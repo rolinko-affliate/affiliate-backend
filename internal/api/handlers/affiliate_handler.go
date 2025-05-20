@@ -111,11 +111,17 @@ func (h *AffiliateHandler) GetAffiliate(c *gin.Context) {
 }
 
 // UpdateAffiliateRequest defines the request for updating an affiliate
+// swagger:model
 type UpdateAffiliateRequest struct {
-	Name           string           `json:"name" binding:"required"`
-	ContactEmail   *string          `json:"contact_email,omitempty"`
-	PaymentDetails *json.RawMessage `json:"payment_details,omitempty"`
-	Status         string           `json:"status" binding:"required"`
+	// Affiliate name
+	Name           string `json:"name" binding:"required" example:"Updated Affiliate"`
+	// Contact email address
+	ContactEmail   *string `json:"contact_email,omitempty" example:"updated@example.com"`
+	// Payment details in JSON format
+	// swagger:strfmt json
+	PaymentDetails *json.RawMessage `json:"payment_details,omitempty" swaggertype:"object"`
+	// Status of the affiliate (active, pending, inactive, rejected)
+	Status         string `json:"status" binding:"required" example:"active"`
 }
 
 // UpdateAffiliate updates an affiliate
@@ -253,11 +259,17 @@ func (h *AffiliateHandler) DeleteAffiliate(c *gin.Context) {
 }
 
 // CreateAffiliateProviderMappingRequest defines the request for creating an affiliate provider mapping
+// swagger:model
 type CreateAffiliateProviderMappingRequest struct {
-	AffiliateID         int64            `json:"affiliate_id" binding:"required"`
-	ProviderType        string           `json:"provider_type" binding:"required"`
-	ProviderAffiliateID *string          `json:"provider_affiliate_id,omitempty"`
-	ProviderConfig      *json.RawMessage `json:"provider_config,omitempty"`
+	// Affiliate ID
+	AffiliateID         int64  `json:"affiliate_id" binding:"required" example:"1"`
+	// Provider type (e.g., 'everflow')
+	ProviderType        string `json:"provider_type" binding:"required" example:"everflow"`
+	// Provider's affiliate ID
+	ProviderAffiliateID *string `json:"provider_affiliate_id,omitempty" example:"aff-12345"`
+	// Provider configuration in JSON format
+	// swagger:strfmt json
+	ProviderConfig      *json.RawMessage `json:"provider_config,omitempty" swaggertype:"object"`
 }
 
 // CreateAffiliateProviderMapping creates a new affiliate provider mapping
@@ -341,9 +353,13 @@ func (h *AffiliateHandler) GetAffiliateProviderMapping(c *gin.Context) {
 }
 
 // UpdateAffiliateProviderMappingRequest defines the request for updating an affiliate provider mapping
+// swagger:model
 type UpdateAffiliateProviderMappingRequest struct {
-	ProviderAffiliateID *string          `json:"provider_affiliate_id,omitempty"`
-	ProviderConfig      *json.RawMessage `json:"provider_config,omitempty"`
+	// Provider's affiliate ID
+	ProviderAffiliateID *string `json:"provider_affiliate_id,omitempty" example:"aff-12345"`
+	// Provider configuration in JSON format
+	// swagger:strfmt json
+	ProviderConfig      *json.RawMessage `json:"provider_config,omitempty" swaggertype:"object"`
 }
 
 // UpdateAffiliateProviderMapping updates an affiliate provider mapping

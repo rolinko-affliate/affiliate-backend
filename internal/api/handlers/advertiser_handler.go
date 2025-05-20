@@ -21,12 +21,19 @@ func NewAdvertiserHandler(as service.AdvertiserService) *AdvertiserHandler {
 }
 
 // CreateAdvertiserRequest defines the request for creating an advertiser
+// swagger:model
 type CreateAdvertiserRequest struct {
-	OrganizationID int64             `json:"organization_id" binding:"required"`
-	Name           string            `json:"name" binding:"required"`
-	ContactEmail   *string           `json:"contact_email,omitempty"`
-	BillingDetails *json.RawMessage  `json:"billing_details,omitempty"`
-	Status         string            `json:"status,omitempty"`
+	// Organization ID
+	OrganizationID int64  `json:"organization_id" binding:"required" example:"1"`
+	// Advertiser name
+	Name           string `json:"name" binding:"required" example:"Example Advertiser"`
+	// Contact email address
+	ContactEmail   *string `json:"contact_email,omitempty" example:"contact@example.com"`
+	// Billing details in JSON format
+	// swagger:strfmt json
+	BillingDetails *json.RawMessage `json:"billing_details,omitempty" swaggertype:"object"`
+	// Status of the advertiser (active, pending, inactive, rejected)
+	Status         string `json:"status,omitempty" example:"active"`
 }
 
 // CreateAdvertiser creates a new advertiser
@@ -104,11 +111,17 @@ func (h *AdvertiserHandler) GetAdvertiser(c *gin.Context) {
 }
 
 // UpdateAdvertiserRequest defines the request for updating an advertiser
+// swagger:model
 type UpdateAdvertiserRequest struct {
-	Name           string           `json:"name" binding:"required"`
-	ContactEmail   *string          `json:"contact_email,omitempty"`
-	BillingDetails *json.RawMessage `json:"billing_details,omitempty"`
-	Status         string           `json:"status" binding:"required"`
+	// Advertiser name
+	Name           string `json:"name" binding:"required" example:"Updated Advertiser"`
+	// Contact email address
+	ContactEmail   *string `json:"contact_email,omitempty" example:"updated@example.com"`
+	// Billing details in JSON format
+	// swagger:strfmt json
+	BillingDetails *json.RawMessage `json:"billing_details,omitempty" swaggertype:"object"`
+	// Status of the advertiser (active, pending, inactive, rejected)
+	Status         string `json:"status" binding:"required" example:"active"`
 }
 
 // UpdateAdvertiser updates an advertiser
@@ -246,12 +259,20 @@ func (h *AdvertiserHandler) DeleteAdvertiser(c *gin.Context) {
 }
 
 // CreateAdvertiserProviderMappingRequest defines the request for creating an advertiser provider mapping
+// swagger:model
 type CreateAdvertiserProviderMappingRequest struct {
-	AdvertiserID         int64            `json:"advertiser_id" binding:"required"`
-	ProviderType         string           `json:"provider_type" binding:"required"`
-	ProviderAdvertiserID *string          `json:"provider_advertiser_id,omitempty"`
-	APICredentials       *json.RawMessage `json:"api_credentials,omitempty"`
-	ProviderConfig       *json.RawMessage `json:"provider_config,omitempty"`
+	// Advertiser ID
+	AdvertiserID         int64  `json:"advertiser_id" binding:"required" example:"1"`
+	// Provider type (e.g., 'everflow')
+	ProviderType         string `json:"provider_type" binding:"required" example:"everflow"`
+	// Provider's advertiser ID
+	ProviderAdvertiserID *string `json:"provider_advertiser_id,omitempty" example:"adv-12345"`
+	// API credentials in JSON format
+	// swagger:strfmt json
+	APICredentials       *json.RawMessage `json:"api_credentials,omitempty" swaggertype:"object"`
+	// Provider configuration in JSON format
+	// swagger:strfmt json
+	ProviderConfig       *json.RawMessage `json:"provider_config,omitempty" swaggertype:"object"`
 }
 
 // CreateAdvertiserProviderMapping creates a new advertiser provider mapping
@@ -340,10 +361,16 @@ func (h *AdvertiserHandler) GetAdvertiserProviderMapping(c *gin.Context) {
 }
 
 // UpdateAdvertiserProviderMappingRequest defines the request for updating an advertiser provider mapping
+// swagger:model
 type UpdateAdvertiserProviderMappingRequest struct {
-	ProviderAdvertiserID *string          `json:"provider_advertiser_id,omitempty"`
-	APICredentials       *json.RawMessage `json:"api_credentials,omitempty"`
-	ProviderConfig       *json.RawMessage `json:"provider_config,omitempty"`
+	// Provider's advertiser ID
+	ProviderAdvertiserID *string `json:"provider_advertiser_id,omitempty" example:"adv-12345"`
+	// API credentials in JSON format
+	// swagger:strfmt json
+	APICredentials       *json.RawMessage `json:"api_credentials,omitempty" swaggertype:"object"`
+	// Provider configuration in JSON format
+	// swagger:strfmt json
+	ProviderConfig       *json.RawMessage `json:"provider_config,omitempty" swaggertype:"object"`
 }
 
 // UpdateAdvertiserProviderMapping updates an advertiser provider mapping

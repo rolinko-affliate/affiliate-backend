@@ -327,12 +327,19 @@ func (h *CampaignHandler) DeleteCampaign(c *gin.Context) {
 }
 
 // CreateCampaignProviderOfferRequest defines the request for creating a campaign provider offer
+// swagger:model
 type CreateCampaignProviderOfferRequest struct {
-	CampaignID         int64            `json:"campaign_id" binding:"required"`
-	ProviderType       string           `json:"provider_type" binding:"required"`
-	ProviderOfferRef   *string          `json:"provider_offer_ref,omitempty"`
-	ProviderOfferConfig *json.RawMessage `json:"provider_offer_config,omitempty"`
-	IsActiveOnProvider bool             `json:"is_active_on_provider"`
+	// Campaign ID
+	CampaignID         int64  `json:"campaign_id" binding:"required" example:"1"`
+	// Provider type (e.g., 'everflow')
+	ProviderType       string `json:"provider_type" binding:"required" example:"everflow"`
+	// Provider's offer reference
+	ProviderOfferRef   *string `json:"provider_offer_ref,omitempty" example:"offer-12345"`
+	// Provider offer configuration in JSON format
+	// swagger:strfmt json
+	ProviderOfferConfig *json.RawMessage `json:"provider_offer_config,omitempty" swaggertype:"object"`
+	// Whether the offer is active on the provider
+	IsActiveOnProvider bool `json:"is_active_on_provider" example:"true"`
 }
 
 // CreateCampaignProviderOffer creates a new campaign provider offer
@@ -410,10 +417,15 @@ func (h *CampaignHandler) GetCampaignProviderOffer(c *gin.Context) {
 }
 
 // UpdateCampaignProviderOfferRequest defines the request for updating a campaign provider offer
+// swagger:model
 type UpdateCampaignProviderOfferRequest struct {
-	ProviderOfferRef   *string          `json:"provider_offer_ref,omitempty"`
-	ProviderOfferConfig *json.RawMessage `json:"provider_offer_config,omitempty"`
-	IsActiveOnProvider bool             `json:"is_active_on_provider"`
+	// Provider's offer reference
+	ProviderOfferRef   *string `json:"provider_offer_ref,omitempty" example:"offer-12345"`
+	// Provider offer configuration in JSON format
+	// swagger:strfmt json
+	ProviderOfferConfig *json.RawMessage `json:"provider_offer_config,omitempty" swaggertype:"object"`
+	// Whether the offer is active on the provider
+	IsActiveOnProvider bool `json:"is_active_on_provider" example:"true"`
 }
 
 // UpdateCampaignProviderOffer updates a campaign provider offer

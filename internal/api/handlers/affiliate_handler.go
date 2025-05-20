@@ -21,12 +21,19 @@ func NewAffiliateHandler(as service.AffiliateService) *AffiliateHandler {
 }
 
 // CreateAffiliateRequest defines the request for creating an affiliate
+// swagger:model
 type CreateAffiliateRequest struct {
-	OrganizationID int64            `json:"organization_id" binding:"required"`
-	Name           string           `json:"name" binding:"required"`
-	ContactEmail   *string          `json:"contact_email,omitempty"`
-	PaymentDetails *json.RawMessage `json:"payment_details,omitempty"`
-	Status         string           `json:"status,omitempty"`
+	// Organization ID
+	OrganizationID int64  `json:"organization_id" binding:"required" example:"1"`
+	// Affiliate name
+	Name           string `json:"name" binding:"required" example:"Example Affiliate"`
+	// Contact email address
+	ContactEmail   *string `json:"contact_email,omitempty" example:"affiliate@example.com"`
+	// Payment details in JSON format
+	// swagger:strfmt json
+	PaymentDetails *json.RawMessage `json:"payment_details,omitempty" swaggertype:"object"`
+	// Status of the affiliate (active, pending, inactive, rejected)
+	Status         string `json:"status,omitempty" example:"active"`
 }
 
 // CreateAffiliate creates a new affiliate

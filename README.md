@@ -58,6 +58,55 @@ affiliate-backend/
 
 - `GET /api/v1/users/me`: Get the current user's profile
 
+## API Documentation
+
+The API is documented using OpenAPI 3.0 specification. You can generate and view the documentation using the following commands:
+
+### Generate OpenAPI Specification
+
+```bash
+# Generate OpenAPI docs in docs/swagger directory
+make openapi
+
+# Export OpenAPI spec to JSON file (openapi.json)
+make openapi-json
+
+# Export OpenAPI spec to YAML file (openapi.yaml)
+make openapi-yaml
+```
+
+### View API Documentation
+
+```bash
+# Serve Swagger UI documentation on http://localhost:8090
+make serve-docs
+```
+
+### Integrate Swagger UI with the Application
+
+To add Swagger UI directly to your application:
+
+1. Install the required dependencies:
+   ```bash
+   make install-swagger-ui
+   ```
+
+2. Add the following code to your router setup in `internal/api/router.go`:
+   ```go
+   import (
+       // ... existing imports
+       swaggerFiles "github.com/swaggo/files"
+       ginSwagger "github.com/swaggo/gin-swagger"
+       _ "github.com/affiliate-backend/docs/swagger" // Import generated docs
+   )
+
+   // In your SetupRouter function:
+   // Swagger documentation
+   r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+   ```
+
+3. Rebuild and run your application, then access Swagger UI at `/swagger/index.html`
+
 ## Authentication
 
 This service uses Supabase JWT tokens for authentication. Include the JWT token in the `Authorization` header as a Bearer token:

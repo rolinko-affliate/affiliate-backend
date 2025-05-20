@@ -1,0 +1,120 @@
+basePath: /api/v1
+definitions:
+  handlers.SupabaseUserWebhookPayload:
+    properties:
+      record:
+        properties:
+          email:
+            type: string
+          id:
+            type: string
+        type: object
+      table:
+        description: e.g., "users"
+        type: string
+      type:
+        description: e.g., "INSERT"
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact:
+    email: support@example.com
+    name: API Support
+    url: http://www.example.com/support
+  description: API Server for Affiliate Backend Application
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Affiliate Backend API
+  version: "1.0"
+paths:
+  /health:
+    get:
+      description: Returns the health status of the API
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Status UP
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Health check endpoint
+      tags:
+      - system
+  /public/webhooks/supabase/new-user:
+    post:
+      consumes:
+      - application/json
+      description: Process webhook from Supabase when a new user is created
+      parameters:
+      - description: Webhook payload
+        in: body
+        name: payload
+        required: true
+        schema:
+          $ref: '#/definitions/handlers.SupabaseUserWebhookPayload'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: User profile created successfully
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: Invalid webhook payload
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal server error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Handle Supabase new user webhook
+      tags:
+      - webhooks
+  /users/me:
+    get:
+      consumes:
+      - application/json
+      description: Retrieves the profile of the currently authenticated user
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: User profile
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Invalid user ID format
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "404":
+          description: Profile not found
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Get current user profile
+      tags:
+      - profile
+securityDefinitions:
+  BearerAuth:
+    description: Type "Bearer" followed by a space and JWT token.
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

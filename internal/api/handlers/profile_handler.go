@@ -31,6 +31,16 @@ type SupabaseUserWebhookPayload struct {
 }
 
 // HandleSupabaseNewUserWebhook handles the webhook from Supabase for new user creation
+// @Summary      Handle Supabase new user webhook
+// @Description  Process webhook from Supabase when a new user is created
+// @Tags         webhooks
+// @Accept       json
+// @Produce      json
+// @Param        payload  body      SupabaseUserWebhookPayload  true  "Webhook payload"
+// @Success      200      {object}  map[string]string           "User profile created successfully"
+// @Failure      400      {object}  map[string]string           "Invalid webhook payload"
+// @Failure      500      {object}  map[string]string           "Internal server error"
+// @Router       /public/webhooks/supabase/new-user [post]
 func (h *ProfileHandler) HandleSupabaseNewUserWebhook(c *gin.Context) {
 	var payload SupabaseUserWebhookPayload
 	if err := c.ShouldBindJSON(&payload); err != nil {
@@ -67,6 +77,16 @@ func (h *ProfileHandler) HandleSupabaseNewUserWebhook(c *gin.Context) {
 }
 
 // GetMyProfile retrieves the current user's profile
+// @Summary      Get current user profile
+// @Description  Retrieves the profile of the currently authenticated user
+// @Tags         profile
+// @Accept       json
+// @Produce      json
+// @Success      200  {object}  map[string]interface{}  "User profile"
+// @Failure      400  {object}  map[string]string       "Invalid user ID format"
+// @Failure      404  {object}  map[string]string       "Profile not found"
+// @Security     BearerAuth
+// @Router       /users/me [get]
 func (h *ProfileHandler) GetMyProfile(c *gin.Context) {
 	userIDStr, _ := c.Get(middleware.UserIDKey)
 	userID, err := uuid.Parse(userIDStr.(string))

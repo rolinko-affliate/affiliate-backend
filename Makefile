@@ -1,4 +1,4 @@
-.PHONY: build run test clean migrate-up migrate-down
+.PHONY: build run test clean migrate-up migrate-down swagger
 
 # Build the application
 build:
@@ -7,6 +7,10 @@ build:
 # Run the application
 run:
 	go run ./cmd/api/main.go
+
+# Generate OpenAPI specification
+swagger:
+	$(shell go env GOPATH)/bin/swag init -g cmd/api/main.go -o docs
 
 # Run tests
 test:

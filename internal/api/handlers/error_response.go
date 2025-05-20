@@ -22,6 +22,12 @@ func RespondWithError(c *gin.Context, code int, message string, details ...strin
 }
 
 // HealthCheck handler for health checks
+// @Summary      Health check endpoint
+// @Description  Returns the health status of the API
+// @Tags         system
+// @Produce      json
+// @Success      200  {object}  map[string]string  "Status UP"
+// @Router       /health [get]
 func HealthCheck(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"status": "UP"})
 }

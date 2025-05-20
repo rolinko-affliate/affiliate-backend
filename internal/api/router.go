@@ -11,7 +11,10 @@ import (
 type RouterOptions struct {
 	ProfileHandler       *handlers.ProfileHandler
 	ProfileService       service.ProfileService
-	// Add other handlers and services as needed
+	OrganizationHandler  *handlers.OrganizationHandler
+	AdvertiserHandler    *handlers.AdvertiserHandler
+	AffiliateHandler     *handlers.AffiliateHandler
+	CampaignHandler      *handlers.CampaignHandler
 }
 
 // SetupRouter sets up the API router
@@ -31,26 +34,104 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 	v1 := r.Group("/api/v1")
 	v1.Use(middleware.AuthMiddleware()) // Apply JWT auth middleware
 
-	// --- Profile Routes ---
 	// Create RBAC middleware factory
 	rbacMW := func(allowedRoles ...string) gin.HandlerFunc {
 		return middleware.RBACMiddleware(opts.ProfileService, allowedRoles...)
 	}
 
+	// --- Profile Routes ---
 	v1.GET("/users/me", rbacMW("Affiliate", "AdvertiserManager", "AffiliateManager", "Admin"), 
 		opts.ProfileHandler.GetMyProfile)
 
-	// --- Organization Routes (Example - Admin only) ---
-	// Add organization routes here
+	// --- Organization Routes ---
+	organizations := v1.Group("/organizations")
+	organizations.Use(rbacMW("Admin")) // Only admins can manage organizations
+	{
+		organizations.POST("", opts.OrganizationHandler.CreateOrganization)
+		organizations.GET("", opts.OrganizationHandler.ListOrganizations)
+		organizations.GET("/:id", opts.OrganizationHandler.GetOrganization)
+		organizations.PUT("/:id", opts.OrganizationHandler.UpdateOrganization)
+		organizations.DELETE("/:id", opts.OrganizationHandler.DeleteOrganization)
+		
+		// Organization's advertisers
+		organizations.GET("/:id/advertisers", opts.AdvertiserHandler.ListAdvertisersByOrganization)
+		
+		// Organization's affiliates
+		organizations.GET("/:id/affiliates", opts.AffiliateHandler.ListAffiliatesByOrganization)
+		
+		// Organization's campaigns
+		organizations.GET("/:id/campaigns", opts.CampaignHandler.ListCampaignsByOrganization)
+	}
 
-	// --- Advertiser Routes (Example - AdvertiserManager & Admin) ---
-	// Add advertiser routes here
+	// --- Advertiser Routes ---
+	advertisers := v1.Group("/advertisers")
+	advertisers.Use(rbacMW("AdvertiserManager", "Admin"))
+	{
+		advertisers.POST("", opts.AdvertiserHandler.CreateAdvertiser)
+		advertisers.GET("/:id", opts.AdvertiserHandler.GetAdvertiser)
+		advertisers.PUT("/:id", opts.AdvertiserHandler.UpdateAdvertiser)
+		advertisers.DELETE("/:id", opts.AdvertiserHandler.DeleteAdvertiser)
+		
+		// Advertiser's campaigns
+		advertisers.GET("/:id/campaigns", opts.CampaignHandler.ListCampaignsByAdvertiser)
+		
+		// Advertiser's provider mappings
+		advertisers.GET("/:id/provider-mappings/:providerType", opts.AdvertiserHandler.GetAdvertiserProviderMapping)
+	}
+	
+	// Advertiser provider mappings
+	advProviderMappings := v1.Group("/advertiser-provider-mappings")
+	advProviderMappings.Use(rbacMW("AdvertiserManager", "Admin"))
+	{
+		advProviderMappings.POST("", opts.AdvertiserHandler.CreateAdvertiserProviderMapping)
+		advProviderMappings.PUT("/:mappingId", opts.AdvertiserHandler.UpdateAdvertiserProviderMapping)
+		advProviderMappings.DELETE("/:mappingId", opts.AdvertiserHandler.DeleteAdvertiserProviderMapping)
+	}
 
-	// --- Campaign & Offer Routes (Example - AdvertiserManager & Admin) ---
-	// Add campaign and offer routes here
+	// --- Affiliate Routes ---
+	affiliates := v1.Group("/affiliates")
+	affiliates.Use(rbacMW("AffiliateManager", "Admin"))
+	{
+		affiliates.POST("", opts.AffiliateHandler.CreateAffiliate)
+		affiliates.GET("/:id", opts.AffiliateHandler.GetAffiliate)
+		affiliates.PUT("/:id", opts.AffiliateHandler.UpdateAffiliate)
+		affiliates.DELETE("/:id", opts.AffiliateHandler.DeleteAffiliate)
+		
+		// Affiliate's provider mappings
+		affiliates.GET("/:id/provider-mappings/:providerType", opts.AffiliateHandler.GetAffiliateProviderMapping)
+	}
+	
+	// Affiliate provider mappings
+	affProviderMappings := v1.Group("/affiliate-provider-mappings")
+	affProviderMappings.Use(rbacMW("AffiliateManager", "Admin"))
+	{
+		affProviderMappings.POST("", opts.AffiliateHandler.CreateAffiliateProviderMapping)
+		affProviderMappings.PUT("/:mappingId", opts.AffiliateHandler.UpdateAffiliateProviderMapping)
+		affProviderMappings.DELETE("/:mappingId", opts.AffiliateHandler.DeleteAffiliateProviderMapping)
+	}
 
-	// --- Affiliate Routes (Example - Affiliate & AffiliateManager, Admin) ---
-	// Add affiliate routes here
+	// --- Campaign Routes ---
+	campaigns := v1.Group("/campaigns")
+	campaigns.Use(rbacMW("AdvertiserManager", "Admin"))
+	{
+		campaigns.POST("", opts.CampaignHandler.CreateCampaign)
+		campaigns.GET("/:id", opts.CampaignHandler.GetCampaign)
+		campaigns.PUT("/:id", opts.CampaignHandler.UpdateCampaign)
+		campaigns.DELETE("/:id", opts.CampaignHandler.DeleteCampaign)
+		
+		// Campaign's provider offers
+		campaigns.GET("/:id/provider-offers", opts.CampaignHandler.ListCampaignProviderOffersByCampaign)
+	}
+	
+	// Campaign provider offers
+	campaignProviderOffers := v1.Group("/campaign-provider-offers")
+	campaignProviderOffers.Use(rbacMW("AdvertiserManager", "Admin"))
+	{
+		campaignProviderOffers.POST("", opts.CampaignHandler.CreateCampaignProviderOffer)
+		campaignProviderOffers.GET("/:id", opts.CampaignHandler.GetCampaignProviderOffer)
+		campaignProviderOffers.PUT("/:id", opts.CampaignHandler.UpdateCampaignProviderOffer)
+		campaignProviderOffers.DELETE("/:id", opts.CampaignHandler.DeleteCampaignProviderOffer)
+	}
 
 	return r
 }

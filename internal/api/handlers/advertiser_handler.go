@@ -1,0 +1,441 @@
+package handlers
+
+import (
+	"encoding/json"
+	"net/http"
+	"strconv"
+
+	"github.com/affiliate-backend/internal/domain"
+	"github.com/affiliate-backend/internal/service"
+	"github.com/gin-gonic/gin"
+)
+
+// AdvertiserHandler handles advertiser-related requests
+type AdvertiserHandler struct {
+	advertiserService service.AdvertiserService
+}
+
+// NewAdvertiserHandler creates a new advertiser handler
+func NewAdvertiserHandler(as service.AdvertiserService) *AdvertiserHandler {
+	return &AdvertiserHandler{advertiserService: as}
+}
+
+// CreateAdvertiserRequest defines the request for creating an advertiser
+type CreateAdvertiserRequest struct {
+	OrganizationID int64             `json:"organization_id" binding:"required"`
+	Name           string            `json:"name" binding:"required"`
+	ContactEmail   *string           `json:"contact_email,omitempty"`
+	BillingDetails *json.RawMessage  `json:"billing_details,omitempty"`
+	Status         string            `json:"status,omitempty"`
+}
+
+// CreateAdvertiser creates a new advertiser
+// @Summary      Create a new advertiser
+// @Description  Creates a new advertiser with the given details
+// @Tags         advertisers
+// @Accept       json
+// @Produce      json
+// @Param        request  body      CreateAdvertiserRequest  true  "Advertiser details"
+// @Success      201      {object}  domain.Advertiser        "Created advertiser"
+// @Failure      400      {object}  map[string]string        "Invalid request"
+// @Failure      500      {object}  map[string]string        "Internal server error"
+// @Security     BearerAuth
+// @Router       /advertisers [post]
+func (h *AdvertiserHandler) CreateAdvertiser(c *gin.Context) {
+	var req CreateAdvertiserRequest
+	if err := c.ShouldBindJSON(&req); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request: " + err.Error()})
+		return
+	}
+
+	advertiser := &domain.Advertiser{
+		OrganizationID: req.OrganizationID,
+		Name:           req.Name,
+		ContactEmail:   req.ContactEmail,
+		Status:         req.Status,
+	}
+
+	if req.BillingDetails != nil {
+		billingDetailsStr := string(*req.BillingDetails)
+		advertiser.BillingDetails = &billingDetailsStr
+	}
+
+	createdAdvertiser, err := h.advertiserService.CreateAdvertiser(c.Request.Context(), advertiser)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create advertiser: " + err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusCreated, createdAdvertiser)
+}
+
+// GetAdvertiser retrieves an advertiser by ID
+// @Summary      Get advertiser by ID
+// @Description  Retrieves an advertiser by its ID
+// @Tags         advertisers
+// @Accept       json
+// @Produce      json
+// @Param        id   path      int                 true  "Advertiser ID"
+// @Success      200  {object}  domain.Advertiser  "Advertiser details"
+// @Failure      400  {object}  map[string]string  "Invalid advertiser ID"
+// @Failure      404  {object}  map[string]string  "Advertiser not found"
+// @Failure      500  {object}  map[string]string  "Internal server error"
+// @Security     BearerAuth
+// @Router       /advertisers/{id} [get]
+func (h *AdvertiserHandler) GetAdvertiser(c *gin.Context) {
+	idStr := c.Param("id")
+	id, err := strconv.ParseInt(idStr, 10, 64)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid advertiser ID"})
+		return
+	}
+
+	advertiser, err := h.advertiserService.GetAdvertiserByID(c.Request.Context(), id)
+	if err != nil {
+		if err.Error() == "advertiser not found: not found" {
+			c.JSON(http.StatusNotFound, gin.H{"error": "Advertiser not found"})
+			return
+		}
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get advertiser: " + err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, advertiser)
+}
+
+// UpdateAdvertiserRequest defines the request for updating an advertiser
+type UpdateAdvertiserRequest struct {
+	Name           string           `json:"name" binding:"required"`
+	ContactEmail   *string          `json:"contact_email,omitempty"`
+	BillingDetails *json.RawMessage `json:"billing_details,omitempty"`
+	Status         string           `json:"status" binding:"required"`
+}
+
+// UpdateAdvertiser updates an advertiser
+// @Summary      Update advertiser
+// @Description  Updates an advertiser with the given details
+// @Tags         advertisers
+// @Accept       json
+// @Produce      json
+// @Param        id       path      int                     true  "Advertiser ID"
+// @Param        request  body      UpdateAdvertiserRequest  true  "Advertiser details"
+// @Success      200      {object}  domain.Advertiser        "Updated advertiser"
+// @Failure      400      {object}  map[string]string        "Invalid request"
+// @Failure      404      {object}  map[string]string        "Advertiser not found"
+// @Failure      500      {object}  map[string]string        "Internal server error"
+// @Security     BearerAuth
+// @Router       /advertisers/{id} [put]
+func (h *AdvertiserHandler) UpdateAdvertiser(c *gin.Context) {
+	idStr := c.Param("id")
+	id, err := strconv.ParseInt(idStr, 10, 64)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid advertiser ID"})
+		return
+	}
+
+	var req UpdateAdvertiserRequest
+	if err := c.ShouldBindJSON(&req); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request: " + err.Error()})
+		return
+	}
+
+	// Get existing advertiser
+	advertiser, err := h.advertiserService.GetAdvertiserByID(c.Request.Context(), id)
+	if err != nil {
+		if err.Error() == "advertiser not found: not found" {
+			c.JSON(http.StatusNotFound, gin.H{"error": "Advertiser not found"})
+			return
+		}
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get advertiser: " + err.Error()})
+		return
+	}
+
+	// Update advertiser
+	advertiser.Name = req.Name
+	advertiser.ContactEmail = req.ContactEmail
+	advertiser.Status = req.Status
+
+	if req.BillingDetails != nil {
+		billingDetailsStr := string(*req.BillingDetails)
+		advertiser.BillingDetails = &billingDetailsStr
+	}
+
+	if err := h.advertiserService.UpdateAdvertiser(c.Request.Context(), advertiser); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to update advertiser: " + err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, advertiser)
+}
+
+// ListAdvertisersByOrganization retrieves a list of advertisers for an organization
+// @Summary      List advertisers by organization
+// @Description  Retrieves a list of advertisers for an organization with pagination
+// @Tags         advertisers
+// @Accept       json
+// @Produce      json
+// @Param        id  path      int                    true   "Organization ID"
+// @Param        page           query     int                    false  "Page number (default: 1)"
+// @Param        pageSize       query     int                    false  "Page size (default: 10)"
+// @Success      200            {array}   domain.Advertiser      "List of advertisers"
+// @Failure      400            {object}  map[string]string      "Invalid organization ID"
+// @Failure      500            {object}  map[string]string      "Internal server error"
+// @Security     BearerAuth
+// @Router       /organizations/{id}/advertisers [get]
+func (h *AdvertiserHandler) ListAdvertisersByOrganization(c *gin.Context) {
+	orgIDStr := c.Param("id")
+	orgID, err := strconv.ParseInt(orgIDStr, 10, 64)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid organization ID"})
+		return
+	}
+
+	pageStr := c.DefaultQuery("page", "1")
+	pageSizeStr := c.DefaultQuery("pageSize", "10")
+
+	page, err := strconv.Atoi(pageStr)
+	if err != nil || page < 1 {
+		page = 1
+	}
+
+	pageSize, err := strconv.Atoi(pageSizeStr)
+	if err != nil || pageSize < 1 {
+		pageSize = 10
+	}
+
+	advertisers, err := h.advertiserService.ListAdvertisersByOrganization(c.Request.Context(), orgID, page, pageSize)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to list advertisers: " + err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, advertisers)
+}
+
+// DeleteAdvertiser deletes an advertiser
+// @Summary      Delete advertiser
+// @Description  Deletes an advertiser by its ID
+// @Tags         advertisers
+// @Accept       json
+// @Produce      json
+// @Param        id   path      int                true  "Advertiser ID"
+// @Success      204  {object}  nil                "No content"
+// @Failure      400  {object}  map[string]string  "Invalid advertiser ID"
+// @Failure      404  {object}  map[string]string  "Advertiser not found"
+// @Failure      500  {object}  map[string]string  "Internal server error"
+// @Security     BearerAuth
+// @Router       /advertisers/{id} [delete]
+func (h *AdvertiserHandler) DeleteAdvertiser(c *gin.Context) {
+	idStr := c.Param("id")
+	id, err := strconv.ParseInt(idStr, 10, 64)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid advertiser ID"})
+		return
+	}
+
+	if err := h.advertiserService.DeleteAdvertiser(c.Request.Context(), id); err != nil {
+		if err.Error() == "advertiser not found: not found" {
+			c.JSON(http.StatusNotFound, gin.H{"error": "Advertiser not found"})
+			return
+		}
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to delete advertiser: " + err.Error()})
+		return
+	}
+
+	c.Status(http.StatusNoContent)
+}
+
+// CreateAdvertiserProviderMappingRequest defines the request for creating an advertiser provider mapping
+type CreateAdvertiserProviderMappingRequest struct {
+	AdvertiserID         int64            `json:"advertiser_id" binding:"required"`
+	ProviderType         string           `json:"provider_type" binding:"required"`
+	ProviderAdvertiserID *string          `json:"provider_advertiser_id,omitempty"`
+	APICredentials       *json.RawMessage `json:"api_credentials,omitempty"`
+	ProviderConfig       *json.RawMessage `json:"provider_config,omitempty"`
+}
+
+// CreateAdvertiserProviderMapping creates a new advertiser provider mapping
+// @Summary      Create a new advertiser provider mapping
+// @Description  Creates a new mapping between an advertiser and a provider
+// @Tags         advertisers
+// @Accept       json
+// @Produce      json
+// @Param        request  body      CreateAdvertiserProviderMappingRequest  true  "Mapping details"
+// @Success      201      {object}  domain.AdvertiserProviderMapping        "Created mapping"
+// @Failure      400      {object}  map[string]string                       "Invalid request"
+// @Failure      500      {object}  map[string]string                       "Internal server error"
+// @Security     BearerAuth
+// @Router       /advertiser-provider-mappings [post]
+func (h *AdvertiserHandler) CreateAdvertiserProviderMapping(c *gin.Context) {
+	var req CreateAdvertiserProviderMappingRequest
+	if err := c.ShouldBindJSON(&req); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request: " + err.Error()})
+		return
+	}
+
+	mapping := &domain.AdvertiserProviderMapping{
+		AdvertiserID:         req.AdvertiserID,
+		ProviderType:         req.ProviderType,
+		ProviderAdvertiserID: req.ProviderAdvertiserID,
+	}
+
+	if req.APICredentials != nil {
+		apiCredentialsStr := string(*req.APICredentials)
+		mapping.APICredentials = &apiCredentialsStr
+	}
+
+	if req.ProviderConfig != nil {
+		providerConfigStr := string(*req.ProviderConfig)
+		mapping.ProviderConfig = &providerConfigStr
+	}
+
+	createdMapping, err := h.advertiserService.CreateAdvertiserProviderMapping(c.Request.Context(), mapping)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create advertiser provider mapping: " + err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusCreated, createdMapping)
+}
+
+// GetAdvertiserProviderMapping retrieves an advertiser provider mapping
+// @Summary      Get advertiser provider mapping
+// @Description  Retrieves a mapping between an advertiser and a provider
+// @Tags         advertisers
+// @Accept       json
+// @Produce      json
+// @Param        advertiserId   path      int                                true  "Advertiser ID"
+// @Param        providerType   path      string                             true  "Provider Type"
+// @Success      200            {object}  domain.AdvertiserProviderMapping  "Mapping details"
+// @Failure      400            {object}  map[string]string                 "Invalid request"
+// @Failure      404            {object}  map[string]string                 "Mapping not found"
+// @Failure      500            {object}  map[string]string                 "Internal server error"
+// @Security     BearerAuth
+// @Router       /advertisers/{id}/provider-mappings/{providerType} [get]
+func (h *AdvertiserHandler) GetAdvertiserProviderMapping(c *gin.Context) {
+	advertiserIDStr := c.Param("id")
+	advertiserID, err := strconv.ParseInt(advertiserIDStr, 10, 64)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid advertiser ID"})
+		return
+	}
+
+	providerType := c.Param("providerType")
+	if providerType == "" {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Provider type is required"})
+		return
+	}
+
+	mapping, err := h.advertiserService.GetAdvertiserProviderMapping(c.Request.Context(), advertiserID, providerType)
+	if err != nil {
+		if err.Error() == "advertiser provider mapping not found: not found" {
+			c.JSON(http.StatusNotFound, gin.H{"error": "Advertiser provider mapping not found"})
+			return
+		}
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get advertiser provider mapping: " + err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, mapping)
+}
+
+// UpdateAdvertiserProviderMappingRequest defines the request for updating an advertiser provider mapping
+type UpdateAdvertiserProviderMappingRequest struct {
+	ProviderAdvertiserID *string          `json:"provider_advertiser_id,omitempty"`
+	APICredentials       *json.RawMessage `json:"api_credentials,omitempty"`
+	ProviderConfig       *json.RawMessage `json:"provider_config,omitempty"`
+}
+
+// UpdateAdvertiserProviderMapping updates an advertiser provider mapping
+// @Summary      Update advertiser provider mapping
+// @Description  Updates a mapping between an advertiser and a provider
+// @Tags         advertisers
+// @Accept       json
+// @Produce      json
+// @Param        mappingId  path      int                                      true  "Mapping ID"
+// @Param        request    body      UpdateAdvertiserProviderMappingRequest  true  "Mapping details"
+// @Success      200        {object}  domain.AdvertiserProviderMapping        "Updated mapping"
+// @Failure      400        {object}  map[string]string                       "Invalid request"
+// @Failure      404        {object}  map[string]string                       "Mapping not found"
+// @Failure      500        {object}  map[string]string                       "Internal server error"
+// @Security     BearerAuth
+// @Router       /advertiser-provider-mappings/{mappingId} [put]
+func (h *AdvertiserHandler) UpdateAdvertiserProviderMapping(c *gin.Context) {
+	mappingIDStr := c.Param("mappingId")
+	mappingID, err := strconv.ParseInt(mappingIDStr, 10, 64)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid mapping ID"})
+		return
+	}
+
+	var req UpdateAdvertiserProviderMappingRequest
+	if err := c.ShouldBindJSON(&req); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request: " + err.Error()})
+		return
+	}
+
+	// Get existing mapping
+	mapping, err := h.advertiserService.GetAdvertiserProviderMapping(c.Request.Context(), 0, "")
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get advertiser provider mapping: " + err.Error()})
+		return
+	}
+
+	// Update mapping
+	mapping.MappingID = mappingID
+	mapping.ProviderAdvertiserID = req.ProviderAdvertiserID
+
+	if req.APICredentials != nil {
+		apiCredentialsStr := string(*req.APICredentials)
+		mapping.APICredentials = &apiCredentialsStr
+	}
+
+	if req.ProviderConfig != nil {
+		providerConfigStr := string(*req.ProviderConfig)
+		mapping.ProviderConfig = &providerConfigStr
+	}
+
+	if err := h.advertiserService.UpdateAdvertiserProviderMapping(c.Request.Context(), mapping); err != nil {
+		if err.Error() == "advertiser provider mapping not found: not found" {
+			c.JSON(http.StatusNotFound, gin.H{"error": "Advertiser provider mapping not found"})
+			return
+		}
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to update advertiser provider mapping: " + err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, mapping)
+}
+
+// DeleteAdvertiserProviderMapping deletes an advertiser provider mapping
+// @Summary      Delete advertiser provider mapping
+// @Description  Deletes a mapping between an advertiser and a provider
+// @Tags         advertisers
+// @Accept       json
+// @Produce      json
+// @Param        mappingId  path      int                true  "Mapping ID"
+// @Success      204        {object}  nil                "No content"
+// @Failure      400        {object}  map[string]string  "Invalid mapping ID"
+// @Failure      404        {object}  map[string]string  "Mapping not found"
+// @Failure      500        {object}  map[string]string  "Internal server error"
+// @Security     BearerAuth
+// @Router       /advertiser-provider-mappings/{mappingId} [delete]
+func (h *AdvertiserHandler) DeleteAdvertiserProviderMapping(c *gin.Context) {
+	mappingIDStr := c.Param("mappingId")
+	mappingID, err := strconv.ParseInt(mappingIDStr, 10, 64)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid mapping ID"})
+		return
+	}
+
+	if err := h.advertiserService.DeleteAdvertiserProviderMapping(c.Request.Context(), mappingID); err != nil {
+		if err.Error() == "advertiser provider mapping not found: not found" {
+			c.JSON(http.StatusNotFound, gin.H{"error": "Advertiser provider mapping not found"})
+			return
+		}
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to delete advertiser provider mapping: " + err.Error()})
+		return
+	}
+
+	c.Status(http.StatusNoContent)
+}

@@ -14,9 +14,11 @@ services:
       - ENCRYPTION_KEY=${ENCRYPTION_KEY}
     depends_on:
       - db
+      - migrate-up
     volumes:
       - .:/app
     restart: unless-stopped
+    profiles: ["app", "default"]
 
   db:
     image: postgres:14-alpine
@@ -29,6 +31,60 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     restart: unless-stopped
+    profiles: ["app", "migration", "default"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # Migration services with different profiles
+  migrate-up:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ./migrate up
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/affiliate_platform?sslmode=disable
+    depends_on:
+      db:
+        condition: service_healthy
+    profiles: ["migration", "app"]
+
+  migrate-down:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ./migrate down
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/affiliate_platform?sslmode=disable
+    depends_on:
+      db:
+        condition: service_healthy
+    profiles: ["migration-down"]
+
+  migrate-check:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ./migrate check
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/affiliate_platform?sslmode=disable
+    depends_on:
+      db:
+        condition: service_healthy
+    profiles: ["migration-check"]
+
+  migrate:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/affiliate_platform?sslmode=disable
+    depends_on:
+      db:
+        condition: service_healthy
+    profiles: ["migration"]
 
 volumes:
   postgres_data:

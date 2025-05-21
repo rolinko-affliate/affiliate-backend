@@ -1,12 +1,35 @@
-.PHONY: build run test clean migrate-up migrate-down swagger
+.PHONY: build build-all run run-with-migrate test clean lint deps gen-key version \
+	migrate-up migrate-down migrate-reset migrate-check migrate-version migrate-status migrate-create \
+	docker-build docker-push docker-run docker-stop docker-migrate-up docker-migrate-down docker-migrate-check
 
-# Build the application
+# Go parameters
+GOCMD=go
+GOBUILD=$(GOCMD) build
+GORUN=$(GOCMD) run
+GOTEST=$(GOCMD) test
+GOCLEAN=$(GOCMD) clean
+GOGET=$(GOCMD) get
+BINARY_NAME=affiliate-backend
+API_BINARY=api
+MIGRATE_BINARY=migrate
+VERSION=$(shell git describe --tags --always --dirty 2>/dev/null || echo "dev")
+
+# Build the API application
 build:
-	go build -o affiliate-backend ./cmd/api
+	$(GOBUILD) -o $(BINARY_NAME) -v ./cmd/api
+
+# Build all binaries
+build-all:
+	$(GOBUILD) -o $(API_BINARY) -v ./cmd/api
+	$(GOBUILD) -o $(MIGRATE_BINARY) -v ./cmd/migrate
 
 # Run the application
 run:
-	go run ./cmd/api/main.go
+	$(GORUN) ./cmd/api/main.go
+
+# Run the application with auto-migrate
+run-with-migrate:
+	$(GORUN) ./cmd/api/main.go --auto-migrate
 
 # Generate OpenAPI specification
 swagger:
@@ -14,29 +37,69 @@ swagger:
 
 # Run tests
 test:
-	go test -v ./...
+	$(GOTEST) -v ./...
 
 # Clean build artifacts
 clean:
-	rm -f affiliate-backend
+	$(GOCLEAN)
+	rm -f $(BINARY_NAME) $(API_BINARY) $(MIGRATE_BINARY)
 
+# Run linter
+lint:
+	go vet ./...
+	golint ./...
+
+# Install dependencies
+deps:
+	go mod download
+	@echo "Installing required packages for migrations..."
+	go get github.com/golang-migrate/migrate/v4
+	go get github.com/golang-migrate/migrate/v4/database/postgres
+	go get github.com/golang-migrate/migrate/v4/source/file
+	@echo "Installing development tools..."
+	go get github.com/jackc/pgx/v5
+	go get github.com/swaggo/swag/cmd/swag
+	go get golang.org/x/lint/golint
+
+# Show version
+version:
+	@echo "Version: $(VERSION)"
+
+# Generate a random encryption key
+gen-key:
+	@echo "Generating a random 32-byte base64 encoded encryption key..."
+	@openssl rand -base64 32
+
+# Database migration commands
 # Run database migrations up
 migrate-up:
 	@echo "Running database migrations..."
-	@if [ -z "$(DATABASE_URL)" ]; then \
-		echo "DATABASE_URL is not set. Please set it and try again."; \
-		exit 1; \
-	fi
-	migrate -path migrations -database "$(DATABASE_URL)" up
+	$(GORUN) ./cmd/migrate/main.go up
 
-# Run database migrations down
+# Run database migrations down (rollback one migration)
 migrate-down:
-	@echo "Rolling back database migrations..."
-	@if [ -z "$(DATABASE_URL)" ]; then \
-		echo "DATABASE_URL is not set. Please set it and try again."; \
-		exit 1; \
-	fi
-	migrate -path migrations -database "$(DATABASE_URL)" down
+	@echo "Rolling back one migration..."
+	$(GORUN) ./cmd/migrate/main.go down
+
+# Run database migrations down (rollback all migrations)
+migrate-reset:
+	@echo "Rolling back all migrations..."
+	$(GORUN) ./cmd/migrate/main.go reset
+
+# Check database migration status
+migrate-check:
+	@echo "Checking migration status..."
+	$(GORUN) ./cmd/migrate/main.go check
+
+# Show current database version
+migrate-version:
+	@echo "Current database version:"
+	$(GORUN) ./cmd/migrate/main.go version
+
+# Show detailed migration status
+migrate-status:
+	@echo "Migration status:"
+	$(GORUN) ./cmd/migrate/main.go status
 
 # Generate a new migration file
 migrate-create:
@@ -46,16 +109,60 @@ migrate-create:
 	fi
 	migrate create -ext sql -dir migrations -seq $(NAME)
 
-# Install dependencies
-deps:
-	go mod download
+# Docker commands
+# Build Docker image
+docker-build:
+	docker build -t affiliate-backend:$(VERSION) -t affiliate-backend:latest .
 
-# Run linter
-lint:
-	go vet ./...
-	golint ./...
+# Push Docker image
+docker-push:
+	docker push affiliate-backend:$(VERSION)
 
-# Generate a random encryption key
-gen-key:
-	@echo "Generating a random 32-byte base64 encoded encryption key..."
-	@openssl rand -base64 32
+# Run Docker Compose
+docker-run:
+	docker-compose up -d
+
+# Stop Docker Compose
+docker-stop:
+	docker-compose down
+
+# Run database migrations up using Docker
+docker-migrate-up:
+	docker-compose run --rm migrate up
+
+# Run database migrations down using Docker
+docker-migrate-down:
+	docker-compose run --rm migrate down
+
+# Check database migration status using Docker
+docker-migrate-check:
+	docker-compose run --rm migrate check
+
+# Help
+help:
+	@echo "Available commands:"
+	@echo "  make build              - Build the API application"
+	@echo "  make build-all          - Build all binaries (API and migrate)"
+	@echo "  make run                - Run the application"
+	@echo "  make run-with-migrate   - Run the application with auto-migrate"
+	@echo "  make test               - Run tests"
+	@echo "  make clean              - Clean build files"
+	@echo "  make lint               - Run linter"
+	@echo "  make deps               - Install dependencies"
+	@echo "  make version            - Show version"
+	@echo "  make swagger            - Generate Swagger documentation"
+	@echo "  make gen-key            - Generate a random encryption key"
+	@echo "  make migrate-up         - Run database migrations up"
+	@echo "  make migrate-down       - Rollback one migration"
+	@echo "  make migrate-reset      - Rollback all migrations"
+	@echo "  make migrate-check      - Check if migrations are up to date"
+	@echo "  make migrate-version    - Show current database version"
+	@echo "  make migrate-status     - Show detailed migration status"
+	@echo "  make migrate-create     - Generate a new migration file"
+	@echo "  make docker-build       - Build Docker image"
+	@echo "  make docker-push        - Push Docker image"
+	@echo "  make docker-run         - Run Docker Compose"
+	@echo "  make docker-stop        - Stop Docker Compose"
+	@echo "  make docker-migrate-up  - Run migrations up using Docker"
+	@echo "  make docker-migrate-down- Run migrations down using Docker"
+	@echo "  make docker-migrate-check- Check migrations using Docker"

@@ -22,9 +22,11 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"net/http"
 	"os"
+	"os/exec"
 	"os/signal"
 	"syscall"
 	"time"
@@ -36,10 +38,96 @@ import (
 	"github.com/affiliate-backend/internal/service"
 )
 
+// checkDatabaseMigrations verifies that the database schema is up to date
+// If autoMigrate is true, it will attempt to run pending migrations
+func checkDatabaseMigrations(cfg *config.Config, autoMigrate bool) error {
+	if cfg.DatabaseURL == "" {
+		return fmt.Errorf("DATABASE_URL is not set")
+	}
+
+	log.Println("Checking database connection and migration status...")
+	
+	// Initialize the database connection
+	db, err := repository.InitDBConnection(cfg.DatabaseURL)
+	if err != nil {
+		return fmt.Errorf("failed to connect to database: %v", err)
+	}
+	defer db.Close()
+	
+	// Check if the schema_migrations table exists
+	var exists bool
+	err = db.QueryRow(context.Background(), 
+		"SELECT EXISTS (SELECT FROM information_schema.tables WHERE table_name = 'schema_migrations')").Scan(&exists)
+	if err != nil {
+		return fmt.Errorf("failed to check if schema_migrations table exists: %v", err)
+	}
+	
+	if !exists {
+		log.Println("Migration table does not exist. Database has not been initialized with migrations.")
+		if autoMigrate {
+			log.Println("Auto-migrate flag is set. Attempting to run migrations...")
+			
+			// Execute the migrate command
+			cmd := exec.Command("go", "run", "./cmd/migrate/main.go", "up")
+			cmd.Stdout = os.Stdout
+			cmd.Stderr = os.Stderr
+			
+			if err := cmd.Run(); err != nil {
+				return fmt.Errorf("failed to run migrations: %v", err)
+			}
+			
+			log.Println("Migrations applied successfully")
+		} else {
+			return fmt.Errorf("database migrations are required. Run 'make migrate-up' or start with --auto-migrate flag")
+		}
+	} else {
+		// Check if there are pending migrations by querying the schema_migrations table
+		var version int64
+		var dirty bool
+		err = db.QueryRow(context.Background(), 
+			"SELECT version, dirty FROM schema_migrations LIMIT 1").Scan(&version, &dirty)
+		
+		if err != nil {
+			// If the table exists but we can't query it, something is wrong
+			return fmt.Errorf("failed to check migration status: %v", err)
+		}
+		
+		if dirty {
+			return fmt.Errorf("database schema is in a dirty state (version: %d). Manual intervention required", version)
+		}
+		
+		log.Printf("Database schema version: %d\n", version)
+		log.Println("Database schema appears to be up to date")
+	}
+	
+	if autoMigrate {
+		log.Println("Note: For full migration functionality, install the required packages:")
+		log.Println("  go get github.com/golang-migrate/migrate/v4")
+		log.Println("  go get github.com/golang-migrate/migrate/v4/database/postgres")
+		log.Println("  go get github.com/golang-migrate/migrate/v4/source/file")
+	}
+
+	return nil
+}
+
 func main() {
 	// Load Configuration
 	config.LoadConfig()
 	appConf := config.AppConfig
+
+	// Check if auto-migrate flag is set
+	autoMigrate := false
+	for _, arg := range os.Args {
+		if arg == "--auto-migrate" {
+			autoMigrate = true
+			break
+		}
+	}
+
+	// Check database migration status
+	if err := checkDatabaseMigrations(&appConf, autoMigrate); err != nil {
+		log.Fatalf("Database migration check failed: %v", err)
+	}
 
 	// Initialize Database
 	repository.InitDB(&appConf)

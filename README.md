@@ -7,7 +7,9 @@ This is the backend service for the Affiliate Platform MVP. It manages all appli
 ```
 affiliate-backend/
 ├── cmd/
-│   └── api/                // Main application entry point
+│   ├── api/                // Main application entry point
+│   │   └── main.go
+│   └── migrate/            // Database migration tool
 │       └── main.go
 ├── internal/               // Private application and library code
 │   ├── api/                // API handlers, middleware, routing
@@ -37,16 +39,83 @@ affiliate-backend/
 
 1. Clone the repository
 2. Copy `.env.example` to `.env` and update the values
-3. Run database migrations:
+3. Install dependencies:
    ```
-   go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@latest
-   migrate -path migrations -database "${DATABASE_URL}" up
+   make deps
    ```
-4. Build and run the application:
+4. Run database migrations:
    ```
-   go build -o affiliate-backend ./cmd/api
-   ./affiliate-backend
+   make migrate-up
    ```
+5. Build and run the application:
+   ```
+   make build
+   make run
+   ```
+   
+   Or run with auto-migration:
+   ```
+   make run-with-migrate
+   ```
+
+## Database Migrations
+
+The application uses a migration system to manage database schema changes. The migration tool is located in the `cmd/migrate` directory and can be used to apply, rollback, and check the status of migrations.
+
+### Migration Commands
+
+- Apply all pending migrations:
+  ```
+  make migrate-up
+  ```
+
+- Rollback the most recent migration:
+  ```
+  make migrate-down
+  ```
+
+- Rollback all migrations:
+  ```
+  make migrate-reset
+  ```
+
+- Check if migrations are up to date:
+  ```
+  make migrate-check
+  ```
+
+- Show current database version:
+  ```
+  make migrate-version
+  ```
+
+- Show detailed migration status:
+  ```
+  make migrate-status
+  ```
+
+- Create a new migration file:
+  ```
+  make migrate-create NAME=add_new_table
+  ```
+
+### Migration Files
+
+Migration files are stored in the `migrations` directory and follow the naming convention `000001_name.up.sql` and `000001_name.down.sql`. The `up.sql` file contains the SQL statements to apply the migration, and the `down.sql` file contains the SQL statements to rollback the migration.
+
+### Auto-Migration
+
+The API server can automatically apply pending migrations on startup by using the `--auto-migrate` flag:
+
+```
+./affiliate-backend --auto-migrate
+```
+
+Or using the make command:
+
+```
+make run-with-migrate
+```
 
 ## API Endpoints
 

@@ -2519,6 +2519,10 @@ const docTemplate = `{
                 "organization_id": {
                     "type": "integer"
                 },
+                "status": {
+                    "description": "'active', 'inactive', 'suspended'",
+                    "type": "string"
+                },
                 "updated_at": {
                     "type": "string"
                 }

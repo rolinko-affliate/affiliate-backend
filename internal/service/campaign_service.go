@@ -4,9 +4,12 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"log"
 	"time"
 
 	"github.com/affiliate-backend/internal/domain"
+	"github.com/affiliate-backend/internal/platform/crypto"
+	"github.com/affiliate-backend/internal/platform/everflow"
 	"github.com/affiliate-backend/internal/repository"
 )
 
@@ -29,9 +32,11 @@ type CampaignService interface {
 
 // campaignService implements CampaignService
 type campaignService struct {
-	campaignRepo   repository.CampaignRepository
-	advertiserRepo repository.AdvertiserRepository
-	orgRepo        repository.OrganizationRepository
+	campaignRepo    repository.CampaignRepository
+	advertiserRepo  repository.AdvertiserRepository
+	orgRepo         repository.OrganizationRepository
+	everflowService *everflow.Service
+	cryptoService   crypto.Service
 }
 
 // NewCampaignService creates a new campaign service
@@ -39,11 +44,15 @@ func NewCampaignService(
 	campaignRepo repository.CampaignRepository,
 	advertiserRepo repository.AdvertiserRepository,
 	orgRepo repository.OrganizationRepository,
+	everflowService *everflow.Service,
+	cryptoService crypto.Service,
 ) CampaignService {
 	return &campaignService{
-		campaignRepo:   campaignRepo,
-		advertiserRepo: advertiserRepo,
-		orgRepo:        orgRepo,
+		campaignRepo:    campaignRepo,
+		advertiserRepo:  advertiserRepo,
+		orgRepo:         orgRepo,
+		everflowService: everflowService,
+		cryptoService:   cryptoService,
 	}
 }
 
@@ -96,6 +105,18 @@ func (s *campaignService) CreateCampaign(ctx context.Context, campaign *domain.C
 
 	if err := s.campaignRepo.CreateCampaign(ctx, campaign); err != nil {
 		return nil, fmt.Errorf("failed to create campaign: %w", err)
+	}
+
+	// Create offer in Everflow if the service is available
+	if s.everflowService != nil {
+		go func() {
+			// Use a background context since this is a fire-and-forget operation
+			bgCtx := context.Background()
+			if err := s.everflowService.CreateOfferInEverflow(bgCtx, campaign); err != nil {
+				// Log the error but don't fail the campaign creation
+				log.Printf("Error creating offer in Everflow: %v", err)
+			}
+		}()
 	}
 
 	return campaign, nil

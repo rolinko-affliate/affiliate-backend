@@ -4,8 +4,11 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"log"
 
 	"github.com/affiliate-backend/internal/domain"
+	"github.com/affiliate-backend/internal/platform/crypto"
+	"github.com/affiliate-backend/internal/platform/everflow"
 	"github.com/affiliate-backend/internal/repository"
 )
 
@@ -28,13 +31,22 @@ type AdvertiserService interface {
 type advertiserService struct {
 	advertiserRepo repository.AdvertiserRepository
 	orgRepo        repository.OrganizationRepository
+	everflowService *everflow.Service
+	cryptoService  crypto.Service
 }
 
 // NewAdvertiserService creates a new advertiser service
-func NewAdvertiserService(advertiserRepo repository.AdvertiserRepository, orgRepo repository.OrganizationRepository) AdvertiserService {
+func NewAdvertiserService(
+	advertiserRepo repository.AdvertiserRepository, 
+	orgRepo repository.OrganizationRepository,
+	everflowService *everflow.Service,
+	cryptoService crypto.Service,
+) AdvertiserService {
 	return &advertiserService{
-		advertiserRepo: advertiserRepo,
-		orgRepo:        orgRepo,
+		advertiserRepo:  advertiserRepo,
+		orgRepo:         orgRepo,
+		everflowService: everflowService,
+		cryptoService:   cryptoService,
 	}
 }
 
@@ -77,6 +89,18 @@ func (s *advertiserService) CreateAdvertiser(ctx context.Context, advertiser *do
 
 	if err := s.advertiserRepo.CreateAdvertiser(ctx, advertiser); err != nil {
 		return nil, fmt.Errorf("failed to create advertiser: %w", err)
+	}
+
+	// Create advertiser in Everflow if the service is available
+	if s.everflowService != nil {
+		go func() {
+			// Use a background context since this is a fire-and-forget operation
+			bgCtx := context.Background()
+			if err := s.everflowService.CreateAdvertiserInEverflow(bgCtx, advertiser); err != nil {
+				// Log the error but don't fail the advertiser creation
+				log.Printf("Error creating advertiser in Everflow: %v", err)
+			}
+		}()
 	}
 
 	return advertiser, nil

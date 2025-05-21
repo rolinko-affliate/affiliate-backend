@@ -25,10 +25,4 @@ type Role struct {
 	Description *string `json:"description,omitempty" db:"description"` // Pointer for NULLable
 }
 
-// Organization represents an organization in the system
-type Organization struct {
-	OrganizationID int64     `json:"organization_id" db:"organization_id"`
-	Name           string    `json:"name" db:"name"`
-	CreatedAt      time.Time `json:"created_at" db:"created_at"`
-	UpdatedAt      time.Time `json:"updated_at" db:"updated_at"`
-}
+// Note: Organization struct is defined in organization.go

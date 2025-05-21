@@ -15,8 +15,10 @@ import (
 type ProfileRepository interface {
 	CreateProfile(ctx context.Context, profile *domain.Profile) error
 	GetProfileByID(ctx context.Context, id uuid.UUID) (*domain.Profile, error)
+	UpdateProfile(ctx context.Context, profile *domain.Profile) error
+	DeleteProfile(ctx context.Context, id uuid.UUID) error
 	GetRoleByID(ctx context.Context, roleID int) (*domain.Role, error)
-	// Add other methods as needed
+	UpsertProfile(ctx context.Context, profile *domain.Profile) error
 }
 
 // pgxProfileRepository implements ProfileRepository using pgx
@@ -60,6 +62,44 @@ func (r *pgxProfileRepository) GetProfileByID(ctx context.Context, id uuid.UUID)
 	return &p, nil
 }
 
+// UpdateProfile updates an existing profile in the database
+func (r *pgxProfileRepository) UpdateProfile(ctx context.Context, profile *domain.Profile) error {
+	query := `UPDATE public.profiles 
+	          SET organization_id = $1, role_id = $2, email = $3, first_name = $4, last_name = $5, updated_at = $6
+	          WHERE id = $7`
+	
+	result, err := r.db.Exec(ctx, query,
+		profile.OrganizationID, profile.RoleID, profile.Email,
+		profile.FirstName, profile.LastName, profile.UpdatedAt,
+		profile.ID)
+	
+	if err != nil {
+		return fmt.Errorf("error updating profile: %w", err)
+	}
+	
+	if result.RowsAffected() == 0 {
+		return fmt.Errorf("profile not found: %w", domain.ErrNotFound)
+	}
+	
+	return nil
+}
+
+// DeleteProfile deletes a profile from the database
+func (r *pgxProfileRepository) DeleteProfile(ctx context.Context, id uuid.UUID) error {
+	query := `DELETE FROM public.profiles WHERE id = $1`
+	
+	result, err := r.db.Exec(ctx, query, id)
+	if err != nil {
+		return fmt.Errorf("error deleting profile: %w", err)
+	}
+	
+	if result.RowsAffected() == 0 {
+		return fmt.Errorf("profile not found: %w", domain.ErrNotFound)
+	}
+	
+	return nil
+}
+
 // GetRoleByID retrieves a role by ID
 func (r *pgxProfileRepository) GetRoleByID(ctx context.Context, roleID int) (*domain.Role, error) {
 	query := `SELECT role_id, name, description FROM public.roles WHERE role_id = $1`
@@ -79,4 +119,27 @@ func (r *pgxProfileRepository) GetRoleByID(ctx context.Context, roleID int) (*do
 	}
 	
 	return &role, nil
+}
+
+// UpsertProfile creates or updates a profile in the database
+func (r *pgxProfileRepository) UpsertProfile(ctx context.Context, profile *domain.Profile) error {
+	query := `
+		INSERT INTO public.profiles (id, organization_id, role_id, email, first_name, last_name, created_at, updated_at)
+		VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+		ON CONFLICT (id) 
+		DO UPDATE SET 
+			organization_id = $2,
+			role_id = $3,
+			email = $4,
+			first_name = $5,
+			last_name = $6,
+			updated_at = $8
+	`
+	_, err := r.db.Exec(ctx, query,
+		profile.ID, profile.OrganizationID, profile.RoleID, profile.Email,
+		profile.FirstName, profile.LastName, profile.CreatedAt, profile.UpdatedAt)
+	if err != nil {
+		return fmt.Errorf("error upserting profile: %w", err)
+	}
+	return nil
 }

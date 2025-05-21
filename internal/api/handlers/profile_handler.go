@@ -76,6 +76,25 @@ func (h *ProfileHandler) HandleSupabaseNewUserWebhook(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "User profile created successfully from webhook"})
 }
 
+// ProfileRequest represents the request body for creating/updating a profile
+type ProfileRequest struct {
+	OrganizationID *int64  `json:"organization_id,omitempty"`
+	RoleID         int     `json:"role_id"`
+	Email          string  `json:"email"`
+	FirstName      *string `json:"first_name,omitempty"`
+	LastName       *string `json:"last_name,omitempty"`
+}
+
+// UpsertProfileRequest represents the request body for upserting a profile
+type UpsertProfileRequest struct {
+	ID             string  `json:"id"`
+	OrganizationID *int64  `json:"organization_id,omitempty"`
+	RoleID         int     `json:"role_id"`
+	Email          string  `json:"email"`
+	FirstName      *string `json:"first_name,omitempty"`
+	LastName       *string `json:"last_name,omitempty"`
+}
+
 // GetMyProfile retrieves the current user's profile
 // @Summary      Get current user profile
 // @Description  Retrieves the profile of the currently authenticated user
@@ -101,4 +120,184 @@ func (h *ProfileHandler) GetMyProfile(c *gin.Context) {
 		return
 	}
 	c.JSON(http.StatusOK, profile)
+}
+
+// CreateProfile creates a new profile
+// @Summary      Create a new profile
+// @Description  Creates a new user profile
+// @Tags         profile
+// @Accept       json
+// @Produce      json
+// @Param        profile  body      ProfileRequest  true  "Profile information"
+// @Success      201      {object}  domain.Profile  "Created profile"
+// @Failure      400      {object}  map[string]string  "Invalid request"
+// @Failure      500      {object}  map[string]string  "Internal server error"
+// @Security     BearerAuth
+// @Router       /profiles [post]
+func (h *ProfileHandler) CreateProfile(c *gin.Context) {
+	var req ProfileRequest
+	if err := c.ShouldBindJSON(&req); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request: " + err.Error()})
+		return
+	}
+
+	// Validate required fields
+	if req.Email == "" || req.RoleID == 0 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Email and role_id are required"})
+		return
+	}
+
+	// Generate a new UUID for the profile
+	profileID := uuid.New()
+
+	// Create the profile using the service
+	createdProfile, err := h.profileService.CreateNewUserProfile(
+		c.Request.Context(),
+		profileID,
+		req.Email,
+		req.OrganizationID,
+		req.RoleID,
+	)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create profile: " + err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusCreated, createdProfile)
+}
+
+// UpdateProfile updates an existing profile
+// @Summary      Update a profile
+// @Description  Updates an existing user profile
+// @Tags         profile
+// @Accept       json
+// @Produce      json
+// @Param        id       path      string          true  "Profile ID"
+// @Param        profile  body      ProfileRequest  true  "Updated profile information"
+// @Success      200      {object}  domain.Profile  "Updated profile"
+// @Failure      400      {object}  map[string]string  "Invalid request"
+// @Failure      404      {object}  map[string]string  "Profile not found"
+// @Failure      500      {object}  map[string]string  "Internal server error"
+// @Security     BearerAuth
+// @Router       /profiles/{id} [put]
+func (h *ProfileHandler) UpdateProfile(c *gin.Context) {
+	// Parse profile ID from URL
+	profileIDStr := c.Param("id")
+	profileID, err := uuid.Parse(profileIDStr)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid profile ID format"})
+		return
+	}
+
+	// Get existing profile
+	existingProfile, err := h.profileService.GetProfileByID(c.Request.Context(), profileID)
+	if err != nil {
+		c.JSON(http.StatusNotFound, gin.H{"error": "Profile not found"})
+		return
+	}
+
+	// Parse request body
+	var req ProfileRequest
+	if err := c.ShouldBindJSON(&req); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request: " + err.Error()})
+		return
+	}
+
+	// Update profile fields
+	existingProfile.OrganizationID = req.OrganizationID
+	existingProfile.RoleID = req.RoleID
+	existingProfile.Email = req.Email
+	existingProfile.FirstName = req.FirstName
+	existingProfile.LastName = req.LastName
+
+	// Save updated profile
+	updatedProfile, err := h.profileService.UpdateProfile(c.Request.Context(), existingProfile)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to update profile: " + err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, updatedProfile)
+}
+
+// DeleteProfile deletes a profile
+// @Summary      Delete a profile
+// @Description  Deletes an existing user profile
+// @Tags         profile
+// @Accept       json
+// @Produce      json
+// @Param        id  path      string  true  "Profile ID"
+// @Success      204  {object}  nil  "Profile deleted successfully"
+// @Failure      400  {object}  map[string]string  "Invalid profile ID format"
+// @Failure      404  {object}  map[string]string  "Profile not found"
+// @Failure      500  {object}  map[string]string  "Internal server error"
+// @Security     BearerAuth
+// @Router       /profiles/{id} [delete]
+func (h *ProfileHandler) DeleteProfile(c *gin.Context) {
+	// Parse profile ID from URL
+	profileIDStr := c.Param("id")
+	profileID, err := uuid.Parse(profileIDStr)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid profile ID format"})
+		return
+	}
+
+	// Delete the profile
+	err = h.profileService.DeleteProfile(c.Request.Context(), profileID)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to delete profile: " + err.Error()})
+		return
+	}
+
+	c.Status(http.StatusNoContent)
+}
+
+// UpsertProfile creates or updates a profile
+// @Summary      Upsert a profile
+// @Description  Creates a new profile if it doesn't exist, or updates an existing one
+// @Tags         profile
+// @Accept       json
+// @Produce      json
+// @Param        profile  body      UpsertProfileRequest  true  "Profile information"
+// @Success      200      {object}  domain.Profile  "Upserted profile"
+// @Failure      400      {object}  map[string]string  "Invalid request"
+// @Failure      500      {object}  map[string]string  "Internal server error"
+// @Security     BearerAuth
+// @Router       /profiles/upsert [post]
+func (h *ProfileHandler) UpsertProfile(c *gin.Context) {
+	var req UpsertProfileRequest
+	if err := c.ShouldBindJSON(&req); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request: " + err.Error()})
+		return
+	}
+
+	// Validate required fields
+	if req.ID == "" || req.Email == "" || req.RoleID == 0 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "ID, email, and role_id are required"})
+		return
+	}
+
+	// Parse the UUID
+	profileID, err := uuid.Parse(req.ID)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid profile ID format"})
+		return
+	}
+
+	// Upsert the profile using the service
+	upsertedProfile, err := h.profileService.UpsertProfile(
+		c.Request.Context(),
+		profileID,
+		req.Email,
+		req.OrganizationID,
+		req.RoleID,
+		req.FirstName,
+		req.LastName,
+	)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to upsert profile: " + err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, upsertedProfile)
 }

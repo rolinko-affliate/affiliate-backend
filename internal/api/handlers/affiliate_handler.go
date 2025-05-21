@@ -317,7 +317,7 @@ func (h *AffiliateHandler) CreateAffiliateProviderMapping(c *gin.Context) {
 // @Tags         affiliates
 // @Accept       json
 // @Produce      json
-// @Param        affiliateId   path      int                               true  "Affiliate ID"
+// @Param        id   path      int                               true  "Affiliate ID"
 // @Param        providerType  path      string                            true  "Provider Type"
 // @Success      200           {object}  domain.AffiliateProviderMapping  "Mapping details"
 // @Failure      400           {object}  map[string]string                "Invalid request"

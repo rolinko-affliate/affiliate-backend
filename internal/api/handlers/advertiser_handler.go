@@ -325,7 +325,7 @@ func (h *AdvertiserHandler) CreateAdvertiserProviderMapping(c *gin.Context) {
 // @Tags         advertisers
 // @Accept       json
 // @Produce      json
-// @Param        advertiserId   path      int                                true  "Advertiser ID"
+// @Param        id   path      int                                true  "Advertiser ID"
 // @Param        providerType   path      string                             true  "Provider Type"
 // @Success      200            {object}  domain.AdvertiserProviderMapping  "Mapping details"
 // @Failure      400            {object}  map[string]string                 "Invalid request"

@@ -42,6 +42,15 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 	// --- Profile Routes ---
 	v1.GET("/users/me", rbacMW("Affiliate", "AdvertiserManager", "AffiliateManager", "Admin"), 
 		opts.ProfileHandler.GetMyProfile)
+		
+	// Profile management routes
+	profiles := v1.Group("/profiles")
+	{
+		profiles.POST("", opts.ProfileHandler.CreateProfile)
+		profiles.POST("/upsert", opts.ProfileHandler.UpsertProfile)
+		profiles.PUT("/:id", opts.ProfileHandler.UpdateProfile)
+		profiles.DELETE("/:id", opts.ProfileHandler.DeleteProfile)
+	}
 
 	// --- Organization Routes ---
 	organizations := v1.Group("/organizations")

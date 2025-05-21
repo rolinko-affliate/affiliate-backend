@@ -183,8 +183,11 @@ CREATE INDEX idx_cp_offers_provider_ref ON public.campaign_provider_offers(provi
 -- #############################################################################
 
 -- Seed initial roles
-INSERT INTO public.roles (name, description) VALUES
-  ('Admin', 'Platform Administrator with full access'),
-  ('AdvertiserManager', 'Manages advertisers and their campaigns within their organization'),
-  ('AffiliateManager', 'Manages affiliates and approves applications within their organization'),
-  ('Affiliate', 'Partner promoting offers, associated with an organization');
+INSERT INTO public.roles (role_id, name, description) VALUES
+  (100000, 'User', 'Default user role with limited access'),
+  (1000, 'AdvertiserManager', 'Manages advertisers and their campaigns within their organization'),
+  (1001, 'AffiliateManager', 'Manages affiliates and approves applications within their organization'),
+  (1, 'Admin', 'Platform Administrator with full access');
+
+-- Create default organization
+INSERT INTO public.organizations (name) VALUES ('rolinko');

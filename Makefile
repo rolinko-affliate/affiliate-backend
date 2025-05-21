@@ -53,13 +53,13 @@ lint:
 deps:
 	go mod download
 	@echo "Installing required packages for migrations..."
-	go get github.com/golang-migrate/migrate/v4
-	go get github.com/golang-migrate/migrate/v4/database/postgres
-	go get github.com/golang-migrate/migrate/v4/source/file
+	go get -u github.com/golang-migrate/migrate/v4
+	go get -u github.com/golang-migrate/migrate/v4/database/postgres
+	go get -u github.com/golang-migrate/migrate/v4/source/file
 	@echo "Installing development tools..."
-	go get github.com/jackc/pgx/v5
-	go get github.com/swaggo/swag/cmd/swag
-	go get golang.org/x/lint/golint
+	go get -u github.com/jackc/pgx/v5
+	go get -u github.com/swaggo/swag/cmd/swag
+	go get -u golang.org/x/lint/golint
 
 # Show version
 version:

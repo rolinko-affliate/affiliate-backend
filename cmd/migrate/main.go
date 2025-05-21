@@ -7,9 +7,8 @@ import (
 	"os"
 	"strconv"
 
-	// Uncomment these imports after installing the required packages:
 	"github.com/affiliate-backend/internal/config"
-	"github.com/golang-migrate/migrate"
+	"github.com/golang-migrate/migrate/v4"
 	_ "github.com/golang-migrate/migrate/v4/database/postgres"
 	_ "github.com/golang-migrate/migrate/v4/source/file"
 )
@@ -34,17 +33,6 @@ const (
 func main() {
 	fmt.Println("Database Migration Tool")
 	fmt.Println("----------------------")
-	fmt.Println("This tool requires the following packages to be installed:")
-	fmt.Println("  go get github.com/golang-migrate/migrate/v4")
-	fmt.Println("  go get github.com/golang-migrate/migrate/v4/database/postgres")
-	fmt.Println("  go get github.com/golang-migrate/migrate/v4/source/file")
-	fmt.Println()
-	fmt.Println("Please install these packages and uncomment the imports in this file.")
-	fmt.Println("Then you can use this tool to manage database migrations.")
-	fmt.Println()
-	printUsage()
-	
-	// The actual implementation is commented out until the required packages are installed
 	
 	
 	// Load Configuration

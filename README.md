@@ -43,6 +43,14 @@ affiliate-backend/
    ```
    make deps
    ```
+   
+   If you encounter issues with the migration packages, install them manually:
+   ```
+   go get -u github.com/golang-migrate/migrate/v4
+   go get -u github.com/golang-migrate/migrate/v4/database/postgres
+   go get -u github.com/golang-migrate/migrate/v4/source/file
+   ```
+   
 4. Run database migrations:
    ```
    make migrate-up

@@ -160,7 +160,7 @@ func main() {
 
 	// Initialize Handlers
 	profileHandler := handlers.NewProfileHandler(profileService)
-	organizationHandler := handlers.NewOrganizationHandler(organizationService)
+	organizationHandler := handlers.NewOrganizationHandler(organizationService, profileService)
 	advertiserHandler := handlers.NewAdvertiserHandler(advertiserService, profileService)
 	affiliateHandler := handlers.NewAffiliateHandler(affiliateService, profileService)
 	campaignHandler := handlers.NewCampaignHandler(campaignService)

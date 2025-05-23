@@ -1,21 +1,68 @@
 package handlers
 
 import (
+	"fmt"
 	"net/http"
 	"strconv"
 
+	"github.com/affiliate-backend/internal/api/middleware"
+	"github.com/affiliate-backend/internal/domain"
 	"github.com/affiliate-backend/internal/service"
 	"github.com/gin-gonic/gin"
+	"github.com/google/uuid"
 )
 
 // OrganizationHandler handles organization-related requests
 type OrganizationHandler struct {
 	organizationService service.OrganizationService
+	profileService      service.ProfileService
 }
 
 // NewOrganizationHandler creates a new organization handler
-func NewOrganizationHandler(os service.OrganizationService) *OrganizationHandler {
-	return &OrganizationHandler{organizationService: os}
+func NewOrganizationHandler(os service.OrganizationService, ps service.ProfileService) *OrganizationHandler {
+	return &OrganizationHandler{
+		organizationService: os,
+		profileService:      ps,
+	}
+}
+
+// checkOrganizationAccess verifies if the user has permission to access/modify the organization
+// Returns true if the user has access, false otherwise
+func (h *OrganizationHandler) checkOrganizationAccess(c *gin.Context, orgID int64) (bool, error) {
+	// Get user role from context
+	userRole, exists := c.Get(middleware.UserRoleKey)
+	if !exists {
+		return false, fmt.Errorf("user role not found in context")
+	}
+	
+	// Admin can access all organizations
+	if userRole.(string) == "Admin" {
+		return true, nil
+	}
+	
+	// Get user ID from context
+	userIDStr, exists := c.Get(middleware.UserIDKey)
+	if !exists {
+		return false, fmt.Errorf("user ID not found in context")
+	}
+	
+	userID, err := uuid.Parse(userIDStr.(string))
+	if err != nil {
+		return false, fmt.Errorf("invalid user ID format: %w", err)
+	}
+	
+	// Get user's profile to check organization
+	profile, err := h.profileService.GetProfileByID(c.Request.Context(), userID)
+	if err != nil {
+		return false, fmt.Errorf("failed to get user profile: %w", err)
+	}
+	
+	// Check if user belongs to the organization
+	if profile.OrganizationID == nil {
+		return false, nil
+	}
+	
+	return *profile.OrganizationID == orgID, nil
 }
 
 // CreateOrganizationRequest defines the request for creating an organization
@@ -32,10 +79,23 @@ type CreateOrganizationRequest struct {
 // @Param        request  body      CreateOrganizationRequest  true  "Organization details"
 // @Success      201      {object}  domain.Organization        "Created organization"
 // @Failure      400      {object}  map[string]string          "Invalid request"
+// @Failure      403      {object}  map[string]string          "Forbidden - Only admins can create organizations"
 // @Failure      500      {object}  map[string]string          "Internal server error"
 // @Security     BearerAuth
 // @Router       /organizations [post]
 func (h *OrganizationHandler) CreateOrganization(c *gin.Context) {
+	// Only admins can create organizations
+	userRole, exists := c.Get(middleware.UserRoleKey)
+	if !exists {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "User role not found in context"})
+		return
+	}
+	
+	if userRole.(string) != "Admin" {
+		c.JSON(http.StatusForbidden, gin.H{"error": "Only administrators can create organizations"})
+		return
+	}
+
 	var req CreateOrganizationRequest
 	if err := c.ShouldBindJSON(&req); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request: " + err.Error()})
@@ -60,6 +120,7 @@ func (h *OrganizationHandler) CreateOrganization(c *gin.Context) {
 // @Param        id   path      int                   true  "Organization ID"
 // @Success      200  {object}  domain.Organization  "Organization details"
 // @Failure      400  {object}  map[string]string    "Invalid organization ID"
+// @Failure      403  {object}  map[string]string    "Forbidden - User doesn't have permission"
 // @Failure      404  {object}  map[string]string    "Organization not found"
 // @Failure      500  {object}  map[string]string    "Internal server error"
 // @Security     BearerAuth
@@ -82,6 +143,17 @@ func (h *OrganizationHandler) GetOrganization(c *gin.Context) {
 		return
 	}
 
+	// Check if user has permission to view this organization
+	hasAccess, err := h.checkOrganizationAccess(c, organization.OrganizationID)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to verify permissions: " + err.Error()})
+		return
+	}
+	if !hasAccess {
+		c.JSON(http.StatusForbidden, gin.H{"error": "You don't have permission to view this organization"})
+		return
+	}
+
 	c.JSON(http.StatusOK, organization)
 }
 
@@ -100,6 +172,7 @@ type UpdateOrganizationRequest struct {
 // @Param        request  body      UpdateOrganizationRequest  true  "Organization details"
 // @Success      200      {object}  domain.Organization        "Updated organization"
 // @Failure      400      {object}  map[string]string          "Invalid request"
+// @Failure      403      {object}  map[string]string          "Forbidden - User doesn't have permission"
 // @Failure      404      {object}  map[string]string          "Organization not found"
 // @Failure      500      {object}  map[string]string          "Internal server error"
 // @Security     BearerAuth
@@ -126,6 +199,17 @@ func (h *OrganizationHandler) UpdateOrganization(c *gin.Context) {
 			return
 		}
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get organization: " + err.Error()})
+		return
+	}
+
+	// Check if user has permission to update this organization
+	hasAccess, err := h.checkOrganizationAccess(c, organization.OrganizationID)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to verify permissions: " + err.Error()})
+		return
+	}
+	if !hasAccess {
+		c.JSON(http.StatusForbidden, gin.H{"error": "You don't have permission to update this organization"})
 		return
 	}
 
@@ -165,13 +249,43 @@ func (h *OrganizationHandler) ListOrganizations(c *gin.Context) {
 		pageSize = 10
 	}
 
+	// Get user role from context
+	userRole, exists := c.Get(middleware.UserRoleKey)
+	if !exists {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "User role not found in context"})
+		return
+	}
+
+	// Get all organizations
 	organizations, err := h.organizationService.ListOrganizations(c.Request.Context(), page, pageSize)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to list organizations: " + err.Error()})
 		return
 	}
 
-	c.JSON(http.StatusOK, organizations)
+	// If user is Admin, return all organizations
+	if userRole.(string) == "Admin" {
+		c.JSON(http.StatusOK, organizations)
+		return
+	}
+
+	// For non-admin users, filter organizations to only include their own
+	userOrgID, exists := c.Get("organizationID")
+	if !exists {
+		// If user doesn't have an organization, return empty list
+		c.JSON(http.StatusOK, []*domain.Organization{})
+		return
+	}
+
+	// Filter organizations to only include the user's organization
+	var filteredOrgs []*domain.Organization
+	for _, org := range organizations {
+		if org.OrganizationID == userOrgID.(int64) {
+			filteredOrgs = append(filteredOrgs, org)
+		}
+	}
+
+	c.JSON(http.StatusOK, filteredOrgs)
 }
 
 // DeleteOrganization deletes an organization
@@ -183,6 +297,7 @@ func (h *OrganizationHandler) ListOrganizations(c *gin.Context) {
 // @Param        id   path      int                true  "Organization ID"
 // @Success      204  {object}  nil                "No content"
 // @Failure      400  {object}  map[string]string  "Invalid organization ID"
+// @Failure      403  {object}  map[string]string  "Forbidden - User doesn't have permission"
 // @Failure      404  {object}  map[string]string  "Organization not found"
 // @Failure      500  {object}  map[string]string  "Internal server error"
 // @Security     BearerAuth
@@ -195,11 +310,29 @@ func (h *OrganizationHandler) DeleteOrganization(c *gin.Context) {
 		return
 	}
 
-	if err := h.organizationService.DeleteOrganization(c.Request.Context(), id); err != nil {
+	// Get the organization first to check permissions
+	organization, err := h.organizationService.GetOrganizationByID(c.Request.Context(), id)
+	if err != nil {
 		if err.Error() == "organization not found: not found" {
 			c.JSON(http.StatusNotFound, gin.H{"error": "Organization not found"})
 			return
 		}
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get organization: " + err.Error()})
+		return
+	}
+
+	// Check if user has permission to delete this organization
+	hasAccess, err := h.checkOrganizationAccess(c, organization.OrganizationID)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to verify permissions: " + err.Error()})
+		return
+	}
+	if !hasAccess {
+		c.JSON(http.StatusForbidden, gin.H{"error": "You don't have permission to delete this organization"})
+		return
+	}
+
+	if err := h.organizationService.DeleteOrganization(c.Request.Context(), id); err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to delete organization: " + err.Error()})
 		return
 	}

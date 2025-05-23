@@ -13,13 +13,15 @@ affiliate-backend/
 │       └── main.go
 ├── internal/               // Private application and library code
 │   ├── api/                // API handlers, middleware, routing
-│   │   ├── handlers/
-│   │   ├── middleware/
-│   │   └── router.go
+│   │   ├── handlers/       // HTTP request handlers for all resources
+│   │   ├── middleware/     // Authentication and authorization middleware
+│   │   └── router.go       // API route definitions
 │   ├── auth/               // Authentication (JWT validation) & Authorization (RBAC)
-│   ├── config/             // Configuration loading
+│   ├── config/             // Configuration loading and environment variables
 │   ├── domain/             // Core business logic entities/models (structs)
-│   ├── platform/           // External platform integrations (e.g., everflow client)
+│   ├── platform/           // External platform integrations
+│   │   ├── crypto/         // Encryption/decryption utilities
+│   │   └── everflow/       // Everflow API client integration
 │   ├── repository/         // Data access layer (database interactions)
 │   └── service/            // Business logic services
 ├── migrations/             // Database migration files
@@ -27,6 +29,37 @@ affiliate-backend/
 ├── go.sum
 └── .env                    // Environment variables (DO NOT COMMIT if it contains secrets)
 ```
+
+## Security Features
+
+### Authentication
+- JWT-based authentication using Supabase Auth
+- Token validation and verification
+- Secure session management
+
+### Authorization
+- Role-Based Access Control (RBAC) system
+- Organization-based access control
+- Permission checks at the handler level
+- Admin users have full access to all resources
+- Non-admin users can only access resources within their organization
+
+### Data Protection
+- Encryption of sensitive data using AES-256
+- Secure storage of API credentials
+- Input validation and sanitization
+
+## Key Features
+
+- **Multi-tenancy**: Organizations are isolated from each other
+- **Role-based permissions**: Different access levels based on user roles
+- **Affiliate Management**: Create and manage affiliate accounts
+- **Advertiser Management**: Create and manage advertiser accounts
+- **Campaign Management**: Create and manage advertising campaigns
+- **Provider Integration**: Integration with external affiliate networks (Everflow)
+- **RESTful API**: Clean and consistent API design
+- **Database Migrations**: Versioned database schema changes
+- **Swagger Documentation**: Auto-generated API documentation
 
 ## Getting Started
 

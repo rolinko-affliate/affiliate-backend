@@ -32,7 +32,8 @@ RUN apk add --no-cache ca-certificates tzdata && \
 
 # Set environment variables
 ENV TZ=UTC \
-    APP_ENV=production
+    APP_ENV=production \
+    ENVIRONMENT=production
 
 # Expose the application port
 EXPOSE 8080

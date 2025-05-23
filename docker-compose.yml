@@ -12,6 +12,7 @@ services:
       - DATABASE_URL=postgres://postgres:postgres@db:5432/affiliate_platform?sslmode=disable
       - SUPABASE_JWT_SECRET=${SUPABASE_JWT_SECRET}
       - ENCRYPTION_KEY=${ENCRYPTION_KEY}
+      - ENVIRONMENT=development
     depends_on:
       - db
       - migrate-up

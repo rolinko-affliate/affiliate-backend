@@ -39,6 +39,8 @@ affiliate-backend/
 
 1. Clone the repository
 2. Copy `.env.example` to `.env` and update the values
+   - Set `ENVIRONMENT=development` for local development (enables CORS)
+   - Set `ENVIRONMENT=production` for production deployment (disables CORS)
 3. Install dependencies:
    ```
    make deps
@@ -119,11 +121,19 @@ The API server can automatically apply pending migrations on startup by using th
 ./affiliate-backend --auto-migrate
 ```
 
-Or using the make command:
+## CORS Configuration
 
-```
-make run-with-migrate
-```
+The API server includes CORS (Cross-Origin Resource Sharing) configuration that behaves differently based on the environment:
+
+- In **development** mode (`ENVIRONMENT=development`), CORS is enabled and allows requests from any origin.
+- In **production** mode (`ENVIRONMENT=production`), CORS is disabled, restricting cross-origin requests.
+
+This configuration helps secure the API in production while allowing for easier development and testing in local environments.
+
+To set the environment:
+- In `.env` file: Set `ENVIRONMENT=development` or `ENVIRONMENT=production`
+- In Docker: The `docker-compose.yml` sets `ENVIRONMENT=development` for local development
+- In production: The `Dockerfile` sets `ENVIRONMENT=production` by default
 
 ## API Endpoints
 

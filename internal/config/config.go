@@ -12,6 +12,7 @@ type Config struct {
 	SupabaseJWTSecret string `mapstructure:"SUPABASE_JWT_SECRET"`
 	// Key for encrypting/decrypting sensitive data like Everflow API keys
 	EncryptionKey string `mapstructure:"ENCRYPTION_KEY"` // 32-byte AES key, base64 encoded
+	Environment   string `mapstructure:"ENVIRONMENT"`    // "development" or "production"
 }
 
 var AppConfig Config
@@ -24,6 +25,7 @@ func LoadConfig() {
 
 	// Set defaults (optional)
 	viper.SetDefault("PORT", "8080")
+	viper.SetDefault("ENVIRONMENT", "production")
 
 	if err := viper.ReadInConfig(); err != nil {
 		if _, ok := err.(viper.ConfigFileNotFoundError); ok {

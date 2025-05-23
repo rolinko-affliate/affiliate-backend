@@ -20,6 +20,9 @@ type RouterOptions struct {
 // SetupRouter sets up the API router
 func SetupRouter(opts RouterOptions) *gin.Engine {
 	r := gin.Default() // Starts with Logger and Recovery middleware
+	
+	// Apply CORS middleware (will only allow CORS in development)
+	r.Use(middleware.CORSMiddleware())
 
 	// Health Check
 	r.GET("/health", handlers.HealthCheck)

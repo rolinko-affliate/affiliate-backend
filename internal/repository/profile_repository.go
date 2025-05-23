@@ -33,9 +33,17 @@ func NewPgxProfileRepository(db *pgxpool.Pool) ProfileRepository {
 
 // CreateProfile creates a new profile in the database
 func (r *pgxProfileRepository) CreateProfile(ctx context.Context, profile *domain.Profile) error {
+	// First, get the role name for the given role_id
+	roleQuery := `SELECT name FROM public.roles WHERE role_id = $1`
+	err := r.db.QueryRow(ctx, roleQuery, profile.RoleID).Scan(&profile.RoleName)
+	if err != nil {
+		return fmt.Errorf("error getting role name for role_id %d: %w", profile.RoleID, err)
+	}
+
+	// Now insert the profile
 	query := `INSERT INTO public.profiles (id, organization_id, role_id, email, first_name, last_name, created_at, updated_at)
               VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`
-	_, err := r.db.Exec(ctx, query,
+	_, err = r.db.Exec(ctx, query,
 		profile.ID, profile.OrganizationID, profile.RoleID, profile.Email,
 		profile.FirstName, profile.LastName, profile.CreatedAt, profile.UpdatedAt)
 	if err != nil {
@@ -46,11 +54,13 @@ func (r *pgxProfileRepository) CreateProfile(ctx context.Context, profile *domai
 
 // GetProfileByID retrieves a profile by ID
 func (r *pgxProfileRepository) GetProfileByID(ctx context.Context, id uuid.UUID) (*domain.Profile, error) {
-	query := `SELECT id, organization_id, role_id, email, first_name, last_name, created_at, updated_at
-              FROM public.profiles WHERE id = $1`
+	query := `SELECT p.id, p.organization_id, p.role_id, r.name as role_name, p.email, p.first_name, p.last_name, p.created_at, p.updated_at
+              FROM public.profiles p
+              JOIN public.roles r ON p.role_id = r.role_id
+              WHERE p.id = $1`
 	var p domain.Profile
 	err := r.db.QueryRow(ctx, query, id).Scan(
-		&p.ID, &p.OrganizationID, &p.RoleID, &p.Email,
+		&p.ID, &p.OrganizationID, &p.RoleID, &p.RoleName, &p.Email,
 		&p.FirstName, &p.LastName, &p.CreatedAt, &p.UpdatedAt,
 	)
 	if err != nil {
@@ -64,6 +74,13 @@ func (r *pgxProfileRepository) GetProfileByID(ctx context.Context, id uuid.UUID)
 
 // UpdateProfile updates an existing profile in the database
 func (r *pgxProfileRepository) UpdateProfile(ctx context.Context, profile *domain.Profile) error {
+	// First, get the role name for the given role_id
+	roleQuery := `SELECT name FROM public.roles WHERE role_id = $1`
+	err := r.db.QueryRow(ctx, roleQuery, profile.RoleID).Scan(&profile.RoleName)
+	if err != nil {
+		return fmt.Errorf("error getting role name for role_id %d: %w", profile.RoleID, err)
+	}
+
 	query := `UPDATE public.profiles 
 	          SET organization_id = $1, role_id = $2, email = $3, first_name = $4, last_name = $5, updated_at = $6
 	          WHERE id = $7`
@@ -123,6 +140,13 @@ func (r *pgxProfileRepository) GetRoleByID(ctx context.Context, roleID int) (*do
 
 // UpsertProfile creates or updates a profile in the database
 func (r *pgxProfileRepository) UpsertProfile(ctx context.Context, profile *domain.Profile) error {
+	// First, get the role name for the given role_id
+	roleQuery := `SELECT name FROM public.roles WHERE role_id = $1`
+	err := r.db.QueryRow(ctx, roleQuery, profile.RoleID).Scan(&profile.RoleName)
+	if err != nil {
+		return fmt.Errorf("error getting role name for role_id %d: %w", profile.RoleID, err)
+	}
+
 	query := `
 		INSERT INTO public.profiles (id, organization_id, role_id, email, first_name, last_name, created_at, updated_at)
 		VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
@@ -135,7 +159,7 @@ func (r *pgxProfileRepository) UpsertProfile(ctx context.Context, profile *domai
 			last_name = $6,
 			updated_at = $8
 	`
-	_, err := r.db.Exec(ctx, query,
+	_, err = r.db.Exec(ctx, query,
 		profile.ID, profile.OrganizationID, profile.RoleID, profile.Email,
 		profile.FirstName, profile.LastName, profile.CreatedAt, profile.UpdatedAt)
 	if err != nil {

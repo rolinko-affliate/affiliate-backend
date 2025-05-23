@@ -76,13 +76,24 @@ func (h *ProfileHandler) HandleSupabaseNewUserWebhook(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "User profile created successfully from webhook"})
 }
 
-// ProfileRequest represents the request body for creating/updating a profile
+// ProfileRequest represents the request body for creating a profile
 type ProfileRequest struct {
 	OrganizationID *int64  `json:"organization_id,omitempty"`
 	RoleID         int     `json:"role_id"`
 	Email          string  `json:"email"`
 	FirstName      *string `json:"first_name,omitempty"`
 	LastName       *string `json:"last_name,omitempty"`
+}
+
+// UpdateProfileRequest represents the request body for updating a profile
+// All fields are nullable to allow partial updates
+type UpdateProfileRequest struct {
+	OrganizationID *int64  `json:"organization_id,omitempty"`
+	RoleID         *int    `json:"role_id,omitempty"`
+	Email          *string `json:"email,omitempty"`
+	FirstName      *string `json:"first_name,omitempty"`
+	LastName       *string `json:"last_name,omitempty"`
+	// Note: RoleName is not included as it's derived from RoleID
 }
 
 // UpsertProfileRequest represents the request body for upserting a profile
@@ -168,16 +179,16 @@ func (h *ProfileHandler) CreateProfile(c *gin.Context) {
 
 // UpdateProfile updates an existing profile
 // @Summary      Update a profile
-// @Description  Updates an existing user profile
+// @Description  Updates an existing user profile with only the provided fields
 // @Tags         profile
 // @Accept       json
 // @Produce      json
-// @Param        id       path      string          true  "Profile ID"
-// @Param        profile  body      ProfileRequest  true  "Updated profile information"
-// @Success      200      {object}  domain.Profile  "Updated profile"
-// @Failure      400      {object}  map[string]string  "Invalid request"
-// @Failure      404      {object}  map[string]string  "Profile not found"
-// @Failure      500      {object}  map[string]string  "Internal server error"
+// @Param        id       path      string               true  "Profile ID"
+// @Param        profile  body      UpdateProfileRequest true  "Updated profile information"
+// @Success      200      {object}  domain.Profile       "Updated profile"
+// @Failure      400      {object}  map[string]string    "Invalid request"
+// @Failure      404      {object}  map[string]string    "Profile not found"
+// @Failure      500      {object}  map[string]string    "Internal server error"
 // @Security     BearerAuth
 // @Router       /profiles/{id} [put]
 func (h *ProfileHandler) UpdateProfile(c *gin.Context) {
@@ -197,18 +208,29 @@ func (h *ProfileHandler) UpdateProfile(c *gin.Context) {
 	}
 
 	// Parse request body
-	var req ProfileRequest
+	var req UpdateProfileRequest
 	if err := c.ShouldBindJSON(&req); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request: " + err.Error()})
 		return
 	}
 
-	// Update profile fields
-	existingProfile.OrganizationID = req.OrganizationID
-	existingProfile.RoleID = req.RoleID
-	existingProfile.Email = req.Email
-	existingProfile.FirstName = req.FirstName
-	existingProfile.LastName = req.LastName
+	// Only update fields that are provided in the request
+	if req.OrganizationID != nil {
+		existingProfile.OrganizationID = req.OrganizationID
+	}
+	if req.RoleID != nil {
+		existingProfile.RoleID = *req.RoleID
+		// Note: RoleName will be updated in the repository based on the new RoleID
+	}
+	if req.Email != nil {
+		existingProfile.Email = *req.Email
+	}
+	if req.FirstName != nil {
+		existingProfile.FirstName = req.FirstName
+	}
+	if req.LastName != nil {
+		existingProfile.LastName = req.LastName
+	}
 
 	// Save updated profile
 	updatedProfile, err := h.profileService.UpdateProfile(c.Request.Context(), existingProfile)

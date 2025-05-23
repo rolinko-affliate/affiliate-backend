@@ -135,20 +135,24 @@ func main() {
 
 	// Initialize Repositories
 	profileRepo := repository.NewPgxProfileRepository(repository.DB)
+	organizationRepo := repository.NewPgxOrganizationRepository(repository.DB)
 	// Initialize other repositories as needed
 
 	// Initialize Services
 	profileService := service.NewProfileService(profileRepo)
+	organizationService := service.NewOrganizationService(organizationRepo)
 	// Initialize other services as needed
 
 	// Initialize Handlers
 	profileHandler := handlers.NewProfileHandler(profileService)
+	organizationHandler := handlers.NewOrganizationHandler(organizationService)
 	// Initialize other handlers as needed
 
 	// Setup Router
 	router := api.SetupRouter(api.RouterOptions{
-		ProfileHandler: profileHandler,
-		ProfileService: profileService,
+		ProfileHandler:      profileHandler,
+		ProfileService:      profileService,
+		OrganizationHandler: organizationHandler,
 		// Add other handlers and services as needed
 	})
 

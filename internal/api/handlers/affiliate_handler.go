@@ -2,9 +2,11 @@ package handlers
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"strconv"
 
+	"github.com/affiliate-backend/internal/api/middleware"
 	"github.com/affiliate-backend/internal/domain"
 	"github.com/affiliate-backend/internal/service"
 	"github.com/gin-gonic/gin"
@@ -13,11 +15,39 @@ import (
 // AffiliateHandler handles affiliate-related requests
 type AffiliateHandler struct {
 	affiliateService service.AffiliateService
+	profileService   service.ProfileService
 }
 
 // NewAffiliateHandler creates a new affiliate handler
-func NewAffiliateHandler(as service.AffiliateService) *AffiliateHandler {
-	return &AffiliateHandler{affiliateService: as}
+func NewAffiliateHandler(as service.AffiliateService, ps service.ProfileService) *AffiliateHandler {
+	return &AffiliateHandler{
+		affiliateService: as,
+		profileService:   ps,
+	}
+}
+
+// checkAffiliateAccess verifies if the user has permission to access/modify the affiliate
+// Returns true if the user has access, false otherwise
+func (h *AffiliateHandler) checkAffiliateAccess(c *gin.Context, affiliateOrgID int64) (bool, error) {
+	// Get user role from context
+	userRole, exists := c.Get(middleware.UserRoleKey)
+	if !exists {
+		return false, fmt.Errorf("user role not found in context")
+	}
+	
+	// Admin can access all affiliates
+	if userRole.(string) == "Admin" {
+		return true, nil
+	}
+	
+	// Get user's organization ID from context
+	userOrgID, exists := c.Get("organizationID")
+	if !exists {
+		return false, fmt.Errorf("user organization ID not found in context")
+	}
+	
+	// Check if user belongs to the same organization as the affiliate
+	return userOrgID.(int64) == affiliateOrgID, nil
 }
 
 // CreateAffiliateRequest defines the request for creating an affiliate

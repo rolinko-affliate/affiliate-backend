@@ -34,6 +34,8 @@ import (
 	"github.com/affiliate-backend/internal/api"
 	"github.com/affiliate-backend/internal/api/handlers"
 	"github.com/affiliate-backend/internal/config"
+	"github.com/affiliate-backend/internal/platform/crypto"
+	"github.com/affiliate-backend/internal/platform/everflow"
 	"github.com/affiliate-backend/internal/repository"
 	"github.com/affiliate-backend/internal/service"
 )
@@ -136,16 +138,32 @@ func main() {
 	// Initialize Repositories
 	profileRepo := repository.NewPgxProfileRepository(repository.DB)
 	organizationRepo := repository.NewPgxOrganizationRepository(repository.DB)
+	advertiserRepo := repository.NewPgxAdvertiserRepository(repository.DB)
+	campaignRepo := repository.NewPgxCampaignRepository(repository.DB)
+	affiliateRepo := repository.NewPgxAffiliateRepository(repository.DB)
 	// Initialize other repositories as needed
 
-	// Initialize Services
+	// Initialize Platform Services
+	cryptoService := crypto.NewServiceFromConfig()
+	everflowService, err := everflow.NewEverflowServiceFromEnv(advertiserRepo, campaignRepo, cryptoService)
+	if err != nil {
+		log.Printf("Warning: Failed to initialize Everflow service: %v", err)
+	}
+
+	// Initialize Domain Services
 	profileService := service.NewProfileService(profileRepo)
 	organizationService := service.NewOrganizationService(organizationRepo)
+	advertiserService := service.NewAdvertiserService(advertiserRepo, organizationRepo, everflowService, cryptoService)
+	affiliateService := service.NewAffiliateService(affiliateRepo, organizationRepo)
+	campaignService := service.NewCampaignService(campaignRepo, advertiserRepo, organizationRepo, everflowService, cryptoService)
 	// Initialize other services as needed
 
 	// Initialize Handlers
 	profileHandler := handlers.NewProfileHandler(profileService)
 	organizationHandler := handlers.NewOrganizationHandler(organizationService)
+	advertiserHandler := handlers.NewAdvertiserHandler(advertiserService, profileService)
+	affiliateHandler := handlers.NewAffiliateHandler(affiliateService, profileService)
+	campaignHandler := handlers.NewCampaignHandler(campaignService)
 	// Initialize other handlers as needed
 
 	// Setup Router
@@ -153,7 +171,9 @@ func main() {
 		ProfileHandler:      profileHandler,
 		ProfileService:      profileService,
 		OrganizationHandler: organizationHandler,
-		// Add other handlers and services as needed
+		AdvertiserHandler:   advertiserHandler,
+		AffiliateHandler:    affiliateHandler,
+		CampaignHandler:     campaignHandler,
 	})
 
 	// Start Server

@@ -2,9 +2,11 @@ package handlers
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"strconv"
 
+	"github.com/affiliate-backend/internal/api/middleware"
 	"github.com/affiliate-backend/internal/domain"
 	"github.com/affiliate-backend/internal/service"
 	"github.com/gin-gonic/gin"
@@ -13,11 +15,39 @@ import (
 // AdvertiserHandler handles advertiser-related requests
 type AdvertiserHandler struct {
 	advertiserService service.AdvertiserService
+	profileService    service.ProfileService
 }
 
 // NewAdvertiserHandler creates a new advertiser handler
-func NewAdvertiserHandler(as service.AdvertiserService) *AdvertiserHandler {
-	return &AdvertiserHandler{advertiserService: as}
+func NewAdvertiserHandler(as service.AdvertiserService, ps service.ProfileService) *AdvertiserHandler {
+	return &AdvertiserHandler{
+		advertiserService: as,
+		profileService:    ps,
+	}
+}
+
+// checkAdvertiserAccess verifies if the user has permission to access/modify the advertiser
+// Returns true if the user has access, false otherwise
+func (h *AdvertiserHandler) checkAdvertiserAccess(c *gin.Context, advertiserOrgID int64) (bool, error) {
+	// Get user role from context
+	userRole, exists := c.Get(middleware.UserRoleKey)
+	if !exists {
+		return false, fmt.Errorf("user role not found in context")
+	}
+	
+	// Admin can access all advertisers
+	if userRole.(string) == "Admin" {
+		return true, nil
+	}
+	
+	// Get user's organization ID from context
+	userOrgID, exists := c.Get("organizationID")
+	if !exists {
+		return false, fmt.Errorf("user organization ID not found in context")
+	}
+	
+	// Check if user belongs to the same organization as the advertiser
+	return userOrgID.(int64) == advertiserOrgID, nil
 }
 
 // CreateAdvertiserRequest defines the request for creating an advertiser
@@ -45,6 +75,7 @@ type CreateAdvertiserRequest struct {
 // @Param        request  body      CreateAdvertiserRequest  true  "Advertiser details"
 // @Success      201      {object}  domain.Advertiser        "Created advertiser"
 // @Failure      400      {object}  map[string]string        "Invalid request"
+// @Failure      403      {object}  map[string]string        "Forbidden - User doesn't have permission"
 // @Failure      500      {object}  map[string]string        "Internal server error"
 // @Security     BearerAuth
 // @Router       /advertisers [post]
@@ -52,6 +83,17 @@ func (h *AdvertiserHandler) CreateAdvertiser(c *gin.Context) {
 	var req CreateAdvertiserRequest
 	if err := c.ShouldBindJSON(&req); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request: " + err.Error()})
+		return
+	}
+
+	// Check if user has permission to create an advertiser for this organization
+	hasAccess, err := h.checkAdvertiserAccess(c, req.OrganizationID)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to verify permissions: " + err.Error()})
+		return
+	}
+	if !hasAccess {
+		c.JSON(http.StatusForbidden, gin.H{"error": "You don't have permission to create an advertiser for this organization"})
 		return
 	}
 
@@ -85,6 +127,7 @@ func (h *AdvertiserHandler) CreateAdvertiser(c *gin.Context) {
 // @Param        id   path      int                 true  "Advertiser ID"
 // @Success      200  {object}  domain.Advertiser  "Advertiser details"
 // @Failure      400  {object}  map[string]string  "Invalid advertiser ID"
+// @Failure      403  {object}  map[string]string  "Forbidden - User doesn't have permission"
 // @Failure      404  {object}  map[string]string  "Advertiser not found"
 // @Failure      500  {object}  map[string]string  "Internal server error"
 // @Security     BearerAuth
@@ -104,6 +147,17 @@ func (h *AdvertiserHandler) GetAdvertiser(c *gin.Context) {
 			return
 		}
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get advertiser: " + err.Error()})
+		return
+	}
+
+	// Check if user has permission to view this advertiser
+	hasAccess, err := h.checkAdvertiserAccess(c, advertiser.OrganizationID)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to verify permissions: " + err.Error()})
+		return
+	}
+	if !hasAccess {
+		c.JSON(http.StatusForbidden, gin.H{"error": "You don't have permission to view this advertiser"})
 		return
 	}
 
@@ -134,6 +188,7 @@ type UpdateAdvertiserRequest struct {
 // @Param        request  body      UpdateAdvertiserRequest  true  "Advertiser details"
 // @Success      200      {object}  domain.Advertiser        "Updated advertiser"
 // @Failure      400      {object}  map[string]string        "Invalid request"
+// @Failure      403      {object}  map[string]string        "Forbidden - User doesn't have permission"
 // @Failure      404      {object}  map[string]string        "Advertiser not found"
 // @Failure      500      {object}  map[string]string        "Internal server error"
 // @Security     BearerAuth
@@ -160,6 +215,17 @@ func (h *AdvertiserHandler) UpdateAdvertiser(c *gin.Context) {
 			return
 		}
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get advertiser: " + err.Error()})
+		return
+	}
+
+	// Check if user has permission to update this advertiser
+	hasAccess, err := h.checkAdvertiserAccess(c, advertiser.OrganizationID)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to verify permissions: " + err.Error()})
+		return
+	}
+	if !hasAccess {
+		c.JSON(http.StatusForbidden, gin.H{"error": "You don't have permission to update this advertiser"})
 		return
 	}
 
@@ -192,6 +258,7 @@ func (h *AdvertiserHandler) UpdateAdvertiser(c *gin.Context) {
 // @Param        pageSize       query     int                    false  "Page size (default: 10)"
 // @Success      200            {array}   domain.Advertiser      "List of advertisers"
 // @Failure      400            {object}  map[string]string      "Invalid organization ID"
+// @Failure      403            {object}  map[string]string      "Forbidden - User doesn't have permission"
 // @Failure      500            {object}  map[string]string      "Internal server error"
 // @Security     BearerAuth
 // @Router       /organizations/{id}/advertisers [get]
@@ -200,6 +267,17 @@ func (h *AdvertiserHandler) ListAdvertisersByOrganization(c *gin.Context) {
 	orgID, err := strconv.ParseInt(orgIDStr, 10, 64)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid organization ID"})
+		return
+	}
+
+	// Check if user has permission to list advertisers for this organization
+	hasAccess, err := h.checkAdvertiserAccess(c, orgID)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to verify permissions: " + err.Error()})
+		return
+	}
+	if !hasAccess {
+		c.JSON(http.StatusForbidden, gin.H{"error": "You don't have permission to list advertisers for this organization"})
 		return
 	}
 
@@ -234,6 +312,7 @@ func (h *AdvertiserHandler) ListAdvertisersByOrganization(c *gin.Context) {
 // @Param        id   path      int                true  "Advertiser ID"
 // @Success      204  {object}  nil                "No content"
 // @Failure      400  {object}  map[string]string  "Invalid advertiser ID"
+// @Failure      403  {object}  map[string]string  "Forbidden - User doesn't have permission"
 // @Failure      404  {object}  map[string]string  "Advertiser not found"
 // @Failure      500  {object}  map[string]string  "Internal server error"
 // @Security     BearerAuth
@@ -246,11 +325,29 @@ func (h *AdvertiserHandler) DeleteAdvertiser(c *gin.Context) {
 		return
 	}
 
-	if err := h.advertiserService.DeleteAdvertiser(c.Request.Context(), id); err != nil {
+	// Get the advertiser first to check permissions
+	advertiser, err := h.advertiserService.GetAdvertiserByID(c.Request.Context(), id)
+	if err != nil {
 		if err.Error() == "advertiser not found: not found" {
 			c.JSON(http.StatusNotFound, gin.H{"error": "Advertiser not found"})
 			return
 		}
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get advertiser: " + err.Error()})
+		return
+	}
+
+	// Check if user has permission to delete this advertiser
+	hasAccess, err := h.checkAdvertiserAccess(c, advertiser.OrganizationID)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to verify permissions: " + err.Error()})
+		return
+	}
+	if !hasAccess {
+		c.JSON(http.StatusForbidden, gin.H{"error": "You don't have permission to delete this advertiser"})
+		return
+	}
+
+	if err := h.advertiserService.DeleteAdvertiser(c.Request.Context(), id); err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to delete advertiser: " + err.Error()})
 		return
 	}

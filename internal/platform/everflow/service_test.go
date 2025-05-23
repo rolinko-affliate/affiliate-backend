@@ -206,7 +206,7 @@ func TestCreateAdvertiserInEverflow(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		// Check request method and path
 		assert.Equal(t, "POST", r.Method)
-		
+
 		if r.URL.Path == "/v1/networks/advertisers" {
 			// Return a successful response for advertiser creation
 			w.Header().Set("Content-Type", "application/json")
@@ -230,7 +230,7 @@ func TestCreateAdvertiserInEverflow(t *testing.T) {
 		}
 	}))
 	defer server.Close()
-	
+
 	// Create test advertiser
 	advertiser := &domain.Advertiser{
 		AdvertiserID:   123,
@@ -238,12 +238,12 @@ func TestCreateAdvertiserInEverflow(t *testing.T) {
 		Name:           "Test Advertiser",
 		Status:         "active",
 	}
-	
+
 	// Setup mocks
 	mockAdvertiserRepo := new(MockAdvertiserRepository)
 	mockCampaignRepo := new(MockCampaignRepository)
 	mockCryptoService := new(MockCryptoService)
-	
+
 	// Setup expectations
 	mockAdvertiserRepo.On("CreateAdvertiserProviderMapping", mock.Anything, mock.MatchedBy(func(mapping *domain.AdvertiserProviderMapping) bool {
 		// Verify mapping properties
@@ -252,36 +252,36 @@ func TestCreateAdvertiserInEverflow(t *testing.T) {
 		assert.NotNil(t, mapping.ProviderAdvertiserID)
 		assert.Equal(t, "12345", *mapping.ProviderAdvertiserID)
 		assert.NotNil(t, mapping.ProviderConfig)
-		
+
 		// Verify provider config contains expected data
 		var providerConfig map[string]interface{}
 		err := json.Unmarshal([]byte(*mapping.ProviderConfig), &providerConfig)
 		assert.NoError(t, err)
 		assert.Equal(t, float64(12345), providerConfig["network_advertiser_id"])
-		
+
 		return true
 	})).Return(nil)
-	
+
 	// Create service with mock client
 	client := NewClient("test-api-key")
 	client.httpClient = server.Client()
-	
+
 	service := &Service{
-		client:          client,
-		advertiserRepo:  mockAdvertiserRepo,
-		campaignRepo:    mockCampaignRepo,
-		cryptoService:   mockCryptoService,
+		client:         client,
+		advertiserRepo: mockAdvertiserRepo,
+		campaignRepo:   mockCampaignRepo,
+		cryptoService:  mockCryptoService,
 	}
-	
+
 	// Override the base URL to point to our test server
 	origBaseURL := everflowAPIBaseURL
 	everflowAPIBaseURL = server.URL + "/v1"
 	defer func() { everflowAPIBaseURL = origBaseURL }()
-	
+
 	// Test the service
 	err := service.CreateAdvertiserInEverflow(context.Background(), advertiser)
 	assert.NoError(t, err)
-	
+
 	// Verify expectations
 	mockAdvertiserRepo.AssertExpectations(t)
 }
@@ -292,7 +292,7 @@ func TestCreateOfferInEverflow(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		// Check request method and path
 		assert.Equal(t, "POST", r.Method)
-		
+
 		if r.URL.Path == "/v1/networks/offers" {
 			// Return a successful response for offer creation
 			w.Header().Set("Content-Type", "application/json")
@@ -318,7 +318,7 @@ func TestCreateOfferInEverflow(t *testing.T) {
 		}
 	}))
 	defer server.Close()
-	
+
 	// Create test campaign
 	campaign := &domain.Campaign{
 		CampaignID:     789,
@@ -327,7 +327,7 @@ func TestCreateOfferInEverflow(t *testing.T) {
 		Name:           "Test Campaign",
 		Status:         "active",
 	}
-	
+
 	// Create test advertiser
 	advertiser := &domain.Advertiser{
 		AdvertiserID:   123,
@@ -335,7 +335,7 @@ func TestCreateOfferInEverflow(t *testing.T) {
 		Name:           "Test Advertiser",
 		Status:         "active",
 	}
-	
+
 	// Create test mapping
 	providerAdvertiserID := "12345"
 	mapping := &domain.AdvertiserProviderMapping{
@@ -344,16 +344,16 @@ func TestCreateOfferInEverflow(t *testing.T) {
 		ProviderType:         "everflow",
 		ProviderAdvertiserID: &providerAdvertiserID,
 	}
-	
+
 	// Setup mocks
 	mockAdvertiserRepo := new(MockAdvertiserRepository)
 	mockCampaignRepo := new(MockCampaignRepository)
 	mockCryptoService := new(MockCryptoService)
-	
+
 	// Setup expectations
 	mockAdvertiserRepo.On("GetAdvertiserByID", mock.Anything, int64(123)).Return(advertiser, nil)
 	mockAdvertiserRepo.On("GetAdvertiserProviderMapping", mock.Anything, int64(123), "everflow").Return(mapping, nil)
-	
+
 	mockCampaignRepo.On("CreateCampaignProviderOffer", mock.Anything, mock.MatchedBy(func(offer *domain.CampaignProviderOffer) bool {
 		// Verify offer properties
 		assert.Equal(t, campaign.CampaignID, offer.CampaignID)
@@ -363,37 +363,37 @@ func TestCreateOfferInEverflow(t *testing.T) {
 		assert.NotNil(t, offer.ProviderOfferConfig)
 		assert.True(t, offer.IsActiveOnProvider)
 		assert.NotNil(t, offer.LastSyncedAt)
-		
+
 		// Verify provider config contains expected data
 		var providerConfig map[string]interface{}
 		err := json.Unmarshal([]byte(*offer.ProviderOfferConfig), &providerConfig)
 		assert.NoError(t, err)
 		assert.Equal(t, float64(54321), providerConfig["network_offer_id"])
 		assert.Equal(t, float64(12345), providerConfig["network_advertiser_id"])
-		
+
 		return true
 	})).Return(nil)
-	
+
 	// Create service with mock client
 	client := NewClient("test-api-key")
 	client.httpClient = server.Client()
-	
+
 	service := &Service{
-		client:          client,
-		advertiserRepo:  mockAdvertiserRepo,
-		campaignRepo:    mockCampaignRepo,
-		cryptoService:   mockCryptoService,
+		client:         client,
+		advertiserRepo: mockAdvertiserRepo,
+		campaignRepo:   mockCampaignRepo,
+		cryptoService:  mockCryptoService,
 	}
-	
+
 	// Override the base URL to point to our test server
 	origBaseURL := everflowAPIBaseURL
 	everflowAPIBaseURL = server.URL + "/v1"
 	defer func() { everflowAPIBaseURL = origBaseURL }()
-	
+
 	// Test the service
 	err := service.CreateOfferInEverflow(context.Background(), campaign)
 	assert.NoError(t, err)
-	
+
 	// Verify expectations
 	mockAdvertiserRepo.AssertExpectations(t)
 	mockCampaignRepo.AssertExpectations(t)
@@ -405,14 +405,14 @@ func TestMapAdvertiserToEverflowRequest(t *testing.T) {
 	mockAdvertiserRepo := new(MockAdvertiserRepository)
 	mockCampaignRepo := new(MockCampaignRepository)
 	mockCryptoService := new(MockCryptoService)
-	
+
 	service := &Service{
-		client:          NewClient("test-api-key"),
-		advertiserRepo:  mockAdvertiserRepo,
-		campaignRepo:    mockCampaignRepo,
-		cryptoService:   mockCryptoService,
+		client:         NewClient("test-api-key"),
+		advertiserRepo: mockAdvertiserRepo,
+		campaignRepo:   mockCampaignRepo,
+		cryptoService:  mockCryptoService,
 	}
-	
+
 	// Test case 1: Basic advertiser
 	t.Run("Basic advertiser", func(t *testing.T) {
 		advertiser := &domain.Advertiser{
@@ -421,7 +421,7 @@ func TestMapAdvertiserToEverflowRequest(t *testing.T) {
 			Name:           "Test Advertiser",
 			Status:         "active",
 		}
-		
+
 		req, err := service.mapAdvertiserToEverflowRequest(advertiser)
 		assert.NoError(t, err)
 		assert.Equal(t, "Test Advertiser", req.Name)
@@ -430,7 +430,7 @@ func TestMapAdvertiserToEverflowRequest(t *testing.T) {
 		assert.Nil(t, req.ContactAddress)
 		assert.Nil(t, req.Billing)
 	})
-	
+
 	// Test case 2: Advertiser with contact email
 	t.Run("Advertiser with contact email", func(t *testing.T) {
 		email := "test@example.com"
@@ -441,13 +441,13 @@ func TestMapAdvertiserToEverflowRequest(t *testing.T) {
 			Status:         "active",
 			ContactEmail:   &email,
 		}
-		
+
 		req, err := service.mapAdvertiserToEverflowRequest(advertiser)
 		assert.NoError(t, err)
 		assert.NotNil(t, req.InternalNotes)
 		assert.Contains(t, *req.InternalNotes, email)
 	})
-	
+
 	// Test case 3: Advertiser with billing details
 	t.Run("Advertiser with billing details", func(t *testing.T) {
 		billingDetails := `{
@@ -462,15 +462,15 @@ func TestMapAdvertiserToEverflowRequest(t *testing.T) {
 				"country": "US"
 			}
 		}`
-		
+
 		advertiser := &domain.Advertiser{
-			AdvertiserID:    123,
-			OrganizationID:  456,
-			Name:            "Test Advertiser",
-			Status:          "active",
-			BillingDetails:  &billingDetails,
+			AdvertiserID:   123,
+			OrganizationID: 456,
+			Name:           "Test Advertiser",
+			Status:         "active",
+			BillingDetails: &billingDetails,
 		}
-		
+
 		req, err := service.mapAdvertiserToEverflowRequest(advertiser)
 		assert.NoError(t, err)
 		assert.NotNil(t, req.IsContactAddressEnabled)
@@ -482,7 +482,7 @@ func TestMapAdvertiserToEverflowRequest(t *testing.T) {
 		assert.Equal(t, "94105", req.ContactAddress.ZipPostalCode)
 		assert.Equal(t, "US", req.ContactAddress.CountryCode)
 		assert.Equal(t, "CA", req.ContactAddress.RegionCode)
-		
+
 		assert.NotNil(t, req.Billing)
 		assert.Equal(t, "monthly", req.Billing.BillingFrequency)
 		assert.Equal(t, "123456789", *req.Billing.TaxID)
@@ -495,14 +495,14 @@ func TestMapCampaignToEverflowRequest(t *testing.T) {
 	mockAdvertiserRepo := new(MockAdvertiserRepository)
 	mockCampaignRepo := new(MockCampaignRepository)
 	mockCryptoService := new(MockCryptoService)
-	
+
 	service := &Service{
-		client:          NewClient("test-api-key"),
-		advertiserRepo:  mockAdvertiserRepo,
-		campaignRepo:    mockCampaignRepo,
-		cryptoService:   mockCryptoService,
+		client:         NewClient("test-api-key"),
+		advertiserRepo: mockAdvertiserRepo,
+		campaignRepo:   mockCampaignRepo,
+		cryptoService:  mockCryptoService,
 	}
-	
+
 	// Test case 1: Basic campaign
 	t.Run("Basic campaign", func(t *testing.T) {
 		campaign := &domain.Campaign{
@@ -512,7 +512,7 @@ func TestMapCampaignToEverflowRequest(t *testing.T) {
 			Name:           "Test Campaign",
 			Status:         "active",
 		}
-		
+
 		req, err := service.mapCampaignToEverflowRequest(campaign, 12345)
 		assert.NoError(t, err)
 		assert.Equal(t, "Test Campaign", req.Name)
@@ -522,7 +522,7 @@ func TestMapCampaignToEverflowRequest(t *testing.T) {
 		assert.Equal(t, "public", req.Visibility)
 		assert.Equal(t, "server_postback", req.ConversionMethod)
 		assert.Equal(t, fmt.Sprintf("https://example.com/campaigns/%d?click_id={transaction_id}", campaign.CampaignID), req.DestinationURL)
-		
+
 		// Verify payout/revenue
 		assert.Len(t, req.PayoutRevenue, 1)
 		assert.True(t, req.PayoutRevenue[0].IsDefault)
@@ -530,20 +530,20 @@ func TestMapCampaignToEverflowRequest(t *testing.T) {
 		assert.Equal(t, 1.00, req.PayoutRevenue[0].PayoutAmount)
 		assert.Equal(t, "cpa", req.PayoutRevenue[0].RevenueType)
 		assert.Equal(t, 2.00, req.PayoutRevenue[0].RevenueAmount)
-		
+
 		// Verify session settings
 		assert.NotNil(t, req.SessionDefinition)
 		assert.Equal(t, "cookie", *req.SessionDefinition)
 		assert.NotNil(t, req.SessionDuration)
 		assert.Equal(t, 720, *req.SessionDuration)
-		
+
 		// Verify tags
 		assert.Len(t, req.Tags, 3)
 		assert.Contains(t, req.Tags, fmt.Sprintf("campaign_id:%d", campaign.CampaignID))
 		assert.Contains(t, req.Tags, fmt.Sprintf("advertiser_id:%d", campaign.AdvertiserID))
 		assert.Contains(t, req.Tags, fmt.Sprintf("organization_id:%d", campaign.OrganizationID))
 	})
-	
+
 	// Test case 2: Campaign with description
 	t.Run("Campaign with description", func(t *testing.T) {
 		description := "This is a test campaign description"
@@ -555,13 +555,13 @@ func TestMapCampaignToEverflowRequest(t *testing.T) {
 			Status:         "active",
 			Description:    &description,
 		}
-		
+
 		req, err := service.mapCampaignToEverflowRequest(campaign, 12345)
 		assert.NoError(t, err)
 		assert.NotNil(t, req.Description)
 		assert.Equal(t, description, *req.Description)
 	})
-	
+
 	// Test case 3: Campaign with different status
 	t.Run("Campaign with different status", func(t *testing.T) {
 		campaign := &domain.Campaign{
@@ -571,7 +571,7 @@ func TestMapCampaignToEverflowRequest(t *testing.T) {
 			Name:           "Test Campaign",
 			Status:         "paused",
 		}
-		
+
 		req, err := service.mapCampaignToEverflowRequest(campaign, 12345)
 		assert.NoError(t, err)
 		assert.Equal(t, "paused", req.OfferStatus)

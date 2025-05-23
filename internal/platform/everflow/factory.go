@@ -35,11 +35,11 @@ func NewEverflowServiceFromEnv(
 		if err := json.Unmarshal([]byte(configJSON), &config); err != nil {
 			return nil, fmt.Errorf("failed to parse EVERFLOW_CONFIG: %w", err)
 		}
-		
+
 		if config.APIKey == "" {
 			return nil, fmt.Errorf("EVERFLOW_CONFIG is missing api_key")
 		}
-		
+
 		log.Println("Creating Everflow service with API key from EVERFLOW_CONFIG")
 		return NewService(config.APIKey, advertiserRepo, campaignRepo, cryptoService), nil
 	}

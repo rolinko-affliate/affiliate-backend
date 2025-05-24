@@ -3,6 +3,7 @@ package repository
 import (
 	"context"
 	"database/sql"
+	"encoding/json"
 	"fmt"
 	"time"
 
@@ -38,13 +39,24 @@ func NewPgxAdvertiserRepository(db *pgxpool.Pool) AdvertiserRepository {
 
 // CreateAdvertiser creates a new advertiser in the database
 func (r *pgxAdvertiserRepository) CreateAdvertiser(ctx context.Context, advertiser *domain.Advertiser) error {
-	query := `INSERT INTO public.advertisers (organization_id, name, contact_email, billing_details, status, created_at, updated_at)
-              VALUES ($1, $2, $3, $4, $5, $6, $7)
-              RETURNING advertiser_id, created_at, updated_at`
+	query := `INSERT INTO public.advertisers (
+		organization_id, name, contact_email, billing_details, status,
+		internal_notes, default_currency_id, platform_name, platform_url, platform_username,
+		accounting_contact_email, offer_id_macro, affiliate_id_macro, attribution_method,
+		email_attribution_method, attribution_priority, reporting_timezone_id, is_expose_publisher_reporting,
+		everflow_sync_status, last_everflow_sync_at, everflow_sync_error,
+		created_at, updated_at
+	) VALUES (
+		$1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23
+	) RETURNING advertiser_id, created_at, updated_at`
 	
 	var billingDetailsJSON sql.NullString
 	if advertiser.BillingDetails != nil {
-		billingDetailsJSON = sql.NullString{String: *advertiser.BillingDetails, Valid: true}
+		billingBytes, err := json.Marshal(advertiser.BillingDetails)
+		if err != nil {
+			return fmt.Errorf("failed to marshal billing details: %w", err)
+		}
+		billingDetailsJSON = sql.NullString{String: string(billingBytes), Valid: true}
 	}
 	
 	now := time.Now()
@@ -53,7 +65,23 @@ func (r *pgxAdvertiserRepository) CreateAdvertiser(ctx context.Context, advertis
 		advertiser.Name, 
 		advertiser.ContactEmail, 
 		billingDetailsJSON, 
-		advertiser.Status, 
+		advertiser.Status,
+		advertiser.InternalNotes,
+		advertiser.DefaultCurrencyID,
+		advertiser.PlatformName,
+		advertiser.PlatformURL,
+		advertiser.PlatformUsername,
+		advertiser.AccountingContactEmail,
+		advertiser.OfferIDMacro,
+		advertiser.AffiliateIDMacro,
+		advertiser.AttributionMethod,
+		advertiser.EmailAttributionMethod,
+		advertiser.AttributionPriority,
+		advertiser.ReportingTimezoneID,
+		advertiser.IsExposePublisherReporting,
+		advertiser.EverflowSyncStatus,
+		advertiser.LastEverflowSyncAt,
+		advertiser.EverflowSyncError,
 		now, 
 		now,
 	).Scan(
@@ -70,11 +98,24 @@ func (r *pgxAdvertiserRepository) CreateAdvertiser(ctx context.Context, advertis
 
 // GetAdvertiserByID retrieves an advertiser by ID
 func (r *pgxAdvertiserRepository) GetAdvertiserByID(ctx context.Context, id int64) (*domain.Advertiser, error) {
-	query := `SELECT advertiser_id, organization_id, name, contact_email, billing_details, status, created_at, updated_at
-              FROM public.advertisers WHERE advertiser_id = $1`
+	query := `SELECT 
+		advertiser_id, organization_id, name, contact_email, billing_details, status,
+		internal_notes, default_currency_id, platform_name, platform_url, platform_username,
+		accounting_contact_email, offer_id_macro, affiliate_id_macro, attribution_method,
+		email_attribution_method, attribution_priority, reporting_timezone_id, is_expose_publisher_reporting,
+		everflow_sync_status, last_everflow_sync_at, everflow_sync_error,
+		created_at, updated_at
+	FROM public.advertisers WHERE advertiser_id = $1`
 	
 	var advertiser domain.Advertiser
 	var contactEmail, billingDetails sql.NullString
+	var internalNotes, defaultCurrencyID, platformName, platformURL, platformUsername sql.NullString
+	var accountingContactEmail, offerIDMacro, affiliateIDMacro sql.NullString
+	var attributionMethod, emailAttributionMethod, attributionPriority sql.NullString
+	var reportingTimezoneID sql.NullInt32
+	var isExposePublisherReporting sql.NullBool
+	var everflowSyncStatus, everflowSyncError sql.NullString
+	var lastEverflowSyncAt sql.NullTime
 	
 	err := r.db.QueryRow(ctx, query, id).Scan(
 		&advertiser.AdvertiserID,
@@ -83,6 +124,22 @@ func (r *pgxAdvertiserRepository) GetAdvertiserByID(ctx context.Context, id int6
 		&contactEmail,
 		&billingDetails,
 		&advertiser.Status,
+		&internalNotes,
+		&defaultCurrencyID,
+		&platformName,
+		&platformURL,
+		&platformUsername,
+		&accountingContactEmail,
+		&offerIDMacro,
+		&affiliateIDMacro,
+		&attributionMethod,
+		&emailAttributionMethod,
+		&attributionPriority,
+		&reportingTimezoneID,
+		&isExposePublisherReporting,
+		&everflowSyncStatus,
+		&lastEverflowSyncAt,
+		&everflowSyncError,
 		&advertiser.CreatedAt,
 		&advertiser.UpdatedAt,
 	)
@@ -94,14 +151,65 @@ func (r *pgxAdvertiserRepository) GetAdvertiserByID(ctx context.Context, id int6
 		return nil, fmt.Errorf("error getting advertiser by ID: %w", err)
 	}
 	
+	// Handle nullable fields
 	if contactEmail.Valid {
-		email := contactEmail.String
-		advertiser.ContactEmail = &email
+		advertiser.ContactEmail = &contactEmail.String
 	}
-	
 	if billingDetails.Valid {
-		details := billingDetails.String
-		advertiser.BillingDetails = &details
+		var billing domain.BillingDetails
+		if err := json.Unmarshal([]byte(billingDetails.String), &billing); err != nil {
+			return nil, fmt.Errorf("failed to unmarshal billing details: %w", err)
+		}
+		advertiser.BillingDetails = &billing
+	}
+	if internalNotes.Valid {
+		advertiser.InternalNotes = &internalNotes.String
+	}
+	if defaultCurrencyID.Valid {
+		advertiser.DefaultCurrencyID = &defaultCurrencyID.String
+	}
+	if platformName.Valid {
+		advertiser.PlatformName = &platformName.String
+	}
+	if platformURL.Valid {
+		advertiser.PlatformURL = &platformURL.String
+	}
+	if platformUsername.Valid {
+		advertiser.PlatformUsername = &platformUsername.String
+	}
+	if accountingContactEmail.Valid {
+		advertiser.AccountingContactEmail = &accountingContactEmail.String
+	}
+	if offerIDMacro.Valid {
+		advertiser.OfferIDMacro = &offerIDMacro.String
+	}
+	if affiliateIDMacro.Valid {
+		advertiser.AffiliateIDMacro = &affiliateIDMacro.String
+	}
+	if attributionMethod.Valid {
+		advertiser.AttributionMethod = &attributionMethod.String
+	}
+	if emailAttributionMethod.Valid {
+		advertiser.EmailAttributionMethod = &emailAttributionMethod.String
+	}
+	if attributionPriority.Valid {
+		advertiser.AttributionPriority = &attributionPriority.String
+	}
+	if reportingTimezoneID.Valid {
+		timezoneID := int(reportingTimezoneID.Int32)
+		advertiser.ReportingTimezoneID = &timezoneID
+	}
+	if isExposePublisherReporting.Valid {
+		advertiser.IsExposePublisherReporting = &isExposePublisherReporting.Bool
+	}
+	if everflowSyncStatus.Valid {
+		advertiser.EverflowSyncStatus = &everflowSyncStatus.String
+	}
+	if lastEverflowSyncAt.Valid {
+		advertiser.LastEverflowSyncAt = &lastEverflowSyncAt.Time
+	}
+	if everflowSyncError.Valid {
+		advertiser.EverflowSyncError = &everflowSyncError.String
 	}
 	
 	return &advertiser, nil
@@ -109,21 +217,48 @@ func (r *pgxAdvertiserRepository) GetAdvertiserByID(ctx context.Context, id int6
 
 // UpdateAdvertiser updates an advertiser in the database
 func (r *pgxAdvertiserRepository) UpdateAdvertiser(ctx context.Context, advertiser *domain.Advertiser) error {
-	query := `UPDATE public.advertisers
-              SET name = $1, contact_email = $2, billing_details = $3, status = $4
-              WHERE advertiser_id = $5
-              RETURNING updated_at`
+	query := `UPDATE public.advertisers SET 
+		name = $1, contact_email = $2, billing_details = $3, status = $4,
+		internal_notes = $5, default_currency_id = $6, platform_name = $7, platform_url = $8, platform_username = $9,
+		accounting_contact_email = $10, offer_id_macro = $11, affiliate_id_macro = $12, attribution_method = $13,
+		email_attribution_method = $14, attribution_priority = $15, reporting_timezone_id = $16, is_expose_publisher_reporting = $17,
+		everflow_sync_status = $18, last_everflow_sync_at = $19, everflow_sync_error = $20,
+		updated_at = $21
+	WHERE advertiser_id = $22
+	RETURNING updated_at`
 	
 	var billingDetailsJSON sql.NullString
 	if advertiser.BillingDetails != nil {
-		billingDetailsJSON = sql.NullString{String: *advertiser.BillingDetails, Valid: true}
+		billingBytes, err := json.Marshal(advertiser.BillingDetails)
+		if err != nil {
+			return fmt.Errorf("failed to marshal billing details: %w", err)
+		}
+		billingDetailsJSON = sql.NullString{String: string(billingBytes), Valid: true}
 	}
 	
+	now := time.Now()
 	err := r.db.QueryRow(ctx, query, 
 		advertiser.Name, 
 		advertiser.ContactEmail, 
 		billingDetailsJSON, 
-		advertiser.Status, 
+		advertiser.Status,
+		advertiser.InternalNotes,
+		advertiser.DefaultCurrencyID,
+		advertiser.PlatformName,
+		advertiser.PlatformURL,
+		advertiser.PlatformUsername,
+		advertiser.AccountingContactEmail,
+		advertiser.OfferIDMacro,
+		advertiser.AffiliateIDMacro,
+		advertiser.AttributionMethod,
+		advertiser.EmailAttributionMethod,
+		advertiser.AttributionPriority,
+		advertiser.ReportingTimezoneID,
+		advertiser.IsExposePublisherReporting,
+		advertiser.EverflowSyncStatus,
+		advertiser.LastEverflowSyncAt,
+		advertiser.EverflowSyncError,
+		now,
 		advertiser.AdvertiserID,
 	).Scan(&advertiser.UpdatedAt)
 	
@@ -139,11 +274,17 @@ func (r *pgxAdvertiserRepository) UpdateAdvertiser(ctx context.Context, advertis
 
 // ListAdvertisersByOrganization retrieves a list of advertisers for an organization with pagination
 func (r *pgxAdvertiserRepository) ListAdvertisersByOrganization(ctx context.Context, orgID int64, limit, offset int) ([]*domain.Advertiser, error) {
-	query := `SELECT advertiser_id, organization_id, name, contact_email, billing_details, status, created_at, updated_at
-              FROM public.advertisers
-              WHERE organization_id = $1
-              ORDER BY advertiser_id
-              LIMIT $2 OFFSET $3`
+	query := `SELECT 
+		advertiser_id, organization_id, name, contact_email, billing_details, status,
+		internal_notes, default_currency_id, platform_name, platform_url, platform_username,
+		accounting_contact_email, offer_id_macro, affiliate_id_macro, attribution_method,
+		email_attribution_method, attribution_priority, reporting_timezone_id, is_expose_publisher_reporting,
+		everflow_sync_status, last_everflow_sync_at, everflow_sync_error,
+		created_at, updated_at
+	FROM public.advertisers
+	WHERE organization_id = $1
+	ORDER BY advertiser_id
+	LIMIT $2 OFFSET $3`
 	
 	rows, err := r.db.Query(ctx, query, orgID, limit, offset)
 	if err != nil {
@@ -155,6 +296,13 @@ func (r *pgxAdvertiserRepository) ListAdvertisersByOrganization(ctx context.Cont
 	for rows.Next() {
 		var advertiser domain.Advertiser
 		var contactEmail, billingDetails sql.NullString
+		var internalNotes, defaultCurrencyID, platformName, platformURL, platformUsername sql.NullString
+		var accountingContactEmail, offerIDMacro, affiliateIDMacro sql.NullString
+		var attributionMethod, emailAttributionMethod, attributionPriority sql.NullString
+		var reportingTimezoneID sql.NullInt32
+		var isExposePublisherReporting sql.NullBool
+		var everflowSyncStatus, everflowSyncError sql.NullString
+		var lastEverflowSyncAt sql.NullTime
 		
 		if err := rows.Scan(
 			&advertiser.AdvertiserID,
@@ -163,20 +311,87 @@ func (r *pgxAdvertiserRepository) ListAdvertisersByOrganization(ctx context.Cont
 			&contactEmail,
 			&billingDetails,
 			&advertiser.Status,
+			&internalNotes,
+			&defaultCurrencyID,
+			&platformName,
+			&platformURL,
+			&platformUsername,
+			&accountingContactEmail,
+			&offerIDMacro,
+			&affiliateIDMacro,
+			&attributionMethod,
+			&emailAttributionMethod,
+			&attributionPriority,
+			&reportingTimezoneID,
+			&isExposePublisherReporting,
+			&everflowSyncStatus,
+			&lastEverflowSyncAt,
+			&everflowSyncError,
 			&advertiser.CreatedAt,
 			&advertiser.UpdatedAt,
 		); err != nil {
 			return nil, fmt.Errorf("error scanning advertiser row: %w", err)
 		}
 		
+		// Handle nullable fields
 		if contactEmail.Valid {
-			email := contactEmail.String
-			advertiser.ContactEmail = &email
+			advertiser.ContactEmail = &contactEmail.String
 		}
-		
 		if billingDetails.Valid {
-			details := billingDetails.String
-			advertiser.BillingDetails = &details
+			var billing domain.BillingDetails
+			if err := json.Unmarshal([]byte(billingDetails.String), &billing); err != nil {
+				return nil, fmt.Errorf("failed to unmarshal billing details: %w", err)
+			}
+			advertiser.BillingDetails = &billing
+		}
+		if internalNotes.Valid {
+			advertiser.InternalNotes = &internalNotes.String
+		}
+		if defaultCurrencyID.Valid {
+			advertiser.DefaultCurrencyID = &defaultCurrencyID.String
+		}
+		if platformName.Valid {
+			advertiser.PlatformName = &platformName.String
+		}
+		if platformURL.Valid {
+			advertiser.PlatformURL = &platformURL.String
+		}
+		if platformUsername.Valid {
+			advertiser.PlatformUsername = &platformUsername.String
+		}
+		if accountingContactEmail.Valid {
+			advertiser.AccountingContactEmail = &accountingContactEmail.String
+		}
+		if offerIDMacro.Valid {
+			advertiser.OfferIDMacro = &offerIDMacro.String
+		}
+		if affiliateIDMacro.Valid {
+			advertiser.AffiliateIDMacro = &affiliateIDMacro.String
+		}
+		if attributionMethod.Valid {
+			advertiser.AttributionMethod = &attributionMethod.String
+		}
+		if emailAttributionMethod.Valid {
+			advertiser.EmailAttributionMethod = &emailAttributionMethod.String
+		}
+		if attributionPriority.Valid {
+			advertiser.AttributionPriority = &attributionPriority.String
+		}
+		if reportingTimezoneID.Valid {
+			timezoneID := int(reportingTimezoneID.Int32)
+			advertiser.ReportingTimezoneID = &timezoneID
+		}
+		if isExposePublisherReporting.Valid {
+			advertiser.IsExposePublisherReporting = &isExposePublisherReporting.Bool
+		}
+		if everflowSyncStatus.Valid {
+			advertiser.EverflowSyncStatus = &everflowSyncStatus.String
+		}
+		if lastEverflowSyncAt.Valid {
+			advertiser.LastEverflowSyncAt = &lastEverflowSyncAt.Time
+		}
+		if everflowSyncError.Valid {
+			advertiser.EverflowSyncError = &everflowSyncError.String
 		}
 		
 		advertisers = append(advertisers, &advertiser)

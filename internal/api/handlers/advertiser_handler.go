@@ -64,6 +64,24 @@ type CreateAdvertiserRequest struct {
 	BillingDetails *json.RawMessage `json:"billing_details,omitempty" swaggertype:"object"`
 	// Status of the advertiser (active, pending, inactive, rejected)
 	Status         string `json:"status,omitempty" example:"active"`
+	
+	// Enhanced fields for Everflow integration
+	InternalNotes              *string `json:"internal_notes,omitempty" example:"Internal notes about the advertiser"`
+	DefaultCurrencyID          *string `json:"default_currency_id,omitempty" example:"USD"`
+	PlatformName               *string `json:"platform_name,omitempty" example:"Example Platform"`
+	PlatformURL                *string `json:"platform_url,omitempty" example:"https://platform.example.com"`
+	PlatformUsername           *string `json:"platform_username,omitempty" example:"platform_user"`
+	AccountingContactEmail     *string `json:"accounting_contact_email,omitempty" example:"accounting@example.com"`
+	OfferIDMacro               *string `json:"offer_id_macro,omitempty" example:"oid"`
+	AffiliateIDMacro           *string `json:"affiliate_id_macro,omitempty" example:"aid"`
+	AttributionMethod          *string `json:"attribution_method,omitempty" example:"first_click"`
+	EmailAttributionMethod     *string `json:"email_attribution_method,omitempty" example:"first_click"`
+	AttributionPriority        *string `json:"attribution_priority,omitempty" example:"high"`
+	ReportingTimezoneID        *int    `json:"reporting_timezone_id,omitempty" example:"67"`
+	IsExposePublisherReporting *bool   `json:"is_expose_publisher_reporting,omitempty" example:"false"`
+	
+	// Synchronization options
+	SyncToEverflow *bool `json:"sync_to_everflow,omitempty" example:"true"`
 }
 
 // CreateAdvertiser creates a new advertiser
@@ -102,11 +120,30 @@ func (h *AdvertiserHandler) CreateAdvertiser(c *gin.Context) {
 		Name:           req.Name,
 		ContactEmail:   req.ContactEmail,
 		Status:         req.Status,
+		
+		// Enhanced fields for Everflow integration
+		InternalNotes:              req.InternalNotes,
+		DefaultCurrencyID:          req.DefaultCurrencyID,
+		PlatformName:               req.PlatformName,
+		PlatformURL:                req.PlatformURL,
+		PlatformUsername:           req.PlatformUsername,
+		AccountingContactEmail:     req.AccountingContactEmail,
+		OfferIDMacro:               req.OfferIDMacro,
+		AffiliateIDMacro:           req.AffiliateIDMacro,
+		AttributionMethod:          req.AttributionMethod,
+		EmailAttributionMethod:     req.EmailAttributionMethod,
+		AttributionPriority:        req.AttributionPriority,
+		ReportingTimezoneID:        req.ReportingTimezoneID,
+		IsExposePublisherReporting: req.IsExposePublisherReporting,
 	}
 
 	if req.BillingDetails != nil {
-		billingDetailsStr := string(*req.BillingDetails)
-		advertiser.BillingDetails = &billingDetailsStr
+		var billingDetails domain.BillingDetails
+		if err := json.Unmarshal(*req.BillingDetails, &billingDetails); err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid billing details format: " + err.Error()})
+			return
+		}
+		advertiser.BillingDetails = &billingDetails
 	}
 
 	createdAdvertiser, err := h.advertiserService.CreateAdvertiser(c.Request.Context(), advertiser)
@@ -118,18 +155,20 @@ func (h *AdvertiserHandler) CreateAdvertiser(c *gin.Context) {
 	c.JSON(http.StatusCreated, createdAdvertiser)
 }
 
-// GetAdvertiser retrieves an advertiser by ID
+// GetAdvertiser retrieves an advertiser by ID with optional Everflow data comparison
 // @Summary      Get advertiser by ID
-// @Description  Retrieves an advertiser by its ID
+// @Description  Retrieves an advertiser by its ID with optional Everflow data comparison
 // @Tags         advertisers
 // @Accept       json
 // @Produce      json
-// @Param        id   path      int                 true  "Advertiser ID"
-// @Success      200  {object}  domain.Advertiser  "Advertiser details"
-// @Failure      400  {object}  map[string]string  "Invalid advertiser ID"
-// @Failure      403  {object}  map[string]string  "Forbidden - User doesn't have permission"
-// @Failure      404  {object}  map[string]string  "Advertiser not found"
-// @Failure      500  {object}  map[string]string  "Internal server error"
+// @Param        id              path      int                 true   "Advertiser ID"
+// @Param        include_everflow query     bool                false  "Include Everflow data comparison"
+// @Success      200             {object}  domain.Advertiser   "Advertiser details"
+// @Success      200             {object}  domain.AdvertiserWithEverflowData  "Advertiser with Everflow comparison (when include_everflow=true)"
+// @Failure      400             {object}  map[string]string   "Invalid advertiser ID"
+// @Failure      403             {object}  map[string]string   "Forbidden - User doesn't have permission"
+// @Failure      404             {object}  map[string]string   "Advertiser not found"
+// @Failure      500             {object}  map[string]string   "Internal server error"
 // @Security     BearerAuth
 // @Router       /advertisers/{id} [get]
 func (h *AdvertiserHandler) GetAdvertiser(c *gin.Context) {
@@ -140,28 +179,58 @@ func (h *AdvertiserHandler) GetAdvertiser(c *gin.Context) {
 		return
 	}
 
-	advertiser, err := h.advertiserService.GetAdvertiserByID(c.Request.Context(), id)
-	if err != nil {
-		if err.Error() == "advertiser not found: not found" {
-			c.JSON(http.StatusNotFound, gin.H{"error": "Advertiser not found"})
+	// Check if Everflow data should be included
+	includeEverflow := c.Query("include_everflow") == "true"
+
+	if includeEverflow {
+		// Get advertiser with Everflow data comparison
+		advertiserWithEverflow, err := h.advertiserService.GetAdvertiserWithEverflowData(c.Request.Context(), id)
+		if err != nil {
+			if err.Error() == "advertiser not found: not found" || err.Error() == "failed to get advertiser: not found" {
+				c.JSON(http.StatusNotFound, gin.H{"error": "Advertiser not found"})
+				return
+			}
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get advertiser: " + err.Error()})
 			return
 		}
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get advertiser: " + err.Error()})
-		return
-	}
 
-	// Check if user has permission to view this advertiser
-	hasAccess, err := h.checkAdvertiserAccess(c, advertiser.OrganizationID)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to verify permissions: " + err.Error()})
-		return
-	}
-	if !hasAccess {
-		c.JSON(http.StatusForbidden, gin.H{"error": "You don't have permission to view this advertiser"})
-		return
-	}
+		// Check if user has permission to view this advertiser
+		hasAccess, err := h.checkAdvertiserAccess(c, advertiserWithEverflow.Advertiser.OrganizationID)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to verify permissions: " + err.Error()})
+			return
+		}
+		if !hasAccess {
+			c.JSON(http.StatusForbidden, gin.H{"error": "You don't have permission to view this advertiser"})
+			return
+		}
 
-	c.JSON(http.StatusOK, advertiser)
+		c.JSON(http.StatusOK, advertiserWithEverflow)
+	} else {
+		// Get basic advertiser data
+		advertiser, err := h.advertiserService.GetAdvertiserByID(c.Request.Context(), id)
+		if err != nil {
+			if err.Error() == "advertiser not found: not found" {
+				c.JSON(http.StatusNotFound, gin.H{"error": "Advertiser not found"})
+				return
+			}
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get advertiser: " + err.Error()})
+			return
+		}
+
+		// Check if user has permission to view this advertiser
+		hasAccess, err := h.checkAdvertiserAccess(c, advertiser.OrganizationID)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to verify permissions: " + err.Error()})
+			return
+		}
+		if !hasAccess {
+			c.JSON(http.StatusForbidden, gin.H{"error": "You don't have permission to view this advertiser"})
+			return
+		}
+
+		c.JSON(http.StatusOK, advertiser)
+	}
 }
 
 // UpdateAdvertiserRequest defines the request for updating an advertiser
@@ -176,6 +245,24 @@ type UpdateAdvertiserRequest struct {
 	BillingDetails *json.RawMessage `json:"billing_details,omitempty" swaggertype:"object"`
 	// Status of the advertiser (active, pending, inactive, rejected)
 	Status         string `json:"status" binding:"required" example:"active"`
+	
+	// Enhanced fields for Everflow integration
+	InternalNotes              *string `json:"internal_notes,omitempty" example:"Updated internal notes"`
+	DefaultCurrencyID          *string `json:"default_currency_id,omitempty" example:"USD"`
+	PlatformName               *string `json:"platform_name,omitempty" example:"Updated Platform"`
+	PlatformURL                *string `json:"platform_url,omitempty" example:"https://updated-platform.example.com"`
+	PlatformUsername           *string `json:"platform_username,omitempty" example:"updated_user"`
+	AccountingContactEmail     *string `json:"accounting_contact_email,omitempty" example:"updated-accounting@example.com"`
+	OfferIDMacro               *string `json:"offer_id_macro,omitempty" example:"oid"`
+	AffiliateIDMacro           *string `json:"affiliate_id_macro,omitempty" example:"aid"`
+	AttributionMethod          *string `json:"attribution_method,omitempty" example:"last_click"`
+	EmailAttributionMethod     *string `json:"email_attribution_method,omitempty" example:"last_click"`
+	AttributionPriority        *string `json:"attribution_priority,omitempty" example:"medium"`
+	ReportingTimezoneID        *int    `json:"reporting_timezone_id,omitempty" example:"67"`
+	IsExposePublisherReporting *bool   `json:"is_expose_publisher_reporting,omitempty" example:"true"`
+	
+	// Synchronization options
+	SyncToEverflow *bool `json:"sync_to_everflow,omitempty" example:"true"`
 }
 
 // UpdateAdvertiser updates an advertiser
@@ -233,10 +320,29 @@ func (h *AdvertiserHandler) UpdateAdvertiser(c *gin.Context) {
 	advertiser.Name = req.Name
 	advertiser.ContactEmail = req.ContactEmail
 	advertiser.Status = req.Status
+	
+	// Update enhanced fields for Everflow integration
+	advertiser.InternalNotes = req.InternalNotes
+	advertiser.DefaultCurrencyID = req.DefaultCurrencyID
+	advertiser.PlatformName = req.PlatformName
+	advertiser.PlatformURL = req.PlatformURL
+	advertiser.PlatformUsername = req.PlatformUsername
+	advertiser.AccountingContactEmail = req.AccountingContactEmail
+	advertiser.OfferIDMacro = req.OfferIDMacro
+	advertiser.AffiliateIDMacro = req.AffiliateIDMacro
+	advertiser.AttributionMethod = req.AttributionMethod
+	advertiser.EmailAttributionMethod = req.EmailAttributionMethod
+	advertiser.AttributionPriority = req.AttributionPriority
+	advertiser.ReportingTimezoneID = req.ReportingTimezoneID
+	advertiser.IsExposePublisherReporting = req.IsExposePublisherReporting
 
 	if req.BillingDetails != nil {
-		billingDetailsStr := string(*req.BillingDetails)
-		advertiser.BillingDetails = &billingDetailsStr
+		var billingDetails domain.BillingDetails
+		if err := json.Unmarshal(*req.BillingDetails, &billingDetails); err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid billing details format: " + err.Error()})
+			return
+		}
+		advertiser.BillingDetails = &billingDetails
 	}
 
 	if err := h.advertiserService.UpdateAdvertiser(c.Request.Context(), advertiser); err != nil {
@@ -562,4 +668,167 @@ func (h *AdvertiserHandler) DeleteAdvertiserProviderMapping(c *gin.Context) {
 	}
 
 	c.Status(http.StatusNoContent)
+}
+
+// SyncAdvertiserToEverflow synchronizes an advertiser to Everflow
+// @Summary      Sync advertiser to Everflow
+// @Description  Synchronizes an advertiser from local database to Everflow
+// @Tags         advertisers
+// @Accept       json
+// @Produce      json
+// @Param        id   path      int                true  "Advertiser ID"
+// @Success      200  {object}  map[string]string  "Sync successful"
+// @Failure      400  {object}  map[string]string  "Invalid advertiser ID"
+// @Failure      403  {object}  map[string]string  "Forbidden - User doesn't have permission"
+// @Failure      404  {object}  map[string]string  "Advertiser not found"
+// @Failure      500  {object}  map[string]string  "Internal server error"
+// @Security     BearerAuth
+// @Router       /advertisers/{id}/sync-to-everflow [post]
+func (h *AdvertiserHandler) SyncAdvertiserToEverflow(c *gin.Context) {
+	idStr := c.Param("id")
+	id, err := strconv.ParseInt(idStr, 10, 64)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid advertiser ID"})
+		return
+	}
+
+	// Get advertiser to check permissions
+	advertiser, err := h.advertiserService.GetAdvertiserByID(c.Request.Context(), id)
+	if err != nil {
+		if err.Error() == "advertiser not found: not found" {
+			c.JSON(http.StatusNotFound, gin.H{"error": "Advertiser not found"})
+			return
+		}
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get advertiser: " + err.Error()})
+		return
+	}
+
+	// Check if user has permission to sync this advertiser
+	hasAccess, err := h.checkAdvertiserAccess(c, advertiser.OrganizationID)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to verify permissions: " + err.Error()})
+		return
+	}
+	if !hasAccess {
+		c.JSON(http.StatusForbidden, gin.H{"error": "You don't have permission to sync this advertiser"})
+		return
+	}
+
+	// Sync to Everflow
+	if err := h.advertiserService.SyncAdvertiserToEverflow(c.Request.Context(), id); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to sync advertiser to Everflow: " + err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"message": "Advertiser successfully synced to Everflow"})
+}
+
+// SyncAdvertiserFromEverflow synchronizes an advertiser from Everflow
+// @Summary      Sync advertiser from Everflow
+// @Description  Synchronizes an advertiser from Everflow to local database
+// @Tags         advertisers
+// @Accept       json
+// @Produce      json
+// @Param        id   path      int                true  "Advertiser ID"
+// @Success      200  {object}  map[string]string  "Sync successful"
+// @Failure      400  {object}  map[string]string  "Invalid advertiser ID"
+// @Failure      403  {object}  map[string]string  "Forbidden - User doesn't have permission"
+// @Failure      404  {object}  map[string]string  "Advertiser not found"
+// @Failure      500  {object}  map[string]string  "Internal server error"
+// @Security     BearerAuth
+// @Router       /advertisers/{id}/sync-from-everflow [post]
+func (h *AdvertiserHandler) SyncAdvertiserFromEverflow(c *gin.Context) {
+	idStr := c.Param("id")
+	id, err := strconv.ParseInt(idStr, 10, 64)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid advertiser ID"})
+		return
+	}
+
+	// Get advertiser to check permissions
+	advertiser, err := h.advertiserService.GetAdvertiserByID(c.Request.Context(), id)
+	if err != nil {
+		if err.Error() == "advertiser not found: not found" {
+			c.JSON(http.StatusNotFound, gin.H{"error": "Advertiser not found"})
+			return
+		}
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get advertiser: " + err.Error()})
+		return
+	}
+
+	// Check if user has permission to sync this advertiser
+	hasAccess, err := h.checkAdvertiserAccess(c, advertiser.OrganizationID)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to verify permissions: " + err.Error()})
+		return
+	}
+	if !hasAccess {
+		c.JSON(http.StatusForbidden, gin.H{"error": "You don't have permission to sync this advertiser"})
+		return
+	}
+
+	// Sync from Everflow
+	if err := h.advertiserService.SyncAdvertiserFromEverflow(c.Request.Context(), id); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to sync advertiser from Everflow: " + err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"message": "Advertiser successfully synced from Everflow"})
+}
+
+// CompareAdvertiserWithEverflow compares an advertiser with Everflow data
+// @Summary      Compare advertiser with Everflow
+// @Description  Compares local advertiser data with Everflow data and returns discrepancies
+// @Tags         advertisers
+// @Accept       json
+// @Produce      json
+// @Param        id   path      int                                true  "Advertiser ID"
+// @Success      200  {object}  []domain.AdvertiserDiscrepancy    "Discrepancies found"
+// @Failure      400  {object}  map[string]string                 "Invalid advertiser ID"
+// @Failure      403  {object}  map[string]string                 "Forbidden - User doesn't have permission"
+// @Failure      404  {object}  map[string]string                 "Advertiser not found"
+// @Failure      500  {object}  map[string]string                 "Internal server error"
+// @Security     BearerAuth
+// @Router       /advertisers/{id}/compare-with-everflow [get]
+func (h *AdvertiserHandler) CompareAdvertiserWithEverflow(c *gin.Context) {
+	idStr := c.Param("id")
+	id, err := strconv.ParseInt(idStr, 10, 64)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid advertiser ID"})
+		return
+	}
+
+	// Get advertiser to check permissions
+	advertiser, err := h.advertiserService.GetAdvertiserByID(c.Request.Context(), id)
+	if err != nil {
+		if err.Error() == "advertiser not found: not found" {
+			c.JSON(http.StatusNotFound, gin.H{"error": "Advertiser not found"})
+			return
+		}
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get advertiser: " + err.Error()})
+		return
+	}
+
+	// Check if user has permission to view this advertiser
+	hasAccess, err := h.checkAdvertiserAccess(c, advertiser.OrganizationID)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to verify permissions: " + err.Error()})
+		return
+	}
+	if !hasAccess {
+		c.JSON(http.StatusForbidden, gin.H{"error": "You don't have permission to view this advertiser"})
+		return
+	}
+
+	// Compare with Everflow
+	discrepancies, err := h.advertiserService.CompareAdvertiserWithEverflow(c.Request.Context(), id)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to compare advertiser with Everflow: " + err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"discrepancies": discrepancies,
+		"total_count":   len(discrepancies),
+	})
 }

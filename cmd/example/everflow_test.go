@@ -271,18 +271,21 @@ func TestMapAdvertiserToEverflowRequest(t *testing.T) {
 
 	// Create test advertiser
 	email := "test@example.com"
-	billingDetails := `{
-		"billing_frequency": "monthly",
-		"tax_id": "123456789",
-		"address": {
-			"line1": "123 Main St",
-			"line2": "Suite 100",
-			"city": "San Francisco",
-			"state": "CA",
-			"postal_code": "94105",
-			"country": "US"
-		}
-	}`
+	line2 := "Suite 100"
+	state := "CA"
+	taxID := "123456789"
+	billingDetails := &domain.BillingDetails{
+		BillingFrequency: "monthly",
+		TaxID:           &taxID,
+		Address: &domain.BillingAddress{
+			Line1:      "123 Main St",
+			Line2:      &line2,
+			City:       "San Francisco",
+			State:      &state,
+			PostalCode: "94105",
+			Country:    "US",
+		},
+	}
 
 	advertiser := &domain.Advertiser{
 		AdvertiserID:    123,
@@ -290,7 +293,7 @@ func TestMapAdvertiserToEverflowRequest(t *testing.T) {
 		Name:            "Test Advertiser",
 		Status:          "active",
 		ContactEmail:    &email,
-		BillingDetails:  &billingDetails,
+		BillingDetails:  billingDetails,
 		CreatedAt:       time.Now(),
 		UpdatedAt:       time.Now(),
 	}

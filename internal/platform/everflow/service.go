@@ -257,60 +257,109 @@ func (s *Service) mapAdvertiserToEverflowRequest(advertiser *domain.Advertiser) 
 		accountStatus = "pending"
 	}
 
+	// Determine default currency
+	defaultCurrency := "USD"
+	if advertiser.DefaultCurrencyID != nil {
+		defaultCurrency = *advertiser.DefaultCurrencyID
+	}
+
 	// Create basic request
 	req := &EverflowCreateAdvertiserRequest{
 		Name:              advertiser.Name,
 		AccountStatus:     accountStatus,
-		DefaultCurrencyID: "USD", // Default to USD, could be configurable
+		DefaultCurrencyID: defaultCurrency,
 	}
 
-	// Add contact email as internal notes if available
-	if advertiser.ContactEmail != nil {
+	// Map Everflow-specific fields
+	if advertiser.InternalNotes != nil {
+		req.InternalNotes = advertiser.InternalNotes
+	} else if advertiser.ContactEmail != nil {
+		// Fallback: Add contact email as internal notes if no internal notes but contact email exists
 		notes := fmt.Sprintf("Contact Email: %s", *advertiser.ContactEmail)
 		req.InternalNotes = &notes
 	}
 
-	// Parse billing details if available
+	if advertiser.PlatformName != nil {
+		req.PlatformName = advertiser.PlatformName
+	}
+
+	if advertiser.PlatformURL != nil {
+		req.PlatformURL = advertiser.PlatformURL
+	}
+
+	if advertiser.PlatformUsername != nil {
+		req.PlatformUsername = advertiser.PlatformUsername
+	}
+
+	if advertiser.AccountingContactEmail != nil {
+		req.AccountingContactEmail = advertiser.AccountingContactEmail
+	}
+
+	if advertiser.OfferIDMacro != nil {
+		req.OfferIDMacro = advertiser.OfferIDMacro
+	}
+
+	if advertiser.AffiliateIDMacro != nil {
+		req.AffiliateIDMacro = advertiser.AffiliateIDMacro
+	}
+
+	if advertiser.AttributionMethod != nil {
+		req.AttributionMethod = advertiser.AttributionMethod
+	}
+
+	if advertiser.EmailAttributionMethod != nil {
+		req.EmailAttributionMethod = advertiser.EmailAttributionMethod
+	}
+
+	if advertiser.AttributionPriority != nil {
+		req.AttributionPriority = advertiser.AttributionPriority
+	}
+
+	if advertiser.ReportingTimezoneID != nil {
+		req.ReportingTimezoneID = advertiser.ReportingTimezoneID
+	}
+
+	if advertiser.IsExposePublisherReporting != nil {
+		req.IsExposePublisherReportingData = advertiser.IsExposePublisherReporting
+	}
+
+	// Map billing details if available
 	if advertiser.BillingDetails != nil {
-		var billingData map[string]interface{}
-		if err := json.Unmarshal([]byte(*advertiser.BillingDetails), &billingData); err == nil {
-			// If we have an address in billing details, add it to the request
-			if address, ok := billingData["address"].(map[string]interface{}); ok {
-				isContactAddressEnabled := true
-				req.IsContactAddressEnabled = &isContactAddressEnabled
+		// Map billing information to Everflow billing structure
+		req.Billing = &AdvertiserBilling{
+			BillingFrequency:           advertiser.BillingDetails.BillingFrequency,
+			TaxID:                      advertiser.BillingDetails.TaxID,
+			IsInvoiceCreationAuto:      advertiser.BillingDetails.IsInvoiceCreationAuto,
+			InvoiceAmountThreshold:     advertiser.BillingDetails.InvoiceAmountThreshold,
+			AutoInvoiceStartDate:       advertiser.BillingDetails.AutoInvoiceStartDate,
+			DefaultInvoiceIsHidden:     advertiser.BillingDetails.DefaultInvoiceIsHidden,
+			InvoiceGenerationDaysDelay: advertiser.BillingDetails.InvoiceGenerationDaysDelay,
+			DefaultPaymentTerms:        advertiser.BillingDetails.DefaultPaymentTerms,
+			Details:                    advertiser.BillingDetails.AdditionalDetails,
+		}
 
-				// Extract address fields with defaults
-				address1 := getStringFromMap(address, "line1", "")
-				address2 := getStringFromMap(address, "line2", "")
-				city := getStringFromMap(address, "city", "")
-				zipCode := getStringFromMap(address, "postal_code", "")
-				country := getStringFromMap(address, "country", "US")
-				region := getStringFromMap(address, "state", "CA")
+		// If we have an address in billing details, add it to the request
+		if advertiser.BillingDetails.Address != nil {
+			isContactAddressEnabled := true
+			req.IsContactAddressEnabled = &isContactAddressEnabled
 
-				if address1 != "" && city != "" && zipCode != "" {
-					req.ContactAddress = &AdvertiserAddress{
-						Address1:      address1,
-						Address2:      &address2,
-						City:          city,
-						ZipPostalCode: zipCode,
-						CountryCode:   country,
-						RegionCode:    region,
-					}
-				}
+			address := advertiser.BillingDetails.Address
+			address2 := ""
+			if address.Line2 != nil {
+				address2 = *address.Line2
+			}
+			region := "CA" // Default region
+			if address.State != nil {
+				region = *address.State
 			}
 
-			// If we have billing frequency, add it to the request
-			if frequency, ok := billingData["billing_frequency"].(string); ok {
-				if frequency == "weekly" || frequency == "monthly" {
-					req.Billing = &AdvertiserBilling{
-						BillingFrequency: frequency,
-					}
-
-					// Add tax ID if available
-					if taxID, ok := billingData["tax_id"].(string); ok {
-						req.Billing.TaxID = &taxID
-					}
-				}
+			req.ContactAddress = &AdvertiserAddress{
+				Address1:      address.Line1,
+				Address2:      &address2,
+				City:          address.City,
+				ZipPostalCode: address.PostalCode,
+				CountryCode:   address.Country,
+				RegionCode:    region,
 			}
 		}
 	}
@@ -375,12 +424,4 @@ func (s *Service) mapCampaignToEverflowRequest(campaign *domain.Campaign, networ
 	}
 
 	return req, nil
-}
-
-// Helper function to get string value from a map with a default
-func getStringFromMap(data map[string]interface{}, key, defaultValue string) string {
-	if value, ok := data[key].(string); ok {
-		return value
-	}
-	return defaultValue
 }

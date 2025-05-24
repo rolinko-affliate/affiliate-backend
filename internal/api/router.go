@@ -83,6 +83,11 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		advertisers.PUT("/:id", opts.AdvertiserHandler.UpdateAdvertiser)
 		advertisers.DELETE("/:id", opts.AdvertiserHandler.DeleteAdvertiser)
 		
+		// Everflow sync endpoints
+		advertisers.POST("/:id/sync-to-everflow", opts.AdvertiserHandler.SyncAdvertiserToEverflow)
+		advertisers.POST("/:id/sync-from-everflow", opts.AdvertiserHandler.SyncAdvertiserFromEverflow)
+		advertisers.GET("/:id/compare-with-everflow", opts.AdvertiserHandler.CompareAdvertiserWithEverflow)
+		
 		// Advertiser's campaigns
 		advertisers.GET("/:id/campaigns", opts.CampaignHandler.ListCampaignsByAdvertiser)
 		

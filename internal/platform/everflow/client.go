@@ -37,7 +37,7 @@ type EverflowCreateAdvertiserRequest struct {
 	InternalNotes                  *string             `json:"internal_notes,omitempty"`
 	ReportingTimezoneID            *int                `json:"reporting_timezone_id,omitempty"`
 	AttributionMethod              *string             `json:"attribution_method,omitempty"`       // "last_touch" or "first_touch"
-	EmailAttributionMethod         *string             `json:"email_attribution_method,omitempty"` // "last_affiliate_attribution"
+	EmailAttributionMethod         *string             `json:"email_attribution_method,omitempty"` // "last_affiliate_attribution", "first_affiliate_attribution"
 	AttributionPriority            *string             `json:"attribution_priority,omitempty"`     // "click", "coupon_code"
 	VerificationToken              *string             `json:"verification_token,omitempty"`
 	OfferIDMacro                   *string             `json:"offer_id_macro,omitempty"`
@@ -79,7 +79,7 @@ type AdvertiserUser struct {
 
 // AdvertiserBilling represents an advertiser's billing information
 type AdvertiserBilling struct {
-	BillingFrequency           string                 `json:"billing_frequency"` // "weekly", "monthly", "other"
+	BillingFrequency           string                 `json:"billing_frequency"` // "weekly", "bimonthly", "monthly", "two_months", "quarterly", "manual", "other"
 	TaxID                      *string                `json:"tax_id,omitempty"`
 	IsInvoiceCreationAuto      *bool                  `json:"is_invoice_creation_auto,omitempty"`
 	InvoiceAmountThreshold     *float64               `json:"invoice_amount_threshold,omitempty"`
@@ -296,7 +296,7 @@ type ListAdvertisersOptions struct {
 
 // ListAdvertisers retrieves all advertisers with optional filters
 func (c *Client) ListAdvertisers(ctx context.Context, opts *ListAdvertisersOptions) (*EverflowListAdvertisersResponse, error) {
-	reqURL := everflowAPIBaseURL + "/v1/networks/advertisers"
+	reqURL := everflowAPIBaseURL + "/networks/advertisers"
 
 	// Add query parameters if options are provided
 	if opts != nil {
@@ -348,7 +348,7 @@ func (c *Client) CreateAdvertiser(ctx context.Context, req EverflowCreateAdverti
 		return nil, fmt.Errorf("failed to marshal create advertiser request: %w", err)
 	}
 
-	httpReq, err := http.NewRequestWithContext(ctx, "POST", everflowAPIBaseURL+"/v1/networks/advertisers", bytes.NewBuffer(payloadBytes))
+	httpReq, err := http.NewRequestWithContext(ctx, "POST", everflowAPIBaseURL+"/networks/advertisers", bytes.NewBuffer(payloadBytes))
 	if err != nil {
 		return nil, fmt.Errorf("failed to create HTTP request: %w", err)
 	}
@@ -395,7 +395,7 @@ const (
 
 // GetAdvertiser retrieves a single advertiser by ID from Everflow
 func (c *Client) GetAdvertiser(ctx context.Context, networkAdvertiserID int64, opts *GetAdvertiserOptions) (*Advertiser, error) {
-	reqURL := fmt.Sprintf("%s/v1/networks/advertisers/%d", everflowAPIBaseURL, networkAdvertiserID)
+	reqURL := fmt.Sprintf("%s/networks/advertisers/%d", everflowAPIBaseURL, networkAdvertiserID)
 
 	// Add query parameters if options are provided
 	if opts != nil && len(opts.Relationships) > 0 {
@@ -441,29 +441,30 @@ func (c *Client) GetAdvertiser(ctx context.Context, networkAdvertiserID int64, o
 
 // EverflowUpdateAdvertiserRequest represents the request to update an advertiser in Everflow
 type EverflowUpdateAdvertiserRequest struct {
-	Name                    string              `json:"name"`
-	AccountStatus           string              `json:"account_status"`
-	NetworkEmployeeID       int                 `json:"network_employee_id"`
-	InternalNotes           *string             `json:"internal_notes,omitempty"`
-	AddressID               *int                `json:"address_id,omitempty"`
-	IsContactAddressEnabled *bool               `json:"is_contact_address_enabled,omitempty"`
-	SalesManagerID          *int                `json:"sales_manager_id,omitempty"`
-	DefaultCurrencyID       string              `json:"default_currency_id"`
-	PlatformName            *string             `json:"platform_name,omitempty"`
-	PlatformURL             *string             `json:"platform_url,omitempty"`
-	PlatformUsername        *string             `json:"platform_username,omitempty"`
-	ReportingTimezoneID     int                 `json:"reporting_timezone_id"`
-	AttributionMethod       *string             `json:"attribution_method,omitempty"`
-	EmailAttributionMethod  *string             `json:"email_attribution_method,omitempty"`
-	AttributionPriority     *string             `json:"attribution_priority,omitempty"`
-	AccountingContactEmail  *string             `json:"accounting_contact_email,omitempty"`
-	VerificationToken       *string             `json:"verification_token,omitempty"`
-	OfferIDMacro            *string             `json:"offer_id_macro,omitempty"`
-	AffiliateIDMacro        *string             `json:"affiliate_id_macro,omitempty"`
-	Labels                  []string            `json:"labels,omitempty"`
-	ContactAddress          *AdvertiserAddress  `json:"contact_address,omitempty"`
-	Billing                 *AdvertiserBilling  `json:"billing,omitempty"`
-	Settings                *AdvertiserSettings `json:"settings,omitempty"`
+	Name                           string              `json:"name"`
+	AccountStatus                  string              `json:"account_status"`
+	NetworkEmployeeID              int                 `json:"network_employee_id"`
+	InternalNotes                  *string             `json:"internal_notes,omitempty"`
+	AddressID                      *int                `json:"address_id,omitempty"`
+	IsContactAddressEnabled        *bool               `json:"is_contact_address_enabled,omitempty"`
+	SalesManagerID                 *int                `json:"sales_manager_id,omitempty"`
+	IsExposePublisherReportingData *bool               `json:"is_expose_publisher_reporting_data,omitempty"`
+	DefaultCurrencyID              string              `json:"default_currency_id"`
+	PlatformName                   *string             `json:"platform_name,omitempty"`
+	PlatformURL                    *string             `json:"platform_url,omitempty"`
+	PlatformUsername               *string             `json:"platform_username,omitempty"`
+	ReportingTimezoneID            int                 `json:"reporting_timezone_id"`
+	AttributionMethod              *string             `json:"attribution_method,omitempty"`
+	EmailAttributionMethod         *string             `json:"email_attribution_method,omitempty"`
+	AttributionPriority            *string             `json:"attribution_priority,omitempty"`
+	AccountingContactEmail         *string             `json:"accounting_contact_email,omitempty"`
+	VerificationToken              *string             `json:"verification_token,omitempty"`
+	OfferIDMacro                   *string             `json:"offer_id_macro,omitempty"`
+	AffiliateIDMacro               *string             `json:"affiliate_id_macro,omitempty"`
+	Labels                         []string            `json:"labels,omitempty"`
+	ContactAddress                 *AdvertiserAddress  `json:"contact_address,omitempty"`
+	Billing                        *AdvertiserBilling  `json:"billing,omitempty"`
+	Settings                       *AdvertiserSettings `json:"settings,omitempty"`
 }
 
 // EverflowUpdateAdvertiserResponse represents the response from updating an advertiser
@@ -478,7 +479,7 @@ func (c *Client) UpdateAdvertiser(ctx context.Context, networkAdvertiserID int64
 		return nil, fmt.Errorf("failed to marshal update advertiser request: %w", err)
 	}
 
-	httpReq, err := http.NewRequestWithContext(ctx, "PUT", fmt.Sprintf("%s/v1/networks/advertisers/%d", everflowAPIBaseURL, networkAdvertiserID), bytes.NewBuffer(payloadBytes))
+	httpReq, err := http.NewRequestWithContext(ctx, "PUT", fmt.Sprintf("%s/networks/advertisers/%d", everflowAPIBaseURL, networkAdvertiserID), bytes.NewBuffer(payloadBytes))
 	if err != nil {
 		return nil, fmt.Errorf("failed to create HTTP request: %w", err)
 	}
@@ -571,7 +572,7 @@ func (c *Client) AddTagsToAdvertiser(ctx context.Context, networkAdvertiserID in
 	httpReq, err := http.NewRequestWithContext(
 		ctx,
 		"POST",
-		fmt.Sprintf("%s/v1/networks/advertisers/%d/tags", everflowAPIBaseURL, networkAdvertiserID),
+		fmt.Sprintf("%s/networks/advertisers/%d/tags", everflowAPIBaseURL, networkAdvertiserID),
 		bytes.NewBuffer(payloadBytes),
 	)
 	if err != nil {

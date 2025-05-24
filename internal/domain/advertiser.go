@@ -57,10 +57,13 @@ type AdvertiserDiscrepancy struct {
 	Severity      string      `json:"severity"` // 'low', 'medium', 'high', 'critical'
 }
 
-// AdvertiserWithEverflowData represents an advertiser with Everflow comparison data
-type AdvertiserWithEverflowData struct {
+// AdvertiserWithProviderData represents an advertiser with provider comparison data
+type AdvertiserWithProviderData struct {
 	*Advertiser
-	EverflowData   interface{}                `json:"everflow_data,omitempty"`
+	ProviderData   interface{}                `json:"provider_data,omitempty"`
 	Discrepancies  []AdvertiserDiscrepancy    `json:"discrepancies,omitempty"`
 	SyncStatus     string                     `json:"sync_status"` // 'synced', 'out_of_sync', 'not_synced', 'error'
 }
+
+// AdvertiserWithEverflowData is an alias for backward compatibility
+type AdvertiserWithEverflowData = AdvertiserWithProviderData

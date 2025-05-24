@@ -9,6 +9,7 @@ import (
 	"github.com/affiliate-backend/internal/config"
 	"github.com/affiliate-backend/internal/platform/crypto"
 	"github.com/affiliate-backend/internal/platform/everflow"
+	"github.com/affiliate-backend/internal/platform/provider"
 	"github.com/affiliate-backend/internal/repository"
 	"github.com/affiliate-backend/internal/service"
 	"github.com/jackc/pgx/v5/pgxpool"
@@ -34,19 +35,26 @@ func main() {
 	// Initialize crypto service
 	cryptoService := crypto.NewServiceFromConfig()
 
-	// Initialize Everflow service
-	everflowService, err := everflow.NewEverflowServiceFromEnv(
-		advertiserRepo,
-		providerMappingRepo,
-		campaignRepo,
-		cryptoService,
-	)
-	if err != nil {
-		log.Printf("Warning: Failed to initialize Everflow service: %v", err)
+	// Initialize provider services
+	var providerAdvertiserService provider.ProviderAdvertiserService
+	var providerOfferService provider.ProviderCampaignService
+
+	// Initialize Everflow provider service if configured
+	everflowAPIKey := os.Getenv("EVERFLOW_API_KEY")
+	if everflowAPIKey != "" {
+		everflowProviderService := everflow.NewProviderService(
+			everflowAPIKey,
+			advertiserRepo,
+			providerMappingRepo,
+			campaignRepo,
+			cryptoService,
+		)
+		providerAdvertiserService = everflowProviderService
+		providerOfferService = everflowProviderService
 	}
 
 	// Initialize sync service
-	syncService := service.NewAdvertiserSyncService(advertiserRepo, providerMappingRepo, everflowService)
+	syncService := service.NewAdvertiserSyncService(advertiserRepo, providerMappingRepo, providerAdvertiserService)
 
 	// Initialize services
 	advertiserService := service.NewAdvertiserService(
@@ -61,7 +69,7 @@ func main() {
 		campaignRepo,
 		advertiserRepo,
 		orgRepo,
-		everflowService,
+		providerOfferService,
 		cryptoService,
 	)
 	

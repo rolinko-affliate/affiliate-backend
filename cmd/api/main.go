@@ -36,6 +36,7 @@ import (
 	"github.com/affiliate-backend/internal/config"
 	"github.com/affiliate-backend/internal/platform/crypto"
 	"github.com/affiliate-backend/internal/platform/everflow"
+	"github.com/affiliate-backend/internal/platform/provider"
 	"github.com/affiliate-backend/internal/repository"
 	"github.com/affiliate-backend/internal/service"
 )
@@ -146,9 +147,19 @@ func main() {
 
 	// Initialize Platform Services
 	cryptoService := crypto.NewServiceFromConfig()
-	everflowService, err := everflow.NewEverflowServiceFromEnv(advertiserRepo, providerMappingRepo, campaignRepo, cryptoService)
-	if err != nil {
-		log.Printf("Warning: Failed to initialize Everflow service: %v", err)
+	
+	// Initialize provider services
+	var providerAdvertiserSvc provider.ProviderAdvertiserService
+	var providerOfferSvc provider.ProviderCampaignService
+	
+	// Try to initialize Everflow provider service
+	if apiKey := os.Getenv("EVERFLOW_API_KEY"); apiKey != "" {
+		everflowProviderSvc := everflow.NewProviderService(apiKey, advertiserRepo, providerMappingRepo, campaignRepo, cryptoService)
+		providerAdvertiserSvc = everflowProviderSvc
+		providerOfferSvc = everflowProviderSvc
+		log.Println("Everflow provider service initialized")
+	} else {
+		log.Println("Warning: EVERFLOW_API_KEY not set, provider services will be unavailable")
 	}
 
 	// Initialize Domain Services
@@ -156,11 +167,11 @@ func main() {
 	organizationService := service.NewOrganizationService(organizationRepo)
 	
 	// Initialize advertiser sync service
-	advertiserSyncService := service.NewAdvertiserSyncService(advertiserRepo, providerMappingRepo, everflowService)
+	advertiserSyncService := service.NewAdvertiserSyncService(advertiserRepo, providerMappingRepo, providerAdvertiserSvc)
 	
 	advertiserService := service.NewAdvertiserService(advertiserRepo, providerMappingRepo, organizationRepo, advertiserSyncService, cryptoService)
 	affiliateService := service.NewAffiliateService(affiliateRepo, organizationRepo)
-	campaignService := service.NewCampaignService(campaignRepo, advertiserRepo, organizationRepo, everflowService, cryptoService)
+	campaignService := service.NewCampaignService(campaignRepo, advertiserRepo, organizationRepo, providerOfferSvc, cryptoService)
 	// Initialize other services as needed
 
 	// Initialize Handlers

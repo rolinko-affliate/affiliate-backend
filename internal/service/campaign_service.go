@@ -9,7 +9,7 @@ import (
 
 	"github.com/affiliate-backend/internal/domain"
 	"github.com/affiliate-backend/internal/platform/crypto"
-	"github.com/affiliate-backend/internal/platform/everflow"
+	"github.com/affiliate-backend/internal/platform/provider"
 	"github.com/affiliate-backend/internal/repository"
 )
 
@@ -32,11 +32,11 @@ type CampaignService interface {
 
 // campaignService implements CampaignService
 type campaignService struct {
-	campaignRepo    repository.CampaignRepository
-	advertiserRepo  repository.AdvertiserRepository
-	orgRepo         repository.OrganizationRepository
-	everflowService *everflow.Service
-	cryptoService   crypto.Service
+	campaignRepo      repository.CampaignRepository
+	advertiserRepo    repository.AdvertiserRepository
+	orgRepo           repository.OrganizationRepository
+	providerOfferSvc  provider.ProviderCampaignService
+	cryptoService     crypto.Service
 }
 
 // NewCampaignService creates a new campaign service
@@ -44,15 +44,15 @@ func NewCampaignService(
 	campaignRepo repository.CampaignRepository,
 	advertiserRepo repository.AdvertiserRepository,
 	orgRepo repository.OrganizationRepository,
-	everflowService *everflow.Service,
+	providerOfferSvc provider.ProviderCampaignService,
 	cryptoService crypto.Service,
 ) CampaignService {
 	return &campaignService{
-		campaignRepo:    campaignRepo,
-		advertiserRepo:  advertiserRepo,
-		orgRepo:         orgRepo,
-		everflowService: everflowService,
-		cryptoService:   cryptoService,
+		campaignRepo:     campaignRepo,
+		advertiserRepo:   advertiserRepo,
+		orgRepo:          orgRepo,
+		providerOfferSvc: providerOfferSvc,
+		cryptoService:    cryptoService,
 	}
 }
 
@@ -116,14 +116,14 @@ func (s *campaignService) CreateCampaign(ctx context.Context, campaign *domain.C
 		return nil, fmt.Errorf("failed to create campaign: %w", err)
 	}
 
-	// Sync to Everflow asynchronously if the service is available and campaign has required fields
-	if s.everflowService != nil && s.shouldSyncToEverflow(campaign) {
+	// Sync to provider asynchronously if the service is available and campaign has required fields
+	if s.providerOfferSvc != nil && s.shouldSyncToProvider(campaign) {
 		go func() {
 			// Use a background context since this is a fire-and-forget operation
 			bgCtx := context.Background()
-			if err := s.syncCampaignToEverflow(bgCtx, campaign); err != nil {
+			if err := s.syncCampaignToProvider(bgCtx, campaign); err != nil {
 				// Log the error but don't fail the campaign creation
-				log.Printf("Error syncing campaign to Everflow: %v", err)
+				log.Printf("Error syncing campaign to provider: %v", err)
 			}
 		}()
 	}
@@ -439,21 +439,21 @@ func (s *campaignService) validateOfferFields(campaign *domain.Campaign) error {
 	return nil
 }
 
-// shouldSyncToEverflow determines if a campaign should be synced to Everflow
-func (s *campaignService) shouldSyncToEverflow(campaign *domain.Campaign) bool {
-	// Only sync if campaign has a destination URL (required for Everflow offers)
+// shouldSyncToProvider determines if a campaign should be synced to the provider
+func (s *campaignService) shouldSyncToProvider(campaign *domain.Campaign) bool {
+	// Only sync if campaign has a destination URL (required for provider offers)
 	return campaign.DestinationURL != nil && *campaign.DestinationURL != ""
 }
 
-// syncCampaignToEverflow syncs a campaign to Everflow as an offer
-func (s *campaignService) syncCampaignToEverflow(ctx context.Context, campaign *domain.Campaign) error {
-	// Create offer in Everflow
-	err := s.everflowService.CreateOfferInEverflow(ctx, campaign)
+// syncCampaignToProvider syncs a campaign to the provider as an offer
+func (s *campaignService) syncCampaignToProvider(ctx context.Context, campaign *domain.Campaign) error {
+	// Create offer in provider
+	err := s.providerOfferSvc.CreateOfferInProvider(ctx, campaign)
 	if err != nil {
-		return fmt.Errorf("failed to create offer in Everflow: %w", err)
+		return fmt.Errorf("failed to create offer in provider: %w", err)
 	}
 	
-	// The Everflow service handles creating the provider offer record internally
+	// The provider service handles creating the provider offer record internally
 	
 	return nil
 }

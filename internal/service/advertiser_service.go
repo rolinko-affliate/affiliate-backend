@@ -13,14 +13,14 @@ import (
 type AdvertiserService interface {
 	CreateAdvertiser(ctx context.Context, advertiser *domain.Advertiser) (*domain.Advertiser, error)
 	GetAdvertiserByID(ctx context.Context, id int64) (*domain.Advertiser, error)
-	GetAdvertiserWithEverflowData(ctx context.Context, id int64) (*domain.AdvertiserWithEverflowData, error)
+	GetAdvertiserWithProviderData(ctx context.Context, id int64) (*domain.AdvertiserWithProviderData, error)
 	UpdateAdvertiser(ctx context.Context, advertiser *domain.Advertiser) error
 	ListAdvertisersByOrganization(ctx context.Context, orgID int64, page, pageSize int) ([]*domain.Advertiser, error)
 	DeleteAdvertiser(ctx context.Context, id int64) error
 	
-	SyncAdvertiserToEverflow(ctx context.Context, advertiserID int64) error
-	SyncAdvertiserFromEverflow(ctx context.Context, advertiserID int64) error
-	CompareAdvertiserWithEverflow(ctx context.Context, advertiserID int64) ([]domain.AdvertiserDiscrepancy, error)
+	SyncAdvertiserToProvider(ctx context.Context, advertiserID int64) error
+	SyncAdvertiserFromProvider(ctx context.Context, advertiserID int64) error
+	CompareAdvertiserWithProvider(ctx context.Context, advertiserID int64) ([]domain.AdvertiserDiscrepancy, error)
 	
 	CreateAdvertiserProviderMapping(ctx context.Context, mapping *domain.AdvertiserProviderMapping) (*domain.AdvertiserProviderMapping, error)
 	GetAdvertiserProviderMapping(ctx context.Context, advertiserID int64, providerType string) (*domain.AdvertiserProviderMapping, error)
@@ -72,7 +72,7 @@ func (s *advertiserService) CreateAdvertiser(ctx context.Context, advertiser *do
 	}
 
 	if s.syncService != nil {
-		s.syncService.AsyncSyncToEverflow(ctx, advertiser)
+		s.syncService.AsyncSyncToProvider(ctx, advertiser)
 	}
 
 	return advertiser, nil
@@ -94,7 +94,7 @@ func (s *advertiserService) UpdateAdvertiser(ctx context.Context, advertiser *do
 	}
 
 	if s.syncService != nil {
-		s.syncService.AsyncSyncUpdateToEverflow(ctx, advertiser)
+		s.syncService.AsyncSyncUpdateToProvider(ctx, advertiser)
 	}
 
 	return nil
@@ -185,37 +185,37 @@ func (s *advertiserService) DeleteAdvertiserProviderMapping(ctx context.Context,
 	return s.providerMappingRepo.DeleteAdvertiserProviderMapping(ctx, mappingID)
 }
 
-func (s *advertiserService) GetAdvertiserWithEverflowData(ctx context.Context, id int64) (*domain.AdvertiserWithEverflowData, error) {
+func (s *advertiserService) GetAdvertiserWithProviderData(ctx context.Context, id int64) (*domain.AdvertiserWithProviderData, error) {
 	if s.syncService == nil {
 		advertiser, err := s.advertiserRepo.GetAdvertiserByID(ctx, id)
 		if err != nil {
 			return nil, fmt.Errorf("failed to get advertiser: %w", err)
 		}
-		return &domain.AdvertiserWithEverflowData{
+		return &domain.AdvertiserWithProviderData{
 			Advertiser: advertiser,
 			SyncStatus: "service_unavailable",
 		}, nil
 	}
-	return s.syncService.GetAdvertiserWithEverflowData(ctx, id)
+	return s.syncService.GetAdvertiserWithProviderData(ctx, id)
 }
 
-func (s *advertiserService) SyncAdvertiserToEverflow(ctx context.Context, advertiserID int64) error {
+func (s *advertiserService) SyncAdvertiserToProvider(ctx context.Context, advertiserID int64) error {
 	if s.syncService == nil {
 		return fmt.Errorf("sync service not available")
 	}
-	return s.syncService.SyncToEverflow(ctx, advertiserID)
+	return s.syncService.SyncToProvider(ctx, advertiserID)
 }
 
-func (s *advertiserService) SyncAdvertiserFromEverflow(ctx context.Context, advertiserID int64) error {
+func (s *advertiserService) SyncAdvertiserFromProvider(ctx context.Context, advertiserID int64) error {
 	if s.syncService == nil {
 		return fmt.Errorf("sync service not available")
 	}
-	return s.syncService.SyncFromEverflow(ctx, advertiserID)
+	return s.syncService.SyncFromProvider(ctx, advertiserID)
 }
 
-func (s *advertiserService) CompareAdvertiserWithEverflow(ctx context.Context, advertiserID int64) ([]domain.AdvertiserDiscrepancy, error) {
+func (s *advertiserService) CompareAdvertiserWithProvider(ctx context.Context, advertiserID int64) ([]domain.AdvertiserDiscrepancy, error) {
 	if s.syncService == nil {
 		return nil, fmt.Errorf("sync service not available")
 	}
-	return s.syncService.CompareWithEverflow(ctx, advertiserID)
+	return s.syncService.CompareWithProvider(ctx, advertiserID)
 }

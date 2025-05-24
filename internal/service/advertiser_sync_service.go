@@ -7,31 +7,31 @@ import (
 	"time"
 
 	"github.com/affiliate-backend/internal/domain"
-	"github.com/affiliate-backend/internal/platform/everflow"
+	"github.com/affiliate-backend/internal/platform/provider"
 	"github.com/affiliate-backend/internal/repository"
 )
 
 type AdvertiserSyncService struct {
 	advertiserRepo         repository.AdvertiserRepository
 	providerMappingRepo    repository.AdvertiserProviderMappingRepository
-	everflowService        *everflow.Service
+	providerAdvertiserSvc  provider.ProviderAdvertiserService
 }
 
 func NewAdvertiserSyncService(
 	advertiserRepo repository.AdvertiserRepository,
 	providerMappingRepo repository.AdvertiserProviderMappingRepository,
-	everflowService *everflow.Service,
+	providerAdvertiserSvc provider.ProviderAdvertiserService,
 ) *AdvertiserSyncService {
 	return &AdvertiserSyncService{
-		advertiserRepo:      advertiserRepo,
-		providerMappingRepo: providerMappingRepo,
-		everflowService:     everflowService,
+		advertiserRepo:        advertiserRepo,
+		providerMappingRepo:   providerMappingRepo,
+		providerAdvertiserSvc: providerAdvertiserSvc,
 	}
 }
 
-func (s *AdvertiserSyncService) SyncToEverflow(ctx context.Context, advertiserID int64) error {
-	if s.everflowService == nil {
-		return fmt.Errorf("Everflow service not available")
+func (s *AdvertiserSyncService) SyncToProvider(ctx context.Context, advertiserID int64) error {
+	if s.providerAdvertiserSvc == nil {
+		return fmt.Errorf("Provider advertiser service not available")
 	}
 
 	advertiser, err := s.advertiserRepo.GetAdvertiserByID(ctx, advertiserID)
@@ -41,46 +41,36 @@ func (s *AdvertiserSyncService) SyncToEverflow(ctx context.Context, advertiserID
 
 	mapping, err := s.providerMappingRepo.GetAdvertiserProviderMapping(ctx, advertiserID, "everflow")
 	if err != nil {
-		return s.everflowService.CreateAdvertiserInEverflow(ctx, advertiser)
+		return s.providerAdvertiserSvc.CreateAdvertiserInProvider(ctx, advertiser)
 	}
 
 	if mapping.ProviderAdvertiserID == nil {
 		return fmt.Errorf("advertiser mapping exists but has no provider advertiser ID")
 	}
 
-	updateReq, err := s.mapAdvertiserToEverflowUpdateRequest(advertiser)
-	if err != nil {
-		return fmt.Errorf("failed to map advertiser to Everflow update request: %w", err)
-	}
-
-	_, err = s.everflowService.UpdateAdvertiserInEverflowByMapping(ctx, advertiserID, *updateReq)
+	_, err = s.providerAdvertiserSvc.UpdateAdvertiserInProvider(ctx, advertiserID, advertiser)
 	return err
 }
 
-func (s *AdvertiserSyncService) SyncFromEverflow(ctx context.Context, advertiserID int64) error {
-	if s.everflowService == nil {
-		return fmt.Errorf("Everflow service not available")
+func (s *AdvertiserSyncService) SyncFromProvider(ctx context.Context, advertiserID int64) error {
+	if s.providerAdvertiserSvc == nil {
+		return fmt.Errorf("Provider advertiser service not available")
 	}
 
-	everflowAdvertiser, err := s.everflowService.GetAdvertiserFromEverflowByMapping(ctx, advertiserID, []string{"billing", "settings"})
+	providerAdvertiser, err := s.providerAdvertiserSvc.GetAdvertiserFromProvider(ctx, advertiserID, []string{"billing", "settings"})
 	if err != nil {
-		return fmt.Errorf("failed to get advertiser from Everflow: %w", err)
+		return fmt.Errorf("failed to get advertiser from provider: %w", err)
 	}
 
-	localAdvertiser, err := s.advertiserRepo.GetAdvertiserByID(ctx, advertiserID)
-	if err != nil {
-		return fmt.Errorf("failed to get local advertiser: %w", err)
-	}
-
-	s.mapEverflowToLocalAdvertiser(everflowAdvertiser, localAdvertiser)
-	return s.advertiserRepo.UpdateAdvertiser(ctx, localAdvertiser)
+	// The provider service already returns a domain.Advertiser with merged data
+	return s.advertiserRepo.UpdateAdvertiser(ctx, providerAdvertiser)
 }
 
-func (s *AdvertiserSyncService) CompareWithEverflow(ctx context.Context, advertiserID int64) ([]domain.AdvertiserDiscrepancy, error) {
+func (s *AdvertiserSyncService) CompareWithProvider(ctx context.Context, advertiserID int64) ([]domain.AdvertiserDiscrepancy, error) {
 	var discrepancies []domain.AdvertiserDiscrepancy
 
-	if s.everflowService == nil {
-		return discrepancies, fmt.Errorf("Everflow service not available")
+	if s.providerAdvertiserSvc == nil {
+		return discrepancies, fmt.Errorf("Provider advertiser service not available")
 	}
 
 	localAdvertiser, err := s.advertiserRepo.GetAdvertiserByID(ctx, advertiserID)
@@ -88,15 +78,15 @@ func (s *AdvertiserSyncService) CompareWithEverflow(ctx context.Context, adverti
 		return discrepancies, fmt.Errorf("failed to get local advertiser: %w", err)
 	}
 
-	everflowAdvertiser, err := s.everflowService.GetAdvertiserFromEverflowByMapping(ctx, advertiserID, []string{"billing", "settings"})
+	providerAdvertiser, err := s.providerAdvertiserSvc.GetAdvertiserFromProvider(ctx, advertiserID, []string{"billing", "settings"})
 	if err != nil {
-		return discrepancies, fmt.Errorf("failed to get Everflow advertiser: %w", err)
+		return discrepancies, fmt.Errorf("failed to get provider advertiser: %w", err)
 	}
 
-	return s.compareAdvertisers(localAdvertiser, everflowAdvertiser), nil
+	return s.compareAdvertisers(localAdvertiser, providerAdvertiser), nil
 }
 
-func (s *AdvertiserSyncService) AsyncSyncToEverflow(ctx context.Context, advertiser *domain.Advertiser) {
+func (s *AdvertiserSyncService) AsyncSyncToProvider(ctx context.Context, advertiser *domain.Advertiser) {
 	go func() {
 		bgCtx := context.Background()
 		
@@ -104,14 +94,14 @@ func (s *AdvertiserSyncService) AsyncSyncToEverflow(ctx context.Context, adverti
 		advertiser.EverflowSyncStatus = &pendingStatus
 		s.advertiserRepo.UpdateAdvertiser(bgCtx, advertiser)
 
-		if err := s.everflowService.CreateAdvertiserInEverflow(bgCtx, advertiser); err != nil {
+		if err := s.providerAdvertiserSvc.CreateAdvertiserInProvider(bgCtx, advertiser); err != nil {
 			failedStatus := "failed"
 			errorMsg := err.Error()
 			advertiser.EverflowSyncStatus = &failedStatus
 			advertiser.EverflowSyncError = &errorMsg
 			s.advertiserRepo.UpdateAdvertiser(bgCtx, advertiser)
 			
-			log.Printf("Error creating advertiser %d in Everflow: %v", advertiser.AdvertiserID, err)
+			log.Printf("Error creating advertiser %d in provider: %v", advertiser.AdvertiserID, err)
 		} else {
 			syncedStatus := "synced"
 			now := time.Now()
@@ -120,12 +110,12 @@ func (s *AdvertiserSyncService) AsyncSyncToEverflow(ctx context.Context, adverti
 			advertiser.EverflowSyncError = nil
 			s.advertiserRepo.UpdateAdvertiser(bgCtx, advertiser)
 			
-			log.Printf("Successfully synced advertiser %d to Everflow", advertiser.AdvertiserID)
+			log.Printf("Successfully synced advertiser %d to provider", advertiser.AdvertiserID)
 		}
 	}()
 }
 
-func (s *AdvertiserSyncService) AsyncSyncUpdateToEverflow(ctx context.Context, advertiser *domain.Advertiser) {
+func (s *AdvertiserSyncService) AsyncSyncUpdateToProvider(ctx context.Context, advertiser *domain.Advertiser) {
 	if advertiser.EverflowSyncStatus == nil || *advertiser.EverflowSyncStatus != "synced" {
 		return
 	}
@@ -137,14 +127,14 @@ func (s *AdvertiserSyncService) AsyncSyncUpdateToEverflow(ctx context.Context, a
 		advertiser.EverflowSyncStatus = &pendingStatus
 		s.advertiserRepo.UpdateAdvertiser(bgCtx, advertiser)
 		
-		if err := s.SyncToEverflow(bgCtx, advertiser.AdvertiserID); err != nil {
+		if err := s.SyncToProvider(bgCtx, advertiser.AdvertiserID); err != nil {
 			failedStatus := "failed"
 			errorMsg := err.Error()
 			advertiser.EverflowSyncStatus = &failedStatus
 			advertiser.EverflowSyncError = &errorMsg
 			s.advertiserRepo.UpdateAdvertiser(bgCtx, advertiser)
 			
-			log.Printf("Error updating advertiser %d in Everflow: %v", advertiser.AdvertiserID, err)
+			log.Printf("Error updating advertiser %d in provider: %v", advertiser.AdvertiserID, err)
 		} else {
 			syncedStatus := "synced"
 			now := time.Now()
@@ -153,43 +143,44 @@ func (s *AdvertiserSyncService) AsyncSyncUpdateToEverflow(ctx context.Context, a
 			advertiser.EverflowSyncError = nil
 			s.advertiserRepo.UpdateAdvertiser(bgCtx, advertiser)
 			
-			log.Printf("Successfully updated advertiser %d in Everflow", advertiser.AdvertiserID)
+			log.Printf("Successfully updated advertiser %d in provider", advertiser.AdvertiserID)
 		}
 	}()
 }
 
-func (s *AdvertiserSyncService) GetAdvertiserWithEverflowData(ctx context.Context, id int64) (*domain.AdvertiserWithEverflowData, error) {
+func (s *AdvertiserSyncService) GetAdvertiserWithProviderData(ctx context.Context, id int64) (*domain.AdvertiserWithProviderData, error) {
 	advertiser, err := s.advertiserRepo.GetAdvertiserByID(ctx, id)
 	if err != nil {
 		return nil, fmt.Errorf("failed to get advertiser: %w", err)
 	}
 
-	result := &domain.AdvertiserWithEverflowData{
+	result := &domain.AdvertiserWithProviderData{
 		Advertiser: advertiser,
 		SyncStatus: "not_synced",
 	}
 
-	if s.everflowService == nil {
+	if s.providerAdvertiserSvc == nil {
 		result.SyncStatus = "service_unavailable"
 		return result, nil
 	}
 
-	everflowAdvertiser, err := s.everflowService.GetAdvertiserFromEverflowByMapping(ctx, id, []string{"billing", "settings"})
+	providerAdvertiser, err := s.providerAdvertiserSvc.GetAdvertiserFromProvider(ctx, id, []string{"billing", "settings"})
 	if err != nil {
 		if advertiser.EverflowSyncStatus == nil || *advertiser.EverflowSyncStatus == "not_synced" {
 			result.SyncStatus = "not_synced"
 		} else {
 			result.SyncStatus = "error"
-			log.Printf("Error fetching advertiser %d from Everflow: %v", id, err)
+			log.Printf("Error fetching advertiser %d from provider: %v", id, err)
 		}
 		return result, nil
 	}
 
-	result.EverflowData = everflowAdvertiser
+	// Store the provider data in the ProviderData field
+	result.ProviderData = providerAdvertiser
 
-	discrepancies, err := s.CompareWithEverflow(ctx, id)
+	discrepancies, err := s.CompareWithProvider(ctx, id)
 	if err != nil {
-		log.Printf("Error comparing advertiser %d with Everflow: %v", id, err)
+		log.Printf("Error comparing advertiser %d with provider: %v", id, err)
 		result.SyncStatus = "comparison_error"
 	} else {
 		result.Discrepancies = discrepancies
@@ -203,20 +194,46 @@ func (s *AdvertiserSyncService) GetAdvertiserWithEverflowData(ctx context.Contex
 	return result, nil
 }
 
-// Helper methods that would be moved from the main service
-func (s *AdvertiserSyncService) mapAdvertiserToEverflowUpdateRequest(advertiser *domain.Advertiser) (*everflow.EverflowUpdateAdvertiserRequest, error) {
-	// Implementation would be moved from advertiser_service.go
-	// This is a placeholder - the actual implementation exists in the main service
-	return nil, fmt.Errorf("not implemented - to be moved from main service")
-}
+// Helper methods for comparing advertisers
+func (s *AdvertiserSyncService) compareAdvertisers(local *domain.Advertiser, provider *domain.Advertiser) []domain.AdvertiserDiscrepancy {
+	var discrepancies []domain.AdvertiserDiscrepancy
 
-func (s *AdvertiserSyncService) mapEverflowToLocalAdvertiser(everflowAdvertiser *everflow.Advertiser, localAdvertiser *domain.Advertiser) {
-	// Implementation would be moved from advertiser_service.go
-	// This is a placeholder - the actual implementation exists in the main service
-}
+	// Compare basic fields
+	if local.Name != provider.Name {
+		discrepancies = append(discrepancies, domain.AdvertiserDiscrepancy{
+			Field:         "name",
+			LocalValue:    local.Name,
+			ProviderValue: provider.Name,
+		})
+	}
 
-func (s *AdvertiserSyncService) compareAdvertisers(local *domain.Advertiser, everflow *everflow.Advertiser) []domain.AdvertiserDiscrepancy {
-	// Implementation would be moved from advertiser_service.go
-	// This is a placeholder - the actual implementation exists in the main service
-	return []domain.AdvertiserDiscrepancy{}
+	if local.Status != provider.Status {
+		discrepancies = append(discrepancies, domain.AdvertiserDiscrepancy{
+			Field:         "status",
+			LocalValue:    local.Status,
+			ProviderValue: provider.Status,
+		})
+	}
+
+	// Compare optional fields
+	if (local.DefaultCurrencyID == nil) != (provider.DefaultCurrencyID == nil) ||
+		(local.DefaultCurrencyID != nil && provider.DefaultCurrencyID != nil && *local.DefaultCurrencyID != *provider.DefaultCurrencyID) {
+		localVal := ""
+		providerVal := ""
+		if local.DefaultCurrencyID != nil {
+			localVal = *local.DefaultCurrencyID
+		}
+		if provider.DefaultCurrencyID != nil {
+			providerVal = *provider.DefaultCurrencyID
+		}
+		discrepancies = append(discrepancies, domain.AdvertiserDiscrepancy{
+			Field:         "default_currency_id",
+			LocalValue:    localVal,
+			ProviderValue: providerVal,
+		})
+	}
+
+	// Add more field comparisons as needed...
+
+	return discrepancies
 }

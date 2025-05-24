@@ -202,10 +202,10 @@ func ToAdvertiserResponse(advertiser *domain.Advertiser) *AdvertiserResponse {
 	}
 }
 
-func ToAdvertiserWithEverflowResponse(data *domain.AdvertiserWithEverflowData) *AdvertiserWithEverflowResponse {
+func ToAdvertiserWithEverflowResponse(data *domain.AdvertiserWithProviderData) *AdvertiserWithEverflowResponse {
 	return &AdvertiserWithEverflowResponse{
 		Advertiser:    ToAdvertiserResponse(data.Advertiser),
-		EverflowData:  data.EverflowData,
+		EverflowData:  data.ProviderData,
 		SyncStatus:    data.SyncStatus,
 		Discrepancies: data.Discrepancies,
 	}

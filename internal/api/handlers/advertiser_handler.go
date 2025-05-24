@@ -106,7 +106,7 @@ func (h *AdvertiserHandler) GetAdvertiserWithEverflowData(c *gin.Context) {
 		return
 	}
 
-	data, err := h.advertiserService.GetAdvertiserWithEverflowData(c.Request.Context(), id)
+	data, err := h.advertiserService.GetAdvertiserWithProviderData(c.Request.Context(), id)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
@@ -271,7 +271,7 @@ func (h *AdvertiserHandler) SyncToEverflow(c *gin.Context) {
 		return
 	}
 
-	if err := h.advertiserService.SyncAdvertiserToEverflow(c.Request.Context(), id); err != nil {
+	if err := h.advertiserService.SyncAdvertiserToProvider(c.Request.Context(), id); err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
@@ -302,7 +302,7 @@ func (h *AdvertiserHandler) SyncFromEverflow(c *gin.Context) {
 		return
 	}
 
-	if err := h.advertiserService.SyncAdvertiserFromEverflow(c.Request.Context(), id); err != nil {
+	if err := h.advertiserService.SyncAdvertiserFromProvider(c.Request.Context(), id); err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
@@ -333,7 +333,7 @@ func (h *AdvertiserHandler) CompareWithEverflow(c *gin.Context) {
 		return
 	}
 
-	discrepancies, err := h.advertiserService.CompareAdvertiserWithEverflow(c.Request.Context(), id)
+	discrepancies, err := h.advertiserService.CompareAdvertiserWithProvider(c.Request.Context(), id)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
@@ -524,7 +524,7 @@ func (h *AdvertiserHandler) SyncAdvertiserToEverflow(c *gin.Context) {
 		return
 	}
 
-	err = h.advertiserService.SyncAdvertiserToEverflow(c.Request.Context(), advertiserID)
+	err = h.advertiserService.SyncAdvertiserToProvider(c.Request.Context(), advertiserID)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to sync advertiser to Everflow: " + err.Error()})
 		return
@@ -563,7 +563,7 @@ func (h *AdvertiserHandler) SyncAdvertiserFromEverflow(c *gin.Context) {
 		return
 	}
 
-	err = h.advertiserService.SyncAdvertiserFromEverflow(c.Request.Context(), advertiserID)
+	err = h.advertiserService.SyncAdvertiserFromProvider(c.Request.Context(), advertiserID)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to sync advertiser from Everflow: " + err.Error()})
 		return
@@ -602,7 +602,7 @@ func (h *AdvertiserHandler) CompareAdvertiserWithEverflow(c *gin.Context) {
 		return
 	}
 
-	comparison, err := h.advertiserService.CompareAdvertiserWithEverflow(c.Request.Context(), advertiserID)
+	comparison, err := h.advertiserService.CompareAdvertiserWithProvider(c.Request.Context(), advertiserID)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to compare advertiser with Everflow: " + err.Error()})
 		return

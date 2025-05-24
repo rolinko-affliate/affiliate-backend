@@ -18,6 +18,7 @@ type Config struct {
 // NewEverflowServiceFromEnv creates a new Everflow service using environment variables
 func NewEverflowServiceFromEnv(
 	advertiserRepo repository.AdvertiserRepository,
+	providerMappingRepo repository.AdvertiserProviderMappingRepository,
 	campaignRepo repository.CampaignRepository,
 	cryptoService crypto.Service,
 ) (*Service, error) {
@@ -25,7 +26,7 @@ func NewEverflowServiceFromEnv(
 	apiKey := os.Getenv("EVERFLOW_API_KEY")
 	if apiKey != "" {
 		log.Println("Creating Everflow service with API key from environment variable")
-		return NewService(apiKey, advertiserRepo, campaignRepo, cryptoService), nil
+		return NewService(apiKey, advertiserRepo, providerMappingRepo, campaignRepo, cryptoService), nil
 	}
 
 	// Check if EVERFLOW_CONFIG is set (JSON string)
@@ -41,7 +42,7 @@ func NewEverflowServiceFromEnv(
 		}
 
 		log.Println("Creating Everflow service with API key from EVERFLOW_CONFIG")
-		return NewService(config.APIKey, advertiserRepo, campaignRepo, cryptoService), nil
+		return NewService(config.APIKey, advertiserRepo, providerMappingRepo, campaignRepo, cryptoService), nil
 	}
 
 	// If no configuration is found, return nil without error

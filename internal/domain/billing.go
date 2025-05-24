@@ -2,7 +2,7 @@ package domain
 
 // BillingDetails represents structured billing information for an advertiser
 type BillingDetails struct {
-	BillingFrequency           string                 `json:"billing_frequency"` // "weekly", "monthly", "other"
+	BillingFrequency           string                 `json:"billing_frequency"` // "weekly", "bimonthly", "monthly", "two_months", "quarterly", "manual", "other"
 	TaxID                      *string                `json:"tax_id,omitempty"`
 	IsInvoiceCreationAuto      *bool                  `json:"is_invoice_creation_auto,omitempty"`
 	InvoiceAmountThreshold     *float64               `json:"invoice_amount_threshold,omitempty"`

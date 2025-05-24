@@ -49,12 +49,17 @@ func (m *MockAdvertiserRepository) DeleteAdvertiser(ctx context.Context, id int6
 	return args.Error(0)
 }
 
-func (m *MockAdvertiserRepository) CreateAdvertiserProviderMapping(ctx context.Context, mapping *domain.AdvertiserProviderMapping) error {
+// Mock provider mapping repository
+type MockAdvertiserProviderMappingRepository struct {
+	mock.Mock
+}
+
+func (m *MockAdvertiserProviderMappingRepository) CreateAdvertiserProviderMapping(ctx context.Context, mapping *domain.AdvertiserProviderMapping) error {
 	args := m.Called(ctx, mapping)
 	return args.Error(0)
 }
 
-func (m *MockAdvertiserRepository) GetAdvertiserProviderMapping(ctx context.Context, advertiserID int64, providerType string) (*domain.AdvertiserProviderMapping, error) {
+func (m *MockAdvertiserProviderMappingRepository) GetAdvertiserProviderMapping(ctx context.Context, advertiserID int64, providerType string) (*domain.AdvertiserProviderMapping, error) {
 	args := m.Called(ctx, advertiserID, providerType)
 	if args.Get(0) == nil {
 		return nil, args.Error(1)
@@ -62,12 +67,12 @@ func (m *MockAdvertiserRepository) GetAdvertiserProviderMapping(ctx context.Cont
 	return args.Get(0).(*domain.AdvertiserProviderMapping), args.Error(1)
 }
 
-func (m *MockAdvertiserRepository) UpdateAdvertiserProviderMapping(ctx context.Context, mapping *domain.AdvertiserProviderMapping) error {
+func (m *MockAdvertiserProviderMappingRepository) UpdateAdvertiserProviderMapping(ctx context.Context, mapping *domain.AdvertiserProviderMapping) error {
 	args := m.Called(ctx, mapping)
 	return args.Error(0)
 }
 
-func (m *MockAdvertiserRepository) DeleteAdvertiserProviderMapping(ctx context.Context, mappingID int64) error {
+func (m *MockAdvertiserProviderMappingRepository) DeleteAdvertiserProviderMapping(ctx context.Context, mappingID int64) error {
 	args := m.Called(ctx, mappingID)
 	return args.Error(0)
 }
@@ -173,6 +178,7 @@ func TestEverflowServiceFactory(t *testing.T) {
 
 	// Setup
 	mockAdvertiserRepo := new(MockAdvertiserRepository)
+	mockProviderMappingRepo := new(MockAdvertiserProviderMappingRepository)
 	mockCampaignRepo := new(MockCampaignRepository)
 	mockCryptoService := new(MockCryptoService)
 
@@ -184,6 +190,7 @@ func TestEverflowServiceFactory(t *testing.T) {
 
 		service, err := everflow.NewEverflowServiceFromEnv(
 			mockAdvertiserRepo,
+			mockProviderMappingRepo,
 			mockCampaignRepo,
 			mockCryptoService,
 		)
@@ -199,6 +206,7 @@ func TestEverflowServiceFactory(t *testing.T) {
 
 		service, err := everflow.NewEverflowServiceFromEnv(
 			mockAdvertiserRepo,
+			mockProviderMappingRepo,
 			mockCampaignRepo,
 			mockCryptoService,
 		)
@@ -215,6 +223,7 @@ func TestEverflowServiceFactory(t *testing.T) {
 
 		service, err := everflow.NewEverflowServiceFromEnv(
 			mockAdvertiserRepo,
+			mockProviderMappingRepo,
 			mockCampaignRepo,
 			mockCryptoService,
 		)
@@ -231,6 +240,7 @@ func TestEverflowServiceFactory(t *testing.T) {
 
 		service, err := everflow.NewEverflowServiceFromEnv(
 			mockAdvertiserRepo,
+			mockProviderMappingRepo,
 			mockCampaignRepo,
 			mockCryptoService,
 		)
@@ -247,6 +257,7 @@ func TestEverflowServiceFactory(t *testing.T) {
 
 		service, err := everflow.NewEverflowServiceFromEnv(
 			mockAdvertiserRepo,
+			mockProviderMappingRepo,
 			mockCampaignRepo,
 			mockCryptoService,
 		)
@@ -259,12 +270,14 @@ func TestEverflowServiceFactory(t *testing.T) {
 func TestMapAdvertiserToEverflowRequest(t *testing.T) {
 	// Setup
 	mockAdvertiserRepo := new(MockAdvertiserRepository)
+	mockProviderMappingRepo := new(MockAdvertiserProviderMappingRepository)
 	mockCampaignRepo := new(MockCampaignRepository)
 	mockCryptoService := new(MockCryptoService)
 
 	service := everflow.NewService(
 		"test-api-key",
 		mockAdvertiserRepo,
+		mockProviderMappingRepo,
 		mockCampaignRepo,
 		mockCryptoService,
 	)

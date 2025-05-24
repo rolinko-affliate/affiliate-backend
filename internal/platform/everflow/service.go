@@ -14,24 +14,27 @@ import (
 
 // Service represents the Everflow integration service
 type Service struct {
-	client         *Client
-	advertiserRepo repository.AdvertiserRepository
-	campaignRepo   repository.CampaignRepository
-	cryptoService  crypto.Service
+	client              *Client
+	advertiserRepo      repository.AdvertiserRepository
+	providerMappingRepo repository.AdvertiserProviderMappingRepository
+	campaignRepo        repository.CampaignRepository
+	cryptoService       crypto.Service
 }
 
 // NewService creates a new Everflow service
 func NewService(
 	apiKey string,
 	advertiserRepo repository.AdvertiserRepository,
+	providerMappingRepo repository.AdvertiserProviderMappingRepository,
 	campaignRepo repository.CampaignRepository,
 	cryptoService crypto.Service,
 ) *Service {
 	return &Service{
-		client:         NewClient(apiKey),
-		advertiserRepo: advertiserRepo,
-		campaignRepo:   campaignRepo,
-		cryptoService:  cryptoService,
+		client:              NewClient(apiKey),
+		advertiserRepo:      advertiserRepo,
+		providerMappingRepo: providerMappingRepo,
+		campaignRepo:        campaignRepo,
+		cryptoService:       cryptoService,
 	}
 }
 
@@ -86,7 +89,7 @@ func (s *Service) CreateAdvertiserInEverflow(ctx context.Context, advertiser *do
 		ProviderConfig:       &providerConfigStr,
 	}
 
-	if err := s.advertiserRepo.CreateAdvertiserProviderMapping(ctx, mapping); err != nil {
+	if err := s.providerMappingRepo.CreateAdvertiserProviderMapping(ctx, mapping); err != nil {
 		return fmt.Errorf("failed to create advertiser provider mapping: %w", err)
 	}
 
@@ -115,7 +118,7 @@ func (s *Service) GetAdvertiserFromEverflow(ctx context.Context, networkAdvertis
 // GetAdvertiserFromEverflowByMapping retrieves an advertiser from Everflow using our internal advertiser ID
 func (s *Service) GetAdvertiserFromEverflowByMapping(ctx context.Context, advertiserID int64, relationships []string) (*Advertiser, error) {
 	// Get the advertiser's Everflow mapping
-	mapping, err := s.advertiserRepo.GetAdvertiserProviderMapping(ctx, advertiserID, "everflow")
+	mapping, err := s.providerMappingRepo.GetAdvertiserProviderMapping(ctx, advertiserID, "everflow")
 	if err != nil {
 		return nil, fmt.Errorf("failed to get advertiser provider mapping: %w", err)
 	}
@@ -134,14 +137,14 @@ func (s *Service) GetAdvertiserFromEverflowByMapping(ctx context.Context, advert
 }
 
 // UpdateAdvertiserInEverflow updates an advertiser in Everflow by ID
-func (s *Service) UpdateAdvertiserInEverflow(ctx context.Context, networkAdvertiserID int64, req EverflowUpdateAdvertiserRequest) (*EverflowUpdateAdvertiserResponse, error) {
+func (s *Service) UpdateAdvertiserInEverflow(ctx context.Context, networkAdvertiserID int64, req EverflowUpdateAdvertiserRequest) (*Advertiser, error) {
 	return s.client.UpdateAdvertiser(ctx, networkAdvertiserID, req)
 }
 
 // UpdateAdvertiserInEverflowByMapping updates an advertiser in Everflow using our internal advertiser ID
-func (s *Service) UpdateAdvertiserInEverflowByMapping(ctx context.Context, advertiserID int64, req EverflowUpdateAdvertiserRequest) (*EverflowUpdateAdvertiserResponse, error) {
+func (s *Service) UpdateAdvertiserInEverflowByMapping(ctx context.Context, advertiserID int64, req EverflowUpdateAdvertiserRequest) (*Advertiser, error) {
 	// Get the advertiser's Everflow mapping
-	mapping, err := s.advertiserRepo.GetAdvertiserProviderMapping(ctx, advertiserID, "everflow")
+	mapping, err := s.providerMappingRepo.GetAdvertiserProviderMapping(ctx, advertiserID, "everflow")
 	if err != nil {
 		return nil, fmt.Errorf("failed to get advertiser provider mapping: %w", err)
 	}
@@ -168,7 +171,7 @@ func (s *Service) CreateOfferInEverflow(ctx context.Context, campaign *domain.Ca
 	}
 
 	// Get the advertiser's Everflow mapping
-	mapping, err := s.advertiserRepo.GetAdvertiserProviderMapping(ctx, advertiser.AdvertiserID, "everflow")
+	mapping, err := s.providerMappingRepo.GetAdvertiserProviderMapping(ctx, advertiser.AdvertiserID, "everflow")
 	if err != nil {
 		return fmt.Errorf("failed to get advertiser provider mapping: %w", err)
 	}

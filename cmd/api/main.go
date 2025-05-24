@@ -139,13 +139,14 @@ func main() {
 	profileRepo := repository.NewPgxProfileRepository(repository.DB)
 	organizationRepo := repository.NewPgxOrganizationRepository(repository.DB)
 	advertiserRepo := repository.NewPgxAdvertiserRepository(repository.DB)
+	providerMappingRepo := repository.NewPgxAdvertiserProviderMappingRepository(repository.DB)
 	campaignRepo := repository.NewPgxCampaignRepository(repository.DB)
 	affiliateRepo := repository.NewPgxAffiliateRepository(repository.DB)
 	// Initialize other repositories as needed
 
 	// Initialize Platform Services
 	cryptoService := crypto.NewServiceFromConfig()
-	everflowService, err := everflow.NewEverflowServiceFromEnv(advertiserRepo, campaignRepo, cryptoService)
+	everflowService, err := everflow.NewEverflowServiceFromEnv(advertiserRepo, providerMappingRepo, campaignRepo, cryptoService)
 	if err != nil {
 		log.Printf("Warning: Failed to initialize Everflow service: %v", err)
 	}
@@ -153,7 +154,11 @@ func main() {
 	// Initialize Domain Services
 	profileService := service.NewProfileService(profileRepo)
 	organizationService := service.NewOrganizationService(organizationRepo)
-	advertiserService := service.NewAdvertiserService(advertiserRepo, organizationRepo, everflowService, cryptoService)
+	
+	// Initialize advertiser sync service
+	advertiserSyncService := service.NewAdvertiserSyncService(advertiserRepo, providerMappingRepo, everflowService)
+	
+	advertiserService := service.NewAdvertiserService(advertiserRepo, providerMappingRepo, organizationRepo, advertiserSyncService, cryptoService)
 	affiliateService := service.NewAffiliateService(affiliateRepo, organizationRepo)
 	campaignService := service.NewCampaignService(campaignRepo, advertiserRepo, organizationRepo, everflowService, cryptoService)
 	// Initialize other services as needed

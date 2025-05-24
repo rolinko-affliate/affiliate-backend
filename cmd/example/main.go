@@ -27,6 +27,7 @@ func main() {
 
 	// Initialize repositories
 	advertiserRepo := repository.NewPgxAdvertiserRepository(db)
+	providerMappingRepo := repository.NewPgxAdvertiserProviderMappingRepository(db)
 	campaignRepo := repository.NewPgxCampaignRepository(db)
 	orgRepo := repository.NewPgxOrganizationRepository(db)
 
@@ -36,6 +37,7 @@ func main() {
 	// Initialize Everflow service
 	everflowService, err := everflow.NewEverflowServiceFromEnv(
 		advertiserRepo,
+		providerMappingRepo,
 		campaignRepo,
 		cryptoService,
 	)
@@ -43,11 +45,15 @@ func main() {
 		log.Printf("Warning: Failed to initialize Everflow service: %v", err)
 	}
 
+	// Initialize sync service
+	syncService := service.NewAdvertiserSyncService(advertiserRepo, providerMappingRepo, everflowService)
+
 	// Initialize services
 	advertiserService := service.NewAdvertiserService(
 		advertiserRepo,
+		providerMappingRepo,
 		orgRepo,
-		everflowService,
+		syncService,
 		cryptoService,
 	)
 

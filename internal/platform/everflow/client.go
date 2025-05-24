@@ -467,13 +467,8 @@ type EverflowUpdateAdvertiserRequest struct {
 	Settings                       *AdvertiserSettings `json:"settings,omitempty"`
 }
 
-// EverflowUpdateAdvertiserResponse represents the response from updating an advertiser
-type EverflowUpdateAdvertiserResponse struct {
-	Result bool `json:"result"`
-}
-
 // UpdateAdvertiser updates an existing advertiser in Everflow
-func (c *Client) UpdateAdvertiser(ctx context.Context, networkAdvertiserID int64, req EverflowUpdateAdvertiserRequest) (*EverflowUpdateAdvertiserResponse, error) {
+func (c *Client) UpdateAdvertiser(ctx context.Context, networkAdvertiserID int64, req EverflowUpdateAdvertiserRequest) (*Advertiser, error) {
 	payloadBytes, err := json.Marshal(req)
 	if err != nil {
 		return nil, fmt.Errorf("failed to marshal update advertiser request: %w", err)
@@ -505,12 +500,12 @@ func (c *Client) UpdateAdvertiser(ctx context.Context, networkAdvertiserID int64
 		return nil, fmt.Errorf("Everflow API request failed with status %d", resp.StatusCode)
 	}
 
-	var updateResp EverflowUpdateAdvertiserResponse
-	if err := json.NewDecoder(resp.Body).Decode(&updateResp); err != nil {
+	var advertiser Advertiser
+	if err := json.NewDecoder(resp.Body).Decode(&advertiser); err != nil {
 		return nil, fmt.Errorf("failed to decode Everflow update advertiser response: %w", err)
 	}
 
-	return &updateResp, nil
+	return &advertiser, nil
 }
 
 // CreateOffer creates a new offer in Everflow

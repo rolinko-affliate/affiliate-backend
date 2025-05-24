@@ -1,168 +1,114 @@
 # Database Migrations
 
-This directory contains database migration files for the application. Migrations are used to manage database schema changes in a versioned and repeatable way.
+This directory contains database migration files for the affiliate platform.
 
 ## Migration Files
 
-Migration files follow the naming convention:
+- `000001_create_complete_schema.sql` - Creates the complete database schema with all tables and Everflow integration support
 
+## Schema Overview
+
+The migration creates the following tables:
+
+### Core Platform Tables
+- `organizations` - Multi-tenant organization support
+- `roles` - User role definitions
+- `profiles` - User profiles linked to Supabase Auth
+
+### Advertiser & Affiliate Tables
+- `advertisers` - Advertiser entities with complete Everflow integration fields
+- `affiliates` - Affiliate entities
+- `advertiser_provider_mappings` - Maps advertisers to external providers (Everflow)
+- `affiliate_provider_mappings` - Maps affiliates to external providers
+
+### Campaign Tables
+- `campaigns` - Campaign entities with complete Everflow offer field support (25+ fields)
+- `campaign_provider_offers` - Maps campaigns to provider offers
+
+## Features
+
+- **Complete Everflow Integration**: All necessary fields for Everflow offer creation and management
+- **Multi-tenant Support**: Organization-based data isolation
+- **Provider Abstraction**: Designed to support multiple affiliate networks (currently Everflow)
+- **Comprehensive Offer Support**: Caps, payouts, revenue, tracking, and configuration options
+- **Audit Trail**: Created/updated timestamps with automatic triggers
+
+## Campaign Table Fields
+
+The campaigns table includes comprehensive Everflow offer support with the following field categories:
+
+### Core Campaign Fields
+- `campaign_id`, `organization_id`, `advertiser_id`, `name`, `description`, `status`
+- `start_date`, `end_date`, `created_at`, `updated_at`
+
+### Everflow Offer Fields
+- **URLs**: `destination_url`, `thumbnail_url`, `preview_url`, `server_side_url`, `view_through_destination_url`
+- **Configuration**: `visibility`, `currency_id`, `conversion_method`, `session_definition`, `session_duration`
+- **Content**: `internal_notes`, `terms_and_conditions`, `html_description`, `app_identifier`
+- **Settings**: `is_force_terms_and_conditions`, `is_using_explicit_terms_and_conditions`, `is_whitelist_check_enabled`, `is_view_through_enabled`, `is_description_plain_text`, `is_use_direct_linking`
+- **Timing**: `caps_timezone_id`, `project_id`, `date_live_until`
+
+### Caps and Limits
+- **Conversion Caps**: `daily_conversion_cap`, `weekly_conversion_cap`, `monthly_conversion_cap`, `global_conversion_cap`
+- **Click Caps**: `daily_click_cap`, `weekly_click_cap`, `monthly_click_cap`, `global_click_cap`
+- **Cap Control**: `is_caps_enabled`
+
+### Tracking and Revenue
+- **Tracking**: `encoded_value`, `today_clicks`, `today_revenue`, `time_created`, `time_saved`
+- **Payout**: `payout_type`, `payout_amount`
+- **Revenue**: `revenue_type`, `revenue_amount`
+- **Configuration**: `offer_config` (JSONB for additional settings)
+
+## Running Migrations
+
+Use your preferred migration tool (e.g., golang-migrate, Flyway, etc.) to apply the migration.
+
+Example with golang-migrate:
+```bash
+migrate -path ./migrations -database "postgres://user:password@localhost/dbname?sslmode=disable" up
 ```
-000001_name.up.sql   # SQL to apply the migration
-000001_name.down.sql # SQL to rollback the migration
+
+## Database Recreation
+
+Since this is a single comprehensive migration, you can easily recreate the database from scratch:
+
+```bash
+# Drop and recreate database
+migrate -path ./migrations -database "postgres://user:password@localhost/dbname?sslmode=disable" down
+migrate -path ./migrations -database "postgres://user:password@localhost/dbname?sslmode=disable" up
 ```
-
-The numeric prefix determines the order in which migrations are applied.
-
-## Initial Schema
-
-The initial schema migration (`000001_create_initial_tables.up.sql`) creates the core tables for the application:
-
-- `organizations`: Tenant organizations
-- `roles`: User roles for RBAC
-- `profiles`: User profiles linked to Supabase Auth
-- `advertisers`: Advertiser entities
-- `affiliates`: Affiliate entities
-- `campaigns`: Advertising campaigns
-- `advertiser_provider_mappings`: Links advertisers to external providers
-- `affiliate_provider_mappings`: Links affiliates to external providers
-- `campaign_provider_offers`: Links campaigns to external provider offers
 
 ## Schema Features
 
-The database schema includes several features:
-
 ### Automatic Timestamps
-
-All tables have `created_at` and `updated_at` timestamps that are automatically managed:
-
-```sql
--- Function to update updated_at timestamp automatically
-CREATE OR REPLACE FUNCTION trigger_set_timestamp()
-RETURNS TRIGGER AS $$
-BEGIN
-  NEW.updated_at = NOW();
-  RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
-
--- Trigger on each table
-CREATE TRIGGER set_organizations_timestamp
-BEFORE UPDATE ON public.organizations
-FOR EACH ROW
-EXECUTE FUNCTION trigger_set_timestamp();
-```
+All tables have `created_at` and `updated_at` timestamps that are automatically managed using triggers.
 
 ### Foreign Key Relationships
-
-Tables are linked with foreign key relationships:
-
-```sql
--- Example: profiles table with foreign keys
-CREATE TABLE public.profiles (
-    id UUID PRIMARY KEY,
-    organization_id BIGINT REFERENCES public.organizations(organization_id) ON DELETE SET NULL,
-    role_id INT REFERENCES public.roles(role_id) ON DELETE RESTRICT NOT NULL,
-    -- Other columns...
-);
-```
+Tables are properly linked with foreign key relationships and appropriate cascade behaviors.
 
 ### Indexes
+Performance indexes are created on frequently queried columns including:
+- Organization and advertiser relationships
+- Campaign status and visibility
+- Provider mappings
+- JSONB configuration fields (GIN indexes)
 
-Indexes are created for performance optimization:
+### Data Validation
+- CHECK constraints on enum fields (status, visibility, payout types, etc.)
+- NOT NULL constraints on required fields
+- UNIQUE constraints where appropriate
 
-```sql
--- Example: indexes on profiles table
-CREATE INDEX idx_profiles_organization_id ON public.profiles(organization_id);
-CREATE INDEX idx_profiles_role_id ON public.profiles(role_id);
-CREATE INDEX idx_profiles_email ON public.profiles(email);
-```
-
-### JSON/JSONB Fields
-
-Some tables use JSON/JSONB fields for flexible data storage:
-
-```sql
--- Example: JSON fields in advertisers table
-CREATE TABLE public.advertisers (
-    -- Other columns...
-    billing_details JSONB, -- Store address, tax ID, etc.
-    -- Other columns...
-);
-```
-
-### Status Enumerations
-
-Status fields use CHECK constraints to enforce valid values:
-
-```sql
--- Example: status field in advertisers table
-CREATE TABLE public.advertisers (
-    -- Other columns...
-    status VARCHAR(20) NOT NULL DEFAULT 'pending' CHECK (status IN ('active', 'pending', 'inactive', 'rejected')),
-    -- Other columns...
-);
-```
-
-## Seed Data
-
-The initial migration includes seed data for roles and a default organization:
-
-```sql
--- Seed initial roles
-INSERT INTO public.roles (role_id, name, description) VALUES
-  (100000, 'User', 'Default user role with limited access'),
-  (1000, 'AdvertiserManager', 'Manages advertisers and their campaigns within their organization'),
-  (1001, 'AffiliateManager', 'Manages affiliates and approves applications within their organization'),
-  (1, 'Admin', 'Platform Administrator with full access');
-
--- Create default organization
-INSERT INTO public.organizations (name) VALUES ('rolinko');
-```
+### Seed Data
+The migration includes initial seed data for:
+- Default user roles (Admin, AdvertiserManager, AffiliateManager, User)
+- Default organization ('rolinko')
 
 ## Managing Migrations
 
-Migrations are managed using the migration tool in the `cmd/migrate` directory:
-
-```bash
-# Apply all pending migrations
-go run cmd/migrate/main.go up
-
-# Rollback the most recent migration
-go run cmd/migrate/main.go down
-
-# Other migration commands...
-```
-
-Or using the Makefile:
-
-```bash
-# Apply all pending migrations
-make migrate-up
-
-# Rollback the most recent migration
-make migrate-down
-
-# Other migration commands...
-```
+Migrations can be managed using standard migration tools or custom migration commands in your application.
 
 ## Creating New Migrations
 
-New migrations can be created using the migration tool:
-
-```bash
-# Create a new migration
-go run cmd/migrate/main.go create add_new_table
-```
-
-Or using the Makefile:
-
-```bash
-# Create a new migration
-make migrate-create NAME=add_new_table
-```
-
-This will create two new files:
-- `migrations/000002_add_new_table.up.sql`
-- `migrations/000002_add_new_table.down.sql`
-
-Edit these files to add the SQL statements for applying and rolling back the migration.
+When adding new features, create additional migration files following the naming convention:
+- `000002_feature_name.up.sql`
+- `000002_feature_name.down.sql`

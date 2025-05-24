@@ -2,8 +2,10 @@ package handlers
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"strconv"
+	"strings"
 	"time"
 
 	"github.com/affiliate-backend/internal/domain"
@@ -30,6 +32,397 @@ type CreateCampaignRequest struct {
 	Status         string           `json:"status,omitempty"`
 	StartDate      *string          `json:"start_date,omitempty"` // Format: YYYY-MM-DD
 	EndDate        *string          `json:"end_date,omitempty"`   // Format: YYYY-MM-DD
+	
+	// Offer-specific fields for Everflow integration
+	DestinationURL      *string  `json:"destination_url,omitempty"`
+	ThumbnailURL        *string  `json:"thumbnail_url,omitempty"`
+	PreviewURL          *string  `json:"preview_url,omitempty"`
+	Visibility          *string  `json:"visibility,omitempty"`                   // 'public', 'require_approval', 'private'
+	CurrencyID          *string  `json:"currency_id,omitempty"`                 // 'USD', 'EUR', etc.
+	ConversionMethod    *string  `json:"conversion_method,omitempty"`           // 'server_postback', 'pixel', etc.
+	SessionDefinition   *string  `json:"session_definition,omitempty"`          // 'cookie', 'ip', 'fingerprint'
+	SessionDuration     *int     `json:"session_duration,omitempty"`            // in hours
+	InternalNotes       *string  `json:"internal_notes,omitempty"`
+	TermsAndConditions  *string  `json:"terms_and_conditions,omitempty"`
+	IsForceTermsAndConditions *bool `json:"is_force_terms_and_conditions,omitempty"`
+	
+	// Caps and limits
+	IsCapsEnabled         *bool `json:"is_caps_enabled,omitempty"`
+	DailyConversionCap    *int  `json:"daily_conversion_cap,omitempty"`
+	WeeklyConversionCap   *int  `json:"weekly_conversion_cap,omitempty"`
+	MonthlyConversionCap  *int  `json:"monthly_conversion_cap,omitempty"`
+	GlobalConversionCap   *int  `json:"global_conversion_cap,omitempty"`
+	DailyClickCap         *int  `json:"daily_click_cap,omitempty"`
+	WeeklyClickCap        *int  `json:"weekly_click_cap,omitempty"`
+	MonthlyClickCap       *int  `json:"monthly_click_cap,omitempty"`
+	GlobalClickCap        *int  `json:"global_click_cap,omitempty"`
+	
+	// Payout and revenue configuration
+	PayoutType     *string  `json:"payout_type,omitempty"`         // 'cpa', 'cpc', 'cpm', etc.
+	PayoutAmount   *float64 `json:"payout_amount,omitempty"`
+	RevenueType    *string  `json:"revenue_type,omitempty"`        // 'rpa', 'rpc', 'rpm', etc.
+	RevenueAmount  *float64 `json:"revenue_amount,omitempty"`
+	
+	// Additional configuration
+	OfferConfig *json.RawMessage `json:"offer_config,omitempty"` // Additional Everflow-specific config
+}
+
+// ValidationError represents a validation error
+type ValidationError struct {
+	Field   string `json:"field"`
+	Message string `json:"message"`
+}
+
+// validateCreateCampaignRequest validates the create campaign request
+func validateCreateCampaignRequest(req *CreateCampaignRequest) []ValidationError {
+	var errors []ValidationError
+
+	// Validate required fields
+	if req.OrganizationID <= 0 {
+		errors = append(errors, ValidationError{
+			Field:   "organization_id",
+			Message: "organization_id must be a positive integer",
+		})
+	}
+
+	if req.AdvertiserID <= 0 {
+		errors = append(errors, ValidationError{
+			Field:   "advertiser_id",
+			Message: "advertiser_id must be a positive integer",
+		})
+	}
+
+	if strings.TrimSpace(req.Name) == "" {
+		errors = append(errors, ValidationError{
+			Field:   "name",
+			Message: "name is required and cannot be empty",
+		})
+	}
+
+	if len(req.Name) > 255 {
+		errors = append(errors, ValidationError{
+			Field:   "name",
+			Message: "name cannot exceed 255 characters",
+		})
+	}
+
+	// Validate status if provided
+	if req.Status != "" {
+		validStatuses := []string{"draft", "active", "paused", "archived"}
+		if !contains(validStatuses, req.Status) {
+			errors = append(errors, ValidationError{
+				Field:   "status",
+				Message: fmt.Sprintf("status must be one of: %s", strings.Join(validStatuses, ", ")),
+			})
+		}
+	}
+
+	// Validate visibility if provided
+	if req.Visibility != nil && *req.Visibility != "" {
+		validVisibilities := []string{"public", "require_approval", "private"}
+		if !contains(validVisibilities, *req.Visibility) {
+			errors = append(errors, ValidationError{
+				Field:   "visibility",
+				Message: fmt.Sprintf("visibility must be one of: %s", strings.Join(validVisibilities, ", ")),
+			})
+		}
+	}
+
+	// Validate conversion method if provided
+	if req.ConversionMethod != nil && *req.ConversionMethod != "" {
+		validMethods := []string{"server_postback", "pixel", "hybrid"}
+		if !contains(validMethods, *req.ConversionMethod) {
+			errors = append(errors, ValidationError{
+				Field:   "conversion_method",
+				Message: fmt.Sprintf("conversion_method must be one of: %s", strings.Join(validMethods, ", ")),
+			})
+		}
+	}
+
+	// Validate session definition if provided
+	if req.SessionDefinition != nil && *req.SessionDefinition != "" {
+		validDefinitions := []string{"cookie", "ip", "fingerprint"}
+		if !contains(validDefinitions, *req.SessionDefinition) {
+			errors = append(errors, ValidationError{
+				Field:   "session_definition",
+				Message: fmt.Sprintf("session_definition must be one of: %s", strings.Join(validDefinitions, ", ")),
+			})
+		}
+	}
+
+	// Validate session duration if provided
+	if req.SessionDuration != nil && *req.SessionDuration <= 0 {
+		errors = append(errors, ValidationError{
+			Field:   "session_duration",
+			Message: "session_duration must be a positive integer (hours)",
+		})
+	}
+
+	// Validate payout type if provided
+	if req.PayoutType != nil && *req.PayoutType != "" {
+		validPayoutTypes := []string{"cpa", "cpc", "cpm", "cps", "cpa_cps", "prv"}
+		if !contains(validPayoutTypes, *req.PayoutType) {
+			errors = append(errors, ValidationError{
+				Field:   "payout_type",
+				Message: fmt.Sprintf("payout_type must be one of: %s", strings.Join(validPayoutTypes, ", ")),
+			})
+		}
+	}
+
+	// Validate revenue type if provided
+	if req.RevenueType != nil && *req.RevenueType != "" {
+		validRevenueTypes := []string{"rpa", "rpc", "rpm", "rps", "rpa_rps", "prv"}
+		if !contains(validRevenueTypes, *req.RevenueType) {
+			errors = append(errors, ValidationError{
+				Field:   "revenue_type",
+				Message: fmt.Sprintf("revenue_type must be one of: %s", strings.Join(validRevenueTypes, ", ")),
+			})
+		}
+	}
+
+	// Validate payout amount if provided
+	if req.PayoutAmount != nil && *req.PayoutAmount < 0 {
+		errors = append(errors, ValidationError{
+			Field:   "payout_amount",
+			Message: "payout_amount cannot be negative",
+		})
+	}
+
+	// Validate revenue amount if provided
+	if req.RevenueAmount != nil && *req.RevenueAmount < 0 {
+		errors = append(errors, ValidationError{
+			Field:   "revenue_amount",
+			Message: "revenue_amount cannot be negative",
+		})
+	}
+
+	// Validate caps are non-negative if provided
+	capFields := map[string]*int{
+		"daily_conversion_cap":   req.DailyConversionCap,
+		"weekly_conversion_cap":  req.WeeklyConversionCap,
+		"monthly_conversion_cap": req.MonthlyConversionCap,
+		"global_conversion_cap":  req.GlobalConversionCap,
+		"daily_click_cap":        req.DailyClickCap,
+		"weekly_click_cap":       req.WeeklyClickCap,
+		"monthly_click_cap":      req.MonthlyClickCap,
+		"global_click_cap":       req.GlobalClickCap,
+	}
+
+	for fieldName, value := range capFields {
+		if value != nil && *value < 0 {
+			errors = append(errors, ValidationError{
+				Field:   fieldName,
+				Message: fmt.Sprintf("%s cannot be negative", fieldName),
+			})
+		}
+	}
+
+	// Validate date formats if provided
+	if req.StartDate != nil && *req.StartDate != "" {
+		if _, err := time.Parse("2006-01-02", *req.StartDate); err != nil {
+			errors = append(errors, ValidationError{
+				Field:   "start_date",
+				Message: "start_date must be in YYYY-MM-DD format",
+			})
+		}
+	}
+
+	if req.EndDate != nil && *req.EndDate != "" {
+		if _, err := time.Parse("2006-01-02", *req.EndDate); err != nil {
+			errors = append(errors, ValidationError{
+				Field:   "end_date",
+				Message: "end_date must be in YYYY-MM-DD format",
+			})
+		}
+	}
+
+	// Validate date logic if both dates are provided
+	if req.StartDate != nil && req.EndDate != nil && *req.StartDate != "" && *req.EndDate != "" {
+		startDate, startErr := time.Parse("2006-01-02", *req.StartDate)
+		endDate, endErr := time.Parse("2006-01-02", *req.EndDate)
+		
+		if startErr == nil && endErr == nil && endDate.Before(startDate) {
+			errors = append(errors, ValidationError{
+				Field:   "end_date",
+				Message: "end_date cannot be before start_date",
+			})
+		}
+	}
+
+	return errors
+}
+
+// contains checks if a slice contains a string
+func contains(slice []string, item string) bool {
+	for _, s := range slice {
+		if s == item {
+			return true
+		}
+	}
+	return false
+}
+
+// validateUpdateCampaignRequest validates the update campaign request
+func validateUpdateCampaignRequest(req *UpdateCampaignRequest) []ValidationError {
+	var errors []ValidationError
+
+	// Validate required fields
+	if strings.TrimSpace(req.Name) == "" {
+		errors = append(errors, ValidationError{
+			Field:   "name",
+			Message: "name is required and cannot be empty",
+		})
+	}
+
+	if len(req.Name) > 255 {
+		errors = append(errors, ValidationError{
+			Field:   "name",
+			Message: "name cannot exceed 255 characters",
+		})
+	}
+
+	// Validate status (required for update)
+	validStatuses := []string{"draft", "active", "paused", "archived"}
+	if !contains(validStatuses, req.Status) {
+		errors = append(errors, ValidationError{
+			Field:   "status",
+			Message: fmt.Sprintf("status must be one of: %s", strings.Join(validStatuses, ", ")),
+		})
+	}
+
+	// Validate visibility if provided
+	if req.Visibility != nil && *req.Visibility != "" {
+		validVisibilities := []string{"public", "require_approval", "private"}
+		if !contains(validVisibilities, *req.Visibility) {
+			errors = append(errors, ValidationError{
+				Field:   "visibility",
+				Message: fmt.Sprintf("visibility must be one of: %s", strings.Join(validVisibilities, ", ")),
+			})
+		}
+	}
+
+	// Validate conversion method if provided
+	if req.ConversionMethod != nil && *req.ConversionMethod != "" {
+		validMethods := []string{"server_postback", "pixel", "hybrid"}
+		if !contains(validMethods, *req.ConversionMethod) {
+			errors = append(errors, ValidationError{
+				Field:   "conversion_method",
+				Message: fmt.Sprintf("conversion_method must be one of: %s", strings.Join(validMethods, ", ")),
+			})
+		}
+	}
+
+	// Validate session definition if provided
+	if req.SessionDefinition != nil && *req.SessionDefinition != "" {
+		validDefinitions := []string{"cookie", "ip", "fingerprint"}
+		if !contains(validDefinitions, *req.SessionDefinition) {
+			errors = append(errors, ValidationError{
+				Field:   "session_definition",
+				Message: fmt.Sprintf("session_definition must be one of: %s", strings.Join(validDefinitions, ", ")),
+			})
+		}
+	}
+
+	// Validate session duration if provided
+	if req.SessionDuration != nil && *req.SessionDuration <= 0 {
+		errors = append(errors, ValidationError{
+			Field:   "session_duration",
+			Message: "session_duration must be a positive integer (hours)",
+		})
+	}
+
+	// Validate payout type if provided
+	if req.PayoutType != nil && *req.PayoutType != "" {
+		validPayoutTypes := []string{"cpa", "cpc", "cpm", "cps", "cpa_cps", "prv"}
+		if !contains(validPayoutTypes, *req.PayoutType) {
+			errors = append(errors, ValidationError{
+				Field:   "payout_type",
+				Message: fmt.Sprintf("payout_type must be one of: %s", strings.Join(validPayoutTypes, ", ")),
+			})
+		}
+	}
+
+	// Validate revenue type if provided
+	if req.RevenueType != nil && *req.RevenueType != "" {
+		validRevenueTypes := []string{"rpa", "rpc", "rpm", "rps", "rpa_rps", "prv"}
+		if !contains(validRevenueTypes, *req.RevenueType) {
+			errors = append(errors, ValidationError{
+				Field:   "revenue_type",
+				Message: fmt.Sprintf("revenue_type must be one of: %s", strings.Join(validRevenueTypes, ", ")),
+			})
+		}
+	}
+
+	// Validate payout amount if provided
+	if req.PayoutAmount != nil && *req.PayoutAmount < 0 {
+		errors = append(errors, ValidationError{
+			Field:   "payout_amount",
+			Message: "payout_amount cannot be negative",
+		})
+	}
+
+	// Validate revenue amount if provided
+	if req.RevenueAmount != nil && *req.RevenueAmount < 0 {
+		errors = append(errors, ValidationError{
+			Field:   "revenue_amount",
+			Message: "revenue_amount cannot be negative",
+		})
+	}
+
+	// Validate caps are non-negative if provided
+	capFields := map[string]*int{
+		"daily_conversion_cap":   req.DailyConversionCap,
+		"weekly_conversion_cap":  req.WeeklyConversionCap,
+		"monthly_conversion_cap": req.MonthlyConversionCap,
+		"global_conversion_cap":  req.GlobalConversionCap,
+		"daily_click_cap":        req.DailyClickCap,
+		"weekly_click_cap":       req.WeeklyClickCap,
+		"monthly_click_cap":      req.MonthlyClickCap,
+		"global_click_cap":       req.GlobalClickCap,
+	}
+
+	for fieldName, value := range capFields {
+		if value != nil && *value < 0 {
+			errors = append(errors, ValidationError{
+				Field:   fieldName,
+				Message: fmt.Sprintf("%s cannot be negative", fieldName),
+			})
+		}
+	}
+
+	// Validate date formats if provided
+	if req.StartDate != nil && *req.StartDate != "" {
+		if _, err := time.Parse("2006-01-02", *req.StartDate); err != nil {
+			errors = append(errors, ValidationError{
+				Field:   "start_date",
+				Message: "start_date must be in YYYY-MM-DD format",
+			})
+		}
+	}
+
+	if req.EndDate != nil && *req.EndDate != "" {
+		if _, err := time.Parse("2006-01-02", *req.EndDate); err != nil {
+			errors = append(errors, ValidationError{
+				Field:   "end_date",
+				Message: "end_date must be in YYYY-MM-DD format",
+			})
+		}
+	}
+
+	// Validate date logic if both dates are provided
+	if req.StartDate != nil && req.EndDate != nil && *req.StartDate != "" && *req.EndDate != "" {
+		startDate, startErr := time.Parse("2006-01-02", *req.StartDate)
+		endDate, endErr := time.Parse("2006-01-02", *req.EndDate)
+		
+		if startErr == nil && endErr == nil && endDate.Before(startDate) {
+			errors = append(errors, ValidationError{
+				Field:   "end_date",
+				Message: "end_date cannot be before start_date",
+			})
+		}
+	}
+
+	return errors
 }
 
 // CreateCampaign creates a new campaign
@@ -51,12 +444,57 @@ func (h *CampaignHandler) CreateCampaign(c *gin.Context) {
 		return
 	}
 
+	// Validate the request
+	if validationErrors := validateCreateCampaignRequest(&req); len(validationErrors) > 0 {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": "Validation failed",
+			"validation_errors": validationErrors,
+		})
+		return
+	}
+
 	campaign := &domain.Campaign{
 		OrganizationID: req.OrganizationID,
 		AdvertiserID:   req.AdvertiserID,
 		Name:           req.Name,
 		Description:    req.Description,
 		Status:         req.Status,
+		
+		// Offer-specific fields
+		DestinationURL:            req.DestinationURL,
+		ThumbnailURL:              req.ThumbnailURL,
+		PreviewURL:                req.PreviewURL,
+		Visibility:                req.Visibility,
+		CurrencyID:                req.CurrencyID,
+		ConversionMethod:          req.ConversionMethod,
+		SessionDefinition:         req.SessionDefinition,
+		SessionDuration:           req.SessionDuration,
+		InternalNotes:             req.InternalNotes,
+		TermsAndConditions:        req.TermsAndConditions,
+		IsForceTermsAndConditions: req.IsForceTermsAndConditions,
+		
+		// Caps and limits
+		IsCapsEnabled:         req.IsCapsEnabled,
+		DailyConversionCap:    req.DailyConversionCap,
+		WeeklyConversionCap:   req.WeeklyConversionCap,
+		MonthlyConversionCap:  req.MonthlyConversionCap,
+		GlobalConversionCap:   req.GlobalConversionCap,
+		DailyClickCap:         req.DailyClickCap,
+		WeeklyClickCap:        req.WeeklyClickCap,
+		MonthlyClickCap:       req.MonthlyClickCap,
+		GlobalClickCap:        req.GlobalClickCap,
+		
+		// Payout and revenue
+		PayoutType:    req.PayoutType,
+		PayoutAmount:  req.PayoutAmount,
+		RevenueType:   req.RevenueType,
+		RevenueAmount: req.RevenueAmount,
+	}
+
+	// Handle offer config JSON
+	if req.OfferConfig != nil {
+		offerConfigStr := string(*req.OfferConfig)
+		campaign.OfferConfig = &offerConfigStr
 	}
 
 	// Parse dates if provided
@@ -128,6 +566,39 @@ type UpdateCampaignRequest struct {
 	Status      string  `json:"status" binding:"required"`
 	StartDate   *string `json:"start_date,omitempty"` // Format: YYYY-MM-DD
 	EndDate     *string `json:"end_date,omitempty"`   // Format: YYYY-MM-DD
+	
+	// Offer-specific fields for Everflow integration
+	DestinationURL      *string  `json:"destination_url,omitempty"`
+	ThumbnailURL        *string  `json:"thumbnail_url,omitempty"`
+	PreviewURL          *string  `json:"preview_url,omitempty"`
+	Visibility          *string  `json:"visibility,omitempty"`                   // 'public', 'require_approval', 'private'
+	CurrencyID          *string  `json:"currency_id,omitempty"`                 // 'USD', 'EUR', etc.
+	ConversionMethod    *string  `json:"conversion_method,omitempty"`           // 'server_postback', 'pixel', etc.
+	SessionDefinition   *string  `json:"session_definition,omitempty"`          // 'cookie', 'ip', 'fingerprint'
+	SessionDuration     *int     `json:"session_duration,omitempty"`            // in hours
+	InternalNotes       *string  `json:"internal_notes,omitempty"`
+	TermsAndConditions  *string  `json:"terms_and_conditions,omitempty"`
+	IsForceTermsAndConditions *bool `json:"is_force_terms_and_conditions,omitempty"`
+	
+	// Caps and limits
+	IsCapsEnabled         *bool `json:"is_caps_enabled,omitempty"`
+	DailyConversionCap    *int  `json:"daily_conversion_cap,omitempty"`
+	WeeklyConversionCap   *int  `json:"weekly_conversion_cap,omitempty"`
+	MonthlyConversionCap  *int  `json:"monthly_conversion_cap,omitempty"`
+	GlobalConversionCap   *int  `json:"global_conversion_cap,omitempty"`
+	DailyClickCap         *int  `json:"daily_click_cap,omitempty"`
+	WeeklyClickCap        *int  `json:"weekly_click_cap,omitempty"`
+	MonthlyClickCap       *int  `json:"monthly_click_cap,omitempty"`
+	GlobalClickCap        *int  `json:"global_click_cap,omitempty"`
+	
+	// Payout and revenue configuration
+	PayoutType     *string  `json:"payout_type,omitempty"`         // 'cpa', 'cpc', 'cpm', etc.
+	PayoutAmount   *float64 `json:"payout_amount,omitempty"`
+	RevenueType    *string  `json:"revenue_type,omitempty"`        // 'rpa', 'rpc', 'rpm', etc.
+	RevenueAmount  *float64 `json:"revenue_amount,omitempty"`
+	
+	// Additional configuration
+	OfferConfig *json.RawMessage `json:"offer_config,omitempty"` // Additional Everflow-specific config
 }
 
 // UpdateCampaign updates a campaign
@@ -158,6 +629,15 @@ func (h *CampaignHandler) UpdateCampaign(c *gin.Context) {
 		return
 	}
 
+	// Validate the request
+	if validationErrors := validateUpdateCampaignRequest(&req); len(validationErrors) > 0 {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": "Validation failed",
+			"validation_errors": validationErrors,
+		})
+		return
+	}
+
 	// Get existing campaign
 	campaign, err := h.campaignService.GetCampaignByID(c.Request.Context(), id)
 	if err != nil {
@@ -169,10 +649,46 @@ func (h *CampaignHandler) UpdateCampaign(c *gin.Context) {
 		return
 	}
 
-	// Update campaign
+	// Update campaign basic fields
 	campaign.Name = req.Name
 	campaign.Description = req.Description
 	campaign.Status = req.Status
+	
+	// Update offer-specific fields
+	campaign.DestinationURL = req.DestinationURL
+	campaign.ThumbnailURL = req.ThumbnailURL
+	campaign.PreviewURL = req.PreviewURL
+	campaign.Visibility = req.Visibility
+	campaign.CurrencyID = req.CurrencyID
+	campaign.ConversionMethod = req.ConversionMethod
+	campaign.SessionDefinition = req.SessionDefinition
+	campaign.SessionDuration = req.SessionDuration
+	campaign.InternalNotes = req.InternalNotes
+	campaign.TermsAndConditions = req.TermsAndConditions
+	campaign.IsForceTermsAndConditions = req.IsForceTermsAndConditions
+	
+	// Update caps and limits
+	campaign.IsCapsEnabled = req.IsCapsEnabled
+	campaign.DailyConversionCap = req.DailyConversionCap
+	campaign.WeeklyConversionCap = req.WeeklyConversionCap
+	campaign.MonthlyConversionCap = req.MonthlyConversionCap
+	campaign.GlobalConversionCap = req.GlobalConversionCap
+	campaign.DailyClickCap = req.DailyClickCap
+	campaign.WeeklyClickCap = req.WeeklyClickCap
+	campaign.MonthlyClickCap = req.MonthlyClickCap
+	campaign.GlobalClickCap = req.GlobalClickCap
+	
+	// Update payout and revenue
+	campaign.PayoutType = req.PayoutType
+	campaign.PayoutAmount = req.PayoutAmount
+	campaign.RevenueType = req.RevenueType
+	campaign.RevenueAmount = req.RevenueAmount
+	
+	// Handle offer config JSON
+	if req.OfferConfig != nil {
+		offerConfigStr := string(*req.OfferConfig)
+		campaign.OfferConfig = &offerConfigStr
+	}
 
 	// Parse dates if provided
 	if req.StartDate != nil {
@@ -324,6 +840,7 @@ func (h *CampaignHandler) DeleteCampaign(c *gin.Context) {
 	}
 
 	c.Status(http.StatusNoContent)
+	c.Writer.Write([]byte{})
 }
 
 // CreateCampaignProviderOfferRequest defines the request for creating a campaign provider offer
@@ -544,4 +1061,5 @@ func (h *CampaignHandler) DeleteCampaignProviderOffer(c *gin.Context) {
 	}
 
 	c.Status(http.StatusNoContent)
+	c.Writer.Write([]byte{})
 }

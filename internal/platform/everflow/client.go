@@ -244,48 +244,243 @@ type EverflowListAdvertisersResponse struct {
 // EverflowCreateAdvertiserResponse represents the response from creating an advertiser in Everflow
 type EverflowCreateAdvertiserResponse Advertiser
 
-// EverflowCreateOfferRequest represents the request to create an offer in Everflow
-type EverflowCreateOfferRequest struct {
-	Name                string              `json:"name"`
-	NetworkAdvertiserID int64               `json:"network_advertiser_id"` // From advertiser_provider_mappings.provider_advertiser_id
-	DestinationURL      string              `json:"destination_url"`
-	OfferStatus         string              `json:"offer_status"`      // e.g., "active", "pending", "paused"
-	CurrencyID          string              `json:"currency_id"`       // e.g., "USD"
-	Visibility          string              `json:"visibility"`        // e.g., "public", "private"
-	ConversionMethod    string              `json:"conversion_method"` // e.g., "server_postback", "http_image_pixel"
-	NetworkCategoryID   *int                `json:"network_category_id,omitempty"`
-	PreviewURL          *string             `json:"preview_url,omitempty"`
-	SessionDefinition   *string             `json:"session_definition,omitempty"` // e.g., "cookie", "ip"
-	SessionDuration     *int                `json:"session_duration,omitempty"`   // in hours
-	InternalNotes       *string             `json:"internal_notes,omitempty"`
-	Description         *string             `json:"description,omitempty"`
-	IsCapsEnabled       *bool               `json:"is_caps_enabled,omitempty"`
-	PayoutRevenue       []PayoutRevenueItem `json:"payout_revenue"`
-	Tags                []string            `json:"tags,omitempty"`
+// PayoutRevenueEntry represents a single payout/revenue entry
+type PayoutRevenueEntry struct {
+	EntryName                   *string `json:"entry_name,omitempty"`
+	PayoutType                  string  `json:"payout_type"`                            // "cpc", "cpa", "cpm", "cps", "cpa_cps", "prv"
+	PayoutAmount                *float64 `json:"payout_amount,omitempty"`
+	PayoutPercentage            *int    `json:"payout_percentage,omitempty"`
+	RevenueType                 string  `json:"revenue_type"`                           // "rpc", "rpa", "rpm", "rps", "rpa_rps"
+	RevenueAmount               *float64 `json:"revenue_amount,omitempty"`
+	RevenuePercentage           *int    `json:"revenue_percentage,omitempty"`
+	IsDefault                   bool    `json:"is_default"`
+	IsPrivate                   bool    `json:"is_private"`
+	IsPostbackDisabled          *bool   `json:"is_postback_disabled,omitempty"`
+	GlobalAdvertiserEventID     *int    `json:"global_advertiser_event_id,omitempty"`
+	IsMustApproveConversion     *bool   `json:"is_must_approve_conversion,omitempty"`
+	IsAllowDuplicateConversion  *bool   `json:"is_allow_duplicate_conversion,omitempty"`
 }
 
-// PayoutRevenueItem represents a payout/revenue structure for an offer
-type PayoutRevenueItem struct {
-	IsDefault          bool    `json:"is_default"`
-	PayoutType         string  `json:"payout_type"` // "cpa", "cpc", "cpm", etc.
-	PayoutAmount       float64 `json:"payout_amount"`
-	RevenueType        string  `json:"revenue_type"` // "cpa", "cpc", "cpm", etc.
-	RevenueAmount      float64 `json:"revenue_amount"`
-	GoalName           *string `json:"goal_name,omitempty"`
-	GoalTrackingMethod *string `json:"goal_tracking_method,omitempty"`
+// PayoutRevenue represents the payout revenue structure
+type PayoutRevenue struct {
+	Entries []PayoutRevenueEntry `json:"entries"`
 }
 
-// EverflowCreateOfferResponse represents the response from creating an offer in Everflow
-type EverflowCreateOfferResponse struct {
-	NetworkOfferID      int64  `json:"network_offer_id"`
-	NetworkID           int64  `json:"network_id"`
-	NetworkAdvertiserID int64  `json:"network_advertiser_id"`
-	Name                string `json:"name"`
-	DestinationURL      string `json:"destination_url"`
-	OfferStatus         string `json:"offer_status"`
-	CurrencyID          string `json:"currency_id"`
-	OfferURL            string `json:"offer_url,omitempty"`
-	// Other fields omitted for brevity
+// OfferRelationshipRemainingCaps represents remaining caps in relationship data
+type OfferRelationshipRemainingCaps struct {
+	RemainingDailyConversionCap   *int `json:"remaining_daily_conversion_cap,omitempty"`
+	RemainingMonthlyConversionCap *int `json:"remaining_monthly_conversion_cap,omitempty"`
+	RemainingGlobalConversionCap  *int `json:"remaining_global_conversion_cap,omitempty"`
+	RemainingDailyClickCap        *int `json:"remaining_daily_click_cap,omitempty"`
+	RemainingWeeklyClickCap       *int `json:"remaining_weekly_click_cap,omitempty"`
+	RemainingMonthlyClickCap      *int `json:"remaining_monthly_click_cap,omitempty"`
+	RemainingGlobalClickCap       *int `json:"remaining_global_click_cap,omitempty"`
+}
+
+// OfferRelationshipRuleset represents ruleset in relationship data
+type OfferRelationshipRuleset struct {
+	NetworkRulesetID *int                   `json:"network_ruleset_id,omitempty"`
+	Platforms        []map[string]interface{} `json:"platforms,omitempty"`
+	DeviceTypes      []map[string]interface{} `json:"device_types,omitempty"`
+	Countries        []map[string]interface{} `json:"countries,omitempty"`
+}
+
+// OfferRelationshipCategory represents category in relationship data
+type OfferRelationshipCategory struct {
+	NetworkCategoryID *int    `json:"network_category_id,omitempty"`
+	Name              *string `json:"name,omitempty"`
+}
+
+// OfferRelationship represents relationship data for an offer
+type OfferRelationship struct {
+	RemainingCaps    *OfferRelationshipRemainingCaps `json:"remaining_caps,omitempty"`
+	Ruleset          *OfferRelationshipRuleset       `json:"ruleset,omitempty"`
+	Category         *OfferRelationshipCategory      `json:"category,omitempty"`
+	PayoutRevenue    *PayoutRevenue                  `json:"payout_revenue,omitempty"`
+	AdditionalData   map[string]interface{}          `json:"-"` // For any additional fields
+}
+
+// Offer represents a complete offer object from Everflow
+type Offer struct {
+	NetworkOfferID                              int64              `json:"network_offer_id"`
+	NetworkID                                   int64              `json:"network_id"`
+	NetworkAdvertiserID                         int64              `json:"network_advertiser_id"`
+	NetworkOfferGroupID                         *int64             `json:"network_offer_group_id,omitempty"`
+	NetworkCategoryID                           *int64             `json:"network_category_id,omitempty"`
+	Name                                        string             `json:"name"`
+	ThumbnailURL                                *string            `json:"thumbnail_url,omitempty"`
+	InternalNotes                               *string            `json:"internal_notes,omitempty"`
+	DestinationURL                              string             `json:"destination_url"`
+	ServerSideURL                               *string            `json:"server_side_url,omitempty"`
+	IsViewThroughEnabled                        *bool              `json:"is_view_through_enabled,omitempty"`
+	ViewThroughDestinationURL                   *string            `json:"view_through_destination_url,omitempty"`
+	PreviewURL                                  *string            `json:"preview_url,omitempty"`
+	OfferStatus                                 string             `json:"offer_status"`
+	Visibility                                  *string            `json:"visibility,omitempty"`
+	CurrencyID                                  *string            `json:"currency_id,omitempty"`
+	CapsTimezoneID                              *int               `json:"caps_timezone_id,omitempty"`
+	ProjectID                                   *string            `json:"project_id,omitempty"`
+	DateLiveUntil                               *string            `json:"date_live_until,omitempty"`
+	HTMLDescription                             *string            `json:"html_description,omitempty"`
+	IsUsingExplicitTermsAndConditions           *bool              `json:"is_using_explicit_terms_and_conditions,omitempty"`
+	TermsAndConditions                          *string            `json:"terms_and_conditions,omitempty"`
+	IsForceTermsAndConditions                   *bool              `json:"is_force_terms_and_conditions,omitempty"`
+	IsCapsEnabled                               *bool              `json:"is_caps_enabled,omitempty"`
+	DailyConversionCap                          *int               `json:"daily_conversion_cap,omitempty"`
+	WeeklyConversionCap                         *int               `json:"weekly_conversion_cap,omitempty"`
+	MonthlyConversionCap                        *int               `json:"monthly_conversion_cap,omitempty"`
+	GlobalConversionCap                         *int               `json:"global_conversion_cap,omitempty"`
+	DailyPayoutCap                              *int               `json:"daily_payout_cap,omitempty"`
+	WeeklyPayoutCap                             *int               `json:"weekly_payout_cap,omitempty"`
+	MonthlyPayoutCap                            *int               `json:"monthly_payout_cap,omitempty"`
+	GlobalPayoutCap                             *int               `json:"global_payout_cap,omitempty"`
+	DailyRevenueCap                             *int               `json:"daily_revenue_cap,omitempty"`
+	WeeklyRevenueCap                            *int               `json:"weekly_revenue_cap,omitempty"`
+	MonthlyRevenueCap                           *int               `json:"monthly_revenue_cap,omitempty"`
+	GlobalRevenueCap                            *int               `json:"global_revenue_cap,omitempty"`
+	DailyClickCap                               *int               `json:"daily_click_cap,omitempty"`
+	WeeklyClickCap                              *int               `json:"weekly_click_cap,omitempty"`
+	MonthlyClickCap                             *int               `json:"monthly_click_cap,omitempty"`
+	GlobalClickCap                              *int               `json:"global_click_cap,omitempty"`
+	RedirectMode                                *string            `json:"redirect_mode,omitempty"`
+	IsUsingSuppressionList                      *bool              `json:"is_using_suppression_list,omitempty"`
+	SuppressionListID                           *int               `json:"suppression_list_id,omitempty"`
+	IsDuplicateFilterEnabled                    *bool              `json:"is_duplicate_filter_enabled,omitempty"`
+	DuplicateFilterTargetingAction              *string            `json:"duplicate_filter_targeting_action,omitempty"`
+	NetworkTrackingDomainID                     *int               `json:"network_tracking_domain_id,omitempty"`
+	IsUseSecureLink                             *bool              `json:"is_use_secure_link,omitempty"`
+	IsAllowDeepLink                             *bool              `json:"is_allow_deep_link,omitempty"`
+	IsSessionTrackingEnabled                    *bool              `json:"is_session_tracking_enabled,omitempty"`
+	SessionTrackingLifespanHour                 *int               `json:"session_tracking_lifespan_hour,omitempty"`
+	SessionTrackingMinimumLifespanSecond        *int               `json:"session_tracking_minimum_lifespan_second,omitempty"`
+	IsViewThroughSessionTrackingEnabled         *bool              `json:"is_view_through_session_tracking_enabled,omitempty"`
+	ViewThroughSessionTrackingLifespanMinute    *int               `json:"view_through_session_tracking_lifespan_minute,omitempty"`
+	ViewThroughSessionTrackingMinimalLifespanSecond *int           `json:"view_through_session_tracking_minimal_lifespan_second,omitempty"`
+	IsBlockAlreadyConverted                     *bool              `json:"is_block_already_converted,omitempty"`
+	AlreadyConvertedAction                      *string            `json:"already_converted_action,omitempty"`
+	ConversionMethod                            *string            `json:"conversion_method,omitempty"`
+	IsWhitelistCheckEnabled                     *bool              `json:"is_whitelist_check_enabled,omitempty"`
+	IsUseScrubRate                              *bool              `json:"is_use_scrub_rate,omitempty"`
+	ScrubRateStatus                             *string            `json:"scrub_rate_status,omitempty"`
+	ScrubRatePercentage                         *int               `json:"scrub_rate_percentage,omitempty"`
+	SessionDefinition                           *string            `json:"session_definition,omitempty"`
+	SessionDuration                             *int               `json:"session_duration,omitempty"`
+	AppIdentifier                               *string            `json:"app_identifier,omitempty"`
+	IsDescriptionPlainText                      *bool              `json:"is_description_plain_text,omitempty"`
+	IsUseDirectLinking                          *bool              `json:"is_use_direct_linking,omitempty"`
+	EncodedValue                                *string            `json:"encoded_value,omitempty"`
+	TodayClicks                                 *int               `json:"today_clicks,omitempty"`
+	TodayRevenue                                *string            `json:"today_revenue,omitempty"`
+	TimeCreated                                 *int64             `json:"time_created,omitempty"`
+	TimeSaved                                   *int64             `json:"time_saved,omitempty"`
+	NetworkAdvertiserName                       *string            `json:"network_advertiser_name,omitempty"`
+	Category                                    *string            `json:"category,omitempty"`
+	Payout                                      *string            `json:"payout,omitempty"`
+	Revenue                                     *string            `json:"revenue,omitempty"`
+	Labels                                      *string            `json:"labels,omitempty"`
+	Channels                                    *string            `json:"channels,omitempty"`
+	PayoutRevenue                               *PayoutRevenue     `json:"payout_revenue,omitempty"`
+	Relationship                                *OfferRelationship `json:"relationship,omitempty"`
+}
+
+// OfferInput represents the input for creating or updating an offer
+type OfferInput struct {
+	NetworkAdvertiserID                         int64              `json:"network_advertiser_id"`
+	NetworkOfferGroupID                         *int64             `json:"network_offer_group_id,omitempty"`
+	Name                                        string             `json:"name"`
+	ThumbnailURL                                *string            `json:"thumbnail_url,omitempty"`
+	NetworkCategoryID                           *int64             `json:"network_category_id,omitempty"`
+	InternalNotes                               *string            `json:"internal_notes,omitempty"`
+	DestinationURL                              string             `json:"destination_url"`
+	ServerSideURL                               *string            `json:"server_side_url,omitempty"`
+	IsViewThroughEnabled                        *bool              `json:"is_view_through_enabled,omitempty"`
+	ViewThroughDestinationURL                   *string            `json:"view_through_destination_url,omitempty"`
+	PreviewURL                                  *string            `json:"preview_url,omitempty"`
+	OfferStatus                                 string             `json:"offer_status"`
+	Visibility                                  *string            `json:"visibility,omitempty"`
+	CurrencyID                                  *string            `json:"currency_id,omitempty"`
+	CapsTimezoneID                              *int               `json:"caps_timezone_id,omitempty"`
+	ProjectID                                   *string            `json:"project_id,omitempty"`
+	DateLiveUntil                               *string            `json:"date_live_until,omitempty"`
+	HTMLDescription                             *string            `json:"html_description,omitempty"`
+	IsUsingExplicitTermsAndConditions           *bool              `json:"is_using_explicit_terms_and_conditions,omitempty"`
+	TermsAndConditions                          *string            `json:"terms_and_conditions,omitempty"`
+	IsForceTermsAndConditions                   *bool              `json:"is_force_terms_and_conditions,omitempty"`
+	IsCapsEnabled                               *bool              `json:"is_caps_enabled,omitempty"`
+	DailyConversionCap                          *int               `json:"daily_conversion_cap,omitempty"`
+	WeeklyConversionCap                         *int               `json:"weekly_conversion_cap,omitempty"`
+	MonthlyConversionCap                        *int               `json:"monthly_conversion_cap,omitempty"`
+	GlobalConversionCap                         *int               `json:"global_conversion_cap,omitempty"`
+	DailyPayoutCap                              *int               `json:"daily_payout_cap,omitempty"`
+	WeeklyPayoutCap                             *int               `json:"weekly_payout_cap,omitempty"`
+	MonthlyPayoutCap                            *int               `json:"monthly_payout_cap,omitempty"`
+	GlobalPayoutCap                             *int               `json:"global_payout_cap,omitempty"`
+	DailyRevenueCap                             *int               `json:"daily_revenue_cap,omitempty"`
+	WeeklyRevenueCap                            *int               `json:"weekly_revenue_cap,omitempty"`
+	MonthlyRevenueCap                           *int               `json:"monthly_revenue_cap,omitempty"`
+	GlobalRevenueCap                            *int               `json:"global_revenue_cap,omitempty"`
+	DailyClickCap                               *int               `json:"daily_click_cap,omitempty"`
+	WeeklyClickCap                              *int               `json:"weekly_click_cap,omitempty"`
+	MonthlyClickCap                             *int               `json:"monthly_click_cap,omitempty"`
+	GlobalClickCap                              *int               `json:"global_click_cap,omitempty"`
+	RedirectMode                                *string            `json:"redirect_mode,omitempty"`
+	IsUsingSuppressionList                      *bool              `json:"is_using_suppression_list,omitempty"`
+	SuppressionListID                           *int               `json:"suppression_list_id,omitempty"`
+	IsDuplicateFilterEnabled                    *bool              `json:"is_duplicate_filter_enabled,omitempty"`
+	DuplicateFilterTargetingAction              *string            `json:"duplicate_filter_targeting_action,omitempty"`
+	NetworkTrackingDomainID                     *int               `json:"network_tracking_domain_id,omitempty"`
+	IsUseSecureLink                             *bool              `json:"is_use_secure_link,omitempty"`
+	IsAllowDeepLink                             *bool              `json:"is_allow_deep_link,omitempty"`
+	IsSessionTrackingEnabled                    *bool              `json:"is_session_tracking_enabled,omitempty"`
+	SessionTrackingLifespanHour                 *int               `json:"session_tracking_lifespan_hour,omitempty"`
+	SessionTrackingMinimumLifespanSecond        *int               `json:"session_tracking_minimum_lifespan_second,omitempty"`
+	IsViewThroughSessionTrackingEnabled         *bool              `json:"is_view_through_session_tracking_enabled,omitempty"`
+	ViewThroughSessionTrackingLifespanMinute    *int               `json:"view_through_session_tracking_lifespan_minute,omitempty"`
+	ViewThroughSessionTrackingMinimalLifespanSecond *int           `json:"view_through_session_tracking_minimal_lifespan_second,omitempty"`
+	IsBlockAlreadyConverted                     *bool              `json:"is_block_already_converted,omitempty"`
+	AlreadyConvertedAction                      *string            `json:"already_converted_action,omitempty"`
+	ConversionMethod                            *string            `json:"conversion_method,omitempty"`
+	IsWhitelistCheckEnabled                     *bool              `json:"is_whitelist_check_enabled,omitempty"`
+	IsUseScrubRate                              *bool              `json:"is_use_scrub_rate,omitempty"`
+	ScrubRateStatus                             *string            `json:"scrub_rate_status,omitempty"`
+	ScrubRatePercentage                         *int               `json:"scrub_rate_percentage,omitempty"`
+	SessionDefinition                           *string            `json:"session_definition,omitempty"`
+	SessionDuration                             *int               `json:"session_duration,omitempty"`
+	AppIdentifier                               *string            `json:"app_identifier,omitempty"`
+	IsDescriptionPlainText                      *bool              `json:"is_description_plain_text,omitempty"`
+	IsUseDirectLinking                          *bool              `json:"is_use_direct_linking,omitempty"`
+	EncodedValue                                *string            `json:"encoded_value,omitempty"`
+	Meta                                        *OfferMeta         `json:"meta,omitempty"`
+	PayoutRevenue                               *PayoutRevenue     `json:"payout_revenue,omitempty"`
+}
+
+// OfferMeta represents metadata for an offer
+type OfferMeta struct {
+	AdvertiserCampaignName *string `json:"advertiser_campaign_name,omitempty"`
+}
+
+// OffersTableSearchTerm represents a search term for the offers table
+type OffersTableSearchTerm struct {
+	SearchType string `json:"search_type"` // "name", "encoded_value", "advertiser_name"
+	Value      string `json:"value"`
+}
+
+// OffersTableRequest represents the request for the offers table endpoint
+type OffersTableRequest struct {
+	SearchTerms []OffersTableSearchTerm    `json:"search_terms,omitempty"`
+	Filters     map[string]interface{}     `json:"filters,omitempty"`
+}
+
+// OffersTableOptions represents options for the offers table request
+type OffersTableOptions struct {
+	Page          *int     `json:"page,omitempty"`
+	PageSize      *int     `json:"page_size,omitempty"`
+	Relationships []string `json:"relationships,omitempty"`
+}
+
+// OffersTableResponse represents the response from the offers table endpoint
+type OffersTableResponse struct {
+	Offers []Offer `json:"offers"`
 }
 
 // ListAdvertisersOptions represents options for listing advertisers
@@ -508,8 +703,68 @@ func (c *Client) UpdateAdvertiser(ctx context.Context, networkAdvertiserID int64
 	return &advertiser, nil
 }
 
+// GetOfferOptions represents options for getting a single offer
+type GetOfferOptions struct {
+	Relationships []string `json:"relationships,omitempty"`
+}
+
+// Valid relationship values for GetOffer
+const (
+	OfferRelationshipCampaigns                = "campaigns"
+	OfferRelationshipAdvertiserGlobalEvents   = "advertiser_global_events"
+	OfferRelationshipOfferEmail               = "offer_email"
+	OfferRelationshipOfferEmailOptout         = "offer_email_optout"
+	OfferRelationshipReporting                = "reporting"
+)
+
+// GetOffer retrieves a single offer by ID from Everflow
+func (c *Client) GetOffer(ctx context.Context, networkOfferID int64, opts *GetOfferOptions) (*Offer, error) {
+	reqURL := fmt.Sprintf("%s/networks/offers/%d", everflowAPIBaseURL, networkOfferID)
+
+	// Add query parameters if options are provided
+	if opts != nil && len(opts.Relationships) > 0 {
+		params := url.Values{}
+		for _, relationship := range opts.Relationships {
+			params.Add("relationship", relationship)
+		}
+		reqURL += "?" + params.Encode()
+	}
+
+	httpReq, err := http.NewRequestWithContext(ctx, "GET", reqURL, nil)
+	if err != nil {
+		return nil, fmt.Errorf("failed to create HTTP request: %w", err)
+	}
+	httpReq.Header.Set("X-Eflow-API-Key", c.apiKey)
+
+	resp, err := c.httpClient.Do(httpReq)
+	if err != nil {
+		return nil, fmt.Errorf("failed to execute request to Everflow: %w", err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode == http.StatusNotFound {
+		return nil, fmt.Errorf("offer with ID %d not found", networkOfferID)
+	}
+
+	if resp.StatusCode != http.StatusOK {
+		// Read error body for more details
+		var errorResp map[string]interface{}
+		if err := json.NewDecoder(resp.Body).Decode(&errorResp); err == nil {
+			return nil, fmt.Errorf("Everflow API request failed with status %d: %v", resp.StatusCode, errorResp)
+		}
+		return nil, fmt.Errorf("Everflow API request failed with status %d", resp.StatusCode)
+	}
+
+	var offer Offer
+	if err := json.NewDecoder(resp.Body).Decode(&offer); err != nil {
+		return nil, fmt.Errorf("failed to decode Everflow get offer response: %w", err)
+	}
+
+	return &offer, nil
+}
+
 // CreateOffer creates a new offer in Everflow
-func (c *Client) CreateOffer(ctx context.Context, req EverflowCreateOfferRequest) (*EverflowCreateOfferResponse, error) {
+func (c *Client) CreateOffer(ctx context.Context, req OfferInput) (*Offer, error) {
 	payloadBytes, err := json.Marshal(req)
 	if err != nil {
 		return nil, fmt.Errorf("failed to marshal create offer request: %w", err)
@@ -537,12 +792,111 @@ func (c *Client) CreateOffer(ctx context.Context, req EverflowCreateOfferRequest
 		return nil, fmt.Errorf("Everflow API request failed with status %d", resp.StatusCode)
 	}
 
-	var createResp EverflowCreateOfferResponse
-	if err := json.NewDecoder(resp.Body).Decode(&createResp); err != nil {
+	var offer Offer
+	if err := json.NewDecoder(resp.Body).Decode(&offer); err != nil {
 		return nil, fmt.Errorf("failed to decode Everflow create offer response: %w", err)
 	}
 
-	return &createResp, nil
+	return &offer, nil
+}
+
+// UpdateOffer updates an existing offer in Everflow
+func (c *Client) UpdateOffer(ctx context.Context, networkOfferID int64, req OfferInput) (*Offer, error) {
+	payloadBytes, err := json.Marshal(req)
+	if err != nil {
+		return nil, fmt.Errorf("failed to marshal update offer request: %w", err)
+	}
+
+	httpReq, err := http.NewRequestWithContext(ctx, "PUT", fmt.Sprintf("%s/networks/offers/%d", everflowAPIBaseURL, networkOfferID), bytes.NewBuffer(payloadBytes))
+	if err != nil {
+		return nil, fmt.Errorf("failed to create HTTP request: %w", err)
+	}
+	httpReq.Header.Set("Content-Type", "application/json")
+	httpReq.Header.Set("X-Eflow-API-Key", c.apiKey)
+
+	resp, err := c.httpClient.Do(httpReq)
+	if err != nil {
+		return nil, fmt.Errorf("failed to execute request to Everflow: %w", err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode == http.StatusNotFound {
+		return nil, fmt.Errorf("offer with ID %d not found", networkOfferID)
+	}
+
+	if resp.StatusCode != http.StatusOK {
+		// Read error body for more details
+		var errorResp map[string]interface{}
+		if err := json.NewDecoder(resp.Body).Decode(&errorResp); err == nil {
+			return nil, fmt.Errorf("Everflow API request failed with status %d: %v", resp.StatusCode, errorResp)
+		}
+		return nil, fmt.Errorf("Everflow API request failed with status %d", resp.StatusCode)
+	}
+
+	var offer Offer
+	if err := json.NewDecoder(resp.Body).Decode(&offer); err != nil {
+		return nil, fmt.Errorf("failed to decode Everflow update offer response: %w", err)
+	}
+
+	return &offer, nil
+}
+
+// OffersTable retrieves a list of offers with optional filtering and search
+func (c *Client) OffersTable(ctx context.Context, req OffersTableRequest, opts *OffersTableOptions) (*OffersTableResponse, error) {
+	reqURL := everflowAPIBaseURL + "/networks/offerstable"
+
+	// Add query parameters if options are provided
+	if opts != nil {
+		params := url.Values{}
+		if opts.Page != nil {
+			params.Add("page", strconv.Itoa(*opts.Page))
+		}
+		if opts.PageSize != nil {
+			params.Add("page_size", strconv.Itoa(*opts.PageSize))
+		}
+		if len(opts.Relationships) > 0 {
+			for _, relationship := range opts.Relationships {
+				params.Add("relationship", relationship)
+			}
+		}
+		if len(params) > 0 {
+			reqURL += "?" + params.Encode()
+		}
+	}
+
+	payloadBytes, err := json.Marshal(req)
+	if err != nil {
+		return nil, fmt.Errorf("failed to marshal offers table request: %w", err)
+	}
+
+	httpReq, err := http.NewRequestWithContext(ctx, "POST", reqURL, bytes.NewBuffer(payloadBytes))
+	if err != nil {
+		return nil, fmt.Errorf("failed to create HTTP request: %w", err)
+	}
+	httpReq.Header.Set("Content-Type", "application/json")
+	httpReq.Header.Set("X-Eflow-API-Key", c.apiKey)
+
+	resp, err := c.httpClient.Do(httpReq)
+	if err != nil {
+		return nil, fmt.Errorf("failed to execute request to Everflow: %w", err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != http.StatusOK {
+		// Read error body for more details
+		var errorResp map[string]interface{}
+		if err := json.NewDecoder(resp.Body).Decode(&errorResp); err == nil {
+			return nil, fmt.Errorf("Everflow API request failed with status %d: %v", resp.StatusCode, errorResp)
+		}
+		return nil, fmt.Errorf("Everflow API request failed with status %d", resp.StatusCode)
+	}
+
+	var offersResp OffersTableResponse
+	if err := json.NewDecoder(resp.Body).Decode(&offersResp); err != nil {
+		return nil, fmt.Errorf("failed to decode Everflow offers table response: %w", err)
+	}
+
+	return &offersResp, nil
 }
 
 // AddTagsToAdvertiser adds tags to an advertiser in Everflow

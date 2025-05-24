@@ -103,18 +103,27 @@ func (s *campaignService) CreateCampaign(ctx context.Context, campaign *domain.C
 		}
 	}
 
+	// Set default values for offer fields if not provided
+	s.setDefaultOfferValues(campaign)
+
+	// Validate offer-specific fields
+	if err := s.validateOfferFields(campaign); err != nil {
+		return nil, fmt.Errorf("invalid offer configuration: %w", err)
+	}
+
+	// Save campaign to database first
 	if err := s.campaignRepo.CreateCampaign(ctx, campaign); err != nil {
 		return nil, fmt.Errorf("failed to create campaign: %w", err)
 	}
 
-	// Create offer in Everflow if the service is available
-	if s.everflowService != nil {
+	// Sync to Everflow asynchronously if the service is available and campaign has required fields
+	if s.everflowService != nil && s.shouldSyncToEverflow(campaign) {
 		go func() {
 			// Use a background context since this is a fire-and-forget operation
 			bgCtx := context.Background()
-			if err := s.everflowService.CreateOfferInEverflow(bgCtx, campaign); err != nil {
+			if err := s.syncCampaignToEverflow(bgCtx, campaign); err != nil {
 				// Log the error but don't fail the campaign creation
-				log.Printf("Error creating offer in Everflow: %v", err)
+				log.Printf("Error syncing campaign to Everflow: %v", err)
 			}
 		}()
 	}
@@ -246,7 +255,7 @@ func (s *campaignService) UpdateCampaignProviderOffer(ctx context.Context, offer
 	}
 
 	// Get existing offer to verify campaign ID
-	existingOffer, err := s.campaignRepo.GetCampaignProviderOfferByID(ctx, offer.ProviderOfferID)
+	existingOffer, err := s.campaignRepo.GetCampaignProviderOfferByID(ctx, offer.CampaignProviderOfferID)
 	if err != nil {
 		return fmt.Errorf("failed to get existing campaign provider offer: %w", err)
 	}
@@ -270,4 +279,181 @@ func (s *campaignService) ListCampaignProviderOffersByCampaign(ctx context.Conte
 // DeleteCampaignProviderOffer deletes a campaign provider offer
 func (s *campaignService) DeleteCampaignProviderOffer(ctx context.Context, id int64) error {
 	return s.campaignRepo.DeleteCampaignProviderOffer(ctx, id)
+}
+
+// setDefaultOfferValues sets default values for offer fields if not provided
+func (s *campaignService) setDefaultOfferValues(campaign *domain.Campaign) {
+	if campaign.Visibility == nil {
+		visibility := "public"
+		campaign.Visibility = &visibility
+	}
+	
+	if campaign.CurrencyID == nil {
+		currencyID := "USD"
+		campaign.CurrencyID = &currencyID
+	}
+	
+	if campaign.ConversionMethod == nil {
+		conversionMethod := "server_postback"
+		campaign.ConversionMethod = &conversionMethod
+	}
+	
+	if campaign.SessionDefinition == nil {
+		sessionDefinition := "cookie"
+		campaign.SessionDefinition = &sessionDefinition
+	}
+	
+	if campaign.SessionDuration == nil {
+		sessionDuration := 24
+		campaign.SessionDuration = &sessionDuration
+	}
+	
+	if campaign.PayoutType == nil {
+		payoutType := "cpa"
+		campaign.PayoutType = &payoutType
+	}
+	
+	if campaign.PayoutAmount == nil {
+		payoutAmount := 1.00
+		campaign.PayoutAmount = &payoutAmount
+	}
+	
+	if campaign.RevenueType == nil {
+		revenueType := "rpa"
+		campaign.RevenueType = &revenueType
+	}
+	
+	if campaign.RevenueAmount == nil {
+		revenueAmount := 2.00
+		campaign.RevenueAmount = &revenueAmount
+	}
+	
+	if campaign.IsForceTermsAndConditions == nil {
+		isForce := false
+		campaign.IsForceTermsAndConditions = &isForce
+	}
+	
+	if campaign.IsCapsEnabled == nil {
+		isCapsEnabled := false
+		campaign.IsCapsEnabled = &isCapsEnabled
+	}
+}
+
+// validateOfferFields validates offer-specific fields
+func (s *campaignService) validateOfferFields(campaign *domain.Campaign) error {
+	// Validate visibility
+	if campaign.Visibility != nil {
+		validVisibilities := map[string]bool{
+			"public":           true,
+			"require_approval": true,
+			"private":          true,
+		}
+		if !validVisibilities[*campaign.Visibility] {
+			return fmt.Errorf("invalid visibility: %s", *campaign.Visibility)
+		}
+	}
+	
+	// Validate conversion method
+	if campaign.ConversionMethod != nil {
+		validMethods := map[string]bool{
+			"server_postback": true,
+			"pixel":           true,
+			"postback_url":    true,
+			"api":             true,
+		}
+		if !validMethods[*campaign.ConversionMethod] {
+			return fmt.Errorf("invalid conversion method: %s", *campaign.ConversionMethod)
+		}
+	}
+	
+	// Validate session definition
+	if campaign.SessionDefinition != nil {
+		validDefinitions := map[string]bool{
+			"cookie":      true,
+			"ip":          true,
+			"fingerprint": true,
+		}
+		if !validDefinitions[*campaign.SessionDefinition] {
+			return fmt.Errorf("invalid session definition: %s", *campaign.SessionDefinition)
+		}
+	}
+	
+	// Validate payout type
+	if campaign.PayoutType != nil {
+		validPayoutTypes := map[string]bool{
+			"cpa":     true,
+			"cpc":     true,
+			"cpm":     true,
+			"cps":     true,
+			"cpa_cps": true,
+			"prv":     true,
+		}
+		if !validPayoutTypes[*campaign.PayoutType] {
+			return fmt.Errorf("invalid payout type: %s", *campaign.PayoutType)
+		}
+	}
+	
+	// Validate revenue type
+	if campaign.RevenueType != nil {
+		validRevenueTypes := map[string]bool{
+			"rpa":     true,
+			"rpc":     true,
+			"rpm":     true,
+			"rps":     true,
+			"rpa_rps": true,
+			"prv":     true,
+		}
+		if !validRevenueTypes[*campaign.RevenueType] {
+			return fmt.Errorf("invalid revenue type: %s", *campaign.RevenueType)
+		}
+	}
+	
+	// Validate amounts are positive
+	if campaign.PayoutAmount != nil && *campaign.PayoutAmount < 0 {
+		return fmt.Errorf("payout amount must be non-negative")
+	}
+	
+	if campaign.RevenueAmount != nil && *campaign.RevenueAmount < 0 {
+		return fmt.Errorf("revenue amount must be non-negative")
+	}
+	
+	// Validate session duration is positive
+	if campaign.SessionDuration != nil && *campaign.SessionDuration <= 0 {
+		return fmt.Errorf("session duration must be positive")
+	}
+	
+	// Validate caps are non-negative
+	caps := []*int{
+		campaign.DailyConversionCap, campaign.WeeklyConversionCap,
+		campaign.MonthlyConversionCap, campaign.GlobalConversionCap,
+		campaign.DailyClickCap, campaign.WeeklyClickCap,
+		campaign.MonthlyClickCap, campaign.GlobalClickCap,
+	}
+	
+	for _, cap := range caps {
+		if cap != nil && *cap < 0 {
+			return fmt.Errorf("caps must be non-negative")
+		}
+	}
+	
+	return nil
+}
+
+// shouldSyncToEverflow determines if a campaign should be synced to Everflow
+func (s *campaignService) shouldSyncToEverflow(campaign *domain.Campaign) bool {
+	// Only sync if campaign has a destination URL (required for Everflow offers)
+	return campaign.DestinationURL != nil && *campaign.DestinationURL != ""
+}
+
+// syncCampaignToEverflow syncs a campaign to Everflow as an offer
+func (s *campaignService) syncCampaignToEverflow(ctx context.Context, campaign *domain.Campaign) error {
+	// Create offer in Everflow
+	err := s.everflowService.CreateOfferInEverflow(ctx, campaign)
+	if err != nil {
+		return fmt.Errorf("failed to create offer in Everflow: %w", err)
+	}
+	
+	// The Everflow service handles creating the provider offer record internally
+	
+	return nil
 }

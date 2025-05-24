@@ -220,7 +220,9 @@ func (s *Service) CreateOfferInEverflow(ctx context.Context, campaign *domain.Ca
 		"network_advertiser_id": everflowResp.NetworkAdvertiserID,
 		"offer_status":          everflowResp.OfferStatus,
 		"currency_id":           everflowResp.CurrencyID,
-		"offer_url":             everflowResp.OfferURL,
+		"encoded_value":         everflowResp.EncodedValue,
+		"time_created":          everflowResp.TimeCreated,
+		"time_saved":            everflowResp.TimeSaved,
 	}
 
 	providerConfigJSON, err := json.Marshal(providerConfig)
@@ -371,7 +373,7 @@ func (s *Service) mapAdvertiserToEverflowRequest(advertiser *domain.Advertiser) 
 }
 
 // mapCampaignToEverflowRequest maps our campaign to an Everflow offer request
-func (s *Service) mapCampaignToEverflowRequest(campaign *domain.Campaign, networkAdvertiserID int64) (*EverflowCreateOfferRequest, error) {
+func (s *Service) mapCampaignToEverflowRequest(campaign *domain.Campaign, networkAdvertiserID int64) (*OfferInput, error) {
 	// Map status
 	offerStatus := "pending"
 	switch campaign.Status {
@@ -386,45 +388,241 @@ func (s *Service) mapCampaignToEverflowRequest(campaign *domain.Campaign, networ
 	// Create a default destination URL (this would typically come from campaign details)
 	destinationURL := fmt.Sprintf("https://example.com/campaigns/%d?click_id={transaction_id}", campaign.CampaignID)
 
-	// Create basic request
-	req := &EverflowCreateOfferRequest{
-		Name:                campaign.Name,
-		NetworkAdvertiserID: networkAdvertiserID,
-		DestinationURL:      destinationURL,
-		OfferStatus:         offerStatus,
-		CurrencyID:          "USD",             // Default to USD, could be configurable
-		Visibility:          "public",          // Default to public, could be configurable
-		ConversionMethod:    "server_postback", // Default to server postback, could be configurable
+	// Default values
+	currencyID := "USD"
+	visibility := "public"
+	conversionMethod := "server_postback"
+	sessionDefinition := "cookie"
+	sessionDuration := 720 // 30 days in hours
 
-		// Add default payout/revenue structure
-		PayoutRevenue: []PayoutRevenueItem{
+	// Create default payout/revenue structure
+	payoutAmount := 1.00
+	revenueAmount := 2.00
+	payoutRevenue := &PayoutRevenue{
+		Entries: []PayoutRevenueEntry{
 			{
-				IsDefault:     true,
+				EntryName:     nil, // Empty entry name for default
 				PayoutType:    "cpa",
-				PayoutAmount:  1.00, // Default payout amount, should be configurable
-				RevenueType:   "cpa",
-				RevenueAmount: 2.00, // Default revenue amount, should be configurable
+				PayoutAmount:  &payoutAmount,
+				RevenueType:   "rpa",
+				RevenueAmount: &revenueAmount,
+				IsDefault:     true,
+				IsPrivate:     false,
 			},
 		},
 	}
 
-	// Add description if available
-	if campaign.Description != nil {
-		req.Description = campaign.Description
+	// Create basic request
+	req := &OfferInput{
+		Name:                campaign.Name,
+		NetworkAdvertiserID: networkAdvertiserID,
+		DestinationURL:      destinationURL,
+		OfferStatus:         offerStatus,
+		CurrencyID:          &currencyID,
+		Visibility:          &visibility,
+		ConversionMethod:    &conversionMethod,
+		SessionDefinition:   &sessionDefinition,
+		SessionDuration:     &sessionDuration,
+		PayoutRevenue:       payoutRevenue,
 	}
 
-	// Add session definition and duration
-	sessionDefinition := "cookie"
-	sessionDuration := 720 // 30 days in hours
-	req.SessionDefinition = &sessionDefinition
-	req.SessionDuration = &sessionDuration
-
-	// Add tags
-	req.Tags = []string{
-		fmt.Sprintf("campaign_id:%d", campaign.CampaignID),
-		fmt.Sprintf("advertiser_id:%d", campaign.AdvertiserID),
-		fmt.Sprintf("organization_id:%d", campaign.OrganizationID),
+	// Add description if available
+	if campaign.Description != nil {
+		req.HTMLDescription = campaign.Description
 	}
 
 	return req, nil
+}
+
+// GetOfferFromEverflow retrieves a single offer from Everflow by ID
+func (s *Service) GetOfferFromEverflow(ctx context.Context, networkOfferID int64, relationships []string) (*Offer, error) {
+	opts := &GetOfferOptions{
+		Relationships: relationships,
+	}
+
+	return s.client.GetOffer(ctx, networkOfferID, opts)
+}
+
+// GetOfferFromEverflowByMapping retrieves an offer from Everflow using our internal campaign ID
+func (s *Service) GetOfferFromEverflowByMapping(ctx context.Context, campaignID int64, relationships []string) (*Offer, error) {
+	// Get the campaign's Everflow offer mapping
+	offers, err := s.campaignRepo.ListCampaignProviderOffersByCampaign(ctx, campaignID)
+	if err != nil {
+		return nil, fmt.Errorf("failed to get campaign provider offers: %w", err)
+	}
+
+	// Find the Everflow offer
+	var everflowOffer *domain.CampaignProviderOffer
+	for _, offer := range offers {
+		if offer.ProviderType == "everflow" && offer.ProviderOfferRef != nil {
+			everflowOffer = offer
+			break
+		}
+	}
+
+	if everflowOffer == nil {
+		return nil, fmt.Errorf("campaign does not have an Everflow offer")
+	}
+
+	// Convert the provider offer ref to int64
+	networkOfferID, err := strconv.ParseInt(*everflowOffer.ProviderOfferRef, 10, 64)
+	if err != nil {
+		return nil, fmt.Errorf("invalid provider offer ref: %w", err)
+	}
+
+	return s.GetOfferFromEverflow(ctx, networkOfferID, relationships)
+}
+
+// UpdateOfferInEverflow updates an offer in Everflow by ID
+func (s *Service) UpdateOfferInEverflow(ctx context.Context, networkOfferID int64, req OfferInput) (*Offer, error) {
+	return s.client.UpdateOffer(ctx, networkOfferID, req)
+}
+
+// UpdateOfferInEverflowByMapping updates an offer in Everflow using our internal campaign ID
+func (s *Service) UpdateOfferInEverflowByMapping(ctx context.Context, campaignID int64, req OfferInput) (*Offer, error) {
+	// Get the campaign's Everflow offer mapping
+	offers, err := s.campaignRepo.ListCampaignProviderOffersByCampaign(ctx, campaignID)
+	if err != nil {
+		return nil, fmt.Errorf("failed to get campaign provider offers: %w", err)
+	}
+
+	// Find the Everflow offer
+	var everflowOffer *domain.CampaignProviderOffer
+	for _, offer := range offers {
+		if offer.ProviderType == "everflow" && offer.ProviderOfferRef != nil {
+			everflowOffer = offer
+			break
+		}
+	}
+
+	if everflowOffer == nil {
+		return nil, fmt.Errorf("campaign does not have an Everflow offer")
+	}
+
+	// Convert the provider offer ref to int64
+	networkOfferID, err := strconv.ParseInt(*everflowOffer.ProviderOfferRef, 10, 64)
+	if err != nil {
+		return nil, fmt.Errorf("invalid provider offer ref: %w", err)
+	}
+
+	// Update the offer
+	updatedOffer, err := s.UpdateOfferInEverflow(ctx, networkOfferID, req)
+	if err != nil {
+		return nil, err
+	}
+
+	// Update the local mapping with new status and sync time
+	now := time.Now()
+	everflowOffer.IsActiveOnProvider = updatedOffer.OfferStatus == "active"
+	everflowOffer.LastSyncedAt = &now
+
+	// Update provider config with new data
+	providerConfig := map[string]interface{}{
+		"network_offer_id":      updatedOffer.NetworkOfferID,
+		"network_id":            updatedOffer.NetworkID,
+		"network_advertiser_id": updatedOffer.NetworkAdvertiserID,
+		"offer_status":          updatedOffer.OfferStatus,
+		"currency_id":           updatedOffer.CurrencyID,
+		"encoded_value":         updatedOffer.EncodedValue,
+		"time_created":          updatedOffer.TimeCreated,
+		"time_saved":            updatedOffer.TimeSaved,
+	}
+
+	providerConfigJSON, err := json.Marshal(providerConfig)
+	if err != nil {
+		return nil, fmt.Errorf("failed to marshal provider config: %w", err)
+	}
+
+	providerConfigStr := string(providerConfigJSON)
+	everflowOffer.ProviderOfferConfig = &providerConfigStr
+
+	if err := s.campaignRepo.UpdateCampaignProviderOffer(ctx, everflowOffer); err != nil {
+		// Log the error but don't fail the operation
+		fmt.Printf("Warning: failed to update campaign provider offer mapping: %v\n", err)
+	}
+
+	return updatedOffer, nil
+}
+
+// ListOffersFromEverflow retrieves offers from Everflow with optional filtering
+func (s *Service) ListOffersFromEverflow(ctx context.Context, req OffersTableRequest, opts *OffersTableOptions) (*OffersTableResponse, error) {
+	return s.client.OffersTable(ctx, req, opts)
+}
+
+// SyncCampaignWithEverflowOffer synchronizes a campaign's data with its Everflow offer
+func (s *Service) SyncCampaignWithEverflowOffer(ctx context.Context, campaignID int64) error {
+	// Get the campaign
+	campaign, err := s.campaignRepo.GetCampaignByID(ctx, campaignID)
+	if err != nil {
+		return fmt.Errorf("failed to get campaign: %w", err)
+	}
+
+	// Get the Everflow offer
+	offer, err := s.GetOfferFromEverflowByMapping(ctx, campaignID, []string{"reporting"})
+	if err != nil {
+		return fmt.Errorf("failed to get Everflow offer: %w", err)
+	}
+
+	// Update campaign status based on offer status
+	var newStatus string
+	switch offer.OfferStatus {
+	case "active":
+		newStatus = "active"
+	case "paused":
+		newStatus = "paused"
+	case "pending":
+		newStatus = "draft"
+	default:
+		newStatus = campaign.Status // Keep current status if unknown
+	}
+
+	if campaign.Status != newStatus {
+		campaign.Status = newStatus
+		if err := s.campaignRepo.UpdateCampaign(ctx, campaign); err != nil {
+			return fmt.Errorf("failed to update campaign status: %w", err)
+		}
+	}
+
+	// Update the provider offer mapping
+	offers, err := s.campaignRepo.ListCampaignProviderOffersByCampaign(ctx, campaignID)
+	if err != nil {
+		return fmt.Errorf("failed to get campaign provider offers: %w", err)
+	}
+
+	for _, providerOffer := range offers {
+		if providerOffer.ProviderType == "everflow" {
+			now := time.Now()
+			providerOffer.IsActiveOnProvider = offer.OfferStatus == "active"
+			providerOffer.LastSyncedAt = &now
+
+			// Update provider config
+			providerConfig := map[string]interface{}{
+				"network_offer_id":      offer.NetworkOfferID,
+				"network_id":            offer.NetworkID,
+				"network_advertiser_id": offer.NetworkAdvertiserID,
+				"offer_status":          offer.OfferStatus,
+				"currency_id":           offer.CurrencyID,
+				"encoded_value":         offer.EncodedValue,
+				"time_created":          offer.TimeCreated,
+				"time_saved":            offer.TimeSaved,
+				"today_clicks":          offer.TodayClicks,
+				"today_revenue":         offer.TodayRevenue,
+			}
+
+			providerConfigJSON, err := json.Marshal(providerConfig)
+			if err != nil {
+				return fmt.Errorf("failed to marshal provider config: %w", err)
+			}
+
+			providerConfigStr := string(providerConfigJSON)
+			providerOffer.ProviderOfferConfig = &providerConfigStr
+
+			if err := s.campaignRepo.UpdateCampaignProviderOffer(ctx, providerOffer); err != nil {
+				return fmt.Errorf("failed to update campaign provider offer: %w", err)
+			}
+			break
+		}
+	}
+
+	return nil
 }

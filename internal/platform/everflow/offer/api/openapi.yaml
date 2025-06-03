@@ -1,0 +1,2255 @@
+openapi: 3.0.0
+info:
+  description: API for managing offers in the Everflow platform
+  title: Everflow Network API - Offers
+  version: 1.0.0
+servers:
+- description: Production server
+  url: https://api.eflow.team/v1
+security:
+- ApiKeyAuth: []
+paths:
+  /networks/offers:
+    post:
+      description: Create a new offer in the Everflow platform. Note that the payload
+        for creating offers is complex.
+      operationId: createOffer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateOfferRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OfferResponse'
+          description: Successfully created offer
+        "400":
+          description: Bad request
+        "401":
+          description: Unauthorized
+        "500":
+          description: Internal server error
+      summary: Create an offer
+      tags:
+      - Offers
+  /networks/offers/{offerId}:
+    get:
+      description: Fetch the details of a single offer by its ID
+      operationId: getOfferById
+      parameters:
+      - description: The ID of the offer you want to fetch
+        explode: false
+        in: path
+        name: offerId
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: Additional relationships to include (comma-separated)
+        explode: true
+        in: query
+        name: relationship
+        required: false
+        schema:
+          enum:
+          - advertiser
+          - offer_group
+          - visibility
+          - payout_revenue
+          - custom_cap_settings
+          - custom_scrub_rate_settings
+          - custom_payout_revenue_settings
+          - custom_creative_settings
+          - redirects
+          - traffic_filters
+          - targeting
+          - files
+          - audits
+          - source_name
+          - urls
+          - integrations
+          - campaigns
+          - advertiser_global_events
+          - offer_email
+          - offer_email_optout
+          - reporting
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OfferResponse'
+          description: Successfully retrieved offer
+        "404":
+          description: Offer not found
+        "401":
+          description: Unauthorized
+        "500":
+          description: Internal server error
+      summary: Find offer by ID
+      tags:
+      - Offers
+    put:
+      description: "Update an existing offer. Requires passing the entire offer object,\
+        \ not just the fields to update."
+      operationId: updateOffer
+      parameters:
+      - description: The ID of the offer you want to update
+        explode: false
+        in: path
+        name: offerId
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateOfferRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OfferResponse'
+          description: Successfully updated offer
+        "400":
+          description: Bad request
+        "404":
+          description: Offer not found
+        "401":
+          description: Unauthorized
+        "500":
+          description: Internal server error
+      summary: Update an offer
+      tags:
+      - Offers
+components:
+  schemas:
+    CreateOfferRequest:
+      example:
+        scrub_rate_status: rejected
+        is_description_plain_text: false
+        daily_revenue_cap: 1
+        session_tracking_minimum_lifespan_second: 8
+        weekly_conversion_cap: 2
+        creatives:
+        - is_private: false
+          html_code: html_code
+          resource_file:
+            temp_url: temp_url
+            original_file_name: original_file_name
+          creative_type: image
+          html_files:
+          - temp_url: temp_url
+            original_file_name: original_file_name
+          - temp_url: temp_url
+            original_file_name: original_file_name
+          name: name
+          width: 1
+          creative_status: active
+          email_subject: email_subject
+          email_from: email_from
+          height: 2
+        - is_private: false
+          html_code: html_code
+          resource_file:
+            temp_url: temp_url
+            original_file_name: original_file_name
+          creative_type: image
+          html_files:
+          - temp_url: temp_url
+            original_file_name: original_file_name
+          - temp_url: temp_url
+            original_file_name: original_file_name
+          name: name
+          width: 1
+          creative_status: active
+          email_subject: email_subject
+          email_from: email_from
+          height: 2
+        monthly_revenue_cap: 1
+        requirement_kpis:
+        - kpi: kpi
+        - kpi: kpi
+        view_through_destination_url: view_through_destination_url
+        weekly_click_cap: 1
+        is_view_through_enabled: false
+        conversion_method: server_postback
+        server_side_url: server_side_url
+        project_id: project_id
+        is_fail_traffic_enabled: false
+        global_conversion_cap: 9
+        is_block_already_converted: false
+        network_category_id: 1
+        is_view_through_session_tracking_enabled: false
+        requirement_tracking_parameters:
+        - tracking_parameter: tracking_parameter
+          value: value
+        - tracking_parameter: tracking_parameter
+          value: value
+        is_using_suppression_list: false
+        visibility: public
+        daily_payout_cap: 3
+        ruleset:
+          regions:
+          - "{}"
+          - "{}"
+          brands:
+          - "{}"
+          - "{}"
+          languages:
+          - "{}"
+          - "{}"
+          cities:
+          - "{}"
+          - "{}"
+          is_use_day_parting: false
+          days_parting:
+          - "{}"
+          - "{}"
+          postal_codes:
+          - "{}"
+          - "{}"
+          countries:
+          - "{}"
+          - "{}"
+          os_versions:
+          - "{}"
+          - "{}"
+          browsers:
+          - "{}"
+          - "{}"
+          ips:
+          - "{}"
+          - "{}"
+          platforms:
+          - "{}"
+          - "{}"
+          day_parting_timezone_id: 3
+          dmas:
+          - "{}"
+          - "{}"
+          connection_types:
+          - "{}"
+          - "{}"
+          is_block_proxy: false
+          device_types:
+          - "{}"
+          - "{}"
+          day_parting_apply_to: user_timezone
+          isps:
+          - "{}"
+          - "{}"
+          mobile_carriers:
+          - "{}"
+          - "{}"
+        is_allow_deep_link: false
+        thumbnail_file:
+          temp_url: temp_url
+          original_file_name: original_file_name
+        daily_conversion_cap: 5
+        email_optout:
+          is_enabled: true
+          suppression_file_link: suppression_file_link
+          unsub_link: unsub_link
+        is_session_tracking_enabled: false
+        monthly_click_cap: 4
+        labels:
+        - labels
+        - labels
+        terms_and_conditions: terms_and_conditions
+        monthly_payout_cap: 4
+        session_definition: cookie
+        channels:
+        - network_channel_id: 3
+        - network_channel_id: 3
+        caps_timezone_id: 5
+        is_use_scrub_rate: false
+        meta:
+          advertiser_campaign_name: advertiser_campaign_name
+        name: name
+        redirect_mode: standard
+        global_payout_cap: 7
+        integrations:
+          optizmo:
+            optoutlist_id: optoutlist_id
+          ezepo:
+            enabled: true
+          twentyfour_metrics:
+            network_integration_twentyfour_metrics_tracker_id: 8
+          anura:
+            enabled: true
+          forensiq:
+            click_threshold: 7
+            conversion_threshold: 3
+            action: block
+            conversion_status: pending
+          invoca:
+            enabled: true
+        is_caps_enabled: false
+        session_tracking_lifespan_hour: 6
+        is_using_explicit_terms_and_conditions: false
+        is_whitelist_check_enabled: false
+        email_attribution_method: first_affiliate_attribution
+        network_offer_group_id: 6
+        already_converted_action: block
+        is_use_secure_link: false
+        network_advertiser_id: 0
+        destination_url: destination_url
+        view_through_session_tracking_minimal_lifespan_second: 6
+        global_revenue_cap: 6
+        traffic_filters:
+        - parameter: sub1
+          match_type: exact
+          action: block
+          value: value
+        - parameter: sub1
+          match_type: exact
+          action: block
+          value: value
+        thumbnail_url: thumbnail_url
+        session_duration: 6
+        internal_notes: internal_notes
+        monthly_conversion_cap: 7
+        offer_status: active
+        daily_click_cap: 7
+        weekly_payout_cap: 2
+        email:
+          is_enabled: true
+          subject_lines: subject_lines
+          from_lines: from_lines
+        attribution_method: first_touch
+        is_use_direct_linking: false
+        network_tracking_domain_id: 9
+        redirect_routing_method: internal
+        source_names:
+        - source_names
+        - source_names
+        duplicate_filter_targeting_action: block
+        scrub_rate_percentage: 3
+        redirect_internal_routing_type: priority
+        html_description: html_description
+        internal_redirects:
+        - redirect_network_offer_id: 6
+          is_pay_affiliate: false
+          routing_value: 3
+          network_affiliate_ids:
+          - 7
+          - 7
+          redirect_network_offer_group_id: 5
+          redirect_network_campaign_id: 6
+          ruleset:
+            regions:
+            - "{}"
+            - "{}"
+            brands:
+            - "{}"
+            - "{}"
+            languages:
+            - "{}"
+            - "{}"
+            cities:
+            - "{}"
+            - "{}"
+            is_use_day_parting: false
+            days_parting:
+            - "{}"
+            - "{}"
+            postal_codes:
+            - "{}"
+            - "{}"
+            countries:
+            - "{}"
+            - "{}"
+            os_versions:
+            - "{}"
+            - "{}"
+            browsers:
+            - "{}"
+            - "{}"
+            ips:
+            - "{}"
+            - "{}"
+            platforms:
+            - "{}"
+            - "{}"
+            day_parting_timezone_id: 3
+            dmas:
+            - "{}"
+            - "{}"
+            connection_types:
+            - "{}"
+            - "{}"
+            is_block_proxy: false
+            device_types:
+            - "{}"
+            - "{}"
+            day_parting_apply_to: user_timezone
+            isps:
+            - "{}"
+            - "{}"
+            mobile_carriers:
+            - "{}"
+            - "{}"
+          is_apply_specific_affiliates: false
+          categories:
+          - traffic_filter
+          - traffic_filter
+          is_pass_through: false
+          redirect_network_offer_url_id: 6
+        - redirect_network_offer_id: 6
+          is_pay_affiliate: false
+          routing_value: 3
+          network_affiliate_ids:
+          - 7
+          - 7
+          redirect_network_offer_group_id: 5
+          redirect_network_campaign_id: 6
+          ruleset:
+            regions:
+            - "{}"
+            - "{}"
+            brands:
+            - "{}"
+            - "{}"
+            languages:
+            - "{}"
+            - "{}"
+            cities:
+            - "{}"
+            - "{}"
+            is_use_day_parting: false
+            days_parting:
+            - "{}"
+            - "{}"
+            postal_codes:
+            - "{}"
+            - "{}"
+            countries:
+            - "{}"
+            - "{}"
+            os_versions:
+            - "{}"
+            - "{}"
+            browsers:
+            - "{}"
+            - "{}"
+            ips:
+            - "{}"
+            - "{}"
+            platforms:
+            - "{}"
+            - "{}"
+            day_parting_timezone_id: 3
+            dmas:
+            - "{}"
+            - "{}"
+            connection_types:
+            - "{}"
+            - "{}"
+            is_block_proxy: false
+            device_types:
+            - "{}"
+            - "{}"
+            day_parting_apply_to: user_timezone
+            isps:
+            - "{}"
+            - "{}"
+            mobile_carriers:
+            - "{}"
+            - "{}"
+          is_apply_specific_affiliates: false
+          categories:
+          - traffic_filter
+          - traffic_filter
+          is_pass_through: false
+          redirect_network_offer_url_id: 6
+        view_through_session_tracking_lifespan_minute: 9
+        weekly_revenue_cap: 1
+        preview_url: preview_url
+        is_force_terms_and_conditions: false
+        is_duplicate_filter_enabled: false
+        global_click_cap: 5
+        date_live_until: 2000-01-23
+        suppression_list_id: 9
+        app_identifier: app_identifier
+        payout_revenue:
+        - entry_name: Base
+          is_private: true
+          is_allow_duplicate_conversion: true
+          revenue_percentage: 0
+          revenue_type: rpc
+          payout_type: cpc
+          is_postback_disabled: false
+          is_default: true
+          payout_percentage: 7
+          global_advertiser_event_id: 4
+          revenue_amount: 6.519180951018382
+          payout_amount: 0.8851374739011653
+          is_must_approve_conversion: false
+        - entry_name: Base
+          is_private: true
+          is_allow_duplicate_conversion: true
+          revenue_percentage: 0
+          revenue_type: rpc
+          payout_type: cpc
+          is_postback_disabled: false
+          is_default: true
+          payout_percentage: 7
+          global_advertiser_event_id: 4
+          revenue_amount: 6.519180951018382
+          payout_amount: 0.8851374739011653
+          is_must_approve_conversion: false
+        currency_id: USD
+      properties:
+        network_advertiser_id:
+          description: ID of the advertiser submitting the offer
+          type: integer
+        network_offer_group_id:
+          description: ID of the offer group associated with the offer
+          type: integer
+        name:
+          description: Displayed name of the offer
+          type: string
+        thumbnail_url:
+          description: URL of the image thumbnail associated with the offer
+          type: string
+        network_category_id:
+          description: ID of the category type associated with the offer
+          type: integer
+        internal_notes:
+          description: Notes on the offer for network employees
+          type: string
+        destination_url:
+          description: URL of the final landing page associated with the offer
+          type: string
+        server_side_url:
+          description: Server-side URL that will be asynchronously fired by Everflow
+          type: string
+        is_view_through_enabled:
+          default: false
+          description: Whether conversions can be generated from impressions
+          type: boolean
+        view_through_destination_url:
+          description: URL of the final landing page when redirected from an impression
+          type: string
+        preview_url:
+          description: URL of a preview of the offer landing page
+          type: string
+        offer_status:
+          description: Status of the offer
+          enum:
+          - active
+          - paused
+          - pending
+          - deleted
+          type: string
+        currency_id:
+          default: USD
+          description: "Currency used to compute payouts, costs and revenues"
+          type: string
+        caps_timezone_id:
+          default: 0
+          description: ID of the timezone used for caps
+          type: integer
+        project_id:
+          description: ID for the advertiser campaign or an Insertion Order
+          type: string
+        date_live_until:
+          description: Date until when the offer can be run (yyyy-MM-dd)
+          format: date
+          type: string
+        html_description:
+          description: Description of the offer for affiliates (HTML accepted)
+          type: string
+        is_using_explicit_terms_and_conditions:
+          default: false
+          description: Whether the offer is using specific Terms and Conditions
+          type: boolean
+        terms_and_conditions:
+          description: Text listing the specific Terms and Conditions
+          type: string
+        is_force_terms_and_conditions:
+          default: false
+          description: Whether affiliates are required to accept the offer's Terms
+            and Conditions
+          type: boolean
+        is_caps_enabled:
+          default: false
+          description: Whether caps are enabled
+          type: boolean
+        daily_conversion_cap:
+          default: 0
+          description: Limit to the number of unique conversions in one day
+          type: integer
+        weekly_conversion_cap:
+          default: 0
+          description: Limit to the number of unique conversions in one week
+          type: integer
+        monthly_conversion_cap:
+          default: 0
+          description: Limit to the number of unique conversions in one month
+          type: integer
+        global_conversion_cap:
+          default: 0
+          description: Limit to the total number of unique conversions
+          type: integer
+        daily_payout_cap:
+          default: 0
+          description: Limit to the affiliate's payout for one day
+          type: integer
+        weekly_payout_cap:
+          default: 0
+          description: Limit to the affiliate's payout for one week
+          type: integer
+        monthly_payout_cap:
+          default: 0
+          description: Limit to the affiliate's payout for one month
+          type: integer
+        global_payout_cap:
+          default: 0
+          description: Limit to the affiliate's total payout
+          type: integer
+        daily_revenue_cap:
+          default: 0
+          description: Limit to the network's revenue for one day
+          type: integer
+        weekly_revenue_cap:
+          default: 0
+          description: Limit to the network's revenue for one week
+          type: integer
+        monthly_revenue_cap:
+          default: 0
+          description: Limit to the network's revenue for one month
+          type: integer
+        global_revenue_cap:
+          default: 0
+          description: Limit to the network's total revenue
+          type: integer
+        daily_click_cap:
+          default: 0
+          description: Limit to the number of unique clicks in one day
+          type: integer
+        weekly_click_cap:
+          default: 0
+          description: Limit to the number of unique clicks in one week
+          type: integer
+        monthly_click_cap:
+          default: 0
+          description: Limit to the number of unique clicks in one month
+          type: integer
+        global_click_cap:
+          default: 0
+          description: Limit to the total number of unique clicks
+          type: integer
+        redirect_mode:
+          default: standard
+          description: Setting used to obscure referrer URLs from advertisers
+          enum:
+          - standard
+          - single_meta_refresh
+          - double_meta_refresh
+          type: string
+        is_using_suppression_list:
+          default: false
+          description: Whether an email suppression list is used
+          type: boolean
+        suppression_list_id:
+          default: 0
+          description: ID of the suppression list
+          type: integer
+        is_duplicate_filter_enabled:
+          default: false
+          description: Whether duplicate clicks are filtered
+          type: boolean
+        duplicate_filter_targeting_action:
+          description: Action for duplicate clicks
+          enum:
+          - block
+          - fail_traffic
+          type: string
+        network_tracking_domain_id:
+          description: ID of the tracking domain
+          type: integer
+        is_use_secure_link:
+          default: false
+          description: Whether tracking links use HTTPS
+          type: boolean
+        is_allow_deep_link:
+          default: false
+          description: Whether affiliates can send traffic to target URLs
+          type: boolean
+        is_session_tracking_enabled:
+          default: false
+          description: Whether conversions are blocked based on time intervals
+          type: boolean
+        session_tracking_lifespan_hour:
+          default: 0
+          description: Maximum interval between click and conversion
+          type: integer
+        session_tracking_minimum_lifespan_second:
+          default: 0
+          description: Minimum interval between click and conversion
+          type: integer
+        is_view_through_session_tracking_enabled:
+          default: false
+          description: Whether conversions from impressions are time-tracked
+          type: boolean
+        view_through_session_tracking_lifespan_minute:
+          default: 0
+          description: Maximum interval between impression and conversion
+          type: integer
+        view_through_session_tracking_minimal_lifespan_second:
+          default: 0
+          description: Minimum interval between impression and conversion
+          type: integer
+        is_block_already_converted:
+          default: false
+          description: Whether to block clicks from already-converted users
+          type: boolean
+        already_converted_action:
+          description: Action for already-converted users
+          enum:
+          - block
+          - fail_traffic
+          type: string
+        visibility:
+          default: public
+          description: Offer visibility for affiliates
+          enum:
+          - public
+          - require_approval
+          - private
+          type: string
+        conversion_method:
+          default: server_postback
+          description: Method used by advertiser to fire tracking data
+          enum:
+          - http_image_pixel
+          - https_image_pixel
+          - server_postback
+          - cookie_based
+          - http_iframe_pixel
+          - https_iframe_pixel
+          - javascript
+          type: string
+        is_whitelist_check_enabled:
+          default: false
+          description: Whether to check conversion postback origin
+          type: boolean
+        is_use_scrub_rate:
+          default: false
+          description: Whether to throttle conversions
+          type: boolean
+        scrub_rate_status:
+          description: Status for throttled conversions
+          enum:
+          - rejected
+          - pending
+          type: string
+        scrub_rate_percentage:
+          default: 0
+          description: Percentage of conversions to throttle
+          type: integer
+        session_definition:
+          default: cookie
+          description: Method for determining unique clicks
+          enum:
+          - cookie
+          - ip
+          - ip_user_agent
+          - google_ad_id
+          - idfa
+          type: string
+        session_duration:
+          default: 24
+          description: Duration of active session in hours
+          type: integer
+        app_identifier:
+          description: Bundle ID for iOS/Android Apps
+          type: string
+        is_description_plain_text:
+          default: false
+          description: Whether description is plain text
+          type: boolean
+        is_use_direct_linking:
+          default: false
+          description: Whether offer uses Direct Linking
+          type: boolean
+        is_fail_traffic_enabled:
+          default: false
+          description: Whether invalid clicks are redirected
+          type: boolean
+        redirect_routing_method:
+          default: internal
+          description: How fail traffic is handled
+          enum:
+          - internal
+          type: string
+        redirect_internal_routing_type:
+          default: priority
+          description: Redirect distribution mechanism
+          enum:
+          - priority
+          - weight
+          - priority_global
+          - weight_global
+          type: string
+        meta:
+          $ref: '#/components/schemas/Meta'
+        creatives:
+          items:
+            $ref: '#/components/schemas/Creative'
+          type: array
+        internal_redirects:
+          items:
+            $ref: '#/components/schemas/InternalRedirect'
+          type: array
+        ruleset:
+          $ref: '#/components/schemas/Ruleset'
+        traffic_filters:
+          items:
+            $ref: '#/components/schemas/TrafficFilter'
+          type: array
+        email:
+          $ref: '#/components/schemas/EmailSettings'
+        email_optout:
+          $ref: '#/components/schemas/EmailOptoutSettings'
+        labels:
+          description: Labels for organizing offers
+          items:
+            type: string
+          type: array
+        source_names:
+          description: Names of the source
+          items:
+            type: string
+          type: array
+        payout_revenue:
+          items:
+            $ref: '#/components/schemas/PayoutRevenue'
+          type: array
+        thumbnail_file:
+          $ref: '#/components/schemas/ThumbnailFile'
+        integrations:
+          $ref: '#/components/schemas/Integrations'
+        channels:
+          items:
+            $ref: '#/components/schemas/Channel'
+          type: array
+        requirement_kpis:
+          items:
+            $ref: '#/components/schemas/RequirementKPI'
+          type: array
+        requirement_tracking_parameters:
+          items:
+            $ref: '#/components/schemas/RequirementTrackingParameter'
+          type: array
+        email_attribution_method:
+          description: Email attribution method
+          enum:
+          - first_affiliate_attribution
+          - last_affiliate_attribution
+          type: string
+        attribution_method:
+          description: Attribution method
+          enum:
+          - first_touch
+          - last_touch
+          type: string
+      required:
+      - destination_url
+      - name
+      - network_advertiser_id
+      - offer_status
+      - payout_revenue
+      type: object
+    UpdateOfferRequest:
+      allOf:
+      - $ref: '#/components/schemas/CreateOfferRequest'
+      description: Same as CreateOfferRequest but all fields must be provided
+      example:
+        scrub_rate_status: rejected
+        is_description_plain_text: false
+        daily_revenue_cap: 1
+        session_tracking_minimum_lifespan_second: 8
+        weekly_conversion_cap: 2
+        creatives:
+        - is_private: false
+          html_code: html_code
+          resource_file:
+            temp_url: temp_url
+            original_file_name: original_file_name
+          creative_type: image
+          html_files:
+          - temp_url: temp_url
+            original_file_name: original_file_name
+          - temp_url: temp_url
+            original_file_name: original_file_name
+          name: name
+          width: 1
+          creative_status: active
+          email_subject: email_subject
+          email_from: email_from
+          height: 2
+        - is_private: false
+          html_code: html_code
+          resource_file:
+            temp_url: temp_url
+            original_file_name: original_file_name
+          creative_type: image
+          html_files:
+          - temp_url: temp_url
+            original_file_name: original_file_name
+          - temp_url: temp_url
+            original_file_name: original_file_name
+          name: name
+          width: 1
+          creative_status: active
+          email_subject: email_subject
+          email_from: email_from
+          height: 2
+        monthly_revenue_cap: 1
+        requirement_kpis:
+        - kpi: kpi
+        - kpi: kpi
+        view_through_destination_url: view_through_destination_url
+        weekly_click_cap: 1
+        is_view_through_enabled: false
+        conversion_method: server_postback
+        server_side_url: server_side_url
+        project_id: project_id
+        is_fail_traffic_enabled: false
+        global_conversion_cap: 9
+        is_block_already_converted: false
+        network_category_id: 1
+        is_view_through_session_tracking_enabled: false
+        requirement_tracking_parameters:
+        - tracking_parameter: tracking_parameter
+          value: value
+        - tracking_parameter: tracking_parameter
+          value: value
+        is_using_suppression_list: false
+        visibility: public
+        daily_payout_cap: 3
+        ruleset:
+          regions:
+          - "{}"
+          - "{}"
+          brands:
+          - "{}"
+          - "{}"
+          languages:
+          - "{}"
+          - "{}"
+          cities:
+          - "{}"
+          - "{}"
+          is_use_day_parting: false
+          days_parting:
+          - "{}"
+          - "{}"
+          postal_codes:
+          - "{}"
+          - "{}"
+          countries:
+          - "{}"
+          - "{}"
+          os_versions:
+          - "{}"
+          - "{}"
+          browsers:
+          - "{}"
+          - "{}"
+          ips:
+          - "{}"
+          - "{}"
+          platforms:
+          - "{}"
+          - "{}"
+          day_parting_timezone_id: 3
+          dmas:
+          - "{}"
+          - "{}"
+          connection_types:
+          - "{}"
+          - "{}"
+          is_block_proxy: false
+          device_types:
+          - "{}"
+          - "{}"
+          day_parting_apply_to: user_timezone
+          isps:
+          - "{}"
+          - "{}"
+          mobile_carriers:
+          - "{}"
+          - "{}"
+        is_allow_deep_link: false
+        thumbnail_file:
+          temp_url: temp_url
+          original_file_name: original_file_name
+        daily_conversion_cap: 5
+        email_optout:
+          is_enabled: true
+          suppression_file_link: suppression_file_link
+          unsub_link: unsub_link
+        is_session_tracking_enabled: false
+        monthly_click_cap: 4
+        labels:
+        - labels
+        - labels
+        terms_and_conditions: terms_and_conditions
+        monthly_payout_cap: 4
+        session_definition: cookie
+        channels:
+        - network_channel_id: 3
+        - network_channel_id: 3
+        caps_timezone_id: 5
+        is_use_scrub_rate: false
+        meta:
+          advertiser_campaign_name: advertiser_campaign_name
+        name: name
+        redirect_mode: standard
+        global_payout_cap: 7
+        integrations:
+          optizmo:
+            optoutlist_id: optoutlist_id
+          ezepo:
+            enabled: true
+          twentyfour_metrics:
+            network_integration_twentyfour_metrics_tracker_id: 8
+          anura:
+            enabled: true
+          forensiq:
+            click_threshold: 7
+            conversion_threshold: 3
+            action: block
+            conversion_status: pending
+          invoca:
+            enabled: true
+        is_caps_enabled: false
+        session_tracking_lifespan_hour: 6
+        is_using_explicit_terms_and_conditions: false
+        is_whitelist_check_enabled: false
+        email_attribution_method: first_affiliate_attribution
+        network_offer_group_id: 6
+        already_converted_action: block
+        is_use_secure_link: false
+        network_advertiser_id: 0
+        destination_url: destination_url
+        view_through_session_tracking_minimal_lifespan_second: 6
+        global_revenue_cap: 6
+        traffic_filters:
+        - parameter: sub1
+          match_type: exact
+          action: block
+          value: value
+        - parameter: sub1
+          match_type: exact
+          action: block
+          value: value
+        thumbnail_url: thumbnail_url
+        session_duration: 6
+        internal_notes: internal_notes
+        monthly_conversion_cap: 7
+        offer_status: active
+        daily_click_cap: 7
+        weekly_payout_cap: 2
+        email:
+          is_enabled: true
+          subject_lines: subject_lines
+          from_lines: from_lines
+        attribution_method: first_touch
+        is_use_direct_linking: false
+        network_tracking_domain_id: 9
+        redirect_routing_method: internal
+        source_names:
+        - source_names
+        - source_names
+        duplicate_filter_targeting_action: block
+        scrub_rate_percentage: 3
+        redirect_internal_routing_type: priority
+        html_description: html_description
+        internal_redirects:
+        - redirect_network_offer_id: 6
+          is_pay_affiliate: false
+          routing_value: 3
+          network_affiliate_ids:
+          - 7
+          - 7
+          redirect_network_offer_group_id: 5
+          redirect_network_campaign_id: 6
+          ruleset:
+            regions:
+            - "{}"
+            - "{}"
+            brands:
+            - "{}"
+            - "{}"
+            languages:
+            - "{}"
+            - "{}"
+            cities:
+            - "{}"
+            - "{}"
+            is_use_day_parting: false
+            days_parting:
+            - "{}"
+            - "{}"
+            postal_codes:
+            - "{}"
+            - "{}"
+            countries:
+            - "{}"
+            - "{}"
+            os_versions:
+            - "{}"
+            - "{}"
+            browsers:
+            - "{}"
+            - "{}"
+            ips:
+            - "{}"
+            - "{}"
+            platforms:
+            - "{}"
+            - "{}"
+            day_parting_timezone_id: 3
+            dmas:
+            - "{}"
+            - "{}"
+            connection_types:
+            - "{}"
+            - "{}"
+            is_block_proxy: false
+            device_types:
+            - "{}"
+            - "{}"
+            day_parting_apply_to: user_timezone
+            isps:
+            - "{}"
+            - "{}"
+            mobile_carriers:
+            - "{}"
+            - "{}"
+          is_apply_specific_affiliates: false
+          categories:
+          - traffic_filter
+          - traffic_filter
+          is_pass_through: false
+          redirect_network_offer_url_id: 6
+        - redirect_network_offer_id: 6
+          is_pay_affiliate: false
+          routing_value: 3
+          network_affiliate_ids:
+          - 7
+          - 7
+          redirect_network_offer_group_id: 5
+          redirect_network_campaign_id: 6
+          ruleset:
+            regions:
+            - "{}"
+            - "{}"
+            brands:
+            - "{}"
+            - "{}"
+            languages:
+            - "{}"
+            - "{}"
+            cities:
+            - "{}"
+            - "{}"
+            is_use_day_parting: false
+            days_parting:
+            - "{}"
+            - "{}"
+            postal_codes:
+            - "{}"
+            - "{}"
+            countries:
+            - "{}"
+            - "{}"
+            os_versions:
+            - "{}"
+            - "{}"
+            browsers:
+            - "{}"
+            - "{}"
+            ips:
+            - "{}"
+            - "{}"
+            platforms:
+            - "{}"
+            - "{}"
+            day_parting_timezone_id: 3
+            dmas:
+            - "{}"
+            - "{}"
+            connection_types:
+            - "{}"
+            - "{}"
+            is_block_proxy: false
+            device_types:
+            - "{}"
+            - "{}"
+            day_parting_apply_to: user_timezone
+            isps:
+            - "{}"
+            - "{}"
+            mobile_carriers:
+            - "{}"
+            - "{}"
+          is_apply_specific_affiliates: false
+          categories:
+          - traffic_filter
+          - traffic_filter
+          is_pass_through: false
+          redirect_network_offer_url_id: 6
+        view_through_session_tracking_lifespan_minute: 9
+        weekly_revenue_cap: 1
+        preview_url: preview_url
+        is_force_terms_and_conditions: false
+        is_duplicate_filter_enabled: false
+        global_click_cap: 5
+        date_live_until: 2000-01-23
+        suppression_list_id: 9
+        app_identifier: app_identifier
+        payout_revenue:
+        - entry_name: Base
+          is_private: true
+          is_allow_duplicate_conversion: true
+          revenue_percentage: 0
+          revenue_type: rpc
+          payout_type: cpc
+          is_postback_disabled: false
+          is_default: true
+          payout_percentage: 7
+          global_advertiser_event_id: 4
+          revenue_amount: 6.519180951018382
+          payout_amount: 0.8851374739011653
+          is_must_approve_conversion: false
+        - entry_name: Base
+          is_private: true
+          is_allow_duplicate_conversion: true
+          revenue_percentage: 0
+          revenue_type: rpc
+          payout_type: cpc
+          is_postback_disabled: false
+          is_default: true
+          payout_percentage: 7
+          global_advertiser_event_id: 4
+          revenue_amount: 6.519180951018382
+          payout_amount: 0.8851374739011653
+          is_must_approve_conversion: false
+        currency_id: USD
+    OfferResponse:
+      example:
+        scrub_rate_status: scrub_rate_status
+        network_offer_id: 0
+        is_description_plain_text: true
+        daily_revenue_cap: 1
+        session_tracking_minimum_lifespan_second: 6
+        weekly_conversion_cap: 9
+        monthly_revenue_cap: 7
+        view_through_destination_url: view_through_destination_url
+        weekly_click_cap: 5
+        is_view_through_enabled: true
+        conversion_method: conversion_method
+        server_side_url: server_side_url
+        project_id: project_id
+        is_fail_traffic_enabled: true
+        time_created: 1
+        global_conversion_cap: 2
+        is_block_already_converted: true
+        network_category_id: 5
+        is_view_through_session_tracking_enabled: true
+        is_using_suppression_list: true
+        visibility: visibility
+        daily_payout_cap: 4
+        is_allow_deep_link: true
+        daily_conversion_cap: 7
+        is_session_tracking_enabled: true
+        monthly_click_cap: 9
+        terms_and_conditions: terms_and_conditions
+        monthly_payout_cap: 1
+        network_id: 6
+        session_definition: session_definition
+        caps_timezone_id: 2
+        is_use_scrub_rate: true
+        name: name
+        time_saved: 2
+        redirect_mode: redirect_mode
+        global_payout_cap: 1
+        is_caps_enabled: true
+        session_tracking_lifespan_hour: 9
+        is_email_attribution_enabled: true
+        is_using_explicit_terms_and_conditions: true
+        is_allow_duplicate_conversion: true
+        is_whitelist_check_enabled: true
+        network_offer_group_id: 5
+        already_converted_action: already_converted_action
+        is_use_secure_link: true
+        email_attribution_window_minute: 5
+        network_advertiser_id: 1
+        destination_url: destination_url
+        view_through_session_tracking_minimal_lifespan_second: 6
+        global_revenue_cap: 1
+        thumbnail_url: thumbnail_url
+        session_duration: 6
+        internal_notes: internal_notes
+        monthly_conversion_cap: 3
+        email_attribution_window_type: email_attribution_window_type
+        offer_status: active
+        daily_click_cap: 4
+        relationship: "{}"
+        weekly_payout_cap: 7
+        is_use_direct_linking: true
+        network_tracking_domain_id: 8
+        redirect_routing_method: redirect_routing_method
+        is_email_attribution_window_enabled: true
+        duplicate_filter_targeting_action: duplicate_filter_targeting_action
+        scrub_rate_percentage: 6
+        redirect_internal_routing_type: redirect_internal_routing_type
+        html_description: html_description
+        session_tracking_start_on: session_tracking_start_on
+        is_seo_friendly: true
+        view_through_session_tracking_lifespan_minute: 3
+        weekly_revenue_cap: 6
+        preview_url: preview_url
+        is_force_terms_and_conditions: true
+        is_duplicate_filter_enabled: true
+        global_click_cap: 9
+        date_live_until: date_live_until
+        suppression_list_id: 6
+        app_identifier: app_identifier
+        currency_id: currency_id
+        is_must_approve_conversion: true
+      properties:
+        network_offer_id:
+          description: ID of the offer
+          type: integer
+        network_id:
+          description: ID of the network
+          type: integer
+        network_advertiser_id:
+          description: ID of the advertiser
+          type: integer
+        network_offer_group_id:
+          description: ID of the offer group
+          type: integer
+        name:
+          description: Name of the offer
+          type: string
+        thumbnail_url:
+          description: Thumbnail URL
+          type: string
+        network_category_id:
+          description: Category ID
+          type: integer
+        internal_notes:
+          description: Internal notes
+          type: string
+        destination_url:
+          description: Landing page URL
+          type: string
+        server_side_url:
+          description: Server-side URL
+          type: string
+        is_view_through_enabled:
+          description: View through enabled
+          type: boolean
+        view_through_destination_url:
+          description: View through destination URL
+          type: string
+        preview_url:
+          description: Preview URL
+          type: string
+        offer_status:
+          description: Offer status
+          enum:
+          - active
+          - paused
+          - pending
+          - deleted
+          type: string
+        currency_id:
+          description: Currency ID
+          type: string
+        caps_timezone_id:
+          description: Caps timezone ID
+          type: integer
+        project_id:
+          description: Project ID
+          type: string
+        date_live_until:
+          description: Live until date
+          type: string
+        html_description:
+          description: HTML description
+          type: string
+        is_using_explicit_terms_and_conditions:
+          description: Using explicit terms
+          type: boolean
+        terms_and_conditions:
+          description: Terms and conditions
+          type: string
+        is_force_terms_and_conditions:
+          description: Force terms acceptance
+          type: boolean
+        is_caps_enabled:
+          description: Caps enabled
+          type: boolean
+        daily_conversion_cap:
+          description: Daily conversion cap
+          type: integer
+        weekly_conversion_cap:
+          description: Weekly conversion cap
+          type: integer
+        monthly_conversion_cap:
+          description: Monthly conversion cap
+          type: integer
+        global_conversion_cap:
+          description: Global conversion cap
+          type: integer
+        daily_payout_cap:
+          description: Daily payout cap
+          type: integer
+        weekly_payout_cap:
+          description: Weekly payout cap
+          type: integer
+        monthly_payout_cap:
+          description: Monthly payout cap
+          type: integer
+        global_payout_cap:
+          description: Global payout cap
+          type: integer
+        daily_revenue_cap:
+          description: Daily revenue cap
+          type: integer
+        weekly_revenue_cap:
+          description: Weekly revenue cap
+          type: integer
+        monthly_revenue_cap:
+          description: Monthly revenue cap
+          type: integer
+        global_revenue_cap:
+          description: Global revenue cap
+          type: integer
+        daily_click_cap:
+          description: Daily click cap
+          type: integer
+        weekly_click_cap:
+          description: Weekly click cap
+          type: integer
+        monthly_click_cap:
+          description: Monthly click cap
+          type: integer
+        global_click_cap:
+          description: Global click cap
+          type: integer
+        redirect_mode:
+          description: Redirect mode
+          type: string
+        is_using_suppression_list:
+          description: Using suppression list
+          type: boolean
+        suppression_list_id:
+          description: Suppression list ID
+          type: integer
+        is_must_approve_conversion:
+          description: Must approve conversions
+          type: boolean
+        is_allow_duplicate_conversion:
+          description: Allow duplicate conversions
+          type: boolean
+        is_duplicate_filter_enabled:
+          description: Duplicate filter enabled
+          type: boolean
+        duplicate_filter_targeting_action:
+          description: Duplicate filter action
+          type: string
+        network_tracking_domain_id:
+          description: Tracking domain ID
+          type: integer
+        is_use_secure_link:
+          description: Use secure links
+          type: boolean
+        is_seo_friendly:
+          description: SEO friendly
+          type: boolean
+        is_allow_deep_link:
+          description: Allow deep linking
+          type: boolean
+        is_session_tracking_enabled:
+          description: Session tracking enabled
+          type: boolean
+        session_tracking_start_on:
+          description: Session tracking start
+          type: string
+        session_tracking_lifespan_hour:
+          description: Session lifespan hours
+          type: integer
+        session_tracking_minimum_lifespan_second:
+          description: Minimum session lifespan
+          type: integer
+        is_view_through_session_tracking_enabled:
+          description: View through tracking enabled
+          type: boolean
+        view_through_session_tracking_lifespan_minute:
+          description: View through lifespan
+          type: integer
+        view_through_session_tracking_minimal_lifespan_second:
+          description: View through minimum lifespan
+          type: integer
+        is_block_already_converted:
+          description: Block already converted
+          type: boolean
+        already_converted_action:
+          description: Already converted action
+          type: string
+        is_fail_traffic_enabled:
+          description: Fail traffic enabled
+          type: boolean
+        redirect_routing_method:
+          description: Redirect routing method
+          type: string
+        redirect_internal_routing_type:
+          description: Internal routing type
+          type: string
+        visibility:
+          description: Visibility setting
+          type: string
+        time_created:
+          description: Creation timestamp
+          type: integer
+        time_saved:
+          description: Last saved timestamp
+          type: integer
+        conversion_method:
+          description: Conversion method
+          type: string
+        is_whitelist_check_enabled:
+          description: Whitelist check enabled
+          type: boolean
+        is_use_scrub_rate:
+          description: Use scrub rate
+          type: boolean
+        scrub_rate_status:
+          description: Scrub rate status
+          type: string
+        scrub_rate_percentage:
+          description: Scrub rate percentage
+          type: integer
+        session_definition:
+          description: Session definition
+          type: string
+        session_duration:
+          description: Session duration
+          type: integer
+        app_identifier:
+          description: App identifier
+          type: string
+        is_description_plain_text:
+          description: Plain text description
+          type: boolean
+        is_use_direct_linking:
+          description: Use direct linking
+          type: boolean
+        is_email_attribution_enabled:
+          description: Email attribution enabled
+          type: boolean
+        is_email_attribution_window_enabled:
+          description: Email attribution window enabled
+          type: boolean
+        email_attribution_window_minute:
+          description: Email attribution window
+          type: integer
+        email_attribution_window_type:
+          description: Attribution window type
+          type: string
+        relationship:
+          description: Related data based on requested relationships
+          type: object
+      type: object
+    Meta:
+      example:
+        advertiser_campaign_name: advertiser_campaign_name
+      properties:
+        advertiser_campaign_name:
+          description: Optional advertiser campaign name
+          type: string
+      type: object
+    Creative:
+      example:
+        is_private: false
+        html_code: html_code
+        resource_file:
+          temp_url: temp_url
+          original_file_name: original_file_name
+        creative_type: image
+        html_files:
+        - temp_url: temp_url
+          original_file_name: original_file_name
+        - temp_url: temp_url
+          original_file_name: original_file_name
+        name: name
+        width: 1
+        creative_status: active
+        email_subject: email_subject
+        email_from: email_from
+        height: 2
+      properties:
+        name:
+          description: Name of the creative
+          type: string
+        creative_type:
+          description: Type of creative
+          enum:
+          - image
+          - html
+          - thumbnail
+          - email
+          - archive
+          - video
+          - text
+          type: string
+        is_private:
+          default: false
+          description: Whether creative is private
+          type: boolean
+        creative_status:
+          description: Status of creative
+          enum:
+          - active
+          - deleted
+          type: string
+        html_code:
+          description: HTML content (required for html/email types)
+          type: string
+        width:
+          description: Width (required for html type)
+          type: integer
+        height:
+          description: Height (required for html type)
+          type: integer
+        email_from:
+          description: From field (required for email type)
+          type: string
+        email_subject:
+          description: Subject field (required for email type)
+          type: string
+        resource_file:
+          $ref: '#/components/schemas/ResourceFile'
+        html_files:
+          items:
+            $ref: '#/components/schemas/HtmlFile'
+          type: array
+      required:
+      - creative_status
+      - creative_type
+      - name
+      type: object
+    ResourceFile:
+      example:
+        temp_url: temp_url
+        original_file_name: original_file_name
+      properties:
+        temp_url:
+          description: Temporary URL from file upload
+          type: string
+        original_file_name:
+          description: Original filename
+          type: string
+      required:
+      - original_file_name
+      - temp_url
+      type: object
+    HtmlFile:
+      example:
+        temp_url: temp_url
+        original_file_name: original_file_name
+      properties:
+        temp_url:
+          description: Temporary URL from file upload
+          type: string
+        original_file_name:
+          description: Filename used for macro generation
+          type: string
+      required:
+      - original_file_name
+      - temp_url
+      type: object
+    InternalRedirect:
+      example:
+        redirect_network_offer_id: 6
+        is_pay_affiliate: false
+        routing_value: 3
+        network_affiliate_ids:
+        - 7
+        - 7
+        redirect_network_offer_group_id: 5
+        redirect_network_campaign_id: 6
+        ruleset:
+          regions:
+          - "{}"
+          - "{}"
+          brands:
+          - "{}"
+          - "{}"
+          languages:
+          - "{}"
+          - "{}"
+          cities:
+          - "{}"
+          - "{}"
+          is_use_day_parting: false
+          days_parting:
+          - "{}"
+          - "{}"
+          postal_codes:
+          - "{}"
+          - "{}"
+          countries:
+          - "{}"
+          - "{}"
+          os_versions:
+          - "{}"
+          - "{}"
+          browsers:
+          - "{}"
+          - "{}"
+          ips:
+          - "{}"
+          - "{}"
+          platforms:
+          - "{}"
+          - "{}"
+          day_parting_timezone_id: 3
+          dmas:
+          - "{}"
+          - "{}"
+          connection_types:
+          - "{}"
+          - "{}"
+          is_block_proxy: false
+          device_types:
+          - "{}"
+          - "{}"
+          day_parting_apply_to: user_timezone
+          isps:
+          - "{}"
+          - "{}"
+          mobile_carriers:
+          - "{}"
+          - "{}"
+        is_apply_specific_affiliates: false
+        categories:
+        - traffic_filter
+        - traffic_filter
+        is_pass_through: false
+        redirect_network_offer_url_id: 6
+      properties:
+        redirect_network_offer_id:
+          description: Offer ID to redirect to
+          type: integer
+        redirect_network_offer_url_id:
+          description: Offer URL ID (0 for default)
+          type: integer
+        redirect_network_offer_group_id:
+          description: Offer group ID to redirect to
+          type: integer
+        redirect_network_campaign_id:
+          description: Campaign ID to redirect to
+          type: integer
+        routing_value:
+          description: Priority or weight value
+          type: integer
+        ruleset:
+          $ref: '#/components/schemas/Ruleset'
+        categories:
+          description: Fail traffic categories
+          items:
+            enum:
+            - traffic_filter
+            - traffic_control
+            - already_converted
+            - offer_expired
+            - geotargeting
+            - caps
+            - other
+            type: string
+          type: array
+        is_pay_affiliate:
+          default: false
+          description: Whether to pay affiliate
+          type: boolean
+        is_pass_through:
+          default: false
+          description: Whether to pass through to destination
+          type: boolean
+        is_apply_specific_affiliates:
+          default: false
+          description: Whether to apply to specific affiliates
+          type: boolean
+        network_affiliate_ids:
+          description: Specific affiliate IDs
+          items:
+            type: integer
+          type: array
+      type: object
+    Ruleset:
+      description: Targeting rules for traffic
+      example:
+        regions:
+        - "{}"
+        - "{}"
+        brands:
+        - "{}"
+        - "{}"
+        languages:
+        - "{}"
+        - "{}"
+        cities:
+        - "{}"
+        - "{}"
+        is_use_day_parting: false
+        days_parting:
+        - "{}"
+        - "{}"
+        postal_codes:
+        - "{}"
+        - "{}"
+        countries:
+        - "{}"
+        - "{}"
+        os_versions:
+        - "{}"
+        - "{}"
+        browsers:
+        - "{}"
+        - "{}"
+        ips:
+        - "{}"
+        - "{}"
+        platforms:
+        - "{}"
+        - "{}"
+        day_parting_timezone_id: 3
+        dmas:
+        - "{}"
+        - "{}"
+        connection_types:
+        - "{}"
+        - "{}"
+        is_block_proxy: false
+        device_types:
+        - "{}"
+        - "{}"
+        day_parting_apply_to: user_timezone
+        isps:
+        - "{}"
+        - "{}"
+        mobile_carriers:
+        - "{}"
+        - "{}"
+      properties:
+        platforms:
+          items:
+            type: object
+          type: array
+        device_types:
+          items:
+            type: object
+          type: array
+        os_versions:
+          items:
+            type: object
+          type: array
+        browsers:
+          items:
+            type: object
+          type: array
+        languages:
+          items:
+            type: object
+          type: array
+        countries:
+          items:
+            type: object
+          type: array
+        regions:
+          items:
+            type: object
+          type: array
+        cities:
+          items:
+            type: object
+          type: array
+        dmas:
+          items:
+            type: object
+          type: array
+        mobile_carriers:
+          items:
+            type: object
+          type: array
+        connection_types:
+          items:
+            type: object
+          type: array
+        ips:
+          items:
+            type: object
+          type: array
+        is_block_proxy:
+          default: false
+          description: Block proxy traffic
+          type: boolean
+        is_use_day_parting:
+          default: false
+          description: Enable day parting
+          type: boolean
+        day_parting_apply_to:
+          description: Day parting timezone setting
+          enum:
+          - user_timezone
+          - selected_timezone
+          type: string
+        day_parting_timezone_id:
+          description: Timezone ID for day parting
+          type: integer
+        days_parting:
+          items:
+            type: object
+          type: array
+        isps:
+          items:
+            type: object
+          type: array
+        brands:
+          items:
+            type: object
+          type: array
+        postal_codes:
+          items:
+            type: object
+          type: array
+      type: object
+    TrafficFilter:
+      example:
+        parameter: sub1
+        match_type: exact
+        action: block
+        value: value
+      properties:
+        parameter:
+          description: Parameter to filter
+          enum:
+          - sub1
+          - sub2
+          - sub3
+          - sub4
+          - sub5
+          - source_id
+          - user_agent
+          - referer
+          - idfa
+          - google_advertiser_id
+          - http_accept_language
+          - creative_id
+          type: string
+        match_type:
+          description: Matching type
+          enum:
+          - exact
+          - minimum
+          - maximum
+          - contains
+          - starts_with
+          - range
+          - ends_with
+          - blank
+          - does_not_match
+          - does_not_contain
+          type: string
+        value:
+          description: Value to match
+          type: string
+        action:
+          description: Action to take
+          enum:
+          - block
+          - fail_traffic
+          type: string
+      required:
+      - action
+      - match_type
+      - parameter
+      - value
+      type: object
+    EmailSettings:
+      example:
+        is_enabled: true
+        subject_lines: subject_lines
+        from_lines: from_lines
+      properties:
+        is_enabled:
+          description: Email settings enabled
+          type: boolean
+        subject_lines:
+          description: Approved subject lines
+          type: string
+        from_lines:
+          description: Approved from lines
+          type: string
+      type: object
+    EmailOptoutSettings:
+      example:
+        is_enabled: true
+        suppression_file_link: suppression_file_link
+        unsub_link: unsub_link
+      properties:
+        is_enabled:
+          description: Email optout enabled
+          type: boolean
+        suppression_file_link:
+          description: Suppression file URL
+          type: string
+        unsub_link:
+          description: Unsubscribe URL
+          type: string
+      type: object
+    PayoutRevenue:
+      example:
+        entry_name: Base
+        is_private: true
+        is_allow_duplicate_conversion: true
+        revenue_percentage: 0
+        revenue_type: rpc
+        payout_type: cpc
+        is_postback_disabled: false
+        is_default: true
+        payout_percentage: 7
+        global_advertiser_event_id: 4
+        revenue_amount: 6.519180951018382
+        payout_amount: 0.8851374739011653
+        is_must_approve_conversion: false
+      properties:
+        entry_name:
+          default: Base
+          description: Event name
+          type: string
+        payout_type:
+          description: Payout type
+          enum:
+          - cpc
+          - cpa
+          - cpm
+          - cps
+          - cpa_cps
+          - prv
+          type: string
+        payout_amount:
+          description: Payout amount
+          format: double
+          type: number
+        payout_percentage:
+          description: Payout percentage
+          type: integer
+        revenue_type:
+          description: Revenue type
+          enum:
+          - rpc
+          - rpa
+          - rpm
+          - rps
+          - rpa_rps
+          type: string
+        revenue_amount:
+          description: Revenue amount
+          format: double
+          type: number
+        revenue_percentage:
+          description: Revenue percentage
+          type: integer
+        is_default:
+          description: Is base conversion
+          type: boolean
+        is_private:
+          description: Is private event
+          type: boolean
+        is_postback_disabled:
+          default: false
+          description: Disable partner postback
+          type: boolean
+        global_advertiser_event_id:
+          default: 0
+          description: Global advertiser event ID
+          type: integer
+        is_must_approve_conversion:
+          default: false
+          description: Require conversion approval
+          type: boolean
+        is_allow_duplicate_conversion:
+          default: true
+          description: Allow duplicate conversions
+          type: boolean
+      required:
+      - is_default
+      - is_private
+      - payout_type
+      - revenue_type
+      type: object
+    ThumbnailFile:
+      example:
+        temp_url: temp_url
+        original_file_name: original_file_name
+      properties:
+        temp_url:
+          description: Temporary file URL
+          type: string
+        original_file_name:
+          description: Original filename
+          type: string
+      type: object
+    Integrations:
+      example:
+        optizmo:
+          optoutlist_id: optoutlist_id
+        ezepo:
+          enabled: true
+        twentyfour_metrics:
+          network_integration_twentyfour_metrics_tracker_id: 8
+        anura:
+          enabled: true
+        forensiq:
+          click_threshold: 7
+          conversion_threshold: 3
+          action: block
+          conversion_status: pending
+        invoca:
+          enabled: true
+      properties:
+        optizmo:
+          $ref: '#/components/schemas/Integrations_optizmo'
+        twentyfour_metrics:
+          $ref: '#/components/schemas/Integrations_twentyfour_metrics'
+        forensiq:
+          $ref: '#/components/schemas/Integrations_forensiq'
+        ezepo:
+          $ref: '#/components/schemas/Integrations_ezepo'
+        anura:
+          $ref: '#/components/schemas/Integrations_anura'
+        invoca:
+          $ref: '#/components/schemas/Integrations_invoca'
+      type: object
+    Channel:
+      example:
+        network_channel_id: 3
+      properties:
+        network_channel_id:
+          description: Channel ID
+          type: integer
+      type: object
+    RequirementKPI:
+      example:
+        kpi: kpi
+      properties:
+        kpi:
+          description: KPI threshold
+          type: string
+      type: object
+    RequirementTrackingParameter:
+      example:
+        tracking_parameter: tracking_parameter
+        value: value
+      properties:
+        tracking_parameter:
+          description: Tracking parameter name
+          type: string
+        value:
+          description: Parameter value
+          type: string
+      type: object
+    Integrations_optizmo:
+      example:
+        optoutlist_id: optoutlist_id
+      properties:
+        optoutlist_id:
+          description: Optizmo optout list ID
+          type: string
+      type: object
+    Integrations_twentyfour_metrics:
+      example:
+        network_integration_twentyfour_metrics_tracker_id: 8
+      properties:
+        network_integration_twentyfour_metrics_tracker_id:
+          description: 24metrics tracker ID
+          type: integer
+      type: object
+    Integrations_forensiq:
+      example:
+        click_threshold: 7
+        conversion_threshold: 3
+        action: block
+        conversion_status: pending
+      properties:
+        click_threshold:
+          description: Click threshold
+          type: integer
+        action:
+          description: Click threshold action
+          enum:
+          - block
+          - fail_traffic
+          type: string
+        conversion_threshold:
+          description: Conversion threshold
+          type: integer
+        conversion_status:
+          description: Conversion threshold status
+          enum:
+          - pending
+          - rejected
+          type: string
+      type: object
+    Integrations_ezepo:
+      example:
+        enabled: true
+      properties:
+        enabled:
+          description: Ezepo enabled
+          type: boolean
+      type: object
+    Integrations_anura:
+      example:
+        enabled: true
+      properties:
+        enabled:
+          description: Anura enabled
+          type: boolean
+      type: object
+    Integrations_invoca:
+      example:
+        enabled: true
+      properties:
+        enabled:
+          description: Invoca enabled
+          type: boolean
+      type: object
+  securitySchemes:
+    ApiKeyAuth:
+      description: API key for authentication
+      in: header
+      name: X-Eflow-API-Key
+      type: apiKey

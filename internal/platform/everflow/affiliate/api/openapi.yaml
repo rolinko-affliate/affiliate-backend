@@ -1,0 +1,1005 @@
+openapi: 3.0.3
+info:
+  description: API for managing affiliates in the Everflow platform
+  title: Everflow Affiliates API
+  version: 1.0.0
+servers:
+- description: Production server
+  url: https://api.eflow.team/v1
+security:
+- ApiKeyAuth: []
+paths:
+  /networks/affiliates:
+    post:
+      description: Creates a new affiliate in the network
+      operationId: createAffiliate
+      requestBody:
+        content:
+          application/json:
+            examples:
+              paymentNoneBillingMonthly:
+                summary: Payment method is none and billing frequency is monthly
+                value:
+                  name: Test Affiliate
+                  account_status: active
+                  network_employee_id: 1
+                  internal_notes: This is a test affiliate created using the API
+                  default_currency_id: USD
+                  enable_media_cost_tracking_links: false
+                  referrer_id: 0
+                  is_contact_address_enabled: true
+                  contact_address:
+                    address_1: 105 Ocean Avenue
+                    address_2: ""
+                    city: Los Angeles
+                    region_code: CA
+                    country_code: US
+                    zip_postal_code: GHGHGH
+                  labels:
+                  - test
+                  - type 1
+                  users:
+                  - first_name: Bob
+                    last_name: Smith
+                    email: everflow.test@example.com
+                    account_status: active
+                    initial_password: J0hnD0e2020!
+                    language_id: 1
+                    timezone_id: 90
+                    currency_id: USD
+                  billing:
+                    billing_frequency: monthly
+                    payment_type: none
+                    tax_id: XXXXX
+                    details:
+                      day_of_month: 1
+            schema:
+              $ref: '#/components/schemas/CreateAffiliateRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Affiliate'
+          description: Affiliate created successfully
+        "400":
+          description: Bad request
+        "401":
+          description: Unauthorized
+        "422":
+          description: Validation error
+      summary: Create Affiliate
+      tags:
+      - Affiliates
+  /networks/affiliates/{affiliateId}:
+    get:
+      description: Retrieves a single affiliate by its ID
+      operationId: getAffiliateById
+      parameters:
+      - description: The ID of the affiliate you want to fetch
+        explode: false
+        in: path
+        name: affiliateId
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: Additional relationships to include in the response
+        explode: true
+        in: query
+        name: relationship
+        required: false
+        schema:
+          items:
+            enum:
+            - reporting
+            - billing
+            - coupon_codes
+            - users
+            - audits
+            - visibility
+            - signup
+            - api
+            - traffic_source
+            - referral_link
+            - referrer
+            - referral
+            - supply_partner
+            type: string
+          type: array
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                network_affiliate_id: 1
+                network_id: 346
+                name: Google
+                account_status: active
+                network_employee_id: 6
+                internal_notes: ""
+                has_notifications: true
+                network_traffic_source_id: 0
+                account_executive_id: 0
+                adress_id: 0
+                default_currency_id: USD
+                is_contact_address_enabled: false
+                enable_media_cost_tracking_links: true
+                time_created: 1554517251
+                time_saved: 1560453624
+                relationship:
+                  labels:
+                    total: 1
+                    entries:
+                    - Direct
+                  account_manager:
+                    first_name: Bob
+                    last_name: Smith
+                    email: my.everflow@gmail.com
+                    work_phone: ""
+                    cell_phone: ""
+                    instant_messaging_id: 1
+                    instant_messaging_identifier: peter_mobaff
+                  encoded_value: 28KL6
+                referrer_id: 0
+              schema:
+                $ref: '#/components/schemas/AffiliateWithRelationships'
+          description: Affiliate retrieved successfully
+        "404":
+          description: Affiliate not found
+        "401":
+          description: Unauthorized
+      summary: Find Affiliate By ID
+      tags:
+      - Affiliates
+    put:
+      description: "Updates an existing affiliate. All fields must be specified, not\
+        \ only the ones you wish to update."
+      operationId: updateAffiliate
+      parameters:
+      - description: The ID of the affiliate you want to update
+        explode: false
+        in: path
+        name: affiliateId
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            example:
+              name: Test Affiliate
+              account_status: active
+              network_employee_id: 1
+              internal_notes: This is a test affiliate created using the API
+              default_currency_id: USD
+              enable_media_cost_tracking_links: false
+              referrer_id: 0
+              is_contact_address_enabled: true
+              contact_address:
+                address_1: 105 Ocean Avenue
+                address_2: ""
+                city: Los Angeles
+                region_code: CA
+                country_code: US
+                zip_postal_code: GHGHGH
+              labels:
+              - test
+              - type 1
+              billing:
+                billing_frequency: monthly
+                payment_type: none
+                tax_id: XXXXX
+                details:
+                  day_of_month: 1
+            schema:
+              $ref: '#/components/schemas/UpdateAffiliateRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Affiliate'
+          description: Affiliate updated successfully
+        "400":
+          description: Bad request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Affiliate not found
+        "422":
+          description: Validation error
+      summary: Update Affiliate
+      tags:
+      - Affiliates
+components:
+  schemas:
+    CreateAffiliateRequest:
+      example:
+        default_currency_id: USD
+        referrer_id: 6
+        network_employee_id: 0
+        enable_media_cost_tracking_links: false
+        account_status: active
+        users:
+        - instant_messaging_identifier: instant_messaging_identifier
+          work_phone: work_phone
+          instant_messaging_id: 5
+          last_name: last_name
+          account_status: active
+          language_id: 5
+          title: title
+          cell_phone: cell_phone
+          initial_password: initial_password
+          timezone_id: 2
+          first_name: first_name
+          email: email
+          currency_id: currency_id
+        - instant_messaging_identifier: instant_messaging_identifier
+          work_phone: work_phone
+          instant_messaging_id: 5
+          last_name: last_name
+          account_status: active
+          language_id: 5
+          title: title
+          cell_phone: cell_phone
+          initial_password: initial_password
+          timezone_id: 2
+          first_name: first_name
+          email: email
+          currency_id: currency_id
+        labels:
+        - labels
+        - labels
+        billing:
+          billing_frequency: weekly
+          auto_invoice_start_date: 2000-01-23
+          payment_type: none
+          default_invoice_is_hidden: false
+          invoice_generation_days_delay: 7
+          invoice_amount_threshold: 9.301444243932576
+          details:
+            starting_month: 2
+            day_of_month_one: 13
+            day_of_month_two: 23
+            day_of_month: 4
+            day_of_week: 1
+          payment:
+            reception_identifier: reception_identifier
+            account_number: account_number
+            swift_code: swift_code
+            bank_address: bank_address
+            paypal_reception_method: email
+            last_name: last_name
+            routing_number: routing_number
+            paxum_id: paxum_id
+            phone: phone
+            account_name: account_name
+            bank_name: bank_name
+            idap: idap
+            is_existing_payee: true
+            first_name: first_name
+            email: email
+            country_iso: country_iso
+          default_payment_terms: 3
+          is_invoice_creation_auto: false
+          tax_id: tax_id
+        network_affiliate_tier_id: 1
+        internal_notes: internal_notes
+        name: name
+        is_contact_address_enabled: false
+        contact_address:
+          country_code: country_code
+          city: city
+          address_1: address_1
+          zip_postal_code: zip_postal_code
+          address_2: address_2
+          region_code: region_code
+      properties:
+        name:
+          description: The name of the affiliate
+          type: string
+        account_status:
+          description: The affiliate's account status
+          enum:
+          - active
+          - inactive
+          type: string
+        network_employee_id:
+          description: The employee id of the affiliate's account manager
+          type: integer
+        internal_notes:
+          description: Internal notes for network usage
+          type: string
+        default_currency_id:
+          description: The affiliate's default currency (3-letter code)
+          example: USD
+          type: string
+        enable_media_cost_tracking_links:
+          default: false
+          description: Whether to allow affiliate to pass and override cost in their
+            tracking links
+          type: boolean
+        referrer_id:
+          default: 0
+          description: The id of the affiliate that referred the new affiliate
+          type: integer
+        is_contact_address_enabled:
+          default: false
+          description: Whether to include a contact address for this affiliate
+          type: boolean
+        network_affiliate_tier_id:
+          description: The ID of the Affiliate Tier
+          type: integer
+        contact_address:
+          $ref: '#/components/schemas/ContactAddress'
+        labels:
+          description: Labels to associate with the affiliate
+          items:
+            type: string
+          type: array
+        users:
+          description: List of affiliate users to be created
+          items:
+            $ref: '#/components/schemas/AffiliateUser'
+          type: array
+        billing:
+          $ref: '#/components/schemas/BillingInfo'
+      required:
+      - account_status
+      - name
+      - network_employee_id
+      type: object
+    UpdateAffiliateRequest:
+      example:
+        default_currency_id: default_currency_id
+        network_affiliate_tier_id: 1
+        internal_notes: internal_notes
+        referrer_id: 6
+        network_employee_id: 0
+        name: name
+        enable_media_cost_tracking_links: true
+        is_contact_address_enabled: true
+        account_status: active
+        contact_address:
+          country_code: country_code
+          city: city
+          address_1: address_1
+          zip_postal_code: zip_postal_code
+          address_2: address_2
+          region_code: region_code
+        labels:
+        - labels
+        - labels
+        billing:
+          billing_frequency: weekly
+          auto_invoice_start_date: 2000-01-23
+          payment_type: none
+          default_invoice_is_hidden: false
+          invoice_generation_days_delay: 7
+          invoice_amount_threshold: 9.301444243932576
+          details:
+            starting_month: 2
+            day_of_month_one: 13
+            day_of_month_two: 23
+            day_of_month: 4
+            day_of_week: 1
+          payment:
+            reception_identifier: reception_identifier
+            account_number: account_number
+            swift_code: swift_code
+            bank_address: bank_address
+            paypal_reception_method: email
+            last_name: last_name
+            routing_number: routing_number
+            paxum_id: paxum_id
+            phone: phone
+            account_name: account_name
+            bank_name: bank_name
+            idap: idap
+            is_existing_payee: true
+            first_name: first_name
+            email: email
+            country_iso: country_iso
+          default_payment_terms: 3
+          is_invoice_creation_auto: false
+          tax_id: tax_id
+      properties:
+        name:
+          description: The name of the affiliate
+          type: string
+        account_status:
+          description: The affiliate's account status
+          enum:
+          - active
+          - inactive
+          type: string
+        network_employee_id:
+          description: The employee id of the affiliate's account manager
+          type: integer
+        internal_notes:
+          description: Internal notes for network usage
+          type: string
+        default_currency_id:
+          description: The affiliate's default currency (3-letter code)
+          type: string
+        enable_media_cost_tracking_links:
+          description: Whether to allow affiliate to pass and override cost in their
+            tracking links
+          type: boolean
+        referrer_id:
+          description: The id of the affiliate that referred the new affiliate
+          type: integer
+        is_contact_address_enabled:
+          description: Whether to include a contact address for this affiliate
+          type: boolean
+        network_affiliate_tier_id:
+          description: The ID of the Affiliate Tier
+          type: integer
+        contact_address:
+          $ref: '#/components/schemas/ContactAddress'
+        labels:
+          description: Labels to associate with the affiliate
+          items:
+            type: string
+          type: array
+        billing:
+          $ref: '#/components/schemas/BillingInfo'
+      required:
+      - account_status
+      - name
+      - network_employee_id
+      type: object
+    ContactAddress:
+      example:
+        country_code: country_code
+        city: city
+        address_1: address_1
+        zip_postal_code: zip_postal_code
+        address_2: address_2
+        region_code: region_code
+      properties:
+        address_1:
+          description: The address first line
+          type: string
+        address_2:
+          description: The address second line
+          type: string
+        city:
+          description: The city name
+          type: string
+        region_code:
+          description: The region code
+          type: string
+        country_code:
+          description: The country code
+          type: string
+        zip_postal_code:
+          description: The ZIP or Postal code
+          type: string
+      type: object
+    AffiliateUser:
+      example:
+        instant_messaging_identifier: instant_messaging_identifier
+        work_phone: work_phone
+        instant_messaging_id: 5
+        last_name: last_name
+        account_status: active
+        language_id: 5
+        title: title
+        cell_phone: cell_phone
+        initial_password: initial_password
+        timezone_id: 2
+        first_name: first_name
+        email: email
+        currency_id: currency_id
+      properties:
+        first_name:
+          description: The affiliate user's first name
+          type: string
+        last_name:
+          description: The affiliate user's last name
+          type: string
+        email:
+          description: The affiliate user's email (must be unique)
+          format: email
+          type: string
+        account_status:
+          description: The affiliate user's account status
+          enum:
+          - active
+          - inactive
+          type: string
+        title:
+          description: The affiliate user's title
+          type: string
+        work_phone:
+          description: The affiliate user's work phone number
+          type: string
+        cell_phone:
+          description: The affiliate user's cell phone number
+          type: string
+        instant_messaging_id:
+          description: The id of an instant messaging platform
+          type: integer
+        instant_messaging_identifier:
+          description: The affiliate user's instant messaging identifier
+          type: string
+        language_id:
+          description: The affiliate user's language id (1 = English)
+          enum:
+          - 1
+          type: integer
+        timezone_id:
+          description: The affiliate user's timezone id
+          type: integer
+        currency_id:
+          description: The affiliate user's currency id
+          type: string
+        initial_password:
+          description: "The affiliate user's login password (min 8 chars, 1 non-alphanumeric,\
+            \ 1 uppercase, 1 lowercase)"
+          type: string
+      required:
+      - account_status
+      - email
+      - first_name
+      - last_name
+      type: object
+    BillingInfo:
+      example:
+        billing_frequency: weekly
+        auto_invoice_start_date: 2000-01-23
+        payment_type: none
+        default_invoice_is_hidden: false
+        invoice_generation_days_delay: 7
+        invoice_amount_threshold: 9.301444243932576
+        details:
+          starting_month: 2
+          day_of_month_one: 13
+          day_of_month_two: 23
+          day_of_month: 4
+          day_of_week: 1
+        payment:
+          reception_identifier: reception_identifier
+          account_number: account_number
+          swift_code: swift_code
+          bank_address: bank_address
+          paypal_reception_method: email
+          last_name: last_name
+          routing_number: routing_number
+          paxum_id: paxum_id
+          phone: phone
+          account_name: account_name
+          bank_name: bank_name
+          idap: idap
+          is_existing_payee: true
+          first_name: first_name
+          email: email
+          country_iso: country_iso
+        default_payment_terms: 3
+        is_invoice_creation_auto: false
+        tax_id: tax_id
+      properties:
+        billing_frequency:
+          description: The affiliate's invoicing frequency
+          enum:
+          - weekly
+          - bimonthly
+          - monthly
+          - two_months
+          - quarterly
+          - manual
+          - other
+          type: string
+        payment_type:
+          description: The affiliate's payment type
+          enum:
+          - none
+          - pay
+          - paypal
+          - check
+          - wire
+          - direct_deposit
+          - tipalti
+          - paxum
+          - veem
+          - payoneer
+          - bitcoin
+          - webmoney
+          - capitalist
+          - transferwise
+          - gift_card
+          - masspay
+          - skrill
+          type: string
+        tax_id:
+          description: The affiliate's tax id
+          type: string
+        is_invoice_creation_auto:
+          default: false
+          description: Configures automatic invoice creations
+          type: boolean
+        auto_invoice_start_date:
+          description: Automatic invoice creation start date (YYYY-mm-dd)
+          format: date
+          type: string
+        default_invoice_is_hidden:
+          default: false
+          description: Whether invoices are hidden from the affiliate by default
+          type: boolean
+        invoice_generation_days_delay:
+          default: 0
+          description: Days to wait for invoice generation after billing period
+          type: integer
+        invoice_amount_threshold:
+          default: 0
+          description: Minimal amount required for invoice generation
+          format: double
+          type: number
+        default_payment_terms:
+          default: 0
+          description: Number of days for payment terms on invoices
+          type: integer
+        details:
+          $ref: '#/components/schemas/BillingDetails'
+        payment:
+          $ref: '#/components/schemas/PaymentDetails'
+      type: object
+    BillingDetails:
+      example:
+        starting_month: 2
+        day_of_month_one: 13
+        day_of_month_two: 23
+        day_of_month: 4
+        day_of_week: 1
+      properties:
+        day_of_week:
+          description: Day of the week (0-6) for weekly billing
+          maximum: 6
+          minimum: 0
+          type: integer
+        day_of_month_one:
+          description: First day of month for bimonthly billing
+          maximum: 31
+          minimum: 1
+          type: integer
+        day_of_month_two:
+          description: Second day of month for bimonthly billing
+          maximum: 31
+          minimum: 1
+          type: integer
+        day_of_month:
+          description: Day of month for monthly/quarterly billing
+          maximum: 31
+          minimum: 1
+          type: integer
+        starting_month:
+          description: Starting month for quarterly billing
+          maximum: 12
+          minimum: 1
+          type: integer
+      type: object
+    PaymentDetails:
+      example:
+        reception_identifier: reception_identifier
+        account_number: account_number
+        swift_code: swift_code
+        bank_address: bank_address
+        paypal_reception_method: email
+        last_name: last_name
+        routing_number: routing_number
+        paxum_id: paxum_id
+        phone: phone
+        account_name: account_name
+        bank_name: bank_name
+        idap: idap
+        is_existing_payee: true
+        first_name: first_name
+        email: email
+        country_iso: country_iso
+      properties:
+        paxum_id:
+          description: The affiliate's paxum id (when payment_type is paxum)
+          type: string
+        paypal_reception_method:
+          description: Reception method for PayPal
+          enum:
+          - email
+          - phone
+          - paypal_account
+          type: string
+        reception_identifier:
+          description: PayPal reception identifier
+          type: string
+        email:
+          description: Email for payoneer or veem
+          format: email
+          type: string
+        is_existing_payee:
+          description: Whether to assign existing payee id (tipalti)
+          type: boolean
+        idap:
+          description: Payee's IDAP (Payee ID) for tipalti
+          type: string
+        first_name:
+          description: First name for veem
+          type: string
+        last_name:
+          description: Last name for veem
+          type: string
+        phone:
+          description: Phone number in international format (veem)
+          type: string
+        country_iso:
+          description: Country ISO code (veem)
+          type: string
+        bank_name:
+          description: Bank name (wire/direct_deposit)
+          type: string
+        bank_address:
+          description: Bank address (wire/direct_deposit)
+          type: string
+        account_name:
+          description: Bank account name (wire/direct_deposit)
+          type: string
+        account_number:
+          description: Bank account number (wire/direct_deposit)
+          type: string
+        routing_number:
+          description: Bank routing number (wire/direct_deposit)
+          type: string
+        swift_code:
+          description: SWIFT code (wire/direct_deposit)
+          type: string
+      type: object
+    Affiliate:
+      example:
+        referrer_id: 7
+        network_country_code: network_country_code
+        adress_id: 7
+        enable_media_cost_tracking_links: true
+        account_status: active
+        account_executive_id: 5
+        internal_notes: internal_notes
+        balance: 2.027123023002322
+        is_contact_address_enabled: true
+        time_created: 9
+        network_traffic_source_id: 2
+        today_revenue: today_revenue
+        network_affiliate_id: 0
+        default_currency_id: default_currency_id
+        network_employee_id: 1
+        last_login: 4
+        account_manager_name: account_manager_name
+        account_executive_name: account_executive_name
+        is_payable: true
+        labels:
+        - labels
+        - labels
+        network_id: 6
+        payment_type: payment_type
+        name: name
+        time_saved: 3
+        account_manager_id: 5
+        has_notifications: true
+        global_tracking_domain_url: global_tracking_domain_url
+      properties:
+        network_affiliate_id:
+          description: The unique ID of the affiliate
+          type: integer
+        network_id:
+          description: The network ID
+          type: integer
+        name:
+          description: The name of the affiliate
+          type: string
+        account_status:
+          description: The affiliate's account status
+          enum:
+          - active
+          - inactive
+          - pending
+          - suspended
+          type: string
+        network_employee_id:
+          description: The employee id of the account manager
+          type: integer
+        account_manager_id:
+          description: The account manager ID
+          type: integer
+        account_manager_name:
+          description: The account manager's name
+          type: string
+        account_executive_id:
+          description: Account executive ID
+          type: integer
+        account_executive_name:
+          description: The account executive's name
+          type: string
+        internal_notes:
+          description: Internal notes
+          type: string
+        has_notifications:
+          description: Whether the affiliate has notifications enabled
+          type: boolean
+        network_traffic_source_id:
+          description: Traffic source ID
+          type: integer
+        adress_id:
+          description: Address ID (note the typo in the field name)
+          type: integer
+        default_currency_id:
+          description: Default currency code
+          type: string
+        is_contact_address_enabled:
+          description: Whether contact address is enabled
+          type: boolean
+        enable_media_cost_tracking_links:
+          description: Whether media cost tracking links are enabled
+          type: boolean
+        today_revenue:
+          description: Today's revenue (formatted as currency string)
+          type: string
+        time_created:
+          description: Unix timestamp of creation
+          format: int64
+          type: integer
+        time_saved:
+          description: Unix timestamp of last save
+          format: int64
+          type: integer
+        labels:
+          description: Array of labels associated with the affiliate
+          items:
+            type: string
+          type: array
+        balance:
+          description: The affiliate's balance
+          type: number
+        last_login:
+          description: Unix timestamp of last login
+          format: int64
+          type: integer
+        global_tracking_domain_url:
+          description: Global tracking domain URL
+          type: string
+        network_country_code:
+          description: Network country code
+          type: string
+        is_payable:
+          description: Whether the affiliate is payable
+          type: boolean
+        payment_type:
+          description: The payment type
+          type: string
+        referrer_id:
+          description: ID of referring affiliate
+          type: integer
+      type: object
+    AffiliateWithRelationships:
+      allOf:
+      - $ref: '#/components/schemas/Affiliate'
+      - properties:
+          relationship:
+            $ref: '#/components/schemas/AffiliateWithRelationships_allOf_relationship'
+        type: object
+      example:
+        referrer_id: 7
+        network_country_code: network_country_code
+        adress_id: 7
+        enable_media_cost_tracking_links: true
+        account_status: active
+        account_executive_id: 5
+        internal_notes: internal_notes
+        balance: 2.027123023002322
+        is_contact_address_enabled: true
+        time_created: 9
+        network_traffic_source_id: 2
+        today_revenue: today_revenue
+        relationship:
+          account_manager:
+            instant_messaging_identifier: instant_messaging_identifier
+            work_phone: work_phone
+            instant_messaging_id: 1
+            last_name: last_name
+            first_name: first_name
+            email: email
+            cell_phone: cell_phone
+          encoded_value: encoded_value
+          labels:
+            total: 1
+            entries:
+            - entries
+            - entries
+        network_affiliate_id: 0
+        default_currency_id: default_currency_id
+        network_employee_id: 1
+        last_login: 4
+        account_manager_name: account_manager_name
+        account_executive_name: account_executive_name
+        is_payable: true
+        labels:
+        - labels
+        - labels
+        network_id: 6
+        payment_type: payment_type
+        name: name
+        time_saved: 3
+        account_manager_id: 5
+        has_notifications: true
+        global_tracking_domain_url: global_tracking_domain_url
+    AffiliateWithRelationships_allOf_relationship_labels:
+      example:
+        total: 1
+        entries:
+        - entries
+        - entries
+      properties:
+        total:
+          type: integer
+        entries:
+          items:
+            type: string
+          type: array
+      type: object
+    AffiliateWithRelationships_allOf_relationship_account_manager:
+      example:
+        instant_messaging_identifier: instant_messaging_identifier
+        work_phone: work_phone
+        instant_messaging_id: 1
+        last_name: last_name
+        first_name: first_name
+        email: email
+        cell_phone: cell_phone
+      properties:
+        first_name:
+          type: string
+        last_name:
+          type: string
+        email:
+          type: string
+        work_phone:
+          type: string
+        cell_phone:
+          type: string
+        instant_messaging_id:
+          type: integer
+        instant_messaging_identifier:
+          type: string
+      type: object
+    AffiliateWithRelationships_allOf_relationship:
+      description: Additional relationship data based on requested relationships
+      example:
+        account_manager:
+          instant_messaging_identifier: instant_messaging_identifier
+          work_phone: work_phone
+          instant_messaging_id: 1
+          last_name: last_name
+          first_name: first_name
+          email: email
+          cell_phone: cell_phone
+        encoded_value: encoded_value
+        labels:
+          total: 1
+          entries:
+          - entries
+          - entries
+      properties:
+        labels:
+          $ref: '#/components/schemas/AffiliateWithRelationships_allOf_relationship_labels'
+        account_manager:
+          $ref: '#/components/schemas/AffiliateWithRelationships_allOf_relationship_account_manager'
+        encoded_value:
+          description: Encoded affiliate ID
+          type: string
+      type: object
+  securitySchemes:
+    ApiKeyAuth:
+      in: header
+      name: X-Eflow-API-Key
+      type: apiKey

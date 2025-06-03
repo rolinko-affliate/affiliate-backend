@@ -1,0 +1,1197 @@
+openapi: 3.0.3
+info:
+  contact:
+    name: Everflow Support
+    url: https://helpdesk.everflow.io/en/
+  description: API for managing advertisers in the Everflow platform
+  title: Everflow Network API - Advertisers
+  version: 1.0.0
+servers:
+- description: Production server
+  url: https://api.eflow.team
+security:
+- ApiKeyAuth: []
+paths:
+  /v1/networks/advertisers:
+    post:
+      description: Create a new advertiser in the network
+      operationId: createAdvertiser
+      requestBody:
+        content:
+          application/json:
+            example:
+              name: Some Brand Inc.
+              account_status: active
+              network_employee_id: 264
+              default_currency_id: USD
+              sales_manager_id: 227
+              reporting_timezone_id: 80
+              attribution_method: last_touch
+              email_attribution_method: last_affiliate_attribution
+              attribution_priority: click
+              verification_token: c7HIWpFUGnyQfN5wwBollBBGtUkeOm
+              internal_notes: Some notes not visible to the advertiser
+              is_contact_address_enabled: true
+              contact_address:
+                address_1: 4110 rue St-Laurent
+                address_2: "202"
+                city: Montreal
+                zip_postal_code: H2R 0A1
+                country_id: 36
+                country_code: CA
+                region_code: QC
+              labels:
+              - DTC Brand
+              users:
+              - account_status: active
+                language_id: 1
+                timezone_id: 80
+                currency_id: USD
+                first_name: John
+                last_name: Doe
+                email: john.doe@example.com
+                initial_password: ""
+              billing:
+                billing_frequency: other
+                default_payment_terms: 0
+                tax_id: "123456789"
+              settings:
+                exposed_variables:
+                  affiliate_id: true
+                  affiliate: false
+                  sub1: true
+                  sub2: true
+                  sub3: false
+                  sub4: false
+                  sub5: false
+                  source_id: false
+                  offer_url: false
+            schema:
+              $ref: '#/components/schemas/CreateAdvertiserRequest'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Advertiser'
+          description: Advertiser created successfully
+        "400":
+          description: Bad request - Invalid input parameters
+        "401":
+          description: Unauthorized - Invalid API key
+        "422":
+          description: Unprocessable entity - Validation errors
+      summary: Create Advertiser
+  /v1/networks/advertisers/{advertiserId}:
+    get:
+      description: Retrieve a specific advertiser by their ID
+      operationId: getAdvertiserById
+      parameters:
+      - description: The ID of the advertiser to retrieve
+        explode: false
+        in: path
+        name: advertiserId
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: Additional relationships to include in the response
+        explode: false
+        in: query
+        name: relationship
+        required: false
+        schema:
+          items:
+            enum:
+            - reporting
+            - labels
+            - demand_partner
+            - billing
+            - integrations
+            - api
+            - sales_manager
+            type: string
+          type: array
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                network_advertiser_id: 1
+                network_id: 1
+                name: Google
+                account_status: active
+                network_employee_id: 11
+                internal_notes: ""
+                address_id: 0
+                is_contact_address_enabled: false
+                sales_manager_id: 17
+                is_expose_publisher_reporting_data: null
+                default_currency_id: USD
+                platform_name: ""
+                platform_url: ""
+                platform_username: ""
+                reporting_timezone_id: 67
+                accounting_contact_email: ""
+                verification_token: ""
+                offer_id_macro: oid
+                affiliate_id_macro: affid
+                attribution_method: last_touch
+                email_attribution_method: last_affiliate_attribution
+                attribution_priority: click
+                time_created: 1559919745
+                time_saved: 1559919745
+              schema:
+                $ref: '#/components/schemas/Advertiser'
+          description: Advertiser retrieved successfully
+        "401":
+          description: Unauthorized - Invalid API key
+        "404":
+          description: Advertiser not found
+      summary: Get Advertiser by ID
+    put:
+      description: Update an existing advertiser. All fields must be provided as this
+        is a full update operation.
+      operationId: updateAdvertiser
+      parameters:
+      - description: The ID of the advertiser to update
+        explode: false
+        in: path
+        name: advertiserId
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateAdvertiserRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Advertiser'
+          description: Advertiser updated successfully
+        "400":
+          description: Bad request - Invalid input parameters
+        "401":
+          description: Unauthorized - Invalid API key
+        "404":
+          description: Advertiser not found
+        "422":
+          description: Unprocessable entity - Validation errors
+      summary: Update Advertiser
+components:
+  schemas:
+    CreateAdvertiserRequest:
+      example:
+        default_currency_id: default_currency_id
+        attribution_method: last_touch
+        settings:
+          exposed_variables:
+            offer_url: true
+            sub4: true
+            sub5: true
+            sub2: true
+            affiliate_id: true
+            sub3: true
+            sub1: true
+            source_id: true
+            affiliate: true
+        email_attribution_method: last_affiliate_attribution
+        accounting_contact_email: accounting_contact_email
+        offer_id_macro: offer_id_macro
+        network_employee_id: 0
+        platform_username: platform_username
+        address_id: 6
+        platform_url: platform_url
+        account_status: active
+        users:
+        - instant_messaging_identifier: instant_messaging_identifier
+          work_phone: work_phone
+          instant_messaging_id: 5
+          last_name: last_name
+          account_status: active
+          language_id: 2
+          title: title
+          cell_phone: cell_phone
+          initial_password: initial_password
+          timezone_id: 7
+          first_name: first_name
+          email: email
+          currency_id: currency_id
+        labels:
+        - labels
+        - labels
+        billing:
+          billing_frequency: weekly
+          auto_invoice_start_date: 2000-01-23
+          default_invoice_is_hidden: false
+          invoice_generation_days_delay: 8
+          invoice_amount_threshold: 4.652396432933246
+          details:
+            starting_month: 3
+            day_of_month_one: 3
+            day_of_month_two: 7
+            day_of_month: 5
+            day_of_week: 3
+          default_payment_terms: 7
+          is_invoice_creation_auto: false
+          tax_id: tax_id
+        sales_manager_id: 1
+        attribution_priority: click
+        internal_notes: internal_notes
+        name: name
+        platform_name: platform_name
+        is_contact_address_enabled: false
+        reporting_timezone_id: 5
+        verification_token: verification_token
+        contact_address:
+          country_code: country_code
+          city: city
+          address_1: address_1
+          zip_postal_code: zip_postal_code
+          address_2: address_2
+          country_id: 9
+          region_code: region_code
+        affiliate_id_macro: affiliate_id_macro
+      properties:
+        name:
+          description: The name of the advertiser
+          type: string
+        account_status:
+          description: Status of the advertiser
+          enum:
+          - active
+          - inactive
+          - suspended
+          type: string
+        network_employee_id:
+          description: The employee id of the advertiser's account manager
+          type: integer
+        internal_notes:
+          description: Internal notes for the advertiser
+          type: string
+        address_id:
+          description: The address id of the advertiser
+          type: integer
+        is_contact_address_enabled:
+          default: false
+          description: Whether or not to include a contact address for this advertiser
+          type: boolean
+        sales_manager_id:
+          description: The employee id of the advertiser's sales manager
+          type: integer
+        default_currency_id:
+          description: The advertiser's default currency
+          type: string
+        platform_name:
+          description: The name of the shopping cart or attribution platform
+          type: string
+        platform_url:
+          description: The URL for logging into the advertiser's platform
+          type: string
+        platform_username:
+          description: The username for logging into the advertiser's platform
+          type: string
+        reporting_timezone_id:
+          description: The timezone used in the advertiser's platform reporting
+          type: integer
+        attribution_method:
+          description: Determines how attribution works for this advertiser
+          enum:
+          - last_touch
+          - first_touch
+          type: string
+        email_attribution_method:
+          description: Determines how email attribution works for this advertiser
+          enum:
+          - last_affiliate_attribution
+          - first_affiliate_attribution
+          type: string
+        attribution_priority:
+          description: Determines attribution priority between click and coupon code
+          enum:
+          - click
+          - coupon_code
+          type: string
+        accounting_contact_email:
+          description: The email address of the accounting contact
+          type: string
+        verification_token:
+          description: Verification token for incoming postbacks
+          maxLength: 50
+          type: string
+        offer_id_macro:
+          description: The string used for the offer id macro
+          type: string
+        affiliate_id_macro:
+          description: The string used for the affiliate id macro
+          type: string
+        labels:
+          description: The list of labels associated with the advertiser
+          items:
+            type: string
+          type: array
+        users:
+          description: List of advertiser users (maximum one)
+          items:
+            $ref: '#/components/schemas/AdvertiserUser'
+          maxItems: 1
+          type: array
+        contact_address:
+          $ref: '#/components/schemas/ContactAddress'
+        billing:
+          $ref: '#/components/schemas/Billing'
+        settings:
+          $ref: '#/components/schemas/Settings'
+      required:
+      - account_status
+      - attribution_method
+      - attribution_priority
+      - default_currency_id
+      - email_attribution_method
+      - name
+      - network_employee_id
+      - reporting_timezone_id
+      type: object
+    UpdateAdvertiserRequest:
+      allOf:
+      - $ref: '#/components/schemas/CreateAdvertiserRequest'
+      - properties:
+          network_advertiser_id:
+            description: The ID of the advertiser (read-only in update)
+            type: integer
+          network_id:
+            description: The network ID (read-only in update)
+            type: integer
+          time_created:
+            description: Creation timestamp (read-only in update)
+            type: integer
+          time_saved:
+            description: Last save timestamp (read-only in update)
+            type: integer
+        type: object
+      example:
+        email_attribution_method: last_affiliate_attribution
+        platform_username: platform_username
+        network_advertiser_id: 5
+        account_status: active
+        billing:
+          billing_frequency: weekly
+          auto_invoice_start_date: 2000-01-23
+          default_invoice_is_hidden: false
+          invoice_generation_days_delay: 8
+          invoice_amount_threshold: 4.652396432933246
+          details:
+            starting_month: 3
+            day_of_month_one: 3
+            day_of_month_two: 7
+            day_of_month: 5
+            day_of_week: 3
+          default_payment_terms: 7
+          is_invoice_creation_auto: false
+          tax_id: tax_id
+        sales_manager_id: 1
+        internal_notes: internal_notes
+        platform_name: platform_name
+        is_contact_address_enabled: false
+        reporting_timezone_id: 5
+        time_created: 7
+        verification_token: verification_token
+        contact_address:
+          country_code: country_code
+          city: city
+          address_1: address_1
+          zip_postal_code: zip_postal_code
+          address_2: address_2
+          country_id: 9
+          region_code: region_code
+        affiliate_id_macro: affiliate_id_macro
+        default_currency_id: default_currency_id
+        attribution_method: last_touch
+        settings:
+          exposed_variables:
+            offer_url: true
+            sub4: true
+            sub5: true
+            sub2: true
+            affiliate_id: true
+            sub3: true
+            sub1: true
+            source_id: true
+            affiliate: true
+        accounting_contact_email: accounting_contact_email
+        offer_id_macro: offer_id_macro
+        network_employee_id: 0
+        address_id: 6
+        platform_url: platform_url
+        users:
+        - instant_messaging_identifier: instant_messaging_identifier
+          work_phone: work_phone
+          instant_messaging_id: 5
+          last_name: last_name
+          account_status: active
+          language_id: 2
+          title: title
+          cell_phone: cell_phone
+          initial_password: initial_password
+          timezone_id: 7
+          first_name: first_name
+          email: email
+          currency_id: currency_id
+        labels:
+        - labels
+        - labels
+        network_id: 2
+        attribution_priority: click
+        name: name
+        time_saved: 9
+    Advertiser:
+      example:
+        email_attribution_method: last_affiliate_attribution
+        platform_username: platform_username
+        network_advertiser_id: 0
+        account_status: active
+        sales_manager_id: 5
+        internal_notes: internal_notes
+        platform_name: platform_name
+        is_contact_address_enabled: true
+        reporting_timezone_id: 2
+        time_created: 7
+        relationship:
+          settings:
+            exposed_variables:
+              offer_url: true
+              sub4: true
+              sub5: true
+              sub2: true
+              affiliate_id: true
+              sub3: true
+              sub1: true
+              source_id: true
+              affiliate: true
+          account_manager:
+            instant_messaging_identifier: instant_messaging_identifier
+            work_phone: work_phone
+            instant_messaging_id: 2
+            last_name: last_name
+            first_name: first_name
+            email: email
+            cell_phone: cell_phone
+          api_whitelist_ips:
+            total: 0
+            entries:
+            - "{}"
+            - "{}"
+          api_keys:
+            total: 0
+            entries:
+            - "{}"
+            - "{}"
+          sales_manager:
+            instant_messaging_identifier: instant_messaging_identifier
+            work_phone: work_phone
+            instant_messaging_id: 2
+            last_name: last_name
+            first_name: first_name
+            email: email
+            cell_phone: cell_phone
+          reporting:
+            gross_sales: 3.353193347011243
+            invalid_cv_scrub: 4
+            payout: 6.878052220127876
+            avg_sale_value: 7.058770351582356
+            event_revenue: 6.704019297950036
+            imp: 4
+            duplicate_click: 1
+            unique_click: 1
+            revenue: 5.944895607614016
+            cpa: 3.5571952270680973
+            cpc: 9.018348186070783
+            total_cv: 9
+            epc: 6.965117697638846
+            roas: 0.8851374739011653
+            event: 9
+            profit: 3.0937452626664474
+            cvr: 6.683562403749608
+            ctr: 7.457744773683766
+            evr: 8.762042012749001
+            cpm: 6.438423552598547
+            rpa: 2.8841621266687802
+            margin: 7.143538047012306
+            rpc: 1.284659006116532
+            view_through_cv: 5
+            rpm: 6.778324963048013
+            cv: 1
+            gross_click: 6
+            invalid_click: 1
+            total_click: 7
+            media_buying_cost: 6.519180951018382
+          labels:
+            total: 3
+            entries:
+            - entries
+            - entries
+          billing:
+            billing_frequency: weekly
+            auto_invoice_start_date: 2000-01-23
+            default_invoice_is_hidden: false
+            invoice_generation_days_delay: 8
+            invoice_amount_threshold: 4.652396432933246
+            details:
+              starting_month: 3
+              day_of_month_one: 3
+              day_of_month_two: 7
+              day_of_month: 5
+              day_of_week: 3
+            default_payment_terms: 7
+            is_invoice_creation_auto: false
+            tax_id: tax_id
+        verification_token: verification_token
+        affiliate_id_macro: affiliate_id_macro
+        default_currency_id: default_currency_id
+        attribution_method: last_touch
+        accounting_contact_email: accounting_contact_email
+        offer_id_macro: offer_id_macro
+        network_employee_id: 1
+        address_id: 5
+        platform_url: platform_url
+        is_expose_publisher_reporting_data: true
+        network_id: 6
+        attribution_priority: click
+        name: name
+        time_saved: 9
+      properties:
+        network_advertiser_id:
+          description: The unique ID of the advertiser
+          type: integer
+        network_id:
+          description: The network ID
+          type: integer
+        name:
+          description: The name of the advertiser
+          type: string
+        account_status:
+          description: Status of the advertiser
+          enum:
+          - active
+          - inactive
+          - suspended
+          type: string
+        network_employee_id:
+          description: The employee id of the advertiser's account manager
+          type: integer
+        internal_notes:
+          description: Internal notes for the advertiser
+          type: string
+        address_id:
+          description: The address id of the advertiser
+          type: integer
+        is_contact_address_enabled:
+          description: Whether contact address is enabled
+          type: boolean
+        sales_manager_id:
+          description: The employee id of the advertiser's sales manager
+          type: integer
+        is_expose_publisher_reporting_data:
+          description: Whether to expose publisher reporting data
+          nullable: true
+          type: boolean
+        default_currency_id:
+          description: The advertiser's default currency
+          type: string
+        platform_name:
+          description: The name of the shopping cart or attribution platform
+          type: string
+        platform_url:
+          description: The URL for logging into the advertiser's platform
+          type: string
+        platform_username:
+          description: The username for logging into the advertiser's platform
+          type: string
+        reporting_timezone_id:
+          description: The timezone used in the advertiser's platform reporting
+          type: integer
+        accounting_contact_email:
+          description: The email address of the accounting contact
+          type: string
+        verification_token:
+          description: Verification token for incoming postbacks
+          type: string
+        offer_id_macro:
+          description: The string used for the offer id macro
+          type: string
+        affiliate_id_macro:
+          description: The string used for the affiliate id macro
+          type: string
+        attribution_method:
+          description: How attribution works for this advertiser
+          enum:
+          - last_touch
+          - first_touch
+          type: string
+        email_attribution_method:
+          description: How email attribution works for this advertiser
+          enum:
+          - last_affiliate_attribution
+          - first_affiliate_attribution
+          type: string
+        attribution_priority:
+          description: Attribution priority between click and coupon code
+          enum:
+          - click
+          - coupon_code
+          type: string
+        time_created:
+          description: Creation timestamp
+          type: integer
+        time_saved:
+          description: Last save timestamp
+          type: integer
+        relationship:
+          $ref: '#/components/schemas/Advertiser_relationship'
+      type: object
+    AdvertiserUser:
+      example:
+        instant_messaging_identifier: instant_messaging_identifier
+        work_phone: work_phone
+        instant_messaging_id: 5
+        last_name: last_name
+        account_status: active
+        language_id: 2
+        title: title
+        cell_phone: cell_phone
+        initial_password: initial_password
+        timezone_id: 7
+        first_name: first_name
+        email: email
+        currency_id: currency_id
+      properties:
+        first_name:
+          description: The advertiser user's first name
+          type: string
+        last_name:
+          description: The advertiser user's last name
+          type: string
+        email:
+          description: The advertiser user's email (must be unique)
+          format: email
+          type: string
+        account_status:
+          description: The advertiser user's account status
+          enum:
+          - active
+          - inactive
+          type: string
+        title:
+          description: The advertiser user's title
+          type: string
+        work_phone:
+          description: The advertiser user's work phone number
+          type: string
+        cell_phone:
+          description: The advertiser user's cell phone number
+          type: string
+        instant_messaging_id:
+          description: The id of an instant messaging platform
+          type: integer
+        instant_messaging_identifier:
+          description: The advertiser user's instant messaging identifier
+          type: string
+        language_id:
+          description: The advertiser user's language id (limited to 1 for English)
+          type: integer
+        timezone_id:
+          description: The advertiser user's timezone id
+          type: integer
+        currency_id:
+          description: The advertiser user's currency id
+          type: string
+        initial_password:
+          description: The advertiser user's login password (optional)
+          type: string
+      required:
+      - account_status
+      - currency_id
+      - email
+      - first_name
+      - language_id
+      - last_name
+      - timezone_id
+      type: object
+    ContactAddress:
+      example:
+        country_code: country_code
+        city: city
+        address_1: address_1
+        zip_postal_code: zip_postal_code
+        address_2: address_2
+        country_id: 9
+        region_code: region_code
+      properties:
+        address_1:
+          description: The address first line
+          type: string
+        address_2:
+          description: The address second line
+          type: string
+        city:
+          description: The city name
+          type: string
+        region_code:
+          description: The region code
+          type: string
+        country_code:
+          description: The country code
+          type: string
+        country_id:
+          description: The country ID (numeric identifier)
+          type: integer
+        zip_postal_code:
+          description: The ZIP or Postal code
+          type: string
+      required:
+      - address_1
+      - city
+      - country_code
+      - region_code
+      - zip_postal_code
+      type: object
+    Billing:
+      example:
+        billing_frequency: weekly
+        auto_invoice_start_date: 2000-01-23
+        default_invoice_is_hidden: false
+        invoice_generation_days_delay: 8
+        invoice_amount_threshold: 4.652396432933246
+        details:
+          starting_month: 3
+          day_of_month_one: 3
+          day_of_month_two: 7
+          day_of_month: 5
+          day_of_week: 3
+        default_payment_terms: 7
+        is_invoice_creation_auto: false
+        tax_id: tax_id
+      properties:
+        billing_frequency:
+          description: The advertiser's invoicing frequency
+          enum:
+          - weekly
+          - bimonthly
+          - monthly
+          - two_months
+          - quarterly
+          - manual
+          - other
+          type: string
+        invoice_amount_threshold:
+          default: 0
+          description: Minimal amount required for invoice generation
+          format: double
+          type: number
+        tax_id:
+          description: The advertiser's tax id
+          type: string
+        is_invoice_creation_auto:
+          default: false
+          description: Configures automatic invoice creations
+          type: boolean
+        auto_invoice_start_date:
+          description: Automatic invoice creation start date (YYYY-mm-dd)
+          format: date
+          type: string
+        default_invoice_is_hidden:
+          default: false
+          description: Whether invoices are hidden from advertiser by default
+          type: boolean
+        invoice_generation_days_delay:
+          default: 0
+          description: Days to wait for invoice generation after billing period
+          type: integer
+        default_payment_terms:
+          default: 0
+          description: Number of days for payment terms on invoices
+          type: integer
+        details:
+          $ref: '#/components/schemas/Billing_details'
+      type: object
+    Settings:
+      example:
+        exposed_variables:
+          offer_url: true
+          sub4: true
+          sub5: true
+          sub2: true
+          affiliate_id: true
+          sub3: true
+          sub1: true
+          source_id: true
+          affiliate: true
+      properties:
+        exposed_variables:
+          $ref: '#/components/schemas/Settings_exposed_variables'
+      type: object
+    Employee:
+      example:
+        instant_messaging_identifier: instant_messaging_identifier
+        work_phone: work_phone
+        instant_messaging_id: 2
+        last_name: last_name
+        first_name: first_name
+        email: email
+        cell_phone: cell_phone
+      properties:
+        first_name:
+          type: string
+        last_name:
+          type: string
+        email:
+          type: string
+        work_phone:
+          type: string
+        cell_phone:
+          type: string
+        instant_messaging_id:
+          type: integer
+        instant_messaging_identifier:
+          type: string
+      type: object
+    ReportingData:
+      example:
+        gross_sales: 3.353193347011243
+        invalid_cv_scrub: 4
+        payout: 6.878052220127876
+        avg_sale_value: 7.058770351582356
+        event_revenue: 6.704019297950036
+        imp: 4
+        duplicate_click: 1
+        unique_click: 1
+        revenue: 5.944895607614016
+        cpa: 3.5571952270680973
+        cpc: 9.018348186070783
+        total_cv: 9
+        epc: 6.965117697638846
+        roas: 0.8851374739011653
+        event: 9
+        profit: 3.0937452626664474
+        cvr: 6.683562403749608
+        ctr: 7.457744773683766
+        evr: 8.762042012749001
+        cpm: 6.438423552598547
+        rpa: 2.8841621266687802
+        margin: 7.143538047012306
+        rpc: 1.284659006116532
+        view_through_cv: 5
+        rpm: 6.778324963048013
+        cv: 1
+        gross_click: 6
+        invalid_click: 1
+        total_click: 7
+        media_buying_cost: 6.519180951018382
+      properties:
+        imp:
+          description: Impressions
+          type: integer
+        total_click:
+          description: Total clicks
+          type: integer
+        unique_click:
+          description: Unique clicks
+          type: integer
+        invalid_click:
+          description: Invalid clicks
+          type: integer
+        duplicate_click:
+          description: Duplicate clicks
+          type: integer
+        gross_click:
+          description: Gross clicks
+          type: integer
+        ctr:
+          description: Click-through rate
+          type: number
+        cv:
+          description: Conversions
+          type: integer
+        invalid_cv_scrub:
+          description: Invalid conversions scrubbed
+          type: integer
+        view_through_cv:
+          description: View-through conversions
+          type: integer
+        total_cv:
+          description: Total conversions
+          type: integer
+        event:
+          description: Events
+          type: integer
+        cvr:
+          description: Conversion rate
+          type: number
+        evr:
+          description: Event rate
+          type: number
+        cpc:
+          description: Cost per click
+          type: number
+        cpm:
+          description: Cost per mille
+          type: number
+        cpa:
+          description: Cost per acquisition
+          type: number
+        epc:
+          description: Earnings per click
+          type: number
+        rpc:
+          description: Revenue per click
+          type: number
+        rpa:
+          description: Revenue per acquisition
+          type: number
+        rpm:
+          description: Revenue per mille
+          type: number
+        payout:
+          description: Payout amount
+          type: number
+        revenue:
+          description: Revenue amount
+          type: number
+        event_revenue:
+          description: Event revenue
+          type: number
+        gross_sales:
+          description: Gross sales
+          type: number
+        profit:
+          description: Profit
+          type: number
+        margin:
+          description: Margin
+          type: number
+        roas:
+          description: Return on ad spend
+          type: number
+        avg_sale_value:
+          description: Average sale value
+          type: number
+        media_buying_cost:
+          description: Media buying cost
+          type: number
+      type: object
+    Advertiser_relationship_labels:
+      example:
+        total: 3
+        entries:
+        - entries
+        - entries
+      properties:
+        total:
+          type: integer
+        entries:
+          items:
+            type: string
+          type: array
+      type: object
+    Advertiser_relationship_api_keys:
+      example:
+        total: 0
+        entries:
+        - "{}"
+        - "{}"
+      properties:
+        total:
+          type: integer
+        entries:
+          items:
+            type: object
+          type: array
+      type: object
+    Advertiser_relationship:
+      description: Related data based on requested relationships
+      example:
+        settings:
+          exposed_variables:
+            offer_url: true
+            sub4: true
+            sub5: true
+            sub2: true
+            affiliate_id: true
+            sub3: true
+            sub1: true
+            source_id: true
+            affiliate: true
+        account_manager:
+          instant_messaging_identifier: instant_messaging_identifier
+          work_phone: work_phone
+          instant_messaging_id: 2
+          last_name: last_name
+          first_name: first_name
+          email: email
+          cell_phone: cell_phone
+        api_whitelist_ips:
+          total: 0
+          entries:
+          - "{}"
+          - "{}"
+        api_keys:
+          total: 0
+          entries:
+          - "{}"
+          - "{}"
+        sales_manager:
+          instant_messaging_identifier: instant_messaging_identifier
+          work_phone: work_phone
+          instant_messaging_id: 2
+          last_name: last_name
+          first_name: first_name
+          email: email
+          cell_phone: cell_phone
+        reporting:
+          gross_sales: 3.353193347011243
+          invalid_cv_scrub: 4
+          payout: 6.878052220127876
+          avg_sale_value: 7.058770351582356
+          event_revenue: 6.704019297950036
+          imp: 4
+          duplicate_click: 1
+          unique_click: 1
+          revenue: 5.944895607614016
+          cpa: 3.5571952270680973
+          cpc: 9.018348186070783
+          total_cv: 9
+          epc: 6.965117697638846
+          roas: 0.8851374739011653
+          event: 9
+          profit: 3.0937452626664474
+          cvr: 6.683562403749608
+          ctr: 7.457744773683766
+          evr: 8.762042012749001
+          cpm: 6.438423552598547
+          rpa: 2.8841621266687802
+          margin: 7.143538047012306
+          rpc: 1.284659006116532
+          view_through_cv: 5
+          rpm: 6.778324963048013
+          cv: 1
+          gross_click: 6
+          invalid_click: 1
+          total_click: 7
+          media_buying_cost: 6.519180951018382
+        labels:
+          total: 3
+          entries:
+          - entries
+          - entries
+        billing:
+          billing_frequency: weekly
+          auto_invoice_start_date: 2000-01-23
+          default_invoice_is_hidden: false
+          invoice_generation_days_delay: 8
+          invoice_amount_threshold: 4.652396432933246
+          details:
+            starting_month: 3
+            day_of_month_one: 3
+            day_of_month_two: 7
+            day_of_month: 5
+            day_of_week: 3
+          default_payment_terms: 7
+          is_invoice_creation_auto: false
+          tax_id: tax_id
+      properties:
+        labels:
+          $ref: '#/components/schemas/Advertiser_relationship_labels'
+        account_manager:
+          $ref: '#/components/schemas/Employee'
+        sales_manager:
+          $ref: '#/components/schemas/Employee'
+        reporting:
+          $ref: '#/components/schemas/ReportingData'
+        api_keys:
+          $ref: '#/components/schemas/Advertiser_relationship_api_keys'
+        api_whitelist_ips:
+          $ref: '#/components/schemas/Advertiser_relationship_api_keys'
+        billing:
+          $ref: '#/components/schemas/Billing'
+        settings:
+          $ref: '#/components/schemas/Settings'
+      type: object
+    Billing_details:
+      description: Billing frequency details (required for specific frequencies)
+      example:
+        starting_month: 3
+        day_of_month_one: 3
+        day_of_month_two: 7
+        day_of_month: 5
+        day_of_week: 3
+      properties:
+        day_of_week:
+          description: Day of the week (for weekly frequency)
+          type: integer
+        day_of_month_one:
+          description: First day of the month (for bimonthly frequency)
+          type: integer
+        day_of_month_two:
+          description: Second day of the month (for bimonthly frequency)
+          type: integer
+        day_of_month:
+          description: "Day of the month (for monthly, two_months, quarterly)"
+          type: integer
+        starting_month:
+          description: "Starting month for cycle (for two_months, quarterly)"
+          type: integer
+      type: object
+    Settings_exposed_variables:
+      description: Variables exposed in the Advertiser UI
+      example:
+        offer_url: true
+        sub4: true
+        sub5: true
+        sub2: true
+        affiliate_id: true
+        sub3: true
+        sub1: true
+        source_id: true
+        affiliate: true
+      properties:
+        affiliate_id:
+          description: Whether to expose affiliate id variable
+          type: boolean
+        affiliate:
+          description: Whether to expose affiliate variables (name and id)
+          type: boolean
+        sub1:
+          description: Whether to expose Sub1 variable
+          type: boolean
+        sub2:
+          description: Whether to expose Sub2 variable
+          type: boolean
+        sub3:
+          description: Whether to expose Sub3 variable
+          type: boolean
+        sub4:
+          description: Whether to expose Sub4 variable
+          type: boolean
+        sub5:
+          description: Whether to expose Sub5 variable
+          type: boolean
+        source_id:
+          description: Whether to expose Source ID variable
+          type: boolean
+        offer_url:
+          description: Whether to expose offer URL variable
+          type: boolean
+      type: object
+  securitySchemes:
+    ApiKeyAuth:
+      in: header
+      name: X-Eflow-API-Key
+      type: apiKey

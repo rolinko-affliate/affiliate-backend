@@ -6,6 +6,23 @@ import (
 	"github.com/affiliate-backend/internal/domain"
 )
 
+// Helper functions for type conversion
+func convertIntToInt32Ptr(i *int) *int32 {
+	if i == nil {
+		return nil
+	}
+	val := int32(*i)
+	return &val
+}
+
+func convertInt32ToIntPtr(i *int32) *int {
+	if i == nil {
+		return nil
+	}
+	val := int(*i)
+	return &val
+}
+
 type CreateAdvertiserRequest struct {
 	Name                         string                  `json:"name" binding:"required"`
 	Status                       string                  `json:"status,omitempty"`
@@ -144,7 +161,7 @@ func (req *CreateAdvertiserRequest) ToDomain() *domain.Advertiser {
 		AttributionMethod:          req.AttributionMethod,
 		EmailAttributionMethod:     req.EmailAttributionMethod,
 		AttributionPriority:        req.AttributionPriority,
-		ReportingTimezoneID:        req.ReportingTimezoneID,
+		ReportingTimezoneID:        convertIntToInt32Ptr(req.ReportingTimezoneID),
 		IsExposePublisherReporting: req.IsExposePublisherReporting,
 	}
 }
@@ -168,7 +185,7 @@ func (req *UpdateAdvertiserRequest) ToDomain(advertiserID int64, orgID int64) *d
 		AttributionMethod:          req.AttributionMethod,
 		EmailAttributionMethod:     req.EmailAttributionMethod,
 		AttributionPriority:        req.AttributionPriority,
-		ReportingTimezoneID:        req.ReportingTimezoneID,
+		ReportingTimezoneID:        convertIntToInt32Ptr(req.ReportingTimezoneID),
 		IsExposePublisherReporting: req.IsExposePublisherReporting,
 	}
 }
@@ -192,7 +209,7 @@ func ToAdvertiserResponse(advertiser *domain.Advertiser) *AdvertiserResponse {
 		AttributionMethod:          advertiser.AttributionMethod,
 		EmailAttributionMethod:     advertiser.EmailAttributionMethod,
 		AttributionPriority:        advertiser.AttributionPriority,
-		ReportingTimezoneID:        advertiser.ReportingTimezoneID,
+		ReportingTimezoneID:        convertInt32ToIntPtr(advertiser.ReportingTimezoneID),
 		IsExposePublisherReporting: advertiser.IsExposePublisherReporting,
 		EverflowSyncStatus:         advertiser.EverflowSyncStatus,
 		LastEverflowSyncAt:         advertiser.LastEverflowSyncAt,

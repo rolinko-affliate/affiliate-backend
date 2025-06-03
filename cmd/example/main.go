@@ -8,8 +8,6 @@ import (
 
 	"github.com/affiliate-backend/internal/config"
 	"github.com/affiliate-backend/internal/platform/crypto"
-	"github.com/affiliate-backend/internal/platform/everflow"
-	"github.com/affiliate-backend/internal/platform/provider"
 	"github.com/affiliate-backend/internal/repository"
 	"github.com/affiliate-backend/internal/service"
 	"github.com/jackc/pgx/v5/pgxpool"
@@ -36,33 +34,11 @@ func main() {
 	cryptoService := crypto.NewServiceFromConfig()
 
 	// Initialize provider services
-	var providerAdvertiserService provider.ProviderAdvertiserService
-	var providerOfferService provider.ProviderCampaignService
-
-	// Initialize Everflow provider service if configured
-	everflowAPIKey := os.Getenv("EVERFLOW_API_KEY")
-	if everflowAPIKey != "" {
-		everflowProviderService := everflow.NewProviderService(
-			everflowAPIKey,
-			&config.AppConfig,
-			advertiserRepo,
-			providerMappingRepo,
-			campaignRepo,
-			cryptoService,
-		)
-		providerAdvertiserService = everflowProviderService
-		providerOfferService = everflowProviderService
-	}
-
-	// Initialize sync service
-	syncService := service.NewAdvertiserSyncService(advertiserRepo, providerMappingRepo, providerAdvertiserService)
-
 	// Initialize services
 	advertiserService := service.NewAdvertiserService(
 		advertiserRepo,
 		providerMappingRepo,
 		orgRepo,
-		syncService,
 		cryptoService,
 	)
 
@@ -70,7 +46,6 @@ func main() {
 		campaignRepo,
 		advertiserRepo,
 		orgRepo,
-		providerOfferService,
 		cryptoService,
 	)
 	

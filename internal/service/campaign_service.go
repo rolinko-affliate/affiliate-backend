@@ -4,12 +4,10 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"log"
 	"time"
 
 	"github.com/affiliate-backend/internal/domain"
 	"github.com/affiliate-backend/internal/platform/crypto"
-	"github.com/affiliate-backend/internal/platform/provider"
 	"github.com/affiliate-backend/internal/repository"
 )
 
@@ -35,7 +33,6 @@ type campaignService struct {
 	campaignRepo      repository.CampaignRepository
 	advertiserRepo    repository.AdvertiserRepository
 	orgRepo           repository.OrganizationRepository
-	providerOfferSvc  provider.ProviderCampaignService
 	cryptoService     crypto.Service
 }
 
@@ -44,15 +41,13 @@ func NewCampaignService(
 	campaignRepo repository.CampaignRepository,
 	advertiserRepo repository.AdvertiserRepository,
 	orgRepo repository.OrganizationRepository,
-	providerOfferSvc provider.ProviderCampaignService,
 	cryptoService crypto.Service,
 ) CampaignService {
 	return &campaignService{
-		campaignRepo:     campaignRepo,
-		advertiserRepo:   advertiserRepo,
-		orgRepo:          orgRepo,
-		providerOfferSvc: providerOfferSvc,
-		cryptoService:    cryptoService,
+		campaignRepo:   campaignRepo,
+		advertiserRepo: advertiserRepo,
+		orgRepo:        orgRepo,
+		cryptoService:  cryptoService,
 	}
 }
 
@@ -116,17 +111,7 @@ func (s *campaignService) CreateCampaign(ctx context.Context, campaign *domain.C
 		return nil, fmt.Errorf("failed to create campaign: %w", err)
 	}
 
-	// Sync to provider asynchronously if the service is available and campaign has required fields
-	if s.providerOfferSvc != nil && s.shouldSyncToProvider(campaign) {
-		go func() {
-			// Use a background context since this is a fire-and-forget operation
-			bgCtx := context.Background()
-			if err := s.syncCampaignToProvider(bgCtx, campaign); err != nil {
-				// Log the error but don't fail the campaign creation
-				log.Printf("Error syncing campaign to provider: %v", err)
-			}
-		}()
-	}
+	// TODO: Add provider sync using IntegrationService if needed
 
 	return campaign, nil
 }
@@ -304,7 +289,7 @@ func (s *campaignService) setDefaultOfferValues(campaign *domain.Campaign) {
 	}
 	
 	if campaign.SessionDuration == nil {
-		sessionDuration := 24
+		sessionDuration := int32(24)
 		campaign.SessionDuration = &sessionDuration
 	}
 	
@@ -440,20 +425,4 @@ func (s *campaignService) validateOfferFields(campaign *domain.Campaign) error {
 }
 
 // shouldSyncToProvider determines if a campaign should be synced to the provider
-func (s *campaignService) shouldSyncToProvider(campaign *domain.Campaign) bool {
-	// Only sync if campaign has a destination URL (required for provider offers)
-	return campaign.DestinationURL != nil && *campaign.DestinationURL != ""
-}
-
-// syncCampaignToProvider syncs a campaign to the provider as an offer
-func (s *campaignService) syncCampaignToProvider(ctx context.Context, campaign *domain.Campaign) error {
-	// Create offer in provider
-	err := s.providerOfferSvc.CreateOfferInProvider(ctx, campaign)
-	if err != nil {
-		return fmt.Errorf("failed to create offer in provider: %w", err)
-	}
-	
-	// The provider service handles creating the provider offer record internally
-	
-	return nil
-}
+// TODO: Add provider sync methods using IntegrationService if needed

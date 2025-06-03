@@ -32,7 +32,6 @@ type advertiserService struct {
 	advertiserRepo      repository.AdvertiserRepository
 	providerMappingRepo repository.AdvertiserProviderMappingRepository
 	orgRepo             repository.OrganizationRepository
-	syncService         *AdvertiserSyncService
 	cryptoService       crypto.Service
 }
 
@@ -40,14 +39,12 @@ func NewAdvertiserService(
 	advertiserRepo repository.AdvertiserRepository,
 	providerMappingRepo repository.AdvertiserProviderMappingRepository,
 	orgRepo repository.OrganizationRepository,
-	syncService *AdvertiserSyncService,
 	cryptoService crypto.Service,
 ) AdvertiserService {
 	return &advertiserService{
 		advertiserRepo:      advertiserRepo,
 		providerMappingRepo: providerMappingRepo,
 		orgRepo:             orgRepo,
-		syncService:         syncService,
 		cryptoService:       cryptoService,
 	}
 }
@@ -71,9 +68,7 @@ func (s *advertiserService) CreateAdvertiser(ctx context.Context, advertiser *do
 		return nil, fmt.Errorf("failed to create advertiser: %w", err)
 	}
 
-	if s.syncService != nil {
-		s.syncService.AsyncSyncToProvider(ctx, advertiser)
-	}
+	// TODO: Add provider sync using IntegrationService if needed
 
 	return advertiser, nil
 }
@@ -93,9 +88,7 @@ func (s *advertiserService) UpdateAdvertiser(ctx context.Context, advertiser *do
 		return fmt.Errorf("failed to update advertiser: %w", err)
 	}
 
-	if s.syncService != nil {
-		s.syncService.AsyncSyncUpdateToProvider(ctx, advertiser)
-	}
+	// TODO: Add provider sync using IntegrationService if needed
 
 	return nil
 }
@@ -186,36 +179,27 @@ func (s *advertiserService) DeleteAdvertiserProviderMapping(ctx context.Context,
 }
 
 func (s *advertiserService) GetAdvertiserWithProviderData(ctx context.Context, id int64) (*domain.AdvertiserWithProviderData, error) {
-	if s.syncService == nil {
-		advertiser, err := s.advertiserRepo.GetAdvertiserByID(ctx, id)
-		if err != nil {
-			return nil, fmt.Errorf("failed to get advertiser: %w", err)
-		}
-		return &domain.AdvertiserWithProviderData{
-			Advertiser: advertiser,
-			SyncStatus: "service_unavailable",
-		}, nil
+	advertiser, err := s.advertiserRepo.GetAdvertiserByID(ctx, id)
+	if err != nil {
+		return nil, fmt.Errorf("failed to get advertiser: %w", err)
 	}
-	return s.syncService.GetAdvertiserWithProviderData(ctx, id)
+	return &domain.AdvertiserWithProviderData{
+		Advertiser: advertiser,
+		SyncStatus: "not_implemented",
+	}, nil
 }
 
 func (s *advertiserService) SyncAdvertiserToProvider(ctx context.Context, advertiserID int64) error {
-	if s.syncService == nil {
-		return fmt.Errorf("sync service not available")
-	}
-	return s.syncService.SyncToProvider(ctx, advertiserID)
+	// TODO: Implement using IntegrationService
+	return fmt.Errorf("sync to provider not implemented")
 }
 
 func (s *advertiserService) SyncAdvertiserFromProvider(ctx context.Context, advertiserID int64) error {
-	if s.syncService == nil {
-		return fmt.Errorf("sync service not available")
-	}
-	return s.syncService.SyncFromProvider(ctx, advertiserID)
+	// TODO: Implement using IntegrationService
+	return fmt.Errorf("sync from provider not implemented")
 }
 
 func (s *advertiserService) CompareAdvertiserWithProvider(ctx context.Context, advertiserID int64) ([]domain.AdvertiserDiscrepancy, error) {
-	if s.syncService == nil {
-		return nil, fmt.Errorf("sync service not available")
-	}
-	return s.syncService.CompareWithProvider(ctx, advertiserID)
+	// TODO: Implement using IntegrationService
+	return nil, fmt.Errorf("compare with provider not implemented")
 }

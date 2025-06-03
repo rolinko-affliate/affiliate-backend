@@ -25,8 +25,9 @@ type Advertiser struct {
 	AttributionMethod          *string `json:"attribution_method,omitempty" db:"attribution_method"`
 	EmailAttributionMethod     *string `json:"email_attribution_method,omitempty" db:"email_attribution_method"`
 	AttributionPriority        *string `json:"attribution_priority,omitempty" db:"attribution_priority"`
-	ReportingTimezoneID        *int    `json:"reporting_timezone_id,omitempty" db:"reporting_timezone_id"`
+	ReportingTimezoneID        *int32  `json:"reporting_timezone_id,omitempty" db:"reporting_timezone_id"`
 	IsExposePublisherReporting *bool   `json:"is_expose_publisher_reporting,omitempty" db:"is_expose_publisher_reporting"`
+	NetworkEmployeeID          *int32  `json:"network_employee_id,omitempty" db:"network_employee_id"`
 	
 	CreatedAt       time.Time `json:"created_at" db:"created_at"`
 	UpdatedAt       time.Time `json:"updated_at" db:"updated_at"`

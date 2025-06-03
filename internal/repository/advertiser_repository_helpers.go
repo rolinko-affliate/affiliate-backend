@@ -78,7 +78,7 @@ func scanNullableFields(
 		advertiser.AttributionPriority = &attributionPriority.String
 	}
 	if reportingTimezoneID.Valid {
-		timezoneID := int(reportingTimezoneID.Int32)
+		timezoneID := reportingTimezoneID.Int32
 		advertiser.ReportingTimezoneID = &timezoneID
 	}
 	if isExposePublisherReporting.Valid {

@@ -1,54 +1,63 @@
 package everflow
 
 import (
-	"encoding/json"
-	"fmt"
-	"log"
-	"os"
-
-	"github.com/affiliate-backend/internal/config"
-	"github.com/affiliate-backend/internal/platform/crypto"
-	"github.com/affiliate-backend/internal/repository"
+	"github.com/affiliate-backend/internal/platform/everflow/advertiser"
+	"github.com/affiliate-backend/internal/platform/everflow/affiliate"
+	"github.com/affiliate-backend/internal/platform/everflow/offer"
 )
 
-// Config represents the configuration for the Everflow service
+// Config holds the configuration for Everflow clients
 type Config struct {
-	APIKey string `json:"api_key"`
+	BaseURL string
+	APIKey  string
 }
 
-// NewEverflowServiceFromEnv creates a new Everflow service using environment variables
-func NewEverflowServiceFromEnv(
-	cfg *config.Config,
-	advertiserRepo repository.AdvertiserRepository,
-	providerMappingRepo repository.AdvertiserProviderMappingRepository,
-	campaignRepo repository.CampaignRepository,
-	cryptoService crypto.Service,
-) (*Service, error) {
-	// Check if EVERFLOW_API_KEY is set directly
-	apiKey := os.Getenv("EVERFLOW_API_KEY")
-	if apiKey != "" {
-		log.Println("Creating Everflow service with API key from environment variable")
-		return NewService(apiKey, cfg, advertiserRepo, providerMappingRepo, campaignRepo, cryptoService), nil
+// NewIntegrationServiceWithClients creates a new IntegrationService with configured Everflow clients
+func NewIntegrationServiceWithClients(
+	config Config,
+	advertiserRepo AdvertiserRepository,
+	affiliateRepo AffiliateRepository,
+	campaignRepo CampaignRepository,
+	advertiserProviderMappingRepo AdvertiserProviderMappingRepository,
+	affiliateProviderMappingRepo AffiliateProviderMappingRepository,
+	campaignProviderMappingRepo CampaignProviderMappingRepository,
+) *IntegrationService {
+	// Configure advertiser client
+	advertiserConfig := advertiser.NewConfiguration()
+	advertiserConfig.Servers = []advertiser.ServerConfiguration{
+		{
+			URL: config.BaseURL,
+		},
 	}
+	advertiserClient := advertiser.NewAPIClient(advertiserConfig)
 
-	// Check if EVERFLOW_CONFIG is set (JSON string)
-	configJSON := os.Getenv("EVERFLOW_CONFIG")
-	if configJSON != "" {
-		var everflowConfig Config
-		if err := json.Unmarshal([]byte(configJSON), &everflowConfig); err != nil {
-			return nil, fmt.Errorf("failed to parse EVERFLOW_CONFIG: %w", err)
-		}
-
-		if everflowConfig.APIKey == "" {
-			return nil, fmt.Errorf("EVERFLOW_CONFIG is missing api_key")
-		}
-
-		log.Println("Creating Everflow service with API key from EVERFLOW_CONFIG")
-		return NewService(everflowConfig.APIKey, cfg, advertiserRepo, providerMappingRepo, campaignRepo, cryptoService), nil
+	// Configure affiliate client
+	affiliateConfig := affiliate.NewConfiguration()
+	affiliateConfig.Servers = []affiliate.ServerConfiguration{
+		{
+			URL: config.BaseURL,
+		},
 	}
+	affiliateClient := affiliate.NewAPIClient(affiliateConfig)
 
-	// If no configuration is found, return nil without error
-	// This allows the application to run without Everflow integration
-	log.Println("No Everflow configuration found, Everflow integration will be disabled")
-	return nil, nil
+	// Configure offer client
+	offerConfig := offer.NewConfiguration()
+	offerConfig.Servers = []offer.ServerConfiguration{
+		{
+			URL: config.BaseURL,
+		},
+	}
+	offerClient := offer.NewAPIClient(offerConfig)
+
+	return NewIntegrationService(
+		advertiserClient,
+		affiliateClient,
+		offerClient,
+		advertiserRepo,
+		affiliateRepo,
+		campaignRepo,
+		advertiserProviderMappingRepo,
+		affiliateProviderMappingRepo,
+		campaignProviderMappingRepo,
+	)
 }

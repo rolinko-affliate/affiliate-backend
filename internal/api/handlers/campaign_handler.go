@@ -13,6 +13,23 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// Helper functions for type conversion
+func intToInt32Ptr(i *int) *int32 {
+	if i == nil {
+		return nil
+	}
+	val := int32(*i)
+	return &val
+}
+
+func int32ToIntPtr(i *int32) *int {
+	if i == nil {
+		return nil
+	}
+	val := int(*i)
+	return &val
+}
+
 // CampaignHandler handles campaign-related requests
 type CampaignHandler struct {
 	campaignService service.CampaignService
@@ -468,7 +485,7 @@ func (h *CampaignHandler) CreateCampaign(c *gin.Context) {
 		CurrencyID:                req.CurrencyID,
 		ConversionMethod:          req.ConversionMethod,
 		SessionDefinition:         req.SessionDefinition,
-		SessionDuration:           req.SessionDuration,
+		SessionDuration:           intToInt32Ptr(req.SessionDuration),
 		InternalNotes:             req.InternalNotes,
 		TermsAndConditions:        req.TermsAndConditions,
 		IsForceTermsAndConditions: req.IsForceTermsAndConditions,
@@ -662,7 +679,7 @@ func (h *CampaignHandler) UpdateCampaign(c *gin.Context) {
 	campaign.CurrencyID = req.CurrencyID
 	campaign.ConversionMethod = req.ConversionMethod
 	campaign.SessionDefinition = req.SessionDefinition
-	campaign.SessionDuration = req.SessionDuration
+	campaign.SessionDuration = intToInt32Ptr(req.SessionDuration)
 	campaign.InternalNotes = req.InternalNotes
 	campaign.TermsAndConditions = req.TermsAndConditions
 	campaign.IsForceTermsAndConditions = req.IsForceTermsAndConditions

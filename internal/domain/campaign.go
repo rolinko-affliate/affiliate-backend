@@ -16,6 +16,7 @@ type Campaign struct {
 	EndDate        *time.Time `json:"end_date,omitempty" db:"end_date"`
 	
 	// Offer-specific fields for Everflow integration
+	NetworkAdvertiserID *int32  `json:"network_advertiser_id,omitempty" db:"network_advertiser_id"`
 	DestinationURL      *string `json:"destination_url,omitempty" db:"destination_url"`
 	ThumbnailURL        *string `json:"thumbnail_url,omitempty" db:"thumbnail_url"`
 	PreviewURL          *string `json:"preview_url,omitempty" db:"preview_url"`
@@ -23,8 +24,8 @@ type Campaign struct {
 	CurrencyID          *string `json:"currency_id,omitempty" db:"currency_id"`                 // 'USD', 'EUR', etc.
 	ConversionMethod    *string `json:"conversion_method,omitempty" db:"conversion_method"`     // 'server_postback', 'pixel', etc.
 	SessionDefinition   *string `json:"session_definition,omitempty" db:"session_definition"`   // 'cookie', 'ip', 'fingerprint'
-	SessionDuration     *int    `json:"session_duration,omitempty" db:"session_duration"`       // in hours
-	CapsTimezoneID      *int    `json:"caps_timezone_id,omitempty" db:"caps_timezone_id"`
+	SessionDuration     *int32  `json:"session_duration,omitempty" db:"session_duration"`       // in hours
+	CapsTimezoneID      *int32  `json:"caps_timezone_id,omitempty" db:"caps_timezone_id"`
 	ProjectID           *string `json:"project_id,omitempty" db:"project_id"`
 	DateLiveUntil       *time.Time `json:"date_live_until,omitempty" db:"date_live_until"`
 	HTMLDescription     *string `json:"html_description,omitempty" db:"html_description"`
@@ -82,4 +83,16 @@ type CampaignProviderOffer struct {
 	LastSyncedAt            *time.Time `json:"last_synced_at,omitempty" db:"last_synced_at"`
 	CreatedAt               time.Time  `json:"created_at" db:"created_at"`
 	UpdatedAt               time.Time  `json:"updated_at" db:"updated_at"`
+}
+
+// CampaignProviderMapping represents a mapping between a campaign and a provider
+type CampaignProviderMapping struct {
+	MappingID            int64     `json:"mapping_id" db:"mapping_id"`
+	CampaignID           int64     `json:"campaign_id" db:"campaign_id"`
+	ProviderType         string    `json:"provider_type" db:"provider_type"` // 'everflow' for MVP
+	ProviderCampaignID   *string   `json:"provider_campaign_id,omitempty" db:"provider_campaign_id"` // Provider's Campaign/Offer ID
+	APICredentials       *string   `json:"api_credentials,omitempty" db:"api_credentials"` // JSONB stored as string for API keys/tokens
+	ProviderConfig       *string   `json:"provider_config,omitempty" db:"provider_config"` // JSONB stored as string
+	CreatedAt            time.Time `json:"created_at" db:"created_at"`
+	UpdatedAt            time.Time `json:"updated_at" db:"updated_at"`
 }

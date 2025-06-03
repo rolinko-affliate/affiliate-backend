@@ -6,7 +6,6 @@ import (
 	"time"
 
 	"github.com/affiliate-backend/internal/domain"
-	"github.com/affiliate-backend/internal/platform/provider"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 )
@@ -152,31 +151,6 @@ func (m *BasicMockCryptoService) Decrypt(ciphertext string) (string, error) {
 	return ciphertext, nil
 }
 
-// Mock provider service for testing
-type BasicMockProviderCampaignService struct {
-	mock.Mock
-}
-
-func (m *BasicMockProviderCampaignService) CreateOfferInProvider(ctx context.Context, campaign *domain.Campaign) error {
-	args := m.Called(ctx, campaign)
-	return args.Error(0)
-}
-
-func (m *BasicMockProviderCampaignService) GetOfferFromProvider(ctx context.Context, campaignID int64, relationships []string) (*domain.Campaign, error) {
-	args := m.Called(ctx, campaignID, relationships)
-	if args.Get(0) == nil {
-		return nil, args.Error(1)
-	}
-	return args.Get(0).(*domain.Campaign), args.Error(1)
-}
-
-func (m *BasicMockProviderCampaignService) UpdateOfferInProvider(ctx context.Context, campaignID int64, campaign *domain.Campaign) (*domain.Campaign, error) {
-	args := m.Called(ctx, campaignID, campaign)
-	if args.Get(0) == nil {
-		return nil, args.Error(1)
-	}
-	return args.Get(0).(*domain.Campaign), args.Error(1)
-}
 
 func TestCampaignService_CreateCampaign_BasicSuccess(t *testing.T) {
 	// Setup
@@ -185,10 +159,7 @@ func TestCampaignService_CreateCampaign_BasicSuccess(t *testing.T) {
 	mockOrgRepo := new(BasicMockOrganizationRepository)
 	mockCrypto := &BasicMockCryptoService{}
 	
-	// Create a mock provider service
-	var mockProviderSvc provider.ProviderCampaignService = &BasicMockProviderCampaignService{}
-	
-	service := NewCampaignService(mockRepo, mockAdvertiserRepo, mockOrgRepo, mockProviderSvc, mockCrypto)
+	service := NewCampaignService(mockRepo, mockAdvertiserRepo, mockOrgRepo, mockCrypto)
 
 	ctx := context.Background()
 	
@@ -222,9 +193,8 @@ func TestCampaignService_GetCampaignByID_BasicSuccess(t *testing.T) {
 	mockAdvertiserRepo := new(BasicMockAdvertiserRepository)
 	mockOrgRepo := new(BasicMockOrganizationRepository)
 	mockCrypto := &BasicMockCryptoService{}
-	var mockProviderSvc provider.ProviderCampaignService = &BasicMockProviderCampaignService{}
 	
-	service := NewCampaignService(mockRepo, mockAdvertiserRepo, mockOrgRepo, mockProviderSvc, mockCrypto)
+	service := NewCampaignService(mockRepo, mockAdvertiserRepo, mockOrgRepo, mockCrypto)
 
 	ctx := context.Background()
 	campaignID := int64(123)
@@ -260,9 +230,8 @@ func TestCampaignService_GetCampaignByID_NotFound(t *testing.T) {
 	mockAdvertiserRepo := new(BasicMockAdvertiserRepository)
 	mockOrgRepo := new(BasicMockOrganizationRepository)
 	mockCrypto := &BasicMockCryptoService{}
-	var mockProviderSvc provider.ProviderCampaignService = &BasicMockProviderCampaignService{}
 	
-	service := NewCampaignService(mockRepo, mockAdvertiserRepo, mockOrgRepo, mockProviderSvc, mockCrypto)
+	service := NewCampaignService(mockRepo, mockAdvertiserRepo, mockOrgRepo, mockCrypto)
 
 	ctx := context.Background()
 	campaignID := int64(999)

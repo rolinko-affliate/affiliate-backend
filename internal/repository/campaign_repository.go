@@ -351,12 +351,12 @@ func (r *pgxCampaignRepository) GetCampaignByID(ctx context.Context, id int64) (
 	}
 	
 	if sessionDuration.Valid {
-		duration := int(sessionDuration.Int32)
+		duration := sessionDuration.Int32
 		campaign.SessionDuration = &duration
 	}
 	
 	if capsTimezoneID.Valid {
-		timezone := int(capsTimezoneID.Int32)
+		timezone := capsTimezoneID.Int32
 		campaign.CapsTimezoneID = &timezone
 	}
 	

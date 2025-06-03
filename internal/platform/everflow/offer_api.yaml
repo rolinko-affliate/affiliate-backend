@@ -1,1102 +1,1111 @@
-openapi: 3.0.3
+openapi: 3.0.0
 info:
-  title: Everflow Offers API
-  description: |
-    The Everflow Offers API provides endpoints to list, retrieve, create, copy, update, and export offers in an
-    Everflow network. This specification describes all endpoints under the Offers section of the
-    Everflow Network API.
+  title: Everflow Network API - Offers
+  description: API for managing offers in the Everflow platform
   version: 1.0.0
-  contact:
-    name: Everflow API Support
-    url: https://developers.everflow.io/docs/network/offers/
-
 servers:
-  - url: https://api.eflow.team
+  - url: https://api.eflow.team/v1
     description: Production server
-
+security:
+  - ApiKeyAuth: []
 paths:
-  /v1/networks/offerstable:
+  /networks/offers:
     post:
-      summary: Fetch a list of offers
-      description: |
-        Retrieve a list of offers with optional filtering and search. 
-        Supports text search on name or advertiser and structured field filters. 
-        Supports pagination via `page` and `page_size`. 
-        Supports including related info (e.g. ruleset, visibility) via the `relationship` query param.
+      summary: Create an offer
+      description: Create a new offer in the Everflow platform. Note that the payload for creating offers is complex.
+      operationId: createOffer
+      tags:
+        - Offers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateOfferRequest'
+      responses:
+        '200':
+          description: Successfully created offer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OfferResponse'
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal server error
+  
+  /networks/offers/{offerId}:
+    get:
+      summary: Find offer by ID
+      description: Fetch the details of a single offer by its ID
+      operationId: getOfferById
+      tags:
+        - Offers
       parameters:
-        - name: page
-          in: query
-          description: Page number of results (pagination).
-          schema:
-            type: integer
-        - name: page_size
-          in: query
-          description: Number of offers per page.
+        - name: offerId
+          in: path
+          required: true
+          description: The ID of the offer you want to fetch
           schema:
             type: integer
         - name: relationship
           in: query
-          description: |
-            Include related data. Possible values: `visibility`, `ruleset`, `tracking_domain`, 
-            `urls`, `affiliate_tier`, `account_manager`, `sales_manager`.
-            (This parameter can be repeated to include multiple relationships.)
-          schema:
-            type: array
-            items:
-              type: string
-              enum: [visibility, ruleset, tracking_domain, urls, affiliate_tier, account_manager, sales_manager]
-          style: form
-          explode: true
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                search_terms:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      search_type:
-                        type: string
-                        description: Type of field to search (`name`, `encoded_value`, or `advertiser_name`).
-                        enum: [name, encoded_value, advertiser_name]
-                      value:
-                        type: string
-                        description: Search value for the specified field.
-                filters:
-                  type: object
-                  description: Structured filters on offer fields (e.g. offer_status, payout_types, device_type_ids, etc.).
-                  additionalProperties: true
-            example:
-              filters:
-                offer_status: "active"
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  offers:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Offer'
-              example:
-                offers:
-                  - network_offer_id: 2
-                    network_id: 1
-                    network_advertiser_id: 13
-                    name: "Game Auto"
-                    offer_status: "active"
-                    thumbnail_url: ""
-                    visibility: "public"
-                    network_advertiser_name: "Kaori Thompson Inc."
-                    category: "Finance"
-                    network_offer_group_id: 2
-                    time_created: 1623683450
-                    time_saved: 1623706863
-                    payout: "CPA: $0.800"
-                    revenue: "RPA: $1.000"
-                    today_revenue: "$0.00"
-                    today_clicks: 0
-                    daily_conversion_cap: 25
-                    monthly_conversion_cap: 50
-                    global_conversion_cap: 100
-                    destination_url: "http://landing-page.com?aid={affiliate_id}&oid={offer_id}&tid={transaction_id}"
-                    encoded_value: "3QQG7"
-                    labels: null
-                    is_force_terms_and_conditions: false
-                    project_id: ""
-                    channels: null
-                    relationship:
-                      remaining_caps:
-                        remaining_daily_conversion_cap: 25
-                        remaining_monthly_conversion_cap: 50
-                        remaining_global_conversion_cap: 100
-                      ruleset:
-                        network_ruleset_id: 70
-                        platforms: []
-                        device_types: []
-                        countries: []
-
-  /v1/networks/offers/{offerId}:
-    get:
-      summary: Get offer details by ID
-      description: Retrieve a single offer's details by its unique ID.
-      parameters:
-        - name: offerId
-          in: path
-          required: true
-          description: The ID of the offer to fetch.
-          schema:
-            type: integer
-        - name: relationship
-          in: query
-          description: |
-            Include related data. Possible values: `campaigns`, `advertiser_global_events`, 
-            `offer_email`, `offer_email_optout`, `reporting` (to include today's stats).
-            This parameter can be repeated for multiple relationships.
-          schema:
-            type: array
-            items:
-              type: string
-              enum: [campaigns, advertiser_global_events, offer_email, offer_email_optout, reporting]
-          style: form
-          explode: true
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Offer'
-              example:
-                network_offer_id: 1
-                network_id: 1
-                network_advertiser_id: 13
-                network_offer_group_id: 3
-                name: "Offer Example"
-                thumbnail_url: ""
-                network_category_id: 1
-                internal_notes: ""
-                destination_url: "http://.../test.php?aid={affiliate_id}&oid={offer_id}&tid={transaction_id}"
-                server_side_url: ""
-                is_view_through_enabled: false
-                view_through_destination_url: ""
-                preview_url: ""
-                offer_status: "active"
-                currency_id: "USD"
-                caps_timezone_id: 0
-                project_id: ""
-                date_live_until: ""
-                html_description: ""
-                is_using_explicit_terms_and_conditions: false
-                terms_and_conditions: ""
-                is_force_terms_and_conditions: false
-                is_caps_enabled: false
-                conversion_method: "server_postback"
-                is_whitelist_check_enabled: false
-                session_definition: "cookie"
-                session_duration: 24
-                app_identifier: ""
-                is_description_plain_text: false
-                is_use_direct_linking: false
-                relationship:
-                  category:
-                    network_category_id: 1
-                    name: "Finance"
-                  payout_revenue:
-                    entries:
-                      - entry_name: ""
-                        payout_type: "cpa"
-                        payout_amount: 0.8
-                        revenue_type: "rpa"
-                        revenue_amount: 1
-                        is_default: true
-                        is_private: false
-
-    put:
-      summary: Update an offer
-      description: |
-        Update all details of the offer identified by `offerId`. The request must include a full 
-        representation of the offer object (all fields); omitting any field will reset it to default. 
-        This is effectively a full replace of the offer. For safer partial updates, use Bulk Edit.
-      parameters:
-        - name: offerId
-          in: path
-          required: true
-          description: The ID of the offer to update.
-          schema:
-            type: integer
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/OfferInput'
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Offer'
-
-  /v1/networks/offers:
-    post:
-      summary: Create a new offer
-      description: |
-        Create an offer by providing the full offer object. **Note:** The offer payload is extensive – all 
-        fields must be specified, as unspecified fields will default or be cleared. 
-        It's often simpler to create a template offer in Everflow and then use the Copy and Bulk Edit 
-        endpoints to adjust it.
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/OfferInput'
-            example:
-              network_advertiser_id: 13
-              network_offer_group_id: 5
-              name: "New Offer"
-              destination_url: "http://example.com?aid={affiliate_id}&oid={offer_id}"
-              offer_status: "active"
-              visibility: "public"
-              payout_revenue:
-                entries:
-                  - entry_name: "Base"
-                    payout_type: "cpa"
-                    payout_amount: 1.00
-                    revenue_type: "rpa"
-                    revenue_amount: 1.50
-                    is_default: true
-                    is_private: false
-      responses:
-        '200':
-          description: Created
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Offer'
-
-  /v1/networks/offers/{offerId}/copy:
-    get:
-      summary: Copy an existing offer
-      description: |
-        Create a copy of the offer identified by `offerId`. 
-        Optional query parameters control whether to copy specific settings (custom payouts, creatives, 
-        visibility, URLs, forwarding rules) from the source offer. 
-        Returns the newly created offer object.
-      parameters:
-        - name: offerId
-          in: path
-          required: true
-          description: The ID of the offer to copy.
-          schema:
-            type: integer
-        - name: is_copy_custom_settings
-          in: query
-          schema:
-            type: boolean
-          description: Copy custom payout/revenue settings, caps, throttle rates, and landing pages (default `false`).
-        - name: is_copy_creatives
-          in: query
-          schema:
-            type: boolean
-          description: Copy the offer's creatives (default `false`).
-        - name: is_copy_visibility
-          in: query
-          schema:
-            type: boolean
-          description: Copy affiliate visibility settings (default `false`).
-        - name: is_copy_additional_urls
-          in: query
-          schema:
-            type: boolean
-          description: Copy additional Offer URLs (default `false`).
-        - name: is_copy_forwarding_rules
-          in: query
-          schema:
-            type: boolean
-          description: Copy forwarding rules (default `false`).
-        - name: name
-          in: query
+          required: false
+          description: Additional relationships to include (comma-separated)
           schema:
             type: string
-          description: |
-            New name for the copied offer (URL-encode if it contains special characters). 
-            If omitted, the name will default to "`<Old Offer Name> (Copy)`".
+            enum:
+              - advertiser
+              - offer_group
+              - visibility
+              - payout_revenue
+              - custom_cap_settings
+              - custom_scrub_rate_settings
+              - custom_payout_revenue_settings
+              - custom_creative_settings
+              - redirects
+              - traffic_filters
+              - targeting
+              - files
+              - audits
+              - source_name
+              - urls
+              - integrations
+              - campaigns
+              - advertiser_global_events
+              - offer_email
+              - offer_email_optout
+              - reporting
       responses:
         '200':
-          description: OK (copied offer returned)
+          description: Successfully retrieved offer
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Offer'
-
-  /v1/networks/patch/offers/apply:
-    patch:
-      summary: Bulk edit offers
-      description: |
-        Update specific fields on multiple offers at once. Provide the IDs of offers to update and the list of 
-        field changes to apply. 
-        Only the given fields will be changed; other offer fields remain untouched. Supports operators to 
-        overwrite, append, delete, or clear values.
+                $ref: '#/components/schemas/OfferResponse'
+        '404':
+          description: Offer not found
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal server error
+    
+    put:
+      summary: Update an offer
+      description: Update an existing offer. Requires passing the entire offer object, not just the fields to update.
+      operationId: updateOffer
+      tags:
+        - Offers
+      parameters:
+        - name: offerId
+          in: path
+          required: true
+          description: The ID of the offer you want to update
+          schema:
+            type: integer
       requestBody:
+        required: true
         content:
           application/json:
             schema:
-              type: object
-              required: [network_offer_ids, fields]
-              properties:
-                network_offer_ids:
-                  type: array
-                  items:
-                    type: integer
-                  description: IDs of the offers to patch.
-                fields:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/FieldPatch'
-                  description: List of fields to update (each with type, value, and operator).
-            example:
-              network_offer_ids: [7, 23]
-              fields:
-                - field_type: "offer_status"
-                  field_value: "paused"
-                  operator: "overwrite"
+              $ref: '#/components/schemas/UpdateOfferRequest'
       responses:
         '200':
-          description: OK
+          description: Successfully updated offer
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  result:
-                    type: boolean
-                    description: "`true` if the patch was applied successfully (all offers updated)."
-
-  /v1/networks/patch/offers/submit:
-    post:
-      summary: Preview a bulk patch (no changes applied)
-      description: |
-        Simulate a bulk edit on offers. The payload is the same as for Bulk Edit (offer IDs and field 
-        changes), but this returns a preview of changes without applying them. 
-        The response details which changes would occur and flags any errors, allowing you to validate 
-        the patch before execution.
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                network_offer_ids:
-                  type: array
-                  items:
-                    type: integer
-                  description: IDs of the offers to simulate patching.
-                fields:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/FieldPatch'
-                  description: List of fields to patch (same format as Bulk Edit).
-      responses:
-        '200':
-          description: OK (preview of changes)
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/PatchPreviewResponse'
-
-  /v1/networks/export/offers:
-    post:
-      summary: Export offers data
-      description: |
-        Export offer data in CSV or JSON format. Specify the desired fields and filters, and receive a file 
-        containing the matching offers.
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                format:
-                  type: string
-                  enum: [csv, json]
-                  description: Export file format (`csv` or `json`).
-                fields:
-                  type: array
-                  items:
-                    type: string
-                  description: List of offer fields to include. If omitted, all fields are exported.
-                query:
-                  type: object
-                  description: Filters to apply to the export (same structure as in Fetch Offers).
-                  properties:
-                    search_terms:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          search_type:
-                            type: string
-                          value:
-                            type: string
-                    filters:
-                      type: object
-                      additionalProperties: true
-            example:
-              format: "csv"
-              fields: ["network_offer_id", "name", "offer_status"]
-              query:
-                filters:
-                  offer_status: "active"
-      responses:
-        '200':
-          description: Export generated
-          content:
-            text/csv:
-              schema:
-                type: string
-                format: binary
-              example: |
-                network_offer_id,name,offer_status
-                1,"Offer Example","active"
-                2,"Game Auto","active"
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Offer'
-              example:
-                - network_offer_id: 1
-                  name: "Offer Example"
-                  offer_status: "active"
+                $ref: '#/components/schemas/OfferResponse'
+        '400':
+          description: Bad request
+        '404':
+          description: Offer not found
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal server error
 
 components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Eflow-API-Key
+      description: API key for authentication
+  
   schemas:
-    Offer:
+    CreateOfferRequest:
+      type: object
+      required:
+        - network_advertiser_id
+        - name
+        - destination_url
+        - offer_status
+        - payout_revenue
+      properties:
+        network_advertiser_id:
+          type: integer
+          description: ID of the advertiser submitting the offer
+        network_offer_group_id:
+          type: integer
+          description: ID of the offer group associated with the offer
+        name:
+          type: string
+          description: Displayed name of the offer
+        thumbnail_url:
+          type: string
+          description: URL of the image thumbnail associated with the offer
+        network_category_id:
+          type: integer
+          description: ID of the category type associated with the offer
+        internal_notes:
+          type: string
+          description: Notes on the offer for network employees
+        destination_url:
+          type: string
+          description: URL of the final landing page associated with the offer
+        server_side_url:
+          type: string
+          description: Server-side URL that will be asynchronously fired by Everflow
+        is_view_through_enabled:
+          type: boolean
+          description: Whether conversions can be generated from impressions
+          default: false
+        view_through_destination_url:
+          type: string
+          description: URL of the final landing page when redirected from an impression
+        preview_url:
+          type: string
+          description: URL of a preview of the offer landing page
+        offer_status:
+          type: string
+          enum: [active, paused, pending, deleted]
+          description: Status of the offer
+        currency_id:
+          type: string
+          description: Currency used to compute payouts, costs and revenues
+          default: USD
+        caps_timezone_id:
+          type: integer
+          description: ID of the timezone used for caps
+          default: 0
+        project_id:
+          type: string
+          description: ID for the advertiser campaign or an Insertion Order
+        date_live_until:
+          type: string
+          format: date
+          description: Date until when the offer can be run (yyyy-MM-dd)
+        html_description:
+          type: string
+          description: Description of the offer for affiliates (HTML accepted)
+        is_using_explicit_terms_and_conditions:
+          type: boolean
+          description: Whether the offer is using specific Terms and Conditions
+          default: false
+        terms_and_conditions:
+          type: string
+          description: Text listing the specific Terms and Conditions
+        is_force_terms_and_conditions:
+          type: boolean
+          description: Whether affiliates are required to accept the offer's Terms and Conditions
+          default: false
+        is_caps_enabled:
+          type: boolean
+          description: Whether caps are enabled
+          default: false
+        daily_conversion_cap:
+          type: integer
+          description: Limit to the number of unique conversions in one day
+          default: 0
+        weekly_conversion_cap:
+          type: integer
+          description: Limit to the number of unique conversions in one week
+          default: 0
+        monthly_conversion_cap:
+          type: integer
+          description: Limit to the number of unique conversions in one month
+          default: 0
+        global_conversion_cap:
+          type: integer
+          description: Limit to the total number of unique conversions
+          default: 0
+        daily_payout_cap:
+          type: integer
+          description: Limit to the affiliate's payout for one day
+          default: 0
+        weekly_payout_cap:
+          type: integer
+          description: Limit to the affiliate's payout for one week
+          default: 0
+        monthly_payout_cap:
+          type: integer
+          description: Limit to the affiliate's payout for one month
+          default: 0
+        global_payout_cap:
+          type: integer
+          description: Limit to the affiliate's total payout
+          default: 0
+        daily_revenue_cap:
+          type: integer
+          description: Limit to the network's revenue for one day
+          default: 0
+        weekly_revenue_cap:
+          type: integer
+          description: Limit to the network's revenue for one week
+          default: 0
+        monthly_revenue_cap:
+          type: integer
+          description: Limit to the network's revenue for one month
+          default: 0
+        global_revenue_cap:
+          type: integer
+          description: Limit to the network's total revenue
+          default: 0
+        daily_click_cap:
+          type: integer
+          description: Limit to the number of unique clicks in one day
+          default: 0
+        weekly_click_cap:
+          type: integer
+          description: Limit to the number of unique clicks in one week
+          default: 0
+        monthly_click_cap:
+          type: integer
+          description: Limit to the number of unique clicks in one month
+          default: 0
+        global_click_cap:
+          type: integer
+          description: Limit to the total number of unique clicks
+          default: 0
+        redirect_mode:
+          type: string
+          enum: [standard, single_meta_refresh, double_meta_refresh]
+          description: Setting used to obscure referrer URLs from advertisers
+          default: standard
+        is_using_suppression_list:
+          type: boolean
+          description: Whether an email suppression list is used
+          default: false
+        suppression_list_id:
+          type: integer
+          description: ID of the suppression list
+          default: 0
+        is_duplicate_filter_enabled:
+          type: boolean
+          description: Whether duplicate clicks are filtered
+          default: false
+        duplicate_filter_targeting_action:
+          type: string
+          enum: [block, fail_traffic]
+          description: Action for duplicate clicks
+        network_tracking_domain_id:
+          type: integer
+          description: ID of the tracking domain
+        is_use_secure_link:
+          type: boolean
+          description: Whether tracking links use HTTPS
+          default: false
+        is_allow_deep_link:
+          type: boolean
+          description: Whether affiliates can send traffic to target URLs
+          default: false
+        is_session_tracking_enabled:
+          type: boolean
+          description: Whether conversions are blocked based on time intervals
+          default: false
+        session_tracking_lifespan_hour:
+          type: integer
+          description: Maximum interval between click and conversion
+          default: 0
+        session_tracking_minimum_lifespan_second:
+          type: integer
+          description: Minimum interval between click and conversion
+          default: 0
+        is_view_through_session_tracking_enabled:
+          type: boolean
+          description: Whether conversions from impressions are time-tracked
+          default: false
+        view_through_session_tracking_lifespan_minute:
+          type: integer
+          description: Maximum interval between impression and conversion
+          default: 0
+        view_through_session_tracking_minimal_lifespan_second:
+          type: integer
+          description: Minimum interval between impression and conversion
+          default: 0
+        is_block_already_converted:
+          type: boolean
+          description: Whether to block clicks from already-converted users
+          default: false
+        already_converted_action:
+          type: string
+          enum: [block, fail_traffic]
+          description: Action for already-converted users
+        visibility:
+          type: string
+          enum: [public, require_approval, private]
+          description: Offer visibility for affiliates
+          default: public
+        conversion_method:
+          type: string
+          enum: [http_image_pixel, https_image_pixel, server_postback, cookie_based, http_iframe_pixel, https_iframe_pixel, javascript]
+          description: Method used by advertiser to fire tracking data
+          default: server_postback
+        is_whitelist_check_enabled:
+          type: boolean
+          description: Whether to check conversion postback origin
+          default: false
+        is_use_scrub_rate:
+          type: boolean
+          description: Whether to throttle conversions
+          default: false
+        scrub_rate_status:
+          type: string
+          enum: [rejected, pending]
+          description: Status for throttled conversions
+        scrub_rate_percentage:
+          type: integer
+          description: Percentage of conversions to throttle
+          default: 0
+        session_definition:
+          type: string
+          enum: [cookie, ip, ip_user_agent, google_ad_id, idfa]
+          description: Method for determining unique clicks
+          default: cookie
+        session_duration:
+          type: integer
+          description: Duration of active session in hours
+          default: 24
+        app_identifier:
+          type: string
+          description: Bundle ID for iOS/Android Apps
+        is_description_plain_text:
+          type: boolean
+          description: Whether description is plain text
+          default: false
+        is_use_direct_linking:
+          type: boolean
+          description: Whether offer uses Direct Linking
+          default: false
+        is_fail_traffic_enabled:
+          type: boolean
+          description: Whether invalid clicks are redirected
+          default: false
+        redirect_routing_method:
+          type: string
+          enum: [internal]
+          description: How fail traffic is handled
+          default: internal
+        redirect_internal_routing_type:
+          type: string
+          enum: [priority, weight, priority_global, weight_global]
+          description: Redirect distribution mechanism
+          default: priority
+        meta:
+          $ref: '#/components/schemas/Meta'
+        creatives:
+          type: array
+          items:
+            $ref: '#/components/schemas/Creative'
+        internal_redirects:
+          type: array
+          items:
+            $ref: '#/components/schemas/InternalRedirect'
+        ruleset:
+          $ref: '#/components/schemas/Ruleset'
+        traffic_filters:
+          type: array
+          items:
+            $ref: '#/components/schemas/TrafficFilter'
+        email:
+          $ref: '#/components/schemas/EmailSettings'
+        email_optout:
+          $ref: '#/components/schemas/EmailOptoutSettings'
+        labels:
+          type: array
+          items:
+            type: string
+          description: Labels for organizing offers
+        source_names:
+          type: array
+          items:
+            type: string
+          description: Names of the source
+        payout_revenue:
+          type: array
+          items:
+            $ref: '#/components/schemas/PayoutRevenue'
+        thumbnail_file:
+          $ref: '#/components/schemas/ThumbnailFile'
+        integrations:
+          $ref: '#/components/schemas/Integrations'
+        channels:
+          type: array
+          items:
+            $ref: '#/components/schemas/Channel'
+        requirement_kpis:
+          type: array
+          items:
+            $ref: '#/components/schemas/RequirementKPI'
+        requirement_tracking_parameters:
+          type: array
+          items:
+            $ref: '#/components/schemas/RequirementTrackingParameter'
+        email_attribution_method:
+          type: string
+          enum: [first_affiliate_attribution, last_affiliate_attribution]
+          description: Email attribution method
+        attribution_method:
+          type: string
+          enum: [first_touch, last_touch]
+          description: Attribution method
+    
+    UpdateOfferRequest:
+      allOf:
+        - $ref: '#/components/schemas/CreateOfferRequest'
+      description: Same as CreateOfferRequest but all fields must be provided
+    
+    OfferResponse:
       type: object
       properties:
         network_offer_id:
           type: integer
-          description: Internal ID of the offer (assigned by Everflow).
+          description: ID of the offer
         network_id:
           type: integer
-          description: ID of the Everflow network.
+          description: ID of the network
         network_advertiser_id:
           type: integer
-          description: ID of the advertiser associated with this offer.
+          description: ID of the advertiser
         network_offer_group_id:
           type: integer
-          description: ID of the offer group/category for this offer.
-        network_category_id:
-          type: integer
-          description: ID of the category (vertical) of the offer.
+          description: ID of the offer group
         name:
           type: string
-          description: Name of the offer (as seen by partners).
+          description: Name of the offer
         thumbnail_url:
           type: string
-          description: URL of the thumbnail image for the offer.
+          description: Thumbnail URL
+        network_category_id:
+          type: integer
+          description: Category ID
         internal_notes:
           type: string
-          description: Internal notes for the offer (visible only to network users).
+          description: Internal notes
         destination_url:
           type: string
-          description: Default landing page URL for the offer. Supports tracking tokens like {affiliate_id}, {offer_id}, {transaction_id}.
+          description: Landing page URL
         server_side_url:
           type: string
-          description: Server-side tracking URL (fired asynchronously on click).
+          description: Server-side URL
         is_view_through_enabled:
           type: boolean
-          description: Whether conversions from impressions (view-through conversions) are enabled.
+          description: View through enabled
         view_through_destination_url:
           type: string
-          description: Destination URL used for view-through (impression) redirects (if view-through enabled).
+          description: View through destination URL
         preview_url:
           type: string
-          description: URL for a preview of the offer's landing page.
+          description: Preview URL
         offer_status:
           type: string
-          description: "Current status of the offer. 'active' = live and accepting traffic, 'paused' = temporarily stopped, 'pending' = awaiting approval, 'deleted' = removed."
           enum: [active, paused, pending, deleted]
-        visibility:
-          type: string
-          description: "Offer visibility setting for affiliates. 'public' = visible to all, 'require_approval' = requires approval, 'private' = invite only."
-          enum: [public, require_approval, private]
+          description: Offer status
         currency_id:
           type: string
-          description: "Currency for payouts and revenue (e.g. \"USD\")."
+          description: Currency ID
         caps_timezone_id:
           type: integer
-          description: Timezone ID for caps if different from network default.
+          description: Caps timezone ID
         project_id:
           type: string
-          description: Advertiser's campaign or IO (project) identifier.
+          description: Project ID
         date_live_until:
           type: string
-          format: date
-          description: Date (YYYY-MM-DD) until which the offer is active (end date).
+          description: Live until date
         html_description:
           type: string
-          description: HTML content describing the offer for affiliates.
+          description: HTML description
         is_using_explicit_terms_and_conditions:
           type: boolean
-          description: If true, this offer uses custom terms and conditions text.
+          description: Using explicit terms
         terms_and_conditions:
           type: string
-          description: Specific terms and conditions text (required if explicit T&C is true).
+          description: Terms and conditions
         is_force_terms_and_conditions:
           type: boolean
-          description: If true, affiliates must explicitly accept the terms and conditions.
+          description: Force terms acceptance
         is_caps_enabled:
           type: boolean
-          description: Whether conversion caps are enabled for the offer.
+          description: Caps enabled
         daily_conversion_cap:
           type: integer
-          description: Daily conversion cap (if caps enabled).
+          description: Daily conversion cap
         weekly_conversion_cap:
           type: integer
-          description: Weekly conversion cap.
+          description: Weekly conversion cap
         monthly_conversion_cap:
           type: integer
-          description: Monthly conversion cap.
+          description: Monthly conversion cap
         global_conversion_cap:
           type: integer
-          description: Total (global) conversion cap.
+          description: Global conversion cap
         daily_payout_cap:
           type: integer
-          description: Daily payout cap (in affiliate payout currency).
+          description: Daily payout cap
         weekly_payout_cap:
           type: integer
-          description: Weekly payout cap.
+          description: Weekly payout cap
         monthly_payout_cap:
           type: integer
-          description: Monthly payout cap.
+          description: Monthly payout cap
         global_payout_cap:
           type: integer
-          description: Total (global) payout cap.
+          description: Global payout cap
         daily_revenue_cap:
           type: integer
-          description: Daily revenue cap (in network's currency).
+          description: Daily revenue cap
         weekly_revenue_cap:
           type: integer
-          description: Weekly revenue cap.
+          description: Weekly revenue cap
         monthly_revenue_cap:
           type: integer
-          description: Monthly revenue cap.
+          description: Monthly revenue cap
         global_revenue_cap:
           type: integer
-          description: Total (global) revenue cap.
+          description: Global revenue cap
         daily_click_cap:
           type: integer
-          description: Daily unique click cap.
+          description: Daily click cap
         weekly_click_cap:
           type: integer
-          description: Weekly unique click cap.
+          description: Weekly click cap
         monthly_click_cap:
           type: integer
-          description: Monthly unique click cap.
+          description: Monthly click cap
         global_click_cap:
           type: integer
-          description: Total (global) unique click cap.
+          description: Global click cap
         redirect_mode:
           type: string
-          description: |
-            Method to obscure referrer (if any). Options: `standard`, `single_meta_refresh`, 
-            `double_meta_refresh`.
+          description: Redirect mode
         is_using_suppression_list:
           type: boolean
-          description: If true, an email suppression list is used for this offer.
+          description: Using suppression list
         suppression_list_id:
           type: integer
-          description: ID of the suppression list (if used).
+          description: Suppression list ID
+        is_must_approve_conversion:
+          type: boolean
+          description: Must approve conversions
+        is_allow_duplicate_conversion:
+          type: boolean
+          description: Allow duplicate conversions
         is_duplicate_filter_enabled:
           type: boolean
-          description: If true, duplicate click filtering is enabled.
+          description: Duplicate filter enabled
         duplicate_filter_targeting_action:
           type: string
-          description: Action for duplicate clicks if filtering is enabled (`block` or `fail_traffic`).
-          enum: [block, fail_traffic]
+          description: Duplicate filter action
         network_tracking_domain_id:
           type: integer
-          description: ID of the tracking domain used for this offer's tracking links.
+          description: Tracking domain ID
         is_use_secure_link:
           type: boolean
-          description: If true, use HTTPS for tracking links (requires SSL setup).
+          description: Use secure links
+        is_seo_friendly:
+          type: boolean
+          description: SEO friendly
         is_allow_deep_link:
           type: boolean
-          description: If true, affiliates can append their own target URLs for deep linking.
+          description: Allow deep linking
         is_session_tracking_enabled:
           type: boolean
-          description: Enable session (time-based) tracking for click-to-conversion timing.
+          description: Session tracking enabled
+        session_tracking_start_on:
+          type: string
+          description: Session tracking start
         session_tracking_lifespan_hour:
           type: integer
-          description: Maximum hours for a click-to-conversion to be considered valid (if session tracking).
+          description: Session lifespan hours
         session_tracking_minimum_lifespan_second:
           type: integer
-          description: Minimum seconds for a click-to-conversion to count (if session tracking).
+          description: Minimum session lifespan
         is_view_through_session_tracking_enabled:
           type: boolean
-          description: If true, apply session timing rules to impression-to-conversion as well.
+          description: View through tracking enabled
         view_through_session_tracking_lifespan_minute:
           type: integer
-          description: Max minutes for impression-to-conversion validity (if view-through session tracking).
+          description: View through lifespan
         view_through_session_tracking_minimal_lifespan_second:
           type: integer
-          description: Min seconds for impression-to-conversion (if view-through session tracking).
+          description: View through minimum lifespan
         is_block_already_converted:
           type: boolean
-          description: If true, block or redirect clicks from users who already converted.
+          description: Block already converted
         already_converted_action:
           type: string
-          description: Action for clicks from users who already converted (`block` or `fail_traffic`).
-          enum: [block, fail_traffic]
-        conversion_method:
-          type: string
-          description: |
-            Tracking method used by the advertiser. e.g. `server_postback`, `javascript`, 
-            `http_image_pixel`, etc.
-        is_whitelist_check_enabled:
+          description: Already converted action
+        is_fail_traffic_enabled:
           type: boolean
-          description: If true, checks conversion origin against whitelisted domains (advertiser postback origin).
-        is_use_scrub_rate:
-          type: boolean
-          description: If true, apply a scrub rate (percentage of conversions automatically throttled).
-        scrub_rate_status:
+          description: Fail traffic enabled
+        redirect_routing_method:
           type: string
-          description: Status to assign scrubbed conversions (`rejected` or `pending`).
-          enum: [rejected, pending]
-        scrub_rate_percentage:
-          type: integer
-          description: Percentage of conversions to scrub (throttle).
-        session_definition:
+          description: Redirect routing method
+        redirect_internal_routing_type:
           type: string
-          description: Criteria defining a unique click session (`cookie`, `ip`, `ip_user_agent`, `google_ad_id`, or `idfa`).
-          enum: [cookie, ip, ip_user_agent, google_ad_id, idfa]
-        session_duration:
-          type: integer
-          description: Duration in hours of a session window for click-to-conversion matching.
-        app_identifier:
+          description: Internal routing type
+        visibility:
           type: string
-          description: Mobile app bundle ID (for iOS/Android offers, if applicable).
-        is_description_plain_text:
-          type: boolean
-          description: If true, the offer description should be treated as plain text (no HTML).
-        is_use_direct_linking:
-          type: boolean
-          description: Whether the offer uses Direct Linking (special tracking mode).
-        encoded_value:
-          type: string
-          description: Encoded offer identifier used in tracking links.
-        today_clicks:
-          type: integer
-          description: Number of clicks received today.
-        today_revenue:
-          type: string
-          description: Revenue generated today (formatted as currency string).
+          description: Visibility setting
         time_created:
           type: integer
-          description: Unix timestamp when the offer was created.
+          description: Creation timestamp
         time_saved:
           type: integer
-          description: Unix timestamp when the offer was last saved/updated.
-        network_advertiser_name:
-          type: string
-          description: Name of the advertiser associated with this offer.
-        category:
-          type: string
-          description: Category name of the offer.
-        payout:
-          type: string
-          description: 'Formatted payout string (e.g., "CPA: $0.800").'
-        revenue:
-          type: string
-          description: 'Formatted revenue string (e.g., "RPA: $1.000").'
-        labels:
-          type: string
-          nullable: true
-          description: Labels associated with the offer.
-        channels:
-          type: string
-          nullable: true
-          description: Channels associated with the offer.
-        payout_revenue:
-          type: object
-          properties:
-            entries:
-              type: array
-              description: List of conversion payout/revenue definitions for the offer.
-              items:
-                type: object
-                properties:
-                  entry_name:
-                    type: string
-                    description: "Name of the conversion event (e.g., \"Base\")."
-                  payout_type:
-                    type: string
-                    description: "Payout type (`cpc`, `cpa`, `cpm`, `cps`, `cpa_cps`, or `prv`)."
-                    enum: [cpc, cpa, cpm, cps, cpa_cps, prv]
-                  payout_amount:
-                    type: number
-                    description: Payout amount (if applicable for the payout_type).
-                  payout_percentage:
-                    type: integer
-                    description: Payout percentage (if applicable for the payout_type).
-                  revenue_type:
-                    type: string
-                    description: "Revenue type (`rpc`, `rpa`, `rpm`, `rps`, or `rpa_rps`)."
-                    enum: [rpc, rpa, rpm, rps, rpa_rps]
-                  revenue_amount:
-                    type: number
-                    description: Revenue amount (if applicable for the revenue_type).
-                  revenue_percentage:
-                    type: integer
-                    description: Revenue percentage (if applicable for the revenue_type).
-                  is_default:
-                    type: boolean
-                    description: True if this is the default (base) conversion event.
-                  is_private:
-                    type: boolean
-                    description: False for the base conversion (true if this event is private to certain partners).
-                  is_postback_disabled:
-                    type: boolean
-                    description: If true, partner postbacks are not fired for this conversion (often true for unpaid events).
-                  global_advertiser_event_id:
-                    type: integer
-                    description: ID of the corresponding global advertiser event (if any).
-                  is_must_approve_conversion:
-                    type: boolean
-                    description: If true, conversions for this event are hidden from partners and require approval (pending status).
-                  is_allow_duplicate_conversion:
-                    type: boolean
-                    description: If true, allows multiple approved conversions with the same transaction ID for this event.
-        relationship:
-          type: object
-          description: Additional nested data included via `relationship` parameter.
-          properties:
-            remaining_caps:
-              type: object
-              properties:
-                remaining_daily_conversion_cap:
-                  type: integer
-                remaining_monthly_conversion_cap:
-                  type: integer
-                remaining_global_conversion_cap:
-                  type: integer
-                remaining_daily_click_cap:
-                  type: integer
-                remaining_weekly_click_cap:
-                  type: integer
-                remaining_monthly_click_cap:
-                  type: integer
-                remaining_global_click_cap:
-                  type: integer
-            ruleset:
-              type: object
-              properties:
-                network_ruleset_id:
-                  type: integer
-                platforms:
-                  type: array
-                  items:
-                    type: object
-                device_types:
-                  type: array
-                  items:
-                    type: object
-                countries:
-                  type: array
-                  items:
-                    type: object
-            category:
-              type: object
-              properties:
-                network_category_id:
-                  type: integer
-                name:
-                  type: string
-          additionalProperties: true
-
-    OfferInput:
-      type: object
-      description: Offer payload for creating or updating an offer. All fields from the Offer schema are allowed, except ID fields which are assigned by the system.
-      properties:
-        network_advertiser_id:
-          type: integer
-          description: Advertiser ID associated with the new offer.
-        network_offer_group_id:
-          type: integer
-          description: Offer group (category) ID for the offer.
-        name:
-          type: string
-          description: Name of the offer.
-        thumbnail_url:
-          type: string
-        network_category_id:
-          type: integer
-        internal_notes:
-          type: string
-        destination_url:
-          type: string
-          description: Default landing page URL for the offer. Supports tracking tokens like {affiliate_id}, {offer_id}, {transaction_id}.
-        server_side_url:
-          type: string
-          description: Server-side tracking URL (fired asynchronously on click).
-        is_view_through_enabled:
-          type: boolean
-          description: Whether conversions from impressions (view-through conversions) are enabled.
-        view_through_destination_url:
-          type: string
-          description: Destination URL used for view-through (impression) redirects (if view-through enabled).
-        preview_url:
-          type: string
-          description: URL for a preview of the offer's landing page.
-        offer_status:
-          type: string
-          description: Current status of the offer. 'active' = live and accepting traffic, 'paused' = temporarily stopped, 'pending' = awaiting approval, 'deleted' = removed.
-          enum: [active, paused, pending, deleted]
-        visibility:
-          type: string
-          description: Offer visibility setting for affiliates. 'public' = visible to all, 'require_approval' = requires approval, 'private' = invite only.
-          enum: [public, require_approval, private]
-        currency_id:
-          type: string
-          description: Currency for payouts and revenue (e.g. "USD").
-        caps_timezone_id:
-          type: integer
-          description: Timezone ID for caps if different from network default.
-        project_id:
-          type: string
-          description: Advertiser's campaign or IO (project) identifier.
-        date_live_until:
-          type: string
-          format: date
-          description: Date (YYYY-MM-DD) until which the offer is active (end date).
-        html_description:
-          type: string
-          description: HTML content describing the offer for affiliates.
-        is_using_explicit_terms_and_conditions:
-          type: boolean
-          description: If true, this offer uses custom terms and conditions text.
-        terms_and_conditions:
-          type: string
-          description: Specific terms and conditions text (required if explicit T&C is true).
-        is_force_terms_and_conditions:
-          type: boolean
-          description: If true, affiliates must explicitly accept the terms and conditions.
-        is_caps_enabled:
-          type: boolean
-        daily_conversion_cap:
-          type: integer
-        weekly_conversion_cap:
-          type: integer
-        monthly_conversion_cap:
-          type: integer
-        global_conversion_cap:
-          type: integer
-        daily_payout_cap:
-          type: integer
-        weekly_payout_cap:
-          type: integer
-        monthly_payout_cap:
-          type: integer
-        global_payout_cap:
-          type: integer
-        daily_revenue_cap:
-          type: integer
-        weekly_revenue_cap:
-          type: integer
-        monthly_revenue_cap:
-          type: integer
-        global_revenue_cap:
-          type: integer
-        daily_click_cap:
-          type: integer
-        weekly_click_cap:
-          type: integer
-        monthly_click_cap:
-          type: integer
-        global_click_cap:
-          type: integer
-        redirect_mode:
-          type: string
-        is_using_suppression_list:
-          type: boolean
-        suppression_list_id:
-          type: integer
-        is_duplicate_filter_enabled:
-          type: boolean
-        duplicate_filter_targeting_action:
-          type: string
-        network_tracking_domain_id:
-          type: integer
-        is_use_secure_link:
-          type: boolean
-        is_allow_deep_link:
-          type: boolean
-        is_session_tracking_enabled:
-          type: boolean
-        session_tracking_lifespan_hour:
-          type: integer
-        session_tracking_minimum_lifespan_second:
-          type: integer
-        is_view_through_session_tracking_enabled:
-          type: boolean
-        view_through_session_tracking_lifespan_minute:
-          type: integer
-        view_through_session_tracking_minimal_lifespan_second:
-          type: integer
-        is_block_already_converted:
-          type: boolean
-        already_converted_action:
-          type: string
+          description: Last saved timestamp
         conversion_method:
           type: string
-          description: Tracking method used by the advertiser. e.g. `server_postback`, `javascript`, `http_image_pixel`, etc.
+          description: Conversion method
         is_whitelist_check_enabled:
           type: boolean
-          description: If true, checks conversion origin against whitelisted domains (advertiser postback origin).
+          description: Whitelist check enabled
         is_use_scrub_rate:
           type: boolean
-          description: If true, apply a scrub rate (percentage of conversions automatically throttled).
+          description: Use scrub rate
         scrub_rate_status:
           type: string
-          description: Status to assign scrubbed conversions (`rejected` or `pending`).
-          enum: [rejected, pending]
+          description: Scrub rate status
         scrub_rate_percentage:
           type: integer
-          description: Percentage of conversions to scrub (throttle).
+          description: Scrub rate percentage
         session_definition:
           type: string
-          description: Criteria defining a unique click session (`cookie`, `ip`, `ip_user_agent`, `google_ad_id`, or `idfa`).
-          enum: [cookie, ip, ip_user_agent, google_ad_id, idfa]
+          description: Session definition
         session_duration:
           type: integer
-          description: Duration in hours of a session window for click-to-conversion matching.
+          description: Session duration
         app_identifier:
           type: string
+          description: App identifier
         is_description_plain_text:
           type: boolean
+          description: Plain text description
         is_use_direct_linking:
           type: boolean
-        encoded_value:
+          description: Use direct linking
+        is_email_attribution_enabled:
+          type: boolean
+          description: Email attribution enabled
+        is_email_attribution_window_enabled:
+          type: boolean
+          description: Email attribution window enabled
+        email_attribution_window_minute:
+          type: integer
+          description: Email attribution window
+        email_attribution_window_type:
           type: string
-          description: Custom encoded value for the offer (optional).
-        meta:
+          description: Attribution window type
+        relationship:
+          type: object
+          description: Related data based on requested relationships
+    
+    Meta:
+      type: object
+      properties:
+        advertiser_campaign_name:
+          type: string
+          description: Optional advertiser campaign name
+    
+    Creative:
+      type: object
+      required:
+        - name
+        - creative_type
+        - creative_status
+      properties:
+        name:
+          type: string
+          description: Name of the creative
+        creative_type:
+          type: string
+          enum: [image, html, thumbnail, email, archive, video, text]
+          description: Type of creative
+        is_private:
+          type: boolean
+          description: Whether creative is private
+          default: false
+        creative_status:
+          type: string
+          enum: [active, deleted]
+          description: Status of creative
+        html_code:
+          type: string
+          description: HTML content (required for html/email types)
+        width:
+          type: integer
+          description: Width (required for html type)
+        height:
+          type: integer
+          description: Height (required for html type)
+        email_from:
+          type: string
+          description: From field (required for email type)
+        email_subject:
+          type: string
+          description: Subject field (required for email type)
+        resource_file:
+          $ref: '#/components/schemas/ResourceFile'
+        html_files:
+          type: array
+          items:
+            $ref: '#/components/schemas/HtmlFile'
+    
+    ResourceFile:
+      type: object
+      required:
+        - temp_url
+        - original_file_name
+      properties:
+        temp_url:
+          type: string
+          description: Temporary URL from file upload
+        original_file_name:
+          type: string
+          description: Original filename
+    
+    HtmlFile:
+      type: object
+      required:
+        - temp_url
+        - original_file_name
+      properties:
+        temp_url:
+          type: string
+          description: Temporary URL from file upload
+        original_file_name:
+          type: string
+          description: Filename used for macro generation
+    
+    InternalRedirect:
+      type: object
+      properties:
+        redirect_network_offer_id:
+          type: integer
+          description: Offer ID to redirect to
+        redirect_network_offer_url_id:
+          type: integer
+          description: Offer URL ID (0 for default)
+        redirect_network_offer_group_id:
+          type: integer
+          description: Offer group ID to redirect to
+        redirect_network_campaign_id:
+          type: integer
+          description: Campaign ID to redirect to
+        routing_value:
+          type: integer
+          description: Priority or weight value
+        ruleset:
+          $ref: '#/components/schemas/Ruleset'
+        categories:
+          type: array
+          items:
+            type: string
+            enum: [traffic_filter, traffic_control, already_converted, offer_expired, geotargeting, caps, other]
+          description: Fail traffic categories
+        is_pay_affiliate:
+          type: boolean
+          description: Whether to pay affiliate
+          default: false
+        is_pass_through:
+          type: boolean
+          description: Whether to pass through to destination
+          default: false
+        is_apply_specific_affiliates:
+          type: boolean
+          description: Whether to apply to specific affiliates
+          default: false
+        network_affiliate_ids:
+          type: array
+          items:
+            type: integer
+          description: Specific affiliate IDs
+    
+    Ruleset:
+      type: object
+      description: Targeting rules for traffic
+      properties:
+        platforms:
+          type: array
+          items:
+            type: object
+        device_types:
+          type: array
+          items:
+            type: object
+        os_versions:
+          type: array
+          items:
+            type: object
+        browsers:
+          type: array
+          items:
+            type: object
+        languages:
+          type: array
+          items:
+            type: object
+        countries:
+          type: array
+          items:
+            type: object
+        regions:
+          type: array
+          items:
+            type: object
+        cities:
+          type: array
+          items:
+            type: object
+        dmas:
+          type: array
+          items:
+            type: object
+        mobile_carriers:
+          type: array
+          items:
+            type: object
+        connection_types:
+          type: array
+          items:
+            type: object
+        ips:
+          type: array
+          items:
+            type: object
+        is_block_proxy:
+          type: boolean
+          description: Block proxy traffic
+          default: false
+        is_use_day_parting:
+          type: boolean
+          description: Enable day parting
+          default: false
+        day_parting_apply_to:
+          type: string
+          enum: [user_timezone, selected_timezone]
+          description: Day parting timezone setting
+        day_parting_timezone_id:
+          type: integer
+          description: Timezone ID for day parting
+        days_parting:
+          type: array
+          items:
+            type: object
+        isps:
+          type: array
+          items:
+            type: object
+        brands:
+          type: array
+          items:
+            type: object
+        postal_codes:
+          type: array
+          items:
+            type: object
+    
+    TrafficFilter:
+      type: object
+      required:
+        - parameter
+        - match_type
+        - value
+        - action
+      properties:
+        parameter:
+          type: string
+          enum: [sub1, sub2, sub3, sub4, sub5, source_id, user_agent, referer, idfa, google_advertiser_id, http_accept_language, creative_id]
+          description: Parameter to filter
+        match_type:
+          type: string
+          enum: [exact, minimum, maximum, contains, starts_with, range, ends_with, blank, does_not_match, does_not_contain]
+          description: Matching type
+        value:
+          type: string
+          description: Value to match
+        action:
+          type: string
+          enum: [block, fail_traffic]
+          description: Action to take
+    
+    EmailSettings:
+      type: object
+      properties:
+        is_enabled:
+          type: boolean
+          description: Email settings enabled
+        subject_lines:
+          type: string
+          description: Approved subject lines
+        from_lines:
+          type: string
+          description: Approved from lines
+    
+    EmailOptoutSettings:
+      type: object
+      properties:
+        is_enabled:
+          type: boolean
+          description: Email optout enabled
+        suppression_file_link:
+          type: string
+          description: Suppression file URL
+        unsub_link:
+          type: string
+          description: Unsubscribe URL
+    
+    PayoutRevenue:
+      type: object
+      required:
+        - payout_type
+        - revenue_type
+        - is_default
+        - is_private
+      properties:
+        entry_name:
+          type: string
+          description: Event name
+          default: Base
+        payout_type:
+          type: string
+          enum: [cpc, cpa, cpm, cps, cpa_cps, prv]
+          description: Payout type
+        payout_amount:
+          type: number
+          format: double
+          description: Payout amount
+        payout_percentage:
+          type: integer
+          description: Payout percentage
+        revenue_type:
+          type: string
+          enum: [rpc, rpa, rpm, rps, rpa_rps]
+          description: Revenue type
+        revenue_amount:
+          type: number
+          format: double
+          description: Revenue amount
+        revenue_percentage:
+          type: integer
+          description: Revenue percentage
+        is_default:
+          type: boolean
+          description: Is base conversion
+        is_private:
+          type: boolean
+          description: Is private event
+        is_postback_disabled:
+          type: boolean
+          description: Disable partner postback
+          default: false
+        global_advertiser_event_id:
+          type: integer
+          description: Global advertiser event ID
+          default: 0
+        is_must_approve_conversion:
+          type: boolean
+          description: Require conversion approval
+          default: false
+        is_allow_duplicate_conversion:
+          type: boolean
+          description: Allow duplicate conversions
+          default: true
+    
+    ThumbnailFile:
+      type: object
+      properties:
+        temp_url:
+          type: string
+          description: Temporary file URL
+        original_file_name:
+          type: string
+          description: Original filename
+    
+    Integrations:
+      type: object
+      properties:
+        optizmo:
           type: object
           properties:
-            advertiser_campaign_name:
+            optoutlist_id:
               type: string
-              description: Optional advertiser campaign name or identifier.
-        payout_revenue:
+              description: Optizmo optout list ID
+        twentyfour_metrics:
           type: object
-          description: Payout and revenue configuration for the offer.
           properties:
-            entries:
-              type: array
-              description: List of conversion payout/revenue definitions for the offer.
-              items:
-                type: object
-                properties:
-                  entry_name:
-                    type: string
-                    description: Name of the conversion event (e.g., "Base").
-                  payout_type:
-                    type: string
-                    description: Payout type (`cpc`, `cpa`, `cpm`, `cps`, `cpa_cps`, or `prv`).
-                    enum: [cpc, cpa, cpm, cps, cpa_cps, prv]
-                  payout_amount:
-                    type: number
-                    description: Payout amount (if applicable for the payout_type).
-                  payout_percentage:
-                    type: integer
-                    description: Payout percentage (if applicable for the payout_type).
-                  revenue_type:
-                    type: string
-                    description: Revenue type (`rpc`, `rpa`, `rpm`, `rps`, or `rpa_rps`).
-                    enum: [rpc, rpa, rpm, rps, rpa_rps]
-                  revenue_amount:
-                    type: number
-                    description: Revenue amount (if applicable for the revenue_type).
-                  revenue_percentage:
-                    type: integer
-                    description: Revenue percentage (if applicable for the revenue_type).
-                  is_default:
-                    type: boolean
-                    description: True if this is the default (base) conversion event.
-                  is_private:
-                    type: boolean
-                    description: False for the base conversion (true if this event is private to certain partners).
-                  is_postback_disabled:
-                    type: boolean
-                    description: If true, partner postbacks are not fired for this conversion (often true for unpaid events).
-                  global_advertiser_event_id:
-                    type: integer
-                    description: ID of the corresponding global advertiser event (if any).
-                  is_must_approve_conversion:
-                    type: boolean
-                    description: If true, conversions for this event are hidden from partners and require approval (pending status).
-                  is_allow_duplicate_conversion:
-                    type: boolean
-                    description: If true, allows multiple approved conversions with the same transaction ID for this event.
-
-    FieldPatch:
-      type: object
-      required: [field_type, field_value, operator]
-      properties:
-        field_type:
-          type: string
-          description: The field to patch (use the field identifier as documented, e.g. "offer_status", "payout", "daily_click_cap", etc.).
-        field_value:
-          description: The value to set for the field (type varies depending on the field – could be a string, number, boolean, object, or array).
-          nullable: true
-        operator:
-          type: string
-          description: Patch operation type (`overwrite`, `append`, `delete`, or `clear`).
-          enum: [overwrite, append, delete, clear]
-
-    PatchPreviewResponse:
+            network_integration_twentyfour_metrics_tracker_id:
+              type: integer
+              description: 24metrics tracker ID
+        forensiq:
+          type: object
+          properties:
+            click_threshold:
+              type: integer
+              description: Click threshold
+            action:
+              type: string
+              enum: [block, fail_traffic]
+              description: Click threshold action
+            conversion_threshold:
+              type: integer
+              description: Conversion threshold
+            conversion_status:
+              type: string
+              enum: [pending, rejected]
+              description: Conversion threshold status
+        ezepo:
+          type: object
+          properties:
+            enabled:
+              type: boolean
+              description: Ezepo enabled
+        anura:
+          type: object
+          properties:
+            enabled:
+              type: boolean
+              description: Anura enabled
+        invoca:
+          type: object
+          properties:
+            enabled:
+              type: boolean
+              description: Invoca enabled
+    
+    Channel:
       type: object
       properties:
-        changes:
-          type: array
-          description: List of proposed changes (one per affected offer field).
-          items:
-            type: object
-            properties:
-              network_offer:
-                type: object
-                description: Basic info on the offer being changed.
-                properties:
-                  network_offer_id:
-                    type: integer
-                  name:
-                    type: string
-                  offer_status:
-                    type: string
-              change_status:
-                type: string
-                description: Outcome for this change (`ok`, `no_change`, or `error`).
-                enum: [ok, no_change, error]
-              current_field:
-                type: object
-                description: Field's current value before the patch.
-                properties:
-                  field_type:
-                    type: string
-                  field_value:
-                    nullable: true
-              changed_field:
-                type: object
-                description: Field's value after the patch.
-                properties:
-                  field_type:
-                    type: string
-                  field_value:
-                    nullable: true
-              error_message:
-                type: string
-                description: Error message if this change could not be applied (present if change_status = `error`).
-              related_changes:
-                type: string
-                description: Additional info about related changes triggered by this change (if any).
-        resource_errors:
-          type: array
-          description: List of errors for offers that could not be processed at all (if the patch couldn't be attempted on them).
-          items:
-            type: object
-            properties:
-              id:
-                type: integer
-                description: ID of the offer that had an error.
-              label:
-                type: string
-                description: Name/label of the offer.
-              message:
-                type: string
-                description: Description of why the offer is invalid for patching.
+        network_channel_id:
+          type: integer
+          description: Channel ID
+    
+    RequirementKPI:
+      type: object
+      properties:
+        kpi:
+          type: string
+          description: KPI threshold
+    
+    RequirementTrackingParameter:
+      type: object
+      properties:
+        tracking_parameter:
+          type: string
+          description: Tracking parameter name
+        value:
+          type: string
+          description: Parameter value

@@ -8,7 +8,9 @@ import (
 
 	"github.com/affiliate-backend/internal/domain"
 	"github.com/affiliate-backend/internal/platform/crypto"
+	"github.com/affiliate-backend/internal/platform/provider"
 	"github.com/affiliate-backend/internal/repository"
+	"github.com/google/uuid"
 )
 
 // CampaignService defines the interface for campaign operations
@@ -20,6 +22,10 @@ type CampaignService interface {
 	ListCampaignsByAdvertiser(ctx context.Context, advertiserID int64, page, pageSize int) ([]*domain.Campaign, error)
 	DeleteCampaign(ctx context.Context, id int64) error
 	
+	// Provider sync methods
+	SyncCampaignToProvider(ctx context.Context, campaignID int64) error
+	SyncCampaignFromProvider(ctx context.Context, campaignID int64) error
+	
 	// Provider offer methods
 	CreateCampaignProviderOffer(ctx context.Context, offer *domain.CampaignProviderOffer) (*domain.CampaignProviderOffer, error)
 	GetCampaignProviderOfferByID(ctx context.Context, id int64) (*domain.CampaignProviderOffer, error)
@@ -30,24 +36,30 @@ type CampaignService interface {
 
 // campaignService implements CampaignService
 type campaignService struct {
-	campaignRepo      repository.CampaignRepository
-	advertiserRepo    repository.AdvertiserRepository
-	orgRepo           repository.OrganizationRepository
-	cryptoService     crypto.Service
+	campaignRepo            repository.CampaignRepository
+	campaignProviderMappingRepo repository.CampaignProviderMappingRepository
+	advertiserRepo          repository.AdvertiserRepository
+	orgRepo                 repository.OrganizationRepository
+	cryptoService           crypto.Service
+	integrationService      provider.IntegrationService
 }
 
 // NewCampaignService creates a new campaign service
 func NewCampaignService(
 	campaignRepo repository.CampaignRepository,
+	campaignProviderMappingRepo repository.CampaignProviderMappingRepository,
 	advertiserRepo repository.AdvertiserRepository,
 	orgRepo repository.OrganizationRepository,
 	cryptoService crypto.Service,
+	integrationService provider.IntegrationService,
 ) CampaignService {
 	return &campaignService{
-		campaignRepo:   campaignRepo,
-		advertiserRepo: advertiserRepo,
-		orgRepo:        orgRepo,
-		cryptoService:  cryptoService,
+		campaignRepo:                campaignRepo,
+		campaignProviderMappingRepo: campaignProviderMappingRepo,
+		advertiserRepo:              advertiserRepo,
+		orgRepo:                     orgRepo,
+		cryptoService:               cryptoService,
+		integrationService:          integrationService,
 	}
 }
 
@@ -106,12 +118,37 @@ func (s *campaignService) CreateCampaign(ctx context.Context, campaign *domain.C
 		return nil, fmt.Errorf("invalid offer configuration: %w", err)
 	}
 
-	// Save campaign to database first
+	// Step 1: Insert local record
 	if err := s.campaignRepo.CreateCampaign(ctx, campaign); err != nil {
 		return nil, fmt.Errorf("failed to create campaign: %w", err)
 	}
 
-	// TODO: Add provider sync using IntegrationService if needed
+	// Step 2: Call IntegrationService to create in provider
+	providerCampaign, err := s.integrationService.CreateCampaign(ctx, *campaign)
+	if err != nil {
+		// Log error but don't fail the operation since local creation succeeded
+		fmt.Printf("Warning: failed to create campaign in provider: %v\n", err)
+		return campaign, nil
+	}
+
+	// Step 3: Create provider mapping with provider ID and payload
+	var providerID *string
+	if providerCampaign.NetworkAdvertiserID != nil {
+		idStr := fmt.Sprintf("%d", *providerCampaign.NetworkAdvertiserID)
+		providerID = &idStr
+	}
+	mapping := &domain.CampaignProviderMapping{
+		CampaignID:         campaign.CampaignID,
+		ProviderType:       "everflow",
+		ProviderCampaignID: providerID,
+		APICredentials:     nil, // Set by IntegrationService
+		ProviderConfig:     nil, // Set by IntegrationService with full payload
+	}
+
+	if err := s.campaignProviderMappingRepo.CreateCampaignProviderMapping(ctx, mapping); err != nil {
+		// Log error but don't fail the operation since campaign was created in provider
+		fmt.Printf("Warning: failed to create provider mapping for campaign %d: %v\n", campaign.CampaignID, err)
+	}
 
 	return campaign, nil
 }
@@ -156,7 +193,25 @@ func (s *campaignService) UpdateCampaign(ctx context.Context, campaign *domain.C
 	campaign.OrganizationID = existingCampaign.OrganizationID
 	campaign.AdvertiserID = existingCampaign.AdvertiserID
 
-	return s.campaignRepo.UpdateCampaign(ctx, campaign)
+	// Step 1: Update local record first
+	if err := s.campaignRepo.UpdateCampaign(ctx, campaign); err != nil {
+		return fmt.Errorf("failed to update campaign: %w", err)
+	}
+
+	// Step 2: Check if provider mapping exists
+	_, err = s.campaignProviderMappingRepo.GetCampaignProviderMapping(ctx, campaign.CampaignID, "everflow")
+	if err != nil {
+		// No provider mapping exists, skip provider sync
+		return nil
+	}
+
+	// Step 3: Update in provider if mapping exists
+	if err = s.integrationService.UpdateCampaign(ctx, *campaign); err != nil {
+		// Log error but don't fail the operation since local update succeeded
+		fmt.Printf("Warning: failed to update campaign in provider: %v\n", err)
+	}
+
+	return nil
 }
 
 // ListCampaignsByOrganization retrieves a list of campaigns for an organization with pagination
@@ -424,5 +479,110 @@ func (s *campaignService) validateOfferFields(campaign *domain.Campaign) error {
 	return nil
 }
 
-// shouldSyncToProvider determines if a campaign should be synced to the provider
-// TODO: Add provider sync methods using IntegrationService if needed
+// SyncCampaignToProvider syncs a campaign to the provider
+func (s *campaignService) SyncCampaignToProvider(ctx context.Context, campaignID int64) error {
+	// Get local campaign
+	campaign, err := s.campaignRepo.GetCampaignByID(ctx, campaignID)
+	if err != nil {
+		return fmt.Errorf("failed to get campaign: %w", err)
+	}
+
+	// Check if provider mapping exists
+	_, err = s.campaignProviderMappingRepo.GetCampaignProviderMapping(ctx, campaignID, "everflow")
+	if err != nil {
+		// No mapping exists, create in provider
+		return s.createCampaignInProvider(ctx, campaign)
+	}
+
+	// Mapping exists, update in provider
+	if err = s.integrationService.UpdateCampaign(ctx, *campaign); err != nil {
+		return fmt.Errorf("failed to sync campaign to provider: %w", err)
+	}
+
+	return nil
+}
+
+// SyncCampaignFromProvider syncs a campaign from the provider
+func (s *campaignService) SyncCampaignFromProvider(ctx context.Context, campaignID int64) error {
+	// Get provider mapping
+	_, err := s.campaignProviderMappingRepo.GetCampaignProviderMapping(ctx, campaignID, "everflow")
+	if err != nil {
+		return fmt.Errorf("no provider mapping found for campaign %d: %w", campaignID, err)
+	}
+
+	// Convert campaign ID to UUID for IntegrationService
+	campaignUUID := s.int64ToUUID(campaignID)
+	
+	// Get campaign from provider
+	providerCampaign, err := s.integrationService.GetCampaign(ctx, campaignUUID)
+	if err != nil {
+		return fmt.Errorf("failed to get campaign from provider: %w", err)
+	}
+
+	// Update local campaign with provider data
+	localCampaign, err := s.campaignRepo.GetCampaignByID(ctx, campaignID)
+	if err != nil {
+		return fmt.Errorf("failed to get local campaign: %w", err)
+	}
+
+	// Merge provider data into local campaign
+	s.mergeProviderDataIntoCampaign(localCampaign, &providerCampaign)
+
+	// Update local record
+	return s.campaignRepo.UpdateCampaign(ctx, localCampaign)
+}
+
+// Helper methods
+
+// createCampaignInProvider creates a campaign in the provider when no mapping exists
+func (s *campaignService) createCampaignInProvider(ctx context.Context, campaign *domain.Campaign) error {
+	// Create in provider
+	providerCampaign, err := s.integrationService.CreateCampaign(ctx, *campaign)
+	if err != nil {
+		return fmt.Errorf("failed to create campaign in provider: %w", err)
+	}
+
+	// Create provider mapping
+	var providerID *string
+	if providerCampaign.NetworkAdvertiserID != nil {
+		idStr := fmt.Sprintf("%d", *providerCampaign.NetworkAdvertiserID)
+		providerID = &idStr
+	}
+	mapping := &domain.CampaignProviderMapping{
+		CampaignID:         campaign.CampaignID,
+		ProviderType:       "everflow",
+		ProviderCampaignID: providerID,
+		APICredentials:     nil, // Set by IntegrationService
+		ProviderConfig:     nil, // Set by IntegrationService with full payload
+	}
+
+	if err := s.campaignProviderMappingRepo.CreateCampaignProviderMapping(ctx, mapping); err != nil {
+		fmt.Printf("Warning: failed to create provider mapping for campaign %d: %v\n", campaign.CampaignID, err)
+	}
+
+	return nil
+}
+
+// mergeProviderDataIntoCampaign merges provider data into local campaign
+func (s *campaignService) mergeProviderDataIntoCampaign(local *domain.Campaign, provider *domain.Campaign) {
+	// Merge relevant fields from provider into local
+	if provider.NetworkAdvertiserID != nil {
+		local.NetworkAdvertiserID = provider.NetworkAdvertiserID
+	}
+	// Add other fields as needed based on what the provider returns
+}
+
+// int64ToUUID converts int64 to UUID (copied from other services)
+func (s *campaignService) int64ToUUID(id int64) uuid.UUID {
+	// Convert int64 back to UUID format
+	// This is a simplified approach - in production you might want a more sophisticated mapping
+	hex := fmt.Sprintf("%015x", id)
+	// Pad to 32 characters
+	for len(hex) < 32 {
+		hex = "0" + hex
+	}
+	// Format as UUID
+	uuidStr := fmt.Sprintf("%s-%s-%s-%s-%s", hex[:8], hex[8:12], hex[12:16], hex[16:20], hex[20:32])
+	parsed, _ := uuid.Parse(uuidStr)
+	return parsed
+}

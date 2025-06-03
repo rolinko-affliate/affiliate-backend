@@ -35,6 +35,7 @@ import (
 	"github.com/affiliate-backend/internal/api/handlers"
 	"github.com/affiliate-backend/internal/config"
 	"github.com/affiliate-backend/internal/platform/crypto"
+	"github.com/affiliate-backend/internal/platform/everflow"
 	"github.com/affiliate-backend/internal/repository"
 	"github.com/affiliate-backend/internal/service"
 )
@@ -138,21 +139,38 @@ func main() {
 	profileRepo := repository.NewPgxProfileRepository(repository.DB)
 	organizationRepo := repository.NewPgxOrganizationRepository(repository.DB)
 	advertiserRepo := repository.NewPgxAdvertiserRepository(repository.DB)
-	providerMappingRepo := repository.NewPgxAdvertiserProviderMappingRepository(repository.DB)
-	campaignRepo := repository.NewPgxCampaignRepository(repository.DB)
+	advertiserProviderMappingRepo := repository.NewPgxAdvertiserProviderMappingRepository(repository.DB)
 	affiliateRepo := repository.NewPgxAffiliateRepository(repository.DB)
+	affiliateProviderMappingRepo := repository.NewPgxAffiliateProviderMappingRepository(repository.DB)
+	campaignRepo := repository.NewPgxCampaignRepository(repository.DB)
+	campaignProviderMappingRepo := repository.NewPgxCampaignProviderMappingRepository(repository.DB)
 	// Initialize other repositories as needed
 
 	// Initialize Platform Services
 	cryptoService := crypto.NewServiceFromConfig()
 	
+	// Initialize integration service with Everflow configuration
+	everflowConfig := everflow.Config{
+		BaseURL: "https://api.eflow.team",
+		APIKey:  "your-api-key-here", // TODO: Load from environment
+	}
+	integrationService := everflow.NewIntegrationServiceWithClients(
+		everflowConfig,
+		advertiserRepo,
+		affiliateRepo,
+		campaignRepo,
+		advertiserProviderMappingRepo,
+		affiliateProviderMappingRepo,
+		campaignProviderMappingRepo,
+	)
+	
 	// Initialize Domain Services
 	profileService := service.NewProfileService(profileRepo)
 	organizationService := service.NewOrganizationService(organizationRepo)
 	
-	advertiserService := service.NewAdvertiserService(advertiserRepo, providerMappingRepo, organizationRepo, cryptoService)
-	affiliateService := service.NewAffiliateService(affiliateRepo, organizationRepo)
-	campaignService := service.NewCampaignService(campaignRepo, advertiserRepo, organizationRepo, cryptoService)
+	advertiserService := service.NewAdvertiserService(advertiserRepo, advertiserProviderMappingRepo, organizationRepo, cryptoService, integrationService)
+	affiliateService := service.NewAffiliateService(affiliateRepo, affiliateProviderMappingRepo, organizationRepo, integrationService)
+	campaignService := service.NewCampaignService(campaignRepo, campaignProviderMappingRepo, advertiserRepo, organizationRepo, cryptoService, integrationService)
 	// Initialize other services as needed
 
 	// Initialize Handlers

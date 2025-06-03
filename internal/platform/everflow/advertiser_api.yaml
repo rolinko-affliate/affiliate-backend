@@ -1,0 +1,791 @@
+openapi: 3.0.0
+info:
+  title: Everflow Advertiser API Schema Definitions
+  description: |
+    This OpenAPI specification defines the data models and schemas for Everflow API integration.
+    
+    **Important**: This file contains only schema definitions used by the client implementation 
+    for transparent sync operations. Users do not interact with these Everflow endpoints directly.
+    
+    **Architecture**:
+    - Users interact with local API endpoints (e.g., /api/advertisers)
+    - System stores data locally first
+    - System syncs to Everflow transparently in the background
+    - These schemas ensure proper data mapping between local and Everflow models
+    
+    Reference: [Everflow Docs](https://developers.everflow.io/docs/network/advertisers/)
+  version: "1.0.0"
+servers:
+  - url: https://api.eflow.team
+    description: Everflow API server (used internally by client)
+
+paths:
+  /v1/networks/advertisers:
+    post:
+      summary: "Create Advertiser"
+      description: "Create a new advertiser with the given information."
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EverflowCreateAdvertiserRequest"
+      responses:
+        '201':
+          description: "Created"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Advertiser"
+
+  /v1/networks/advertisers/{advertiserId}:
+    get:
+      summary: "Find Advertiser by ID"
+      description: "Retrieve an advertiser by ID. Supports extra data via the relationship query parameter."
+      parameters:
+        - name: advertiserId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: "The ID of the advertiser to fetch"
+        - name: relationship
+          in: query
+          description: "Include additional related information. Can be repeated."
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              enum: [reporting, labels, demand_partner, billing, integrations, api]
+            uniqueItems: true
+          style: form
+          explode: true
+      responses:
+        '200':
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Advertiser"
+    
+    put:
+      summary: "Update Advertiser"
+      description: "Update an advertiser's details. All fields should be included to avoid unintended resets."
+      parameters:
+        - name: advertiserId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: "The ID of the advertiser to update"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EverflowUpdateAdvertiserRequest"
+      responses:
+        '200':
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Advertiser"
+
+components:
+  schemas:
+    # Main Advertiser Response Schema
+    Advertiser:
+      type: object
+      properties:
+        network_advertiser_id:
+          type: integer
+          format: int64
+          description: Unique identifier for the advertiser
+        network_id:
+          type: integer
+          format: int64
+          description: Network identifier
+        name:
+          type: string
+          description: Name of the advertiser
+        account_status:
+          type: string
+          enum: [active, inactive, suspended]
+          description: Status of the advertiser account
+        network_employee_id:
+          type: integer
+          description: Employee ID of the advertiser's account manager
+        internal_notes:
+          type: string
+          description: Internal notes for the advertiser, not visible to the advertiser
+        address_id:
+          type: integer
+          format: int64
+          description: Address identifier
+        is_contact_address_enabled:
+          type: boolean
+          description: Whether contact address is enabled
+        sales_manager_id:
+          type: integer
+          description: Employee ID of the advertiser's sales manager
+        is_expose_publisher_reporting_data:
+          type: boolean
+          nullable: true
+          description: Whether to expose publisher reporting data
+        default_currency_id:
+          type: string
+          description: Default currency ID (e.g., "USD")
+        platform_name:
+          type: string
+          description: Platform name
+        platform_url:
+          type: string
+          description: Platform URL
+        platform_username:
+          type: string
+          description: Platform username
+        reporting_timezone_id:
+          type: integer
+          description: Timezone ID for reporting
+        accounting_contact_email:
+          type: string
+          description: Accounting contact email
+        verification_token:
+          type: string
+          description: Verification token for postbacks
+        offer_id_macro:
+          type: string
+          description: Offer ID macro
+        affiliate_id_macro:
+          type: string
+          description: Affiliate ID macro
+        time_created:
+          type: integer
+          format: int64
+          description: Creation timestamp
+        time_saved:
+          type: integer
+          format: int64
+          description: Last saved timestamp
+        attribution_method:
+          type: string
+          enum: [last_touch, first_touch]
+          description: Attribution method
+        email_attribution_method:
+          type: string
+          enum: [last_affiliate_attribution, first_affiliate_attribution]
+          description: Email attribution method
+        attribution_priority:
+          type: string
+          enum: [click, coupon_code]
+          description: Attribution priority
+        contact_address:
+          $ref: "#/components/schemas/AdvertiserAddress"
+        labels:
+          type: array
+          items:
+            type: string
+          description: Labels associated with the advertiser
+        users:
+          type: array
+          items:
+            $ref: "#/components/schemas/AdvertiserUser"
+          description: Users associated with the advertiser
+        billing:
+          $ref: "#/components/schemas/AdvertiserBillingResponse"
+        settings:
+          $ref: "#/components/schemas/AdvertiserSettings"
+        relationship:
+          $ref: "#/components/schemas/AdvertiserRelationship"
+
+    # Create Advertiser Request Schema
+    EverflowCreateAdvertiserRequest:
+      type: object
+      required:
+        - name
+        - account_status
+        - default_currency_id
+      properties:
+        name:
+          type: string
+          description: Name of the advertiser
+        account_status:
+          type: string
+          enum: [active, inactive, suspended]
+          description: Status of the advertiser account
+        default_currency_id:
+          type: string
+          description: Default currency ID (e.g., "USD")
+        network_employee_id:
+          type: integer
+          nullable: true
+          description: Employee ID of the advertiser's account manager
+        sales_manager_id:
+          type: integer
+          nullable: true
+          description: Employee ID of the advertiser's sales manager
+        internal_notes:
+          type: string
+          nullable: true
+          description: Internal notes for the advertiser
+        reporting_timezone_id:
+          type: integer
+          nullable: true
+          description: Timezone ID for reporting
+        attribution_method:
+          type: string
+          enum: [last_touch, first_touch]
+          nullable: true
+          description: Attribution method
+        email_attribution_method:
+          type: string
+          enum: [last_affiliate_attribution, first_affiliate_attribution]
+          nullable: true
+          description: Email attribution method
+        attribution_priority:
+          type: string
+          enum: [click, coupon_code]
+          nullable: true
+          description: Attribution priority
+        verification_token:
+          type: string
+          nullable: true
+          maxLength: 50
+          description: Verification token for postbacks
+        offer_id_macro:
+          type: string
+          nullable: true
+          description: Offer ID macro
+        affiliate_id_macro:
+          type: string
+          nullable: true
+          description: Affiliate ID macro
+        is_contact_address_enabled:
+          type: boolean
+          nullable: true
+          description: Whether contact address is enabled
+        is_expose_publisher_reporting_data:
+          type: boolean
+          nullable: true
+          description: Whether to expose publisher reporting data
+        platform_name:
+          type: string
+          nullable: true
+          description: Platform name
+        platform_url:
+          type: string
+          nullable: true
+          description: Platform URL
+        platform_username:
+          type: string
+          nullable: true
+          description: Platform username
+        accounting_contact_email:
+          type: string
+          nullable: true
+          format: email
+          description: Accounting contact email
+        contact_address:
+          $ref: "#/components/schemas/AdvertiserAddress"
+        labels:
+          type: array
+          items:
+            type: string
+          description: Labels to associate with the advertiser
+        users:
+          type: array
+          items:
+            $ref: "#/components/schemas/AdvertiserUser"
+          description: Users to create with the advertiser
+        billing:
+          $ref: "#/components/schemas/AdvertiserBilling"
+        settings:
+          $ref: "#/components/schemas/AdvertiserSettings"
+
+    # Update Advertiser Request Schema
+    EverflowUpdateAdvertiserRequest:
+      type: object
+      required:
+        - name
+        - account_status
+        - network_employee_id
+        - default_currency_id
+        - reporting_timezone_id
+      properties:
+        name:
+          type: string
+          description: Name of the advertiser
+        account_status:
+          type: string
+          enum: [active, inactive, suspended]
+          description: Status of the advertiser account
+        network_employee_id:
+          type: integer
+          description: Employee ID of the advertiser's account manager
+        internal_notes:
+          type: string
+          nullable: true
+          description: Internal notes for the advertiser
+        address_id:
+          type: integer
+          nullable: true
+          description: Address identifier
+        is_contact_address_enabled:
+          type: boolean
+          nullable: true
+          description: Whether contact address is enabled
+        sales_manager_id:
+          type: integer
+          nullable: true
+          description: Employee ID of the advertiser's sales manager
+        is_expose_publisher_reporting_data:
+          type: boolean
+          nullable: true
+          description: Whether to expose publisher reporting data
+        default_currency_id:
+          type: string
+          description: Default currency ID (e.g., "USD")
+        platform_name:
+          type: string
+          nullable: true
+          description: Platform name
+        platform_url:
+          type: string
+          nullable: true
+          description: Platform URL
+        platform_username:
+          type: string
+          nullable: true
+          description: Platform username
+        reporting_timezone_id:
+          type: integer
+          description: Timezone ID for reporting
+        attribution_method:
+          type: string
+          enum: [last_touch, first_touch]
+          nullable: true
+          description: Attribution method
+        email_attribution_method:
+          type: string
+          enum: [last_affiliate_attribution, first_affiliate_attribution]
+          nullable: true
+          description: Email attribution method
+        attribution_priority:
+          type: string
+          enum: [click, coupon_code]
+          nullable: true
+          description: Attribution priority
+        accounting_contact_email:
+          type: string
+          nullable: true
+          format: email
+          description: Accounting contact email
+        verification_token:
+          type: string
+          nullable: true
+          description: Verification token for postbacks
+        offer_id_macro:
+          type: string
+          nullable: true
+          description: Offer ID macro
+        affiliate_id_macro:
+          type: string
+          nullable: true
+          description: Affiliate ID macro
+        labels:
+          type: array
+          items:
+            type: string
+          description: Labels to associate with the advertiser
+        contact_address:
+          $ref: "#/components/schemas/AdvertiserAddress"
+        billing:
+          $ref: "#/components/schemas/AdvertiserBilling"
+        settings:
+          $ref: "#/components/schemas/AdvertiserSettings"
+
+    # Address Schema
+    AdvertiserAddress:
+      type: object
+      required:
+        - address_1
+        - city
+        - zip_postal_code
+        - country_code
+        - region_code
+      properties:
+        address_1:
+          type: string
+          description: Primary address line
+        address_2:
+          type: string
+          nullable: true
+          description: Secondary address line
+        city:
+          type: string
+          description: City name
+        zip_postal_code:
+          type: string
+          description: ZIP or postal code
+        country_code:
+          type: string
+          description: Country code (from metadata API)
+        region_code:
+          type: string
+          description: Region/state code (from metadata API)
+
+    # User Schema
+    AdvertiserUser:
+      type: object
+      required:
+        - first_name
+        - last_name
+        - email
+        - account_status
+      properties:
+        first_name:
+          type: string
+          description: User's first name
+        last_name:
+          type: string
+          description: User's last name
+        email:
+          type: string
+          format: email
+          description: User's email address
+        account_status:
+          type: string
+          enum: [active, inactive, suspended]
+          description: User's account status
+        initial_password:
+          type: string
+          nullable: true
+          description: Initial password for the user
+        language_id:
+          type: integer
+          nullable: true
+          description: Language preference ID
+        timezone_id:
+          type: integer
+          nullable: true
+          description: Timezone preference ID
+        currency_id:
+          type: string
+          nullable: true
+          description: Currency preference ID
+
+    # Billing Schema for Requests
+    AdvertiserBilling:
+      type: object
+      required:
+        - billing_frequency
+      properties:
+        billing_frequency:
+          type: string
+          enum: [weekly, bimonthly, monthly, two_months, quarterly, manual, other]
+          description: Billing frequency
+        tax_id:
+          type: string
+          nullable: true
+          description: Tax identification number
+        is_invoice_creation_auto:
+          type: boolean
+          nullable: true
+          description: Whether invoice creation is automatic
+        invoice_amount_threshold:
+          type: number
+          format: float
+          nullable: true
+          description: Invoice amount threshold
+        auto_invoice_start_date:
+          type: string
+          nullable: true
+          description: Auto invoice start date
+        default_invoice_is_hidden:
+          type: boolean
+          nullable: true
+          description: Whether default invoice is hidden
+        invoice_generation_days_delay:
+          type: integer
+          nullable: true
+          description: Invoice generation delay in days
+        default_payment_terms:
+          type: integer
+          nullable: true
+          description: Default payment terms in days
+        details:
+          type: object
+          additionalProperties: true
+          description: Additional billing details
+
+    # Billing Response Schema
+    AdvertiserBillingResponse:
+      type: object
+      properties:
+        network_id:
+          type: integer
+          format: int64
+          description: Network identifier
+        network_advertiser_id:
+          type: integer
+          format: int64
+          description: Advertiser identifier
+        billing_frequency:
+          type: string
+          enum: [weekly, bimonthly, monthly, two_months, quarterly, manual, other]
+          description: Billing frequency
+        invoice_amount_threshold:
+          type: number
+          format: float
+          description: Invoice amount threshold
+        tax_id:
+          type: string
+          description: Tax identification number
+        is_invoice_creation_auto:
+          type: boolean
+          description: Whether invoice creation is automatic
+        auto_invoice_start_date:
+          type: string
+          description: Auto invoice start date
+        default_invoice_is_hidden:
+          type: boolean
+          description: Whether default invoice is hidden
+        invoice_generation_days_delay:
+          type: integer
+          description: Invoice generation delay in days
+        default_payment_terms:
+          type: integer
+          description: Default payment terms in days
+
+    # Settings Schema
+    AdvertiserSettings:
+      type: object
+      properties:
+        exposed_variables:
+          type: object
+          additionalProperties:
+            type: boolean
+          description: Exposed variables settings
+
+    # Relationship Schema
+    AdvertiserRelationship:
+      type: object
+      properties:
+        labels:
+          $ref: "#/components/schemas/AdvertiserLabels"
+        account_manager:
+          $ref: "#/components/schemas/AccountManager"
+        integrations:
+          $ref: "#/components/schemas/AdvertiserIntegrations"
+        reporting:
+          $ref: "#/components/schemas/AdvertiserReporting"
+        api_keys:
+          $ref: "#/components/schemas/AdvertiserAPIKeys"
+        api_whitelist_ips:
+          $ref: "#/components/schemas/AdvertiserAPIWhitelistIPs"
+        billing:
+          $ref: "#/components/schemas/AdvertiserBillingResponse"
+        settings:
+          $ref: "#/components/schemas/AdvertiserSettings"
+        sale_manager:
+          $ref: "#/components/schemas/SalesManager"
+
+    # Labels Schema
+    AdvertiserLabels:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: Total number of labels
+        entries:
+          type: array
+          items:
+            type: string
+          description: List of label entries
+
+    # Account Manager Schema
+    AccountManager:
+      type: object
+      properties:
+        first_name:
+          type: string
+          description: Account manager's first name
+        last_name:
+          type: string
+          description: Account manager's last name
+        email:
+          type: string
+          format: email
+          description: Account manager's email
+        work_phone:
+          type: string
+          description: Work phone number
+        cell_phone:
+          type: string
+          description: Cell phone number
+        instant_messaging_id:
+          type: integer
+          description: Instant messaging ID
+        instant_messaging_identifier:
+          type: string
+          description: Instant messaging identifier
+
+    # Sales Manager Schema
+    SalesManager:
+      type: object
+      properties:
+        first_name:
+          type: string
+          description: Sales manager's first name
+        last_name:
+          type: string
+          description: Sales manager's last name
+        email:
+          type: string
+          format: email
+          description: Sales manager's email
+        work_phone:
+          type: string
+          description: Work phone number
+        cell_phone:
+          type: string
+          description: Cell phone number
+        instant_messaging_id:
+          type: integer
+          description: Instant messaging ID
+        instant_messaging_identifier:
+          type: string
+          description: Instant messaging identifier
+
+    # Integrations Schema
+    AdvertiserIntegrations:
+      type: object
+      properties:
+        advertiser_demand_partner:
+          description: Advertiser demand partner integration
+
+    # Reporting Schema
+    AdvertiserReporting:
+      type: object
+      properties:
+        imp:
+          type: integer
+          description: Impressions
+        total_click:
+          type: integer
+          description: Total clicks
+        unique_click:
+          type: integer
+          description: Unique clicks
+        invalid_click:
+          type: integer
+          description: Invalid clicks
+        duplicate_click:
+          type: integer
+          description: Duplicate clicks
+        gross_click:
+          type: integer
+          description: Gross clicks
+        ctr:
+          type: number
+          format: float
+          description: Click-through rate
+        cv:
+          type: integer
+          description: Conversions
+        invalid_cv_scrub:
+          type: integer
+          description: Invalid conversions scrubbed
+        view_through_cv:
+          type: integer
+          description: View-through conversions
+        total_cv:
+          type: integer
+          description: Total conversions
+        event:
+          type: integer
+          description: Events
+        cvr:
+          type: number
+          format: float
+          description: Conversion rate
+        evr:
+          type: number
+          format: float
+          description: Event rate
+        cpc:
+          type: number
+          format: float
+          description: Cost per click
+        cpm:
+          type: number
+          format: float
+          description: Cost per mille
+        cpa:
+          type: number
+          format: float
+          description: Cost per acquisition
+        epc:
+          type: number
+          format: float
+          description: Earnings per click
+        rpc:
+          type: number
+          format: float
+          description: Revenue per click
+        rpa:
+          type: number
+          format: float
+          description: Revenue per acquisition
+        rpm:
+          type: number
+          format: float
+          description: Revenue per mille
+        payout:
+          type: number
+          format: float
+          description: Total payout
+        revenue:
+          type: number
+          format: float
+          description: Total revenue
+
+    # API Keys Schema
+    AdvertiserAPIKeys:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: Total number of API keys
+        entries:
+          type: array
+          items: {}
+          description: List of API key entries
+
+    # API Whitelist IPs Schema
+    AdvertiserAPIWhitelistIPs:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: Total number of whitelisted IPs
+        entries:
+          type: array
+          items: {}
+          description: List of whitelisted IP entries
+
+    # Pagination Schema
+    Paging:
+      type: object
+      properties:
+        page:
+          type: integer
+          description: Current page number
+        page_size:
+          type: integer
+          description: Number of items per page
+        total_count:
+          type: integer
+          description: Total number of items

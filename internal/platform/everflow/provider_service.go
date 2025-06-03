@@ -7,6 +7,7 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/affiliate-backend/internal/config"
 	"github.com/affiliate-backend/internal/domain"
 	"github.com/affiliate-backend/internal/platform/crypto"
 	"github.com/affiliate-backend/internal/platform/provider"
@@ -25,13 +26,14 @@ type ProviderService struct {
 // NewProviderService creates a new Everflow provider service
 func NewProviderService(
 	apiKey string,
+	cfg *config.Config,
 	advertiserRepo repository.AdvertiserRepository,
 	providerMappingRepo repository.AdvertiserProviderMappingRepository,
 	campaignRepo repository.CampaignRepository,
 	cryptoService crypto.Service,
 ) *ProviderService {
 	return &ProviderService{
-		client:              NewClient(apiKey),
+		client:              NewClient(apiKey, cfg),
 		advertiserRepo:      advertiserRepo,
 		providerMappingRepo: providerMappingRepo,
 		campaignRepo:        campaignRepo,

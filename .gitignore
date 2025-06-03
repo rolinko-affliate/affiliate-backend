@@ -26,3 +26,4 @@ go.work
 
 # Binary
 affiliate-backend
+postgres_data

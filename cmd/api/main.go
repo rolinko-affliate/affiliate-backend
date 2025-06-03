@@ -154,7 +154,7 @@ func main() {
 	
 	// Try to initialize Everflow provider service
 	if apiKey := os.Getenv("EVERFLOW_API_KEY"); apiKey != "" {
-		everflowProviderSvc := everflow.NewProviderService(apiKey, advertiserRepo, providerMappingRepo, campaignRepo, cryptoService)
+		everflowProviderSvc := everflow.NewProviderService(apiKey, &config.AppConfig, advertiserRepo, providerMappingRepo, campaignRepo, cryptoService)
 		providerAdvertiserSvc = everflowProviderSvc
 		providerOfferSvc = everflowProviderSvc
 		log.Println("Everflow provider service initialized")

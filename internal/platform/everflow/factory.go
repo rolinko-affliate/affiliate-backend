@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/affiliate-backend/internal/config"
 	"github.com/affiliate-backend/internal/platform/crypto"
 	"github.com/affiliate-backend/internal/repository"
 )
@@ -17,6 +18,7 @@ type Config struct {
 
 // NewEverflowServiceFromEnv creates a new Everflow service using environment variables
 func NewEverflowServiceFromEnv(
+	cfg *config.Config,
 	advertiserRepo repository.AdvertiserRepository,
 	providerMappingRepo repository.AdvertiserProviderMappingRepository,
 	campaignRepo repository.CampaignRepository,
@@ -26,23 +28,23 @@ func NewEverflowServiceFromEnv(
 	apiKey := os.Getenv("EVERFLOW_API_KEY")
 	if apiKey != "" {
 		log.Println("Creating Everflow service with API key from environment variable")
-		return NewService(apiKey, advertiserRepo, providerMappingRepo, campaignRepo, cryptoService), nil
+		return NewService(apiKey, cfg, advertiserRepo, providerMappingRepo, campaignRepo, cryptoService), nil
 	}
 
 	// Check if EVERFLOW_CONFIG is set (JSON string)
 	configJSON := os.Getenv("EVERFLOW_CONFIG")
 	if configJSON != "" {
-		var config Config
-		if err := json.Unmarshal([]byte(configJSON), &config); err != nil {
+		var everflowConfig Config
+		if err := json.Unmarshal([]byte(configJSON), &everflowConfig); err != nil {
 			return nil, fmt.Errorf("failed to parse EVERFLOW_CONFIG: %w", err)
 		}
 
-		if config.APIKey == "" {
+		if everflowConfig.APIKey == "" {
 			return nil, fmt.Errorf("EVERFLOW_CONFIG is missing api_key")
 		}
 
 		log.Println("Creating Everflow service with API key from EVERFLOW_CONFIG")
-		return NewService(config.APIKey, advertiserRepo, providerMappingRepo, campaignRepo, cryptoService), nil
+		return NewService(everflowConfig.APIKey, cfg, advertiserRepo, providerMappingRepo, campaignRepo, cryptoService), nil
 	}
 
 	// If no configuration is found, return nil without error

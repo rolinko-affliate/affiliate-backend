@@ -8,11 +8,19 @@ import (
 	"net/http/httptest"
 	"testing"
 
+	"github.com/affiliate-backend/internal/config"
 	"github.com/affiliate-backend/internal/domain"
 	"github.com/affiliate-backend/internal/platform/crypto"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 )
+
+// testConfig returns a test configuration
+func testConfig() *config.Config {
+	return &config.Config{
+		DebugMode: false, // Set to false for tests to avoid noise
+	}
+}
 
 // Mock repositories
 type MockAdvertiserRepository struct {
@@ -269,7 +277,7 @@ func TestCreateAdvertiserInEverflow(t *testing.T) {
 	})).Return(nil)
 
 	// Create service with mock client
-	client := NewClient("test-api-key")
+	client := NewClient("test-api-key", testConfig())
 	client.httpClient = server.Client()
 
 	service := &Service{
@@ -390,7 +398,7 @@ func TestCreateOfferInEverflow(t *testing.T) {
 	})).Return(nil)
 
 	// Create service with mock client
-	client := NewClient("test-api-key")
+	client := NewClient("test-api-key", testConfig())
 	client.httpClient = server.Client()
 
 	service := &Service{
@@ -424,7 +432,7 @@ func TestMapAdvertiserToEverflowRequest(t *testing.T) {
 	mockCryptoService := new(MockCryptoService)
 
 	service := &Service{
-		client:         NewClient("test-api-key"),
+		client:         NewClient("test-api-key", testConfig()),
 		advertiserRepo:        mockAdvertiserRepo,
 		providerMappingRepo:   mockProviderMappingRepo,
 		campaignRepo:   mockCampaignRepo,
@@ -519,7 +527,7 @@ func TestMapCampaignToEverflowRequest(t *testing.T) {
 	mockCryptoService := new(MockCryptoService)
 
 	service := &Service{
-		client:         NewClient("test-api-key"),
+		client:         NewClient("test-api-key", testConfig()),
 		advertiserRepo:        mockAdvertiserRepo,
 		providerMappingRepo:   mockProviderMappingRepo,
 		campaignRepo:   mockCampaignRepo,
@@ -637,7 +645,7 @@ func TestGetOfferFromEverflow(t *testing.T) {
 	mockCryptoService := new(MockCryptoService)
 
 	// Create service with mock client
-	client := NewClient("test-api-key")
+	client := NewClient("test-api-key", testConfig())
 	client.httpClient = server.Client()
 
 	service := &Service{
@@ -700,7 +708,7 @@ func TestUpdateOfferInEverflow(t *testing.T) {
 	mockCryptoService := new(MockCryptoService)
 
 	// Create service with mock client
-	client := NewClient("test-api-key")
+	client := NewClient("test-api-key", testConfig())
 	client.httpClient = server.Client()
 
 	service := &Service{
@@ -782,7 +790,7 @@ func TestOffersTable(t *testing.T) {
 	mockCryptoService := new(MockCryptoService)
 
 	// Create service with mock client
-	client := NewClient("test-api-key")
+	client := NewClient("test-api-key", testConfig())
 	client.httpClient = server.Client()
 
 	service := &Service{
@@ -843,7 +851,7 @@ func TestServiceWithNewClientMethods(t *testing.T) {
 	mockCryptoService := new(MockCryptoService)
 
 	service := &Service{
-		client:              NewClient("test-api-key"),
+		client:              NewClient("test-api-key", testConfig()),
 		advertiserRepo:      mockAdvertiserRepo,
 		providerMappingRepo: mockProviderMappingRepo,
 		campaignRepo:        mockCampaignRepo,
@@ -942,7 +950,7 @@ func TestServiceNewMethods(t *testing.T) {
 	mockCryptoService := new(MockCryptoService)
 
 	// Create service with mock client
-	client := NewClient("test-api-key")
+	client := NewClient("test-api-key", testConfig())
 	client.httpClient = server.Client()
 
 	service := &Service{

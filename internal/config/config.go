@@ -13,6 +13,7 @@ type Config struct {
 	// Key for encrypting/decrypting sensitive data like Everflow API keys
 	EncryptionKey string `mapstructure:"ENCRYPTION_KEY"` // 32-byte AES key, base64 encoded
 	Environment   string `mapstructure:"ENVIRONMENT"`    // "development" or "production"
+	DebugMode     bool   `mapstructure:"DEBUG_MODE"`     // Enable debug logging for API requests/responses
 }
 
 var AppConfig Config
@@ -26,6 +27,7 @@ func LoadConfig() {
 	// Set defaults (optional)
 	viper.SetDefault("PORT", "8080")
 	viper.SetDefault("ENVIRONMENT", "production")
+	viper.SetDefault("DEBUG_MODE", false)
 
 	if err := viper.ReadInConfig(); err != nil {
 		if _, ok := err.(viper.ConfigFileNotFoundError); ok {
@@ -49,4 +51,24 @@ func LoadConfig() {
 	if AppConfig.EncryptionKey == "" {
 		log.Fatal("ENCRYPTION_KEY must be set for securing provider credentials")
 	}
+}
+
+// IsDebugMode returns true if debug mode is enabled (global function)
+func IsDebugMode() bool {
+	return AppConfig.DebugMode
+}
+
+// IsDevelopment returns true if running in development environment (global function)
+func IsDevelopment() bool {
+	return AppConfig.Environment == "development"
+}
+
+// IsDebugMode returns true if debug mode is enabled (method on Config)
+func (c *Config) IsDebugMode() bool {
+	return c.DebugMode
+}
+
+// IsDevelopment returns true if running in development environment (method on Config)
+func (c *Config) IsDevelopment() bool {
+	return c.Environment == "development"
 }

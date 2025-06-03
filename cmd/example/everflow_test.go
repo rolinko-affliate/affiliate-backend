@@ -6,6 +6,7 @@ import (
 	"testing"
 	"time"
 
+	"github.com/affiliate-backend/internal/config"
 	"github.com/affiliate-backend/internal/domain"
 	"github.com/affiliate-backend/internal/platform/crypto"
 	"github.com/affiliate-backend/internal/platform/everflow"
@@ -169,6 +170,18 @@ func (m *MockCryptoService) Decrypt(ciphertext string) (string, error) {
 	return args.String(0), args.Error(1)
 }
 
+// testConfig returns a test configuration
+func testConfig() *config.Config {
+	return &config.Config{
+		Port:              "8080",
+		DatabaseURL:       "test-db-url",
+		SupabaseJWTSecret: "test-jwt-secret",
+		EncryptionKey:     "test-encryption-key",
+		Environment:       "test",
+		DebugMode:         true,
+	}
+}
+
 // TestEverflowServiceFactory tests the factory function for creating the Everflow service
 func TestEverflowServiceFactory(t *testing.T) {
 	// Skip if running in CI
@@ -188,7 +201,7 @@ func TestEverflowServiceFactory(t *testing.T) {
 		os.Unsetenv("EVERFLOW_API_KEY")
 		os.Unsetenv("EVERFLOW_CONFIG")
 
-		service, err := everflow.NewEverflowServiceFromEnv(
+		service, err := everflow.NewEverflowServiceFromEnv(testConfig(), 
 			mockAdvertiserRepo,
 			mockProviderMappingRepo,
 			mockCampaignRepo,
@@ -204,7 +217,7 @@ func TestEverflowServiceFactory(t *testing.T) {
 		os.Setenv("EVERFLOW_API_KEY", "test-api-key")
 		defer os.Unsetenv("EVERFLOW_API_KEY")
 
-		service, err := everflow.NewEverflowServiceFromEnv(
+		service, err := everflow.NewEverflowServiceFromEnv(testConfig(), 
 			mockAdvertiserRepo,
 			mockProviderMappingRepo,
 			mockCampaignRepo,
@@ -221,7 +234,7 @@ func TestEverflowServiceFactory(t *testing.T) {
 		os.Setenv("EVERFLOW_CONFIG", `{"api_key":"test-api-key-from-config"}`)
 		defer os.Unsetenv("EVERFLOW_CONFIG")
 
-		service, err := everflow.NewEverflowServiceFromEnv(
+		service, err := everflow.NewEverflowServiceFromEnv(testConfig(), 
 			mockAdvertiserRepo,
 			mockProviderMappingRepo,
 			mockCampaignRepo,
@@ -238,7 +251,7 @@ func TestEverflowServiceFactory(t *testing.T) {
 		os.Setenv("EVERFLOW_CONFIG", `{invalid-json}`)
 		defer os.Unsetenv("EVERFLOW_CONFIG")
 
-		service, err := everflow.NewEverflowServiceFromEnv(
+		service, err := everflow.NewEverflowServiceFromEnv(testConfig(), 
 			mockAdvertiserRepo,
 			mockProviderMappingRepo,
 			mockCampaignRepo,
@@ -255,7 +268,7 @@ func TestEverflowServiceFactory(t *testing.T) {
 		os.Setenv("EVERFLOW_CONFIG", `{"api_key":""}`)
 		defer os.Unsetenv("EVERFLOW_CONFIG")
 
-		service, err := everflow.NewEverflowServiceFromEnv(
+		service, err := everflow.NewEverflowServiceFromEnv(testConfig(), 
 			mockAdvertiserRepo,
 			mockProviderMappingRepo,
 			mockCampaignRepo,
@@ -276,6 +289,7 @@ func TestMapAdvertiserToEverflowRequest(t *testing.T) {
 
 	service := everflow.NewService(
 		"test-api-key",
+		testConfig(),
 		mockAdvertiserRepo,
 		mockProviderMappingRepo,
 		mockCampaignRepo,

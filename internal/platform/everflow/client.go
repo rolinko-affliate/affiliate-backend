@@ -5,10 +5,14 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"io"
+	"log"
 	"net/http"
 	"net/url"
 	"strconv"
 	"time"
+
+	"github.com/affiliate-backend/internal/config"
 )
 
 var everflowAPIBaseURL = "https://api.eflow.team/v1" // Everflow API base URL
@@ -17,14 +21,114 @@ var everflowAPIBaseURL = "https://api.eflow.team/v1" // Everflow API base URL
 type Client struct {
 	httpClient *http.Client
 	apiKey     string
+	config     *config.Config
 }
 
 // NewClient creates a new Everflow API client
-func NewClient(apiKey string) *Client {
+func NewClient(apiKey string, cfg *config.Config) *Client {
 	return &Client{
 		httpClient: &http.Client{Timeout: 30 * time.Second}, // Increased timeout for potentially slow API responses
 		apiKey:     apiKey,
+		config:     cfg,
 	}
+}
+
+// logRequest logs the HTTP request details if debug mode is enabled
+func (c *Client) logRequest(method, url string, body []byte) {
+	if c.config == nil || !c.config.IsDebugMode() {
+		return
+	}
+	
+	log.Printf("[EVERFLOW DEBUG] Request: %s %s", method, url)
+	if len(body) > 0 {
+		// Pretty print JSON if possible
+		var prettyJSON bytes.Buffer
+		if err := json.Indent(&prettyJSON, body, "", "  "); err == nil {
+			log.Printf("[EVERFLOW DEBUG] Request Body:\n%s", prettyJSON.String())
+		} else {
+			log.Printf("[EVERFLOW DEBUG] Request Body: %s", string(body))
+		}
+	}
+}
+
+// logResponse logs the HTTP response details if debug mode is enabled
+func (c *Client) logResponse(statusCode int, body []byte) {
+	if c.config == nil || !c.config.IsDebugMode() {
+		return
+	}
+	
+	log.Printf("[EVERFLOW DEBUG] Response: Status %d", statusCode)
+	if len(body) > 0 {
+		// Pretty print JSON if possible
+		var prettyJSON bytes.Buffer
+		if err := json.Indent(&prettyJSON, body, "", "  "); err == nil {
+			log.Printf("[EVERFLOW DEBUG] Response Body:\n%s", prettyJSON.String())
+		} else {
+			log.Printf("[EVERFLOW DEBUG] Response Body: %s", string(body))
+		}
+	}
+}
+
+// doRequest performs an HTTP request with logging and error handling
+func (c *Client) doRequest(ctx context.Context, method, url string, body []byte) (*http.Response, []byte, error) {
+	// Log the request
+	c.logRequest(method, url, body)
+	
+	var bodyReader io.Reader
+	if len(body) > 0 {
+		bodyReader = bytes.NewBuffer(body)
+	}
+	
+	httpReq, err := http.NewRequestWithContext(ctx, method, url, bodyReader)
+	if err != nil {
+		return nil, nil, fmt.Errorf("failed to create HTTP request: %w", err)
+	}
+	
+	// Set headers
+	httpReq.Header.Set("X-Eflow-API-Key", c.apiKey)
+	if len(body) > 0 {
+		httpReq.Header.Set("Content-Type", "application/json")
+	}
+	
+	resp, err := c.httpClient.Do(httpReq)
+	if err != nil {
+		return nil, nil, fmt.Errorf("failed to execute request to Everflow: %w", err)
+	}
+	
+	// Read response body
+	respBody, err := io.ReadAll(resp.Body)
+	resp.Body.Close()
+	if err != nil {
+		return nil, nil, fmt.Errorf("failed to read response body: %w", err)
+	}
+	
+	// Log the response
+	c.logResponse(resp.StatusCode, respBody)
+	
+	return resp, respBody, nil
+}
+
+// handleErrorResponse processes error responses and returns appropriate errors
+func (c *Client) handleErrorResponse(resp *http.Response, respBody []byte, expectedStatusCodes ...int) error {
+	// Check if status code is expected
+	for _, expectedCode := range expectedStatusCodes {
+		if resp.StatusCode == expectedCode {
+			return nil
+		}
+	}
+	
+	// Handle specific error cases
+	if resp.StatusCode == http.StatusNotFound {
+		return fmt.Errorf("resource not found (404)")
+	}
+	
+	// Try to parse error response
+	var errorResp map[string]interface{}
+	if err := json.Unmarshal(respBody, &errorResp); err == nil {
+		return fmt.Errorf("Everflow API request failed with status %d: %v", resp.StatusCode, errorResp)
+	}
+	
+	return fmt.Errorf("Everflow API request failed with status %d: %s", resp.StatusCode, string(respBody))
 }
 
 // EverflowCreateAdvertiserRequest represents the request to create an advertiser in Everflow
@@ -507,29 +611,17 @@ func (c *Client) ListAdvertisers(ctx context.Context, opts *ListAdvertisersOptio
 		}
 	}
 
-	httpReq, err := http.NewRequestWithContext(ctx, "GET", reqURL, nil)
+	resp, respBody, err := c.doRequest(ctx, "GET", reqURL, nil)
 	if err != nil {
-		return nil, fmt.Errorf("failed to create HTTP request: %w", err)
+		return nil, err
 	}
-	httpReq.Header.Set("X-Eflow-API-Key", c.apiKey)
 
-	resp, err := c.httpClient.Do(httpReq)
-	if err != nil {
-		return nil, fmt.Errorf("failed to execute request to Everflow: %w", err)
-	}
-	defer resp.Body.Close()
-
-	if resp.StatusCode != http.StatusOK {
-		// Read error body for more details
-		var errorResp map[string]interface{}
-		if err := json.NewDecoder(resp.Body).Decode(&errorResp); err == nil {
-			return nil, fmt.Errorf("Everflow API request failed with status %d: %v", resp.StatusCode, errorResp)
-		}
-		return nil, fmt.Errorf("Everflow API request failed with status %d", resp.StatusCode)
+	if err := c.handleErrorResponse(resp, respBody, http.StatusOK); err != nil {
+		return nil, err
 	}
 
 	var listResp EverflowListAdvertisersResponse
-	if err := json.NewDecoder(resp.Body).Decode(&listResp); err != nil {
+	if err := json.Unmarshal(respBody, &listResp); err != nil {
 		return nil, fmt.Errorf("failed to decode Everflow list advertisers response: %w", err)
 	}
 
@@ -543,30 +635,17 @@ func (c *Client) CreateAdvertiser(ctx context.Context, req EverflowCreateAdverti
 		return nil, fmt.Errorf("failed to marshal create advertiser request: %w", err)
 	}
 
-	httpReq, err := http.NewRequestWithContext(ctx, "POST", everflowAPIBaseURL+"/networks/advertisers", bytes.NewBuffer(payloadBytes))
+	resp, respBody, err := c.doRequest(ctx, "POST", everflowAPIBaseURL+"/networks/advertisers", payloadBytes)
 	if err != nil {
-		return nil, fmt.Errorf("failed to create HTTP request: %w", err)
+		return nil, err
 	}
-	httpReq.Header.Set("Content-Type", "application/json")
-	httpReq.Header.Set("X-Eflow-API-Key", c.apiKey)
 
-	resp, err := c.httpClient.Do(httpReq)
-	if err != nil {
-		return nil, fmt.Errorf("failed to execute request to Everflow: %w", err)
-	}
-	defer resp.Body.Close()
-
-	if resp.StatusCode != http.StatusCreated && resp.StatusCode != http.StatusOK {
-		// Read error body for more details
-		var errorResp map[string]interface{}
-		if err := json.NewDecoder(resp.Body).Decode(&errorResp); err == nil {
-			return nil, fmt.Errorf("Everflow API request failed with status %d: %v", resp.StatusCode, errorResp)
-		}
-		return nil, fmt.Errorf("Everflow API request failed with status %d", resp.StatusCode)
+	if err := c.handleErrorResponse(resp, respBody, http.StatusCreated, http.StatusOK); err != nil {
+		return nil, err
 	}
 
 	var createResp EverflowCreateAdvertiserResponse
-	if err := json.NewDecoder(resp.Body).Decode(&createResp); err != nil {
+	if err := json.Unmarshal(respBody, &createResp); err != nil {
 		return nil, fmt.Errorf("failed to decode Everflow create advertiser response: %w", err)
 	}
 
@@ -601,33 +680,21 @@ func (c *Client) GetAdvertiser(ctx context.Context, networkAdvertiserID int64, o
 		reqURL += "?" + params.Encode()
 	}
 
-	httpReq, err := http.NewRequestWithContext(ctx, "GET", reqURL, nil)
+	resp, respBody, err := c.doRequest(ctx, "GET", reqURL, nil)
 	if err != nil {
-		return nil, fmt.Errorf("failed to create HTTP request: %w", err)
+		return nil, err
 	}
-	httpReq.Header.Set("X-Eflow-API-Key", c.apiKey)
-
-	resp, err := c.httpClient.Do(httpReq)
-	if err != nil {
-		return nil, fmt.Errorf("failed to execute request to Everflow: %w", err)
-	}
-	defer resp.Body.Close()
 
 	if resp.StatusCode == http.StatusNotFound {
 		return nil, fmt.Errorf("advertiser with ID %d not found", networkAdvertiserID)
 	}
 
-	if resp.StatusCode != http.StatusOK {
-		// Read error body for more details
-		var errorResp map[string]interface{}
-		if err := json.NewDecoder(resp.Body).Decode(&errorResp); err == nil {
-			return nil, fmt.Errorf("Everflow API request failed with status %d: %v", resp.StatusCode, errorResp)
-		}
-		return nil, fmt.Errorf("Everflow API request failed with status %d", resp.StatusCode)
+	if err := c.handleErrorResponse(resp, respBody, http.StatusOK); err != nil {
+		return nil, err
 	}
 
 	var advertiser Advertiser
-	if err := json.NewDecoder(resp.Body).Decode(&advertiser); err != nil {
+	if err := json.Unmarshal(respBody, &advertiser); err != nil {
 		return nil, fmt.Errorf("failed to decode Everflow get advertiser response: %w", err)
 	}
 
@@ -669,34 +736,22 @@ func (c *Client) UpdateAdvertiser(ctx context.Context, networkAdvertiserID int64
 		return nil, fmt.Errorf("failed to marshal update advertiser request: %w", err)
 	}
 
-	httpReq, err := http.NewRequestWithContext(ctx, "PUT", fmt.Sprintf("%s/networks/advertisers/%d", everflowAPIBaseURL, networkAdvertiserID), bytes.NewBuffer(payloadBytes))
+	reqURL := fmt.Sprintf("%s/networks/advertisers/%d", everflowAPIBaseURL, networkAdvertiserID)
+	resp, respBody, err := c.doRequest(ctx, "PUT", reqURL, payloadBytes)
 	if err != nil {
-		return nil, fmt.Errorf("failed to create HTTP request: %w", err)
+		return nil, err
 	}
-	httpReq.Header.Set("Content-Type", "application/json")
-	httpReq.Header.Set("X-Eflow-API-Key", c.apiKey)
-
-	resp, err := c.httpClient.Do(httpReq)
-	if err != nil {
-		return nil, fmt.Errorf("failed to execute request to Everflow: %w", err)
-	}
-	defer resp.Body.Close()
 
 	if resp.StatusCode == http.StatusNotFound {
 		return nil, fmt.Errorf("advertiser with ID %d not found", networkAdvertiserID)
 	}
 
-	if resp.StatusCode != http.StatusOK {
-		// Read error body for more details
-		var errorResp map[string]interface{}
-		if err := json.NewDecoder(resp.Body).Decode(&errorResp); err == nil {
-			return nil, fmt.Errorf("Everflow API request failed with status %d: %v", resp.StatusCode, errorResp)
-		}
-		return nil, fmt.Errorf("Everflow API request failed with status %d", resp.StatusCode)
+	if err := c.handleErrorResponse(resp, respBody, http.StatusOK); err != nil {
+		return nil, err
 	}
 
 	var advertiser Advertiser
-	if err := json.NewDecoder(resp.Body).Decode(&advertiser); err != nil {
+	if err := json.Unmarshal(respBody, &advertiser); err != nil {
 		return nil, fmt.Errorf("failed to decode Everflow update advertiser response: %w", err)
 	}
 
@@ -730,33 +785,21 @@ func (c *Client) GetOffer(ctx context.Context, networkOfferID int64, opts *GetOf
 		reqURL += "?" + params.Encode()
 	}
 
-	httpReq, err := http.NewRequestWithContext(ctx, "GET", reqURL, nil)
+	resp, respBody, err := c.doRequest(ctx, "GET", reqURL, nil)
 	if err != nil {
-		return nil, fmt.Errorf("failed to create HTTP request: %w", err)
+		return nil, err
 	}
-	httpReq.Header.Set("X-Eflow-API-Key", c.apiKey)
-
-	resp, err := c.httpClient.Do(httpReq)
-	if err != nil {
-		return nil, fmt.Errorf("failed to execute request to Everflow: %w", err)
-	}
-	defer resp.Body.Close()
 
 	if resp.StatusCode == http.StatusNotFound {
 		return nil, fmt.Errorf("offer with ID %d not found", networkOfferID)
 	}
 
-	if resp.StatusCode != http.StatusOK {
-		// Read error body for more details
-		var errorResp map[string]interface{}
-		if err := json.NewDecoder(resp.Body).Decode(&errorResp); err == nil {
-			return nil, fmt.Errorf("Everflow API request failed with status %d: %v", resp.StatusCode, errorResp)
-		}
-		return nil, fmt.Errorf("Everflow API request failed with status %d", resp.StatusCode)
+	if err := c.handleErrorResponse(resp, respBody, http.StatusOK); err != nil {
+		return nil, err
 	}
 
 	var offer Offer
-	if err := json.NewDecoder(resp.Body).Decode(&offer); err != nil {
+	if err := json.Unmarshal(respBody, &offer); err != nil {
 		return nil, fmt.Errorf("failed to decode Everflow get offer response: %w", err)
 	}
 
@@ -770,30 +813,17 @@ func (c *Client) CreateOffer(ctx context.Context, req OfferInput) (*Offer, error
 		return nil, fmt.Errorf("failed to marshal create offer request: %w", err)
 	}
 
-	httpReq, err := http.NewRequestWithContext(ctx, "POST", everflowAPIBaseURL+"/networks/offers", bytes.NewBuffer(payloadBytes))
+	resp, respBody, err := c.doRequest(ctx, "POST", everflowAPIBaseURL+"/networks/offers", payloadBytes)
 	if err != nil {
-		return nil, fmt.Errorf("failed to create HTTP request: %w", err)
+		return nil, err
 	}
-	httpReq.Header.Set("Content-Type", "application/json")
-	httpReq.Header.Set("X-Eflow-API-Key", c.apiKey)
 
-	resp, err := c.httpClient.Do(httpReq)
-	if err != nil {
-		return nil, fmt.Errorf("failed to execute request to Everflow: %w", err)
-	}
-	defer resp.Body.Close()
-
-	if resp.StatusCode != http.StatusCreated && resp.StatusCode != http.StatusOK {
-		// Read error body for more details
-		var errorResp map[string]interface{}
-		if err := json.NewDecoder(resp.Body).Decode(&errorResp); err == nil {
-			return nil, fmt.Errorf("Everflow API request failed with status %d: %v", resp.StatusCode, errorResp)
-		}
-		return nil, fmt.Errorf("Everflow API request failed with status %d", resp.StatusCode)
+	if err := c.handleErrorResponse(resp, respBody, http.StatusCreated, http.StatusOK); err != nil {
+		return nil, err
 	}
 
 	var offer Offer
-	if err := json.NewDecoder(resp.Body).Decode(&offer); err != nil {
+	if err := json.Unmarshal(respBody, &offer); err != nil {
 		return nil, fmt.Errorf("failed to decode Everflow create offer response: %w", err)
 	}
 
@@ -807,34 +837,22 @@ func (c *Client) UpdateOffer(ctx context.Context, networkOfferID int64, req Offe
 		return nil, fmt.Errorf("failed to marshal update offer request: %w", err)
 	}
 
-	httpReq, err := http.NewRequestWithContext(ctx, "PUT", fmt.Sprintf("%s/networks/offers/%d", everflowAPIBaseURL, networkOfferID), bytes.NewBuffer(payloadBytes))
+	reqURL := fmt.Sprintf("%s/networks/offers/%d", everflowAPIBaseURL, networkOfferID)
+	resp, respBody, err := c.doRequest(ctx, "PUT", reqURL, payloadBytes)
 	if err != nil {
-		return nil, fmt.Errorf("failed to create HTTP request: %w", err)
+		return nil, err
 	}
-	httpReq.Header.Set("Content-Type", "application/json")
-	httpReq.Header.Set("X-Eflow-API-Key", c.apiKey)
-
-	resp, err := c.httpClient.Do(httpReq)
-	if err != nil {
-		return nil, fmt.Errorf("failed to execute request to Everflow: %w", err)
-	}
-	defer resp.Body.Close()
 
 	if resp.StatusCode == http.StatusNotFound {
 		return nil, fmt.Errorf("offer with ID %d not found", networkOfferID)
 	}
 
-	if resp.StatusCode != http.StatusOK {
-		// Read error body for more details
-		var errorResp map[string]interface{}
-		if err := json.NewDecoder(resp.Body).Decode(&errorResp); err == nil {
-			return nil, fmt.Errorf("Everflow API request failed with status %d: %v", resp.StatusCode, errorResp)
-		}
-		return nil, fmt.Errorf("Everflow API request failed with status %d", resp.StatusCode)
+	if err := c.handleErrorResponse(resp, respBody, http.StatusOK); err != nil {
+		return nil, err
 	}
 
 	var offer Offer
-	if err := json.NewDecoder(resp.Body).Decode(&offer); err != nil {
+	if err := json.Unmarshal(respBody, &offer); err != nil {
 		return nil, fmt.Errorf("failed to decode Everflow update offer response: %w", err)
 	}
 
@@ -869,30 +887,17 @@ func (c *Client) OffersTable(ctx context.Context, req OffersTableRequest, opts *
 		return nil, fmt.Errorf("failed to marshal offers table request: %w", err)
 	}
 
-	httpReq, err := http.NewRequestWithContext(ctx, "POST", reqURL, bytes.NewBuffer(payloadBytes))
+	resp, respBody, err := c.doRequest(ctx, "POST", reqURL, payloadBytes)
 	if err != nil {
-		return nil, fmt.Errorf("failed to create HTTP request: %w", err)
+		return nil, err
 	}
-	httpReq.Header.Set("Content-Type", "application/json")
-	httpReq.Header.Set("X-Eflow-API-Key", c.apiKey)
 
-	resp, err := c.httpClient.Do(httpReq)
-	if err != nil {
-		return nil, fmt.Errorf("failed to execute request to Everflow: %w", err)
-	}
-	defer resp.Body.Close()
-
-	if resp.StatusCode != http.StatusOK {
-		// Read error body for more details
-		var errorResp map[string]interface{}
-		if err := json.NewDecoder(resp.Body).Decode(&errorResp); err == nil {
-			return nil, fmt.Errorf("Everflow API request failed with status %d: %v", resp.StatusCode, errorResp)
-		}
-		return nil, fmt.Errorf("Everflow API request failed with status %d", resp.StatusCode)
+	if err := c.handleErrorResponse(resp, respBody, http.StatusOK); err != nil {
+		return nil, err
 	}
 
 	var offersResp OffersTableResponse
-	if err := json.NewDecoder(resp.Body).Decode(&offersResp); err != nil {
+	if err := json.Unmarshal(respBody, &offersResp); err != nil {
 		return nil, fmt.Errorf("failed to decode Everflow offers table response: %w", err)
 	}
 
@@ -918,31 +923,14 @@ func (c *Client) AddTagsToAdvertiser(ctx context.Context, networkAdvertiserID in
 		return fmt.Errorf("failed to marshal add tags request: %w", err)
 	}
 
-	httpReq, err := http.NewRequestWithContext(
-		ctx,
-		"POST",
-		fmt.Sprintf("%s/networks/advertisers/%d/tags", everflowAPIBaseURL, networkAdvertiserID),
-		bytes.NewBuffer(payloadBytes),
-	)
+	reqURL := fmt.Sprintf("%s/networks/advertisers/%d/tags", everflowAPIBaseURL, networkAdvertiserID)
+	resp, respBody, err := c.doRequest(ctx, "POST", reqURL, payloadBytes)
 	if err != nil {
-		return fmt.Errorf("failed to create HTTP request: %w", err)
+		return err
 	}
-	httpReq.Header.Set("Content-Type", "application/json")
-	httpReq.Header.Set("X-Eflow-API-Key", c.apiKey)
 
-	resp, err := c.httpClient.Do(httpReq)
-	if err != nil {
-		return fmt.Errorf("failed to execute request to Everflow: %w", err)
-	}
-	defer resp.Body.Close()
-
-	if resp.StatusCode != http.StatusCreated && resp.StatusCode != http.StatusOK {
-		// Read error body for more details
-		var errorResp map[string]interface{}
-		if err := json.NewDecoder(resp.Body).Decode(&errorResp); err == nil {
-			return fmt.Errorf("Everflow API request failed with status %d: %v", resp.StatusCode, errorResp)
-		}
-		return fmt.Errorf("Everflow API request failed with status %d", resp.StatusCode)
+	if err := c.handleErrorResponse(resp, respBody, http.StatusCreated, http.StatusOK); err != nil {
+		return err
 	}
 
 	return nil
@@ -967,31 +955,14 @@ func (c *Client) AddTagsToOffer(ctx context.Context, networkOfferID int64, tags 
 		return fmt.Errorf("failed to marshal add tags request: %w", err)
 	}
 
-	httpReq, err := http.NewRequestWithContext(
-		ctx,
-		"POST",
-		fmt.Sprintf("%s/networks/offers/%d/tags", everflowAPIBaseURL, networkOfferID),
-		bytes.NewBuffer(payloadBytes),
-	)
+	reqURL := fmt.Sprintf("%s/networks/offers/%d/tags", everflowAPIBaseURL, networkOfferID)
+	resp, respBody, err := c.doRequest(ctx, "POST", reqURL, payloadBytes)
 	if err != nil {
-		return fmt.Errorf("failed to create HTTP request: %w", err)
+		return err
 	}
-	httpReq.Header.Set("Content-Type", "application/json")
-	httpReq.Header.Set("X-Eflow-API-Key", c.apiKey)
 
-	resp, err := c.httpClient.Do(httpReq)
-	if err != nil {
-		return fmt.Errorf("failed to execute request to Everflow: %w", err)
-	}
-	defer resp.Body.Close()
-
-	if resp.StatusCode != http.StatusCreated && resp.StatusCode != http.StatusOK {
-		// Read error body for more details
-		var errorResp map[string]interface{}
-		if err := json.NewDecoder(resp.Body).Decode(&errorResp); err == nil {
-			return fmt.Errorf("Everflow API request failed with status %d: %v", resp.StatusCode, errorResp)
-		}
-		return fmt.Errorf("Everflow API request failed with status %d", resp.StatusCode)
+	if err := c.handleErrorResponse(resp, respBody, http.StatusCreated, http.StatusOK); err != nil {
+		return err
 	}
 
 	return nil
@@ -1016,33 +987,20 @@ func (c *Client) GenerateTrackingLink(ctx context.Context, networkOfferID int64,
 		return "", fmt.Errorf("failed to marshal tracking link request: %w", err)
 	}
 
-	httpReq, err := http.NewRequestWithContext(ctx, "POST", everflowAPIBaseURL+"/networks/tracking_links", bytes.NewBuffer(payloadBytes))
+	resp, respBody, err := c.doRequest(ctx, "POST", everflowAPIBaseURL+"/networks/tracking_links", payloadBytes)
 	if err != nil {
-		return "", fmt.Errorf("failed to create HTTP request: %w", err)
+		return "", err
 	}
-	httpReq.Header.Set("Content-Type", "application/json")
-	httpReq.Header.Set("X-Eflow-API-Key", c.apiKey)
 
-	resp, err := c.httpClient.Do(httpReq)
-	if err != nil {
-		return "", fmt.Errorf("failed to execute request to Everflow: %w", err)
-	}
-	defer resp.Body.Close()
-
-	if resp.StatusCode != http.StatusCreated && resp.StatusCode != http.StatusOK {
-		// Read error body for more details
-		var errorResp map[string]interface{}
-		if err := json.NewDecoder(resp.Body).Decode(&errorResp); err == nil {
-			return "", fmt.Errorf("Everflow API request failed with status %d: %v", resp.StatusCode, errorResp)
-		}
-		return "", fmt.Errorf("Everflow API request failed with status %d", resp.StatusCode)
+	if err := c.handleErrorResponse(resp, respBody, http.StatusCreated, http.StatusOK); err != nil {
+		return "", err
 	}
 
 	var response struct {
 		TrackingURL string `json:"tracking_url"`
 	}
 
-	if err := json.NewDecoder(resp.Body).Decode(&response); err != nil {
+	if err := json.Unmarshal(respBody, &response); err != nil {
 		return "", fmt.Errorf("failed to decode Everflow tracking link response: %w", err)
 	}
 

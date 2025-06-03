@@ -44,6 +44,7 @@ func main() {
 	if everflowAPIKey != "" {
 		everflowProviderService := everflow.NewProviderService(
 			everflowAPIKey,
+			&config.AppConfig,
 			advertiserRepo,
 			providerMappingRepo,
 			campaignRepo,

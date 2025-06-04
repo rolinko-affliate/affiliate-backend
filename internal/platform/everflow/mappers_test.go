@@ -86,6 +86,90 @@ func TestAffiliateMapping(t *testing.T) {
 			assert.True(t, req.HasIsContactAddressEnabled())
 			assert.Equal(t, false, req.GetIsContactAddressEnabled()) // Default value
 		})
+
+		t.Run("with contact address and billing info", func(t *testing.T) {
+			// Create domain affiliate with new structured data
+			labelsJSON := `["premium", "trusted"]`
+			aff := &domain.Affiliate{
+				AffiliateID:    1,
+				OrganizationID: 100,
+				Name:           "Full Featured Affiliate",
+				Status:         "active",
+				NetworkEmployeeID: int32Ptr(1),
+				
+				// Contact Address
+				ContactAddress: &domain.ContactAddress{
+					Address1:       stringPtr("123 Main Street"),
+					City:           stringPtr("New York"),
+					RegionCode:     stringPtr("NY"),
+					CountryCode:    stringPtr("US"),
+					ZipPostalCode:  stringPtr("10001"),
+				},
+				
+				// Billing Information
+				BillingInfo: &domain.BillingDetails{
+					Frequency:             (*domain.BillingFrequency)(stringPtr("monthly")),
+					PaymentType:           (*domain.PaymentType)(stringPtr("wire")),
+					TaxID:                 stringPtr("12-3456789"),
+					IsInvoiceCreationAuto: boolPtr(true),
+					Schedule: &domain.BillingSchedule{
+						DayOfMonth:    int32Ptr(15),
+						StartingMonth: int32Ptr(1),
+					},
+					PaymentDetails: &domain.PaymentDetails{
+						Type:          (*domain.PaymentDetailsType)(stringPtr("wire")),
+						BankName:      stringPtr("Test Bank"),
+						AccountNumber: stringPtr("123456789"),
+						RoutingNumber: stringPtr("987654321"),
+						SwiftCode:     stringPtr("TESTSWIFT"),
+					},
+				},
+				
+				// Labels
+				Labels: &labelsJSON,
+				
+				CreatedAt: time.Now(),
+				UpdatedAt: time.Now(),
+			}
+
+			req, err := service.mapAffiliateToEverflowRequest(aff)
+			require.NoError(t, err)
+			require.NotNil(t, req)
+
+			// Verify basic fields
+			assert.Equal(t, "Full Featured Affiliate", req.GetName())
+			assert.Equal(t, "active", req.GetAccountStatus())
+
+			// Verify contact address is mapped
+			assert.True(t, req.HasContactAddress())
+			contactAddr := req.GetContactAddress()
+			assert.Equal(t, "123 Main Street", contactAddr.GetAddress1())
+			assert.Equal(t, "New York", contactAddr.GetCity())
+			assert.Equal(t, "NY", contactAddr.GetRegionCode())
+			assert.Equal(t, "US", contactAddr.GetCountryCode())
+			assert.Equal(t, "10001", contactAddr.GetZipPostalCode())
+
+			// Verify billing information is mapped
+			assert.True(t, req.HasBilling())
+			billing := req.GetBilling()
+			assert.Equal(t, "monthly", billing.GetBillingFrequency())
+			assert.Equal(t, "wire", billing.GetPaymentType())
+			assert.Equal(t, "12-3456789", billing.GetTaxId())
+			assert.Equal(t, true, billing.GetIsInvoiceCreationAuto())
+
+			// Verify billing details (schedule fields are in the main billing object)
+			assert.True(t, billing.HasDetails())
+			details := billing.GetDetails()
+			assert.Equal(t, int32(15), details.GetDayOfMonth())
+			assert.Equal(t, int32(1), details.GetStartingMonth())
+
+			// Verify labels
+			assert.True(t, req.HasLabels())
+			labels := req.GetLabels()
+			assert.Len(t, labels, 2)
+			assert.Contains(t, labels, "premium")
+			assert.Contains(t, labels, "trusted")
+		})
 	})
 
 	t.Run("mapAffiliateToEverflowUpdateRequest", func(t *testing.T) {

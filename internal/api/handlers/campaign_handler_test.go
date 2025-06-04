@@ -97,6 +97,16 @@ func (m *MockCampaignService) DeleteCampaignProviderOffer(ctx context.Context, i
 	return args.Error(0)
 }
 
+func (m *MockCampaignService) SyncCampaignFromProvider(ctx context.Context, campaignID int64) error {
+	args := m.Called(ctx, campaignID)
+	return args.Error(0)
+}
+
+func (m *MockCampaignService) SyncCampaignToProvider(ctx context.Context, campaignID int64) error {
+	args := m.Called(ctx, campaignID)
+	return args.Error(0)
+}
+
 func TestCampaignHandler_CreateCampaign_Success(t *testing.T) {
 	// Setup
 	gin.SetMode(gin.TestMode)

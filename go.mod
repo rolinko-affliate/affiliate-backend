@@ -1,6 +1,8 @@
 module github.com/affiliate-backend
 
-go 1.19
+go 1.23.0
+
+toolchain go1.23.5
 
 require (
 	github.com/gin-contrib/cors v1.5.0

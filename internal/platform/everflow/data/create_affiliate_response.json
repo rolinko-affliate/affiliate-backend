@@ -1,0 +1,33 @@
+{
+  "network_affiliate_id": 1234,
+  "network_id": 346,
+  "name": "Test Affiliate",
+  "account_status": "active",
+  "network_employee_id": 1,
+  "account_manager_id": 1,
+  "account_manager_name": "John Doe",
+  "account_executive_id": 0,
+  "account_executive_name": "",
+  "internal_notes": "This is a test affiliate created using the API",
+  "has_notifications": true,
+  "network_traffic_source_id": 0,
+  "adress_id": 5678,
+  "default_currency_id": "USD",
+  "is_contact_address_enabled": true,
+  "enable_media_cost_tracking_links": false,
+  "network_affiliate_tier_id": 1,
+  "today_revenue": "$0.00",
+  "time_created": 1735650123,
+  "time_saved": 1735650123,
+  "labels": [
+    "test",
+    "type 1"
+  ],
+  "balance": 0,
+  "last_login": 0,
+  "global_tracking_domain_url": "",
+  "network_country_code": "US",
+  "is_payable": true,
+  "payment_type": "wire",
+  "referrer_id": 0
+}

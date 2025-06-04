@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"github.com/affiliate-backend/internal/domain"
+	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 )
@@ -151,15 +152,95 @@ func (m *BasicMockCryptoService) Decrypt(ciphertext string) (string, error) {
 	return ciphertext, nil
 }
 
+// BasicMockCampaignProviderMappingRepository is a basic mock for testing
+type BasicMockCampaignProviderMappingRepository struct {
+	mock.Mock
+}
+
+func (m *BasicMockCampaignProviderMappingRepository) GetCampaignProviderMapping(ctx context.Context, campaignID int64, providerType string) (*domain.CampaignProviderMapping, error) {
+	args := m.Called(ctx, campaignID, providerType)
+	if args.Get(0) == nil {
+		return nil, args.Error(1)
+	}
+	return args.Get(0).(*domain.CampaignProviderMapping), args.Error(1)
+}
+
+func (m *BasicMockCampaignProviderMappingRepository) CreateCampaignProviderMapping(ctx context.Context, mapping *domain.CampaignProviderMapping) error {
+	args := m.Called(ctx, mapping)
+	return args.Error(0)
+}
+
+func (m *BasicMockCampaignProviderMappingRepository) UpdateCampaignProviderMapping(ctx context.Context, mapping *domain.CampaignProviderMapping) error {
+	args := m.Called(ctx, mapping)
+	return args.Error(0)
+}
+
+func (m *BasicMockCampaignProviderMappingRepository) DeleteCampaignProviderMapping(ctx context.Context, mappingID int64) error {
+	args := m.Called(ctx, mappingID)
+	return args.Error(0)
+}
+
+// BasicMockIntegrationService is a basic mock for testing
+type BasicMockIntegrationService struct {
+	mock.Mock
+}
+
+func (m *BasicMockIntegrationService) CreateAdvertiser(ctx context.Context, adv domain.Advertiser) (domain.Advertiser, error) {
+	args := m.Called(ctx, adv)
+	return args.Get(0).(domain.Advertiser), args.Error(1)
+}
+
+func (m *BasicMockIntegrationService) UpdateAdvertiser(ctx context.Context, adv domain.Advertiser) error {
+	args := m.Called(ctx, adv)
+	return args.Error(0)
+}
+
+func (m *BasicMockIntegrationService) GetAdvertiser(ctx context.Context, id uuid.UUID) (domain.Advertiser, error) {
+	args := m.Called(ctx, id)
+	return args.Get(0).(domain.Advertiser), args.Error(1)
+}
+
+func (m *BasicMockIntegrationService) CreateAffiliate(ctx context.Context, aff domain.Affiliate) (domain.Affiliate, error) {
+	args := m.Called(ctx, aff)
+	return args.Get(0).(domain.Affiliate), args.Error(1)
+}
+
+func (m *BasicMockIntegrationService) UpdateAffiliate(ctx context.Context, aff domain.Affiliate) error {
+	args := m.Called(ctx, aff)
+	return args.Error(0)
+}
+
+func (m *BasicMockIntegrationService) GetAffiliate(ctx context.Context, id uuid.UUID) (domain.Affiliate, error) {
+	args := m.Called(ctx, id)
+	return args.Get(0).(domain.Affiliate), args.Error(1)
+}
+
+func (m *BasicMockIntegrationService) CreateCampaign(ctx context.Context, camp domain.Campaign) (domain.Campaign, error) {
+	args := m.Called(ctx, camp)
+	return args.Get(0).(domain.Campaign), args.Error(1)
+}
+
+func (m *BasicMockIntegrationService) UpdateCampaign(ctx context.Context, camp domain.Campaign) error {
+	args := m.Called(ctx, camp)
+	return args.Error(0)
+}
+
+func (m *BasicMockIntegrationService) GetCampaign(ctx context.Context, id uuid.UUID) (domain.Campaign, error) {
+	args := m.Called(ctx, id)
+	return args.Get(0).(domain.Campaign), args.Error(1)
+}
+
 
 func TestCampaignService_CreateCampaign_BasicSuccess(t *testing.T) {
 	// Setup
 	mockRepo := new(BasicMockCampaignRepository)
+	mockProviderMappingRepo := new(BasicMockCampaignProviderMappingRepository)
 	mockAdvertiserRepo := new(BasicMockAdvertiserRepository)
 	mockOrgRepo := new(BasicMockOrganizationRepository)
 	mockCrypto := &BasicMockCryptoService{}
+	mockIntegration := new(BasicMockIntegrationService)
 	
-	service := NewCampaignService(mockRepo, mockAdvertiserRepo, mockOrgRepo, mockCrypto)
+	service := NewCampaignService(mockRepo, mockProviderMappingRepo, mockAdvertiserRepo, mockOrgRepo, mockCrypto, mockIntegration)
 
 	ctx := context.Background()
 	
@@ -173,6 +254,18 @@ func TestCampaignService_CreateCampaign_BasicSuccess(t *testing.T) {
 
 	// Mock expectations
 	mockRepo.On("CreateCampaign", ctx, mock.AnythingOfType("*domain.Campaign")).Return(nil)
+	
+	// Mock integration service to return a campaign with provider ID
+	providerCampaign := domain.Campaign{
+		CampaignID: 123,
+		NetworkAdvertiserID: func() *int32 { id := int32(456); return &id }(),
+		Name: "Test Campaign",
+		Status: "active",
+	}
+	mockIntegration.On("CreateCampaign", ctx, mock.AnythingOfType("domain.Campaign")).Return(providerCampaign, nil)
+	
+	// Mock provider mapping creation
+	mockProviderMappingRepo.On("CreateCampaignProviderMapping", ctx, mock.AnythingOfType("*domain.CampaignProviderMapping")).Return(nil)
 
 	// Execute
 	result, err := service.CreateCampaign(ctx, campaign)
@@ -185,16 +278,20 @@ func TestCampaignService_CreateCampaign_BasicSuccess(t *testing.T) {
 	assert.Equal(t, "draft", result.Status)
 
 	mockRepo.AssertExpectations(t)
+	mockIntegration.AssertExpectations(t)
+	mockProviderMappingRepo.AssertExpectations(t)
 }
 
 func TestCampaignService_GetCampaignByID_BasicSuccess(t *testing.T) {
 	// Setup
 	mockRepo := new(BasicMockCampaignRepository)
+	mockProviderMappingRepo := new(BasicMockCampaignProviderMappingRepository)
 	mockAdvertiserRepo := new(BasicMockAdvertiserRepository)
 	mockOrgRepo := new(BasicMockOrganizationRepository)
 	mockCrypto := &BasicMockCryptoService{}
+	mockIntegration := new(BasicMockIntegrationService)
 	
-	service := NewCampaignService(mockRepo, mockAdvertiserRepo, mockOrgRepo, mockCrypto)
+	service := NewCampaignService(mockRepo, mockProviderMappingRepo, mockAdvertiserRepo, mockOrgRepo, mockCrypto, mockIntegration)
 
 	ctx := context.Background()
 	campaignID := int64(123)
@@ -227,11 +324,13 @@ func TestCampaignService_GetCampaignByID_BasicSuccess(t *testing.T) {
 func TestCampaignService_GetCampaignByID_NotFound(t *testing.T) {
 	// Setup
 	mockRepo := new(BasicMockCampaignRepository)
+	mockProviderMappingRepo := new(BasicMockCampaignProviderMappingRepository)
 	mockAdvertiserRepo := new(BasicMockAdvertiserRepository)
 	mockOrgRepo := new(BasicMockOrganizationRepository)
 	mockCrypto := &BasicMockCryptoService{}
+	mockIntegration := new(BasicMockIntegrationService)
 	
-	service := NewCampaignService(mockRepo, mockAdvertiserRepo, mockOrgRepo, mockCrypto)
+	service := NewCampaignService(mockRepo, mockProviderMappingRepo, mockAdvertiserRepo, mockOrgRepo, mockCrypto, mockIntegration)
 
 	ctx := context.Background()
 	campaignID := int64(999)

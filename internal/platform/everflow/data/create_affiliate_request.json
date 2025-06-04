@@ -1,0 +1,60 @@
+{
+  "name": "Test Affiliate",
+  "account_status": "active",
+  "network_employee_id": 1,
+  "internal_notes": "This is a test affiliate created using the API",
+  "default_currency_id": "USD",
+  "enable_media_cost_tracking_links": false,
+  "referrer_id": 0,
+  "is_contact_address_enabled": true,
+  "network_affiliate_tier_id": 1,
+  "contact_address": {
+    "address_1": "105 Ocean Avenue",
+    "address_2": "",
+    "city": "Los Angeles",
+    "region_code": "CA",
+    "country_code": "US",
+    "zip_postal_code": "90291"
+  },
+  "labels": [
+    "test",
+    "type 1"
+  ],
+  "users": [
+    {
+      "first_name": "Bob",
+      "last_name": "Smith",
+      "email": "everflow.test@example.com",
+      "account_status": "active",
+      "title": "Media Buyer",
+      "work_phone": "+1-555-123-4567",
+      "cell_phone": "+1-555-987-6543",
+      "initial_password": "J0hnD0e2020!",
+      "language_id": 1,
+      "timezone_id": 90,
+      "currency_id": "USD"
+    }
+  ],
+  "billing": {
+    "billing_frequency": "monthly",
+    "payment_type": "wire",
+    "tax_id": "123-45-6789",
+    "is_invoice_creation_auto": true,
+    "auto_invoice_start_date": "2025-01-01",
+    "default_invoice_is_hidden": false,
+    "invoice_generation_days_delay": 3,
+    "invoice_amount_threshold": 100.00,
+    "default_payment_terms": 30,
+    "details": {
+      "day_of_month": 1
+    },
+    "payment": {
+      "bank_name": "Wells Fargo",
+      "bank_address": "420 Montgomery Street, San Francisco, CA 94104",
+      "account_name": "Test Affiliate Inc.",
+      "account_number": "123456789",
+      "routing_number": "121000248",
+      "swift_code": "WFBIUS6S"
+    }
+  }
+}

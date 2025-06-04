@@ -28,11 +28,11 @@ func NewPgxAffiliateProviderMappingRepository(db *pgxpool.Pool) AffiliateProvide
 
 func (r *pgxAffiliateProviderMappingRepository) CreateAffiliateProviderMapping(ctx context.Context, mapping *domain.AffiliateProviderMapping) error {
 	query := `INSERT INTO public.affiliate_provider_mappings 
-              (affiliate_id, provider_type, provider_affiliate_id, api_credentials, provider_config, created_at, updated_at)
-              VALUES ($1, $2, $3, $4, $5, $6, $7)
+              (affiliate_id, provider_type, provider_affiliate_id, api_credentials, provider_config, provider_data, created_at, updated_at)
+              VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
               RETURNING mapping_id, created_at, updated_at`
 	
-	var providerAffiliateID, apiCredentials, providerConfig sql.NullString
+	var providerAffiliateID, apiCredentials, providerConfig, providerData sql.NullString
 	
 	if mapping.ProviderAffiliateID != nil {
 		providerAffiliateID = sql.NullString{String: *mapping.ProviderAffiliateID, Valid: true}
@@ -43,6 +43,9 @@ func (r *pgxAffiliateProviderMappingRepository) CreateAffiliateProviderMapping(c
 	if mapping.ProviderConfig != nil {
 		providerConfig = sql.NullString{String: *mapping.ProviderConfig, Valid: true}
 	}
+	if mapping.ProviderData != nil {
+		providerData = sql.NullString{String: *mapping.ProviderData, Valid: true}
+	}
 	
 	now := time.Now()
 	err := r.db.QueryRow(ctx, query, 
@@ -51,6 +54,7 @@ func (r *pgxAffiliateProviderMappingRepository) CreateAffiliateProviderMapping(c
 		providerAffiliateID, 
 		apiCredentials, 
 		providerConfig, 
+		providerData,
 		now, 
 		now,
 	).Scan(
@@ -67,13 +71,14 @@ func (r *pgxAffiliateProviderMappingRepository) CreateAffiliateProviderMapping(c
 }
 
 func (r *pgxAffiliateProviderMappingRepository) GetAffiliateProviderMapping(ctx context.Context, affiliateID int64, providerType string) (*domain.AffiliateProviderMapping, error) {
-	query := `SELECT mapping_id, affiliate_id, provider_type, provider_affiliate_id, api_credentials, provider_config,
-	          created_at, updated_at
+	query := `SELECT mapping_id, affiliate_id, provider_type, provider_affiliate_id, api_credentials, provider_config, provider_data,
+	          sync_status, last_sync_at, sync_error, created_at, updated_at
 	          FROM public.affiliate_provider_mappings 
 	          WHERE affiliate_id = $1 AND provider_type = $2`
 	
 	var mapping domain.AffiliateProviderMapping
-	var providerAffiliateID, apiCredentials, providerConfig sql.NullString
+	var providerAffiliateID, apiCredentials, providerConfig, providerData, syncStatus, syncError sql.NullString
+	var lastSyncAt sql.NullTime
 	
 	err := r.db.QueryRow(ctx, query, affiliateID, providerType).Scan(
 		&mapping.MappingID,
@@ -82,6 +87,10 @@ func (r *pgxAffiliateProviderMappingRepository) GetAffiliateProviderMapping(ctx 
 		&providerAffiliateID,
 		&apiCredentials,
 		&providerConfig,
+		&providerData,
+		&syncStatus,
+		&lastSyncAt,
+		&syncError,
 		&mapping.CreatedAt,
 		&mapping.UpdatedAt,
 	)
@@ -102,17 +111,31 @@ func (r *pgxAffiliateProviderMappingRepository) GetAffiliateProviderMapping(ctx 
 	if providerConfig.Valid {
 		mapping.ProviderConfig = &providerConfig.String
 	}
+	if providerData.Valid {
+		mapping.ProviderData = &providerData.String
+	}
+	if syncStatus.Valid {
+		mapping.SyncStatus = &syncStatus.String
+	}
+	if lastSyncAt.Valid {
+		mapping.LastSyncAt = &lastSyncAt.Time
+	}
+	if syncError.Valid {
+		mapping.SyncError = &syncError.String
+	}
 	
 	return &mapping, nil
 }
 
 func (r *pgxAffiliateProviderMappingRepository) UpdateAffiliateProviderMapping(ctx context.Context, mapping *domain.AffiliateProviderMapping) error {
 	query := `UPDATE public.affiliate_provider_mappings SET 
-	          provider_affiliate_id = $1, api_credentials = $2, provider_config = $3, updated_at = $4
-	          WHERE mapping_id = $5
+	          provider_affiliate_id = $1, api_credentials = $2, provider_config = $3, provider_data = $4,
+	          sync_status = $5, last_sync_at = $6, sync_error = $7, updated_at = $8
+	          WHERE mapping_id = $9
 	          RETURNING updated_at`
 	
-	var providerAffiliateID, apiCredentials, providerConfig sql.NullString
+	var providerAffiliateID, apiCredentials, providerConfig, providerData, syncStatus, syncError sql.NullString
+	var lastSyncAt sql.NullTime
 	
 	if mapping.ProviderAffiliateID != nil {
 		providerAffiliateID = sql.NullString{String: *mapping.ProviderAffiliateID, Valid: true}
@@ -123,12 +146,28 @@ func (r *pgxAffiliateProviderMappingRepository) UpdateAffiliateProviderMapping(c
 	if mapping.ProviderConfig != nil {
 		providerConfig = sql.NullString{String: *mapping.ProviderConfig, Valid: true}
 	}
+	if mapping.ProviderData != nil {
+		providerData = sql.NullString{String: *mapping.ProviderData, Valid: true}
+	}
+	if mapping.SyncStatus != nil {
+		syncStatus = sql.NullString{String: *mapping.SyncStatus, Valid: true}
+	}
+	if mapping.LastSyncAt != nil {
+		lastSyncAt = sql.NullTime{Time: *mapping.LastSyncAt, Valid: true}
+	}
+	if mapping.SyncError != nil {
+		syncError = sql.NullString{String: *mapping.SyncError, Valid: true}
+	}
 	
 	now := time.Now()
 	err := r.db.QueryRow(ctx, query, 
 		providerAffiliateID, 
 		apiCredentials, 
 		providerConfig, 
+		providerData,
+		syncStatus,
+		lastSyncAt,
+		syncError,
 		now,
 		mapping.MappingID,
 	).Scan(&mapping.UpdatedAt)

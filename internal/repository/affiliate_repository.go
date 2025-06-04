@@ -7,23 +7,18 @@ import (
 	"time"
 
 	"github.com/affiliate-backend/internal/domain"
-	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/pgxpool"
 )
 
-// AffiliateRepository defines the interface for affiliate operations
+// AffiliateRepository defines the interface for affiliate data operations
 type AffiliateRepository interface {
 	CreateAffiliate(ctx context.Context, affiliate *domain.Affiliate) error
-	GetAffiliateByID(ctx context.Context, id int64) (*domain.Affiliate, error)
+	GetAffiliateByID(ctx context.Context, affiliateID int64) (*domain.Affiliate, error)
 	UpdateAffiliate(ctx context.Context, affiliate *domain.Affiliate) error
-	ListAffiliatesByOrganization(ctx context.Context, orgID int64, limit, offset int) ([]*domain.Affiliate, error)
-	DeleteAffiliate(ctx context.Context, id int64) error
-	
-	// Provider mapping methods
-	CreateAffiliateProviderMapping(ctx context.Context, mapping *domain.AffiliateProviderMapping) error
-	GetAffiliateProviderMapping(ctx context.Context, affiliateID int64, providerType string) (*domain.AffiliateProviderMapping, error)
-	UpdateAffiliateProviderMapping(ctx context.Context, mapping *domain.AffiliateProviderMapping) error
-	DeleteAffiliateProviderMapping(ctx context.Context, mappingID int64) error
+	DeleteAffiliate(ctx context.Context, affiliateID int64) error
+	GetAffiliatesByOrganization(ctx context.Context, organizationID int64) ([]*domain.Affiliate, error)
+	ListAffiliatesByOrganization(ctx context.Context, organizationID int64, limit, offset int) ([]*domain.Affiliate, error)
+	GetAffiliateByEmail(ctx context.Context, email string) (*domain.Affiliate, error)
 }
 
 // pgxAffiliateRepository implements AffiliateRepository using pgx
@@ -36,20 +31,47 @@ func NewPgxAffiliateRepository(db *pgxpool.Pool) AffiliateRepository {
 	return &pgxAffiliateRepository{db: db}
 }
 
-// CreateAffiliate creates a new affiliate in the database
+// CreateAffiliate creates a new affiliate in the database (clean domain model)
 func (r *pgxAffiliateRepository) CreateAffiliate(ctx context.Context, affiliate *domain.Affiliate) error {
-	query := `INSERT INTO public.affiliates (organization_id, name, contact_email, payment_details, status, created_at, updated_at)
-              VALUES ($1, $2, $3, $4, $5, $6, $7)
-              RETURNING affiliate_id, created_at, updated_at`
+	query := `INSERT INTO public.affiliates (
+		organization_id, name, contact_email, payment_details, status,
+		internal_notes, default_currency_id, contact_address, billing_info, labels,
+		invoice_amount_threshold, default_payment_terms,
+		created_at, updated_at
+	) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)
+	RETURNING affiliate_id, created_at, updated_at`
 	
-	var contactEmail, paymentDetails sql.NullString
-	
+	// Handle nullable fields
+	var contactEmail, paymentDetails, internalNotes, defaultCurrencyID, contactAddress, billingInfo, labels sql.NullString
+	var invoiceAmountThreshold sql.NullFloat64
+	var defaultPaymentTerms sql.NullInt32
+
 	if affiliate.ContactEmail != nil {
 		contactEmail = sql.NullString{String: *affiliate.ContactEmail, Valid: true}
 	}
-	
 	if affiliate.PaymentDetails != nil {
 		paymentDetails = sql.NullString{String: *affiliate.PaymentDetails, Valid: true}
+	}
+	if affiliate.InternalNotes != nil {
+		internalNotes = sql.NullString{String: *affiliate.InternalNotes, Valid: true}
+	}
+	if affiliate.DefaultCurrencyID != nil {
+		defaultCurrencyID = sql.NullString{String: *affiliate.DefaultCurrencyID, Valid: true}
+	}
+	if affiliate.ContactAddress != nil {
+		contactAddress = sql.NullString{String: *affiliate.ContactAddress, Valid: true}
+	}
+	if affiliate.BillingInfo != nil {
+		billingInfo = sql.NullString{String: *affiliate.BillingInfo, Valid: true}
+	}
+	if affiliate.Labels != nil {
+		labels = sql.NullString{String: *affiliate.Labels, Valid: true}
+	}
+	if affiliate.InvoiceAmountThreshold != nil {
+		invoiceAmountThreshold = sql.NullFloat64{Float64: *affiliate.InvoiceAmountThreshold, Valid: true}
+	}
+	if affiliate.DefaultPaymentTerms != nil {
+		defaultPaymentTerms = sql.NullInt32{Int32: *affiliate.DefaultPaymentTerms, Valid: true}
 	}
 	
 	now := time.Now()
@@ -58,285 +80,410 @@ func (r *pgxAffiliateRepository) CreateAffiliate(ctx context.Context, affiliate 
 		affiliate.Name, 
 		contactEmail, 
 		paymentDetails, 
-		affiliate.Status, 
-		now, 
+		affiliate.Status,
+		internalNotes,
+		defaultCurrencyID,
+		contactAddress,
+		billingInfo,
+		labels,
+		invoiceAmountThreshold,
+		defaultPaymentTerms,
 		now,
-	).Scan(
-		&affiliate.AffiliateID, 
-		&affiliate.CreatedAt, 
-		&affiliate.UpdatedAt,
-	)
+		now,
+	).Scan(&affiliate.AffiliateID, &affiliate.CreatedAt, &affiliate.UpdatedAt)
 	
 	if err != nil {
 		return fmt.Errorf("error creating affiliate: %w", err)
 	}
+	
 	return nil
 }
 
 // GetAffiliateByID retrieves an affiliate by ID
-func (r *pgxAffiliateRepository) GetAffiliateByID(ctx context.Context, id int64) (*domain.Affiliate, error) {
-	query := `SELECT affiliate_id, organization_id, name, contact_email, payment_details, status, created_at, updated_at
-              FROM public.affiliates WHERE affiliate_id = $1`
+func (r *pgxAffiliateRepository) GetAffiliateByID(ctx context.Context, affiliateID int64) (*domain.Affiliate, error) {
+	query := `SELECT 
+		affiliate_id, organization_id, name, contact_email, payment_details, status,
+		internal_notes, default_currency_id, contact_address, billing_info, labels,
+		invoice_amount_threshold, default_payment_terms,
+		created_at, updated_at
+	FROM public.affiliates 
+	WHERE affiliate_id = $1`
 	
-	var affiliate domain.Affiliate
-	var contactEmail, paymentDetails sql.NullString
+	affiliate := &domain.Affiliate{}
+	var contactEmail, paymentDetails, internalNotes, defaultCurrencyID, contactAddress, billingInfo, labels sql.NullString
+	var invoiceAmountThreshold sql.NullFloat64
+	var defaultPaymentTerms sql.NullInt32
 	
-	err := r.db.QueryRow(ctx, query, id).Scan(
+	err := r.db.QueryRow(ctx, query, affiliateID).Scan(
 		&affiliate.AffiliateID,
 		&affiliate.OrganizationID,
 		&affiliate.Name,
 		&contactEmail,
 		&paymentDetails,
 		&affiliate.Status,
+		&internalNotes,
+		&defaultCurrencyID,
+		&contactAddress,
+		&billingInfo,
+		&labels,
+		&invoiceAmountThreshold,
+		&defaultPaymentTerms,
 		&affiliate.CreatedAt,
 		&affiliate.UpdatedAt,
 	)
 	
 	if err != nil {
-		if err == pgx.ErrNoRows {
-			return nil, fmt.Errorf("affiliate not found: %w", domain.ErrNotFound)
-		}
 		return nil, fmt.Errorf("error getting affiliate by ID: %w", err)
 	}
 	
+	// Handle nullable fields
 	if contactEmail.Valid {
-		email := contactEmail.String
-		affiliate.ContactEmail = &email
+		affiliate.ContactEmail = &contactEmail.String
 	}
-	
 	if paymentDetails.Valid {
-		details := paymentDetails.String
-		affiliate.PaymentDetails = &details
+		affiliate.PaymentDetails = &paymentDetails.String
+	}
+	if internalNotes.Valid {
+		affiliate.InternalNotes = &internalNotes.String
+	}
+	if defaultCurrencyID.Valid {
+		affiliate.DefaultCurrencyID = &defaultCurrencyID.String
+	}
+	if contactAddress.Valid {
+		affiliate.ContactAddress = &contactAddress.String
+	}
+	if billingInfo.Valid {
+		affiliate.BillingInfo = &billingInfo.String
+	}
+	if labels.Valid {
+		affiliate.Labels = &labels.String
+	}
+	if invoiceAmountThreshold.Valid {
+		affiliate.InvoiceAmountThreshold = &invoiceAmountThreshold.Float64
+	}
+	if defaultPaymentTerms.Valid {
+		affiliate.DefaultPaymentTerms = &defaultPaymentTerms.Int32
 	}
 	
-	return &affiliate, nil
+	return affiliate, nil
 }
 
-// UpdateAffiliate updates an affiliate in the database
+// UpdateAffiliate updates an existing affiliate
 func (r *pgxAffiliateRepository) UpdateAffiliate(ctx context.Context, affiliate *domain.Affiliate) error {
-	query := `UPDATE public.affiliates
-              SET name = $1, contact_email = $2, payment_details = $3, status = $4
-              WHERE affiliate_id = $5
-              RETURNING updated_at`
+	query := `UPDATE public.affiliates SET 
+		organization_id = $2, name = $3, contact_email = $4, payment_details = $5, 
+		status = $6, internal_notes = $7, default_currency_id = $8, contact_address = $9,
+		billing_info = $10, labels = $11, invoice_amount_threshold = $12, 
+		default_payment_terms = $13, updated_at = $14
+	WHERE affiliate_id = $1`
 	
-	var contactEmail, paymentDetails sql.NullString
-	
+	// Handle nullable fields
+	var contactEmail, paymentDetails, internalNotes, defaultCurrencyID, contactAddress, billingInfo, labels sql.NullString
+	var invoiceAmountThreshold sql.NullFloat64
+	var defaultPaymentTerms sql.NullInt32
+
 	if affiliate.ContactEmail != nil {
 		contactEmail = sql.NullString{String: *affiliate.ContactEmail, Valid: true}
 	}
-	
 	if affiliate.PaymentDetails != nil {
 		paymentDetails = sql.NullString{String: *affiliate.PaymentDetails, Valid: true}
 	}
+	if affiliate.InternalNotes != nil {
+		internalNotes = sql.NullString{String: *affiliate.InternalNotes, Valid: true}
+	}
+	if affiliate.DefaultCurrencyID != nil {
+		defaultCurrencyID = sql.NullString{String: *affiliate.DefaultCurrencyID, Valid: true}
+	}
+	if affiliate.ContactAddress != nil {
+		contactAddress = sql.NullString{String: *affiliate.ContactAddress, Valid: true}
+	}
+	if affiliate.BillingInfo != nil {
+		billingInfo = sql.NullString{String: *affiliate.BillingInfo, Valid: true}
+	}
+	if affiliate.Labels != nil {
+		labels = sql.NullString{String: *affiliate.Labels, Valid: true}
+	}
+	if affiliate.InvoiceAmountThreshold != nil {
+		invoiceAmountThreshold = sql.NullFloat64{Float64: *affiliate.InvoiceAmountThreshold, Valid: true}
+	}
+	if affiliate.DefaultPaymentTerms != nil {
+		defaultPaymentTerms = sql.NullInt32{Int32: *affiliate.DefaultPaymentTerms, Valid: true}
+	}
 	
-	err := r.db.QueryRow(ctx, query, 
-		affiliate.Name, 
-		contactEmail, 
-		paymentDetails, 
-		affiliate.Status, 
+	now := time.Now()
+	_, err := r.db.Exec(ctx, query,
 		affiliate.AffiliateID,
-	).Scan(&affiliate.UpdatedAt)
+		affiliate.OrganizationID,
+		affiliate.Name,
+		contactEmail,
+		paymentDetails,
+		affiliate.Status,
+		internalNotes,
+		defaultCurrencyID,
+		contactAddress,
+		billingInfo,
+		labels,
+		invoiceAmountThreshold,
+		defaultPaymentTerms,
+		now,
+	)
 	
 	if err != nil {
-		if err == pgx.ErrNoRows {
-			return fmt.Errorf("affiliate not found: %w", domain.ErrNotFound)
-		}
 		return fmt.Errorf("error updating affiliate: %w", err)
+	}
+	
+	affiliate.UpdatedAt = now
+	return nil
+}
+
+// DeleteAffiliate deletes an affiliate by ID
+func (r *pgxAffiliateRepository) DeleteAffiliate(ctx context.Context, affiliateID int64) error {
+	query := `DELETE FROM public.affiliates WHERE affiliate_id = $1`
+	
+	_, err := r.db.Exec(ctx, query, affiliateID)
+	if err != nil {
+		return fmt.Errorf("error deleting affiliate: %w", err)
 	}
 	
 	return nil
 }
 
-// ListAffiliatesByOrganization retrieves a list of affiliates for an organization with pagination
-func (r *pgxAffiliateRepository) ListAffiliatesByOrganization(ctx context.Context, orgID int64, limit, offset int) ([]*domain.Affiliate, error) {
-	query := `SELECT affiliate_id, organization_id, name, contact_email, payment_details, status, created_at, updated_at
-              FROM public.affiliates
-              WHERE organization_id = $1
-              ORDER BY affiliate_id
-              LIMIT $2 OFFSET $3`
+// GetAffiliatesByOrganization retrieves all affiliates for an organization
+func (r *pgxAffiliateRepository) GetAffiliatesByOrganization(ctx context.Context, organizationID int64) ([]*domain.Affiliate, error) {
+	query := `SELECT 
+		affiliate_id, organization_id, name, contact_email, payment_details, status,
+		internal_notes, default_currency_id, contact_address, billing_info, labels,
+		invoice_amount_threshold, default_payment_terms,
+		created_at, updated_at
+	FROM public.affiliates 
+	WHERE organization_id = $1
+	ORDER BY created_at DESC`
 	
-	rows, err := r.db.Query(ctx, query, orgID, limit, offset)
+	rows, err := r.db.Query(ctx, query, organizationID)
 	if err != nil {
-		return nil, fmt.Errorf("error listing affiliates: %w", err)
+		return nil, fmt.Errorf("error querying affiliates by organization: %w", err)
 	}
 	defer rows.Close()
 	
 	var affiliates []*domain.Affiliate
+	
 	for rows.Next() {
-		var affiliate domain.Affiliate
-		var contactEmail, paymentDetails sql.NullString
+		affiliate := &domain.Affiliate{}
+		var contactEmail, paymentDetails, internalNotes, defaultCurrencyID, contactAddress, billingInfo, labels sql.NullString
+		var invoiceAmountThreshold sql.NullFloat64
+		var defaultPaymentTerms sql.NullInt32
 		
-		if err := rows.Scan(
+		err := rows.Scan(
 			&affiliate.AffiliateID,
 			&affiliate.OrganizationID,
 			&affiliate.Name,
 			&contactEmail,
 			&paymentDetails,
 			&affiliate.Status,
+			&internalNotes,
+			&defaultCurrencyID,
+			&contactAddress,
+			&billingInfo,
+			&labels,
+			&invoiceAmountThreshold,
+			&defaultPaymentTerms,
 			&affiliate.CreatedAt,
 			&affiliate.UpdatedAt,
-		); err != nil {
+		)
+		
+		if err != nil {
 			return nil, fmt.Errorf("error scanning affiliate row: %w", err)
 		}
 		
+		// Handle nullable fields
 		if contactEmail.Valid {
-			email := contactEmail.String
-			affiliate.ContactEmail = &email
+			affiliate.ContactEmail = &contactEmail.String
 		}
-		
 		if paymentDetails.Valid {
-			details := paymentDetails.String
-			affiliate.PaymentDetails = &details
+			affiliate.PaymentDetails = &paymentDetails.String
+		}
+		if internalNotes.Valid {
+			affiliate.InternalNotes = &internalNotes.String
+		}
+		if defaultCurrencyID.Valid {
+			affiliate.DefaultCurrencyID = &defaultCurrencyID.String
+		}
+		if contactAddress.Valid {
+			affiliate.ContactAddress = &contactAddress.String
+		}
+		if billingInfo.Valid {
+			affiliate.BillingInfo = &billingInfo.String
+		}
+		if labels.Valid {
+			affiliate.Labels = &labels.String
+		}
+		if invoiceAmountThreshold.Valid {
+			affiliate.InvoiceAmountThreshold = &invoiceAmountThreshold.Float64
+		}
+		if defaultPaymentTerms.Valid {
+			affiliate.DefaultPaymentTerms = &defaultPaymentTerms.Int32
 		}
 		
-		affiliates = append(affiliates, &affiliate)
+		affiliates = append(affiliates, affiliate)
 	}
 	
-	if err := rows.Err(); err != nil {
+	if err = rows.Err(); err != nil {
 		return nil, fmt.Errorf("error iterating affiliate rows: %w", err)
 	}
 	
 	return affiliates, nil
 }
 
-// DeleteAffiliate deletes an affiliate from the database
-func (r *pgxAffiliateRepository) DeleteAffiliate(ctx context.Context, id int64) error {
-	query := `DELETE FROM public.affiliates WHERE affiliate_id = $1`
+// GetAffiliateByEmail retrieves an affiliate by email
+func (r *pgxAffiliateRepository) GetAffiliateByEmail(ctx context.Context, email string) (*domain.Affiliate, error) {
+	query := `SELECT 
+		affiliate_id, organization_id, name, contact_email, payment_details, status,
+		internal_notes, default_currency_id, contact_address, billing_info, labels,
+		invoice_amount_threshold, default_payment_terms,
+		created_at, updated_at
+	FROM public.affiliates 
+	WHERE contact_email = $1`
 	
-	commandTag, err := r.db.Exec(ctx, query, id)
-	if err != nil {
-		return fmt.Errorf("error deleting affiliate: %w", err)
-	}
+	affiliate := &domain.Affiliate{}
+	var contactEmail, paymentDetails, internalNotes, defaultCurrencyID, contactAddress, billingInfo, labels sql.NullString
+	var invoiceAmountThreshold sql.NullFloat64
+	var defaultPaymentTerms sql.NullInt32
 	
-	if commandTag.RowsAffected() == 0 {
-		return fmt.Errorf("affiliate not found: %w", domain.ErrNotFound)
-	}
-	
-	return nil
-}
-
-// CreateAffiliateProviderMapping creates a new affiliate provider mapping in the database
-func (r *pgxAffiliateRepository) CreateAffiliateProviderMapping(ctx context.Context, mapping *domain.AffiliateProviderMapping) error {
-	query := `INSERT INTO public.affiliate_provider_mappings 
-              (affiliate_id, provider_type, provider_affiliate_id, provider_config, created_at, updated_at)
-              VALUES ($1, $2, $3, $4, $5, $6)
-              RETURNING mapping_id, created_at, updated_at`
-	
-	var providerAffiliateID, providerConfig sql.NullString
-	
-	if mapping.ProviderAffiliateID != nil {
-		providerAffiliateID = sql.NullString{String: *mapping.ProviderAffiliateID, Valid: true}
-	}
-	
-	if mapping.ProviderConfig != nil {
-		providerConfig = sql.NullString{String: *mapping.ProviderConfig, Valid: true}
-	}
-	
-	now := time.Now()
-	err := r.db.QueryRow(ctx, query, 
-		mapping.AffiliateID, 
-		mapping.ProviderType, 
-		providerAffiliateID, 
-		providerConfig, 
-		now, 
-		now,
-	).Scan(
-		&mapping.MappingID, 
-		&mapping.CreatedAt, 
-		&mapping.UpdatedAt,
+	err := r.db.QueryRow(ctx, query, email).Scan(
+		&affiliate.AffiliateID,
+		&affiliate.OrganizationID,
+		&affiliate.Name,
+		&contactEmail,
+		&paymentDetails,
+		&affiliate.Status,
+		&internalNotes,
+		&defaultCurrencyID,
+		&contactAddress,
+		&billingInfo,
+		&labels,
+		&invoiceAmountThreshold,
+		&defaultPaymentTerms,
+		&affiliate.CreatedAt,
+		&affiliate.UpdatedAt,
 	)
 	
 	if err != nil {
-		return fmt.Errorf("error creating affiliate provider mapping: %w", err)
+		return nil, fmt.Errorf("error getting affiliate by email: %w", err)
 	}
 	
-	return nil
+	// Handle nullable fields
+	if contactEmail.Valid {
+		affiliate.ContactEmail = &contactEmail.String
+	}
+	if paymentDetails.Valid {
+		affiliate.PaymentDetails = &paymentDetails.String
+	}
+	if internalNotes.Valid {
+		affiliate.InternalNotes = &internalNotes.String
+	}
+	if defaultCurrencyID.Valid {
+		affiliate.DefaultCurrencyID = &defaultCurrencyID.String
+	}
+	if contactAddress.Valid {
+		affiliate.ContactAddress = &contactAddress.String
+	}
+	if billingInfo.Valid {
+		affiliate.BillingInfo = &billingInfo.String
+	}
+	if labels.Valid {
+		affiliate.Labels = &labels.String
+	}
+	if invoiceAmountThreshold.Valid {
+		affiliate.InvoiceAmountThreshold = &invoiceAmountThreshold.Float64
+	}
+	if defaultPaymentTerms.Valid {
+		affiliate.DefaultPaymentTerms = &defaultPaymentTerms.Int32
+	}
+	
+	return affiliate, nil
 }
 
-// GetAffiliateProviderMapping retrieves an affiliate provider mapping
-func (r *pgxAffiliateRepository) GetAffiliateProviderMapping(ctx context.Context, affiliateID int64, providerType string) (*domain.AffiliateProviderMapping, error) {
-	query := `SELECT mapping_id, affiliate_id, provider_type, provider_affiliate_id, provider_config, created_at, updated_at
-              FROM public.affiliate_provider_mappings 
-              WHERE affiliate_id = $1 AND provider_type = $2`
+// ListAffiliatesByOrganization retrieves affiliates by organization with pagination
+func (r *pgxAffiliateRepository) ListAffiliatesByOrganization(ctx context.Context, organizationID int64, limit, offset int) ([]*domain.Affiliate, error) {
+	query := `SELECT 
+		affiliate_id, organization_id, name, contact_email, payment_details, status,
+		internal_notes, default_currency_id, contact_address, billing_info, labels,
+		invoice_amount_threshold, default_payment_terms,
+		created_at, updated_at
+	FROM public.affiliates 
+	WHERE organization_id = $1
+	ORDER BY created_at DESC
+	LIMIT $2 OFFSET $3`
 	
-	var mapping domain.AffiliateProviderMapping
-	var providerAffiliateID, providerConfig sql.NullString
-	
-	err := r.db.QueryRow(ctx, query, affiliateID, providerType).Scan(
-		&mapping.MappingID,
-		&mapping.AffiliateID,
-		&mapping.ProviderType,
-		&providerAffiliateID,
-		&providerConfig,
-		&mapping.CreatedAt,
-		&mapping.UpdatedAt,
-	)
-	
+	rows, err := r.db.Query(ctx, query, organizationID, limit, offset)
 	if err != nil {
-		if err == pgx.ErrNoRows {
-			return nil, fmt.Errorf("affiliate provider mapping not found: %w", domain.ErrNotFound)
+		return nil, fmt.Errorf("error querying affiliates by organization: %w", err)
+	}
+	defer rows.Close()
+	
+	var affiliates []*domain.Affiliate
+	for rows.Next() {
+		affiliate := &domain.Affiliate{}
+		var contactEmail, paymentDetails, internalNotes, defaultCurrencyID, contactAddress, billingInfo, labels sql.NullString
+		var invoiceAmountThreshold sql.NullFloat64
+		var defaultPaymentTerms sql.NullInt32
+		
+		err := rows.Scan(
+			&affiliate.AffiliateID,
+			&affiliate.OrganizationID,
+			&affiliate.Name,
+			&contactEmail,
+			&paymentDetails,
+			&affiliate.Status,
+			&internalNotes,
+			&defaultCurrencyID,
+			&contactAddress,
+			&billingInfo,
+			&labels,
+			&invoiceAmountThreshold,
+			&defaultPaymentTerms,
+			&affiliate.CreatedAt,
+			&affiliate.UpdatedAt,
+		)
+		if err != nil {
+			return nil, fmt.Errorf("error scanning affiliate row: %w", err)
 		}
-		return nil, fmt.Errorf("error getting affiliate provider mapping: %w", err)
-	}
-	
-	if providerAffiliateID.Valid {
-		id := providerAffiliateID.String
-		mapping.ProviderAffiliateID = &id
-	}
-	
-	if providerConfig.Valid {
-		config := providerConfig.String
-		mapping.ProviderConfig = &config
-	}
-	
-	return &mapping, nil
-}
-
-// UpdateAffiliateProviderMapping updates an affiliate provider mapping in the database
-func (r *pgxAffiliateRepository) UpdateAffiliateProviderMapping(ctx context.Context, mapping *domain.AffiliateProviderMapping) error {
-	query := `UPDATE public.affiliate_provider_mappings
-              SET provider_affiliate_id = $1, provider_config = $2
-              WHERE mapping_id = $3
-              RETURNING updated_at`
-	
-	var providerAffiliateID, providerConfig sql.NullString
-	
-	if mapping.ProviderAffiliateID != nil {
-		providerAffiliateID = sql.NullString{String: *mapping.ProviderAffiliateID, Valid: true}
-	}
-	
-	if mapping.ProviderConfig != nil {
-		providerConfig = sql.NullString{String: *mapping.ProviderConfig, Valid: true}
-	}
-	
-	err := r.db.QueryRow(ctx, query, 
-		providerAffiliateID, 
-		providerConfig, 
-		mapping.MappingID,
-	).Scan(&mapping.UpdatedAt)
-	
-	if err != nil {
-		if err == pgx.ErrNoRows {
-			return fmt.Errorf("affiliate provider mapping not found: %w", domain.ErrNotFound)
+		
+		// Handle nullable fields
+		if contactEmail.Valid {
+			affiliate.ContactEmail = &contactEmail.String
 		}
-		return fmt.Errorf("error updating affiliate provider mapping: %w", err)
+		if paymentDetails.Valid {
+			affiliate.PaymentDetails = &paymentDetails.String
+		}
+		if internalNotes.Valid {
+			affiliate.InternalNotes = &internalNotes.String
+		}
+		if defaultCurrencyID.Valid {
+			affiliate.DefaultCurrencyID = &defaultCurrencyID.String
+		}
+		if contactAddress.Valid {
+			affiliate.ContactAddress = &contactAddress.String
+		}
+		if billingInfo.Valid {
+			affiliate.BillingInfo = &billingInfo.String
+		}
+		if labels.Valid {
+			affiliate.Labels = &labels.String
+		}
+		if invoiceAmountThreshold.Valid {
+			affiliate.InvoiceAmountThreshold = &invoiceAmountThreshold.Float64
+		}
+		if defaultPaymentTerms.Valid {
+			affiliate.DefaultPaymentTerms = &defaultPaymentTerms.Int32
+		}
+		
+		affiliates = append(affiliates, affiliate)
 	}
 	
-	return nil
-}
-
-// DeleteAffiliateProviderMapping deletes an affiliate provider mapping from the database
-func (r *pgxAffiliateRepository) DeleteAffiliateProviderMapping(ctx context.Context, mappingID int64) error {
-	query := `DELETE FROM public.affiliate_provider_mappings WHERE mapping_id = $1`
-	
-	commandTag, err := r.db.Exec(ctx, query, mappingID)
-	if err != nil {
-		return fmt.Errorf("error deleting affiliate provider mapping: %w", err)
+	if err = rows.Err(); err != nil {
+		return nil, fmt.Errorf("error iterating affiliate rows: %w", err)
 	}
 	
-	if commandTag.RowsAffected() == 0 {
-		return fmt.Errorf("affiliate provider mapping not found: %w", domain.ErrNotFound)
-	}
-	
-	return nil
+	return affiliates, nil
 }

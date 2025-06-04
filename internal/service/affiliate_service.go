@@ -76,30 +76,12 @@ func (s *affiliateService) CreateAffiliate(ctx context.Context, affiliate *domai
 	}
 
 	// Step 2: Call IntegrationService to create in provider
-	providerAffiliate, err := s.integrationService.CreateAffiliate(ctx, *affiliate)
+	// The integration service handles provider mapping creation internally
+	_, err = s.integrationService.CreateAffiliate(ctx, *affiliate)
 	if err != nil {
 		// Log error but don't fail the operation since local creation succeeded
 		fmt.Printf("Warning: failed to create affiliate in provider: %v\n", err)
 		return affiliate, nil
-	}
-
-	// Step 3: Create provider mapping with provider ID and payload
-	var providerID *string
-	if providerAffiliate.NetworkAffiliateID != nil {
-		idStr := fmt.Sprintf("%d", *providerAffiliate.NetworkAffiliateID)
-		providerID = &idStr
-	}
-	mapping := &domain.AffiliateProviderMapping{
-		AffiliateID:         affiliate.AffiliateID,
-		ProviderType:        "everflow",
-		ProviderAffiliateID: providerID,
-		APICredentials:      nil, // Set by IntegrationService
-		ProviderConfig:      nil, // Set by IntegrationService with full payload
-	}
-
-	if err := s.providerMappingRepo.CreateAffiliateProviderMapping(ctx, mapping); err != nil {
-		// Log error but don't fail the operation since affiliate was created in provider
-		fmt.Printf("Warning: failed to create provider mapping for affiliate %d: %v\n", affiliate.AffiliateID, err)
 	}
 
 	return affiliate, nil
@@ -263,28 +245,10 @@ func (s *affiliateService) SyncAffiliateFromProvider(ctx context.Context, affili
 
 // createAffiliateInProvider creates an affiliate in the provider when no mapping exists
 func (s *affiliateService) createAffiliateInProvider(ctx context.Context, affiliate *domain.Affiliate) error {
-	// Create in provider
-	providerAffiliate, err := s.integrationService.CreateAffiliate(ctx, *affiliate)
+	// Create in provider - integration service handles provider mapping creation
+	_, err := s.integrationService.CreateAffiliate(ctx, *affiliate)
 	if err != nil {
 		return fmt.Errorf("failed to create affiliate in provider: %w", err)
-	}
-
-	// Create provider mapping
-	var providerID *string
-	if providerAffiliate.NetworkAffiliateID != nil {
-		idStr := fmt.Sprintf("%d", *providerAffiliate.NetworkAffiliateID)
-		providerID = &idStr
-	}
-	mapping := &domain.AffiliateProviderMapping{
-		AffiliateID:         affiliate.AffiliateID,
-		ProviderType:        "everflow",
-		ProviderAffiliateID: providerID,
-		APICredentials:      nil, // Set by IntegrationService
-		ProviderConfig:      nil, // Set by IntegrationService with full payload
-	}
-
-	if err := s.providerMappingRepo.CreateAffiliateProviderMapping(ctx, mapping); err != nil {
-		fmt.Printf("Warning: failed to create provider mapping for affiliate %d: %v\n", affiliate.AffiliateID, err)
 	}
 
 	return nil
@@ -293,10 +257,14 @@ func (s *affiliateService) createAffiliateInProvider(ctx context.Context, affili
 // mergeProviderDataIntoAffiliate merges provider data into local affiliate
 func (s *affiliateService) mergeProviderDataIntoAffiliate(local *domain.Affiliate, provider *domain.Affiliate) {
 	// Merge relevant fields from provider into local
-	if provider.NetworkAffiliateID != nil {
-		local.NetworkAffiliateID = provider.NetworkAffiliateID
+	// Provider-specific data like NetworkAffiliateID is now stored in provider mappings
+	// This function can be used to merge general affiliate data if needed
+	
+	// Example: merge status if provider has updated status
+	if provider.Status != "" {
+		local.Status = provider.Status
 	}
-	// Add other fields as needed based on what the provider returns
+	// Add other general fields as needed based on what the provider returns
 }
 
 // validateAffiliate validates affiliate fields

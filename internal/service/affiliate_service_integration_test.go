@@ -79,7 +79,6 @@ func TestIntegrationServiceInterface(t *testing.T) {
 			AffiliateID:        1,
 			Name:               "Test Affiliate",
 			Status:             "active",
-			NetworkAffiliateID: int32Ptr(1234),
 		}
 		
 		mockService.On("CreateAffiliate", ctx, inputAffiliate).Return(expectedAffiliate, nil)
@@ -90,7 +89,6 @@ func TestIntegrationServiceInterface(t *testing.T) {
 		assert.Equal(t, expectedAffiliate.AffiliateID, result.AffiliateID)
 		assert.Equal(t, expectedAffiliate.Name, result.Name)
 		assert.Equal(t, expectedAffiliate.Status, result.Status)
-		assert.Equal(t, int32(1234), *result.NetworkAffiliateID)
 		
 		mockService.AssertExpectations(t)
 	})
@@ -114,7 +112,6 @@ func TestAffiliateServiceIntegration(t *testing.T) {
 			AffiliateID:        1,
 			Name:               "Test Affiliate",
 			Status:             "active",
-			NetworkAffiliateID: int32Ptr(1234),
 		}
 		
 		// Setup mock expectation
@@ -128,8 +125,6 @@ func TestAffiliateServiceIntegration(t *testing.T) {
 		assert.Equal(t, int64(1), result.AffiliateID)
 		assert.Equal(t, "Test Affiliate", result.Name)
 		assert.Equal(t, "active", result.Status)
-		assert.NotNil(t, result.NetworkAffiliateID)
-		assert.Equal(t, int32(1234), *result.NetworkAffiliateID)
 		
 		mockIntegrationService.AssertExpectations(t)
 	})

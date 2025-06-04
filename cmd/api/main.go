@@ -36,13 +36,16 @@ import (
 	"github.com/affiliate-backend/internal/config"
 	"github.com/affiliate-backend/internal/platform/crypto"
 	"github.com/affiliate-backend/internal/platform/everflow"
+	"github.com/affiliate-backend/internal/platform/provider"
 	"github.com/affiliate-backend/internal/repository"
 	"github.com/affiliate-backend/internal/service"
 )
 
 // checkDatabaseMigrations verifies that the database schema is up to date
 // If autoMigrate is true, it will attempt to run pending migrations
+// Skips database checks when in mock mode
 func checkDatabaseMigrations(cfg *config.Config, autoMigrate bool) error {
+	
 	if cfg.DatabaseURL == "" {
 		return fmt.Errorf("DATABASE_URL is not set")
 	}
@@ -113,17 +116,48 @@ func checkDatabaseMigrations(cfg *config.Config, autoMigrate bool) error {
 }
 
 func main() {
+	// Check for help flag first
+	for _, arg := range os.Args {
+		if arg == "--help" || arg == "-h" {
+			fmt.Println("Affiliate Backend API Server")
+			fmt.Println("")
+			fmt.Println("Usage:")
+			fmt.Println("  affiliate-backend [flags]")
+			fmt.Println("")
+			fmt.Println("Flags:")
+			fmt.Println("  --help, -h        Show this help message")
+			fmt.Println("  --auto-migrate    Automatically run database migrations if needed")
+			fmt.Println("  --mock-mode       Run in mock mode (uses mock integration service instead of real provider)")
+			fmt.Println("")
+			fmt.Println("Environment Variables:")
+			fmt.Println("  DATABASE_URL      PostgreSQL connection string")
+			fmt.Println("  PORT              Server port (default: 8080)")
+			fmt.Println("  MOCK_MODE         Enable mock mode (true/false, default: false)")
+			fmt.Println("")
+			return
+		}
+	}
+
 	// Load Configuration
 	config.LoadConfig()
 	appConf := config.AppConfig
 
-	// Check if auto-migrate flag is set
+	// Check command line flags
 	autoMigrate := false
+	mockMode := false
 	for _, arg := range os.Args {
 		if arg == "--auto-migrate" {
 			autoMigrate = true
-			break
 		}
+		if arg == "--mock-mode" {
+			mockMode = true
+		}
+	}
+	
+	// Override config with command line flag if provided
+	if mockMode {
+		appConf.MockMode = true
+		log.Println("🔧 Mock mode enabled via command line flag")
 	}
 
 	// Check database migration status
@@ -131,7 +165,7 @@ func main() {
 		log.Fatalf("Database migration check failed: %v", err)
 	}
 
-	// Initialize Database
+	// Initialize Database and Repositories
 	repository.InitDB(&appConf)
 	defer repository.CloseDB()
 
@@ -144,34 +178,39 @@ func main() {
 	affiliateProviderMappingRepo := repository.NewPgxAffiliateProviderMappingRepository(repository.DB)
 	campaignRepo := repository.NewPgxCampaignRepository(repository.DB)
 	campaignProviderMappingRepo := repository.NewPgxCampaignProviderMappingRepository(repository.DB)
-	// Initialize other repositories as needed
 
 	// Initialize Platform Services
 	cryptoService := crypto.NewServiceFromConfig()
 	
-	// Initialize integration service with Everflow configuration
-	everflowConfig := everflow.Config{
-		BaseURL: "https://api.eflow.team",
-		APIKey:  "your-api-key-here", // TODO: Load from environment
+	// Initialize integration service based on configuration
+	var integrationService provider.IntegrationService
+	if appConf.IsMockMode() {
+		log.Println("🔧 Starting in MOCK MODE - using LoggingMockIntegrationService")
+		integrationService = provider.NewLoggingMockIntegrationService()
+	} else {
+		log.Println("🔧 Starting in PRODUCTION MODE - using real Everflow integration")
+		// Initialize integration service with Everflow configuration
+		everflowConfig := everflow.Config{
+			BaseURL: "https://api.eflow.team",
+			APIKey:  "your-api-key-here", // TODO: Load from environment
+		}
+		integrationService = everflow.NewIntegrationServiceWithClients(
+			everflowConfig,
+			advertiserRepo,
+			affiliateRepo,
+			campaignRepo,
+			advertiserProviderMappingRepo,
+			affiliateProviderMappingRepo,
+			campaignProviderMappingRepo,
+		)
 	}
-	integrationService := everflow.NewIntegrationServiceWithClients(
-		everflowConfig,
-		advertiserRepo,
-		affiliateRepo,
-		campaignRepo,
-		advertiserProviderMappingRepo,
-		affiliateProviderMappingRepo,
-		campaignProviderMappingRepo,
-	)
 	
 	// Initialize Domain Services
 	profileService := service.NewProfileService(profileRepo)
 	organizationService := service.NewOrganizationService(organizationRepo)
-	
 	advertiserService := service.NewAdvertiserService(advertiserRepo, advertiserProviderMappingRepo, organizationRepo, cryptoService, integrationService)
 	affiliateService := service.NewAffiliateService(affiliateRepo, affiliateProviderMappingRepo, organizationRepo, integrationService)
 	campaignService := service.NewCampaignService(campaignRepo, campaignProviderMappingRepo, advertiserRepo, organizationRepo, cryptoService, integrationService)
-	// Initialize other services as needed
 
 	// Initialize Handlers
 	profileHandler := handlers.NewProfileHandler(profileService)
@@ -179,7 +218,6 @@ func main() {
 	advertiserHandler := handlers.NewAdvertiserHandler(advertiserService, profileService)
 	affiliateHandler := handlers.NewAffiliateHandler(affiliateService, profileService)
 	campaignHandler := handlers.NewCampaignHandler(campaignService)
-	// Initialize other handlers as needed
 
 	// Setup Router
 	router := api.SetupRouter(api.RouterOptions{

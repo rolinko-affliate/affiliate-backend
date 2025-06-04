@@ -25,7 +25,7 @@ build-all:
 
 # Run the application
 run:
-	$(GORUN) ./cmd/api/main.go
+	$(GORUN) ./cmd/api/main.go --mock-mode
 
 # Run the application with auto-migrate
 run-with-migrate:

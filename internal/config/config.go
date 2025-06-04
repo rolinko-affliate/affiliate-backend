@@ -14,6 +14,7 @@ type Config struct {
 	EncryptionKey string `mapstructure:"ENCRYPTION_KEY"` // 32-byte AES key, base64 encoded
 	Environment   string `mapstructure:"ENVIRONMENT"`    // "development" or "production"
 	DebugMode     bool   `mapstructure:"DEBUG_MODE"`     // Enable debug logging for API requests/responses
+	MockMode      bool   `mapstructure:"MOCK_MODE"`      // Enable mock integration service instead of real provider
 }
 
 var AppConfig Config
@@ -28,6 +29,7 @@ func LoadConfig() {
 	viper.SetDefault("PORT", "8080")
 	viper.SetDefault("ENVIRONMENT", "production")
 	viper.SetDefault("DEBUG_MODE", false)
+	viper.SetDefault("MOCK_MODE", false)
 
 	if err := viper.ReadInConfig(); err != nil {
 		if _, ok := err.(viper.ConfigFileNotFoundError); ok {
@@ -71,4 +73,14 @@ func (c *Config) IsDebugMode() bool {
 // IsDevelopment returns true if running in development environment (method on Config)
 func (c *Config) IsDevelopment() bool {
 	return c.Environment == "development"
+}
+
+// IsMockMode returns true if mock mode is enabled (global function)
+func IsMockMode() bool {
+	return AppConfig.MockMode
+}
+
+// IsMockMode returns true if mock mode is enabled (method on Config)
+func (c *Config) IsMockMode() bool {
+	return c.MockMode
 }

@@ -24,17 +24,9 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/advertisers/{id}/campaigns": {
+        "/advertisers/{advertiser_id}/campaigns": {
             "get": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Retrieves a list of campaigns for an advertiser with pagination",
-                "consumes": [
-                    "application/json"
-                ],
+                "description": "Retrieve campaigns for a specific advertiser with pagination",
                 "produces": [
                     "application/json"
                 ],
@@ -46,7 +38,7 @@ const docTemplate = `{
                     {
                         "type": "integer",
                         "description": "Advertiser ID",
-                        "name": "id",
+                        "name": "advertiser_id",
                         "in": "path",
                         "required": true
                     },
@@ -58,37 +50,28 @@ const docTemplate = `{
                     },
                     {
                         "type": "integer",
-                        "description": "Page size (default: 10)",
-                        "name": "pageSize",
+                        "description": "Page size (default: 20, max: 100)",
+                        "name": "page_size",
                         "in": "query"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "List of campaigns",
+                        "description": "OK",
                         "schema": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/definitions/domain.Campaign"
-                            }
+                            "$ref": "#/definitions/models.CampaignListResponse"
                         }
                     },
                     "400": {
-                        "description": "Invalid advertiser ID",
+                        "description": "Bad Request",
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
+                            "$ref": "#/definitions/handlers.ErrorResponse"
                         }
                     },
                     "500": {
-                        "description": "Internal server error",
+                        "description": "Internal Server Error",
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
+                            "$ref": "#/definitions/handlers.ErrorResponse"
                         }
                     }
                 }
@@ -605,265 +588,9 @@ const docTemplate = `{
                 }
             }
         },
-        "/campaign-provider-offers": {
-            "post": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Creates a new offer for a campaign on a provider",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "campaigns"
-                ],
-                "summary": "Create a new campaign provider offer",
-                "parameters": [
-                    {
-                        "description": "Offer details",
-                        "name": "request",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/handlers.CreateCampaignProviderOfferRequest"
-                        }
-                    }
-                ],
-                "responses": {
-                    "201": {
-                        "description": "Created offer",
-                        "schema": {
-                            "$ref": "#/definitions/domain.CampaignProviderOffer"
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid request",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/campaign-provider-offers/{id}": {
-            "get": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Retrieves a campaign provider offer by its ID",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "campaigns"
-                ],
-                "summary": "Get campaign provider offer by ID",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "Offer ID",
-                        "name": "id",
-                        "in": "path",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Offer details",
-                        "schema": {
-                            "$ref": "#/definitions/domain.CampaignProviderOffer"
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid offer ID",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Offer not found",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                }
-            },
-            "put": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Updates a campaign provider offer with the given details",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "campaigns"
-                ],
-                "summary": "Update campaign provider offer",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "Offer ID",
-                        "name": "id",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "description": "Offer details",
-                        "name": "request",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/handlers.UpdateCampaignProviderOfferRequest"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Updated offer",
-                        "schema": {
-                            "$ref": "#/definitions/domain.CampaignProviderOffer"
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid request",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Offer not found",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                }
-            },
-            "delete": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Deletes a campaign provider offer by its ID",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "campaigns"
-                ],
-                "summary": "Delete campaign provider offer",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "Offer ID",
-                        "name": "id",
-                        "in": "path",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "204": {
-                        "description": "No content"
-                    },
-                    "400": {
-                        "description": "Invalid offer ID",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Offer not found",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "/campaigns": {
             "post": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Creates a new campaign with the given details",
+                "description": "Create a new campaign with the provided details",
                 "consumes": [
                     "application/json"
                 ],
@@ -876,38 +603,32 @@ const docTemplate = `{
                 "summary": "Create a new campaign",
                 "parameters": [
                     {
-                        "description": "Campaign details",
-                        "name": "request",
+                        "description": "Campaign creation request",
+                        "name": "campaign",
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/handlers.CreateCampaignRequest"
+                            "$ref": "#/definitions/models.CreateCampaignRequest"
                         }
                     }
                 ],
                 "responses": {
                     "201": {
-                        "description": "Created campaign",
+                        "description": "Created",
                         "schema": {
-                            "$ref": "#/definitions/domain.Campaign"
+                            "$ref": "#/definitions/models.CampaignResponse"
                         }
                     },
                     "400": {
-                        "description": "Invalid request",
+                        "description": "Bad Request",
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
+                            "$ref": "#/definitions/handlers.ErrorResponse"
                         }
                     },
                     "500": {
-                        "description": "Internal server error",
+                        "description": "Internal Server Error",
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
+                            "$ref": "#/definitions/handlers.ErrorResponse"
                         }
                     }
                 }
@@ -915,22 +636,14 @@ const docTemplate = `{
         },
         "/campaigns/{id}": {
             "get": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Retrieves a campaign by its ID",
-                "consumes": [
-                    "application/json"
-                ],
+                "description": "Retrieve a campaign by its ID",
                 "produces": [
                     "application/json"
                 ],
                 "tags": [
                     "campaigns"
                 ],
-                "summary": "Get campaign by ID",
+                "summary": "Get a campaign by ID",
                 "parameters": [
                     {
                         "type": "integer",
@@ -942,47 +655,33 @@ const docTemplate = `{
                 ],
                 "responses": {
                     "200": {
-                        "description": "Campaign details",
+                        "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/domain.Campaign"
+                            "$ref": "#/definitions/models.CampaignResponse"
                         }
                     },
                     "400": {
-                        "description": "Invalid campaign ID",
+                        "description": "Bad Request",
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
+                            "$ref": "#/definitions/handlers.ErrorResponse"
                         }
                     },
                     "404": {
-                        "description": "Campaign not found",
+                        "description": "Not Found",
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
+                            "$ref": "#/definitions/handlers.ErrorResponse"
                         }
                     },
                     "500": {
-                        "description": "Internal server error",
+                        "description": "Internal Server Error",
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
+                            "$ref": "#/definitions/handlers.ErrorResponse"
                         }
                     }
                 }
             },
             "put": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Updates a campaign with the given details",
+                "description": "Update an existing campaign with the provided details",
                 "consumes": [
                     "application/json"
                 ],
@@ -992,7 +691,7 @@ const docTemplate = `{
                 "tags": [
                     "campaigns"
                 ],
-                "summary": "Update campaign",
+                "summary": "Update a campaign",
                 "parameters": [
                     {
                         "type": "integer",
@@ -1002,68 +701,48 @@ const docTemplate = `{
                         "required": true
                     },
                     {
-                        "description": "Campaign details",
-                        "name": "request",
+                        "description": "Campaign update request",
+                        "name": "campaign",
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/handlers.UpdateCampaignRequest"
+                            "$ref": "#/definitions/models.UpdateCampaignRequest"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Updated campaign",
+                        "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/domain.Campaign"
+                            "$ref": "#/definitions/models.CampaignResponse"
                         }
                     },
                     "400": {
-                        "description": "Invalid request",
+                        "description": "Bad Request",
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
+                            "$ref": "#/definitions/handlers.ErrorResponse"
                         }
                     },
                     "404": {
-                        "description": "Campaign not found",
+                        "description": "Not Found",
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
+                            "$ref": "#/definitions/handlers.ErrorResponse"
                         }
                     },
                     "500": {
-                        "description": "Internal server error",
+                        "description": "Internal Server Error",
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
+                            "$ref": "#/definitions/handlers.ErrorResponse"
                         }
                     }
                 }
             },
             "delete": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Deletes a campaign by its ID",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
+                "description": "Delete a campaign by its ID",
                 "tags": [
                     "campaigns"
                 ],
-                "summary": "Delete campaign",
+                "summary": "Delete a campaign",
                 "parameters": [
                     {
                         "type": "integer",
@@ -1075,91 +754,24 @@ const docTemplate = `{
                 ],
                 "responses": {
                     "204": {
-                        "description": "No content"
+                        "description": "No Content"
                     },
                     "400": {
-                        "description": "Invalid campaign ID",
+                        "description": "Bad Request",
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
+                            "$ref": "#/definitions/handlers.ErrorResponse"
                         }
                     },
                     "404": {
-                        "description": "Campaign not found",
+                        "description": "Not Found",
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
+                            "$ref": "#/definitions/handlers.ErrorResponse"
                         }
                     },
                     "500": {
-                        "description": "Internal server error",
+                        "description": "Internal Server Error",
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/campaigns/{id}/provider-offers": {
-            "get": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Retrieves a list of provider offers for a campaign",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "campaigns"
-                ],
-                "summary": "List campaign provider offers by campaign",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "Campaign ID",
-                        "name": "id",
-                        "in": "path",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "List of offers",
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/definitions/domain.CampaignProviderOffer"
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid campaign ID",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
+                            "$ref": "#/definitions/handlers.ErrorResponse"
                         }
                     }
                 }
@@ -1597,17 +1209,9 @@ const docTemplate = `{
                 }
             }
         },
-        "/organizations/{id}/campaigns": {
+        "/organizations/{organization_id}/campaigns": {
             "get": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Retrieves a list of campaigns for an organization with pagination",
-                "consumes": [
-                    "application/json"
-                ],
+                "description": "Retrieve campaigns for a specific organization with pagination",
                 "produces": [
                     "application/json"
                 ],
@@ -1619,7 +1223,7 @@ const docTemplate = `{
                     {
                         "type": "integer",
                         "description": "Organization ID",
-                        "name": "id",
+                        "name": "organization_id",
                         "in": "path",
                         "required": true
                     },
@@ -1631,37 +1235,28 @@ const docTemplate = `{
                     },
                     {
                         "type": "integer",
-                        "description": "Page size (default: 10)",
-                        "name": "pageSize",
+                        "description": "Page size (default: 20, max: 100)",
+                        "name": "page_size",
                         "in": "query"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "List of campaigns",
+                        "description": "OK",
                         "schema": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/definitions/domain.Campaign"
-                            }
+                            "$ref": "#/definitions/models.CampaignListResponse"
                         }
                     },
                     "400": {
-                        "description": "Invalid organization ID",
+                        "description": "Bad Request",
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
+                            "$ref": "#/definitions/handlers.ErrorResponse"
                         }
                     },
                     "500": {
-                        "description": "Internal server error",
+                        "description": "Internal Server Error",
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
+                            "$ref": "#/definitions/handlers.ErrorResponse"
                         }
                     }
                 }
@@ -2120,217 +1715,6 @@ const docTemplate = `{
                 }
             }
         },
-        "domain.Campaign": {
-            "type": "object",
-            "properties": {
-                "advertiser_id": {
-                    "type": "integer"
-                },
-                "app_identifier": {
-                    "type": "string"
-                },
-                "campaign_id": {
-                    "type": "integer"
-                },
-                "caps_timezone_id": {
-                    "type": "integer"
-                },
-                "conversion_method": {
-                    "description": "'server_postback', 'pixel', etc.",
-                    "type": "string"
-                },
-                "created_at": {
-                    "type": "string"
-                },
-                "currency_id": {
-                    "description": "'USD', 'EUR', etc.",
-                    "type": "string"
-                },
-                "daily_click_cap": {
-                    "type": "integer"
-                },
-                "daily_conversion_cap": {
-                    "type": "integer"
-                },
-                "date_live_until": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "destination_url": {
-                    "type": "string"
-                },
-                "encoded_value": {
-                    "description": "Everflow tracking fields",
-                    "type": "string"
-                },
-                "end_date": {
-                    "type": "string"
-                },
-                "global_click_cap": {
-                    "type": "integer"
-                },
-                "global_conversion_cap": {
-                    "type": "integer"
-                },
-                "html_description": {
-                    "type": "string"
-                },
-                "internal_notes": {
-                    "type": "string"
-                },
-                "is_caps_enabled": {
-                    "description": "Caps and limits",
-                    "type": "boolean"
-                },
-                "is_description_plain_text": {
-                    "type": "boolean"
-                },
-                "is_force_terms_and_conditions": {
-                    "type": "boolean"
-                },
-                "is_use_direct_linking": {
-                    "type": "boolean"
-                },
-                "is_using_explicit_terms_and_conditions": {
-                    "type": "boolean"
-                },
-                "is_view_through_enabled": {
-                    "type": "boolean"
-                },
-                "is_whitelist_check_enabled": {
-                    "type": "boolean"
-                },
-                "monthly_click_cap": {
-                    "type": "integer"
-                },
-                "monthly_conversion_cap": {
-                    "type": "integer"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "network_advertiser_id": {
-                    "description": "Offer-specific fields for Everflow integration",
-                    "type": "integer"
-                },
-                "offer_config": {
-                    "description": "Additional configuration stored as JSON",
-                    "type": "string"
-                },
-                "organization_id": {
-                    "type": "integer"
-                },
-                "payout_amount": {
-                    "type": "number"
-                },
-                "payout_type": {
-                    "description": "Payout and revenue configuration",
-                    "type": "string"
-                },
-                "preview_url": {
-                    "type": "string"
-                },
-                "project_id": {
-                    "type": "string"
-                },
-                "revenue_amount": {
-                    "type": "number"
-                },
-                "revenue_type": {
-                    "description": "'rpa', 'rpc', 'rpm', etc.",
-                    "type": "string"
-                },
-                "server_side_url": {
-                    "type": "string"
-                },
-                "session_definition": {
-                    "description": "'cookie', 'ip', 'fingerprint'",
-                    "type": "string"
-                },
-                "session_duration": {
-                    "description": "in hours",
-                    "type": "integer"
-                },
-                "start_date": {
-                    "type": "string"
-                },
-                "status": {
-                    "description": "'draft', 'active', 'paused', 'archived'",
-                    "type": "string"
-                },
-                "terms_and_conditions": {
-                    "type": "string"
-                },
-                "thumbnail_url": {
-                    "type": "string"
-                },
-                "time_created": {
-                    "type": "integer"
-                },
-                "time_saved": {
-                    "type": "integer"
-                },
-                "today_clicks": {
-                    "type": "integer"
-                },
-                "today_revenue": {
-                    "type": "string"
-                },
-                "updated_at": {
-                    "type": "string"
-                },
-                "view_through_destination_url": {
-                    "type": "string"
-                },
-                "visibility": {
-                    "description": "'public', 'require_approval', 'private'",
-                    "type": "string"
-                },
-                "weekly_click_cap": {
-                    "type": "integer"
-                },
-                "weekly_conversion_cap": {
-                    "type": "integer"
-                }
-            }
-        },
-        "domain.CampaignProviderOffer": {
-            "type": "object",
-            "properties": {
-                "campaign_id": {
-                    "type": "integer"
-                },
-                "campaign_provider_offer_id": {
-                    "type": "integer"
-                },
-                "created_at": {
-                    "type": "string"
-                },
-                "is_active_on_provider": {
-                    "type": "boolean"
-                },
-                "last_synced_at": {
-                    "type": "string"
-                },
-                "provider_offer_config": {
-                    "description": "JSONB stored as string",
-                    "type": "string"
-                },
-                "provider_offer_ref": {
-                    "description": "Provider's Offer ID (e.g., Everflow's network_offer_id)",
-                    "type": "string"
-                },
-                "provider_type": {
-                    "description": "'everflow' for MVP",
-                    "type": "string"
-                },
-                "updated_at": {
-                    "type": "string"
-                }
-            }
-        },
         "domain.Organization": {
             "type": "object",
             "properties": {
@@ -2450,42 +1834,6 @@ const docTemplate = `{
                 }
             }
         },
-        "handlers.CreateCampaignProviderOfferRequest": {
-            "type": "object",
-            "required": [
-                "campaign_id",
-                "provider_type"
-            ],
-            "properties": {
-                "campaign_id": {
-                    "description": "Campaign ID",
-                    "type": "integer",
-                    "example": 1
-                },
-                "is_active_on_provider": {
-                    "description": "Whether the offer is active on the provider",
-                    "type": "boolean",
-                    "example": true
-                },
-                "provider_offer_config": {
-                    "description": "Provider offer configuration in JSON format\nswagger:strfmt json",
-                    "type": "object"
-                },
-                "provider_offer_ref": {
-                    "description": "Provider's offer reference",
-                    "type": "string",
-                    "example": "offer-12345"
-                },
-                "provider_type": {
-                    "description": "Provider type (e.g., 'everflow')",
-                    "type": "string",
-                    "example": "everflow"
-                }
-            }
-        },
-        "handlers.CreateCampaignRequest": {
-            "type": "object"
-        },
         "handlers.CreateOrganizationRequest": {
             "type": "object",
             "required": [
@@ -2493,6 +1841,17 @@ const docTemplate = `{
             ],
             "properties": {
                 "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "handlers.ErrorResponse": {
+            "type": "object",
+            "properties": {
+                "details": {
+                    "type": "string"
+                },
+                "error": {
                     "type": "string"
                 }
             }
@@ -2583,28 +1942,6 @@ const docTemplate = `{
                 }
             }
         },
-        "handlers.UpdateCampaignProviderOfferRequest": {
-            "type": "object",
-            "properties": {
-                "is_active_on_provider": {
-                    "description": "Whether the offer is active on the provider",
-                    "type": "boolean",
-                    "example": true
-                },
-                "provider_offer_config": {
-                    "description": "Provider offer configuration in JSON format\nswagger:strfmt json",
-                    "type": "object"
-                },
-                "provider_offer_ref": {
-                    "description": "Provider's offer reference",
-                    "type": "string",
-                    "example": "offer-12345"
-                }
-            }
-        },
-        "handlers.UpdateCampaignRequest": {
-            "type": "object"
-        },
         "handlers.UpdateOrganizationRequest": {
             "type": "object",
             "required": [
@@ -2655,6 +1992,393 @@ const docTemplate = `{
                     "type": "integer"
                 },
                 "role_id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "models.CampaignListResponse": {
+            "type": "object",
+            "properties": {
+                "campaigns": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.CampaignResponse"
+                    }
+                },
+                "page": {
+                    "type": "integer"
+                },
+                "page_size": {
+                    "type": "integer"
+                },
+                "total": {
+                    "type": "integer"
+                }
+            }
+        },
+        "models.CampaignResponse": {
+            "type": "object",
+            "properties": {
+                "advertiser_id": {
+                    "type": "integer"
+                },
+                "campaign_id": {
+                    "type": "integer"
+                },
+                "conversion_method": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "currency_id": {
+                    "type": "string"
+                },
+                "daily_click_cap": {
+                    "type": "integer"
+                },
+                "daily_conversion_cap": {
+                    "type": "integer"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "destination_url": {
+                    "description": "Core campaign fields",
+                    "type": "string"
+                },
+                "end_date": {
+                    "type": "string"
+                },
+                "global_click_cap": {
+                    "type": "integer"
+                },
+                "global_conversion_cap": {
+                    "type": "integer"
+                },
+                "internal_notes": {
+                    "type": "string"
+                },
+                "is_caps_enabled": {
+                    "description": "Caps and limits",
+                    "type": "boolean"
+                },
+                "monthly_click_cap": {
+                    "type": "integer"
+                },
+                "monthly_conversion_cap": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "organization_id": {
+                    "type": "integer"
+                },
+                "payout_amount": {
+                    "type": "number"
+                },
+                "payout_type": {
+                    "description": "Payout and revenue configuration",
+                    "type": "string"
+                },
+                "preview_url": {
+                    "type": "string"
+                },
+                "revenue_amount": {
+                    "type": "number"
+                },
+                "revenue_type": {
+                    "type": "string"
+                },
+                "session_definition": {
+                    "type": "string"
+                },
+                "session_duration": {
+                    "type": "integer"
+                },
+                "start_date": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "terms_and_conditions": {
+                    "type": "string"
+                },
+                "thumbnail_url": {
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
+                },
+                "visibility": {
+                    "type": "string"
+                },
+                "weekly_click_cap": {
+                    "type": "integer"
+                },
+                "weekly_conversion_cap": {
+                    "type": "integer"
+                }
+            }
+        },
+        "models.CreateCampaignRequest": {
+            "type": "object",
+            "required": [
+                "advertiser_id",
+                "name",
+                "organization_id",
+                "status"
+            ],
+            "properties": {
+                "advertiser_id": {
+                    "type": "integer"
+                },
+                "conversion_method": {
+                    "type": "string",
+                    "enum": [
+                        "server_postback",
+                        "pixel"
+                    ]
+                },
+                "currency_id": {
+                    "type": "string"
+                },
+                "daily_click_cap": {
+                    "type": "integer"
+                },
+                "daily_conversion_cap": {
+                    "type": "integer"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "destination_url": {
+                    "description": "Core campaign fields",
+                    "type": "string"
+                },
+                "end_date": {
+                    "type": "string"
+                },
+                "global_click_cap": {
+                    "type": "integer"
+                },
+                "global_conversion_cap": {
+                    "type": "integer"
+                },
+                "internal_notes": {
+                    "type": "string"
+                },
+                "is_caps_enabled": {
+                    "description": "Caps and limits",
+                    "type": "boolean"
+                },
+                "monthly_click_cap": {
+                    "type": "integer"
+                },
+                "monthly_conversion_cap": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "organization_id": {
+                    "type": "integer"
+                },
+                "payout_amount": {
+                    "type": "number"
+                },
+                "payout_type": {
+                    "description": "Payout and revenue configuration",
+                    "type": "string",
+                    "enum": [
+                        "cpa",
+                        "cpc",
+                        "cpm"
+                    ]
+                },
+                "preview_url": {
+                    "type": "string"
+                },
+                "revenue_amount": {
+                    "type": "number"
+                },
+                "revenue_type": {
+                    "type": "string",
+                    "enum": [
+                        "rpa",
+                        "rpc",
+                        "rpm"
+                    ]
+                },
+                "session_definition": {
+                    "type": "string",
+                    "enum": [
+                        "cookie",
+                        "ip",
+                        "fingerprint"
+                    ]
+                },
+                "session_duration": {
+                    "type": "integer"
+                },
+                "start_date": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string",
+                    "enum": [
+                        "draft",
+                        "active",
+                        "paused",
+                        "archived"
+                    ]
+                },
+                "terms_and_conditions": {
+                    "type": "string"
+                },
+                "thumbnail_url": {
+                    "type": "string"
+                },
+                "visibility": {
+                    "type": "string",
+                    "enum": [
+                        "public",
+                        "require_approval",
+                        "private"
+                    ]
+                },
+                "weekly_click_cap": {
+                    "type": "integer"
+                },
+                "weekly_conversion_cap": {
+                    "type": "integer"
+                }
+            }
+        },
+        "models.UpdateCampaignRequest": {
+            "type": "object",
+            "required": [
+                "name",
+                "status"
+            ],
+            "properties": {
+                "conversion_method": {
+                    "type": "string",
+                    "enum": [
+                        "server_postback",
+                        "pixel"
+                    ]
+                },
+                "currency_id": {
+                    "type": "string"
+                },
+                "daily_click_cap": {
+                    "type": "integer"
+                },
+                "daily_conversion_cap": {
+                    "type": "integer"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "destination_url": {
+                    "description": "Core campaign fields",
+                    "type": "string"
+                },
+                "end_date": {
+                    "type": "string"
+                },
+                "global_click_cap": {
+                    "type": "integer"
+                },
+                "global_conversion_cap": {
+                    "type": "integer"
+                },
+                "internal_notes": {
+                    "type": "string"
+                },
+                "is_caps_enabled": {
+                    "description": "Caps and limits",
+                    "type": "boolean"
+                },
+                "monthly_click_cap": {
+                    "type": "integer"
+                },
+                "monthly_conversion_cap": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "payout_amount": {
+                    "type": "number"
+                },
+                "payout_type": {
+                    "description": "Payout and revenue configuration",
+                    "type": "string",
+                    "enum": [
+                        "cpa",
+                        "cpc",
+                        "cpm"
+                    ]
+                },
+                "preview_url": {
+                    "type": "string"
+                },
+                "revenue_amount": {
+                    "type": "number"
+                },
+                "revenue_type": {
+                    "type": "string",
+                    "enum": [
+                        "rpa",
+                        "rpc",
+                        "rpm"
+                    ]
+                },
+                "session_definition": {
+                    "type": "string",
+                    "enum": [
+                        "cookie",
+                        "ip",
+                        "fingerprint"
+                    ]
+                },
+                "session_duration": {
+                    "type": "integer"
+                },
+                "start_date": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string",
+                    "enum": [
+                        "draft",
+                        "active",
+                        "paused",
+                        "archived"
+                    ]
+                },
+                "terms_and_conditions": {
+                    "type": "string"
+                },
+                "thumbnail_url": {
+                    "type": "string"
+                },
+                "visibility": {
+                    "type": "string",
+                    "enum": [
+                        "public",
+                        "require_approval",
+                        "private"
+                    ]
+                },
+                "weekly_click_cap": {
+                    "type": "integer"
+                },
+                "weekly_conversion_cap": {
                     "type": "integer"
                 }
             }

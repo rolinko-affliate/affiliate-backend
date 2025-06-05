@@ -134,19 +134,6 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		campaigns.GET("/:id", opts.CampaignHandler.GetCampaign)
 		campaigns.PUT("/:id", opts.CampaignHandler.UpdateCampaign)
 		campaigns.DELETE("/:id", opts.CampaignHandler.DeleteCampaign)
-		
-		// Campaign's provider offers
-		campaigns.GET("/:id/provider-offers", opts.CampaignHandler.ListCampaignProviderOffersByCampaign)
-	}
-	
-	// Campaign provider offers
-	campaignProviderOffers := v1.Group("/campaign-provider-offers")
-	campaignProviderOffers.Use(rbacMW("AdvertiserManager", "Admin"))
-	{
-		campaignProviderOffers.POST("", opts.CampaignHandler.CreateCampaignProviderOffer)
-		campaignProviderOffers.GET("/:id", opts.CampaignHandler.GetCampaignProviderOffer)
-		campaignProviderOffers.PUT("/:id", opts.CampaignHandler.UpdateCampaignProviderOffer)
-		campaignProviderOffers.DELETE("/:id", opts.CampaignHandler.DeleteCampaignProviderOffer)
 	}
 
 	return r

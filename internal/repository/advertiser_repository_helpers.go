@@ -3,17 +3,21 @@ package repository
 import (
 	"database/sql"
 	"encoding/json"
-	"fmt"
 
 	"github.com/affiliate-backend/internal/domain"
 )
 
-func marshalBillingDetails(billing *string) (sql.NullString, error) {
+func marshalBillingDetails(billing *domain.BillingDetails) (sql.NullString, error) {
 	if billing == nil {
 		return sql.NullString{}, nil
 	}
 	
-	return sql.NullString{String: *billing, Valid: true}, nil
+	jsonBytes, err := json.Marshal(billing)
+	if err != nil {
+		return sql.NullString{}, err
+	}
+	
+	return sql.NullString{String: string(jsonBytes), Valid: true}, nil
 }
 
 func scanNullableFields(
@@ -23,14 +27,16 @@ func scanNullableFields(
 	accountingContactEmail, offerIDMacro, affiliateIDMacro sql.NullString,
 	attributionMethod, emailAttributionMethod, attributionPriority sql.NullString,
 	reportingTimezoneID sql.NullInt32,
-	isExposePublisherReporting sql.NullBool,
 ) error {
 	if contactEmail.Valid {
 		advertiser.ContactEmail = &contactEmail.String
 	}
 	
 	if billingDetails.Valid {
-		advertiser.BillingDetails = &billingDetails.String
+		var bd domain.BillingDetails
+		if err := json.Unmarshal([]byte(billingDetails.String), &bd); err == nil {
+			advertiser.BillingDetails = &bd
+		}
 	}
 	
 	if internalNotes.Valid {
@@ -70,9 +76,6 @@ func scanNullableFields(
 		timezoneID := reportingTimezoneID.Int32
 		advertiser.ReportingTimezoneID = &timezoneID
 	}
-	if isExposePublisherReporting.Valid {
-		advertiser.IsExposePublisherReporting = &isExposePublisherReporting.Bool
-	}
 	
 	return nil
 }
@@ -81,5 +84,5 @@ const advertiserSelectFields = `
 	advertiser_id, organization_id, name, contact_email, billing_details, status,
 	internal_notes, default_currency_id, platform_name, platform_url, platform_username,
 	accounting_contact_email, offer_id_macro, affiliate_id_macro, attribution_method,
-	email_attribution_method, attribution_priority, reporting_timezone_id, is_expose_publisher_reporting,
+	email_attribution_method, attribution_priority, reporting_timezone_id,
 	created_at, updated_at`

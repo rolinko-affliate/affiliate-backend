@@ -1,6 +1,7 @@
 package domain
 
 import (
+	"fmt"
 	"time"
 )
 
@@ -10,7 +11,7 @@ type Advertiser struct {
 	OrganizationID  int64     `json:"organization_id" db:"organization_id"`
 	Name            string    `json:"name" db:"name"`
 	ContactEmail    *string   `json:"contact_email,omitempty" db:"contact_email"`
-	BillingDetails  *string   `json:"billing_details,omitempty" db:"billing_details"` // JSONB stored as string
+	BillingDetails  *BillingDetails `json:"billing_details,omitempty" db:"billing_details"` // JSONB
 	Status          string    `json:"status" db:"status"` // 'active', 'pending', 'inactive', 'rejected'
 	
 	// General purpose fields (provider-agnostic)
@@ -26,10 +27,35 @@ type Advertiser struct {
 	EmailAttributionMethod     *string `json:"email_attribution_method,omitempty" db:"email_attribution_method"`
 	AttributionPriority        *string `json:"attribution_priority,omitempty" db:"attribution_priority"`
 	ReportingTimezoneID        *int32  `json:"reporting_timezone_id,omitempty" db:"reporting_timezone_id"`
-	IsExposePublisherReporting *bool   `json:"is_expose_publisher_reporting,omitempty" db:"is_expose_publisher_reporting"`
+
 	
 	CreatedAt       time.Time `json:"created_at" db:"created_at"`
 	UpdatedAt       time.Time `json:"updated_at" db:"updated_at"`
+}
+
+// Validate validates the advertiser data
+func (a *Advertiser) Validate() error {
+	if a.Name == "" {
+		return fmt.Errorf("advertiser name is required")
+	}
+	if a.OrganizationID <= 0 {
+		return fmt.Errorf("valid organization ID is required")
+	}
+	if a.Status == "" {
+		return fmt.Errorf("advertiser status is required")
+	}
+	validStatuses := map[string]bool{
+		"active": true, "pending": true, "inactive": true, "rejected": true,
+	}
+	if !validStatuses[a.Status] {
+		return fmt.Errorf("invalid status: %s", a.Status)
+	}
+	return nil
+}
+
+// HasBillingDetails returns true if billing details are present
+func (a *Advertiser) HasBillingDetails() bool {
+	return a.BillingDetails != nil && a.BillingDetails.HasData()
 }
 
 // AdvertiserProviderMapping represents a mapping between an advertiser and a provider
@@ -51,6 +77,24 @@ type AdvertiserProviderMapping struct {
 	
 	CreatedAt            time.Time `json:"created_at" db:"created_at"`
 	UpdatedAt            time.Time `json:"updated_at" db:"updated_at"`
+}
+
+// IsSynced returns true if the mapping is successfully synced
+func (apm *AdvertiserProviderMapping) IsSynced() bool {
+	return apm.SyncStatus != nil && *apm.SyncStatus == "synced"
+}
+
+// HasSyncError returns true if there's a sync error
+func (apm *AdvertiserProviderMapping) HasSyncError() bool {
+	return apm.SyncStatus != nil && *apm.SyncStatus == "error"
+}
+
+// GetSyncStatusString returns the sync status as a string, defaulting to "not_synced"
+func (apm *AdvertiserProviderMapping) GetSyncStatusString() string {
+	if apm.SyncStatus == nil {
+		return "not_synced"
+	}
+	return *apm.SyncStatus
 }
 
 // AdvertiserDiscrepancy represents a discrepancy between local and provider data

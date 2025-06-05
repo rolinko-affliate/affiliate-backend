@@ -173,7 +173,7 @@ func main() {
 	profileRepo := repository.NewPgxProfileRepository(repository.DB)
 	organizationRepo := repository.NewPgxOrganizationRepository(repository.DB)
 	advertiserRepo := repository.NewPgxAdvertiserRepository(repository.DB)
-	advertiserProviderMappingRepo := repository.NewPgxAdvertiserProviderMappingRepository(repository.DB)
+	advertiserProviderMappingRepo := repository.NewAdvertiserProviderMappingRepository(repository.DB)
 	affiliateRepo := repository.NewPgxAffiliateRepository(repository.DB)
 	affiliateProviderMappingRepo := repository.NewPgxAffiliateProviderMappingRepository(repository.DB)
 	campaignRepo := repository.NewPgxCampaignRepository(repository.DB)
@@ -210,7 +210,7 @@ func main() {
 	organizationService := service.NewOrganizationService(organizationRepo)
 	advertiserService := service.NewAdvertiserService(advertiserRepo, advertiserProviderMappingRepo, organizationRepo, cryptoService, integrationService)
 	affiliateService := service.NewAffiliateService(affiliateRepo, affiliateProviderMappingRepo, organizationRepo, integrationService)
-	campaignService := service.NewCampaignService(campaignRepo, campaignProviderMappingRepo, advertiserRepo, organizationRepo, cryptoService, integrationService)
+	campaignService := service.NewCampaignService(campaignRepo)
 
 	// Initialize Handlers
 	profileHandler := handlers.NewProfileHandler(profileService)

@@ -44,15 +44,12 @@ type AffiliateRepository interface {
 
 type CampaignRepository interface {
 	GetCampaignByID(ctx context.Context, id int64) (*domain.Campaign, error)
-	CreateCampaignProviderOffer(ctx context.Context, offer *domain.CampaignProviderOffer) error
-	UpdateCampaignProviderOffer(ctx context.Context, offer *domain.CampaignProviderOffer) error
-	ListCampaignProviderOffersByCampaign(ctx context.Context, campaignID int64) ([]*domain.CampaignProviderOffer, error)
 }
 
 type AdvertiserProviderMappingRepository interface {
-	GetProviderMapping(ctx context.Context, advertiserID int64, providerType string) (*domain.AdvertiserProviderMapping, error)
-	CreateProviderMapping(ctx context.Context, mapping *domain.AdvertiserProviderMapping) (*domain.AdvertiserProviderMapping, error)
-	UpdateProviderMapping(ctx context.Context, mapping *domain.AdvertiserProviderMapping) error
+	GetMappingByAdvertiserAndProvider(ctx context.Context, advertiserID int64, providerType string) (*domain.AdvertiserProviderMapping, error)
+	CreateMapping(ctx context.Context, mapping *domain.AdvertiserProviderMapping) error
+	UpdateMapping(ctx context.Context, mapping *domain.AdvertiserProviderMapping) error
 }
 
 type AffiliateProviderMappingRepository interface {

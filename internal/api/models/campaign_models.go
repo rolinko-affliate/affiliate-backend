@@ -1,0 +1,278 @@
+package models
+
+import (
+	"time"
+
+	"github.com/affiliate-backend/internal/domain"
+)
+
+// CreateCampaignRequest represents the request to create a new campaign
+type CreateCampaignRequest struct {
+	OrganizationID int64      `json:"organization_id" binding:"required"`
+	AdvertiserID   int64      `json:"advertiser_id" binding:"required"`
+	Name           string     `json:"name" binding:"required"`
+	Description    *string    `json:"description,omitempty"`
+	Status         string     `json:"status" binding:"required,oneof=draft active paused archived"`
+	StartDate      *time.Time `json:"start_date,omitempty"`
+	EndDate        *time.Time `json:"end_date,omitempty"`
+	InternalNotes  *string    `json:"internal_notes,omitempty"`
+	
+	// Core campaign fields
+	DestinationURL      *string `json:"destination_url,omitempty"`
+	ThumbnailURL        *string `json:"thumbnail_url,omitempty"`
+	PreviewURL          *string `json:"preview_url,omitempty"`
+	Visibility          *string `json:"visibility,omitempty" binding:"omitempty,oneof=public require_approval private"`
+	CurrencyID          *string `json:"currency_id,omitempty"`
+	ConversionMethod    *string `json:"conversion_method,omitempty" binding:"omitempty,oneof=server_postback pixel"`
+	SessionDefinition   *string `json:"session_definition,omitempty" binding:"omitempty,oneof=cookie ip fingerprint"`
+	SessionDuration     *int32  `json:"session_duration,omitempty"`
+	TermsAndConditions  *string `json:"terms_and_conditions,omitempty"`
+	
+	// Caps and limits
+	IsCapsEnabled         *bool `json:"is_caps_enabled,omitempty"`
+	DailyConversionCap    *int  `json:"daily_conversion_cap,omitempty"`
+	WeeklyConversionCap   *int  `json:"weekly_conversion_cap,omitempty"`
+	MonthlyConversionCap  *int  `json:"monthly_conversion_cap,omitempty"`
+	GlobalConversionCap   *int  `json:"global_conversion_cap,omitempty"`
+	DailyClickCap         *int  `json:"daily_click_cap,omitempty"`
+	WeeklyClickCap        *int  `json:"weekly_click_cap,omitempty"`
+	MonthlyClickCap       *int  `json:"monthly_click_cap,omitempty"`
+	GlobalClickCap        *int  `json:"global_click_cap,omitempty"`
+	
+	// Payout and revenue configuration
+	PayoutType     *string  `json:"payout_type,omitempty" binding:"omitempty,oneof=cpa cpc cpm"`
+	PayoutAmount   *float64 `json:"payout_amount,omitempty"`
+	RevenueType    *string  `json:"revenue_type,omitempty" binding:"omitempty,oneof=rpa rpc rpm"`
+	RevenueAmount  *float64 `json:"revenue_amount,omitempty"`
+}
+
+// UpdateCampaignRequest represents the request to update an existing campaign
+type UpdateCampaignRequest struct {
+	Name          string     `json:"name" binding:"required"`
+	Description   *string    `json:"description,omitempty"`
+	Status        string     `json:"status" binding:"required,oneof=draft active paused archived"`
+	StartDate     *time.Time `json:"start_date,omitempty"`
+	EndDate       *time.Time `json:"end_date,omitempty"`
+	InternalNotes *string    `json:"internal_notes,omitempty"`
+	
+	// Core campaign fields
+	DestinationURL      *string `json:"destination_url,omitempty"`
+	ThumbnailURL        *string `json:"thumbnail_url,omitempty"`
+	PreviewURL          *string `json:"preview_url,omitempty"`
+	Visibility          *string `json:"visibility,omitempty" binding:"omitempty,oneof=public require_approval private"`
+	CurrencyID          *string `json:"currency_id,omitempty"`
+	ConversionMethod    *string `json:"conversion_method,omitempty" binding:"omitempty,oneof=server_postback pixel"`
+	SessionDefinition   *string `json:"session_definition,omitempty" binding:"omitempty,oneof=cookie ip fingerprint"`
+	SessionDuration     *int32  `json:"session_duration,omitempty"`
+	TermsAndConditions  *string `json:"terms_and_conditions,omitempty"`
+	
+	// Caps and limits
+	IsCapsEnabled         *bool `json:"is_caps_enabled,omitempty"`
+	DailyConversionCap    *int  `json:"daily_conversion_cap,omitempty"`
+	WeeklyConversionCap   *int  `json:"weekly_conversion_cap,omitempty"`
+	MonthlyConversionCap  *int  `json:"monthly_conversion_cap,omitempty"`
+	GlobalConversionCap   *int  `json:"global_conversion_cap,omitempty"`
+	DailyClickCap         *int  `json:"daily_click_cap,omitempty"`
+	WeeklyClickCap        *int  `json:"weekly_click_cap,omitempty"`
+	MonthlyClickCap       *int  `json:"monthly_click_cap,omitempty"`
+	GlobalClickCap        *int  `json:"global_click_cap,omitempty"`
+	
+	// Payout and revenue configuration
+	PayoutType     *string  `json:"payout_type,omitempty" binding:"omitempty,oneof=cpa cpc cpm"`
+	PayoutAmount   *float64 `json:"payout_amount,omitempty"`
+	RevenueType    *string  `json:"revenue_type,omitempty" binding:"omitempty,oneof=rpa rpc rpm"`
+	RevenueAmount  *float64 `json:"revenue_amount,omitempty"`
+}
+
+// CampaignResponse represents the response for campaign operations
+type CampaignResponse struct {
+	CampaignID     int64      `json:"campaign_id"`
+	OrganizationID int64      `json:"organization_id"`
+	AdvertiserID   int64      `json:"advertiser_id"`
+	Name           string     `json:"name"`
+	Description    *string    `json:"description,omitempty"`
+	Status         string     `json:"status"`
+	StartDate      *time.Time `json:"start_date,omitempty"`
+	EndDate        *time.Time `json:"end_date,omitempty"`
+	InternalNotes  *string    `json:"internal_notes,omitempty"`
+	
+	// Core campaign fields
+	DestinationURL      *string `json:"destination_url,omitempty"`
+	ThumbnailURL        *string `json:"thumbnail_url,omitempty"`
+	PreviewURL          *string `json:"preview_url,omitempty"`
+	Visibility          *string `json:"visibility,omitempty"`
+	CurrencyID          *string `json:"currency_id,omitempty"`
+	ConversionMethod    *string `json:"conversion_method,omitempty"`
+	SessionDefinition   *string `json:"session_definition,omitempty"`
+	SessionDuration     *int32  `json:"session_duration,omitempty"`
+	TermsAndConditions  *string `json:"terms_and_conditions,omitempty"`
+	
+	// Caps and limits
+	IsCapsEnabled         *bool `json:"is_caps_enabled,omitempty"`
+	DailyConversionCap    *int  `json:"daily_conversion_cap,omitempty"`
+	WeeklyConversionCap   *int  `json:"weekly_conversion_cap,omitempty"`
+	MonthlyConversionCap  *int  `json:"monthly_conversion_cap,omitempty"`
+	GlobalConversionCap   *int  `json:"global_conversion_cap,omitempty"`
+	DailyClickCap         *int  `json:"daily_click_cap,omitempty"`
+	WeeklyClickCap        *int  `json:"weekly_click_cap,omitempty"`
+	MonthlyClickCap       *int  `json:"monthly_click_cap,omitempty"`
+	GlobalClickCap        *int  `json:"global_click_cap,omitempty"`
+	
+	// Payout and revenue configuration
+	PayoutType     *string  `json:"payout_type,omitempty"`
+	PayoutAmount   *float64 `json:"payout_amount,omitempty"`
+	RevenueType    *string  `json:"revenue_type,omitempty"`
+	RevenueAmount  *float64 `json:"revenue_amount,omitempty"`
+	
+	CreatedAt      time.Time  `json:"created_at"`
+	UpdatedAt      time.Time  `json:"updated_at"`
+}
+
+// CampaignListResponse represents the response for listing campaigns
+type CampaignListResponse struct {
+	Campaigns []CampaignResponse `json:"campaigns"`
+	Total     int                `json:"total"`
+	Page      int                `json:"page"`
+	PageSize  int                `json:"page_size"`
+}
+
+// ToCampaignDomain converts CreateCampaignRequest to domain.Campaign
+func (r *CreateCampaignRequest) ToCampaignDomain() *domain.Campaign {
+	return &domain.Campaign{
+		OrganizationID: r.OrganizationID,
+		AdvertiserID:   r.AdvertiserID,
+		Name:           r.Name,
+		Description:    r.Description,
+		Status:         r.Status,
+		StartDate:      r.StartDate,
+		EndDate:        r.EndDate,
+		InternalNotes:  r.InternalNotes,
+		
+		// Core campaign fields
+		DestinationURL:      r.DestinationURL,
+		ThumbnailURL:        r.ThumbnailURL,
+		PreviewURL:          r.PreviewURL,
+		Visibility:          r.Visibility,
+		CurrencyID:          r.CurrencyID,
+		ConversionMethod:    r.ConversionMethod,
+		SessionDefinition:   r.SessionDefinition,
+		SessionDuration:     r.SessionDuration,
+		TermsAndConditions:  r.TermsAndConditions,
+		
+		// Caps and limits
+		IsCapsEnabled:         r.IsCapsEnabled,
+		DailyConversionCap:    r.DailyConversionCap,
+		WeeklyConversionCap:   r.WeeklyConversionCap,
+		MonthlyConversionCap:  r.MonthlyConversionCap,
+		GlobalConversionCap:   r.GlobalConversionCap,
+		DailyClickCap:         r.DailyClickCap,
+		WeeklyClickCap:        r.WeeklyClickCap,
+		MonthlyClickCap:       r.MonthlyClickCap,
+		GlobalClickCap:        r.GlobalClickCap,
+		
+		// Payout and revenue configuration
+		PayoutType:     r.PayoutType,
+		PayoutAmount:   r.PayoutAmount,
+		RevenueType:    r.RevenueType,
+		RevenueAmount:  r.RevenueAmount,
+	}
+}
+
+// UpdateCampaignDomain updates a domain.Campaign with UpdateCampaignRequest data
+func (r *UpdateCampaignRequest) UpdateCampaignDomain(campaign *domain.Campaign) {
+	campaign.Name = r.Name
+	campaign.Description = r.Description
+	campaign.Status = r.Status
+	campaign.StartDate = r.StartDate
+	campaign.EndDate = r.EndDate
+	campaign.InternalNotes = r.InternalNotes
+	
+	// Core campaign fields
+	campaign.DestinationURL = r.DestinationURL
+	campaign.ThumbnailURL = r.ThumbnailURL
+	campaign.PreviewURL = r.PreviewURL
+	campaign.Visibility = r.Visibility
+	campaign.CurrencyID = r.CurrencyID
+	campaign.ConversionMethod = r.ConversionMethod
+	campaign.SessionDefinition = r.SessionDefinition
+	campaign.SessionDuration = r.SessionDuration
+	campaign.TermsAndConditions = r.TermsAndConditions
+	
+	// Caps and limits
+	campaign.IsCapsEnabled = r.IsCapsEnabled
+	campaign.DailyConversionCap = r.DailyConversionCap
+	campaign.WeeklyConversionCap = r.WeeklyConversionCap
+	campaign.MonthlyConversionCap = r.MonthlyConversionCap
+	campaign.GlobalConversionCap = r.GlobalConversionCap
+	campaign.DailyClickCap = r.DailyClickCap
+	campaign.WeeklyClickCap = r.WeeklyClickCap
+	campaign.MonthlyClickCap = r.MonthlyClickCap
+	campaign.GlobalClickCap = r.GlobalClickCap
+	
+	// Payout and revenue configuration
+	campaign.PayoutType = r.PayoutType
+	campaign.PayoutAmount = r.PayoutAmount
+	campaign.RevenueType = r.RevenueType
+	campaign.RevenueAmount = r.RevenueAmount
+}
+
+// FromCampaignDomain converts domain.Campaign to CampaignResponse
+func FromCampaignDomain(campaign *domain.Campaign) *CampaignResponse {
+	return &CampaignResponse{
+		CampaignID:     campaign.CampaignID,
+		OrganizationID: campaign.OrganizationID,
+		AdvertiserID:   campaign.AdvertiserID,
+		Name:           campaign.Name,
+		Description:    campaign.Description,
+		Status:         campaign.Status,
+		StartDate:      campaign.StartDate,
+		EndDate:        campaign.EndDate,
+		InternalNotes:  campaign.InternalNotes,
+		
+		// Core campaign fields
+		DestinationURL:      campaign.DestinationURL,
+		ThumbnailURL:        campaign.ThumbnailURL,
+		PreviewURL:          campaign.PreviewURL,
+		Visibility:          campaign.Visibility,
+		CurrencyID:          campaign.CurrencyID,
+		ConversionMethod:    campaign.ConversionMethod,
+		SessionDefinition:   campaign.SessionDefinition,
+		SessionDuration:     campaign.SessionDuration,
+		TermsAndConditions:  campaign.TermsAndConditions,
+		
+		// Caps and limits
+		IsCapsEnabled:         campaign.IsCapsEnabled,
+		DailyConversionCap:    campaign.DailyConversionCap,
+		WeeklyConversionCap:   campaign.WeeklyConversionCap,
+		MonthlyConversionCap:  campaign.MonthlyConversionCap,
+		GlobalConversionCap:   campaign.GlobalConversionCap,
+		DailyClickCap:         campaign.DailyClickCap,
+		WeeklyClickCap:        campaign.WeeklyClickCap,
+		MonthlyClickCap:       campaign.MonthlyClickCap,
+		GlobalClickCap:        campaign.GlobalClickCap,
+		
+		// Payout and revenue configuration
+		PayoutType:     campaign.PayoutType,
+		PayoutAmount:   campaign.PayoutAmount,
+		RevenueType:    campaign.RevenueType,
+		RevenueAmount:  campaign.RevenueAmount,
+		
+		CreatedAt:      campaign.CreatedAt,
+		UpdatedAt:      campaign.UpdatedAt,
+	}
+}
+
+// FromCampaignDomainList converts a list of domain.Campaign to CampaignListResponse
+func FromCampaignDomainList(campaigns []*domain.Campaign, total, page, pageSize int) *CampaignListResponse {
+	campaignResponses := make([]CampaignResponse, len(campaigns))
+	for i, campaign := range campaigns {
+		campaignResponses[i] = *FromCampaignDomain(campaign)
+	}
+	
+	return &CampaignListResponse{
+		Campaigns: campaignResponses,
+		Total:     total,
+		Page:      page,
+		PageSize:  pageSize,
+	}
+}

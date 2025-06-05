@@ -23,6 +23,7 @@ func convertInt32ToIntPtr(i *int32) *int {
 	return &val
 }
 
+
 type CreateAdvertiserRequest struct {
 	Name                         string                  `json:"name" binding:"required"`
 	Status                       string                  `json:"status,omitempty"`
@@ -41,7 +42,6 @@ type CreateAdvertiserRequest struct {
 	EmailAttributionMethod       *string                 `json:"email_attribution_method,omitempty"`
 	AttributionPriority          *string                 `json:"attribution_priority,omitempty"`
 	ReportingTimezoneID          *int                    `json:"reporting_timezone_id,omitempty"`
-	IsExposePublisherReporting   *bool                   `json:"is_expose_publisher_reporting,omitempty"`
 }
 
 type UpdateAdvertiserRequest struct {
@@ -61,7 +61,6 @@ type UpdateAdvertiserRequest struct {
 	EmailAttributionMethod       *string                 `json:"email_attribution_method,omitempty"`
 	AttributionPriority          *string                 `json:"attribution_priority,omitempty"`
 	ReportingTimezoneID          *int                    `json:"reporting_timezone_id,omitempty"`
-	IsExposePublisherReporting   *bool                   `json:"is_expose_publisher_reporting,omitempty"`
 }
 
 type AdvertiserResponse struct {
@@ -83,7 +82,6 @@ type AdvertiserResponse struct {
 	EmailAttributionMethod       *string                 `json:"email_attribution_method,omitempty"`
 	AttributionPriority          *string                 `json:"attribution_priority,omitempty"`
 	ReportingTimezoneID          *int                    `json:"reporting_timezone_id,omitempty"`
-	IsExposePublisherReporting   *bool                   `json:"is_expose_publisher_reporting,omitempty"`
 	CreatedAt                    time.Time               `json:"created_at"`
 	UpdatedAt                    time.Time               `json:"updated_at"`
 }
@@ -159,7 +157,6 @@ func (req *CreateAdvertiserRequest) ToDomain() *domain.Advertiser {
 		EmailAttributionMethod:     req.EmailAttributionMethod,
 		AttributionPriority:        req.AttributionPriority,
 		ReportingTimezoneID:        convertIntToInt32Ptr(req.ReportingTimezoneID),
-		IsExposePublisherReporting: req.IsExposePublisherReporting,
 	}
 }
 
@@ -183,7 +180,6 @@ func (req *UpdateAdvertiserRequest) ToDomain(advertiserID int64, orgID int64) *d
 		EmailAttributionMethod:     req.EmailAttributionMethod,
 		AttributionPriority:        req.AttributionPriority,
 		ReportingTimezoneID:        convertIntToInt32Ptr(req.ReportingTimezoneID),
-		IsExposePublisherReporting: req.IsExposePublisherReporting,
 	}
 }
 
@@ -207,7 +203,7 @@ func ToAdvertiserResponse(advertiser *domain.Advertiser) *AdvertiserResponse {
 		EmailAttributionMethod:     advertiser.EmailAttributionMethod,
 		AttributionPriority:        advertiser.AttributionPriority,
 		ReportingTimezoneID:        convertInt32ToIntPtr(advertiser.ReportingTimezoneID),
-		IsExposePublisherReporting: advertiser.IsExposePublisherReporting,
+
 		CreatedAt:                  advertiser.CreatedAt,
 		UpdatedAt:                  advertiser.UpdatedAt,
 	}

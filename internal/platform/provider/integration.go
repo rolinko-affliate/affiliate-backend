@@ -180,9 +180,7 @@ func (m *MockIntegrationServiceWithDefaults) CreateCampaign(ctx context.Context,
 	result.CampaignID = 1
 	result.CreatedAt = time.Now()
 	result.UpdatedAt = time.Now()
-	// Simulate provider-specific fields
-	networkAdvID := int32(456)
-	result.NetworkAdvertiserID = &networkAdvID
+
 	return result, nil
 }
 

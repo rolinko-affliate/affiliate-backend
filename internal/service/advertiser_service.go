@@ -85,7 +85,7 @@ func (s *advertiserService) CreateAdvertiser(ctx context.Context, advertiser *do
 		ProviderConfig:       nil, // Set by IntegrationService with full payload
 	}
 
-	createdMapping, err := s.providerMappingRepo.CreateMapping(ctx, mapping)
+	err = s.providerMappingRepo.CreateMapping(ctx, mapping)
 	if err != nil {
 		return nil, fmt.Errorf("failed to create provider mapping: %w", err)
 	}
@@ -94,24 +94,22 @@ func (s *advertiserService) CreateAdvertiser(ctx context.Context, advertiser *do
 	providerAdvertiser, err := s.integrationService.CreateAdvertiser(ctx, *advertiser)
 	if err != nil {
 		// Update mapping status to "failed"
-		createdMapping.SyncStatus = stringPtr("failed")
-		createdMapping.SyncError = stringPtr(err.Error())
-		createdMapping.LastSyncAt = &now
-		s.providerMappingRepo.UpdateMapping(ctx, createdMapping)
+		mapping.SyncStatus = stringPtr("failed")
+		mapping.SyncError = stringPtr(err.Error())
+		mapping.LastSyncAt = &now
+		s.providerMappingRepo.UpdateMapping(ctx, mapping)
 		return nil, fmt.Errorf("failed to create advertiser in provider: %w", err)
 	}
 
 	// Step 4: Update mapping with provider ID and "active" status
-	var providerID *string
-	if providerAdvertiser.NetworkEmployeeID != nil {
-		idStr := fmt.Sprintf("%d", *providerAdvertiser.NetworkEmployeeID)
-		providerID = &idStr
-	}
-	createdMapping.ProviderAdvertiserID = providerID
-	createdMapping.SyncStatus = stringPtr("active")
-	createdMapping.SyncError = nil
-	createdMapping.LastSyncAt = &now
-	if err := s.providerMappingRepo.UpdateMapping(ctx, createdMapping); err != nil {
+	// For now, we'll use the advertiser ID as the provider ID since the integration service
+	// doesn't return provider-specific IDs in the mock implementation
+	providerID := fmt.Sprintf("%d", providerAdvertiser.AdvertiserID)
+	mapping.ProviderAdvertiserID = &providerID
+	mapping.SyncStatus = stringPtr("active")
+	mapping.SyncError = nil
+	mapping.LastSyncAt = &now
+	if err := s.providerMappingRepo.UpdateMapping(ctx, mapping); err != nil {
 		// Log error but don't fail since advertiser was created successfully
 		fmt.Printf("Warning: failed to update provider mapping status to active: %v\n", err)
 	}
@@ -136,7 +134,7 @@ func (s *advertiserService) UpdateAdvertiser(ctx context.Context, advertiser *do
 	}
 
 	// Step 2: Check if provider mapping exists
-	_, err := s.providerMappingRepo.GetMappingByAdvertiserAndProvider(ctx, advertiser.AdvertiserID, "everflow")
+	mapping, err := s.providerMappingRepo.GetMappingByAdvertiserAndProvider(ctx, advertiser.AdvertiserID, "everflow")
 	if err != nil {
 		// No provider mapping exists, skip provider sync
 		return nil
@@ -405,39 +403,39 @@ func (s *advertiserService) createAdvertiserInProvider(ctx context.Context, adve
 		ProviderConfig: nil, // Set by IntegrationService with full payload
 	}
 
-	createdMapping, err := s.providerMappingRepo.CreateMapping(ctx, mapping)
-	if err != nil {
+	if err := s.providerMappingRepo.CreateMapping(ctx, mapping); err != nil {
 		return fmt.Errorf("failed to create provider mapping: %w", err)
 	}
 
 	// Create in provider
 	providerAdvertiser, err := s.integrationService.CreateAdvertiser(ctx, *advertiser)
 	if err != nil {
-		createdMapping.SyncStatus = stringPtr("sync_failed")
-		createdMapping.SyncError = stringPtr(err.Error())
-		createdMapping.LastSyncAt = &now
-		s.providerMappingRepo.UpdateMapping(ctx, createdMapping)
+		mapping.SyncStatus = stringPtr("sync_failed")
+		mapping.SyncError = stringPtr(err.Error())
+		mapping.LastSyncAt = &now
+		s.providerMappingRepo.UpdateMapping(ctx, mapping)
 		return fmt.Errorf("failed to create advertiser in provider: %w", err)
 	}
 
 	// Update mapping with provider ID and "active" status
-	var providerID *string
-	if providerAdvertiser.NetworkEmployeeID != nil {
-		idStr := fmt.Sprintf("%d", *providerAdvertiser.NetworkEmployeeID)
-		providerID = &idStr
-	}
-	createdMapping.ProviderAdvertiserID = providerID
-	createdMapping.SyncStatus = stringPtr("active")
-	createdMapping.SyncError = nil
-	createdMapping.LastSyncAt = &now
-	return s.providerMappingRepo.UpdateMapping(ctx, createdMapping)
+	providerID := fmt.Sprintf("%d", providerAdvertiser.AdvertiserID)
+	mapping.ProviderAdvertiserID = &providerID
+	mapping.SyncStatus = stringPtr("active")
+	mapping.SyncError = nil
+	mapping.LastSyncAt = &now
+	return s.providerMappingRepo.UpdateMapping(ctx, mapping)
 }
 
 // mergeProviderDataIntoAdvertiser merges provider data into local advertiser
 func (s *advertiserService) mergeProviderDataIntoAdvertiser(local *domain.Advertiser, provider *domain.Advertiser) {
 	// Merge relevant fields from provider into local
-	if provider.NetworkEmployeeID != nil {
-		local.NetworkEmployeeID = provider.NetworkEmployeeID
+	// For now, we only merge basic fields since provider-specific fields
+	// are handled through the provider mapping
+	if provider.Name != "" {
+		local.Name = provider.Name
+	}
+	if provider.Status != "" {
+		local.Status = provider.Status
 	}
 	// Add other fields as needed based on what the provider returns
 }
@@ -477,16 +475,14 @@ func (s *advertiserService) compareAdvertiserFields(local *domain.Advertiser, pr
 		})
 	}
 
-	// Compare NetworkEmployeeID if both exist
-	if local.NetworkEmployeeID != nil && provider.NetworkEmployeeID != nil {
-		if *local.NetworkEmployeeID != *provider.NetworkEmployeeID {
-			discrepancies = append(discrepancies, domain.AdvertiserDiscrepancy{
-				Field:         "network_employee_id",
-				LocalValue:    *local.NetworkEmployeeID,
-				ProviderValue: *provider.NetworkEmployeeID,
-				Severity:      "critical",
-			})
-		}
+	// Compare status
+	if local.Status != provider.Status {
+		discrepancies = append(discrepancies, domain.AdvertiserDiscrepancy{
+			Field:         "status",
+			LocalValue:    local.Status,
+			ProviderValue: provider.Status,
+			Severity:      "medium",
+		})
 	}
 
 	return discrepancies

@@ -24,446 +24,6 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/advertiser-provider-mappings": {
-            "post": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Creates a new mapping between an advertiser and a provider",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "advertisers"
-                ],
-                "summary": "Create a new advertiser provider mapping",
-                "parameters": [
-                    {
-                        "description": "Mapping details",
-                        "name": "request",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/handlers.CreateAdvertiserProviderMappingRequest"
-                        }
-                    }
-                ],
-                "responses": {
-                    "201": {
-                        "description": "Created mapping",
-                        "schema": {
-                            "$ref": "#/definitions/domain.AdvertiserProviderMapping"
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid request",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/advertiser-provider-mappings/{mappingId}": {
-            "put": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Updates a mapping between an advertiser and a provider",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "advertisers"
-                ],
-                "summary": "Update advertiser provider mapping",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "Mapping ID",
-                        "name": "mappingId",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "description": "Mapping details",
-                        "name": "request",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/handlers.UpdateAdvertiserProviderMappingRequest"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Updated mapping",
-                        "schema": {
-                            "$ref": "#/definitions/domain.AdvertiserProviderMapping"
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid request",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Mapping not found",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                }
-            },
-            "delete": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Deletes a mapping between an advertiser and a provider",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "advertisers"
-                ],
-                "summary": "Delete advertiser provider mapping",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "Mapping ID",
-                        "name": "mappingId",
-                        "in": "path",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "204": {
-                        "description": "No content"
-                    },
-                    "400": {
-                        "description": "Invalid mapping ID",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Mapping not found",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/advertisers": {
-            "post": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Creates a new advertiser with the given details",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "advertisers"
-                ],
-                "summary": "Create a new advertiser",
-                "parameters": [
-                    {
-                        "description": "Advertiser details",
-                        "name": "request",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/handlers.CreateAdvertiserRequest"
-                        }
-                    }
-                ],
-                "responses": {
-                    "201": {
-                        "description": "Created advertiser",
-                        "schema": {
-                            "$ref": "#/definitions/domain.Advertiser"
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid request",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/advertisers/{id}": {
-            "get": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Retrieves an advertiser by its ID",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "advertisers"
-                ],
-                "summary": "Get advertiser by ID",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "Advertiser ID",
-                        "name": "id",
-                        "in": "path",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Advertiser details",
-                        "schema": {
-                            "$ref": "#/definitions/domain.Advertiser"
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid advertiser ID",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Advertiser not found",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                }
-            },
-            "put": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Updates an advertiser with the given details",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "advertisers"
-                ],
-                "summary": "Update advertiser",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "Advertiser ID",
-                        "name": "id",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "description": "Advertiser details",
-                        "name": "request",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/handlers.UpdateAdvertiserRequest"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Updated advertiser",
-                        "schema": {
-                            "$ref": "#/definitions/domain.Advertiser"
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid request",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Advertiser not found",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                }
-            },
-            "delete": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Deletes an advertiser by its ID",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "advertisers"
-                ],
-                "summary": "Delete advertiser",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "Advertiser ID",
-                        "name": "id",
-                        "in": "path",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "204": {
-                        "description": "No content"
-                    },
-                    "400": {
-                        "description": "Invalid advertiser ID",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Advertiser not found",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "/advertisers/{id}/campaigns": {
             "get": {
                 "security": [
@@ -515,77 +75,6 @@ const docTemplate = `{
                     },
                     "400": {
                         "description": "Invalid advertiser ID",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/advertisers/{id}/provider-mappings/{providerType}": {
-            "get": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Retrieves a mapping between an advertiser and a provider",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "advertisers"
-                ],
-                "summary": "Get advertiser provider mapping",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "Advertiser ID",
-                        "name": "id",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "type": "string",
-                        "description": "Provider Type",
-                        "name": "providerType",
-                        "in": "path",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Mapping details",
-                        "schema": {
-                            "$ref": "#/definitions/domain.AdvertiserProviderMapping"
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid request",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Mapping not found",
                         "schema": {
                             "type": "object",
                             "additionalProperties": {
@@ -1796,6 +1285,15 @@ const docTemplate = `{
                             }
                         }
                     },
+                    "403": {
+                        "description": "Forbidden - Only admins can create organizations",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
                     "500": {
                         "description": "Internal server error",
                         "schema": {
@@ -1844,6 +1342,15 @@ const docTemplate = `{
                     },
                     "400": {
                         "description": "Invalid organization ID",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden - User doesn't have permission",
                         "schema": {
                             "type": "object",
                             "additionalProperties": {
@@ -1922,6 +1429,15 @@ const docTemplate = `{
                             }
                         }
                     },
+                    "403": {
+                        "description": "Forbidden - User doesn't have permission",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
                     "404": {
                         "description": "Organization not found",
                         "schema": {
@@ -1981,78 +1497,17 @@ const docTemplate = `{
                             }
                         }
                     },
+                    "403": {
+                        "description": "Forbidden - User doesn't have permission",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
                     "404": {
                         "description": "Organization not found",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/organizations/{id}/advertisers": {
-            "get": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Retrieves a list of advertisers for an organization with pagination",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "advertisers"
-                ],
-                "summary": "List advertisers by organization",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "Organization ID",
-                        "name": "id",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "type": "integer",
-                        "description": "Page number (default: 1)",
-                        "name": "page",
-                        "in": "query"
-                    },
-                    {
-                        "type": "integer",
-                        "description": "Page size (default: 10)",
-                        "name": "pageSize",
-                        "in": "query"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "List of advertisers",
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/definitions/domain.Advertiser"
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid organization ID",
                         "schema": {
                             "type": "object",
                             "additionalProperties": {
@@ -2333,7 +1788,7 @@ const docTemplate = `{
                         "BearerAuth": []
                     }
                 ],
-                "description": "Updates an existing user profile",
+                "description": "Updates an existing user profile with only the provided fields",
                 "consumes": [
                     "application/json"
                 ],
@@ -2358,7 +1813,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/handlers.ProfileRequest"
+                            "$ref": "#/definitions/handlers.UpdateProfileRequest"
                         }
                     }
                 ],
@@ -2562,76 +2017,41 @@ const docTemplate = `{
         }
     },
     "definitions": {
-        "domain.Advertiser": {
-            "type": "object",
-            "properties": {
-                "advertiser_id": {
-                    "type": "integer"
-                },
-                "billing_details": {
-                    "description": "JSONB stored as string",
-                    "type": "string"
-                },
-                "contact_email": {
-                    "type": "string"
-                },
-                "created_at": {
-                    "type": "string"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "organization_id": {
-                    "type": "integer"
-                },
-                "status": {
-                    "description": "'active', 'pending', 'inactive', 'rejected'",
-                    "type": "string"
-                },
-                "updated_at": {
-                    "type": "string"
-                }
-            }
-        },
-        "domain.AdvertiserProviderMapping": {
-            "type": "object",
-            "properties": {
-                "advertiser_id": {
-                    "type": "integer"
-                },
-                "created_at": {
-                    "type": "string"
-                },
-                "mapping_id": {
-                    "type": "integer"
-                },
-                "provider_advertiser_id": {
-                    "description": "e.g., Everflow's network_advertiser_id",
-                    "type": "string"
-                },
-                "provider_config": {
-                    "description": "JSONB stored as string",
-                    "type": "string"
-                },
-                "provider_type": {
-                    "description": "'everflow' for MVP",
-                    "type": "string"
-                },
-                "updated_at": {
-                    "type": "string"
-                }
-            }
-        },
         "domain.Affiliate": {
             "type": "object",
             "properties": {
                 "affiliate_id": {
                     "type": "integer"
                 },
+                "billing_info": {
+                    "description": "JSONB stored as string",
+                    "type": "string"
+                },
+                "contact_address": {
+                    "description": "JSONB stored as string",
+                    "type": "string"
+                },
                 "contact_email": {
                     "type": "string"
                 },
                 "created_at": {
+                    "type": "string"
+                },
+                "default_currency_id": {
+                    "type": "string"
+                },
+                "default_payment_terms": {
+                    "type": "integer"
+                },
+                "internal_notes": {
+                    "description": "General purpose fields moved from EverflowProviderData",
+                    "type": "string"
+                },
+                "invoice_amount_threshold": {
+                    "type": "number"
+                },
+                "labels": {
+                    "description": "JSONB stored as string (array of strings)",
                     "type": "string"
                 },
                 "name": {
@@ -2659,7 +2079,14 @@ const docTemplate = `{
                 "affiliate_id": {
                     "type": "integer"
                 },
+                "api_credentials": {
+                    "description": "JSONB stored as string for API keys/tokens",
+                    "type": "string"
+                },
                 "created_at": {
+                    "type": "string"
+                },
+                "last_sync_at": {
                     "type": "string"
                 },
                 "mapping_id": {
@@ -2673,8 +2100,19 @@ const docTemplate = `{
                     "description": "JSONB stored as string",
                     "type": "string"
                 },
+                "provider_data": {
+                    "description": "Provider-specific data (stored as JSONB) - contains all Everflow-specific fields",
+                    "type": "string"
+                },
                 "provider_type": {
                     "description": "'everflow' for MVP",
+                    "type": "string"
+                },
+                "sync_error": {
+                    "type": "string"
+                },
+                "sync_status": {
+                    "description": "Synchronization metadata",
                     "type": "string"
                 },
                 "updated_at": {
@@ -2688,22 +2126,131 @@ const docTemplate = `{
                 "advertiser_id": {
                     "type": "integer"
                 },
+                "app_identifier": {
+                    "type": "string"
+                },
                 "campaign_id": {
                     "type": "integer"
                 },
+                "caps_timezone_id": {
+                    "type": "integer"
+                },
+                "conversion_method": {
+                    "description": "'server_postback', 'pixel', etc.",
+                    "type": "string"
+                },
                 "created_at": {
+                    "type": "string"
+                },
+                "currency_id": {
+                    "description": "'USD', 'EUR', etc.",
+                    "type": "string"
+                },
+                "daily_click_cap": {
+                    "type": "integer"
+                },
+                "daily_conversion_cap": {
+                    "type": "integer"
+                },
+                "date_live_until": {
                     "type": "string"
                 },
                 "description": {
                     "type": "string"
                 },
+                "destination_url": {
+                    "type": "string"
+                },
+                "encoded_value": {
+                    "description": "Everflow tracking fields",
+                    "type": "string"
+                },
                 "end_date": {
                     "type": "string"
+                },
+                "global_click_cap": {
+                    "type": "integer"
+                },
+                "global_conversion_cap": {
+                    "type": "integer"
+                },
+                "html_description": {
+                    "type": "string"
+                },
+                "internal_notes": {
+                    "type": "string"
+                },
+                "is_caps_enabled": {
+                    "description": "Caps and limits",
+                    "type": "boolean"
+                },
+                "is_description_plain_text": {
+                    "type": "boolean"
+                },
+                "is_force_terms_and_conditions": {
+                    "type": "boolean"
+                },
+                "is_use_direct_linking": {
+                    "type": "boolean"
+                },
+                "is_using_explicit_terms_and_conditions": {
+                    "type": "boolean"
+                },
+                "is_view_through_enabled": {
+                    "type": "boolean"
+                },
+                "is_whitelist_check_enabled": {
+                    "type": "boolean"
+                },
+                "monthly_click_cap": {
+                    "type": "integer"
+                },
+                "monthly_conversion_cap": {
+                    "type": "integer"
                 },
                 "name": {
                     "type": "string"
                 },
+                "network_advertiser_id": {
+                    "description": "Offer-specific fields for Everflow integration",
+                    "type": "integer"
+                },
+                "offer_config": {
+                    "description": "Additional configuration stored as JSON",
+                    "type": "string"
+                },
                 "organization_id": {
+                    "type": "integer"
+                },
+                "payout_amount": {
+                    "type": "number"
+                },
+                "payout_type": {
+                    "description": "Payout and revenue configuration",
+                    "type": "string"
+                },
+                "preview_url": {
+                    "type": "string"
+                },
+                "project_id": {
+                    "type": "string"
+                },
+                "revenue_amount": {
+                    "type": "number"
+                },
+                "revenue_type": {
+                    "description": "'rpa', 'rpc', 'rpm', etc.",
+                    "type": "string"
+                },
+                "server_side_url": {
+                    "type": "string"
+                },
+                "session_definition": {
+                    "description": "'cookie', 'ip', 'fingerprint'",
+                    "type": "string"
+                },
+                "session_duration": {
+                    "description": "in hours",
                     "type": "integer"
                 },
                 "start_date": {
@@ -2713,8 +2260,39 @@ const docTemplate = `{
                     "description": "'draft', 'active', 'paused', 'archived'",
                     "type": "string"
                 },
+                "terms_and_conditions": {
+                    "type": "string"
+                },
+                "thumbnail_url": {
+                    "type": "string"
+                },
+                "time_created": {
+                    "type": "integer"
+                },
+                "time_saved": {
+                    "type": "integer"
+                },
+                "today_clicks": {
+                    "type": "integer"
+                },
+                "today_revenue": {
+                    "type": "string"
+                },
                 "updated_at": {
                     "type": "string"
+                },
+                "view_through_destination_url": {
+                    "type": "string"
+                },
+                "visibility": {
+                    "description": "'public', 'require_approval', 'private'",
+                    "type": "string"
+                },
+                "weekly_click_cap": {
+                    "type": "integer"
+                },
+                "weekly_conversion_cap": {
+                    "type": "integer"
                 }
             }
         },
@@ -2722,6 +2300,9 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "campaign_id": {
+                    "type": "integer"
+                },
+                "campaign_provider_offer_id": {
                     "type": "integer"
                 },
                 "created_at": {
@@ -2736,9 +2317,6 @@ const docTemplate = `{
                 "provider_offer_config": {
                     "description": "JSONB stored as string",
                     "type": "string"
-                },
-                "provider_offer_id": {
-                    "type": "integer"
                 },
                 "provider_offer_ref": {
                     "description": "Provider's Offer ID (e.g., Everflow's network_offer_id)",
@@ -2802,73 +2380,12 @@ const docTemplate = `{
                 "role_id": {
                     "type": "integer"
                 },
+                "role_name": {
+                    "description": "Mandatory role name",
+                    "type": "string"
+                },
                 "updated_at": {
                     "type": "string"
-                }
-            }
-        },
-        "handlers.CreateAdvertiserProviderMappingRequest": {
-            "type": "object",
-            "required": [
-                "advertiser_id",
-                "provider_type"
-            ],
-            "properties": {
-                "advertiser_id": {
-                    "description": "Advertiser ID",
-                    "type": "integer",
-                    "example": 1
-                },
-                "api_credentials": {
-                    "description": "API credentials in JSON format\nswagger:strfmt json",
-                    "type": "object"
-                },
-                "provider_advertiser_id": {
-                    "description": "Provider's advertiser ID",
-                    "type": "string",
-                    "example": "adv-12345"
-                },
-                "provider_config": {
-                    "description": "Provider configuration in JSON format\nswagger:strfmt json",
-                    "type": "object"
-                },
-                "provider_type": {
-                    "description": "Provider type (e.g., 'everflow')",
-                    "type": "string",
-                    "example": "everflow"
-                }
-            }
-        },
-        "handlers.CreateAdvertiserRequest": {
-            "type": "object",
-            "required": [
-                "name",
-                "organization_id"
-            ],
-            "properties": {
-                "billing_details": {
-                    "description": "Billing details in JSON format\nswagger:strfmt json",
-                    "type": "object"
-                },
-                "contact_email": {
-                    "description": "Contact email address",
-                    "type": "string",
-                    "example": "contact@example.com"
-                },
-                "name": {
-                    "description": "Advertiser name",
-                    "type": "string",
-                    "example": "Example Advertiser"
-                },
-                "organization_id": {
-                    "description": "Organization ID",
-                    "type": "integer",
-                    "example": 1
-                },
-                "status": {
-                    "description": "Status of the advertiser (active, pending, inactive, rejected)",
-                    "type": "string",
-                    "example": "active"
                 }
             }
         },
@@ -2967,37 +2484,7 @@ const docTemplate = `{
             }
         },
         "handlers.CreateCampaignRequest": {
-            "type": "object",
-            "required": [
-                "advertiser_id",
-                "name",
-                "organization_id"
-            ],
-            "properties": {
-                "advertiser_id": {
-                    "type": "integer"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "end_date": {
-                    "description": "Format: YYYY-MM-DD",
-                    "type": "string"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "organization_id": {
-                    "type": "integer"
-                },
-                "start_date": {
-                    "description": "Format: YYYY-MM-DD",
-                    "type": "string"
-                },
-                "status": {
-                    "type": "string"
-                }
-            }
+            "type": "object"
         },
         "handlers.CreateOrganizationRequest": {
             "type": "object",
@@ -3051,52 +2538,6 @@ const docTemplate = `{
                 "type": {
                     "description": "e.g., \"INSERT\"",
                     "type": "string"
-                }
-            }
-        },
-        "handlers.UpdateAdvertiserProviderMappingRequest": {
-            "type": "object",
-            "properties": {
-                "api_credentials": {
-                    "description": "API credentials in JSON format\nswagger:strfmt json",
-                    "type": "object"
-                },
-                "provider_advertiser_id": {
-                    "description": "Provider's advertiser ID",
-                    "type": "string",
-                    "example": "adv-12345"
-                },
-                "provider_config": {
-                    "description": "Provider configuration in JSON format\nswagger:strfmt json",
-                    "type": "object"
-                }
-            }
-        },
-        "handlers.UpdateAdvertiserRequest": {
-            "type": "object",
-            "required": [
-                "name",
-                "status"
-            ],
-            "properties": {
-                "billing_details": {
-                    "description": "Billing details in JSON format\nswagger:strfmt json",
-                    "type": "object"
-                },
-                "contact_email": {
-                    "description": "Contact email address",
-                    "type": "string",
-                    "example": "updated@example.com"
-                },
-                "name": {
-                    "description": "Advertiser name",
-                    "type": "string",
-                    "example": "Updated Advertiser"
-                },
-                "status": {
-                    "description": "Status of the advertiser (active, pending, inactive, rejected)",
-                    "type": "string",
-                    "example": "active"
                 }
             }
         },
@@ -3162,30 +2603,7 @@ const docTemplate = `{
             }
         },
         "handlers.UpdateCampaignRequest": {
-            "type": "object",
-            "required": [
-                "name",
-                "status"
-            ],
-            "properties": {
-                "description": {
-                    "type": "string"
-                },
-                "end_date": {
-                    "description": "Format: YYYY-MM-DD",
-                    "type": "string"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "start_date": {
-                    "description": "Format: YYYY-MM-DD",
-                    "type": "string"
-                },
-                "status": {
-                    "type": "string"
-                }
-            }
+            "type": "object"
         },
         "handlers.UpdateOrganizationRequest": {
             "type": "object",
@@ -3195,6 +2613,26 @@ const docTemplate = `{
             "properties": {
                 "name": {
                     "type": "string"
+                }
+            }
+        },
+        "handlers.UpdateProfileRequest": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "first_name": {
+                    "type": "string"
+                },
+                "last_name": {
+                    "type": "string"
+                },
+                "organization_id": {
+                    "type": "integer"
+                },
+                "role_id": {
+                    "type": "integer"
                 }
             }
         },

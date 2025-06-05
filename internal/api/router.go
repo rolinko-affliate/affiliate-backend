@@ -92,16 +92,16 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		advertisers.GET("/:id/campaigns", opts.CampaignHandler.ListCampaignsByAdvertiser)
 		
 		// Advertiser's provider mappings
-		advertisers.GET("/:id/provider-mappings/:providerType", opts.AdvertiserHandler.GetAdvertiserProviderMapping)
+		advertisers.GET("/:id/provider-mappings/:providerType", opts.AdvertiserHandler.GetProviderMapping)
 	}
 	
 	// Advertiser provider mappings
 	advProviderMappings := v1.Group("/advertiser-provider-mappings")
 	advProviderMappings.Use(rbacMW("AdvertiserManager", "Admin"))
 	{
-		advProviderMappings.POST("", opts.AdvertiserHandler.CreateAdvertiserProviderMapping)
-		advProviderMappings.PUT("/:mappingId", opts.AdvertiserHandler.UpdateAdvertiserProviderMapping)
-		advProviderMappings.DELETE("/:mappingId", opts.AdvertiserHandler.DeleteAdvertiserProviderMapping)
+		advProviderMappings.POST("", opts.AdvertiserHandler.CreateProviderMapping)
+		advProviderMappings.PUT("/:mappingId", opts.AdvertiserHandler.UpdateProviderMapping)
+		advProviderMappings.DELETE("/:mappingId", opts.AdvertiserHandler.DeleteProviderMapping)
 	}
 
 	// --- Affiliate Routes ---

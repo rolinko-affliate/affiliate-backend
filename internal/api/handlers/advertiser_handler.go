@@ -402,14 +402,14 @@ func (h *AdvertiserHandler) ListAdvertisersByOrganization(c *gin.Context) {
 }
 
 // CreateAdvertiserProviderMapping creates a new advertiser provider mapping
-func (h *AdvertiserHandler) CreateAdvertiserProviderMapping(c *gin.Context) {
+func (h *AdvertiserHandler) CreateProviderMapping(c *gin.Context) {
 	var req models.CreateAdvertiserProviderMappingRequest
 	if err := c.ShouldBindJSON(&req); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request body: " + err.Error()})
 		return
 	}
 
-	mapping, err := h.advertiserService.CreateAdvertiserProviderMapping(c.Request.Context(), &req.ProviderMapping)
+	mapping, err := h.advertiserService.CreateProviderMapping(c.Request.Context(), &req.ProviderMapping)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create provider mapping: " + err.Error()})
 		return
@@ -421,7 +421,7 @@ func (h *AdvertiserHandler) CreateAdvertiserProviderMapping(c *gin.Context) {
 }
 
 // GetAdvertiserProviderMapping retrieves an advertiser provider mapping
-func (h *AdvertiserHandler) GetAdvertiserProviderMapping(c *gin.Context) {
+func (h *AdvertiserHandler) GetProviderMapping(c *gin.Context) {
 	advertiserIDStr := c.Param("id")
 	advertiserID, err := strconv.ParseInt(advertiserIDStr, 10, 64)
 	if err != nil {
@@ -435,7 +435,7 @@ func (h *AdvertiserHandler) GetAdvertiserProviderMapping(c *gin.Context) {
 		return
 	}
 
-	mapping, err := h.advertiserService.GetAdvertiserProviderMapping(c.Request.Context(), advertiserID, providerType)
+	mapping, err := h.advertiserService.GetProviderMapping(c.Request.Context(), advertiserID, providerType)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get provider mapping: " + err.Error()})
 		return
@@ -452,7 +452,7 @@ func (h *AdvertiserHandler) GetAdvertiserProviderMapping(c *gin.Context) {
 }
 
 // UpdateAdvertiserProviderMapping updates an advertiser provider mapping
-func (h *AdvertiserHandler) UpdateAdvertiserProviderMapping(c *gin.Context) {
+func (h *AdvertiserHandler) UpdateProviderMapping(c *gin.Context) {
 	mappingIDStr := c.Param("mappingId")
 	mappingID, err := strconv.ParseInt(mappingIDStr, 10, 64)
 	if err != nil {
@@ -467,7 +467,7 @@ func (h *AdvertiserHandler) UpdateAdvertiserProviderMapping(c *gin.Context) {
 	}
 
 	req.ProviderMapping.MappingID = mappingID
-	err = h.advertiserService.UpdateAdvertiserProviderMapping(c.Request.Context(), &req.ProviderMapping)
+	err = h.advertiserService.UpdateProviderMapping(c.Request.Context(), &req.ProviderMapping)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to update provider mapping: " + err.Error()})
 		return
@@ -477,7 +477,7 @@ func (h *AdvertiserHandler) UpdateAdvertiserProviderMapping(c *gin.Context) {
 }
 
 // DeleteAdvertiserProviderMapping deletes an advertiser provider mapping
-func (h *AdvertiserHandler) DeleteAdvertiserProviderMapping(c *gin.Context) {
+func (h *AdvertiserHandler) DeleteProviderMapping(c *gin.Context) {
 	mappingIDStr := c.Param("mappingId")
 	mappingID, err := strconv.ParseInt(mappingIDStr, 10, 64)
 	if err != nil {
@@ -485,7 +485,7 @@ func (h *AdvertiserHandler) DeleteAdvertiserProviderMapping(c *gin.Context) {
 		return
 	}
 
-	err = h.advertiserService.DeleteAdvertiserProviderMapping(c.Request.Context(), mappingID)
+	err = h.advertiserService.DeleteProviderMapping(c.Request.Context(), mappingID)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to delete provider mapping: " + err.Error()})
 		return

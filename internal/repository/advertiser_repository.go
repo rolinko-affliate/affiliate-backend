@@ -33,10 +33,9 @@ func (r *pgxAdvertiserRepository) CreateAdvertiser(ctx context.Context, advertis
 		internal_notes, default_currency_id, platform_name, platform_url, platform_username,
 		accounting_contact_email, offer_id_macro, affiliate_id_macro, attribution_method,
 		email_attribution_method, attribution_priority, reporting_timezone_id, is_expose_publisher_reporting,
-		everflow_sync_status, last_everflow_sync_at, everflow_sync_error,
 		created_at, updated_at
 	) VALUES (
-		$1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23
+		$1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20
 	) RETURNING advertiser_id, created_at, updated_at`
 	
 	billingDetailsJSON, err := marshalBillingDetails(advertiser.BillingDetails)
@@ -64,9 +63,6 @@ func (r *pgxAdvertiserRepository) CreateAdvertiser(ctx context.Context, advertis
 		advertiser.AttributionPriority,
 		advertiser.ReportingTimezoneID,
 		advertiser.IsExposePublisherReporting,
-		advertiser.EverflowSyncStatus,
-		advertiser.LastEverflowSyncAt,
-		advertiser.EverflowSyncError,
 		now, 
 		now,
 	).Scan(
@@ -91,8 +87,6 @@ func (r *pgxAdvertiserRepository) GetAdvertiserByID(ctx context.Context, id int6
 	var attributionMethod, emailAttributionMethod, attributionPriority sql.NullString
 	var reportingTimezoneID sql.NullInt32
 	var isExposePublisherReporting sql.NullBool
-	var everflowSyncStatus, everflowSyncError sql.NullString
-	var lastEverflowSyncAt sql.NullTime
 	
 	err := r.db.QueryRow(ctx, query, id).Scan(
 		&advertiser.AdvertiserID,
@@ -114,9 +108,6 @@ func (r *pgxAdvertiserRepository) GetAdvertiserByID(ctx context.Context, id int6
 		&attributionPriority,
 		&reportingTimezoneID,
 		&isExposePublisherReporting,
-		&everflowSyncStatus,
-		&lastEverflowSyncAt,
-		&everflowSyncError,
 		&advertiser.CreatedAt,
 		&advertiser.UpdatedAt,
 	)
@@ -131,7 +122,7 @@ func (r *pgxAdvertiserRepository) GetAdvertiserByID(ctx context.Context, id int6
 	err = scanNullableFields(&advertiser, contactEmail, billingDetails, internalNotes, defaultCurrencyID, 
 		platformName, platformURL, platformUsername, accountingContactEmail, offerIDMacro, affiliateIDMacro,
 		attributionMethod, emailAttributionMethod, attributionPriority, reportingTimezoneID, 
-		isExposePublisherReporting, everflowSyncStatus, everflowSyncError, lastEverflowSyncAt)
+		isExposePublisherReporting)
 	if err != nil {
 		return nil, err
 	}
@@ -145,9 +136,8 @@ func (r *pgxAdvertiserRepository) UpdateAdvertiser(ctx context.Context, advertis
 		internal_notes = $5, default_currency_id = $6, platform_name = $7, platform_url = $8, platform_username = $9,
 		accounting_contact_email = $10, offer_id_macro = $11, affiliate_id_macro = $12, attribution_method = $13,
 		email_attribution_method = $14, attribution_priority = $15, reporting_timezone_id = $16, is_expose_publisher_reporting = $17,
-		everflow_sync_status = $18, last_everflow_sync_at = $19, everflow_sync_error = $20,
-		updated_at = $21
-	WHERE advertiser_id = $22
+		updated_at = $18
+	WHERE advertiser_id = $19
 	RETURNING updated_at`
 	
 	billingDetailsJSON, err := marshalBillingDetails(advertiser.BillingDetails)
@@ -174,9 +164,6 @@ func (r *pgxAdvertiserRepository) UpdateAdvertiser(ctx context.Context, advertis
 		advertiser.AttributionPriority,
 		advertiser.ReportingTimezoneID,
 		advertiser.IsExposePublisherReporting,
-		advertiser.EverflowSyncStatus,
-		advertiser.LastEverflowSyncAt,
-		advertiser.EverflowSyncError,
 		now,
 		advertiser.AdvertiserID,
 	).Scan(&advertiser.UpdatedAt)
@@ -213,8 +200,6 @@ func (r *pgxAdvertiserRepository) ListAdvertisersByOrganization(ctx context.Cont
 		var attributionMethod, emailAttributionMethod, attributionPriority sql.NullString
 		var reportingTimezoneID sql.NullInt32
 		var isExposePublisherReporting sql.NullBool
-		var everflowSyncStatus, everflowSyncError sql.NullString
-		var lastEverflowSyncAt sql.NullTime
 		
 		if err := rows.Scan(
 			&advertiser.AdvertiserID,
@@ -236,9 +221,6 @@ func (r *pgxAdvertiserRepository) ListAdvertisersByOrganization(ctx context.Cont
 			&attributionPriority,
 			&reportingTimezoneID,
 			&isExposePublisherReporting,
-			&everflowSyncStatus,
-			&lastEverflowSyncAt,
-			&everflowSyncError,
 			&advertiser.CreatedAt,
 			&advertiser.UpdatedAt,
 		); err != nil {
@@ -248,7 +230,7 @@ func (r *pgxAdvertiserRepository) ListAdvertisersByOrganization(ctx context.Cont
 		err = scanNullableFields(&advertiser, contactEmail, billingDetails, internalNotes, defaultCurrencyID, 
 			platformName, platformURL, platformUsername, accountingContactEmail, offerIDMacro, affiliateIDMacro,
 			attributionMethod, emailAttributionMethod, attributionPriority, reportingTimezoneID, 
-			isExposePublisherReporting, everflowSyncStatus, everflowSyncError, lastEverflowSyncAt)
+			isExposePublisherReporting)
 		if err != nil {
 			return nil, err
 		}

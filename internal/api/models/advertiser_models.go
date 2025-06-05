@@ -84,9 +84,6 @@ type AdvertiserResponse struct {
 	AttributionPriority          *string                 `json:"attribution_priority,omitempty"`
 	ReportingTimezoneID          *int                    `json:"reporting_timezone_id,omitempty"`
 	IsExposePublisherReporting   *bool                   `json:"is_expose_publisher_reporting,omitempty"`
-	EverflowSyncStatus           *string                 `json:"everflow_sync_status,omitempty"`
-	LastEverflowSyncAt           *time.Time              `json:"last_everflow_sync_at,omitempty"`
-	EverflowSyncError            *string                 `json:"everflow_sync_error,omitempty"`
 	CreatedAt                    time.Time               `json:"created_at"`
 	UpdatedAt                    time.Time               `json:"updated_at"`
 }
@@ -211,9 +208,6 @@ func ToAdvertiserResponse(advertiser *domain.Advertiser) *AdvertiserResponse {
 		AttributionPriority:        advertiser.AttributionPriority,
 		ReportingTimezoneID:        convertInt32ToIntPtr(advertiser.ReportingTimezoneID),
 		IsExposePublisherReporting: advertiser.IsExposePublisherReporting,
-		EverflowSyncStatus:         advertiser.EverflowSyncStatus,
-		LastEverflowSyncAt:         advertiser.LastEverflowSyncAt,
-		EverflowSyncError:          advertiser.EverflowSyncError,
 		CreatedAt:                  advertiser.CreatedAt,
 		UpdatedAt:                  advertiser.UpdatedAt,
 	}

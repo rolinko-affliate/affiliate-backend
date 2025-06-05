@@ -8,17 +8,12 @@ import (
 	"github.com/affiliate-backend/internal/domain"
 )
 
-func marshalBillingDetails(billing *domain.BillingDetails) (sql.NullString, error) {
+func marshalBillingDetails(billing *string) (sql.NullString, error) {
 	if billing == nil {
 		return sql.NullString{}, nil
 	}
 	
-	billingBytes, err := json.Marshal(billing)
-	if err != nil {
-		return sql.NullString{}, fmt.Errorf("failed to marshal billing details: %w", err)
-	}
-	
-	return sql.NullString{String: string(billingBytes), Valid: true}, nil
+	return sql.NullString{String: *billing, Valid: true}, nil
 }
 
 func scanNullableFields(
@@ -29,19 +24,13 @@ func scanNullableFields(
 	attributionMethod, emailAttributionMethod, attributionPriority sql.NullString,
 	reportingTimezoneID sql.NullInt32,
 	isExposePublisherReporting sql.NullBool,
-	everflowSyncStatus, everflowSyncError sql.NullString,
-	lastEverflowSyncAt sql.NullTime,
 ) error {
 	if contactEmail.Valid {
 		advertiser.ContactEmail = &contactEmail.String
 	}
 	
 	if billingDetails.Valid {
-		var billing domain.BillingDetails
-		if err := json.Unmarshal([]byte(billingDetails.String), &billing); err != nil {
-			return fmt.Errorf("failed to unmarshal billing details: %w", err)
-		}
-		advertiser.BillingDetails = &billing
+		advertiser.BillingDetails = &billingDetails.String
 	}
 	
 	if internalNotes.Valid {
@@ -84,15 +73,6 @@ func scanNullableFields(
 	if isExposePublisherReporting.Valid {
 		advertiser.IsExposePublisherReporting = &isExposePublisherReporting.Bool
 	}
-	if everflowSyncStatus.Valid {
-		advertiser.EverflowSyncStatus = &everflowSyncStatus.String
-	}
-	if lastEverflowSyncAt.Valid {
-		advertiser.LastEverflowSyncAt = &lastEverflowSyncAt.Time
-	}
-	if everflowSyncError.Valid {
-		advertiser.EverflowSyncError = &everflowSyncError.String
-	}
 	
 	return nil
 }
@@ -102,5 +82,4 @@ const advertiserSelectFields = `
 	internal_notes, default_currency_id, platform_name, platform_url, platform_username,
 	accounting_contact_email, offer_id_macro, affiliate_id_macro, attribution_method,
 	email_attribution_method, attribution_priority, reporting_timezone_id, is_expose_publisher_reporting,
-	everflow_sync_status, last_everflow_sync_at, everflow_sync_error,
 	created_at, updated_at`

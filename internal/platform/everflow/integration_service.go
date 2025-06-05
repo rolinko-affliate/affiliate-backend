@@ -50,9 +50,9 @@ type CampaignRepository interface {
 }
 
 type AdvertiserProviderMappingRepository interface {
-	GetAdvertiserProviderMapping(ctx context.Context, advertiserID int64, providerType string) (*domain.AdvertiserProviderMapping, error)
-	CreateAdvertiserProviderMapping(ctx context.Context, mapping *domain.AdvertiserProviderMapping) error
-	UpdateAdvertiserProviderMapping(ctx context.Context, mapping *domain.AdvertiserProviderMapping) error
+	GetProviderMapping(ctx context.Context, advertiserID int64, providerType string) (*domain.AdvertiserProviderMapping, error)
+	CreateProviderMapping(ctx context.Context, mapping *domain.AdvertiserProviderMapping) (*domain.AdvertiserProviderMapping, error)
+	UpdateProviderMapping(ctx context.Context, mapping *domain.AdvertiserProviderMapping) error
 }
 
 type AffiliateProviderMappingRepository interface {

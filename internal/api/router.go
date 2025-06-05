@@ -66,7 +66,7 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		
 		// Organization's advertisers
 		organizations.GET("/:id/advertisers", opts.AdvertiserHandler.ListAdvertisersByOrganization)
-		
+
 		// Organization's affiliates
 		organizations.GET("/:id/affiliates", opts.AffiliateHandler.ListAffiliatesByOrganization)
 		

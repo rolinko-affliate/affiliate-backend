@@ -34,40 +34,41 @@ func (h *OrganizationHandler) checkOrganizationAccess(c *gin.Context, orgID int6
 	if !exists {
 		return false, fmt.Errorf("user role not found in context")
 	}
-	
+
 	// Admin can access all organizations
 	if userRole.(string) == "Admin" {
 		return true, nil
 	}
-	
+
 	// Get user ID from context
 	userIDStr, exists := c.Get(middleware.UserIDKey)
 	if !exists {
 		return false, fmt.Errorf("user ID not found in context")
 	}
-	
+
 	userID, err := uuid.Parse(userIDStr.(string))
 	if err != nil {
 		return false, fmt.Errorf("invalid user ID format: %w", err)
 	}
-	
+
 	// Get user's profile to check organization
 	profile, err := h.profileService.GetProfileByID(c.Request.Context(), userID)
 	if err != nil {
 		return false, fmt.Errorf("failed to get user profile: %w", err)
 	}
-	
+
 	// Check if user belongs to the organization
 	if profile.OrganizationID == nil {
 		return false, nil
 	}
-	
+
 	return *profile.OrganizationID == orgID, nil
 }
 
 // CreateOrganizationRequest defines the request for creating an organization
 type CreateOrganizationRequest struct {
 	Name string `json:"name" binding:"required"`
+	Type string `json:"type" binding:"required,oneof=advertiser affiliate platform_owner"`
 }
 
 // CreateOrganization creates a new organization
@@ -90,7 +91,7 @@ func (h *OrganizationHandler) CreateOrganization(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "User role not found in context"})
 		return
 	}
-	
+
 	if userRole.(string) != "Admin" {
 		c.JSON(http.StatusForbidden, gin.H{"error": "Only administrators can create organizations"})
 		return
@@ -102,9 +103,12 @@ func (h *OrganizationHandler) CreateOrganization(c *gin.Context) {
 		return
 	}
 
-	organization, err := h.organizationService.CreateOrganization(c.Request.Context(), req.Name)
+	// Convert string to OrganizationType
+	orgType := domain.OrganizationType(req.Type)
+
+	organization, err := h.organizationService.CreateOrganization(c.Request.Context(), req.Name, orgType)
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create organization: " + err.Error()})
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Failed to create organization: " + err.Error()})
 		return
 	}
 
@@ -160,6 +164,7 @@ func (h *OrganizationHandler) GetOrganization(c *gin.Context) {
 // UpdateOrganizationRequest defines the request for updating an organization
 type UpdateOrganizationRequest struct {
 	Name string `json:"name" binding:"required"`
+	Type string `json:"type" binding:"required,oneof=advertiser affiliate platform_owner"`
 }
 
 // UpdateOrganization updates an organization
@@ -215,8 +220,9 @@ func (h *OrganizationHandler) UpdateOrganization(c *gin.Context) {
 
 	// Update organization
 	organization.Name = req.Name
+	organization.Type = domain.OrganizationType(req.Type)
 	if err := h.organizationService.UpdateOrganization(c.Request.Context(), organization); err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to update organization: " + err.Error()})
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Failed to update organization: " + err.Error()})
 		return
 	}
 

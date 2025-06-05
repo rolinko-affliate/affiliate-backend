@@ -1727,14 +1727,26 @@ const docTemplate = `{
                 "organization_id": {
                     "type": "integer"
                 },
-                "status": {
-                    "description": "'active', 'inactive', 'suspended'",
-                    "type": "string"
+                "type": {
+                    "$ref": "#/definitions/domain.OrganizationType"
                 },
                 "updated_at": {
                     "type": "string"
                 }
             }
+        },
+        "domain.OrganizationType": {
+            "type": "string",
+            "enum": [
+                "advertiser",
+                "affiliate",
+                "platform_owner"
+            ],
+            "x-enum-varnames": [
+                "OrganizationTypeAdvertiser",
+                "OrganizationTypeAffiliate",
+                "OrganizationTypePlatformOwner"
+            ]
         },
         "domain.Profile": {
             "type": "object",
@@ -1837,11 +1849,20 @@ const docTemplate = `{
         "handlers.CreateOrganizationRequest": {
             "type": "object",
             "required": [
-                "name"
+                "name",
+                "type"
             ],
             "properties": {
                 "name": {
                     "type": "string"
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "advertiser",
+                        "affiliate",
+                        "platform_owner"
+                    ]
                 }
             }
         },
@@ -1945,11 +1966,20 @@ const docTemplate = `{
         "handlers.UpdateOrganizationRequest": {
             "type": "object",
             "required": [
-                "name"
+                "name",
+                "type"
             ],
             "properties": {
                 "name": {
                     "type": "string"
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "advertiser",
+                        "affiliate",
+                        "platform_owner"
+                    ]
                 }
             }
         },

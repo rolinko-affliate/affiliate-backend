@@ -31,12 +31,12 @@ func NewPgxOrganizationRepository(db *pgxpool.Pool) OrganizationRepository {
 
 // CreateOrganization creates a new organization in the database
 func (r *pgxOrganizationRepository) CreateOrganization(ctx context.Context, org *domain.Organization) error {
-	query := `INSERT INTO public.organizations (name, created_at, updated_at)
-              VALUES ($1, $2, $3)
+	query := `INSERT INTO public.organizations (name, type, created_at, updated_at)
+              VALUES ($1, $2, $3, $4)
               RETURNING organization_id, created_at, updated_at`
-	
+
 	now := time.Now()
-	err := r.db.QueryRow(ctx, query, org.Name, now, now).Scan(
+	err := r.db.QueryRow(ctx, query, org.Name, org.Type, now, now).Scan(
 		&org.OrganizationID, &org.CreatedAt, &org.UpdatedAt,
 	)
 	if err != nil {
@@ -47,12 +47,12 @@ func (r *pgxOrganizationRepository) CreateOrganization(ctx context.Context, org 
 
 // GetOrganizationByID retrieves an organization by ID
 func (r *pgxOrganizationRepository) GetOrganizationByID(ctx context.Context, id int64) (*domain.Organization, error) {
-	query := `SELECT organization_id, name, created_at, updated_at
+	query := `SELECT organization_id, name, type, created_at, updated_at
               FROM public.organizations WHERE organization_id = $1`
-	
+
 	var org domain.Organization
 	err := r.db.QueryRow(ctx, query, id).Scan(
-		&org.OrganizationID, &org.Name, &org.CreatedAt, &org.UpdatedAt,
+		&org.OrganizationID, &org.Name, &org.Type, &org.CreatedAt, &org.UpdatedAt,
 	)
 	if err != nil {
 		if err == pgx.ErrNoRows {
@@ -66,11 +66,11 @@ func (r *pgxOrganizationRepository) GetOrganizationByID(ctx context.Context, id 
 // UpdateOrganization updates an organization in the database
 func (r *pgxOrganizationRepository) UpdateOrganization(ctx context.Context, org *domain.Organization) error {
 	query := `UPDATE public.organizations
-              SET name = $1
-              WHERE organization_id = $2
+              SET name = $1, type = $2
+              WHERE organization_id = $3
               RETURNING updated_at`
-	
-	err := r.db.QueryRow(ctx, query, org.Name, org.OrganizationID).Scan(&org.UpdatedAt)
+
+	err := r.db.QueryRow(ctx, query, org.Name, org.Type, org.OrganizationID).Scan(&org.UpdatedAt)
 	if err != nil {
 		if err == pgx.ErrNoRows {
 			return fmt.Errorf("organization not found: %w", domain.ErrNotFound)
@@ -82,45 +82,45 @@ func (r *pgxOrganizationRepository) UpdateOrganization(ctx context.Context, org 
 
 // ListOrganizations retrieves a list of organizations with pagination
 func (r *pgxOrganizationRepository) ListOrganizations(ctx context.Context, limit, offset int) ([]*domain.Organization, error) {
-	query := `SELECT organization_id, name, created_at, updated_at
+	query := `SELECT organization_id, name, type, created_at, updated_at
               FROM public.organizations
               ORDER BY organization_id
               LIMIT $1 OFFSET $2`
-	
+
 	rows, err := r.db.Query(ctx, query, limit, offset)
 	if err != nil {
 		return nil, fmt.Errorf("error listing organizations: %w", err)
 	}
 	defer rows.Close()
-	
+
 	var organizations []*domain.Organization
 	for rows.Next() {
 		var org domain.Organization
-		if err := rows.Scan(&org.OrganizationID, &org.Name, &org.CreatedAt, &org.UpdatedAt); err != nil {
+		if err := rows.Scan(&org.OrganizationID, &org.Name, &org.Type, &org.CreatedAt, &org.UpdatedAt); err != nil {
 			return nil, fmt.Errorf("error scanning organization row: %w", err)
 		}
 		organizations = append(organizations, &org)
 	}
-	
+
 	if err := rows.Err(); err != nil {
 		return nil, fmt.Errorf("error iterating organization rows: %w", err)
 	}
-	
+
 	return organizations, nil
 }
 
 // DeleteOrganization deletes an organization from the database
 func (r *pgxOrganizationRepository) DeleteOrganization(ctx context.Context, id int64) error {
 	query := `DELETE FROM public.organizations WHERE organization_id = $1`
-	
+
 	commandTag, err := r.db.Exec(ctx, query, id)
 	if err != nil {
 		return fmt.Errorf("error deleting organization: %w", err)
 	}
-	
+
 	if commandTag.RowsAffected() == 0 {
 		return fmt.Errorf("organization not found: %w", domain.ErrNotFound)
 	}
-	
+
 	return nil
 }

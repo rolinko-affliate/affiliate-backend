@@ -10,7 +10,7 @@ import (
 
 // OrganizationService defines the interface for organization operations
 type OrganizationService interface {
-	CreateOrganization(ctx context.Context, name string) (*domain.Organization, error)
+	CreateOrganization(ctx context.Context, name string, orgType domain.OrganizationType) (*domain.Organization, error)
 	GetOrganizationByID(ctx context.Context, id int64) (*domain.Organization, error)
 	UpdateOrganization(ctx context.Context, org *domain.Organization) error
 	ListOrganizations(ctx context.Context, page, pageSize int) ([]*domain.Organization, error)
@@ -28,13 +28,26 @@ func NewOrganizationService(orgRepo repository.OrganizationRepository) Organizat
 }
 
 // CreateOrganization creates a new organization
-func (s *organizationService) CreateOrganization(ctx context.Context, name string) (*domain.Organization, error) {
+func (s *organizationService) CreateOrganization(ctx context.Context, name string, orgType domain.OrganizationType) (*domain.Organization, error) {
 	if name == "" {
 		return nil, fmt.Errorf("organization name cannot be empty")
+	}
+	if orgType == "" {
+		return nil, fmt.Errorf("organization type cannot be empty")
+	}
+
+	// Validate organization type using the enum's IsValid method
+	if !orgType.IsValid() {
+		return nil, fmt.Errorf("invalid organization type: %s. Valid types are: %s, %s, %s",
+			orgType,
+			domain.OrganizationTypeAdvertiser,
+			domain.OrganizationTypeAffiliate,
+			domain.OrganizationTypePlatformOwner)
 	}
 
 	org := &domain.Organization{
 		Name: name,
+		Type: orgType,
 	}
 
 	if err := s.orgRepo.CreateOrganization(ctx, org); err != nil {
@@ -53,6 +66,18 @@ func (s *organizationService) GetOrganizationByID(ctx context.Context, id int64)
 func (s *organizationService) UpdateOrganization(ctx context.Context, org *domain.Organization) error {
 	if org.Name == "" {
 		return fmt.Errorf("organization name cannot be empty")
+	}
+	if org.Type == "" {
+		return fmt.Errorf("organization type cannot be empty")
+	}
+
+	// Validate organization type using the enum's IsValid method
+	if !org.Type.IsValid() {
+		return fmt.Errorf("invalid organization type: %s. Valid types are: %s, %s, %s",
+			org.Type,
+			domain.OrganizationTypeAdvertiser,
+			domain.OrganizationTypeAffiliate,
+			domain.OrganizationTypePlatformOwner)
 	}
 
 	return s.orgRepo.UpdateOrganization(ctx, org)

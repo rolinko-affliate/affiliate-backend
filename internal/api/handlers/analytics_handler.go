@@ -1,9 +1,11 @@
 package handlers
 
 import (
+	"encoding/json"
 	"net/http"
 	"strconv"
 
+	"github.com/affiliate-backend/internal/domain"
 	"github.com/affiliate-backend/internal/service"
 	"github.com/gin-gonic/gin"
 )
@@ -162,24 +164,66 @@ func (h *AnalyticsHandler) GetPublisherByID(c *gin.Context) {
 
 // Additional CRUD endpoints for managing analytics data (optional, for data management)
 
+// CreateAdvertiserRequest represents the request body for creating an advertiser
+type CreateAdvertiserRequest struct {
+	Domain string                 `json:"domain" binding:"required"`
+	Data   map[string]interface{} `json:"data" binding:"required"`
+}
+
 // CreateAdvertiser creates a new advertiser analytics entry
 // @Summary Create advertiser analytics data
 // @Description Create a new advertiser analytics entry
 // @Tags Analytics
 // @Accept json
 // @Produce json
-// @Param advertiser body domain.AnalyticsAdvertiser true "Advertiser data"
+// @Param advertiser body CreateAdvertiserRequest true "Advertiser data"
 // @Success 201 {object} SuccessResponse{data=domain.AnalyticsAdvertiser} "Advertiser created successfully"
 // @Failure 400 {object} ErrorResponse "Bad request - invalid data"
 // @Failure 500 {object} ErrorResponse "Internal server error"
 // @Router /api/v1/analytics/advertisers [post]
 func (h *AnalyticsHandler) CreateAdvertiser(c *gin.Context) {
-	// Implementation for creating advertiser analytics data
-	// This would typically be used by admin/data management interfaces
-	c.JSON(http.StatusNotImplemented, ErrorResponse{
-		Error:   "Not implemented",
-		Details: "This endpoint is reserved for future data management functionality",
-	})
+	var req CreateAdvertiserRequest
+	if err := c.ShouldBindJSON(&req); err != nil {
+		c.JSON(http.StatusBadRequest, ErrorResponse{
+			Error:   "Invalid request body",
+			Details: err.Error(),
+		})
+		return
+	}
+
+	// Convert data to JSON string for storage
+	dataJSON, err := json.Marshal(req.Data)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, ErrorResponse{
+			Error:   "Invalid data format",
+			Details: err.Error(),
+		})
+		return
+	}
+
+	// Create advertiser object
+	dataStr := string(dataJSON)
+	advertiser := &domain.AnalyticsAdvertiser{
+		Domain:         req.Domain,
+		AdditionalData: &dataStr,
+	}
+
+	// Create via service
+	if err := h.analyticsService.CreateAdvertiser(c.Request.Context(), advertiser); err != nil {
+		c.JSON(http.StatusInternalServerError, ErrorResponse{
+			Error:   "Failed to create advertiser",
+			Details: err.Error(),
+		})
+		return
+	}
+
+	c.JSON(http.StatusCreated, advertiser)
+}
+
+// CreatePublisherRequest represents the request body for creating a publisher
+type CreatePublisherRequest struct {
+	Domain string                 `json:"domain" binding:"required"`
+	Data   map[string]interface{} `json:"data" binding:"required"`
 }
 
 // CreatePublisher creates a new publisher analytics entry
@@ -188,16 +232,46 @@ func (h *AnalyticsHandler) CreateAdvertiser(c *gin.Context) {
 // @Tags Analytics
 // @Accept json
 // @Produce json
-// @Param publisher body domain.AnalyticsPublisher true "Publisher data"
+// @Param publisher body CreatePublisherRequest true "Publisher data"
 // @Success 201 {object} SuccessResponse{data=domain.AnalyticsPublisher} "Publisher created successfully"
 // @Failure 400 {object} ErrorResponse "Bad request - invalid data"
 // @Failure 500 {object} ErrorResponse "Internal server error"
 // @Router /api/v1/analytics/affiliates [post]
 func (h *AnalyticsHandler) CreatePublisher(c *gin.Context) {
-	// Implementation for creating publisher analytics data
-	// This would typically be used by admin/data management interfaces
-	c.JSON(http.StatusNotImplemented, ErrorResponse{
-		Error:   "Not implemented",
-		Details: "This endpoint is reserved for future data management functionality",
-	})
+	var req CreatePublisherRequest
+	if err := c.ShouldBindJSON(&req); err != nil {
+		c.JSON(http.StatusBadRequest, ErrorResponse{
+			Error:   "Invalid request body",
+			Details: err.Error(),
+		})
+		return
+	}
+
+	// Convert data to JSON string for storage
+	dataJSON, err := json.Marshal(req.Data)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, ErrorResponse{
+			Error:   "Invalid data format",
+			Details: err.Error(),
+		})
+		return
+	}
+
+	// Create publisher object
+	dataStr := string(dataJSON)
+	publisher := &domain.AnalyticsPublisher{
+		Domain:         req.Domain,
+		AdditionalData: &dataStr,
+	}
+
+	// Create via service
+	if err := h.analyticsService.CreatePublisher(c.Request.Context(), publisher); err != nil {
+		c.JSON(http.StatusInternalServerError, ErrorResponse{
+			Error:   "Failed to create publisher",
+			Details: err.Error(),
+		})
+		return
+	}
+
+	c.JSON(http.StatusCreated, publisher)
 }

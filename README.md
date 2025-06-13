@@ -56,6 +56,7 @@ affiliate-backend/
 - **Affiliate Management**: Create and manage affiliate accounts
 - **Advertiser Management**: Create and manage advertiser accounts
 - **Campaign Management**: Create and manage advertising campaigns
+- **Analytics Service**: Advanced analytics for advertisers and publishers with autocompletion
 - **Provider Integration**: Integration with external affiliate networks (Everflow)
 - **RESTful API**: Clean and consistent API design
 - **Database Migrations**: Versioned database schema changes
@@ -146,6 +147,10 @@ The application uses a migration system to manage database schema changes. The m
 
 Migration files are stored in the `migrations` directory and follow the naming convention `000001_name.up.sql` and `000001_name.down.sql`. The `up.sql` file contains the SQL statements to apply the migration, and the `down.sql` file contains the SQL statements to rollback the migration.
 
+Current migrations include:
+- `000001_initial_schema`: Core platform tables (users, organizations, campaigns, etc.)
+- `000002_create_analytics_tables`: Analytics service tables for advertisers and publishers
+
 ### Auto-Migration
 
 The API server can automatically apply pending migrations on startup by using the `--auto-migrate` flag:
@@ -176,7 +181,16 @@ To set the environment:
 
 ### Authenticated Endpoints
 
+#### User Management
 - `GET /api/v1/users/me`: Get the current user's profile
+
+#### Analytics Service
+- `GET /api/v1/analytics/autocomplete`: Search for advertisers and publishers with autocompletion (minimum 3 characters)
+- `GET /api/v1/analytics/advertisers/:id`: Get detailed advertiser information by ID
+- `GET /api/v1/analytics/affiliates/:id`: Get detailed publisher (affiliate) information by ID
+
+#### Campaign Management
+- Standard CRUD operations for campaigns, affiliates, and advertisers
 
 ## API Documentation
 
@@ -243,6 +257,44 @@ The service uses Role-Based Access Control (RBAC) for authorization. The followi
 - `AdvertiserManager`: Manages advertisers and campaigns
 - `AffiliateManager`: Manages affiliates
 - `Affiliate`: Regular affiliate user
+
+## Analytics Service
+
+The platform includes a comprehensive analytics service for advertiser and publisher data analysis. For detailed information about the analytics service, see [ANALYTICS_SERVICE_README.md](ANALYTICS_SERVICE_README.md).
+
+### Analytics Features
+- **Autocompletion**: Search for organizations with minimum 3-character queries
+- **Advertiser Analytics**: Detailed advertiser data including metadata, affiliate networks, verticals, and partner information
+- **Publisher Analytics**: Comprehensive publisher data with keywords, traffic scores, social media presence, and partner relationships
+- **Flexible Search**: Filter by advertiser, publisher, or search both simultaneously
+- **JSONB Storage**: Flexible data structures for complex analytics data
+
+### Analytics API Examples
+
+```bash
+# Search for organizations (autocompletion)
+curl -H "Authorization: Bearer $TOKEN" \
+  "http://localhost:8080/api/v1/analytics/autocomplete?q=tech&type=publisher&limit=5"
+
+# Get advertiser details
+curl -H "Authorization: Bearer $TOKEN" \
+  "http://localhost:8080/api/v1/analytics/advertisers/1"
+
+# Get publisher details  
+curl -H "Authorization: Bearer $TOKEN" \
+  "http://localhost:8080/api/v1/analytics/affiliates/1"
+```
+
+### Testing the Analytics Service
+
+A comprehensive test script is available to verify all analytics endpoints:
+
+```bash
+# Run the analytics service test suite
+./test_analytics.sh
+```
+
+This script tests all three endpoints with various scenarios including error handling and validation.
 
 ## Environment Variables
 

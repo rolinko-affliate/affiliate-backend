@@ -32,6 +32,8 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 	public := r.Group("/api/v1/public")
 	{
 		public.POST("/webhooks/supabase/new-user", opts.ProfileHandler.HandleSupabaseNewUserWebhook)
+		
+
 	}
 
 	// Authenticated routes

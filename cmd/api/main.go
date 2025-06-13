@@ -43,7 +43,6 @@ import (
 
 // checkDatabaseMigrations verifies that the database schema is up to date
 // If autoMigrate is true, it will attempt to run pending migrations
-// Skips database checks when in mock mode
 func checkDatabaseMigrations(cfg *config.Config, autoMigrate bool) error {
 	
 	if cfg.DatabaseURL == "" {
@@ -127,12 +126,13 @@ func main() {
 			fmt.Println("Flags:")
 			fmt.Println("  --help, -h        Show this help message")
 			fmt.Println("  --auto-migrate    Automatically run database migrations if needed")
-			fmt.Println("  --mock-mode       Run in mock mode (uses mock integration service instead of real provider)")
+			fmt.Println("  --mock-mode       Run in mock mode (uses mock integration service instead of real Everflow provider)")
 			fmt.Println("")
 			fmt.Println("Environment Variables:")
 			fmt.Println("  DATABASE_URL      PostgreSQL connection string")
 			fmt.Println("  PORT              Server port (default: 8080)")
 			fmt.Println("  MOCK_MODE         Enable mock mode (true/false, default: false)")
+			fmt.Println("                    Note: Mock mode only replaces the integration service, database is still required")
 			fmt.Println("")
 			return
 		}

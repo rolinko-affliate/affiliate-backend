@@ -28,6 +28,9 @@ import (
 	"os"
 	"os/exec"
 	"os/signal"
+	"path/filepath"
+	"strconv"
+	"strings"
 	"syscall"
 	"time"
 
@@ -40,6 +43,32 @@ import (
 	"github.com/affiliate-backend/internal/repository"
 	"github.com/affiliate-backend/internal/service"
 )
+
+// getLatestMigrationVersion scans the migrations directory to find the highest version number
+func getLatestMigrationVersion() (int64, error) {
+	files, err := filepath.Glob("migrations/*.up.sql")
+	if err != nil {
+		return 0, fmt.Errorf("failed to read migrations directory: %v", err)
+	}
+	
+	var latestVersion int64 = 0
+	for _, file := range files {
+		// Extract version number from filename like "000002_create_analytics_tables.up.sql"
+		basename := filepath.Base(file)
+		versionStr := strings.Split(basename, "_")[0]
+		
+		version, err := strconv.ParseInt(versionStr, 10, 64)
+		if err != nil {
+			continue // Skip files that don't follow the expected naming convention
+		}
+		
+		if version > latestVersion {
+			latestVersion = version
+		}
+	}
+	
+	return latestVersion, nil
+}
 
 // checkDatabaseMigrations verifies that the database schema is up to date
 // If autoMigrate is true, it will attempt to run pending migrations
@@ -101,7 +130,33 @@ func checkDatabaseMigrations(cfg *config.Config, autoMigrate bool) error {
 		}
 		
 		log.Printf("Database schema version: %d\n", version)
-		log.Println("Database schema appears to be up to date")
+		
+		// Check if there are newer migration files available
+		latestVersion, err := getLatestMigrationVersion()
+		if err != nil {
+			log.Printf("Warning: Could not determine latest migration version: %v", err)
+			log.Println("Database schema appears to be up to date (unable to verify)")
+		} else if version < latestVersion {
+			log.Printf("Database schema is outdated. Current: %d, Latest available: %d", version, latestVersion)
+			if autoMigrate {
+				log.Println("Auto-migrate flag is set. Attempting to run migrations...")
+				
+				// Execute the migrate command
+				cmd := exec.Command("go", "run", "./cmd/migrate/main.go", "up")
+				cmd.Stdout = os.Stdout
+				cmd.Stderr = os.Stderr
+				
+				if err := cmd.Run(); err != nil {
+					return fmt.Errorf("failed to run migrations: %v", err)
+				}
+				
+				log.Println("Migrations applied successfully")
+			} else {
+				return fmt.Errorf("database migrations are required. Current version: %d, Latest: %d. Run 'make migrate-up' or start with --auto-migrate flag", version, latestVersion)
+			}
+		} else {
+			log.Println("Database schema is up to date")
+		}
 	}
 	
 	if autoMigrate {

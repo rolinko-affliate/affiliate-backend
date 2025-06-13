@@ -296,6 +296,8 @@ INSERT INTO public.roles (role_id, name, description) VALUES
 
 -- Create default organization
 INSERT INTO public.organizations (name, type) VALUES ('rolinko', 'platform_owner');
+INSERT INTO public.organizations (name, type) VALUES ('jinko', 'advertiser');
+INSERT INTO public.organizations (name, type) VALUES ('upsail', 'affiliate');
 
 -- #############################################################################
 -- ## Final Optimization and Validation

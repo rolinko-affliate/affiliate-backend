@@ -178,6 +178,7 @@ func main() {
 	affiliateProviderMappingRepo := repository.NewPgxAffiliateProviderMappingRepository(repository.DB)
 	campaignRepo := repository.NewPgxCampaignRepository(repository.DB)
 	campaignProviderMappingRepo := repository.NewPgxCampaignProviderMappingRepository(repository.DB)
+	analyticsRepo := repository.NewAnalyticsRepository(repository.DB)
 
 	// Initialize Platform Services
 	cryptoService := crypto.NewServiceFromConfig()
@@ -211,6 +212,7 @@ func main() {
 	advertiserService := service.NewAdvertiserService(advertiserRepo, advertiserProviderMappingRepo, organizationRepo, cryptoService, integrationService)
 	affiliateService := service.NewAffiliateService(affiliateRepo, affiliateProviderMappingRepo, organizationRepo, integrationService)
 	campaignService := service.NewCampaignService(campaignRepo)
+	analyticsService := service.NewAnalyticsService(analyticsRepo)
 
 	// Initialize Handlers
 	profileHandler := handlers.NewProfileHandler(profileService)
@@ -218,6 +220,7 @@ func main() {
 	advertiserHandler := handlers.NewAdvertiserHandler(advertiserService, profileService)
 	affiliateHandler := handlers.NewAffiliateHandler(affiliateService, profileService)
 	campaignHandler := handlers.NewCampaignHandler(campaignService)
+	analyticsHandler := handlers.NewAnalyticsHandler(analyticsService)
 
 	// Setup Router
 	router := api.SetupRouter(api.RouterOptions{
@@ -227,6 +230,7 @@ func main() {
 		AdvertiserHandler:   advertiserHandler,
 		AffiliateHandler:    affiliateHandler,
 		CampaignHandler:     campaignHandler,
+		AnalyticsHandler:    analyticsHandler,
 	})
 
 	// Start Server

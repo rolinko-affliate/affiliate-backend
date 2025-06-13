@@ -15,6 +15,7 @@ type RouterOptions struct {
 	AdvertiserHandler    *handlers.AdvertiserHandler
 	AffiliateHandler     *handlers.AffiliateHandler
 	CampaignHandler      *handlers.CampaignHandler
+	AnalyticsHandler     *handlers.AnalyticsHandler
 }
 
 // SetupRouter sets up the API router
@@ -134,6 +135,22 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		campaigns.GET("/:id", opts.CampaignHandler.GetCampaign)
 		campaigns.PUT("/:id", opts.CampaignHandler.UpdateCampaign)
 		campaigns.DELETE("/:id", opts.CampaignHandler.DeleteCampaign)
+	}
+
+	// --- Analytics Routes ---
+	analytics := v1.Group("/analytics")
+	analytics.Use(rbacMW("AdvertiserManager", "AffiliateManager", "Admin")) // Allow all managers and admins
+	{
+		// Autocompletion endpoint
+		analytics.GET("/autocomplete", opts.AnalyticsHandler.AutocompleteOrganizations)
+		
+		// Advertiser analytics endpoints
+		analytics.GET("/advertisers/:id", opts.AnalyticsHandler.GetAdvertiserByID)
+		analytics.POST("/advertisers", opts.AnalyticsHandler.CreateAdvertiser) // For future data management
+		
+		// Publisher/Affiliate analytics endpoints
+		analytics.GET("/affiliates/:id", opts.AnalyticsHandler.GetPublisherByID)
+		analytics.POST("/affiliates", opts.AnalyticsHandler.CreatePublisher) // For future data management
 	}
 
 	return r

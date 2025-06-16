@@ -588,6 +588,327 @@ const docTemplate = `{
                 }
             }
         },
+        "/api/v1/analytics/advertisers": {
+            "post": {
+                "description": "Create a new advertiser analytics entry",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Analytics"
+                ],
+                "summary": "Create advertiser analytics data",
+                "parameters": [
+                    {
+                        "description": "Advertiser data",
+                        "name": "advertiser",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/handlers.CreateAdvertiserRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Advertiser created successfully",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/handlers.SuccessResponse"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#/definitions/domain.AnalyticsAdvertiser"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request - invalid data",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/analytics/advertisers/{id}": {
+            "get": {
+                "description": "Retrieve detailed analytics data for a specific advertiser",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Analytics"
+                ],
+                "summary": "Get advertiser analytics data",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Advertiser ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Advertiser analytics data",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/handlers.SuccessResponse"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#/definitions/domain.AnalyticsAdvertiserResponse"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request - invalid ID",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Advertiser not found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/analytics/affiliates": {
+            "post": {
+                "description": "Create a new publisher analytics entry",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Analytics"
+                ],
+                "summary": "Create publisher analytics data",
+                "parameters": [
+                    {
+                        "description": "Publisher data",
+                        "name": "publisher",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/handlers.CreatePublisherRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Publisher created successfully",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/handlers.SuccessResponse"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#/definitions/domain.AnalyticsPublisher"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request - invalid data",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/analytics/affiliates/{id}": {
+            "get": {
+                "description": "Retrieve detailed analytics data for a specific publisher (affiliate)",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Analytics"
+                ],
+                "summary": "Get publisher analytics data",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Publisher ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Publisher analytics data",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/handlers.SuccessResponse"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#/definitions/domain.AnalyticsPublisherResponse"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request - invalid ID",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Publisher not found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/analytics/autocomplete": {
+            "get": {
+                "description": "Search advertisers and/or publishers by domain name for autocompletion (minimum 3 characters)",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Analytics"
+                ],
+                "summary": "Search organizations for autocompletion",
+                "parameters": [
+                    {
+                        "minLength": 3,
+                        "type": "string",
+                        "description": "Search query (minimum 3 characters)",
+                        "name": "q",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "enum": [
+                            "advertiser",
+                            "publisher",
+                            "both"
+                        ],
+                        "type": "string",
+                        "default": "both",
+                        "description": "Organization type filter",
+                        "name": "type",
+                        "in": "query"
+                    },
+                    {
+                        "maximum": 50,
+                        "minimum": 1,
+                        "type": "integer",
+                        "default": 10,
+                        "description": "Maximum number of results",
+                        "name": "limit",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Autocompletion results",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/handlers.SuccessResponse"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/definitions/domain.AutocompleteResult"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request - invalid parameters",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/campaigns": {
             "post": {
                 "description": "Create a new campaign with the provided details",
@@ -1668,6 +1989,26 @@ const docTemplate = `{
                 }
             }
         },
+        "domain.AffiliateNetworkData": {
+            "type": "object",
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "sampleValue": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
         "domain.AffiliateProviderMapping": {
             "type": "object",
             "properties": {
@@ -1711,6 +2052,303 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.AnalyticsAdvertiser": {
+            "type": "object",
+            "properties": {
+                "created_at": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "favicon_image_url": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "screenshot_image_url": {
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.AnalyticsAdvertiserResponse": {
+            "type": "object",
+            "properties": {
+                "advertiser": {
+                    "type": "object",
+                    "properties": {
+                        "affiliateNetworks": {
+                            "$ref": "#/definitions/domain.AffiliateNetworkData"
+                        },
+                        "backlinks": {},
+                        "contactEmails": {
+                            "$ref": "#/definitions/domain.ContactEmailData"
+                        },
+                        "domain": {
+                            "type": "string"
+                        },
+                        "keywords": {
+                            "$ref": "#/definitions/domain.KeywordData"
+                        },
+                        "metaData": {
+                            "$ref": "#/definitions/domain.MetaData"
+                        },
+                        "partnerInformation": {},
+                        "relatedAdvertisers": {},
+                        "socialMedia": {
+                            "$ref": "#/definitions/domain.SocialMediaData"
+                        },
+                        "verticals": {
+                            "$ref": "#/definitions/domain.VerticalData"
+                        }
+                    }
+                }
+            }
+        },
+        "domain.AnalyticsPublisher": {
+            "type": "object",
+            "properties": {
+                "created_at": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "favicon_image_url": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "known": {
+                    "type": "boolean"
+                },
+                "promotype": {
+                    "type": "string"
+                },
+                "relevance": {
+                    "type": "number"
+                },
+                "screenshot_image_url": {
+                    "type": "string"
+                },
+                "traffic_score": {
+                    "type": "number"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.AnalyticsPublisherResponse": {
+            "type": "object",
+            "properties": {
+                "publisher": {
+                    "type": "object",
+                    "properties": {
+                        "affiliateNetworks": {
+                            "$ref": "#/definitions/domain.AffiliateNetworkData"
+                        },
+                        "countryRankings": {
+                            "$ref": "#/definitions/domain.CountryRankingData"
+                        },
+                        "domain": {
+                            "type": "string"
+                        },
+                        "keywords": {
+                            "$ref": "#/definitions/domain.KeywordData"
+                        },
+                        "known": {
+                            "type": "object",
+                            "properties": {
+                                "value": {
+                                    "type": "boolean"
+                                }
+                            }
+                        },
+                        "liveUrls": {},
+                        "metaData": {
+                            "$ref": "#/definitions/domain.MetaData"
+                        },
+                        "partnerInformation": {},
+                        "partners": {},
+                        "promotype": {
+                            "type": "object",
+                            "properties": {
+                                "value": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "relatedPublishers": {},
+                        "relevance": {
+                            "type": "number"
+                        },
+                        "socialMedia": {
+                            "$ref": "#/definitions/domain.SocialMediaData"
+                        },
+                        "trafficScore": {
+                            "type": "number"
+                        },
+                        "verticals": {},
+                        "verticalsV2": {
+                            "$ref": "#/definitions/domain.VerticalData"
+                        }
+                    }
+                }
+            }
+        },
+        "domain.AutocompleteResult": {
+            "type": "object",
+            "properties": {
+                "domain": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "description": "Display name (domain for now)",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "\"advertiser\" or \"publisher\"",
+                    "type": "string"
+                }
+            }
+        },
+        "domain.ContactEmailData": {
+            "type": "object",
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "error": {
+                    "type": "boolean"
+                },
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "department": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "domain.CountryRankingData": {
+            "type": "object",
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "highestValue": {
+                    "type": "object",
+                    "properties": {
+                        "countryCode": {
+                            "type": "string"
+                        },
+                        "score": {
+                            "type": "number"
+                        }
+                    }
+                },
+                "sampleValue": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "countryCode": {
+                                "type": "string"
+                            },
+                            "score": {
+                                "type": "number"
+                            }
+                        }
+                    }
+                },
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "countryCode": {
+                                "type": "string"
+                            },
+                            "score": {
+                                "type": "number"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "domain.KeywordData": {
+            "type": "object",
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "sampleValue": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "score": {
+                                "type": "number"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "score": {
+                                "type": "number"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "domain.MetaData": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "faviconImageUrl": {
+                    "type": "string"
+                },
+                "screenshotImageUrl": {
                     "type": "string"
                 }
             }
@@ -1781,6 +2419,81 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.SocialMediaData": {
+            "type": "object",
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "socialsAvailable": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "value": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "domain.VerticalData": {
+            "type": "object",
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "sampleValue": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "rank": {
+                            "type": "integer"
+                        },
+                        "score": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "rank": {
+                                "type": "integer"
+                            },
+                            "score": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "handlers.CreateAdvertiserRequest": {
+            "type": "object",
+            "required": [
+                "data",
+                "domain"
+            ],
+            "properties": {
+                "data": {
+                    "type": "object",
+                    "additionalProperties": true
+                },
+                "domain": {
                     "type": "string"
                 }
             }
@@ -1866,6 +2579,22 @@ const docTemplate = `{
                 }
             }
         },
+        "handlers.CreatePublisherRequest": {
+            "type": "object",
+            "required": [
+                "data",
+                "domain"
+            ],
+            "properties": {
+                "data": {
+                    "type": "object",
+                    "additionalProperties": true
+                },
+                "domain": {
+                    "type": "string"
+                }
+            }
+        },
         "handlers.ErrorResponse": {
             "type": "object",
             "properties": {
@@ -1894,6 +2623,15 @@ const docTemplate = `{
                 },
                 "role_id": {
                     "type": "integer"
+                }
+            }
+        },
+        "handlers.SuccessResponse": {
+            "type": "object",
+            "properties": {
+                "data": {},
+                "message": {
+                    "type": "string"
                 }
             }
         },

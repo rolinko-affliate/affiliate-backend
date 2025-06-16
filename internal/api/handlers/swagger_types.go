@@ -6,6 +6,12 @@ import (
 
 // This file contains type definitions to help Swagger generate proper documentation
 
+// SuccessResponse represents a standard success response
+type SuccessResponse struct {
+	Message string      `json:"message"`
+	Data    interface{} `json:"data"`
+}
+
 // SwaggerRawMessage is used to represent JSON raw message in Swagger docs
 // @Description JSON raw message
 type SwaggerRawMessage struct {

@@ -59,22 +59,20 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 
 	// --- Organization Routes ---
 	organizations := v1.Group("/organizations")
-	organizations.Use(rbacMW("Admin")) // Only admins can manage organizations
 	{
-		organizations.POST("", opts.OrganizationHandler.CreateOrganization)
-		organizations.GET("", opts.OrganizationHandler.ListOrganizations)
-		organizations.GET("/:id", opts.OrganizationHandler.GetOrganization)
-		organizations.PUT("/:id", opts.OrganizationHandler.UpdateOrganization)
-		organizations.DELETE("/:id", opts.OrganizationHandler.DeleteOrganization)
+		// Admin-only routes for organization management
+		organizations.POST("", rbacMW("Admin"), opts.OrganizationHandler.CreateOrganization)
+		organizations.PUT("/:id", rbacMW("Admin"), opts.OrganizationHandler.UpdateOrganization)
+		organizations.DELETE("/:id", rbacMW("Admin"), opts.OrganizationHandler.DeleteOrganization)
 		
-		// Organization's advertisers
-		organizations.GET("/:id/advertisers", opts.AdvertiserHandler.ListAdvertisersByOrganization)
-
-		// Organization's affiliates
-		organizations.GET("/:id/affiliates", opts.AffiliateHandler.ListAffiliatesByOrganization)
+		// Read-only routes accessible by users who belong to organizations
+		organizations.GET("", rbacMW("Admin", "AdvertiserManager", "AffiliateManager", "User"), opts.OrganizationHandler.ListOrganizations)
+		organizations.GET("/:id", rbacMW("Admin", "AdvertiserManager", "AffiliateManager", "User"), opts.OrganizationHandler.GetOrganization)
 		
-		// Organization's campaigns
-		organizations.GET("/:id/campaigns", opts.CampaignHandler.ListCampaignsByOrganization)
+		// Organization's resources - accessible by managers and admins
+		organizations.GET("/:id/advertisers", rbacMW("Admin", "AdvertiserManager"), opts.AdvertiserHandler.ListAdvertisersByOrganization)
+		organizations.GET("/:id/affiliates", rbacMW("Admin", "AffiliateManager"), opts.AffiliateHandler.ListAffiliatesByOrganization)
+		organizations.GET("/:id/campaigns", rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.CampaignHandler.ListCampaignsByOrganization)
 	}
 
 	// --- Advertiser Routes ---

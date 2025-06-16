@@ -158,8 +158,18 @@ func (h *ProfileHandler) CreateProfile(c *gin.Context) {
 		return
 	}
 
-	// Generate a new UUID for the profile
-	profileID := uuid.New()
+	// Get the user ID from the JWT token (set by auth middleware)
+	userIDStr, exists := c.Get(middleware.UserIDKey)
+	if !exists {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "User ID not found in context"})
+		return
+	}
+	
+	profileID, err := uuid.Parse(userIDStr.(string))
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid user ID format"})
+		return
+	}
 
 	// Create the profile using the service
 	createdProfile, err := h.profileService.CreateNewUserProfile(

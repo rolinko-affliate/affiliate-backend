@@ -33,29 +33,21 @@ func NewPgxCampaignRepository(db *pgxpool.Pool) CampaignRepository {
 
 // CreateCampaign creates a new campaign in the database
 func (r *pgxCampaignRepository) CreateCampaign(ctx context.Context, campaign *domain.Campaign) error {
+	// Only use fields that exist in the database table
 	query := `INSERT INTO public.campaigns 
-              (organization_id, advertiser_id, name, description, status, start_date, end_date, internal_notes,
-               destination_url, thumbnail_url, preview_url, visibility, currency_id, conversion_method,
-               session_definition, session_duration, terms_and_conditions, is_caps_enabled,
-               daily_conversion_cap, weekly_conversion_cap, monthly_conversion_cap, global_conversion_cap,
-               daily_click_cap, weekly_click_cap, monthly_click_cap, global_click_cap,
+              (organization_id, advertiser_id, name, description, status, start_date, end_date,
+               destination_url, thumbnail_url, preview_url, visibility, currency_id,
                payout_type, payout_amount, revenue_type, revenue_amount,
                created_at, updated_at)
-              VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18,
-                      $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31, $32)
+              VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)
               RETURNING campaign_id, created_at, updated_at`
 	
-	// Handle nullable fields
+	// Handle nullable fields that exist in the database
 	var description, destinationURL, thumbnailURL, previewURL, visibility, currencyID sql.NullString
-	var conversionMethod, sessionDefinition, termsAndConditions, payoutType, revenueType sql.NullString
+	var payoutType, revenueType sql.NullString
 	var startDate, endDate sql.NullTime
-	var internalNotes sql.NullString
-	var sessionDuration sql.NullInt32
-	var isCapsEnabled sql.NullBool
-	var dailyConversionCap, weeklyConversionCap, monthlyConversionCap, globalConversionCap sql.NullInt32
-	var dailyClickCap, weeklyClickCap, monthlyClickCap, globalClickCap sql.NullInt32
 	var payoutAmount, revenueAmount sql.NullFloat64
-	
+
 	// Set nullable fields
 	if campaign.Description != nil {
 		description = sql.NullString{String: *campaign.Description, Valid: true}
@@ -65,9 +57,6 @@ func (r *pgxCampaignRepository) CreateCampaign(ctx context.Context, campaign *do
 	}
 	if campaign.EndDate != nil {
 		endDate = sql.NullTime{Time: *campaign.EndDate, Valid: true}
-	}
-	if campaign.InternalNotes != nil {
-		internalNotes = sql.NullString{String: *campaign.InternalNotes, Valid: true}
 	}
 	if campaign.DestinationURL != nil {
 		destinationURL = sql.NullString{String: *campaign.DestinationURL, Valid: true}
@@ -83,45 +72,6 @@ func (r *pgxCampaignRepository) CreateCampaign(ctx context.Context, campaign *do
 	}
 	if campaign.CurrencyID != nil {
 		currencyID = sql.NullString{String: *campaign.CurrencyID, Valid: true}
-	}
-	if campaign.ConversionMethod != nil {
-		conversionMethod = sql.NullString{String: *campaign.ConversionMethod, Valid: true}
-	}
-	if campaign.SessionDefinition != nil {
-		sessionDefinition = sql.NullString{String: *campaign.SessionDefinition, Valid: true}
-	}
-	if campaign.SessionDuration != nil {
-		sessionDuration = sql.NullInt32{Int32: *campaign.SessionDuration, Valid: true}
-	}
-	if campaign.TermsAndConditions != nil {
-		termsAndConditions = sql.NullString{String: *campaign.TermsAndConditions, Valid: true}
-	}
-	if campaign.IsCapsEnabled != nil {
-		isCapsEnabled = sql.NullBool{Bool: *campaign.IsCapsEnabled, Valid: true}
-	}
-	if campaign.DailyConversionCap != nil {
-		dailyConversionCap = sql.NullInt32{Int32: int32(*campaign.DailyConversionCap), Valid: true}
-	}
-	if campaign.WeeklyConversionCap != nil {
-		weeklyConversionCap = sql.NullInt32{Int32: int32(*campaign.WeeklyConversionCap), Valid: true}
-	}
-	if campaign.MonthlyConversionCap != nil {
-		monthlyConversionCap = sql.NullInt32{Int32: int32(*campaign.MonthlyConversionCap), Valid: true}
-	}
-	if campaign.GlobalConversionCap != nil {
-		globalConversionCap = sql.NullInt32{Int32: int32(*campaign.GlobalConversionCap), Valid: true}
-	}
-	if campaign.DailyClickCap != nil {
-		dailyClickCap = sql.NullInt32{Int32: int32(*campaign.DailyClickCap), Valid: true}
-	}
-	if campaign.WeeklyClickCap != nil {
-		weeklyClickCap = sql.NullInt32{Int32: int32(*campaign.WeeklyClickCap), Valid: true}
-	}
-	if campaign.MonthlyClickCap != nil {
-		monthlyClickCap = sql.NullInt32{Int32: int32(*campaign.MonthlyClickCap), Valid: true}
-	}
-	if campaign.GlobalClickCap != nil {
-		globalClickCap = sql.NullInt32{Int32: int32(*campaign.GlobalClickCap), Valid: true}
 	}
 	if campaign.PayoutType != nil {
 		payoutType = sql.NullString{String: *campaign.PayoutType, Valid: true}
@@ -140,11 +90,8 @@ func (r *pgxCampaignRepository) CreateCampaign(ctx context.Context, campaign *do
 	
 	err := r.db.QueryRow(ctx, query,
 		campaign.OrganizationID, campaign.AdvertiserID, campaign.Name, description, campaign.Status,
-		startDate, endDate, internalNotes,
-		destinationURL, thumbnailURL, previewURL, visibility, currencyID, conversionMethod,
-		sessionDefinition, sessionDuration, termsAndConditions, isCapsEnabled,
-		dailyConversionCap, weeklyConversionCap, monthlyConversionCap, globalConversionCap,
-		dailyClickCap, weeklyClickCap, monthlyClickCap, globalClickCap,
+		startDate, endDate,
+		destinationURL, thumbnailURL, previewURL, visibility, currencyID,
 		payoutType, payoutAmount, revenueType, revenueAmount,
 		now, now,
 	).Scan(&campaign.CampaignID, &campaign.CreatedAt, &campaign.UpdatedAt)
@@ -567,13 +514,9 @@ func (r *pgxCampaignRepository) ListCampaignsByAdvertiser(ctx context.Context, a
 
 // ListCampaignsByOrganization retrieves campaigns for a specific organization with pagination
 func (r *pgxCampaignRepository) ListCampaignsByOrganization(ctx context.Context, orgID int64, limit, offset int) ([]*domain.Campaign, error) {
-	query := `SELECT campaign_id, organization_id, advertiser_id, name, description, status,
-              start_date, end_date, internal_notes,
-              destination_url, thumbnail_url, preview_url, visibility, currency_id, conversion_method,
-              session_definition, session_duration, terms_and_conditions, is_caps_enabled,
-              daily_conversion_cap, weekly_conversion_cap, monthly_conversion_cap, global_conversion_cap,
-              daily_click_cap, weekly_click_cap, monthly_click_cap, global_click_cap,
-              payout_type, payout_amount, revenue_type, revenue_amount,
+	query := `SELECT campaign_id, organization_id, advertiser_id, name, description, 
+              start_date, end_date, status, destination_url, thumbnail_url, preview_url, 
+              visibility, currency_id, payout_type, payout_amount, revenue_type, revenue_amount,
               created_at, updated_at
               FROM public.campaigns WHERE organization_id = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3`
 	
@@ -587,31 +530,22 @@ func (r *pgxCampaignRepository) ListCampaignsByOrganization(ctx context.Context,
 	for rows.Next() {
 		campaign := &domain.Campaign{}
 		var description, destinationURL, thumbnailURL, previewURL, visibility, currencyID sql.NullString
-		var conversionMethod, sessionDefinition, termsAndConditions, payoutType, revenueType sql.NullString
+		var payoutType, revenueType sql.NullString
 		var startDate, endDate sql.NullTime
-		var internalNotes sql.NullString
-		var sessionDuration sql.NullInt32
-		var isCapsEnabled sql.NullBool
-		var dailyConversionCap, weeklyConversionCap, monthlyConversionCap, globalConversionCap sql.NullInt32
-		var dailyClickCap, weeklyClickCap, monthlyClickCap, globalClickCap sql.NullInt32
 		var payoutAmount, revenueAmount sql.NullFloat64
 		
 		err := rows.Scan(
 			&campaign.CampaignID, &campaign.OrganizationID, &campaign.AdvertiserID,
-			&campaign.Name, &description, &campaign.Status,
-			&startDate, &endDate, &internalNotes,
-			&destinationURL, &thumbnailURL, &previewURL, &visibility, &currencyID, &conversionMethod,
-			&sessionDefinition, &sessionDuration, &termsAndConditions, &isCapsEnabled,
-			&dailyConversionCap, &weeklyConversionCap, &monthlyConversionCap, &globalConversionCap,
-			&dailyClickCap, &weeklyClickCap, &monthlyClickCap, &globalClickCap,
-			&payoutType, &payoutAmount, &revenueType, &revenueAmount,
+			&campaign.Name, &description,
+			&startDate, &endDate, &campaign.Status, &destinationURL, &thumbnailURL, &previewURL,
+			&visibility, &currencyID, &payoutType, &payoutAmount, &revenueType, &revenueAmount,
 			&campaign.CreatedAt, &campaign.UpdatedAt,
 		)
 		if err != nil {
 			return nil, fmt.Errorf("failed to scan campaign: %w", err)
 		}
 		
-		// Handle nullable fields (same logic as GetCampaignByID)
+		// Handle nullable fields
 		if description.Valid {
 			campaign.Description = &description.String
 		}
@@ -620,9 +554,6 @@ func (r *pgxCampaignRepository) ListCampaignsByOrganization(ctx context.Context,
 		}
 		if endDate.Valid {
 			campaign.EndDate = &endDate.Time
-		}
-		if internalNotes.Valid {
-			campaign.InternalNotes = &internalNotes.String
 		}
 		if destinationURL.Valid {
 			campaign.DestinationURL = &destinationURL.String
@@ -638,53 +569,6 @@ func (r *pgxCampaignRepository) ListCampaignsByOrganization(ctx context.Context,
 		}
 		if currencyID.Valid {
 			campaign.CurrencyID = &currencyID.String
-		}
-		if conversionMethod.Valid {
-			campaign.ConversionMethod = &conversionMethod.String
-		}
-		if sessionDefinition.Valid {
-			campaign.SessionDefinition = &sessionDefinition.String
-		}
-		if sessionDuration.Valid {
-			campaign.SessionDuration = &sessionDuration.Int32
-		}
-		if termsAndConditions.Valid {
-			campaign.TermsAndConditions = &termsAndConditions.String
-		}
-		if isCapsEnabled.Valid {
-			campaign.IsCapsEnabled = &isCapsEnabled.Bool
-		}
-		if dailyConversionCap.Valid {
-			val := int(dailyConversionCap.Int32)
-			campaign.DailyConversionCap = &val
-		}
-		if weeklyConversionCap.Valid {
-			val := int(weeklyConversionCap.Int32)
-			campaign.WeeklyConversionCap = &val
-		}
-		if monthlyConversionCap.Valid {
-			val := int(monthlyConversionCap.Int32)
-			campaign.MonthlyConversionCap = &val
-		}
-		if globalConversionCap.Valid {
-			val := int(globalConversionCap.Int32)
-			campaign.GlobalConversionCap = &val
-		}
-		if dailyClickCap.Valid {
-			val := int(dailyClickCap.Int32)
-			campaign.DailyClickCap = &val
-		}
-		if weeklyClickCap.Valid {
-			val := int(weeklyClickCap.Int32)
-			campaign.WeeklyClickCap = &val
-		}
-		if monthlyClickCap.Valid {
-			val := int(monthlyClickCap.Int32)
-			campaign.MonthlyClickCap = &val
-		}
-		if globalClickCap.Valid {
-			val := int(globalClickCap.Int32)
-			campaign.GlobalClickCap = &val
 		}
 		if payoutType.Valid {
 			campaign.PayoutType = &payoutType.String

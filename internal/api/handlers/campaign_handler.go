@@ -222,7 +222,7 @@ func (h *CampaignHandler) ListCampaignsByAdvertiser(c *gin.Context) {
 // @Failure 500 {object} ErrorResponse
 // @Router /organizations/{organization_id}/campaigns [get]
 func (h *CampaignHandler) ListCampaignsByOrganization(c *gin.Context) {
-	orgIDStr := c.Param("organization_id")
+	orgIDStr := c.Param("id")
 	orgID, err := strconv.ParseInt(orgIDStr, 10, 64)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, ErrorResponse{

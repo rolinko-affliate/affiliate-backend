@@ -118,7 +118,7 @@ func checkDatabaseMigrations(cfg *config.Config, autoMigrate bool) error {
 		var version int64
 		var dirty bool
 		err = db.QueryRow(context.Background(), 
-			"SELECT version, dirty FROM schema_migrations LIMIT 1").Scan(&version, &dirty)
+			"SELECT MAX(version) as version, bool_or(dirty) as dirty FROM schema_migrations").Scan(&version, &dirty)
 		
 		if err != nil {
 			// If the table exists but we can't query it, something is wrong

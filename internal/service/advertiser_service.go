@@ -74,12 +74,12 @@ func (s *advertiserService) CreateAdvertiser(ctx context.Context, advertiser *do
 		return nil, fmt.Errorf("failed to create advertiser: %w", err)
 	}
 
-	// Step 2: Create provider mapping with "creating" status
+	// Step 2: Create provider mapping with "pending" status
 	now := time.Now()
 	mapping := &domain.AdvertiserProviderMapping{
 		AdvertiserID:         advertiser.AdvertiserID,
 		ProviderType:         "everflow",
-		SyncStatus:           stringPtr("creating"),
+		SyncStatus:           stringPtr("pending"),
 		LastSyncAt:           &now,
 		APICredentials:       nil, // Set during configuration
 		ProviderConfig:       nil, // Set by IntegrationService with full payload
@@ -101,12 +101,12 @@ func (s *advertiserService) CreateAdvertiser(ctx context.Context, advertiser *do
 		return nil, fmt.Errorf("failed to create advertiser in provider: %w", err)
 	}
 
-	// Step 4: Update mapping with provider ID and "active" status
+	// Step 4: Update mapping with provider ID and "synced" status
 	// For now, we'll use the advertiser ID as the provider ID since the integration service
 	// doesn't return provider-specific IDs in the mock implementation
 	providerID := fmt.Sprintf("%d", providerAdvertiser.AdvertiserID)
 	mapping.ProviderAdvertiserID = &providerID
-	mapping.SyncStatus = stringPtr("active")
+	mapping.SyncStatus = stringPtr("synced")
 	mapping.SyncError = nil
 	mapping.LastSyncAt = &now
 	if err := s.providerMappingRepo.UpdateMapping(ctx, mapping); err != nil {
@@ -147,13 +147,13 @@ func (s *advertiserService) UpdateAdvertiser(ctx context.Context, advertiser *do
 		fmt.Printf("Warning: failed to update advertiser in provider: %v\n", err)
 		
 		// Update mapping sync status to indicate sync failure
-		mapping.SyncStatus = stringPtr("sync_failed")
+		mapping.SyncStatus = stringPtr("failed")
 		mapping.SyncError = stringPtr(err.Error())
 		mapping.LastSyncAt = &now
 		s.providerMappingRepo.UpdateMapping(ctx, mapping)
 	} else {
 		// Update mapping sync status to indicate successful sync
-		mapping.SyncStatus = stringPtr("active")
+		mapping.SyncStatus = stringPtr("synced")
 		mapping.SyncError = nil
 		mapping.LastSyncAt = &now
 		s.providerMappingRepo.UpdateMapping(ctx, mapping)
@@ -295,7 +295,7 @@ func (s *advertiserService) SyncAdvertiserToProvider(ctx context.Context, advert
 	// Mapping exists, update in provider
 	now := time.Now()
 	if err := s.integrationService.UpdateAdvertiser(ctx, *advertiser); err != nil {
-		mapping.SyncStatus = stringPtr("sync_failed")
+		mapping.SyncStatus = stringPtr("failed")
 		mapping.SyncError = stringPtr(err.Error())
 		mapping.LastSyncAt = &now
 		s.providerMappingRepo.UpdateMapping(ctx, mapping)
@@ -303,7 +303,7 @@ func (s *advertiserService) SyncAdvertiserToProvider(ctx context.Context, advert
 	}
 
 	// Update mapping sync status
-	mapping.SyncStatus = stringPtr("active")
+	mapping.SyncStatus = stringPtr("synced")
 	mapping.SyncError = nil
 	mapping.LastSyncAt = &now
 	return s.providerMappingRepo.UpdateMapping(ctx, mapping)
@@ -323,7 +323,7 @@ func (s *advertiserService) SyncAdvertiserFromProvider(ctx context.Context, adve
 	providerAdvertiser, err := s.integrationService.GetAdvertiser(ctx, advertiserUUID)
 	if err != nil {
 		now := time.Now()
-		mapping.SyncStatus = stringPtr("sync_failed")
+		mapping.SyncStatus = stringPtr("failed")
 		mapping.SyncError = stringPtr(err.Error())
 		mapping.LastSyncAt = &now
 		s.providerMappingRepo.UpdateMapping(ctx, mapping)
@@ -346,7 +346,7 @@ func (s *advertiserService) SyncAdvertiserFromProvider(ctx context.Context, adve
 
 	// Update mapping sync status
 	now := time.Now()
-	mapping.SyncStatus = stringPtr("active")
+	mapping.SyncStatus = stringPtr("synced")
 	mapping.SyncError = nil
 	mapping.LastSyncAt = &now
 	return s.providerMappingRepo.UpdateMapping(ctx, mapping)
@@ -392,12 +392,12 @@ func (s *advertiserService) CompareAdvertiserWithProvider(ctx context.Context, a
 
 // createAdvertiserInProvider creates an advertiser in the provider when no mapping exists
 func (s *advertiserService) createAdvertiserInProvider(ctx context.Context, advertiser *domain.Advertiser) error {
-	// Create provider mapping with "creating" status
+	// Create provider mapping with "pending" status
 	now := time.Now()
 	mapping := &domain.AdvertiserProviderMapping{
 		AdvertiserID:   advertiser.AdvertiserID,
 		ProviderType:   "everflow",
-		SyncStatus:     stringPtr("creating"),
+		SyncStatus:     stringPtr("pending"),
 		LastSyncAt:     &now,
 		APICredentials: nil, // Set by IntegrationService
 		ProviderConfig: nil, // Set by IntegrationService with full payload
@@ -410,17 +410,17 @@ func (s *advertiserService) createAdvertiserInProvider(ctx context.Context, adve
 	// Create in provider
 	providerAdvertiser, err := s.integrationService.CreateAdvertiser(ctx, *advertiser)
 	if err != nil {
-		mapping.SyncStatus = stringPtr("sync_failed")
+		mapping.SyncStatus = stringPtr("failed")
 		mapping.SyncError = stringPtr(err.Error())
 		mapping.LastSyncAt = &now
 		s.providerMappingRepo.UpdateMapping(ctx, mapping)
 		return fmt.Errorf("failed to create advertiser in provider: %w", err)
 	}
 
-	// Update mapping with provider ID and "active" status
+	// Update mapping with provider ID and "synced" status
 	providerID := fmt.Sprintf("%d", providerAdvertiser.AdvertiserID)
 	mapping.ProviderAdvertiserID = &providerID
-	mapping.SyncStatus = stringPtr("active")
+	mapping.SyncStatus = stringPtr("synced")
 	mapping.SyncError = nil
 	mapping.LastSyncAt = &now
 	return s.providerMappingRepo.UpdateMapping(ctx, mapping)

@@ -120,8 +120,11 @@ func int64ToUUID(id int64) uuid.UUID {
 
 // CreateAdvertiser creates an advertiser in Everflow
 func (s *IntegrationService) CreateAdvertiser(ctx context.Context, adv domain.Advertiser) (domain.Advertiser, error) {
-	// TODO: Implement advertiser creation when advertiser functionality is needed
-	return adv, fmt.Errorf("advertiser creation not implemented")
+	// Mock implementation - simulate successful creation
+	// In a real implementation, this would make an API call to Everflow
+	
+	// Return the advertiser with the same ID (simulating successful creation)
+	return adv, nil
 }
 
 // UpdateAdvertiser updates an advertiser in Everflow

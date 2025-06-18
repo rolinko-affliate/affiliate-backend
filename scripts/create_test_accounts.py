@@ -1,38 +1,25 @@
 #!/usr/bin/env python3
-
 """
-Idempotent Test Account Creation Script for Affiliate Platform Backend
-
-Creates test accounts and organizations with full idempotency.
-Safe to run multiple times without creating duplicates.
+Simplified Test Account Creation Script
+Creates test data using only the specified organizations and user IDs.
 """
 
-import argparse
 import json
 import logging
-import sys
+import requests
 import time
-import uuid
-from typing import Dict, List, Optional, Any, Tuple
 from dataclasses import dataclass
 from enum import Enum
-import requests
-from requests.adapters import HTTPAdapter
-from urllib3.util.retry import Retry
+from typing import List, Optional, Dict, Any
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%Y-%m-%d %H:%M:%S'
-)
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 class OperationResult(Enum):
-    CREATED = "created"
+    SUCCESS = "success"
     ALREADY_EXISTS = "already_exists"
-    UPDATED = "updated"
-    FAILED = "failed"
+    ERROR = "error"
 
 @dataclass
 class TestUser:
@@ -52,35 +39,15 @@ class TestOrganization:
 
 @dataclass
 class IdempotentResult:
-    operation: str
     result: OperationResult
-    entity_id: Optional[Any] = None
-    entity_data: Optional[Dict] = None
+    data: Optional[Dict[str, Any]] = None
     error_message: Optional[str] = None
-    
-    @property
-    def success(self) -> bool:
-        return self.result in [OperationResult.CREATED, OperationResult.ALREADY_EXISTS, OperationResult.UPDATED]
 
 class IdempotentAPIClient:
-    
-    def __init__(self, base_url: str, admin_token: Optional[str] = None, timeout: int = 30):
-        self.base_url = base_url.rstrip('/')
+    def __init__(self, base_url: str, admin_token: str = None):
+        self.base_url = base_url.rstrip('/') + '/api/v1'
         self.admin_token = admin_token
-        self.timeout = timeout
-        
-        # Configure session with retries
         self.session = requests.Session()
-        retry_strategy = Retry(
-            total=3,
-            backoff_factor=1,
-            status_forcelist=[429, 500, 502, 503, 504],
-        )
-        adapter = HTTPAdapter(max_retries=retry_strategy)
-        self.session.mount("http://", adapter)
-        self.session.mount("https://", adapter)
-        
-        # Set default headers
         self.session.headers.update({
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -90,442 +57,204 @@ class IdempotentAPIClient:
             self.session.headers.update({
                 'Authorization': f'Bearer {self.admin_token}'
             })
-    
-    def _make_request(self, method: str, endpoint: str, data: Optional[Dict] = None, 
-                     params: Optional[Dict] = None) -> Tuple[bool, int, Dict]:
-        url = f"{self.base_url}{endpoint}"
-        
-        try:
-            logger.debug(f"Making {method} request to {url}")
-            if data:
-                logger.debug(f"Request data: {json.dumps(data, indent=2)}")
-            
-            response = self.session.request(
-                method=method,
-                url=url,
-                json=data,
-                params=params,
-                timeout=self.timeout
-            )
-            
-            logger.debug(f"Response status: {response.status_code}")
-            
-            # Try to parse JSON response
-            try:
-                response_data = response.json()
-            except json.JSONDecodeError:
-                response_data = {"raw_response": response.text}
-            
-            success = 200 <= response.status_code < 300
-            return success, response.status_code, response_data
-                
-        except requests.exceptions.RequestException as e:
-            logger.error(f"Request failed: {e}")
-            return False, 0, {"error": str(e)}
-    
-    def health_check(self) -> bool:
-        success, status_code, data = self._make_request('GET', '/health')
-        return success
-    
-    def get_organizations(self) -> Tuple[bool, List[Dict]]:
-        success, status_code, data = self._make_request('GET', '/api/v1/organizations')
-        if success:
-            # Handle both list response and paginated response
-            if isinstance(data, list):
-                return True, data
-            elif isinstance(data, dict) and 'organizations' in data:
-                return True, data['organizations']
-            elif isinstance(data, dict) and 'data' in data:
-                return True, data['data']
-            else:
-                return True, []
-        return False, []
-    
-    def get_organization_by_name(self, name: str) -> Tuple[bool, Optional[Dict]]:
-    
-        success, orgs = self.get_organizations()
-        if not success:
-            return False, None
-        
-        for org in orgs:
-            if org.get('name') == name:
-                return True, org
-        return True, None
-    
+
     def create_organization_idempotent(self, name: str, org_type: str) -> IdempotentResult:
-    
-        # Check if organization already exists
-        exists_success, existing_org = self.get_organization_by_name(name)
-        if not exists_success:
-            return IdempotentResult(
-                operation=f"create_organization({name})",
-                result=OperationResult.FAILED,
-                error_message="Failed to check existing organizations"
-            )
-        
-        if existing_org:
-            # Organization already exists
-            if existing_org.get('type') == org_type:
+        """Create organization if it doesn't exist"""
+        try:
+            # Check if organization exists
+            response = self.session.get(f"{self.base_url}/organizations")
+            if response.status_code == 200:
+                orgs = response.json()
+                for org in orgs:
+                    if org.get('name') == name:
+                        return IdempotentResult(
+                            result=OperationResult.ALREADY_EXISTS,
+                            data=org
+                        )
+            
+            # Create organization
+            data = {"name": name, "type": org_type}
+            response = self.session.post(f"{self.base_url}/organizations", json=data)
+            
+            if response.status_code == 201:
                 return IdempotentResult(
-                    operation=f"create_organization({name})",
-                    result=OperationResult.ALREADY_EXISTS,
-                    entity_id=existing_org.get('organization_id'),
-                    entity_data=existing_org
+                    result=OperationResult.SUCCESS,
+                    data=response.json()
                 )
             else:
                 return IdempotentResult(
-                    operation=f"create_organization({name})",
-                    result=OperationResult.FAILED,
-                    error_message=f"Organization exists with different type: {existing_org.get('type')} != {org_type}"
+                    result=OperationResult.ERROR,
+                    error_message=f"HTTP {response.status_code}: {response.text}"
                 )
-        
-        # Create new organization
-        data = {"name": name, "type": org_type}
-        success, status_code, response_data = self._make_request('POST', '/api/v1/organizations', data=data)
-        
-        if success:
+                
+        except Exception as e:
             return IdempotentResult(
-                operation=f"create_organization({name})",
-                result=OperationResult.CREATED,
-                entity_id=response_data.get('organization_id'),
-                entity_data=response_data
-            )
-        else:
-            # Check if it's a duplicate error
-            error_msg = response_data.get('error', f'HTTP {status_code}')
-            if 'duplicate' in error_msg.lower() or 'already exists' in error_msg.lower() or status_code == 409:
-                # Race condition - organization was created between our check and creation
-                exists_success, existing_org = self.get_organization_by_name(name)
-                if exists_success and existing_org:
-                    return IdempotentResult(
-                        operation=f"create_organization({name})",
-                        result=OperationResult.ALREADY_EXISTS,
-                        entity_id=existing_org.get('organization_id'),
-                        entity_data=existing_org
-                    )
-            
-            return IdempotentResult(
-                operation=f"create_organization({name})",
-                result=OperationResult.FAILED,
-                error_message=error_msg
-            )
-    
-    def upsert_profile(self, user_uuid: str, email: str, first_name: str,
-                      last_name: str, role_id: int, organization_id: Optional[int] = None) -> IdempotentResult:
-    
-        data = {
-            "id": user_uuid,
-            "email": email,
-            "first_name": first_name,
-            "last_name": last_name,
-            "role_id": role_id
-        }
-        if organization_id:
-            data["organization_id"] = organization_id
-        
-        success, status_code, response_data = self._make_request('POST', '/api/v1/profiles/upsert', data=data)
-        
-        if success:
-            # The upsert endpoint doesn't tell us if it was created or updated
-            # We'll assume it was successful and mark as CREATED for simplicity
-            return IdempotentResult(
-                operation=f"upsert_profile({email})",
-                result=OperationResult.CREATED,
-                entity_id=user_uuid,
-                entity_data=response_data
-            )
-        else:
-            error_msg = response_data.get('error', f'HTTP {status_code}')
-            return IdempotentResult(
-                operation=f"upsert_profile({email})",
-                result=OperationResult.FAILED,
-                error_message=error_msg
-            )
-    
-    def get_advertisers(self) -> Tuple[bool, List[Dict]]:
-    
-        success, status_code, data = self._make_request('GET', '/api/v1/advertisers')
-        if success:
-            if isinstance(data, list):
-                return True, data
-            elif isinstance(data, dict) and 'advertisers' in data:
-                return True, data['advertisers']
-            elif isinstance(data, dict) and 'data' in data:
-                return True, data['data']
-            else:
-                return True, []
-        return False, []
-    
-    def get_advertiser_by_name(self, name: str) -> Tuple[bool, Optional[Dict]]:
-    
-        success, advertisers = self.get_advertisers()
-        if not success:
-            return False, None
-        
-        for adv in advertisers:
-            if adv.get('name') == name:
-                return True, adv
-        return True, None
-    
-    def create_advertiser_idempotent(self, name: str, organization_id: int, contact_email: str,
-                                   billing_details: Optional[Dict] = None) -> IdempotentResult:
-    
-        # Check if advertiser already exists
-        exists_success, existing_adv = self.get_advertiser_by_name(name)
-        if not exists_success:
-            return IdempotentResult(
-                operation=f"create_advertiser({name})",
-                result=OperationResult.FAILED,
-                error_message="Failed to check existing advertisers"
-            )
-        
-        if existing_adv:
-            return IdempotentResult(
-                operation=f"create_advertiser({name})",
-                result=OperationResult.ALREADY_EXISTS,
-                entity_id=existing_adv.get('advertiser_id'),
-                entity_data=existing_adv
-            )
-        
-        # Create new advertiser
-        data = {
-            "name": name,
-            "organization_id": organization_id,
-            "contact_email": contact_email,
-            "status": "active"
-        }
-        if billing_details:
-            data["billing_details"] = billing_details
-        
-        success, status_code, response_data = self._make_request('POST', '/api/v1/advertisers', data=data)
-        
-        if success:
-            return IdempotentResult(
-                operation=f"create_advertiser({name})",
-                result=OperationResult.CREATED,
-                entity_id=response_data.get('advertiser_id'),
-                entity_data=response_data
-            )
-        else:
-            error_msg = response_data.get('error', f'HTTP {status_code}')
-            if 'duplicate' in error_msg.lower() or 'already exists' in error_msg.lower() or status_code == 409:
-                # Race condition - check again
-                exists_success, existing_adv = self.get_advertiser_by_name(name)
-                if exists_success and existing_adv:
-                    return IdempotentResult(
-                        operation=f"create_advertiser({name})",
-                        result=OperationResult.ALREADY_EXISTS,
-                        entity_id=existing_adv.get('advertiser_id'),
-                        entity_data=existing_adv
-                    )
-            
-            return IdempotentResult(
-                operation=f"create_advertiser({name})",
-                result=OperationResult.FAILED,
-                error_message=error_msg
-            )
-    
-    def get_affiliates(self) -> Tuple[bool, List[Dict]]:
-    
-        success, status_code, data = self._make_request('GET', '/api/v1/affiliates')
-        if success:
-            if isinstance(data, list):
-                return True, data
-            elif isinstance(data, dict) and 'affiliates' in data:
-                return True, data['affiliates']
-            elif isinstance(data, dict) and 'data' in data:
-                return True, data['data']
-            else:
-                return True, []
-        return False, []
-    
-    def get_affiliate_by_name(self, name: str) -> Tuple[bool, Optional[Dict]]:
-    
-        success, affiliates = self.get_affiliates()
-        if not success:
-            return False, None
-        
-        for aff in affiliates:
-            if aff.get('name') == name:
-                return True, aff
-        return True, None
-    
-    def create_affiliate_idempotent(self, name: str, organization_id: int, contact_email: str,
-                                  payment_details: Optional[Dict] = None) -> IdempotentResult:
-    
-        # Check if affiliate already exists
-        exists_success, existing_aff = self.get_affiliate_by_name(name)
-        if not exists_success:
-            return IdempotentResult(
-                operation=f"create_affiliate({name})",
-                result=OperationResult.FAILED,
-                error_message="Failed to check existing affiliates"
-            )
-        
-        if existing_aff:
-            return IdempotentResult(
-                operation=f"create_affiliate({name})",
-                result=OperationResult.ALREADY_EXISTS,
-                entity_id=existing_aff.get('affiliate_id'),
-                entity_data=existing_aff
-            )
-        
-        # Create new affiliate
-        data = {
-            "name": name,
-            "organization_id": organization_id,
-            "contact_email": contact_email,
-            "status": "active"
-        }
-        if payment_details:
-            data["payment_details"] = payment_details
-        
-        success, status_code, response_data = self._make_request('POST', '/api/v1/affiliates', data=data)
-        
-        if success:
-            return IdempotentResult(
-                operation=f"create_affiliate({name})",
-                result=OperationResult.CREATED,
-                entity_id=response_data.get('affiliate_id'),
-                entity_data=response_data
-            )
-        else:
-            error_msg = response_data.get('error', f'HTTP {status_code}')
-            if 'duplicate' in error_msg.lower() or 'already exists' in error_msg.lower() or status_code == 409:
-                # Race condition - check again
-                exists_success, existing_aff = self.get_affiliate_by_name(name)
-                if exists_success and existing_aff:
-                    return IdempotentResult(
-                        operation=f"create_affiliate({name})",
-                        result=OperationResult.ALREADY_EXISTS,
-                        entity_id=existing_aff.get('affiliate_id'),
-                        entity_data=existing_aff
-                    )
-            
-            return IdempotentResult(
-                operation=f"create_affiliate({name})",
-                result=OperationResult.FAILED,
-                error_message=error_msg
-            )
-    
-    def get_campaigns(self) -> Tuple[bool, List[Dict]]:
-    
-        success, status_code, data = self._make_request('GET', '/api/v1/campaigns')
-        if success:
-            if isinstance(data, list):
-                return True, data
-            elif isinstance(data, dict) and 'campaigns' in data:
-                return True, data['campaigns']
-            elif isinstance(data, dict) and 'data' in data:
-                return True, data['data']
-            else:
-                return True, []
-        return False, []
-    
-    def get_campaign_by_name(self, name: str) -> Tuple[bool, Optional[Dict]]:
-    
-        success, campaigns = self.get_campaigns()
-        if not success:
-            return False, None
-        
-        for camp in campaigns:
-            if camp.get('name') == name:
-                return True, camp
-        return True, None
-    
-    def create_campaign_idempotent(self, name: str, advertiser_id: int, organization_id: int, 
-                                 payout_type: str, payout_amount: float, revenue_type: str, 
-                                 revenue_amount: float, currency_id: str = "USD", 
-                                 status: str = "active", visibility: str = "public") -> IdempotentResult:
-    
-        # Check if campaign already exists
-        exists_success, existing_camp = self.get_campaign_by_name(name)
-        if not exists_success:
-            return IdempotentResult(
-                operation=f"create_campaign({name})",
-                result=OperationResult.FAILED,
-                error_message="Failed to check existing campaigns"
-            )
-        
-        if existing_camp:
-            return IdempotentResult(
-                operation=f"create_campaign({name})",
-                result=OperationResult.ALREADY_EXISTS,
-                entity_id=existing_camp.get('campaign_id'),
-                entity_data=existing_camp
-            )
-        
-        # Create new campaign
-        data = {
-            "name": name,
-            "advertiser_id": advertiser_id,
-            "organization_id": organization_id,
-            "payout_type": payout_type,
-            "payout_amount": payout_amount,
-            "revenue_type": revenue_type,
-            "revenue_amount": revenue_amount,
-            "currency_id": currency_id,
-            "status": status,
-            "visibility": visibility
-        }
-        
-        success, status_code, response_data = self._make_request('POST', '/api/v1/campaigns', data=data)
-        
-        if success:
-            return IdempotentResult(
-                operation=f"create_campaign({name})",
-                result=OperationResult.CREATED,
-                entity_id=response_data.get('campaign_id'),
-                entity_data=response_data
-            )
-        else:
-            error_msg = response_data.get('error', f'HTTP {status_code}')
-            if 'duplicate' in error_msg.lower() or 'already exists' in error_msg.lower() or status_code == 409:
-                # Race condition - check again
-                exists_success, existing_camp = self.get_campaign_by_name(name)
-                if exists_success and existing_camp:
-                    return IdempotentResult(
-                        operation=f"create_campaign({name})",
-                        result=OperationResult.ALREADY_EXISTS,
-                        entity_id=existing_camp.get('campaign_id'),
-                        entity_data=existing_camp
-                    )
-            
-            return IdempotentResult(
-                operation=f"create_campaign({name})",
-                result=OperationResult.FAILED,
-                error_message=error_msg
-            )
-    
-    def create_analytics_data_idempotent(self, endpoint: str, data: Dict, identifier: str) -> IdempotentResult:
-    
-        success, status_code, response_data = self._make_request('POST', endpoint, data=data)
-        
-        if success:
-            return IdempotentResult(
-                operation=f"create_analytics({identifier})",
-                result=OperationResult.CREATED,
-                entity_data=response_data
-            )
-        else:
-            error_msg = response_data.get('error', f'HTTP {status_code}')
-            # For analytics, we might want to be more lenient about duplicates
-            if 'duplicate' in error_msg.lower() or 'already exists' in error_msg.lower() or status_code == 409:
-                return IdempotentResult(
-                    operation=f"create_analytics({identifier})",
-                    result=OperationResult.ALREADY_EXISTS,
-                    entity_data=response_data
-                )
-            
-            return IdempotentResult(
-                operation=f"create_analytics({identifier})",
-                result=OperationResult.FAILED,
-                error_message=error_msg
+                result=OperationResult.ERROR,
+                error_message=str(e)
             )
 
-class IdempotentTestAccountCreator:
+    def create_user_profile_idempotent(self, user: TestUser, organization_id: str) -> IdempotentResult:
+        """Create user profile if it doesn't exist"""
+        try:
+            # For user profiles, we'll use upsert since there's no list endpoint
+            # and we want to create the profile with the specific UUID
+            
+            # Create user profile using upsert
+            data = {
+                "id": user.uuid,
+                "email": user.email,
+                "first_name": user.first_name,
+                "last_name": user.last_name,
+                "role_id": user.role_id,
+                "organization_id": organization_id
+            }
+            response = self.session.post(f"{self.base_url}/profiles/upsert", json=data)
+            
+            if response.status_code in [200, 201]:
+                result_type = OperationResult.ALREADY_EXISTS if response.status_code == 200 else OperationResult.SUCCESS
+                return IdempotentResult(
+                    result=result_type,
+                    data=response.json()
+                )
+            else:
+                return IdempotentResult(
+                    result=OperationResult.ERROR,
+                    error_message=f"HTTP {response.status_code}: {response.text}"
+                )
+                
+        except Exception as e:
+            return IdempotentResult(
+                result=OperationResult.ERROR,
+                error_message=str(e)
+            )
 
-    
+    def create_advertiser_idempotent(self, name: str, organization_id: str, contact_email: str, billing_details: dict) -> IdempotentResult:
+        """Create advertiser if it doesn't exist"""
+        try:
+            # Check if advertiser exists by listing organization's advertisers
+            response = self.session.get(f"{self.base_url}/organizations/{organization_id}/advertisers")
+            if response.status_code == 200:
+                advertisers = response.json()
+                if advertisers:  # Check if advertisers is not None
+                    for adv in advertisers:
+                        if adv.get('name') == name:
+                            return IdempotentResult(
+                                result=OperationResult.ALREADY_EXISTS,
+                                data=adv
+                            )
+            
+            # Create advertiser
+            data = {
+                "name": name,
+                "organization_id": int(organization_id),
+                "contact_email": contact_email,
+                "billing_details": billing_details
+            }
+            response = self.session.post(f"{self.base_url}/advertisers", json=data)
+            
+            if response.status_code == 201:
+                return IdempotentResult(
+                    result=OperationResult.SUCCESS,
+                    data=response.json()
+                )
+            else:
+                return IdempotentResult(
+                    result=OperationResult.ERROR,
+                    error_message=f"HTTP {response.status_code}: {response.text}"
+                )
+                
+        except Exception as e:
+            return IdempotentResult(
+                result=OperationResult.ERROR,
+                error_message=str(e)
+            )
+
+    def create_affiliate_idempotent(self, name: str, organization_id: str, contact_email: str, **kwargs) -> IdempotentResult:
+        """Create affiliate if it doesn't exist"""
+        try:
+            # Check if affiliate exists by listing organization's affiliates
+            response = self.session.get(f"{self.base_url}/organizations/{organization_id}/affiliates")
+            if response.status_code == 200:
+                affiliates = response.json()
+                if affiliates:  # Check if affiliates is not None
+                    for aff in affiliates:
+                        if aff.get('name') == name:
+                            return IdempotentResult(
+                                result=OperationResult.ALREADY_EXISTS,
+                                data=aff
+                            )
+            
+            # Create affiliate
+            data = {
+                "name": name,
+                "organization_id": int(organization_id),
+                "contact_email": contact_email,
+                **kwargs
+            }
+            response = self.session.post(f"{self.base_url}/affiliates", json=data)
+            
+            if response.status_code == 201:
+                return IdempotentResult(
+                    result=OperationResult.SUCCESS,
+                    data=response.json()
+                )
+            else:
+                return IdempotentResult(
+                    result=OperationResult.ERROR,
+                    error_message=f"HTTP {response.status_code}: {response.text}"
+                )
+                
+        except Exception as e:
+            return IdempotentResult(
+                result=OperationResult.ERROR,
+                error_message=str(e)
+            )
+
+    def create_campaign_idempotent(self, name: str, advertiser_id: str, organization_id: str, payout_amount: float, payout_currency: str, **kwargs) -> IdempotentResult:
+        """Create campaign if it doesn't exist"""
+        try:
+            # Check if campaign exists by listing organization's campaigns
+            response = self.session.get(f"{self.base_url}/organizations/{organization_id}/campaigns")
+            if response.status_code == 200:
+                campaigns_response = response.json()
+                if campaigns_response and 'campaigns' in campaigns_response:
+                    campaigns = campaigns_response['campaigns']
+                    for camp in campaigns:
+                        if camp.get('name') == name:
+                            return IdempotentResult(
+                                result=OperationResult.ALREADY_EXISTS,
+                                data=camp
+                            )
+            
+            # Create campaign
+            data = {
+                "name": name,
+                "organization_id": int(organization_id),
+                "advertiser_id": int(advertiser_id),
+                "payout_amount": payout_amount,
+                "payout_currency": payout_currency,
+                **kwargs
+            }
+            response = self.session.post(f"{self.base_url}/campaigns", json=data)
+            
+            if response.status_code == 201:
+                return IdempotentResult(
+                    result=OperationResult.SUCCESS,
+                    data=response.json()
+                )
+            else:
+                return IdempotentResult(
+                    result=OperationResult.ERROR,
+                    error_message=f"HTTP {response.status_code}: {response.text}"
+                )
+                
+        except Exception as e:
+            return IdempotentResult(
+                result=OperationResult.ERROR,
+                error_message=str(e)
+            )
+
+class SimpleTestAccountCreator:
     def __init__(self, api_client: IdempotentAPIClient, verbose: bool = False):
         self.api = api_client
         self.verbose = verbose
@@ -534,43 +263,23 @@ class IdempotentTestAccountCreator:
             'profiles': {},
             'advertisers': {},
             'affiliates': {},
-            'campaigns': {},
-            'analytics': {}
+            'campaigns': {}
         }
         
         if verbose:
             logger.setLevel(logging.DEBUG)
-    
-    def log_result(self, result: IdempotentResult):
-    
-        if result.success:
-            if result.result == OperationResult.CREATED:
-                logger.info(f"✅ Created: {result.operation}")
-            elif result.result == OperationResult.ALREADY_EXISTS:
-                logger.info(f"ℹ️  Already exists: {result.operation}")
-            elif result.result == OperationResult.UPDATED:
-                logger.info(f"🔄 Updated: {result.operation}")
-        else:
-            logger.error(f"❌ Failed: {result.operation} - {result.error_message}")
-    
-    def check_api_health(self) -> bool:
-    
-        logger.info("Checking API health...")
-        if self.api.health_check():
-            logger.info("✅ API is healthy and responding")
-            return True
-        else:
-            logger.error("❌ API health check failed")
-            return False
-    
+
     def get_test_organizations(self) -> List[TestOrganization]:
-    
+        """Create test organizations using only the specified entities"""
         return [
+            # Platform Owner (already exists in seed data)
             TestOrganization(
-                name="UpsailAI",
+                name="rolinko",
                 type="platform_owner",
                 description="Platform administration organization"
             ),
+            
+            # Advertisers
             TestOrganization(
                 name="Adidas",
                 type="advertiser",
@@ -579,27 +288,32 @@ class IdempotentTestAccountCreator:
             TestOrganization(
                 name="Dyson",
                 type="advertiser",
-                description="Home appliance technology company"
+                description="British technology company - home appliances"
             ),
+            
+            # Affiliates
             TestOrganization(
                 name="Le Monde",
                 type="affiliate",
-                description="French news publisher"
+                description="French daily newspaper"
             )
         ]
-    
+
     def get_test_users(self) -> List[TestUser]:
-    
+        """Create test users using only the specified user IDs and organizations"""
         return [
-            TestUser(
-                uuid="550e8400-e29b-41d4-a716-446655440000",
-                email="admin@upsailai.com",
-                first_name="Admin",
-                last_name="User",
-                role_name="Admin",
-                role_id=1,
-                organization_name="UpsailAI"
-            ),
+            # Skip Platform Admin (already exists in seed data)
+            # TestUser(
+            #     uuid="4cbe2452-88aa-4429-9145-b527d9eebfbf",
+            #     email="admin@rolinko.com",
+            #     first_name="Platform",
+            #     last_name="Administrator",
+            #     role_name="Admin",
+            #     role_id=1,
+            #     organization_name="rolinko"
+            # ),
+            
+            # Advertiser Managers
             TestUser(
                 uuid="a654ad6a-83c7-44c5-9f34-d2d5adb2f8a0",
                 email="rolinko@adidas.com",
@@ -618,6 +332,8 @@ class IdempotentTestAccountCreator:
                 role_id=1000,
                 organization_name="Dyson"
             ),
+            
+            # Affiliate Managers
             TestUser(
                 uuid="268826c9-d59d-4b40-9558-4ce5f7bf7534",
                 email="rolinko@lemonde.fr",
@@ -628,9 +344,9 @@ class IdempotentTestAccountCreator:
                 organization_name="Le Monde"
             )
         ]
-    
+
     def create_organizations(self) -> bool:
-    
+        """Create test organizations"""
         logger.info("Creating test organizations...")
         
         organizations = self.get_test_organizations()
@@ -640,29 +356,27 @@ class IdempotentTestAccountCreator:
             logger.info(f"Processing organization: {org.name} ({org.type})")
             
             result = self.api.create_organization_idempotent(org.name, org.type)
-            self.log_result(result)
             
-            if result.success:
+            if result.result in [OperationResult.SUCCESS, OperationResult.ALREADY_EXISTS]:
                 self.results['organizations'][org.name] = {
-                    'id': result.entity_id,
-                    'type': org.type,
-                    'result': result.result.value,
-                    'data': result.entity_data
+                    'id': result.data['organization_id'],
+                    'result': result.result.value
                 }
                 success_count += 1
+                logger.info(f"✅ Organization '{org.name}': {result.result.value}")
             else:
                 self.results['organizations'][org.name] = {
                     'id': None,
-                    'type': org.type,
                     'result': result.result.value,
                     'error': result.error_message
                 }
+                logger.error(f"❌ Organization '{org.name}': {result.error_message}")
         
         logger.info(f"Organizations processed: {success_count}/{len(organizations)} successful")
         return success_count == len(organizations)
-    
+
     def create_user_profiles(self) -> bool:
-    
+        """Create test user profiles"""
         logger.info("Creating test user profiles...")
         
         users = self.get_test_users()
@@ -674,49 +388,36 @@ class IdempotentTestAccountCreator:
             # Get organization ID
             org_id = None
             if user.organization_name in self.results['organizations']:
-                org_data = self.results['organizations'][user.organization_name]
-                if org_data['id']:
-                    org_id = org_data['id']
-                else:
-                    logger.error(f"Organization '{user.organization_name}' was not created successfully")
-                    continue
-            else:
-                logger.error(f"Organization '{user.organization_name}' not found in results")
+                org_id = self.results['organizations'][user.organization_name]['id']
+            
+            if not org_id:
+                logger.error(f"❌ Organization '{user.organization_name}' not found for user {user.email}")
                 continue
             
-            result = self.api.upsert_profile(
-                user_uuid=user.uuid,
-                email=user.email,
-                first_name=user.first_name,
-                last_name=user.last_name,
-                role_id=user.role_id,
-                organization_id=org_id
-            )
-            self.log_result(result)
+            result = self.api.create_user_profile_idempotent(user, org_id)
             
-            if result.success:
+            if result.result in [OperationResult.SUCCESS, OperationResult.ALREADY_EXISTS]:
                 self.results['profiles'][user.email] = {
-                    'uuid': user.uuid,
+                    'id': result.data['id'],
                     'organization_id': org_id,
-                    'role_id': user.role_id,
-                    'result': result.result.value,
-                    'data': result.entity_data
+                    'result': result.result.value
                 }
                 success_count += 1
+                logger.info(f"✅ Profile '{user.email}': {result.result.value}")
             else:
                 self.results['profiles'][user.email] = {
-                    'uuid': user.uuid,
+                    'id': None,
                     'organization_id': org_id,
-                    'role_id': user.role_id,
                     'result': result.result.value,
                     'error': result.error_message
                 }
+                logger.error(f"❌ Profile '{user.email}': {result.error_message}")
         
-        logger.info(f"User profiles processed: {success_count}/{len(users)} successful")
+        logger.info(f"Profiles processed: {success_count}/{len(users)} successful")
         return success_count == len(users)
-    
+
     def create_advertisers(self) -> bool:
-    
+        """Create test advertisers"""
         logger.info("Creating test advertisers...")
         
         advertisers_data = [
@@ -762,14 +463,10 @@ class IdempotentTestAccountCreator:
             # Get organization ID
             org_id = None
             if adv_data['organization_name'] in self.results['organizations']:
-                org_data = self.results['organizations'][adv_data['organization_name']]
-                if org_data['id']:
-                    org_id = org_data['id']
-                else:
-                    logger.error(f"Organization '{adv_data['organization_name']}' was not created successfully")
-                    continue
-            else:
-                logger.error(f"Organization '{adv_data['organization_name']}' not found in results")
+                org_id = self.results['organizations'][adv_data['organization_name']]['id']
+            
+            if not org_id:
+                logger.error(f"❌ Organization '{adv_data['organization_name']}' not found")
                 continue
             
             result = self.api.create_advertiser_idempotent(
@@ -778,16 +475,15 @@ class IdempotentTestAccountCreator:
                 contact_email=adv_data['contact_email'],
                 billing_details=adv_data['billing_details']
             )
-            self.log_result(result)
             
-            if result.success:
+            if result.result in [OperationResult.SUCCESS, OperationResult.ALREADY_EXISTS]:
                 self.results['advertisers'][adv_data['name']] = {
-                    'id': result.entity_id,
+                    'id': result.data['advertiser_id'],
                     'organization_id': org_id,
-                    'result': result.result.value,
-                    'data': result.entity_data
+                    'result': result.result.value
                 }
                 success_count += 1
+                logger.info(f"✅ Advertiser '{adv_data['name']}': {result.result.value}")
             else:
                 self.results['advertisers'][adv_data['name']] = {
                     'id': None,
@@ -795,31 +491,42 @@ class IdempotentTestAccountCreator:
                     'result': result.result.value,
                     'error': result.error_message
                 }
+                logger.error(f"❌ Advertiser '{adv_data['name']}': {result.error_message}")
         
         logger.info(f"Advertisers processed: {success_count}/{len(advertisers_data)} successful")
         return success_count == len(advertisers_data)
-    
+
     def create_affiliates(self) -> bool:
-    
+        """Create test affiliates"""
         logger.info("Creating test affiliates...")
         
         affiliates_data = [
             {
-                "name": "Le Monde",
+                "name": "Le Monde Digital",
                 "organization_name": "Le Monde",
                 "contact_email": "rolinko@lemonde.fr",
                 "payment_details": {
-                    "preferred_method": "bank_transfer",
-                    "bank_details": {
-                        "account_holder": "Le Monde SA",
-                        "iban": "FR1420041010050500013M02606",
-                        "bic": "PSSTFRPPPAR",
-                        "bank_name": "BNP Paribas"
-                    },
-                    "tax_id": "FR12345678901",
-                    "minimum_payout": 100.00,
-                    "currency": "EUR"
-                }
+                    "bank_account": "FR1420041010050500013M02606",
+                    "routing_number": "PSSTFRPPPAR",
+                    "payment_method": "bank_transfer"
+                },
+                "status": "active",
+                "internal_notes": "Premium French news publisher",
+                "default_currency_id": "EUR",
+                "contact_address": {
+                    "address1": "67-69 Avenue Pierre Mendès France",
+                    "city": "Paris",
+                    "region_code": "IDF",
+                    "country_code": "FR",
+                    "zip_postal_code": "75013"
+                },
+                "billing_info": {
+                    "company_name": "Le Monde SA",
+                    "tax_id": "FR12345678901"
+                },
+                "labels": ["news", "premium", "french"],
+                "invoice_amount_threshold": 500.00,
+                "default_payment_terms": 30
             }
         ]
         
@@ -831,32 +538,31 @@ class IdempotentTestAccountCreator:
             # Get organization ID
             org_id = None
             if aff_data['organization_name'] in self.results['organizations']:
-                org_data = self.results['organizations'][aff_data['organization_name']]
-                if org_data['id']:
-                    org_id = org_data['id']
-                else:
-                    logger.error(f"Organization '{aff_data['organization_name']}' was not created successfully")
-                    continue
-            else:
-                logger.error(f"Organization '{aff_data['organization_name']}' not found in results")
+                org_id = self.results['organizations'][aff_data['organization_name']]['id']
+            
+            if not org_id:
+                logger.error(f"❌ Organization '{aff_data['organization_name']}' not found")
                 continue
+            
+            # Extract affiliate-specific fields
+            affiliate_kwargs = {k: v for k, v in aff_data.items() 
+                              if k not in ['name', 'organization_name', 'contact_email']}
             
             result = self.api.create_affiliate_idempotent(
                 name=aff_data['name'],
                 organization_id=org_id,
                 contact_email=aff_data['contact_email'],
-                payment_details=aff_data['payment_details']
+                **affiliate_kwargs
             )
-            self.log_result(result)
             
-            if result.success:
+            if result.result in [OperationResult.SUCCESS, OperationResult.ALREADY_EXISTS]:
                 self.results['affiliates'][aff_data['name']] = {
-                    'id': result.entity_id,
+                    'id': result.data['affiliate_id'],
                     'organization_id': org_id,
-                    'result': result.result.value,
-                    'data': result.entity_data
+                    'result': result.result.value
                 }
                 success_count += 1
+                logger.info(f"✅ Affiliate '{aff_data['name']}': {result.result.value}")
             else:
                 self.results['affiliates'][aff_data['name']] = {
                     'id': None,
@@ -864,36 +570,39 @@ class IdempotentTestAccountCreator:
                     'result': result.result.value,
                     'error': result.error_message
                 }
+                logger.error(f"❌ Affiliate '{aff_data['name']}': {result.error_message}")
         
         logger.info(f"Affiliates processed: {success_count}/{len(affiliates_data)} successful")
         return success_count == len(affiliates_data)
-    
+
     def create_campaigns(self) -> bool:
-    
+        """Create test campaigns"""
         logger.info("Creating test campaigns...")
         
         campaigns_data = [
             {
-                "name": "Adidas Summer Collection 2025",
+                "name": "Adidas Holiday Collection 2025",
                 "advertiser_name": "Adidas Global",
-                "payout_type": "cpa",
                 "payout_amount": 15.00,
-                "revenue_type": "rpa",
-                "revenue_amount": 25.00,
-                "currency_id": "USD",
+                "payout_currency": "EUR",
                 "status": "active",
-                "visibility": "public"
+                "description": "Holiday season sportswear and lifestyle collection",
+                "start_date": "2025-11-01T00:00:00Z",
+                "end_date": "2025-12-31T23:59:59Z",
+                "destination_url": "https://adidas.com/holiday-collection",
+                "thumbnail_url": "https://assets.adidas.com/holiday-thumb.jpg"
             },
             {
-                "name": "Dyson V15 Detect Launch",
+                "name": "Dyson Christmas Gift Guide",
                 "advertiser_name": "Dyson Ltd",
-                "payout_type": "cpa",
-                "payout_amount": 50.00,
-                "revenue_type": "rpa",
-                "revenue_amount": 80.00,
-                "currency_id": "USD",
+                "payout_amount": 25.00,
+                "payout_currency": "GBP",
                 "status": "active",
-                "visibility": "require_approval"
+                "description": "Premium home appliances for holiday gifting",
+                "start_date": "2025-11-15T00:00:00Z",
+                "end_date": "2025-12-25T23:59:59Z",
+                "destination_url": "https://dyson.com/christmas-gifts",
+                "thumbnail_url": "https://assets.dyson.com/christmas-thumb.jpg"
             }
         ]
         
@@ -907,38 +616,34 @@ class IdempotentTestAccountCreator:
             organization_id = None
             if camp_data['advertiser_name'] in self.results['advertisers']:
                 advertiser_data = self.results['advertisers'][camp_data['advertiser_name']]
-                if advertiser_data['id']:
-                    advertiser_id = advertiser_data['id']
-                    organization_id = advertiser_data['organization_id']
-                else:
-                    logger.error(f"Advertiser '{camp_data['advertiser_name']}' was not created successfully")
-                    continue
-            else:
-                logger.error(f"Advertiser '{camp_data['advertiser_name']}' not found in results")
+                advertiser_id = advertiser_data['id']
+                organization_id = advertiser_data['organization_id']
+            
+            if not advertiser_id or not organization_id:
+                logger.error(f"❌ Advertiser '{camp_data['advertiser_name']}' not found")
                 continue
+            
+            # Extract campaign-specific fields
+            campaign_kwargs = {k: v for k, v in camp_data.items() 
+                             if k not in ['name', 'advertiser_name', 'payout_amount', 'payout_currency']}
             
             result = self.api.create_campaign_idempotent(
                 name=camp_data['name'],
                 advertiser_id=advertiser_id,
                 organization_id=organization_id,
-                payout_type=camp_data['payout_type'],
                 payout_amount=camp_data['payout_amount'],
-                revenue_type=camp_data['revenue_type'],
-                revenue_amount=camp_data['revenue_amount'],
-                currency_id=camp_data['currency_id'],
-                status=camp_data['status'],
-                visibility=camp_data['visibility']
+                payout_currency=camp_data['payout_currency'],
+                **campaign_kwargs
             )
-            self.log_result(result)
             
-            if result.success:
+            if result.result in [OperationResult.SUCCESS, OperationResult.ALREADY_EXISTS]:
                 self.results['campaigns'][camp_data['name']] = {
-                    'id': result.entity_id,
+                    'id': result.data['campaign_id'],
                     'advertiser_id': advertiser_id,
-                    'result': result.result.value,
-                    'data': result.entity_data
+                    'result': result.result.value
                 }
                 success_count += 1
+                logger.info(f"✅ Campaign '{camp_data['name']}': {result.result.value}")
             else:
                 self.results['campaigns'][camp_data['name']] = {
                     'id': None,
@@ -946,258 +651,69 @@ class IdempotentTestAccountCreator:
                     'result': result.result.value,
                     'error': result.error_message
                 }
+                logger.error(f"❌ Campaign '{camp_data['name']}': {result.error_message}")
         
         logger.info(f"Campaigns processed: {success_count}/{len(campaigns_data)} successful")
         return success_count == len(campaigns_data)
-    
-    def create_analytics_data(self) -> bool:
-    
-        logger.info("Creating test analytics data...")
-        
-        # Advertiser analytics data
-        advertiser_analytics = [
-            {
-                "domain": "adidas.com",
-                "affiliate_networks": ["Impact", "CJ Affiliate", "ShareASale", "Awin"],
-                "keywords": ["sportswear", "sneakers", "athletic", "running", "football", "basketball"],
-                "verticals": ["Sports/Athletic Wear", "Fashion/Footwear", "Sports/Equipment"],
-                "social_media_presence": {
-                    "facebook": "https://facebook.com/adidas",
-                    "instagram": "https://instagram.com/adidas",
-                    "twitter": "https://twitter.com/adidas",
-                    "youtube": "https://youtube.com/adidas"
-                }
-            },
-            {
-                "domain": "dyson.com",
-                "affiliate_networks": ["Impact", "CJ Affiliate", "Awin", "ShareASale"],
-                "keywords": ["vacuum", "air purifier", "hair dryer", "cordless", "cyclone"],
-                "verticals": ["Home/Electricals", "Home/Appliances", "Beauty/Hair Care"],
-                "social_media_presence": {
-                    "facebook": "https://facebook.com/dyson",
-                    "instagram": "https://instagram.com/dyson",
-                    "twitter": "https://twitter.com/dyson",
-                    "youtube": "https://youtube.com/dyson"
-                }
-            }
-        ]
-        
-        # Publisher analytics data
-        publisher_analytics = [
-            {
-                "domain": "lemonde.fr",
-                "affiliate_networks": ["Affilae", "Awin", "Effiliation", "Impact", "Publicidees", "Rakuten"],
-                "keywords": ["panier", "magasin", "fnac", "stock", "smartphone"],
-                "traffic_score": 9250.75,
-                "relevance": 85.5,
-                "partners": [
-                    "dyson.fr", "adidas.fr", "nike.fr", "amazon.fr", "fnac.com",
-                    "cdiscount.com", "darty.com", "boulanger.com", "conforama.fr",
-                    "ikea.fr", "leroy-merlin.fr", "castorama.fr", "decathlon.fr",
-                    "zalando.fr", "asos.fr", "h-m.com", "zara.com", "mango.com",
-                    "sephora.fr", "marionnaud.fr", "nocibe.fr", "douglas.fr",
-                    "parfumerie-burdin.com", "origines-parfums.com", "notino.fr",
-                    "parfums-moins-cher.com", "parfumdo.com"
-                ]
-            }
-        ]
-        
-        success_count = 0
-        total_count = len(advertiser_analytics) + len(publisher_analytics)
-        
-        # Create advertiser analytics
-        for adv_analytics in advertiser_analytics:
-            logger.info(f"Processing advertiser analytics for: {adv_analytics['domain']}")
-            
-            result = self.api.create_analytics_data_idempotent(
-                '/api/v1/analytics/advertisers',
-                adv_analytics,
-                f"advertiser_{adv_analytics['domain']}"
-            )
-            self.log_result(result)
-            
-            if result.success:
-                self.results['analytics'][f"advertiser_{adv_analytics['domain']}"] = {
-                    'result': result.result.value,
-                    'data': result.entity_data
-                }
-                success_count += 1
-            else:
-                self.results['analytics'][f"advertiser_{adv_analytics['domain']}"] = {
-                    'result': result.result.value,
-                    'error': result.error_message
-                }
-        
-        # Create publisher analytics
-        for pub_analytics in publisher_analytics:
-            logger.info(f"Processing publisher analytics for: {pub_analytics['domain']}")
-            
-            result = self.api.create_analytics_data_idempotent(
-                '/api/v1/analytics/affiliates',
-                pub_analytics,
-                f"publisher_{pub_analytics['domain']}"
-            )
-            self.log_result(result)
-            
-            if result.success:
-                self.results['analytics'][f"publisher_{pub_analytics['domain']}"] = {
-                    'result': result.result.value,
-                    'data': result.entity_data
-                }
-                success_count += 1
-            else:
-                self.results['analytics'][f"publisher_{pub_analytics['domain']}"] = {
-                    'result': result.result.value,
-                    'error': result.error_message
-                }
-        
-        logger.info(f"Analytics data processed: {success_count}/{total_count} successful")
-        return success_count == total_count
-    
-    def create_all_test_data(self) -> bool:
-    
-        logger.info("Starting idempotent test account creation process...")
+
+    def run_all(self) -> bool:
+        """Run all test data creation steps"""
+        logger.info("🚀 Starting simplified test account creation...")
         
         steps = [
-            ("API Health Check", self.check_api_health),
             ("Organizations", self.create_organizations),
             ("User Profiles", self.create_user_profiles),
             ("Advertisers", self.create_advertisers),
             ("Affiliates", self.create_affiliates),
-            ("Campaigns", self.create_campaigns),
-            ("Analytics Data", self.create_analytics_data)
+            ("Campaigns", self.create_campaigns)
         ]
         
+        all_success = True
+        
         for step_name, step_func in steps:
-            logger.info(f"\n{'='*50}")
-            logger.info(f"Step: {step_name}")
-            logger.info(f"{'='*50}")
-            
-            if not step_func():
-                logger.error(f"Step failed: {step_name}")
-                # Don't return False immediately - continue with other steps
-                # This allows partial recovery and shows all issues
-            
-            # Small delay between steps
-            time.sleep(0.5)
+            logger.info(f"\n📋 Step: {step_name}")
+            success = step_func()
+            if not success:
+                logger.error(f"❌ Step '{step_name}' failed")
+                all_success = False
+            else:
+                logger.info(f"✅ Step '{step_name}' completed successfully")
         
-        logger.info(f"\n{'='*50}")
-        logger.info("🎉 Idempotent test data creation process completed!")
-        logger.info(f"{'='*50}")
-        
-        return True  # Always return True since we want to show the summary
-    
-    def print_summary(self):
-    
-        print("\n" + "="*70)
-        print("IDEMPOTENT TEST ACCOUNT CREATION SUMMARY")
-        print("="*70)
-        
-        # Count results by type
+        # Print summary
+        logger.info("\n📊 CREATION SUMMARY:")
         for category, items in self.results.items():
-            if not items:
-                continue
-                
-            print(f"\n📊 {category.title()}: {len(items)} processed")
-            
-            created_count = sum(1 for item in items.values() if item.get('result') == 'created')
-            exists_count = sum(1 for item in items.values() if item.get('result') == 'already_exists')
-            failed_count = sum(1 for item in items.values() if item.get('result') == 'failed')
-            
-            print(f"   ✅ Created: {created_count}")
-            print(f"   ℹ️  Already existed: {exists_count}")
-            print(f"   ❌ Failed: {failed_count}")
-            
-            for name, data in items.items():
-                status_icon = {
-                    'created': '✅',
-                    'already_exists': 'ℹ️ ',
-                    'failed': '❌',
-                    'updated': '🔄'
-                }.get(data.get('result'), '❓')
-                
-                if data.get('id'):
-                    print(f"   {status_icon} {name} (ID: {data['id']})")
-                else:
-                    print(f"   {status_icon} {name}")
-                    if data.get('error'):
-                        print(f"      Error: {data['error']}")
+            successful = sum(1 for item in items.values() if item.get('result') in ['success', 'already_exists'])
+            total = len(items)
+            logger.info(f"  {category.title()}: {successful}/{total} successful")
         
-        print("\n" + "="*70)
-        print("IDEMPOTENCY BENEFITS:")
-        print("✅ Safe to run multiple times")
-        print("✅ No duplicate data creation")
-        print("✅ Graceful handling of existing entities")
-        print("✅ Partial failure recovery")
-        print("✅ Clear status reporting")
-        print("\n" + "="*70)
-        print("Next Steps:")
-        print("1. Verify the data: python3 scripts/verify_test_accounts.py")
-        print("2. Test the API endpoints with the created accounts")
-        print("3. Use the test UUIDs for Supabase Auth integration")
-        print("4. Run this script again anytime - it's fully idempotent!")
-        print("="*70)
+        if all_success:
+            logger.info("🎉 All test data created successfully!")
+        else:
+            logger.error("❌ Some steps failed. Check logs for details.")
+        
+        return all_success
 
 def main():
-
-    parser = argparse.ArgumentParser(
-        description="Create test accounts for the Affiliate Platform Backend (Idempotent Version)",
-        formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog="""
-Examples:
-  # Basic usage with admin token
-  python3 scripts/create_test_accounts_idempotent.py -t "your-jwt-token"
-  
-  # With custom API URL
-  python3 scripts/create_test_accounts_idempotent.py -u "http://localhost:3000" -t "token"
-  
-  # Verbose output
-  python3 scripts/create_test_accounts_idempotent.py -t "token" -v
-  
-  # Dry run (check API health only)
-  python3 scripts/create_test_accounts_idempotent.py -u "http://localhost:8080" --dry-run
-
-Environment Variables:
-  API_BASE_URL    - API base URL (default: http://localhost:8080)
-  ADMIN_JWT_TOKEN - JWT token for admin authentication
-
-Features:
-  ✅ Fully idempotent - safe to run multiple times
-  ✅ No duplicate data creation
-  ✅ Graceful error handling and recovery
-  ✅ Clear status reporting and logging
-  ✅ Modular and maintainable code structure
-        """
-    )
+    """Main function"""
+    import sys
+    import os
+    import argparse
     
+    # Parse command line arguments
+    parser = argparse.ArgumentParser(description='Create simplified test accounts for affiliate platform')
     parser.add_argument(
-        '-u', '--api-url',
+        '--api-url',
         default='http://localhost:8080',
-        help='API base URL (default: http://localhost:8080)'
+        help='Base URL for the API (default: http://localhost:8080)'
     )
-    
     parser.add_argument(
         '-t', '--token',
         help='JWT token for admin authentication'
     )
-    
     parser.add_argument(
-        '-v', '--verbose',
+        '--verbose',
         action='store_true',
-        help='Enable verbose output'
-    )
-    
-    parser.add_argument(
-        '--dry-run',
-        action='store_true',
-        help='Only check API health, do not create data'
-    )
-    
-    parser.add_argument(
-        '--timeout',
-        type=int,
-        default=30,
-        help='Request timeout in seconds (default: 30)'
+        help='Enable verbose logging'
     )
     
     args = parser.parse_args()
@@ -1205,52 +721,26 @@ Features:
     # Get token from environment if not provided
     admin_token = args.token
     if not admin_token:
-        import os
         admin_token = os.getenv('ADMIN_JWT_TOKEN')
     
-    if not admin_token and not args.dry_run:
+    if not admin_token:
         logger.error("Admin JWT token is required for creating test data")
         logger.error("Provide it via -t option or ADMIN_JWT_TOKEN environment variable")
+        logger.error("\nTo generate a test token, run:")
+        logger.error("  python scripts/generate_test_jwt.py")
         sys.exit(1)
     
     # Create API client
-    api_client = IdempotentAPIClient(
-        base_url=args.api_url,
-        admin_token=admin_token,
-        timeout=args.timeout
-    )
+    api_client = IdempotentAPIClient(args.api_url, admin_token)
     
     # Create test account creator
-    creator = IdempotentTestAccountCreator(api_client, verbose=args.verbose)
+    creator = SimpleTestAccountCreator(api_client, verbose=args.verbose)
     
-    try:
-        if args.dry_run:
-            logger.info("Performing dry run - checking API health only")
-            if creator.check_api_health():
-                logger.info("✅ API is healthy and ready for test account creation")
-                sys.exit(0)
-            else:
-                logger.error("❌ API health check failed")
-                sys.exit(1)
-        else:
-            # Create all test data
-            creator.create_all_test_data()
-            
-            # Print summary
-            creator.print_summary()
-            
-            logger.info("🎉 Idempotent test account creation completed!")
-            sys.exit(0)
-                
-    except KeyboardInterrupt:
-        logger.warning("Test account creation interrupted by user")
-        sys.exit(1)
-    except Exception as e:
-        logger.error(f"Unexpected error: {e}")
-        if args.verbose:
-            import traceback
-            traceback.print_exc()
-        sys.exit(1)
+    # Run all creation steps
+    success = creator.run_all()
+    
+    # Exit with appropriate code
+    sys.exit(0 if success else 1)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

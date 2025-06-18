@@ -7,12 +7,30 @@ import (
 	"github.com/affiliate-backend/internal/domain"
 )
 
-// TrackingLinkRequest represents the request to create or update a tracking link
+// TrackingLinkRequest represents the request to create a tracking link
 type TrackingLinkRequest struct {
 	Name                string  `json:"name" binding:"required" example:"Facebook Campaign Link"`
 	Description         *string `json:"description,omitempty" example:"Tracking link for Facebook traffic"`
+	Status              string  `json:"status" binding:"required" example:"active"`
 	CampaignID          int64   `json:"campaign_id" binding:"required" example:"1"`
 	AffiliateID         int64   `json:"affiliate_id" binding:"required" example:"1"`
+	SourceID            *string `json:"source_id,omitempty" example:"facebook"`
+	Sub1                *string `json:"sub1,omitempty" example:"campaign_123"`
+	Sub2                *string `json:"sub2,omitempty" example:"adset_456"`
+	Sub3                *string `json:"sub3,omitempty" example:"ad_789"`
+	Sub4                *string `json:"sub4,omitempty" example:"placement_mobile"`
+	Sub5                *string `json:"sub5,omitempty" example:"audience_lookalike"`
+	IsEncryptParameters *bool   `json:"is_encrypt_parameters,omitempty" example:"false"`
+	IsRedirectLink      *bool   `json:"is_redirect_link,omitempty" example:"true"`
+	InternalNotes       *string `json:"internal_notes,omitempty" example:"High-performing traffic source"`
+	Tags                *string `json:"tags,omitempty" example:"facebook,mobile,lookalike"`
+}
+
+// TrackingLinkUpdateRequest represents the request to update a tracking link
+type TrackingLinkUpdateRequest struct {
+	Name                *string `json:"name,omitempty" example:"Facebook Campaign Link"`
+	Description         *string `json:"description,omitempty" example:"Tracking link for Facebook traffic"`
+	Status              *string `json:"status,omitempty" example:"active"`
 	SourceID            *string `json:"source_id,omitempty" example:"facebook"`
 	Sub1                *string `json:"sub1,omitempty" example:"campaign_123"`
 	Sub2                *string `json:"sub2,omitempty" example:"adset_456"`
@@ -114,6 +132,7 @@ func (req *TrackingLinkRequest) ToTrackingLinkDomain(organizationID int64) *doma
 		AffiliateID:         req.AffiliateID,
 		Name:                req.Name,
 		Description:         req.Description,
+		Status:              req.Status,
 		SourceID:            req.SourceID,
 		Sub1:                req.Sub1,
 		Sub2:                req.Sub2,
@@ -124,6 +143,49 @@ func (req *TrackingLinkRequest) ToTrackingLinkDomain(organizationID int64) *doma
 		IsRedirectLink:      req.IsRedirectLink,
 		InternalNotes:       req.InternalNotes,
 		Tags:                req.Tags,
+	}
+}
+
+// UpdateTrackingLinkDomain updates a domain model with non-nil fields from the update request
+func (req *TrackingLinkUpdateRequest) UpdateTrackingLinkDomain(trackingLink *domain.TrackingLink) {
+	if req.Name != nil {
+		trackingLink.Name = *req.Name
+	}
+	if req.Description != nil {
+		trackingLink.Description = req.Description
+	}
+	if req.Status != nil {
+		trackingLink.Status = *req.Status
+	}
+	if req.SourceID != nil {
+		trackingLink.SourceID = req.SourceID
+	}
+	if req.Sub1 != nil {
+		trackingLink.Sub1 = req.Sub1
+	}
+	if req.Sub2 != nil {
+		trackingLink.Sub2 = req.Sub2
+	}
+	if req.Sub3 != nil {
+		trackingLink.Sub3 = req.Sub3
+	}
+	if req.Sub4 != nil {
+		trackingLink.Sub4 = req.Sub4
+	}
+	if req.Sub5 != nil {
+		trackingLink.Sub5 = req.Sub5
+	}
+	if req.IsEncryptParameters != nil {
+		trackingLink.IsEncryptParameters = req.IsEncryptParameters
+	}
+	if req.IsRedirectLink != nil {
+		trackingLink.IsRedirectLink = req.IsRedirectLink
+	}
+	if req.InternalNotes != nil {
+		trackingLink.InternalNotes = req.InternalNotes
+	}
+	if req.Tags != nil {
+		trackingLink.Tags = req.Tags
 	}
 }
 

@@ -169,7 +169,7 @@ func (h *TrackingLinkHandler) GetTrackingLink(c *gin.Context) {
 // @Produce json
 // @Param organization_id path int true "Organization ID"
 // @Param tracking_link_id path int true "Tracking Link ID"
-// @Param request body models.TrackingLinkRequest true "Tracking link update request"
+// @Param request body models.TrackingLinkUpdateRequest true "Tracking link update request"
 // @Success 200 {object} models.TrackingLinkResponse
 // @Failure 400 {object} ErrorResponse
 // @Failure 401 {object} ErrorResponse
@@ -196,7 +196,7 @@ func (h *TrackingLinkHandler) UpdateTrackingLink(c *gin.Context) {
 		return
 	}
 
-	var req models.TrackingLinkRequest
+	var req models.TrackingLinkUpdateRequest
 	if err := c.ShouldBindJSON(&req); err != nil {
 		c.JSON(http.StatusBadRequest, ErrorResponse{
 			Error:   "Invalid request body",
@@ -205,12 +205,30 @@ func (h *TrackingLinkHandler) UpdateTrackingLink(c *gin.Context) {
 		return
 	}
 
-	// Convert to domain model
-	trackingLink := req.ToTrackingLinkDomain(organizationID)
-	trackingLink.TrackingLinkID = trackingLinkID
+	// Get existing tracking link
+	existingTrackingLink, err := h.trackingLinkService.GetTrackingLinkByID(c.Request.Context(), trackingLinkID)
+	if err != nil {
+		c.JSON(http.StatusNotFound, ErrorResponse{
+			Error:   "Tracking link not found",
+			Details: err.Error(),
+		})
+		return
+	}
+
+	// Verify tracking link belongs to the organization
+	if existingTrackingLink.OrganizationID != organizationID {
+		c.JSON(http.StatusNotFound, ErrorResponse{
+			Error:   "Tracking link not found",
+			Details: "Tracking link does not belong to the specified organization",
+		})
+		return
+	}
+
+	// Update fields from request
+	req.UpdateTrackingLinkDomain(existingTrackingLink)
 
 	// Update tracking link
-	if err := h.trackingLinkService.UpdateTrackingLink(c.Request.Context(), trackingLink); err != nil {
+	if err := h.trackingLinkService.UpdateTrackingLink(c.Request.Context(), existingTrackingLink); err != nil {
 		c.JSON(http.StatusInternalServerError, ErrorResponse{
 			Error:   "Failed to update tracking link",
 			Details: err.Error(),

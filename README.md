@@ -1,308 +1,190 @@
-# Affiliate Platform Backend
+[![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/golang-migrate/migrate/ci.yaml?branch=master)](https://github.com/golang-migrate/migrate/actions/workflows/ci.yaml?query=branch%3Amaster)
+[![GoDoc](https://pkg.go.dev/badge/github.com/golang-migrate/migrate)](https://pkg.go.dev/github.com/golang-migrate/migrate/v4)
+[![Coverage Status](https://img.shields.io/coveralls/github/golang-migrate/migrate/master.svg)](https://coveralls.io/github/golang-migrate/migrate?branch=master)
+[![packagecloud.io](https://img.shields.io/badge/deb-packagecloud.io-844fec.svg)](https://packagecloud.io/golang-migrate/migrate?filter=debs)
+[![Docker Pulls](https://img.shields.io/docker/pulls/migrate/migrate.svg)](https://hub.docker.com/r/migrate/migrate/)
+![Supported Go Versions](https://img.shields.io/badge/Go-1.19%2C%201.20-lightgrey.svg)
+[![GitHub Release](https://img.shields.io/github/release/golang-migrate/migrate.svg)](https://github.com/golang-migrate/migrate/releases)
+[![Go Report Card](https://goreportcard.com/badge/github.com/golang-migrate/migrate/v4)](https://goreportcard.com/report/github.com/golang-migrate/migrate/v4)
 
-This is the backend service for the Affiliate Platform MVP. It manages all application-specific data and business logic, while leveraging Supabase solely for user authentication (JWT issuance and validation).
+# migrate
 
-## Project Structure
+__Database migrations written in Go. Use as [CLI](#cli-usage) or import as [library](#use-in-your-go-project).__
 
-```
-affiliate-backend/
-├── cmd/
-│   ├── api/                // Main application entry point
-│   │   └── main.go
-│   └── migrate/            // Database migration tool
-│       └── main.go
-├── internal/               // Private application and library code
-│   ├── api/                // API handlers, middleware, routing
-│   │   ├── handlers/       // HTTP request handlers for all resources
-│   │   ├── middleware/     // Authentication and authorization middleware
-│   │   └── router.go       // API route definitions
-│   ├── auth/               // Authentication (JWT validation) & Authorization (RBAC)
-│   ├── config/             // Configuration loading and environment variables
-│   ├── domain/             // Core business logic entities/models (structs)
-│   ├── platform/           // External platform integrations
-│   │   ├── crypto/         // Encryption/decryption utilities
-│   │   └── everflow/       // Everflow API client integration
-│   ├── repository/         // Data access layer (database interactions)
-│   └── service/            // Business logic services
-├── migrations/             // Database migration files
-├── go.mod
-├── go.sum
-└── .env                    // Environment variables (DO NOT COMMIT if it contains secrets)
-```
+* Migrate reads migrations from [sources](#migration-sources)
+   and applies them in correct order to a [database](#databases).
+* Drivers are "dumb", migrate glues everything together and makes sure the logic is bulletproof.
+   (Keeps the drivers lightweight, too.)
+* Database drivers don't assume things or try to correct user input. When in doubt, fail.
 
-## Security Features
+Forked from [mattes/migrate](https://github.com/mattes/migrate)
 
-### Authentication
-- JWT-based authentication using Supabase Auth
-- Token validation and verification
-- Secure session management
+## Databases
 
-### Authorization
-- Role-Based Access Control (RBAC) system
-- Organization-based access control
-- Permission checks at the handler level
-- Admin users have full access to all resources
-- Non-admin users can only access resources within their organization
+Database drivers run migrations. [Add a new database?](database/driver.go)
 
-### Data Protection
-- Encryption of sensitive data using AES-256
-- Secure storage of API credentials
-- Input validation and sanitization
+* [PostgreSQL](database/postgres)
+* [PGX v4](database/pgx)
+* [PGX v5](database/pgx/v5)
+* [Redshift](database/redshift)
+* [Ql](database/ql)
+* [Cassandra](database/cassandra)
+* [SQLite](database/sqlite)
+* [SQLite3](database/sqlite3) ([todo #165](https://github.com/mattes/migrate/issues/165))
+* [SQLCipher](database/sqlcipher)
+* [MySQL/ MariaDB](database/mysql)
+* [Neo4j](database/neo4j)
+* [MongoDB](database/mongodb)
+* [CrateDB](database/crate) ([todo #170](https://github.com/mattes/migrate/issues/170))
+* [Shell](database/shell) ([todo #171](https://github.com/mattes/migrate/issues/171))
+* [Google Cloud Spanner](database/spanner)
+* [CockroachDB](database/cockroachdb)
+* [YugabyteDB](database/yugabytedb)
+* [ClickHouse](database/clickhouse)
+* [Firebird](database/firebird)
+* [MS SQL Server](database/sqlserver)
 
-## Key Features
+### Database URLs
 
-- **Multi-tenancy**: Organizations are isolated from each other
-- **Role-based permissions**: Different access levels based on user roles
-- **Affiliate Management**: Create and manage affiliate accounts
-- **Advertiser Management**: Create and manage advertiser accounts
-- **Campaign Management**: Create and manage advertising campaigns
-- **Analytics Service**: Advanced analytics for advertisers and publishers with autocompletion
-- **Provider Integration**: Integration with external affiliate networks (Everflow)
-- **RESTful API**: Clean and consistent API design
-- **Database Migrations**: Versioned database schema changes
-- **Swagger Documentation**: Auto-generated API documentation
+Database connection strings are specified via URLs. The URL format is driver dependent but generally has the form: `dbdriver://username:password@host:port/dbname?param1=true&param2=false`
 
-## Getting Started
+Any [reserved URL characters](https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters) need to be escaped. Note, the `%` character also [needs to be escaped](https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_the_percent_character)
 
-### Prerequisites
+Explicitly, the following characters need to be escaped:
+`!`, `#`, `$`, `%`, `&`, `'`, `(`, `)`, `*`, `+`, `,`, `/`, `:`, `;`, `=`, `?`, `@`, `[`, `]`
 
-- Go 1.21 or higher
-- PostgreSQL database
-
-### Setup
-
-1. Clone the repository
-2. Copy `.env.example` to `.env` and update the values
-   - Set `ENVIRONMENT=development` for local development (enables CORS)
-   - Set `ENVIRONMENT=production` for production deployment (disables CORS)
-3. Install dependencies:
-   ```
-   make deps
-   ```
-   
-   If you encounter issues with the migration packages, install them manually:
-   ```
-   go get -u github.com/golang-migrate/migrate/v4
-   go get -u github.com/golang-migrate/migrate/v4/database/postgres
-   go get -u github.com/golang-migrate/migrate/v4/source/file
-   ```
-   
-4. Run database migrations:
-   ```
-   make migrate-up
-   ```
-5. Build and run the application:
-   ```
-   make build
-   make run
-   ```
-   
-   Or run with auto-migration:
-   ```
-   make run-with-migrate
-   ```
-
-## Database Migrations
-
-The application uses a migration system to manage database schema changes. The migration tool is located in the `cmd/migrate` directory and can be used to apply, rollback, and check the status of migrations.
-
-### Migration Commands
-
-- Apply all pending migrations:
-  ```
-  make migrate-up
-  ```
-
-- Rollback the most recent migration:
-  ```
-  make migrate-down
-  ```
-
-- Rollback all migrations:
-  ```
-  make migrate-reset
-  ```
-
-- Check if migrations are up to date:
-  ```
-  make migrate-check
-  ```
-
-- Show current database version:
-  ```
-  make migrate-version
-  ```
-
-- Show detailed migration status:
-  ```
-  make migrate-status
-  ```
-
-- Create a new migration file:
-  ```
-  make migrate-create NAME=add_new_table
-  ```
-
-### Migration Files
-
-Migration files are stored in the `migrations` directory and follow the naming convention `000001_name.up.sql` and `000001_name.down.sql`. The `up.sql` file contains the SQL statements to apply the migration, and the `down.sql` file contains the SQL statements to rollback the migration.
-
-Current migrations include:
-- `000001_initial_schema`: Core platform tables (users, organizations, campaigns, etc.)
-- `000002_create_analytics_tables`: Analytics service tables for advertisers and publishers
-
-### Auto-Migration
-
-The API server can automatically apply pending migrations on startup by using the `--auto-migrate` flag:
-
-```
-./affiliate-backend --auto-migrate
-```
-
-## CORS Configuration
-
-The API server includes CORS (Cross-Origin Resource Sharing) configuration that behaves differently based on the environment:
-
-- In **development** mode (`ENVIRONMENT=development`), CORS is enabled and allows requests from any origin.
-- In **production** mode (`ENVIRONMENT=production`), CORS is disabled, restricting cross-origin requests.
-
-This configuration helps secure the API in production while allowing for easier development and testing in local environments.
-
-To set the environment:
-- In `.env` file: Set `ENVIRONMENT=development` or `ENVIRONMENT=production`
-- In Docker: The `docker-compose.yml` sets `ENVIRONMENT=development` for local development
-- In production: The `Dockerfile` sets `ENVIRONMENT=production` by default
-
-## API Endpoints
-
-### Public Endpoints
-
-- `POST /api/v1/public/webhooks/supabase/new-user`: Webhook for Supabase auth to create a profile when a new user signs up
-
-### Authenticated Endpoints
-
-#### User Management
-- `GET /api/v1/users/me`: Get the current user's profile
-
-#### Analytics Service
-- `GET /api/v1/analytics/autocomplete`: Search for advertisers and publishers with autocompletion (minimum 3 characters)
-- `GET /api/v1/analytics/advertisers/:id`: Get detailed advertiser information by ID
-- `GET /api/v1/analytics/affiliates/:id`: Get detailed publisher (affiliate) information by ID
-
-#### Campaign Management
-- Standard CRUD operations for campaigns, affiliates, and advertisers
-
-## API Documentation
-
-The API is documented using OpenAPI 3.0 specification. You can generate and view the documentation using the following commands:
-
-### Generate OpenAPI Specification
+It's easiest to always run the URL parts of your DB connection URL (e.g. username, password, etc) through an URL encoder. See the example Python snippets below:
 
 ```bash
-# Generate OpenAPI docs in docs/swagger directory
-make openapi
-
-# Export OpenAPI spec to JSON file (openapi.json)
-make openapi-json
-
-# Export OpenAPI spec to YAML file (openapi.yaml)
-make openapi-yaml
+$ python3 -c 'import urllib.parse; print(urllib.parse.quote(input("String to encode: "), ""))'
+String to encode: FAKEpassword!#$%&'()*+,/:;=?@[]
+FAKEpassword%21%23%24%25%26%27%28%29%2A%2B%2C%2F%3A%3B%3D%3F%40%5B%5D
+$ python2 -c 'import urllib; print urllib.quote(raw_input("String to encode: "), "")'
+String to encode: FAKEpassword!#$%&'()*+,/:;=?@[]
+FAKEpassword%21%23%24%25%26%27%28%29%2A%2B%2C%2F%3A%3B%3D%3F%40%5B%5D
+$
 ```
 
-### View API Documentation
+## Migration Sources
+
+Source drivers read migrations from local or remote sources. [Add a new source?](source/driver.go)
+
+* [Filesystem](source/file) - read from filesystem
+* [io/fs](source/iofs) - read from a Go [io/fs](https://pkg.go.dev/io/fs#FS)
+* [Go-Bindata](source/go_bindata) - read from embedded binary data ([jteeuwen/go-bindata](https://github.com/jteeuwen/go-bindata))
+* [pkger](source/pkger) - read from embedded binary data ([markbates/pkger](https://github.com/markbates/pkger))
+* [GitHub](source/github) - read from remote GitHub repositories
+* [GitHub Enterprise](source/github_ee) - read from remote GitHub Enterprise repositories
+* [Bitbucket](source/bitbucket) - read from remote Bitbucket repositories
+* [Gitlab](source/gitlab) - read from remote Gitlab repositories
+* [AWS S3](source/aws_s3) - read from Amazon Web Services S3
+* [Google Cloud Storage](source/google_cloud_storage) - read from Google Cloud Platform Storage
+
+## CLI usage
+
+* Simple wrapper around this library.
+* Handles ctrl+c (SIGINT) gracefully.
+* No config search paths, no config files, no magic ENV var injections.
+
+__[CLI Documentation](cmd/migrate)__
+
+### Basic usage
 
 ```bash
-# Serve Swagger UI documentation on http://localhost:8090
-make serve-docs
+$ migrate -source file://path/to/migrations -database postgres://localhost:5432/database up 2
 ```
 
-### Integrate Swagger UI with the Application
-
-To add Swagger UI directly to your application:
-
-1. Install the required dependencies:
-   ```bash
-   make install-swagger-ui
-   ```
-
-2. Add the following code to your router setup in `internal/api/router.go`:
-   ```go
-   import (
-       // ... existing imports
-       swaggerFiles "github.com/swaggo/files"
-       ginSwagger "github.com/swaggo/gin-swagger"
-       _ "github.com/affiliate-backend/docs/swagger" // Import generated docs
-   )
-
-   // In your SetupRouter function:
-   // Swagger documentation
-   r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
-   ```
-
-3. Rebuild and run your application, then access Swagger UI at `/swagger/index.html`
-
-## Authentication
-
-This service uses Supabase JWT tokens for authentication. Include the JWT token in the `Authorization` header as a Bearer token:
-
-```
-Authorization: Bearer <token>
-```
-
-## Authorization
-
-The service uses Role-Based Access Control (RBAC) for authorization. The following roles are available:
-
-- `Admin`: System administrator with full access
-- `AdvertiserManager`: Manages advertisers and campaigns
-- `AffiliateManager`: Manages affiliates
-- `Affiliate`: Regular affiliate user
-
-## Analytics Service
-
-The platform includes a comprehensive analytics service for advertiser and publisher data analysis. For detailed information about the analytics service, see [ANALYTICS_SERVICE_README.md](ANALYTICS_SERVICE_README.md).
-
-### Analytics Features
-- **Autocompletion**: Search for organizations with minimum 3-character queries
-- **Advertiser Analytics**: Detailed advertiser data including metadata, affiliate networks, verticals, and partner information
-- **Publisher Analytics**: Comprehensive publisher data with keywords, traffic scores, social media presence, and partner relationships
-- **Flexible Search**: Filter by advertiser, publisher, or search both simultaneously
-- **JSONB Storage**: Flexible data structures for complex analytics data
-
-### Analytics API Examples
+### Docker usage
 
 ```bash
-# Search for organizations (autocompletion)
-curl -H "Authorization: Bearer $TOKEN" \
-  "http://localhost:8080/api/v1/analytics/autocomplete?q=tech&type=publisher&limit=5"
-
-# Get advertiser details
-curl -H "Authorization: Bearer $TOKEN" \
-  "http://localhost:8080/api/v1/analytics/advertisers/1"
-
-# Get publisher details  
-curl -H "Authorization: Bearer $TOKEN" \
-  "http://localhost:8080/api/v1/analytics/affiliates/1"
+$ docker run -v {{ migration dir }}:/migrations --network host migrate/migrate
+    -path=/migrations/ -database postgres://localhost:5432/database up 2
 ```
 
-### Testing the Analytics Service
+## Use in your Go project
 
-A comprehensive test script is available to verify all analytics endpoints:
+* API is stable and frozen for this release (v3 & v4).
+* Uses [Go modules](https://golang.org/cmd/go/#hdr-Modules__module_versions__and_more) to manage dependencies.
+* To help prevent database corruptions, it supports graceful stops via `GracefulStop chan bool`.
+* Bring your own logger.
+* Uses `io.Reader` streams internally for low memory overhead.
+* Thread-safe and no goroutine leaks.
+
+__[Go Documentation](https://pkg.go.dev/github.com/golang-migrate/migrate/v4)__
+
+```go
+import (
+    "github.com/golang-migrate/migrate/v4"
+    _ "github.com/golang-migrate/migrate/v4/database/postgres"
+    _ "github.com/golang-migrate/migrate/v4/source/github"
+)
+
+func main() {
+    m, err := migrate.New(
+        "github://mattes:personal-access-token@mattes/migrate_test",
+        "postgres://localhost:5432/database?sslmode=enable")
+    m.Steps(2)
+}
+```
+
+Want to use an existing database client?
+
+```go
+import (
+    "database/sql"
+    _ "github.com/lib/pq"
+    "github.com/golang-migrate/migrate/v4"
+    "github.com/golang-migrate/migrate/v4/database/postgres"
+    _ "github.com/golang-migrate/migrate/v4/source/file"
+)
+
+func main() {
+    db, err := sql.Open("postgres", "postgres://localhost:5432/database?sslmode=enable")
+    driver, err := postgres.WithInstance(db, &postgres.Config{})
+    m, err := migrate.NewWithDatabaseInstance(
+        "file:///migrations",
+        "postgres", driver)
+    m.Up() // or m.Step(2) if you want to explicitly set the number of migrations to run
+}
+```
+
+## Getting started
+
+Go to [getting started](GETTING_STARTED.md)
+
+## Tutorials
+
+* [CockroachDB](database/cockroachdb/TUTORIAL.md)
+* [PostgreSQL](database/postgres/TUTORIAL.md)
+
+(more tutorials to come)
+
+## Migration files
+
+Each migration has an up and down migration. [Why?](FAQ.md#why-two-separate-files-up-and-down-for-a-migration)
 
 ```bash
-# Run the analytics service test suite
-./test_analytics.sh
+1481574547_create_users_table.up.sql
+1481574547_create_users_table.down.sql
 ```
 
-This script tests all three endpoints with various scenarios including error handling and validation.
+[Best practices: How to write migrations.](MIGRATIONS.md)
 
-## Environment Variables
+## Versions
 
-- `PORT`: The port to run the server on (default: 8080)
-- `DATABASE_URL`: PostgreSQL connection string
-- `SUPABASE_JWT_SECRET`: Supabase JWT secret for validating tokens
-- `ENCRYPTION_KEY`: 32-byte base64 encoded AES key for encrypting sensitive data
+Version | Supported? | Import | Notes
+--------|------------|--------|------
+**master** | :white_check_mark: | `import "github.com/golang-migrate/migrate/v4"` | New features and bug fixes arrive here first |
+**v4** | :white_check_mark: | `import "github.com/golang-migrate/migrate/v4"` | Used for stable releases |
+**v3** | :x: | `import "github.com/golang-migrate/migrate"` (with package manager) or `import "gopkg.in/golang-migrate/migrate.v3"` (not recommended) | **DO NOT USE** - No longer supported |
 
-## License
+## Development and Contributing
 
-[MIT](LICENSE)
+Yes, please! [`Makefile`](Makefile) is your friend,
+read the [development guide](CONTRIBUTING.md).
+
+Also have a look at the [FAQ](FAQ.md).
+
+---
+
+Looking for alternatives? [https://awesome-go.com/#database](https://awesome-go.com/#database).

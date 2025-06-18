@@ -39,7 +39,7 @@ func (r *pgxCampaignRepository) CreateCampaign(ctx context.Context, campaign *do
                destination_url, thumbnail_url, preview_url, visibility, currency_id,
                billing_model, payout_structure, payout_amount, revenue_structure, revenue_amount,
                created_at, updated_at)
-              VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)
+              VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19)
               RETURNING campaign_id, created_at, updated_at`
 	
 	// Handle nullable fields that exist in the database
@@ -75,9 +75,9 @@ func (r *pgxCampaignRepository) CreateCampaign(ctx context.Context, campaign *do
 	}
 	if campaign.BillingModel != nil {
 		billingModel = sql.NullString{String: *campaign.BillingModel, Valid: true}
+	}
 	if campaign.PayoutStructure != nil {
 		payoutStructure = sql.NullString{String: *campaign.PayoutStructure, Valid: true}
-	}
 	}
 	if campaign.PayoutAmount != nil {
 		payoutAmount = sql.NullFloat64{Float64: *campaign.PayoutAmount, Valid: true}

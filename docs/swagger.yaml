@@ -590,6 +590,9 @@ definitions:
     properties:
       advertiser_id:
         type: integer
+      billing_model:
+        description: Payout and revenue configuration
+        type: string
       campaign_id:
         type: integer
       conversion_method:
@@ -628,14 +631,13 @@ definitions:
         type: integer
       payout_amount:
         type: number
-      payout_type:
-        description: Payout and revenue configuration
+      payout_structure:
         type: string
       preview_url:
         type: string
       revenue_amount:
         type: number
-      revenue_type:
+      revenue_structure:
         type: string
       session_definition:
         type: string
@@ -662,6 +664,12 @@ definitions:
     properties:
       advertiser_id:
         type: integer
+      billing_model:
+        description: Payout and revenue configuration
+        enum:
+        - click
+        - conversion
+        type: string
       conversion_method:
         enum:
         - server_postback
@@ -698,23 +706,22 @@ definitions:
       organization_id:
         type: integer
       payout_amount:
+        minimum: 0
         type: number
-      payout_type:
-        description: Payout and revenue configuration
+      payout_structure:
         enum:
-        - cpa
-        - cpc
-        - cpm
+        - fixed
+        - percentage
         type: string
       preview_url:
         type: string
       revenue_amount:
+        minimum: 0
         type: number
-      revenue_type:
+      revenue_structure:
         enum:
-        - rpa
-        - rpc
-        - rpm
+        - fixed
+        - percentage
         type: string
       session_definition:
         enum:
@@ -755,6 +762,12 @@ definitions:
     type: object
   models.UpdateCampaignRequest:
     properties:
+      billing_model:
+        description: Payout and revenue configuration
+        enum:
+        - click
+        - conversion
+        type: string
       conversion_method:
         enum:
         - server_postback
@@ -789,23 +802,22 @@ definitions:
       name:
         type: string
       payout_amount:
+        minimum: 0
         type: number
-      payout_type:
-        description: Payout and revenue configuration
+      payout_structure:
         enum:
-        - cpa
-        - cpc
-        - cpm
+        - fixed
+        - percentage
         type: string
       preview_url:
         type: string
       revenue_amount:
+        minimum: 0
         type: number
-      revenue_type:
+      revenue_structure:
         enum:
-        - rpa
-        - rpc
-        - rpm
+        - fixed
+        - percentage
         type: string
       session_definition:
         enum:

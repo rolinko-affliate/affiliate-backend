@@ -40,10 +40,11 @@ type Campaign struct {
 	GlobalClickCap        *int  `json:"global_click_cap,omitempty" db:"global_click_cap"`
 	
 	// Payout and revenue configuration
-	PayoutType     *string  `json:"payout_type,omitempty" db:"payout_type"`         // 'cpa', 'cpc', 'cpm', etc.
-	PayoutAmount   *float64 `json:"payout_amount,omitempty" db:"payout_amount"`
-	RevenueType    *string  `json:"revenue_type,omitempty" db:"revenue_type"`       // 'rpa', 'rpc', 'rpm', etc.
-	RevenueAmount  *float64 `json:"revenue_amount,omitempty" db:"revenue_amount"`
+	BillingModel      *string  `json:"billing_model,omitempty" db:"billing_model"`           // 'click' or 'conversion'
+	PayoutStructure   *string  `json:"payout_structure,omitempty" db:"payout_structure"`     // 'fixed' or 'percentage' (only for conversion)
+	PayoutAmount      *float64 `json:"payout_amount,omitempty" db:"payout_amount"`           // Fixed amount or percentage value
+	RevenueStructure  *string  `json:"revenue_structure,omitempty" db:"revenue_structure"`   // 'fixed' or 'percentage' (only for conversion)
+	RevenueAmount     *float64 `json:"revenue_amount,omitempty" db:"revenue_amount"`         // Fixed amount or percentage value
 	
 	CreatedAt time.Time `json:"created_at" db:"created_at"`
 	UpdatedAt time.Time `json:"updated_at" db:"updated_at"`

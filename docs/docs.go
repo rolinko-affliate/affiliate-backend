@@ -2790,6 +2790,10 @@ const docTemplate = `{
                 "advertiser_id": {
                     "type": "integer"
                 },
+                "billing_model": {
+                    "description": "Payout and revenue configuration",
+                    "type": "string"
+                },
                 "campaign_id": {
                     "type": "integer"
                 },
@@ -2846,8 +2850,7 @@ const docTemplate = `{
                 "payout_amount": {
                     "type": "number"
                 },
-                "payout_type": {
-                    "description": "Payout and revenue configuration",
+                "payout_structure": {
                     "type": "string"
                 },
                 "preview_url": {
@@ -2856,7 +2859,7 @@ const docTemplate = `{
                 "revenue_amount": {
                     "type": "number"
                 },
-                "revenue_type": {
+                "revenue_structure": {
                     "type": "string"
                 },
                 "session_definition": {
@@ -2902,6 +2905,14 @@ const docTemplate = `{
             "properties": {
                 "advertiser_id": {
                     "type": "integer"
+                },
+                "billing_model": {
+                    "description": "Payout and revenue configuration",
+                    "type": "string",
+                    "enum": [
+                        "click",
+                        "conversion"
+                    ]
                 },
                 "conversion_method": {
                     "type": "string",
@@ -2955,29 +2966,28 @@ const docTemplate = `{
                     "type": "integer"
                 },
                 "payout_amount": {
-                    "type": "number"
+                    "type": "number",
+                    "minimum": 0
                 },
-                "payout_type": {
-                    "description": "Payout and revenue configuration",
+                "payout_structure": {
                     "type": "string",
                     "enum": [
-                        "cpa",
-                        "cpc",
-                        "cpm"
+                        "fixed",
+                        "percentage"
                     ]
                 },
                 "preview_url": {
                     "type": "string"
                 },
                 "revenue_amount": {
-                    "type": "number"
+                    "type": "number",
+                    "minimum": 0
                 },
-                "revenue_type": {
+                "revenue_structure": {
                     "type": "string",
                     "enum": [
-                        "rpa",
-                        "rpc",
-                        "rpm"
+                        "fixed",
+                        "percentage"
                     ]
                 },
                 "session_definition": {
@@ -3032,6 +3042,14 @@ const docTemplate = `{
                 "status"
             ],
             "properties": {
+                "billing_model": {
+                    "description": "Payout and revenue configuration",
+                    "type": "string",
+                    "enum": [
+                        "click",
+                        "conversion"
+                    ]
+                },
                 "conversion_method": {
                     "type": "string",
                     "enum": [
@@ -3081,29 +3099,28 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "payout_amount": {
-                    "type": "number"
+                    "type": "number",
+                    "minimum": 0
                 },
-                "payout_type": {
-                    "description": "Payout and revenue configuration",
+                "payout_structure": {
                     "type": "string",
                     "enum": [
-                        "cpa",
-                        "cpc",
-                        "cpm"
+                        "fixed",
+                        "percentage"
                     ]
                 },
                 "preview_url": {
                     "type": "string"
                 },
                 "revenue_amount": {
-                    "type": "number"
+                    "type": "number",
+                    "minimum": 0
                 },
-                "revenue_type": {
+                "revenue_structure": {
                     "type": "string",
                     "enum": [
-                        "rpa",
-                        "rpc",
-                        "rpm"
+                        "fixed",
+                        "percentage"
                     ]
                 },
                 "session_definition": {

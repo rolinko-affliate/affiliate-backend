@@ -40,10 +40,11 @@ type CreateCampaignRequest struct {
 	GlobalClickCap        *int  `json:"global_click_cap,omitempty"`
 	
 	// Payout and revenue configuration
-	PayoutType     *string  `json:"payout_type,omitempty" binding:"omitempty,oneof=cpa cpc cpm"`
-	PayoutAmount   *float64 `json:"payout_amount,omitempty"`
-	RevenueType    *string  `json:"revenue_type,omitempty" binding:"omitempty,oneof=rpa rpc rpm"`
-	RevenueAmount  *float64 `json:"revenue_amount,omitempty"`
+	BillingModel      *string  `json:"billing_model,omitempty" binding:"omitempty,oneof=click conversion"`
+	PayoutStructure   *string  `json:"payout_structure,omitempty" binding:"omitempty,oneof=fixed percentage"`
+	PayoutAmount      *float64 `json:"payout_amount,omitempty" binding:"omitempty,min=0"`
+	RevenueStructure  *string  `json:"revenue_structure,omitempty" binding:"omitempty,oneof=fixed percentage"`
+	RevenueAmount     *float64 `json:"revenue_amount,omitempty" binding:"omitempty,min=0"`
 }
 
 // UpdateCampaignRequest represents the request to update an existing campaign
@@ -78,10 +79,11 @@ type UpdateCampaignRequest struct {
 	GlobalClickCap        *int  `json:"global_click_cap,omitempty"`
 	
 	// Payout and revenue configuration
-	PayoutType     *string  `json:"payout_type,omitempty" binding:"omitempty,oneof=cpa cpc cpm"`
-	PayoutAmount   *float64 `json:"payout_amount,omitempty"`
-	RevenueType    *string  `json:"revenue_type,omitempty" binding:"omitempty,oneof=rpa rpc rpm"`
-	RevenueAmount  *float64 `json:"revenue_amount,omitempty"`
+	BillingModel      *string  `json:"billing_model,omitempty" binding:"omitempty,oneof=click conversion"`
+	PayoutStructure   *string  `json:"payout_structure,omitempty" binding:"omitempty,oneof=fixed percentage"`
+	PayoutAmount      *float64 `json:"payout_amount,omitempty" binding:"omitempty,min=0"`
+	RevenueStructure  *string  `json:"revenue_structure,omitempty" binding:"omitempty,oneof=fixed percentage"`
+	RevenueAmount     *float64 `json:"revenue_amount,omitempty" binding:"omitempty,min=0"`
 }
 
 // CampaignResponse represents the response for campaign operations
@@ -119,10 +121,11 @@ type CampaignResponse struct {
 	GlobalClickCap        *int  `json:"global_click_cap,omitempty"`
 	
 	// Payout and revenue configuration
-	PayoutType     *string  `json:"payout_type,omitempty"`
-	PayoutAmount   *float64 `json:"payout_amount,omitempty"`
-	RevenueType    *string  `json:"revenue_type,omitempty"`
-	RevenueAmount  *float64 `json:"revenue_amount,omitempty"`
+	BillingModel      *string  `json:"billing_model,omitempty"`
+	PayoutStructure   *string  `json:"payout_structure,omitempty"`
+	PayoutAmount      *float64 `json:"payout_amount,omitempty"`
+	RevenueStructure  *string  `json:"revenue_structure,omitempty"`
+	RevenueAmount     *float64 `json:"revenue_amount,omitempty"`
 	
 	CreatedAt      time.Time  `json:"created_at"`
 	UpdatedAt      time.Time  `json:"updated_at"`
@@ -171,9 +174,10 @@ func (r *CreateCampaignRequest) ToCampaignDomain() *domain.Campaign {
 		GlobalClickCap:        r.GlobalClickCap,
 		
 		// Payout and revenue configuration
-		PayoutType:     r.PayoutType,
-		PayoutAmount:   r.PayoutAmount,
-		RevenueType:    r.RevenueType,
+		BillingModel:     r.BillingModel,
+		PayoutStructure:  r.PayoutStructure,
+		PayoutAmount:     r.PayoutAmount,
+		RevenueStructure:    r.RevenueStructure,
 		RevenueAmount:  r.RevenueAmount,
 	}
 }
@@ -210,9 +214,10 @@ func (r *UpdateCampaignRequest) UpdateCampaignDomain(campaign *domain.Campaign) 
 	campaign.GlobalClickCap = r.GlobalClickCap
 	
 	// Payout and revenue configuration
-	campaign.PayoutType = r.PayoutType
+	campaign.BillingModel = r.BillingModel
+	campaign.PayoutStructure = r.PayoutStructure
 	campaign.PayoutAmount = r.PayoutAmount
-	campaign.RevenueType = r.RevenueType
+	campaign.RevenueStructure = r.RevenueStructure
 	campaign.RevenueAmount = r.RevenueAmount
 }
 
@@ -252,10 +257,11 @@ func FromCampaignDomain(campaign *domain.Campaign) *CampaignResponse {
 		GlobalClickCap:        campaign.GlobalClickCap,
 		
 		// Payout and revenue configuration
-		PayoutType:     campaign.PayoutType,
-		PayoutAmount:   campaign.PayoutAmount,
-		RevenueType:    campaign.RevenueType,
-		RevenueAmount:  campaign.RevenueAmount,
+		BillingModel:     campaign.BillingModel,
+		PayoutStructure:  campaign.PayoutStructure,
+		PayoutAmount:     campaign.PayoutAmount,
+		RevenueStructure: campaign.RevenueStructure,
+		RevenueAmount:    campaign.RevenueAmount,
 		
 		CreatedAt:      campaign.CreatedAt,
 		UpdatedAt:      campaign.UpdatedAt,

@@ -37,14 +37,14 @@ func (r *pgxCampaignRepository) CreateCampaign(ctx context.Context, campaign *do
 	query := `INSERT INTO public.campaigns 
               (organization_id, advertiser_id, name, description, status, start_date, end_date,
                destination_url, thumbnail_url, preview_url, visibility, currency_id,
-               payout_type, payout_amount, revenue_type, revenue_amount,
+               billing_model, payout_structure, payout_amount, revenue_structure, revenue_amount,
                created_at, updated_at)
               VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)
               RETURNING campaign_id, created_at, updated_at`
 	
 	// Handle nullable fields that exist in the database
 	var description, destinationURL, thumbnailURL, previewURL, visibility, currencyID sql.NullString
-	var payoutType, revenueType sql.NullString
+	var billingModel, payoutStructure, revenueStructure sql.NullString
 	var startDate, endDate sql.NullTime
 	var payoutAmount, revenueAmount sql.NullFloat64
 
@@ -73,14 +73,17 @@ func (r *pgxCampaignRepository) CreateCampaign(ctx context.Context, campaign *do
 	if campaign.CurrencyID != nil {
 		currencyID = sql.NullString{String: *campaign.CurrencyID, Valid: true}
 	}
-	if campaign.PayoutType != nil {
-		payoutType = sql.NullString{String: *campaign.PayoutType, Valid: true}
+	if campaign.BillingModel != nil {
+		billingModel = sql.NullString{String: *campaign.BillingModel, Valid: true}
+	if campaign.PayoutStructure != nil {
+		payoutStructure = sql.NullString{String: *campaign.PayoutStructure, Valid: true}
+	}
 	}
 	if campaign.PayoutAmount != nil {
 		payoutAmount = sql.NullFloat64{Float64: *campaign.PayoutAmount, Valid: true}
 	}
-	if campaign.RevenueType != nil {
-		revenueType = sql.NullString{String: *campaign.RevenueType, Valid: true}
+	if campaign.RevenueStructure != nil {
+		revenueStructure = sql.NullString{String: *campaign.RevenueStructure, Valid: true}
 	}
 	if campaign.RevenueAmount != nil {
 		revenueAmount = sql.NullFloat64{Float64: *campaign.RevenueAmount, Valid: true}
@@ -92,7 +95,7 @@ func (r *pgxCampaignRepository) CreateCampaign(ctx context.Context, campaign *do
 		campaign.OrganizationID, campaign.AdvertiserID, campaign.Name, description, campaign.Status,
 		startDate, endDate,
 		destinationURL, thumbnailURL, previewURL, visibility, currencyID,
-		payoutType, payoutAmount, revenueType, revenueAmount,
+		billingModel, payoutStructure, payoutAmount, revenueStructure, revenueAmount,
 		now, now,
 	).Scan(&campaign.CampaignID, &campaign.CreatedAt, &campaign.UpdatedAt)
 	
@@ -111,13 +114,13 @@ func (r *pgxCampaignRepository) GetCampaignByID(ctx context.Context, id int64) (
               session_definition, session_duration, terms_and_conditions, is_caps_enabled,
               daily_conversion_cap, weekly_conversion_cap, monthly_conversion_cap, global_conversion_cap,
               daily_click_cap, weekly_click_cap, monthly_click_cap, global_click_cap,
-              payout_type, payout_amount, revenue_type, revenue_amount,
+              billing_model, payout_structure, payout_amount, revenue_structure, revenue_amount,
               created_at, updated_at
               FROM public.campaigns WHERE campaign_id = $1`
 	
 	campaign := &domain.Campaign{}
 	var description, destinationURL, thumbnailURL, previewURL, visibility, currencyID sql.NullString
-	var conversionMethod, sessionDefinition, termsAndConditions, payoutType, revenueType sql.NullString
+	var conversionMethod, sessionDefinition, termsAndConditions, billingModel, payoutStructure, revenueStructure sql.NullString
 	var startDate, endDate sql.NullTime
 	var internalNotes sql.NullString
 	var sessionDuration sql.NullInt32
@@ -134,7 +137,7 @@ func (r *pgxCampaignRepository) GetCampaignByID(ctx context.Context, id int64) (
 		&sessionDefinition, &sessionDuration, &termsAndConditions, &isCapsEnabled,
 		&dailyConversionCap, &weeklyConversionCap, &monthlyConversionCap, &globalConversionCap,
 		&dailyClickCap, &weeklyClickCap, &monthlyClickCap, &globalClickCap,
-		&payoutType, &payoutAmount, &revenueType, &revenueAmount,
+		&billingModel, &payoutStructure, &payoutAmount, &revenueStructure, &revenueAmount,
 		&campaign.CreatedAt, &campaign.UpdatedAt,
 	)
 	
@@ -220,14 +223,20 @@ func (r *pgxCampaignRepository) GetCampaignByID(ctx context.Context, id int64) (
 		val := int(globalClickCap.Int32)
 		campaign.GlobalClickCap = &val
 	}
-	if payoutType.Valid {
-		campaign.PayoutType = &payoutType.String
+	if billingModel.Valid {
+		campaign.BillingModel = &billingModel.String
+			if payoutStructure.Valid {
+				campaign.PayoutStructure = &payoutStructure.String
+			}
+	}
+	if payoutStructure.Valid {
+		campaign.PayoutStructure = &payoutStructure.String
 	}
 	if payoutAmount.Valid {
 		campaign.PayoutAmount = &payoutAmount.Float64
 	}
-	if revenueType.Valid {
-		campaign.RevenueType = &revenueType.String
+	if revenueStructure.Valid {
+		campaign.RevenueStructure = &revenueStructure.String
 	}
 	if revenueAmount.Valid {
 		campaign.RevenueAmount = &revenueAmount.Float64
@@ -246,13 +255,13 @@ func (r *pgxCampaignRepository) UpdateCampaign(ctx context.Context, campaign *do
               terms_and_conditions = $18, is_caps_enabled = $19,
               daily_conversion_cap = $20, weekly_conversion_cap = $21, monthly_conversion_cap = $22, global_conversion_cap = $23,
               daily_click_cap = $24, weekly_click_cap = $25, monthly_click_cap = $26, global_click_cap = $27,
-              payout_type = $28, payout_amount = $29, revenue_type = $30, revenue_amount = $31,
-              updated_at = $32
+              billing_model = $28, payout_structure = $29, payout_amount = $30, revenue_structure = $31, revenue_amount = $32,
+              updated_at = $33
               WHERE campaign_id = $1`
 	
 	// Handle nullable fields (same as CreateCampaign)
 	var description, destinationURL, thumbnailURL, previewURL, visibility, currencyID sql.NullString
-	var conversionMethod, sessionDefinition, termsAndConditions, payoutType, revenueType sql.NullString
+	var conversionMethod, sessionDefinition, termsAndConditions, billingModel, payoutStructure, revenueStructure sql.NullString
 	var startDate, endDate sql.NullTime
 	var internalNotes sql.NullString
 	var sessionDuration sql.NullInt32
@@ -328,14 +337,17 @@ func (r *pgxCampaignRepository) UpdateCampaign(ctx context.Context, campaign *do
 	if campaign.GlobalClickCap != nil {
 		globalClickCap = sql.NullInt32{Int32: int32(*campaign.GlobalClickCap), Valid: true}
 	}
-	if campaign.PayoutType != nil {
-		payoutType = sql.NullString{String: *campaign.PayoutType, Valid: true}
+	if campaign.BillingModel != nil {
+		billingModel = sql.NullString{String: *campaign.BillingModel, Valid: true}
+	}
+	if campaign.PayoutStructure != nil {
+		payoutStructure = sql.NullString{String: *campaign.PayoutStructure, Valid: true}
 	}
 	if campaign.PayoutAmount != nil {
 		payoutAmount = sql.NullFloat64{Float64: *campaign.PayoutAmount, Valid: true}
 	}
-	if campaign.RevenueType != nil {
-		revenueType = sql.NullString{String: *campaign.RevenueType, Valid: true}
+	if campaign.RevenueStructure != nil {
+		revenueStructure = sql.NullString{String: *campaign.RevenueStructure, Valid: true}
 	}
 	if campaign.RevenueAmount != nil {
 		revenueAmount = sql.NullFloat64{Float64: *campaign.RevenueAmount, Valid: true}
@@ -351,7 +363,7 @@ func (r *pgxCampaignRepository) UpdateCampaign(ctx context.Context, campaign *do
 		sessionDefinition, sessionDuration, termsAndConditions, isCapsEnabled,
 		dailyConversionCap, weeklyConversionCap, monthlyConversionCap, globalConversionCap,
 		dailyClickCap, weeklyClickCap, monthlyClickCap, globalClickCap,
-		payoutType, payoutAmount, revenueType, revenueAmount,
+		billingModel, payoutStructure, payoutAmount, revenueStructure, revenueAmount,
 		now,
 	)
 	
@@ -376,7 +388,7 @@ func (r *pgxCampaignRepository) ListCampaignsByAdvertiser(ctx context.Context, a
               session_definition, session_duration, terms_and_conditions, is_caps_enabled,
               daily_conversion_cap, weekly_conversion_cap, monthly_conversion_cap, global_conversion_cap,
               daily_click_cap, weekly_click_cap, monthly_click_cap, global_click_cap,
-              payout_type, payout_amount, revenue_type, revenue_amount,
+              billing_model, payout_structure, payout_amount, revenue_structure, revenue_amount,
               created_at, updated_at
               FROM public.campaigns WHERE advertiser_id = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3`
 	
@@ -390,7 +402,7 @@ func (r *pgxCampaignRepository) ListCampaignsByAdvertiser(ctx context.Context, a
 	for rows.Next() {
 		campaign := &domain.Campaign{}
 		var description, destinationURL, thumbnailURL, previewURL, visibility, currencyID sql.NullString
-		var conversionMethod, sessionDefinition, termsAndConditions, payoutType, revenueType sql.NullString
+		var conversionMethod, sessionDefinition, termsAndConditions, billingModel, payoutStructure, revenueStructure sql.NullString
 		var startDate, endDate sql.NullTime
 		var internalNotes sql.NullString
 		var sessionDuration sql.NullInt32
@@ -407,7 +419,7 @@ func (r *pgxCampaignRepository) ListCampaignsByAdvertiser(ctx context.Context, a
 			&sessionDefinition, &sessionDuration, &termsAndConditions, &isCapsEnabled,
 			&dailyConversionCap, &weeklyConversionCap, &monthlyConversionCap, &globalConversionCap,
 			&dailyClickCap, &weeklyClickCap, &monthlyClickCap, &globalClickCap,
-			&payoutType, &payoutAmount, &revenueType, &revenueAmount,
+			&billingModel, &payoutStructure, &payoutAmount, &revenueStructure, &revenueAmount,
 			&campaign.CreatedAt, &campaign.UpdatedAt,
 		)
 		if err != nil {
@@ -489,14 +501,17 @@ func (r *pgxCampaignRepository) ListCampaignsByAdvertiser(ctx context.Context, a
 			val := int(globalClickCap.Int32)
 			campaign.GlobalClickCap = &val
 		}
-		if payoutType.Valid {
-			campaign.PayoutType = &payoutType.String
+		if billingModel.Valid {
+			campaign.BillingModel = &billingModel.String
+			if payoutStructure.Valid {
+				campaign.PayoutStructure = &payoutStructure.String
+			}
 		}
 		if payoutAmount.Valid {
 			campaign.PayoutAmount = &payoutAmount.Float64
 		}
-		if revenueType.Valid {
-			campaign.RevenueType = &revenueType.String
+		if revenueStructure.Valid {
+			campaign.RevenueStructure = &revenueStructure.String
 		}
 		if revenueAmount.Valid {
 			campaign.RevenueAmount = &revenueAmount.Float64
@@ -516,7 +531,7 @@ func (r *pgxCampaignRepository) ListCampaignsByAdvertiser(ctx context.Context, a
 func (r *pgxCampaignRepository) ListCampaignsByOrganization(ctx context.Context, orgID int64, limit, offset int) ([]*domain.Campaign, error) {
 	query := `SELECT campaign_id, organization_id, advertiser_id, name, description, 
               start_date, end_date, status, destination_url, thumbnail_url, preview_url, 
-              visibility, currency_id, payout_type, payout_amount, revenue_type, revenue_amount,
+              visibility, currency_id, billing_model, payout_structure, payout_amount, revenue_structure, revenue_amount,
               created_at, updated_at
               FROM public.campaigns WHERE organization_id = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3`
 	
@@ -530,7 +545,7 @@ func (r *pgxCampaignRepository) ListCampaignsByOrganization(ctx context.Context,
 	for rows.Next() {
 		campaign := &domain.Campaign{}
 		var description, destinationURL, thumbnailURL, previewURL, visibility, currencyID sql.NullString
-		var payoutType, revenueType sql.NullString
+		var billingModel, payoutStructure, revenueStructure sql.NullString
 		var startDate, endDate sql.NullTime
 		var payoutAmount, revenueAmount sql.NullFloat64
 		
@@ -538,7 +553,7 @@ func (r *pgxCampaignRepository) ListCampaignsByOrganization(ctx context.Context,
 			&campaign.CampaignID, &campaign.OrganizationID, &campaign.AdvertiserID,
 			&campaign.Name, &description,
 			&startDate, &endDate, &campaign.Status, &destinationURL, &thumbnailURL, &previewURL,
-			&visibility, &currencyID, &payoutType, &payoutAmount, &revenueType, &revenueAmount,
+			&visibility, &currencyID, &billingModel, &payoutStructure, &payoutAmount, &revenueStructure, &revenueAmount,
 			&campaign.CreatedAt, &campaign.UpdatedAt,
 		)
 		if err != nil {
@@ -570,14 +585,17 @@ func (r *pgxCampaignRepository) ListCampaignsByOrganization(ctx context.Context,
 		if currencyID.Valid {
 			campaign.CurrencyID = &currencyID.String
 		}
-		if payoutType.Valid {
-			campaign.PayoutType = &payoutType.String
+		if billingModel.Valid {
+			campaign.BillingModel = &billingModel.String
+			if payoutStructure.Valid {
+				campaign.PayoutStructure = &payoutStructure.String
+			}
 		}
 		if payoutAmount.Valid {
 			campaign.PayoutAmount = &payoutAmount.Float64
 		}
-		if revenueType.Valid {
-			campaign.RevenueType = &revenueType.String
+		if revenueStructure.Valid {
+			campaign.RevenueStructure = &revenueStructure.String
 		}
 		if revenueAmount.Valid {
 			campaign.RevenueAmount = &revenueAmount.Float64

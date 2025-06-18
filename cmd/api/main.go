@@ -233,6 +233,8 @@ func main() {
 	affiliateProviderMappingRepo := repository.NewPgxAffiliateProviderMappingRepository(repository.DB)
 	campaignRepo := repository.NewPgxCampaignRepository(repository.DB)
 	campaignProviderMappingRepo := repository.NewPgxCampaignProviderMappingRepository(repository.DB)
+	trackingLinkRepo := repository.NewTrackingLinkRepository(repository.DB)
+	trackingLinkProviderMappingRepo := repository.NewTrackingLinkProviderMappingRepository(repository.DB)
 	analyticsRepo := repository.NewAnalyticsRepository(repository.DB)
 
 	// Initialize Platform Services
@@ -267,6 +269,7 @@ func main() {
 	advertiserService := service.NewAdvertiserService(advertiserRepo, advertiserProviderMappingRepo, organizationRepo, cryptoService, integrationService)
 	affiliateService := service.NewAffiliateService(affiliateRepo, affiliateProviderMappingRepo, organizationRepo, integrationService)
 	campaignService := service.NewCampaignService(campaignRepo)
+	trackingLinkService := service.NewTrackingLinkService(trackingLinkRepo, trackingLinkProviderMappingRepo, campaignRepo, affiliateRepo, campaignProviderMappingRepo, affiliateProviderMappingRepo, integrationService)
 	analyticsService := service.NewAnalyticsService(analyticsRepo)
 
 	// Initialize Handlers
@@ -275,6 +278,7 @@ func main() {
 	advertiserHandler := handlers.NewAdvertiserHandler(advertiserService, profileService)
 	affiliateHandler := handlers.NewAffiliateHandler(affiliateService, profileService)
 	campaignHandler := handlers.NewCampaignHandler(campaignService)
+	trackingLinkHandler := handlers.NewTrackingLinkHandler(trackingLinkService)
 	analyticsHandler := handlers.NewAnalyticsHandler(analyticsService)
 
 	// Setup Router
@@ -285,6 +289,7 @@ func main() {
 		AdvertiserHandler:   advertiserHandler,
 		AffiliateHandler:    affiliateHandler,
 		CampaignHandler:     campaignHandler,
+		TrackingLinkHandler: trackingLinkHandler,
 		AnalyticsHandler:    analyticsHandler,
 	})
 

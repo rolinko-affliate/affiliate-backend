@@ -15,6 +15,7 @@ type RouterOptions struct {
 	AdvertiserHandler    *handlers.AdvertiserHandler
 	AffiliateHandler     *handlers.AffiliateHandler
 	CampaignHandler      *handlers.CampaignHandler
+	TrackingLinkHandler  *handlers.TrackingLinkHandler
 	AnalyticsHandler     *handlers.AnalyticsHandler
 }
 
@@ -136,6 +137,24 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		campaigns.PUT("/:id", opts.CampaignHandler.UpdateCampaign)
 		campaigns.DELETE("/:id", opts.CampaignHandler.DeleteCampaign)
 	}
+
+	// --- Tracking Link Routes ---
+	// Organization-level tracking link routes
+	organizations.GET("/:id/tracking-links", rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.TrackingLinkHandler.ListTrackingLinksByOrganization)
+	organizations.POST("/:id/tracking-links", rbacMW("Admin", "AdvertiserManager"), opts.TrackingLinkHandler.CreateTrackingLink)
+	organizations.POST("/:id/tracking-links/generate", rbacMW("Admin", "AdvertiserManager"), opts.TrackingLinkHandler.GenerateTrackingLink)
+	organizations.GET("/:id/tracking-links/:link_id", rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.TrackingLinkHandler.GetTrackingLink)
+	organizations.PUT("/:id/tracking-links/:link_id", rbacMW("Admin", "AdvertiserManager"), opts.TrackingLinkHandler.UpdateTrackingLink)
+	organizations.DELETE("/:id/tracking-links/:link_id", rbacMW("Admin", "AdvertiserManager"), opts.TrackingLinkHandler.DeleteTrackingLink)
+	organizations.POST("/:id/tracking-links/:link_id/regenerate", rbacMW("Admin", "AdvertiserManager"), opts.TrackingLinkHandler.RegenerateTrackingLink)
+	organizations.GET("/:id/tracking-links/:link_id/qr", rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.TrackingLinkHandler.GetTrackingLinkQR)
+
+
+	// Campaign-specific tracking link routes
+	campaigns.GET("/:id/tracking-links", rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.TrackingLinkHandler.ListTrackingLinksByCampaign)
+
+	// Affiliate-specific tracking link routes
+	affiliates.GET("/:id/tracking-links", rbacMW("Admin", "AffiliateManager"), opts.TrackingLinkHandler.ListTrackingLinksByAffiliate)
 
 	// --- Analytics Routes ---
 	analytics := v1.Group("/analytics")

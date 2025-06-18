@@ -3,7 +3,9 @@ package provider
 import (
 	"context"
 	"encoding/json"
+	"fmt"
 	"log"
+	"strings"
 	"time"
 
 	"github.com/affiliate-backend/internal/domain"
@@ -11,7 +13,7 @@ import (
 	"github.com/stretchr/testify/mock"
 )
 
-// IntegrationService defines the provider-agnostic interface for advertiser, affiliate, and campaign operations
+// IntegrationService defines the provider-agnostic interface for advertiser, affiliate, campaign, and tracking link operations
 type IntegrationService interface {
 	// Advertisers
 	CreateAdvertiser(ctx context.Context, adv domain.Advertiser) (domain.Advertiser, error)
@@ -27,6 +29,10 @@ type IntegrationService interface {
 	CreateCampaign(ctx context.Context, camp domain.Campaign) (domain.Campaign, error)
 	UpdateCampaign(ctx context.Context, camp domain.Campaign) error
 	GetCampaign(ctx context.Context, id uuid.UUID) (domain.Campaign, error)
+
+	// Tracking Links
+	GenerateTrackingLink(ctx context.Context, req *domain.TrackingLinkGenerationRequest, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) (*domain.TrackingLinkGenerationResponse, error)
+	GenerateTrackingLinkQR(ctx context.Context, req *domain.TrackingLinkGenerationRequest, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) ([]byte, error)
 }
 
 // ProviderAdvertiserService defines the interface for advertiser operations
@@ -103,6 +109,18 @@ func (m *MockIntegrationService) UpdateCampaign(ctx context.Context, camp domain
 func (m *MockIntegrationService) GetCampaign(ctx context.Context, id uuid.UUID) (domain.Campaign, error) {
 	args := m.Called(ctx, id)
 	return args.Get(0).(domain.Campaign), args.Error(1)
+}
+
+// GenerateTrackingLink mocks tracking link generation
+func (m *MockIntegrationService) GenerateTrackingLink(ctx context.Context, req *domain.TrackingLinkGenerationRequest, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) (*domain.TrackingLinkGenerationResponse, error) {
+	args := m.Called(ctx, req, campaignMapping, affiliateMapping)
+	return args.Get(0).(*domain.TrackingLinkGenerationResponse), args.Error(1)
+}
+
+// GenerateTrackingLinkQR mocks tracking link QR code generation
+func (m *MockIntegrationService) GenerateTrackingLinkQR(ctx context.Context, req *domain.TrackingLinkGenerationRequest, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) ([]byte, error) {
+	args := m.Called(ctx, req, campaignMapping, affiliateMapping)
+	return args.Get(0).([]byte), args.Error(1)
 }
 
 // NewMockIntegrationService creates a new mock integration service
@@ -200,6 +218,32 @@ func (m *MockIntegrationServiceWithDefaults) GetCampaign(ctx context.Context, id
 		CreatedAt:      time.Now(),
 		UpdatedAt:      time.Now(),
 	}, nil
+}
+
+// GenerateTrackingLink returns a simulated tracking link generation response
+func (m *MockIntegrationServiceWithDefaults) GenerateTrackingLink(ctx context.Context, req *domain.TrackingLinkGenerationRequest, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) (*domain.TrackingLinkGenerationResponse, error) {
+	// Create a simulated tracking URL
+	generatedURL := "http://mock-tracking-domain.test/ABC123/DEF456/?sub1=test&sub2=mock"
+	
+	// Create provider data
+	providerData := &domain.EverflowTrackingLinkProviderData{
+		NetworkOfferID:     int32Ptr(12345),
+		NetworkAffiliateID: int32Ptr(67890),
+		GeneratedURL:       &generatedURL,
+	}
+	
+	providerDataJSON, _ := providerData.ToJSON()
+	
+	return &domain.TrackingLinkGenerationResponse{
+		GeneratedURL: generatedURL,
+		ProviderData: &providerDataJSON,
+	}, nil
+}
+
+// GenerateTrackingLinkQR returns a simulated QR code (empty byte slice for mock)
+func (m *MockIntegrationServiceWithDefaults) GenerateTrackingLinkQR(ctx context.Context, req *domain.TrackingLinkGenerationRequest, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) ([]byte, error) {
+	// Return a mock QR code (in real implementation, this would be a PNG image)
+	return []byte("mock-qr-code-data"), nil
 }
 
 // LoggingMockIntegrationService is a mock integration service that logs all requests and returns simulated responses
@@ -401,4 +445,94 @@ func (l *LoggingMockIntegrationService) GetCampaign(ctx context.Context, id uuid
 	
 	l.logResponse("GET", "CAMPAIGN", response)
 	return response, nil
+}
+
+// GenerateTrackingLink logs the request and returns a simulated tracking link
+func (l *LoggingMockIntegrationService) GenerateTrackingLink(ctx context.Context, req *domain.TrackingLinkGenerationRequest, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) (*domain.TrackingLinkGenerationResponse, error) {
+	l.logRequest("GENERATE", "TRACKING_LINK", map[string]interface{}{
+		"request":          req,
+		"campaign_mapping": campaignMapping,
+		"affiliate_mapping": affiliateMapping,
+	})
+	
+	// Simulate processing time
+	time.Sleep(200 * time.Millisecond)
+	
+	// Create a simulated tracking URL with the request parameters
+	baseURL := "http://mock-tracking-domain.test/ABC123/DEF456/"
+	params := []string{}
+	
+	if req.SourceID != nil {
+		params = append(params, fmt.Sprintf("source_id=%s", *req.SourceID))
+	}
+	if req.Sub1 != nil {
+		params = append(params, fmt.Sprintf("sub1=%s", *req.Sub1))
+	}
+	if req.Sub2 != nil {
+		params = append(params, fmt.Sprintf("sub2=%s", *req.Sub2))
+	}
+	if req.Sub3 != nil {
+		params = append(params, fmt.Sprintf("sub3=%s", *req.Sub3))
+	}
+	if req.Sub4 != nil {
+		params = append(params, fmt.Sprintf("sub4=%s", *req.Sub4))
+	}
+	if req.Sub5 != nil {
+		params = append(params, fmt.Sprintf("sub5=%s", *req.Sub5))
+	}
+	
+	generatedURL := baseURL
+	if len(params) > 0 {
+		generatedURL += "?" + strings.Join(params, "&")
+	}
+	
+	// Create provider data
+	providerData := &domain.EverflowTrackingLinkProviderData{
+		NetworkOfferID:           int32Ptr(12345),
+		NetworkCampaignID:        int32Ptr(54321),
+		NetworkAffiliateID:       int32Ptr(67890),
+		NetworkTrackingDomainID:  req.NetworkTrackingDomainID,
+		NetworkOfferURLID:        req.NetworkOfferURLID,
+		CreativeID:               req.CreativeID,
+		NetworkTrafficSourceID:   req.NetworkTrafficSourceID,
+		GeneratedURL:             &generatedURL,
+		CanAffiliateRunAllOffers: boolPtr(true),
+	}
+	
+	providerDataJSON, _ := providerData.ToJSON()
+	
+	response := &domain.TrackingLinkGenerationResponse{
+		GeneratedURL: generatedURL,
+		ProviderData: &providerDataJSON,
+	}
+	
+	l.logResponse("GENERATE", "TRACKING_LINK", response)
+	return response, nil
+}
+
+// GenerateTrackingLinkQR logs the request and returns a simulated QR code
+func (l *LoggingMockIntegrationService) GenerateTrackingLinkQR(ctx context.Context, req *domain.TrackingLinkGenerationRequest, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) ([]byte, error) {
+	l.logRequest("GENERATE", "TRACKING_LINK_QR", map[string]interface{}{
+		"request":          req,
+		"campaign_mapping": campaignMapping,
+		"affiliate_mapping": affiliateMapping,
+	})
+	
+	// Simulate processing time
+	time.Sleep(250 * time.Millisecond)
+	
+	// Return a mock QR code (in real implementation, this would be a PNG image)
+	qrData := []byte("mock-qr-code-png-data-for-tracking-link")
+	
+	log.Printf("✅ MOCK GENERATE TRACKING_LINK_QR: Generated QR code with %d bytes", len(qrData))
+	return qrData, nil
+}
+
+// Helper functions for pointer creation
+func int32Ptr(i int32) *int32 {
+	return &i
+}
+
+func boolPtr(b bool) *bool {
+	return &b
 }

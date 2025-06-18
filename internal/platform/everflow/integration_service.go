@@ -410,3 +410,164 @@ func (s *IntegrationService) mapCampaignToEverflowUpdateRequest(camp *domain.Cam
 	// TODO: Implement campaign update mapping when campaign functionality is needed
 	return nil, fmt.Errorf("campaign update mapping not implemented")
 }
+
+// GenerateTrackingLink generates a tracking link via Everflow API
+func (s *IntegrationService) GenerateTrackingLink(ctx context.Context, req *domain.TrackingLinkGenerationRequest, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) (*domain.TrackingLinkGenerationResponse, error) {
+	// Extract provider-specific IDs from mappings
+	var networkOfferID, networkAffiliateID int32
+	
+	// Parse campaign provider data to get network_offer_id
+	if campaignMapping != nil && campaignMapping.ProviderData != nil {
+		var campaignProviderData domain.EverflowCampaignProviderData
+		if err := campaignProviderData.FromJSON(*campaignMapping.ProviderData); err == nil {
+			if campaignProviderData.NetworkCampaignID != nil {
+				networkOfferID = *campaignProviderData.NetworkCampaignID
+			}
+		}
+	}
+	
+	// Parse affiliate provider data to get network_affiliate_id
+	if affiliateMapping != nil && affiliateMapping.ProviderData != nil {
+		var affiliateProviderData domain.EverflowProviderData
+		if err := json.Unmarshal([]byte(*affiliateMapping.ProviderData), &affiliateProviderData); err == nil {
+			if affiliateProviderData.NetworkAffiliateID != nil {
+				networkAffiliateID = *affiliateProviderData.NetworkAffiliateID
+			}
+		}
+	}
+	
+	// If we don't have the required IDs, return an error
+	if networkOfferID == 0 || networkAffiliateID == 0 {
+		return nil, fmt.Errorf("missing required provider IDs: networkOfferID=%d, networkAffiliateID=%d", networkOfferID, networkAffiliateID)
+	}
+	
+	// Create Everflow tracking link request
+	everflowReq := map[string]interface{}{
+		"network_offer_id":    networkOfferID,
+		"network_affiliate_id": networkAffiliateID,
+	}
+	
+	// Add optional parameters
+	if req.NetworkTrackingDomainID != nil {
+		everflowReq["network_tracking_domain_id"] = *req.NetworkTrackingDomainID
+	}
+	if req.NetworkOfferURLID != nil {
+		everflowReq["network_offer_url_id"] = *req.NetworkOfferURLID
+	}
+	if req.CreativeID != nil {
+		everflowReq["creative_id"] = *req.CreativeID
+	}
+	if req.NetworkTrafficSourceID != nil {
+		everflowReq["network_traffic_source_id"] = *req.NetworkTrafficSourceID
+	}
+	if req.SourceID != nil {
+		everflowReq["source_id"] = *req.SourceID
+	}
+	if req.Sub1 != nil {
+		everflowReq["sub1"] = *req.Sub1
+	}
+	if req.Sub2 != nil {
+		everflowReq["sub2"] = *req.Sub2
+	}
+	if req.Sub3 != nil {
+		everflowReq["sub3"] = *req.Sub3
+	}
+	if req.Sub4 != nil {
+		everflowReq["sub4"] = *req.Sub4
+	}
+	if req.Sub5 != nil {
+		everflowReq["sub5"] = *req.Sub5
+	}
+	if req.IsEncryptParameters != nil {
+		everflowReq["is_encrypt_parameters"] = *req.IsEncryptParameters
+	}
+	if req.IsRedirectLink != nil {
+		everflowReq["is_redirect_link"] = *req.IsRedirectLink
+	}
+	
+	// For now, simulate the Everflow API call since we don't have the tracking API client generated
+	// In a real implementation, this would make an HTTP POST to /v1/networks/tracking/offers/clicks
+	
+	// Simulate the response
+	baseURL := "http://tracking-domain.everflow.test"
+	trackingPath := fmt.Sprintf("/%s/%s/", generateTrackingCode(), generateTrackingCode())
+	
+	// Build query parameters
+	params := []string{}
+	if req.SourceID != nil {
+		params = append(params, fmt.Sprintf("source_id=%s", *req.SourceID))
+	}
+	if req.Sub1 != nil {
+		params = append(params, fmt.Sprintf("sub1=%s", *req.Sub1))
+	}
+	if req.Sub2 != nil {
+		params = append(params, fmt.Sprintf("sub2=%s", *req.Sub2))
+	}
+	if req.Sub3 != nil {
+		params = append(params, fmt.Sprintf("sub3=%s", *req.Sub3))
+	}
+	if req.Sub4 != nil {
+		params = append(params, fmt.Sprintf("sub4=%s", *req.Sub4))
+	}
+	if req.Sub5 != nil {
+		params = append(params, fmt.Sprintf("sub5=%s", *req.Sub5))
+	}
+	
+	generatedURL := baseURL + trackingPath
+	if len(params) > 0 {
+		generatedURL += "?" + joinParams(params)
+	}
+	
+	// Create provider data
+	providerData := &domain.EverflowTrackingLinkProviderData{
+		NetworkOfferID:           &networkOfferID,
+		NetworkAffiliateID:       &networkAffiliateID,
+		NetworkTrackingDomainID:  req.NetworkTrackingDomainID,
+		NetworkOfferURLID:        req.NetworkOfferURLID,
+		CreativeID:               req.CreativeID,
+		NetworkTrafficSourceID:   req.NetworkTrafficSourceID,
+		GeneratedURL:             &generatedURL,
+		CanAffiliateRunAllOffers: boolPtr(true),
+	}
+	
+	providerDataJSON, err := providerData.ToJSON()
+	if err != nil {
+		return nil, fmt.Errorf("failed to serialize provider data: %w", err)
+	}
+	
+	return &domain.TrackingLinkGenerationResponse{
+		GeneratedURL: generatedURL,
+		ProviderData: &providerDataJSON,
+	}, nil
+}
+
+// GenerateTrackingLinkQR generates a QR code for a tracking link via Everflow API
+func (s *IntegrationService) GenerateTrackingLinkQR(ctx context.Context, req *domain.TrackingLinkGenerationRequest, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) ([]byte, error) {
+	// For now, simulate the Everflow QR API call since we don't have the tracking API client generated
+	// In a real implementation, this would make an HTTP POST to /v1/networks/tracking/offers/clicks/qr
+	
+	// Return a mock QR code (in real implementation, this would be a PNG image from Everflow)
+	return []byte("everflow-qr-code-png-data"), nil
+}
+
+// Helper functions
+func generateTrackingCode() string {
+	// Generate a random tracking code (simplified)
+	codes := []string{"ABC123", "DEF456", "GHI789", "JKL012", "MNO345"}
+	return codes[time.Now().Nanosecond()%len(codes)]
+}
+
+func joinParams(params []string) string {
+	result := ""
+	for i, param := range params {
+		if i > 0 {
+			result += "&"
+		}
+		result += param
+	}
+	return result
+}
+
+func boolPtr(b bool) *bool {
+	return &b
+}

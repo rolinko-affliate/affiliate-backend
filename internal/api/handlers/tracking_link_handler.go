@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"encoding/base64"
 	"fmt"
 	"net/http"
 	"strconv"
@@ -137,7 +138,7 @@ func (h *TrackingLinkHandler) GenerateTrackingLink(c *gin.Context) {
 // @Failure 403 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
-// @Router /organizations/{id}/tracking-links/{link_id} [get]
+// @Router /organizations/{organization_id}/tracking-links/{tracking_link_id} [get]
 func (h *TrackingLinkHandler) GetTrackingLink(c *gin.Context) {
 	trackingLinkID, err := strconv.ParseInt(c.Param("link_id"), 10, 64)
 	if err != nil {
@@ -176,7 +177,7 @@ func (h *TrackingLinkHandler) GetTrackingLink(c *gin.Context) {
 // @Failure 403 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
-// @Router /organizations/{id}/tracking-links/{link_id} [put]
+// @Router /organizations/{organization_id}/tracking-links/{tracking_link_id} [put]
 func (h *TrackingLinkHandler) UpdateTrackingLink(c *gin.Context) {
 	organizationID, err := strconv.ParseInt(c.Param("id"), 10, 64)
 	if err != nil {
@@ -262,7 +263,7 @@ func (h *TrackingLinkHandler) UpdateTrackingLink(c *gin.Context) {
 // @Failure 403 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
-// @Router /organizations/{id}/tracking-links/{link_id} [delete]
+// @Router /organizations/{organization_id}/tracking-links/{tracking_link_id} [delete]
 func (h *TrackingLinkHandler) DeleteTrackingLink(c *gin.Context) {
 	trackingLinkID, err := strconv.ParseInt(c.Param("link_id"), 10, 64)
 	if err != nil {
@@ -289,8 +290,7 @@ func (h *TrackingLinkHandler) DeleteTrackingLink(c *gin.Context) {
 // @Description Retrieve a list of tracking links for a specific campaign
 // @Tags tracking-links
 // @Produce json
-// @Param organization_id path int true "Organization ID"
-// @Param campaign_id path int true "Campaign ID"
+// @Param id path int true "Campaign ID"
 // @Param page query int false "Page number" default(1)
 // @Param page_size query int false "Page size" default(20)
 // @Success 200 {object} models.TrackingLinkListResponse
@@ -346,8 +346,7 @@ func (h *TrackingLinkHandler) ListTrackingLinksByCampaign(c *gin.Context) {
 // @Description Retrieve a list of tracking links for a specific affiliate
 // @Tags tracking-links
 // @Produce json
-// @Param organization_id path int true "Organization ID"
-// @Param affiliate_id path int true "Affiliate ID"
+// @Param id path int true "Affiliate ID"
 // @Param page query int false "Page number" default(1)
 // @Param page_size query int false "Page size" default(20)
 // @Success 200 {object} models.TrackingLinkListResponse
@@ -411,7 +410,7 @@ func (h *TrackingLinkHandler) ListTrackingLinksByAffiliate(c *gin.Context) {
 // @Failure 401 {object} ErrorResponse
 // @Failure 403 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
-// @Router /organizations/{id}/tracking-links [get]
+// @Router /organizations/{organization_id}/tracking-links [get]
 func (h *TrackingLinkHandler) ListTrackingLinksByOrganization(c *gin.Context) {
 	organizationID, err := strconv.ParseInt(c.Param("id"), 10, 64)
 	if err != nil {
@@ -467,7 +466,7 @@ func (h *TrackingLinkHandler) ListTrackingLinksByOrganization(c *gin.Context) {
 // @Failure 403 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
-// @Router /organizations/{id}/tracking-links/{link_id}/regenerate [post]
+// @Router /organizations/{organization_id}/tracking-links/{tracking_link_id}/regenerate [post]
 func (h *TrackingLinkHandler) RegenerateTrackingLink(c *gin.Context) {
 	trackingLinkID, err := strconv.ParseInt(c.Param("link_id"), 10, 64)
 	if err != nil {
@@ -500,13 +499,13 @@ func (h *TrackingLinkHandler) RegenerateTrackingLink(c *gin.Context) {
 // @Produce image/png
 // @Param organization_id path int true "Organization ID"
 // @Param tracking_link_id path int true "Tracking Link ID"
-// @Success 200 {file} binary "QR code image"
+// @Success 200 {string} binary "QR code image" encoded with base64
 // @Failure 400 {object} ErrorResponse
 // @Failure 401 {object} ErrorResponse
 // @Failure 403 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
-// @Router /organizations/{id}/tracking-links/{link_id}/qr [get]
+// @Router /organizations/{organization_id}/tracking-links/{tracking_link_id}/qr [get]
 func (h *TrackingLinkHandler) GetTrackingLinkQR(c *gin.Context) {
 	trackingLinkID, err := strconv.ParseInt(c.Param("link_id"), 10, 64)
 	if err != nil {
@@ -529,11 +528,14 @@ func (h *TrackingLinkHandler) GetTrackingLinkQR(c *gin.Context) {
 
 	// For now, return a simple mock QR code
 	// In a real implementation, you would generate a QR code from the tracking URL
-	qrData := []byte("mock-qr-code-png-data")
+	qrData := []byte(trackingLink.Name)
 
-	c.Header("Content-Type", "image/png")
-	c.Header("Content-Disposition", fmt.Sprintf("inline; filename=\"tracking-link-%d-qr.png\"", trackingLink.TrackingLinkID))
-	c.Data(http.StatusOK, "image/png", qrData)
+	// Convert qrData from bytes slice to base64 encoded string
+	// Convert qrData from bytes slice to base64 encoded string
+	base64QR := base64.StdEncoding.EncodeToString(qrData)
+	
+	// Return base64 encoded string directly
+	c.String(http.StatusOK, base64QR)
 }
 
 

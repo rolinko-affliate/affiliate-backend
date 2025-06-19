@@ -421,8 +421,9 @@ class SimpleTestAccountCreator:
         logger.info("Creating test advertisers...")
         
         advertisers_data = [
+            # Adidas advertisers by region
             {
-                "name": "Adidas Global",
+                "name": "Adidas Germany",
                 "organization_name": "Adidas",
                 "contact_email": "rolinko@adidas.com",
                 "billing_details": {
@@ -434,11 +435,44 @@ class SimpleTestAccountCreator:
                         "country": "Germany"
                     },
                     "tax_id": "DE123456789",
-                    "billing_email": "billing@adidas.com"
+                    "billing_email": "billing-de@adidas.com"
                 }
             },
             {
-                "name": "Dyson Ltd",
+                "name": "Adidas USA",
+                "organization_name": "Adidas",
+                "contact_email": "rolinko@adidas.com",
+                "billing_details": {
+                    "company_name": "Adidas North America Inc.",
+                    "address": {
+                        "street": "5055 N Greeley Ave",
+                        "city": "Portland",
+                        "postal_code": "97217",
+                        "country": "United States"
+                    },
+                    "tax_id": "US987654321",
+                    "billing_email": "billing-us@adidas.com"
+                }
+            },
+            {
+                "name": "Adidas France",
+                "organization_name": "Adidas",
+                "contact_email": "rolinko@adidas.com",
+                "billing_details": {
+                    "company_name": "Adidas France SAS",
+                    "address": {
+                        "street": "2 Rue du Stade",
+                        "city": "Strasbourg",
+                        "postal_code": "67000",
+                        "country": "France"
+                    },
+                    "tax_id": "FR456789123",
+                    "billing_email": "billing-fr@adidas.com"
+                }
+            },
+            # Dyson advertisers by region
+            {
+                "name": "Dyson UK",
                 "organization_name": "Dyson",
                 "contact_email": "rolinko@dyson.com",
                 "billing_details": {
@@ -450,7 +484,39 @@ class SimpleTestAccountCreator:
                         "country": "United Kingdom"
                     },
                     "tax_id": "GB123456789",
-                    "billing_email": "billing@dyson.com"
+                    "billing_email": "billing-uk@dyson.com"
+                }
+            },
+            {
+                "name": "Dyson USA",
+                "organization_name": "Dyson",
+                "contact_email": "rolinko@dyson.com",
+                "billing_details": {
+                    "company_name": "Dyson Inc.",
+                    "address": {
+                        "street": "875 N Michigan Ave",
+                        "city": "Chicago",
+                        "postal_code": "60611",
+                        "country": "United States"
+                    },
+                    "tax_id": "US789123456",
+                    "billing_email": "billing-us@dyson.com"
+                }
+            },
+            {
+                "name": "Dyson Japan",
+                "organization_name": "Dyson",
+                "contact_email": "rolinko@dyson.com",
+                "billing_details": {
+                    "company_name": "Dyson K.K.",
+                    "address": {
+                        "street": "1-1-1 Shibuya",
+                        "city": "Tokyo",
+                        "postal_code": "150-0002",
+                        "country": "Japan"
+                    },
+                    "tax_id": "JP321654987",
+                    "billing_email": "billing-jp@dyson.com"
                 }
             }
         ]
@@ -580,29 +646,155 @@ class SimpleTestAccountCreator:
         logger.info("Creating test campaigns...")
         
         campaigns_data = [
+            # Adidas Germany campaigns
             {
-                "name": "Adidas Holiday Collection 2025",
-                "advertiser_name": "Adidas Global",
-                "payout_amount": 15.00,
+                "name": "Adidas Winter Sports Collection 2025",
+                "advertiser_name": "Adidas Germany",
+                "payout_amount": 18.00,
                 "payout_currency": "EUR",
                 "status": "active",
-                "description": "Holiday season sportswear and lifestyle collection",
-                "start_date": "2025-11-01T00:00:00Z",
-                "end_date": "2025-12-31T23:59:59Z",
-                "destination_url": "https://adidas.com/holiday-collection",
-                "thumbnail_url": "https://assets.adidas.com/holiday-thumb.jpg"
+                "description": "Premium winter sports gear and apparel for German market",
+                "start_date": "2025-10-01T00:00:00Z",
+                "end_date": "2026-03-31T23:59:59Z",
+                "destination_url": "https://adidas.de/winter-sports",
+                "thumbnail_url": "https://assets.adidas.com/de/winter-sports-thumb.jpg"
             },
             {
-                "name": "Dyson Christmas Gift Guide",
-                "advertiser_name": "Dyson Ltd",
+                "name": "Adidas Originals Retro Revival",
+                "advertiser_name": "Adidas Germany",
+                "payout_amount": 22.00,
+                "payout_currency": "EUR",
+                "status": "active",
+                "description": "Classic Adidas Originals collection featuring retro designs",
+                "start_date": "2025-09-01T00:00:00Z",
+                "end_date": "2025-12-31T23:59:59Z",
+                "destination_url": "https://adidas.de/originals-retro",
+                "thumbnail_url": "https://assets.adidas.com/de/originals-thumb.jpg"
+            },
+            # Adidas USA campaigns
+            {
+                "name": "Adidas Back to School 2025",
+                "advertiser_name": "Adidas USA",
+                "payout_amount": 20.00,
+                "payout_currency": "USD",
+                "status": "active",
+                "description": "Student-focused athletic wear and sneakers for back-to-school season",
+                "start_date": "2025-07-15T00:00:00Z",
+                "end_date": "2025-09-30T23:59:59Z",
+                "destination_url": "https://adidas.com/us/back-to-school",
+                "thumbnail_url": "https://assets.adidas.com/us/back-to-school-thumb.jpg"
+            },
+            {
+                "name": "Adidas NBA Partnership Collection",
+                "advertiser_name": "Adidas USA",
                 "payout_amount": 25.00,
+                "payout_currency": "USD",
+                "status": "active",
+                "description": "Official NBA team jerseys and basketball gear",
+                "start_date": "2025-10-01T00:00:00Z",
+                "end_date": "2026-04-30T23:59:59Z",
+                "destination_url": "https://adidas.com/us/nba-collection",
+                "thumbnail_url": "https://assets.adidas.com/us/nba-thumb.jpg"
+            },
+            # Adidas France campaigns
+            {
+                "name": "Adidas Paris Fashion Week Collection",
+                "advertiser_name": "Adidas France",
+                "payout_amount": 30.00,
+                "payout_currency": "EUR",
+                "status": "active",
+                "description": "Limited edition streetwear inspired by Paris Fashion Week",
+                "start_date": "2025-09-15T00:00:00Z",
+                "end_date": "2025-11-30T23:59:59Z",
+                "destination_url": "https://adidas.fr/paris-fashion-week",
+                "thumbnail_url": "https://assets.adidas.com/fr/fashion-week-thumb.jpg"
+            },
+            {
+                "name": "Adidas Running Marathon Training",
+                "advertiser_name": "Adidas France",
+                "payout_amount": 16.00,
+                "payout_currency": "EUR",
+                "status": "active",
+                "description": "Professional running gear for marathon training and competitions",
+                "start_date": "2025-08-01T00:00:00Z",
+                "end_date": "2026-05-31T23:59:59Z",
+                "destination_url": "https://adidas.fr/running-marathon",
+                "thumbnail_url": "https://assets.adidas.com/fr/running-thumb.jpg"
+            },
+            # Dyson UK campaigns
+            {
+                "name": "Dyson V15 Detect Launch",
+                "advertiser_name": "Dyson UK",
+                "payout_amount": 45.00,
                 "payout_currency": "GBP",
                 "status": "active",
-                "description": "Premium home appliances for holiday gifting",
-                "start_date": "2025-11-15T00:00:00Z",
+                "description": "Latest cordless vacuum with laser dust detection technology",
+                "start_date": "2025-09-01T00:00:00Z",
+                "end_date": "2025-12-31T23:59:59Z",
+                "destination_url": "https://dyson.co.uk/v15-detect",
+                "thumbnail_url": "https://assets.dyson.com/uk/v15-detect-thumb.jpg"
+            },
+            {
+                "name": "Dyson Airwrap Holiday Gift Set",
+                "advertiser_name": "Dyson UK",
+                "payout_amount": 55.00,
+                "payout_currency": "GBP",
+                "status": "active",
+                "description": "Premium hair styling tool perfect for holiday gifting",
+                "start_date": "2025-11-01T00:00:00Z",
                 "end_date": "2025-12-25T23:59:59Z",
-                "destination_url": "https://dyson.com/christmas-gifts",
-                "thumbnail_url": "https://assets.dyson.com/christmas-thumb.jpg"
+                "destination_url": "https://dyson.co.uk/airwrap-holiday",
+                "thumbnail_url": "https://assets.dyson.com/uk/airwrap-thumb.jpg"
+            },
+            # Dyson USA campaigns
+            {
+                "name": "Dyson Black Friday Mega Sale",
+                "advertiser_name": "Dyson USA",
+                "payout_amount": 50.00,
+                "payout_currency": "USD",
+                "status": "active",
+                "description": "Exclusive Black Friday deals on all Dyson products",
+                "start_date": "2025-11-20T00:00:00Z",
+                "end_date": "2025-11-30T23:59:59Z",
+                "destination_url": "https://dyson.com/us/black-friday",
+                "thumbnail_url": "https://assets.dyson.com/us/black-friday-thumb.jpg"
+            },
+            {
+                "name": "Dyson Pure Cool Air Purifier Campaign",
+                "advertiser_name": "Dyson USA",
+                "payout_amount": 40.00,
+                "payout_currency": "USD",
+                "status": "active",
+                "description": "Advanced air purification for healthier indoor environments",
+                "start_date": "2025-08-01T00:00:00Z",
+                "end_date": "2026-02-28T23:59:59Z",
+                "destination_url": "https://dyson.com/us/air-purifiers",
+                "thumbnail_url": "https://assets.dyson.com/us/pure-cool-thumb.jpg"
+            },
+            # Dyson Japan campaigns
+            {
+                "name": "Dyson Supersonic Hair Dryer Japan Exclusive",
+                "advertiser_name": "Dyson Japan",
+                "payout_amount": 3500.00,
+                "payout_currency": "JPY",
+                "status": "active",
+                "description": "Japan-exclusive colors and attachments for Dyson Supersonic",
+                "start_date": "2025-10-01T00:00:00Z",
+                "end_date": "2025-12-31T23:59:59Z",
+                "destination_url": "https://dyson.co.jp/supersonic-exclusive",
+                "thumbnail_url": "https://assets.dyson.com/jp/supersonic-thumb.jpg"
+            },
+            {
+                "name": "Dyson Spring Cleaning Festival",
+                "advertiser_name": "Dyson Japan",
+                "payout_amount": 4200.00,
+                "payout_currency": "JPY",
+                "status": "active",
+                "description": "Complete home cleaning solutions for Japanese spring cleaning tradition",
+                "start_date": "2025-03-01T00:00:00Z",
+                "end_date": "2025-05-31T23:59:59Z",
+                "destination_url": "https://dyson.co.jp/spring-cleaning",
+                "thumbnail_url": "https://assets.dyson.com/jp/spring-cleaning-thumb.jpg"
             }
         ]
         

@@ -23,6 +23,20 @@ func NewAdvertiserHandler(as service.AdvertiserService, ps service.ProfileServic
 	}
 }
 
+// CreateAdvertiser creates a new advertiser
+// @Summary      Create a new advertiser
+// @Description  Creates a new advertiser with the given details
+// @Tags         advertisers
+// @Accept       json
+// @Produce      json
+// @Param        request  body      models.CreateAdvertiserRequest  true  "Advertiser details"
+// @Success      201      {object}  models.AdvertiserResponse       "Created advertiser"
+// @Failure      400      {object}  map[string]string               "Invalid request"
+// @Failure      401      {object}  map[string]string               "Unauthorized"
+// @Failure      403      {object}  map[string]string               "Forbidden"
+// @Failure      500      {object}  map[string]string               "Internal server error"
+// @Security     BearerAuth
+// @Router       /advertisers [post]
 func (h *AdvertiserHandler) CreateAdvertiser(c *gin.Context) {
 	var req models.CreateAdvertiserRequest
 	if err := c.ShouldBindJSON(&req); err != nil {
@@ -57,6 +71,20 @@ func (h *AdvertiserHandler) CreateAdvertiser(c *gin.Context) {
 	c.JSON(http.StatusCreated, models.ToAdvertiserResponse(createdAdvertiser))
 }
 
+// GetAdvertiser retrieves an advertiser by ID
+// @Summary      Get advertiser by ID
+// @Description  Retrieves an advertiser by its ID
+// @Tags         advertisers
+// @Accept       json
+// @Produce      json
+// @Param        id   path      int                         true  "Advertiser ID"
+// @Success      200  {object}  models.AdvertiserResponse   "Advertiser details"
+// @Failure      400  {object}  map[string]string           "Invalid advertiser ID"
+// @Failure      403  {object}  map[string]string           "Forbidden - User doesn't have permission"
+// @Failure      404  {object}  map[string]string           "Advertiser not found"
+// @Failure      500  {object}  map[string]string           "Internal server error"
+// @Security     BearerAuth
+// @Router       /advertisers/{id} [get]
 func (h *AdvertiserHandler) GetAdvertiser(c *gin.Context) {
 	id, err := strconv.ParseInt(c.Param("id"), 10, 64)
 	if err != nil {
@@ -115,6 +143,21 @@ func (h *AdvertiserHandler) GetAdvertiserWithEverflowData(c *gin.Context) {
 	c.JSON(http.StatusOK, models.ToAdvertiserWithEverflowResponse(data))
 }
 
+// UpdateAdvertiser updates an advertiser
+// @Summary      Update advertiser
+// @Description  Updates an advertiser with the given details
+// @Tags         advertisers
+// @Accept       json
+// @Produce      json
+// @Param        id       path      int                           true  "Advertiser ID"
+// @Param        request  body      models.UpdateAdvertiserRequest true  "Advertiser details"
+// @Success      200      {object}  models.AdvertiserResponse     "Updated advertiser"
+// @Failure      400      {object}  map[string]string             "Invalid request"
+// @Failure      403      {object}  map[string]string             "Forbidden - User doesn't have permission"
+// @Failure      404      {object}  map[string]string             "Advertiser not found"
+// @Failure      500      {object}  map[string]string             "Internal server error"
+// @Security     BearerAuth
+// @Router       /advertisers/{id} [put]
 func (h *AdvertiserHandler) UpdateAdvertiser(c *gin.Context) {
 	id, err := strconv.ParseInt(c.Param("id"), 10, 64)
 	if err != nil {
@@ -217,6 +260,20 @@ func (h *AdvertiserHandler) ListAdvertisers(c *gin.Context) {
 	})
 }
 
+// DeleteAdvertiser deletes an advertiser
+// @Summary      Delete advertiser
+// @Description  Deletes an advertiser by its ID
+// @Tags         advertisers
+// @Accept       json
+// @Produce      json
+// @Param        id   path      int                true  "Advertiser ID"
+// @Success      204  {object}  nil                "No content"
+// @Failure      400  {object}  map[string]string  "Invalid advertiser ID"
+// @Failure      403  {object}  map[string]string  "Forbidden - User doesn't have permission"
+// @Failure      404  {object}  map[string]string  "Advertiser not found"
+// @Failure      500  {object}  map[string]string  "Internal server error"
+// @Security     BearerAuth
+// @Router       /advertisers/{id} [delete]
 func (h *AdvertiserHandler) DeleteAdvertiser(c *gin.Context) {
 	id, err := strconv.ParseInt(c.Param("id"), 10, 64)
 	if err != nil {
@@ -361,6 +418,20 @@ func (h *AdvertiserHandler) checkAdvertiserAccess(c *gin.Context, advertiserOrgI
 }
 
 // ListAdvertisersByOrganization retrieves a list of advertisers for an organization
+// @Summary      List advertisers by organization
+// @Description  Retrieves a list of advertisers for an organization with pagination
+// @Tags         advertisers
+// @Accept       json
+// @Produce      json
+// @Param        id  path      int                   true   "Organization ID"
+// @Param        page           query     int                   false  "Page number (default: 1)"
+// @Param        pageSize       query     int                   false  "Page size (default: 10)"
+// @Success      200            {array}   domain.Advertiser     "List of advertisers"
+// @Failure      400            {object}  map[string]string     "Invalid organization ID"
+// @Failure      403            {object}  map[string]string     "Forbidden - User doesn't have permission"
+// @Failure      500            {object}  map[string]string     "Internal server error"
+// @Security     BearerAuth
+// @Router       /organizations/{id}/advertisers [get]
 func (h *AdvertiserHandler) ListAdvertisersByOrganization(c *gin.Context) {
 	orgIDStr := c.Param("id")
 	orgID, err := strconv.ParseInt(orgIDStr, 10, 64)
@@ -401,7 +472,18 @@ func (h *AdvertiserHandler) ListAdvertisersByOrganization(c *gin.Context) {
 	c.JSON(http.StatusOK, advertisers)
 }
 
-// CreateAdvertiserProviderMapping creates a new advertiser provider mapping
+// CreateProviderMapping creates a new advertiser provider mapping
+// @Summary      Create advertiser provider mapping
+// @Description  Creates a new advertiser provider mapping
+// @Tags         advertiser-provider-mappings
+// @Accept       json
+// @Produce      json
+// @Param        request  body      models.CreateAdvertiserProviderMappingRequest  true  "Provider mapping details"
+// @Success      201      {object}  models.CreateAdvertiserProviderMappingResponse "Created provider mapping"
+// @Failure      400      {object}  map[string]string                              "Invalid request"
+// @Failure      500      {object}  map[string]string                              "Internal server error"
+// @Security     BearerAuth
+// @Router       /advertiser-provider-mappings [post]
 func (h *AdvertiserHandler) CreateProviderMapping(c *gin.Context) {
 	var req models.CreateAdvertiserProviderMappingRequest
 	if err := c.ShouldBindJSON(&req); err != nil {
@@ -420,7 +502,20 @@ func (h *AdvertiserHandler) CreateProviderMapping(c *gin.Context) {
 	})
 }
 
-// GetAdvertiserProviderMapping retrieves an advertiser provider mapping
+// GetProviderMapping retrieves an advertiser provider mapping
+// @Summary      Get advertiser provider mapping
+// @Description  Retrieves an advertiser provider mapping by advertiser ID and provider type
+// @Tags         advertisers
+// @Accept       json
+// @Produce      json
+// @Param        id           path      int                                         true  "Advertiser ID"
+// @Param        providerType path      string                                      true  "Provider type"
+// @Success      200          {object}  models.GetAdvertiserProviderMappingResponse "Provider mapping details"
+// @Failure      400          {object}  map[string]string                           "Invalid request"
+// @Failure      404          {object}  map[string]string                           "Provider mapping not found"
+// @Failure      500          {object}  map[string]string                           "Internal server error"
+// @Security     BearerAuth
+// @Router       /advertisers/{id}/provider-mappings/{providerType} [get]
 func (h *AdvertiserHandler) GetProviderMapping(c *gin.Context) {
 	advertiserIDStr := c.Param("id")
 	advertiserID, err := strconv.ParseInt(advertiserIDStr, 10, 64)
@@ -451,7 +546,19 @@ func (h *AdvertiserHandler) GetProviderMapping(c *gin.Context) {
 	})
 }
 
-// UpdateAdvertiserProviderMapping updates an advertiser provider mapping
+// UpdateProviderMapping updates an advertiser provider mapping
+// @Summary      Update advertiser provider mapping
+// @Description  Updates an advertiser provider mapping by mapping ID
+// @Tags         advertiser-provider-mappings
+// @Accept       json
+// @Produce      json
+// @Param        mappingId  path      int                                           true  "Mapping ID"
+// @Param        request    body      models.UpdateAdvertiserProviderMappingRequest true  "Provider mapping details"
+// @Success      200        {object}  map[string]string                             "Update successful"
+// @Failure      400        {object}  map[string]string                             "Invalid request"
+// @Failure      500        {object}  map[string]string                             "Internal server error"
+// @Security     BearerAuth
+// @Router       /advertiser-provider-mappings/{mappingId} [put]
 func (h *AdvertiserHandler) UpdateProviderMapping(c *gin.Context) {
 	mappingIDStr := c.Param("mappingId")
 	mappingID, err := strconv.ParseInt(mappingIDStr, 10, 64)
@@ -476,7 +583,18 @@ func (h *AdvertiserHandler) UpdateProviderMapping(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "Provider mapping updated successfully"})
 }
 
-// DeleteAdvertiserProviderMapping deletes an advertiser provider mapping
+// DeleteProviderMapping deletes an advertiser provider mapping
+// @Summary      Delete advertiser provider mapping
+// @Description  Deletes an advertiser provider mapping by mapping ID
+// @Tags         advertiser-provider-mappings
+// @Accept       json
+// @Produce      json
+// @Param        mappingId  path      int                true  "Mapping ID"
+// @Success      204        {object}  nil                "No content"
+// @Failure      400        {object}  map[string]string  "Invalid mapping ID"
+// @Failure      500        {object}  map[string]string  "Internal server error"
+// @Security     BearerAuth
+// @Router       /advertiser-provider-mappings/{mappingId} [delete]
 func (h *AdvertiserHandler) DeleteProviderMapping(c *gin.Context) {
 	mappingIDStr := c.Param("mappingId")
 	mappingID, err := strconv.ParseInt(mappingIDStr, 10, 64)
@@ -495,6 +613,19 @@ func (h *AdvertiserHandler) DeleteProviderMapping(c *gin.Context) {
 }
 
 // SyncAdvertiserToEverflow syncs an advertiser to Everflow
+// @Summary      Sync advertiser to Everflow
+// @Description  Syncs an advertiser to the Everflow platform
+// @Tags         advertisers
+// @Accept       json
+// @Produce      json
+// @Param        id   path      int                true  "Advertiser ID"
+// @Success      200  {object}  map[string]string  "Sync initiated successfully"
+// @Failure      400  {object}  map[string]string  "Invalid advertiser ID"
+// @Failure      403  {object}  map[string]string  "Forbidden - User doesn't have permission"
+// @Failure      404  {object}  map[string]string  "Advertiser not found"
+// @Failure      500  {object}  map[string]string  "Internal server error"
+// @Security     BearerAuth
+// @Router       /advertisers/{id}/sync-to-everflow [post]
 func (h *AdvertiserHandler) SyncAdvertiserToEverflow(c *gin.Context) {
 	advertiserIDStr := c.Param("id")
 	advertiserID, err := strconv.ParseInt(advertiserIDStr, 10, 64)
@@ -534,6 +665,19 @@ func (h *AdvertiserHandler) SyncAdvertiserToEverflow(c *gin.Context) {
 }
 
 // SyncAdvertiserFromEverflow syncs an advertiser from Everflow
+// @Summary      Sync advertiser from Everflow
+// @Description  Syncs an advertiser from the Everflow platform
+// @Tags         advertisers
+// @Accept       json
+// @Produce      json
+// @Param        id   path      int                true  "Advertiser ID"
+// @Success      200  {object}  map[string]string  "Sync completed successfully"
+// @Failure      400  {object}  map[string]string  "Invalid advertiser ID"
+// @Failure      403  {object}  map[string]string  "Forbidden - User doesn't have permission"
+// @Failure      404  {object}  map[string]string  "Advertiser not found"
+// @Failure      500  {object}  map[string]string  "Internal server error"
+// @Security     BearerAuth
+// @Router       /advertisers/{id}/sync-from-everflow [post]
 func (h *AdvertiserHandler) SyncAdvertiserFromEverflow(c *gin.Context) {
 	advertiserIDStr := c.Param("id")
 	advertiserID, err := strconv.ParseInt(advertiserIDStr, 10, 64)
@@ -573,6 +717,19 @@ func (h *AdvertiserHandler) SyncAdvertiserFromEverflow(c *gin.Context) {
 }
 
 // CompareAdvertiserWithEverflow compares an advertiser with Everflow data
+// @Summary      Compare advertiser with Everflow
+// @Description  Compares an advertiser with its Everflow counterpart and returns discrepancies
+// @Tags         advertisers
+// @Accept       json
+// @Produce      json
+// @Param        id   path      int                true  "Advertiser ID"
+// @Success      200  {object}  map[string]interface{}  "Comparison results with discrepancies"
+// @Failure      400  {object}  map[string]string       "Invalid advertiser ID"
+// @Failure      403  {object}  map[string]string       "Forbidden - User doesn't have permission"
+// @Failure      404  {object}  map[string]string       "Advertiser not found"
+// @Failure      500  {object}  map[string]string       "Internal server error"
+// @Security     BearerAuth
+// @Router       /advertisers/{id}/compare-with-everflow [get]
 func (h *AdvertiserHandler) CompareAdvertiserWithEverflow(c *gin.Context) {
 	advertiserIDStr := c.Param("id")
 	advertiserID, err := strconv.ParseInt(advertiserIDStr, 10, 64)

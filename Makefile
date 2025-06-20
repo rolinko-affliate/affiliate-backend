@@ -12,7 +12,8 @@ GOGET=$(GOCMD) get
 BINARY_NAME=affiliate-backend
 API_BINARY=api
 MIGRATE_BINARY=migrate
-VERSION=$(shell git describe --tags --always --dirty 2>/dev/null || echo "dev")
+VERSION=$(shell cat VERSION 2>/dev/null || echo "dev")
+IMAGE_NAME=europe-west1-docker.pkg.dev/jinko-test/jinko-test-docker-repo/saas-app
 
 # Build the API application
 build:
@@ -112,11 +113,11 @@ migrate-create:
 # Docker commands
 # Build Docker image
 docker-build:
-	docker build -t affiliate-backend:$(VERSION) -t affiliate-backend:latest .
+	docker build -t $(IMAGE_NAME):$(VERSION) .
 
 # Push Docker image
 docker-push:
-	docker push affiliate-backend:$(VERSION)
+	docker push $(IMAGE_NAME):$(VERSION)
 
 # Run Docker Compose
 docker-run:

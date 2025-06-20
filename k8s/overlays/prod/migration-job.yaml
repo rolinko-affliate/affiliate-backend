@@ -1,0 +1,110 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: affiliate-backend-migration
+  namespace: saas-bff
+  labels:
+    app: affiliate-backend
+    component: migration
+    environment: prod
+spec:
+  ttlSecondsAfterFinished: 86400  # Keep job for 24 hours after completion
+  backoffLimit: 3  # Retry up to 3 times
+  template:
+    metadata:
+      labels:
+        app: affiliate-backend
+        component: migration
+        environment: prod
+    spec:
+      # Specify the Kubernetes service account to use
+      serviceAccountName: cloud-sql-sa
+      
+      # Add a shared volume for debugging
+      volumes:
+      - name: shared-data
+        emptyDir: {}
+      
+      containers:
+      - name: migration
+        image: europe-west1-docker.pkg.dev/jinko-test/jinko-test-docker-repo/saas-app:1.0.0
+        command: ["/bin/sh"]
+        args:
+          - "-c"
+          - |
+            # Wait for cloud-sql-proxy to be ready
+            until nc -z 127.0.0.1 5432; do
+              echo "Waiting for cloud-sql-proxy to be ready..."
+              sleep 2
+            done
+            # Run migrations (adjust command based on your migration tool)
+            echo "Running database migrations..."
+            # Example: ./migrate up
+            # Or: go run cmd/migrate/main.go up
+            # Or: your migration command here
+            echo "Migration completed"
+        env:
+        - name: DATABASE_HOST
+          value: "127.0.0.1"
+        - name: DATABASE_PORT
+          value: "5432"
+        - name: DATABASE_USER
+          valueFrom:
+            secretKeyRef:
+              name: saas-bff-db-credentials
+              key: db_user
+        - name: DATABASE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: saas-bff-db-credentials
+              key: db_password
+        - name: DATABASE_NAME
+          valueFrom:
+            secretKeyRef:
+              name: saas-bff-db-credentials
+              key: db_name
+        - name: DATABASE_SSLMODE
+          value: "require"
+        - name: LOG_LEVEL
+          value: "info"
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "256Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+        volumeMounts:
+        - name: shared-data
+          mountPath: /shared
+      
+      # Cloud SQL Proxy sidecar container
+      - name: cloud-sql-proxy
+        image: gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.1.0
+        args:
+          - "--structured-logs"
+          - "--address=0.0.0.0"
+          - "--port=5432"
+          - "--auto-iam-authn"
+          - "--private-ip"
+          - "$(CONNECTION_NAME)"
+        env:
+        - name: CONNECTION_NAME
+          valueFrom:
+            secretKeyRef:
+              name: saas-bff-db-credentials
+              key: connection_name
+        resources:
+          requests:
+            cpu: "50m"
+            memory: "128Mi"
+          limits:
+            cpu: "200m"
+            memory: "256Mi"
+        securityContext:
+          runAsNonRoot: true
+        volumeMounts:
+        - name: shared-data
+          mountPath: /shared
+      
+      restartPolicy: OnFailure

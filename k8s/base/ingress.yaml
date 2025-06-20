@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: affiliate-backend
+  namespace: saas-bff
+  labels:
+    app: affiliate-backend
+spec:
+  rules:
+  - host: api.affiliate-backend.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: affiliate-backend
+            port:
+              name: http

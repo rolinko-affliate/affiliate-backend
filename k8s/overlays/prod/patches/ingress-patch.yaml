@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: affiliate-backend
+  namespace: saas-bff
+  annotations:
+    kubernetes.io/ingress.class: "gce"
+    # Static IP annotation for GKE
+    kubernetes.io/ingress.global-static-ip-name: "saas-bff-jinko-test-ip"
+    # Use GKE managed certificate
+    networking.gke.io/managed-certificates: "affiliate-backend-ssl-cert"
+    # Allow HTTP traffic (will be redirected to HTTPS by GCE)
+    kubernetes.io/ingress.allow-http: "true"
+    # Additional GCE-specific annotations
+    cloud.google.com/neg: '{"ingress": true}'
+    cloud.google.com/backend-config: '{"default": "affiliate-backend-backendconfig"}'
+    # Force HTTPS redirect
+    kubernetes.io/ingress.https-redirect: "true"
+spec:
+  ingressClassName: gce
+  defaultBackend:
+    service:
+      name: affiliate-backend
+      port:
+        name: http
+  rules:
+  - host: api.affiliate.rolinko.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: affiliate-backend
+            port:
+              name: http

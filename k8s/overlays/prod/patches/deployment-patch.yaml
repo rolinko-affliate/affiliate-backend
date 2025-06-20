@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: affiliate-backend
+  namespace: saas-bff
+  labels:
+    app: affiliate-backend
+spec:
+  replicas: 3
+  template:
+    spec:
+      serviceAccountName: cloud-sql-sa
+      containers:
+      - name: app
+        resources:
+          requests:
+            cpu: "200m"
+            memory: "512Mi"
+          limits:
+            cpu: "1000m"
+            memory: "1Gi"
+        env:
+        - name: LOG_LEVEL
+          value: "info"
+        - name: DATABASE_SSLMODE
+          value: "disable"

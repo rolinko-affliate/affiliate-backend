@@ -1,0 +1,44 @@
+apiVersion: compute.cnrm.cloud.google.com/v1beta1
+kind: ComputeSecurityPolicy
+metadata:
+  name: affiliate-backend-security-policy
+  namespace: saas-bff
+spec:
+  description: "Security policy for affiliate-backend application"
+  rules:
+  # Allow traffic from specific IP ranges (adjust as needed)
+  - action: "allow"
+    priority: 1000
+    match:
+      versionedExpr: "SRC_IPS_V1"
+      config:
+        srcIpRanges:
+        - "*"  # Allow all IPs - adjust for production
+    description: "Allow all traffic"
+  
+  # Rate limiting rule
+  - action: "rate_based_ban"
+    priority: 2000
+    match:
+      versionedExpr: "SRC_IPS_V1"
+      config:
+        srcIpRanges:
+        - "*"
+    rateLimitOptions:
+      conformAction: "allow"
+      exceedAction: "deny(429)"
+      enforceOnKey: "IP"
+      rateLimitThreshold:
+        count: 100
+        intervalSec: 60
+    description: "Rate limit: 100 requests per minute per IP"
+  
+  # Default rule - deny all other traffic
+  - action: "deny(403)"
+    priority: 2147483647
+    match:
+      versionedExpr: "SRC_IPS_V1"
+      config:
+        srcIpRanges:
+        - "*"
+    description: "Default deny rule"

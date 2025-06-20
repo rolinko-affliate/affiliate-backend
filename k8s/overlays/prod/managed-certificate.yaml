@@ -1,0 +1,8 @@
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: affiliate-backend-ssl-cert
+  namespace: saas-bff
+spec:
+  domains:
+  - api.affiliate.rolinko.com

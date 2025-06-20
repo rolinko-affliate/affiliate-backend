@@ -1,0 +1,32 @@
+apiVersion: cloud.google.com/v1
+kind: BackendConfig
+metadata:
+  name: affiliate-backend-backendconfig
+  namespace: saas-bff
+spec:
+  # Health check configuration
+  healthCheck:
+    checkIntervalSec: 10
+    timeoutSec: 5
+    healthyThreshold: 1
+    unhealthyThreshold: 3
+    type: HTTP
+    requestPath: /health
+    port: 8080
+  # Connection draining timeout
+  connectionDraining:
+    drainingTimeoutSec: 60
+  # Session affinity (optional)
+  sessionAffinity:
+    affinityType: "CLIENT_IP"
+    affinityCookieTtlSec: 3600
+  # Security policy (optional)
+  securityPolicy:
+    name: "affiliate-backend-security-policy"
+  # CDN configuration (optional)
+  cdn:
+    enabled: true
+    cachePolicy:
+      includeHost: true
+      includeProtocol: true
+      includeQueryString: false

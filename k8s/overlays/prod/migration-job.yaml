@@ -21,7 +21,7 @@ spec:
       volumes:
       - name: shared-data
         emptyDir: {}
-      
+      serviceAccountName: saas-bff-ksa
       containers:
       - name: migration
         image: europe-west1-docker.pkg.dev/jinko-test/jinko-test-docker-repo/saas-app:0.0.4

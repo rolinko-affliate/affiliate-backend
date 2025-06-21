@@ -34,17 +34,14 @@ spec:
               echo "Waiting for cloud-sql-proxy to be ready..."
               sleep 2
             done
-            # Run migrations (adjust command based on your migration tool)
-            echo "Running database migrations..."
-            # Example: ./migrate up
-            # Or: go run cmd/migrate/main.go up
-            # Or: your migration command here
+            ./migrate up
             echo "Migration completed"
         env:
-        - name: DATABASE_HOST
-          value: "127.0.0.1"
-        - name: DATABASE_PORT
-          value: "5432"
+        - name: PORT
+          value: "8080"
+        - name: HOST
+          value: "0.0.0.0"
+
         - name: DATABASE_USER
           valueFrom:
             secretKeyRef:
@@ -62,8 +59,19 @@ spec:
               key: db_name
         - name: DATABASE_SSL_MODE
           value: "disable"
-        - name: LOG_LEVEL
-          value: "info"
+
+        - name: SUPABASE_JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: saas-bff-secrets
+              key: supabase_jwt_secret
+        - name: ENCRYPTION_KEY
+          valueFrom:
+            secretKeyRef:
+              name: saas-bff-secrets
+              key: encryption_key
+        - name: MOCK_MODE
+          value: "true"
         resources:
           requests:
             cpu: "100m"

@@ -1,5 +1,11 @@
 # Build stage
-FROM golang:1.23-alpine AS builder
+FROM --platform=$BUILDPLATFORM golang:1.23-alpine AS builder
+
+# Build arguments for cross-compilation
+ARG TARGETPLATFORM
+ARG BUILDPLATFORM
+ARG TARGETOS
+ARG TARGETARCH
 
 WORKDIR /app
 
@@ -13,8 +19,8 @@ RUN go mod download
 COPY . .
 
 # Build the application and migration tool
-RUN CGO_ENABLED=0 GOOS=linux go build -o affiliate-backend ./cmd/api && \
-    CGO_ENABLED=0 GOOS=linux go build -o migrate ./cmd/migrate
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=${TARGETARCH} go build -o affiliate-backend ./cmd/api && \
+    CGO_ENABLED=0 GOOS=linux GOARCH=${TARGETARCH} go build -o migrate ./cmd/migrate
 
 # Final stage
 FROM alpine:latest

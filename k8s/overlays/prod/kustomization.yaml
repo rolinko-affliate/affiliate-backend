@@ -9,7 +9,6 @@ resources:
 - cluster-issuer.yaml
 - backend-config.yaml
 - managed-certificate.yaml
-- security-policy.yaml
 
 patches:
 - path: patches/deployment-patch.yaml
@@ -17,4 +16,4 @@ patches:
 
 images:
 - name: europe-west1-docker.pkg.dev/jinko-test/jinko-test-docker-repo/saas-app
-  newTag: 1.0.0
+  newTag: 0.0.4

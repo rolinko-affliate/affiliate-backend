@@ -111,9 +111,13 @@ migrate-create:
 	migrate create -ext sql -dir migrations -seq $(NAME)
 
 # Docker commands
-# Build Docker image
+# Build Docker image for linux/amd64 (GKE compatible)
 docker-build:
-	docker build -t $(IMAGE_NAME):$(VERSION) .
+	docker build --platform linux/amd64 -t $(IMAGE_NAME):$(VERSION) .
+
+# Build multi-platform Docker image (recommended for production)
+docker-build-multi:
+	docker buildx build --platform linux/amd64,linux/arm64 -t $(IMAGE_NAME):$(VERSION) --push .
 
 # Push Docker image
 docker-push:
@@ -160,7 +164,8 @@ help:
 	@echo "  make migrate-version    - Show current database version"
 	@echo "  make migrate-status     - Show detailed migration status"
 	@echo "  make migrate-create     - Generate a new migration file"
-	@echo "  make docker-build       - Build Docker image"
+	@echo "  make docker-build       - Build Docker image for linux/amd64"
+	@echo "  make docker-build-multi - Build multi-platform Docker image and push"
 	@echo "  make docker-push        - Push Docker image"
 	@echo "  make docker-run         - Run Docker Compose"
 	@echo "  make docker-stop        - Stop Docker Compose"

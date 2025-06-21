@@ -17,9 +17,6 @@ spec:
         component: migration
         environment: prod
     spec:
-      # Specify the Kubernetes service account to use
-      serviceAccountName: cloud-sql-sa
-      
       # Add a shared volume for debugging
       volumes:
       - name: shared-data
@@ -27,7 +24,7 @@ spec:
       
       containers:
       - name: migration
-        image: europe-west1-docker.pkg.dev/jinko-test/jinko-test-docker-repo/saas-app:1.0.0
+        image: europe-west1-docker.pkg.dev/jinko-test/jinko-test-docker-repo/saas-app:0.0.4
         command: ["/bin/sh"]
         args:
           - "-c"
@@ -63,8 +60,8 @@ spec:
             secretKeyRef:
               name: saas-bff-db-credentials
               key: db_name
-        - name: DATABASE_SSLMODE
-          value: "require"
+        - name: DATABASE_SSL_MODE
+          value: "disable"
         - name: LOG_LEVEL
           value: "info"
         resources:

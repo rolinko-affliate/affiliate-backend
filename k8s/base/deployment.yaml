@@ -17,9 +17,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: europe-west1-docker.pkg.dev/jinko-test/jinko-test-docker-repo/saas-app:0.0.1
-        args:
-          - "--mock-mode"
+        image: europe-west1-docker.pkg.dev/jinko-test/jinko-test-docker-repo/saas-app:0.0.4
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -29,10 +27,7 @@ spec:
           value: "8080"
         - name: HOST
           value: "0.0.0.0"
-        - name: DATABASE_HOST
-          value: "127.0.0.1"
-        - name: DATABASE_PORT
-          value: "5432"
+
         - name: DATABASE_USER
           valueFrom:
             secretKeyRef:
@@ -48,30 +43,22 @@ spec:
             secretKeyRef:
               name: saas-bff-db-credentials
               key: db_name
-        - name: DATABASE_SSLMODE
+        - name: DATABASE_SSL_MODE
           value: "disable"
-        - name: LOG_LEVEL
-          value: "info"
-        - name: SUPABASE_URL
+
+        - name: SUPABASE_JWT_SECRET
           valueFrom:
             secretKeyRef:
               name: saas-bff-secrets
-              key: supabase_url
-        - name: SUPABASE_ANON_KEY
+              key: supabase_jwt_secret
+        - name: ENCRYPTION_KEY
           valueFrom:
             secretKeyRef:
               name: saas-bff-secrets
-              key: supabase_anon_key
-        - name: SUPABASE_SERVICE_ROLE_KEY
-          valueFrom:
-            secretKeyRef:
-              name: saas-bff-secrets
-              key: supabase_service_role_key
-        - name: JWT_SECRET
-          valueFrom:
-            secretKeyRef:
-              name: saas-bff-secrets
-              key: jwt_secret
+              key: encryption_key
+        - name: MOCK_MODE
+          value: "true"
+
         readinessProbe:
           httpGet:
             path: /health

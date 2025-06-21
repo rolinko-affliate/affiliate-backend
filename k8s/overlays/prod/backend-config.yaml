@@ -20,9 +20,9 @@ spec:
   sessionAffinity:
     affinityType: "CLIENT_IP"
     affinityCookieTtlSec: 3600
-  # Security policy (optional)
-  securityPolicy:
-    name: "affiliate-backend-security-policy"
+  # Security policy (optional) - disabled until Config Connector is available
+  # securityPolicy:
+  #   name: "affiliate-backend-security-policy"
   # CDN configuration (optional)
   cdn:
     enabled: true

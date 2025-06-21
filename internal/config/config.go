@@ -9,6 +9,14 @@ import (
 type Config struct {
 	Port              string `mapstructure:"PORT"`
 	DatabaseURL       string `mapstructure:"DATABASE_URL"`
+	
+	DatabaseHost	   string `mapstructure:"DATABASE_HOST"`
+	DatabasePort        string `mapstructure:"DATABASE_PORT"`
+	DatabaseName		string `mapstructure:"DATABASE_NAME"`
+	DatabaseUser	   string `mapstructure:"DATABASE_USER"`
+	DatabasePassword   string `mapstructure:"DATABASE_PASSWORD"`
+	DatabaseSSLMode    string `mapstructure:"DATABASE_SSL_MODE"` // e.g. "disable", "require", "verify-ca", "verify-full"
+
 	SupabaseJWTSecret string `mapstructure:"SUPABASE_JWT_SECRET"`
 	// Key for encrypting/decrypting sensitive data like Everflow API keys
 	EncryptionKey string `mapstructure:"ENCRYPTION_KEY"` // 32-byte AES key, base64 encoded
@@ -23,13 +31,25 @@ func LoadConfig() {
 	viper.AddConfigPath(".")      // Look for config in current directory
 	viper.SetConfigName(".env")   // Name of config file (without extension)
 	viper.SetConfigType("env")    // Type of config file
-	viper.AutomaticEnv()          // Read in environment variables that match
 
 	// Set defaults (optional)
 	viper.SetDefault("PORT", "8080")
 	viper.SetDefault("ENVIRONMENT", "production")
 	viper.SetDefault("DEBUG_MODE", false)
 	viper.SetDefault("MOCK_MODE", false)
+
+	viper.SetDefault("DATABASE_SSL_MODE", "disable") // Default to no SSL for local dev
+	viper.SetDefault("DATABASE_HOST", "localhost")
+	viper.SetDefault("DATABASE_PORT", "5432")
+	viper.SetDefault("DATABASE_NAME", "myapp")
+	viper.SetDefault("DATABASE_USER", "postgres")
+	viper.SetDefault("DATABASE_PASSWORD", "password") // Default password, should be overridden
+	
+	viper.SetDefault("SUPABASE_JWT_SECRET", "") // Default password, should be overridden
+	viper.SetDefault("ENCRYPTION_KEY", "") // Default password, should be overridden
+	viper.SetDefault("MockMode", false)
+
+	viper.AutomaticEnv()          // Read in environment variables that match
 
 	if err := viper.ReadInConfig(); err != nil {
 		if _, ok := err.(viper.ConfigFileNotFoundError); ok {
@@ -43,9 +63,19 @@ func LoadConfig() {
 		log.Fatalf("Unable to decode into struct: %v", err)
 	}
 
+	log.Printf("Loaded configuration: %+v", AppConfig)
+
 	// Basic validation
 	if AppConfig.DatabaseURL == "" {
-		log.Fatal("DATABASE_URL must be set")
+		log.Println("DATABASE_URL not set, constructing from individual components")
+		// if DATABASE_URL is not set, construct it from individual components likepostgres://postgres:postgres@localhost:5432/affiliate_platform?sslmode=disable
+		AppConfig.DatabaseURL = "postgres://" +
+			AppConfig.DatabaseUser + ":" +
+			AppConfig.DatabasePassword + "@" +
+			AppConfig.DatabaseHost + ":" +
+			AppConfig.DatabasePort + "/" +
+			AppConfig.DatabaseName + "?sslmode=" +
+			AppConfig.DatabaseSSLMode
 	}
 	if AppConfig.SupabaseJWTSecret == "" {
 		log.Fatal("SUPABASE_JWT_SECRET must be set")

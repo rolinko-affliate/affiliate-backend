@@ -1,3 +1,7 @@
-# Python dependencies for test account creation scripts
+# Python dependencies for scripts
 requests>=2.25.0
 urllib3>=1.26.0
+
+# Dependencies for analytics data push script
+aiohttp>=3.8.0
+aiofiles>=0.8.0

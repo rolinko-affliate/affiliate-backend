@@ -191,21 +191,25 @@ func (h *AnalyticsHandler) CreateAdvertiser(c *gin.Context) {
 		return
 	}
 
-	// Convert data to JSON string for storage
-	dataJSON, err := json.Marshal(req.Data)
-	if err != nil {
+	// Create advertiser object and extract fields from data
+	advertiser := &domain.AnalyticsAdvertiser{
+		Domain: req.Domain,
+	}
+
+	// Extract and store individual fields as JSON strings
+	if err := h.extractAdvertiserFields(advertiser, req.Data); err != nil {
 		c.JSON(http.StatusBadRequest, ErrorResponse{
-			Error:   "Invalid data format",
+			Error:   "Failed to process advertiser data",
 			Details: err.Error(),
 		})
 		return
 	}
 
-	// Create advertiser object
-	dataStr := string(dataJSON)
-	advertiser := &domain.AnalyticsAdvertiser{
-		Domain:         req.Domain,
-		AdditionalData: &dataStr,
+	// Store remaining data in AdditionalData
+	if remainingData, err := h.extractRemainingAdvertiserData(req.Data); err == nil && len(remainingData) > 0 {
+		dataJSON, _ := json.Marshal(remainingData)
+		dataStr := string(dataJSON)
+		advertiser.AdditionalData = &dataStr
 	}
 
 	// Create via service
@@ -217,7 +221,10 @@ func (h *AnalyticsHandler) CreateAdvertiser(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusCreated, advertiser)
+	c.JSON(http.StatusCreated, gin.H{
+		"message": "Advertiser created successfully",
+		"data":    advertiser,
+	})
 }
 
 // CreatePublisherRequest represents the request body for creating a publisher
@@ -247,21 +254,25 @@ func (h *AnalyticsHandler) CreatePublisher(c *gin.Context) {
 		return
 	}
 
-	// Convert data to JSON string for storage
-	dataJSON, err := json.Marshal(req.Data)
-	if err != nil {
+	// Create publisher object and extract fields from data
+	publisher := &domain.AnalyticsPublisher{
+		Domain: req.Domain,
+	}
+
+	// Extract and store individual fields as JSON strings
+	if err := h.extractPublisherFields(publisher, req.Data); err != nil {
 		c.JSON(http.StatusBadRequest, ErrorResponse{
-			Error:   "Invalid data format",
+			Error:   "Failed to process publisher data",
 			Details: err.Error(),
 		})
 		return
 	}
 
-	// Create publisher object
-	dataStr := string(dataJSON)
-	publisher := &domain.AnalyticsPublisher{
-		Domain:         req.Domain,
-		AdditionalData: &dataStr,
+	// Store remaining data in AdditionalData
+	if remainingData, err := h.extractRemainingPublisherData(req.Data); err == nil && len(remainingData) > 0 {
+		dataJSON, _ := json.Marshal(remainingData)
+		dataStr := string(dataJSON)
+		publisher.AdditionalData = &dataStr
 	}
 
 	// Create via service
@@ -273,5 +284,172 @@ func (h *AnalyticsHandler) CreatePublisher(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusCreated, publisher)
+	c.JSON(http.StatusCreated, gin.H{
+		"message": "Publisher created successfully",
+		"data":    publisher,
+	})
+}
+
+// Helper functions to extract and process analytics data fields
+
+// extractAdvertiserFields extracts known fields from the data map and stores them in the advertiser object
+func (h *AnalyticsHandler) extractAdvertiserFields(advertiser *domain.AnalyticsAdvertiser, data map[string]interface{}) error {
+	// Extract metadata fields
+	if metaData, ok := data["metaData"].(map[string]interface{}); ok {
+		if desc, ok := metaData["description"].(string); ok {
+			advertiser.Description = &desc
+		}
+		if favicon, ok := metaData["faviconImageUrl"].(string); ok {
+			advertiser.FaviconImageURL = &favicon
+		}
+		if screenshot, ok := metaData["screenshotImageUrl"].(string); ok {
+			advertiser.ScreenshotImageURL = &screenshot
+		}
+	}
+
+	// Extract and store JSON fields
+	jsonFields := map[string]**string{
+		"affiliateNetworks":   &advertiser.AffiliateNetworks,
+		"contactEmails":       &advertiser.ContactEmails,
+		"keywords":            &advertiser.Keywords,
+		"verticals":           &advertiser.Verticals,
+		"socialMedia":         &advertiser.SocialMedia,
+		"partnerInformation":  &advertiser.PartnerInformation,
+		"relatedAdvertisers":  &advertiser.RelatedAdvertisers,
+		"backlinks":           &advertiser.Backlinks,
+	}
+
+	for fieldName, fieldPtr := range jsonFields {
+		if fieldData, exists := data[fieldName]; exists {
+			if jsonBytes, err := json.Marshal(fieldData); err == nil {
+				jsonStr := string(jsonBytes)
+				*fieldPtr = &jsonStr
+			}
+		}
+	}
+
+	return nil
+}
+
+// extractPublisherFields extracts known fields from the data map and stores them in the publisher object
+func (h *AnalyticsHandler) extractPublisherFields(publisher *domain.AnalyticsPublisher, data map[string]interface{}) error {
+	// Extract metadata fields
+	if metaData, ok := data["metaData"].(map[string]interface{}); ok {
+		if desc, ok := metaData["description"].(string); ok {
+			publisher.Description = &desc
+		}
+		if favicon, ok := metaData["faviconImageUrl"].(string); ok {
+			publisher.FaviconImageURL = &favicon
+		}
+		if screenshot, ok := metaData["screenshotImageUrl"].(string); ok {
+			publisher.ScreenshotImageURL = &screenshot
+		}
+	}
+
+	// Extract simple fields
+	if known, ok := data["known"].(map[string]interface{}); ok {
+		if value, ok := known["value"].(bool); ok {
+			publisher.Known = value
+		}
+	}
+
+	if relevance, ok := data["relevance"].(float64); ok {
+		publisher.Relevance = relevance
+	}
+
+	if trafficScore, ok := data["trafficScore"].(float64); ok {
+		publisher.TrafficScore = trafficScore
+	}
+
+	if promotype, ok := data["promotype"].(map[string]interface{}); ok {
+		if value, ok := promotype["value"].(string); ok {
+			publisher.Promotype = &value
+		} else if promotype["value"] == nil {
+			// Handle null promotype
+			publisher.Promotype = nil
+		}
+	}
+
+	// Extract and store JSON fields
+	jsonFields := map[string]**string{
+		"affiliateNetworks":   &publisher.AffiliateNetworks,
+		"countryRankings":     &publisher.CountryRankings,
+		"keywords":            &publisher.Keywords,
+		"verticals":           &publisher.Verticals,
+		"verticalsV2":         &publisher.VerticalsV2,
+		"socialMedia":         &publisher.SocialMedia,
+		"partnerInformation":  &publisher.PartnerInformation,
+		"partners":            &publisher.Partners,
+		"relatedPublishers":   &publisher.RelatedPublishers,
+		"liveUrls":            &publisher.LiveURLs,
+	}
+
+	for fieldName, fieldPtr := range jsonFields {
+		if fieldData, exists := data[fieldName]; exists {
+			if jsonBytes, err := json.Marshal(fieldData); err == nil {
+				jsonStr := string(jsonBytes)
+				*fieldPtr = &jsonStr
+			}
+		}
+	}
+
+	return nil
+}
+
+// extractRemainingAdvertiserData extracts any remaining data that wasn't processed by extractAdvertiserFields
+func (h *AnalyticsHandler) extractRemainingAdvertiserData(data map[string]interface{}) (map[string]interface{}, error) {
+	// List of fields that are already processed
+	processedFields := map[string]bool{
+		"domain":               true,
+		"metaData":             true,
+		"affiliateNetworks":    true,
+		"contactEmails":        true,
+		"keywords":             true,
+		"verticals":            true,
+		"socialMedia":          true,
+		"partnerInformation":   true,
+		"relatedAdvertisers":   true,
+		"backlinks":            true,
+	}
+
+	remaining := make(map[string]interface{})
+	for key, value := range data {
+		if !processedFields[key] {
+			remaining[key] = value
+		}
+	}
+
+	return remaining, nil
+}
+
+// extractRemainingPublisherData extracts any remaining data that wasn't processed by extractPublisherFields
+func (h *AnalyticsHandler) extractRemainingPublisherData(data map[string]interface{}) (map[string]interface{}, error) {
+	// List of fields that are already processed
+	processedFields := map[string]bool{
+		"domain":               true,
+		"metaData":             true,
+		"known":                true,
+		"relevance":            true,
+		"trafficScore":         true,
+		"promotype":            true,
+		"affiliateNetworks":    true,
+		"countryRankings":      true,
+		"keywords":             true,
+		"verticals":            true,
+		"verticalsV2":          true,
+		"socialMedia":          true,
+		"partnerInformation":   true,
+		"partners":             true,
+		"relatedPublishers":    true,
+		"liveUrls":             true,
+	}
+
+	remaining := make(map[string]interface{})
+	for key, value := range data {
+		if !processedFields[key] {
+			remaining[key] = value
+		}
+	}
+
+	return remaining, nil
 }

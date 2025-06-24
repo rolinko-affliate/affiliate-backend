@@ -561,5 +561,5 @@ For support and questions:
 
 ---
 
-**Version**: 0.0.5  
+**Version**: 0.0.6
 **Last Updated**: 2025-06-24

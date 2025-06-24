@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: europe-west1-docker.pkg.dev/jinko-test/jinko-test-docker-repo/saas-app:0.0.5
+        image: europe-west1-docker.pkg.dev/jinko-test/jinko-test-docker-repo/saas-app:0.0.6
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

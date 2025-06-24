@@ -5,7 +5,6 @@ namePrefix: prod-
 
 resources:
 - ../../base
-- migration-job.yaml
 - cluster-issuer.yaml
 - backend-config.yaml
 - managed-certificate.yaml

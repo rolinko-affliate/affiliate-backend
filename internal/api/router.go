@@ -9,20 +9,20 @@ import (
 
 // RouterOptions contains dependencies for the router
 type RouterOptions struct {
-	ProfileHandler       *handlers.ProfileHandler
-	ProfileService       service.ProfileService
-	OrganizationHandler  *handlers.OrganizationHandler
-	AdvertiserHandler    *handlers.AdvertiserHandler
-	AffiliateHandler     *handlers.AffiliateHandler
-	CampaignHandler      *handlers.CampaignHandler
-	TrackingLinkHandler  *handlers.TrackingLinkHandler
-	AnalyticsHandler     *handlers.AnalyticsHandler
+	ProfileHandler      *handlers.ProfileHandler
+	ProfileService      service.ProfileService
+	OrganizationHandler *handlers.OrganizationHandler
+	AdvertiserHandler   *handlers.AdvertiserHandler
+	AffiliateHandler    *handlers.AffiliateHandler
+	CampaignHandler     *handlers.CampaignHandler
+	TrackingLinkHandler *handlers.TrackingLinkHandler
+	AnalyticsHandler    *handlers.AnalyticsHandler
 }
 
 // SetupRouter sets up the API router
 func SetupRouter(opts RouterOptions) *gin.Engine {
 	r := gin.Default() // Starts with Logger and Recovery middleware
-	
+
 	// Apply CORS middleware (will only allow CORS in development)
 	r.Use(middleware.CORSMiddleware())
 
@@ -33,7 +33,6 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 	public := r.Group("/api/v1/public")
 	{
 		public.POST("/webhooks/supabase/new-user", opts.ProfileHandler.HandleSupabaseNewUserWebhook)
-		
 
 	}
 
@@ -48,7 +47,7 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 
 	// --- Profile Routes ---
 	v1.GET("/users/me", opts.ProfileHandler.GetMyProfile)
-		
+
 	// Profile management routes
 	profiles := v1.Group("/profiles")
 	{
@@ -65,11 +64,11 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		organizations.POST("", rbacMW("Admin"), opts.OrganizationHandler.CreateOrganization)
 		organizations.PUT("/:id", rbacMW("Admin"), opts.OrganizationHandler.UpdateOrganization)
 		organizations.DELETE("/:id", rbacMW("Admin"), opts.OrganizationHandler.DeleteOrganization)
-		
+
 		// Read-only routes accessible by users who belong to organizations
 		organizations.GET("", rbacMW("Admin", "AdvertiserManager", "AffiliateManager", "User"), opts.OrganizationHandler.ListOrganizations)
 		organizations.GET("/:id", rbacMW("Admin", "AdvertiserManager", "AffiliateManager", "User"), opts.OrganizationHandler.GetOrganization)
-		
+
 		// Organization's resources - accessible by managers and admins
 		organizations.GET("/:id/advertisers", rbacMW("Admin", "AdvertiserManager"), opts.AdvertiserHandler.ListAdvertisersByOrganization)
 		organizations.GET("/:id/affiliates", rbacMW("Admin", "AffiliateManager"), opts.AffiliateHandler.ListAffiliatesByOrganization)
@@ -84,19 +83,19 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		advertisers.GET("/:id", opts.AdvertiserHandler.GetAdvertiser)
 		advertisers.PUT("/:id", opts.AdvertiserHandler.UpdateAdvertiser)
 		advertisers.DELETE("/:id", opts.AdvertiserHandler.DeleteAdvertiser)
-		
+
 		// Everflow sync endpoints
 		advertisers.POST("/:id/sync-to-everflow", opts.AdvertiserHandler.SyncAdvertiserToEverflow)
 		advertisers.POST("/:id/sync-from-everflow", opts.AdvertiserHandler.SyncAdvertiserFromEverflow)
 		advertisers.GET("/:id/compare-with-everflow", opts.AdvertiserHandler.CompareAdvertiserWithEverflow)
-		
+
 		// Advertiser's campaigns
 		advertisers.GET("/:id/campaigns", opts.CampaignHandler.ListCampaignsByAdvertiser)
-		
+
 		// Advertiser's provider mappings
 		advertisers.GET("/:id/provider-mappings/:providerType", opts.AdvertiserHandler.GetProviderMapping)
 	}
-	
+
 	// Advertiser provider mappings
 	advProviderMappings := v1.Group("/advertiser-provider-mappings")
 	advProviderMappings.Use(rbacMW("AdvertiserManager", "Admin"))
@@ -114,11 +113,11 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		affiliates.GET("/:id", opts.AffiliateHandler.GetAffiliate)
 		affiliates.PUT("/:id", opts.AffiliateHandler.UpdateAffiliate)
 		affiliates.DELETE("/:id", opts.AffiliateHandler.DeleteAffiliate)
-		
+
 		// Affiliate's provider mappings
 		affiliates.GET("/:id/provider-mappings/:providerType", opts.AffiliateHandler.GetAffiliateProviderMapping)
 	}
-	
+
 	// Affiliate provider mappings
 	affProviderMappings := v1.Group("/affiliate-provider-mappings")
 	affProviderMappings.Use(rbacMW("AffiliateManager", "Admin"))
@@ -149,7 +148,6 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 	organizations.POST("/:id/tracking-links/:link_id/regenerate", rbacMW("Admin", "AdvertiserManager"), opts.TrackingLinkHandler.RegenerateTrackingLink)
 	organizations.GET("/:id/tracking-links/:link_id/qr", rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.TrackingLinkHandler.GetTrackingLinkQR)
 
-
 	// Campaign-specific tracking link routes
 	campaigns.GET("/:id/tracking-links", rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.TrackingLinkHandler.ListTrackingLinksByCampaign)
 
@@ -162,11 +160,11 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 	{
 		// Autocompletion endpoint
 		analytics.GET("/autocomplete", opts.AnalyticsHandler.AutocompleteOrganizations)
-		
+
 		// Advertiser analytics endpoints
 		analytics.GET("/advertisers/:id", opts.AnalyticsHandler.GetAdvertiserByID)
 		analytics.POST("/advertisers", opts.AnalyticsHandler.CreateAdvertiser) // For future data management
-		
+
 		// Publisher/Affiliate analytics endpoints
 		analytics.GET("/affiliates/:id", opts.AnalyticsHandler.GetPublisherByID)
 		analytics.POST("/affiliates", opts.AnalyticsHandler.CreatePublisher) // For future data management

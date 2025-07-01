@@ -20,8 +20,9 @@ type AnalyticsService interface {
 	UpdateAdvertiser(ctx context.Context, advertiser *domain.AnalyticsAdvertiser) error
 	DeleteAdvertiser(ctx context.Context, id int64) error
 
-	// Publisher methods  
+	// Publisher methods
 	GetPublisherByID(ctx context.Context, id int64) (*domain.AnalyticsPublisherResponse, error)
+	AffiliatesSearch(ctx context.Context, Country string, page, pageSize int) ([]*domain.AnalyticsPublisher, error)
 	CreatePublisher(ctx context.Context, publisher *domain.AnalyticsPublisher) error
 	UpdatePublisher(ctx context.Context, publisher *domain.AnalyticsPublisher) error
 	DeletePublisher(ctx context.Context, id int64) error
@@ -30,6 +31,18 @@ type AnalyticsService interface {
 // analyticsService implements AnalyticsService
 type analyticsService struct {
 	analyticsRepo repository.AnalyticsRepository
+}
+
+func (s *analyticsService) AffiliatesSearch(ctx context.Context, Country string, page, pageSize int) ([]*domain.AnalyticsPublisher, error) {
+	if page < 1 {
+		page = 1
+	}
+	if pageSize < 1 {
+		pageSize = 10
+	}
+
+	pages := (page - 1) * pageSize
+	return s.analyticsRepo.AffiliatesSearch(ctx, Country, pageSize, pages)
 }
 
 // NewAnalyticsService creates a new analytics service

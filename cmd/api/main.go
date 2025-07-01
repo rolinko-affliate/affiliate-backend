@@ -50,65 +50,65 @@ func getLatestMigrationVersion() (int64, error) {
 	if err != nil {
 		return 0, fmt.Errorf("failed to read migrations directory: %v", err)
 	}
-	
+
 	var latestVersion int64 = 0
 	for _, file := range files {
 		// Extract version number from filename like "000002_create_analytics_tables.up.sql"
 		basename := filepath.Base(file)
 		versionStr := strings.Split(basename, "_")[0]
-		
+
 		version, err := strconv.ParseInt(versionStr, 10, 64)
 		if err != nil {
 			continue // Skip files that don't follow the expected naming convention
 		}
-		
+
 		if version > latestVersion {
 			latestVersion = version
 		}
 	}
-	
+
 	return latestVersion, nil
 }
 
 // checkDatabaseMigrations verifies that the database schema is up to date
 // If autoMigrate is true, it will attempt to run pending migrations
 func checkDatabaseMigrations(cfg *config.Config, autoMigrate bool) error {
-	
+
 	if cfg.DatabaseURL == "" {
 		return fmt.Errorf("DATABASE_URL is not set")
 	}
 
 	log.Println("Checking database connection and migration status...")
-	
+
 	// Initialize the database connection
 	db, err := repository.InitDBConnection(cfg.DatabaseURL)
 	if err != nil {
 		return fmt.Errorf("failed to connect to database: %v", err)
 	}
 	defer db.Close()
-	
+
 	// Check if the schema_migrations table exists
 	var exists bool
-	err = db.QueryRow(context.Background(), 
+	err = db.QueryRow(context.Background(),
 		"SELECT EXISTS (SELECT FROM information_schema.tables WHERE table_name = 'schema_migrations')").Scan(&exists)
 	if err != nil {
 		return fmt.Errorf("failed to check if schema_migrations table exists: %v", err)
 	}
-	
+
 	if !exists {
 		log.Println("Migration table does not exist. Database has not been initialized with migrations.")
 		if autoMigrate {
 			log.Println("Auto-migrate flag is set. Attempting to run migrations...")
-			
+
 			// Execute the migrate command
 			cmd := exec.Command("go", "run", "./cmd/migrate/main.go", "up")
 			cmd.Stdout = os.Stdout
 			cmd.Stderr = os.Stderr
-			
+
 			if err := cmd.Run(); err != nil {
 				return fmt.Errorf("failed to run migrations: %v", err)
 			}
-			
+
 			log.Println("Migrations applied successfully")
 		} else {
 			return fmt.Errorf("database migrations are required. Run 'make migrate-up' or start with --auto-migrate flag")
@@ -117,20 +117,20 @@ func checkDatabaseMigrations(cfg *config.Config, autoMigrate bool) error {
 		// Check if there are pending migrations by querying the schema_migrations table
 		var version int64
 		var dirty bool
-		err = db.QueryRow(context.Background(), 
+		err = db.QueryRow(context.Background(),
 			"SELECT MAX(version) as version, bool_or(dirty) as dirty FROM schema_migrations").Scan(&version, &dirty)
-		
+
 		if err != nil {
 			// If the table exists but we can't query it, something is wrong
 			return fmt.Errorf("failed to check migration status: %v", err)
 		}
-		
+
 		if dirty {
 			return fmt.Errorf("database schema is in a dirty state (version: %d). Manual intervention required", version)
 		}
-		
+
 		log.Printf("Database schema version: %d\n", version)
-		
+
 		// Check if there are newer migration files available
 		latestVersion, err := getLatestMigrationVersion()
 		if err != nil {
@@ -140,16 +140,16 @@ func checkDatabaseMigrations(cfg *config.Config, autoMigrate bool) error {
 			log.Printf("Database schema is outdated. Current: %d, Latest available: %d", version, latestVersion)
 			if autoMigrate {
 				log.Println("Auto-migrate flag is set. Attempting to run migrations...")
-				
+
 				// Execute the migrate command
 				cmd := exec.Command("go", "run", "./cmd/migrate/main.go", "up")
 				cmd.Stdout = os.Stdout
 				cmd.Stderr = os.Stderr
-				
+
 				if err := cmd.Run(); err != nil {
 					return fmt.Errorf("failed to run migrations: %v", err)
 				}
-				
+
 				log.Println("Migrations applied successfully")
 			} else {
 				return fmt.Errorf("database migrations are required. Current version: %d, Latest: %d. Run 'make migrate-up' or start with --auto-migrate flag", version, latestVersion)
@@ -158,7 +158,7 @@ func checkDatabaseMigrations(cfg *config.Config, autoMigrate bool) error {
 			log.Println("Database schema is up to date")
 		}
 	}
-	
+
 	if autoMigrate {
 		log.Println("Note: For full migration functionality, install the required packages:")
 		log.Println("  go get github.com/golang-migrate/migrate/v4")
@@ -208,7 +208,7 @@ func main() {
 			mockMode = true
 		}
 	}
-	
+
 	// Override config with command line flag if provided
 	if mockMode {
 		appConf.MockMode = true
@@ -239,7 +239,7 @@ func main() {
 
 	// Initialize Platform Services
 	cryptoService := crypto.NewServiceFromConfig()
-	
+
 	// Initialize integration service based on configuration
 	var integrationService provider.IntegrationService
 	if appConf.IsMockMode() {
@@ -262,7 +262,7 @@ func main() {
 			campaignProviderMappingRepo,
 		)
 	}
-	
+
 	// Initialize Domain Services
 	profileService := service.NewProfileService(profileRepo)
 	organizationService := service.NewOrganizationService(organizationRepo)
@@ -276,7 +276,7 @@ func main() {
 	profileHandler := handlers.NewProfileHandler(profileService)
 	organizationHandler := handlers.NewOrganizationHandler(organizationService, profileService)
 	advertiserHandler := handlers.NewAdvertiserHandler(advertiserService, profileService)
-	affiliateHandler := handlers.NewAffiliateHandler(affiliateService, profileService)
+	affiliateHandler := handlers.NewAffiliateHandler(affiliateService, profileService, analyticsService)
 	campaignHandler := handlers.NewCampaignHandler(campaignService)
 	trackingLinkHandler := handlers.NewTrackingLinkHandler(trackingLinkService)
 	analyticsHandler := handlers.NewAnalyticsHandler(analyticsService)

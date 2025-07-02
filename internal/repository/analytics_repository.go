@@ -30,7 +30,7 @@ type AnalyticsRepository interface {
 	SearchAdvertisers(ctx context.Context, query string, limit int) ([]domain.AutocompleteResult, error)
 	SearchPublishers(ctx context.Context, query string, limit int) ([]domain.AutocompleteResult, error)
 	SearchBoth(ctx context.Context, query string, limit int) ([]domain.AutocompleteResult, error)
-	AffiliatesSearch(ctx context.Context, country string, size int, pages int) ([]*domain.AnalyticsPublisher, error)
+	AffiliatesSearch(ctx context.Context, country string, Offset int, pages int) ([]*domain.AnalyticsPublisher, error)
 }
 
 // analyticsRepository implements AnalyticsRepository
@@ -38,7 +38,7 @@ type analyticsRepository struct {
 	db *pgxpool.Pool
 }
 
-func (r *analyticsRepository) AffiliatesSearch(ctx context.Context, country string, size int, pages int) ([]*domain.AnalyticsPublisher, error) {
+func (r *analyticsRepository) AffiliatesSearch(ctx context.Context, country string, Offset int, pages int) ([]*domain.AnalyticsPublisher, error) {
 	// sql
 	query := `
         SELECT 
@@ -52,26 +52,11 @@ func (r *analyticsRepository) AffiliatesSearch(ctx context.Context, country stri
         
     `
 
-	// 添加国家筛选条件
-	//if country != "" {
-	//	query += fmt.Sprintf(" AND country_rankings = $%d", argPos)
-	//	args = append(args, country)
-	//	argPos++
-	//} else {
-	//	return nil, fmt.Errorf("the country cannot be empty")
-	//}
-
-	//if Item != "" {
-	//
-	//}
-
-	// 添加分页和排序
 	jsonCondition := fmt.Sprintf(`{"value": [{"countryCode": "%s"}]}`, country)
 	query += fmt.Sprintf(` AND country_rankings::jsonb @> '%s'`, jsonCondition)
 	query += " ORDER BY created_at DESC"
-	query += fmt.Sprintf(" LIMIT %d OFFSET %d", size, pages)
+	query += fmt.Sprintf(" LIMIT %d OFFSET %d", Offset, pages)
 
-	//  执行查询
 	rows, err := r.db.Query(ctx, query)
 	if err != nil {
 		return nil, fmt.Errorf("error searching affiliates: %w", err)
@@ -82,7 +67,6 @@ func (r *analyticsRepository) AffiliatesSearch(ctx context.Context, country stri
 	for rows.Next() {
 		var p domain.AnalyticsPublisher
 
-		// 声明中间变量处理可空字段
 		err := rows.Scan(
 			&p.ID, &p.Domain,
 			&p.Description, &p.FaviconImageURL, &p.ScreenshotImageURL,

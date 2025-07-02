@@ -451,10 +451,10 @@ func (h *AffiliateHandler) UpdateAffiliateProviderMapping(c *gin.Context) {
 }
 
 type AffiliatesSearchRequest struct {
-	Item     string `json:"item"`
-	Country  string `json:"country"`
-	Page     string `json:"page"`
-	PageSize string `json:"page_size"`
+	Item    string `json:"item"`
+	Country string `json:"country"`
+	Page    int    `json:"page"`
+	Offset  int    `json:"offset"`
 	//Other  []string `json:"other"`
 }
 
@@ -465,8 +465,8 @@ func (h *AffiliateHandler) AffiliatesSearch(c *gin.Context) {
 		return
 	}
 
-	pageStr := c.DefaultQuery("page", aff.Page)
-	pageSizeStr := c.DefaultQuery("pageSize", aff.PageSize)
+	pageStr := c.DefaultQuery("page", strconv.Itoa(aff.Page))
+	Offset := c.DefaultQuery("pageSize", strconv.Itoa(aff.Offset))
 
 	//空则增加默认值
 	page, err := strconv.Atoi(pageStr)
@@ -475,16 +475,16 @@ func (h *AffiliateHandler) AffiliatesSearch(c *gin.Context) {
 	}
 
 	//空则增加默认值
-	pageSize, err := strconv.Atoi(pageSizeStr)
+	pageSize, err := strconv.Atoi(Offset)
 	if err != nil || pageSize < 1 {
 		pageSize = 10
 	}
-	affiliates, err := h.analyticsService.AffiliatesSearch(c.Request.Context(), aff.Country, page, pageSize)
+	analyticsAdvertiser, err := h.analyticsService.AffiliatesSearch(c.Request.Context(), aff.Country, page, pageSize)
 	if err != nil {
 		if err.Error() == "not found" {
 			c.JSON(http.StatusNotFound, ErrorResponse{
 				Error:   "affiliates not found",
-				Details: "No affiliates found with the specified ID",
+				Details: "No affiliates found with the specified country",
 			})
 			return
 		}
@@ -495,10 +495,7 @@ func (h *AffiliateHandler) AffiliatesSearch(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{
-		"message": "affiliates retrieved successfully",
-		"data":    affiliates,
-	})
+	c.JSON(http.StatusOK, analyticsAdvertiser)
 }
 
 // DeleteAffiliateProviderMapping deletes an affiliate provider mapping

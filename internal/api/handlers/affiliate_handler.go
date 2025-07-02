@@ -16,13 +16,15 @@ import (
 type AffiliateHandler struct {
 	affiliateService service.AffiliateService
 	profileService   service.ProfileService
+	analyticsService service.AnalyticsService
 }
 
 // NewAffiliateHandler creates a new affiliate handler
-func NewAffiliateHandler(as service.AffiliateService, ps service.ProfileService) *AffiliateHandler {
+func NewAffiliateHandler(as service.AffiliateService, ps service.ProfileService, an service.AnalyticsService) *AffiliateHandler {
 	return &AffiliateHandler{
 		affiliateService: as,
 		profileService:   ps,
+		analyticsService: an,
 	}
 }
 
@@ -34,18 +36,18 @@ func (h *AffiliateHandler) checkAffiliateAccess(c *gin.Context, affiliateOrgID i
 	if !exists {
 		return false, fmt.Errorf("user role not found in context")
 	}
-	
+
 	// Admin can access all affiliates
 	if userRole.(string) == "Admin" {
 		return true, nil
 	}
-	
+
 	// Get user's organization ID from context
 	userOrgID, exists := c.Get("organizationID")
 	if !exists {
 		return false, fmt.Errorf("user organization ID not found in context")
 	}
-	
+
 	// Check if user belongs to the same organization as the affiliate
 	return userOrgID.(int64) == affiliateOrgID, nil
 }
@@ -54,16 +56,16 @@ func (h *AffiliateHandler) checkAffiliateAccess(c *gin.Context, affiliateOrgID i
 // swagger:model
 type CreateAffiliateRequest struct {
 	// Organization ID
-	OrganizationID int64  `json:"organization_id" binding:"required" example:"1"`
+	OrganizationID int64 `json:"organization_id" binding:"required" example:"1"`
 	// Affiliate name
-	Name           string `json:"name" binding:"required" example:"Example Affiliate"`
+	Name string `json:"name" binding:"required" example:"Example Affiliate"`
 	// Contact email address
-	ContactEmail   *string `json:"contact_email,omitempty" example:"affiliate@example.com"`
+	ContactEmail *string `json:"contact_email,omitempty" example:"affiliate@example.com"`
 	// Payment details in JSON format
 	// swagger:strfmt json
 	PaymentDetails *json.RawMessage `json:"payment_details,omitempty" swaggertype:"object"`
 	// Status of the affiliate (active, pending, inactive, rejected)
-	Status         string `json:"status,omitempty" example:"active"`
+	Status string `json:"status,omitempty" example:"active"`
 }
 
 // CreateAffiliate creates a new affiliate
@@ -144,14 +146,14 @@ func (h *AffiliateHandler) GetAffiliate(c *gin.Context) {
 // swagger:model
 type UpdateAffiliateRequest struct {
 	// Affiliate name
-	Name           string `json:"name" binding:"required" example:"Updated Affiliate"`
+	Name string `json:"name" binding:"required" example:"Updated Affiliate"`
 	// Contact email address
-	ContactEmail   *string `json:"contact_email,omitempty" example:"updated@example.com"`
+	ContactEmail *string `json:"contact_email,omitempty" example:"updated@example.com"`
 	// Payment details in JSON format
 	// swagger:strfmt json
 	PaymentDetails *json.RawMessage `json:"payment_details,omitempty" swaggertype:"object"`
 	// Status of the affiliate (active, pending, inactive, rejected)
-	Status         string `json:"status" binding:"required" example:"active"`
+	Status string `json:"status" binding:"required" example:"active"`
 }
 
 // UpdateAffiliate updates an affiliate
@@ -292,14 +294,14 @@ func (h *AffiliateHandler) DeleteAffiliate(c *gin.Context) {
 // swagger:model
 type CreateAffiliateProviderMappingRequest struct {
 	// Affiliate ID
-	AffiliateID         int64  `json:"affiliate_id" binding:"required" example:"1"`
+	AffiliateID int64 `json:"affiliate_id" binding:"required" example:"1"`
 	// Provider type (e.g., 'everflow')
-	ProviderType        string `json:"provider_type" binding:"required" example:"everflow"`
+	ProviderType string `json:"provider_type" binding:"required" example:"everflow"`
 	// Provider's affiliate ID
 	ProviderAffiliateID *string `json:"provider_affiliate_id,omitempty" example:"aff-12345"`
 	// Provider configuration in JSON format
 	// swagger:strfmt json
-	ProviderConfig      *json.RawMessage `json:"provider_config,omitempty" swaggertype:"object"`
+	ProviderConfig *json.RawMessage `json:"provider_config,omitempty" swaggertype:"object"`
 }
 
 // CreateAffiliateProviderMapping creates a new affiliate provider mapping
@@ -389,7 +391,7 @@ type UpdateAffiliateProviderMappingRequest struct {
 	ProviderAffiliateID *string `json:"provider_affiliate_id,omitempty" example:"aff-12345"`
 	// Provider configuration in JSON format
 	// swagger:strfmt json
-	ProviderConfig      *json.RawMessage `json:"provider_config,omitempty" swaggertype:"object"`
+	ProviderConfig *json.RawMessage `json:"provider_config,omitempty" swaggertype:"object"`
 }
 
 // UpdateAffiliateProviderMapping updates an affiliate provider mapping
@@ -446,6 +448,54 @@ func (h *AffiliateHandler) UpdateAffiliateProviderMapping(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, mapping)
+}
+
+type AffiliatesSearchRequest struct {
+	Item    string `json:"item"`
+	Country string `json:"country"`
+	Page    int    `json:"page"`
+	Offset  int    `json:"offset"`
+	//Other  []string `json:"other"`
+}
+
+func (h *AffiliateHandler) AffiliatesSearch(c *gin.Context) {
+	var aff AffiliatesSearchRequest
+	if err := c.ShouldBindJSON(&aff); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request: " + err.Error()})
+		return
+	}
+
+	pageStr := c.DefaultQuery("page", strconv.Itoa(aff.Page))
+	Offset := c.DefaultQuery("pageSize", strconv.Itoa(aff.Offset))
+
+	//空则增加默认值
+	page, err := strconv.Atoi(pageStr)
+	if err != nil || page < 1 {
+		page = 1
+	}
+
+	//空则增加默认值
+	pageSize, err := strconv.Atoi(Offset)
+	if err != nil || pageSize < 1 {
+		pageSize = 10
+	}
+	analyticsAdvertiser, err := h.analyticsService.AffiliatesSearch(c.Request.Context(), aff.Country, page, pageSize)
+	if err != nil {
+		if err.Error() == "not found" {
+			c.JSON(http.StatusNotFound, ErrorResponse{
+				Error:   "affiliates not found",
+				Details: "No affiliates found with the specified country",
+			})
+			return
+		}
+		c.JSON(http.StatusInternalServerError, ErrorResponse{
+			Error:   "Failed to retrieve affiliates",
+			Details: err.Error(),
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, analyticsAdvertiser)
 }
 
 // DeleteAffiliateProviderMapping deletes an affiliate provider mapping

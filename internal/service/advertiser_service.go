@@ -1,6 +1,7 @@
 package service
 
 import (
+	"bytes"
 	"context"
 	"encoding/json"
 	"fmt"
@@ -8,9 +9,13 @@ import (
 
 	"github.com/affiliate-backend/internal/domain"
 	"github.com/affiliate-backend/internal/platform/crypto"
+	"github.com/affiliate-backend/internal/platform/everflow/advertiser"
 	"github.com/affiliate-backend/internal/platform/provider"
 	"github.com/affiliate-backend/internal/repository"
 	"github.com/google/uuid"
+	"io"
+	"log"
+	"net/http"
 )
 
 type AdvertiserService interface {
@@ -20,11 +25,11 @@ type AdvertiserService interface {
 	UpdateAdvertiser(ctx context.Context, advertiser *domain.Advertiser) error
 	ListAdvertisersByOrganization(ctx context.Context, orgID int64, page, pageSize int) ([]*domain.Advertiser, error)
 	DeleteAdvertiser(ctx context.Context, id int64) error
-	
+
 	SyncAdvertiserToProvider(ctx context.Context, advertiserID int64) error
 	SyncAdvertiserFromProvider(ctx context.Context, advertiserID int64) error
 	CompareAdvertiserWithProvider(ctx context.Context, advertiserID int64) ([]domain.AdvertiserDiscrepancy, error)
-	
+
 	CreateProviderMapping(ctx context.Context, mapping *domain.AdvertiserProviderMapping) (*domain.AdvertiserProviderMapping, error)
 	GetProviderMapping(ctx context.Context, advertiserID int64, providerType string) (*domain.AdvertiserProviderMapping, error)
 	GetProviderMappings(ctx context.Context, advertiserID int64) ([]*domain.AdvertiserProviderMapping, error)
@@ -38,6 +43,7 @@ type advertiserService struct {
 	orgRepo             repository.OrganizationRepository
 	cryptoService       crypto.Service
 	integrationService  provider.IntegrationService
+	trackingLinkService trackingLinkService
 }
 
 func NewAdvertiserService(
@@ -59,12 +65,13 @@ func NewAdvertiserService(
 func (s *advertiserService) CreateAdvertiser(ctx context.Context, advertiser *domain.Advertiser) (*domain.Advertiser, error) {
 	// Validate organization exists
 	_, err := s.orgRepo.GetOrganizationByID(ctx, advertiser.OrganizationID)
+	s.addNetworksAdvertiser()
 	if err != nil {
 		return nil, fmt.Errorf("organization not found: %w", err)
 	}
 
 	setDefaultStatus(advertiser)
-	
+
 	if err := validateAdvertiser(advertiser); err != nil {
 		return nil, err
 	}
@@ -77,12 +84,12 @@ func (s *advertiserService) CreateAdvertiser(ctx context.Context, advertiser *do
 	// Step 2: Create provider mapping with "pending" status
 	now := time.Now()
 	mapping := &domain.AdvertiserProviderMapping{
-		AdvertiserID:         advertiser.AdvertiserID,
-		ProviderType:         "everflow",
-		SyncStatus:           stringPtr("pending"),
-		LastSyncAt:           &now,
-		APICredentials:       nil, // Set during configuration
-		ProviderConfig:       nil, // Set by IntegrationService with full payload
+		AdvertiserID:   advertiser.AdvertiserID,
+		ProviderType:   "everflow",
+		SyncStatus:     stringPtr("pending"),
+		LastSyncAt:     &now,
+		APICredentials: nil, // Set during configuration
+		ProviderConfig: nil, // Set by IntegrationService with full payload
 	}
 
 	err = s.providerMappingRepo.CreateMapping(ctx, mapping)
@@ -145,7 +152,7 @@ func (s *advertiserService) UpdateAdvertiser(ctx context.Context, advertiser *do
 	if err := s.integrationService.UpdateAdvertiser(ctx, *advertiser); err != nil {
 		// Log error but don't fail the operation since local update succeeded
 		fmt.Printf("Warning: failed to update advertiser in provider: %v\n", err)
-		
+
 		// Update mapping sync status to indicate sync failure
 		mapping.SyncStatus = stringPtr("failed")
 		mapping.SyncError = stringPtr(err.Error())
@@ -318,7 +325,7 @@ func (s *advertiserService) SyncAdvertiserFromProvider(ctx context.Context, adve
 
 	// Convert advertiser ID to UUID for IntegrationService
 	advertiserUUID := int64ToUUID(advertiserID)
-	
+
 	// Get advertiser from provider
 	providerAdvertiser, err := s.integrationService.GetAdvertiser(ctx, advertiserUUID)
 	if err != nil {
@@ -372,7 +379,7 @@ func (s *advertiserService) CompareAdvertiserWithProvider(ctx context.Context, a
 
 	// Convert advertiser ID to UUID for IntegrationService
 	advertiserUUID := int64ToUUID(advertiserID)
-	
+
 	// Get advertiser from provider
 	providerAdvertiser, err := s.integrationService.GetAdvertiser(ctx, advertiserUUID)
 	if err != nil {
@@ -515,11 +522,11 @@ func validateAdvertiser(advertiser *domain.Advertiser) error {
 	if advertiser.Name == "" {
 		return fmt.Errorf("advertiser name cannot be empty")
 	}
-	
+
 	if advertiser.ContactEmail == nil || *advertiser.ContactEmail == "" {
 		return fmt.Errorf("advertiser contact email cannot be empty")
 	}
-	
+
 	// Validate status
 	validStatuses := map[string]bool{
 		"active":   true,
@@ -530,11 +537,279 @@ func validateAdvertiser(advertiser *domain.Advertiser) error {
 	if !validStatuses[advertiser.Status] {
 		return fmt.Errorf("invalid status: %s", advertiser.Status)
 	}
-	
+
 	return nil
 }
 
 // stringPtr returns a pointer to the given string
 func stringPtr(s string) *string {
 	return &s
+}
+
+func (s *advertiserService) addNetworksAdvertiser() {
+
+	var str []string = []string{"DTC Brand"}
+	var x, y = false, true
+	var Address2 = "202"
+	var CountryId int32 = 36
+	var DefaultPaymentTerms int32 = 0
+	var BillingFrequency string = "other"
+	var TaxId string = "123456789"
+	var InternalNotes string = "Some notes not visible to the advertiser"
+	var AddressId int32 = 1
+	var SalesManagerId int32 = 1
+	var null string = ""
+
+	var VerificationToken string = "c7HIWpFUGnyQfN5wwBollBBGtUkeOm"
+
+	var ContactAddress = advertiser.ContactAddress{
+		Address1:      "4110 rue St-Laurent",
+		Address2:      &Address2,
+		City:          "Montreal",
+		ZipPostalCode: "H2R 0A1",
+		CountryId:     &CountryId,
+		CountryCode:   "CA",
+		RegionCode:    "QC",
+	}
+	var Details = advertiser.BillingDetails{}
+	var Billings = advertiser.Billing{
+		Details:             &Details,
+		DefaultPaymentTerms: &DefaultPaymentTerms,
+		BillingFrequency:    &BillingFrequency,
+		TaxId:               &TaxId,
+	}
+	var SettingsExposedVariables = advertiser.SettingsExposedVariables{
+		AffiliateId: &y,
+		Affiliate:   &x,
+		Sub1:        &y,
+		Sub2:        &y,
+		Sub3:        &x,
+		Sub4:        &x,
+		Sub5:        &x,
+		SourceId:    &x,
+		OfferUrl:    &x,
+	}
+	var Settings = advertiser.Settings{
+		ExposedVariables: &SettingsExposedVariables,
+	}
+
+	everflowReq := advertiser.CreateAdvertiserRequest{
+		Name:                    "test",
+		AccountStatus:           "active",
+		NetworkEmployeeId:       1,
+		InternalNotes:           &InternalNotes,
+		AddressId:               &AddressId,
+		IsContactAddressEnabled: &x,
+		SalesManagerId:          &SalesManagerId,
+		DefaultCurrencyId:       "USD",
+		PlatformName:            &null,
+		PlatformUrl:             &null,
+		PlatformUsername:        &null,
+		ReportingTimezoneId:     80,
+		AttributionMethod:       "last_touch",
+		EmailAttributionMethod:  "last_affiliate_attribution",
+		AttributionPriority:     "click",
+		AccountingContactEmail:  &null,
+		VerificationToken:       &VerificationToken,
+		OfferIdMacro:            &null,
+		AffiliateIdMacro:        &null,
+		Labels:                  str,
+		Users: []advertiser.AdvertiserUser{
+			{
+				AccountStatus:   "active",
+				LanguageId:      1,
+				TimezoneId:      80,
+				CurrencyId:      "USD",
+				FirstName:       "john",
+				LastName:        "smith",
+				Email:           "john.doe@example.com",
+				InitialPassword: &null,
+			},
+		},
+		ContactAddress: &ContactAddress,
+		Billing:        &Billings,
+		Settings:       &Settings,
+	}
+
+	url := "https://api.eflow.team/v1/networks/advertisers" //Everflow广告
+	jsonBody, err := json.Marshal(everflowReq)
+
+	// 包装为 io.Reader
+	bodyReader := bytes.NewReader(jsonBody)
+	req, err := http.NewRequest(http.MethodPost, url, bodyReader)
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("X-Eflow-API-Key", "GReOQMUkSWOvtQnJ1AnWzw")
+	// 发送请求
+	client := &http.Client{}
+	resp, err := client.Do(req)
+	if err != nil {
+		log.Fatal("请求失败:", err)
+	}
+	defer func(Body io.ReadCloser) {
+		err := Body.Close()
+		if err != nil {
+
+		}
+	}(resp.Body)
+
+	// 处理响应
+	bodyBytes, _ := io.ReadAll(resp.Body)
+	fmt.Println("状态码:", resp.StatusCode)
+	fmt.Println("响应内容:", string(bodyBytes))
+}
+
+func (s *advertiserService) getNetworksAdvertiser() {
+	var AdvertiserId = "3"
+	url := "https://api.eflow.team/v1/networks/advertisers/" + AdvertiserId //按 ID 查询会员详情
+
+	//  创建带上下文的请求（支持超时控制）
+	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
+	defer cancel()
+
+	req, err := http.NewRequestWithContext(ctx, "GET", url, nil)
+	if err != nil {
+		fmt.Println("创建请求失败:", err)
+		return
+	}
+
+	//请求头（
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("X-Eflow-API-Key", "GReOQMUkSWOvtQnJ1AnWzw") // Everflow认证头[1,6](@ref)
+
+	// 发送请求并处理响应
+	client := &http.Client{}
+	resp, err := client.Do(req)
+	if err != nil {
+		fmt.Println("请求失败:", err)
+		return
+	}
+	defer resp.Body.Close()
+
+	// 解析响应
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println("读取响应失败:", err)
+		return
+	}
+
+	fmt.Println("状态码:", resp.StatusCode)
+	fmt.Println("响应头:", resp.Header.Get("Content-Type"))
+
+	var result map[string]interface{}
+	if err := json.Unmarshal(body, &result); err != nil {
+		fmt.Println("JSON解析失败:", err)
+		return
+	}
+	fmt.Printf("解析结果: %+v\n", body)
+}
+func (s *advertiserService) updateNetworksAdvertiser() {
+	var AdvertiserId = "3"
+	url := "https://api.eflow.team/v1/networks/advertisers/" + AdvertiserId //更新联盟会员
+
+	var str []string = []string{"DTC Brand"}
+	var x, y = false, true
+	var Address2 = "202"
+	var CountryId int32 = 36
+	var DefaultPaymentTerms int32 = 0
+	var BillingFrequency string = "other"
+	var TaxId string = "123456789"
+	var InternalNotes string = "Some notes not visible to the advertiser"
+	var AddressId int32 = 1
+	var SalesManagerId int32 = 1
+	var null string = ""
+
+	var VerificationToken string = "c7HIWpFUGnyQfN5wwBollBBGtUkeOm"
+
+	var ContactAddress = advertiser.ContactAddress{
+		Address1:      "4110 rue St-Laurent",
+		Address2:      &Address2,
+		City:          "Montreal",
+		ZipPostalCode: "H2R 0A1",
+		CountryId:     &CountryId,
+		CountryCode:   "CA",
+		RegionCode:    "QC",
+	}
+	var Details = advertiser.BillingDetails{}
+	var Billings = advertiser.Billing{
+		Details:             &Details,
+		DefaultPaymentTerms: &DefaultPaymentTerms,
+		BillingFrequency:    &BillingFrequency,
+		TaxId:               &TaxId,
+	}
+	var SettingsExposedVariables = advertiser.SettingsExposedVariables{
+		AffiliateId: &y,
+		Affiliate:   &x,
+		Sub1:        &y,
+		Sub2:        &y,
+		Sub3:        &x,
+		Sub4:        &x,
+		Sub5:        &x,
+		SourceId:    &x,
+		OfferUrl:    &x,
+	}
+	var Settings = advertiser.Settings{
+		ExposedVariables: &SettingsExposedVariables,
+	}
+
+	everflowReq := advertiser.CreateAdvertiserRequest{
+		Name:                    "test",
+		AccountStatus:           "active",
+		NetworkEmployeeId:       1,
+		InternalNotes:           &InternalNotes,
+		AddressId:               &AddressId,
+		IsContactAddressEnabled: &x,
+		SalesManagerId:          &SalesManagerId,
+		DefaultCurrencyId:       "USD",
+		PlatformName:            &null,
+		PlatformUrl:             &null,
+		PlatformUsername:        &null,
+		ReportingTimezoneId:     80,
+		AttributionMethod:       "last_touch",
+		EmailAttributionMethod:  "last_affiliate_attribution",
+		AttributionPriority:     "click",
+		AccountingContactEmail:  &null,
+		VerificationToken:       &VerificationToken,
+		OfferIdMacro:            &null,
+		AffiliateIdMacro:        &null,
+		Labels:                  str,
+		Users: []advertiser.AdvertiserUser{
+			{
+				AccountStatus:   "active",
+				LanguageId:      1,
+				TimezoneId:      80,
+				CurrencyId:      "USD",
+				FirstName:       "john",
+				LastName:        "smith",
+				Email:           "john.doe@example.com",
+				InitialPassword: &null,
+			},
+		},
+		ContactAddress: &ContactAddress,
+		Billing:        &Billings,
+		Settings:       &Settings,
+	}
+	jsonBody, err := json.Marshal(everflowReq)
+
+	// 包装为 io.Reader
+	bodyReader := bytes.NewReader(jsonBody)
+	req, err := http.NewRequest(http.MethodPut, url, bodyReader)
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("X-Eflow-API-Key", "GReOQMUkSWOvtQnJ1AnWzw")
+	// 发送请求
+	client := &http.Client{}
+	resp, err := client.Do(req)
+	if err != nil {
+		log.Fatal("请求失败:", err)
+	}
+	defer func(Body io.ReadCloser) {
+		err := Body.Close()
+		if err != nil {
+
+		}
+	}(resp.Body)
+
+	// 处理响应
+	bodyBytes, _ := io.ReadAll(resp.Body)
+	fmt.Println("状态码:", resp.StatusCode)
+	fmt.Println("响应内容:", string(bodyBytes))
 }

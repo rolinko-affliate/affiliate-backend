@@ -450,14 +450,36 @@ func (h *AffiliateHandler) UpdateAffiliateProviderMapping(c *gin.Context) {
 	c.JSON(http.StatusOK, mapping)
 }
 
+// AffiliatesSearchRequest defines the request for searching affiliates
+// swagger:model
 type AffiliatesSearchRequest struct {
-	Item    string `json:"item"`
-	Country string `json:"country"`
-	Page    int    `json:"page"`
-	Offset  int    `json:"offset"`
-	//Other  []string `json:"other"`
+	// Country code to filter by (optional)
+	Country string `json:"country,omitempty" example:"US"`
+	// Partner domains to search for (optional)
+	PartnerDomains []string `json:"partner_domains,omitempty" example:"amazon.com,etsy.com"`
+	// Verticals to filter by (optional) - matches verticalsV2 names
+	Verticals []string `json:"verticals,omitempty" example:"E-commerce,Fashion / Clothing"`
+	// Page number for pagination
+	Page int `json:"page,omitempty" example:"1"`
+	// Page size (number of results per page)
+	Offset int `json:"offset,omitempty" example:"10"`
 }
 
+// AffiliatesSearch searches for affiliates/publishers by multiple criteria
+// @Summary      Search affiliates by country, partner domains, and verticals
+// @Description  Search for affiliates/publishers filtered by country, partner domains, and/or verticals with full publisher data, sorted by country rankings
+// @Tags         affiliates
+// @Accept       json
+// @Produce      json
+// @Param        request  body      AffiliatesSearchRequest                    true  "Search parameters"
+// @Param        page     query     int                                        false "Page number (default: 1)"
+// @Param        pageSize query     int                                        false "Page size (default: 10)"
+// @Success      200      {array}   domain.AnalyticsPublisherResponse         "List of publishers with full data sorted by country rankings"
+// @Failure      400      {object}  ErrorResponse                             "Invalid request"
+// @Failure      404      {object}  ErrorResponse                             "No affiliates found"
+// @Failure      500      {object}  ErrorResponse                             "Internal server error"
+// @Security     BearerAuth
+// @Router       /affiliates/search [post]
 func (h *AffiliateHandler) AffiliatesSearch(c *gin.Context) {
 	var aff AffiliatesSearchRequest
 	if err := c.ShouldBindJSON(&aff); err != nil {
@@ -479,15 +501,8 @@ func (h *AffiliateHandler) AffiliatesSearch(c *gin.Context) {
 	if err != nil || pageSize < 1 {
 		pageSize = 10
 	}
-	analyticsAdvertiser, err := h.analyticsService.AffiliatesSearch(c.Request.Context(), aff.Country, page, pageSize)
+	analyticsAdvertiser, err := h.analyticsService.AffiliatesSearch(c.Request.Context(), aff.Country, aff.PartnerDomains, aff.Verticals, page, pageSize)
 	if err != nil {
-		if err.Error() == "not found" {
-			c.JSON(http.StatusNotFound, ErrorResponse{
-				Error:   "affiliates not found",
-				Details: "No affiliates found with the specified country",
-			})
-			return
-		}
 		c.JSON(http.StatusInternalServerError, ErrorResponse{
 			Error:   "Failed to retrieve affiliates",
 			Details: err.Error(),
@@ -495,6 +510,7 @@ func (h *AffiliateHandler) AffiliatesSearch(c *gin.Context) {
 		return
 	}
 
+	// Always return the result (empty array if no results found)
 	c.JSON(http.StatusOK, analyticsAdvertiser)
 }
 

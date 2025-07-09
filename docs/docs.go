@@ -1090,6 +1090,78 @@ const docTemplate = `{
                 }
             }
         },
+        "/affiliates/search": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Search for affiliates/publishers filtered by country, partner domains, and/or verticals with full publisher data, sorted by country rankings",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "affiliates"
+                ],
+                "summary": "Search affiliates by country, partner domains, and verticals",
+                "parameters": [
+                    {
+                        "description": "Search parameters",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/handlers.AffiliatesSearchRequest"
+                        }
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Page number (default: 1)",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Page size (default: 10)",
+                        "name": "pageSize",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of publishers with full data sorted by country rankings",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/domain.AnalyticsPublisherResponse"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "No affiliates found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/affiliates/{id}": {
             "get": {
                 "security": [
@@ -4320,6 +4392,48 @@ const docTemplate = `{
                 }
             }
         },
+        "handlers.AffiliatesSearchRequest": {
+            "type": "object",
+            "properties": {
+                "country": {
+                    "description": "Country code to filter by (optional)",
+                    "type": "string",
+                    "example": "US"
+                },
+                "offset": {
+                    "description": "Page size (number of results per page)",
+                    "type": "integer",
+                    "example": 10
+                },
+                "page": {
+                    "description": "Page number for pagination",
+                    "type": "integer",
+                    "example": 1
+                },
+                "partner_domains": {
+                    "description": "Partner domains to search for (optional)",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "example": [
+                        "amazon.com",
+                        "etsy.com"
+                    ]
+                },
+                "verticals": {
+                    "description": "Verticals to filter by (optional) - matches verticalsV2 names",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "example": [
+                        "E-commerce",
+                        "Fashion / Clothing"
+                    ]
+                }
+            }
+        },
         "handlers.CreateAdvertiserRequest": {
             "type": "object",
             "required": [
@@ -5577,7 +5691,7 @@ const docTemplate = `{
 
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
-	Version:          "1.0.0",
+	Version:          "1.0",
 	Host:             "localhost:8080",
 	BasePath:         "/api/v1",
 	Schemes:          []string{},

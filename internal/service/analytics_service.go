@@ -22,7 +22,7 @@ type AnalyticsService interface {
 
 	// Publisher methods
 	GetPublisherByID(ctx context.Context, id int64) (*domain.AnalyticsPublisherResponse, error)
-	AffiliatesSearch(ctx context.Context, Country string, page, Offset int) ([]*domain.AnalyticsPublisher, error)
+	AffiliatesSearch(ctx context.Context, country string, partnerDomains []string, verticals []string, page, offset int) ([]*domain.AnalyticsPublisherResponse, error)
 	CreatePublisher(ctx context.Context, publisher *domain.AnalyticsPublisher) error
 	UpdatePublisher(ctx context.Context, publisher *domain.AnalyticsPublisher) error
 	DeletePublisher(ctx context.Context, id int64) error
@@ -33,16 +33,33 @@ type analyticsService struct {
 	analyticsRepo repository.AnalyticsRepository
 }
 
-func (s *analyticsService) AffiliatesSearch(ctx context.Context, Country string, page, Offset int) ([]*domain.AnalyticsPublisher, error) {
+func (s *analyticsService) AffiliatesSearch(ctx context.Context, country string, partnerDomains []string, verticals []string, page, offset int) ([]*domain.AnalyticsPublisherResponse, error) {
 	if page < 1 {
 		page = 1
 	}
-	if Offset < 1 {
-		Offset = 10
+	if offset < 1 {
+		offset = 10
 	}
 
-	pages := (page - 1) * Offset
-	return s.analyticsRepo.AffiliatesSearch(ctx, Country, Offset, pages)
+	pages := (page - 1) * offset
+	publishers, err := s.analyticsRepo.AffiliatesSearch(ctx, country, partnerDomains, verticals, offset, pages)
+	if err != nil {
+		return nil, err
+	}
+
+	// Transform each publisher to the full response format
+	// Initialize as empty slice to ensure we never return null
+	responses := make([]*domain.AnalyticsPublisherResponse, 0)
+	for _, publisher := range publishers {
+		response, err := s.buildPublisherResponse(publisher)
+		if err != nil {
+			// Log error but continue with other publishers
+			continue
+		}
+		responses = append(responses, response)
+	}
+
+	return responses, nil
 }
 
 // NewAnalyticsService creates a new analytics service

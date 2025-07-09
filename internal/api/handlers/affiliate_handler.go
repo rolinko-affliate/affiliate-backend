@@ -467,16 +467,15 @@ type AffiliatesSearchRequest struct {
 
 // AffiliatesSearch searches for affiliates/publishers by multiple criteria
 // @Summary      Search affiliates by country, partner domains, and verticals
-// @Description  Search for affiliates/publishers filtered by country, partner domains, and/or verticals with full publisher data, sorted by country rankings
+// @Description  Search for affiliates/publishers filtered by country, partner domains, and/or verticals with full publisher data, sorted by country rankings. Accessible by advertisers, affiliate managers, and admins.
 // @Tags         affiliates
 // @Accept       json
 // @Produce      json
 // @Param        request  body      AffiliatesSearchRequest                    true  "Search parameters"
 // @Param        page     query     int                                        false "Page number (default: 1)"
 // @Param        pageSize query     int                                        false "Page size (default: 10)"
-// @Success      200      {array}   domain.AnalyticsPublisherResponse         "List of publishers with full data sorted by country rankings"
+// @Success      200      {array}   domain.AnalyticsPublisherResponse         "List of publishers with full data sorted by country rankings (empty array if no results)"
 // @Failure      400      {object}  ErrorResponse                             "Invalid request"
-// @Failure      404      {object}  ErrorResponse                             "No affiliates found"
 // @Failure      500      {object}  ErrorResponse                             "Internal server error"
 // @Security     BearerAuth
 // @Router       /affiliates/search [post]

@@ -114,11 +114,12 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		affiliates.PUT("/:id", opts.AffiliateHandler.UpdateAffiliate)
 		affiliates.DELETE("/:id", opts.AffiliateHandler.DeleteAffiliate)
 
-		affiliates.POST("/search", opts.AffiliateHandler.AffiliatesSearch)
-
 		// Affiliate's provider mappings
 		affiliates.GET("/:id/provider-mappings/:providerType", opts.AffiliateHandler.GetAffiliateProviderMapping)
 	}
+
+	// Affiliate Search - accessible by both advertisers and affiliate managers
+	v1.POST("/affiliates/search", rbacMW("AdvertiserManager", "AffiliateManager", "Admin"), opts.AffiliateHandler.AffiliatesSearch)
 
 	// Affiliate provider mappings
 	affProviderMappings := v1.Group("/affiliate-provider-mappings")

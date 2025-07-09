@@ -450,14 +450,34 @@ func (h *AffiliateHandler) UpdateAffiliateProviderMapping(c *gin.Context) {
 	c.JSON(http.StatusOK, mapping)
 }
 
+// AffiliatesSearchRequest defines the request for searching affiliates
+// swagger:model
 type AffiliatesSearchRequest struct {
-	Item    string `json:"item"`
-	Country string `json:"country"`
-	Page    int    `json:"page"`
-	Offset  int    `json:"offset"`
-	//Other  []string `json:"other"`
+	// Search item (optional)
+	Item string `json:"item,omitempty" example:""`
+	// Country code to filter by
+	Country string `json:"country" binding:"required" example:"US"`
+	// Page number for pagination
+	Page int `json:"page,omitempty" example:"1"`
+	// Page size (number of results per page)
+	Offset int `json:"offset,omitempty" example:"10"`
 }
 
+// AffiliatesSearch searches for affiliates/publishers by country
+// @Summary      Search affiliates by country
+// @Description  Search for affiliates/publishers filtered by country with full publisher data
+// @Tags         affiliates
+// @Accept       json
+// @Produce      json
+// @Param        request  body      AffiliatesSearchRequest                    true  "Search parameters"
+// @Param        page     query     int                                        false "Page number (default: 1)"
+// @Param        pageSize query     int                                        false "Page size (default: 10)"
+// @Success      200      {array}   domain.AnalyticsPublisherResponse         "List of publishers with full data"
+// @Failure      400      {object}  ErrorResponse                             "Invalid request"
+// @Failure      404      {object}  ErrorResponse                             "No affiliates found"
+// @Failure      500      {object}  ErrorResponse                             "Internal server error"
+// @Security     BearerAuth
+// @Router       /affiliates/search [post]
 func (h *AffiliateHandler) AffiliatesSearch(c *gin.Context) {
 	var aff AffiliatesSearchRequest
 	if err := c.ShouldBindJSON(&aff); err != nil {

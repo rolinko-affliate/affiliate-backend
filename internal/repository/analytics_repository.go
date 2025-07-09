@@ -30,7 +30,7 @@ type AnalyticsRepository interface {
 	SearchAdvertisers(ctx context.Context, query string, limit int) ([]domain.AutocompleteResult, error)
 	SearchPublishers(ctx context.Context, query string, limit int) ([]domain.AutocompleteResult, error)
 	SearchBoth(ctx context.Context, query string, limit int) ([]domain.AutocompleteResult, error)
-	AffiliatesSearch(ctx context.Context, country string, Offset int, pages int) ([]*domain.AnalyticsPublisher, error)
+	AffiliatesSearch(ctx context.Context, country string, partnerDomains []string, verticals []string, limit int, offset int) ([]*domain.AnalyticsPublisher, error)
 }
 
 // analyticsRepository implements AnalyticsRepository
@@ -38,34 +38,86 @@ type analyticsRepository struct {
 	db *pgxpool.Pool
 }
 
-func (r *analyticsRepository) AffiliatesSearch(ctx context.Context, country string, Offset int, pages int) ([]*domain.AnalyticsPublisher, error) {
-	// sql
+func (r *analyticsRepository) AffiliatesSearch(ctx context.Context, country string, partnerDomains []string, verticals []string, limit int, offset int) ([]*domain.AnalyticsPublisher, error) {
+	// Base query with all fields
 	query := `
         SELECT 
             id, domain, description, favicon_image_url, screenshot_image_url,
-			   affiliate_networks, country_rankings, keywords, verticals, verticals_v2,
-			   partner_information, partners, related_publishers, social_media, live_urls,
-			   known, relevance, traffic_score, promotype, additional_data,
-			   created_at, updated_at
-		FROM analytics_publishers 
-        WHERE 1=1
-        
-    `
+            affiliate_networks, country_rankings, keywords, verticals, verticals_v2,
+            partner_information, partners, related_publishers, social_media, live_urls,
+            known, relevance, traffic_score, promotype, additional_data,
+            created_at, updated_at,
+            -- Extract country score for sorting
+            COALESCE(
+                (country_rankings->'value'->0->>'score')::decimal, 
+                0
+            ) as country_score
+        FROM analytics_publishers 
+        WHERE 1=1`
 
-	jsonCondition := fmt.Sprintf(`{"value": [{"countryCode": "%s"}]}`, country)
-	query += fmt.Sprintf(` AND country_rankings::jsonb @> '%s'`, jsonCondition)
-	query += " ORDER BY created_at DESC"
-	query += fmt.Sprintf(" LIMIT %d OFFSET %d", Offset, pages)
+	var conditions []string
+	var args []interface{}
+	argIndex := 1
 
-	rows, err := r.db.Query(ctx, query)
+	// Country filter - search in country_rankings JSONB
+	if country != "" {
+		conditions = append(conditions, fmt.Sprintf(`
+			country_rankings->'value' @> $%d`, argIndex))
+		args = append(args, fmt.Sprintf(`[{"countryCode": "%s"}]`, strings.ToLower(country)))
+		argIndex++
+	}
+
+	// Partner domains filter - search in partners JSONB array
+	if len(partnerDomains) > 0 {
+		partnerConditions := make([]string, len(partnerDomains))
+		for i, domain := range partnerDomains {
+			partnerConditions[i] = fmt.Sprintf(`partners->'value' @> $%d`, argIndex)
+			args = append(args, fmt.Sprintf(`["%s"]`, domain))
+			argIndex++
+		}
+		conditions = append(conditions, fmt.Sprintf("(%s)", strings.Join(partnerConditions, " OR ")))
+	}
+
+	// Verticals filter - search in verticalsV2 JSONB array
+	if len(verticals) > 0 {
+		verticalConditions := make([]string, len(verticals))
+		for i, vertical := range verticals {
+			verticalConditions[i] = fmt.Sprintf(`verticals_v2->'value' @> $%d`, argIndex)
+			args = append(args, fmt.Sprintf(`[{"name": "%s"}]`, vertical))
+			argIndex++
+		}
+		conditions = append(conditions, fmt.Sprintf("(%s)", strings.Join(verticalConditions, " OR ")))
+	}
+
+	// Add conditions to query
+	if len(conditions) > 0 {
+		query += " AND " + strings.Join(conditions, " AND ")
+	}
+
+	// Order by country score (highest first), then by relevance, then by traffic score
+	query += `
+        ORDER BY 
+            country_score DESC,
+            relevance DESC,
+            traffic_score DESC,
+            created_at DESC`
+
+	// Add pagination
+	query += fmt.Sprintf(" LIMIT $%d OFFSET $%d", argIndex, argIndex+1)
+	args = append(args, limit, offset)
+
+	rows, err := r.db.Query(ctx, query, args...)
 	if err != nil {
 		return nil, fmt.Errorf("error searching affiliates: %w", err)
 	}
 	defer rows.Close()
-	var analyticsAdvertiser []*domain.AnalyticsPublisher
+
+	// Initialize as empty slice to ensure we never return null
+	publishers := make([]*domain.AnalyticsPublisher, 0)
 
 	for rows.Next() {
 		var p domain.AnalyticsPublisher
+		var countryScore float64 // We select this but don't need to store it
 
 		err := rows.Scan(
 			&p.ID, &p.Domain,
@@ -74,18 +126,20 @@ func (r *analyticsRepository) AffiliatesSearch(ctx context.Context, country stri
 			&p.PartnerInformation, &p.Partners, &p.RelatedPublishers, &p.SocialMedia, &p.LiveURLs,
 			&p.Known, &p.Relevance, &p.TrafficScore, &p.Promotype, &p.AdditionalData,
 			&p.CreatedAt, &p.UpdatedAt,
+			&countryScore, // Country score for sorting (not stored in struct)
 		)
 		if err != nil {
-			return nil, err
+			return nil, fmt.Errorf("error scanning publisher row: %w", err)
 		}
 
-		analyticsAdvertiser = append(analyticsAdvertiser, &p)
+		publishers = append(publishers, &p)
 	}
 
 	if err := rows.Err(); err != nil {
 		return nil, fmt.Errorf("rows iteration error: %w", err)
 	}
-	return analyticsAdvertiser, nil
+
+	return publishers, nil
 }
 
 // NewAnalyticsRepository creates a new analytics repository

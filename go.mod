@@ -5,15 +5,15 @@ go 1.23.0
 toolchain go1.23.5
 
 require (
-	github.com/gin-contrib/cors v1.5.0
+	github.com/gin-contrib/cors v1.4.0
 	github.com/gin-gonic/gin v1.9.1
 	github.com/golang-jwt/jwt/v5 v5.0.0
-	github.com/golang-migrate/migrate/v4 v4.18.3
-	github.com/google/uuid v1.6.0
-	github.com/jackc/pgx/v5 v5.7.5
+	github.com/golang-migrate/migrate/v4 v4.16.2
+	github.com/google/uuid v1.3.0
+	github.com/jackc/pgx/v5 v5.4.3
 	github.com/spf13/viper v1.16.0
-	github.com/stretchr/testify v1.10.0
-	github.com/swaggo/swag v1.16.4
+	github.com/stretchr/testify v1.9.0
+	github.com/swaggo/swag v1.16.1
 )
 
 require (
@@ -77,3 +77,11 @@ require (
 replace github.com/go-openapi/swag => github.com/go-openapi/swag v0.22.9
 
 replace github.com/go-openapi/jsonpointer => github.com/go-openapi/jsonpointer v0.20.3
+
+replace golang.org/x/sys => golang.org/x/sys v0.8.0
+
+replace golang.org/x/crypto => golang.org/x/crypto v0.9.0
+
+replace golang.org/x/net => golang.org/x/net v0.10.0
+
+replace golang.org/x/text => golang.org/x/text v0.9.0

@@ -30,7 +30,7 @@ type AnalyticsRepository interface {
 	SearchAdvertisers(ctx context.Context, query string, limit int) ([]domain.AutocompleteResult, error)
 	SearchPublishers(ctx context.Context, query string, limit int) ([]domain.AutocompleteResult, error)
 	SearchBoth(ctx context.Context, query string, limit int) ([]domain.AutocompleteResult, error)
-	AffiliatesSearch(ctx context.Context, country string, partnerDomains []string, verticals []string, limit int, offset int) ([]*domain.AnalyticsPublisher, error)
+	AffiliatesSearch(ctx context.Context, domainFilter, country string, partnerDomains []string, verticals []string, limit int, offset int) ([]*domain.AnalyticsPublisher, error)
 }
 
 // analyticsRepository implements AnalyticsRepository
@@ -38,7 +38,7 @@ type analyticsRepository struct {
 	db *pgxpool.Pool
 }
 
-func (r *analyticsRepository) AffiliatesSearch(ctx context.Context, country string, partnerDomains []string, verticals []string, limit int, offset int) ([]*domain.AnalyticsPublisher, error) {
+func (r *analyticsRepository) AffiliatesSearch(ctx context.Context, domainFilter, country string, partnerDomains []string, verticals []string, limit int, offset int) ([]*domain.AnalyticsPublisher, error) {
 	// Base query with all fields
 	query := `
         SELECT 
@@ -46,18 +46,20 @@ func (r *analyticsRepository) AffiliatesSearch(ctx context.Context, country stri
             affiliate_networks, country_rankings, keywords, verticals, verticals_v2,
             partner_information, partners, related_publishers, social_media, live_urls,
             known, relevance, traffic_score, promotype, additional_data,
-            created_at, updated_at,
-            -- Extract country score for sorting
-            COALESCE(
-                (country_rankings->'value'->0->>'score')::decimal, 
-                0
-            ) as country_score
+            created_at, updated_at
         FROM analytics_publishers 
         WHERE 1=1`
 
 	var conditions []string
 	var args []interface{}
 	argIndex := 1
+
+	// Domain filter - partial matching like auto-completion
+	if domainFilter != "" {
+		conditions = append(conditions, fmt.Sprintf(`domain ILIKE $%d`, argIndex))
+		args = append(args, fmt.Sprintf("%%%s%%", domainFilter))
+		argIndex++
+	}
 
 	// Country filter - search in country_rankings JSONB
 	if country != "" {
@@ -70,9 +72,9 @@ func (r *analyticsRepository) AffiliatesSearch(ctx context.Context, country stri
 	// Partner domains filter - search in partners JSONB array
 	if len(partnerDomains) > 0 {
 		partnerConditions := make([]string, len(partnerDomains))
-		for i, domain := range partnerDomains {
+		for i, partnerDomain := range partnerDomains {
 			partnerConditions[i] = fmt.Sprintf(`partners->'value' @> $%d`, argIndex)
-			args = append(args, fmt.Sprintf(`["%s"]`, domain))
+			args = append(args, fmt.Sprintf(`["%s"]`, partnerDomain))
 			argIndex++
 		}
 		conditions = append(conditions, fmt.Sprintf("(%s)", strings.Join(partnerConditions, " OR ")))
@@ -94,13 +96,10 @@ func (r *analyticsRepository) AffiliatesSearch(ctx context.Context, country stri
 		query += " AND " + strings.Join(conditions, " AND ")
 	}
 
-	// Order by country score (highest first), then by relevance, then by traffic score
+	// Order by number of partners (highest first), then by relevance, then by traffic score
 	query += `
         ORDER BY 
-            country_score DESC,
-            relevance DESC,
-            traffic_score DESC,
-            created_at DESC`
+            COALESCE((partners->'count')::int, 0) DESC`
 
 	// Add pagination
 	query += fmt.Sprintf(" LIMIT $%d OFFSET $%d", argIndex, argIndex+1)
@@ -117,7 +116,6 @@ func (r *analyticsRepository) AffiliatesSearch(ctx context.Context, country stri
 
 	for rows.Next() {
 		var p domain.AnalyticsPublisher
-		var countryScore float64 // We select this but don't need to store it
 
 		err := rows.Scan(
 			&p.ID, &p.Domain,
@@ -126,7 +124,6 @@ func (r *analyticsRepository) AffiliatesSearch(ctx context.Context, country stri
 			&p.PartnerInformation, &p.Partners, &p.RelatedPublishers, &p.SocialMedia, &p.LiveURLs,
 			&p.Known, &p.Relevance, &p.TrafficScore, &p.Promotype, &p.AdditionalData,
 			&p.CreatedAt, &p.UpdatedAt,
-			&countryScore, // Country score for sorting (not stored in struct)
 		)
 		if err != nil {
 			return nil, fmt.Errorf("error scanning publisher row: %w", err)

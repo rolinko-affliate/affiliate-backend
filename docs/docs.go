@@ -1097,7 +1097,7 @@ const docTemplate = `{
                         "BearerAuth": []
                     }
                 ],
-                "description": "Search for affiliates/publishers filtered by country, partner domains, and/or verticals with full publisher data, sorted by country rankings",
+                "description": "Search for affiliates/publishers with domain auto-completion and filtered by country, partner domains, and/or verticals with full publisher data, sorted by number of partners. Accessible by advertisers, affiliate managers, and admins.",
                 "consumes": [
                     "application/json"
                 ],
@@ -1107,7 +1107,7 @@ const docTemplate = `{
                 "tags": [
                     "affiliates"
                 ],
-                "summary": "Search affiliates by country, partner domains, and verticals",
+                "summary": "Search affiliates by domain, country, partner domains, and verticals",
                 "parameters": [
                     {
                         "description": "Search parameters",
@@ -1133,7 +1133,7 @@ const docTemplate = `{
                 ],
                 "responses": {
                     "200": {
-                        "description": "List of publishers with full data sorted by country rankings",
+                        "description": "List of publishers with full data sorted by number of partners (empty array if no results)",
                         "schema": {
                             "type": "array",
                             "items": {
@@ -1143,12 +1143,6 @@ const docTemplate = `{
                     },
                     "400": {
                         "description": "Invalid request",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "404": {
-                        "description": "No affiliates found",
                         "schema": {
                             "$ref": "#/definitions/handlers.ErrorResponse"
                         }
@@ -4399,6 +4393,11 @@ const docTemplate = `{
                     "description": "Country code to filter by (optional)",
                     "type": "string",
                     "example": "US"
+                },
+                "domain": {
+                    "description": "Domain name to search for (optional) - partial matching like auto-completion",
+                    "type": "string",
+                    "example": "example.com"
                 },
                 "offset": {
                     "description": "Page size (number of results per page)",

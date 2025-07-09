@@ -22,7 +22,7 @@ type AnalyticsService interface {
 
 	// Publisher methods
 	GetPublisherByID(ctx context.Context, id int64) (*domain.AnalyticsPublisherResponse, error)
-	AffiliatesSearch(ctx context.Context, country string, partnerDomains []string, verticals []string, page, offset int) ([]*domain.AnalyticsPublisherResponse, error)
+	AffiliatesSearch(ctx context.Context, domainFilter, country string, partnerDomains []string, verticals []string, page, offset int) ([]*domain.AnalyticsPublisherResponse, error)
 	CreatePublisher(ctx context.Context, publisher *domain.AnalyticsPublisher) error
 	UpdatePublisher(ctx context.Context, publisher *domain.AnalyticsPublisher) error
 	DeletePublisher(ctx context.Context, id int64) error
@@ -33,7 +33,7 @@ type analyticsService struct {
 	analyticsRepo repository.AnalyticsRepository
 }
 
-func (s *analyticsService) AffiliatesSearch(ctx context.Context, country string, partnerDomains []string, verticals []string, page, offset int) ([]*domain.AnalyticsPublisherResponse, error) {
+func (s *analyticsService) AffiliatesSearch(ctx context.Context, domainFilter, country string, partnerDomains []string, verticals []string, page, offset int) ([]*domain.AnalyticsPublisherResponse, error) {
 	if page < 1 {
 		page = 1
 	}
@@ -42,7 +42,7 @@ func (s *analyticsService) AffiliatesSearch(ctx context.Context, country string,
 	}
 
 	pages := (page - 1) * offset
-	publishers, err := s.analyticsRepo.AffiliatesSearch(ctx, country, partnerDomains, verticals, offset, pages)
+	publishers, err := s.analyticsRepo.AffiliatesSearch(ctx, domainFilter, country, partnerDomains, verticals, offset, pages)
 	if err != nil {
 		return nil, err
 	}

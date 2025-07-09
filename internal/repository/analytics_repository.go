@@ -2,7 +2,6 @@ package repository
 
 import (
 	"context"
-	"fmt"
 	"strings"
 
 	"github.com/affiliate-backend/internal/domain"
@@ -30,62 +29,11 @@ type AnalyticsRepository interface {
 	SearchAdvertisers(ctx context.Context, query string, limit int) ([]domain.AutocompleteResult, error)
 	SearchPublishers(ctx context.Context, query string, limit int) ([]domain.AutocompleteResult, error)
 	SearchBoth(ctx context.Context, query string, limit int) ([]domain.AutocompleteResult, error)
-	AffiliatesSearch(ctx context.Context, country string, Offset int, pages int) ([]*domain.AnalyticsPublisher, error)
 }
 
 // analyticsRepository implements AnalyticsRepository
 type analyticsRepository struct {
 	db *pgxpool.Pool
-}
-
-func (r *analyticsRepository) AffiliatesSearch(ctx context.Context, country string, Offset int, pages int) ([]*domain.AnalyticsPublisher, error) {
-	// sql
-	query := `
-        SELECT 
-            id, domain, description, favicon_image_url, screenshot_image_url,
-			   affiliate_networks, country_rankings, keywords, verticals, verticals_v2,
-			   partner_information, partners, related_publishers, social_media, live_urls,
-			   known, relevance, traffic_score, promotype, additional_data,
-			   created_at, updated_at
-		FROM analytics_publishers 
-        WHERE 1=1
-        
-    `
-
-	jsonCondition := fmt.Sprintf(`{"value": [{"countryCode": "%s"}]}`, country)
-	query += fmt.Sprintf(` AND country_rankings::jsonb @> '%s'`, jsonCondition)
-	query += " ORDER BY created_at DESC"
-	query += fmt.Sprintf(" LIMIT %d OFFSET %d", Offset, pages)
-
-	rows, err := r.db.Query(ctx, query)
-	if err != nil {
-		return nil, fmt.Errorf("error searching affiliates: %w", err)
-	}
-	defer rows.Close()
-	var analyticsAdvertiser []*domain.AnalyticsPublisher
-
-	for rows.Next() {
-		var p domain.AnalyticsPublisher
-
-		err := rows.Scan(
-			&p.ID, &p.Domain,
-			&p.Description, &p.FaviconImageURL, &p.ScreenshotImageURL,
-			&p.AffiliateNetworks, &p.CountryRankings, &p.Keywords, &p.Verticals, &p.VerticalsV2,
-			&p.PartnerInformation, &p.Partners, &p.RelatedPublishers, &p.SocialMedia, &p.LiveURLs,
-			&p.Known, &p.Relevance, &p.TrafficScore, &p.Promotype, &p.AdditionalData,
-			&p.CreatedAt, &p.UpdatedAt,
-		)
-		if err != nil {
-			return nil, err
-		}
-
-		analyticsAdvertiser = append(analyticsAdvertiser, &p)
-	}
-
-	if err := rows.Err(); err != nil {
-		return nil, fmt.Errorf("rows iteration error: %w", err)
-	}
-	return analyticsAdvertiser, nil
 }
 
 // NewAnalyticsRepository creates a new analytics repository
@@ -107,7 +55,7 @@ func (r *analyticsRepository) CreateAdvertiser(ctx context.Context, advertiser *
 	err := r.db.QueryRow(ctx, query,
 		advertiser.Domain, advertiser.Description, advertiser.FaviconImageURL, advertiser.ScreenshotImageURL,
 		advertiser.AffiliateNetworks, advertiser.ContactEmails, advertiser.Keywords, advertiser.Verticals,
-		advertiser.PartnerInformation, advertiser.RelatedAdvertisers, advertiser.SocialMedia,
+		advertiser.PartnerInformation, advertiser.RelatedAdvertisers, advertiser.SocialMedia, 
 		advertiser.Backlinks, advertiser.AdditionalData,
 	).Scan(&advertiser.ID, &advertiser.CreatedAt, &advertiser.UpdatedAt)
 
@@ -127,7 +75,7 @@ func (r *analyticsRepository) GetAdvertiserByID(ctx context.Context, id int64) (
 	err := r.db.QueryRow(ctx, query, id).Scan(
 		&advertiser.ID, &advertiser.Domain, &advertiser.Description, &advertiser.FaviconImageURL, &advertiser.ScreenshotImageURL,
 		&advertiser.AffiliateNetworks, &advertiser.ContactEmails, &advertiser.Keywords, &advertiser.Verticals,
-		&advertiser.PartnerInformation, &advertiser.RelatedAdvertisers, &advertiser.SocialMedia,
+		&advertiser.PartnerInformation, &advertiser.RelatedAdvertisers, &advertiser.SocialMedia, 
 		&advertiser.Backlinks, &advertiser.AdditionalData,
 		&advertiser.CreatedAt, &advertiser.UpdatedAt,
 	)
@@ -155,7 +103,7 @@ func (r *analyticsRepository) GetAdvertiserByDomain(ctx context.Context, domainN
 	err := r.db.QueryRow(ctx, query, domainName).Scan(
 		&advertiser.ID, &advertiser.Domain, &advertiser.Description, &advertiser.FaviconImageURL, &advertiser.ScreenshotImageURL,
 		&advertiser.AffiliateNetworks, &advertiser.ContactEmails, &advertiser.Keywords, &advertiser.Verticals,
-		&advertiser.PartnerInformation, &advertiser.RelatedAdvertisers, &advertiser.SocialMedia,
+		&advertiser.PartnerInformation, &advertiser.RelatedAdvertisers, &advertiser.SocialMedia, 
 		&advertiser.Backlinks, &advertiser.AdditionalData,
 		&advertiser.CreatedAt, &advertiser.UpdatedAt,
 	)
@@ -183,7 +131,7 @@ func (r *analyticsRepository) UpdateAdvertiser(ctx context.Context, advertiser *
 	err := r.db.QueryRow(ctx, query,
 		advertiser.ID, advertiser.Domain, advertiser.Description, advertiser.FaviconImageURL, advertiser.ScreenshotImageURL,
 		advertiser.AffiliateNetworks, advertiser.ContactEmails, advertiser.Keywords, advertiser.Verticals,
-		advertiser.PartnerInformation, advertiser.RelatedAdvertisers, advertiser.SocialMedia,
+		advertiser.PartnerInformation, advertiser.RelatedAdvertisers, advertiser.SocialMedia, 
 		advertiser.Backlinks, advertiser.AdditionalData,
 	).Scan(&advertiser.UpdatedAt)
 

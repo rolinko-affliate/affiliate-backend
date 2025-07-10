@@ -15,4 +15,4 @@ patches:
 
 images:
 - name: europe-west1-docker.pkg.dev/jinko-test/jinko-test-docker-repo/saas-app
-  newTag: 0.0.9
+  newTag: 0.0.10

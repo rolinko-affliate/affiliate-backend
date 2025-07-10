@@ -1806,6 +1806,382 @@ const docTemplate = `{
                 }
             }
         },
+        "/billing/config": {
+            "put": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Update billing configuration for the organization",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "billing"
+                ],
+                "summary": "Update billing configuration",
+                "parameters": [
+                    {
+                        "description": "Billing configuration",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.UpdateBillingConfigRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.BillingAccount"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/billing/dashboard": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Get billing dashboard data for the authenticated user's organization",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "billing"
+                ],
+                "summary": "Get billing dashboard",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.BillingDashboardResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/billing/payment-methods": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Add a new payment method for the organization",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "billing"
+                ],
+                "summary": "Add payment method",
+                "parameters": [
+                    {
+                        "description": "Payment method details",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.CreatePaymentMethodRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/domain.StripePaymentMethod"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/billing/payment-methods/{id}": {
+            "delete": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Remove a payment method from the organization",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "billing"
+                ],
+                "summary": "Remove payment method",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Payment Method ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/billing/recharge": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Add funds to the organization's account",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "billing"
+                ],
+                "summary": "Recharge account",
+                "parameters": [
+                    {
+                        "description": "Recharge details",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.RechargeRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/domain.Transaction"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/billing/transactions": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Get transaction history for the organization",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "billing"
+                ],
+                "summary": "Get transaction history",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "default": 20,
+                        "description": "Limit",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "default": 0,
+                        "description": "Offset",
+                        "name": "offset",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/domain.Transaction"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/campaigns": {
             "post": {
                 "description": "Create a new campaign with the provided details",
@@ -3916,6 +4292,100 @@ const docTemplate = `{
                 }
             }
         },
+        "domain.BillingAccount": {
+            "type": "object",
+            "properties": {
+                "auto_recharge_amount": {
+                    "type": "number"
+                },
+                "auto_recharge_enabled": {
+                    "type": "boolean"
+                },
+                "auto_recharge_threshold": {
+                    "type": "number"
+                },
+                "balance": {
+                    "description": "Balance and Credit",
+                    "type": "number"
+                },
+                "billing_account_id": {
+                    "type": "integer"
+                },
+                "billing_address": {
+                    "type": "object",
+                    "additionalProperties": true
+                },
+                "billing_email": {
+                    "type": "string"
+                },
+                "billing_mode": {
+                    "description": "Billing Configuration",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/domain.BillingMode"
+                        }
+                    ]
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "credit_limit": {
+                    "type": "number"
+                },
+                "currency": {
+                    "type": "string"
+                },
+                "default_payment_method_id": {
+                    "description": "Payment Configuration",
+                    "type": "string"
+                },
+                "invoice_day_of_month": {
+                    "description": "Invoice Configuration",
+                    "type": "integer"
+                },
+                "organization_id": {
+                    "type": "integer"
+                },
+                "payment_terms_days": {
+                    "type": "integer"
+                },
+                "status": {
+                    "description": "Status and Metadata",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/domain.BillingAccountStatus"
+                        }
+                    ]
+                },
+                "stripe_account_id": {
+                    "type": "string"
+                },
+                "stripe_customer_id": {
+                    "description": "Stripe Integration",
+                    "type": "string"
+                },
+                "tax_info": {
+                    "type": "object",
+                    "additionalProperties": true
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.BillingAccountStatus": {
+            "type": "string",
+            "enum": [
+                "active",
+                "suspended",
+                "closed"
+            ],
+            "x-enum-varnames": [
+                "BillingAccountStatusActive",
+                "BillingAccountStatusSuspended",
+                "BillingAccountStatusClosed"
+            ]
+        },
         "domain.BillingAddress": {
             "type": "object",
             "properties": {
@@ -3939,6 +4409,38 @@ const docTemplate = `{
                 },
                 "state": {
                     "type": "string"
+                }
+            }
+        },
+        "domain.BillingDashboardResponse": {
+            "type": "object",
+            "properties": {
+                "billing_account": {
+                    "$ref": "#/definitions/domain.BillingAccount"
+                },
+                "current_balance": {
+                    "type": "number"
+                },
+                "monthly_spend": {
+                    "type": "number"
+                },
+                "payment_methods": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.StripePaymentMethod"
+                    }
+                },
+                "pending_invoices": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.Invoice"
+                    }
+                },
+                "recent_transactions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.Transaction"
+                    }
                 }
             }
         },
@@ -4007,6 +4509,21 @@ const docTemplate = `{
                 "BillingFrequencyQuarterly",
                 "BillingFrequencyManual",
                 "BillingFrequencyOther"
+            ]
+        },
+        "domain.BillingMode": {
+            "type": "string",
+            "enum": [
+                "prepaid",
+                "postpaid"
+            ],
+            "x-enum-comments": {
+                "BillingModePostpaid": "Monthly invoicing",
+                "BillingModePrepaid": "Pay-as-you-go with balance"
+            },
+            "x-enum-varnames": [
+                "BillingModePrepaid",
+                "BillingModePostpaid"
             ]
         },
         "domain.BillingSchedule": {
@@ -4105,6 +4622,151 @@ const docTemplate = `{
                     }
                 }
             }
+        },
+        "domain.CreatePaymentMethodRequest": {
+            "type": "object",
+            "required": [
+                "payment_method_id"
+            ],
+            "properties": {
+                "nickname": {
+                    "type": "string"
+                },
+                "payment_method_id": {
+                    "description": "Stripe Payment Method ID",
+                    "type": "string"
+                },
+                "set_as_default": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "domain.Invoice": {
+            "type": "object",
+            "properties": {
+                "amount_due": {
+                    "type": "number"
+                },
+                "amount_paid": {
+                    "type": "number"
+                },
+                "billing_account_id": {
+                    "type": "integer"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "currency": {
+                    "type": "string"
+                },
+                "due_date": {
+                    "type": "string"
+                },
+                "invoice_date": {
+                    "description": "Dates",
+                    "type": "string"
+                },
+                "invoice_id": {
+                    "type": "integer"
+                },
+                "invoice_number": {
+                    "description": "Invoice Details",
+                    "type": "string"
+                },
+                "line_items": {
+                    "description": "Invoice Content",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.InvoiceLineItem"
+                    }
+                },
+                "metadata": {
+                    "description": "Metadata",
+                    "type": "object",
+                    "additionalProperties": true
+                },
+                "notes": {
+                    "type": "string"
+                },
+                "organization_id": {
+                    "type": "integer"
+                },
+                "paid_at": {
+                    "type": "string"
+                },
+                "period_end": {
+                    "type": "string"
+                },
+                "period_start": {
+                    "description": "Billing Period",
+                    "type": "string"
+                },
+                "status": {
+                    "description": "Status",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/domain.InvoiceStatus"
+                        }
+                    ]
+                },
+                "stripe_invoice_id": {
+                    "description": "Stripe Integration",
+                    "type": "string"
+                },
+                "subtotal": {
+                    "description": "Financial Details",
+                    "type": "number"
+                },
+                "tax_amount": {
+                    "type": "number"
+                },
+                "total_amount": {
+                    "type": "number"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.InvoiceLineItem": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "number"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "metadata": {
+                    "type": "object",
+                    "additionalProperties": true
+                },
+                "quantity": {
+                    "type": "number"
+                },
+                "unit_price": {
+                    "type": "number"
+                }
+            }
+        },
+        "domain.InvoiceStatus": {
+            "type": "string",
+            "enum": [
+                "draft",
+                "open",
+                "paid",
+                "void",
+                "uncollectible",
+                "overdue"
+            ],
+            "x-enum-varnames": [
+                "InvoiceStatusDraft",
+                "InvoiceStatusOpen",
+                "InvoiceStatusPaid",
+                "InvoiceStatusVoid",
+                "InvoiceStatusUncollectible",
+                "InvoiceStatusOverdue"
+            ]
         },
         "domain.KeywordData": {
             "type": "object",
@@ -4268,6 +4930,21 @@ const docTemplate = `{
                 "PaymentDetailsTypeOther"
             ]
         },
+        "domain.PaymentMethodStatus": {
+            "type": "string",
+            "enum": [
+                "active",
+                "inactive",
+                "expired",
+                "failed"
+            ],
+            "x-enum-varnames": [
+                "PaymentMethodStatusActive",
+                "PaymentMethodStatusInactive",
+                "PaymentMethodStatusExpired",
+                "PaymentMethodStatusFailed"
+            ]
+        },
         "domain.PaymentType": {
             "type": "string",
             "enum": [
@@ -4324,6 +5001,26 @@ const docTemplate = `{
                 }
             }
         },
+        "domain.RechargeRequest": {
+            "type": "object",
+            "required": [
+                "amount"
+            ],
+            "properties": {
+                "amount": {
+                    "type": "number"
+                },
+                "currency": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "payment_method_id": {
+                    "type": "string"
+                }
+            }
+        },
         "domain.SocialMediaData": {
             "type": "object",
             "properties": {
@@ -4341,6 +5038,221 @@ const docTemplate = `{
                     "additionalProperties": {
                         "type": "string"
                     }
+                }
+            }
+        },
+        "domain.StripePaymentMethod": {
+            "type": "object",
+            "properties": {
+                "account_holder_type": {
+                    "type": "string"
+                },
+                "bank_name": {
+                    "description": "Bank Account Details",
+                    "type": "string"
+                },
+                "billing_account_id": {
+                    "type": "integer"
+                },
+                "brand": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "exp_month": {
+                    "type": "integer"
+                },
+                "exp_year": {
+                    "type": "integer"
+                },
+                "is_default": {
+                    "description": "Status and Configuration",
+                    "type": "boolean"
+                },
+                "last4": {
+                    "type": "string"
+                },
+                "metadata": {
+                    "type": "object",
+                    "additionalProperties": true
+                },
+                "nickname": {
+                    "description": "Metadata",
+                    "type": "string"
+                },
+                "organization_id": {
+                    "type": "integer"
+                },
+                "payment_method_id": {
+                    "type": "integer"
+                },
+                "status": {
+                    "$ref": "#/definitions/domain.PaymentMethodStatus"
+                },
+                "stripe_payment_method_id": {
+                    "description": "Stripe Integration",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "Payment Method Details",
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.Transaction": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "number"
+                },
+                "balance_after": {
+                    "type": "number"
+                },
+                "balance_before": {
+                    "description": "Balance Tracking",
+                    "type": "number"
+                },
+                "billing_account_id": {
+                    "type": "integer"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "currency": {
+                    "type": "string"
+                },
+                "description": {
+                    "description": "Metadata",
+                    "type": "string"
+                },
+                "metadata": {
+                    "type": "object",
+                    "additionalProperties": true
+                },
+                "organization_id": {
+                    "type": "integer"
+                },
+                "processed_at": {
+                    "description": "Timestamps",
+                    "type": "string"
+                },
+                "reference_id": {
+                    "type": "string"
+                },
+                "reference_type": {
+                    "description": "References",
+                    "type": "string"
+                },
+                "related_transaction_id": {
+                    "type": "integer"
+                },
+                "status": {
+                    "description": "Status",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/domain.TransactionStatus"
+                        }
+                    ]
+                },
+                "stripe_charge_id": {
+                    "type": "string"
+                },
+                "stripe_invoice_id": {
+                    "type": "string"
+                },
+                "stripe_payment_intent_id": {
+                    "description": "Stripe Integration",
+                    "type": "string"
+                },
+                "transaction_id": {
+                    "type": "integer"
+                },
+                "type": {
+                    "description": "Transaction Details",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/domain.TransactionType"
+                        }
+                    ]
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.TransactionStatus": {
+            "type": "string",
+            "enum": [
+                "pending",
+                "completed",
+                "failed",
+                "cancelled",
+                "refunded"
+            ],
+            "x-enum-varnames": [
+                "TransactionStatusPending",
+                "TransactionStatusCompleted",
+                "TransactionStatusFailed",
+                "TransactionStatusCancelled",
+                "TransactionStatusRefunded"
+            ]
+        },
+        "domain.TransactionType": {
+            "type": "string",
+            "enum": [
+                "recharge",
+                "debit",
+                "credit",
+                "refund",
+                "chargeback",
+                "invoice_payment",
+                "usage_charge",
+                "affiliate_payout",
+                "platform_fee",
+                "adjustment",
+                "transfer"
+            ],
+            "x-enum-varnames": [
+                "TransactionTypeRecharge",
+                "TransactionTypeDebit",
+                "TransactionTypeCredit",
+                "TransactionTypeRefund",
+                "TransactionTypeChargeback",
+                "TransactionTypeInvoicePayment",
+                "TransactionTypeUsageCharge",
+                "TransactionTypeAffiliatePayout",
+                "TransactionTypePlatformFee",
+                "TransactionTypeAdjustment",
+                "TransactionTypeTransfer"
+            ]
+        },
+        "domain.UpdateBillingConfigRequest": {
+            "type": "object",
+            "properties": {
+                "auto_recharge_amount": {
+                    "type": "number"
+                },
+                "auto_recharge_enabled": {
+                    "type": "boolean"
+                },
+                "auto_recharge_threshold": {
+                    "type": "number"
+                },
+                "billing_email": {
+                    "type": "string"
+                },
+                "billing_mode": {
+                    "$ref": "#/definitions/domain.BillingMode"
+                },
+                "invoice_day_of_month": {
+                    "type": "integer"
+                },
+                "payment_terms_days": {
+                    "type": "integer"
                 }
             }
         },

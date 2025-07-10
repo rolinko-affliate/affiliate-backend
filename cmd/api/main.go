@@ -40,6 +40,7 @@ import (
 	"github.com/affiliate-backend/internal/platform/crypto"
 	"github.com/affiliate-backend/internal/platform/everflow"
 	"github.com/affiliate-backend/internal/platform/provider"
+	"github.com/affiliate-backend/internal/platform/stripe"
 	"github.com/affiliate-backend/internal/repository"
 	"github.com/affiliate-backend/internal/service"
 )
@@ -236,9 +237,39 @@ func main() {
 	trackingLinkRepo := repository.NewTrackingLinkRepository(repository.DB)
 	trackingLinkProviderMappingRepo := repository.NewTrackingLinkProviderMappingRepository(repository.DB)
 	analyticsRepo := repository.NewAnalyticsRepository(repository.DB)
+	
+	// Initialize Billing Repositories
+	billingAccountRepo := repository.NewPgxBillingAccountRepository(repository.DB)
+	paymentMethodRepo := repository.NewPgxPaymentMethodRepository(repository.DB)
+	transactionRepo := repository.NewPgxTransactionRepository(repository.DB)
+	usageRecordRepo := repository.NewPgxUsageRecordRepository(repository.DB)
+	webhookEventRepo := repository.NewPgxWebhookEventRepository(repository.DB)
 
 	// Initialize Platform Services
 	cryptoService := crypto.NewServiceFromConfig()
+
+	// Initialize Stripe service
+	stripeConfig := stripe.Config{
+		SecretKey:      os.Getenv("STRIPE_SECRET_KEY"),
+		PublishableKey: os.Getenv("STRIPE_PUBLISHABLE_KEY"),
+		WebhookSecret:  os.Getenv("STRIPE_WEBHOOK_SECRET"),
+		Environment:    os.Getenv("STRIPE_ENVIRONMENT"), // "test" or "live"
+	}
+	
+	// Use test keys if not provided
+	if stripeConfig.SecretKey == "" {
+		stripeConfig.SecretKey = "sk_test_..." // Default test key
+		log.Println("⚠️  Using default Stripe test secret key")
+	}
+	if stripeConfig.WebhookSecret == "" {
+		stripeConfig.WebhookSecret = "whsec_..." // Default test webhook secret
+		log.Println("⚠️  Using default Stripe webhook secret")
+	}
+	if stripeConfig.Environment == "" {
+		stripeConfig.Environment = "test"
+	}
+	
+	stripeService := stripe.NewService(stripeConfig)
 
 	// Initialize integration service based on configuration
 	var integrationService provider.IntegrationService
@@ -271,6 +302,11 @@ func main() {
 	campaignService := service.NewCampaignService(campaignRepo)
 	trackingLinkService := service.NewTrackingLinkService(trackingLinkRepo, trackingLinkProviderMappingRepo, campaignRepo, affiliateRepo, campaignProviderMappingRepo, affiliateProviderMappingRepo, integrationService)
 	analyticsService := service.NewAnalyticsService(analyticsRepo)
+	
+	// Initialize Billing Services
+	billingService := service.NewBillingService(billingAccountRepo, paymentMethodRepo, transactionRepo, organizationRepo, stripeService)
+	usageCalculationService := service.NewUsageCalculationService(usageRecordRepo, billingAccountRepo, transactionRepo, campaignRepo, affiliateRepo, billingService)
+	cronService := service.NewCronService(usageCalculationService)
 
 	// Initialize Handlers
 	profileHandler := handlers.NewProfileHandler(profileService)
@@ -280,6 +316,10 @@ func main() {
 	campaignHandler := handlers.NewCampaignHandler(campaignService)
 	trackingLinkHandler := handlers.NewTrackingLinkHandler(trackingLinkService)
 	analyticsHandler := handlers.NewAnalyticsHandler(analyticsService)
+	
+	// Initialize Billing Handlers
+	billingHandler := handlers.NewBillingHandler(billingService, profileService)
+	webhookHandler := handlers.NewWebhookHandler(stripeService, billingService, webhookEventRepo, billingAccountRepo, transactionRepo, stripeConfig.WebhookSecret)
 
 	// Setup Router
 	router := api.SetupRouter(api.RouterOptions{
@@ -291,6 +331,8 @@ func main() {
 		CampaignHandler:     campaignHandler,
 		TrackingLinkHandler: trackingLinkHandler,
 		AnalyticsHandler:    analyticsHandler,
+		BillingHandler:      billingHandler,
+		WebhookHandler:      webhookHandler,
 	})
 
 	// Start Server
@@ -298,6 +340,10 @@ func main() {
 		Addr:    ":" + appConf.Port,
 		Handler: router,
 	}
+
+	// Start cron service
+	cronService.Start()
+	defer cronService.Stop()
 
 	// Start the server in a goroutine
 	go func() {

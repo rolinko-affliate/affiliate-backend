@@ -17,6 +17,8 @@ type RouterOptions struct {
 	CampaignHandler     *handlers.CampaignHandler
 	TrackingLinkHandler *handlers.TrackingLinkHandler
 	AnalyticsHandler    *handlers.AnalyticsHandler
+	BillingHandler      *handlers.BillingHandler
+	WebhookHandler      *handlers.WebhookHandler
 }
 
 // SetupRouter sets up the API router
@@ -29,11 +31,11 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 	// Health Check
 	r.GET("/health", handlers.HealthCheck)
 
-	// Public routes (e.g., Supabase webhook for profile creation)
+	// Public routes (e.g., Supabase webhook for profile creation, Stripe webhooks)
 	public := r.Group("/api/v1/public")
 	{
 		public.POST("/webhooks/supabase/new-user", opts.ProfileHandler.HandleSupabaseNewUserWebhook)
-
+		public.POST("/webhooks/stripe", opts.WebhookHandler.HandleStripeWebhook)
 	}
 
 	// Authenticated routes
@@ -171,6 +173,23 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		// Publisher/Affiliate analytics endpoints
 		analytics.GET("/affiliates/:id", opts.AnalyticsHandler.GetPublisherByID)
 		analytics.POST("/affiliates", opts.AnalyticsHandler.CreatePublisher) // For future data management
+	}
+
+	// --- Billing Routes ---
+	billing := v1.Group("/billing")
+	billing.Use(rbacMW("AdvertiserManager", "Admin")) // Only advertisers and admins can access billing
+	{
+		// Billing dashboard and account management
+		billing.GET("/dashboard", opts.BillingHandler.GetBillingDashboard)
+		billing.PUT("/config", opts.BillingHandler.UpdateBillingConfig)
+
+		// Payment methods
+		billing.POST("/payment-methods", opts.BillingHandler.AddPaymentMethod)
+		billing.DELETE("/payment-methods/:id", opts.BillingHandler.RemovePaymentMethod)
+
+		// Transactions and recharging
+		billing.POST("/recharge", opts.BillingHandler.Recharge)
+		billing.GET("/transactions", opts.BillingHandler.GetTransactionHistory)
 	}
 
 	return r

@@ -467,6 +467,19 @@ type AffiliatesSearchRequest struct {
 	Offset int `json:"offset,omitempty" example:"10"`
 }
 
+// AffiliatesSearchResponse defines the response structure for affiliate search
+// swagger:model
+type AffiliatesSearchResponse struct {
+	// List of affiliate publishers matching the search criteria
+	Data []*domain.AnalyticsPublisherResponse `json:"data"`
+	// Total number of items found matching the search criteria
+	Total int64 `json:"total"`
+	// Current page number
+	Page int `json:"page"`
+	// Page size (number of results per page)
+	Offset int `json:"offset"`
+}
+
 // AffiliatesSearch searches for affiliates/publishers by multiple criteria
 // @Summary      Search affiliates by domain, country, partner domains, and verticals
 // @Description  Search for affiliates/publishers with domain auto-completion and filtered by country, partner domains, and/or verticals with full publisher data, sorted by number of partners. Accessible by advertisers, affiliate managers, and admins.
@@ -476,7 +489,7 @@ type AffiliatesSearchRequest struct {
 // @Param        request  body      AffiliatesSearchRequest                    true  "Search parameters"
 // @Param        page     query     int                                        false "Page number (default: 1)"
 // @Param        pageSize query     int                                        false "Page size (default: 10)"
-// @Success      200      {array}   domain.AnalyticsPublisherResponse         "List of publishers with full data sorted by number of partners (empty array if no results)"
+// @Success      200      {object}  AffiliatesSearchResponse                  "Search results with data array and total count"
 // @Failure      400      {object}  ErrorResponse                             "Invalid request"
 // @Failure      500      {object}  ErrorResponse                             "Internal server error"
 // @Security     BearerAuth
@@ -502,7 +515,7 @@ func (h *AffiliateHandler) AffiliatesSearch(c *gin.Context) {
 	if err != nil || pageSize < 1 {
 		pageSize = 10
 	}
-	analyticsAdvertiser, err := h.analyticsService.AffiliatesSearch(c.Request.Context(), aff.Domain, aff.Country, aff.PartnerDomains, aff.Verticals, page, pageSize)
+	result, err := h.analyticsService.AffiliatesSearch(c.Request.Context(), aff.Domain, aff.Country, aff.PartnerDomains, aff.Verticals, page, pageSize)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, ErrorResponse{
 			Error:   "Failed to retrieve affiliates",
@@ -511,8 +524,16 @@ func (h *AffiliateHandler) AffiliatesSearch(c *gin.Context) {
 		return
 	}
 
+	// Create the response structure
+	response := AffiliatesSearchResponse{
+		Data:   result.Data,
+		Total:  result.Total,
+		Page:   page,
+		Offset: pageSize,
+	}
+
 	// Always return the result (empty array if no results found)
-	c.JSON(http.StatusOK, analyticsAdvertiser)
+	c.JSON(http.StatusOK, response)
 }
 
 // DeleteAffiliateProviderMapping deletes an affiliate provider mapping

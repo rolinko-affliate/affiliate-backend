@@ -9,6 +9,12 @@ import (
 	"github.com/affiliate-backend/internal/repository"
 )
 
+// AffiliatesSearchResult represents the result of affiliate search with pagination info
+type AffiliatesSearchResult struct {
+	Data  []*domain.AnalyticsPublisherResponse
+	Total int64
+}
+
 // AnalyticsService defines the interface for analytics business logic
 type AnalyticsService interface {
 	// Autocompletion
@@ -22,7 +28,7 @@ type AnalyticsService interface {
 
 	// Publisher methods
 	GetPublisherByID(ctx context.Context, id int64) (*domain.AnalyticsPublisherResponse, error)
-	AffiliatesSearch(ctx context.Context, domainFilter, country string, partnerDomains []string, verticals []string, page, offset int) ([]*domain.AnalyticsPublisherResponse, error)
+	AffiliatesSearch(ctx context.Context, domainFilter, country string, partnerDomains []string, verticals []string, page, offset int) (*AffiliatesSearchResult, error)
 	CreatePublisher(ctx context.Context, publisher *domain.AnalyticsPublisher) error
 	UpdatePublisher(ctx context.Context, publisher *domain.AnalyticsPublisher) error
 	DeletePublisher(ctx context.Context, id int64) error
@@ -33,7 +39,7 @@ type analyticsService struct {
 	analyticsRepo repository.AnalyticsRepository
 }
 
-func (s *analyticsService) AffiliatesSearch(ctx context.Context, domainFilter, country string, partnerDomains []string, verticals []string, page, offset int) ([]*domain.AnalyticsPublisherResponse, error) {
+func (s *analyticsService) AffiliatesSearch(ctx context.Context, domainFilter, country string, partnerDomains []string, verticals []string, page, offset int) (*AffiliatesSearchResult, error) {
 	if page < 1 {
 		page = 1
 	}
@@ -42,7 +48,7 @@ func (s *analyticsService) AffiliatesSearch(ctx context.Context, domainFilter, c
 	}
 
 	pages := (page - 1) * offset
-	publishers, err := s.analyticsRepo.AffiliatesSearch(ctx, domainFilter, country, partnerDomains, verticals, offset, pages)
+	result, err := s.analyticsRepo.AffiliatesSearch(ctx, domainFilter, country, partnerDomains, verticals, offset, pages)
 	if err != nil {
 		return nil, err
 	}
@@ -50,7 +56,7 @@ func (s *analyticsService) AffiliatesSearch(ctx context.Context, domainFilter, c
 	// Transform each publisher to the full response format
 	// Initialize as empty slice to ensure we never return null
 	responses := make([]*domain.AnalyticsPublisherResponse, 0)
-	for _, publisher := range publishers {
+	for _, publisher := range result.Data {
 		response, err := s.buildPublisherResponse(publisher)
 		if err != nil {
 			// Log error but continue with other publishers
@@ -59,7 +65,10 @@ func (s *analyticsService) AffiliatesSearch(ctx context.Context, domainFilter, c
 		responses = append(responses, response)
 	}
 
-	return responses, nil
+	return &AffiliatesSearchResult{
+		Data:  responses,
+		Total: result.Total,
+	}, nil
 }
 
 // NewAnalyticsService creates a new analytics service

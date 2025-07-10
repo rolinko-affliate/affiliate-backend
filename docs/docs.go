@@ -1133,12 +1133,9 @@ const docTemplate = `{
                 ],
                 "responses": {
                     "200": {
-                        "description": "List of publishers with full data sorted by number of partners (empty array if no results)",
+                        "description": "Search results with data array and total count",
                         "schema": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/definitions/domain.AnalyticsPublisherResponse"
-                            }
+                            "$ref": "#/definitions/handlers.AffiliatesSearchResponse"
                         }
                     },
                     "400": {
@@ -4430,6 +4427,30 @@ const docTemplate = `{
                         "E-commerce",
                         "Fashion / Clothing"
                     ]
+                }
+            }
+        },
+        "handlers.AffiliatesSearchResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "description": "List of affiliate publishers matching the search criteria",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.AnalyticsPublisherResponse"
+                    }
+                },
+                "offset": {
+                    "description": "Page size (number of results per page)",
+                    "type": "integer"
+                },
+                "page": {
+                    "description": "Current page number",
+                    "type": "integer"
+                },
+                "total": {
+                    "description": "Total number of items found matching the search criteria",
+                    "type": "integer"
                 }
             }
         },

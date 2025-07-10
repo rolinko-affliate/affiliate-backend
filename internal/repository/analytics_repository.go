@@ -10,6 +10,12 @@ import (
 	"github.com/jackc/pgx/v5/pgxpool"
 )
 
+// AffiliatesSearchResult represents the result of affiliate search with total count
+type AffiliatesSearchResult struct {
+	Data  []*domain.AnalyticsPublisher
+	Total int64
+}
+
 // AnalyticsRepository defines the interface for analytics data access
 type AnalyticsRepository interface {
 	// Advertiser methods
@@ -30,7 +36,7 @@ type AnalyticsRepository interface {
 	SearchAdvertisers(ctx context.Context, query string, limit int) ([]domain.AutocompleteResult, error)
 	SearchPublishers(ctx context.Context, query string, limit int) ([]domain.AutocompleteResult, error)
 	SearchBoth(ctx context.Context, query string, limit int) ([]domain.AutocompleteResult, error)
-	AffiliatesSearch(ctx context.Context, domainFilter, country string, partnerDomains []string, verticals []string, limit int, offset int) ([]*domain.AnalyticsPublisher, error)
+	AffiliatesSearch(ctx context.Context, domainFilter, country string, partnerDomains []string, verticals []string, limit int, offset int) (*AffiliatesSearchResult, error)
 }
 
 // analyticsRepository implements AnalyticsRepository
@@ -38,18 +44,8 @@ type analyticsRepository struct {
 	db *pgxpool.Pool
 }
 
-func (r *analyticsRepository) AffiliatesSearch(ctx context.Context, domainFilter, country string, partnerDomains []string, verticals []string, limit int, offset int) ([]*domain.AnalyticsPublisher, error) {
-	// Base query with all fields
-	query := `
-        SELECT 
-            id, domain, description, favicon_image_url, screenshot_image_url,
-            affiliate_networks, country_rankings, keywords, verticals, verticals_v2,
-            partner_information, partners, related_publishers, social_media, live_urls,
-            known, relevance, traffic_score, promotype, additional_data,
-            created_at, updated_at
-        FROM analytics_publishers 
-        WHERE 1=1`
-
+func (r *analyticsRepository) AffiliatesSearch(ctx context.Context, domainFilter, country string, partnerDomains []string, verticals []string, limit int, offset int) (*AffiliatesSearchResult, error) {
+	// Build WHERE conditions
 	var conditions []string
 	var args []interface{}
 	argIndex := 1
@@ -91,21 +87,39 @@ func (r *analyticsRepository) AffiliatesSearch(ctx context.Context, domainFilter
 		conditions = append(conditions, fmt.Sprintf("(%s)", strings.Join(verticalConditions, " OR ")))
 	}
 
-	// Add conditions to query
+	// Build WHERE clause
+	whereClause := "WHERE 1=1"
 	if len(conditions) > 0 {
-		query += " AND " + strings.Join(conditions, " AND ")
+		whereClause += " AND " + strings.Join(conditions, " AND ")
 	}
 
-	// Order by number of partners (highest first), then by relevance, then by traffic score
-	query += `
+	// First query: Get total count
+	countQuery := fmt.Sprintf(`SELECT COUNT(*) FROM analytics_publishers %s`, whereClause)
+	
+	var total int64
+	err := r.db.QueryRow(ctx, countQuery, args...).Scan(&total)
+	if err != nil {
+		return nil, fmt.Errorf("error counting affiliates: %w", err)
+	}
+
+	// Second query: Get paginated data
+	dataQuery := fmt.Sprintf(`
+        SELECT 
+            id, domain, description, favicon_image_url, screenshot_image_url,
+            affiliate_networks, country_rankings, keywords, verticals, verticals_v2,
+            partner_information, partners, related_publishers, social_media, live_urls,
+            known, relevance, traffic_score, promotype, additional_data,
+            created_at, updated_at
+        FROM analytics_publishers 
+        %s
         ORDER BY 
-            COALESCE((partners->'count')::int, 0) DESC`
+            COALESCE((partners->'count')::int, 0) DESC
+        LIMIT $%d OFFSET $%d`, whereClause, argIndex, argIndex+1)
+	
+	// Add pagination args
+	dataArgs := append(args, limit, offset)
 
-	// Add pagination
-	query += fmt.Sprintf(" LIMIT $%d OFFSET $%d", argIndex, argIndex+1)
-	args = append(args, limit, offset)
-
-	rows, err := r.db.Query(ctx, query, args...)
+	rows, err := r.db.Query(ctx, dataQuery, dataArgs...)
 	if err != nil {
 		return nil, fmt.Errorf("error searching affiliates: %w", err)
 	}
@@ -136,7 +150,10 @@ func (r *analyticsRepository) AffiliatesSearch(ctx context.Context, domainFilter
 		return nil, fmt.Errorf("rows iteration error: %w", err)
 	}
 
-	return publishers, nil
+	return &AffiliatesSearchResult{
+		Data:  publishers,
+		Total: total,
+	}, nil
 }
 
 // NewAnalyticsRepository creates a new analytics repository

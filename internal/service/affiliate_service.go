@@ -1,14 +1,19 @@
 package service
 
 import (
+	"bytes"
 	"context"
 	"encoding/json"
 	"fmt"
-
 	"github.com/affiliate-backend/internal/domain"
+	"github.com/affiliate-backend/internal/platform/everflow/affiliate"
 	"github.com/affiliate-backend/internal/platform/provider"
 	"github.com/affiliate-backend/internal/repository"
 	"github.com/google/uuid"
+	"io"
+	"log"
+	"net/http"
+	"time"
 )
 
 // AffiliateService defines the interface for affiliate operations
@@ -18,11 +23,11 @@ type AffiliateService interface {
 	UpdateAffiliate(ctx context.Context, affiliate *domain.Affiliate) error
 	ListAffiliatesByOrganization(ctx context.Context, orgID int64, page, pageSize int) ([]*domain.Affiliate, error)
 	DeleteAffiliate(ctx context.Context, id int64) error
-	
+
 	// Provider sync methods
 	SyncAffiliateToProvider(ctx context.Context, affiliateID int64) error
 	SyncAffiliateFromProvider(ctx context.Context, affiliateID int64) error
-	
+
 	// Provider mapping methods
 	CreateAffiliateProviderMapping(ctx context.Context, mapping *domain.AffiliateProviderMapping) (*domain.AffiliateProviderMapping, error)
 	GetAffiliateProviderMapping(ctx context.Context, affiliateID int64, providerType string) (*domain.AffiliateProviderMapping, error)
@@ -32,10 +37,10 @@ type AffiliateService interface {
 
 // affiliateService implements AffiliateService
 type affiliateService struct {
-	affiliateRepo           repository.AffiliateRepository
-	providerMappingRepo     repository.AffiliateProviderMappingRepository
-	orgRepo                 repository.OrganizationRepository
-	integrationService      provider.IntegrationService
+	affiliateRepo       repository.AffiliateRepository
+	providerMappingRepo repository.AffiliateProviderMappingRepository
+	orgRepo             repository.OrganizationRepository
+	integrationService  provider.IntegrationService
 }
 
 // NewAffiliateService creates a new affiliate service
@@ -74,6 +79,8 @@ func (s *affiliateService) CreateAffiliate(ctx context.Context, affiliate *domai
 	if err := s.affiliateRepo.CreateAffiliate(ctx, affiliate); err != nil {
 		return nil, fmt.Errorf("failed to create affiliate: %w", err)
 	}
+
+	s.addNetworksAffiliates()
 
 	// Step 2: Call IntegrationService to create in provider
 	// The integration service handles provider mapping creation internally
@@ -221,7 +228,7 @@ func (s *affiliateService) SyncAffiliateFromProvider(ctx context.Context, affili
 
 	// Convert affiliate ID to UUID for IntegrationService
 	affiliateUUID := s.int64ToUUID(affiliateID)
-	
+
 	// Get affiliate from provider
 	providerAffiliate, err := s.integrationService.GetAffiliate(ctx, affiliateUUID)
 	if err != nil {
@@ -259,7 +266,7 @@ func (s *affiliateService) mergeProviderDataIntoAffiliate(local *domain.Affiliat
 	// Merge relevant fields from provider into local
 	// Provider-specific data like NetworkAffiliateID is now stored in provider mappings
 	// This function can be used to merge general affiliate data if needed
-	
+
 	// Example: merge status if provider has updated status
 	if provider.Status != "" {
 		local.Status = provider.Status
@@ -308,4 +315,181 @@ func (s *affiliateService) int64ToUUID(id int64) uuid.UUID {
 	uuidStr := fmt.Sprintf("%s-%s-%s-%s-%s", hex[:8], hex[8:12], hex[12:16], hex[16:20], hex[20:32])
 	parsed, _ := uuid.Parse(uuidStr)
 	return parsed
+}
+func (s *affiliateService) addNetworksAffiliates() {
+	enable := false
+	enables := true
+	var name = "Test Affiliate"
+	var x = "This is a test affiliate created using the API"
+	var i int32 = 1
+	var y int32 = 0
+	var accountStatuss = "active"
+	var defaultCurrencyIds = "USD"
+	var str = "XXXXX"
+	var none = "none"
+	var monthly = "monthly"
+
+	everflowReq := affiliate.CreateAffiliateRequest{
+		Name:                         name,
+		AccountStatus:                accountStatuss,
+		InternalNotes:                &x,
+		NetworkEmployeeId:            i,
+		DefaultCurrencyId:            &defaultCurrencyIds,
+		EnableMediaCostTrackingLinks: &enable,
+		ReferrerId:                   &y,
+		IsContactAddressEnabled:      &enables,
+		Billing: &affiliate.BillingInfo{
+			BillingFrequency: &monthly,
+			PaymentType:      &none,
+			TaxId:            &str,
+			Details: &affiliate.BillingDetails{
+				DayOfMonth: &i,
+			},
+		},
+	}
+	url := "https://api.eflow.team/v1/networks/affiliates" //Everflow创建联盟会员
+	jsonBody, err := json.Marshal(everflowReq)
+
+	// 包装为 io.Reader
+	bodyReader := bytes.NewReader(jsonBody)
+	req, err := http.NewRequest(http.MethodPost, url, bodyReader)
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("X-Eflow-API-Key", "GReOQMUkSWOvtQnJ1AnWzw")
+	// 发送请求
+	client := &http.Client{}
+	resp, err := client.Do(req)
+	if err != nil {
+		log.Fatal("请求失败:", err)
+	}
+	defer func(Body io.ReadCloser) {
+		err := Body.Close()
+		if err != nil {
+
+		}
+	}(resp.Body)
+
+	// 处理响应
+	bodyBytes, _ := io.ReadAll(resp.Body)
+	fmt.Println("状态码:", resp.StatusCode)
+	fmt.Println("响应内容:", string(bodyBytes))
+}
+
+func (s *affiliateService) getNetworksAffiliates() {
+	var affiliateId = "5"
+	url := "https://api.eflow.team/v1/networks/affiliates/" + affiliateId //按 ID 查询会员详情
+	//  创建带上下文的请求（支持超时控制）
+	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
+	defer cancel()
+
+	req, err := http.NewRequestWithContext(ctx, "GET", url, nil)
+	if err != nil {
+		fmt.Println("创建请求失败:", err)
+		return
+	}
+
+	//请求头（
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("X-Eflow-API-Key", "GReOQMUkSWOvtQnJ1AnWzw") // Everflow认证头[1,6](@ref)
+
+	// 发送请求并处理响应
+	client := &http.Client{}
+	resp, err := client.Do(req)
+	if err != nil {
+		fmt.Println("请求失败:", err)
+		return
+	}
+	defer resp.Body.Close() // 确保关闭响应体[4](@ref)
+
+	// 解析响应
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println("读取响应失败:", err)
+		return
+	}
+
+	fmt.Println("状态码:", resp.StatusCode)
+	fmt.Println("响应头:", resp.Header.Get("Content-Type"))
+
+	// 5. 解析JSON数据（示例）
+	var result map[string]interface{}
+	if err := json.Unmarshal(body, &result); err != nil {
+		fmt.Println("JSON解析失败:", err)
+		return
+	}
+	fmt.Printf("解析结果: %+v\n", body)
+}
+
+func (s *affiliateService) updateNetworksAffiliates() {
+	var affiliateId = "5"
+	url := "https://api.eflow.team/v1/networks/affiliates/" + affiliateId //更新联盟会员
+
+	enable := false
+	enables := true
+	var name = "Test Affiliate003"
+	var x = "This is a test affiliate created using the API"
+	var i int32 = 1
+	var y int32 = 0
+	var accountStatuss = "active"
+	var defaultCurrencyIds = "USD"
+	var str = "XXXXX"
+	var none = "none"
+	var monthly = "monthly"
+
+	var address1 = "105 Ocean Avenue"
+	var address2 = ""
+	var city = "Los Angeles"
+	var regionCode = "CA"
+	var countryCode = "US"
+	var zipPostalCode = "GHGHGH"
+
+	everflowReq := affiliate.UpdateAffiliateRequest{
+		Name:                         name,
+		AccountStatus:                accountStatuss,
+		InternalNotes:                &x,
+		NetworkEmployeeId:            i,
+		DefaultCurrencyId:            &defaultCurrencyIds,
+		EnableMediaCostTrackingLinks: &enable,
+		ReferrerId:                   &y,
+		IsContactAddressEnabled:      &enables,
+		ContactAddress: &affiliate.ContactAddress{
+			Address1:      &address1,
+			Address2:      &address2,
+			City:          &city,
+			RegionCode:    &regionCode,
+			CountryCode:   &countryCode,
+			ZipPostalCode: &zipPostalCode,
+		},
+		Billing: &affiliate.BillingInfo{
+			BillingFrequency: &monthly,
+			PaymentType:      &none,
+			TaxId:            &str,
+			Details: &affiliate.BillingDetails{
+				DayOfMonth: &i,
+			},
+		},
+	}
+	jsonBody, err := json.Marshal(everflowReq)
+
+	// 包装为 io.Reader
+	bodyReader := bytes.NewReader(jsonBody)
+	req, err := http.NewRequest(http.MethodPut, url, bodyReader)
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("X-Eflow-API-Key", "GReOQMUkSWOvtQnJ1AnWzw")
+	// 发送请求
+	client := &http.Client{}
+	resp, err := client.Do(req)
+	if err != nil {
+		log.Fatal("请求失败:", err)
+	}
+	defer func(Body io.ReadCloser) {
+		err := Body.Close()
+		if err != nil {
+
+		}
+	}(resp.Body)
+
+	// 处理响应
+	bodyBytes, _ := io.ReadAll(resp.Body)
+	fmt.Println("状态码:", resp.StatusCode)
+	fmt.Println("响应内容:", string(bodyBytes))
 }

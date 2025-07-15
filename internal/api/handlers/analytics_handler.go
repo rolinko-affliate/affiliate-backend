@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"encoding/json"
+	"errors"
 	"net/http"
 	"strconv"
 
@@ -146,6 +147,50 @@ func (h *AnalyticsHandler) GetPublisherByID(c *gin.Context) {
 			c.JSON(http.StatusNotFound, ErrorResponse{
 				Error:   "Publisher not found",
 				Details: "No publisher found with the specified ID",
+			})
+			return
+		}
+		c.JSON(http.StatusInternalServerError, ErrorResponse{
+			Error:   "Failed to retrieve publisher",
+			Details: err.Error(),
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"message": "Publisher retrieved successfully",
+		"data":    publisher,
+	})
+}
+
+// GetPublisherByDomain retrieves publisher analytics data by domain name
+// @Summary Get publisher analytics data by domain
+// @Description Retrieve detailed analytics data for a specific publisher (affiliate) by domain name
+// @Tags Analytics
+// @Accept json
+// @Produce json
+// @Param domain path string true "Publisher domain name"
+// @Success 200 {object} SuccessResponse{data=domain.AnalyticsPublisherResponse} "Publisher analytics data"
+// @Failure 400 {object} ErrorResponse "Bad request - invalid domain"
+// @Failure 404 {object} ErrorResponse "Publisher not found"
+// @Failure 500 {object} ErrorResponse "Internal server error"
+// @Router /api/v1/analytics/affiliates/domain/{domain} [get]
+func (h *AnalyticsHandler) GetPublisherByDomain(c *gin.Context) {
+	domain := c.Param("domain")
+	if domain == "" {
+		c.JSON(http.StatusBadRequest, ErrorResponse{
+			Error:   "Invalid domain",
+			Details: "Domain parameter is required",
+		})
+		return
+	}
+
+	publisher, err := h.analyticsService.GetPublisherByDomain(c.Request.Context(), domain)
+	if err != nil {
+		if errors.Is(err, domain.ErrNotFound) {
+			c.JSON(http.StatusNotFound, ErrorResponse{
+				Error:   "Publisher not found",
+				Details: "No publisher found with the specified domain",
 			})
 			return
 		}

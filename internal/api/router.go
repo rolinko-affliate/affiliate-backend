@@ -47,6 +47,11 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		return middleware.RBACMiddleware(opts.ProfileService, allowedRoles...)
 	}
 
+	// Create Profile middleware factory (for endpoints that need profile but not role restrictions)
+	profileMW := func() gin.HandlerFunc {
+		return middleware.ProfileMiddleware(opts.ProfileService)
+	}
+
 	// --- Profile Routes ---
 	v1.GET("/users/me", opts.ProfileHandler.GetMyProfile)
 
@@ -172,12 +177,13 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 
 		// Publisher/Affiliate analytics endpoints
 		analytics.GET("/affiliates/:id", opts.AnalyticsHandler.GetPublisherByID)
+		analytics.GET("/affiliates/domain/:domain", opts.AnalyticsHandler.GetPublisherByDomain)
 		analytics.POST("/affiliates", opts.AnalyticsHandler.CreatePublisher) // For future data management
 	}
 
 	// --- Billing Routes ---
 	billing := v1.Group("/billing")
-	billing.Use(rbacMW("AdvertiserManager", "Admin")) // Only advertisers and admins can access billing
+	billing.Use(profileMW()) // Load profile for access control validation in handlers
 	{
 		// Billing dashboard and account management
 		billing.GET("/dashboard", opts.BillingHandler.GetBillingDashboard)

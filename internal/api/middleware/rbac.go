@@ -55,8 +55,9 @@ func RBACMiddleware(profileService service.ProfileService, allowedRoles ...strin
 			return
 		}
 
-		// Add role and organization_id to context for handlers
+		// Add role, organization_id, and profile to context for handlers
 		c.Set(UserRoleKey, role.Name)
+		c.Set("profile", profile) // Set the full profile object for handlers that need it
 		if profile.OrganizationID != nil {
 			c.Set("organizationID", *profile.OrganizationID)
 		}

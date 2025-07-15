@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"fmt"
 	"net/http"
 	"strconv"
 
@@ -21,6 +22,24 @@ func NewBillingHandler(billingService *service.BillingService, profileService se
 		billingService: billingService,
 		profileService: profileService,
 	}
+}
+
+// validateBillingAccess checks if the user has access to billing resources and returns the target organization ID
+func (h *BillingHandler) validateBillingAccess(userProfile *domain.Profile) (int64, error) {
+	// Platform owner (Admin) can access any organization's billing
+	if userProfile.RoleID == 1 { // Admin (platform owner)
+		if userProfile.OrganizationID == nil {
+			return 0, fmt.Errorf("platform owner must be associated with an organization")
+		}
+		return *userProfile.OrganizationID, nil
+	}
+	
+	// Regular users can only access their own organization's billing
+	if userProfile.OrganizationID == nil {
+		return 0, fmt.Errorf("user is not associated with an organization")
+	}
+	
+	return *userProfile.OrganizationID, nil
 }
 
 // GetBillingDashboard godoc
@@ -49,26 +68,18 @@ func (h *BillingHandler) GetBillingDashboard(c *gin.Context) {
 
 	userProfile := profile.(*domain.Profile)
 
-	// Check if user has organization
-	if userProfile.OrganizationID == nil {
+	// Validate billing access and get target organization ID
+	targetOrganizationID, err := h.validateBillingAccess(userProfile)
+	if err != nil {
 		c.JSON(http.StatusForbidden, ErrorResponse{
 			Error:   "Forbidden",
-			Details: "User is not associated with an organization",
-		})
-		return
-	}
-
-	// Check permissions (Admin or AdvertiserManager can access billing)
-	if userProfile.RoleID != 1 && userProfile.RoleID != 1000 { // Admin or AdvertiserManager
-		c.JSON(http.StatusForbidden, ErrorResponse{
-			Error:   "Forbidden",
-			Details: "Insufficient permissions to access billing information",
+			Details: err.Error(),
 		})
 		return
 	}
 
 	// Get billing dashboard
-	dashboard, err := h.billingService.GetBillingDashboard(c.Request.Context(), *userProfile.OrganizationID)
+	dashboard, err := h.billingService.GetBillingDashboard(c.Request.Context(), targetOrganizationID)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, ErrorResponse{
 			Error:   "Internal Server Error",
@@ -107,19 +118,12 @@ func (h *BillingHandler) AddPaymentMethod(c *gin.Context) {
 
 	userProfile := profile.(*domain.Profile)
 
-	// Check permissions
-	if userProfile.OrganizationID == nil {
+	// Validate billing access and get target organization ID
+	targetOrganizationID, err := h.validateBillingAccess(userProfile)
+	if err != nil {
 		c.JSON(http.StatusForbidden, ErrorResponse{
 			Error:   "Forbidden",
-			Details: "User is not associated with an organization",
-		})
-		return
-	}
-
-	if userProfile.RoleID != 1 && userProfile.RoleID != 1000 { // Admin or AdvertiserManager
-		c.JSON(http.StatusForbidden, ErrorResponse{
-			Error:   "Forbidden",
-			Details: "Insufficient permissions to manage payment methods",
+			Details: err.Error(),
 		})
 		return
 	}
@@ -135,7 +139,7 @@ func (h *BillingHandler) AddPaymentMethod(c *gin.Context) {
 	}
 
 	// Add payment method
-	paymentMethod, err := h.billingService.AddPaymentMethod(c.Request.Context(), *userProfile.OrganizationID, &req)
+	paymentMethod, err := h.billingService.AddPaymentMethod(c.Request.Context(), targetOrganizationID, &req)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, ErrorResponse{
 			Error:   "Internal Server Error",
@@ -175,19 +179,12 @@ func (h *BillingHandler) RemovePaymentMethod(c *gin.Context) {
 
 	userProfile := profile.(*domain.Profile)
 
-	// Check permissions
-	if userProfile.OrganizationID == nil {
+	// Validate billing access and get target organization ID
+	targetOrganizationID, err := h.validateBillingAccess(userProfile)
+	if err != nil {
 		c.JSON(http.StatusForbidden, ErrorResponse{
 			Error:   "Forbidden",
-			Details: "User is not associated with an organization",
-		})
-		return
-	}
-
-	if userProfile.RoleID != 1 && userProfile.RoleID != 1000 { // Admin or AdvertiserManager
-		c.JSON(http.StatusForbidden, ErrorResponse{
-			Error:   "Forbidden",
-			Details: "Insufficient permissions to manage payment methods",
+			Details: err.Error(),
 		})
 		return
 	}
@@ -204,7 +201,7 @@ func (h *BillingHandler) RemovePaymentMethod(c *gin.Context) {
 	}
 
 	// Remove payment method
-	err = h.billingService.RemovePaymentMethod(c.Request.Context(), *userProfile.OrganizationID, paymentMethodID)
+	err = h.billingService.RemovePaymentMethod(c.Request.Context(), targetOrganizationID, paymentMethodID)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, ErrorResponse{
 			Error:   "Internal Server Error",
@@ -243,19 +240,12 @@ func (h *BillingHandler) Recharge(c *gin.Context) {
 
 	userProfile := profile.(*domain.Profile)
 
-	// Check permissions
-	if userProfile.OrganizationID == nil {
+	// Validate billing access and get target organization ID
+	targetOrganizationID, err := h.validateBillingAccess(userProfile)
+	if err != nil {
 		c.JSON(http.StatusForbidden, ErrorResponse{
 			Error:   "Forbidden",
-			Details: "User is not associated with an organization",
-		})
-		return
-	}
-
-	if userProfile.RoleID != 1 && userProfile.RoleID != 1000 { // Admin or AdvertiserManager
-		c.JSON(http.StatusForbidden, ErrorResponse{
-			Error:   "Forbidden",
-			Details: "Insufficient permissions to recharge account",
+			Details: err.Error(),
 		})
 		return
 	}
@@ -271,7 +261,7 @@ func (h *BillingHandler) Recharge(c *gin.Context) {
 	}
 
 	// Recharge account
-	transaction, err := h.billingService.Recharge(c.Request.Context(), *userProfile.OrganizationID, &req)
+	transaction, err := h.billingService.Recharge(c.Request.Context(), targetOrganizationID, &req)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, ErrorResponse{
 			Error:   "Internal Server Error",
@@ -310,19 +300,12 @@ func (h *BillingHandler) UpdateBillingConfig(c *gin.Context) {
 
 	userProfile := profile.(*domain.Profile)
 
-	// Check permissions
-	if userProfile.OrganizationID == nil {
+	// Validate billing access and get target organization ID
+	targetOrganizationID, err := h.validateBillingAccess(userProfile)
+	if err != nil {
 		c.JSON(http.StatusForbidden, ErrorResponse{
 			Error:   "Forbidden",
-			Details: "User is not associated with an organization",
-		})
-		return
-	}
-
-	if userProfile.RoleID != 1 && userProfile.RoleID != 1000 { // Admin or AdvertiserManager
-		c.JSON(http.StatusForbidden, ErrorResponse{
-			Error:   "Forbidden",
-			Details: "Insufficient permissions to update billing configuration",
+			Details: err.Error(),
 		})
 		return
 	}
@@ -338,7 +321,7 @@ func (h *BillingHandler) UpdateBillingConfig(c *gin.Context) {
 	}
 
 	// Update billing config
-	account, err := h.billingService.UpdateBillingConfig(c.Request.Context(), *userProfile.OrganizationID, &req)
+	account, err := h.billingService.UpdateBillingConfig(c.Request.Context(), targetOrganizationID, &req)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, ErrorResponse{
 			Error:   "Internal Server Error",
@@ -378,19 +361,12 @@ func (h *BillingHandler) GetTransactionHistory(c *gin.Context) {
 
 	userProfile := profile.(*domain.Profile)
 
-	// Check permissions
-	if userProfile.OrganizationID == nil {
+	// Validate billing access and get target organization ID
+	targetOrganizationID, err := h.validateBillingAccess(userProfile)
+	if err != nil {
 		c.JSON(http.StatusForbidden, ErrorResponse{
 			Error:   "Forbidden",
-			Details: "User is not associated with an organization",
-		})
-		return
-	}
-
-	if userProfile.RoleID != 1 && userProfile.RoleID != 1000 { // Admin or AdvertiserManager
-		c.JSON(http.StatusForbidden, ErrorResponse{
-			Error:   "Forbidden",
-			Details: "Insufficient permissions to view transaction history",
+			Details: err.Error(),
 		})
 		return
 	}
@@ -410,7 +386,7 @@ func (h *BillingHandler) GetTransactionHistory(c *gin.Context) {
 	}
 
 	// Get transaction history
-	transactions, err := h.billingService.GetTransactionHistory(c.Request.Context(), *userProfile.OrganizationID, limit, offset)
+	transactions, err := h.billingService.GetTransactionHistory(c.Request.Context(), targetOrganizationID, limit, offset)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, ErrorResponse{
 			Error:   "Internal Server Error",

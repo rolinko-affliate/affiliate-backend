@@ -28,6 +28,7 @@ type AnalyticsService interface {
 
 	// Publisher methods
 	GetPublisherByID(ctx context.Context, id int64) (*domain.AnalyticsPublisherResponse, error)
+	GetPublisherByDomain(ctx context.Context, domainName string) (*domain.AnalyticsPublisherResponse, error)
 	AffiliatesSearch(ctx context.Context, domainFilter, country string, partnerDomains []string, verticals []string, page, offset int) (*AffiliatesSearchResult, error)
 	CreatePublisher(ctx context.Context, publisher *domain.AnalyticsPublisher) error
 	UpdatePublisher(ctx context.Context, publisher *domain.AnalyticsPublisher) error
@@ -113,6 +114,16 @@ func (s *analyticsService) GetAdvertiserByID(ctx context.Context, id int64) (*do
 // GetPublisherByID retrieves publisher data and formats it for API response
 func (s *analyticsService) GetPublisherByID(ctx context.Context, id int64) (*domain.AnalyticsPublisherResponse, error) {
 	publisher, err := s.analyticsRepo.GetPublisherByID(ctx, id)
+	if err != nil {
+		return nil, err
+	}
+
+	return s.buildPublisherResponse(publisher)
+}
+
+// GetPublisherByDomain retrieves publisher data by domain name and formats it for API response
+func (s *analyticsService) GetPublisherByDomain(ctx context.Context, domainName string) (*domain.AnalyticsPublisherResponse, error) {
+	publisher, err := s.analyticsRepo.GetPublisherByDomain(ctx, domainName)
 	if err != nil {
 		return nil, err
 	}

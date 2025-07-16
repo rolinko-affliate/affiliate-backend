@@ -95,7 +95,7 @@ func TestFavoritePublisherListHandler_CreateList(t *testing.T) {
 	mockService, handler, router := setupFavoritePublisherListHandler()
 
 	router.POST("/favorite-publisher-lists", func(c *gin.Context) {
-		c.Set("organization_id", int64(1))
+		c.Set("organizationID", int64(1))
 		handler.CreateList(c)
 	})
 
@@ -171,8 +171,8 @@ func TestFavoritePublisherListHandler_CreateList(t *testing.T) {
 		mockService.AssertExpectations(t)
 	})
 
-	t.Run("missing organization_id", func(t *testing.T) {
-		router.POST("/test", handler.CreateList) // No middleware to set organization_id
+	t.Run("missing organizationID", func(t *testing.T) {
+		router.POST("/test", handler.CreateList) // No middleware to set organizationID
 
 		req := domain.CreateFavoritePublisherListRequest{
 			Name: "Test List",
@@ -198,7 +198,7 @@ func TestFavoritePublisherListHandler_GetLists(t *testing.T) {
 	mockService, handler, router := setupFavoritePublisherListHandler()
 
 	router.GET("/favorite-publisher-lists", func(c *gin.Context) {
-		c.Set("organization_id", int64(1))
+		c.Set("organizationID", int64(1))
 		handler.GetLists(c)
 	})
 
@@ -247,7 +247,7 @@ func TestFavoritePublisherListHandler_GetListByID(t *testing.T) {
 	mockService, handler, router := setupFavoritePublisherListHandler()
 
 	router.GET("/favorite-publisher-lists/:list_id", func(c *gin.Context) {
-		c.Set("organization_id", int64(1))
+		c.Set("organizationID", int64(1))
 		handler.GetListByID(c)
 	})
 
@@ -314,7 +314,7 @@ func TestFavoritePublisherListHandler_AddPublisherToList(t *testing.T) {
 	mockService, handler, router := setupFavoritePublisherListHandler()
 
 	router.POST("/favorite-publisher-lists/:list_id/publishers", func(c *gin.Context) {
-		c.Set("organization_id", int64(1))
+		c.Set("organizationID", int64(1))
 		handler.AddPublisherToList(c)
 	})
 
@@ -382,7 +382,7 @@ func TestFavoritePublisherListHandler_RemovePublisherFromList(t *testing.T) {
 	mockService, handler, router := setupFavoritePublisherListHandler()
 
 	router.DELETE("/favorite-publisher-lists/:list_id/publishers/:domain", func(c *gin.Context) {
-		c.Set("organization_id", int64(1))
+		c.Set("organizationID", int64(1))
 		handler.RemovePublisherFromList(c)
 	})
 
@@ -427,7 +427,7 @@ func TestFavoritePublisherListHandler_GetListItems(t *testing.T) {
 	mockService, handler, router := setupFavoritePublisherListHandler()
 
 	router.GET("/favorite-publisher-lists/:list_id/publishers", func(c *gin.Context) {
-		c.Set("organization_id", int64(1))
+		c.Set("organizationID", int64(1))
 		handler.GetListItems(c)
 	})
 
@@ -502,7 +502,7 @@ func TestFavoritePublisherListHandler_GetListsContainingPublisher(t *testing.T) 
 	mockService, handler, router := setupFavoritePublisherListHandler()
 
 	router.GET("/favorite-publisher-lists/search", func(c *gin.Context) {
-		c.Set("organization_id", int64(1))
+		c.Set("organizationID", int64(1))
 		handler.GetListsContainingPublisher(c)
 	})
 
@@ -549,7 +549,4 @@ func TestFavoritePublisherListHandler_GetListsContainingPublisher(t *testing.T) 
 	})
 }
 
-// Helper function to create a string pointer
-func stringPtr(s string) *string {
-	return &s
-}
+

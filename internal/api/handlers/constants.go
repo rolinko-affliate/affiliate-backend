@@ -11,6 +11,7 @@ const (
 	MsgPublisherAdded     = "Publisher added to list successfully"
 	MsgPublisherRemoved   = "Publisher removed from list successfully"
 	MsgPublisherUpdated   = "Publisher notes updated successfully"
+	MsgPublisherStatusUpdated = "Publisher status updated successfully"
 	MsgItemsRetrieved     = "List items retrieved successfully"
 	MsgListsWithPublisher = "Lists containing publisher retrieved successfully"
 	MsgPublisherRetrieved = "Publisher retrieved successfully"

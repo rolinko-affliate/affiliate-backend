@@ -197,6 +197,7 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		favoritePublisherLists.POST("/:list_id/publishers", opts.FavoritePublisherListHandler.AddPublisherToList)
 		favoritePublisherLists.GET("/:list_id/publishers", opts.FavoritePublisherListHandler.GetListItems)
 		favoritePublisherLists.PUT("/:list_id/publishers/:domain", opts.FavoritePublisherListHandler.UpdatePublisherInList)
+		favoritePublisherLists.PATCH("/:list_id/publishers/:domain/status", opts.FavoritePublisherListHandler.UpdatePublisherStatus)
 		favoritePublisherLists.DELETE("/:list_id/publishers/:domain", opts.FavoritePublisherListHandler.RemovePublisherFromList)
 
 		// Utility endpoints

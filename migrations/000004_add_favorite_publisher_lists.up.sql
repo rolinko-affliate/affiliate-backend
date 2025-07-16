@@ -1,3 +1,4 @@
+
 -- #############################################################################
 -- ## Favorite Publisher Lists Migration
 -- ## This migration adds support for organizations to manage favorite publisher lists
@@ -34,6 +35,7 @@ CREATE TABLE public.favorite_publisher_list_items (
     list_id BIGINT NOT NULL REFERENCES public.favorite_publisher_lists(list_id) ON DELETE CASCADE,
     publisher_domain VARCHAR(255) NOT NULL,
     notes TEXT, -- Optional notes about why this publisher is in the list
+    status VARCHAR(20) DEFAULT 'added' NOT NULL CHECK (status IN ('added', 'contacted', 'accepted')),
     added_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP NOT NULL,
     
     -- Ensure a publisher domain can only be added once per list
@@ -45,6 +47,7 @@ CREATE INDEX idx_favorite_publisher_lists_organization_id ON public.favorite_pub
 CREATE INDEX idx_favorite_publisher_lists_name ON public.favorite_publisher_lists(name);
 CREATE INDEX idx_favorite_publisher_list_items_list_id ON public.favorite_publisher_list_items(list_id);
 CREATE INDEX idx_favorite_publisher_list_items_domain ON public.favorite_publisher_list_items(publisher_domain);
+CREATE INDEX idx_favorite_publisher_list_items_status ON public.favorite_publisher_list_items(status);
 CREATE INDEX idx_favorite_publisher_list_items_added_at ON public.favorite_publisher_list_items(added_at);
 
 -- Add comments for documentation
@@ -58,4 +61,5 @@ COMMENT ON COLUMN public.favorite_publisher_lists.description IS 'Optional descr
 COMMENT ON COLUMN public.favorite_publisher_list_items.list_id IS 'Reference to the favorite list this item belongs to';
 COMMENT ON COLUMN public.favorite_publisher_list_items.publisher_domain IS 'Domain name of the publisher (e.g., example.com)';
 COMMENT ON COLUMN public.favorite_publisher_list_items.notes IS 'Optional notes about this publisher in the context of this list';
+COMMENT ON COLUMN public.favorite_publisher_list_items.status IS 'Status of publisher interaction: added -> contacted -> accepted';
 COMMENT ON COLUMN public.favorite_publisher_list_items.added_at IS 'Timestamp when the publisher was added to the list';

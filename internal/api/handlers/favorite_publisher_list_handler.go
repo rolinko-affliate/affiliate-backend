@@ -52,7 +52,7 @@ func (h *FavoritePublisherListHandler) respondNotFound(c *gin.Context, message, 
 }
 
 func (h *FavoritePublisherListHandler) getOrganizationID(c *gin.Context) (int64, bool) {
-	organizationID, exists := c.Get("organization_id")
+	organizationID, exists := c.Get("organizationID")
 	if !exists {
 		h.respondUnauthorized(c, DetailOrgIDNotFound)
 		return 0, false
@@ -182,7 +182,7 @@ func (h *FavoritePublisherListHandler) GetLists(c *gin.Context) {
 // @Router /favorite-publisher-lists/{list_id} [get]
 func (h *FavoritePublisherListHandler) GetListByID(c *gin.Context) {
 	// Get organization ID from context (set by RBAC middleware)
-	organizationID, exists := c.Get("organization_id")
+	organizationID, exists := c.Get("organizationID")
 	if !exists {
 		c.JSON(http.StatusUnauthorized, ErrorResponse{
 			Error:   "Unauthorized",
@@ -249,7 +249,7 @@ func (h *FavoritePublisherListHandler) GetListByID(c *gin.Context) {
 // @Router /favorite-publisher-lists/{list_id} [put]
 func (h *FavoritePublisherListHandler) UpdateList(c *gin.Context) {
 	// Get organization ID from context (set by RBAC middleware)
-	organizationID, exists := c.Get("organization_id")
+	organizationID, exists := c.Get("organizationID")
 	if !exists {
 		c.JSON(http.StatusUnauthorized, ErrorResponse{
 			Error:   "Unauthorized",
@@ -330,7 +330,7 @@ func (h *FavoritePublisherListHandler) UpdateList(c *gin.Context) {
 // @Router /favorite-publisher-lists/{list_id} [delete]
 func (h *FavoritePublisherListHandler) DeleteList(c *gin.Context) {
 	// Get organization ID from context (set by RBAC middleware)
-	organizationID, exists := c.Get("organization_id")
+	organizationID, exists := c.Get("organizationID")
 	if !exists {
 		c.JSON(http.StatusUnauthorized, ErrorResponse{
 			Error:   "Unauthorized",
@@ -397,7 +397,7 @@ func (h *FavoritePublisherListHandler) DeleteList(c *gin.Context) {
 // @Router /favorite-publisher-lists/{list_id}/publishers [post]
 func (h *FavoritePublisherListHandler) AddPublisherToList(c *gin.Context) {
 	// Get organization ID from context (set by RBAC middleware)
-	organizationID, exists := c.Get("organization_id")
+	organizationID, exists := c.Get("organizationID")
 	if !exists {
 		c.JSON(http.StatusUnauthorized, ErrorResponse{
 			Error:   "Unauthorized",
@@ -532,7 +532,7 @@ func (h *FavoritePublisherListHandler) RemovePublisherFromList(c *gin.Context) {
 // @Router /favorite-publisher-lists/{list_id}/publishers [get]
 func (h *FavoritePublisherListHandler) GetListItems(c *gin.Context) {
 	// Get organization ID from context (set by RBAC middleware)
-	organizationID, exists := c.Get("organization_id")
+	organizationID, exists := c.Get("organizationID")
 	if !exists {
 		c.JSON(http.StatusUnauthorized, ErrorResponse{
 			Error:   "Unauthorized",
@@ -602,7 +602,7 @@ func (h *FavoritePublisherListHandler) GetListItems(c *gin.Context) {
 // @Router /favorite-publisher-lists/{list_id}/publishers/{domain} [put]
 func (h *FavoritePublisherListHandler) UpdatePublisherInList(c *gin.Context) {
 	// Get organization ID from context (set by RBAC middleware)
-	organizationID, exists := c.Get("organization_id")
+	organizationID, exists := c.Get("organizationID")
 	if !exists {
 		c.JSON(http.StatusUnauthorized, ErrorResponse{
 			Error:   "Unauthorized",
@@ -683,7 +683,7 @@ func (h *FavoritePublisherListHandler) UpdatePublisherInList(c *gin.Context) {
 // @Router /favorite-publisher-lists/search [get]
 func (h *FavoritePublisherListHandler) GetListsContainingPublisher(c *gin.Context) {
 	// Get organization ID from context (set by RBAC middleware)
-	organizationID, exists := c.Get("organization_id")
+	organizationID, exists := c.Get("organizationID")
 	if !exists {
 		c.JSON(http.StatusUnauthorized, ErrorResponse{
 			Error:   "Unauthorized",
@@ -722,5 +722,57 @@ func (h *FavoritePublisherListHandler) GetListsContainingPublisher(c *gin.Contex
 	c.JSON(http.StatusOK, gin.H{
 		"message": "Lists containing publisher retrieved successfully",
 		"data":    lists,
+	})
+}
+
+// UpdatePublisherStatus updates the status of a publisher in a favorite list
+// @Summary Update publisher status in favorite list
+// @Description Updates the status of a publisher in a favorite list (added -> contacted -> accepted)
+// @Tags favorite-publisher-lists
+// @Accept json
+// @Produce json
+// @Param list_id path int true "List ID"
+// @Param domain path string true "Publisher domain"
+// @Param request body domain.UpdatePublisherStatusRequest true "Status update request"
+// @Success 200 {object} map[string]interface{} "Status updated successfully"
+// @Failure 400 {object} ErrorResponse "Invalid request"
+// @Failure 401 {object} ErrorResponse "Unauthorized"
+// @Failure 404 {object} ErrorResponse "List or publisher not found"
+// @Failure 500 {object} ErrorResponse "Internal server error"
+// @Router /api/v1/favorite-publisher-lists/{list_id}/publishers/{domain}/status [patch]
+func (h *FavoritePublisherListHandler) UpdatePublisherStatus(c *gin.Context) {
+	orgID, ok := h.getOrganizationID(c)
+	if !ok {
+		return
+	}
+
+	listID, ok := h.parseListID(c)
+	if !ok {
+		return
+	}
+
+	domainParam, ok := h.getDomainParam(c)
+	if !ok {
+		return
+	}
+
+	var req domain.UpdatePublisherStatusRequest
+	if err := c.ShouldBindJSON(&req); err != nil {
+		h.respondBadRequest(c, ErrInvalidRequestBody, "Invalid request body: "+err.Error())
+		return
+	}
+
+	err := h.favoriteListService.UpdatePublisherStatus(c.Request.Context(), orgID, listID, domainParam, &req)
+	if err != nil {
+		if errors.Is(err, domain.ErrNotFound) {
+			h.respondNotFound(c, ErrListNotFound, "List or publisher not found")
+			return
+		}
+		h.respondInternalError(c, ErrInternalServer, "Failed to update publisher status: "+err.Error())
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"message": MsgPublisherStatusUpdated,
 	})
 }

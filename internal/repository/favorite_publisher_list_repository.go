@@ -25,6 +25,8 @@ type FavoritePublisherListRepository interface {
 	GetListItems(ctx context.Context, listID int64) ([]*domain.FavoritePublisherListItem, error)
 	GetListItemsWithPublisherDetails(ctx context.Context, listID int64) ([]*domain.FavoritePublisherListItem, error)
 	UpdatePublisherInList(ctx context.Context, listID int64, publisherDomain string, notes *string) error
+	UpdatePublisherStatus(ctx context.Context, listID int64, publisherDomain string, status string) error
+	GetPublisherFromList(ctx context.Context, listID int64, publisherDomain string) (*domain.FavoritePublisherListItem, error)
 
 	// Utility methods
 	IsPublisherInList(ctx context.Context, listID int64, publisherDomain string) (bool, error)
@@ -44,7 +46,7 @@ func NewFavoritePublisherListRepository(db *pgxpool.Pool) FavoritePublisherListR
 // SQL query constants
 const (
 	selectListFields = "list_id, organization_id, name, description, created_at, updated_at"
-	selectItemFields = "item_id, list_id, publisher_domain, notes, added_at"
+	selectItemFields = "item_id, list_id, publisher_domain, notes, status, added_at"
 )
 
 // Helper function to scan a list row
@@ -64,7 +66,7 @@ func (r *favoritePublisherListRepository) scanList(row pgx.Row) (*domain.Favorit
 // Helper function to scan a list item row
 func (r *favoritePublisherListRepository) scanListItem(row pgx.Row) (*domain.FavoritePublisherListItem, error) {
 	item := &domain.FavoritePublisherListItem{}
-	err := row.Scan(&item.ItemID, &item.ListID, &item.PublisherDomain, &item.Notes, &item.AddedAt)
+	err := row.Scan(&item.ItemID, &item.ListID, &item.PublisherDomain, &item.Notes, &item.Status, &item.AddedAt)
 	if err != nil {
 		if err == pgx.ErrNoRows {
 			return nil, domain.ErrNotFound
@@ -172,11 +174,11 @@ func (r *favoritePublisherListRepository) DeleteList(ctx context.Context, listID
 // AddPublisherToList adds a publisher to a favorite list
 func (r *favoritePublisherListRepository) AddPublisherToList(ctx context.Context, item *domain.FavoritePublisherListItem) error {
 	query := `
-		INSERT INTO favorite_publisher_list_items (list_id, publisher_domain, notes)
-		VALUES ($1, $2, $3)
+		INSERT INTO favorite_publisher_list_items (list_id, publisher_domain, notes, status)
+		VALUES ($1, $2, $3, $4)
 		RETURNING item_id, added_at`
 
-	err := r.db.QueryRow(ctx, query, item.ListID, item.PublisherDomain, item.Notes).Scan(
+	err := r.db.QueryRow(ctx, query, item.ListID, item.PublisherDomain, item.Notes, item.Status).Scan(
 		&item.ItemID, &item.AddedAt)
 	if err != nil {
 		return fmt.Errorf("failed to add publisher to list: %w", err)
@@ -363,4 +365,28 @@ func (r *favoritePublisherListRepository) GetListsContainingPublisher(ctx contex
 	}
 
 	return lists, nil
+}
+
+// UpdatePublisherStatus updates the status of a publisher in a favorite list
+func (r *favoritePublisherListRepository) UpdatePublisherStatus(ctx context.Context, listID int64, publisherDomain string, status string) error {
+	query := `UPDATE favorite_publisher_list_items SET status = $1 WHERE list_id = $2 AND publisher_domain = $3`
+
+	result, err := r.db.Exec(ctx, query, status, listID, publisherDomain)
+	if err != nil {
+		return fmt.Errorf("failed to update publisher status: %w", err)
+	}
+
+	if result.RowsAffected() == 0 {
+		return domain.ErrNotFound
+	}
+
+	return nil
+}
+
+// GetPublisherFromList retrieves a specific publisher from a favorite list
+func (r *favoritePublisherListRepository) GetPublisherFromList(ctx context.Context, listID int64, publisherDomain string) (*domain.FavoritePublisherListItem, error) {
+	query := fmt.Sprintf(`SELECT %s FROM favorite_publisher_list_items WHERE list_id = $1 AND publisher_domain = $2`, selectItemFields)
+
+	row := r.db.QueryRow(ctx, query, listID, publisherDomain)
+	return r.scanListItem(row)
 }

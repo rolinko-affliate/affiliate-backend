@@ -22,6 +22,7 @@ type FavoritePublisherListService interface {
 	RemovePublisherFromList(ctx context.Context, organizationID int64, listID int64, publisherDomain string) error
 	GetListItems(ctx context.Context, organizationID int64, listID int64, includeDetails bool) ([]*domain.FavoritePublisherListItem, error)
 	UpdatePublisherInList(ctx context.Context, organizationID int64, listID int64, publisherDomain string, req *domain.UpdatePublisherInListRequest) error
+	UpdatePublisherStatus(ctx context.Context, organizationID int64, listID int64, publisherDomain string, req *domain.UpdatePublisherStatusRequest) error
 
 	// Utility methods
 	GetListsContainingPublisher(ctx context.Context, organizationID int64, publisherDomain string) ([]*domain.FavoritePublisherList, error)
@@ -157,10 +158,17 @@ func (s *favoritePublisherListService) AddPublisherToList(ctx context.Context, o
 		return nil, fmt.Errorf("failed to validate publisher domain: %w", err)
 	}
 
+	// Set default status if not provided
+	status := domain.PublisherStatusAdded
+	if req.Status != nil && *req.Status != "" {
+		status = *req.Status
+	}
+
 	item := &domain.FavoritePublisherListItem{
 		ListID:          listID,
 		PublisherDomain: req.PublisherDomain,
 		Notes:           req.Notes,
+		Status:          status,
 	}
 
 	err = s.favoriteListRepo.AddPublisherToList(ctx, item)
@@ -211,4 +219,30 @@ func (s *favoritePublisherListService) UpdatePublisherInList(ctx context.Context
 // GetListsContainingPublisher retrieves all lists that contain a specific publisher for an organization
 func (s *favoritePublisherListService) GetListsContainingPublisher(ctx context.Context, organizationID int64, publisherDomain string) ([]*domain.FavoritePublisherList, error) {
 	return s.favoriteListRepo.GetListsContainingPublisher(ctx, organizationID, publisherDomain)
+}
+
+// UpdatePublisherStatus updates the status of a publisher in a favorite list
+func (s *favoritePublisherListService) UpdatePublisherStatus(ctx context.Context, organizationID int64, listID int64, publisherDomain string, req *domain.UpdatePublisherStatusRequest) error {
+	if err := req.Validate(); err != nil {
+		return err
+	}
+
+	// First, ensure the list belongs to the organization
+	_, err := s.GetListByID(ctx, organizationID, listID)
+	if err != nil {
+		return err
+	}
+
+	// Get current publisher item to check current status for transition validation
+	currentItem, err := s.favoriteListRepo.GetPublisherFromList(ctx, listID, publisherDomain)
+	if err != nil {
+		return fmt.Errorf("failed to get current publisher status: %w", err)
+	}
+
+	// Validate status transition
+	if err := domain.ValidateStatusTransition(currentItem.Status, req.Status); err != nil {
+		return fmt.Errorf("invalid status transition from %s to %s: %w", currentItem.Status, req.Status, err)
+	}
+
+	return s.favoriteListRepo.UpdatePublisherStatus(ctx, listID, publisherDomain, req.Status)
 }

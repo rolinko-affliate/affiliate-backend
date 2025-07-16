@@ -1,5 +1,23 @@
 basePath: /api/v1
 definitions:
+  domain.AddPublisherToListRequest:
+    properties:
+      notes:
+        maxLength: 1000
+        type: string
+      publisher_domain:
+        maxLength: 255
+        minLength: 1
+        type: string
+      status:
+        enum:
+        - added
+        - contacted
+        - accepted
+        type: string
+    required:
+    - publisher_domain
+    type: object
   domain.Advertiser:
     properties:
       accounting_contact_email:
@@ -506,6 +524,18 @@ definitions:
           type: object
         type: array
     type: object
+  domain.CreateFavoritePublisherListRequest:
+    properties:
+      description:
+        maxLength: 1000
+        type: string
+      name:
+        maxLength: 255
+        minLength: 1
+        type: string
+    required:
+    - name
+    type: object
   domain.CreatePaymentMethodRequest:
     properties:
       nickname:
@@ -949,6 +979,33 @@ definitions:
         type: integer
       payment_terms_days:
         type: integer
+    type: object
+  domain.UpdateFavoritePublisherListRequest:
+    properties:
+      description:
+        maxLength: 1000
+        type: string
+      name:
+        maxLength: 255
+        minLength: 1
+        type: string
+    type: object
+  domain.UpdatePublisherInListRequest:
+    properties:
+      notes:
+        maxLength: 1000
+        type: string
+    type: object
+  domain.UpdatePublisherStatusRequest:
+    properties:
+      status:
+        enum:
+        - added
+        - contacted
+        - accepted
+        type: string
+    required:
+    - status
     type: object
   domain.VerticalData:
     properties:
@@ -3015,6 +3072,45 @@ paths:
       summary: Get publisher analytics data
       tags:
       - Analytics
+  /api/v1/analytics/affiliates/domain/{domain}:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve detailed analytics data for a specific publisher (affiliate)
+        by domain name
+      parameters:
+      - description: Publisher domain name
+        in: path
+        name: domain
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Publisher analytics data
+          schema:
+            allOf:
+            - $ref: '#/definitions/handlers.SuccessResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/domain.AnalyticsPublisherResponse'
+              type: object
+        "400":
+          description: Bad request - invalid domain
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "404":
+          description: Publisher not found
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      summary: Get publisher analytics data by domain
+      tags:
+      - Analytics
   /api/v1/analytics/autocomplete:
     get:
       consumes:
@@ -3069,6 +3165,56 @@ paths:
       summary: Search organizations for autocompletion
       tags:
       - Analytics
+  /api/v1/favorite-publisher-lists/{list_id}/publishers/{domain}/status:
+    patch:
+      consumes:
+      - application/json
+      description: Updates the status of a publisher in a favorite list (added ->
+        contacted -> accepted)
+      parameters:
+      - description: List ID
+        in: path
+        name: list_id
+        required: true
+        type: integer
+      - description: Publisher domain
+        in: path
+        name: domain
+        required: true
+        type: string
+      - description: Status update request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/domain.UpdatePublisherStatusRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Status updated successfully
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Invalid request
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "404":
+          description: List or publisher not found
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      summary: Update publisher status in favorite list
+      tags:
+      - favorite-publisher-lists
   /billing/config:
     put:
       consumes:
@@ -3479,6 +3625,406 @@ paths:
       summary: List tracking links by campaign
       tags:
       - tracking-links
+  /favorite-publisher-lists:
+    get:
+      description: Retrieves all favorite publisher lists for the user's organization
+        with statistics
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 'message: string, data: []domain.FavoritePublisherListWithStats'
+          schema:
+            additionalProperties: true
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get all favorite publisher lists
+      tags:
+      - favorite-publisher-lists
+    post:
+      consumes:
+      - application/json
+      description: Creates a new favorite publisher list for the user's organization
+      parameters:
+      - description: Create list request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/domain.CreateFavoritePublisherListRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: 'message: string, data: domain.FavoritePublisherList'
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Create a new favorite publisher list
+      tags:
+      - favorite-publisher-lists
+  /favorite-publisher-lists/{list_id}:
+    delete:
+      description: Deletes a favorite publisher list and all its items
+      parameters:
+      - description: List ID
+        in: path
+        name: list_id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 'message: string'
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Delete favorite publisher list
+      tags:
+      - favorite-publisher-lists
+    get:
+      description: Retrieves a specific favorite publisher list by ID
+      parameters:
+      - description: List ID
+        in: path
+        name: list_id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 'message: string, data: domain.FavoritePublisherList'
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get favorite publisher list by ID
+      tags:
+      - favorite-publisher-lists
+    put:
+      consumes:
+      - application/json
+      description: Updates a favorite publisher list's name and/or description
+      parameters:
+      - description: List ID
+        in: path
+        name: list_id
+        required: true
+        type: integer
+      - description: Update list request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/domain.UpdateFavoritePublisherListRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 'message: string, data: domain.FavoritePublisherList'
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Update favorite publisher list
+      tags:
+      - favorite-publisher-lists
+  /favorite-publisher-lists/{list_id}/publishers:
+    get:
+      description: Retrieves all publisher items in a favorite publisher list
+      parameters:
+      - description: List ID
+        in: path
+        name: list_id
+        required: true
+        type: integer
+      - description: Include publisher details from analytics
+        in: query
+        name: include_details
+        type: boolean
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 'message: string, data: []domain.FavoritePublisherListItem'
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get favorite list items
+      tags:
+      - favorite-publisher-lists
+    post:
+      consumes:
+      - application/json
+      description: Adds a publisher domain to a favorite publisher list
+      parameters:
+      - description: List ID
+        in: path
+        name: list_id
+        required: true
+        type: integer
+      - description: Add publisher request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/domain.AddPublisherToListRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: 'message: string, data: domain.FavoritePublisherListItem'
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "409":
+          description: Conflict
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Add publisher to favorite list
+      tags:
+      - favorite-publisher-lists
+  /favorite-publisher-lists/{list_id}/publishers/{domain}:
+    delete:
+      description: Removes a publisher domain from a favorite publisher list
+      parameters:
+      - description: List ID
+        in: path
+        name: list_id
+        required: true
+        type: integer
+      - description: Publisher domain
+        in: path
+        name: domain
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 'message: string'
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Remove publisher from favorite list
+      tags:
+      - favorite-publisher-lists
+    put:
+      consumes:
+      - application/json
+      description: Updates the notes for a publisher in a favorite publisher list
+      parameters:
+      - description: List ID
+        in: path
+        name: list_id
+        required: true
+        type: integer
+      - description: Publisher domain
+        in: path
+        name: domain
+        required: true
+        type: string
+      - description: Update publisher request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/domain.UpdatePublisherInListRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 'message: string'
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Update publisher notes in favorite list
+      tags:
+      - favorite-publisher-lists
+  /favorite-publisher-lists/search:
+    get:
+      description: Retrieves all favorite publisher lists that contain a specific
+        publisher domain
+      parameters:
+      - description: Publisher domain
+        in: query
+        name: domain
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 'message: string, data: []domain.FavoritePublisherList'
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get lists containing publisher
+      tags:
+      - favorite-publisher-lists
   /health:
     get:
       description: Returns the health status of the API

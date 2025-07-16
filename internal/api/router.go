@@ -18,6 +18,7 @@ type RouterOptions struct {
 	TrackingLinkHandler          *handlers.TrackingLinkHandler
 	AnalyticsHandler             *handlers.AnalyticsHandler
 	FavoritePublisherListHandler *handlers.FavoritePublisherListHandler
+	PublisherMessagingHandler    *handlers.PublisherMessagingHandler
 	BillingHandler               *handlers.BillingHandler
 	WebhookHandler               *handlers.WebhookHandler
 }
@@ -202,6 +203,24 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 
 		// Utility endpoints
 		favoritePublisherLists.GET("/search", opts.FavoritePublisherListHandler.GetListsContainingPublisher)
+	}
+
+	// --- Publisher Messaging Routes ---
+	publisherMessaging := v1.Group("/publisher-messaging")
+	publisherMessaging.Use(rbacMW("AdvertiserManager", "AffiliateManager", "Admin")) // Allow all managers and admins
+	{
+		// Conversation management
+		publisherMessaging.POST("/conversations", opts.PublisherMessagingHandler.CreateConversation)
+		publisherMessaging.GET("/conversations", opts.PublisherMessagingHandler.GetConversations)
+		publisherMessaging.GET("/conversations/:conversation_id", opts.PublisherMessagingHandler.GetConversation)
+		publisherMessaging.PUT("/conversations/:conversation_id/status", opts.PublisherMessagingHandler.UpdateConversationStatus)
+		publisherMessaging.DELETE("/conversations/:conversation_id", opts.PublisherMessagingHandler.DeleteConversation)
+
+		// Message management
+		publisherMessaging.POST("/conversations/:conversation_id/messages", opts.PublisherMessagingHandler.AddMessage)
+
+		// External service integration (no RBAC required for external services)
+		publisherMessaging.POST("/conversations/:conversation_id/external-messages", opts.PublisherMessagingHandler.AddExternalMessage)
 	}
 
 	// --- Billing Routes ---

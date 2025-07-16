@@ -238,6 +238,7 @@ func main() {
 	trackingLinkProviderMappingRepo := repository.NewTrackingLinkProviderMappingRepository(repository.DB)
 	analyticsRepo := repository.NewAnalyticsRepository(repository.DB)
 	favoritePublisherListRepo := repository.NewFavoritePublisherListRepository(repository.DB)
+	publisherMessagingRepo := repository.NewPublisherMessagingRepository(repository.DB)
 
 	// Initialize Billing Repositories
 	billingAccountRepo := repository.NewPgxBillingAccountRepository(repository.DB)
@@ -304,6 +305,7 @@ func main() {
 	trackingLinkService := service.NewTrackingLinkService(trackingLinkRepo, trackingLinkProviderMappingRepo, campaignRepo, affiliateRepo, campaignProviderMappingRepo, affiliateProviderMappingRepo, integrationService)
 	analyticsService := service.NewAnalyticsService(analyticsRepo)
 	favoritePublisherListService := service.NewFavoritePublisherListService(favoritePublisherListRepo, analyticsRepo)
+	publisherMessagingService := service.NewPublisherMessagingService(publisherMessagingRepo, analyticsRepo, favoritePublisherListRepo)
 
 	// Initialize Billing Services
 	billingService := service.NewBillingService(billingAccountRepo, paymentMethodRepo, transactionRepo, organizationRepo, stripeService)
@@ -319,6 +321,7 @@ func main() {
 	trackingLinkHandler := handlers.NewTrackingLinkHandler(trackingLinkService)
 	analyticsHandler := handlers.NewAnalyticsHandler(analyticsService)
 	favoritePublisherListHandler := handlers.NewFavoritePublisherListHandler(favoritePublisherListService)
+	publisherMessagingHandler := handlers.NewPublisherMessagingHandler(publisherMessagingService)
 
 	// Initialize Billing Handlers
 	billingHandler := handlers.NewBillingHandler(billingService, profileService)
@@ -335,6 +338,7 @@ func main() {
 		TrackingLinkHandler:          trackingLinkHandler,
 		AnalyticsHandler:             analyticsHandler,
 		FavoritePublisherListHandler: favoritePublisherListHandler,
+		PublisherMessagingHandler:    publisherMessagingHandler,
 		BillingHandler:               billingHandler,
 		WebhookHandler:               webhookHandler,
 	})

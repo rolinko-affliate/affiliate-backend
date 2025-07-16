@@ -105,7 +105,7 @@ func (h *FavoritePublisherListHandler) getDomainQuery(c *gin.Context) (string, b
 // @Accept json
 // @Produce json
 // @Param request body domain.CreateFavoritePublisherListRequest true "Create list request"
-// @Success 201 {object} gin.H{message=string,data=domain.FavoritePublisherList}
+// @Success 201 {object} map[string]interface{} "message: string, data: domain.FavoritePublisherList"
 // @Failure 400 {object} ErrorResponse
 // @Failure 401 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
@@ -144,7 +144,7 @@ func (h *FavoritePublisherListHandler) CreateList(c *gin.Context) {
 // @Description Retrieves all favorite publisher lists for the user's organization with statistics
 // @Tags favorite-publisher-lists
 // @Produce json
-// @Success 200 {object} gin.H{message=string,data=[]domain.FavoritePublisherListWithStats}
+// @Success 200 {object} map[string]interface{} "message: string, data: []domain.FavoritePublisherListWithStats"
 // @Failure 401 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
 // @Security BearerAuth
@@ -173,7 +173,7 @@ func (h *FavoritePublisherListHandler) GetLists(c *gin.Context) {
 // @Tags favorite-publisher-lists
 // @Produce json
 // @Param list_id path int true "List ID"
-// @Success 200 {object} gin.H{message=string,data=domain.FavoritePublisherList}
+// @Success 200 {object} map[string]interface{} "message: string, data: domain.FavoritePublisherList"
 // @Failure 400 {object} ErrorResponse
 // @Failure 401 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
@@ -240,7 +240,7 @@ func (h *FavoritePublisherListHandler) GetListByID(c *gin.Context) {
 // @Produce json
 // @Param list_id path int true "List ID"
 // @Param request body domain.UpdateFavoritePublisherListRequest true "Update list request"
-// @Success 200 {object} gin.H{message=string,data=domain.FavoritePublisherList}
+// @Success 200 {object} map[string]interface{} "message: string, data: domain.FavoritePublisherList"
 // @Failure 400 {object} ErrorResponse
 // @Failure 401 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
@@ -321,7 +321,7 @@ func (h *FavoritePublisherListHandler) UpdateList(c *gin.Context) {
 // @Tags favorite-publisher-lists
 // @Produce json
 // @Param list_id path int true "List ID"
-// @Success 200 {object} gin.H{message=string}
+// @Success 200 {object} map[string]interface{} "message: string"
 // @Failure 400 {object} ErrorResponse
 // @Failure 401 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
@@ -387,7 +387,7 @@ func (h *FavoritePublisherListHandler) DeleteList(c *gin.Context) {
 // @Produce json
 // @Param list_id path int true "List ID"
 // @Param request body domain.AddPublisherToListRequest true "Add publisher request"
-// @Success 201 {object} gin.H{message=string,data=domain.FavoritePublisherListItem}
+// @Success 201 {object} map[string]interface{} "message: string, data: domain.FavoritePublisherListItem"
 // @Failure 400 {object} ErrorResponse
 // @Failure 401 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
@@ -478,7 +478,7 @@ func (h *FavoritePublisherListHandler) AddPublisherToList(c *gin.Context) {
 // @Produce json
 // @Param list_id path int true "List ID"
 // @Param domain path string true "Publisher domain"
-// @Success 200 {object} gin.H{message=string}
+// @Success 200 {object} map[string]interface{} "message: string"
 // @Failure 400 {object} ErrorResponse
 // @Failure 401 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
@@ -523,7 +523,7 @@ func (h *FavoritePublisherListHandler) RemovePublisherFromList(c *gin.Context) {
 // @Produce json
 // @Param list_id path int true "List ID"
 // @Param include_details query bool false "Include publisher details from analytics"
-// @Success 200 {object} gin.H{message=string,data=[]domain.FavoritePublisherListItem}
+// @Success 200 {object} map[string]interface{} "message: string, data: []domain.FavoritePublisherListItem"
 // @Failure 400 {object} ErrorResponse
 // @Failure 401 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
@@ -593,7 +593,7 @@ func (h *FavoritePublisherListHandler) GetListItems(c *gin.Context) {
 // @Param list_id path int true "List ID"
 // @Param domain path string true "Publisher domain"
 // @Param request body domain.UpdatePublisherInListRequest true "Update publisher request"
-// @Success 200 {object} gin.H{message=string}
+// @Success 200 {object} map[string]interface{} "message: string"
 // @Failure 400 {object} ErrorResponse
 // @Failure 401 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
@@ -675,7 +675,7 @@ func (h *FavoritePublisherListHandler) UpdatePublisherInList(c *gin.Context) {
 // @Tags favorite-publisher-lists
 // @Produce json
 // @Param domain query string true "Publisher domain"
-// @Success 200 {object} gin.H{message=string,data=[]domain.FavoritePublisherList}
+// @Success 200 {object} map[string]interface{} "message: string, data: []domain.FavoritePublisherList"
 // @Failure 400 {object} ErrorResponse
 // @Failure 401 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse

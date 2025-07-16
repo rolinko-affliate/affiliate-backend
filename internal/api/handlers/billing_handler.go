@@ -33,12 +33,12 @@ func (h *BillingHandler) validateBillingAccess(userProfile *domain.Profile) (int
 		}
 		return *userProfile.OrganizationID, nil
 	}
-	
+
 	// Regular users can only access their own organization's billing
 	if userProfile.OrganizationID == nil {
 		return 0, fmt.Errorf("user is not associated with an organization")
 	}
-	
+
 	return *userProfile.OrganizationID, nil
 }
 

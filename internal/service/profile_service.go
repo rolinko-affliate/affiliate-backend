@@ -62,13 +62,13 @@ func (s *profileService) GetProfileByID(ctx context.Context, id uuid.UUID) (*dom
 func (s *profileService) UpdateProfile(ctx context.Context, profile *domain.Profile) (*domain.Profile, error) {
 	// Update the updated_at timestamp
 	profile.UpdatedAt = time.Now()
-	
+
 	// Perform the update
 	err := s.profileRepo.UpdateProfile(ctx, profile)
 	if err != nil {
 		return nil, err
 	}
-	
+
 	// Return the updated profile
 	return profile, nil
 }
@@ -87,10 +87,10 @@ func (s *profileService) GetRoleByID(ctx context.Context, roleID int) (*domain.R
 func (s *profileService) UpsertProfile(ctx context.Context, userID uuid.UUID, email string, orgID *int64, roleID int, firstName, lastName *string) (*domain.Profile, error) {
 	// Check if profile exists
 	existingProfile, err := s.profileRepo.GetProfileByID(ctx, userID)
-	
+
 	now := time.Now()
 	var profile *domain.Profile
-	
+
 	if err == nil {
 		// Profile exists, update it
 		profile = existingProfile
@@ -113,12 +113,12 @@ func (s *profileService) UpsertProfile(ctx context.Context, userID uuid.UUID, em
 			UpdatedAt:      now,
 		}
 	}
-	
+
 	// Use the repository's upsert method
 	err = s.profileRepo.UpsertProfile(ctx, profile)
 	if err != nil {
 		return nil, err
 	}
-	
+
 	return profile, nil
 }

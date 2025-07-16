@@ -19,7 +19,7 @@ var _ MappedNullable = &AdvertiserRelationshipLabels{}
 
 // AdvertiserRelationshipLabels struct for AdvertiserRelationshipLabels
 type AdvertiserRelationshipLabels struct {
-	Total *int32 `json:"total,omitempty"`
+	Total   *int32   `json:"total,omitempty"`
 	Entries []string `json:"entries,omitempty"`
 }
 
@@ -105,7 +105,7 @@ func (o *AdvertiserRelationshipLabels) SetEntries(v []string) {
 }
 
 func (o AdvertiserRelationshipLabels) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -158,5 +158,3 @@ func (v *NullableAdvertiserRelationshipLabels) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

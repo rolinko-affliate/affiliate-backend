@@ -19,14 +19,14 @@ var _ MappedNullable = &AdvertiserRelationship{}
 
 // AdvertiserRelationship Related data based on requested relationships
 type AdvertiserRelationship struct {
-	Labels *AdvertiserRelationshipLabels `json:"labels,omitempty"`
-	AccountManager *Employee `json:"account_manager,omitempty"`
-	SalesManager *Employee `json:"sales_manager,omitempty"`
-	Reporting *ReportingData `json:"reporting,omitempty"`
-	ApiKeys *AdvertiserRelationshipApiKeys `json:"api_keys,omitempty"`
+	Labels          *AdvertiserRelationshipLabels  `json:"labels,omitempty"`
+	AccountManager  *Employee                      `json:"account_manager,omitempty"`
+	SalesManager    *Employee                      `json:"sales_manager,omitempty"`
+	Reporting       *ReportingData                 `json:"reporting,omitempty"`
+	ApiKeys         *AdvertiserRelationshipApiKeys `json:"api_keys,omitempty"`
 	ApiWhitelistIps *AdvertiserRelationshipApiKeys `json:"api_whitelist_ips,omitempty"`
-	Billing *Billing `json:"billing,omitempty"`
-	Settings *Settings `json:"settings,omitempty"`
+	Billing         *Billing                       `json:"billing,omitempty"`
+	Settings        *Settings                      `json:"settings,omitempty"`
 }
 
 // NewAdvertiserRelationship instantiates a new AdvertiserRelationship object
@@ -303,7 +303,7 @@ func (o *AdvertiserRelationship) SetSettings(v Settings) {
 }
 
 func (o AdvertiserRelationship) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -374,5 +374,3 @@ func (v *NullableAdvertiserRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

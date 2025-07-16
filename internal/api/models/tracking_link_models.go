@@ -67,27 +67,27 @@ type TrackingLinkGenerationRequest struct {
 
 // TrackingLinkResponse represents the response for tracking link operations
 type TrackingLinkResponse struct {
-	TrackingLinkID      int64      `json:"tracking_link_id" example:"1"`
-	OrganizationID      int64      `json:"organization_id" example:"1"`
-	CampaignID          int64      `json:"campaign_id" example:"1"`
-	AffiliateID         int64      `json:"affiliate_id" example:"1"`
-	Name                string     `json:"name" example:"Facebook Campaign Link"`
-	Description         *string    `json:"description,omitempty" example:"Tracking link for Facebook traffic"`
-	Status              string     `json:"status" example:"active"`
-	TrackingURL         *string    `json:"tracking_url,omitempty" example:"https://tracking.example.com/ABC123/DEF456/?sub1=campaign_123"`
-	SourceID            *string    `json:"source_id,omitempty" example:"facebook"`
-	Sub1                *string    `json:"sub1,omitempty" example:"campaign_123"`
-	Sub2                *string    `json:"sub2,omitempty" example:"adset_456"`
-	Sub3                *string    `json:"sub3,omitempty" example:"ad_789"`
-	Sub4                *string    `json:"sub4,omitempty" example:"placement_mobile"`
-	Sub5                *string    `json:"sub5,omitempty" example:"audience_lookalike"`
-	IsEncryptParameters *bool      `json:"is_encrypt_parameters,omitempty" example:"false"`
-	IsRedirectLink      *bool      `json:"is_redirect_link,omitempty" example:"true"`
+	TrackingLinkID      int64   `json:"tracking_link_id" example:"1"`
+	OrganizationID      int64   `json:"organization_id" example:"1"`
+	CampaignID          int64   `json:"campaign_id" example:"1"`
+	AffiliateID         int64   `json:"affiliate_id" example:"1"`
+	Name                string  `json:"name" example:"Facebook Campaign Link"`
+	Description         *string `json:"description,omitempty" example:"Tracking link for Facebook traffic"`
+	Status              string  `json:"status" example:"active"`
+	TrackingURL         *string `json:"tracking_url,omitempty" example:"https://tracking.example.com/ABC123/DEF456/?sub1=campaign_123"`
+	SourceID            *string `json:"source_id,omitempty" example:"facebook"`
+	Sub1                *string `json:"sub1,omitempty" example:"campaign_123"`
+	Sub2                *string `json:"sub2,omitempty" example:"adset_456"`
+	Sub3                *string `json:"sub3,omitempty" example:"ad_789"`
+	Sub4                *string `json:"sub4,omitempty" example:"placement_mobile"`
+	Sub5                *string `json:"sub5,omitempty" example:"audience_lookalike"`
+	IsEncryptParameters *bool   `json:"is_encrypt_parameters,omitempty" example:"false"`
+	IsRedirectLink      *bool   `json:"is_redirect_link,omitempty" example:"true"`
 
-	InternalNotes       *string    `json:"internal_notes,omitempty" example:"High-performing traffic source"`
-	Tags                *string    `json:"tags,omitempty" example:"facebook,mobile,lookalike"`
-	CreatedAt           time.Time  `json:"created_at" example:"2023-12-01T10:00:00Z"`
-	UpdatedAt           time.Time  `json:"updated_at" example:"2023-12-01T10:30:00Z"`
+	InternalNotes *string   `json:"internal_notes,omitempty" example:"High-performing traffic source"`
+	Tags          *string   `json:"tags,omitempty" example:"facebook,mobile,lookalike"`
+	CreatedAt     time.Time `json:"created_at" example:"2023-12-01T10:00:00Z"`
+	UpdatedAt     time.Time `json:"updated_at" example:"2023-12-01T10:30:00Z"`
 }
 
 // TrackingLinkGenerationResponse represents the response for tracking link generation
@@ -105,8 +105,6 @@ type TrackingLinkListResponse struct {
 	PageSize      int                     `json:"page_size" example:"20"`
 	TotalPages    int                     `json:"total_pages" example:"8"`
 }
-
-
 
 // TrackingLinkProviderMappingResponse represents the response for tracking link provider mappings
 type TrackingLinkProviderMappingResponse struct {
@@ -231,10 +229,10 @@ func FromTrackingLinkDomain(trackingLink *domain.TrackingLink) *TrackingLinkResp
 		IsEncryptParameters: trackingLink.IsEncryptParameters,
 		IsRedirectLink:      trackingLink.IsRedirectLink,
 
-		InternalNotes:       trackingLink.InternalNotes,
-		Tags:                trackingLink.Tags,
-		CreatedAt:           trackingLink.CreatedAt,
-		UpdatedAt:           trackingLink.UpdatedAt,
+		InternalNotes: trackingLink.InternalNotes,
+		Tags:          trackingLink.Tags,
+		CreatedAt:     trackingLink.CreatedAt,
+		UpdatedAt:     trackingLink.UpdatedAt,
 	}
 }
 
@@ -243,17 +241,17 @@ func FromTrackingLinkGenerationDomain(response *domain.TrackingLinkGenerationRes
 	apiResponse := &TrackingLinkGenerationResponse{
 		GeneratedURL: response.GeneratedURL,
 	}
-	
+
 	if response.TrackingLink != nil {
 		apiResponse.TrackingLink = FromTrackingLinkDomain(response.TrackingLink)
 		// Add QR code URL if tracking link ID is available
 		if response.TrackingLink.TrackingLinkID > 0 {
-			qrURL := fmt.Sprintf("%s/api/v1/organizations/%d/tracking-links/%d/qr", 
+			qrURL := fmt.Sprintf("%s/api/v1/organizations/%d/tracking-links/%d/qr",
 				baseURL, response.TrackingLink.OrganizationID, response.TrackingLink.TrackingLinkID)
 			apiResponse.QRCodeURL = &qrURL
 		}
 	}
-	
+
 	return apiResponse
 }
 

@@ -224,16 +224,16 @@ func (m *MockIntegrationServiceWithDefaults) GetCampaign(ctx context.Context, id
 func (m *MockIntegrationServiceWithDefaults) GenerateTrackingLink(ctx context.Context, req *domain.TrackingLinkGenerationRequest, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) (*domain.TrackingLinkGenerationResponse, error) {
 	// Create a simulated tracking URL
 	generatedURL := "http://mock-tracking-domain.test/ABC123/DEF456/?sub1=test&sub2=mock"
-	
+
 	// Create provider data
 	providerData := &domain.EverflowTrackingLinkProviderData{
 		NetworkOfferID:     int32Ptr(12345),
 		NetworkAffiliateID: int32Ptr(67890),
 		GeneratedURL:       &generatedURL,
 	}
-	
+
 	providerDataJSON, _ := providerData.ToJSON()
-	
+
 	return &domain.TrackingLinkGenerationResponse{
 		GeneratedURL: generatedURL,
 		ProviderData: &providerDataJSON,
@@ -266,7 +266,7 @@ func (l *LoggingMockIntegrationService) logRequest(operation string, entityType 
 		log.Printf("🚀 MOCK %s %s: (failed to marshal data: %v)", operation, entityType, err)
 		return
 	}
-	
+
 	log.Printf("🚀 MOCK %s %s:\n%s", operation, entityType, string(jsonData))
 }
 
@@ -277,26 +277,26 @@ func (l *LoggingMockIntegrationService) logResponse(operation string, entityType
 		log.Printf("✅ MOCK %s %s Response: (failed to marshal data: %v)", operation, entityType, err)
 		return
 	}
-	
+
 	log.Printf("✅ MOCK %s %s Response:\n%s", operation, entityType, string(jsonData))
 }
 
 // CreateAdvertiser logs the request and returns a simulated advertiser
 func (l *LoggingMockIntegrationService) CreateAdvertiser(ctx context.Context, adv domain.Advertiser) (domain.Advertiser, error) {
 	l.logRequest("CREATE", "ADVERTISER", adv)
-	
+
 	// Simulate processing time
 	time.Sleep(100 * time.Millisecond)
-	
+
 	// Create a simulated response
 	response := adv
 	response.AdvertiserID = 12345 // Simulate provider-assigned ID
 	response.CreatedAt = time.Now()
 	response.UpdatedAt = time.Now()
-	
+
 	// Note: Advertiser domain doesn't have ProviderData field
 	// Provider-specific data would be stored in AdvertiserProviderMapping
-	
+
 	l.logResponse("CREATE", "ADVERTISER", response)
 	return response, nil
 }
@@ -304,10 +304,10 @@ func (l *LoggingMockIntegrationService) CreateAdvertiser(ctx context.Context, ad
 // UpdateAdvertiser logs the request and simulates an update
 func (l *LoggingMockIntegrationService) UpdateAdvertiser(ctx context.Context, adv domain.Advertiser) error {
 	l.logRequest("UPDATE", "ADVERTISER", adv)
-	
+
 	// Simulate processing time
 	time.Sleep(80 * time.Millisecond)
-	
+
 	log.Printf("✅ MOCK UPDATE ADVERTISER: Successfully updated advertiser ID %d", adv.AdvertiserID)
 	return nil
 }
@@ -315,10 +315,10 @@ func (l *LoggingMockIntegrationService) UpdateAdvertiser(ctx context.Context, ad
 // GetAdvertiser logs the request and returns a simulated advertiser
 func (l *LoggingMockIntegrationService) GetAdvertiser(ctx context.Context, id uuid.UUID) (domain.Advertiser, error) {
 	l.logRequest("GET", "ADVERTISER", map[string]interface{}{"id": id})
-	
+
 	// Simulate processing time
 	time.Sleep(50 * time.Millisecond)
-	
+
 	// Create a simulated response
 	response := domain.Advertiser{
 		AdvertiserID:   12345,
@@ -328,10 +328,10 @@ func (l *LoggingMockIntegrationService) GetAdvertiser(ctx context.Context, id uu
 		CreatedAt:      time.Now().Add(-24 * time.Hour),
 		UpdatedAt:      time.Now(),
 	}
-	
+
 	// Note: Advertiser domain doesn't have ProviderData field
 	// Provider-specific data would be stored in AdvertiserProviderMapping
-	
+
 	l.logResponse("GET", "ADVERTISER", response)
 	return response, nil
 }
@@ -339,19 +339,19 @@ func (l *LoggingMockIntegrationService) GetAdvertiser(ctx context.Context, id uu
 // CreateAffiliate logs the request and returns a simulated affiliate
 func (l *LoggingMockIntegrationService) CreateAffiliate(ctx context.Context, aff domain.Affiliate) (domain.Affiliate, error) {
 	l.logRequest("CREATE", "AFFILIATE", aff)
-	
+
 	// Simulate processing time
 	time.Sleep(120 * time.Millisecond)
-	
+
 	// Create a simulated response
 	response := aff
 	response.AffiliateID = 67890 // Simulate provider-assigned ID
 	response.CreatedAt = time.Now()
 	response.UpdatedAt = time.Now()
-	
+
 	// Note: Affiliate domain doesn't have ProviderData field
 	// Provider-specific data would be stored in AffiliateProviderMapping
-	
+
 	l.logResponse("CREATE", "AFFILIATE", response)
 	return response, nil
 }
@@ -359,10 +359,10 @@ func (l *LoggingMockIntegrationService) CreateAffiliate(ctx context.Context, aff
 // UpdateAffiliate logs the request and simulates an update
 func (l *LoggingMockIntegrationService) UpdateAffiliate(ctx context.Context, aff domain.Affiliate) error {
 	l.logRequest("UPDATE", "AFFILIATE", aff)
-	
+
 	// Simulate processing time
 	time.Sleep(90 * time.Millisecond)
-	
+
 	log.Printf("✅ MOCK UPDATE AFFILIATE: Successfully updated affiliate ID %d", aff.AffiliateID)
 	return nil
 }
@@ -370,10 +370,10 @@ func (l *LoggingMockIntegrationService) UpdateAffiliate(ctx context.Context, aff
 // GetAffiliate logs the request and returns a simulated affiliate
 func (l *LoggingMockIntegrationService) GetAffiliate(ctx context.Context, id uuid.UUID) (domain.Affiliate, error) {
 	l.logRequest("GET", "AFFILIATE", map[string]interface{}{"id": id})
-	
+
 	// Simulate processing time
 	time.Sleep(60 * time.Millisecond)
-	
+
 	// Create a simulated response
 	response := domain.Affiliate{
 		AffiliateID:    67890,
@@ -383,10 +383,10 @@ func (l *LoggingMockIntegrationService) GetAffiliate(ctx context.Context, id uui
 		CreatedAt:      time.Now().Add(-48 * time.Hour),
 		UpdatedAt:      time.Now(),
 	}
-	
+
 	// Note: Affiliate domain doesn't have ProviderData field
 	// Provider-specific data would be stored in AffiliateProviderMapping
-	
+
 	l.logResponse("GET", "AFFILIATE", response)
 	return response, nil
 }
@@ -394,19 +394,19 @@ func (l *LoggingMockIntegrationService) GetAffiliate(ctx context.Context, id uui
 // CreateCampaign logs the request and returns a simulated campaign
 func (l *LoggingMockIntegrationService) CreateCampaign(ctx context.Context, camp domain.Campaign) (domain.Campaign, error) {
 	l.logRequest("CREATE", "CAMPAIGN", camp)
-	
+
 	// Simulate processing time
 	time.Sleep(150 * time.Millisecond)
-	
+
 	// Create a simulated response
 	response := camp
 	response.CampaignID = 54321 // Simulate provider-assigned ID
 	response.CreatedAt = time.Now()
 	response.UpdatedAt = time.Now()
-	
+
 	// Note: Campaign domain doesn't have ProviderData field
 	// Provider-specific data would be stored in CampaignProviderMapping
-	
+
 	l.logResponse("CREATE", "CAMPAIGN", response)
 	return response, nil
 }
@@ -414,10 +414,10 @@ func (l *LoggingMockIntegrationService) CreateCampaign(ctx context.Context, camp
 // UpdateCampaign logs the request and simulates an update
 func (l *LoggingMockIntegrationService) UpdateCampaign(ctx context.Context, camp domain.Campaign) error {
 	l.logRequest("UPDATE", "CAMPAIGN", camp)
-	
+
 	// Simulate processing time
 	time.Sleep(100 * time.Millisecond)
-	
+
 	log.Printf("✅ MOCK UPDATE CAMPAIGN: Successfully updated campaign ID %d", camp.CampaignID)
 	return nil
 }
@@ -425,10 +425,10 @@ func (l *LoggingMockIntegrationService) UpdateCampaign(ctx context.Context, camp
 // GetCampaign logs the request and returns a simulated campaign
 func (l *LoggingMockIntegrationService) GetCampaign(ctx context.Context, id uuid.UUID) (domain.Campaign, error) {
 	l.logRequest("GET", "CAMPAIGN", map[string]interface{}{"id": id})
-	
+
 	// Simulate processing time
 	time.Sleep(70 * time.Millisecond)
-	
+
 	// Create a simulated response
 	response := domain.Campaign{
 		CampaignID:     54321,
@@ -439,10 +439,10 @@ func (l *LoggingMockIntegrationService) GetCampaign(ctx context.Context, id uuid
 		CreatedAt:      time.Now().Add(-72 * time.Hour),
 		UpdatedAt:      time.Now(),
 	}
-	
+
 	// Note: Campaign domain doesn't have ProviderData field
 	// Provider-specific data would be stored in CampaignProviderMapping
-	
+
 	l.logResponse("GET", "CAMPAIGN", response)
 	return response, nil
 }
@@ -450,18 +450,18 @@ func (l *LoggingMockIntegrationService) GetCampaign(ctx context.Context, id uuid
 // GenerateTrackingLink logs the request and returns a simulated tracking link
 func (l *LoggingMockIntegrationService) GenerateTrackingLink(ctx context.Context, req *domain.TrackingLinkGenerationRequest, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) (*domain.TrackingLinkGenerationResponse, error) {
 	l.logRequest("GENERATE", "TRACKING_LINK", map[string]interface{}{
-		"request":          req,
-		"campaign_mapping": campaignMapping,
+		"request":           req,
+		"campaign_mapping":  campaignMapping,
 		"affiliate_mapping": affiliateMapping,
 	})
-	
+
 	// Simulate processing time
 	time.Sleep(200 * time.Millisecond)
-	
+
 	// Create a simulated tracking URL with the request parameters
 	baseURL := "http://mock-tracking-domain.test/ABC123/DEF456/"
 	params := []string{}
-	
+
 	if req.SourceID != nil {
 		params = append(params, fmt.Sprintf("source_id=%s", *req.SourceID))
 	}
@@ -480,12 +480,12 @@ func (l *LoggingMockIntegrationService) GenerateTrackingLink(ctx context.Context
 	if req.Sub5 != nil {
 		params = append(params, fmt.Sprintf("sub5=%s", *req.Sub5))
 	}
-	
+
 	generatedURL := baseURL
 	if len(params) > 0 {
 		generatedURL += "?" + strings.Join(params, "&")
 	}
-	
+
 	// Create provider data
 	providerData := &domain.EverflowTrackingLinkProviderData{
 		NetworkOfferID:           int32Ptr(12345),
@@ -498,14 +498,14 @@ func (l *LoggingMockIntegrationService) GenerateTrackingLink(ctx context.Context
 		GeneratedURL:             &generatedURL,
 		CanAffiliateRunAllOffers: boolPtr(true),
 	}
-	
+
 	providerDataJSON, _ := providerData.ToJSON()
-	
+
 	response := &domain.TrackingLinkGenerationResponse{
 		GeneratedURL: generatedURL,
 		ProviderData: &providerDataJSON,
 	}
-	
+
 	l.logResponse("GENERATE", "TRACKING_LINK", response)
 	return response, nil
 }
@@ -513,17 +513,17 @@ func (l *LoggingMockIntegrationService) GenerateTrackingLink(ctx context.Context
 // GenerateTrackingLinkQR logs the request and returns a simulated QR code
 func (l *LoggingMockIntegrationService) GenerateTrackingLinkQR(ctx context.Context, req *domain.TrackingLinkGenerationRequest, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) ([]byte, error) {
 	l.logRequest("GENERATE", "TRACKING_LINK_QR", map[string]interface{}{
-		"request":          req,
-		"campaign_mapping": campaignMapping,
+		"request":           req,
+		"campaign_mapping":  campaignMapping,
 		"affiliate_mapping": affiliateMapping,
 	})
-	
+
 	// Simulate processing time
 	time.Sleep(250 * time.Millisecond)
-	
+
 	// Return a mock QR code (in real implementation, this would be a PNG image)
 	qrData := []byte("mock-qr-code-png-data-for-tracking-link")
-	
+
 	log.Printf("✅ MOCK GENERATE TRACKING_LINK_QR: Generated QR code with %d bytes", len(qrData))
 	return qrData, nil
 }

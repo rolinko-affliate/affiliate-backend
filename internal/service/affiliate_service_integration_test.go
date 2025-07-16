@@ -65,31 +65,31 @@ func TestIntegrationServiceInterface(t *testing.T) {
 	t.Run("test integration service interface compliance", func(t *testing.T) {
 		// This test verifies that our mock implements the interface correctly
 		var _ provider.IntegrationService = &MockIntegrationServiceSimple{}
-		
+
 		mockService := &MockIntegrationServiceSimple{}
 		ctx := context.Background()
-		
+
 		// Test affiliate creation
 		inputAffiliate := domain.Affiliate{
 			Name:   "Test Affiliate",
 			Status: "active",
 		}
-		
+
 		expectedAffiliate := domain.Affiliate{
-			AffiliateID:        1,
-			Name:               "Test Affiliate",
-			Status:             "active",
+			AffiliateID: 1,
+			Name:        "Test Affiliate",
+			Status:      "active",
 		}
-		
+
 		mockService.On("CreateAffiliate", ctx, inputAffiliate).Return(expectedAffiliate, nil)
-		
+
 		result, err := mockService.CreateAffiliate(ctx, inputAffiliate)
-		
+
 		assert.NoError(t, err)
 		assert.Equal(t, expectedAffiliate.AffiliateID, result.AffiliateID)
 		assert.Equal(t, expectedAffiliate.Name, result.Name)
 		assert.Equal(t, expectedAffiliate.Status, result.Status)
-		
+
 		mockService.AssertExpectations(t)
 	})
 }
@@ -98,34 +98,34 @@ func TestAffiliateServiceIntegration(t *testing.T) {
 	t.Run("test affiliate service with integration service", func(t *testing.T) {
 		// This test focuses on the integration between affiliate service and integration service
 		// without requiring full repository mocks
-		
+
 		mockIntegrationService := &MockIntegrationServiceSimple{}
 		ctx := context.Background()
-		
+
 		// Test data
 		affiliate := domain.Affiliate{
 			Name:   "Test Affiliate",
 			Status: "active",
 		}
-		
+
 		expectedResult := domain.Affiliate{
-			AffiliateID:        1,
-			Name:               "Test Affiliate",
-			Status:             "active",
+			AffiliateID: 1,
+			Name:        "Test Affiliate",
+			Status:      "active",
 		}
-		
+
 		// Setup mock expectation
 		mockIntegrationService.On("CreateAffiliate", ctx, affiliate).Return(expectedResult, nil)
-		
+
 		// Execute
 		result, err := mockIntegrationService.CreateAffiliate(ctx, affiliate)
-		
+
 		// Verify
 		assert.NoError(t, err)
 		assert.Equal(t, int64(1), result.AffiliateID)
 		assert.Equal(t, "Test Affiliate", result.Name)
 		assert.Equal(t, "active", result.Status)
-		
+
 		mockIntegrationService.AssertExpectations(t)
 	})
 }

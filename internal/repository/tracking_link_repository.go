@@ -19,7 +19,6 @@ type TrackingLinkRepository interface {
 	ListTrackingLinksByAffiliate(ctx context.Context, affiliateID int64, limit, offset int) ([]*domain.TrackingLink, error)
 	ListTrackingLinksByOrganization(ctx context.Context, organizationID int64, limit, offset int) ([]*domain.TrackingLink, error)
 	GetTrackingLinkByCampaignAndAffiliate(ctx context.Context, campaignID, affiliateID int64, sourceID, sub1, sub2, sub3, sub4, sub5 *string) (*domain.TrackingLink, error)
-
 }
 
 // trackingLinkRepository implements TrackingLinkRepository
@@ -386,4 +385,3 @@ func (r *trackingLinkRepository) GetTrackingLinkByCampaignAndAffiliate(ctx conte
 
 	return trackingLink, nil
 }
-

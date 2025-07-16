@@ -23,74 +23,73 @@ func convertInt32ToIntPtr(i *int32) *int {
 	return &val
 }
 
-
 type CreateAdvertiserRequest struct {
-	Name                         string                  `json:"name" binding:"required"`
-	Status                       string                  `json:"status,omitempty"`
-	OrganizationID               int64                   `json:"organization_id" binding:"required"`
-	ContactEmail                 *string                 `json:"contact_email,omitempty"`
-	BillingDetails               *domain.BillingDetails  `json:"billing_details,omitempty"`
-	InternalNotes                *string                 `json:"internal_notes,omitempty"`
-	DefaultCurrencyID            *string                 `json:"default_currency_id,omitempty"`
-	PlatformName                 *string                 `json:"platform_name,omitempty"`
-	PlatformURL                  *string                 `json:"platform_url,omitempty"`
-	PlatformUsername             *string                 `json:"platform_username,omitempty"`
-	AccountingContactEmail       *string                 `json:"accounting_contact_email,omitempty"`
-	OfferIDMacro                 *string                 `json:"offer_id_macro,omitempty"`
-	AffiliateIDMacro             *string                 `json:"affiliate_id_macro,omitempty"`
-	AttributionMethod            *string                 `json:"attribution_method,omitempty"`
-	EmailAttributionMethod       *string                 `json:"email_attribution_method,omitempty"`
-	AttributionPriority          *string                 `json:"attribution_priority,omitempty"`
-	ReportingTimezoneID          *int                    `json:"reporting_timezone_id,omitempty"`
+	Name                   string                 `json:"name" binding:"required"`
+	Status                 string                 `json:"status,omitempty"`
+	OrganizationID         int64                  `json:"organization_id" binding:"required"`
+	ContactEmail           *string                `json:"contact_email,omitempty"`
+	BillingDetails         *domain.BillingDetails `json:"billing_details,omitempty"`
+	InternalNotes          *string                `json:"internal_notes,omitempty"`
+	DefaultCurrencyID      *string                `json:"default_currency_id,omitempty"`
+	PlatformName           *string                `json:"platform_name,omitempty"`
+	PlatformURL            *string                `json:"platform_url,omitempty"`
+	PlatformUsername       *string                `json:"platform_username,omitempty"`
+	AccountingContactEmail *string                `json:"accounting_contact_email,omitempty"`
+	OfferIDMacro           *string                `json:"offer_id_macro,omitempty"`
+	AffiliateIDMacro       *string                `json:"affiliate_id_macro,omitempty"`
+	AttributionMethod      *string                `json:"attribution_method,omitempty"`
+	EmailAttributionMethod *string                `json:"email_attribution_method,omitempty"`
+	AttributionPriority    *string                `json:"attribution_priority,omitempty"`
+	ReportingTimezoneID    *int                   `json:"reporting_timezone_id,omitempty"`
 }
 
 type UpdateAdvertiserRequest struct {
-	Name                         string                  `json:"name" binding:"required"`
-	Status                       string                  `json:"status" binding:"required"`
-	ContactEmail                 *string                 `json:"contact_email,omitempty"`
-	BillingDetails               *domain.BillingDetails  `json:"billing_details,omitempty"`
-	InternalNotes                *string                 `json:"internal_notes,omitempty"`
-	DefaultCurrencyID            *string                 `json:"default_currency_id,omitempty"`
-	PlatformName                 *string                 `json:"platform_name,omitempty"`
-	PlatformURL                  *string                 `json:"platform_url,omitempty"`
-	PlatformUsername             *string                 `json:"platform_username,omitempty"`
-	AccountingContactEmail       *string                 `json:"accounting_contact_email,omitempty"`
-	OfferIDMacro                 *string                 `json:"offer_id_macro,omitempty"`
-	AffiliateIDMacro             *string                 `json:"affiliate_id_macro,omitempty"`
-	AttributionMethod            *string                 `json:"attribution_method,omitempty"`
-	EmailAttributionMethod       *string                 `json:"email_attribution_method,omitempty"`
-	AttributionPriority          *string                 `json:"attribution_priority,omitempty"`
-	ReportingTimezoneID          *int                    `json:"reporting_timezone_id,omitempty"`
+	Name                   string                 `json:"name" binding:"required"`
+	Status                 string                 `json:"status" binding:"required"`
+	ContactEmail           *string                `json:"contact_email,omitempty"`
+	BillingDetails         *domain.BillingDetails `json:"billing_details,omitempty"`
+	InternalNotes          *string                `json:"internal_notes,omitempty"`
+	DefaultCurrencyID      *string                `json:"default_currency_id,omitempty"`
+	PlatformName           *string                `json:"platform_name,omitempty"`
+	PlatformURL            *string                `json:"platform_url,omitempty"`
+	PlatformUsername       *string                `json:"platform_username,omitempty"`
+	AccountingContactEmail *string                `json:"accounting_contact_email,omitempty"`
+	OfferIDMacro           *string                `json:"offer_id_macro,omitempty"`
+	AffiliateIDMacro       *string                `json:"affiliate_id_macro,omitempty"`
+	AttributionMethod      *string                `json:"attribution_method,omitempty"`
+	EmailAttributionMethod *string                `json:"email_attribution_method,omitempty"`
+	AttributionPriority    *string                `json:"attribution_priority,omitempty"`
+	ReportingTimezoneID    *int                   `json:"reporting_timezone_id,omitempty"`
 }
 
 type AdvertiserResponse struct {
-	AdvertiserID                 int64                   `json:"advertiser_id"`
-	Name                         string                  `json:"name"`
-	Status                       string                  `json:"status"`
-	OrganizationID               int64                   `json:"organization_id"`
-	ContactEmail                 *string                 `json:"contact_email,omitempty"`
-	BillingDetails               *domain.BillingDetails  `json:"billing_details,omitempty"`
-	InternalNotes                *string                 `json:"internal_notes,omitempty"`
-	DefaultCurrencyID            *string                 `json:"default_currency_id,omitempty"`
-	PlatformName                 *string                 `json:"platform_name,omitempty"`
-	PlatformURL                  *string                 `json:"platform_url,omitempty"`
-	PlatformUsername             *string                 `json:"platform_username,omitempty"`
-	AccountingContactEmail       *string                 `json:"accounting_contact_email,omitempty"`
-	OfferIDMacro                 *string                 `json:"offer_id_macro,omitempty"`
-	AffiliateIDMacro             *string                 `json:"affiliate_id_macro,omitempty"`
-	AttributionMethod            *string                 `json:"attribution_method,omitempty"`
-	EmailAttributionMethod       *string                 `json:"email_attribution_method,omitempty"`
-	AttributionPriority          *string                 `json:"attribution_priority,omitempty"`
-	ReportingTimezoneID          *int                    `json:"reporting_timezone_id,omitempty"`
-	CreatedAt                    time.Time               `json:"created_at"`
-	UpdatedAt                    time.Time               `json:"updated_at"`
+	AdvertiserID           int64                  `json:"advertiser_id"`
+	Name                   string                 `json:"name"`
+	Status                 string                 `json:"status"`
+	OrganizationID         int64                  `json:"organization_id"`
+	ContactEmail           *string                `json:"contact_email,omitempty"`
+	BillingDetails         *domain.BillingDetails `json:"billing_details,omitempty"`
+	InternalNotes          *string                `json:"internal_notes,omitempty"`
+	DefaultCurrencyID      *string                `json:"default_currency_id,omitempty"`
+	PlatformName           *string                `json:"platform_name,omitempty"`
+	PlatformURL            *string                `json:"platform_url,omitempty"`
+	PlatformUsername       *string                `json:"platform_username,omitempty"`
+	AccountingContactEmail *string                `json:"accounting_contact_email,omitempty"`
+	OfferIDMacro           *string                `json:"offer_id_macro,omitempty"`
+	AffiliateIDMacro       *string                `json:"affiliate_id_macro,omitempty"`
+	AttributionMethod      *string                `json:"attribution_method,omitempty"`
+	EmailAttributionMethod *string                `json:"email_attribution_method,omitempty"`
+	AttributionPriority    *string                `json:"attribution_priority,omitempty"`
+	ReportingTimezoneID    *int                   `json:"reporting_timezone_id,omitempty"`
+	CreatedAt              time.Time              `json:"created_at"`
+	UpdatedAt              time.Time              `json:"updated_at"`
 }
 
 type AdvertiserWithEverflowResponse struct {
-	Advertiser    *AdvertiserResponse                `json:"advertiser"`
-	EverflowData  interface{}                        `json:"everflow_data,omitempty"`
-	SyncStatus    string                             `json:"sync_status"`
-	Discrepancies []domain.AdvertiserDiscrepancy     `json:"discrepancies,omitempty"`
+	Advertiser    *AdvertiserResponse            `json:"advertiser"`
+	EverflowData  interface{}                    `json:"everflow_data,omitempty"`
+	SyncStatus    string                         `json:"sync_status"`
+	Discrepancies []domain.AdvertiserDiscrepancy `json:"discrepancies,omitempty"`
 }
 
 type ListAdvertisersResponse struct {
@@ -140,72 +139,72 @@ type UpdateAdvertiserProviderMappingRequest struct {
 
 func (req *CreateAdvertiserRequest) ToDomain() *domain.Advertiser {
 	return &domain.Advertiser{
-		Name:                       req.Name,
-		Status:                     req.Status,
-		OrganizationID:             req.OrganizationID,
-		ContactEmail:               req.ContactEmail,
-		BillingDetails:             req.BillingDetails,
-		InternalNotes:              req.InternalNotes,
-		DefaultCurrencyID:          req.DefaultCurrencyID,
-		PlatformName:               req.PlatformName,
-		PlatformURL:                req.PlatformURL,
-		PlatformUsername:           req.PlatformUsername,
-		AccountingContactEmail:     req.AccountingContactEmail,
-		OfferIDMacro:               req.OfferIDMacro,
-		AffiliateIDMacro:           req.AffiliateIDMacro,
-		AttributionMethod:          req.AttributionMethod,
-		EmailAttributionMethod:     req.EmailAttributionMethod,
-		AttributionPriority:        req.AttributionPriority,
-		ReportingTimezoneID:        convertIntToInt32Ptr(req.ReportingTimezoneID),
+		Name:                   req.Name,
+		Status:                 req.Status,
+		OrganizationID:         req.OrganizationID,
+		ContactEmail:           req.ContactEmail,
+		BillingDetails:         req.BillingDetails,
+		InternalNotes:          req.InternalNotes,
+		DefaultCurrencyID:      req.DefaultCurrencyID,
+		PlatformName:           req.PlatformName,
+		PlatformURL:            req.PlatformURL,
+		PlatformUsername:       req.PlatformUsername,
+		AccountingContactEmail: req.AccountingContactEmail,
+		OfferIDMacro:           req.OfferIDMacro,
+		AffiliateIDMacro:       req.AffiliateIDMacro,
+		AttributionMethod:      req.AttributionMethod,
+		EmailAttributionMethod: req.EmailAttributionMethod,
+		AttributionPriority:    req.AttributionPriority,
+		ReportingTimezoneID:    convertIntToInt32Ptr(req.ReportingTimezoneID),
 	}
 }
 
 func (req *UpdateAdvertiserRequest) ToDomain(advertiserID int64, orgID int64) *domain.Advertiser {
 	return &domain.Advertiser{
-		AdvertiserID:               advertiserID,
-		Name:                       req.Name,
-		Status:                     req.Status,
-		OrganizationID:             orgID,
-		ContactEmail:               req.ContactEmail,
-		BillingDetails:             req.BillingDetails,
-		InternalNotes:              req.InternalNotes,
-		DefaultCurrencyID:          req.DefaultCurrencyID,
-		PlatformName:               req.PlatformName,
-		PlatformURL:                req.PlatformURL,
-		PlatformUsername:           req.PlatformUsername,
-		AccountingContactEmail:     req.AccountingContactEmail,
-		OfferIDMacro:               req.OfferIDMacro,
-		AffiliateIDMacro:           req.AffiliateIDMacro,
-		AttributionMethod:          req.AttributionMethod,
-		EmailAttributionMethod:     req.EmailAttributionMethod,
-		AttributionPriority:        req.AttributionPriority,
-		ReportingTimezoneID:        convertIntToInt32Ptr(req.ReportingTimezoneID),
+		AdvertiserID:           advertiserID,
+		Name:                   req.Name,
+		Status:                 req.Status,
+		OrganizationID:         orgID,
+		ContactEmail:           req.ContactEmail,
+		BillingDetails:         req.BillingDetails,
+		InternalNotes:          req.InternalNotes,
+		DefaultCurrencyID:      req.DefaultCurrencyID,
+		PlatformName:           req.PlatformName,
+		PlatformURL:            req.PlatformURL,
+		PlatformUsername:       req.PlatformUsername,
+		AccountingContactEmail: req.AccountingContactEmail,
+		OfferIDMacro:           req.OfferIDMacro,
+		AffiliateIDMacro:       req.AffiliateIDMacro,
+		AttributionMethod:      req.AttributionMethod,
+		EmailAttributionMethod: req.EmailAttributionMethod,
+		AttributionPriority:    req.AttributionPriority,
+		ReportingTimezoneID:    convertIntToInt32Ptr(req.ReportingTimezoneID),
 	}
 }
 
 func ToAdvertiserResponse(advertiser *domain.Advertiser) *AdvertiserResponse {
 	return &AdvertiserResponse{
-		AdvertiserID:               advertiser.AdvertiserID,
-		Name:                       advertiser.Name,
-		Status:                     advertiser.Status,
-		OrganizationID:             advertiser.OrganizationID,
-		ContactEmail:               advertiser.ContactEmail,
-		BillingDetails:             advertiser.BillingDetails,
-		InternalNotes:              advertiser.InternalNotes,
-		DefaultCurrencyID:          advertiser.DefaultCurrencyID,
-		PlatformName:               advertiser.PlatformName,
-		PlatformURL:                advertiser.PlatformURL,
-		PlatformUsername:           advertiser.PlatformUsername,
-		AccountingContactEmail:     advertiser.AccountingContactEmail,
-		OfferIDMacro:               advertiser.OfferIDMacro,
-		AffiliateIDMacro:           advertiser.AffiliateIDMacro,
-		AttributionMethod:          advertiser.AttributionMethod,
-		EmailAttributionMethod:     advertiser.EmailAttributionMethod,
-		AttributionPriority:        advertiser.AttributionPriority,
-		ReportingTimezoneID:        convertInt32ToIntPtr(advertiser.ReportingTimezoneID),
+		AdvertiserID:           advertiser.AdvertiserID,
+		Name:                   advertiser.Name,
+		Status:                 advertiser.Status,
+		OrganizationID:         advertiser.OrganizationID,
+		ContactEmail:           advertiser.ContactEmail,
+		BillingDetails:         advertiser.BillingDetails,
+		InternalNotes:          advertiser.InternalNotes,
+		DefaultCurrencyID:      advertiser.DefaultCurrencyID,
+		PlatformName:           advertiser.PlatformName,
+		PlatformURL:            advertiser.PlatformURL,
+		PlatformUsername:       advertiser.PlatformUsername,
+		AccountingContactEmail: advertiser.AccountingContactEmail,
+		OfferIDMacro:           advertiser.OfferIDMacro,
+		AffiliateIDMacro:       advertiser.AffiliateIDMacro,
+		AttributionMethod:      advertiser.AttributionMethod,
+		EmailAttributionMethod: advertiser.EmailAttributionMethod,
+		AttributionPriority:    advertiser.AttributionPriority,
+		ReportingTimezoneID:    convertInt32ToIntPtr(advertiser.ReportingTimezoneID),
 
-		CreatedAt:                  advertiser.CreatedAt,
-		UpdatedAt:                  advertiser.UpdatedAt,
+		CreatedAt: advertiser.CreatedAt,
+		UpdatedAt: advertiser.UpdatedAt,
 	}
 }
 

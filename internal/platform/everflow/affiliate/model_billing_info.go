@@ -36,9 +36,9 @@ type BillingInfo struct {
 	// Minimal amount required for invoice generation
 	InvoiceAmountThreshold *float64 `json:"invoice_amount_threshold,omitempty"`
 	// Number of days for payment terms on invoices
-	DefaultPaymentTerms *int32 `json:"default_payment_terms,omitempty"`
-	Details *BillingDetails `json:"details,omitempty"`
-	Payment *PaymentDetails `json:"payment,omitempty"`
+	DefaultPaymentTerms *int32          `json:"default_payment_terms,omitempty"`
+	Details             *BillingDetails `json:"details,omitempty"`
+	Payment             *PaymentDetails `json:"payment,omitempty"`
 }
 
 // NewBillingInfo instantiates a new BillingInfo object
@@ -431,7 +431,7 @@ func (o *BillingInfo) SetPayment(v PaymentDetails) {
 }
 
 func (o BillingInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -511,5 +511,3 @@ func (v *NullableBillingInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

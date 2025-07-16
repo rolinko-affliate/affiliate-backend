@@ -19,7 +19,7 @@ var _ MappedNullable = &AffiliateWithRelationshipsAllOfRelationshipLabels{}
 
 // AffiliateWithRelationshipsAllOfRelationshipLabels struct for AffiliateWithRelationshipsAllOfRelationshipLabels
 type AffiliateWithRelationshipsAllOfRelationshipLabels struct {
-	Total *int32 `json:"total,omitempty"`
+	Total   *int32   `json:"total,omitempty"`
 	Entries []string `json:"entries,omitempty"`
 }
 
@@ -105,7 +105,7 @@ func (o *AffiliateWithRelationshipsAllOfRelationshipLabels) SetEntries(v []strin
 }
 
 func (o AffiliateWithRelationshipsAllOfRelationshipLabels) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -158,5 +158,3 @@ func (v *NullableAffiliateWithRelationshipsAllOfRelationshipLabels) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

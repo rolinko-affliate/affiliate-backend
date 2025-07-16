@@ -533,16 +533,12 @@ func (h *TrackingLinkHandler) GetTrackingLinkQR(c *gin.Context) {
 	// Convert qrData from bytes slice to base64 encoded string
 	// Convert qrData from bytes slice to base64 encoded string
 	base64QR := base64.StdEncoding.EncodeToString(qrData)
-	
+
 	// Return base64 encoded string directly
 	c.String(http.StatusOK, base64QR)
 }
 
-
-
 // Helper functions
-
-
 
 // getBaseURL extracts the base URL from the request
 func getBaseURL(c *gin.Context) string {

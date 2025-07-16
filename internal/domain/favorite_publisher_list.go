@@ -12,7 +12,7 @@ type FavoritePublisherList struct {
 	Description    *string   `json:"description,omitempty" db:"description"`
 	CreatedAt      time.Time `json:"created_at" db:"created_at"`
 	UpdatedAt      time.Time `json:"updated_at" db:"updated_at"`
-	
+
 	// Optional: Include items when fetching with details
 	Items []FavoritePublisherListItem `json:"items,omitempty" db:"-"`
 }
@@ -24,7 +24,7 @@ type FavoritePublisherListItem struct {
 	PublisherDomain string    `json:"publisher_domain" db:"publisher_domain"`
 	Notes           *string   `json:"notes,omitempty" db:"notes"`
 	AddedAt         time.Time `json:"added_at" db:"added_at"`
-	
+
 	// Optional: Include publisher details when fetching with details
 	Publisher *AnalyticsPublisher `json:"publisher,omitempty" db:"-"`
 }
@@ -58,42 +58,50 @@ type FavoritePublisherListWithStats struct {
 	PublisherCount int `json:"publisher_count"`
 }
 
+// Validation helpers
+func validateStringLength(value string, minLen, maxLen int) error {
+	if len(value) < minLen || len(value) > maxLen {
+		return ErrInvalidInput
+	}
+	return nil
+}
+
+func validateOptionalStringLength(value *string, maxLen int) error {
+	if value != nil && len(*value) > maxLen {
+		return ErrInvalidInput
+	}
+	return nil
+}
+
 // Validation methods
 
 // Validate validates the CreateFavoritePublisherListRequest
 func (r *CreateFavoritePublisherListRequest) Validate() error {
-	if r.Name == "" {
-		return ErrInvalidInput
+	if err := validateStringLength(r.Name, 1, 255); err != nil {
+		return err
 	}
-	if len(r.Name) > 255 {
-		return ErrInvalidInput
+	return validateOptionalStringLength(r.Description, 1000)
+}
+
+// Validate validates the UpdateFavoritePublisherListRequest
+func (r *UpdateFavoritePublisherListRequest) Validate() error {
+	if r.Name != nil {
+		if err := validateStringLength(*r.Name, 1, 255); err != nil {
+			return err
+		}
 	}
-	if r.Description != nil && len(*r.Description) > 1000 {
-		return ErrInvalidInput
-	}
-	return nil
+	return validateOptionalStringLength(r.Description, 1000)
 }
 
 // Validate validates the AddPublisherToListRequest
 func (r *AddPublisherToListRequest) Validate() error {
-	if r.PublisherDomain == "" {
-		return ErrInvalidInput
+	if err := validateStringLength(r.PublisherDomain, 1, 255); err != nil {
+		return err
 	}
-	if len(r.PublisherDomain) > 255 {
-		return ErrInvalidInput
-	}
-	if r.Notes != nil && len(*r.Notes) > 1000 {
-		return ErrInvalidInput
-	}
-	return nil
+	return validateOptionalStringLength(r.Notes, 1000)
 }
 
-
-
-// Validate validates the update publisher in list request
+// Validate validates the UpdatePublisherInListRequest
 func (r *UpdatePublisherInListRequest) Validate() error {
-	if r.Notes != nil && len(*r.Notes) > 1000 {
-		return ErrInvalidInput
-	}
-	return nil
+	return validateOptionalStringLength(r.Notes, 1000)
 }

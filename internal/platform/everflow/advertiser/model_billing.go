@@ -34,8 +34,8 @@ type Billing struct {
 	// Days to wait for invoice generation after billing period
 	InvoiceGenerationDaysDelay *int32 `json:"invoice_generation_days_delay,omitempty"`
 	// Number of days for payment terms on invoices
-	DefaultPaymentTerms *int32 `json:"default_payment_terms,omitempty"`
-	Details *BillingDetails `json:"details,omitempty"`
+	DefaultPaymentTerms *int32          `json:"default_payment_terms,omitempty"`
+	Details             *BillingDetails `json:"details,omitempty"`
 }
 
 // NewBilling instantiates a new Billing object
@@ -364,7 +364,7 @@ func (o *Billing) SetDetails(v BillingDetails) {
 }
 
 func (o Billing) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -438,5 +438,3 @@ func (v *NullableBilling) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

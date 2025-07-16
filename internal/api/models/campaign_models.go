@@ -16,35 +16,35 @@ type CreateCampaignRequest struct {
 	StartDate      *time.Time `json:"start_date,omitempty"`
 	EndDate        *time.Time `json:"end_date,omitempty"`
 	InternalNotes  *string    `json:"internal_notes,omitempty"`
-	
+
 	// Core campaign fields
-	DestinationURL      *string `json:"destination_url,omitempty"`
-	ThumbnailURL        *string `json:"thumbnail_url,omitempty"`
-	PreviewURL          *string `json:"preview_url,omitempty"`
-	Visibility          *string `json:"visibility,omitempty" binding:"omitempty,oneof=public require_approval private"`
-	CurrencyID          *string `json:"currency_id,omitempty"`
-	ConversionMethod    *string `json:"conversion_method,omitempty" binding:"omitempty,oneof=server_postback pixel"`
-	SessionDefinition   *string `json:"session_definition,omitempty" binding:"omitempty,oneof=cookie ip fingerprint"`
-	SessionDuration     *int32  `json:"session_duration,omitempty"`
-	TermsAndConditions  *string `json:"terms_and_conditions,omitempty"`
-	
+	DestinationURL     *string `json:"destination_url,omitempty"`
+	ThumbnailURL       *string `json:"thumbnail_url,omitempty"`
+	PreviewURL         *string `json:"preview_url,omitempty"`
+	Visibility         *string `json:"visibility,omitempty" binding:"omitempty,oneof=public require_approval private"`
+	CurrencyID         *string `json:"currency_id,omitempty"`
+	ConversionMethod   *string `json:"conversion_method,omitempty" binding:"omitempty,oneof=server_postback pixel"`
+	SessionDefinition  *string `json:"session_definition,omitempty" binding:"omitempty,oneof=cookie ip fingerprint"`
+	SessionDuration    *int32  `json:"session_duration,omitempty"`
+	TermsAndConditions *string `json:"terms_and_conditions,omitempty"`
+
 	// Caps and limits
-	IsCapsEnabled         *bool `json:"is_caps_enabled,omitempty"`
-	DailyConversionCap    *int  `json:"daily_conversion_cap,omitempty"`
-	WeeklyConversionCap   *int  `json:"weekly_conversion_cap,omitempty"`
-	MonthlyConversionCap  *int  `json:"monthly_conversion_cap,omitempty"`
-	GlobalConversionCap   *int  `json:"global_conversion_cap,omitempty"`
-	DailyClickCap         *int  `json:"daily_click_cap,omitempty"`
-	WeeklyClickCap        *int  `json:"weekly_click_cap,omitempty"`
-	MonthlyClickCap       *int  `json:"monthly_click_cap,omitempty"`
-	GlobalClickCap        *int  `json:"global_click_cap,omitempty"`
-	
+	IsCapsEnabled        *bool `json:"is_caps_enabled,omitempty"`
+	DailyConversionCap   *int  `json:"daily_conversion_cap,omitempty"`
+	WeeklyConversionCap  *int  `json:"weekly_conversion_cap,omitempty"`
+	MonthlyConversionCap *int  `json:"monthly_conversion_cap,omitempty"`
+	GlobalConversionCap  *int  `json:"global_conversion_cap,omitempty"`
+	DailyClickCap        *int  `json:"daily_click_cap,omitempty"`
+	WeeklyClickCap       *int  `json:"weekly_click_cap,omitempty"`
+	MonthlyClickCap      *int  `json:"monthly_click_cap,omitempty"`
+	GlobalClickCap       *int  `json:"global_click_cap,omitempty"`
+
 	// Payout and revenue configuration
-	BillingModel      *string  `json:"billing_model,omitempty" binding:"omitempty,oneof=click conversion"`
-	PayoutStructure   *string  `json:"payout_structure,omitempty" binding:"omitempty,oneof=fixed percentage"`
-	PayoutAmount      *float64 `json:"payout_amount,omitempty" binding:"omitempty,min=0"`
-	RevenueStructure  *string  `json:"revenue_structure,omitempty" binding:"omitempty,oneof=fixed percentage"`
-	RevenueAmount     *float64 `json:"revenue_amount,omitempty" binding:"omitempty,min=0"`
+	BillingModel     *string  `json:"billing_model,omitempty" binding:"omitempty,oneof=click conversion"`
+	PayoutStructure  *string  `json:"payout_structure,omitempty" binding:"omitempty,oneof=fixed percentage"`
+	PayoutAmount     *float64 `json:"payout_amount,omitempty" binding:"omitempty,min=0"`
+	RevenueStructure *string  `json:"revenue_structure,omitempty" binding:"omitempty,oneof=fixed percentage"`
+	RevenueAmount    *float64 `json:"revenue_amount,omitempty" binding:"omitempty,min=0"`
 }
 
 // UpdateCampaignRequest represents the request to update an existing campaign
@@ -55,35 +55,35 @@ type UpdateCampaignRequest struct {
 	StartDate     *time.Time `json:"start_date,omitempty"`
 	EndDate       *time.Time `json:"end_date,omitempty"`
 	InternalNotes *string    `json:"internal_notes,omitempty"`
-	
+
 	// Core campaign fields
-	DestinationURL      *string `json:"destination_url,omitempty"`
-	ThumbnailURL        *string `json:"thumbnail_url,omitempty"`
-	PreviewURL          *string `json:"preview_url,omitempty"`
-	Visibility          *string `json:"visibility,omitempty" binding:"omitempty,oneof=public require_approval private"`
-	CurrencyID          *string `json:"currency_id,omitempty"`
-	ConversionMethod    *string `json:"conversion_method,omitempty" binding:"omitempty,oneof=server_postback pixel"`
-	SessionDefinition   *string `json:"session_definition,omitempty" binding:"omitempty,oneof=cookie ip fingerprint"`
-	SessionDuration     *int32  `json:"session_duration,omitempty"`
-	TermsAndConditions  *string `json:"terms_and_conditions,omitempty"`
-	
+	DestinationURL     *string `json:"destination_url,omitempty"`
+	ThumbnailURL       *string `json:"thumbnail_url,omitempty"`
+	PreviewURL         *string `json:"preview_url,omitempty"`
+	Visibility         *string `json:"visibility,omitempty" binding:"omitempty,oneof=public require_approval private"`
+	CurrencyID         *string `json:"currency_id,omitempty"`
+	ConversionMethod   *string `json:"conversion_method,omitempty" binding:"omitempty,oneof=server_postback pixel"`
+	SessionDefinition  *string `json:"session_definition,omitempty" binding:"omitempty,oneof=cookie ip fingerprint"`
+	SessionDuration    *int32  `json:"session_duration,omitempty"`
+	TermsAndConditions *string `json:"terms_and_conditions,omitempty"`
+
 	// Caps and limits
-	IsCapsEnabled         *bool `json:"is_caps_enabled,omitempty"`
-	DailyConversionCap    *int  `json:"daily_conversion_cap,omitempty"`
-	WeeklyConversionCap   *int  `json:"weekly_conversion_cap,omitempty"`
-	MonthlyConversionCap  *int  `json:"monthly_conversion_cap,omitempty"`
-	GlobalConversionCap   *int  `json:"global_conversion_cap,omitempty"`
-	DailyClickCap         *int  `json:"daily_click_cap,omitempty"`
-	WeeklyClickCap        *int  `json:"weekly_click_cap,omitempty"`
-	MonthlyClickCap       *int  `json:"monthly_click_cap,omitempty"`
-	GlobalClickCap        *int  `json:"global_click_cap,omitempty"`
-	
+	IsCapsEnabled        *bool `json:"is_caps_enabled,omitempty"`
+	DailyConversionCap   *int  `json:"daily_conversion_cap,omitempty"`
+	WeeklyConversionCap  *int  `json:"weekly_conversion_cap,omitempty"`
+	MonthlyConversionCap *int  `json:"monthly_conversion_cap,omitempty"`
+	GlobalConversionCap  *int  `json:"global_conversion_cap,omitempty"`
+	DailyClickCap        *int  `json:"daily_click_cap,omitempty"`
+	WeeklyClickCap       *int  `json:"weekly_click_cap,omitempty"`
+	MonthlyClickCap      *int  `json:"monthly_click_cap,omitempty"`
+	GlobalClickCap       *int  `json:"global_click_cap,omitempty"`
+
 	// Payout and revenue configuration
-	BillingModel      *string  `json:"billing_model,omitempty" binding:"omitempty,oneof=click conversion"`
-	PayoutStructure   *string  `json:"payout_structure,omitempty" binding:"omitempty,oneof=fixed percentage"`
-	PayoutAmount      *float64 `json:"payout_amount,omitempty" binding:"omitempty,min=0"`
-	RevenueStructure  *string  `json:"revenue_structure,omitempty" binding:"omitempty,oneof=fixed percentage"`
-	RevenueAmount     *float64 `json:"revenue_amount,omitempty" binding:"omitempty,min=0"`
+	BillingModel     *string  `json:"billing_model,omitempty" binding:"omitempty,oneof=click conversion"`
+	PayoutStructure  *string  `json:"payout_structure,omitempty" binding:"omitempty,oneof=fixed percentage"`
+	PayoutAmount     *float64 `json:"payout_amount,omitempty" binding:"omitempty,min=0"`
+	RevenueStructure *string  `json:"revenue_structure,omitempty" binding:"omitempty,oneof=fixed percentage"`
+	RevenueAmount    *float64 `json:"revenue_amount,omitempty" binding:"omitempty,min=0"`
 }
 
 // CampaignResponse represents the response for campaign operations
@@ -97,38 +97,38 @@ type CampaignResponse struct {
 	StartDate      *time.Time `json:"start_date,omitempty"`
 	EndDate        *time.Time `json:"end_date,omitempty"`
 	InternalNotes  *string    `json:"internal_notes,omitempty"`
-	
+
 	// Core campaign fields
-	DestinationURL      *string `json:"destination_url,omitempty"`
-	ThumbnailURL        *string `json:"thumbnail_url,omitempty"`
-	PreviewURL          *string `json:"preview_url,omitempty"`
-	Visibility          *string `json:"visibility,omitempty"`
-	CurrencyID          *string `json:"currency_id,omitempty"`
-	ConversionMethod    *string `json:"conversion_method,omitempty"`
-	SessionDefinition   *string `json:"session_definition,omitempty"`
-	SessionDuration     *int32  `json:"session_duration,omitempty"`
-	TermsAndConditions  *string `json:"terms_and_conditions,omitempty"`
-	
+	DestinationURL     *string `json:"destination_url,omitempty"`
+	ThumbnailURL       *string `json:"thumbnail_url,omitempty"`
+	PreviewURL         *string `json:"preview_url,omitempty"`
+	Visibility         *string `json:"visibility,omitempty"`
+	CurrencyID         *string `json:"currency_id,omitempty"`
+	ConversionMethod   *string `json:"conversion_method,omitempty"`
+	SessionDefinition  *string `json:"session_definition,omitempty"`
+	SessionDuration    *int32  `json:"session_duration,omitempty"`
+	TermsAndConditions *string `json:"terms_and_conditions,omitempty"`
+
 	// Caps and limits
-	IsCapsEnabled         *bool `json:"is_caps_enabled,omitempty"`
-	DailyConversionCap    *int  `json:"daily_conversion_cap,omitempty"`
-	WeeklyConversionCap   *int  `json:"weekly_conversion_cap,omitempty"`
-	MonthlyConversionCap  *int  `json:"monthly_conversion_cap,omitempty"`
-	GlobalConversionCap   *int  `json:"global_conversion_cap,omitempty"`
-	DailyClickCap         *int  `json:"daily_click_cap,omitempty"`
-	WeeklyClickCap        *int  `json:"weekly_click_cap,omitempty"`
-	MonthlyClickCap       *int  `json:"monthly_click_cap,omitempty"`
-	GlobalClickCap        *int  `json:"global_click_cap,omitempty"`
-	
+	IsCapsEnabled        *bool `json:"is_caps_enabled,omitempty"`
+	DailyConversionCap   *int  `json:"daily_conversion_cap,omitempty"`
+	WeeklyConversionCap  *int  `json:"weekly_conversion_cap,omitempty"`
+	MonthlyConversionCap *int  `json:"monthly_conversion_cap,omitempty"`
+	GlobalConversionCap  *int  `json:"global_conversion_cap,omitempty"`
+	DailyClickCap        *int  `json:"daily_click_cap,omitempty"`
+	WeeklyClickCap       *int  `json:"weekly_click_cap,omitempty"`
+	MonthlyClickCap      *int  `json:"monthly_click_cap,omitempty"`
+	GlobalClickCap       *int  `json:"global_click_cap,omitempty"`
+
 	// Payout and revenue configuration
-	BillingModel      *string  `json:"billing_model,omitempty"`
-	PayoutStructure   *string  `json:"payout_structure,omitempty"`
-	PayoutAmount      *float64 `json:"payout_amount,omitempty"`
-	RevenueStructure  *string  `json:"revenue_structure,omitempty"`
-	RevenueAmount     *float64 `json:"revenue_amount,omitempty"`
-	
-	CreatedAt      time.Time  `json:"created_at"`
-	UpdatedAt      time.Time  `json:"updated_at"`
+	BillingModel     *string  `json:"billing_model,omitempty"`
+	PayoutStructure  *string  `json:"payout_structure,omitempty"`
+	PayoutAmount     *float64 `json:"payout_amount,omitempty"`
+	RevenueStructure *string  `json:"revenue_structure,omitempty"`
+	RevenueAmount    *float64 `json:"revenue_amount,omitempty"`
+
+	CreatedAt time.Time `json:"created_at"`
+	UpdatedAt time.Time `json:"updated_at"`
 }
 
 // CampaignListResponse represents the response for listing campaigns
@@ -150,35 +150,35 @@ func (r *CreateCampaignRequest) ToCampaignDomain() *domain.Campaign {
 		StartDate:      r.StartDate,
 		EndDate:        r.EndDate,
 		InternalNotes:  r.InternalNotes,
-		
+
 		// Core campaign fields
-		DestinationURL:      r.DestinationURL,
-		ThumbnailURL:        r.ThumbnailURL,
-		PreviewURL:          r.PreviewURL,
-		Visibility:          r.Visibility,
-		CurrencyID:          r.CurrencyID,
-		ConversionMethod:    r.ConversionMethod,
-		SessionDefinition:   r.SessionDefinition,
-		SessionDuration:     r.SessionDuration,
-		TermsAndConditions:  r.TermsAndConditions,
-		
+		DestinationURL:     r.DestinationURL,
+		ThumbnailURL:       r.ThumbnailURL,
+		PreviewURL:         r.PreviewURL,
+		Visibility:         r.Visibility,
+		CurrencyID:         r.CurrencyID,
+		ConversionMethod:   r.ConversionMethod,
+		SessionDefinition:  r.SessionDefinition,
+		SessionDuration:    r.SessionDuration,
+		TermsAndConditions: r.TermsAndConditions,
+
 		// Caps and limits
-		IsCapsEnabled:         r.IsCapsEnabled,
-		DailyConversionCap:    r.DailyConversionCap,
-		WeeklyConversionCap:   r.WeeklyConversionCap,
-		MonthlyConversionCap:  r.MonthlyConversionCap,
-		GlobalConversionCap:   r.GlobalConversionCap,
-		DailyClickCap:         r.DailyClickCap,
-		WeeklyClickCap:        r.WeeklyClickCap,
-		MonthlyClickCap:       r.MonthlyClickCap,
-		GlobalClickCap:        r.GlobalClickCap,
-		
+		IsCapsEnabled:        r.IsCapsEnabled,
+		DailyConversionCap:   r.DailyConversionCap,
+		WeeklyConversionCap:  r.WeeklyConversionCap,
+		MonthlyConversionCap: r.MonthlyConversionCap,
+		GlobalConversionCap:  r.GlobalConversionCap,
+		DailyClickCap:        r.DailyClickCap,
+		WeeklyClickCap:       r.WeeklyClickCap,
+		MonthlyClickCap:      r.MonthlyClickCap,
+		GlobalClickCap:       r.GlobalClickCap,
+
 		// Payout and revenue configuration
 		BillingModel:     r.BillingModel,
 		PayoutStructure:  r.PayoutStructure,
 		PayoutAmount:     r.PayoutAmount,
-		RevenueStructure:    r.RevenueStructure,
-		RevenueAmount:  r.RevenueAmount,
+		RevenueStructure: r.RevenueStructure,
+		RevenueAmount:    r.RevenueAmount,
 	}
 }
 
@@ -190,7 +190,7 @@ func (r *UpdateCampaignRequest) UpdateCampaignDomain(campaign *domain.Campaign) 
 	campaign.StartDate = r.StartDate
 	campaign.EndDate = r.EndDate
 	campaign.InternalNotes = r.InternalNotes
-	
+
 	// Core campaign fields
 	campaign.DestinationURL = r.DestinationURL
 	campaign.ThumbnailURL = r.ThumbnailURL
@@ -201,7 +201,7 @@ func (r *UpdateCampaignRequest) UpdateCampaignDomain(campaign *domain.Campaign) 
 	campaign.SessionDefinition = r.SessionDefinition
 	campaign.SessionDuration = r.SessionDuration
 	campaign.TermsAndConditions = r.TermsAndConditions
-	
+
 	// Caps and limits
 	campaign.IsCapsEnabled = r.IsCapsEnabled
 	campaign.DailyConversionCap = r.DailyConversionCap
@@ -212,7 +212,7 @@ func (r *UpdateCampaignRequest) UpdateCampaignDomain(campaign *domain.Campaign) 
 	campaign.WeeklyClickCap = r.WeeklyClickCap
 	campaign.MonthlyClickCap = r.MonthlyClickCap
 	campaign.GlobalClickCap = r.GlobalClickCap
-	
+
 	// Payout and revenue configuration
 	campaign.BillingModel = r.BillingModel
 	campaign.PayoutStructure = r.PayoutStructure
@@ -233,38 +233,38 @@ func FromCampaignDomain(campaign *domain.Campaign) *CampaignResponse {
 		StartDate:      campaign.StartDate,
 		EndDate:        campaign.EndDate,
 		InternalNotes:  campaign.InternalNotes,
-		
+
 		// Core campaign fields
-		DestinationURL:      campaign.DestinationURL,
-		ThumbnailURL:        campaign.ThumbnailURL,
-		PreviewURL:          campaign.PreviewURL,
-		Visibility:          campaign.Visibility,
-		CurrencyID:          campaign.CurrencyID,
-		ConversionMethod:    campaign.ConversionMethod,
-		SessionDefinition:   campaign.SessionDefinition,
-		SessionDuration:     campaign.SessionDuration,
-		TermsAndConditions:  campaign.TermsAndConditions,
-		
+		DestinationURL:     campaign.DestinationURL,
+		ThumbnailURL:       campaign.ThumbnailURL,
+		PreviewURL:         campaign.PreviewURL,
+		Visibility:         campaign.Visibility,
+		CurrencyID:         campaign.CurrencyID,
+		ConversionMethod:   campaign.ConversionMethod,
+		SessionDefinition:  campaign.SessionDefinition,
+		SessionDuration:    campaign.SessionDuration,
+		TermsAndConditions: campaign.TermsAndConditions,
+
 		// Caps and limits
-		IsCapsEnabled:         campaign.IsCapsEnabled,
-		DailyConversionCap:    campaign.DailyConversionCap,
-		WeeklyConversionCap:   campaign.WeeklyConversionCap,
-		MonthlyConversionCap:  campaign.MonthlyConversionCap,
-		GlobalConversionCap:   campaign.GlobalConversionCap,
-		DailyClickCap:         campaign.DailyClickCap,
-		WeeklyClickCap:        campaign.WeeklyClickCap,
-		MonthlyClickCap:       campaign.MonthlyClickCap,
-		GlobalClickCap:        campaign.GlobalClickCap,
-		
+		IsCapsEnabled:        campaign.IsCapsEnabled,
+		DailyConversionCap:   campaign.DailyConversionCap,
+		WeeklyConversionCap:  campaign.WeeklyConversionCap,
+		MonthlyConversionCap: campaign.MonthlyConversionCap,
+		GlobalConversionCap:  campaign.GlobalConversionCap,
+		DailyClickCap:        campaign.DailyClickCap,
+		WeeklyClickCap:       campaign.WeeklyClickCap,
+		MonthlyClickCap:      campaign.MonthlyClickCap,
+		GlobalClickCap:       campaign.GlobalClickCap,
+
 		// Payout and revenue configuration
 		BillingModel:     campaign.BillingModel,
 		PayoutStructure:  campaign.PayoutStructure,
 		PayoutAmount:     campaign.PayoutAmount,
 		RevenueStructure: campaign.RevenueStructure,
 		RevenueAmount:    campaign.RevenueAmount,
-		
-		CreatedAt:      campaign.CreatedAt,
-		UpdatedAt:      campaign.UpdatedAt,
+
+		CreatedAt: campaign.CreatedAt,
+		UpdatedAt: campaign.UpdatedAt,
 	}
 }
 
@@ -274,7 +274,7 @@ func FromCampaignDomainList(campaigns []*domain.Campaign, total, page, pageSize 
 	for i, campaign := range campaigns {
 		campaignResponses[i] = *FromCampaignDomain(campaign)
 	}
-	
+
 	return &CampaignListResponse{
 		Campaigns: campaignResponses,
 		Total:     total,

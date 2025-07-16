@@ -18,11 +18,11 @@ type AffiliateService interface {
 	UpdateAffiliate(ctx context.Context, affiliate *domain.Affiliate) error
 	ListAffiliatesByOrganization(ctx context.Context, orgID int64, page, pageSize int) ([]*domain.Affiliate, error)
 	DeleteAffiliate(ctx context.Context, id int64) error
-	
+
 	// Provider sync methods
 	SyncAffiliateToProvider(ctx context.Context, affiliateID int64) error
 	SyncAffiliateFromProvider(ctx context.Context, affiliateID int64) error
-	
+
 	// Provider mapping methods
 	CreateAffiliateProviderMapping(ctx context.Context, mapping *domain.AffiliateProviderMapping) (*domain.AffiliateProviderMapping, error)
 	GetAffiliateProviderMapping(ctx context.Context, affiliateID int64, providerType string) (*domain.AffiliateProviderMapping, error)
@@ -32,10 +32,10 @@ type AffiliateService interface {
 
 // affiliateService implements AffiliateService
 type affiliateService struct {
-	affiliateRepo           repository.AffiliateRepository
-	providerMappingRepo     repository.AffiliateProviderMappingRepository
-	orgRepo                 repository.OrganizationRepository
-	integrationService      provider.IntegrationService
+	affiliateRepo       repository.AffiliateRepository
+	providerMappingRepo repository.AffiliateProviderMappingRepository
+	orgRepo             repository.OrganizationRepository
+	integrationService  provider.IntegrationService
 }
 
 // NewAffiliateService creates a new affiliate service
@@ -221,7 +221,7 @@ func (s *affiliateService) SyncAffiliateFromProvider(ctx context.Context, affili
 
 	// Convert affiliate ID to UUID for IntegrationService
 	affiliateUUID := s.int64ToUUID(affiliateID)
-	
+
 	// Get affiliate from provider
 	providerAffiliate, err := s.integrationService.GetAffiliate(ctx, affiliateUUID)
 	if err != nil {
@@ -259,7 +259,7 @@ func (s *affiliateService) mergeProviderDataIntoAffiliate(local *domain.Affiliat
 	// Merge relevant fields from provider into local
 	// Provider-specific data like NetworkAffiliateID is now stored in provider mappings
 	// This function can be used to merge general affiliate data if needed
-	
+
 	// Example: merge status if provider has updated status
 	if provider.Status != "" {
 		local.Status = provider.Status

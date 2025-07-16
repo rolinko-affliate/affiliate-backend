@@ -31,9 +31,9 @@ func (r *pgxAffiliateProviderMappingRepository) CreateAffiliateProviderMapping(c
               (affiliate_id, provider_type, provider_affiliate_id, api_credentials, provider_config, provider_data, created_at, updated_at)
               VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
               RETURNING mapping_id, created_at, updated_at`
-	
+
 	var providerAffiliateID, apiCredentials, providerConfig, providerData sql.NullString
-	
+
 	if mapping.ProviderAffiliateID != nil {
 		providerAffiliateID = sql.NullString{String: *mapping.ProviderAffiliateID, Valid: true}
 	}
@@ -46,27 +46,27 @@ func (r *pgxAffiliateProviderMappingRepository) CreateAffiliateProviderMapping(c
 	if mapping.ProviderData != nil {
 		providerData = sql.NullString{String: *mapping.ProviderData, Valid: true}
 	}
-	
+
 	now := time.Now()
-	err := r.db.QueryRow(ctx, query, 
-		mapping.AffiliateID, 
-		mapping.ProviderType, 
-		providerAffiliateID, 
-		apiCredentials, 
-		providerConfig, 
+	err := r.db.QueryRow(ctx, query,
+		mapping.AffiliateID,
+		mapping.ProviderType,
+		providerAffiliateID,
+		apiCredentials,
+		providerConfig,
 		providerData,
-		now, 
+		now,
 		now,
 	).Scan(
-		&mapping.MappingID, 
-		&mapping.CreatedAt, 
+		&mapping.MappingID,
+		&mapping.CreatedAt,
 		&mapping.UpdatedAt,
 	)
-	
+
 	if err != nil {
 		return fmt.Errorf("error creating affiliate provider mapping: %w", err)
 	}
-	
+
 	return nil
 }
 
@@ -75,11 +75,11 @@ func (r *pgxAffiliateProviderMappingRepository) GetAffiliateProviderMapping(ctx 
 	          sync_status, last_sync_at, sync_error, created_at, updated_at
 	          FROM public.affiliate_provider_mappings 
 	          WHERE affiliate_id = $1 AND provider_type = $2`
-	
+
 	var mapping domain.AffiliateProviderMapping
 	var providerAffiliateID, apiCredentials, providerConfig, providerData, syncStatus, syncError sql.NullString
 	var lastSyncAt sql.NullTime
-	
+
 	err := r.db.QueryRow(ctx, query, affiliateID, providerType).Scan(
 		&mapping.MappingID,
 		&mapping.AffiliateID,
@@ -94,14 +94,14 @@ func (r *pgxAffiliateProviderMappingRepository) GetAffiliateProviderMapping(ctx 
 		&mapping.CreatedAt,
 		&mapping.UpdatedAt,
 	)
-	
+
 	if err != nil {
 		if err == pgx.ErrNoRows {
 			return nil, fmt.Errorf("affiliate provider mapping not found: %w", domain.ErrNotFound)
 		}
 		return nil, fmt.Errorf("error getting affiliate provider mapping: %w", err)
 	}
-	
+
 	if providerAffiliateID.Valid {
 		mapping.ProviderAffiliateID = &providerAffiliateID.String
 	}
@@ -123,7 +123,7 @@ func (r *pgxAffiliateProviderMappingRepository) GetAffiliateProviderMapping(ctx 
 	if syncError.Valid {
 		mapping.SyncError = &syncError.String
 	}
-	
+
 	return &mapping, nil
 }
 
@@ -133,10 +133,10 @@ func (r *pgxAffiliateProviderMappingRepository) UpdateAffiliateProviderMapping(c
 	          sync_status = $5, last_sync_at = $6, sync_error = $7, updated_at = $8
 	          WHERE mapping_id = $9
 	          RETURNING updated_at`
-	
+
 	var providerAffiliateID, apiCredentials, providerConfig, providerData, syncStatus, syncError sql.NullString
 	var lastSyncAt sql.NullTime
-	
+
 	if mapping.ProviderAffiliateID != nil {
 		providerAffiliateID = sql.NullString{String: *mapping.ProviderAffiliateID, Valid: true}
 	}
@@ -158,12 +158,12 @@ func (r *pgxAffiliateProviderMappingRepository) UpdateAffiliateProviderMapping(c
 	if mapping.SyncError != nil {
 		syncError = sql.NullString{String: *mapping.SyncError, Valid: true}
 	}
-	
+
 	now := time.Now()
-	err := r.db.QueryRow(ctx, query, 
-		providerAffiliateID, 
-		apiCredentials, 
-		providerConfig, 
+	err := r.db.QueryRow(ctx, query,
+		providerAffiliateID,
+		apiCredentials,
+		providerConfig,
 		providerData,
 		syncStatus,
 		lastSyncAt,
@@ -171,28 +171,28 @@ func (r *pgxAffiliateProviderMappingRepository) UpdateAffiliateProviderMapping(c
 		now,
 		mapping.MappingID,
 	).Scan(&mapping.UpdatedAt)
-	
+
 	if err != nil {
 		if err == pgx.ErrNoRows {
 			return fmt.Errorf("affiliate provider mapping not found: %w", domain.ErrNotFound)
 		}
 		return fmt.Errorf("error updating affiliate provider mapping: %w", err)
 	}
-	
+
 	return nil
 }
 
 func (r *pgxAffiliateProviderMappingRepository) DeleteAffiliateProviderMapping(ctx context.Context, mappingID int64) error {
 	query := `DELETE FROM public.affiliate_provider_mappings WHERE mapping_id = $1`
-	
+
 	commandTag, err := r.db.Exec(ctx, query, mappingID)
 	if err != nil {
 		return fmt.Errorf("error deleting affiliate provider mapping: %w", err)
 	}
-	
+
 	if commandTag.RowsAffected() == 0 {
 		return fmt.Errorf("affiliate provider mapping not found: %w", domain.ErrNotFound)
 	}
-	
+
 	return nil
 }

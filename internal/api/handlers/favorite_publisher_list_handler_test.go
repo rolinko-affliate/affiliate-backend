@@ -357,7 +357,7 @@ func TestFavoritePublisherListHandler_AddPublisherToList(t *testing.T) {
 			Notes:           stringPtr("Test notes"),
 		}
 
-		mockService.On("AddPublisherToList", mock.Anything, int64(1), int64(1), &req).Return(nil, 
+		mockService.On("AddPublisherToList", mock.Anything, int64(1), int64(1), &req).Return(nil,
 			errors.New("publisher example.com is already in the list")).Once()
 
 		body, _ := json.Marshal(req)

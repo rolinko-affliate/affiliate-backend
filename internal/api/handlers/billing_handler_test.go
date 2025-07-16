@@ -198,11 +198,11 @@ func TestBillingHandler_validateBillingAccess(t *testing.T) {
 	handler := &TestBillingHandler{}
 
 	tests := []struct {
-		name        string
-		profile     *domain.Profile
+		name          string
+		profile       *domain.Profile
 		expectedOrgID int64
-		expectError bool
-		errorMsg    string
+		expectError   bool
+		errorMsg      string
 	}{
 		{
 			name: "Admin with organization - should succeed",
@@ -265,11 +265,11 @@ func TestBillingHandler_GetBillingDashboard_AccessControl(t *testing.T) {
 	gin.SetMode(gin.TestMode)
 
 	tests := []struct {
-		name           string
-		profile        *domain.Profile
-		expectedStatus int
+		name              string
+		profile           *domain.Profile
+		expectedStatus    int
 		expectServiceCall bool
-		expectedOrgID  int64
+		expectedOrgID     int64
 	}{
 		{
 			name: "Admin user - should access billing",

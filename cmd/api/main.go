@@ -238,7 +238,7 @@ func main() {
 	trackingLinkProviderMappingRepo := repository.NewTrackingLinkProviderMappingRepository(repository.DB)
 	analyticsRepo := repository.NewAnalyticsRepository(repository.DB)
 	favoritePublisherListRepo := repository.NewFavoritePublisherListRepository(repository.DB)
-	
+
 	// Initialize Billing Repositories
 	billingAccountRepo := repository.NewPgxBillingAccountRepository(repository.DB)
 	paymentMethodRepo := repository.NewPgxPaymentMethodRepository(repository.DB)
@@ -256,7 +256,7 @@ func main() {
 		WebhookSecret:  os.Getenv("STRIPE_WEBHOOK_SECRET"),
 		Environment:    os.Getenv("STRIPE_ENVIRONMENT"), // "test" or "live"
 	}
-	
+
 	// Use test keys if not provided
 	if stripeConfig.SecretKey == "" {
 		stripeConfig.SecretKey = "sk_test_..." // Default test key
@@ -269,7 +269,7 @@ func main() {
 	if stripeConfig.Environment == "" {
 		stripeConfig.Environment = "test"
 	}
-	
+
 	stripeService := stripe.NewService(stripeConfig)
 
 	// Initialize integration service based on configuration
@@ -304,7 +304,7 @@ func main() {
 	trackingLinkService := service.NewTrackingLinkService(trackingLinkRepo, trackingLinkProviderMappingRepo, campaignRepo, affiliateRepo, campaignProviderMappingRepo, affiliateProviderMappingRepo, integrationService)
 	analyticsService := service.NewAnalyticsService(analyticsRepo)
 	favoritePublisherListService := service.NewFavoritePublisherListService(favoritePublisherListRepo, analyticsRepo)
-	
+
 	// Initialize Billing Services
 	billingService := service.NewBillingService(billingAccountRepo, paymentMethodRepo, transactionRepo, organizationRepo, stripeService)
 	usageCalculationService := service.NewUsageCalculationService(usageRecordRepo, billingAccountRepo, transactionRepo, campaignRepo, affiliateRepo, billingService)
@@ -319,7 +319,7 @@ func main() {
 	trackingLinkHandler := handlers.NewTrackingLinkHandler(trackingLinkService)
 	analyticsHandler := handlers.NewAnalyticsHandler(analyticsService)
 	favoritePublisherListHandler := handlers.NewFavoritePublisherListHandler(favoritePublisherListService)
-	
+
 	// Initialize Billing Handlers
 	billingHandler := handlers.NewBillingHandler(billingService, profileService)
 	webhookHandler := handlers.NewWebhookHandler(stripeService, billingService, webhookEventRepo, billingAccountRepo, transactionRepo, stripeConfig.WebhookSecret)

@@ -15,11 +15,11 @@ import (
 
 // BillingService provides billing and payment functionality
 type BillingService struct {
-	billingAccountRepo  repository.BillingAccountRepository
-	paymentMethodRepo   repository.PaymentMethodRepository
-	transactionRepo     repository.TransactionRepository
-	organizationRepo    repository.OrganizationRepository
-	stripeService       *stripe.Service
+	billingAccountRepo repository.BillingAccountRepository
+	paymentMethodRepo  repository.PaymentMethodRepository
+	transactionRepo    repository.TransactionRepository
+	organizationRepo   repository.OrganizationRepository
+	stripeService      *stripe.Service
 }
 
 // NewBillingService creates a new billing service
@@ -281,7 +281,7 @@ func (s *BillingService) Recharge(ctx context.Context, organizationID int64, req
 		}
 	}
 
-	log.Printf("Created recharge transaction %d for organization %d, amount: %s", 
+	log.Printf("Created recharge transaction %d for organization %d, amount: %s",
 		transaction.TransactionID, organizationID, req.Amount.String())
 	return transaction, nil
 }
@@ -297,7 +297,7 @@ func (s *BillingService) DebitAccount(ctx context.Context, organizationID int64,
 	// Check if sufficient balance (for prepaid accounts)
 	if account.BillingMode == domain.BillingModePrepaid {
 		if account.Balance.LessThan(amount) {
-			return nil, fmt.Errorf("insufficient balance: current balance %s, required %s", 
+			return nil, fmt.Errorf("insufficient balance: current balance %s, required %s",
 				account.Balance.String(), amount.String())
 		}
 	}
@@ -330,7 +330,7 @@ func (s *BillingService) DebitAccount(ctx context.Context, organizationID int64,
 		return nil, fmt.Errorf("failed to update account balance: %w", err)
 	}
 
-	log.Printf("Created debit transaction %d for organization %d, amount: %s", 
+	log.Printf("Created debit transaction %d for organization %d, amount: %s",
 		transaction.TransactionID, organizationID, amount.String())
 	return transaction, nil
 }
@@ -395,8 +395,8 @@ func (s *BillingService) convertStripePaymentIntentStatus(status stripeLib.Payme
 	case stripeLib.PaymentIntentStatusProcessing:
 		return domain.TransactionStatusPending
 	case stripeLib.PaymentIntentStatusRequiresPaymentMethod,
-		 stripeLib.PaymentIntentStatusRequiresConfirmation,
-		 stripeLib.PaymentIntentStatusRequiresAction:
+		stripeLib.PaymentIntentStatusRequiresConfirmation,
+		stripeLib.PaymentIntentStatusRequiresAction:
 		return domain.TransactionStatusPending
 	case stripeLib.PaymentIntentStatusCanceled:
 		return domain.TransactionStatusCancelled
@@ -404,4 +404,3 @@ func (s *BillingService) convertStripePaymentIntentStatus(status stripeLib.Payme
 		return domain.TransactionStatusFailed
 	}
 }
-

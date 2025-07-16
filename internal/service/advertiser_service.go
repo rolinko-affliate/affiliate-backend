@@ -20,11 +20,11 @@ type AdvertiserService interface {
 	UpdateAdvertiser(ctx context.Context, advertiser *domain.Advertiser) error
 	ListAdvertisersByOrganization(ctx context.Context, orgID int64, page, pageSize int) ([]*domain.Advertiser, error)
 	DeleteAdvertiser(ctx context.Context, id int64) error
-	
+
 	SyncAdvertiserToProvider(ctx context.Context, advertiserID int64) error
 	SyncAdvertiserFromProvider(ctx context.Context, advertiserID int64) error
 	CompareAdvertiserWithProvider(ctx context.Context, advertiserID int64) ([]domain.AdvertiserDiscrepancy, error)
-	
+
 	CreateProviderMapping(ctx context.Context, mapping *domain.AdvertiserProviderMapping) (*domain.AdvertiserProviderMapping, error)
 	GetProviderMapping(ctx context.Context, advertiserID int64, providerType string) (*domain.AdvertiserProviderMapping, error)
 	GetProviderMappings(ctx context.Context, advertiserID int64) ([]*domain.AdvertiserProviderMapping, error)
@@ -64,7 +64,7 @@ func (s *advertiserService) CreateAdvertiser(ctx context.Context, advertiser *do
 	}
 
 	setDefaultStatus(advertiser)
-	
+
 	if err := validateAdvertiser(advertiser); err != nil {
 		return nil, err
 	}
@@ -77,12 +77,12 @@ func (s *advertiserService) CreateAdvertiser(ctx context.Context, advertiser *do
 	// Step 2: Create provider mapping with "pending" status
 	now := time.Now()
 	mapping := &domain.AdvertiserProviderMapping{
-		AdvertiserID:         advertiser.AdvertiserID,
-		ProviderType:         "everflow",
-		SyncStatus:           stringPtr("pending"),
-		LastSyncAt:           &now,
-		APICredentials:       nil, // Set during configuration
-		ProviderConfig:       nil, // Set by IntegrationService with full payload
+		AdvertiserID:   advertiser.AdvertiserID,
+		ProviderType:   "everflow",
+		SyncStatus:     stringPtr("pending"),
+		LastSyncAt:     &now,
+		APICredentials: nil, // Set during configuration
+		ProviderConfig: nil, // Set by IntegrationService with full payload
 	}
 
 	err = s.providerMappingRepo.CreateMapping(ctx, mapping)
@@ -145,7 +145,7 @@ func (s *advertiserService) UpdateAdvertiser(ctx context.Context, advertiser *do
 	if err := s.integrationService.UpdateAdvertiser(ctx, *advertiser); err != nil {
 		// Log error but don't fail the operation since local update succeeded
 		fmt.Printf("Warning: failed to update advertiser in provider: %v\n", err)
-		
+
 		// Update mapping sync status to indicate sync failure
 		mapping.SyncStatus = stringPtr("failed")
 		mapping.SyncError = stringPtr(err.Error())
@@ -318,7 +318,7 @@ func (s *advertiserService) SyncAdvertiserFromProvider(ctx context.Context, adve
 
 	// Convert advertiser ID to UUID for IntegrationService
 	advertiserUUID := int64ToUUID(advertiserID)
-	
+
 	// Get advertiser from provider
 	providerAdvertiser, err := s.integrationService.GetAdvertiser(ctx, advertiserUUID)
 	if err != nil {
@@ -372,7 +372,7 @@ func (s *advertiserService) CompareAdvertiserWithProvider(ctx context.Context, a
 
 	// Convert advertiser ID to UUID for IntegrationService
 	advertiserUUID := int64ToUUID(advertiserID)
-	
+
 	// Get advertiser from provider
 	providerAdvertiser, err := s.integrationService.GetAdvertiser(ctx, advertiserUUID)
 	if err != nil {
@@ -515,11 +515,11 @@ func validateAdvertiser(advertiser *domain.Advertiser) error {
 	if advertiser.Name == "" {
 		return fmt.Errorf("advertiser name cannot be empty")
 	}
-	
+
 	if advertiser.ContactEmail == nil || *advertiser.ContactEmail == "" {
 		return fmt.Errorf("advertiser contact email cannot be empty")
 	}
-	
+
 	// Validate status
 	validStatuses := map[string]bool{
 		"active":   true,
@@ -530,7 +530,7 @@ func validateAdvertiser(advertiser *domain.Advertiser) error {
 	if !validStatuses[advertiser.Status] {
 		return fmt.Errorf("invalid status: %s", advertiser.Status)
 	}
-	
+
 	return nil
 }
 

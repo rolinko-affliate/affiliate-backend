@@ -16,13 +16,13 @@ type FavoritePublisherListService interface {
 	GetListsByOrganization(ctx context.Context, organizationID int64) ([]*domain.FavoritePublisherListWithStats, error)
 	UpdateList(ctx context.Context, organizationID int64, listID int64, req *domain.UpdateFavoritePublisherListRequest) (*domain.FavoritePublisherList, error)
 	DeleteList(ctx context.Context, organizationID int64, listID int64) error
-	
+
 	// List item management
 	AddPublisherToList(ctx context.Context, organizationID int64, listID int64, req *domain.AddPublisherToListRequest) (*domain.FavoritePublisherListItem, error)
 	RemovePublisherFromList(ctx context.Context, organizationID int64, listID int64, publisherDomain string) error
 	GetListItems(ctx context.Context, organizationID int64, listID int64, includeDetails bool) ([]*domain.FavoritePublisherListItem, error)
 	UpdatePublisherInList(ctx context.Context, organizationID int64, listID int64, publisherDomain string, req *domain.UpdatePublisherInListRequest) error
-	
+
 	// Utility methods
 	GetListsContainingPublisher(ctx context.Context, organizationID int64, publisherDomain string) ([]*domain.FavoritePublisherList, error)
 }
@@ -41,39 +41,52 @@ func NewFavoritePublisherListService(favoriteListRepo repository.FavoritePublish
 	}
 }
 
+// Helper function to validate list ownership
+func (s *favoritePublisherListService) validateListOwnership(ctx context.Context, organizationID, listID int64) (*domain.FavoritePublisherList, error) {
+	list, err := s.favoriteListRepo.GetListByID(ctx, listID)
+	if err != nil {
+		return nil, err
+	}
+
+	if list.OrganizationID != organizationID {
+		return nil, domain.ErrNotFound // Don't reveal existence of lists from other orgs
+	}
+
+	return list, nil
+}
+
+// Helper function to validate publisher domain exists
+func (s *favoritePublisherListService) validatePublisherExists(ctx context.Context, publisherDomain string) error {
+	_, err := s.analyticsRepo.GetPublisherByDomain(ctx, publisherDomain)
+	if err != nil {
+		return fmt.Errorf("publisher domain not found: %w", err)
+	}
+	return nil
+}
+
 // CreateList creates a new favorite publisher list
 func (s *favoritePublisherListService) CreateList(ctx context.Context, organizationID int64, req *domain.CreateFavoritePublisherListRequest) (*domain.FavoritePublisherList, error) {
 	if err := req.Validate(); err != nil {
 		return nil, err
 	}
-	
+
 	list := &domain.FavoritePublisherList{
 		OrganizationID: organizationID,
 		Name:           req.Name,
 		Description:    req.Description,
 	}
-	
+
 	err := s.favoriteListRepo.CreateList(ctx, list)
 	if err != nil {
 		return nil, fmt.Errorf("failed to create favorite publisher list: %w", err)
 	}
-	
+
 	return list, nil
 }
 
 // GetListByID retrieves a favorite publisher list by ID, ensuring it belongs to the organization
 func (s *favoritePublisherListService) GetListByID(ctx context.Context, organizationID int64, listID int64) (*domain.FavoritePublisherList, error) {
-	list, err := s.favoriteListRepo.GetListByID(ctx, listID)
-	if err != nil {
-		return nil, err
-	}
-	
-	// Ensure the list belongs to the organization
-	if list.OrganizationID != organizationID {
-		return nil, domain.ErrNotFound
-	}
-	
-	return list, nil
+	return s.validateListOwnership(ctx, organizationID, listID)
 }
 
 // GetListsByOrganization retrieves all favorite publisher lists for an organization
@@ -88,7 +101,7 @@ func (s *favoritePublisherListService) UpdateList(ctx context.Context, organizat
 	if err != nil {
 		return nil, err
 	}
-	
+
 	// Update fields if provided
 	if req.Name != nil {
 		list.Name = *req.Name
@@ -96,12 +109,12 @@ func (s *favoritePublisherListService) UpdateList(ctx context.Context, organizat
 	if req.Description != nil {
 		list.Description = req.Description
 	}
-	
+
 	err = s.favoriteListRepo.UpdateList(ctx, list)
 	if err != nil {
 		return nil, fmt.Errorf("failed to update favorite publisher list: %w", err)
 	}
-	
+
 	return list, nil
 }
 
@@ -112,7 +125,7 @@ func (s *favoritePublisherListService) DeleteList(ctx context.Context, organizat
 	if err != nil {
 		return err
 	}
-	
+
 	return s.favoriteListRepo.DeleteList(ctx, listID)
 }
 
@@ -121,13 +134,13 @@ func (s *favoritePublisherListService) AddPublisherToList(ctx context.Context, o
 	if err := req.Validate(); err != nil {
 		return nil, err
 	}
-	
+
 	// First, ensure the list belongs to the organization
 	_, err := s.GetListByID(ctx, organizationID, listID)
 	if err != nil {
 		return nil, err
 	}
-	
+
 	// Check if publisher is already in the list
 	exists, err := s.favoriteListRepo.IsPublisherInList(ctx, listID, req.PublisherDomain)
 	if err != nil {
@@ -136,25 +149,25 @@ func (s *favoritePublisherListService) AddPublisherToList(ctx context.Context, o
 	if exists {
 		return nil, fmt.Errorf("publisher %s is already in the list", req.PublisherDomain)
 	}
-	
+
 	// Optionally validate that the publisher domain exists in analytics_publishers
 	// This is a soft validation - we'll still allow adding domains that don't exist yet
 	_, err = s.analyticsRepo.GetPublisherByDomain(ctx, req.PublisherDomain)
 	if err != nil && err != domain.ErrNotFound {
 		return nil, fmt.Errorf("failed to validate publisher domain: %w", err)
 	}
-	
+
 	item := &domain.FavoritePublisherListItem{
 		ListID:          listID,
 		PublisherDomain: req.PublisherDomain,
 		Notes:           req.Notes,
 	}
-	
+
 	err = s.favoriteListRepo.AddPublisherToList(ctx, item)
 	if err != nil {
 		return nil, fmt.Errorf("failed to add publisher to list: %w", err)
 	}
-	
+
 	return item, nil
 }
 
@@ -165,7 +178,7 @@ func (s *favoritePublisherListService) RemovePublisherFromList(ctx context.Conte
 	if err != nil {
 		return err
 	}
-	
+
 	return s.favoriteListRepo.RemovePublisherFromList(ctx, listID, publisherDomain)
 }
 
@@ -176,11 +189,11 @@ func (s *favoritePublisherListService) GetListItems(ctx context.Context, organiz
 	if err != nil {
 		return nil, err
 	}
-	
+
 	if includeDetails {
 		return s.favoriteListRepo.GetListItemsWithPublisherDetails(ctx, listID)
 	}
-	
+
 	return s.favoriteListRepo.GetListItems(ctx, listID)
 }
 
@@ -191,7 +204,7 @@ func (s *favoritePublisherListService) UpdatePublisherInList(ctx context.Context
 	if err != nil {
 		return err
 	}
-	
+
 	return s.favoriteListRepo.UpdatePublisherInList(ctx, listID, publisherDomain, req.Notes)
 }
 

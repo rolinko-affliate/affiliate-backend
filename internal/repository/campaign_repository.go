@@ -41,7 +41,7 @@ func (r *pgxCampaignRepository) CreateCampaign(ctx context.Context, campaign *do
                created_at, updated_at)
               VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19)
               RETURNING campaign_id, created_at, updated_at`
-	
+
 	// Handle nullable fields that exist in the database
 	var description, destinationURL, thumbnailURL, previewURL, visibility, currencyID sql.NullString
 	var billingModel, payoutStructure, revenueStructure sql.NullString
@@ -88,9 +88,9 @@ func (r *pgxCampaignRepository) CreateCampaign(ctx context.Context, campaign *do
 	if campaign.RevenueAmount != nil {
 		revenueAmount = sql.NullFloat64{Float64: *campaign.RevenueAmount, Valid: true}
 	}
-	
+
 	now := time.Now()
-	
+
 	err := r.db.QueryRow(ctx, query,
 		campaign.OrganizationID, campaign.AdvertiserID, campaign.Name, description, campaign.Status,
 		startDate, endDate,
@@ -98,11 +98,11 @@ func (r *pgxCampaignRepository) CreateCampaign(ctx context.Context, campaign *do
 		billingModel, payoutStructure, payoutAmount, revenueStructure, revenueAmount,
 		now, now,
 	).Scan(&campaign.CampaignID, &campaign.CreatedAt, &campaign.UpdatedAt)
-	
+
 	if err != nil {
 		return fmt.Errorf("failed to create campaign: %w", err)
 	}
-	
+
 	return nil
 }
 
@@ -117,7 +117,7 @@ func (r *pgxCampaignRepository) GetCampaignByID(ctx context.Context, id int64) (
               billing_model, payout_structure, payout_amount, revenue_structure, revenue_amount,
               created_at, updated_at
               FROM public.campaigns WHERE campaign_id = $1`
-	
+
 	campaign := &domain.Campaign{}
 	var description, destinationURL, thumbnailURL, previewURL, visibility, currencyID sql.NullString
 	var conversionMethod, sessionDefinition, termsAndConditions, billingModel, payoutStructure, revenueStructure sql.NullString
@@ -128,7 +128,7 @@ func (r *pgxCampaignRepository) GetCampaignByID(ctx context.Context, id int64) (
 	var dailyConversionCap, weeklyConversionCap, monthlyConversionCap, globalConversionCap sql.NullInt32
 	var dailyClickCap, weeklyClickCap, monthlyClickCap, globalClickCap sql.NullInt32
 	var payoutAmount, revenueAmount sql.NullFloat64
-	
+
 	err := r.db.QueryRow(ctx, query, id).Scan(
 		&campaign.CampaignID, &campaign.OrganizationID, &campaign.AdvertiserID,
 		&campaign.Name, &description, &campaign.Status,
@@ -140,14 +140,14 @@ func (r *pgxCampaignRepository) GetCampaignByID(ctx context.Context, id int64) (
 		&billingModel, &payoutStructure, &payoutAmount, &revenueStructure, &revenueAmount,
 		&campaign.CreatedAt, &campaign.UpdatedAt,
 	)
-	
+
 	if err != nil {
 		if err == pgx.ErrNoRows {
 			return nil, fmt.Errorf("campaign not found: %w", err)
 		}
 		return nil, fmt.Errorf("failed to get campaign: %w", err)
 	}
-	
+
 	// Handle nullable fields
 	if description.Valid {
 		campaign.Description = &description.String
@@ -225,9 +225,9 @@ func (r *pgxCampaignRepository) GetCampaignByID(ctx context.Context, id int64) (
 	}
 	if billingModel.Valid {
 		campaign.BillingModel = &billingModel.String
-			if payoutStructure.Valid {
-				campaign.PayoutStructure = &payoutStructure.String
-			}
+		if payoutStructure.Valid {
+			campaign.PayoutStructure = &payoutStructure.String
+		}
 	}
 	if payoutStructure.Valid {
 		campaign.PayoutStructure = &payoutStructure.String
@@ -241,7 +241,7 @@ func (r *pgxCampaignRepository) GetCampaignByID(ctx context.Context, id int64) (
 	if revenueAmount.Valid {
 		campaign.RevenueAmount = &revenueAmount.Float64
 	}
-	
+
 	return campaign, nil
 }
 
@@ -258,7 +258,7 @@ func (r *pgxCampaignRepository) UpdateCampaign(ctx context.Context, campaign *do
               billing_model = $28, payout_structure = $29, payout_amount = $30, revenue_structure = $31, revenue_amount = $32,
               updated_at = $33
               WHERE campaign_id = $1`
-	
+
 	// Handle nullable fields (same as CreateCampaign)
 	var description, destinationURL, thumbnailURL, previewURL, visibility, currencyID sql.NullString
 	var conversionMethod, sessionDefinition, termsAndConditions, billingModel, payoutStructure, revenueStructure sql.NullString
@@ -269,7 +269,7 @@ func (r *pgxCampaignRepository) UpdateCampaign(ctx context.Context, campaign *do
 	var dailyConversionCap, weeklyConversionCap, monthlyConversionCap, globalConversionCap sql.NullInt32
 	var dailyClickCap, weeklyClickCap, monthlyClickCap, globalClickCap sql.NullInt32
 	var payoutAmount, revenueAmount sql.NullFloat64
-	
+
 	// Set nullable fields (same logic as CreateCampaign)
 	if campaign.Description != nil {
 		description = sql.NullString{String: *campaign.Description, Valid: true}
@@ -352,9 +352,9 @@ func (r *pgxCampaignRepository) UpdateCampaign(ctx context.Context, campaign *do
 	if campaign.RevenueAmount != nil {
 		revenueAmount = sql.NullFloat64{Float64: *campaign.RevenueAmount, Valid: true}
 	}
-	
+
 	now := time.Now()
-	
+
 	result, err := r.db.Exec(ctx, query,
 		campaign.CampaignID, campaign.OrganizationID, campaign.AdvertiserID,
 		campaign.Name, description, campaign.Status,
@@ -366,16 +366,16 @@ func (r *pgxCampaignRepository) UpdateCampaign(ctx context.Context, campaign *do
 		billingModel, payoutStructure, payoutAmount, revenueStructure, revenueAmount,
 		now,
 	)
-	
+
 	if err != nil {
 		return fmt.Errorf("failed to update campaign: %w", err)
 	}
-	
+
 	rowsAffected := result.RowsAffected()
 	if rowsAffected == 0 {
 		return fmt.Errorf("campaign not found: not found")
 	}
-	
+
 	campaign.UpdatedAt = now
 	return nil
 }
@@ -391,13 +391,13 @@ func (r *pgxCampaignRepository) ListCampaignsByAdvertiser(ctx context.Context, a
               billing_model, payout_structure, payout_amount, revenue_structure, revenue_amount,
               created_at, updated_at
               FROM public.campaigns WHERE advertiser_id = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3`
-	
+
 	rows, err := r.db.Query(ctx, query, advertiserID, limit, offset)
 	if err != nil {
 		return nil, fmt.Errorf("failed to list campaigns by advertiser: %w", err)
 	}
 	defer rows.Close()
-	
+
 	var campaigns []*domain.Campaign
 	for rows.Next() {
 		campaign := &domain.Campaign{}
@@ -410,7 +410,7 @@ func (r *pgxCampaignRepository) ListCampaignsByAdvertiser(ctx context.Context, a
 		var dailyConversionCap, weeklyConversionCap, monthlyConversionCap, globalConversionCap sql.NullInt32
 		var dailyClickCap, weeklyClickCap, monthlyClickCap, globalClickCap sql.NullInt32
 		var payoutAmount, revenueAmount sql.NullFloat64
-		
+
 		err := rows.Scan(
 			&campaign.CampaignID, &campaign.OrganizationID, &campaign.AdvertiserID,
 			&campaign.Name, &description, &campaign.Status,
@@ -425,7 +425,7 @@ func (r *pgxCampaignRepository) ListCampaignsByAdvertiser(ctx context.Context, a
 		if err != nil {
 			return nil, fmt.Errorf("failed to scan campaign: %w", err)
 		}
-		
+
 		// Handle nullable fields (same logic as GetCampaignByID)
 		if description.Valid {
 			campaign.Description = &description.String
@@ -516,14 +516,14 @@ func (r *pgxCampaignRepository) ListCampaignsByAdvertiser(ctx context.Context, a
 		if revenueAmount.Valid {
 			campaign.RevenueAmount = &revenueAmount.Float64
 		}
-		
+
 		campaigns = append(campaigns, campaign)
 	}
-	
+
 	if err = rows.Err(); err != nil {
 		return nil, fmt.Errorf("failed to iterate campaigns: %w", err)
 	}
-	
+
 	return campaigns, nil
 }
 
@@ -534,13 +534,13 @@ func (r *pgxCampaignRepository) ListCampaignsByOrganization(ctx context.Context,
               visibility, currency_id, billing_model, payout_structure, payout_amount, revenue_structure, revenue_amount,
               created_at, updated_at
               FROM public.campaigns WHERE organization_id = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3`
-	
+
 	rows, err := r.db.Query(ctx, query, orgID, limit, offset)
 	if err != nil {
 		return nil, fmt.Errorf("failed to list campaigns by organization: %w", err)
 	}
 	defer rows.Close()
-	
+
 	var campaigns []*domain.Campaign
 	for rows.Next() {
 		campaign := &domain.Campaign{}
@@ -548,7 +548,7 @@ func (r *pgxCampaignRepository) ListCampaignsByOrganization(ctx context.Context,
 		var billingModel, payoutStructure, revenueStructure sql.NullString
 		var startDate, endDate sql.NullTime
 		var payoutAmount, revenueAmount sql.NullFloat64
-		
+
 		err := rows.Scan(
 			&campaign.CampaignID, &campaign.OrganizationID, &campaign.AdvertiserID,
 			&campaign.Name, &description,
@@ -559,7 +559,7 @@ func (r *pgxCampaignRepository) ListCampaignsByOrganization(ctx context.Context,
 		if err != nil {
 			return nil, fmt.Errorf("failed to scan campaign: %w", err)
 		}
-		
+
 		// Handle nullable fields
 		if description.Valid {
 			campaign.Description = &description.String
@@ -600,30 +600,30 @@ func (r *pgxCampaignRepository) ListCampaignsByOrganization(ctx context.Context,
 		if revenueAmount.Valid {
 			campaign.RevenueAmount = &revenueAmount.Float64
 		}
-		
+
 		campaigns = append(campaigns, campaign)
 	}
-	
+
 	if err = rows.Err(); err != nil {
 		return nil, fmt.Errorf("failed to iterate campaigns: %w", err)
 	}
-	
+
 	return campaigns, nil
 }
 
 // DeleteCampaign deletes a campaign by its ID
 func (r *pgxCampaignRepository) DeleteCampaign(ctx context.Context, id int64) error {
 	query := `DELETE FROM public.campaigns WHERE campaign_id = $1`
-	
+
 	result, err := r.db.Exec(ctx, query, id)
 	if err != nil {
 		return fmt.Errorf("failed to delete campaign: %w", err)
 	}
-	
+
 	rowsAffected := result.RowsAffected()
 	if rowsAffected == 0 {
 		return fmt.Errorf("campaign not found: not found")
 	}
-	
+
 	return nil
 }

@@ -11,12 +11,12 @@ func marshalBillingDetails(billing *domain.BillingDetails) (sql.NullString, erro
 	if billing == nil {
 		return sql.NullString{}, nil
 	}
-	
+
 	jsonBytes, err := json.Marshal(billing)
 	if err != nil {
 		return sql.NullString{}, err
 	}
-	
+
 	return sql.NullString{String: string(jsonBytes), Valid: true}, nil
 }
 
@@ -31,14 +31,14 @@ func scanNullableFields(
 	if contactEmail.Valid {
 		advertiser.ContactEmail = &contactEmail.String
 	}
-	
+
 	if billingDetails.Valid {
 		var bd domain.BillingDetails
 		if err := json.Unmarshal([]byte(billingDetails.String), &bd); err == nil {
 			advertiser.BillingDetails = &bd
 		}
 	}
-	
+
 	if internalNotes.Valid {
 		advertiser.InternalNotes = &internalNotes.String
 	}
@@ -76,7 +76,7 @@ func scanNullableFields(
 		timezoneID := reportingTimezoneID.Int32
 		advertiser.ReportingTimezoneID = &timezoneID
 	}
-	
+
 	return nil
 }
 

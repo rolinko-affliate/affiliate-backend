@@ -19,12 +19,12 @@ var _ MappedNullable = &AffiliateWithRelationshipsAllOfRelationshipAccountManage
 
 // AffiliateWithRelationshipsAllOfRelationshipAccountManager struct for AffiliateWithRelationshipsAllOfRelationshipAccountManager
 type AffiliateWithRelationshipsAllOfRelationshipAccountManager struct {
-	FirstName *string `json:"first_name,omitempty"`
-	LastName *string `json:"last_name,omitempty"`
-	Email *string `json:"email,omitempty"`
-	WorkPhone *string `json:"work_phone,omitempty"`
-	CellPhone *string `json:"cell_phone,omitempty"`
-	InstantMessagingId *int32 `json:"instant_messaging_id,omitempty"`
+	FirstName                  *string `json:"first_name,omitempty"`
+	LastName                   *string `json:"last_name,omitempty"`
+	Email                      *string `json:"email,omitempty"`
+	WorkPhone                  *string `json:"work_phone,omitempty"`
+	CellPhone                  *string `json:"cell_phone,omitempty"`
+	InstantMessagingId         *int32  `json:"instant_messaging_id,omitempty"`
 	InstantMessagingIdentifier *string `json:"instant_messaging_identifier,omitempty"`
 }
 
@@ -270,7 +270,7 @@ func (o *AffiliateWithRelationshipsAllOfRelationshipAccountManager) SetInstantMe
 }
 
 func (o AffiliateWithRelationshipsAllOfRelationshipAccountManager) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -338,5 +338,3 @@ func (v *NullableAffiliateWithRelationshipsAllOfRelationshipAccountManager) Unma
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

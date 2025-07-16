@@ -138,7 +138,7 @@ func TestAnalyticsHandler_GetPublisherByDomain(t *testing.T) {
 			if tt.expectedStatus == http.StatusOK {
 				assert.Equal(t, "Publisher retrieved successfully", response["message"])
 				assert.NotNil(t, response["data"])
-				
+
 				data := response["data"].(map[string]interface{})
 				publisher := data["publisher"].(map[string]interface{})
 				assert.Equal(t, tt.domain, publisher["domain"])
@@ -157,7 +157,7 @@ func TestAnalyticsHandler_GetPublisherByDomain_Integration(t *testing.T) {
 
 	// This test demonstrates the full request flow
 	mockService := new(MockAnalyticsService)
-	
+
 	// Setup mock response
 	expectedResponse := &domain.AnalyticsPublisherResponse{
 		Publisher: domain.AnalyticsPublisher{
@@ -174,7 +174,7 @@ func TestAnalyticsHandler_GetPublisherByDomain_Integration(t *testing.T) {
 			},
 		},
 	}
-	
+
 	mockService.On("GetPublisherByDomain", mock.Anything, "integration-test.com").Return(expectedResponse, nil)
 
 	handler := &AnalyticsHandler{
@@ -198,17 +198,17 @@ func TestAnalyticsHandler_GetPublisherByDomain_Integration(t *testing.T) {
 	assert.NoError(t, err)
 
 	assert.Equal(t, "Publisher retrieved successfully", response["message"])
-	
+
 	data := response["data"].(map[string]interface{})
 	publisher := data["publisher"].(map[string]interface{})
-	
+
 	assert.Equal(t, "integration-test.com", publisher["domain"])
 	assert.Equal(t, 92.3, publisher["relevance"])
 	assert.Equal(t, 2500.50, publisher["trafficScore"])
-	
+
 	known := publisher["known"].(map[string]interface{})
 	assert.Equal(t, true, known["value"])
-	
+
 	metaData := publisher["metaData"].(map[string]interface{})
 	assert.Equal(t, "Integration test publisher", metaData["description"])
 	assert.Equal(t, "https://integration-test.com/favicon.ico", metaData["faviconImageUrl"])

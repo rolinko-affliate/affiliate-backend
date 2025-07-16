@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // DefaultAPIService DefaultAPI service
 type DefaultAPIService service
 
 type ApiCreateAdvertiserRequest struct {
-	ctx context.Context
-	ApiService *DefaultAPIService
+	ctx                     context.Context
+	ApiService              *DefaultAPIService
 	createAdvertiserRequest *CreateAdvertiserRequest
 }
 
@@ -43,24 +42,25 @@ CreateAdvertiser Create Advertiser
 
 Create a new advertiser in the network
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateAdvertiserRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateAdvertiserRequest
 */
 func (a *DefaultAPIService) CreateAdvertiser(ctx context.Context) ApiCreateAdvertiserRequest {
 	return ApiCreateAdvertiserRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Advertiser
+//
+//	@return Advertiser
 func (a *DefaultAPIService) CreateAdvertiserExecute(r ApiCreateAdvertiserRequest) (*Advertiser, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Advertiser
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Advertiser
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.CreateAdvertiser")
@@ -148,8 +148,8 @@ func (a *DefaultAPIService) CreateAdvertiserExecute(r ApiCreateAdvertiserRequest
 }
 
 type ApiGetAdvertiserByIdRequest struct {
-	ctx context.Context
-	ApiService *DefaultAPIService
+	ctx          context.Context
+	ApiService   *DefaultAPIService
 	advertiserId int32
 	relationship *[]string
 }
@@ -169,26 +169,27 @@ GetAdvertiserById Get Advertiser by ID
 
 Retrieve a specific advertiser by their ID
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param advertiserId The ID of the advertiser to retrieve
- @return ApiGetAdvertiserByIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param advertiserId The ID of the advertiser to retrieve
+	@return ApiGetAdvertiserByIdRequest
 */
 func (a *DefaultAPIService) GetAdvertiserById(ctx context.Context, advertiserId int32) ApiGetAdvertiserByIdRequest {
 	return ApiGetAdvertiserByIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		advertiserId: advertiserId,
 	}
 }
 
 // Execute executes the request
-//  @return Advertiser
+//
+//	@return Advertiser
 func (a *DefaultAPIService) GetAdvertiserByIdExecute(r ApiGetAdvertiserByIdRequest) (*Advertiser, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Advertiser
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Advertiser
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetAdvertiserById")
@@ -275,9 +276,9 @@ func (a *DefaultAPIService) GetAdvertiserByIdExecute(r ApiGetAdvertiserByIdReque
 }
 
 type ApiUpdateAdvertiserRequest struct {
-	ctx context.Context
-	ApiService *DefaultAPIService
-	advertiserId int32
+	ctx                     context.Context
+	ApiService              *DefaultAPIService
+	advertiserId            int32
 	updateAdvertiserRequest *UpdateAdvertiserRequest
 }
 
@@ -295,26 +296,27 @@ UpdateAdvertiser Update Advertiser
 
 Update an existing advertiser. All fields must be provided as this is a full update operation.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param advertiserId The ID of the advertiser to update
- @return ApiUpdateAdvertiserRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param advertiserId The ID of the advertiser to update
+	@return ApiUpdateAdvertiserRequest
 */
 func (a *DefaultAPIService) UpdateAdvertiser(ctx context.Context, advertiserId int32) ApiUpdateAdvertiserRequest {
 	return ApiUpdateAdvertiserRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		advertiserId: advertiserId,
 	}
 }
 
 // Execute executes the request
-//  @return Advertiser
+//
+//	@return Advertiser
 func (a *DefaultAPIService) UpdateAdvertiserExecute(r ApiUpdateAdvertiserRequest) (*Advertiser, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Advertiser
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Advertiser
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.UpdateAdvertiser")

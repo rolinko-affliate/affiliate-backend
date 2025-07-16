@@ -22,6 +22,82 @@ func NewFavoritePublisherListHandler(favoriteListService service.FavoritePublish
 	}
 }
 
+// Helper functions for common error responses
+func (h *FavoritePublisherListHandler) respondUnauthorized(c *gin.Context, message string) {
+	c.JSON(http.StatusUnauthorized, ErrorResponse{
+		Error:   ErrUnauthorized,
+		Details: message,
+	})
+}
+
+func (h *FavoritePublisherListHandler) respondBadRequest(c *gin.Context, message, details string) {
+	c.JSON(http.StatusBadRequest, ErrorResponse{
+		Error:   message,
+		Details: details,
+	})
+}
+
+func (h *FavoritePublisherListHandler) respondInternalError(c *gin.Context, message, details string) {
+	c.JSON(http.StatusInternalServerError, ErrorResponse{
+		Error:   message,
+		Details: details,
+	})
+}
+
+func (h *FavoritePublisherListHandler) respondNotFound(c *gin.Context, message, details string) {
+	c.JSON(http.StatusNotFound, ErrorResponse{
+		Error:   message,
+		Details: details,
+	})
+}
+
+func (h *FavoritePublisherListHandler) getOrganizationID(c *gin.Context) (int64, bool) {
+	organizationID, exists := c.Get("organization_id")
+	if !exists {
+		h.respondUnauthorized(c, DetailOrgIDNotFound)
+		return 0, false
+	}
+
+	orgID, ok := organizationID.(int64)
+	if !ok {
+		h.respondInternalError(c, ErrInternalServer, DetailInvalidOrgIDType)
+		return 0, false
+	}
+
+	return orgID, true
+}
+
+func (h *FavoritePublisherListHandler) parseListID(c *gin.Context) (int64, bool) {
+	listIDStr := c.Param("id")
+	if listIDStr == "" {
+		listIDStr = c.Param("list_id") // fallback for different route patterns
+	}
+	listID, err := strconv.ParseInt(listIDStr, 10, 64)
+	if err != nil {
+		h.respondBadRequest(c, ErrInvalidListID, DetailListIDRequired)
+		return 0, false
+	}
+	return listID, true
+}
+
+func (h *FavoritePublisherListHandler) getDomainParam(c *gin.Context) (string, bool) {
+	domainParam := c.Param("domain")
+	if domainParam == "" {
+		h.respondBadRequest(c, ErrInvalidDomain, DetailDomainRequired)
+		return "", false
+	}
+	return domainParam, true
+}
+
+func (h *FavoritePublisherListHandler) getDomainQuery(c *gin.Context) (string, bool) {
+	domainParam := c.Query("domain")
+	if domainParam == "" {
+		h.respondBadRequest(c, ErrInvalidDomain, DetailDomainQueryRequired)
+		return "", false
+	}
+	return domainParam, true
+}
+
 // CreateList creates a new favorite publisher list
 // @Summary Create a new favorite publisher list
 // @Description Creates a new favorite publisher list for the user's organization
@@ -36,52 +112,29 @@ func NewFavoritePublisherListHandler(favoriteListService service.FavoritePublish
 // @Security BearerAuth
 // @Router /favorite-publisher-lists [post]
 func (h *FavoritePublisherListHandler) CreateList(c *gin.Context) {
-	// Get organization ID from context (set by RBAC middleware)
-	organizationID, exists := c.Get("organization_id")
-	if !exists {
-		c.JSON(http.StatusUnauthorized, ErrorResponse{
-			Error:   "Unauthorized",
-			Details: "Organization ID not found in context",
-		})
-		return
-	}
-
-	orgID, ok := organizationID.(int64)
+	orgID, ok := h.getOrganizationID(c)
 	if !ok {
-		c.JSON(http.StatusInternalServerError, ErrorResponse{
-			Error:   "Internal server error",
-			Details: "Invalid organization ID type",
-		})
 		return
 	}
 
 	var req domain.CreateFavoritePublisherListRequest
 	if err := c.ShouldBindJSON(&req); err != nil {
-		c.JSON(http.StatusBadRequest, ErrorResponse{
-			Error:   "Invalid request body",
-			Details: err.Error(),
-		})
+		h.respondBadRequest(c, ErrInvalidRequestBody, err.Error())
 		return
 	}
 
 	list, err := h.favoriteListService.CreateList(c.Request.Context(), orgID, &req)
 	if err != nil {
 		if errors.Is(err, domain.ErrInvalidInput) {
-			c.JSON(http.StatusBadRequest, ErrorResponse{
-				Error:   "Invalid input",
-				Details: err.Error(),
-			})
+			h.respondBadRequest(c, ErrInvalidInput, err.Error())
 			return
 		}
-		c.JSON(http.StatusInternalServerError, ErrorResponse{
-			Error:   "Failed to create favorite publisher list",
-			Details: err.Error(),
-		})
+		h.respondInternalError(c, ErrFailedToCreateList, err.Error())
 		return
 	}
 
 	c.JSON(http.StatusCreated, gin.H{
-		"message": "Favorite publisher list created successfully",
+		"message": MsgListCreated,
 		"data":    list,
 	})
 }
@@ -97,36 +150,19 @@ func (h *FavoritePublisherListHandler) CreateList(c *gin.Context) {
 // @Security BearerAuth
 // @Router /favorite-publisher-lists [get]
 func (h *FavoritePublisherListHandler) GetLists(c *gin.Context) {
-	// Get organization ID from context (set by RBAC middleware)
-	organizationID, exists := c.Get("organization_id")
-	if !exists {
-		c.JSON(http.StatusUnauthorized, ErrorResponse{
-			Error:   "Unauthorized",
-			Details: "Organization ID not found in context",
-		})
-		return
-	}
-
-	orgID, ok := organizationID.(int64)
+	orgID, ok := h.getOrganizationID(c)
 	if !ok {
-		c.JSON(http.StatusInternalServerError, ErrorResponse{
-			Error:   "Internal server error",
-			Details: "Invalid organization ID type",
-		})
 		return
 	}
 
 	lists, err := h.favoriteListService.GetListsByOrganization(c.Request.Context(), orgID)
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, ErrorResponse{
-			Error:   "Failed to retrieve favorite publisher lists",
-			Details: err.Error(),
-		})
+		h.respondInternalError(c, ErrFailedToRetrieveLists, err.Error())
 		return
 	}
 
 	c.JSON(http.StatusOK, gin.H{
-		"message": "Favorite publisher lists retrieved successfully",
+		"message": MsgListsRetrieved,
 		"data":    lists,
 	})
 }
@@ -450,62 +486,33 @@ func (h *FavoritePublisherListHandler) AddPublisherToList(c *gin.Context) {
 // @Security BearerAuth
 // @Router /favorite-publisher-lists/{list_id}/publishers/{domain} [delete]
 func (h *FavoritePublisherListHandler) RemovePublisherFromList(c *gin.Context) {
-	// Get organization ID from context (set by RBAC middleware)
-	organizationID, exists := c.Get("organization_id")
-	if !exists {
-		c.JSON(http.StatusUnauthorized, ErrorResponse{
-			Error:   "Unauthorized",
-			Details: "Organization ID not found in context",
-		})
-		return
-	}
-
-	orgID, ok := organizationID.(int64)
+	orgID, ok := h.getOrganizationID(c)
 	if !ok {
-		c.JSON(http.StatusInternalServerError, ErrorResponse{
-			Error:   "Internal server error",
-			Details: "Invalid organization ID type",
-		})
 		return
 	}
 
-	listIDStr := c.Param("list_id")
-	listID, err := strconv.ParseInt(listIDStr, 10, 64)
-	if err != nil {
-		c.JSON(http.StatusBadRequest, ErrorResponse{
-			Error:   "Invalid list ID",
-			Details: "List ID must be a valid integer",
-		})
+	listID, ok := h.parseListID(c)
+	if !ok {
 		return
 	}
 
-	domainParam := c.Param("domain")
-	if domainParam == "" {
-		c.JSON(http.StatusBadRequest, ErrorResponse{
-			Error:   "Invalid domain",
-			Details: "Domain parameter is required",
-		})
+	domainParam, ok := h.getDomainParam(c)
+	if !ok {
 		return
 	}
 
-	err = h.favoriteListService.RemovePublisherFromList(c.Request.Context(), orgID, listID, domainParam)
+	err := h.favoriteListService.RemovePublisherFromList(c.Request.Context(), orgID, listID, domainParam)
 	if err != nil {
 		if errors.Is(err, domain.ErrNotFound) {
-			c.JSON(http.StatusNotFound, ErrorResponse{
-				Error:   "Publisher not found in list",
-				Details: "No publisher found with the specified domain in this list",
-			})
+			h.respondNotFound(c, ErrPublisherNotInList, DetailPublisherNotInList)
 			return
 		}
-		c.JSON(http.StatusInternalServerError, ErrorResponse{
-			Error:   "Failed to remove publisher from list",
-			Details: err.Error(),
-		})
+		h.respondInternalError(c, ErrFailedToRemovePublisher, err.Error())
 		return
 	}
 
 	c.JSON(http.StatusOK, gin.H{
-		"message": "Publisher removed from list successfully",
+		"message": MsgPublisherRemoved,
 	})
 }
 

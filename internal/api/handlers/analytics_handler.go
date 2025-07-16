@@ -179,8 +179,8 @@ func (h *AnalyticsHandler) GetPublisherByDomain(c *gin.Context) {
 	domainParam := c.Param("domain")
 	if domainParam == "" {
 		c.JSON(http.StatusBadRequest, ErrorResponse{
-			Error:   "Invalid domain",
-			Details: "Domain parameter is required",
+			Error:   ErrInvalidDomain,
+			Details: DetailDomainRequired,
 		})
 		return
 	}
@@ -189,20 +189,20 @@ func (h *AnalyticsHandler) GetPublisherByDomain(c *gin.Context) {
 	if err != nil {
 		if errors.Is(err, domain.ErrNotFound) {
 			c.JSON(http.StatusNotFound, ErrorResponse{
-				Error:   "Publisher not found",
+				Error:   ErrPublisherNotFound,
 				Details: "No publisher found with the specified domain",
 			})
 			return
 		}
 		c.JSON(http.StatusInternalServerError, ErrorResponse{
-			Error:   "Failed to retrieve publisher",
+			Error:   ErrFailedToRetrievePublisher,
 			Details: err.Error(),
 		})
 		return
 	}
 
 	c.JSON(http.StatusOK, gin.H{
-		"message": "Publisher retrieved successfully",
+		"message": MsgPublisherRetrieved,
 		"data":    publisher,
 	})
 }
@@ -354,14 +354,14 @@ func (h *AnalyticsHandler) extractAdvertiserFields(advertiser *domain.AnalyticsA
 
 	// Extract and store JSON fields
 	jsonFields := map[string]**string{
-		"affiliateNetworks":   &advertiser.AffiliateNetworks,
-		"contactEmails":       &advertiser.ContactEmails,
-		"keywords":            &advertiser.Keywords,
-		"verticals":           &advertiser.Verticals,
-		"socialMedia":         &advertiser.SocialMedia,
-		"partnerInformation":  &advertiser.PartnerInformation,
-		"relatedAdvertisers":  &advertiser.RelatedAdvertisers,
-		"backlinks":           &advertiser.Backlinks,
+		"affiliateNetworks":  &advertiser.AffiliateNetworks,
+		"contactEmails":      &advertiser.ContactEmails,
+		"keywords":           &advertiser.Keywords,
+		"verticals":          &advertiser.Verticals,
+		"socialMedia":        &advertiser.SocialMedia,
+		"partnerInformation": &advertiser.PartnerInformation,
+		"relatedAdvertisers": &advertiser.RelatedAdvertisers,
+		"backlinks":          &advertiser.Backlinks,
 	}
 
 	for fieldName, fieldPtr := range jsonFields {
@@ -417,16 +417,16 @@ func (h *AnalyticsHandler) extractPublisherFields(publisher *domain.AnalyticsPub
 
 	// Extract and store JSON fields
 	jsonFields := map[string]**string{
-		"affiliateNetworks":   &publisher.AffiliateNetworks,
-		"countryRankings":     &publisher.CountryRankings,
-		"keywords":            &publisher.Keywords,
-		"verticals":           &publisher.Verticals,
-		"verticalsV2":         &publisher.VerticalsV2,
-		"socialMedia":         &publisher.SocialMedia,
-		"partnerInformation":  &publisher.PartnerInformation,
-		"partners":            &publisher.Partners,
-		"relatedPublishers":   &publisher.RelatedPublishers,
-		"liveUrls":            &publisher.LiveURLs,
+		"affiliateNetworks":  &publisher.AffiliateNetworks,
+		"countryRankings":    &publisher.CountryRankings,
+		"keywords":           &publisher.Keywords,
+		"verticals":          &publisher.Verticals,
+		"verticalsV2":        &publisher.VerticalsV2,
+		"socialMedia":        &publisher.SocialMedia,
+		"partnerInformation": &publisher.PartnerInformation,
+		"partners":           &publisher.Partners,
+		"relatedPublishers":  &publisher.RelatedPublishers,
+		"liveUrls":           &publisher.LiveURLs,
 	}
 
 	for fieldName, fieldPtr := range jsonFields {
@@ -445,16 +445,16 @@ func (h *AnalyticsHandler) extractPublisherFields(publisher *domain.AnalyticsPub
 func (h *AnalyticsHandler) extractRemainingAdvertiserData(data map[string]interface{}) (map[string]interface{}, error) {
 	// List of fields that are already processed
 	processedFields := map[string]bool{
-		"domain":               true,
-		"metaData":             true,
-		"affiliateNetworks":    true,
-		"contactEmails":        true,
-		"keywords":             true,
-		"verticals":            true,
-		"socialMedia":          true,
-		"partnerInformation":   true,
-		"relatedAdvertisers":   true,
-		"backlinks":            true,
+		"domain":             true,
+		"metaData":           true,
+		"affiliateNetworks":  true,
+		"contactEmails":      true,
+		"keywords":           true,
+		"verticals":          true,
+		"socialMedia":        true,
+		"partnerInformation": true,
+		"relatedAdvertisers": true,
+		"backlinks":          true,
 	}
 
 	remaining := make(map[string]interface{})
@@ -471,22 +471,22 @@ func (h *AnalyticsHandler) extractRemainingAdvertiserData(data map[string]interf
 func (h *AnalyticsHandler) extractRemainingPublisherData(data map[string]interface{}) (map[string]interface{}, error) {
 	// List of fields that are already processed
 	processedFields := map[string]bool{
-		"domain":               true,
-		"metaData":             true,
-		"known":                true,
-		"relevance":            true,
-		"trafficScore":         true,
-		"promotype":            true,
-		"affiliateNetworks":    true,
-		"countryRankings":      true,
-		"keywords":             true,
-		"verticals":            true,
-		"verticalsV2":          true,
-		"socialMedia":          true,
-		"partnerInformation":   true,
-		"partners":             true,
-		"relatedPublishers":    true,
-		"liveUrls":             true,
+		"domain":             true,
+		"metaData":           true,
+		"known":              true,
+		"relevance":          true,
+		"trafficScore":       true,
+		"promotype":          true,
+		"affiliateNetworks":  true,
+		"countryRankings":    true,
+		"keywords":           true,
+		"verticals":          true,
+		"verticalsV2":        true,
+		"socialMedia":        true,
+		"partnerInformation": true,
+		"partners":           true,
+		"relatedPublishers":  true,
+		"liveUrls":           true,
 	}
 
 	remaining := make(map[string]interface{})

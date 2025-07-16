@@ -95,7 +95,7 @@ func (r *analyticsRepository) AffiliatesSearch(ctx context.Context, domainFilter
 
 	// First query: Get total count
 	countQuery := fmt.Sprintf(`SELECT COUNT(*) FROM analytics_publishers %s`, whereClause)
-	
+
 	var total int64
 	err := r.db.QueryRow(ctx, countQuery, args...).Scan(&total)
 	if err != nil {
@@ -115,7 +115,7 @@ func (r *analyticsRepository) AffiliatesSearch(ctx context.Context, domainFilter
         ORDER BY 
             COALESCE((partners->'count')::int, 0) DESC
         LIMIT $%d OFFSET $%d`, whereClause, argIndex, argIndex+1)
-	
+
 	// Add pagination args
 	dataArgs := append(args, limit, offset)
 

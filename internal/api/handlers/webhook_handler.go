@@ -89,13 +89,13 @@ func (h *WebhookHandler) HandleStripeWebhook(c *gin.Context) {
 	err = h.processWebhookEvent(c.Request.Context(), &event, webhookEvent)
 	if err != nil {
 		log.Printf("Error processing webhook event %s: %v", event.ID, err)
-		
+
 		// Update webhook event status to failed
 		webhookEvent.Status = domain.WebhookEventStatusFailed
 		webhookEvent.ErrorMessage = stringPtr(err.Error())
 		webhookEvent.ProcessedAt = timePtr(time.Now())
 		h.webhookEventRepo.Update(c.Request.Context(), webhookEvent)
-		
+
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Error processing webhook"})
 		return
 	}
@@ -238,7 +238,7 @@ func (h *WebhookHandler) handleInvoicePaymentSucceeded(ctx context.Context, even
 
 	// Create a transaction for the invoice payment
 	amount := h.stripeService.ConvertAmountFromCents(invoice.AmountPaid)
-	
+
 	transaction := &domain.Transaction{
 		OrganizationID:   billingAccount.OrganizationID,
 		BillingAccountID: billingAccount.BillingAccountID,

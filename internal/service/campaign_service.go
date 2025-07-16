@@ -36,12 +36,12 @@ func (s *campaignService) CreateCampaign(ctx context.Context, campaign *domain.C
 	if err := s.validateCampaign(campaign); err != nil {
 		return fmt.Errorf("campaign validation failed: %w", err)
 	}
-	
+
 	// Create campaign in repository
 	if err := s.campaignRepo.CreateCampaign(ctx, campaign); err != nil {
 		return fmt.Errorf("failed to create campaign: %w", err)
 	}
-	
+
 	return nil
 }
 
@@ -51,7 +51,7 @@ func (s *campaignService) GetCampaignByID(ctx context.Context, id int64) (*domai
 	if err != nil {
 		return nil, fmt.Errorf("failed to get campaign: %w", err)
 	}
-	
+
 	return campaign, nil
 }
 
@@ -61,12 +61,12 @@ func (s *campaignService) UpdateCampaign(ctx context.Context, campaign *domain.C
 	if err := s.validateCampaign(campaign); err != nil {
 		return fmt.Errorf("campaign validation failed: %w", err)
 	}
-	
+
 	// Update campaign in repository
 	if err := s.campaignRepo.UpdateCampaign(ctx, campaign); err != nil {
 		return fmt.Errorf("failed to update campaign: %w", err)
 	}
-	
+
 	return nil
 }
 
@@ -76,7 +76,7 @@ func (s *campaignService) ListCampaignsByAdvertiser(ctx context.Context, adverti
 	if err != nil {
 		return nil, fmt.Errorf("failed to list campaigns by advertiser: %w", err)
 	}
-	
+
 	return campaigns, nil
 }
 
@@ -86,7 +86,7 @@ func (s *campaignService) ListCampaignsByOrganization(ctx context.Context, orgID
 	if err != nil {
 		return nil, fmt.Errorf("failed to list campaigns by organization: %w", err)
 	}
-	
+
 	return campaigns, nil
 }
 
@@ -95,7 +95,7 @@ func (s *campaignService) DeleteCampaign(ctx context.Context, id int64) error {
 	if err := s.campaignRepo.DeleteCampaign(ctx, id); err != nil {
 		return fmt.Errorf("failed to delete campaign: %w", err)
 	}
-	
+
 	return nil
 }
 
@@ -104,15 +104,15 @@ func (s *campaignService) validateCampaign(campaign *domain.Campaign) error {
 	if campaign.Name == "" {
 		return fmt.Errorf("campaign name is required")
 	}
-	
+
 	if campaign.OrganizationID <= 0 {
 		return fmt.Errorf("valid organization ID is required")
 	}
-	
+
 	if campaign.AdvertiserID <= 0 {
 		return fmt.Errorf("valid advertiser ID is required")
 	}
-	
+
 	// Validate status
 	validStatuses := map[string]bool{
 		"draft":    true,
@@ -123,13 +123,13 @@ func (s *campaignService) validateCampaign(campaign *domain.Campaign) error {
 	if !validStatuses[campaign.Status] {
 		return fmt.Errorf("invalid campaign status: %s", campaign.Status)
 	}
-	
+
 	// Validate date range if both dates are provided
 	if campaign.StartDate != nil && campaign.EndDate != nil {
 		if campaign.EndDate.Before(*campaign.StartDate) {
 			return fmt.Errorf("end date cannot be before start date")
 		}
 	}
-	
+
 	return nil
 }

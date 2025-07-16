@@ -19,16 +19,16 @@ type IntegrationService struct {
 	advertiserClient *advertiser.APIClient
 	affiliateClient  *affiliate.APIClient
 	offerClient      *offer.APIClient
-	
+
 	// Repository interfaces for provider mappings
 	advertiserRepo AdvertiserRepository
 	affiliateRepo  AffiliateRepository
 	campaignRepo   CampaignRepository
-	
+
 	advertiserProviderMappingRepo AdvertiserProviderMappingRepository
 	affiliateProviderMappingRepo  AffiliateProviderMappingRepository
 	campaignProviderMappingRepo   CampaignProviderMappingRepository
-	
+
 	// Provider mappers
 	affiliateProviderMapper *AffiliateProviderMapper
 }
@@ -122,7 +122,7 @@ func int64ToUUID(id int64) uuid.UUID {
 func (s *IntegrationService) CreateAdvertiser(ctx context.Context, adv domain.Advertiser) (domain.Advertiser, error) {
 	// Mock implementation - simulate successful creation
 	// In a real implementation, this would make an API call to Everflow
-	
+
 	// Return the advertiser with the same ID (simulating successful creation)
 	return adv, nil
 }
@@ -169,7 +169,7 @@ func (s *IntegrationService) CreateAffiliate(ctx context.Context, aff domain.Aff
 	// Create provider mapping
 	now := time.Now()
 	syncStatus := "synced"
-	
+
 	mapping := &domain.AffiliateProviderMapping{
 		AffiliateID:  aff.AffiliateID,
 		ProviderType: "everflow",
@@ -186,10 +186,10 @@ func (s *IntegrationService) CreateAffiliate(ctx context.Context, aff domain.Aff
 
 	// Store request/response payload in provider config
 	payload := map[string]interface{}{
-		"request":               json.RawMessage(requestPayload),
-		"response":              resp,
-		"last_operation":        "create",
-		"last_operation_time":   now,
+		"request":             json.RawMessage(requestPayload),
+		"response":            resp,
+		"last_operation":      "create",
+		"last_operation_time": now,
 	}
 
 	payloadJSON, err := json.Marshal(payload)
@@ -207,7 +207,7 @@ func (s *IntegrationService) CreateAffiliate(ctx context.Context, aff domain.Aff
 
 	// Update core affiliate with non-provider-specific data from Everflow
 	s.affiliateProviderMapper.MapEverflowResponseToAffiliate(resp, &aff)
-	
+
 	return aff, nil
 }
 
@@ -240,7 +240,7 @@ func (s *IntegrationService) UpdateAffiliate(ctx context.Context, aff domain.Aff
 		everflowReq.GetAccountStatus(),
 		everflowReq.GetNetworkEmployeeId(),
 	)
-	
+
 	if everflowReq.HasInternalNotes() {
 		updateReq.SetInternalNotes(everflowReq.GetInternalNotes())
 	}
@@ -293,10 +293,10 @@ func (s *IntegrationService) UpdateAffiliate(ctx context.Context, aff domain.Aff
 	// Update provider config with request/response payload
 	requestPayload, _ := json.Marshal(updateReq)
 	payload := map[string]interface{}{
-		"request":               json.RawMessage(requestPayload),
-		"response":              resp,
-		"last_operation":        "update",
-		"last_operation_time":   now,
+		"request":             json.RawMessage(requestPayload),
+		"response":            resp,
+		"last_operation":      "update",
+		"last_operation_time": now,
 	}
 
 	payloadJSON, _ := json.Marshal(payload)
@@ -415,7 +415,7 @@ func (s *IntegrationService) mapCampaignToEverflowUpdateRequest(camp *domain.Cam
 func (s *IntegrationService) GenerateTrackingLink(ctx context.Context, req *domain.TrackingLinkGenerationRequest, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) (*domain.TrackingLinkGenerationResponse, error) {
 	// Extract provider-specific IDs from mappings
 	var networkOfferID, networkAffiliateID int32
-	
+
 	// Parse campaign provider data to get network_offer_id
 	if campaignMapping != nil && campaignMapping.ProviderData != nil {
 		var campaignProviderData domain.EverflowCampaignProviderData
@@ -425,7 +425,7 @@ func (s *IntegrationService) GenerateTrackingLink(ctx context.Context, req *doma
 			}
 		}
 	}
-	
+
 	// Parse affiliate provider data to get network_affiliate_id
 	if affiliateMapping != nil && affiliateMapping.ProviderData != nil {
 		var affiliateProviderData domain.EverflowProviderData
@@ -435,18 +435,18 @@ func (s *IntegrationService) GenerateTrackingLink(ctx context.Context, req *doma
 			}
 		}
 	}
-	
+
 	// If we don't have the required IDs, return an error
 	if networkOfferID == 0 || networkAffiliateID == 0 {
 		return nil, fmt.Errorf("missing required provider IDs: networkOfferID=%d, networkAffiliateID=%d", networkOfferID, networkAffiliateID)
 	}
-	
+
 	// Create Everflow tracking link request
 	everflowReq := map[string]interface{}{
-		"network_offer_id":    networkOfferID,
+		"network_offer_id":     networkOfferID,
 		"network_affiliate_id": networkAffiliateID,
 	}
-	
+
 	// Add optional parameters
 	if req.NetworkTrackingDomainID != nil {
 		everflowReq["network_tracking_domain_id"] = *req.NetworkTrackingDomainID
@@ -484,14 +484,14 @@ func (s *IntegrationService) GenerateTrackingLink(ctx context.Context, req *doma
 	if req.IsRedirectLink != nil {
 		everflowReq["is_redirect_link"] = *req.IsRedirectLink
 	}
-	
+
 	// For now, simulate the Everflow API call since we don't have the tracking API client generated
 	// In a real implementation, this would make an HTTP POST to /v1/networks/tracking/offers/clicks
-	
+
 	// Simulate the response
 	baseURL := "http://tracking-domain.everflow.test"
 	trackingPath := fmt.Sprintf("/%s/%s/", generateTrackingCode(), generateTrackingCode())
-	
+
 	// Build query parameters
 	params := []string{}
 	if req.SourceID != nil {
@@ -512,12 +512,12 @@ func (s *IntegrationService) GenerateTrackingLink(ctx context.Context, req *doma
 	if req.Sub5 != nil {
 		params = append(params, fmt.Sprintf("sub5=%s", *req.Sub5))
 	}
-	
+
 	generatedURL := baseURL + trackingPath
 	if len(params) > 0 {
 		generatedURL += "?" + joinParams(params)
 	}
-	
+
 	// Create provider data
 	providerData := &domain.EverflowTrackingLinkProviderData{
 		NetworkOfferID:           &networkOfferID,
@@ -529,12 +529,12 @@ func (s *IntegrationService) GenerateTrackingLink(ctx context.Context, req *doma
 		GeneratedURL:             &generatedURL,
 		CanAffiliateRunAllOffers: boolPtr(true),
 	}
-	
+
 	providerDataJSON, err := providerData.ToJSON()
 	if err != nil {
 		return nil, fmt.Errorf("failed to serialize provider data: %w", err)
 	}
-	
+
 	return &domain.TrackingLinkGenerationResponse{
 		GeneratedURL: generatedURL,
 		ProviderData: &providerDataJSON,
@@ -545,7 +545,7 @@ func (s *IntegrationService) GenerateTrackingLink(ctx context.Context, req *doma
 func (s *IntegrationService) GenerateTrackingLinkQR(ctx context.Context, req *domain.TrackingLinkGenerationRequest, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) ([]byte, error) {
 	// For now, simulate the Everflow QR API call since we don't have the tracking API client generated
 	// In a real implementation, this would make an HTTP POST to /v1/networks/tracking/offers/clicks/qr
-	
+
 	// Return a mock QR code (in real implementation, this would be a PNG image from Everflow)
 	return []byte("everflow-qr-code-png-data"), nil
 }

@@ -19,12 +19,12 @@ var _ MappedNullable = &Employee{}
 
 // Employee struct for Employee
 type Employee struct {
-	FirstName *string `json:"first_name,omitempty"`
-	LastName *string `json:"last_name,omitempty"`
-	Email *string `json:"email,omitempty"`
-	WorkPhone *string `json:"work_phone,omitempty"`
-	CellPhone *string `json:"cell_phone,omitempty"`
-	InstantMessagingId *int32 `json:"instant_messaging_id,omitempty"`
+	FirstName                  *string `json:"first_name,omitempty"`
+	LastName                   *string `json:"last_name,omitempty"`
+	Email                      *string `json:"email,omitempty"`
+	WorkPhone                  *string `json:"work_phone,omitempty"`
+	CellPhone                  *string `json:"cell_phone,omitempty"`
+	InstantMessagingId         *int32  `json:"instant_messaging_id,omitempty"`
 	InstantMessagingIdentifier *string `json:"instant_messaging_identifier,omitempty"`
 }
 
@@ -270,7 +270,7 @@ func (o *Employee) SetInstantMessagingIdentifier(v string) {
 }
 
 func (o Employee) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -338,5 +338,3 @@ func (v *NullableEmployee) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

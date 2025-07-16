@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // OffersAPIService OffersAPI service
 type OffersAPIService service
 
 type ApiCreateOfferRequest struct {
-	ctx context.Context
-	ApiService *OffersAPIService
+	ctx                context.Context
+	ApiService         *OffersAPIService
 	createOfferRequest *CreateOfferRequest
 }
 
@@ -43,24 +42,25 @@ CreateOffer Create an offer
 
 Create a new offer in the Everflow platform. Note that the payload for creating offers is complex.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateOfferRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateOfferRequest
 */
 func (a *OffersAPIService) CreateOffer(ctx context.Context) ApiCreateOfferRequest {
 	return ApiCreateOfferRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OfferResponse
+//
+//	@return OfferResponse
 func (a *OffersAPIService) CreateOfferExecute(r ApiCreateOfferRequest) (*OfferResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OfferResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *OfferResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OffersAPIService.CreateOffer")
@@ -148,9 +148,9 @@ func (a *OffersAPIService) CreateOfferExecute(r ApiCreateOfferRequest) (*OfferRe
 }
 
 type ApiGetOfferByIdRequest struct {
-	ctx context.Context
-	ApiService *OffersAPIService
-	offerId int32
+	ctx          context.Context
+	ApiService   *OffersAPIService
+	offerId      int32
 	relationship *string
 }
 
@@ -169,26 +169,27 @@ GetOfferById Find offer by ID
 
 Fetch the details of a single offer by its ID
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param offerId The ID of the offer you want to fetch
- @return ApiGetOfferByIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param offerId The ID of the offer you want to fetch
+	@return ApiGetOfferByIdRequest
 */
 func (a *OffersAPIService) GetOfferById(ctx context.Context, offerId int32) ApiGetOfferByIdRequest {
 	return ApiGetOfferByIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		offerId: offerId,
+		ctx:        ctx,
+		offerId:    offerId,
 	}
 }
 
 // Execute executes the request
-//  @return OfferResponse
+//
+//	@return OfferResponse
 func (a *OffersAPIService) GetOfferByIdExecute(r ApiGetOfferByIdRequest) (*OfferResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OfferResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *OfferResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OffersAPIService.GetOfferById")
@@ -275,9 +276,9 @@ func (a *OffersAPIService) GetOfferByIdExecute(r ApiGetOfferByIdRequest) (*Offer
 }
 
 type ApiUpdateOfferRequest struct {
-	ctx context.Context
-	ApiService *OffersAPIService
-	offerId int32
+	ctx                context.Context
+	ApiService         *OffersAPIService
+	offerId            int32
 	updateOfferRequest *UpdateOfferRequest
 }
 
@@ -295,26 +296,27 @@ UpdateOffer Update an offer
 
 Update an existing offer. Requires passing the entire offer object, not just the fields to update.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param offerId The ID of the offer you want to update
- @return ApiUpdateOfferRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param offerId The ID of the offer you want to update
+	@return ApiUpdateOfferRequest
 */
 func (a *OffersAPIService) UpdateOffer(ctx context.Context, offerId int32) ApiUpdateOfferRequest {
 	return ApiUpdateOfferRequest{
 		ApiService: a,
-		ctx: ctx,
-		offerId: offerId,
+		ctx:        ctx,
+		offerId:    offerId,
 	}
 }
 
 // Execute executes the request
-//  @return OfferResponse
+//
+//	@return OfferResponse
 func (a *OffersAPIService) UpdateOfferExecute(r ApiUpdateOfferRequest) (*OfferResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OfferResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *OfferResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OffersAPIService.UpdateOffer")

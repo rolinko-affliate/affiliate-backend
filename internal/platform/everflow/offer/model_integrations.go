@@ -19,12 +19,12 @@ var _ MappedNullable = &Integrations{}
 
 // Integrations struct for Integrations
 type Integrations struct {
-	Optizmo *IntegrationsOptizmo `json:"optizmo,omitempty"`
+	Optizmo           *IntegrationsOptizmo           `json:"optizmo,omitempty"`
 	TwentyfourMetrics *IntegrationsTwentyfourMetrics `json:"twentyfour_metrics,omitempty"`
-	Forensiq *IntegrationsForensiq `json:"forensiq,omitempty"`
-	Ezepo *IntegrationsEzepo `json:"ezepo,omitempty"`
-	Anura *IntegrationsAnura `json:"anura,omitempty"`
-	Invoca *IntegrationsInvoca `json:"invoca,omitempty"`
+	Forensiq          *IntegrationsForensiq          `json:"forensiq,omitempty"`
+	Ezepo             *IntegrationsEzepo             `json:"ezepo,omitempty"`
+	Anura             *IntegrationsAnura             `json:"anura,omitempty"`
+	Invoca            *IntegrationsInvoca            `json:"invoca,omitempty"`
 }
 
 // NewIntegrations instantiates a new Integrations object
@@ -237,7 +237,7 @@ func (o *Integrations) SetInvoca(v IntegrationsInvoca) {
 }
 
 func (o Integrations) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -302,5 +302,3 @@ func (v *NullableIntegrations) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

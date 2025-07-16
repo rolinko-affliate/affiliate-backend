@@ -19,7 +19,7 @@ func ProfileMiddleware(profileService service.ProfileService) gin.HandlerFunc {
 			c.AbortWithStatusJSON(http.StatusInternalServerError, gin.H{"error": "User ID not found in context"})
 			return
 		}
-		
+
 		userID, err := uuid.Parse(userIDStr.(string))
 		if err != nil {
 			log.Printf("Error parsing User ID: %v", err)

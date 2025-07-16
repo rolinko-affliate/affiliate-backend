@@ -214,14 +214,14 @@ func (s *UsageCalculationService) calculateFinancialMetrics(ctx context.Context,
 
 		// Store campaign breakdown
 		campaignBreakdown[fmt.Sprintf("campaign_%d", campaign.CampaignID)] = map[string]interface{}{
-			"name":             campaign.Name,
-			"spend":            campaignSpend,
-			"payout":           campaignPayout,
-			"clicks":           usage.Clicks,   // Simplified - should be per campaign
-			"conversions":      usage.Conversions, // Simplified - should be per campaign
-			"billing_model":    campaign.BillingModel,
-			"revenue_amount":   campaign.RevenueAmount,
-			"payout_amount":    campaign.PayoutAmount,
+			"name":           campaign.Name,
+			"spend":          campaignSpend,
+			"payout":         campaignPayout,
+			"clicks":         usage.Clicks,      // Simplified - should be per campaign
+			"conversions":    usage.Conversions, // Simplified - should be per campaign
+			"billing_model":  campaign.BillingModel,
+			"revenue_amount": campaign.RevenueAmount,
+			"payout_amount":  campaign.PayoutAmount,
 		}
 	}
 

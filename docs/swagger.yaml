@@ -1,5 +1,39 @@
 basePath: /api/v1
 definitions:
+  domain.AddExternalMessageRequest:
+    properties:
+      content:
+        maxLength: 5000
+        minLength: 1
+        type: string
+      conversation_id:
+        type: integer
+      external_message_id:
+        type: string
+      message_type:
+        enum:
+        - text
+        - system
+        - notification
+        type: string
+      metadata:
+        additionalProperties: true
+        type: object
+      sender_id:
+        type: string
+      sender_type:
+        enum:
+        - organization
+        - publisher
+        - system
+        type: string
+      sent_at:
+        type: string
+    required:
+    - content
+    - conversation_id
+    - sender_type
+    type: object
   domain.AddPublisherToListRequest:
     properties:
       notes:
@@ -494,6 +528,34 @@ definitions:
           type: object
         type: array
     type: object
+  domain.ConversationListResponse:
+    properties:
+      conversations:
+        items:
+          $ref: '#/definitions/domain.PublisherConversation'
+        type: array
+      page:
+        type: integer
+      page_size:
+        type: integer
+      total:
+        type: integer
+    type: object
+  domain.ConversationWithMessagesResponse:
+    properties:
+      conversation:
+        $ref: '#/definitions/domain.PublisherConversation'
+      messages:
+        items:
+          $ref: '#/definitions/domain.PublisherMessage'
+        type: array
+      page:
+        type: integer
+      page_size:
+        type: integer
+      total:
+        type: integer
+    type: object
   domain.CountryRankingData:
     properties:
       count:
@@ -524,6 +586,27 @@ definitions:
           type: object
         type: array
     type: object
+  domain.CreateConversationRequest:
+    properties:
+      initial_message:
+        maxLength: 5000
+        minLength: 1
+        type: string
+      list_id:
+        type: integer
+      publisher_domain:
+        maxLength: 255
+        minLength: 1
+        type: string
+      subject:
+        maxLength: 500
+        minLength: 1
+        type: string
+    required:
+    - initial_message
+    - publisher_domain
+    - subject
+    type: object
   domain.CreateFavoritePublisherListRequest:
     properties:
       description:
@@ -547,6 +630,45 @@ definitions:
         type: boolean
     required:
     - payment_method_id
+    type: object
+  domain.FavoritePublisherList:
+    properties:
+      created_at:
+        type: string
+      description:
+        type: string
+      items:
+        description: 'Optional: Include items when fetching with details'
+        items:
+          $ref: '#/definitions/domain.FavoritePublisherListItem'
+        type: array
+      list_id:
+        type: integer
+      name:
+        type: string
+      organization_id:
+        type: integer
+      updated_at:
+        type: string
+    type: object
+  domain.FavoritePublisherListItem:
+    properties:
+      added_at:
+        type: string
+      item_id:
+        type: integer
+      list_id:
+        type: integer
+      notes:
+        type: string
+      publisher:
+        allOf:
+        - $ref: '#/definitions/domain.AnalyticsPublisher'
+        description: 'Optional: Include publisher details when fetching with details'
+      publisher_domain:
+        type: string
+      status:
+        type: string
     type: object
   domain.Invoice:
     properties:
@@ -801,6 +923,65 @@ definitions:
       updated_at:
         type: string
     type: object
+  domain.PublisherConversation:
+    properties:
+      conversation_id:
+        type: integer
+      created_at:
+        type: string
+      last_message_at:
+        type: string
+      list:
+        allOf:
+        - $ref: '#/definitions/domain.FavoritePublisherList'
+        description: 'Optional: Include list details'
+      list_id:
+        type: integer
+      message_count:
+        description: Computed fields
+        type: integer
+      messages:
+        description: 'Optional: Include messages when fetching with details'
+        items:
+          $ref: '#/definitions/domain.PublisherMessage'
+        type: array
+      organization_id:
+        type: integer
+      publisher:
+        allOf:
+        - $ref: '#/definitions/domain.AnalyticsPublisher'
+        description: 'Optional: Include publisher details'
+      publisher_domain:
+        type: string
+      status:
+        type: string
+      subject:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  domain.PublisherMessage:
+    properties:
+      content:
+        type: string
+      conversation_id:
+        type: integer
+      external_message_id:
+        type: string
+      message_id:
+        type: integer
+      message_type:
+        type: string
+      metadata:
+        additionalProperties: true
+        type: object
+      sender_id:
+        type: string
+      sender_type:
+        type: string
+      sent_at:
+        type: string
+    type: object
   domain.RechargeRequest:
     properties:
       amount:
@@ -813,6 +994,24 @@ definitions:
         type: string
     required:
     - amount
+    type: object
+  domain.SendMessageRequest:
+    properties:
+      content:
+        maxLength: 5000
+        minLength: 1
+        type: string
+      message_type:
+        enum:
+        - text
+        - system
+        - notification
+        type: string
+      metadata:
+        additionalProperties: true
+        type: object
+    required:
+    - content
     type: object
   domain.SocialMediaData:
     properties:
@@ -979,6 +1178,17 @@ definitions:
         type: integer
       payment_terms_days:
         type: integer
+    type: object
+  domain.UpdateConversationStatusRequest:
+    properties:
+      status:
+        enum:
+        - active
+        - closed
+        - archived
+        type: string
+    required:
+    - status
     type: object
   domain.UpdateFavoritePublisherListRequest:
     properties:
@@ -3215,6 +3425,274 @@ paths:
       summary: Update publisher status in favorite list
       tags:
       - favorite-publisher-lists
+  /api/v1/publisher-messaging/conversations:
+    get:
+      description: Retrieves a paginated list of conversations for the organization
+      parameters:
+      - description: Filter by conversation status (active, closed)
+        in: query
+        name: status
+        type: string
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Page size (default: 20)'
+        in: query
+        name: page_size
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Conversations retrieved successfully
+          schema:
+            $ref: '#/definitions/domain.ConversationListResponse'
+        "401":
+          description: Organization ID not found in context
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      summary: Get conversations for organization
+      tags:
+      - Publisher Messaging
+    post:
+      consumes:
+      - application/json
+      description: Initiates a new conversation with a publisher from a favorite list
+      parameters:
+      - description: Conversation creation request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/domain.CreateConversationRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Conversation created successfully
+          schema:
+            $ref: '#/definitions/domain.PublisherConversation'
+        "400":
+          description: Invalid request body or validation error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "401":
+          description: Organization ID not found in context
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "404":
+          description: Publisher or favorite list not found
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "409":
+          description: Active conversation with publisher already exists
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      summary: Create a new conversation with a publisher
+      tags:
+      - Publisher Messaging
+  /api/v1/publisher-messaging/conversations/{conversation_id}:
+    delete:
+      description: Deletes a conversation and all associated messages
+      parameters:
+      - description: Conversation ID
+        in: path
+        name: conversation_id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "204":
+          description: Conversation deleted successfully
+        "400":
+          description: Invalid conversation ID
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "401":
+          description: Organization ID not found in context
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "404":
+          description: Conversation not found
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      summary: Delete conversation
+      tags:
+      - Publisher Messaging
+    get:
+      description: Retrieves a specific conversation along with its messages
+      parameters:
+      - description: Conversation ID
+        in: path
+        name: conversation_id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Conversation retrieved successfully
+          schema:
+            $ref: '#/definitions/domain.ConversationWithMessagesResponse'
+        "400":
+          description: Invalid conversation ID
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "401":
+          description: Organization ID not found in context
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "404":
+          description: Conversation not found
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      summary: Get conversation with messages
+      tags:
+      - Publisher Messaging
+  /api/v1/publisher-messaging/conversations/{conversation_id}/external-messages:
+    post:
+      consumes:
+      - application/json
+      description: Allows external services to add messages to existing conversations
+        (e.g., publisher replies)
+      parameters:
+      - description: Conversation ID
+        in: path
+        name: conversation_id
+        required: true
+        type: integer
+      - description: External message request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/domain.AddExternalMessageRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Message added successfully
+          schema:
+            $ref: '#/definitions/domain.PublisherMessage'
+        "400":
+          description: Invalid request body or conversation ID
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "404":
+          description: Conversation not found
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      summary: Add external message to conversation
+      tags:
+      - Publisher Messaging
+  /api/v1/publisher-messaging/conversations/{conversation_id}/messages:
+    post:
+      consumes:
+      - application/json
+      description: Adds a new message to an existing conversation
+      parameters:
+      - description: Conversation ID
+        in: path
+        name: conversation_id
+        required: true
+        type: integer
+      - description: Message request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/domain.SendMessageRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Message added successfully
+          schema:
+            $ref: '#/definitions/domain.PublisherMessage'
+        "400":
+          description: Invalid request body or conversation ID
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "401":
+          description: Organization ID not found in context
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "404":
+          description: Conversation not found
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      summary: Add message to conversation
+      tags:
+      - Publisher Messaging
+  /api/v1/publisher-messaging/conversations/{conversation_id}/status:
+    put:
+      consumes:
+      - application/json
+      description: Updates the status of a conversation (e.g., close conversation)
+      parameters:
+      - description: Conversation ID
+        in: path
+        name: conversation_id
+        required: true
+        type: integer
+      - description: Status update request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/domain.UpdateConversationStatusRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Conversation status updated successfully
+          schema:
+            $ref: '#/definitions/domain.PublisherConversation'
+        "400":
+          description: Invalid request body or conversation ID
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "401":
+          description: Organization ID not found in context
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "404":
+          description: Conversation not found
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      summary: Update conversation status
+      tags:
+      - Publisher Messaging
   /billing/config:
     put:
       consumes:

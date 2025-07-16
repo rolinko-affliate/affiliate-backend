@@ -88,7 +88,7 @@ func (h *PublisherMessagingHandler) CreateConversation(c *gin.Context) {
 // @Param status query string false "Filter by conversation status (active, closed)"
 // @Param page query int false "Page number (default: 1)"
 // @Param page_size query int false "Page size (default: 20)"
-// @Success 200 {object} domain.ConversationsResponse "Conversations retrieved successfully"
+// @Success 200 {object} domain.ConversationListResponse "Conversations retrieved successfully"
 // @Failure 401 {object} ErrorResponse "Organization ID not found in context"
 // @Failure 500 {object} ErrorResponse "Internal server error"
 // @Router /api/v1/publisher-messaging/conversations [get]
@@ -178,7 +178,7 @@ func (h *PublisherMessagingHandler) GetConversation(c *gin.Context) {
 // @Accept json
 // @Produce json
 // @Param conversation_id path int true "Conversation ID"
-// @Param request body domain.AddMessageRequest true "Message request"
+// @Param request body domain.SendMessageRequest true "Message request"
 // @Success 201 {object} domain.PublisherMessage "Message added successfully"
 // @Failure 400 {object} ErrorResponse "Invalid request body or conversation ID"
 // @Failure 401 {object} ErrorResponse "Organization ID not found in context"

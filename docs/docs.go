@@ -1941,6 +1941,410 @@ const docTemplate = `{
                 }
             }
         },
+        "/api/v1/publisher-messaging/conversations": {
+            "get": {
+                "description": "Retrieves a paginated list of conversations for the organization",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Publisher Messaging"
+                ],
+                "summary": "Get conversations for organization",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Filter by conversation status (active, closed)",
+                        "name": "status",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Page number (default: 1)",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Page size (default: 20)",
+                        "name": "page_size",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Conversations retrieved successfully",
+                        "schema": {
+                            "$ref": "#/definitions/domain.ConversationListResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Organization ID not found in context",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Initiates a new conversation with a publisher from a favorite list",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Publisher Messaging"
+                ],
+                "summary": "Create a new conversation with a publisher",
+                "parameters": [
+                    {
+                        "description": "Conversation creation request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.CreateConversationRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Conversation created successfully",
+                        "schema": {
+                            "$ref": "#/definitions/domain.PublisherConversation"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request body or validation error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Organization ID not found in context",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Publisher or favorite list not found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Active conversation with publisher already exists",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/publisher-messaging/conversations/{conversation_id}": {
+            "get": {
+                "description": "Retrieves a specific conversation along with its messages",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Publisher Messaging"
+                ],
+                "summary": "Get conversation with messages",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Conversation ID",
+                        "name": "conversation_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Conversation retrieved successfully",
+                        "schema": {
+                            "$ref": "#/definitions/domain.ConversationWithMessagesResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid conversation ID",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Organization ID not found in context",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Conversation not found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes a conversation and all associated messages",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Publisher Messaging"
+                ],
+                "summary": "Delete conversation",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Conversation ID",
+                        "name": "conversation_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Conversation deleted successfully"
+                    },
+                    "400": {
+                        "description": "Invalid conversation ID",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Organization ID not found in context",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Conversation not found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/publisher-messaging/conversations/{conversation_id}/external-messages": {
+            "post": {
+                "description": "Allows external services to add messages to existing conversations (e.g., publisher replies)",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Publisher Messaging"
+                ],
+                "summary": "Add external message to conversation",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Conversation ID",
+                        "name": "conversation_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "External message request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.AddExternalMessageRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Message added successfully",
+                        "schema": {
+                            "$ref": "#/definitions/domain.PublisherMessage"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request body or conversation ID",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Conversation not found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/publisher-messaging/conversations/{conversation_id}/messages": {
+            "post": {
+                "description": "Adds a new message to an existing conversation",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Publisher Messaging"
+                ],
+                "summary": "Add message to conversation",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Conversation ID",
+                        "name": "conversation_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Message request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.SendMessageRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Message added successfully",
+                        "schema": {
+                            "$ref": "#/definitions/domain.PublisherMessage"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request body or conversation ID",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Organization ID not found in context",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Conversation not found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/publisher-messaging/conversations/{conversation_id}/status": {
+            "put": {
+                "description": "Updates the status of a conversation (e.g., close conversation)",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Publisher Messaging"
+                ],
+                "summary": "Update conversation status",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Conversation ID",
+                        "name": "conversation_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Status update request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.UpdateConversationStatusRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Conversation status updated successfully",
+                        "schema": {
+                            "$ref": "#/definitions/domain.PublisherConversation"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request body or conversation ID",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Organization ID not found in context",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Conversation not found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/billing/config": {
             "put": {
                 "security": [
@@ -4628,6 +5032,53 @@ const docTemplate = `{
         }
     },
     "definitions": {
+        "domain.AddExternalMessageRequest": {
+            "type": "object",
+            "required": [
+                "content",
+                "conversation_id",
+                "sender_type"
+            ],
+            "properties": {
+                "content": {
+                    "type": "string",
+                    "maxLength": 5000,
+                    "minLength": 1
+                },
+                "conversation_id": {
+                    "type": "integer"
+                },
+                "external_message_id": {
+                    "type": "string"
+                },
+                "message_type": {
+                    "type": "string",
+                    "enum": [
+                        "text",
+                        "system",
+                        "notification"
+                    ]
+                },
+                "metadata": {
+                    "type": "object",
+                    "additionalProperties": true
+                },
+                "sender_id": {
+                    "type": "string"
+                },
+                "sender_type": {
+                    "type": "string",
+                    "enum": [
+                        "organization",
+                        "publisher",
+                        "system"
+                    ]
+                },
+                "sent_at": {
+                    "type": "string"
+                }
+            }
+        },
         "domain.AddPublisherToListRequest": {
             "type": "object",
             "required": [
@@ -5350,6 +5801,49 @@ const docTemplate = `{
                 }
             }
         },
+        "domain.ConversationListResponse": {
+            "type": "object",
+            "properties": {
+                "conversations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.PublisherConversation"
+                    }
+                },
+                "page": {
+                    "type": "integer"
+                },
+                "page_size": {
+                    "type": "integer"
+                },
+                "total": {
+                    "type": "integer"
+                }
+            }
+        },
+        "domain.ConversationWithMessagesResponse": {
+            "type": "object",
+            "properties": {
+                "conversation": {
+                    "$ref": "#/definitions/domain.PublisherConversation"
+                },
+                "messages": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.PublisherMessage"
+                    }
+                },
+                "page": {
+                    "type": "integer"
+                },
+                "page_size": {
+                    "type": "integer"
+                },
+                "total": {
+                    "type": "integer"
+                }
+            }
+        },
         "domain.CountryRankingData": {
             "type": "object",
             "properties": {
@@ -5397,6 +5891,34 @@ const docTemplate = `{
                 }
             }
         },
+        "domain.CreateConversationRequest": {
+            "type": "object",
+            "required": [
+                "initial_message",
+                "publisher_domain",
+                "subject"
+            ],
+            "properties": {
+                "initial_message": {
+                    "type": "string",
+                    "maxLength": 5000,
+                    "minLength": 1
+                },
+                "list_id": {
+                    "type": "integer"
+                },
+                "publisher_domain": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "minLength": 1
+                },
+                "subject": {
+                    "type": "string",
+                    "maxLength": 500,
+                    "minLength": 1
+                }
+            }
+        },
         "domain.CreateFavoritePublisherListRequest": {
             "type": "object",
             "required": [
@@ -5429,6 +5951,67 @@ const docTemplate = `{
                 },
                 "set_as_default": {
                     "type": "boolean"
+                }
+            }
+        },
+        "domain.FavoritePublisherList": {
+            "type": "object",
+            "properties": {
+                "created_at": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "items": {
+                    "description": "Optional: Include items when fetching with details",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.FavoritePublisherListItem"
+                    }
+                },
+                "list_id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "organization_id": {
+                    "type": "integer"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.FavoritePublisherListItem": {
+            "type": "object",
+            "properties": {
+                "added_at": {
+                    "type": "string"
+                },
+                "item_id": {
+                    "type": "integer"
+                },
+                "list_id": {
+                    "type": "integer"
+                },
+                "notes": {
+                    "type": "string"
+                },
+                "publisher": {
+                    "description": "Optional: Include publisher details when fetching with details",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/domain.AnalyticsPublisher"
+                        }
+                    ]
+                },
+                "publisher_domain": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
                 }
             }
         },
@@ -5792,6 +6375,98 @@ const docTemplate = `{
                 }
             }
         },
+        "domain.PublisherConversation": {
+            "type": "object",
+            "properties": {
+                "conversation_id": {
+                    "type": "integer"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "last_message_at": {
+                    "type": "string"
+                },
+                "list": {
+                    "description": "Optional: Include list details",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/domain.FavoritePublisherList"
+                        }
+                    ]
+                },
+                "list_id": {
+                    "type": "integer"
+                },
+                "message_count": {
+                    "description": "Computed fields",
+                    "type": "integer"
+                },
+                "messages": {
+                    "description": "Optional: Include messages when fetching with details",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.PublisherMessage"
+                    }
+                },
+                "organization_id": {
+                    "type": "integer"
+                },
+                "publisher": {
+                    "description": "Optional: Include publisher details",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/domain.AnalyticsPublisher"
+                        }
+                    ]
+                },
+                "publisher_domain": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "subject": {
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.PublisherMessage": {
+            "type": "object",
+            "properties": {
+                "content": {
+                    "type": "string"
+                },
+                "conversation_id": {
+                    "type": "integer"
+                },
+                "external_message_id": {
+                    "type": "string"
+                },
+                "message_id": {
+                    "type": "integer"
+                },
+                "message_type": {
+                    "type": "string"
+                },
+                "metadata": {
+                    "type": "object",
+                    "additionalProperties": true
+                },
+                "sender_id": {
+                    "type": "string"
+                },
+                "sender_type": {
+                    "type": "string"
+                },
+                "sent_at": {
+                    "type": "string"
+                }
+            }
+        },
         "domain.RechargeRequest": {
             "type": "object",
             "required": [
@@ -5809,6 +6484,31 @@ const docTemplate = `{
                 },
                 "payment_method_id": {
                     "type": "string"
+                }
+            }
+        },
+        "domain.SendMessageRequest": {
+            "type": "object",
+            "required": [
+                "content"
+            ],
+            "properties": {
+                "content": {
+                    "type": "string",
+                    "maxLength": 5000,
+                    "minLength": 1
+                },
+                "message_type": {
+                    "type": "string",
+                    "enum": [
+                        "text",
+                        "system",
+                        "notification"
+                    ]
+                },
+                "metadata": {
+                    "type": "object",
+                    "additionalProperties": true
                 }
             }
         },
@@ -6044,6 +6744,22 @@ const docTemplate = `{
                 },
                 "payment_terms_days": {
                     "type": "integer"
+                }
+            }
+        },
+        "domain.UpdateConversationStatusRequest": {
+            "type": "object",
+            "required": [
+                "status"
+            ],
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "enum": [
+                        "active",
+                        "closed",
+                        "archived"
+                    ]
                 }
             }
         },

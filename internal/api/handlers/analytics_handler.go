@@ -176,8 +176,8 @@ func (h *AnalyticsHandler) GetPublisherByID(c *gin.Context) {
 // @Failure 500 {object} ErrorResponse "Internal server error"
 // @Router /api/v1/analytics/affiliates/domain/{domain} [get]
 func (h *AnalyticsHandler) GetPublisherByDomain(c *gin.Context) {
-	domain := c.Param("domain")
-	if domain == "" {
+	domainParam := c.Param("domain")
+	if domainParam == "" {
 		c.JSON(http.StatusBadRequest, ErrorResponse{
 			Error:   "Invalid domain",
 			Details: "Domain parameter is required",
@@ -185,7 +185,7 @@ func (h *AnalyticsHandler) GetPublisherByDomain(c *gin.Context) {
 		return
 	}
 
-	publisher, err := h.analyticsService.GetPublisherByDomain(c.Request.Context(), domain)
+	publisher, err := h.analyticsService.GetPublisherByDomain(c.Request.Context(), domainParam)
 	if err != nil {
 		if errors.Is(err, domain.ErrNotFound) {
 			c.JSON(http.StatusNotFound, ErrorResponse{

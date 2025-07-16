@@ -9,16 +9,17 @@ import (
 
 // RouterOptions contains dependencies for the router
 type RouterOptions struct {
-	ProfileHandler      *handlers.ProfileHandler
-	ProfileService      service.ProfileService
-	OrganizationHandler *handlers.OrganizationHandler
-	AdvertiserHandler   *handlers.AdvertiserHandler
-	AffiliateHandler    *handlers.AffiliateHandler
-	CampaignHandler     *handlers.CampaignHandler
-	TrackingLinkHandler *handlers.TrackingLinkHandler
-	AnalyticsHandler    *handlers.AnalyticsHandler
-	BillingHandler      *handlers.BillingHandler
-	WebhookHandler      *handlers.WebhookHandler
+	ProfileHandler               *handlers.ProfileHandler
+	ProfileService               service.ProfileService
+	OrganizationHandler          *handlers.OrganizationHandler
+	AdvertiserHandler            *handlers.AdvertiserHandler
+	AffiliateHandler             *handlers.AffiliateHandler
+	CampaignHandler              *handlers.CampaignHandler
+	TrackingLinkHandler          *handlers.TrackingLinkHandler
+	AnalyticsHandler             *handlers.AnalyticsHandler
+	FavoritePublisherListHandler *handlers.FavoritePublisherListHandler
+	BillingHandler               *handlers.BillingHandler
+	WebhookHandler               *handlers.WebhookHandler
 }
 
 // SetupRouter sets up the API router
@@ -179,6 +180,27 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		analytics.GET("/affiliates/:id", opts.AnalyticsHandler.GetPublisherByID)
 		analytics.GET("/affiliates/domain/:domain", opts.AnalyticsHandler.GetPublisherByDomain)
 		analytics.POST("/affiliates", opts.AnalyticsHandler.CreatePublisher) // For future data management
+	}
+
+	// --- Favorite Publisher Lists Routes ---
+	favoritePublisherLists := v1.Group("/favorite-publisher-lists")
+	favoritePublisherLists.Use(rbacMW("AdvertiserManager", "AffiliateManager", "Admin")) // Allow all managers and admins
+	{
+		// List management
+		favoritePublisherLists.POST("", opts.FavoritePublisherListHandler.CreateList)
+		favoritePublisherLists.GET("", opts.FavoritePublisherListHandler.GetLists)
+		favoritePublisherLists.GET("/:list_id", opts.FavoritePublisherListHandler.GetListByID)
+		favoritePublisherLists.PUT("/:list_id", opts.FavoritePublisherListHandler.UpdateList)
+		favoritePublisherLists.DELETE("/:list_id", opts.FavoritePublisherListHandler.DeleteList)
+
+		// Publisher management within lists
+		favoritePublisherLists.POST("/:list_id/publishers", opts.FavoritePublisherListHandler.AddPublisherToList)
+		favoritePublisherLists.GET("/:list_id/publishers", opts.FavoritePublisherListHandler.GetListItems)
+		favoritePublisherLists.PUT("/:list_id/publishers/:domain", opts.FavoritePublisherListHandler.UpdatePublisherInList)
+		favoritePublisherLists.DELETE("/:list_id/publishers/:domain", opts.FavoritePublisherListHandler.RemovePublisherFromList)
+
+		// Utility endpoints
+		favoritePublisherLists.GET("/search", opts.FavoritePublisherListHandler.GetListsContainingPublisher)
 	}
 
 	// --- Billing Routes ---

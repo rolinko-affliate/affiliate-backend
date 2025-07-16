@@ -237,6 +237,7 @@ func main() {
 	trackingLinkRepo := repository.NewTrackingLinkRepository(repository.DB)
 	trackingLinkProviderMappingRepo := repository.NewTrackingLinkProviderMappingRepository(repository.DB)
 	analyticsRepo := repository.NewAnalyticsRepository(repository.DB)
+	favoritePublisherListRepo := repository.NewFavoritePublisherListRepository(repository.DB)
 	
 	// Initialize Billing Repositories
 	billingAccountRepo := repository.NewPgxBillingAccountRepository(repository.DB)
@@ -302,6 +303,7 @@ func main() {
 	campaignService := service.NewCampaignService(campaignRepo)
 	trackingLinkService := service.NewTrackingLinkService(trackingLinkRepo, trackingLinkProviderMappingRepo, campaignRepo, affiliateRepo, campaignProviderMappingRepo, affiliateProviderMappingRepo, integrationService)
 	analyticsService := service.NewAnalyticsService(analyticsRepo)
+	favoritePublisherListService := service.NewFavoritePublisherListService(favoritePublisherListRepo, analyticsRepo)
 	
 	// Initialize Billing Services
 	billingService := service.NewBillingService(billingAccountRepo, paymentMethodRepo, transactionRepo, organizationRepo, stripeService)
@@ -316,6 +318,7 @@ func main() {
 	campaignHandler := handlers.NewCampaignHandler(campaignService)
 	trackingLinkHandler := handlers.NewTrackingLinkHandler(trackingLinkService)
 	analyticsHandler := handlers.NewAnalyticsHandler(analyticsService)
+	favoritePublisherListHandler := handlers.NewFavoritePublisherListHandler(favoritePublisherListService)
 	
 	// Initialize Billing Handlers
 	billingHandler := handlers.NewBillingHandler(billingService, profileService)
@@ -323,16 +326,17 @@ func main() {
 
 	// Setup Router
 	router := api.SetupRouter(api.RouterOptions{
-		ProfileHandler:      profileHandler,
-		ProfileService:      profileService,
-		OrganizationHandler: organizationHandler,
-		AdvertiserHandler:   advertiserHandler,
-		AffiliateHandler:    affiliateHandler,
-		CampaignHandler:     campaignHandler,
-		TrackingLinkHandler: trackingLinkHandler,
-		AnalyticsHandler:    analyticsHandler,
-		BillingHandler:      billingHandler,
-		WebhookHandler:      webhookHandler,
+		ProfileHandler:               profileHandler,
+		ProfileService:               profileService,
+		OrganizationHandler:          organizationHandler,
+		AdvertiserHandler:            advertiserHandler,
+		AffiliateHandler:             affiliateHandler,
+		CampaignHandler:              campaignHandler,
+		TrackingLinkHandler:          trackingLinkHandler,
+		AnalyticsHandler:             analyticsHandler,
+		FavoritePublisherListHandler: favoritePublisherListHandler,
+		BillingHandler:               billingHandler,
+		WebhookHandler:               webhookHandler,
 	})
 
 	// Start Server

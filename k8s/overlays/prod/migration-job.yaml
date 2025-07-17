@@ -24,7 +24,7 @@ spec:
       serviceAccountName: saas-bff-ksa
       containers:
       - name: migration
-        image: europe-west1-docker.pkg.dev/jinko-test/jinko-test-docker-repo/saas-app:0.0.10
+        image: europe-west1-docker.pkg.dev/jinko-test/jinko-test-docker-repo/saas-app:0.0.11
         command: ["/bin/sh"]
         args:
           - "-c"

@@ -39,12 +39,11 @@ type Campaign struct {
 	MonthlyClickCap      *int  `json:"monthly_click_cap,omitempty" db:"monthly_click_cap"`
 	GlobalClickCap       *int  `json:"global_click_cap,omitempty" db:"global_click_cap"`
 
-	// Payout and revenue configuration
-	BillingModel     *string  `json:"billing_model,omitempty" db:"billing_model"`         // 'click' or 'conversion'
-	PayoutStructure  *string  `json:"payout_structure,omitempty" db:"payout_structure"`   // 'fixed' or 'percentage' (only for conversion)
-	PayoutAmount     *float64 `json:"payout_amount,omitempty" db:"payout_amount"`         // Fixed amount or percentage value
-	RevenueStructure *string  `json:"revenue_structure,omitempty" db:"revenue_structure"` // 'fixed' or 'percentage' (only for conversion)
-	RevenueAmount    *float64 `json:"revenue_amount,omitempty" db:"revenue_amount"`       // Fixed amount or percentage value
+	// Simplified billing configuration
+	FixedRevenue               *float64 `json:"fixed_revenue,omitempty" db:"fixed_revenue"`                             // Fixed revenue amount the platform earns per conversion
+	FixedClickAmount           *float64 `json:"fixed_click_amount,omitempty" db:"fixed_click_amount"`                   // Fixed amount paid to affiliates per click
+	FixedConversionAmount      *float64 `json:"fixed_conversion_amount,omitempty" db:"fixed_conversion_amount"`         // Fixed amount paid to affiliates per conversion
+	PercentageConversionAmount *float64 `json:"percentage_conversion_amount,omitempty" db:"percentage_conversion_amount"` // Percentage of revenue paid to affiliates per conversion (0-100)
 
 	CreatedAt time.Time `json:"created_at" db:"created_at"`
 	UpdatedAt time.Time `json:"updated_at" db:"updated_at"`

@@ -206,7 +206,7 @@ func (r *favoritePublisherListRepository) RemovePublisherFromList(ctx context.Co
 // GetListItems retrieves all items in a favorite list
 func (r *favoritePublisherListRepository) GetListItems(ctx context.Context, listID int64) ([]*domain.FavoritePublisherListItem, error) {
 	query := `
-		SELECT item_id, list_id, publisher_domain, notes, added_at
+		SELECT item_id, list_id, publisher_domain, notes, status, added_at
 		FROM favorite_publisher_list_items
 		WHERE list_id = $1
 		ORDER BY added_at DESC`
@@ -220,7 +220,7 @@ func (r *favoritePublisherListRepository) GetListItems(ctx context.Context, list
 	var items []*domain.FavoritePublisherListItem
 	for rows.Next() {
 		item := &domain.FavoritePublisherListItem{}
-		err := rows.Scan(&item.ItemID, &item.ListID, &item.PublisherDomain, &item.Notes, &item.AddedAt)
+		err := rows.Scan(&item.ItemID, &item.ListID, &item.PublisherDomain, &item.Notes, &item.Status, &item.AddedAt)
 		if err != nil {
 			return nil, fmt.Errorf("failed to scan list item: %w", err)
 		}
@@ -234,7 +234,7 @@ func (r *favoritePublisherListRepository) GetListItems(ctx context.Context, list
 func (r *favoritePublisherListRepository) GetListItemsWithPublisherDetails(ctx context.Context, listID int64) ([]*domain.FavoritePublisherListItem, error) {
 	query := `
 		SELECT 
-			fpli.item_id, fpli.list_id, fpli.publisher_domain, fpli.notes, fpli.added_at,
+			fpli.item_id, fpli.list_id, fpli.publisher_domain, fpli.notes, fpli.status, fpli.added_at,
 			ap.id, ap.domain, ap.description, ap.favicon_image_url, ap.screenshot_image_url,
 			ap.known, ap.relevance, ap.traffic_score, ap.promotype, ap.created_at, ap.updated_at
 		FROM favorite_publisher_list_items fpli
@@ -265,7 +265,7 @@ func (r *favoritePublisherListRepository) GetListItemsWithPublisherDetails(ctx c
 		var publisherUpdatedAt sql.NullTime
 
 		err := rows.Scan(
-			&item.ItemID, &item.ListID, &item.PublisherDomain, &item.Notes, &item.AddedAt,
+			&item.ItemID, &item.ListID, &item.PublisherDomain, &item.Notes, &item.Status, &item.AddedAt,
 			&publisherID, &publisherDomain, &publisherDescription, &publisherFavicon, &publisherScreenshot,
 			&publisherKnown, &publisherRelevance, &publisherTrafficScore, &publisherPromotype,
 			&publisherCreatedAt, &publisherUpdatedAt)

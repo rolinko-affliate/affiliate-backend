@@ -39,12 +39,11 @@ type CreateCampaignRequest struct {
 	MonthlyClickCap      *int  `json:"monthly_click_cap,omitempty"`
 	GlobalClickCap       *int  `json:"global_click_cap,omitempty"`
 
-	// Payout and revenue configuration
-	BillingModel     *string  `json:"billing_model,omitempty" binding:"omitempty,oneof=click conversion"`
-	PayoutStructure  *string  `json:"payout_structure,omitempty" binding:"omitempty,oneof=fixed percentage"`
-	PayoutAmount     *float64 `json:"payout_amount,omitempty" binding:"omitempty,min=0"`
-	RevenueStructure *string  `json:"revenue_structure,omitempty" binding:"omitempty,oneof=fixed percentage"`
-	RevenueAmount    *float64 `json:"revenue_amount,omitempty" binding:"omitempty,min=0"`
+	// Simplified billing configuration
+	FixedRevenue               *float64 `json:"fixed_revenue,omitempty" binding:"omitempty,min=0"`
+	FixedClickAmount           *float64 `json:"fixed_click_amount,omitempty" binding:"omitempty,min=0"`
+	FixedConversionAmount      *float64 `json:"fixed_conversion_amount,omitempty" binding:"omitempty,min=0"`
+	PercentageConversionAmount *float64 `json:"percentage_conversion_amount,omitempty" binding:"omitempty,min=0,max=100"`
 }
 
 // UpdateCampaignRequest represents the request to update an existing campaign
@@ -78,12 +77,11 @@ type UpdateCampaignRequest struct {
 	MonthlyClickCap      *int  `json:"monthly_click_cap,omitempty"`
 	GlobalClickCap       *int  `json:"global_click_cap,omitempty"`
 
-	// Payout and revenue configuration
-	BillingModel     *string  `json:"billing_model,omitempty" binding:"omitempty,oneof=click conversion"`
-	PayoutStructure  *string  `json:"payout_structure,omitempty" binding:"omitempty,oneof=fixed percentage"`
-	PayoutAmount     *float64 `json:"payout_amount,omitempty" binding:"omitempty,min=0"`
-	RevenueStructure *string  `json:"revenue_structure,omitempty" binding:"omitempty,oneof=fixed percentage"`
-	RevenueAmount    *float64 `json:"revenue_amount,omitempty" binding:"omitempty,min=0"`
+	// Simplified billing configuration
+	FixedRevenue               *float64 `json:"fixed_revenue,omitempty" binding:"omitempty,min=0"`
+	FixedClickAmount           *float64 `json:"fixed_click_amount,omitempty" binding:"omitempty,min=0"`
+	FixedConversionAmount      *float64 `json:"fixed_conversion_amount,omitempty" binding:"omitempty,min=0"`
+	PercentageConversionAmount *float64 `json:"percentage_conversion_amount,omitempty" binding:"omitempty,min=0,max=100"`
 }
 
 // CampaignResponse represents the response for campaign operations
@@ -120,12 +118,11 @@ type CampaignResponse struct {
 	MonthlyClickCap      *int  `json:"monthly_click_cap,omitempty"`
 	GlobalClickCap       *int  `json:"global_click_cap,omitempty"`
 
-	// Payout and revenue configuration
-	BillingModel     *string  `json:"billing_model,omitempty"`
-	PayoutStructure  *string  `json:"payout_structure,omitempty"`
-	PayoutAmount     *float64 `json:"payout_amount,omitempty"`
-	RevenueStructure *string  `json:"revenue_structure,omitempty"`
-	RevenueAmount    *float64 `json:"revenue_amount,omitempty"`
+	// Simplified billing configuration
+	FixedRevenue               *float64 `json:"fixed_revenue,omitempty"`
+	FixedClickAmount           *float64 `json:"fixed_click_amount,omitempty"`
+	FixedConversionAmount      *float64 `json:"fixed_conversion_amount,omitempty"`
+	PercentageConversionAmount *float64 `json:"percentage_conversion_amount,omitempty"`
 
 	CreatedAt time.Time `json:"created_at"`
 	UpdatedAt time.Time `json:"updated_at"`
@@ -173,12 +170,11 @@ func (r *CreateCampaignRequest) ToCampaignDomain() *domain.Campaign {
 		MonthlyClickCap:      r.MonthlyClickCap,
 		GlobalClickCap:       r.GlobalClickCap,
 
-		// Payout and revenue configuration
-		BillingModel:     r.BillingModel,
-		PayoutStructure:  r.PayoutStructure,
-		PayoutAmount:     r.PayoutAmount,
-		RevenueStructure: r.RevenueStructure,
-		RevenueAmount:    r.RevenueAmount,
+		// Simplified billing configuration
+		FixedRevenue:               r.FixedRevenue,
+		FixedClickAmount:           r.FixedClickAmount,
+		FixedConversionAmount:      r.FixedConversionAmount,
+		PercentageConversionAmount: r.PercentageConversionAmount,
 	}
 }
 
@@ -213,12 +209,11 @@ func (r *UpdateCampaignRequest) UpdateCampaignDomain(campaign *domain.Campaign) 
 	campaign.MonthlyClickCap = r.MonthlyClickCap
 	campaign.GlobalClickCap = r.GlobalClickCap
 
-	// Payout and revenue configuration
-	campaign.BillingModel = r.BillingModel
-	campaign.PayoutStructure = r.PayoutStructure
-	campaign.PayoutAmount = r.PayoutAmount
-	campaign.RevenueStructure = r.RevenueStructure
-	campaign.RevenueAmount = r.RevenueAmount
+	// Simplified billing configuration
+	campaign.FixedRevenue = r.FixedRevenue
+	campaign.FixedClickAmount = r.FixedClickAmount
+	campaign.FixedConversionAmount = r.FixedConversionAmount
+	campaign.PercentageConversionAmount = r.PercentageConversionAmount
 }
 
 // FromCampaignDomain converts domain.Campaign to CampaignResponse
@@ -256,12 +251,11 @@ func FromCampaignDomain(campaign *domain.Campaign) *CampaignResponse {
 		MonthlyClickCap:      campaign.MonthlyClickCap,
 		GlobalClickCap:       campaign.GlobalClickCap,
 
-		// Payout and revenue configuration
-		BillingModel:     campaign.BillingModel,
-		PayoutStructure:  campaign.PayoutStructure,
-		PayoutAmount:     campaign.PayoutAmount,
-		RevenueStructure: campaign.RevenueStructure,
-		RevenueAmount:    campaign.RevenueAmount,
+		// Simplified billing configuration
+		FixedRevenue:               campaign.FixedRevenue,
+		FixedClickAmount:           campaign.FixedClickAmount,
+		FixedConversionAmount:      campaign.FixedConversionAmount,
+		PercentageConversionAmount: campaign.PercentageConversionAmount,
 
 		CreatedAt: campaign.CreatedAt,
 		UpdatedAt: campaign.UpdatedAt,

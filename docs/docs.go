@@ -7285,10 +7285,6 @@ const docTemplate = `{
                 "advertiser_id": {
                     "type": "integer"
                 },
-                "billing_model": {
-                    "description": "Payout and revenue configuration",
-                    "type": "string"
-                },
                 "campaign_id": {
                     "type": "integer"
                 },
@@ -7317,6 +7313,16 @@ const docTemplate = `{
                 "end_date": {
                     "type": "string"
                 },
+                "fixed_click_amount": {
+                    "type": "number"
+                },
+                "fixed_conversion_amount": {
+                    "type": "number"
+                },
+                "fixed_revenue": {
+                    "description": "Simplified billing configuration",
+                    "type": "number"
+                },
                 "global_click_cap": {
                     "type": "integer"
                 },
@@ -7342,19 +7348,10 @@ const docTemplate = `{
                 "organization_id": {
                     "type": "integer"
                 },
-                "payout_amount": {
+                "percentage_conversion_amount": {
                     "type": "number"
-                },
-                "payout_structure": {
-                    "type": "string"
                 },
                 "preview_url": {
-                    "type": "string"
-                },
-                "revenue_amount": {
-                    "type": "number"
-                },
-                "revenue_structure": {
                     "type": "string"
                 },
                 "session_definition": {
@@ -7480,14 +7477,6 @@ const docTemplate = `{
                 "advertiser_id": {
                     "type": "integer"
                 },
-                "billing_model": {
-                    "description": "Payout and revenue configuration",
-                    "type": "string",
-                    "enum": [
-                        "click",
-                        "conversion"
-                    ]
-                },
                 "conversion_method": {
                     "type": "string",
                     "enum": [
@@ -7514,6 +7503,19 @@ const docTemplate = `{
                 "end_date": {
                     "type": "string"
                 },
+                "fixed_click_amount": {
+                    "type": "number",
+                    "minimum": 0
+                },
+                "fixed_conversion_amount": {
+                    "type": "number",
+                    "minimum": 0
+                },
+                "fixed_revenue": {
+                    "description": "Simplified billing configuration",
+                    "type": "number",
+                    "minimum": 0
+                },
                 "global_click_cap": {
                     "type": "integer"
                 },
@@ -7539,30 +7541,13 @@ const docTemplate = `{
                 "organization_id": {
                     "type": "integer"
                 },
-                "payout_amount": {
+                "percentage_conversion_amount": {
                     "type": "number",
+                    "maximum": 100,
                     "minimum": 0
-                },
-                "payout_structure": {
-                    "type": "string",
-                    "enum": [
-                        "fixed",
-                        "percentage"
-                    ]
                 },
                 "preview_url": {
                     "type": "string"
-                },
-                "revenue_amount": {
-                    "type": "number",
-                    "minimum": 0
-                },
-                "revenue_structure": {
-                    "type": "string",
-                    "enum": [
-                        "fixed",
-                        "percentage"
-                    ]
                 },
                 "session_definition": {
                     "type": "string",
@@ -8030,14 +8015,6 @@ const docTemplate = `{
                 "status"
             ],
             "properties": {
-                "billing_model": {
-                    "description": "Payout and revenue configuration",
-                    "type": "string",
-                    "enum": [
-                        "click",
-                        "conversion"
-                    ]
-                },
                 "conversion_method": {
                     "type": "string",
                     "enum": [
@@ -8064,6 +8041,19 @@ const docTemplate = `{
                 "end_date": {
                     "type": "string"
                 },
+                "fixed_click_amount": {
+                    "type": "number",
+                    "minimum": 0
+                },
+                "fixed_conversion_amount": {
+                    "type": "number",
+                    "minimum": 0
+                },
+                "fixed_revenue": {
+                    "description": "Simplified billing configuration",
+                    "type": "number",
+                    "minimum": 0
+                },
                 "global_click_cap": {
                     "type": "integer"
                 },
@@ -8086,30 +8076,13 @@ const docTemplate = `{
                 "name": {
                     "type": "string"
                 },
-                "payout_amount": {
+                "percentage_conversion_amount": {
                     "type": "number",
+                    "maximum": 100,
                     "minimum": 0
-                },
-                "payout_structure": {
-                    "type": "string",
-                    "enum": [
-                        "fixed",
-                        "percentage"
-                    ]
                 },
                 "preview_url": {
                     "type": "string"
-                },
-                "revenue_amount": {
-                    "type": "number",
-                    "minimum": 0
-                },
-                "revenue_structure": {
-                    "type": "string",
-                    "enum": [
-                        "fixed",
-                        "percentage"
-                    ]
                 },
                 "session_definition": {
                     "type": "string",

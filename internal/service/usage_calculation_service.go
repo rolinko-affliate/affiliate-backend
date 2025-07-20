@@ -187,26 +187,36 @@ func (s *UsageCalculationService) calculateFinancialMetrics(ctx context.Context,
 
 	// Calculate spend per campaign
 	for _, campaign := range campaigns {
-		// Calculate based on billing model and payout structure
+		// Calculate based on simplified billing fields
 		var campaignSpend decimal.Decimal
 		var campaignPayout decimal.Decimal
 
-		if campaign.BillingModel != nil && *campaign.BillingModel == "click" {
-			// Charge per click
-			if campaign.RevenueAmount != nil {
-				campaignSpend = decimal.NewFromFloat(*campaign.RevenueAmount).Mul(decimal.NewFromInt(int64(usage.Clicks)))
-			}
-			if campaign.PayoutAmount != nil {
-				campaignPayout = decimal.NewFromFloat(*campaign.PayoutAmount).Mul(decimal.NewFromInt(int64(usage.Clicks)))
-			}
-		} else if campaign.BillingModel != nil && *campaign.BillingModel == "conversion" {
-			// Charge per conversion
-			if campaign.RevenueAmount != nil {
-				campaignSpend = decimal.NewFromFloat(*campaign.RevenueAmount).Mul(decimal.NewFromInt(int64(usage.Conversions)))
-			}
-			if campaign.PayoutAmount != nil {
-				campaignPayout = decimal.NewFromFloat(*campaign.PayoutAmount).Mul(decimal.NewFromInt(int64(usage.Conversions)))
-			}
+		// Fixed revenue (regardless of performance)
+		if campaign.FixedRevenue != nil {
+			campaignSpend = campaignSpend.Add(decimal.NewFromFloat(*campaign.FixedRevenue))
+		}
+
+		// Click-based billing
+		if campaign.FixedClickAmount != nil {
+			clickAmount := decimal.NewFromFloat(*campaign.FixedClickAmount).Mul(decimal.NewFromInt(int64(usage.Clicks)))
+			campaignSpend = campaignSpend.Add(clickAmount)
+			campaignPayout = campaignPayout.Add(clickAmount)
+		}
+
+		// Conversion-based billing (fixed amount per conversion)
+		if campaign.FixedConversionAmount != nil {
+			conversionAmount := decimal.NewFromFloat(*campaign.FixedConversionAmount).Mul(decimal.NewFromInt(int64(usage.Conversions)))
+			campaignSpend = campaignSpend.Add(conversionAmount)
+			campaignPayout = campaignPayout.Add(conversionAmount)
+		}
+
+		// Percentage-based conversion billing
+		if campaign.PercentageConversionAmount != nil {
+			// For percentage billing, we need conversion value data which might not be available
+			// For now, we'll treat it as a fixed amount per conversion
+			percentageAmount := decimal.NewFromFloat(*campaign.PercentageConversionAmount).Mul(decimal.NewFromInt(int64(usage.Conversions)))
+			campaignSpend = campaignSpend.Add(percentageAmount)
+			campaignPayout = campaignPayout.Add(percentageAmount)
 		}
 
 		totalAdvertiserSpend = totalAdvertiserSpend.Add(campaignSpend)
@@ -214,14 +224,15 @@ func (s *UsageCalculationService) calculateFinancialMetrics(ctx context.Context,
 
 		// Store campaign breakdown
 		campaignBreakdown[fmt.Sprintf("campaign_%d", campaign.CampaignID)] = map[string]interface{}{
-			"name":           campaign.Name,
-			"spend":          campaignSpend,
-			"payout":         campaignPayout,
-			"clicks":         usage.Clicks,      // Simplified - should be per campaign
-			"conversions":    usage.Conversions, // Simplified - should be per campaign
-			"billing_model":  campaign.BillingModel,
-			"revenue_amount": campaign.RevenueAmount,
-			"payout_amount":  campaign.PayoutAmount,
+			"name":                         campaign.Name,
+			"spend":                        campaignSpend,
+			"payout":                       campaignPayout,
+			"clicks":                       usage.Clicks,      // Simplified - should be per campaign
+			"conversions":                  usage.Conversions, // Simplified - should be per campaign
+			"fixed_revenue":                campaign.FixedRevenue,
+			"fixed_click_amount":           campaign.FixedClickAmount,
+			"fixed_conversion_amount":      campaign.FixedConversionAmount,
+			"percentage_conversion_amount": campaign.PercentageConversionAmount,
 		}
 	}
 

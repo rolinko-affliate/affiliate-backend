@@ -2,8 +2,6 @@ module github.com/affiliate-backend
 
 go 1.23.0
 
-toolchain go1.23.5
-
 require (
 	github.com/gin-contrib/cors v1.4.0
 	github.com/gin-gonic/gin v1.9.1
@@ -11,8 +9,10 @@ require (
 	github.com/golang-migrate/migrate/v4 v4.16.2
 	github.com/google/uuid v1.3.0
 	github.com/jackc/pgx/v5 v5.4.3
+	github.com/shopspring/decimal v1.3.1
 	github.com/spf13/viper v1.16.0
 	github.com/stretchr/testify v1.9.0
+	github.com/stripe/stripe-go/v76 v76.25.0
 	github.com/swaggo/swag v1.16.1
 )
 

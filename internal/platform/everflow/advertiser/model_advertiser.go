@@ -66,7 +66,7 @@ type Advertiser struct {
 	// Creation timestamp
 	TimeCreated *int32 `json:"time_created,omitempty"`
 	// Last save timestamp
-	TimeSaved *int32 `json:"time_saved,omitempty"`
+	TimeSaved    *int32                  `json:"time_saved,omitempty"`
 	Relationship *AdvertiserRelationship `json:"relationship,omitempty"`
 }
 
@@ -407,6 +407,7 @@ func (o *Advertiser) HasIsExposePublisherReportingData() bool {
 func (o *Advertiser) SetIsExposePublisherReportingData(v bool) {
 	o.IsExposePublisherReportingData.Set(&v)
 }
+
 // SetIsExposePublisherReportingDataNil sets the value for IsExposePublisherReportingData to be an explicit nil
 func (o *Advertiser) SetIsExposePublisherReportingDataNil() {
 	o.IsExposePublisherReportingData.Set(nil)
@@ -898,7 +899,7 @@ func (o *Advertiser) SetRelationship(v AdvertiserRelationship) {
 }
 
 func (o Advertiser) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1020,5 +1021,3 @@ func (v *NullableAdvertiser) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

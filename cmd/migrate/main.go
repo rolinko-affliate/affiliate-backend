@@ -33,8 +33,7 @@ const (
 func main() {
 	fmt.Println("Database Migration Tool")
 	fmt.Println("----------------------")
-	
-	
+
 	// Load Configuration
 	config.LoadConfig()
 	appConf := config.AppConfig
@@ -213,7 +212,6 @@ func getMigrationInfo(m *migrate.Migrate) (*MigrationInfo, error) {
 
 	return info, nil
 }
-
 
 func printUsage() {
 	fmt.Println("Usage: migrate [command] [options]")

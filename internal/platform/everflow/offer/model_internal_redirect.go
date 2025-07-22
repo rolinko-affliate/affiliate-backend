@@ -28,8 +28,8 @@ type InternalRedirect struct {
 	// Campaign ID to redirect to
 	RedirectNetworkCampaignId *int32 `json:"redirect_network_campaign_id,omitempty"`
 	// Priority or weight value
-	RoutingValue *int32 `json:"routing_value,omitempty"`
-	Ruleset *Ruleset `json:"ruleset,omitempty"`
+	RoutingValue *int32   `json:"routing_value,omitempty"`
+	Ruleset      *Ruleset `json:"ruleset,omitempty"`
 	// Fail traffic categories
 	Categories []string `json:"categories,omitempty"`
 	// Whether to pay affiliate
@@ -424,7 +424,7 @@ func (o *InternalRedirect) SetNetworkAffiliateIds(v []int32) {
 }
 
 func (o InternalRedirect) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -504,5 +504,3 @@ func (v *NullableInternalRedirect) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

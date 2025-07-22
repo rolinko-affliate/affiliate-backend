@@ -11,8 +11,8 @@ API version: 1.0.0
 package offer
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -154,23 +154,23 @@ type CreateOfferRequest struct {
 	// How fail traffic is handled
 	RedirectRoutingMethod *string `json:"redirect_routing_method,omitempty"`
 	// Redirect distribution mechanism
-	RedirectInternalRoutingType *string `json:"redirect_internal_routing_type,omitempty"`
-	Meta *Meta `json:"meta,omitempty"`
-	Creatives []Creative `json:"creatives,omitempty"`
-	InternalRedirects []InternalRedirect `json:"internal_redirects,omitempty"`
-	Ruleset *Ruleset `json:"ruleset,omitempty"`
-	TrafficFilters []TrafficFilter `json:"traffic_filters,omitempty"`
-	Email *EmailSettings `json:"email,omitempty"`
-	EmailOptout *EmailOptoutSettings `json:"email_optout,omitempty"`
+	RedirectInternalRoutingType *string              `json:"redirect_internal_routing_type,omitempty"`
+	Meta                        *Meta                `json:"meta,omitempty"`
+	Creatives                   []Creative           `json:"creatives,omitempty"`
+	InternalRedirects           []InternalRedirect   `json:"internal_redirects,omitempty"`
+	Ruleset                     *Ruleset             `json:"ruleset,omitempty"`
+	TrafficFilters              []TrafficFilter      `json:"traffic_filters,omitempty"`
+	Email                       *EmailSettings       `json:"email,omitempty"`
+	EmailOptout                 *EmailOptoutSettings `json:"email_optout,omitempty"`
 	// Labels for organizing offers
 	Labels []string `json:"labels,omitempty"`
 	// Names of the source
-	SourceNames []string `json:"source_names,omitempty"`
-	PayoutRevenue []PayoutRevenue `json:"payout_revenue"`
-	ThumbnailFile *ThumbnailFile `json:"thumbnail_file,omitempty"`
-	Integrations *Integrations `json:"integrations,omitempty"`
-	Channels []Channel `json:"channels,omitempty"`
-	RequirementKpis []RequirementKPI `json:"requirement_kpis,omitempty"`
+	SourceNames                   []string                       `json:"source_names,omitempty"`
+	PayoutRevenue                 []PayoutRevenue                `json:"payout_revenue"`
+	ThumbnailFile                 *ThumbnailFile                 `json:"thumbnail_file,omitempty"`
+	Integrations                  *Integrations                  `json:"integrations,omitempty"`
+	Channels                      []Channel                      `json:"channels,omitempty"`
+	RequirementKpis               []RequirementKPI               `json:"requirement_kpis,omitempty"`
 	RequirementTrackingParameters []RequirementTrackingParameter `json:"requirement_tracking_parameters,omitempty"`
 	// Email attribution method
 	EmailAttributionMethod *string `json:"email_attribution_method,omitempty"`
@@ -3039,7 +3039,7 @@ func (o *CreateOfferRequest) SetAttributionMethod(v string) {
 }
 
 func (o CreateOfferRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -3310,10 +3310,10 @@ func (o *CreateOfferRequest) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -3369,5 +3369,3 @@ func (v *NullableCreateOfferRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

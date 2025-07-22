@@ -19,18 +19,18 @@ var _ MappedNullable = &Ruleset{}
 
 // Ruleset Targeting rules for traffic
 type Ruleset struct {
-	Platforms []map[string]interface{} `json:"platforms,omitempty"`
-	DeviceTypes []map[string]interface{} `json:"device_types,omitempty"`
-	OsVersions []map[string]interface{} `json:"os_versions,omitempty"`
-	Browsers []map[string]interface{} `json:"browsers,omitempty"`
-	Languages []map[string]interface{} `json:"languages,omitempty"`
-	Countries []map[string]interface{} `json:"countries,omitempty"`
-	Regions []map[string]interface{} `json:"regions,omitempty"`
-	Cities []map[string]interface{} `json:"cities,omitempty"`
-	Dmas []map[string]interface{} `json:"dmas,omitempty"`
-	MobileCarriers []map[string]interface{} `json:"mobile_carriers,omitempty"`
+	Platforms       []map[string]interface{} `json:"platforms,omitempty"`
+	DeviceTypes     []map[string]interface{} `json:"device_types,omitempty"`
+	OsVersions      []map[string]interface{} `json:"os_versions,omitempty"`
+	Browsers        []map[string]interface{} `json:"browsers,omitempty"`
+	Languages       []map[string]interface{} `json:"languages,omitempty"`
+	Countries       []map[string]interface{} `json:"countries,omitempty"`
+	Regions         []map[string]interface{} `json:"regions,omitempty"`
+	Cities          []map[string]interface{} `json:"cities,omitempty"`
+	Dmas            []map[string]interface{} `json:"dmas,omitempty"`
+	MobileCarriers  []map[string]interface{} `json:"mobile_carriers,omitempty"`
 	ConnectionTypes []map[string]interface{} `json:"connection_types,omitempty"`
-	Ips []map[string]interface{} `json:"ips,omitempty"`
+	Ips             []map[string]interface{} `json:"ips,omitempty"`
 	// Block proxy traffic
 	IsBlockProxy *bool `json:"is_block_proxy,omitempty"`
 	// Enable day parting
@@ -38,11 +38,11 @@ type Ruleset struct {
 	// Day parting timezone setting
 	DayPartingApplyTo *string `json:"day_parting_apply_to,omitempty"`
 	// Timezone ID for day parting
-	DayPartingTimezoneId *int32 `json:"day_parting_timezone_id,omitempty"`
-	DaysParting []map[string]interface{} `json:"days_parting,omitempty"`
-	Isps []map[string]interface{} `json:"isps,omitempty"`
-	Brands []map[string]interface{} `json:"brands,omitempty"`
-	PostalCodes []map[string]interface{} `json:"postal_codes,omitempty"`
+	DayPartingTimezoneId *int32                   `json:"day_parting_timezone_id,omitempty"`
+	DaysParting          []map[string]interface{} `json:"days_parting,omitempty"`
+	Isps                 []map[string]interface{} `json:"isps,omitempty"`
+	Brands               []map[string]interface{} `json:"brands,omitempty"`
+	PostalCodes          []map[string]interface{} `json:"postal_codes,omitempty"`
 }
 
 // NewRuleset instantiates a new Ruleset object
@@ -711,7 +711,7 @@ func (o *Ruleset) SetPostalCodes(v []map[string]interface{}) {
 }
 
 func (o Ruleset) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -818,5 +818,3 @@ func (v *NullableRuleset) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

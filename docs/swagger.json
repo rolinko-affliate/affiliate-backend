@@ -1657,6 +1657,68 @@
                 }
             }
         },
+        "/api/v1/analytics/affiliates/domain/{domain}": {
+            "get": {
+                "description": "Retrieve detailed analytics data for a specific publisher (affiliate) by domain name",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Analytics"
+                ],
+                "summary": "Get publisher analytics data by domain",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Publisher domain name",
+                        "name": "domain",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Publisher analytics data",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/handlers.SuccessResponse"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#/definitions/domain.AnalyticsPublisherResponse"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request - invalid domain",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Publisher not found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/api/v1/analytics/affiliates/{id}": {
             "get": {
                 "description": "Retrieve detailed analytics data for a specific publisher (affiliate)",
@@ -1793,6 +1855,859 @@
                     },
                     "500": {
                         "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/favorite-publisher-lists/{list_id}/publishers/{domain}/status": {
+            "patch": {
+                "description": "Updates the status of a publisher in a favorite list (added -\u003e contacted -\u003e accepted)",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "favorite-publisher-lists"
+                ],
+                "summary": "Update publisher status in favorite list",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "List ID",
+                        "name": "list_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Publisher domain",
+                        "name": "domain",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Status update request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.UpdatePublisherStatusRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Status updated successfully",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "List or publisher not found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/publisher-messaging/conversations": {
+            "get": {
+                "description": "Retrieves a paginated list of conversations for the organization",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Publisher Messaging"
+                ],
+                "summary": "Get conversations for organization",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Filter by conversation status (active, closed)",
+                        "name": "status",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Page number (default: 1)",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Page size (default: 20)",
+                        "name": "page_size",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Conversations retrieved successfully",
+                        "schema": {
+                            "$ref": "#/definitions/domain.ConversationListResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Organization ID not found in context",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Initiates a new conversation with a publisher from a favorite list",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Publisher Messaging"
+                ],
+                "summary": "Create a new conversation with a publisher",
+                "parameters": [
+                    {
+                        "description": "Conversation creation request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.CreateConversationRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Conversation created successfully",
+                        "schema": {
+                            "$ref": "#/definitions/domain.PublisherConversation"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request body or validation error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Organization ID not found in context",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Publisher or favorite list not found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Active conversation with publisher already exists",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/publisher-messaging/conversations/{conversation_id}": {
+            "get": {
+                "description": "Retrieves a specific conversation along with its messages",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Publisher Messaging"
+                ],
+                "summary": "Get conversation with messages",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Conversation ID",
+                        "name": "conversation_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Conversation retrieved successfully",
+                        "schema": {
+                            "$ref": "#/definitions/domain.ConversationWithMessagesResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid conversation ID",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Organization ID not found in context",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Conversation not found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes a conversation and all associated messages",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Publisher Messaging"
+                ],
+                "summary": "Delete conversation",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Conversation ID",
+                        "name": "conversation_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Conversation deleted successfully"
+                    },
+                    "400": {
+                        "description": "Invalid conversation ID",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Organization ID not found in context",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Conversation not found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/publisher-messaging/conversations/{conversation_id}/external-messages": {
+            "post": {
+                "description": "Allows external services to add messages to existing conversations (e.g., publisher replies)",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Publisher Messaging"
+                ],
+                "summary": "Add external message to conversation",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Conversation ID",
+                        "name": "conversation_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "External message request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.AddExternalMessageRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Message added successfully",
+                        "schema": {
+                            "$ref": "#/definitions/domain.PublisherMessage"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request body or conversation ID",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Conversation not found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/publisher-messaging/conversations/{conversation_id}/messages": {
+            "post": {
+                "description": "Adds a new message to an existing conversation",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Publisher Messaging"
+                ],
+                "summary": "Add message to conversation",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Conversation ID",
+                        "name": "conversation_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Message request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.SendMessageRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Message added successfully",
+                        "schema": {
+                            "$ref": "#/definitions/domain.PublisherMessage"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request body or conversation ID",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Organization ID not found in context",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Conversation not found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/publisher-messaging/conversations/{conversation_id}/status": {
+            "put": {
+                "description": "Updates the status of a conversation (e.g., close conversation)",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Publisher Messaging"
+                ],
+                "summary": "Update conversation status",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Conversation ID",
+                        "name": "conversation_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Status update request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.UpdateConversationStatusRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Conversation status updated successfully",
+                        "schema": {
+                            "$ref": "#/definitions/domain.PublisherConversation"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request body or conversation ID",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Organization ID not found in context",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Conversation not found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/billing/config": {
+            "put": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Update billing configuration for the organization",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "billing"
+                ],
+                "summary": "Update billing configuration",
+                "parameters": [
+                    {
+                        "description": "Billing configuration",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.UpdateBillingConfigRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.BillingAccount"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/billing/dashboard": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Get billing dashboard data for the authenticated user's organization",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "billing"
+                ],
+                "summary": "Get billing dashboard",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.BillingDashboardResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/billing/payment-methods": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Add a new payment method for the organization",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "billing"
+                ],
+                "summary": "Add payment method",
+                "parameters": [
+                    {
+                        "description": "Payment method details",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.CreatePaymentMethodRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/domain.StripePaymentMethod"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/billing/payment-methods/{id}": {
+            "delete": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Remove a payment method from the organization",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "billing"
+                ],
+                "summary": "Remove payment method",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Payment Method ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/billing/recharge": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Add funds to the organization's account",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "billing"
+                ],
+                "summary": "Recharge account",
+                "parameters": [
+                    {
+                        "description": "Recharge details",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.RechargeRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/domain.Transaction"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/billing/transactions": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Get transaction history for the organization",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "billing"
+                ],
+                "summary": "Get transaction history",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "default": 20,
+                        "description": "Limit",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "default": 0,
+                        "description": "Offset",
+                        "name": "offset",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/domain.Transaction"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
                         "schema": {
                             "$ref": "#/definitions/handlers.ErrorResponse"
                         }
@@ -2043,6 +2958,620 @@
                     },
                     "403": {
                         "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/favorite-publisher-lists": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Retrieves all favorite publisher lists for the user's organization with statistics",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "favorite-publisher-lists"
+                ],
+                "summary": "Get all favorite publisher lists",
+                "responses": {
+                    "200": {
+                        "description": "message: string, data: []domain.FavoritePublisherListWithStats",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Creates a new favorite publisher list for the user's organization",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "favorite-publisher-lists"
+                ],
+                "summary": "Create a new favorite publisher list",
+                "parameters": [
+                    {
+                        "description": "Create list request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.CreateFavoritePublisherListRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "message: string, data: domain.FavoritePublisherList",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/favorite-publisher-lists/search": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Retrieves all favorite publisher lists that contain a specific publisher domain",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "favorite-publisher-lists"
+                ],
+                "summary": "Get lists containing publisher",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Publisher domain",
+                        "name": "domain",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "message: string, data: []domain.FavoritePublisherList",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/favorite-publisher-lists/{list_id}": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Retrieves a specific favorite publisher list by ID",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "favorite-publisher-lists"
+                ],
+                "summary": "Get favorite publisher list by ID",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "List ID",
+                        "name": "list_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "message: string, data: domain.FavoritePublisherList",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Updates a favorite publisher list's name and/or description",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "favorite-publisher-lists"
+                ],
+                "summary": "Update favorite publisher list",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "List ID",
+                        "name": "list_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Update list request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.UpdateFavoritePublisherListRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "message: string, data: domain.FavoritePublisherList",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Deletes a favorite publisher list and all its items",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "favorite-publisher-lists"
+                ],
+                "summary": "Delete favorite publisher list",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "List ID",
+                        "name": "list_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "message: string",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/favorite-publisher-lists/{list_id}/publishers": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Retrieves all publisher items in a favorite publisher list",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "favorite-publisher-lists"
+                ],
+                "summary": "Get favorite list items",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "List ID",
+                        "name": "list_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "Include publisher details from analytics",
+                        "name": "include_details",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "message: string, data: []domain.FavoritePublisherListItem",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Adds a publisher domain to a favorite publisher list",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "favorite-publisher-lists"
+                ],
+                "summary": "Add publisher to favorite list",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "List ID",
+                        "name": "list_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Add publisher request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.AddPublisherToListRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "message: string, data: domain.FavoritePublisherListItem",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/favorite-publisher-lists/{list_id}/publishers/{domain}": {
+            "put": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Updates the notes for a publisher in a favorite publisher list",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "favorite-publisher-lists"
+                ],
+                "summary": "Update publisher notes in favorite list",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "List ID",
+                        "name": "list_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Publisher domain",
+                        "name": "domain",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Update publisher request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.UpdatePublisherInListRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "message: string",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Removes a publisher domain from a favorite publisher list",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "favorite-publisher-lists"
+                ],
+                "summary": "Remove publisher from favorite list",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "List ID",
+                        "name": "list_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Publisher domain",
+                        "name": "domain",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "message: string",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
                         "schema": {
                             "$ref": "#/definitions/handlers.ErrorResponse"
                         }
@@ -3497,6 +5026,78 @@
         }
     },
     "definitions": {
+        "domain.AddExternalMessageRequest": {
+            "type": "object",
+            "required": [
+                "content",
+                "conversation_id",
+                "sender_type"
+            ],
+            "properties": {
+                "content": {
+                    "type": "string",
+                    "maxLength": 5000,
+                    "minLength": 1
+                },
+                "conversation_id": {
+                    "type": "integer"
+                },
+                "external_message_id": {
+                    "type": "string"
+                },
+                "message_type": {
+                    "type": "string",
+                    "enum": [
+                        "text",
+                        "system",
+                        "notification"
+                    ]
+                },
+                "metadata": {
+                    "type": "object",
+                    "additionalProperties": true
+                },
+                "sender_id": {
+                    "type": "string"
+                },
+                "sender_type": {
+                    "type": "string",
+                    "enum": [
+                        "organization",
+                        "publisher",
+                        "system"
+                    ]
+                },
+                "sent_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.AddPublisherToListRequest": {
+            "type": "object",
+            "required": [
+                "publisher_domain"
+            ],
+            "properties": {
+                "notes": {
+                    "type": "string",
+                    "maxLength": 1000
+                },
+                "publisher_domain": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "minLength": 1
+                },
+                "status": {
+                    "type": "string",
+                    "enum": [
+                        "added",
+                        "contacted",
+                        "accepted"
+                    ]
+                }
+            }
+        },
         "domain.Advertiser": {
             "type": "object",
             "properties": {
@@ -3910,6 +5511,100 @@
                 }
             }
         },
+        "domain.BillingAccount": {
+            "type": "object",
+            "properties": {
+                "auto_recharge_amount": {
+                    "type": "number"
+                },
+                "auto_recharge_enabled": {
+                    "type": "boolean"
+                },
+                "auto_recharge_threshold": {
+                    "type": "number"
+                },
+                "balance": {
+                    "description": "Balance and Credit",
+                    "type": "number"
+                },
+                "billing_account_id": {
+                    "type": "integer"
+                },
+                "billing_address": {
+                    "type": "object",
+                    "additionalProperties": true
+                },
+                "billing_email": {
+                    "type": "string"
+                },
+                "billing_mode": {
+                    "description": "Billing Configuration",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/domain.BillingMode"
+                        }
+                    ]
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "credit_limit": {
+                    "type": "number"
+                },
+                "currency": {
+                    "type": "string"
+                },
+                "default_payment_method_id": {
+                    "description": "Payment Configuration",
+                    "type": "string"
+                },
+                "invoice_day_of_month": {
+                    "description": "Invoice Configuration",
+                    "type": "integer"
+                },
+                "organization_id": {
+                    "type": "integer"
+                },
+                "payment_terms_days": {
+                    "type": "integer"
+                },
+                "status": {
+                    "description": "Status and Metadata",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/domain.BillingAccountStatus"
+                        }
+                    ]
+                },
+                "stripe_account_id": {
+                    "type": "string"
+                },
+                "stripe_customer_id": {
+                    "description": "Stripe Integration",
+                    "type": "string"
+                },
+                "tax_info": {
+                    "type": "object",
+                    "additionalProperties": true
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.BillingAccountStatus": {
+            "type": "string",
+            "enum": [
+                "active",
+                "suspended",
+                "closed"
+            ],
+            "x-enum-varnames": [
+                "BillingAccountStatusActive",
+                "BillingAccountStatusSuspended",
+                "BillingAccountStatusClosed"
+            ]
+        },
         "domain.BillingAddress": {
             "type": "object",
             "properties": {
@@ -3933,6 +5628,38 @@
                 },
                 "state": {
                     "type": "string"
+                }
+            }
+        },
+        "domain.BillingDashboardResponse": {
+            "type": "object",
+            "properties": {
+                "billing_account": {
+                    "$ref": "#/definitions/domain.BillingAccount"
+                },
+                "current_balance": {
+                    "type": "number"
+                },
+                "monthly_spend": {
+                    "type": "number"
+                },
+                "payment_methods": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.StripePaymentMethod"
+                    }
+                },
+                "pending_invoices": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.Invoice"
+                    }
+                },
+                "recent_transactions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.Transaction"
+                    }
                 }
             }
         },
@@ -4003,6 +5730,21 @@
                 "BillingFrequencyOther"
             ]
         },
+        "domain.BillingMode": {
+            "type": "string",
+            "enum": [
+                "prepaid",
+                "postpaid"
+            ],
+            "x-enum-comments": {
+                "BillingModePostpaid": "Monthly invoicing",
+                "BillingModePrepaid": "Pay-as-you-go with balance"
+            },
+            "x-enum-varnames": [
+                "BillingModePrepaid",
+                "BillingModePostpaid"
+            ]
+        },
         "domain.BillingSchedule": {
             "type": "object",
             "properties": {
@@ -4053,6 +5795,49 @@
                 }
             }
         },
+        "domain.ConversationListResponse": {
+            "type": "object",
+            "properties": {
+                "conversations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.PublisherConversation"
+                    }
+                },
+                "page": {
+                    "type": "integer"
+                },
+                "page_size": {
+                    "type": "integer"
+                },
+                "total": {
+                    "type": "integer"
+                }
+            }
+        },
+        "domain.ConversationWithMessagesResponse": {
+            "type": "object",
+            "properties": {
+                "conversation": {
+                    "$ref": "#/definitions/domain.PublisherConversation"
+                },
+                "messages": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.PublisherMessage"
+                    }
+                },
+                "page": {
+                    "type": "integer"
+                },
+                "page_size": {
+                    "type": "integer"
+                },
+                "total": {
+                    "type": "integer"
+                }
+            }
+        },
         "domain.CountryRankingData": {
             "type": "object",
             "properties": {
@@ -4099,6 +5884,257 @@
                     }
                 }
             }
+        },
+        "domain.CreateConversationRequest": {
+            "type": "object",
+            "required": [
+                "initial_message",
+                "publisher_domain",
+                "subject"
+            ],
+            "properties": {
+                "initial_message": {
+                    "type": "string",
+                    "maxLength": 5000,
+                    "minLength": 1
+                },
+                "list_id": {
+                    "type": "integer"
+                },
+                "publisher_domain": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "minLength": 1
+                },
+                "subject": {
+                    "type": "string",
+                    "maxLength": 500,
+                    "minLength": 1
+                }
+            }
+        },
+        "domain.CreateFavoritePublisherListRequest": {
+            "type": "object",
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "maxLength": 1000
+                },
+                "name": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "minLength": 1
+                }
+            }
+        },
+        "domain.CreatePaymentMethodRequest": {
+            "type": "object",
+            "required": [
+                "payment_method_id"
+            ],
+            "properties": {
+                "nickname": {
+                    "type": "string"
+                },
+                "payment_method_id": {
+                    "description": "Stripe Payment Method ID",
+                    "type": "string"
+                },
+                "set_as_default": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "domain.FavoritePublisherList": {
+            "type": "object",
+            "properties": {
+                "created_at": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "items": {
+                    "description": "Optional: Include items when fetching with details",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.FavoritePublisherListItem"
+                    }
+                },
+                "list_id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "organization_id": {
+                    "type": "integer"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.FavoritePublisherListItem": {
+            "type": "object",
+            "properties": {
+                "added_at": {
+                    "type": "string"
+                },
+                "item_id": {
+                    "type": "integer"
+                },
+                "list_id": {
+                    "type": "integer"
+                },
+                "notes": {
+                    "type": "string"
+                },
+                "publisher": {
+                    "description": "Optional: Include publisher details when fetching with details",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/domain.AnalyticsPublisher"
+                        }
+                    ]
+                },
+                "publisher_domain": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.Invoice": {
+            "type": "object",
+            "properties": {
+                "amount_due": {
+                    "type": "number"
+                },
+                "amount_paid": {
+                    "type": "number"
+                },
+                "billing_account_id": {
+                    "type": "integer"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "currency": {
+                    "type": "string"
+                },
+                "due_date": {
+                    "type": "string"
+                },
+                "invoice_date": {
+                    "description": "Dates",
+                    "type": "string"
+                },
+                "invoice_id": {
+                    "type": "integer"
+                },
+                "invoice_number": {
+                    "description": "Invoice Details",
+                    "type": "string"
+                },
+                "line_items": {
+                    "description": "Invoice Content",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.InvoiceLineItem"
+                    }
+                },
+                "metadata": {
+                    "description": "Metadata",
+                    "type": "object",
+                    "additionalProperties": true
+                },
+                "notes": {
+                    "type": "string"
+                },
+                "organization_id": {
+                    "type": "integer"
+                },
+                "paid_at": {
+                    "type": "string"
+                },
+                "period_end": {
+                    "type": "string"
+                },
+                "period_start": {
+                    "description": "Billing Period",
+                    "type": "string"
+                },
+                "status": {
+                    "description": "Status",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/domain.InvoiceStatus"
+                        }
+                    ]
+                },
+                "stripe_invoice_id": {
+                    "description": "Stripe Integration",
+                    "type": "string"
+                },
+                "subtotal": {
+                    "description": "Financial Details",
+                    "type": "number"
+                },
+                "tax_amount": {
+                    "type": "number"
+                },
+                "total_amount": {
+                    "type": "number"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.InvoiceLineItem": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "number"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "metadata": {
+                    "type": "object",
+                    "additionalProperties": true
+                },
+                "quantity": {
+                    "type": "number"
+                },
+                "unit_price": {
+                    "type": "number"
+                }
+            }
+        },
+        "domain.InvoiceStatus": {
+            "type": "string",
+            "enum": [
+                "draft",
+                "open",
+                "paid",
+                "void",
+                "uncollectible",
+                "overdue"
+            ],
+            "x-enum-varnames": [
+                "InvoiceStatusDraft",
+                "InvoiceStatusOpen",
+                "InvoiceStatusPaid",
+                "InvoiceStatusVoid",
+                "InvoiceStatusUncollectible",
+                "InvoiceStatusOverdue"
+            ]
         },
         "domain.KeywordData": {
             "type": "object",
@@ -4262,6 +6298,21 @@
                 "PaymentDetailsTypeOther"
             ]
         },
+        "domain.PaymentMethodStatus": {
+            "type": "string",
+            "enum": [
+                "active",
+                "inactive",
+                "expired",
+                "failed"
+            ],
+            "x-enum-varnames": [
+                "PaymentMethodStatusActive",
+                "PaymentMethodStatusInactive",
+                "PaymentMethodStatusExpired",
+                "PaymentMethodStatusFailed"
+            ]
+        },
         "domain.PaymentType": {
             "type": "string",
             "enum": [
@@ -4318,6 +6369,143 @@
                 }
             }
         },
+        "domain.PublisherConversation": {
+            "type": "object",
+            "properties": {
+                "conversation_id": {
+                    "type": "integer"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "last_message_at": {
+                    "type": "string"
+                },
+                "list": {
+                    "description": "Optional: Include list details",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/domain.FavoritePublisherList"
+                        }
+                    ]
+                },
+                "list_id": {
+                    "type": "integer"
+                },
+                "message_count": {
+                    "description": "Computed fields",
+                    "type": "integer"
+                },
+                "messages": {
+                    "description": "Optional: Include messages when fetching with details",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.PublisherMessage"
+                    }
+                },
+                "organization_id": {
+                    "type": "integer"
+                },
+                "publisher": {
+                    "description": "Optional: Include publisher details",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/domain.AnalyticsPublisher"
+                        }
+                    ]
+                },
+                "publisher_domain": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "subject": {
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.PublisherMessage": {
+            "type": "object",
+            "properties": {
+                "content": {
+                    "type": "string"
+                },
+                "conversation_id": {
+                    "type": "integer"
+                },
+                "external_message_id": {
+                    "type": "string"
+                },
+                "message_id": {
+                    "type": "integer"
+                },
+                "message_type": {
+                    "type": "string"
+                },
+                "metadata": {
+                    "type": "object",
+                    "additionalProperties": true
+                },
+                "sender_id": {
+                    "type": "string"
+                },
+                "sender_type": {
+                    "type": "string"
+                },
+                "sent_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.RechargeRequest": {
+            "type": "object",
+            "required": [
+                "amount"
+            ],
+            "properties": {
+                "amount": {
+                    "type": "number"
+                },
+                "currency": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "payment_method_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.SendMessageRequest": {
+            "type": "object",
+            "required": [
+                "content"
+            ],
+            "properties": {
+                "content": {
+                    "type": "string",
+                    "maxLength": 5000,
+                    "minLength": 1
+                },
+                "message_type": {
+                    "type": "string",
+                    "enum": [
+                        "text",
+                        "system",
+                        "notification"
+                    ]
+                },
+                "metadata": {
+                    "type": "object",
+                    "additionalProperties": true
+                }
+            }
+        },
         "domain.SocialMediaData": {
             "type": "object",
             "properties": {
@@ -4335,6 +6523,276 @@
                     "additionalProperties": {
                         "type": "string"
                     }
+                }
+            }
+        },
+        "domain.StripePaymentMethod": {
+            "type": "object",
+            "properties": {
+                "account_holder_type": {
+                    "type": "string"
+                },
+                "bank_name": {
+                    "description": "Bank Account Details",
+                    "type": "string"
+                },
+                "billing_account_id": {
+                    "type": "integer"
+                },
+                "brand": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "exp_month": {
+                    "type": "integer"
+                },
+                "exp_year": {
+                    "type": "integer"
+                },
+                "is_default": {
+                    "description": "Status and Configuration",
+                    "type": "boolean"
+                },
+                "last4": {
+                    "type": "string"
+                },
+                "metadata": {
+                    "type": "object",
+                    "additionalProperties": true
+                },
+                "nickname": {
+                    "description": "Metadata",
+                    "type": "string"
+                },
+                "organization_id": {
+                    "type": "integer"
+                },
+                "payment_method_id": {
+                    "type": "integer"
+                },
+                "status": {
+                    "$ref": "#/definitions/domain.PaymentMethodStatus"
+                },
+                "stripe_payment_method_id": {
+                    "description": "Stripe Integration",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "Payment Method Details",
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.Transaction": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "number"
+                },
+                "balance_after": {
+                    "type": "number"
+                },
+                "balance_before": {
+                    "description": "Balance Tracking",
+                    "type": "number"
+                },
+                "billing_account_id": {
+                    "type": "integer"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "currency": {
+                    "type": "string"
+                },
+                "description": {
+                    "description": "Metadata",
+                    "type": "string"
+                },
+                "metadata": {
+                    "type": "object",
+                    "additionalProperties": true
+                },
+                "organization_id": {
+                    "type": "integer"
+                },
+                "processed_at": {
+                    "description": "Timestamps",
+                    "type": "string"
+                },
+                "reference_id": {
+                    "type": "string"
+                },
+                "reference_type": {
+                    "description": "References",
+                    "type": "string"
+                },
+                "related_transaction_id": {
+                    "type": "integer"
+                },
+                "status": {
+                    "description": "Status",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/domain.TransactionStatus"
+                        }
+                    ]
+                },
+                "stripe_charge_id": {
+                    "type": "string"
+                },
+                "stripe_invoice_id": {
+                    "type": "string"
+                },
+                "stripe_payment_intent_id": {
+                    "description": "Stripe Integration",
+                    "type": "string"
+                },
+                "transaction_id": {
+                    "type": "integer"
+                },
+                "type": {
+                    "description": "Transaction Details",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/domain.TransactionType"
+                        }
+                    ]
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.TransactionStatus": {
+            "type": "string",
+            "enum": [
+                "pending",
+                "completed",
+                "failed",
+                "cancelled",
+                "refunded"
+            ],
+            "x-enum-varnames": [
+                "TransactionStatusPending",
+                "TransactionStatusCompleted",
+                "TransactionStatusFailed",
+                "TransactionStatusCancelled",
+                "TransactionStatusRefunded"
+            ]
+        },
+        "domain.TransactionType": {
+            "type": "string",
+            "enum": [
+                "recharge",
+                "debit",
+                "credit",
+                "refund",
+                "chargeback",
+                "invoice_payment",
+                "usage_charge",
+                "affiliate_payout",
+                "platform_fee",
+                "adjustment",
+                "transfer"
+            ],
+            "x-enum-varnames": [
+                "TransactionTypeRecharge",
+                "TransactionTypeDebit",
+                "TransactionTypeCredit",
+                "TransactionTypeRefund",
+                "TransactionTypeChargeback",
+                "TransactionTypeInvoicePayment",
+                "TransactionTypeUsageCharge",
+                "TransactionTypeAffiliatePayout",
+                "TransactionTypePlatformFee",
+                "TransactionTypeAdjustment",
+                "TransactionTypeTransfer"
+            ]
+        },
+        "domain.UpdateBillingConfigRequest": {
+            "type": "object",
+            "properties": {
+                "auto_recharge_amount": {
+                    "type": "number"
+                },
+                "auto_recharge_enabled": {
+                    "type": "boolean"
+                },
+                "auto_recharge_threshold": {
+                    "type": "number"
+                },
+                "billing_email": {
+                    "type": "string"
+                },
+                "billing_mode": {
+                    "$ref": "#/definitions/domain.BillingMode"
+                },
+                "invoice_day_of_month": {
+                    "type": "integer"
+                },
+                "payment_terms_days": {
+                    "type": "integer"
+                }
+            }
+        },
+        "domain.UpdateConversationStatusRequest": {
+            "type": "object",
+            "required": [
+                "status"
+            ],
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "enum": [
+                        "active",
+                        "closed",
+                        "archived"
+                    ]
+                }
+            }
+        },
+        "domain.UpdateFavoritePublisherListRequest": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "maxLength": 1000
+                },
+                "name": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "minLength": 1
+                }
+            }
+        },
+        "domain.UpdatePublisherInListRequest": {
+            "type": "object",
+            "properties": {
+                "notes": {
+                    "type": "string",
+                    "maxLength": 1000
+                }
+            }
+        },
+        "domain.UpdatePublisherStatusRequest": {
+            "type": "object",
+            "required": [
+                "status"
+            ],
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "enum": [
+                        "added",
+                        "contacted",
+                        "accepted"
+                    ]
                 }
             }
         },
@@ -4821,10 +7279,6 @@
                 "advertiser_id": {
                     "type": "integer"
                 },
-                "billing_model": {
-                    "description": "Payout and revenue configuration",
-                    "type": "string"
-                },
                 "campaign_id": {
                     "type": "integer"
                 },
@@ -4853,6 +7307,16 @@
                 "end_date": {
                     "type": "string"
                 },
+                "fixed_click_amount": {
+                    "type": "number"
+                },
+                "fixed_conversion_amount": {
+                    "type": "number"
+                },
+                "fixed_revenue": {
+                    "description": "Simplified billing configuration",
+                    "type": "number"
+                },
                 "global_click_cap": {
                     "type": "integer"
                 },
@@ -4878,19 +7342,10 @@
                 "organization_id": {
                     "type": "integer"
                 },
-                "payout_amount": {
+                "percentage_conversion_amount": {
                     "type": "number"
-                },
-                "payout_structure": {
-                    "type": "string"
                 },
                 "preview_url": {
-                    "type": "string"
-                },
-                "revenue_amount": {
-                    "type": "number"
-                },
-                "revenue_structure": {
                     "type": "string"
                 },
                 "session_definition": {
@@ -5016,14 +7471,6 @@
                 "advertiser_id": {
                     "type": "integer"
                 },
-                "billing_model": {
-                    "description": "Payout and revenue configuration",
-                    "type": "string",
-                    "enum": [
-                        "click",
-                        "conversion"
-                    ]
-                },
                 "conversion_method": {
                     "type": "string",
                     "enum": [
@@ -5050,6 +7497,19 @@
                 "end_date": {
                     "type": "string"
                 },
+                "fixed_click_amount": {
+                    "type": "number",
+                    "minimum": 0
+                },
+                "fixed_conversion_amount": {
+                    "type": "number",
+                    "minimum": 0
+                },
+                "fixed_revenue": {
+                    "description": "Simplified billing configuration",
+                    "type": "number",
+                    "minimum": 0
+                },
                 "global_click_cap": {
                     "type": "integer"
                 },
@@ -5075,30 +7535,13 @@
                 "organization_id": {
                     "type": "integer"
                 },
-                "payout_amount": {
+                "percentage_conversion_amount": {
                     "type": "number",
+                    "maximum": 100,
                     "minimum": 0
-                },
-                "payout_structure": {
-                    "type": "string",
-                    "enum": [
-                        "fixed",
-                        "percentage"
-                    ]
                 },
                 "preview_url": {
                     "type": "string"
-                },
-                "revenue_amount": {
-                    "type": "number",
-                    "minimum": 0
-                },
-                "revenue_structure": {
-                    "type": "string",
-                    "enum": [
-                        "fixed",
-                        "percentage"
-                    ]
                 },
                 "session_definition": {
                     "type": "string",
@@ -5566,14 +8009,6 @@
                 "status"
             ],
             "properties": {
-                "billing_model": {
-                    "description": "Payout and revenue configuration",
-                    "type": "string",
-                    "enum": [
-                        "click",
-                        "conversion"
-                    ]
-                },
                 "conversion_method": {
                     "type": "string",
                     "enum": [
@@ -5600,6 +8035,19 @@
                 "end_date": {
                     "type": "string"
                 },
+                "fixed_click_amount": {
+                    "type": "number",
+                    "minimum": 0
+                },
+                "fixed_conversion_amount": {
+                    "type": "number",
+                    "minimum": 0
+                },
+                "fixed_revenue": {
+                    "description": "Simplified billing configuration",
+                    "type": "number",
+                    "minimum": 0
+                },
                 "global_click_cap": {
                     "type": "integer"
                 },
@@ -5622,30 +8070,13 @@
                 "name": {
                     "type": "string"
                 },
-                "payout_amount": {
+                "percentage_conversion_amount": {
                     "type": "number",
+                    "maximum": 100,
                     "minimum": 0
-                },
-                "payout_structure": {
-                    "type": "string",
-                    "enum": [
-                        "fixed",
-                        "percentage"
-                    ]
                 },
                 "preview_url": {
                     "type": "string"
-                },
-                "revenue_amount": {
-                    "type": "number",
-                    "minimum": 0
-                },
-                "revenue_structure": {
-                    "type": "string",
-                    "enum": [
-                        "fixed",
-                        "percentage"
-                    ]
                 },
                 "session_definition": {
                     "type": "string",

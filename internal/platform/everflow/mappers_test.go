@@ -12,23 +12,23 @@ func TestAffiliateMapping(t *testing.T) {
 		// TODO: Implement proper tests when Everflow integration is fully implemented
 		// The mappers are currently stubbed out and return "not implemented" errors
 		// These tests should be updated when the actual Everflow API integration is completed
-		
+
 		mapper := NewAffiliateProviderMapper()
 		assert.NotNil(t, mapper)
-		
+
 		// Test that mapper methods exist and return expected errors for now
 		_, err := mapper.MapAffiliateToEverflowRequest(nil, nil)
 		assert.Error(t, err)
 		assert.Contains(t, err.Error(), "not implemented")
-		
+
 		err = mapper.MapEverflowResponseToAffiliate(nil, nil)
 		assert.Error(t, err)
 		assert.Contains(t, err.Error(), "not implemented")
-		
+
 		_, err = mapper.MapEverflowResponseToProviderData(nil)
 		assert.Error(t, err)
 		assert.Contains(t, err.Error(), "not implemented")
-		
+
 		err = mapper.MapEverflowResponseToProviderMapping(nil, nil)
 		assert.Error(t, err)
 		assert.Contains(t, err.Error(), "invalid response or mapping")

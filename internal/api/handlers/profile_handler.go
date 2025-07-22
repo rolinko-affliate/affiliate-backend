@@ -21,7 +21,7 @@ func NewProfileHandler(ps service.ProfileService) *ProfileHandler {
 
 // SupabaseUserWebhookPayload defines the expected structure from Supabase new user webhook
 type SupabaseUserWebhookPayload struct {
-	Type   string `json:"type"` // e.g., "INSERT"
+	Type   string `json:"type"`  // e.g., "INSERT"
 	Table  string `json:"table"` // e.g., "users"
 	Record struct {
 		ID    uuid.UUID `json:"id"`
@@ -164,7 +164,7 @@ func (h *ProfileHandler) CreateProfile(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "User ID not found in context"})
 		return
 	}
-	
+
 	profileID, err := uuid.Parse(userIDStr.(string))
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid user ID format"})

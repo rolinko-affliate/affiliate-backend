@@ -40,7 +40,7 @@ func (r *pgxAffiliateRepository) CreateAffiliate(ctx context.Context, affiliate 
 		created_at, updated_at
 	) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)
 	RETURNING affiliate_id, created_at, updated_at`
-	
+
 	// Handle nullable fields
 	var contactEmail, paymentDetails, internalNotes, defaultCurrencyID, contactAddress, billingInfo, labels sql.NullString
 	var invoiceAmountThreshold sql.NullFloat64
@@ -73,13 +73,13 @@ func (r *pgxAffiliateRepository) CreateAffiliate(ctx context.Context, affiliate 
 	if affiliate.DefaultPaymentTerms != nil {
 		defaultPaymentTerms = sql.NullInt32{Int32: *affiliate.DefaultPaymentTerms, Valid: true}
 	}
-	
+
 	now := time.Now()
-	err := r.db.QueryRow(ctx, query, 
-		affiliate.OrganizationID, 
-		affiliate.Name, 
-		contactEmail, 
-		paymentDetails, 
+	err := r.db.QueryRow(ctx, query,
+		affiliate.OrganizationID,
+		affiliate.Name,
+		contactEmail,
+		paymentDetails,
 		affiliate.Status,
 		internalNotes,
 		defaultCurrencyID,
@@ -91,11 +91,11 @@ func (r *pgxAffiliateRepository) CreateAffiliate(ctx context.Context, affiliate 
 		now,
 		now,
 	).Scan(&affiliate.AffiliateID, &affiliate.CreatedAt, &affiliate.UpdatedAt)
-	
+
 	if err != nil {
 		return fmt.Errorf("error creating affiliate: %w", err)
 	}
-	
+
 	return nil
 }
 
@@ -108,12 +108,12 @@ func (r *pgxAffiliateRepository) GetAffiliateByID(ctx context.Context, affiliate
 		created_at, updated_at
 	FROM public.affiliates 
 	WHERE affiliate_id = $1`
-	
+
 	affiliate := &domain.Affiliate{}
 	var contactEmail, paymentDetails, internalNotes, defaultCurrencyID, contactAddress, billingInfo, labels sql.NullString
 	var invoiceAmountThreshold sql.NullFloat64
 	var defaultPaymentTerms sql.NullInt32
-	
+
 	err := r.db.QueryRow(ctx, query, affiliateID).Scan(
 		&affiliate.AffiliateID,
 		&affiliate.OrganizationID,
@@ -131,11 +131,11 @@ func (r *pgxAffiliateRepository) GetAffiliateByID(ctx context.Context, affiliate
 		&affiliate.CreatedAt,
 		&affiliate.UpdatedAt,
 	)
-	
+
 	if err != nil {
 		return nil, fmt.Errorf("error getting affiliate by ID: %w", err)
 	}
-	
+
 	// Handle nullable fields
 	if contactEmail.Valid {
 		affiliate.ContactEmail = &contactEmail.String
@@ -164,7 +164,7 @@ func (r *pgxAffiliateRepository) GetAffiliateByID(ctx context.Context, affiliate
 	if defaultPaymentTerms.Valid {
 		affiliate.DefaultPaymentTerms = &defaultPaymentTerms.Int32
 	}
-	
+
 	return affiliate, nil
 }
 
@@ -176,7 +176,7 @@ func (r *pgxAffiliateRepository) UpdateAffiliate(ctx context.Context, affiliate 
 		billing_info = $10, labels = $11, invoice_amount_threshold = $12, 
 		default_payment_terms = $13, updated_at = $14
 	WHERE affiliate_id = $1`
-	
+
 	// Handle nullable fields
 	var contactEmail, paymentDetails, internalNotes, defaultCurrencyID, contactAddress, billingInfo, labels sql.NullString
 	var invoiceAmountThreshold sql.NullFloat64
@@ -209,7 +209,7 @@ func (r *pgxAffiliateRepository) UpdateAffiliate(ctx context.Context, affiliate 
 	if affiliate.DefaultPaymentTerms != nil {
 		defaultPaymentTerms = sql.NullInt32{Int32: *affiliate.DefaultPaymentTerms, Valid: true}
 	}
-	
+
 	now := time.Now()
 	_, err := r.db.Exec(ctx, query,
 		affiliate.AffiliateID,
@@ -227,11 +227,11 @@ func (r *pgxAffiliateRepository) UpdateAffiliate(ctx context.Context, affiliate 
 		defaultPaymentTerms,
 		now,
 	)
-	
+
 	if err != nil {
 		return fmt.Errorf("error updating affiliate: %w", err)
 	}
-	
+
 	affiliate.UpdatedAt = now
 	return nil
 }
@@ -239,12 +239,12 @@ func (r *pgxAffiliateRepository) UpdateAffiliate(ctx context.Context, affiliate 
 // DeleteAffiliate deletes an affiliate by ID
 func (r *pgxAffiliateRepository) DeleteAffiliate(ctx context.Context, affiliateID int64) error {
 	query := `DELETE FROM public.affiliates WHERE affiliate_id = $1`
-	
+
 	_, err := r.db.Exec(ctx, query, affiliateID)
 	if err != nil {
 		return fmt.Errorf("error deleting affiliate: %w", err)
 	}
-	
+
 	return nil
 }
 
@@ -258,21 +258,21 @@ func (r *pgxAffiliateRepository) GetAffiliatesByOrganization(ctx context.Context
 	FROM public.affiliates 
 	WHERE organization_id = $1
 	ORDER BY created_at DESC`
-	
+
 	rows, err := r.db.Query(ctx, query, organizationID)
 	if err != nil {
 		return nil, fmt.Errorf("error querying affiliates by organization: %w", err)
 	}
 	defer rows.Close()
-	
+
 	var affiliates []*domain.Affiliate
-	
+
 	for rows.Next() {
 		affiliate := &domain.Affiliate{}
 		var contactEmail, paymentDetails, internalNotes, defaultCurrencyID, contactAddress, billingInfo, labels sql.NullString
 		var invoiceAmountThreshold sql.NullFloat64
 		var defaultPaymentTerms sql.NullInt32
-		
+
 		err := rows.Scan(
 			&affiliate.AffiliateID,
 			&affiliate.OrganizationID,
@@ -290,11 +290,11 @@ func (r *pgxAffiliateRepository) GetAffiliatesByOrganization(ctx context.Context
 			&affiliate.CreatedAt,
 			&affiliate.UpdatedAt,
 		)
-		
+
 		if err != nil {
 			return nil, fmt.Errorf("error scanning affiliate row: %w", err)
 		}
-		
+
 		// Handle nullable fields
 		if contactEmail.Valid {
 			affiliate.ContactEmail = &contactEmail.String
@@ -323,14 +323,14 @@ func (r *pgxAffiliateRepository) GetAffiliatesByOrganization(ctx context.Context
 		if defaultPaymentTerms.Valid {
 			affiliate.DefaultPaymentTerms = &defaultPaymentTerms.Int32
 		}
-		
+
 		affiliates = append(affiliates, affiliate)
 	}
-	
+
 	if err = rows.Err(); err != nil {
 		return nil, fmt.Errorf("error iterating affiliate rows: %w", err)
 	}
-	
+
 	return affiliates, nil
 }
 
@@ -343,12 +343,12 @@ func (r *pgxAffiliateRepository) GetAffiliateByEmail(ctx context.Context, email 
 		created_at, updated_at
 	FROM public.affiliates 
 	WHERE contact_email = $1`
-	
+
 	affiliate := &domain.Affiliate{}
 	var contactEmail, paymentDetails, internalNotes, defaultCurrencyID, contactAddress, billingInfo, labels sql.NullString
 	var invoiceAmountThreshold sql.NullFloat64
 	var defaultPaymentTerms sql.NullInt32
-	
+
 	err := r.db.QueryRow(ctx, query, email).Scan(
 		&affiliate.AffiliateID,
 		&affiliate.OrganizationID,
@@ -366,11 +366,11 @@ func (r *pgxAffiliateRepository) GetAffiliateByEmail(ctx context.Context, email 
 		&affiliate.CreatedAt,
 		&affiliate.UpdatedAt,
 	)
-	
+
 	if err != nil {
 		return nil, fmt.Errorf("error getting affiliate by email: %w", err)
 	}
-	
+
 	// Handle nullable fields
 	if contactEmail.Valid {
 		affiliate.ContactEmail = &contactEmail.String
@@ -399,7 +399,7 @@ func (r *pgxAffiliateRepository) GetAffiliateByEmail(ctx context.Context, email 
 	if defaultPaymentTerms.Valid {
 		affiliate.DefaultPaymentTerms = &defaultPaymentTerms.Int32
 	}
-	
+
 	return affiliate, nil
 }
 
@@ -414,20 +414,20 @@ func (r *pgxAffiliateRepository) ListAffiliatesByOrganization(ctx context.Contex
 	WHERE organization_id = $1
 	ORDER BY created_at DESC
 	LIMIT $2 OFFSET $3`
-	
+
 	rows, err := r.db.Query(ctx, query, organizationID, limit, offset)
 	if err != nil {
 		return nil, fmt.Errorf("error querying affiliates by organization: %w", err)
 	}
 	defer rows.Close()
-	
+
 	var affiliates []*domain.Affiliate
 	for rows.Next() {
 		affiliate := &domain.Affiliate{}
 		var contactEmail, paymentDetails, internalNotes, defaultCurrencyID, contactAddress, billingInfo, labels sql.NullString
 		var invoiceAmountThreshold sql.NullFloat64
 		var defaultPaymentTerms sql.NullInt32
-		
+
 		err := rows.Scan(
 			&affiliate.AffiliateID,
 			&affiliate.OrganizationID,
@@ -448,7 +448,7 @@ func (r *pgxAffiliateRepository) ListAffiliatesByOrganization(ctx context.Contex
 		if err != nil {
 			return nil, fmt.Errorf("error scanning affiliate row: %w", err)
 		}
-		
+
 		// Handle nullable fields
 		if contactEmail.Valid {
 			affiliate.ContactEmail = &contactEmail.String
@@ -477,13 +477,13 @@ func (r *pgxAffiliateRepository) ListAffiliatesByOrganization(ctx context.Contex
 		if defaultPaymentTerms.Valid {
 			affiliate.DefaultPaymentTerms = &defaultPaymentTerms.Int32
 		}
-		
+
 		affiliates = append(affiliates, affiliate)
 	}
-	
+
 	if err = rows.Err(); err != nil {
 		return nil, fmt.Errorf("error iterating affiliate rows: %w", err)
 	}
-	
+
 	return affiliates, nil
 }

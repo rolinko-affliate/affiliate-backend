@@ -9,14 +9,18 @@ import (
 
 // RouterOptions contains dependencies for the router
 type RouterOptions struct {
-	ProfileHandler      *handlers.ProfileHandler
-	ProfileService      service.ProfileService
-	OrganizationHandler *handlers.OrganizationHandler
-	AdvertiserHandler   *handlers.AdvertiserHandler
-	AffiliateHandler    *handlers.AffiliateHandler
-	CampaignHandler     *handlers.CampaignHandler
-	TrackingLinkHandler *handlers.TrackingLinkHandler
-	AnalyticsHandler    *handlers.AnalyticsHandler
+	ProfileHandler               *handlers.ProfileHandler
+	ProfileService               service.ProfileService
+	OrganizationHandler          *handlers.OrganizationHandler
+	AdvertiserHandler            *handlers.AdvertiserHandler
+	AffiliateHandler             *handlers.AffiliateHandler
+	CampaignHandler              *handlers.CampaignHandler
+	TrackingLinkHandler          *handlers.TrackingLinkHandler
+	AnalyticsHandler             *handlers.AnalyticsHandler
+	FavoritePublisherListHandler *handlers.FavoritePublisherListHandler
+	PublisherMessagingHandler    *handlers.PublisherMessagingHandler
+	BillingHandler               *handlers.BillingHandler
+	WebhookHandler               *handlers.WebhookHandler
 }
 
 // SetupRouter sets up the API router
@@ -29,11 +33,11 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 	// Health Check
 	r.GET("/health", handlers.HealthCheck)
 
-	// Public routes (e.g., Supabase webhook for profile creation)
+	// Public routes (e.g., Supabase webhook for profile creation, Stripe webhooks)
 	public := r.Group("/api/v1/public")
 	{
 		public.POST("/webhooks/supabase/new-user", opts.ProfileHandler.HandleSupabaseNewUserWebhook)
-
+		public.POST("/webhooks/stripe", opts.WebhookHandler.HandleStripeWebhook)
 	}
 
 	// Authenticated routes
@@ -43,6 +47,11 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 	// Create RBAC middleware factory
 	rbacMW := func(allowedRoles ...string) gin.HandlerFunc {
 		return middleware.RBACMiddleware(opts.ProfileService, allowedRoles...)
+	}
+
+	// Create Profile middleware factory (for endpoints that need profile but not role restrictions)
+	profileMW := func() gin.HandlerFunc {
+		return middleware.ProfileMiddleware(opts.ProfileService)
 	}
 
 	// --- Profile Routes ---
@@ -170,7 +179,65 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 
 		// Publisher/Affiliate analytics endpoints
 		analytics.GET("/affiliates/:id", opts.AnalyticsHandler.GetPublisherByID)
+		analytics.GET("/affiliates/domain/:domain", opts.AnalyticsHandler.GetPublisherByDomain)
 		analytics.POST("/affiliates", opts.AnalyticsHandler.CreatePublisher) // For future data management
+	}
+
+	// --- Favorite Publisher Lists Routes ---
+	favoritePublisherLists := v1.Group("/favorite-publisher-lists")
+	favoritePublisherLists.Use(rbacMW("AdvertiserManager", "AffiliateManager", "Admin")) // Allow all managers and admins
+	{
+		// List management
+		favoritePublisherLists.POST("", opts.FavoritePublisherListHandler.CreateList)
+		favoritePublisherLists.GET("", opts.FavoritePublisherListHandler.GetLists)
+		favoritePublisherLists.GET("/:list_id", opts.FavoritePublisherListHandler.GetListByID)
+		favoritePublisherLists.PUT("/:list_id", opts.FavoritePublisherListHandler.UpdateList)
+		favoritePublisherLists.DELETE("/:list_id", opts.FavoritePublisherListHandler.DeleteList)
+
+		// Publisher management within lists
+		favoritePublisherLists.POST("/:list_id/publishers", opts.FavoritePublisherListHandler.AddPublisherToList)
+		favoritePublisherLists.GET("/:list_id/publishers", opts.FavoritePublisherListHandler.GetListItems)
+		favoritePublisherLists.PUT("/:list_id/publishers/:domain", opts.FavoritePublisherListHandler.UpdatePublisherInList)
+		favoritePublisherLists.PATCH("/:list_id/publishers/:domain/status", opts.FavoritePublisherListHandler.UpdatePublisherStatus)
+		favoritePublisherLists.DELETE("/:list_id/publishers/:domain", opts.FavoritePublisherListHandler.RemovePublisherFromList)
+
+		// Utility endpoints
+		favoritePublisherLists.GET("/search", opts.FavoritePublisherListHandler.GetListsContainingPublisher)
+	}
+
+	// --- Publisher Messaging Routes ---
+	publisherMessaging := v1.Group("/publisher-messaging")
+	publisherMessaging.Use(rbacMW("AdvertiserManager", "AffiliateManager", "Admin")) // Allow all managers and admins
+	{
+		// Conversation management
+		publisherMessaging.POST("/conversations", opts.PublisherMessagingHandler.CreateConversation)
+		publisherMessaging.GET("/conversations", opts.PublisherMessagingHandler.GetConversations)
+		publisherMessaging.GET("/conversations/:conversation_id", opts.PublisherMessagingHandler.GetConversation)
+		publisherMessaging.PUT("/conversations/:conversation_id/status", opts.PublisherMessagingHandler.UpdateConversationStatus)
+		publisherMessaging.DELETE("/conversations/:conversation_id", opts.PublisherMessagingHandler.DeleteConversation)
+
+		// Message management
+		publisherMessaging.POST("/conversations/:conversation_id/messages", opts.PublisherMessagingHandler.AddMessage)
+
+		// External service integration (no RBAC required for external services)
+		publisherMessaging.POST("/conversations/:conversation_id/external-messages", opts.PublisherMessagingHandler.AddExternalMessage)
+	}
+
+	// --- Billing Routes ---
+	billing := v1.Group("/billing")
+	billing.Use(profileMW()) // Load profile for access control validation in handlers
+	{
+		// Billing dashboard and account management
+		billing.GET("/dashboard", opts.BillingHandler.GetBillingDashboard)
+		billing.PUT("/config", opts.BillingHandler.UpdateBillingConfig)
+
+		// Payment methods
+		billing.POST("/payment-methods", opts.BillingHandler.AddPaymentMethod)
+		billing.DELETE("/payment-methods/:id", opts.BillingHandler.RemovePaymentMethod)
+
+		// Transactions and recharging
+		billing.POST("/recharge", opts.BillingHandler.Recharge)
+		billing.GET("/transactions", opts.BillingHandler.GetTransactionHistory)
 	}
 
 	return r

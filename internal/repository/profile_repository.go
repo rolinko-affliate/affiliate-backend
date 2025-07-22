@@ -84,36 +84,36 @@ func (r *pgxProfileRepository) UpdateProfile(ctx context.Context, profile *domai
 	query := `UPDATE public.profiles 
 	          SET organization_id = $1, role_id = $2, email = $3, first_name = $4, last_name = $5, updated_at = $6
 	          WHERE id = $7`
-	
+
 	result, err := r.db.Exec(ctx, query,
 		profile.OrganizationID, profile.RoleID, profile.Email,
 		profile.FirstName, profile.LastName, profile.UpdatedAt,
 		profile.ID)
-	
+
 	if err != nil {
 		return fmt.Errorf("error updating profile: %w", err)
 	}
-	
+
 	if result.RowsAffected() == 0 {
 		return fmt.Errorf("profile not found: %w", domain.ErrNotFound)
 	}
-	
+
 	return nil
 }
 
 // DeleteProfile deletes a profile from the database
 func (r *pgxProfileRepository) DeleteProfile(ctx context.Context, id uuid.UUID) error {
 	query := `DELETE FROM public.profiles WHERE id = $1`
-	
+
 	result, err := r.db.Exec(ctx, query, id)
 	if err != nil {
 		return fmt.Errorf("error deleting profile: %w", err)
 	}
-	
+
 	if result.RowsAffected() == 0 {
 		return fmt.Errorf("profile not found: %w", domain.ErrNotFound)
 	}
-	
+
 	return nil
 }
 
@@ -129,12 +129,12 @@ func (r *pgxProfileRepository) GetRoleByID(ctx context.Context, roleID int) (*do
 		}
 		return nil, fmt.Errorf("error getting role by ID: %w", err)
 	}
-	
+
 	if description.Valid {
 		desc := description.String
 		role.Description = &desc
 	}
-	
+
 	return &role, nil
 }
 

@@ -21,7 +21,7 @@ func InitDBConnection(dbURL string) (*pgxpool.Pool, error) {
 	if err != nil {
 		return nil, fmt.Errorf("unable to parse database URL: %v", err)
 	}
-	
+
 	// Configure connection pool settings for temporary use
 	dbConfig.MaxConns = 5
 	dbConfig.MinConns = 1
@@ -52,7 +52,7 @@ func InitDB(cfg *config.Config) {
 	if err != nil {
 		log.Fatalf("Unable to parse database URL: %v", err)
 	}
-	
+
 	// Configure connection pool settings
 	dbConfig.MaxConns = 25
 	dbConfig.MinConns = 5

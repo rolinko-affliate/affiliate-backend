@@ -16,17 +16,16 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"reflect"
+	"strings"
 )
-
 
 // AffiliatesAPIService AffiliatesAPI service
 type AffiliatesAPIService service
 
 type ApiCreateAffiliateRequest struct {
-	ctx context.Context
-	ApiService *AffiliatesAPIService
+	ctx                    context.Context
+	ApiService             *AffiliatesAPIService
 	createAffiliateRequest *CreateAffiliateRequest
 }
 
@@ -44,24 +43,25 @@ CreateAffiliate Create Affiliate
 
 Creates a new affiliate in the network
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateAffiliateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateAffiliateRequest
 */
 func (a *AffiliatesAPIService) CreateAffiliate(ctx context.Context) ApiCreateAffiliateRequest {
 	return ApiCreateAffiliateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Affiliate
+//
+//	@return Affiliate
 func (a *AffiliatesAPIService) CreateAffiliateExecute(r ApiCreateAffiliateRequest) (*Affiliate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Affiliate
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Affiliate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AffiliatesAPIService.CreateAffiliate")
@@ -149,9 +149,9 @@ func (a *AffiliatesAPIService) CreateAffiliateExecute(r ApiCreateAffiliateReques
 }
 
 type ApiGetAffiliateByIdRequest struct {
-	ctx context.Context
-	ApiService *AffiliatesAPIService
-	affiliateId int32
+	ctx          context.Context
+	ApiService   *AffiliatesAPIService
+	affiliateId  int32
 	relationship *[]string
 }
 
@@ -170,26 +170,27 @@ GetAffiliateById Find Affiliate By ID
 
 Retrieves a single affiliate by its ID
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param affiliateId The ID of the affiliate you want to fetch
- @return ApiGetAffiliateByIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param affiliateId The ID of the affiliate you want to fetch
+	@return ApiGetAffiliateByIdRequest
 */
 func (a *AffiliatesAPIService) GetAffiliateById(ctx context.Context, affiliateId int32) ApiGetAffiliateByIdRequest {
 	return ApiGetAffiliateByIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		affiliateId: affiliateId,
 	}
 }
 
 // Execute executes the request
-//  @return AffiliateWithRelationships
+//
+//	@return AffiliateWithRelationships
 func (a *AffiliatesAPIService) GetAffiliateByIdExecute(r ApiGetAffiliateByIdRequest) (*AffiliateWithRelationships, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AffiliateWithRelationships
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AffiliateWithRelationships
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AffiliatesAPIService.GetAffiliateById")
@@ -284,9 +285,9 @@ func (a *AffiliatesAPIService) GetAffiliateByIdExecute(r ApiGetAffiliateByIdRequ
 }
 
 type ApiUpdateAffiliateRequest struct {
-	ctx context.Context
-	ApiService *AffiliatesAPIService
-	affiliateId int32
+	ctx                    context.Context
+	ApiService             *AffiliatesAPIService
+	affiliateId            int32
 	updateAffiliateRequest *UpdateAffiliateRequest
 }
 
@@ -304,26 +305,27 @@ UpdateAffiliate Update Affiliate
 
 Updates an existing affiliate. All fields must be specified, not only the ones you wish to update.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param affiliateId The ID of the affiliate you want to update
- @return ApiUpdateAffiliateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param affiliateId The ID of the affiliate you want to update
+	@return ApiUpdateAffiliateRequest
 */
 func (a *AffiliatesAPIService) UpdateAffiliate(ctx context.Context, affiliateId int32) ApiUpdateAffiliateRequest {
 	return ApiUpdateAffiliateRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		affiliateId: affiliateId,
 	}
 }
 
 // Execute executes the request
-//  @return Affiliate
+//
+//	@return Affiliate
 func (a *AffiliatesAPIService) UpdateAffiliateExecute(r ApiUpdateAffiliateRequest) (*Affiliate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Affiliate
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Affiliate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AffiliatesAPIService.UpdateAffiliate")

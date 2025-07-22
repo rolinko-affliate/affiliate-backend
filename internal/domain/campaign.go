@@ -16,57 +16,56 @@ type Campaign struct {
 	StartDate      *time.Time `json:"start_date,omitempty" db:"start_date"`
 	EndDate        *time.Time `json:"end_date,omitempty" db:"end_date"`
 	InternalNotes  *string    `json:"internal_notes,omitempty" db:"internal_notes"`
-	
+
 	// Core campaign fields (provider-agnostic)
-	DestinationURL      *string `json:"destination_url,omitempty" db:"destination_url"`
-	ThumbnailURL        *string `json:"thumbnail_url,omitempty" db:"thumbnail_url"`
-	PreviewURL          *string `json:"preview_url,omitempty" db:"preview_url"`
-	Visibility          *string `json:"visibility,omitempty" db:"visibility"`                   // 'public', 'require_approval', 'private'
-	CurrencyID          *string `json:"currency_id,omitempty" db:"currency_id"`                 // 'USD', 'EUR', etc.
-	ConversionMethod    *string `json:"conversion_method,omitempty" db:"conversion_method"`     // 'server_postback', 'pixel', etc.
-	SessionDefinition   *string `json:"session_definition,omitempty" db:"session_definition"`   // 'cookie', 'ip', 'fingerprint'
-	SessionDuration     *int32  `json:"session_duration,omitempty" db:"session_duration"`       // in hours
-	TermsAndConditions  *string `json:"terms_and_conditions,omitempty" db:"terms_and_conditions"`
-	
+	DestinationURL     *string `json:"destination_url,omitempty" db:"destination_url"`
+	ThumbnailURL       *string `json:"thumbnail_url,omitempty" db:"thumbnail_url"`
+	PreviewURL         *string `json:"preview_url,omitempty" db:"preview_url"`
+	Visibility         *string `json:"visibility,omitempty" db:"visibility"`                 // 'public', 'require_approval', 'private'
+	CurrencyID         *string `json:"currency_id,omitempty" db:"currency_id"`               // 'USD', 'EUR', etc.
+	ConversionMethod   *string `json:"conversion_method,omitempty" db:"conversion_method"`   // 'server_postback', 'pixel', etc.
+	SessionDefinition  *string `json:"session_definition,omitempty" db:"session_definition"` // 'cookie', 'ip', 'fingerprint'
+	SessionDuration    *int32  `json:"session_duration,omitempty" db:"session_duration"`     // in hours
+	TermsAndConditions *string `json:"terms_and_conditions,omitempty" db:"terms_and_conditions"`
+
 	// Caps and limits
-	IsCapsEnabled         *bool `json:"is_caps_enabled,omitempty" db:"is_caps_enabled"`
-	DailyConversionCap    *int  `json:"daily_conversion_cap,omitempty" db:"daily_conversion_cap"`
-	WeeklyConversionCap   *int  `json:"weekly_conversion_cap,omitempty" db:"weekly_conversion_cap"`
-	MonthlyConversionCap  *int  `json:"monthly_conversion_cap,omitempty" db:"monthly_conversion_cap"`
-	GlobalConversionCap   *int  `json:"global_conversion_cap,omitempty" db:"global_conversion_cap"`
-	DailyClickCap         *int  `json:"daily_click_cap,omitempty" db:"daily_click_cap"`
-	WeeklyClickCap        *int  `json:"weekly_click_cap,omitempty" db:"weekly_click_cap"`
-	MonthlyClickCap       *int  `json:"monthly_click_cap,omitempty" db:"monthly_click_cap"`
-	GlobalClickCap        *int  `json:"global_click_cap,omitempty" db:"global_click_cap"`
-	
-	// Payout and revenue configuration
-	BillingModel      *string  `json:"billing_model,omitempty" db:"billing_model"`           // 'click' or 'conversion'
-	PayoutStructure   *string  `json:"payout_structure,omitempty" db:"payout_structure"`     // 'fixed' or 'percentage' (only for conversion)
-	PayoutAmount      *float64 `json:"payout_amount,omitempty" db:"payout_amount"`           // Fixed amount or percentage value
-	RevenueStructure  *string  `json:"revenue_structure,omitempty" db:"revenue_structure"`   // 'fixed' or 'percentage' (only for conversion)
-	RevenueAmount     *float64 `json:"revenue_amount,omitempty" db:"revenue_amount"`         // Fixed amount or percentage value
-	
+	IsCapsEnabled        *bool `json:"is_caps_enabled,omitempty" db:"is_caps_enabled"`
+	DailyConversionCap   *int  `json:"daily_conversion_cap,omitempty" db:"daily_conversion_cap"`
+	WeeklyConversionCap  *int  `json:"weekly_conversion_cap,omitempty" db:"weekly_conversion_cap"`
+	MonthlyConversionCap *int  `json:"monthly_conversion_cap,omitempty" db:"monthly_conversion_cap"`
+	GlobalConversionCap  *int  `json:"global_conversion_cap,omitempty" db:"global_conversion_cap"`
+	DailyClickCap        *int  `json:"daily_click_cap,omitempty" db:"daily_click_cap"`
+	WeeklyClickCap       *int  `json:"weekly_click_cap,omitempty" db:"weekly_click_cap"`
+	MonthlyClickCap      *int  `json:"monthly_click_cap,omitempty" db:"monthly_click_cap"`
+	GlobalClickCap       *int  `json:"global_click_cap,omitempty" db:"global_click_cap"`
+
+	// Simplified billing configuration
+	FixedRevenue               *float64 `json:"fixed_revenue,omitempty" db:"fixed_revenue"`                             // Fixed revenue amount the platform earns per conversion
+	FixedClickAmount           *float64 `json:"fixed_click_amount,omitempty" db:"fixed_click_amount"`                   // Fixed amount paid to affiliates per click
+	FixedConversionAmount      *float64 `json:"fixed_conversion_amount,omitempty" db:"fixed_conversion_amount"`         // Fixed amount paid to affiliates per conversion
+	PercentageConversionAmount *float64 `json:"percentage_conversion_amount,omitempty" db:"percentage_conversion_amount"` // Percentage of revenue paid to affiliates per conversion (0-100)
+
 	CreatedAt time.Time `json:"created_at" db:"created_at"`
 	UpdatedAt time.Time `json:"updated_at" db:"updated_at"`
 }
 
 // CampaignProviderMapping represents a mapping between a campaign and a provider following clean architecture
 type CampaignProviderMapping struct {
-	MappingID            int64      `json:"mapping_id" db:"mapping_id"`
-	CampaignID           int64      `json:"campaign_id" db:"campaign_id"`
-	ProviderType         string     `json:"provider_type" db:"provider_type"` // 'everflow' for MVP
-	ProviderCampaignID   *string    `json:"provider_campaign_id,omitempty" db:"provider_campaign_id"` // Provider's Campaign ID
-	
+	MappingID          int64   `json:"mapping_id" db:"mapping_id"`
+	CampaignID         int64   `json:"campaign_id" db:"campaign_id"`
+	ProviderType       string  `json:"provider_type" db:"provider_type"`                         // 'everflow' for MVP
+	ProviderCampaignID *string `json:"provider_campaign_id,omitempty" db:"provider_campaign_id"` // Provider's Campaign ID
+
 	// Provider-specific data stored as JSONB
-	ProviderData         *string    `json:"provider_data,omitempty" db:"provider_data"`
-	
+	ProviderData *string `json:"provider_data,omitempty" db:"provider_data"`
+
 	// Synchronization metadata
-	SyncStatus           *string    `json:"sync_status,omitempty" db:"sync_status"`
-	LastSyncAt           *time.Time `json:"last_sync_at,omitempty" db:"last_sync_at"`
-	SyncError            *string    `json:"sync_error,omitempty" db:"sync_error"`
-	
-	CreatedAt            time.Time  `json:"created_at" db:"created_at"`
-	UpdatedAt            time.Time  `json:"updated_at" db:"updated_at"`
+	SyncStatus *string    `json:"sync_status,omitempty" db:"sync_status"`
+	LastSyncAt *time.Time `json:"last_sync_at,omitempty" db:"last_sync_at"`
+	SyncError  *string    `json:"sync_error,omitempty" db:"sync_error"`
+
+	CreatedAt time.Time `json:"created_at" db:"created_at"`
+	UpdatedAt time.Time `json:"updated_at" db:"updated_at"`
 }
 
 // EverflowCampaignProviderData represents Everflow-specific campaign data

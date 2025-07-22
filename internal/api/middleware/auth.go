@@ -25,6 +25,7 @@ type AuthClaims struct {
 }
 
 // AuthMiddleware validates Supabase JWTs
+// TEMPORARY: Expiration date validation is currently disabled
 func AuthMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		authHeader := c.GetHeader("Authorization")
@@ -41,7 +42,9 @@ func AuthMiddleware() gin.HandlerFunc {
 		tokenString := parts[1]
 
 		claims := &AuthClaims{}
-		token, err := jwt.ParseWithClaims(tokenString, claims, func(token *jwt.Token) (interface{}, error) {
+		// TEMPORARY: Skip expiration validation for JWT tokens
+		parser := jwt.NewParser(jwt.WithoutClaimsValidation())
+		token, err := parser.ParseWithClaims(tokenString, claims, func(token *jwt.Token) (interface{}, error) {
 			if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
 				return nil, fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
 			}

@@ -19,7 +19,7 @@ var _ MappedNullable = &AffiliateWithRelationshipsAllOfRelationship{}
 
 // AffiliateWithRelationshipsAllOfRelationship Additional relationship data based on requested relationships
 type AffiliateWithRelationshipsAllOfRelationship struct {
-	Labels *AffiliateWithRelationshipsAllOfRelationshipLabels `json:"labels,omitempty"`
+	Labels         *AffiliateWithRelationshipsAllOfRelationshipLabels         `json:"labels,omitempty"`
 	AccountManager *AffiliateWithRelationshipsAllOfRelationshipAccountManager `json:"account_manager,omitempty"`
 	// Encoded affiliate ID
 	EncodedValue *string `json:"encoded_value,omitempty"`
@@ -139,7 +139,7 @@ func (o *AffiliateWithRelationshipsAllOfRelationship) SetEncodedValue(v string) 
 }
 
 func (o AffiliateWithRelationshipsAllOfRelationship) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -195,5 +195,3 @@ func (v *NullableAffiliateWithRelationshipsAllOfRelationship) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

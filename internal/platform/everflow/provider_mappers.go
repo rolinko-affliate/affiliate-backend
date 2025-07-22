@@ -18,7 +18,7 @@ func NewAffiliateProviderMapper() *AffiliateProviderMapper {
 
 // MapAffiliateToEverflowRequest creates an Everflow affiliate request from domain affiliate and provider mapping
 func (m *AffiliateProviderMapper) MapAffiliateToEverflowRequest(
-	aff *domain.Affiliate, 
+	aff *domain.Affiliate,
 	mapping *domain.AffiliateProviderMapping,
 ) (*affiliate.CreateAffiliateRequest, error) {
 	// TODO: Implement full Everflow mapping when Everflow API is properly integrated
@@ -70,7 +70,7 @@ func (m *AffiliateProviderMapper) getDefaultNetworkEmployeeID(everflowData *doma
 
 // MapEverflowResponseToProviderMapping updates provider mapping with Everflow response data
 func (m *AffiliateProviderMapper) MapEverflowResponseToProviderMapping(
-	resp interface{}, 
+	resp interface{},
 	mapping *domain.AffiliateProviderMapping,
 ) error {
 	if resp == nil || mapping == nil {
@@ -79,10 +79,10 @@ func (m *AffiliateProviderMapper) MapEverflowResponseToProviderMapping(
 
 	// TODO: Implement proper response parsing when affiliate sync functionality is needed
 	// For now, just ensure provider data is properly initialized
-	
+
 	// Create or update provider data with Everflow-specific fields
 	everflowData := &domain.EverflowProviderData{}
-	
+
 	// Unmarshal existing provider data if it exists
 	if mapping.ProviderData != nil {
 		if err := json.Unmarshal([]byte(*mapping.ProviderData), everflowData); err != nil {
@@ -98,7 +98,7 @@ func (m *AffiliateProviderMapper) MapEverflowResponseToProviderMapping(
 	if err != nil {
 		return fmt.Errorf("error marshaling provider data: %w", err)
 	}
-	
+
 	providerDataStr := string(providerDataBytes)
 	mapping.ProviderData = &providerDataStr
 

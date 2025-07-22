@@ -7,15 +7,15 @@ import (
 )
 
 type Config struct {
-	Port              string `mapstructure:"PORT"`
-	DatabaseURL       string `mapstructure:"DATABASE_URL"`
-	
-	DatabaseHost	   string `mapstructure:"DATABASE_HOST"`
-	DatabasePort        string `mapstructure:"DATABASE_PORT"`
-	DatabaseName		string `mapstructure:"DATABASE_NAME"`
-	DatabaseUser	   string `mapstructure:"DATABASE_USER"`
-	DatabasePassword   string `mapstructure:"DATABASE_PASSWORD"`
-	DatabaseSSLMode    string `mapstructure:"DATABASE_SSL_MODE"` // e.g. "disable", "require", "verify-ca", "verify-full"
+	Port        string `mapstructure:"PORT"`
+	DatabaseURL string `mapstructure:"DATABASE_URL"`
+
+	DatabaseHost     string `mapstructure:"DATABASE_HOST"`
+	DatabasePort     string `mapstructure:"DATABASE_PORT"`
+	DatabaseName     string `mapstructure:"DATABASE_NAME"`
+	DatabaseUser     string `mapstructure:"DATABASE_USER"`
+	DatabasePassword string `mapstructure:"DATABASE_PASSWORD"`
+	DatabaseSSLMode  string `mapstructure:"DATABASE_SSL_MODE"` // e.g. "disable", "require", "verify-ca", "verify-full"
 
 	SupabaseJWTSecret string `mapstructure:"SUPABASE_JWT_SECRET"`
 	// Key for encrypting/decrypting sensitive data like Everflow API keys
@@ -28,9 +28,9 @@ type Config struct {
 var AppConfig Config
 
 func LoadConfig() {
-	viper.AddConfigPath(".")      // Look for config in current directory
-	viper.SetConfigName(".env")   // Name of config file (without extension)
-	viper.SetConfigType("env")    // Type of config file
+	viper.AddConfigPath(".")    // Look for config in current directory
+	viper.SetConfigName(".env") // Name of config file (without extension)
+	viper.SetConfigType("env")  // Type of config file
 
 	// Set defaults (optional)
 	viper.SetDefault("PORT", "8080")
@@ -44,12 +44,12 @@ func LoadConfig() {
 	viper.SetDefault("DATABASE_NAME", "myapp")
 	viper.SetDefault("DATABASE_USER", "postgres")
 	viper.SetDefault("DATABASE_PASSWORD", "password") // Default password, should be overridden
-	
+
 	viper.SetDefault("SUPABASE_JWT_SECRET", "") // Default password, should be overridden
-	viper.SetDefault("ENCRYPTION_KEY", "") // Default password, should be overridden
+	viper.SetDefault("ENCRYPTION_KEY", "")      // Default password, should be overridden
 	viper.SetDefault("MockMode", false)
 
-	viper.AutomaticEnv()          // Read in environment variables that match
+	viper.AutomaticEnv() // Read in environment variables that match
 
 	if err := viper.ReadInConfig(); err != nil {
 		if _, ok := err.(viper.ConfigFileNotFoundError); ok {

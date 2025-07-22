@@ -13,7 +13,7 @@ BINARY_NAME=affiliate-backend
 API_BINARY=api
 MIGRATE_BINARY=migrate
 VERSION=$(shell cat VERSION 2>/dev/null || echo "dev")
-IMAGE_NAME=europe-west1-docker.pkg.dev/jinko-test/jinko-test-docker-repo/saas-app
+IMAGE_NAME=asia-east2-docker.pkg.dev/jinko-test/jinko-test-docker-repo/saas-app
 
 # Build the API application
 build:

@@ -15,4 +15,4 @@ patches:
 
 images:
 - name: asia-east2-docker.pkg.dev/jinko-test/jinko-test-docker-repo/saas-app
-  newTag: 0.0.12
+  newTag: 0.0.13

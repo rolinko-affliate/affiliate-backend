@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: asia-east2-docker.pkg.dev/jinko-test/jinko-test-docker-repo/saas-app:0.0.12
+        image: asia-east2-docker.pkg.dev/jinko-test/jinko-test-docker-repo/saas-app:0.0.13
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

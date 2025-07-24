@@ -74,44 +74,11 @@ func (s *advertiserService) CreateAdvertiser(ctx context.Context, advertiser *do
 		return nil, fmt.Errorf("failed to create advertiser: %w", err)
 	}
 
-	// Step 2: Create provider mapping with "pending" status
-	now := time.Now()
-	mapping := &domain.AdvertiserProviderMapping{
-		AdvertiserID:   advertiser.AdvertiserID,
-		ProviderType:   "everflow",
-		SyncStatus:     stringPtr("pending"),
-		LastSyncAt:     &now,
-		APICredentials: nil, // Set during configuration
-		ProviderConfig: nil, // Set by IntegrationService with full payload
-	}
-
-	err = s.providerMappingRepo.CreateMapping(ctx, mapping)
+	// Step 2: Call IntegrationService to create in provider
+	// The integration service will handle creating the provider mapping
+	_, err = s.integrationService.CreateAdvertiser(ctx, *advertiser)
 	if err != nil {
-		return nil, fmt.Errorf("failed to create provider mapping: %w", err)
-	}
-
-	// Step 3: Call IntegrationService to create in provider
-	providerAdvertiser, err := s.integrationService.CreateAdvertiser(ctx, *advertiser)
-	if err != nil {
-		// Update mapping status to "failed"
-		mapping.SyncStatus = stringPtr("failed")
-		mapping.SyncError = stringPtr(err.Error())
-		mapping.LastSyncAt = &now
-		s.providerMappingRepo.UpdateMapping(ctx, mapping)
 		return nil, fmt.Errorf("failed to create advertiser in provider: %w", err)
-	}
-
-	// Step 4: Update mapping with provider ID and "synced" status
-	// For now, we'll use the advertiser ID as the provider ID since the integration service
-	// doesn't return provider-specific IDs in the mock implementation
-	providerID := fmt.Sprintf("%d", providerAdvertiser.AdvertiserID)
-	mapping.ProviderAdvertiserID = &providerID
-	mapping.SyncStatus = stringPtr("synced")
-	mapping.SyncError = nil
-	mapping.LastSyncAt = &now
-	if err := s.providerMappingRepo.UpdateMapping(ctx, mapping); err != nil {
-		// Log error but don't fail since advertiser was created successfully
-		fmt.Printf("Warning: failed to update provider mapping status to active: %v\n", err)
 	}
 
 	return advertiser, nil

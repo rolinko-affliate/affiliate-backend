@@ -30,7 +30,8 @@ type IntegrationService struct {
 	campaignProviderMappingRepo   CampaignProviderMappingRepository
 
 	// Provider mappers
-	affiliateProviderMapper *AffiliateProviderMapper
+	affiliateProviderMapper  *AffiliateProviderMapper
+	advertiserProviderMapper *AdvertiserProviderMapper
 }
 
 // Repository interfaces
@@ -87,6 +88,7 @@ func NewIntegrationService(
 		affiliateProviderMappingRepo:  affiliateProviderMappingRepo,
 		campaignProviderMappingRepo:   campaignProviderMappingRepo,
 		affiliateProviderMapper:       NewAffiliateProviderMapper(),
+		advertiserProviderMapper:      NewAdvertiserProviderMapper(),
 	}
 }
 
@@ -120,23 +122,234 @@ func int64ToUUID(id int64) uuid.UUID {
 
 // CreateAdvertiser creates an advertiser in Everflow
 func (s *IntegrationService) CreateAdvertiser(ctx context.Context, adv domain.Advertiser) (domain.Advertiser, error) {
-	// Mock implementation - simulate successful creation
-	// In a real implementation, this would make an API call to Everflow
+	// Check if provider mapping already exists
+	existingMapping, err := s.advertiserProviderMappingRepo.GetMappingByAdvertiserAndProvider(ctx, adv.AdvertiserID, "everflow")
+	if err == nil && existingMapping != nil {
+		return adv, fmt.Errorf("advertiser already has Everflow provider mapping")
+	}
 
-	// Return the advertiser with the same ID (simulating successful creation)
+	// Map domain advertiser to Everflow request (without existing mapping)
+	everflowReq, err := s.advertiserProviderMapper.MapAdvertiserToEverflowRequest(&adv, nil)
+	if err != nil {
+		return adv, fmt.Errorf("failed to map advertiser to Everflow request: %w", err)
+	}
+
+	// Serialize the outbound request for payload storage
+	requestPayload, err := json.Marshal(everflowReq)
+	if err != nil {
+		return adv, fmt.Errorf("failed to serialize request payload: %w", err)
+	}
+
+	// Create advertiser in Everflow
+	resp, httpResp, err := s.advertiserClient.DefaultAPI.CreateAdvertiser(ctx).CreateAdvertiserRequest(*everflowReq).Execute()
+	if err != nil {
+		return adv, fmt.Errorf("failed to create advertiser in Everflow: %w", err)
+	}
+	defer httpResp.Body.Close()
+
+	// Create provider mapping
+	now := time.Now()
+	syncStatus := "synced"
+
+	mapping := &domain.AdvertiserProviderMapping{
+		AdvertiserID: adv.AdvertiserID,
+		ProviderType: "everflow",
+		SyncStatus:   &syncStatus,
+		LastSyncAt:   &now,
+		CreatedAt:    now,
+		UpdatedAt:    now,
+	}
+
+	// Update mapping with Everflow response data
+	if err := s.advertiserProviderMapper.MapEverflowResponseToProviderMapping(resp, mapping); err != nil {
+		return adv, fmt.Errorf("failed to map Everflow response to provider mapping: %w", err)
+	}
+
+	// Store request/response payload in provider config
+	payload := map[string]interface{}{
+		"request":             json.RawMessage(requestPayload),
+		"response":            resp,
+		"last_operation":      "create",
+		"last_operation_time": now,
+	}
+
+	payloadJSON, err := json.Marshal(payload)
+	if err != nil {
+		return adv, fmt.Errorf("failed to marshal payload: %w", err)
+	}
+
+	payloadStr := string(payloadJSON)
+	mapping.ProviderConfig = &payloadStr
+
+	// Create the provider mapping
+	if err := s.advertiserProviderMappingRepo.CreateMapping(ctx, mapping); err != nil {
+		return adv, fmt.Errorf("failed to create advertiser provider mapping: %w", err)
+	}
+
+	// Update core advertiser with non-provider-specific data from Everflow
+	s.advertiserProviderMapper.MapEverflowResponseToAdvertiser(resp, &adv)
+
 	return adv, nil
 }
 
 // UpdateAdvertiser updates an advertiser in Everflow
 func (s *IntegrationService) UpdateAdvertiser(ctx context.Context, adv domain.Advertiser) error {
-	// TODO: Implement advertiser update when advertiser functionality is needed
-	return fmt.Errorf("advertiser update not implemented")
+	// Get provider mapping
+	mapping, err := s.advertiserProviderMappingRepo.GetMappingByAdvertiserAndProvider(ctx, adv.AdvertiserID, "everflow")
+	if err != nil {
+		return fmt.Errorf("failed to get advertiser provider mapping: %w", err)
+	}
+
+	if mapping.ProviderAdvertiserID == nil {
+		return fmt.Errorf("advertiser not found in Everflow")
+	}
+
+	providerID, err := strconv.ParseInt(*mapping.ProviderAdvertiserID, 10, 32)
+	if err != nil {
+		return fmt.Errorf("invalid provider advertiser ID: %w", err)
+	}
+
+	// Map domain advertiser to Everflow update request using existing mapping
+	everflowReq, err := s.advertiserProviderMapper.MapAdvertiserToEverflowRequest(&adv, mapping)
+	if err != nil {
+		return fmt.Errorf("failed to map advertiser to Everflow update request: %w", err)
+	}
+
+	// Convert to update request (different constructor requirements)
+	updateReq := advertiser.NewUpdateAdvertiserRequest(
+		everflowReq.GetName(),
+		everflowReq.GetAccountStatus(),
+		everflowReq.GetNetworkEmployeeId(),
+		everflowReq.GetDefaultCurrencyId(),
+		everflowReq.GetReportingTimezoneId(),
+		everflowReq.GetAttributionMethod(),
+		everflowReq.GetEmailAttributionMethod(),
+		everflowReq.GetAttributionPriority(),
+	)
+
+	if everflowReq.HasInternalNotes() {
+		updateReq.SetInternalNotes(everflowReq.GetInternalNotes())
+	}
+	if everflowReq.HasAddressId() {
+		updateReq.SetAddressId(everflowReq.GetAddressId())
+	}
+	if everflowReq.HasIsContactAddressEnabled() {
+		updateReq.SetIsContactAddressEnabled(everflowReq.GetIsContactAddressEnabled())
+	}
+	if everflowReq.HasSalesManagerId() {
+		updateReq.SetSalesManagerId(everflowReq.GetSalesManagerId())
+	}
+	if everflowReq.HasPlatformName() {
+		updateReq.SetPlatformName(everflowReq.GetPlatformName())
+	}
+	if everflowReq.HasPlatformUrl() {
+		updateReq.SetPlatformUrl(everflowReq.GetPlatformUrl())
+	}
+	if everflowReq.HasPlatformUsername() {
+		updateReq.SetPlatformUsername(everflowReq.GetPlatformUsername())
+	}
+	if everflowReq.HasAccountingContactEmail() {
+		updateReq.SetAccountingContactEmail(everflowReq.GetAccountingContactEmail())
+	}
+	if everflowReq.HasVerificationToken() {
+		updateReq.SetVerificationToken(everflowReq.GetVerificationToken())
+	}
+	if everflowReq.HasOfferIdMacro() {
+		updateReq.SetOfferIdMacro(everflowReq.GetOfferIdMacro())
+	}
+	if everflowReq.HasAffiliateIdMacro() {
+		updateReq.SetAffiliateIdMacro(everflowReq.GetAffiliateIdMacro())
+	}
+	if everflowReq.HasLabels() {
+		updateReq.SetLabels(everflowReq.GetLabels())
+	}
+	if everflowReq.HasUsers() {
+		updateReq.SetUsers(everflowReq.GetUsers())
+	}
+	if everflowReq.HasContactAddress() {
+		updateReq.SetContactAddress(everflowReq.GetContactAddress())
+	}
+	if everflowReq.HasBilling() {
+		updateReq.SetBilling(everflowReq.GetBilling())
+	}
+	if everflowReq.HasSettings() {
+		updateReq.SetSettings(everflowReq.GetSettings())
+	}
+
+	// Update advertiser in Everflow
+	resp, httpResp, err := s.advertiserClient.DefaultAPI.UpdateAdvertiser(ctx, int32(providerID)).UpdateAdvertiserRequest(*updateReq).Execute()
+	if err != nil {
+		return fmt.Errorf("failed to update advertiser in Everflow: %w", err)
+	}
+	defer httpResp.Body.Close()
+
+	// Update provider mapping with response data
+	if err := s.advertiserProviderMapper.MapEverflowResponseToProviderMapping(resp, mapping); err != nil {
+		return fmt.Errorf("failed to update provider mapping with response: %w", err)
+	}
+
+	// Update sync metadata
+	now := time.Now()
+	syncStatus := "synced"
+	mapping.SyncStatus = &syncStatus
+	mapping.LastSyncAt = &now
+	mapping.UpdatedAt = now
+
+	// Update provider config with request/response payload
+	requestPayload, _ := json.Marshal(updateReq)
+	payload := map[string]interface{}{
+		"request":             json.RawMessage(requestPayload),
+		"response":            resp,
+		"last_operation":      "update",
+		"last_operation_time": now,
+	}
+
+	payloadJSON, _ := json.Marshal(payload)
+	payloadStr := string(payloadJSON)
+	mapping.ProviderConfig = &payloadStr
+
+	return s.advertiserProviderMappingRepo.UpdateMapping(ctx, mapping)
 }
 
 // GetAdvertiser retrieves an advertiser from Everflow
 func (s *IntegrationService) GetAdvertiser(ctx context.Context, id uuid.UUID) (domain.Advertiser, error) {
-	// TODO: Implement advertiser retrieval when advertiser functionality is needed
-	return domain.Advertiser{}, fmt.Errorf("advertiser retrieval not implemented")
+	// Convert UUID to int64
+	advertiserID, err := uuidToInt64(id)
+	if err != nil {
+		return domain.Advertiser{}, fmt.Errorf("failed to convert UUID to int64: %w", err)
+	}
+
+	// Get local advertiser
+	adv, err := s.advertiserRepo.GetAdvertiserByID(ctx, advertiserID)
+	if err != nil {
+		return domain.Advertiser{}, fmt.Errorf("failed to get local advertiser: %w", err)
+	}
+
+	// Get provider mapping
+	mapping, err := s.advertiserProviderMappingRepo.GetMappingByAdvertiserAndProvider(ctx, advertiserID, "everflow")
+	if err != nil {
+		return *adv, fmt.Errorf("failed to get advertiser provider mapping: %w", err)
+	}
+
+	if mapping.ProviderAdvertiserID == nil {
+		return *adv, fmt.Errorf("advertiser not found in Everflow")
+	}
+
+	providerID, err := strconv.ParseInt(*mapping.ProviderAdvertiserID, 10, 32)
+	if err != nil {
+		return *adv, fmt.Errorf("invalid provider advertiser ID: %w", err)
+	}
+
+	// Get advertiser from Everflow
+	resp, httpResp, err := s.advertiserClient.DefaultAPI.GetAdvertiserById(ctx, int32(providerID)).Execute()
+	if err != nil {
+		return *adv, fmt.Errorf("failed to get advertiser from Everflow: %w", err)
+	}
+	defer httpResp.Body.Close()
+
+	// Map Everflow response to domain model
+	s.advertiserProviderMapper.MapEverflowResponseToAdvertiser(resp, adv)
+	return *adv, nil
 }
 
 // CreateAffiliate creates an affiliate in Everflow

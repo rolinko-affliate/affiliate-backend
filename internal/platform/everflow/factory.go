@@ -29,6 +29,8 @@ func NewIntegrationServiceWithClients(
 			URL: config.BaseURL,
 		},
 	}
+	// Add Everflow API key header
+	advertiserConfig.AddDefaultHeader("X-Eflow-API-Key", config.APIKey)
 	advertiserClient := advertiser.NewAPIClient(advertiserConfig)
 
 	// Configure affiliate client
@@ -38,6 +40,8 @@ func NewIntegrationServiceWithClients(
 			URL: config.BaseURL,
 		},
 	}
+	// Add Everflow API key header
+	affiliateConfig.AddDefaultHeader("X-Eflow-API-Key", config.APIKey)
 	affiliateClient := affiliate.NewAPIClient(affiliateConfig)
 
 	// Configure offer client
@@ -47,6 +51,8 @@ func NewIntegrationServiceWithClients(
 			URL: config.BaseURL,
 		},
 	}
+	// Add Everflow API key header
+	offerConfig.AddDefaultHeader("X-Eflow-API-Key", config.APIKey)
 	offerClient := offer.NewAPIClient(offerConfig)
 
 	return NewIntegrationService(

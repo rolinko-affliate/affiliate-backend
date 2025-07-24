@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"io"
 	"strconv"
 	"time"
 
@@ -140,10 +141,21 @@ func (s *IntegrationService) CreateAdvertiser(ctx context.Context, adv domain.Ad
 		return adv, fmt.Errorf("failed to serialize request payload: %w", err)
 	}
 
+	// Log the request payload for debugging
+	fmt.Printf("DEBUG: Sending Everflow advertiser request: %s\n", string(requestPayload))
+
 	// Create advertiser in Everflow
 	resp, httpResp, err := s.advertiserClient.DefaultAPI.CreateAdvertiser(ctx).CreateAdvertiserRequest(*everflowReq).Execute()
 	if err != nil {
-		return adv, fmt.Errorf("failed to create advertiser in Everflow: %w", err)
+		// Try to read the response body for more detailed error information
+		var errorBody string
+		if httpResp != nil && httpResp.Body != nil {
+			bodyBytes, readErr := io.ReadAll(httpResp.Body)
+			if readErr == nil {
+				errorBody = string(bodyBytes)
+			}
+		}
+		return adv, fmt.Errorf("failed to create advertiser in Everflow: %w (response: %s)", err, errorBody)
 	}
 	defer httpResp.Body.Close()
 

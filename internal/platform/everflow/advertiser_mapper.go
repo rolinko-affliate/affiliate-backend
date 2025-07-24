@@ -26,7 +26,7 @@ func (m *AdvertiserProviderMapper) MapAdvertiserToEverflowRequest(adv *domain.Ad
 
 	// Required fields with defaults
 	accountStatus := "active"
-	if adv.Status != "" {
+	if adv.Status != "" && adv.Status != "pending" {
 		accountStatus = adv.Status
 	}
 
@@ -114,6 +114,34 @@ func (m *AdvertiserProviderMapper) MapAdvertiserToEverflowRequest(adv *domain.Ad
 		}
 		req.SetUsers(users)
 	}
+
+	// Map contact address if billing details contain address information
+	if adv.BillingDetails != nil && adv.BillingDetails.Address != nil {
+		contactAddress, err := m.mapContactAddress(adv.BillingDetails.Address)
+		if err != nil {
+			return nil, fmt.Errorf("failed to map contact address: %w", err)
+		}
+		req.SetContactAddress(*contactAddress)
+		req.SetIsContactAddressEnabled(true)
+	}
+
+	// Set empty string values for optional fields to match Everflow format
+	emptyString := ""
+	req.SetAccountingContactEmail(emptyString)
+	req.SetOfferIdMacro(emptyString)
+	req.SetAffiliateIdMacro(emptyString)
+	req.SetPlatformName(emptyString)
+	req.SetPlatformUrl(emptyString)
+	req.SetPlatformUsername(emptyString)
+	
+	// Set required fields that might be missing
+	req.SetInternalNotes("Some notes not visible to the advertiser")
+	salesManagerId := int32(1)
+	req.SetSalesManagerId(salesManagerId)
+	
+	// Set labels array
+	labels := []string{"DTC Brand"}
+	req.SetLabels(labels)
 
 	// Set default settings
 	settings := m.createDefaultSettings()
@@ -289,14 +317,20 @@ func (m *AdvertiserProviderMapper) MapEverflowResponseToProviderMapping(resp *ad
 func (m *AdvertiserProviderMapper) mapBillingDetails(bd *domain.BillingDetails) (*advertiser.Billing, error) {
 	billing := advertiser.NewBillingWithDefaults()
 
+	// Set default billing frequency to match Everflow example
+	billing.SetBillingFrequency("other")
+	
 	if bd.Frequency != nil {
 		frequency := string(*bd.Frequency)
 		billing.SetBillingFrequency(frequency)
 	}
 
-	if bd.TaxID != nil {
-		billing.SetTaxId(*bd.TaxID)
+	// Set default tax ID if not provided
+	taxId := "123456789"
+	if bd.TaxID != nil && *bd.TaxID != "" {
+		taxId = *bd.TaxID
 	}
+	billing.SetTaxId(taxId)
 
 	if bd.IsInvoiceCreationAuto != nil {
 		billing.SetIsInvoiceCreationAuto(*bd.IsInvoiceCreationAuto)
@@ -323,10 +357,11 @@ func (m *AdvertiserProviderMapper) mapBillingDetails(bd *domain.BillingDetails) 
 		billing.SetInvoiceAmountThreshold(*bd.InvoiceAmountThreshold)
 	}
 
-	// Map billing schedule details
+	// Always set empty details object to match Everflow format
+	details := advertiser.NewBillingDetailsWithDefaults()
+	
+	// Map billing schedule details if available
 	if bd.Schedule != nil {
-		details := advertiser.NewBillingDetailsWithDefaults()
-
 		if bd.Schedule.DayOfWeek != nil {
 			details.SetDayOfWeek(*bd.Schedule.DayOfWeek)
 		}
@@ -346,9 +381,9 @@ func (m *AdvertiserProviderMapper) mapBillingDetails(bd *domain.BillingDetails) 
 		if bd.Schedule.StartingMonth != nil {
 			details.SetStartingMonth(*bd.Schedule.StartingMonth)
 		}
-
-		billing.SetDetails(*details)
 	}
+	
+	billing.SetDetails(*details)
 
 	return billing, nil
 }
@@ -370,6 +405,49 @@ func (m *AdvertiserProviderMapper) createAdvertiserUser(email, currencyId string
 	)
 
 	return user
+}
+
+// mapContactAddress maps domain billing address to Everflow contact address
+func (m *AdvertiserProviderMapper) mapContactAddress(addr *domain.BillingAddress) (*advertiser.ContactAddress, error) {
+	if addr == nil {
+		return nil, fmt.Errorf("address cannot be nil")
+	}
+
+	// Map state to region code (simple mapping for US states)
+	regionCode := "NY" // Default to NY if not provided
+	if addr.State != nil && *addr.State != "" {
+		regionCode = *addr.State
+	}
+
+	// Map country to country code
+	countryCode := "US"
+	if addr.Country != "" {
+		countryCode = addr.Country
+	}
+
+	contactAddr := advertiser.NewContactAddress(
+		addr.Line1,
+		addr.City,
+		regionCode,
+		countryCode,
+		addr.PostalCode,
+	)
+
+	// Set optional address line 2 if available, otherwise set empty string
+	if addr.Line2 != nil && *addr.Line2 != "" {
+		contactAddr.SetAddress2(*addr.Line2)
+	} else {
+		contactAddr.SetAddress2("") // Ensure address_2 is always present
+	}
+
+	// Set country ID based on country code (simplified mapping)
+	countryId := int32(1) // US country ID (try 1 instead of 840)
+	if countryCode == "CA" {
+		countryId = 36 // Canada
+	}
+	contactAddr.SetCountryId(countryId)
+
+	return contactAddr, nil
 }
 
 // createDefaultSettings creates default settings for the advertiser

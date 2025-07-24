@@ -123,10 +123,10 @@ func int64ToUUID(id int64) uuid.UUID {
 
 // CreateAdvertiser creates an advertiser in Everflow
 func (s *IntegrationService) CreateAdvertiser(ctx context.Context, adv domain.Advertiser) (domain.Advertiser, error) {
-	// Check if provider mapping already exists
+	// Check if provider mapping already exists and is successful
 	existingMapping, err := s.advertiserProviderMappingRepo.GetMappingByAdvertiserAndProvider(ctx, adv.AdvertiserID, "everflow")
-	if err == nil && existingMapping != nil {
-		return adv, fmt.Errorf("advertiser already has Everflow provider mapping")
+	if err == nil && existingMapping != nil && existingMapping.SyncStatus != nil && *existingMapping.SyncStatus == "synced" {
+		return adv, fmt.Errorf("advertiser already has successful Everflow provider mapping")
 	}
 
 	// Map domain advertiser to Everflow request (without existing mapping)
@@ -159,17 +159,28 @@ func (s *IntegrationService) CreateAdvertiser(ctx context.Context, adv domain.Ad
 	}
 	defer httpResp.Body.Close()
 
-	// Create provider mapping
+	// Create or update provider mapping
 	now := time.Now()
 	syncStatus := "synced"
 
-	mapping := &domain.AdvertiserProviderMapping{
-		AdvertiserID: adv.AdvertiserID,
-		ProviderType: "everflow",
-		SyncStatus:   &syncStatus,
-		LastSyncAt:   &now,
-		CreatedAt:    now,
-		UpdatedAt:    now,
+	var mapping *domain.AdvertiserProviderMapping
+	if existingMapping != nil {
+		// Update existing failed mapping
+		mapping = existingMapping
+		mapping.SyncStatus = &syncStatus
+		mapping.LastSyncAt = &now
+		mapping.UpdatedAt = now
+		mapping.SyncError = nil
+	} else {
+		// Create new mapping
+		mapping = &domain.AdvertiserProviderMapping{
+			AdvertiserID: adv.AdvertiserID,
+			ProviderType: "everflow",
+			SyncStatus:   &syncStatus,
+			LastSyncAt:   &now,
+			CreatedAt:    now,
+			UpdatedAt:    now,
+		}
 	}
 
 	// Update mapping with Everflow response data
@@ -193,9 +204,15 @@ func (s *IntegrationService) CreateAdvertiser(ctx context.Context, adv domain.Ad
 	payloadStr := string(payloadJSON)
 	mapping.ProviderConfig = &payloadStr
 
-	// Create the provider mapping
-	if err := s.advertiserProviderMappingRepo.CreateMapping(ctx, mapping); err != nil {
-		return adv, fmt.Errorf("failed to create advertiser provider mapping: %w", err)
+	// Create or update the provider mapping
+	if existingMapping != nil {
+		if err := s.advertiserProviderMappingRepo.UpdateMapping(ctx, mapping); err != nil {
+			return adv, fmt.Errorf("failed to update advertiser provider mapping: %w", err)
+		}
+	} else {
+		if err := s.advertiserProviderMappingRepo.CreateMapping(ctx, mapping); err != nil {
+			return adv, fmt.Errorf("failed to create advertiser provider mapping: %w", err)
+		}
 	}
 
 	// Update core advertiser with non-provider-specific data from Everflow

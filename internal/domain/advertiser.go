@@ -135,3 +135,23 @@ type AdvertiserWithProviderData struct {
 
 // AdvertiserWithEverflowData is an alias for backward compatibility
 type AdvertiserWithEverflowData = AdvertiserWithProviderData
+
+// BulkSyncResult represents the result of a bulk sync operation
+type BulkSyncResult struct {
+	TotalProcessed int                    `json:"total_processed"`
+	SuccessCount   int                    `json:"success_count"`
+	FailureCount   int                    `json:"failure_count"`
+	Successes      []BulkSyncItemResult   `json:"successes,omitempty"`
+	Failures       []BulkSyncItemResult   `json:"failures,omitempty"`
+	StartedAt      time.Time              `json:"started_at"`
+	CompletedAt    time.Time              `json:"completed_at"`
+	Duration       time.Duration          `json:"duration"`
+}
+
+// BulkSyncItemResult represents the result of syncing a single item
+type BulkSyncItemResult struct {
+	AdvertiserID         int64  `json:"advertiser_id"`
+	AdvertiserName       string `json:"advertiser_name"`
+	ProviderAdvertiserID string `json:"provider_advertiser_id,omitempty"`
+	Error                string `json:"error,omitempty"`
+}

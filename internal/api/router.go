@@ -97,6 +97,7 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		advertisers.POST("/:id/sync-to-everflow", opts.AdvertiserHandler.SyncAdvertiserToEverflow)
 		advertisers.POST("/:id/sync-from-everflow", opts.AdvertiserHandler.SyncAdvertiserFromEverflow)
 		advertisers.GET("/:id/compare-with-everflow", opts.AdvertiserHandler.CompareAdvertiserWithEverflow)
+		advertisers.POST("/sync-all-to-everflow", rbacMW("Admin"), opts.AdvertiserHandler.SyncAllAdvertisersToEverflow)
 
 		// Advertiser's campaigns
 		advertisers.GET("/:id/campaigns", opts.CampaignHandler.ListCampaignsByAdvertiser)

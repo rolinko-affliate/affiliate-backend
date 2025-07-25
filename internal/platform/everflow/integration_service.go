@@ -902,7 +902,7 @@ func (s *IntegrationService) mapCampaignToEverflowRequest(camp *domain.Campaign,
 	// Create empty ruleset with default timezone
 	ruleset := offer.NewRuleset()
 	ruleset.SetDayPartingTimezoneId(58) // Default timezone from example
-	req.SetRuleset(ruleset)
+	req.SetRuleset(*ruleset)
 
 	// Set attribution methods
 	req.SetEmailAttributionMethod("first_affiliate_attribution")

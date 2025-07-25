@@ -37,7 +37,7 @@ func NewIntegrationServiceWithClients(
 	affiliateConfig := affiliate.NewConfiguration()
 	affiliateConfig.Servers = []affiliate.ServerConfiguration{
 		{
-			URL: config.BaseURL,
+			URL: config.BaseURL + "/v1", // Affiliate API expects /v1 in server URL
 		},
 	}
 	// Add Everflow API key header

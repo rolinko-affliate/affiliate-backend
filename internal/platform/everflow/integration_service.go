@@ -141,9 +141,6 @@ func (s *IntegrationService) CreateAdvertiser(ctx context.Context, adv domain.Ad
 		return adv, fmt.Errorf("failed to serialize request payload: %w", err)
 	}
 
-	// Log the request payload for debugging
-	fmt.Printf("DEBUG: Sending Everflow advertiser request: %s\n", string(requestPayload))
-
 	// Create advertiser in Everflow
 	resp, httpResp, err := s.advertiserClient.DefaultAPI.CreateAdvertiser(ctx).CreateAdvertiserRequest(*everflowReq).Execute()
 	if err != nil {
@@ -383,10 +380,10 @@ func (s *IntegrationService) GetAdvertiser(ctx context.Context, id uuid.UUID) (d
 
 // CreateAffiliate creates an affiliate in Everflow
 func (s *IntegrationService) CreateAffiliate(ctx context.Context, aff domain.Affiliate) (domain.Affiliate, error) {
-	// Check if provider mapping already exists
+	// Check if provider mapping already exists and is successful
 	existingMapping, err := s.affiliateProviderMappingRepo.GetAffiliateProviderMapping(ctx, aff.AffiliateID, "everflow")
-	if err == nil && existingMapping != nil {
-		return aff, fmt.Errorf("affiliate already has Everflow provider mapping")
+	if err == nil && existingMapping != nil && existingMapping.SyncStatus != nil && *existingMapping.SyncStatus == "synced" {
+		return aff, fmt.Errorf("affiliate already has successful Everflow provider mapping")
 	}
 
 	// Map domain affiliate to Everflow request (without existing mapping)
@@ -404,21 +401,40 @@ func (s *IntegrationService) CreateAffiliate(ctx context.Context, aff domain.Aff
 	// Create affiliate in Everflow
 	resp, httpResp, err := s.affiliateClient.AffiliatesAPI.CreateAffiliate(ctx).CreateAffiliateRequest(*everflowReq).Execute()
 	if err != nil {
-		return aff, fmt.Errorf("failed to create affiliate in Everflow: %w", err)
+		// Try to read the response body for more detailed error information
+		var errorBody string
+		if httpResp != nil && httpResp.Body != nil {
+			bodyBytes, readErr := io.ReadAll(httpResp.Body)
+			if readErr == nil {
+				errorBody = string(bodyBytes)
+			}
+		}
+		return aff, fmt.Errorf("failed to create affiliate in Everflow: %w (response: %s)", err, errorBody)
 	}
 	defer httpResp.Body.Close()
 
-	// Create provider mapping
+	// Create or update provider mapping
 	now := time.Now()
 	syncStatus := "synced"
 
-	mapping := &domain.AffiliateProviderMapping{
-		AffiliateID:  aff.AffiliateID,
-		ProviderType: "everflow",
-		SyncStatus:   &syncStatus,
-		LastSyncAt:   &now,
-		CreatedAt:    now,
-		UpdatedAt:    now,
+	var mapping *domain.AffiliateProviderMapping
+	if existingMapping != nil {
+		// Update existing failed mapping
+		mapping = existingMapping
+		mapping.SyncStatus = &syncStatus
+		mapping.LastSyncAt = &now
+		mapping.UpdatedAt = now
+		mapping.SyncError = nil
+	} else {
+		// Create new mapping
+		mapping = &domain.AffiliateProviderMapping{
+			AffiliateID:  aff.AffiliateID,
+			ProviderType: "everflow",
+			SyncStatus:   &syncStatus,
+			LastSyncAt:   &now,
+			CreatedAt:    now,
+			UpdatedAt:    now,
+		}
 	}
 
 	// Update mapping with Everflow response data
@@ -442,9 +458,15 @@ func (s *IntegrationService) CreateAffiliate(ctx context.Context, aff domain.Aff
 	payloadStr := string(payloadJSON)
 	mapping.ProviderConfig = &payloadStr
 
-	// Create the provider mapping
-	if err := s.affiliateProviderMappingRepo.CreateAffiliateProviderMapping(ctx, mapping); err != nil {
-		return aff, fmt.Errorf("failed to create affiliate provider mapping: %w", err)
+	// Create or update the provider mapping
+	if existingMapping != nil {
+		if err := s.affiliateProviderMappingRepo.UpdateAffiliateProviderMapping(ctx, mapping); err != nil {
+			return aff, fmt.Errorf("failed to update affiliate provider mapping: %w", err)
+		}
+	} else {
+		if err := s.affiliateProviderMappingRepo.CreateAffiliateProviderMapping(ctx, mapping); err != nil {
+			return aff, fmt.Errorf("failed to create affiliate provider mapping: %w", err)
+		}
 	}
 
 	// Update core affiliate with non-provider-specific data from Everflow
@@ -810,6 +832,4 @@ func joinParams(params []string) string {
 	return result
 }
 
-func boolPtr(b bool) *bool {
-	return &b
-}
+

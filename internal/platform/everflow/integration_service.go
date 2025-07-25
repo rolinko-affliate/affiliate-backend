@@ -613,8 +613,113 @@ func (s *IntegrationService) GetAffiliate(ctx context.Context, id uuid.UUID) (do
 
 // CreateCampaign creates a campaign (offer) in Everflow
 func (s *IntegrationService) CreateCampaign(ctx context.Context, camp domain.Campaign) (domain.Campaign, error) {
-	// TODO: Implement campaign creation when campaign functionality is needed
-	return camp, fmt.Errorf("campaign creation not implemented")
+	// Check if provider mapping already exists and is successful
+	existingMapping, err := s.campaignProviderMappingRepo.GetCampaignProviderMapping(ctx, camp.CampaignID, "everflow")
+	if err == nil && existingMapping != nil && existingMapping.SyncStatus != nil && *existingMapping.SyncStatus == "synced" {
+		return camp, fmt.Errorf("campaign already has successful Everflow provider mapping")
+	}
+
+	// Get advertiser provider mapping to get network_advertiser_id
+	advertiserMapping, err := s.advertiserProviderMappingRepo.GetMappingByAdvertiserAndProvider(ctx, camp.AdvertiserID, "everflow")
+	if err != nil {
+		return camp, fmt.Errorf("failed to get advertiser provider mapping: %w", err)
+	}
+	if advertiserMapping.ProviderAdvertiserID == nil {
+		return camp, fmt.Errorf("advertiser not found in Everflow")
+	}
+
+	networkAdvertiserID, err := strconv.ParseInt(*advertiserMapping.ProviderAdvertiserID, 10, 32)
+	if err != nil {
+		return camp, fmt.Errorf("invalid provider advertiser ID: %w", err)
+	}
+
+	// Map domain campaign to Everflow offer request
+	everflowReq, err := s.mapCampaignToEverflowRequest(&camp, int32(networkAdvertiserID))
+	if err != nil {
+		return camp, fmt.Errorf("failed to map campaign to Everflow request: %w", err)
+	}
+
+	// Serialize the outbound request for payload storage
+	requestPayload, err := json.Marshal(everflowReq)
+	if err != nil {
+		return camp, fmt.Errorf("failed to serialize request payload: %w", err)
+	}
+
+	// Create offer in Everflow
+	resp, httpResp, err := s.offerClient.OffersAPI.CreateOffer(ctx).CreateOfferRequest(*everflowReq).Execute()
+	if err != nil {
+		// Try to read the response body for more detailed error information
+		var errorBody string
+		if httpResp != nil && httpResp.Body != nil {
+			bodyBytes, readErr := io.ReadAll(httpResp.Body)
+			if readErr == nil {
+				errorBody = string(bodyBytes)
+			}
+		}
+		return camp, fmt.Errorf("failed to create offer in Everflow: %w (response: %s)", err, errorBody)
+	}
+	defer httpResp.Body.Close()
+
+	// Create or update provider mapping
+	now := time.Now()
+	syncStatus := "synced"
+
+	var mapping *domain.CampaignProviderMapping
+	if existingMapping != nil {
+		// Update existing failed mapping
+		mapping = existingMapping
+		mapping.SyncStatus = &syncStatus
+		mapping.LastSyncAt = &now
+		mapping.UpdatedAt = now
+		mapping.SyncError = nil
+	} else {
+		// Create new mapping
+		mapping = &domain.CampaignProviderMapping{
+			CampaignID:   camp.CampaignID,
+			ProviderType: "everflow",
+			SyncStatus:   &syncStatus,
+			LastSyncAt:   &now,
+			CreatedAt:    now,
+			UpdatedAt:    now,
+		}
+	}
+
+	// Update mapping with Everflow response data
+	if err := s.mapEverflowResponseToCampaignMapping(resp, mapping); err != nil {
+		return camp, fmt.Errorf("failed to map Everflow response to provider mapping: %w", err)
+	}
+
+	// Store request/response payload in provider config
+	payload := map[string]interface{}{
+		"request":             json.RawMessage(requestPayload),
+		"response":            resp,
+		"last_operation":      "create",
+		"last_operation_time": now,
+	}
+
+	payloadJSON, err := json.Marshal(payload)
+	if err != nil {
+		return camp, fmt.Errorf("failed to marshal payload: %w", err)
+	}
+
+	payloadStr := string(payloadJSON)
+	mapping.ProviderData = &payloadStr
+
+	// Create or update the provider mapping
+	if existingMapping != nil {
+		if err := s.campaignProviderMappingRepo.UpdateCampaignProviderMapping(ctx, mapping); err != nil {
+			return camp, fmt.Errorf("failed to update campaign provider mapping: %w", err)
+		}
+	} else {
+		if err := s.campaignProviderMappingRepo.CreateCampaignProviderMapping(ctx, mapping); err != nil {
+			return camp, fmt.Errorf("failed to create campaign provider mapping: %w", err)
+		}
+	}
+
+	// Update core campaign with non-provider-specific data from Everflow
+	s.mapEverflowResponseToCampaign(resp, &camp)
+
+	return camp, nil
 }
 
 // UpdateCampaign updates a campaign (offer) in Everflow
@@ -658,15 +763,330 @@ func (s *IntegrationService) mapEverflowResponseToAffiliate(resp interface{}, af
 }
 
 // mapCampaignToEverflowRequest maps domain campaign to Everflow offer request
-func (s *IntegrationService) mapCampaignToEverflowRequest(camp *domain.Campaign, networkAdvertiserID int32) (interface{}, error) {
-	// TODO: Implement campaign mapping when campaign functionality is needed
-	return nil, fmt.Errorf("campaign mapping not implemented")
+func (s *IntegrationService) mapCampaignToEverflowRequest(camp *domain.Campaign, networkAdvertiserID int32) (*offer.CreateOfferRequest, error) {
+	// Create basic payout revenue structure
+	payoutRevenue := []offer.PayoutRevenue{
+		*offer.NewPayoutRevenue("cpa_cps", "rpa_rps", true, false),
+	}
+
+	// Set payout amounts if available
+	if camp.FixedConversionAmount != nil {
+		payoutRevenue[0].SetPayoutAmount(*camp.FixedConversionAmount)
+	} else {
+		payoutRevenue[0].SetPayoutAmount(2.0) // Default value from example
+	}
+
+	if camp.PercentageConversionAmount != nil {
+		payoutRevenue[0].SetPayoutPercentage(int32(*camp.PercentageConversionAmount))
+	} else {
+		payoutRevenue[0].SetPayoutPercentage(5) // Default value from example
+	}
+
+	// Set revenue amounts
+	if camp.FixedRevenue != nil {
+		payoutRevenue[0].SetRevenueAmount(*camp.FixedRevenue)
+	} else {
+		payoutRevenue[0].SetRevenueAmount(5.0) // Default value from example
+	}
+	payoutRevenue[0].SetRevenuePercentage(10) // Default value from example
+
+	// Determine destination URL
+	destinationURL := "https://example.com"
+	if camp.DestinationURL != nil && *camp.DestinationURL != "" {
+		destinationURL = *camp.DestinationURL
+	}
+
+	// Determine offer status based on campaign status
+	offerStatus := "active"
+	if camp.Status == "paused" {
+		offerStatus = "paused"
+	} else if camp.Status == "draft" {
+		offerStatus = "inactive"
+	}
+
+	// Create the offer request
+	req := offer.NewCreateOfferRequest(
+		networkAdvertiserID,
+		camp.Name,
+		destinationURL,
+		offerStatus,
+		payoutRevenue,
+	)
+
+	// Set optional fields
+	if camp.ThumbnailURL != nil {
+		req.SetThumbnailUrl(*camp.ThumbnailURL)
+	}
+
+	if camp.PreviewURL != nil {
+		req.SetPreviewUrl(*camp.PreviewURL)
+	}
+
+	if camp.InternalNotes != nil {
+		req.SetInternalNotes(*camp.InternalNotes)
+	}
+
+	if camp.CurrencyID != nil {
+		req.SetCurrencyId(*camp.CurrencyID)
+	}
+
+	if camp.ConversionMethod != nil {
+		req.SetConversionMethod(*camp.ConversionMethod)
+	}
+
+	if camp.SessionDefinition != nil {
+		req.SetSessionDefinition(*camp.SessionDefinition)
+	}
+
+	if camp.SessionDuration != nil {
+		req.SetSessionDuration(*camp.SessionDuration)
+	}
+
+	if camp.Visibility != nil {
+		req.SetVisibility(*camp.Visibility)
+	}
+
+	if camp.TermsAndConditions != nil {
+		req.SetTermsAndConditions(*camp.TermsAndConditions)
+		req.SetIsUsingExplicitTermsAndConditions(true)
+	}
+
+	// Set end date if available
+	if camp.EndDate != nil {
+		dateLiveUntil := camp.EndDate.Format("2006-01-02")
+		req.SetDateLiveUntil(dateLiveUntil)
+	}
+
+	// Set description as HTML description
+	if camp.Description != nil {
+		req.SetHtmlDescription(*camp.Description)
+	}
+
+	// Set caps if enabled
+	if camp.IsCapsEnabled != nil && *camp.IsCapsEnabled {
+		req.SetIsCapsEnabled(true)
+		if camp.DailyConversionCap != nil {
+			req.SetDailyConversionCap(int32(*camp.DailyConversionCap))
+		}
+		if camp.WeeklyConversionCap != nil {
+			req.SetWeeklyConversionCap(int32(*camp.WeeklyConversionCap))
+		}
+		if camp.MonthlyConversionCap != nil {
+			req.SetMonthlyConversionCap(int32(*camp.MonthlyConversionCap))
+		}
+		if camp.GlobalConversionCap != nil {
+			req.SetGlobalConversionCap(int32(*camp.GlobalConversionCap))
+		}
+		if camp.DailyClickCap != nil {
+			req.SetDailyClickCap(int32(*camp.DailyClickCap))
+		}
+		if camp.WeeklyClickCap != nil {
+			req.SetWeeklyClickCap(int32(*camp.WeeklyClickCap))
+		}
+		if camp.MonthlyClickCap != nil {
+			req.SetMonthlyClickCap(int32(*camp.MonthlyClickCap))
+		}
+		if camp.GlobalClickCap != nil {
+			req.SetGlobalClickCap(int32(*camp.GlobalClickCap))
+		}
+	}
+
+	// Set constant values as mentioned by user
+	networkTrackingDomainID := int32(12977)
+	req.SetNetworkTrackingDomainId(networkTrackingDomainID)
+	req.SetIsUseSecureLink(true)
+
+	// Set default category ID
+	req.SetNetworkCategoryId(1)
+
+	// Create empty ruleset with default timezone
+	ruleset := offer.NewRuleset()
+	ruleset.SetDayPartingTimezoneId(58) // Default timezone from example
+	req.SetRuleset(ruleset)
+
+	// Set attribution methods
+	req.SetEmailAttributionMethod("first_affiliate_attribution")
+	req.SetAttributionMethod("last_touch")
+
+	return req, nil
 }
 
 // mapEverflowResponseToCampaign maps Everflow offer response to domain campaign
-func (s *IntegrationService) mapEverflowResponseToCampaign(resp interface{}, camp *domain.Campaign) domain.Campaign {
-	// TODO: Implement response mapping when campaign functionality is needed
+func (s *IntegrationService) mapEverflowResponseToCampaign(resp *offer.OfferResponse, camp *domain.Campaign) domain.Campaign {
+	// Update campaign with response data if available
+	if resp != nil {
+		// Update basic fields that might have been modified by Everflow
+		if resp.HasName() {
+			camp.Name = resp.GetName()
+		}
+		
+		if resp.HasDestinationUrl() {
+			destinationURL := resp.GetDestinationUrl()
+			camp.DestinationURL = &destinationURL
+		}
+		
+		if resp.HasThumbnailUrl() {
+			thumbnailURL := resp.GetThumbnailUrl()
+			camp.ThumbnailURL = &thumbnailURL
+		}
+		
+		if resp.HasPreviewUrl() {
+			previewURL := resp.GetPreviewUrl()
+			camp.PreviewURL = &previewURL
+		}
+		
+		if resp.HasInternalNotes() {
+			internalNotes := resp.GetInternalNotes()
+			camp.InternalNotes = &internalNotes
+		}
+		
+		if resp.HasCurrencyId() {
+			currencyID := resp.GetCurrencyId()
+			camp.CurrencyID = &currencyID
+		}
+		
+		if resp.HasConversionMethod() {
+			conversionMethod := resp.GetConversionMethod()
+			camp.ConversionMethod = &conversionMethod
+		}
+		
+		if resp.HasSessionDefinition() {
+			sessionDefinition := resp.GetSessionDefinition()
+			camp.SessionDefinition = &sessionDefinition
+		}
+		
+		if resp.HasSessionDuration() {
+			sessionDuration := resp.GetSessionDuration()
+			camp.SessionDuration = &sessionDuration
+		}
+		
+		if resp.HasVisibility() {
+			visibility := resp.GetVisibility()
+			camp.Visibility = &visibility
+		}
+		
+		if resp.HasTermsAndConditions() {
+			termsAndConditions := resp.GetTermsAndConditions()
+			camp.TermsAndConditions = &termsAndConditions
+		}
+		
+		// Map offer status back to campaign status
+		if resp.HasOfferStatus() {
+			offerStatus := resp.GetOfferStatus()
+			switch offerStatus {
+			case "active":
+				camp.Status = "active"
+			case "paused":
+				camp.Status = "paused"
+			case "inactive":
+				camp.Status = "draft"
+			default:
+				camp.Status = "draft"
+			}
+		}
+	}
+	
 	return *camp
+}
+
+// mapEverflowResponseToCampaignMapping maps Everflow offer response to campaign provider mapping
+func (s *IntegrationService) mapEverflowResponseToCampaignMapping(resp *offer.OfferResponse, mapping *domain.CampaignProviderMapping) error {
+	if resp == nil {
+		return fmt.Errorf("invalid response data")
+	}
+
+	// Set provider campaign ID
+	if resp.HasNetworkOfferId() {
+		providerCampaignID := strconv.FormatInt(int64(resp.GetNetworkOfferId()), 10)
+		mapping.ProviderCampaignID = &providerCampaignID
+	}
+
+	// Create provider data structure
+	providerData := &domain.EverflowCampaignProviderData{}
+	
+	if resp.HasNetworkOfferId() {
+		networkCampaignID := resp.GetNetworkOfferId()
+		providerData.NetworkCampaignID = &networkCampaignID
+	}
+	
+	if resp.HasNetworkAdvertiserId() {
+		networkAdvertiserID := resp.GetNetworkAdvertiserId()
+		providerData.NetworkAdvertiserID = &networkAdvertiserID
+	}
+	
+	if resp.HasCapsTimezoneId() {
+		capsTimezoneID := resp.GetCapsTimezoneId()
+		providerData.CapsTimezoneID = &capsTimezoneID
+	}
+	
+	if resp.HasProjectId() {
+		projectID := resp.GetProjectId()
+		providerData.ProjectID = &projectID
+	}
+	
+	if resp.HasHtmlDescription() {
+		htmlDescription := resp.GetHtmlDescription()
+		providerData.HTMLDescription = &htmlDescription
+	}
+	
+	if resp.HasIsUsingExplicitTermsAndConditions() {
+		isUsingExplicitTermsAndConditions := resp.GetIsUsingExplicitTermsAndConditions()
+		providerData.IsUsingExplicitTermsAndConditions = &isUsingExplicitTermsAndConditions
+	}
+	
+	if resp.HasIsForceTermsAndConditions() {
+		isForceTermsAndConditions := resp.GetIsForceTermsAndConditions()
+		providerData.IsForceTermsAndConditions = &isForceTermsAndConditions
+	}
+	
+	if resp.HasIsViewThroughEnabled() {
+		isViewThroughEnabled := resp.GetIsViewThroughEnabled()
+		providerData.IsViewThroughEnabled = &isViewThroughEnabled
+	}
+	
+	if resp.HasServerSideUrl() {
+		serverSideURL := resp.GetServerSideUrl()
+		providerData.ServerSideURL = &serverSideURL
+	}
+	
+	if resp.HasViewThroughDestinationUrl() {
+		viewThroughDestinationURL := resp.GetViewThroughDestinationUrl()
+		providerData.ViewThroughDestinationURL = &viewThroughDestinationURL
+	}
+	
+	if resp.HasIsDescriptionPlainText() {
+		isDescriptionPlainText := resp.GetIsDescriptionPlainText()
+		providerData.IsDescriptionPlainText = &isDescriptionPlainText
+	}
+	
+	if resp.HasIsUseDirectLinking() {
+		isUseDirectLinking := resp.GetIsUseDirectLinking()
+		providerData.IsUseDirectLinking = &isUseDirectLinking
+	}
+	
+	if resp.HasAppIdentifier() {
+		appIdentifier := resp.GetAppIdentifier()
+		providerData.AppIdentifier = &appIdentifier
+	}
+	
+	if resp.HasTimeCreated() {
+		timeCreated := int(resp.GetTimeCreated())
+		providerData.TimeCreated = &timeCreated
+	}
+	
+	if resp.HasTimeSaved() {
+		timeSaved := int(resp.GetTimeSaved())
+		providerData.TimeSaved = &timeSaved
+	}
+
+	// Convert provider data to JSON and store in mapping
+	providerDataJSON, err := providerData.ToJSON()
+	if err != nil {
+		return fmt.Errorf("failed to serialize provider data: %w", err)
+	}
+	mapping.ProviderData = &providerDataJSON
+
+	return nil
 }
 
 // mapCampaignToEverflowUpdateRequest maps domain campaign to Everflow offer update request

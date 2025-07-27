@@ -283,7 +283,7 @@ func main() {
 		// Initialize integration service with Everflow configuration
 		everflowConfig := everflow.Config{
 			BaseURL: "https://api.eflow.team",
-			APIKey:  "your-api-key-here", // TODO: Load from environment
+			APIKey:  appConf.EverflowAPIKey,
 		}
 		integrationService = everflow.NewIntegrationServiceWithClients(
 			everflowConfig,

@@ -12,6 +12,7 @@ import (
 	"github.com/affiliate-backend/internal/platform/everflow/advertiser"
 	"github.com/affiliate-backend/internal/platform/everflow/affiliate"
 	"github.com/affiliate-backend/internal/platform/everflow/offer"
+	"github.com/affiliate-backend/internal/platform/everflow/tracking"
 	"github.com/google/uuid"
 )
 
@@ -20,6 +21,7 @@ type IntegrationService struct {
 	advertiserClient *advertiser.APIClient
 	affiliateClient  *affiliate.APIClient
 	offerClient      *offer.APIClient
+	trackingClient   *tracking.APIClient
 
 	// Repository interfaces for provider mappings
 	advertiserRepo AdvertiserRepository
@@ -71,6 +73,7 @@ func NewIntegrationService(
 	advertiserClient *advertiser.APIClient,
 	affiliateClient *affiliate.APIClient,
 	offerClient *offer.APIClient,
+	trackingClient *tracking.APIClient,
 	advertiserRepo AdvertiserRepository,
 	affiliateRepo AffiliateRepository,
 	campaignRepo CampaignRepository,
@@ -82,6 +85,7 @@ func NewIntegrationService(
 		advertiserClient:              advertiserClient,
 		affiliateClient:               affiliateClient,
 		offerClient:                   offerClient,
+		trackingClient:                trackingClient,
 		advertiserRepo:                advertiserRepo,
 		affiliateRepo:                 affiliateRepo,
 		campaignRepo:                  campaignRepo,
@@ -1126,90 +1130,75 @@ func (s *IntegrationService) GenerateTrackingLink(ctx context.Context, req *doma
 	}
 
 	// Create Everflow tracking link request
-	everflowReq := map[string]interface{}{
-		"network_offer_id":     networkOfferID,
-		"network_affiliate_id": networkAffiliateID,
-	}
+	everflowReq := tracking.NewCreateTrackingLinkRequest(networkAffiliateID, networkOfferID)
 
 	// Add optional parameters
 	if req.NetworkTrackingDomainID != nil {
-		everflowReq["network_tracking_domain_id"] = *req.NetworkTrackingDomainID
+		everflowReq.SetNetworkTrackingDomainId(*req.NetworkTrackingDomainID)
 	}
 	if req.NetworkOfferURLID != nil {
-		everflowReq["network_offer_url_id"] = *req.NetworkOfferURLID
+		everflowReq.SetNetworkOfferUrlId(*req.NetworkOfferURLID)
 	}
 	if req.CreativeID != nil {
-		everflowReq["creative_id"] = *req.CreativeID
+		everflowReq.SetCreativeId(*req.CreativeID)
 	}
 	if req.NetworkTrafficSourceID != nil {
-		everflowReq["network_traffic_source_id"] = *req.NetworkTrafficSourceID
+		everflowReq.SetNetworkTrafficSourceId(*req.NetworkTrafficSourceID)
 	}
 	if req.SourceID != nil {
-		everflowReq["source_id"] = *req.SourceID
+		everflowReq.SetSourceId(*req.SourceID)
 	}
 	if req.Sub1 != nil {
-		everflowReq["sub1"] = *req.Sub1
+		everflowReq.SetSub1(*req.Sub1)
 	}
 	if req.Sub2 != nil {
-		everflowReq["sub2"] = *req.Sub2
+		everflowReq.SetSub2(*req.Sub2)
 	}
 	if req.Sub3 != nil {
-		everflowReq["sub3"] = *req.Sub3
+		everflowReq.SetSub3(*req.Sub3)
 	}
 	if req.Sub4 != nil {
-		everflowReq["sub4"] = *req.Sub4
+		everflowReq.SetSub4(*req.Sub4)
 	}
 	if req.Sub5 != nil {
-		everflowReq["sub5"] = *req.Sub5
+		everflowReq.SetSub5(*req.Sub5)
 	}
 	if req.IsEncryptParameters != nil {
-		everflowReq["is_encrypt_parameters"] = *req.IsEncryptParameters
+		everflowReq.SetIsEncryptParameters(*req.IsEncryptParameters)
 	}
 	if req.IsRedirectLink != nil {
-		everflowReq["is_redirect_link"] = *req.IsRedirectLink
+		everflowReq.SetIsRedirectLink(*req.IsRedirectLink)
 	}
 
-	// For now, simulate the Everflow API call since we don't have the tracking API client generated
-	// In a real implementation, this would make an HTTP POST to /v1/networks/tracking/offers/clicks
+	// Make the actual API call to Everflow
+	resp, httpResp, err := s.trackingClient.TrackingAPI.CreateTrackingLink(ctx).CreateTrackingLinkRequest(*everflowReq).Execute()
+	if err != nil {
+		// Try to read the response body for more detailed error information
+		var errorBody string
+		if httpResp != nil && httpResp.Body != nil {
+			bodyBytes, readErr := io.ReadAll(httpResp.Body)
+			if readErr == nil {
+				errorBody = string(bodyBytes)
+			}
+		}
+		return nil, fmt.Errorf("failed to create tracking link in Everflow: %w (response: %s)", err, errorBody)
+	}
+	defer httpResp.Body.Close()
 
-	// Simulate the response
-	baseURL := "http://tracking-domain.everflow.test"
-	trackingPath := fmt.Sprintf("/%s/%s/", generateTrackingCode(), generateTrackingCode())
-
-	// Build query parameters
-	params := []string{}
-	if req.SourceID != nil {
-		params = append(params, fmt.Sprintf("source_id=%s", *req.SourceID))
-	}
-	if req.Sub1 != nil {
-		params = append(params, fmt.Sprintf("sub1=%s", *req.Sub1))
-	}
-	if req.Sub2 != nil {
-		params = append(params, fmt.Sprintf("sub2=%s", *req.Sub2))
-	}
-	if req.Sub3 != nil {
-		params = append(params, fmt.Sprintf("sub3=%s", *req.Sub3))
-	}
-	if req.Sub4 != nil {
-		params = append(params, fmt.Sprintf("sub4=%s", *req.Sub4))
-	}
-	if req.Sub5 != nil {
-		params = append(params, fmt.Sprintf("sub5=%s", *req.Sub5))
+	// Extract the generated URL from the response
+	generatedURL := ""
+	if resp.TrackingUrl != nil {
+		generatedURL = *resp.TrackingUrl
 	}
 
-	generatedURL := baseURL + trackingPath
-	if len(params) > 0 {
-		generatedURL += "?" + joinParams(params)
-	}
-
-	// Create provider data
+	// Create provider data from response
 	providerData := &domain.EverflowTrackingLinkProviderData{
-		NetworkOfferID:           &networkOfferID,
-		NetworkAffiliateID:       &networkAffiliateID,
-		NetworkTrackingDomainID:  req.NetworkTrackingDomainID,
-		NetworkOfferURLID:        req.NetworkOfferURLID,
-		CreativeID:               req.CreativeID,
-		NetworkTrafficSourceID:   req.NetworkTrafficSourceID,
+		NetworkOfferID:           resp.NetworkOfferId,
+		NetworkAffiliateID:       resp.NetworkAffiliateId,
+		NetworkTrackingDomainID:  resp.NetworkTrackingDomainId,
+		NetworkOfferURLID:        resp.NetworkOfferUrlId,
+		CreativeID:               resp.CreativeId,
+		NetworkTrafficSourceID:   resp.NetworkTrafficSourceId,
 		GeneratedURL:             &generatedURL,
 		CanAffiliateRunAllOffers: boolPtr(true),
 	}
@@ -1234,22 +1223,5 @@ func (s *IntegrationService) GenerateTrackingLinkQR(ctx context.Context, req *do
 	return []byte("everflow-qr-code-png-data"), nil
 }
 
-// Helper functions
-func generateTrackingCode() string {
-	// Generate a random tracking code (simplified)
-	codes := []string{"ABC123", "DEF456", "GHI789", "JKL012", "MNO345"}
-	return codes[time.Now().Nanosecond()%len(codes)]
-}
-
-func joinParams(params []string) string {
-	result := ""
-	for i, param := range params {
-		if i > 0 {
-			result += "&"
-		}
-		result += param
-	}
-	return result
-}
 
 

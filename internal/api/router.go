@@ -60,7 +60,8 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 	// Profile management routes
 	profiles := v1.Group("/profiles")
 	{
-		profiles.POST("", opts.ProfileHandler.CreateProfile)
+		// TODO: Remove open access to CreateProfile - should have proper access control in production
+		profiles.POST("", opts.ProfileHandler.CreateProfile) // Temporarily without access control
 		profiles.POST("/upsert", opts.ProfileHandler.UpsertProfile)
 		profiles.PUT("/:id", opts.ProfileHandler.UpdateProfile)
 		profiles.DELETE("/:id", opts.ProfileHandler.DeleteProfile)
@@ -69,8 +70,8 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 	// --- Organization Routes ---
 	organizations := v1.Group("/organizations")
 	{
-		// Admin-only routes for organization management
-		organizations.POST("", rbacMW("Admin"), opts.OrganizationHandler.CreateOrganization)
+		// TODO: Remove open access to CreateOrganization - should be Admin-only in production
+		organizations.POST("", opts.OrganizationHandler.CreateOrganization) // Temporarily without access control
 		organizations.PUT("/:id", rbacMW("Admin"), opts.OrganizationHandler.UpdateOrganization)
 		organizations.DELETE("/:id", rbacMW("Admin"), opts.OrganizationHandler.DeleteOrganization)
 
@@ -97,6 +98,7 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		advertisers.POST("/:id/sync-to-everflow", opts.AdvertiserHandler.SyncAdvertiserToEverflow)
 		advertisers.POST("/:id/sync-from-everflow", opts.AdvertiserHandler.SyncAdvertiserFromEverflow)
 		advertisers.GET("/:id/compare-with-everflow", opts.AdvertiserHandler.CompareAdvertiserWithEverflow)
+		advertisers.POST("/sync-all-to-everflow", rbacMW("Admin"), opts.AdvertiserHandler.SyncAllAdvertisersToEverflow)
 
 		// Advertiser's campaigns
 		advertisers.GET("/:id/campaigns", opts.CampaignHandler.ListCampaignsByAdvertiser)

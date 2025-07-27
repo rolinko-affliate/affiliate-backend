@@ -96,6 +96,27 @@ func (apm *AdvertiserProviderMapping) GetSyncStatusString() string {
 	return *apm.SyncStatus
 }
 
+// EverflowAdvertiserProviderData represents Everflow-specific data stored in ProviderData field
+type EverflowAdvertiserProviderData struct {
+	// Everflow-specific fields only (general purpose fields moved to main Advertiser model)
+	NetworkAdvertiserID         *int32 `json:"network_advertiser_id,omitempty"`
+	NetworkEmployeeID           *int32 `json:"network_employee_id,omitempty"`
+	SalesManagerID              *int32 `json:"sales_manager_id,omitempty"`
+	AddressID                   *int32 `json:"address_id,omitempty"`
+	IsContactAddressEnabled     *bool  `json:"is_contact_address_enabled,omitempty"`
+	VerificationToken           *string `json:"verification_token,omitempty"`
+	
+	// Everflow-specific structured data
+	Users           *[]interface{} `json:"users,omitempty"`
+	ContactAddress  *interface{}   `json:"contact_address,omitempty"`
+	Settings        *interface{}   `json:"settings,omitempty"`
+	Labels          *interface{}   `json:"labels,omitempty"`
+	Billing         *interface{}   `json:"billing,omitempty"`
+	
+	// Additional fields for extensibility
+	AdditionalFields map[string]interface{} `json:"additional_fields,omitempty"`
+}
+
 // AdvertiserDiscrepancy represents a discrepancy between local and provider data
 type AdvertiserDiscrepancy struct {
 	Field         string      `json:"field"`
@@ -115,17 +136,22 @@ type AdvertiserWithProviderData struct {
 // AdvertiserWithEverflowData is an alias for backward compatibility
 type AdvertiserWithEverflowData = AdvertiserWithProviderData
 
-// EverflowAdvertiserProviderData represents Everflow-specific data stored in ProviderData field
-type EverflowAdvertiserProviderData struct {
-	// Everflow-specific fields only (general purpose fields moved to main Advertiser model)
-	NetworkAdvertiserID        *int32 `json:"network_advertiser_id,omitempty"`
-	NetworkEmployeeID          *int32 `json:"network_employee_id,omitempty"`
-	IsExposePublisherReporting *bool  `json:"is_expose_publisher_reporting,omitempty"`
+// BulkSyncResult represents the result of a bulk sync operation
+type BulkSyncResult struct {
+	TotalProcessed int                    `json:"total_processed"`
+	SuccessCount   int                    `json:"success_count"`
+	FailureCount   int                    `json:"failure_count"`
+	Successes      []BulkSyncItemResult   `json:"successes,omitempty"`
+	Failures       []BulkSyncItemResult   `json:"failures,omitempty"`
+	StartedAt      time.Time              `json:"started_at"`
+	CompletedAt    time.Time              `json:"completed_at"`
+	Duration       time.Duration          `json:"duration"`
+}
 
-	// Everflow-specific structured data
-	Settings      *interface{} `json:"settings,omitempty"`
-	ReportingData *interface{} `json:"reporting_data,omitempty"`
-
-	// Additional fields for extensibility
-	AdditionalFields map[string]interface{} `json:"additional_fields,omitempty"`
+// BulkSyncItemResult represents the result of syncing a single item
+type BulkSyncItemResult struct {
+	AdvertiserID         int64  `json:"advertiser_id"`
+	AdvertiserName       string `json:"advertiser_name"`
+	ProviderAdvertiserID string `json:"provider_advertiser_id,omitempty"`
+	Error                string `json:"error,omitempty"`
 }

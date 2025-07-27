@@ -51,8 +51,12 @@ func (m *AffiliateProviderMapper) MapAffiliateToEverflowRequest(
 		req.SetInternalNotes(*aff.InternalNotes)
 	}
 
+	// Set default currency ID (required by Everflow)
 	if aff.DefaultCurrencyID != nil {
 		req.SetDefaultCurrencyId(*aff.DefaultCurrencyID)
+	} else {
+		// Default to USD if not specified
+		req.SetDefaultCurrencyId("USD")
 	}
 
 	// Set Everflow-specific fields
@@ -107,12 +111,16 @@ func (m *AffiliateProviderMapper) MapAffiliateToEverflowRequest(
 		}
 	}
 
-	// Map billing info if available
+	// Map billing info (required by Everflow)
 	if aff.BillingInfo != nil {
 		billingInfo, err := m.mapDomainBillingToEverflowBilling(*aff.BillingInfo, aff)
 		if err == nil && billingInfo != nil {
 			req.SetBilling(*billingInfo)
 		}
+	} else {
+		// Create default billing info if not provided
+		billingInfo := m.createDefaultBillingInfo(aff)
+		req.SetBilling(*billingInfo)
 	}
 
 	// Map users if available from Everflow data
@@ -512,4 +520,35 @@ func (m *AffiliateProviderMapper) MapEverflowResponseToProviderMapping(
 	mapping.ProviderData = &providerDataStr
 
 	return nil
+}
+
+// createDefaultBillingInfo creates default billing information for Everflow
+func (m *AffiliateProviderMapper) createDefaultBillingInfo(aff *domain.Affiliate) *affiliate.BillingInfo {
+	billingInfo := affiliate.NewBillingInfo()
+	
+	// Set default billing frequency
+	billingInfo.SetBillingFrequency("monthly")
+	
+	// Set default payment type
+	billingInfo.SetPaymentType("none")
+	
+	// Set default tax ID
+	billingInfo.SetTaxId("XXXXX")
+	
+	// Set default billing details (day of month)
+	details := affiliate.NewBillingDetails()
+	details.SetDayOfMonth(1)
+	billingInfo.SetDetails(*details)
+	
+	// Use affiliate's invoice amount threshold if available
+	if aff.InvoiceAmountThreshold != nil {
+		billingInfo.SetInvoiceAmountThreshold(*aff.InvoiceAmountThreshold)
+	}
+	
+	// Use affiliate's default payment terms if available
+	if aff.DefaultPaymentTerms != nil {
+		billingInfo.SetDefaultPaymentTerms(*aff.DefaultPaymentTerms)
+	}
+	
+	return billingInfo
 }

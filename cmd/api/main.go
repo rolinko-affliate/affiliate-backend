@@ -301,7 +301,7 @@ func main() {
 	organizationService := service.NewOrganizationService(organizationRepo)
 	advertiserService := service.NewAdvertiserService(advertiserRepo, advertiserProviderMappingRepo, organizationRepo, cryptoService, integrationService)
 	affiliateService := service.NewAffiliateService(affiliateRepo, affiliateProviderMappingRepo, organizationRepo, integrationService)
-	campaignService := service.NewCampaignService(campaignRepo)
+	campaignService := service.NewCampaignService(campaignRepo, integrationService)
 	trackingLinkService := service.NewTrackingLinkService(trackingLinkRepo, trackingLinkProviderMappingRepo, campaignRepo, affiliateRepo, campaignProviderMappingRepo, affiliateProviderMappingRepo, integrationService)
 	analyticsService := service.NewAnalyticsService(analyticsRepo)
 	favoritePublisherListService := service.NewFavoritePublisherListService(favoritePublisherListRepo, analyticsRepo)

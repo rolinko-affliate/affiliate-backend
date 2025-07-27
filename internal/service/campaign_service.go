@@ -5,6 +5,7 @@ import (
 	"fmt"
 
 	"github.com/affiliate-backend/internal/domain"
+	"github.com/affiliate-backend/internal/platform/provider"
 	"github.com/affiliate-backend/internal/repository"
 )
 
@@ -20,13 +21,15 @@ type CampaignService interface {
 
 // campaignService implements CampaignService
 type campaignService struct {
-	campaignRepo repository.CampaignRepository
+	campaignRepo       repository.CampaignRepository
+	integrationService provider.IntegrationService
 }
 
 // NewCampaignService creates a new campaign service
-func NewCampaignService(campaignRepo repository.CampaignRepository) CampaignService {
+func NewCampaignService(campaignRepo repository.CampaignRepository, integrationService provider.IntegrationService) CampaignService {
 	return &campaignService{
-		campaignRepo: campaignRepo,
+		campaignRepo:       campaignRepo,
+		integrationService: integrationService,
 	}
 }
 
@@ -37,9 +40,18 @@ func (s *campaignService) CreateCampaign(ctx context.Context, campaign *domain.C
 		return fmt.Errorf("campaign validation failed: %w", err)
 	}
 
-	// Create campaign in repository
+	// Step 1: Create campaign in local repository
 	if err := s.campaignRepo.CreateCampaign(ctx, campaign); err != nil {
 		return fmt.Errorf("failed to create campaign: %w", err)
+	}
+
+	// Step 2: Call IntegrationService to create campaign in provider (Everflow)
+	// The integration service handles provider mapping creation internally
+	_, err := s.integrationService.CreateCampaign(ctx, *campaign)
+	if err != nil {
+		// Log error but don't fail the operation since local creation succeeded
+		fmt.Printf("Warning: failed to create campaign in provider: %v\n", err)
+		return nil
 	}
 
 	return nil

@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"log"
 	"strconv"
 	"time"
 
@@ -384,38 +385,62 @@ func (s *IntegrationService) GetAdvertiser(ctx context.Context, id uuid.UUID) (d
 
 // CreateAffiliate creates an affiliate in Everflow
 func (s *IntegrationService) CreateAffiliate(ctx context.Context, aff domain.Affiliate) (domain.Affiliate, error) {
+	log.Printf("🔧 EVERFLOW CreateAffiliate: Starting affiliate creation for ID %d, Name: %s", aff.AffiliateID, aff.Name)
+	
 	// Check if provider mapping already exists and is successful
 	existingMapping, err := s.affiliateProviderMappingRepo.GetAffiliateProviderMapping(ctx, aff.AffiliateID, "everflow")
 	if err == nil && existingMapping != nil && existingMapping.SyncStatus != nil && *existingMapping.SyncStatus == "synced" {
+		log.Printf("⚠️  EVERFLOW CreateAffiliate: Affiliate %d already has successful Everflow mapping", aff.AffiliateID)
 		return aff, fmt.Errorf("affiliate already has successful Everflow provider mapping")
+	}
+	
+	if err != nil {
+		log.Printf("🔍 EVERFLOW CreateAffiliate: No existing mapping found for affiliate %d (error: %v)", aff.AffiliateID, err)
+	} else if existingMapping != nil {
+		log.Printf("🔍 EVERFLOW CreateAffiliate: Found existing mapping for affiliate %d with status: %v", aff.AffiliateID, existingMapping.SyncStatus)
 	}
 
 	// Map domain affiliate to Everflow request (without existing mapping)
+	log.Printf("🔄 EVERFLOW CreateAffiliate: Mapping affiliate to Everflow request...")
 	everflowReq, err := s.affiliateProviderMapper.MapAffiliateToEverflowRequest(&aff, nil)
 	if err != nil {
+		log.Printf("❌ EVERFLOW CreateAffiliate: Failed to map affiliate to Everflow request: %v", err)
 		return aff, fmt.Errorf("failed to map affiliate to Everflow request: %w", err)
 	}
+
+	// Log the mapped request for debugging
+	reqJSON, _ := json.MarshalIndent(everflowReq, "", "  ")
+	log.Printf("📤 EVERFLOW CreateAffiliate: Sending request to Everflow:\n%s", string(reqJSON))
 
 	// Serialize the outbound request for payload storage
 	requestPayload, err := json.Marshal(everflowReq)
 	if err != nil {
+		log.Printf("❌ EVERFLOW CreateAffiliate: Failed to serialize request payload: %v", err)
 		return aff, fmt.Errorf("failed to serialize request payload: %w", err)
 	}
 
 	// Create affiliate in Everflow
+	log.Printf("🚀 EVERFLOW CreateAffiliate: Making API call to Everflow...")
 	resp, httpResp, err := s.affiliateClient.AffiliatesAPI.CreateAffiliate(ctx).CreateAffiliateRequest(*everflowReq).Execute()
 	if err != nil {
 		// Try to read the response body for more detailed error information
 		var errorBody string
-		if httpResp != nil && httpResp.Body != nil {
-			bodyBytes, readErr := io.ReadAll(httpResp.Body)
-			if readErr == nil {
-				errorBody = string(bodyBytes)
+		var statusCode int
+		if httpResp != nil {
+			statusCode = httpResp.StatusCode
+			if httpResp.Body != nil {
+				bodyBytes, readErr := io.ReadAll(httpResp.Body)
+				if readErr == nil {
+					errorBody = string(bodyBytes)
+				}
 			}
 		}
+		log.Printf("❌ EVERFLOW CreateAffiliate: API call failed with status %d, error: %v, response body: %s", statusCode, err, errorBody)
 		return aff, fmt.Errorf("failed to create affiliate in Everflow: %w (response: %s)", err, errorBody)
 	}
 	defer httpResp.Body.Close()
+	
+	log.Printf("✅ EVERFLOW CreateAffiliate: Successfully created affiliate in Everflow")
 
 	// Create or update provider mapping
 	now := time.Now()
@@ -619,7 +644,7 @@ func (s *IntegrationService) GetAffiliate(ctx context.Context, id uuid.UUID) (do
 func (s *IntegrationService) CreateCampaign(ctx context.Context, camp domain.Campaign) (domain.Campaign, error) {
 	// Check if provider mapping already exists and is successful
 	existingMapping, err := s.campaignProviderMappingRepo.GetCampaignProviderMapping(ctx, camp.CampaignID, "everflow")
-	if err == nil && existingMapping != nil && existingMapping.SyncStatus != nil && *existingMapping.SyncStatus == "synced" {
+	if err == nil && existingMapping != nil && existingMapping.IsActiveOnProvider != nil && *existingMapping.IsActiveOnProvider {
 		return camp, fmt.Errorf("campaign already has successful Everflow provider mapping")
 	}
 
@@ -666,25 +691,25 @@ func (s *IntegrationService) CreateCampaign(ctx context.Context, camp domain.Cam
 
 	// Create or update provider mapping
 	now := time.Now()
-	syncStatus := "synced"
 
 	var mapping *domain.CampaignProviderMapping
 	if existingMapping != nil {
 		// Update existing failed mapping
 		mapping = existingMapping
-		mapping.SyncStatus = &syncStatus
-		mapping.LastSyncAt = &now
+		isActive := true
+		mapping.IsActiveOnProvider = &isActive
+		mapping.LastSyncedAt = &now
 		mapping.UpdatedAt = now
-		mapping.SyncError = nil
 	} else {
 		// Create new mapping
+		isActive := true
 		mapping = &domain.CampaignProviderMapping{
-			CampaignID:   camp.CampaignID,
-			ProviderType: "everflow",
-			SyncStatus:   &syncStatus,
-			LastSyncAt:   &now,
-			CreatedAt:    now,
-			UpdatedAt:    now,
+			CampaignID:         camp.CampaignID,
+			ProviderType:       "everflow",
+			IsActiveOnProvider: &isActive,
+			LastSyncedAt:       &now,
+			CreatedAt:          now,
+			UpdatedAt:          now,
 		}
 	}
 
@@ -1101,35 +1126,51 @@ func (s *IntegrationService) mapCampaignToEverflowUpdateRequest(camp *domain.Cam
 
 // GenerateTrackingLink generates a tracking link via Everflow API
 func (s *IntegrationService) GenerateTrackingLink(ctx context.Context, req *domain.TrackingLinkGenerationRequest, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) (*domain.TrackingLinkGenerationResponse, error) {
+	log.Printf("🔧 EVERFLOW GenerateTrackingLink: Starting tracking link generation")
+	
 	// Extract provider-specific IDs from mappings
 	var networkOfferID, networkAffiliateID int32
 
 	// Parse campaign provider data to get network_offer_id
 	if campaignMapping != nil && campaignMapping.ProviderData != nil {
+		log.Printf("🔍 EVERFLOW GenerateTrackingLink: Parsing campaign provider data...")
 		var campaignProviderData domain.EverflowCampaignProviderData
 		if err := campaignProviderData.FromJSON(*campaignMapping.ProviderData); err == nil {
 			if campaignProviderData.NetworkCampaignID != nil {
 				networkOfferID = *campaignProviderData.NetworkCampaignID
+				log.Printf("✅ EVERFLOW GenerateTrackingLink: Found network_offer_id: %d", networkOfferID)
 			}
+		} else {
+			log.Printf("⚠️  EVERFLOW GenerateTrackingLink: Failed to parse campaign provider data: %v", err)
 		}
+	} else {
+		log.Printf("⚠️  EVERFLOW GenerateTrackingLink: No campaign mapping or provider data available")
 	}
 
 	// Parse affiliate provider data to get network_affiliate_id
 	if affiliateMapping != nil && affiliateMapping.ProviderData != nil {
+		log.Printf("🔍 EVERFLOW GenerateTrackingLink: Parsing affiliate provider data...")
 		var affiliateProviderData domain.EverflowProviderData
 		if err := json.Unmarshal([]byte(*affiliateMapping.ProviderData), &affiliateProviderData); err == nil {
 			if affiliateProviderData.NetworkAffiliateID != nil {
 				networkAffiliateID = *affiliateProviderData.NetworkAffiliateID
+				log.Printf("✅ EVERFLOW GenerateTrackingLink: Found network_affiliate_id: %d", networkAffiliateID)
 			}
+		} else {
+			log.Printf("⚠️  EVERFLOW GenerateTrackingLink: Failed to parse affiliate provider data: %v", err)
 		}
+	} else {
+		log.Printf("⚠️  EVERFLOW GenerateTrackingLink: No affiliate mapping or provider data available")
 	}
 
 	// If we don't have the required IDs, return an error
 	if networkOfferID == 0 || networkAffiliateID == 0 {
+		log.Printf("❌ EVERFLOW GenerateTrackingLink: Missing required provider IDs: networkOfferID=%d, networkAffiliateID=%d", networkOfferID, networkAffiliateID)
 		return nil, fmt.Errorf("missing required provider IDs: networkOfferID=%d, networkAffiliateID=%d", networkOfferID, networkAffiliateID)
 	}
 
 	// Create Everflow tracking link request
+	log.Printf("🔄 EVERFLOW GenerateTrackingLink: Creating Everflow request with affiliate_id=%d, offer_id=%d", networkAffiliateID, networkOfferID)
 	everflowReq := tracking.NewCreateTrackingLinkRequest(networkAffiliateID, networkOfferID)
 
 	// Add optional parameters
@@ -1170,20 +1211,32 @@ func (s *IntegrationService) GenerateTrackingLink(ctx context.Context, req *doma
 		everflowReq.SetIsRedirectLink(*req.IsRedirectLink)
 	}
 
+	// Log the final request for debugging
+	reqJSON, _ := json.MarshalIndent(everflowReq, "", "  ")
+	log.Printf("📤 EVERFLOW GenerateTrackingLink: Sending request to Everflow:\n%s", string(reqJSON))
+
 	// Make the actual API call to Everflow
+	log.Printf("🚀 EVERFLOW GenerateTrackingLink: Making API call to Everflow...")
 	resp, httpResp, err := s.trackingClient.TrackingAPI.CreateTrackingLink(ctx).CreateTrackingLinkRequest(*everflowReq).Execute()
 	if err != nil {
 		// Try to read the response body for more detailed error information
 		var errorBody string
-		if httpResp != nil && httpResp.Body != nil {
-			bodyBytes, readErr := io.ReadAll(httpResp.Body)
-			if readErr == nil {
-				errorBody = string(bodyBytes)
+		var statusCode int
+		if httpResp != nil {
+			statusCode = httpResp.StatusCode
+			if httpResp.Body != nil {
+				bodyBytes, readErr := io.ReadAll(httpResp.Body)
+				if readErr == nil {
+					errorBody = string(bodyBytes)
+				}
 			}
 		}
+		log.Printf("❌ EVERFLOW GenerateTrackingLink: API call failed with status %d, error: %v, response body: %s", statusCode, err, errorBody)
 		return nil, fmt.Errorf("failed to create tracking link in Everflow: %w (response: %s)", err, errorBody)
 	}
 	defer httpResp.Body.Close()
+	
+	log.Printf("✅ EVERFLOW GenerateTrackingLink: Successfully generated tracking link")
 
 	// Extract the generated URL from the response
 	generatedURL := ""

@@ -181,7 +181,7 @@ func (s *trackingLinkService) GenerateTrackingLink(ctx context.Context, req *dom
 	// Check if tracking link already exists with same parameters
 	existingLink, err := s.trackingLinkRepo.GetTrackingLinkByCampaignAndAffiliate(
 		ctx, req.CampaignID, req.AffiliateID, req.SourceID, req.Sub1, req.Sub2, req.Sub3, req.Sub4, req.Sub5)
-	if err == nil {
+	if err == nil && existingLink.TrackingURL != nil {
 		// Tracking link already exists, return it
 		return &domain.TrackingLinkGenerationResponse{
 			TrackingLink: existingLink,

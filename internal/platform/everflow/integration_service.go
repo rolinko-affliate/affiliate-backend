@@ -128,25 +128,35 @@ func int64ToUUID(id int64) uuid.UUID {
 
 // CreateAdvertiser creates an advertiser in Everflow
 func (s *IntegrationService) CreateAdvertiser(ctx context.Context, adv domain.Advertiser) (domain.Advertiser, error) {
+	log.Printf("🚀 EVERFLOW CreateAdvertiser: Starting advertiser creation for advertiser_id=%d, name='%s'", adv.AdvertiserID, adv.Name)
+	
 	// Check if provider mapping already exists and is successful
 	existingMapping, err := s.advertiserProviderMappingRepo.GetMappingByAdvertiserAndProvider(ctx, adv.AdvertiserID, "everflow")
 	if err == nil && existingMapping != nil && existingMapping.SyncStatus != nil && *existingMapping.SyncStatus == "synced" {
+		log.Printf("❌ EVERFLOW CreateAdvertiser: Advertiser already has successful Everflow provider mapping")
 		return adv, fmt.Errorf("advertiser already has successful Everflow provider mapping")
 	}
+	log.Printf("🔍 EVERFLOW CreateAdvertiser: No existing successful mapping found (expected)")
 
 	// Map domain advertiser to Everflow request (without existing mapping)
+	log.Printf("🔄 EVERFLOW CreateAdvertiser: Mapping domain advertiser to Everflow request...")
 	everflowReq, err := s.advertiserProviderMapper.MapAdvertiserToEverflowRequest(&adv, nil)
 	if err != nil {
+		log.Printf("❌ EVERFLOW CreateAdvertiser: Failed to map advertiser to Everflow request: %v", err)
 		return adv, fmt.Errorf("failed to map advertiser to Everflow request: %w", err)
 	}
+	log.Printf("✅ EVERFLOW CreateAdvertiser: Successfully mapped to Everflow request")
 
 	// Serialize the outbound request for payload storage
 	requestPayload, err := json.Marshal(everflowReq)
 	if err != nil {
+		log.Printf("❌ EVERFLOW CreateAdvertiser: Failed to serialize request payload: %v", err)
 		return adv, fmt.Errorf("failed to serialize request payload: %w", err)
 	}
+	log.Printf("🔍 EVERFLOW CreateAdvertiser: Request payload: %s", string(requestPayload))
 
 	// Create advertiser in Everflow
+	log.Printf("🔄 EVERFLOW CreateAdvertiser: Calling Everflow API to create advertiser...")
 	resp, httpResp, err := s.advertiserClient.DefaultAPI.CreateAdvertiser(ctx).CreateAdvertiserRequest(*everflowReq).Execute()
 	if err != nil {
 		// Try to read the response body for more detailed error information
@@ -157,9 +167,11 @@ func (s *IntegrationService) CreateAdvertiser(ctx context.Context, adv domain.Ad
 				errorBody = string(bodyBytes)
 			}
 		}
+		log.Printf("❌ EVERFLOW CreateAdvertiser: Failed to create advertiser in Everflow: %v (response: %s)", err, errorBody)
 		return adv, fmt.Errorf("failed to create advertiser in Everflow: %w (response: %s)", err, errorBody)
 	}
 	defer httpResp.Body.Close()
+	log.Printf("✅ EVERFLOW CreateAdvertiser: Successfully created advertiser in Everflow")
 
 	// Create or update provider mapping
 	now := time.Now()
@@ -642,58 +654,89 @@ func (s *IntegrationService) GetAffiliate(ctx context.Context, id uuid.UUID) (do
 
 // CreateCampaign creates a campaign (offer) in Everflow
 func (s *IntegrationService) CreateCampaign(ctx context.Context, camp domain.Campaign) (domain.Campaign, error) {
+	log.Printf("🚀 EVERFLOW CreateCampaign: Starting campaign creation for campaign_id=%d, advertiser_id=%d, name='%s'", camp.CampaignID, camp.AdvertiserID, camp.Name)
+	
 	// Check if provider mapping already exists and is successful
+	log.Printf("🔍 EVERFLOW CreateCampaign: Checking for existing provider mapping...")
 	existingMapping, err := s.campaignProviderMappingRepo.GetCampaignProviderMapping(ctx, camp.CampaignID, "everflow")
 	if err == nil && existingMapping != nil && existingMapping.IsActiveOnProvider != nil && *existingMapping.IsActiveOnProvider {
+		log.Printf("⚠️  EVERFLOW CreateCampaign: Campaign already has successful Everflow provider mapping")
 		return camp, fmt.Errorf("campaign already has successful Everflow provider mapping")
+	}
+	if err != nil {
+		log.Printf("🔍 EVERFLOW CreateCampaign: No existing mapping found (expected): %v", err)
+	} else if existingMapping != nil {
+		log.Printf("🔍 EVERFLOW CreateCampaign: Found existing mapping but not active, will update it")
 	}
 
 	// Get advertiser provider mapping to get network_advertiser_id
+	log.Printf("🔍 EVERFLOW CreateCampaign: Getting advertiser provider mapping for advertiser_id=%d", camp.AdvertiserID)
 	advertiserMapping, err := s.advertiserProviderMappingRepo.GetMappingByAdvertiserAndProvider(ctx, camp.AdvertiserID, "everflow")
 	if err != nil {
+		log.Printf("❌ EVERFLOW CreateCampaign: Failed to get advertiser provider mapping: %v", err)
 		return camp, fmt.Errorf("failed to get advertiser provider mapping: %w", err)
 	}
+	log.Printf("✅ EVERFLOW CreateCampaign: Found advertiser provider mapping: mapping_id=%d", advertiserMapping.MappingID)
+	
 	if advertiserMapping.ProviderAdvertiserID == nil {
+		log.Printf("❌ EVERFLOW CreateCampaign: Advertiser provider mapping exists but ProviderAdvertiserID is nil")
 		return camp, fmt.Errorf("advertiser not found in Everflow")
 	}
+	log.Printf("✅ EVERFLOW CreateCampaign: Advertiser has provider_advertiser_id='%s'", *advertiserMapping.ProviderAdvertiserID)
 
 	networkAdvertiserID, err := strconv.ParseInt(*advertiserMapping.ProviderAdvertiserID, 10, 32)
 	if err != nil {
+		log.Printf("❌ EVERFLOW CreateCampaign: Invalid provider advertiser ID format: %v", err)
 		return camp, fmt.Errorf("invalid provider advertiser ID: %w", err)
 	}
+	log.Printf("✅ EVERFLOW CreateCampaign: Parsed network_advertiser_id=%d", networkAdvertiserID)
 
 	// Map domain campaign to Everflow offer request
+	log.Printf("🔄 EVERFLOW CreateCampaign: Mapping campaign to Everflow request...")
 	everflowReq, err := s.mapCampaignToEverflowRequest(&camp, int32(networkAdvertiserID))
 	if err != nil {
+		log.Printf("❌ EVERFLOW CreateCampaign: Failed to map campaign to Everflow request: %v", err)
 		return camp, fmt.Errorf("failed to map campaign to Everflow request: %w", err)
 	}
+	log.Printf("✅ EVERFLOW CreateCampaign: Successfully mapped campaign to Everflow request")
 
 	// Serialize the outbound request for payload storage
 	requestPayload, err := json.Marshal(everflowReq)
 	if err != nil {
+		log.Printf("❌ EVERFLOW CreateCampaign: Failed to serialize request payload: %v", err)
 		return camp, fmt.Errorf("failed to serialize request payload: %w", err)
 	}
+	log.Printf("📤 EVERFLOW CreateCampaign: Request payload:\n%s", string(requestPayload))
 
 	// Create offer in Everflow
+	log.Printf("🚀 EVERFLOW CreateCampaign: Making API call to Everflow...")
 	resp, httpResp, err := s.offerClient.OffersAPI.CreateOffer(ctx).CreateOfferRequest(*everflowReq).Execute()
 	if err != nil {
 		// Try to read the response body for more detailed error information
 		var errorBody string
-		if httpResp != nil && httpResp.Body != nil {
-			bodyBytes, readErr := io.ReadAll(httpResp.Body)
-			if readErr == nil {
-				errorBody = string(bodyBytes)
+		var statusCode int
+		if httpResp != nil {
+			statusCode = httpResp.StatusCode
+			if httpResp.Body != nil {
+				bodyBytes, readErr := io.ReadAll(httpResp.Body)
+				if readErr == nil {
+					errorBody = string(bodyBytes)
+				}
 			}
 		}
+		log.Printf("❌ EVERFLOW CreateCampaign: API call failed with status %d, error: %v, response body: %s", statusCode, err, errorBody)
 		return camp, fmt.Errorf("failed to create offer in Everflow: %w (response: %s)", err, errorBody)
 	}
 	defer httpResp.Body.Close()
+	log.Printf("✅ EVERFLOW CreateCampaign: Successfully created offer in Everflow")
 
 	// Create or update provider mapping
+	log.Printf("🔄 EVERFLOW CreateCampaign: Creating/updating provider mapping...")
 	now := time.Now()
 
 	var mapping *domain.CampaignProviderMapping
 	if existingMapping != nil {
+		log.Printf("🔄 EVERFLOW CreateCampaign: Updating existing mapping with mapping_id=%d", existingMapping.MappingID)
 		// Update existing failed mapping
 		mapping = existingMapping
 		isActive := true
@@ -701,6 +744,7 @@ func (s *IntegrationService) CreateCampaign(ctx context.Context, camp domain.Cam
 		mapping.LastSyncedAt = &now
 		mapping.UpdatedAt = now
 	} else {
+		log.Printf("🔄 EVERFLOW CreateCampaign: Creating new provider mapping")
 		// Create new mapping
 		isActive := true
 		mapping = &domain.CampaignProviderMapping{
@@ -714,11 +758,15 @@ func (s *IntegrationService) CreateCampaign(ctx context.Context, camp domain.Cam
 	}
 
 	// Update mapping with Everflow response data
+	log.Printf("🔄 EVERFLOW CreateCampaign: Mapping Everflow response to provider mapping...")
 	if err := s.mapEverflowResponseToCampaignMapping(resp, mapping); err != nil {
+		log.Printf("❌ EVERFLOW CreateCampaign: Failed to map Everflow response to provider mapping: %v", err)
 		return camp, fmt.Errorf("failed to map Everflow response to provider mapping: %w", err)
 	}
+	log.Printf("✅ EVERFLOW CreateCampaign: Successfully mapped Everflow response to provider mapping")
 
 	// Store request/response payload in provider config
+	log.Printf("🔄 EVERFLOW CreateCampaign: Storing request/response payload in provider config...")
 	payload := map[string]interface{}{
 		"request":             json.RawMessage(requestPayload),
 		"response":            resp,
@@ -728,25 +776,35 @@ func (s *IntegrationService) CreateCampaign(ctx context.Context, camp domain.Cam
 
 	payloadJSON, err := json.Marshal(payload)
 	if err != nil {
+		log.Printf("❌ EVERFLOW CreateCampaign: Failed to marshal payload: %v", err)
 		return camp, fmt.Errorf("failed to marshal payload: %w", err)
 	}
 
 	payloadStr := string(payloadJSON)
 	mapping.ProviderData = &payloadStr
+	log.Printf("✅ EVERFLOW CreateCampaign: Successfully created provider data payload")
 
 	// Create or update the provider mapping
 	if existingMapping != nil {
+		log.Printf("🔄 EVERFLOW CreateCampaign: Updating existing provider mapping in database...")
 		if err := s.campaignProviderMappingRepo.UpdateCampaignProviderMapping(ctx, mapping); err != nil {
+			log.Printf("❌ EVERFLOW CreateCampaign: Failed to update campaign provider mapping: %v", err)
 			return camp, fmt.Errorf("failed to update campaign provider mapping: %w", err)
 		}
+		log.Printf("✅ EVERFLOW CreateCampaign: Successfully updated provider mapping")
 	} else {
+		log.Printf("🔄 EVERFLOW CreateCampaign: Creating new provider mapping in database...")
 		if err := s.campaignProviderMappingRepo.CreateCampaignProviderMapping(ctx, mapping); err != nil {
+			log.Printf("❌ EVERFLOW CreateCampaign: Failed to create campaign provider mapping: %v", err)
 			return camp, fmt.Errorf("failed to create campaign provider mapping: %w", err)
 		}
+		log.Printf("✅ EVERFLOW CreateCampaign: Successfully created provider mapping")
 	}
 
 	// Update core campaign with non-provider-specific data from Everflow
+	log.Printf("🔄 EVERFLOW CreateCampaign: Updating core campaign with Everflow response data...")
 	s.mapEverflowResponseToCampaign(resp, &camp)
+	log.Printf("✅ EVERFLOW CreateCampaign: Successfully completed campaign creation")
 
 	return camp, nil
 }
@@ -1126,41 +1184,57 @@ func (s *IntegrationService) mapCampaignToEverflowUpdateRequest(camp *domain.Cam
 
 // GenerateTrackingLink generates a tracking link via Everflow API
 func (s *IntegrationService) GenerateTrackingLink(ctx context.Context, req *domain.TrackingLinkGenerationRequest, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) (*domain.TrackingLinkGenerationResponse, error) {
-	log.Printf("🔧 EVERFLOW GenerateTrackingLink: Starting tracking link generation")
+	log.Printf("🔧 EVERFLOW GenerateTrackingLink: Starting tracking link generation for campaign_id=%d, affiliate_id=%d", req.CampaignID, req.AffiliateID)
 	
 	// Extract provider-specific IDs from mappings
 	var networkOfferID, networkAffiliateID int32
 
 	// Parse campaign provider data to get network_offer_id
-	if campaignMapping != nil && campaignMapping.ProviderData != nil {
-		log.Printf("🔍 EVERFLOW GenerateTrackingLink: Parsing campaign provider data...")
-		var campaignProviderData domain.EverflowCampaignProviderData
-		if err := campaignProviderData.FromJSON(*campaignMapping.ProviderData); err == nil {
-			if campaignProviderData.NetworkCampaignID != nil {
-				networkOfferID = *campaignProviderData.NetworkCampaignID
-				log.Printf("✅ EVERFLOW GenerateTrackingLink: Found network_offer_id: %d", networkOfferID)
+	if campaignMapping != nil {
+		log.Printf("🔍 EVERFLOW GenerateTrackingLink: Campaign mapping found - mapping_id=%d, provider_type=%s", campaignMapping.MappingID, campaignMapping.ProviderType)
+		if campaignMapping.ProviderData != nil {
+			log.Printf("🔍 EVERFLOW GenerateTrackingLink: Parsing campaign provider data...")
+			log.Printf("🔍 EVERFLOW GenerateTrackingLink: Campaign provider data: %s", *campaignMapping.ProviderData)
+			var campaignProviderData domain.EverflowCampaignProviderData
+			if err := campaignProviderData.FromJSON(*campaignMapping.ProviderData); err == nil {
+				if campaignProviderData.NetworkCampaignID != nil {
+					networkOfferID = *campaignProviderData.NetworkCampaignID
+					log.Printf("✅ EVERFLOW GenerateTrackingLink: Found network_offer_id: %d", networkOfferID)
+				} else {
+					log.Printf("⚠️  EVERFLOW GenerateTrackingLink: NetworkCampaignID is nil in campaign provider data")
+				}
+			} else {
+				log.Printf("⚠️  EVERFLOW GenerateTrackingLink: Failed to parse campaign provider data: %v", err)
 			}
 		} else {
-			log.Printf("⚠️  EVERFLOW GenerateTrackingLink: Failed to parse campaign provider data: %v", err)
+			log.Printf("⚠️  EVERFLOW GenerateTrackingLink: Campaign mapping exists but ProviderData is nil")
 		}
 	} else {
-		log.Printf("⚠️  EVERFLOW GenerateTrackingLink: No campaign mapping or provider data available")
+		log.Printf("⚠️  EVERFLOW GenerateTrackingLink: No campaign mapping available")
 	}
 
 	// Parse affiliate provider data to get network_affiliate_id
-	if affiliateMapping != nil && affiliateMapping.ProviderData != nil {
-		log.Printf("🔍 EVERFLOW GenerateTrackingLink: Parsing affiliate provider data...")
-		var affiliateProviderData domain.EverflowProviderData
-		if err := json.Unmarshal([]byte(*affiliateMapping.ProviderData), &affiliateProviderData); err == nil {
-			if affiliateProviderData.NetworkAffiliateID != nil {
-				networkAffiliateID = *affiliateProviderData.NetworkAffiliateID
-				log.Printf("✅ EVERFLOW GenerateTrackingLink: Found network_affiliate_id: %d", networkAffiliateID)
+	if affiliateMapping != nil {
+		log.Printf("🔍 EVERFLOW GenerateTrackingLink: Affiliate mapping found - mapping_id=%d, provider_type=%s", affiliateMapping.MappingID, affiliateMapping.ProviderType)
+		if affiliateMapping.ProviderData != nil {
+			log.Printf("🔍 EVERFLOW GenerateTrackingLink: Parsing affiliate provider data...")
+			log.Printf("🔍 EVERFLOW GenerateTrackingLink: Affiliate provider data: %s", *affiliateMapping.ProviderData)
+			var affiliateProviderData domain.EverflowProviderData
+			if err := json.Unmarshal([]byte(*affiliateMapping.ProviderData), &affiliateProviderData); err == nil {
+				if affiliateProviderData.NetworkAffiliateID != nil {
+					networkAffiliateID = *affiliateProviderData.NetworkAffiliateID
+					log.Printf("✅ EVERFLOW GenerateTrackingLink: Found network_affiliate_id: %d", networkAffiliateID)
+				} else {
+					log.Printf("⚠️  EVERFLOW GenerateTrackingLink: NetworkAffiliateID is nil in affiliate provider data")
+				}
+			} else {
+				log.Printf("⚠️  EVERFLOW GenerateTrackingLink: Failed to parse affiliate provider data: %v", err)
 			}
 		} else {
-			log.Printf("⚠️  EVERFLOW GenerateTrackingLink: Failed to parse affiliate provider data: %v", err)
+			log.Printf("⚠️  EVERFLOW GenerateTrackingLink: Affiliate mapping exists but ProviderData is nil")
 		}
 	} else {
-		log.Printf("⚠️  EVERFLOW GenerateTrackingLink: No affiliate mapping or provider data available")
+		log.Printf("⚠️  EVERFLOW GenerateTrackingLink: No affiliate mapping available")
 	}
 
 	// If we don't have the required IDs, return an error

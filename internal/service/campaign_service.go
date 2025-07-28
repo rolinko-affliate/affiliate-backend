@@ -3,6 +3,7 @@ package service
 import (
 	"context"
 	"fmt"
+	"log"
 
 	"github.com/affiliate-backend/internal/domain"
 	"github.com/affiliate-backend/internal/platform/provider"
@@ -35,25 +36,37 @@ func NewCampaignService(campaignRepo repository.CampaignRepository, integrationS
 
 // CreateCampaign creates a new campaign
 func (s *campaignService) CreateCampaign(ctx context.Context, campaign *domain.Campaign) error {
+	log.Printf("🚀 CAMPAIGN SERVICE: Starting campaign creation for campaign_id=%d, advertiser_id=%d, name='%s'", campaign.CampaignID, campaign.AdvertiserID, campaign.Name)
+	
 	// Validate campaign data
+	log.Printf("🔍 CAMPAIGN SERVICE: Validating campaign data...")
 	if err := s.validateCampaign(campaign); err != nil {
+		log.Printf("❌ CAMPAIGN SERVICE: Campaign validation failed: %v", err)
 		return fmt.Errorf("campaign validation failed: %w", err)
 	}
+	log.Printf("✅ CAMPAIGN SERVICE: Campaign validation passed")
 
 	// Step 1: Create campaign in local repository
+	log.Printf("🔄 CAMPAIGN SERVICE: Creating campaign in local repository...")
 	if err := s.campaignRepo.CreateCampaign(ctx, campaign); err != nil {
+		log.Printf("❌ CAMPAIGN SERVICE: Failed to create campaign in repository: %v", err)
 		return fmt.Errorf("failed to create campaign: %w", err)
 	}
+	log.Printf("✅ CAMPAIGN SERVICE: Successfully created campaign in repository with ID=%d", campaign.CampaignID)
 
 	// Step 2: Call IntegrationService to create campaign in provider (Everflow)
 	// The integration service handles provider mapping creation internally
+	log.Printf("🔄 CAMPAIGN SERVICE: Calling integration service to create campaign in provider...")
 	_, err := s.integrationService.CreateCampaign(ctx, *campaign)
 	if err != nil {
 		// Log error but don't fail the operation since local creation succeeded
+		log.Printf("⚠️  CAMPAIGN SERVICE: Failed to create campaign in provider: %v", err)
 		fmt.Printf("Warning: failed to create campaign in provider: %v\n", err)
 		return nil
 	}
+	log.Printf("✅ CAMPAIGN SERVICE: Successfully created campaign in provider")
 
+	log.Printf("✅ CAMPAIGN SERVICE: Campaign creation completed successfully")
 	return nil
 }
 

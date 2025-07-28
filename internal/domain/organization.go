@@ -11,6 +11,7 @@ const (
 	OrganizationTypeAdvertiser    OrganizationType = "advertiser"
 	OrganizationTypeAffiliate     OrganizationType = "affiliate"
 	OrganizationTypePlatformOwner OrganizationType = "platform_owner"
+	OrganizationTypeAgency        OrganizationType = "agency"
 )
 
 // IsValid checks if the organization type is valid

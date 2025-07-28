@@ -17,7 +17,7 @@ const (
 // IsValid checks if the organization type is valid
 func (ot OrganizationType) IsValid() bool {
 	switch ot {
-	case OrganizationTypeAdvertiser, OrganizationTypeAffiliate, OrganizationTypePlatformOwner:
+	case OrganizationTypeAdvertiser, OrganizationTypeAffiliate, OrganizationTypePlatformOwner, OrganizationTypeAgency:
 		return true
 	default:
 		return false
@@ -35,6 +35,7 @@ func GetValidOrganizationTypes() []OrganizationType {
 		OrganizationTypeAdvertiser,
 		OrganizationTypeAffiliate,
 		OrganizationTypePlatformOwner,
+		OrganizationTypeAgency,
 	}
 }
 

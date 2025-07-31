@@ -9,18 +9,19 @@ import (
 
 // RouterOptions contains dependencies for the router
 type RouterOptions struct {
-	ProfileHandler               *handlers.ProfileHandler
-	ProfileService               service.ProfileService
-	OrganizationHandler          *handlers.OrganizationHandler
-	AdvertiserHandler            *handlers.AdvertiserHandler
-	AffiliateHandler             *handlers.AffiliateHandler
-	CampaignHandler              *handlers.CampaignHandler
-	TrackingLinkHandler          *handlers.TrackingLinkHandler
-	AnalyticsHandler             *handlers.AnalyticsHandler
-	FavoritePublisherListHandler *handlers.FavoritePublisherListHandler
-	PublisherMessagingHandler    *handlers.PublisherMessagingHandler
-	BillingHandler               *handlers.BillingHandler
-	WebhookHandler               *handlers.WebhookHandler
+	ProfileHandler                     *handlers.ProfileHandler
+	ProfileService                     service.ProfileService
+	OrganizationHandler                *handlers.OrganizationHandler
+	OrganizationAssociationHandler     *handlers.OrganizationAssociationHandler
+	AdvertiserHandler                  *handlers.AdvertiserHandler
+	AffiliateHandler                   *handlers.AffiliateHandler
+	CampaignHandler                    *handlers.CampaignHandler
+	TrackingLinkHandler                *handlers.TrackingLinkHandler
+	AnalyticsHandler                   *handlers.AnalyticsHandler
+	FavoritePublisherListHandler       *handlers.FavoritePublisherListHandler
+	PublisherMessagingHandler          *handlers.PublisherMessagingHandler
+	BillingHandler                     *handlers.BillingHandler
+	WebhookHandler                     *handlers.WebhookHandler
 }
 
 // SetupRouter sets up the API router
@@ -87,6 +88,13 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		organizations.GET("/:id/advertisers", rbacMW("Admin", "AdvertiserManager"), opts.AdvertiserHandler.ListAdvertisersByOrganization)
 		organizations.GET("/:id/affiliates", rbacMW("Admin", "AffiliateManager"), opts.AffiliateHandler.ListAffiliatesByOrganization)
 		organizations.GET("/:id/campaigns", rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.CampaignHandler.ListCampaignsByOrganization)
+		
+		// Organization associations
+		organizations.GET("/:id/associations", rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.OrganizationAssociationHandler.GetAssociationsForOrganization)
+		
+		// Visibility endpoints - get visible resources based on associations
+		organizations.GET("/:id/visible-affiliates", rbacMW("Admin", "AdvertiserManager"), opts.OrganizationAssociationHandler.GetVisibleAffiliatesForAdvertiser)
+		organizations.GET("/:id/visible-campaigns", rbacMW("Admin", "AffiliateManager"), opts.OrganizationAssociationHandler.GetVisibleCampaignsForAffiliate)
 	}
 
 	// --- Advertiser Routes ---
@@ -243,6 +251,28 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		// Transactions and recharging
 		billing.POST("/recharge", opts.BillingHandler.Recharge)
 		billing.GET("/transactions", opts.BillingHandler.GetTransactionHistory)
+	}
+
+	// --- Organization Association Routes ---
+	orgAssociations := v1.Group("/organization-associations")
+	orgAssociations.Use(rbacMW("Admin", "AdvertiserManager", "AffiliateManager"))
+	{
+		// Create invitations and requests
+		orgAssociations.POST("/invitations", opts.OrganizationAssociationHandler.CreateInvitation)
+		orgAssociations.POST("/requests", opts.OrganizationAssociationHandler.CreateRequest)
+		
+		// List and get associations
+		orgAssociations.GET("", opts.OrganizationAssociationHandler.ListAssociations)
+		orgAssociations.GET("/:id", opts.OrganizationAssociationHandler.GetAssociation)
+		
+		// Manage association status
+		orgAssociations.POST("/:id/approve", opts.OrganizationAssociationHandler.ApproveAssociation)
+		orgAssociations.POST("/:id/reject", opts.OrganizationAssociationHandler.RejectAssociation)
+		orgAssociations.POST("/:id/suspend", opts.OrganizationAssociationHandler.SuspendAssociation)
+		orgAssociations.POST("/:id/reactivate", opts.OrganizationAssociationHandler.ReactivateAssociation)
+		
+		// Update visibility settings
+		orgAssociations.PUT("/:id/visibility", opts.OrganizationAssociationHandler.UpdateVisibility)
 	}
 
 	return r

@@ -228,6 +228,7 @@ func main() {
 	// Initialize Repositories
 	profileRepo := repository.NewPgxProfileRepository(repository.DB)
 	organizationRepo := repository.NewPgxOrganizationRepository(repository.DB)
+	organizationAssociationRepo := repository.NewPgxOrganizationAssociationRepository(repository.DB)
 	advertiserRepo := repository.NewPgxAdvertiserRepository(repository.DB)
 	advertiserProviderMappingRepo := repository.NewAdvertiserProviderMappingRepository(repository.DB)
 	affiliateRepo := repository.NewPgxAffiliateRepository(repository.DB)
@@ -299,6 +300,7 @@ func main() {
 	// Initialize Domain Services
 	profileService := service.NewProfileService(profileRepo)
 	organizationService := service.NewOrganizationService(organizationRepo, advertiserRepo, affiliateRepo)
+	organizationAssociationService := service.NewOrganizationAssociationService(organizationAssociationRepo, organizationRepo, profileRepo, affiliateRepo, campaignRepo)
 	advertiserService := service.NewAdvertiserService(advertiserRepo, advertiserProviderMappingRepo, organizationRepo, cryptoService, integrationService)
 	affiliateService := service.NewAffiliateService(affiliateRepo, affiliateProviderMappingRepo, organizationRepo, integrationService)
 	campaignService := service.NewCampaignService(campaignRepo)
@@ -315,6 +317,7 @@ func main() {
 	// Initialize Handlers
 	profileHandler := handlers.NewProfileHandler(profileService)
 	organizationHandler := handlers.NewOrganizationHandler(organizationService, profileService)
+	organizationAssociationHandler := handlers.NewOrganizationAssociationHandler(organizationAssociationService)
 	advertiserHandler := handlers.NewAdvertiserHandler(advertiserService, profileService)
 	affiliateHandler := handlers.NewAffiliateHandler(affiliateService, profileService, analyticsService)
 	campaignHandler := handlers.NewCampaignHandler(campaignService)
@@ -329,10 +332,11 @@ func main() {
 
 	// Setup Router
 	router := api.SetupRouter(api.RouterOptions{
-		ProfileHandler:               profileHandler,
-		ProfileService:               profileService,
-		OrganizationHandler:          organizationHandler,
-		AdvertiserHandler:            advertiserHandler,
+		ProfileHandler:                    profileHandler,
+		ProfileService:                    profileService,
+		OrganizationHandler:               organizationHandler,
+		OrganizationAssociationHandler:    organizationAssociationHandler,
+		AdvertiserHandler:                 advertiserHandler,
 		AffiliateHandler:             affiliateHandler,
 		CampaignHandler:              campaignHandler,
 		TrackingLinkHandler:          trackingLinkHandler,

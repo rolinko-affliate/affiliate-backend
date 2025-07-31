@@ -8,9 +8,20 @@ import (
 	"github.com/affiliate-backend/internal/repository"
 )
 
+// CreateOrganizationWithExtraInfoRequest represents the request for creating an organization with extra info
+type CreateOrganizationWithExtraInfoRequest struct {
+	Name                string
+	Type                domain.OrganizationType
+	ContactEmail        string
+	Description         string
+	AdvertiserExtraInfo *domain.AdvertiserExtraInfo
+	AffiliateExtraInfo  *domain.AffiliateExtraInfo
+}
+
 // OrganizationService defines the interface for organization operations
 type OrganizationService interface {
 	CreateOrganization(ctx context.Context, name string, orgType domain.OrganizationType) (*domain.Organization, error)
+	CreateOrganizationWithExtraInfo(ctx context.Context, req *CreateOrganizationWithExtraInfoRequest) (*domain.Organization, error)
 	GetOrganizationByID(ctx context.Context, id int64) (*domain.Organization, error)
 	UpdateOrganization(ctx context.Context, org *domain.Organization) error
 	ListOrganizations(ctx context.Context, page, pageSize int) ([]*domain.Organization, error)
@@ -19,12 +30,18 @@ type OrganizationService interface {
 
 // organizationService implements OrganizationService
 type organizationService struct {
-	orgRepo repository.OrganizationRepository
+	orgRepo        repository.OrganizationRepository
+	advertiserRepo repository.AdvertiserRepository
+	affiliateRepo  repository.AffiliateRepository
 }
 
 // NewOrganizationService creates a new organization service
-func NewOrganizationService(orgRepo repository.OrganizationRepository) OrganizationService {
-	return &organizationService{orgRepo: orgRepo}
+func NewOrganizationService(orgRepo repository.OrganizationRepository, advertiserRepo repository.AdvertiserRepository, affiliateRepo repository.AffiliateRepository) OrganizationService {
+	return &organizationService{
+		orgRepo:        orgRepo,
+		advertiserRepo: advertiserRepo,
+		affiliateRepo:  affiliateRepo,
+	}
 }
 
 // CreateOrganization creates a new organization
@@ -52,6 +69,78 @@ func (s *organizationService) CreateOrganization(ctx context.Context, name strin
 
 	if err := s.orgRepo.CreateOrganization(ctx, org); err != nil {
 		return nil, fmt.Errorf("failed to create organization: %w", err)
+	}
+
+	return org, nil
+}
+
+// CreateOrganizationWithExtraInfo creates a new organization with extra info
+func (s *organizationService) CreateOrganizationWithExtraInfo(ctx context.Context, req *CreateOrganizationWithExtraInfoRequest) (*domain.Organization, error) {
+	if req.Name == "" {
+		return nil, fmt.Errorf("organization name cannot be empty")
+	}
+	if req.Type == "" {
+		return nil, fmt.Errorf("organization type cannot be empty")
+	}
+
+	// Validate organization type
+	if !req.Type.IsValid() {
+		return nil, fmt.Errorf("invalid organization type: %s", req.Type)
+	}
+
+	// Create the organization first
+	org := &domain.Organization{
+		Name: req.Name,
+		Type: req.Type,
+	}
+
+	if err := s.orgRepo.CreateOrganization(ctx, org); err != nil {
+		return nil, fmt.Errorf("failed to create organization: %w", err)
+	}
+
+	// Handle extra info based on organization type
+	switch req.Type {
+	case domain.OrganizationTypeAdvertiser:
+		if req.AdvertiserExtraInfo != nil {
+			// Create advertiser first
+			advertiser := &domain.Advertiser{
+				OrganizationID: org.OrganizationID,
+				Name:           req.Name,
+				ContactEmail:   &req.ContactEmail,
+				Status:         "active",
+			}
+			
+			if err := s.advertiserRepo.CreateAdvertiser(ctx, advertiser); err != nil {
+				return nil, fmt.Errorf("failed to create advertiser: %w", err)
+			}
+
+			// Create advertiser extra info
+			req.AdvertiserExtraInfo.AdvertiserID = advertiser.AdvertiserID
+			if err := s.advertiserRepo.CreateAdvertiserExtraInfo(ctx, req.AdvertiserExtraInfo); err != nil {
+				return nil, fmt.Errorf("failed to create advertiser extra info: %w", err)
+			}
+		}
+
+	case domain.OrganizationTypeAffiliate:
+		if req.AffiliateExtraInfo != nil {
+			// Create affiliate first
+			affiliate := &domain.Affiliate{
+				OrganizationID: org.OrganizationID,
+				Name:           req.Name,
+				ContactEmail:   &req.ContactEmail,
+				Status:         "active",
+			}
+			
+			if err := s.affiliateRepo.CreateAffiliate(ctx, affiliate); err != nil {
+				return nil, fmt.Errorf("failed to create affiliate: %w", err)
+			}
+
+			// Create affiliate extra info
+			req.AffiliateExtraInfo.AffiliateID = affiliate.AffiliateID
+			if err := s.affiliateRepo.CreateAffiliateExtraInfo(ctx, req.AffiliateExtraInfo); err != nil {
+				return nil, fmt.Errorf("failed to create affiliate extra info: %w", err)
+			}
+		}
 	}
 
 	return org, nil

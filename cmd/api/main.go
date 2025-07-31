@@ -298,7 +298,7 @@ func main() {
 
 	// Initialize Domain Services
 	profileService := service.NewProfileService(profileRepo)
-	organizationService := service.NewOrganizationService(organizationRepo)
+	organizationService := service.NewOrganizationService(organizationRepo, advertiserRepo, affiliateRepo)
 	advertiserService := service.NewAdvertiserService(advertiserRepo, advertiserProviderMappingRepo, organizationRepo, cryptoService, integrationService)
 	affiliateService := service.NewAffiliateService(affiliateRepo, affiliateProviderMappingRepo, organizationRepo, integrationService)
 	campaignService := service.NewCampaignService(campaignRepo)

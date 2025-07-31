@@ -38,7 +38,12 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 	{
 		public.POST("/webhooks/supabase/new-user", opts.ProfileHandler.HandleSupabaseNewUserWebhook)
 		public.POST("/webhooks/stripe", opts.WebhookHandler.HandleStripeWebhook)
+		// Organization creation endpoint (no authentication required)
+		public.POST("/organizations", opts.OrganizationHandler.CreateOrganizationPublic)
 	}
+
+	// Organization creation endpoint moved to main API (no authentication required)
+	r.POST("/api/v1/organizations", opts.OrganizationHandler.CreateOrganizationPublic)
 
 	// Authenticated routes
 	v1 := r.Group("/api/v1")
@@ -70,7 +75,7 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 	organizations := v1.Group("/organizations")
 	{
 		// Admin-only routes for organization management
-		organizations.POST("", rbacMW("Admin"), opts.OrganizationHandler.CreateOrganization)
+
 		organizations.PUT("/:id", rbacMW("Admin"), opts.OrganizationHandler.UpdateOrganization)
 		organizations.DELETE("/:id", rbacMW("Admin"), opts.OrganizationHandler.DeleteOrganization)
 

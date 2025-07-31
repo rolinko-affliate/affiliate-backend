@@ -1941,6 +1941,124 @@ const docTemplate = `{
                 }
             }
         },
+        "/api/v1/organizations": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Creates a new organization with the given name. Requires Admin role.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "organizations"
+                ],
+                "summary": "Create a new organization (Admin only)",
+                "parameters": [
+                    {
+                        "description": "Organization details",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/handlers.CreateOrganizationRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created organization",
+                        "schema": {
+                            "$ref": "#/definitions/domain.Organization"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden - Only admins can create organizations",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/public/organizations": {
+            "post": {
+                "description": "Creates a new organization with the given name. No authentication required.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "organizations"
+                ],
+                "summary": "Create a new organization (Public)",
+                "parameters": [
+                    {
+                        "description": "Organization details",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/handlers.CreateOrganizationRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created organization",
+                        "schema": {
+                            "$ref": "#/definitions/domain.Organization"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/api/v1/publisher-messaging/conversations": {
             "get": {
                 "description": "Retrieves a paginated list of conversations for the organization",
@@ -3653,70 +3771,6 @@ const docTemplate = `{
                             "type": "array",
                             "items": {
                                 "$ref": "#/definitions/domain.Organization"
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                }
-            },
-            "post": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Creates a new organization with the given name",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "organizations"
-                ],
-                "summary": "Create a new organization",
-                "parameters": [
-                    {
-                        "description": "Organization details",
-                        "name": "request",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/handlers.CreateOrganizationRequest"
-                        }
-                    }
-                ],
-                "responses": {
-                    "201": {
-                        "description": "Created organization",
-                        "schema": {
-                            "$ref": "#/definitions/domain.Organization"
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid request",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "403": {
-                        "description": "Forbidden - Only admins can create organizations",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
                             }
                         }
                     },
@@ -5746,6 +5800,10 @@ const docTemplate = `{
                 "BillingModePostpaid": "Monthly invoicing",
                 "BillingModePrepaid": "Pay-as-you-go with balance"
             },
+            "x-enum-descriptions": [
+                "Pay-as-you-go with balance",
+                "Monthly invoicing"
+            ],
             "x-enum-varnames": [
                 "BillingModePrepaid",
                 "BillingModePostpaid"
@@ -6217,12 +6275,14 @@ const docTemplate = `{
             "enum": [
                 "advertiser",
                 "affiliate",
-                "platform_owner"
+                "platform_owner",
+                "agency"
             ],
             "x-enum-varnames": [
                 "OrganizationTypeAdvertiser",
                 "OrganizationTypeAffiliate",
-                "OrganizationTypePlatformOwner"
+                "OrganizationTypePlatformOwner",
+                "OrganizationTypeAgency"
             ]
         },
         "domain.PaymentDetails": {

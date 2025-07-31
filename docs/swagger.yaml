@@ -491,6 +491,9 @@ definitions:
     x-enum-comments:
       BillingModePostpaid: Monthly invoicing
       BillingModePrepaid: Pay-as-you-go with balance
+    x-enum-descriptions:
+    - Pay-as-you-go with balance
+    - Monthly invoicing
     x-enum-varnames:
     - BillingModePrepaid
     - BillingModePostpaid
@@ -809,11 +812,13 @@ definitions:
     - advertiser
     - affiliate
     - platform_owner
+    - agency
     type: string
     x-enum-varnames:
     - OrganizationTypeAdvertiser
     - OrganizationTypeAffiliate
     - OrganizationTypePlatformOwner
+    - OrganizationTypeAgency
   domain.PaymentDetails:
     properties:
       account_number:
@@ -3407,6 +3412,84 @@ paths:
       summary: Update publisher status in favorite list
       tags:
       - favorite-publisher-lists
+  /api/v1/organizations:
+    post:
+      consumes:
+      - application/json
+      description: Creates a new organization with the given name. Requires Admin
+        role.
+      parameters:
+      - description: Organization details
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handlers.CreateOrganizationRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created organization
+          schema:
+            $ref: '#/definitions/domain.Organization'
+        "400":
+          description: Invalid request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "403":
+          description: Forbidden - Only admins can create organizations
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal server error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Create a new organization (Admin only)
+      tags:
+      - organizations
+  /api/v1/public/organizations:
+    post:
+      consumes:
+      - application/json
+      description: Creates a new organization with the given name. No authentication
+        required.
+      parameters:
+      - description: Organization details
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handlers.CreateOrganizationRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created organization
+          schema:
+            $ref: '#/definitions/domain.Organization'
+        "400":
+          description: Invalid request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal server error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Create a new organization (Public)
+      tags:
+      - organizations
   /api/v1/publisher-messaging/conversations:
     get:
       description: Retrieves a paginated list of conversations for the organization
@@ -4532,47 +4615,6 @@ paths:
       security:
       - BearerAuth: []
       summary: List organizations
-      tags:
-      - organizations
-    post:
-      consumes:
-      - application/json
-      description: Creates a new organization with the given name
-      parameters:
-      - description: Organization details
-        in: body
-        name: request
-        required: true
-        schema:
-          $ref: '#/definitions/handlers.CreateOrganizationRequest'
-      produces:
-      - application/json
-      responses:
-        "201":
-          description: Created organization
-          schema:
-            $ref: '#/definitions/domain.Organization'
-        "400":
-          description: Invalid request
-          schema:
-            additionalProperties:
-              type: string
-            type: object
-        "403":
-          description: Forbidden - Only admins can create organizations
-          schema:
-            additionalProperties:
-              type: string
-            type: object
-        "500":
-          description: Internal server error
-          schema:
-            additionalProperties:
-              type: string
-            type: object
-      security:
-      - BearerAuth: []
-      summary: Create a new organization
       tags:
       - organizations
   /organizations/{id}:

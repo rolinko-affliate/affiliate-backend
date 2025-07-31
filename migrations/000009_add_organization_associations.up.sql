@@ -78,28 +78,11 @@ ALTER TABLE public.organization_associations
 ADD CONSTRAINT fk_org_associations_approved_by_user 
 FOREIGN KEY (approved_by_user_id) REFERENCES public.profiles(id) ON DELETE SET NULL;
 
--- Add constraint to ensure organization types are correct
--- This constraint ensures advertiser_org_id points to an advertiser organization
--- and affiliate_org_id points to an affiliate organization
-ALTER TABLE public.organization_associations 
-ADD CONSTRAINT check_advertiser_org_type 
-CHECK (
-    EXISTS (
-        SELECT 1 FROM public.organizations 
-        WHERE organization_id = advertiser_org_id 
-        AND type = 'advertiser'
-    )
-);
-
-ALTER TABLE public.organization_associations 
-ADD CONSTRAINT check_affiliate_org_type 
-CHECK (
-    EXISTS (
-        SELECT 1 FROM public.organizations 
-        WHERE organization_id = affiliate_org_id 
-        AND type = 'affiliate'
-    )
-);
+-- Note: Organization type validation is handled at the application level
+-- PostgreSQL CHECK constraints cannot use subqueries, so we rely on:
+-- 1. Foreign key constraints to ensure organizations exist
+-- 2. Application-level validation to ensure correct organization types
+-- 3. API-level authorization to prevent unauthorized associations
 
 -- Add comments for documentation
 COMMENT ON TABLE public.organization_associations IS 'Manages associations between advertiser and affiliate organizations, including invitation/request system and visibility controls';

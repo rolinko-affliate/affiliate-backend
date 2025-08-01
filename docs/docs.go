@@ -2541,7 +2541,12 @@ const docTemplate = `{
         },
         "/api/v1/organizations": {
             "post": {
-                "description": "Creates a new organization with the given name and optional extra info. No authentication required.",
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Creates a new organization with the given name. Requires Admin role.",
                 "consumes": [
                     "application/json"
                 ],
@@ -2551,7 +2556,7 @@ const docTemplate = `{
                 "tags": [
                     "organizations"
                 ],
-                "summary": "Create a new organization (Public)",
+                "summary": "Create a new organization (Admin only)",
                 "parameters": [
                     {
                         "description": "Organization details",
@@ -2572,6 +2577,15 @@ const docTemplate = `{
                     },
                     "400": {
                         "description": "Invalid request",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden - Only admins can create organizations",
                         "schema": {
                             "type": "object",
                             "additionalProperties": {
@@ -2738,7 +2752,7 @@ const docTemplate = `{
                     {
                         "type": "integer",
                         "description": "Organization ID",
-                        "name": "org_id",
+                        "name": "id",
                         "in": "path",
                         "required": true
                     },
@@ -2788,6 +2802,58 @@ const docTemplate = `{
                         "description": "Internal Server Error",
                         "schema": {
                             "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/public/organizations": {
+            "post": {
+                "description": "Creates a new organization with the given name and optional extra info. No authentication required.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "organizations"
+                ],
+                "summary": "Create a new organization (Public)",
+                "parameters": [
+                    {
+                        "description": "Organization details",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/handlers.CreateOrganizationRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created organization",
+                        "schema": {
+                            "$ref": "#/definitions/domain.Organization"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
                         }
                     }
                 }

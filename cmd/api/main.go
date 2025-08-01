@@ -34,6 +34,7 @@ import (
 	"syscall"
 	"time"
 
+	_ "github.com/affiliate-backend/docs" // Import for swagger docs
 	"github.com/affiliate-backend/internal/api"
 	"github.com/affiliate-backend/internal/api/handlers"
 	"github.com/affiliate-backend/internal/config"

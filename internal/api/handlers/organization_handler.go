@@ -142,7 +142,7 @@ func (h *OrganizationHandler) CreateOrganization(c *gin.Context) {
 // @Success      201      {object}  domain.Organization        "Created organization"
 // @Failure      400      {object}  map[string]string          "Invalid request"
 // @Failure      500      {object}  map[string]string          "Internal server error"
-// @Router       /api/v1/organizations [post]
+// @Router       /api/v1/public/organizations [post]
 func (h *OrganizationHandler) CreateOrganizationPublic(c *gin.Context) {
 	var req CreateOrganizationRequest
 	if err := c.ShouldBindJSON(&req); err != nil {

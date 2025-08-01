@@ -5,6 +5,8 @@ import (
 	"github.com/affiliate-backend/internal/api/middleware"
 	"github.com/affiliate-backend/internal/service"
 	"github.com/gin-gonic/gin"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 // RouterOptions contains dependencies for the router
@@ -33,6 +35,9 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 
 	// Health Check
 	r.GET("/health", handlers.HealthCheck)
+
+	// Swagger documentation
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	// Public routes (e.g., Supabase webhook for profile creation, Stripe webhooks)
 	public := r.Group("/api/v1/public")

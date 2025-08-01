@@ -476,7 +476,7 @@ func (h *OrganizationAssociationHandler) ListAssociations(c *gin.Context) {
 // @Tags organization-associations
 // @Accept json
 // @Produce json
-// @Param org_id path int true "Organization ID"
+// @Param id path int true "Organization ID"
 // @Param status query string false "Association status" Enums(pending,active,suspended,rejected)
 // @Param with_details query bool false "Include organization and user details" default(false)
 // @Success 200 {array} domain.OrganizationAssociation

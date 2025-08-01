@@ -22,10 +22,10 @@ type AffiliateRepository interface {
 	
 	// Extra info methods
 	CreateAffiliateExtraInfo(ctx context.Context, extraInfo *domain.AffiliateExtraInfo) error
-	GetAffiliateExtraInfo(ctx context.Context, affiliateID int64) (*domain.AffiliateExtraInfo, error)
+	GetAffiliateExtraInfo(ctx context.Context, organizationID int64) (*domain.AffiliateExtraInfo, error)
 	UpdateAffiliateExtraInfo(ctx context.Context, extraInfo *domain.AffiliateExtraInfo) error
 	UpsertAffiliateExtraInfo(ctx context.Context, extraInfo *domain.AffiliateExtraInfo) error
-	DeleteAffiliateExtraInfo(ctx context.Context, affiliateID int64) error
+	DeleteAffiliateExtraInfo(ctx context.Context, organizationID int64) error
 	GetAffiliateWithExtraInfo(ctx context.Context, affiliateID int64) (*domain.AffiliateWithExtraInfo, error)
 }
 
@@ -495,16 +495,16 @@ func (r *pgxAffiliateRepository) ListAffiliatesByOrganization(ctx context.Contex
 
 	return affiliates, nil
 }
-// CreateAffiliateExtraInfo creates extra info for an affiliate
+// CreateAffiliateExtraInfo creates extra info for an affiliate organization
 func (r *pgxAffiliateRepository) CreateAffiliateExtraInfo(ctx context.Context, extraInfo *domain.AffiliateExtraInfo) error {
 	query := `INSERT INTO public.affiliate_extra_info (
-		affiliate_id, website, affiliate_type, self_description, logo_url, created_at, updated_at
+		organization_id, website, affiliate_type, self_description, logo_url, created_at, updated_at
 	) VALUES ($1, $2, $3, $4, $5, $6, $7) 
 	RETURNING extra_info_id, created_at, updated_at`
 
 	now := time.Now()
 	err := r.db.QueryRow(ctx, query,
-		extraInfo.AffiliateID,
+		extraInfo.OrganizationID,
 		extraInfo.Website,
 		extraInfo.AffiliateType,
 		extraInfo.SelfDescription,
@@ -520,15 +520,15 @@ func (r *pgxAffiliateRepository) CreateAffiliateExtraInfo(ctx context.Context, e
 	return nil
 }
 
-// GetAffiliateExtraInfo retrieves extra info for an affiliate
-func (r *pgxAffiliateRepository) GetAffiliateExtraInfo(ctx context.Context, affiliateID int64) (*domain.AffiliateExtraInfo, error) {
-	query := `SELECT extra_info_id, affiliate_id, website, affiliate_type, self_description, logo_url, created_at, updated_at
-		FROM public.affiliate_extra_info WHERE affiliate_id = $1`
+// GetAffiliateExtraInfo retrieves extra info for an affiliate organization
+func (r *pgxAffiliateRepository) GetAffiliateExtraInfo(ctx context.Context, organizationID int64) (*domain.AffiliateExtraInfo, error) {
+	query := `SELECT extra_info_id, organization_id, website, affiliate_type, self_description, logo_url, created_at, updated_at
+		FROM public.affiliate_extra_info WHERE organization_id = $1`
 
 	extraInfo := &domain.AffiliateExtraInfo{}
-	err := r.db.QueryRow(ctx, query, affiliateID).Scan(
+	err := r.db.QueryRow(ctx, query, organizationID).Scan(
 		&extraInfo.ExtraInfoID,
-		&extraInfo.AffiliateID,
+		&extraInfo.OrganizationID,
 		&extraInfo.Website,
 		&extraInfo.AffiliateType,
 		&extraInfo.SelfDescription,
@@ -547,16 +547,16 @@ func (r *pgxAffiliateRepository) GetAffiliateExtraInfo(ctx context.Context, affi
 	return extraInfo, nil
 }
 
-// UpdateAffiliateExtraInfo updates extra info for an affiliate
+// UpdateAffiliateExtraInfo updates extra info for an affiliate organization
 func (r *pgxAffiliateRepository) UpdateAffiliateExtraInfo(ctx context.Context, extraInfo *domain.AffiliateExtraInfo) error {
 	query := `UPDATE public.affiliate_extra_info SET 
 		website = $2, affiliate_type = $3, self_description = $4, logo_url = $5, updated_at = $6
-		WHERE affiliate_id = $1
+		WHERE organization_id = $1
 		RETURNING updated_at`
 
 	now := time.Now()
 	err := r.db.QueryRow(ctx, query,
-		extraInfo.AffiliateID,
+		extraInfo.OrganizationID,
 		extraInfo.Website,
 		extraInfo.AffiliateType,
 		extraInfo.SelfDescription,
@@ -574,12 +574,12 @@ func (r *pgxAffiliateRepository) UpdateAffiliateExtraInfo(ctx context.Context, e
 	return nil
 }
 
-// UpsertAffiliateExtraInfo creates or updates extra info for an affiliate
+// UpsertAffiliateExtraInfo creates or updates extra info for an affiliate organization
 func (r *pgxAffiliateRepository) UpsertAffiliateExtraInfo(ctx context.Context, extraInfo *domain.AffiliateExtraInfo) error {
 	query := `INSERT INTO public.affiliate_extra_info (
-		affiliate_id, website, affiliate_type, self_description, logo_url, created_at, updated_at
+		organization_id, website, affiliate_type, self_description, logo_url, created_at, updated_at
 	) VALUES ($1, $2, $3, $4, $5, $6, $7)
-	ON CONFLICT (affiliate_id) DO UPDATE SET
+	ON CONFLICT (organization_id) DO UPDATE SET
 		website = EXCLUDED.website,
 		affiliate_type = EXCLUDED.affiliate_type,
 		self_description = EXCLUDED.self_description,
@@ -589,7 +589,7 @@ func (r *pgxAffiliateRepository) UpsertAffiliateExtraInfo(ctx context.Context, e
 
 	now := time.Now()
 	err := r.db.QueryRow(ctx, query,
-		extraInfo.AffiliateID,
+		extraInfo.OrganizationID,
 		extraInfo.Website,
 		extraInfo.AffiliateType,
 		extraInfo.SelfDescription,
@@ -605,11 +605,11 @@ func (r *pgxAffiliateRepository) UpsertAffiliateExtraInfo(ctx context.Context, e
 	return nil
 }
 
-// DeleteAffiliateExtraInfo deletes extra info for an affiliate
-func (r *pgxAffiliateRepository) DeleteAffiliateExtraInfo(ctx context.Context, affiliateID int64) error {
-	query := `DELETE FROM public.affiliate_extra_info WHERE affiliate_id = $1`
+// DeleteAffiliateExtraInfo deletes extra info for an affiliate organization
+func (r *pgxAffiliateRepository) DeleteAffiliateExtraInfo(ctx context.Context, organizationID int64) error {
+	query := `DELETE FROM public.affiliate_extra_info WHERE organization_id = $1`
 
-	commandTag, err := r.db.Exec(ctx, query, affiliateID)
+	commandTag, err := r.db.Exec(ctx, query, organizationID)
 	if err != nil {
 		return fmt.Errorf("error deleting affiliate extra info: %w", err)
 	}
@@ -629,8 +629,8 @@ func (r *pgxAffiliateRepository) GetAffiliateWithExtraInfo(ctx context.Context, 
 		return nil, err
 	}
 
-	// Get the extra info (may not exist)
-	extraInfo, err := r.GetAffiliateExtraInfo(ctx, affiliateID)
+	// Get the extra info (may not exist) - use organization ID
+	extraInfo, err := r.GetAffiliateExtraInfo(ctx, affiliate.OrganizationID)
 	if err != nil && err != domain.ErrNotFound {
 		return nil, err
 	}

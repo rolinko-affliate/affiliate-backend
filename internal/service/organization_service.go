@@ -98,24 +98,12 @@ func (s *organizationService) CreateOrganizationWithExtraInfo(ctx context.Contex
 		return nil, fmt.Errorf("failed to create organization: %w", err)
 	}
 
-	// Handle extra info based on organization type
+	// Handle extra info based on organization type - link directly to organization
 	switch req.Type {
 	case domain.OrganizationTypeAdvertiser:
 		if req.AdvertiserExtraInfo != nil {
-			// Create advertiser first
-			advertiser := &domain.Advertiser{
-				OrganizationID: org.OrganizationID,
-				Name:           req.Name,
-				ContactEmail:   &req.ContactEmail,
-				Status:         "active",
-			}
-			
-			if err := s.advertiserRepo.CreateAdvertiser(ctx, advertiser); err != nil {
-				return nil, fmt.Errorf("failed to create advertiser: %w", err)
-			}
-
-			// Create advertiser extra info
-			req.AdvertiserExtraInfo.AdvertiserID = advertiser.AdvertiserID
+			// Create advertiser extra info directly linked to organization
+			req.AdvertiserExtraInfo.OrganizationID = org.OrganizationID
 			if err := s.advertiserRepo.CreateAdvertiserExtraInfo(ctx, req.AdvertiserExtraInfo); err != nil {
 				return nil, fmt.Errorf("failed to create advertiser extra info: %w", err)
 			}
@@ -123,20 +111,8 @@ func (s *organizationService) CreateOrganizationWithExtraInfo(ctx context.Contex
 
 	case domain.OrganizationTypeAffiliate:
 		if req.AffiliateExtraInfo != nil {
-			// Create affiliate first
-			affiliate := &domain.Affiliate{
-				OrganizationID: org.OrganizationID,
-				Name:           req.Name,
-				ContactEmail:   &req.ContactEmail,
-				Status:         "active",
-			}
-			
-			if err := s.affiliateRepo.CreateAffiliate(ctx, affiliate); err != nil {
-				return nil, fmt.Errorf("failed to create affiliate: %w", err)
-			}
-
-			// Create affiliate extra info
-			req.AffiliateExtraInfo.AffiliateID = affiliate.AffiliateID
+			// Create affiliate extra info directly linked to organization
+			req.AffiliateExtraInfo.OrganizationID = org.OrganizationID
 			if err := s.affiliateRepo.CreateAffiliateExtraInfo(ctx, req.AffiliateExtraInfo); err != nil {
 				return nil, fmt.Errorf("failed to create affiliate extra info: %w", err)
 			}

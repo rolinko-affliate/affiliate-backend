@@ -112,20 +112,20 @@ type AdvertiserWithProviderData struct {
 	SyncStatus    string                  `json:"sync_status"` // 'synced', 'out_of_sync', 'not_synced', 'error'
 }
 
-// AdvertiserExtraInfo represents additional information for an advertiser
+// AdvertiserExtraInfo represents additional information for an advertiser organization
 type AdvertiserExtraInfo struct {
-	ExtraInfoID   int64     `json:"extra_info_id" db:"extra_info_id"`
-	AdvertiserID  int64     `json:"advertiser_id" db:"advertiser_id"`
-	Website       *string   `json:"website,omitempty" db:"website"`
-	WebsiteType   *string   `json:"website_type,omitempty" db:"website_type"` // 'shopify', 'amazon', 'shopline', 'tiktok_shop'
-	CreatedAt     time.Time `json:"created_at" db:"created_at"`
-	UpdatedAt     time.Time `json:"updated_at" db:"updated_at"`
+	ExtraInfoID    int64     `json:"extra_info_id" db:"extra_info_id"`
+	OrganizationID int64     `json:"organization_id" db:"organization_id"`
+	Website        *string   `json:"website,omitempty" db:"website"`
+	WebsiteType    *string   `json:"website_type,omitempty" db:"website_type"` // 'shopify', 'amazon', 'shopline', 'tiktok_shop'
+	CreatedAt      time.Time `json:"created_at" db:"created_at"`
+	UpdatedAt      time.Time `json:"updated_at" db:"updated_at"`
 }
 
 // Validate validates the advertiser extra info data
 func (aei *AdvertiserExtraInfo) Validate() error {
-	if aei.AdvertiserID <= 0 {
-		return fmt.Errorf("valid advertiser ID is required")
+	if aei.OrganizationID <= 0 {
+		return fmt.Errorf("valid organization ID is required")
 	}
 	
 	if aei.WebsiteType != nil {

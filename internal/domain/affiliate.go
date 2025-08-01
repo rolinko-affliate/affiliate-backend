@@ -67,10 +67,10 @@ type AffiliateProviderMapping struct {
 	UpdatedAt time.Time `json:"updated_at" db:"updated_at"`
 }
 
-// AffiliateExtraInfo represents additional information for an affiliate
+// AffiliateExtraInfo represents additional information for an affiliate organization
 type AffiliateExtraInfo struct {
 	ExtraInfoID     int64     `json:"extra_info_id" db:"extra_info_id"`
-	AffiliateID     int64     `json:"affiliate_id" db:"affiliate_id"`
+	OrganizationID  int64     `json:"organization_id" db:"organization_id"`
 	Website         *string   `json:"website,omitempty" db:"website"`
 	AffiliateType   *string   `json:"affiliate_type,omitempty" db:"affiliate_type"` // 'cashback', 'blog', 'incentive', 'content', 'forum', 'sub_affiliate_network'
 	SelfDescription *string   `json:"self_description,omitempty" db:"self_description"`
@@ -81,8 +81,8 @@ type AffiliateExtraInfo struct {
 
 // Validate validates the affiliate extra info data
 func (aei *AffiliateExtraInfo) Validate() error {
-	if aei.AffiliateID <= 0 {
-		return fmt.Errorf("valid affiliate ID is required")
+	if aei.OrganizationID <= 0 {
+		return fmt.Errorf("valid organization ID is required")
 	}
 	
 	if aei.AffiliateType != nil {

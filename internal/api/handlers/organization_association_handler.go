@@ -48,7 +48,7 @@ func (h *OrganizationAssociationHandler) CreateInvitation(c *gin.Context) {
 	req.AssociationType = domain.AssociationTypeInvitation
 
 	// Get user ID from context (set by auth middleware)
-	userID, exists := c.Get("user_id")
+	userID, exists := c.Get("userID")
 	if !exists {
 		c.JSON(http.StatusUnauthorized, ErrorResponse{
 			Error: "User not authenticated",
@@ -95,7 +95,7 @@ func (h *OrganizationAssociationHandler) CreateRequest(c *gin.Context) {
 	req.AssociationType = domain.AssociationTypeRequest
 
 	// Get user ID from context (set by auth middleware)
-	userID, exists := c.Get("user_id")
+	userID, exists := c.Get("userID")
 	if !exists {
 		c.JSON(http.StatusUnauthorized, ErrorResponse{
 			Error: "User not authenticated",
@@ -139,7 +139,7 @@ func (h *OrganizationAssociationHandler) ApproveAssociation(c *gin.Context) {
 	}
 
 	// Get user ID from context (set by auth middleware)
-	userID, exists := c.Get("user_id")
+	userID, exists := c.Get("userID")
 	if !exists {
 		c.JSON(http.StatusUnauthorized, ErrorResponse{
 			Error: "User not authenticated",
@@ -183,7 +183,7 @@ func (h *OrganizationAssociationHandler) RejectAssociation(c *gin.Context) {
 	}
 
 	// Get user ID from context (set by auth middleware)
-	userID, exists := c.Get("user_id")
+	userID, exists := c.Get("userID")
 	if !exists {
 		c.JSON(http.StatusUnauthorized, ErrorResponse{
 			Error: "User not authenticated",
@@ -227,7 +227,7 @@ func (h *OrganizationAssociationHandler) SuspendAssociation(c *gin.Context) {
 	}
 
 	// Get user ID from context (set by auth middleware)
-	userID, exists := c.Get("user_id")
+	userID, exists := c.Get("userID")
 	if !exists {
 		c.JSON(http.StatusUnauthorized, ErrorResponse{
 			Error: "User not authenticated",
@@ -271,7 +271,7 @@ func (h *OrganizationAssociationHandler) ReactivateAssociation(c *gin.Context) {
 	}
 
 	// Get user ID from context (set by auth middleware)
-	userID, exists := c.Get("user_id")
+	userID, exists := c.Get("userID")
 	if !exists {
 		c.JSON(http.StatusUnauthorized, ErrorResponse{
 			Error: "User not authenticated",
@@ -325,7 +325,7 @@ func (h *OrganizationAssociationHandler) UpdateVisibility(c *gin.Context) {
 	}
 
 	// Get user ID from context (set by auth middleware)
-	userID, exists := c.Get("user_id")
+	userID, exists := c.Get("userID")
 	if !exists {
 		c.JSON(http.StatusUnauthorized, ErrorResponse{
 			Error: "User not authenticated",

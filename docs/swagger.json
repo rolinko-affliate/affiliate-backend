@@ -1935,14 +1935,9 @@
                 }
             }
         },
-        "/api/v1/organizations": {
-            "post": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Creates a new organization with the given name. Requires Admin role.",
+        "/api/v1/organization-associations": {
+            "get": {
+                "description": "List organization associations with optional filtering",
                 "consumes": [
                     "application/json"
                 ],
@@ -1950,60 +1945,597 @@
                     "application/json"
                 ],
                 "tags": [
-                    "organizations"
+                    "organization-associations"
                 ],
-                "summary": "Create a new organization (Admin only)",
+                "summary": "List associations",
                 "parameters": [
                     {
-                        "description": "Organization details",
-                        "name": "request",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/handlers.CreateOrganizationRequest"
-                        }
+                        "type": "integer",
+                        "description": "Advertiser organization ID",
+                        "name": "advertiser_org_id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Affiliate organization ID",
+                        "name": "affiliate_org_id",
+                        "in": "query"
+                    },
+                    {
+                        "enum": [
+                            "pending",
+                            "active",
+                            "suspended",
+                            "rejected"
+                        ],
+                        "type": "string",
+                        "description": "Association status",
+                        "name": "status",
+                        "in": "query"
+                    },
+                    {
+                        "enum": [
+                            "invitation",
+                            "request"
+                        ],
+                        "type": "string",
+                        "description": "Association type",
+                        "name": "association_type",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "default": 50,
+                        "description": "Limit",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "default": 0,
+                        "description": "Offset",
+                        "name": "offset",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "default": false,
+                        "description": "Include organization and user details",
+                        "name": "with_details",
+                        "in": "query"
                     }
                 ],
                 "responses": {
-                    "201": {
-                        "description": "Created organization",
+                    "200": {
+                        "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/domain.Organization"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/domain.OrganizationAssociation"
+                            }
                         }
                     },
                     "400": {
-                        "description": "Invalid request",
+                        "description": "Bad Request",
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
+                            "$ref": "#/definitions/handlers.ErrorResponse"
                         }
                     },
-                    "403": {
-                        "description": "Forbidden - Only admins can create organizations",
+                    "401": {
+                        "description": "Unauthorized",
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
+                            "$ref": "#/definitions/handlers.ErrorResponse"
                         }
                     },
                     "500": {
-                        "description": "Internal server error",
+                        "description": "Internal Server Error",
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
+                            "$ref": "#/definitions/handlers.ErrorResponse"
                         }
                     }
                 }
             }
         },
-        "/api/v1/public/organizations": {
+        "/api/v1/organization-associations/invitations": {
             "post": {
-                "description": "Creates a new organization with the given name. No authentication required.",
+                "description": "Create a new invitation from advertiser organization to affiliate organization",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "organization-associations"
+                ],
+                "summary": "Create invitation",
+                "parameters": [
+                    {
+                        "description": "Create invitation request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.CreateAssociationRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/domain.OrganizationAssociation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/organization-associations/requests": {
+            "post": {
+                "description": "Create a new request from affiliate organization to advertiser organization",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "organization-associations"
+                ],
+                "summary": "Create request",
+                "parameters": [
+                    {
+                        "description": "Create request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.CreateAssociationRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/domain.OrganizationAssociation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/organization-associations/{id}": {
+            "get": {
+                "description": "Get an organization association by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "organization-associations"
+                ],
+                "summary": "Get association",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Association ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.OrganizationAssociation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/organization-associations/{id}/approve": {
+            "post": {
+                "description": "Approve a pending organization association",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "organization-associations"
+                ],
+                "summary": "Approve association",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Association ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.OrganizationAssociation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/organization-associations/{id}/reactivate": {
+            "post": {
+                "description": "Reactivate a suspended organization association",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "organization-associations"
+                ],
+                "summary": "Reactivate association",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Association ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.OrganizationAssociation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/organization-associations/{id}/reject": {
+            "post": {
+                "description": "Reject a pending organization association",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "organization-associations"
+                ],
+                "summary": "Reject association",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Association ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.OrganizationAssociation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/organization-associations/{id}/suspend": {
+            "post": {
+                "description": "Suspend an active organization association",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "organization-associations"
+                ],
+                "summary": "Suspend association",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Association ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.OrganizationAssociation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/organization-associations/{id}/visibility": {
+            "put": {
+                "description": "Update the visibility settings of an organization association",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "organization-associations"
+                ],
+                "summary": "Update visibility",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Association ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Update visibility request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.UpdateAssociationRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.OrganizationAssociation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/organizations": {
+            "post": {
+                "description": "Creates a new organization with the given name and optional extra info. No authentication required.",
                 "consumes": [
                     "application/json"
                 ],
@@ -2048,6 +2580,208 @@
                             "additionalProperties": {
                                 "type": "string"
                             }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/organizations/{advertiser_org_id}/visible-affiliates": {
+            "get": {
+                "description": "Get all affiliates from affiliate organizations that are visible to the specified advertiser organization based on active associations",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "organization-associations"
+                ],
+                "summary": "Get visible affiliates for advertiser",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Advertiser Organization ID",
+                        "name": "advertiser_org_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Filter by specific affiliate organization ID",
+                        "name": "affiliate_org_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/domain.Affiliate"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/organizations/{affiliate_org_id}/visible-campaigns": {
+            "get": {
+                "description": "Get all campaigns from advertiser organizations that are visible to the specified affiliate organization based on active associations",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "organization-associations"
+                ],
+                "summary": "Get visible campaigns for affiliate",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Affiliate Organization ID",
+                        "name": "affiliate_org_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Filter by specific advertiser organization ID",
+                        "name": "advertiser_org_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/domain.Campaign"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/organizations/{id}/associations": {
+            "get": {
+                "description": "Get all associations for a specific organization (advertiser or affiliate)",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "organization-associations"
+                ],
+                "summary": "Get associations for organization",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Organization ID",
+                        "name": "org_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "enum": [
+                            "pending",
+                            "active",
+                            "suspended",
+                            "rejected"
+                        ],
+                        "type": "string",
+                        "description": "Association status",
+                        "name": "status",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "default": false,
+                        "description": "Include organization and user details",
+                        "name": "with_details",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/domain.OrganizationAssociation"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
                         }
                     }
                 }
@@ -5546,6 +6280,36 @@
                 }
             }
         },
+        "domain.AssociationStatus": {
+            "type": "string",
+            "enum": [
+                "pending",
+                "active",
+                "suspended",
+                "rejected"
+            ],
+            "x-enum-varnames": [
+                "AssociationStatusPending",
+                "AssociationStatusActive",
+                "AssociationStatusSuspended",
+                "AssociationStatusRejected"
+            ]
+        },
+        "domain.AssociationType": {
+            "type": "string",
+            "enum": [
+                "invitation",
+                "request"
+            ],
+            "x-enum-comments": {
+                "AssociationTypeInvitation": "Advertiser invites affiliate",
+                "AssociationTypeRequest": "Affiliate requests to join advertiser"
+            },
+            "x-enum-varnames": [
+                "AssociationTypeInvitation",
+                "AssociationTypeRequest"
+            ]
+        },
         "domain.AutocompleteResult": {
             "type": "object",
             "properties": {
@@ -5794,10 +6558,6 @@
                 "BillingModePostpaid": "Monthly invoicing",
                 "BillingModePrepaid": "Pay-as-you-go with balance"
             },
-            "x-enum-descriptions": [
-                "Pay-as-you-go with balance",
-                "Monthly invoicing"
-            ],
             "x-enum-varnames": [
                 "BillingModePrepaid",
                 "BillingModePostpaid"
@@ -5824,6 +6584,122 @@
                 },
                 "starting_month": {
                     "description": "For quarterly/yearly billing",
+                    "type": "integer"
+                }
+            }
+        },
+        "domain.Campaign": {
+            "type": "object",
+            "properties": {
+                "advertiser_id": {
+                    "type": "integer"
+                },
+                "campaign_id": {
+                    "type": "integer"
+                },
+                "conversion_method": {
+                    "description": "'server_postback', 'pixel', etc.",
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "currency_id": {
+                    "description": "'USD', 'EUR', etc.",
+                    "type": "string"
+                },
+                "daily_click_cap": {
+                    "type": "integer"
+                },
+                "daily_conversion_cap": {
+                    "type": "integer"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "destination_url": {
+                    "description": "Core campaign fields (provider-agnostic)",
+                    "type": "string"
+                },
+                "end_date": {
+                    "type": "string"
+                },
+                "fixed_click_amount": {
+                    "description": "Fixed amount paid to affiliates per click",
+                    "type": "number"
+                },
+                "fixed_conversion_amount": {
+                    "description": "Fixed amount paid to affiliates per conversion",
+                    "type": "number"
+                },
+                "fixed_revenue": {
+                    "description": "Simplified billing configuration",
+                    "type": "number"
+                },
+                "global_click_cap": {
+                    "type": "integer"
+                },
+                "global_conversion_cap": {
+                    "type": "integer"
+                },
+                "internal_notes": {
+                    "type": "string"
+                },
+                "is_caps_enabled": {
+                    "description": "Caps and limits",
+                    "type": "boolean"
+                },
+                "monthly_click_cap": {
+                    "type": "integer"
+                },
+                "monthly_conversion_cap": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "organization_id": {
+                    "type": "integer"
+                },
+                "percentage_conversion_amount": {
+                    "description": "Percentage of revenue paid to affiliates per conversion (0-100)",
+                    "type": "number"
+                },
+                "preview_url": {
+                    "type": "string"
+                },
+                "session_definition": {
+                    "description": "'cookie', 'ip', 'fingerprint'",
+                    "type": "string"
+                },
+                "session_duration": {
+                    "description": "in hours",
+                    "type": "integer"
+                },
+                "start_date": {
+                    "type": "string"
+                },
+                "status": {
+                    "description": "'draft', 'active', 'paused', 'archived'",
+                    "type": "string"
+                },
+                "terms_and_conditions": {
+                    "type": "string"
+                },
+                "thumbnail_url": {
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
+                },
+                "visibility": {
+                    "description": "'public', 'require_approval', 'private'",
+                    "type": "string"
+                },
+                "weekly_click_cap": {
+                    "type": "integer"
+                },
+                "weekly_conversion_cap": {
                     "type": "integer"
                 }
             }
@@ -5939,6 +6815,48 @@
                                 "type": "number"
                             }
                         }
+                    }
+                }
+            }
+        },
+        "domain.CreateAssociationRequest": {
+            "type": "object",
+            "required": [
+                "advertiser_org_id",
+                "affiliate_org_id",
+                "association_type"
+            ],
+            "properties": {
+                "advertiser_org_id": {
+                    "type": "integer"
+                },
+                "affiliate_org_id": {
+                    "type": "integer"
+                },
+                "all_affiliates_visible": {
+                    "type": "boolean"
+                },
+                "all_campaigns_visible": {
+                    "type": "boolean"
+                },
+                "association_type": {
+                    "$ref": "#/definitions/domain.AssociationType"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "visible_affiliate_ids": {
+                    "description": "For invitations from advertiser",
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "visible_campaign_ids": {
+                    "description": "For requests from affiliate",
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
                     }
                 }
             }
@@ -6260,6 +7178,62 @@
                     "$ref": "#/definitions/domain.OrganizationType"
                 },
                 "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.OrganizationAssociation": {
+            "type": "object",
+            "properties": {
+                "advertiser_org_id": {
+                    "type": "integer"
+                },
+                "affiliate_org_id": {
+                    "type": "integer"
+                },
+                "all_affiliates_visible": {
+                    "description": "Default visibility flags (when true, all affiliates/campaigns are visible)",
+                    "type": "boolean"
+                },
+                "all_campaigns_visible": {
+                    "type": "boolean"
+                },
+                "approved_at": {
+                    "type": "string"
+                },
+                "approved_by_user_id": {
+                    "description": "UUID of user who approved",
+                    "type": "string"
+                },
+                "association_id": {
+                    "type": "integer"
+                },
+                "association_type": {
+                    "$ref": "#/definitions/domain.AssociationType"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "message": {
+                    "description": "Optional message with request/invitation",
+                    "type": "string"
+                },
+                "requested_by_user_id": {
+                    "description": "Request/invitation metadata",
+                    "type": "string"
+                },
+                "status": {
+                    "$ref": "#/definitions/domain.AssociationStatus"
+                },
+                "updated_at": {
+                    "type": "string"
+                },
+                "visible_affiliate_ids": {
+                    "description": "Visibility settings - JSON arrays of IDs",
+                    "type": "string"
+                },
+                "visible_campaign_ids": {
+                    "description": "JSONB array of campaign IDs visible to affiliate",
                     "type": "string"
                 }
             }
@@ -6775,6 +7749,32 @@
                 "TransactionTypeTransfer"
             ]
         },
+        "domain.UpdateAssociationRequest": {
+            "type": "object",
+            "properties": {
+                "all_affiliates_visible": {
+                    "type": "boolean"
+                },
+                "all_campaigns_visible": {
+                    "type": "boolean"
+                },
+                "status": {
+                    "$ref": "#/definitions/domain.AssociationStatus"
+                },
+                "visible_affiliate_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "visible_campaign_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                }
+            }
+        },
         "domain.UpdateBillingConfigRequest": {
             "type": "object",
             "properties": {
@@ -6892,6 +7892,48 @@
                             }
                         }
                     }
+                }
+            }
+        },
+        "handlers.AdvertiserExtraInfoRequest": {
+            "type": "object",
+            "properties": {
+                "website": {
+                    "type": "string"
+                },
+                "website_type": {
+                    "type": "string",
+                    "enum": [
+                        "shopify",
+                        "amazon",
+                        "shopline",
+                        "tiktok_shop"
+                    ]
+                }
+            }
+        },
+        "handlers.AffiliateExtraInfoRequest": {
+            "type": "object",
+            "properties": {
+                "affiliate_type": {
+                    "type": "string",
+                    "enum": [
+                        "cashback",
+                        "blog",
+                        "incentive",
+                        "content",
+                        "forum",
+                        "sub_affiliate_network"
+                    ]
+                },
+                "logo_url": {
+                    "type": "string"
+                },
+                "self_description": {
+                    "type": "string"
+                },
+                "website": {
+                    "type": "string"
                 }
             }
         },
@@ -7050,6 +8092,18 @@
                 "type"
             ],
             "properties": {
+                "advertiser_extra_info": {
+                    "$ref": "#/definitions/handlers.AdvertiserExtraInfoRequest"
+                },
+                "affiliate_extra_info": {
+                    "$ref": "#/definitions/handlers.AffiliateExtraInfoRequest"
+                },
+                "contact_email": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
                 "name": {
                     "type": "string"
                 },
@@ -7058,7 +8112,8 @@
                     "enum": [
                         "advertiser",
                         "affiliate",
-                        "platform_owner"
+                        "platform_owner",
+                        "agency"
                     ]
                 }
             }
@@ -7192,6 +8247,18 @@
                 "type"
             ],
             "properties": {
+                "advertiser_extra_info": {
+                    "$ref": "#/definitions/handlers.AdvertiserExtraInfoRequest"
+                },
+                "affiliate_extra_info": {
+                    "$ref": "#/definitions/handlers.AffiliateExtraInfoRequest"
+                },
+                "contact_email": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
                 "name": {
                     "type": "string"
                 },
@@ -7200,7 +8267,8 @@
                     "enum": [
                         "advertiser",
                         "affiliate",
-                        "platform_owner"
+                        "platform_owner",
+                        "agency"
                     ]
                 }
             }

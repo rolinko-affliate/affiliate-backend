@@ -263,8 +263,8 @@ func (r *pgxAdvertiserRepository) DeleteAdvertiser(ctx context.Context, id int64
 // CreateAdvertiserExtraInfo creates extra info for an advertiser organization
 func (r *pgxAdvertiserRepository) CreateAdvertiserExtraInfo(ctx context.Context, extraInfo *domain.AdvertiserExtraInfo) error {
 	query := `INSERT INTO public.advertiser_extra_info (
-		organization_id, website, website_type, created_at, updated_at
-	) VALUES ($1, $2, $3, $4, $5) 
+		organization_id, website, website_type, company_size, created_at, updated_at
+	) VALUES ($1, $2, $3, $4, $5, $6) 
 	RETURNING extra_info_id, created_at, updated_at`
 
 	now := time.Now()
@@ -272,6 +272,7 @@ func (r *pgxAdvertiserRepository) CreateAdvertiserExtraInfo(ctx context.Context,
 		extraInfo.OrganizationID,
 		extraInfo.Website,
 		extraInfo.WebsiteType,
+		extraInfo.CompanySize,
 		now,
 		now,
 	).Scan(&extraInfo.ExtraInfoID, &extraInfo.CreatedAt, &extraInfo.UpdatedAt)
@@ -285,7 +286,7 @@ func (r *pgxAdvertiserRepository) CreateAdvertiserExtraInfo(ctx context.Context,
 
 // GetAdvertiserExtraInfo retrieves extra info for an advertiser organization
 func (r *pgxAdvertiserRepository) GetAdvertiserExtraInfo(ctx context.Context, organizationID int64) (*domain.AdvertiserExtraInfo, error) {
-	query := `SELECT extra_info_id, organization_id, website, website_type, created_at, updated_at
+	query := `SELECT extra_info_id, organization_id, website, website_type, company_size, created_at, updated_at
 		FROM public.advertiser_extra_info WHERE organization_id = $1`
 
 	extraInfo := &domain.AdvertiserExtraInfo{}
@@ -294,6 +295,7 @@ func (r *pgxAdvertiserRepository) GetAdvertiserExtraInfo(ctx context.Context, or
 		&extraInfo.OrganizationID,
 		&extraInfo.Website,
 		&extraInfo.WebsiteType,
+		&extraInfo.CompanySize,
 		&extraInfo.CreatedAt,
 		&extraInfo.UpdatedAt,
 	)
@@ -311,7 +313,7 @@ func (r *pgxAdvertiserRepository) GetAdvertiserExtraInfo(ctx context.Context, or
 // UpdateAdvertiserExtraInfo updates extra info for an advertiser organization
 func (r *pgxAdvertiserRepository) UpdateAdvertiserExtraInfo(ctx context.Context, extraInfo *domain.AdvertiserExtraInfo) error {
 	query := `UPDATE public.advertiser_extra_info SET 
-		website = $2, website_type = $3, updated_at = $4
+		website = $2, website_type = $3, company_size = $4, updated_at = $5
 		WHERE organization_id = $1
 		RETURNING updated_at`
 
@@ -320,6 +322,7 @@ func (r *pgxAdvertiserRepository) UpdateAdvertiserExtraInfo(ctx context.Context,
 		extraInfo.OrganizationID,
 		extraInfo.Website,
 		extraInfo.WebsiteType,
+		extraInfo.CompanySize,
 		now,
 	).Scan(&extraInfo.UpdatedAt)
 
@@ -336,11 +339,12 @@ func (r *pgxAdvertiserRepository) UpdateAdvertiserExtraInfo(ctx context.Context,
 // UpsertAdvertiserExtraInfo creates or updates extra info for an advertiser organization
 func (r *pgxAdvertiserRepository) UpsertAdvertiserExtraInfo(ctx context.Context, extraInfo *domain.AdvertiserExtraInfo) error {
 	query := `INSERT INTO public.advertiser_extra_info (
-		organization_id, website, website_type, created_at, updated_at
-	) VALUES ($1, $2, $3, $4, $5)
+		organization_id, website, website_type, company_size, created_at, updated_at
+	) VALUES ($1, $2, $3, $4, $5, $6)
 	ON CONFLICT (organization_id) DO UPDATE SET
 		website = EXCLUDED.website,
 		website_type = EXCLUDED.website_type,
+		company_size = EXCLUDED.company_size,
 		updated_at = EXCLUDED.updated_at
 	RETURNING extra_info_id, created_at, updated_at`
 
@@ -349,6 +353,7 @@ func (r *pgxAdvertiserRepository) UpsertAdvertiserExtraInfo(ctx context.Context,
 		extraInfo.OrganizationID,
 		extraInfo.Website,
 		extraInfo.WebsiteType,
+		extraInfo.CompanySize,
 		now,
 		now,
 	).Scan(&extraInfo.ExtraInfoID, &extraInfo.CreatedAt, &extraInfo.UpdatedAt)

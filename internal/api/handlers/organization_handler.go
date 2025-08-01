@@ -68,13 +68,14 @@ func (h *OrganizationHandler) checkOrganizationAccess(c *gin.Context, orgID int6
 // AdvertiserExtraInfoRequest represents the extra info for advertiser organizations
 type AdvertiserExtraInfoRequest struct {
 	Website     *string `json:"website,omitempty"`
-	WebsiteType *string `json:"website_type,omitempty" binding:"omitempty,oneof=shopify amazon shopline tiktok_shop"`
+	WebsiteType *string `json:"website_type,omitempty" binding:"omitempty,oneof=shopify amazon shopline tiktok_shop other"`
+	CompanySize *string `json:"company_size,omitempty" binding:"omitempty,oneof=startup small medium large enterprise"`
 }
 
 // AffiliateExtraInfoRequest represents the extra info for affiliate organizations
 type AffiliateExtraInfoRequest struct {
 	Website         *string `json:"website,omitempty"`
-	AffiliateType   *string `json:"affiliate_type,omitempty" binding:"omitempty,oneof=cashback blog incentive content forum sub_affiliate_network"`
+	AffiliateType   *string `json:"affiliate_type,omitempty" binding:"omitempty,oneof=cashback blog incentive content forum sub_affiliate_network other"`
 	SelfDescription *string `json:"self_description,omitempty"`
 	LogoURL         *string `json:"logo_url,omitempty"`
 }
@@ -166,6 +167,7 @@ func (h *OrganizationHandler) CreateOrganizationPublic(c *gin.Context) {
 		serviceReq.AdvertiserExtraInfo = &domain.AdvertiserExtraInfo{
 			Website:     req.AdvertiserExtraInfo.Website,
 			WebsiteType: req.AdvertiserExtraInfo.WebsiteType,
+			CompanySize: req.AdvertiserExtraInfo.CompanySize,
 		}
 	}
 

@@ -7968,6 +7968,16 @@ const docTemplate = `{
         "handlers.AdvertiserExtraInfoRequest": {
             "type": "object",
             "properties": {
+                "company_size": {
+                    "type": "string",
+                    "enum": [
+                        "startup",
+                        "small",
+                        "medium",
+                        "large",
+                        "enterprise"
+                    ]
+                },
                 "website": {
                     "type": "string"
                 },
@@ -7977,7 +7987,8 @@ const docTemplate = `{
                         "shopify",
                         "amazon",
                         "shopline",
-                        "tiktok_shop"
+                        "tiktok_shop",
+                        "other"
                     ]
                 }
             }
@@ -7993,7 +8004,8 @@ const docTemplate = `{
                         "incentive",
                         "content",
                         "forum",
-                        "sub_affiliate_network"
+                        "sub_affiliate_network",
+                        "other"
                     ]
                 },
                 "logo_url": {

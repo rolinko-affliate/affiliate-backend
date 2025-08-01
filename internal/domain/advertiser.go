@@ -118,6 +118,7 @@ type AdvertiserExtraInfo struct {
 	OrganizationID int64     `json:"organization_id" db:"organization_id"`
 	Website        *string   `json:"website,omitempty" db:"website"`
 	WebsiteType    *string   `json:"website_type,omitempty" db:"website_type"` // 'shopify', 'amazon', 'shopline', 'tiktok_shop'
+	CompanySize    *string   `json:"company_size,omitempty" db:"company_size"`  // 'startup', 'small', 'medium', 'large', 'enterprise'
 	CreatedAt      time.Time `json:"created_at" db:"created_at"`
 	UpdatedAt      time.Time `json:"updated_at" db:"updated_at"`
 }
@@ -134,6 +135,15 @@ func (aei *AdvertiserExtraInfo) Validate() error {
 		}
 		if !validTypes[*aei.WebsiteType] {
 			return fmt.Errorf("invalid website type: %s", *aei.WebsiteType)
+		}
+	}
+	
+	if aei.CompanySize != nil {
+		validSizes := map[string]bool{
+			"startup": true, "small": true, "medium": true, "large": true, "enterprise": true,
+		}
+		if !validSizes[*aei.CompanySize] {
+			return fmt.Errorf("invalid company size: %s", *aei.CompanySize)
 		}
 	}
 	

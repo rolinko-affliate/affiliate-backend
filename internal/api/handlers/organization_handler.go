@@ -101,7 +101,7 @@ type CreateOrganizationRequest struct {
 // @Failure      403      {object}  map[string]string          "Forbidden - Only admins can create organizations"
 // @Failure      500      {object}  map[string]string          "Internal server error"
 // @Security     BearerAuth
-// @Router       /api/v1/organizations [post]
+// @Router       /organizations [post]
 func (h *OrganizationHandler) CreateOrganization(c *gin.Context) {
 	// Check user role
 	userRole, exists := c.Get(middleware.UserRoleKey)
@@ -142,7 +142,7 @@ func (h *OrganizationHandler) CreateOrganization(c *gin.Context) {
 // @Success      201      {object}  domain.Organization        "Created organization"
 // @Failure      400      {object}  map[string]string          "Invalid request"
 // @Failure      500      {object}  map[string]string          "Internal server error"
-// @Router       /api/v1/public/organizations [post]
+// @Router       /public/organizations [post]
 func (h *OrganizationHandler) CreateOrganizationPublic(c *gin.Context) {
 	var req CreateOrganizationRequest
 	if err := c.ShouldBindJSON(&req); err != nil {

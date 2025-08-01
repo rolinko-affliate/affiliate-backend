@@ -42,7 +42,7 @@ type AutocompleteRequest struct {
 // @Success 200 {object} SuccessResponse{data=[]domain.AutocompleteResult} "Autocompletion results"
 // @Failure 400 {object} ErrorResponse "Bad request - invalid parameters"
 // @Failure 500 {object} ErrorResponse "Internal server error"
-// @Router /api/v1/analytics/autocomplete [get]
+// @Router /analytics/autocomplete [get]
 func (h *AnalyticsHandler) AutocompleteOrganizations(c *gin.Context) {
 	var req AutocompleteRequest
 	if err := c.ShouldBindQuery(&req); err != nil {
@@ -84,7 +84,7 @@ func (h *AnalyticsHandler) AutocompleteOrganizations(c *gin.Context) {
 // @Failure 400 {object} ErrorResponse "Bad request - invalid ID"
 // @Failure 404 {object} ErrorResponse "Advertiser not found"
 // @Failure 500 {object} ErrorResponse "Internal server error"
-// @Router /api/v1/analytics/advertisers/{id} [get]
+// @Router /analytics/advertisers/{id} [get]
 func (h *AnalyticsHandler) GetAdvertiserByID(c *gin.Context) {
 	idStr := c.Param("id")
 	id, err := strconv.ParseInt(idStr, 10, 64)
@@ -129,7 +129,7 @@ func (h *AnalyticsHandler) GetAdvertiserByID(c *gin.Context) {
 // @Failure 400 {object} ErrorResponse "Bad request - invalid ID"
 // @Failure 404 {object} ErrorResponse "Publisher not found"
 // @Failure 500 {object} ErrorResponse "Internal server error"
-// @Router /api/v1/analytics/affiliates/{id} [get]
+// @Router /analytics/affiliates/{id} [get]
 func (h *AnalyticsHandler) GetPublisherByID(c *gin.Context) {
 	idStr := c.Param("id")
 	id, err := strconv.ParseInt(idStr, 10, 64)
@@ -174,7 +174,7 @@ func (h *AnalyticsHandler) GetPublisherByID(c *gin.Context) {
 // @Failure 400 {object} ErrorResponse "Bad request - invalid domain"
 // @Failure 404 {object} ErrorResponse "Publisher not found"
 // @Failure 500 {object} ErrorResponse "Internal server error"
-// @Router /api/v1/analytics/affiliates/domain/{domain} [get]
+// @Router /analytics/affiliates/domain/{domain} [get]
 func (h *AnalyticsHandler) GetPublisherByDomain(c *gin.Context) {
 	domainParam := c.Param("domain")
 	if domainParam == "" {
@@ -225,7 +225,7 @@ type CreateAdvertiserRequest struct {
 // @Success 201 {object} SuccessResponse{data=domain.AnalyticsAdvertiser} "Advertiser created successfully"
 // @Failure 400 {object} ErrorResponse "Bad request - invalid data"
 // @Failure 500 {object} ErrorResponse "Internal server error"
-// @Router /api/v1/analytics/advertisers [post]
+// @Router /analytics/advertisers [post]
 func (h *AnalyticsHandler) CreateAdvertiser(c *gin.Context) {
 	var req CreateAdvertiserRequest
 	if err := c.ShouldBindJSON(&req); err != nil {
@@ -288,7 +288,7 @@ type CreatePublisherRequest struct {
 // @Success 201 {object} SuccessResponse{data=domain.AnalyticsPublisher} "Publisher created successfully"
 // @Failure 400 {object} ErrorResponse "Bad request - invalid data"
 // @Failure 500 {object} ErrorResponse "Internal server error"
-// @Router /api/v1/analytics/affiliates [post]
+// @Router /analytics/affiliates [post]
 func (h *AnalyticsHandler) CreatePublisher(c *gin.Context) {
 	var req CreatePublisherRequest
 	if err := c.ShouldBindJSON(&req); err != nil {

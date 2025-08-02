@@ -191,16 +191,18 @@ func (h *OrganizationHandler) CreateOrganizationPublic(c *gin.Context) {
 
 // GetOrganization retrieves an organization by ID
 // @Summary      Get organization by ID
-// @Description  Retrieves an organization by its ID
+// @Description  Retrieves an organization by its ID, optionally with extra info
 // @Tags         organizations
 // @Accept       json
 // @Produce      json
-// @Param        id   path      int                   true  "Organization ID"
-// @Success      200  {object}  domain.Organization  "Organization details"
-// @Failure      400  {object}  map[string]string    "Invalid organization ID"
-// @Failure      403  {object}  map[string]string    "Forbidden - User doesn't have permission"
-// @Failure      404  {object}  map[string]string    "Organization not found"
-// @Failure      500  {object}  map[string]string    "Internal server error"
+// @Param        id           path      int     true   "Organization ID"
+// @Param        with_extra   query     bool    false  "Include extra info (advertiser_extra_info or affiliate_extra_info)"
+// @Success      200          {object}  domain.Organization  "Organization details (basic)"
+// @Success      200          {object}  domain.OrganizationWithExtraInfo  "Organization details (with extra info)"
+// @Failure      400          {object}  map[string]string    "Invalid organization ID"
+// @Failure      403          {object}  map[string]string    "Forbidden - User doesn't have permission"
+// @Failure      404          {object}  map[string]string    "Organization not found"
+// @Failure      500          {object}  map[string]string    "Internal server error"
 // @Security     BearerAuth
 // @Router       /organizations/{id} [get]
 func (h *OrganizationHandler) GetOrganization(c *gin.Context) {
@@ -211,28 +213,58 @@ func (h *OrganizationHandler) GetOrganization(c *gin.Context) {
 		return
 	}
 
-	organization, err := h.organizationService.GetOrganizationByID(c.Request.Context(), id)
-	if err != nil {
-		if err.Error() == "organization not found: not found" {
-			c.JSON(http.StatusNotFound, gin.H{"error": "Organization not found"})
+	// Check if extra info is requested
+	withExtra := c.Query("with_extra") == "true"
+
+	if withExtra {
+		// Get organization with extra info
+		organizationWithExtra, err := h.organizationService.GetOrganizationByIDWithExtraInfo(c.Request.Context(), id)
+		if err != nil {
+			if err.Error() == "organization not found: not found" {
+				c.JSON(http.StatusNotFound, gin.H{"error": "Organization not found"})
+				return
+			}
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get organization: " + err.Error()})
 			return
 		}
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get organization: " + err.Error()})
-		return
-	}
 
-	// Check if user has permission to view this organization
-	hasAccess, err := h.checkOrganizationAccess(c, organization.OrganizationID)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to verify permissions: " + err.Error()})
-		return
-	}
-	if !hasAccess {
-		c.JSON(http.StatusForbidden, gin.H{"error": "You don't have permission to view this organization"})
-		return
-	}
+		// Check if user has permission to view this organization
+		hasAccess, err := h.checkOrganizationAccess(c, organizationWithExtra.OrganizationID)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to verify permissions: " + err.Error()})
+			return
+		}
+		if !hasAccess {
+			c.JSON(http.StatusForbidden, gin.H{"error": "You don't have permission to view this organization"})
+			return
+		}
 
-	c.JSON(http.StatusOK, organization)
+		c.JSON(http.StatusOK, organizationWithExtra)
+	} else {
+		// Get basic organization info
+		organization, err := h.organizationService.GetOrganizationByID(c.Request.Context(), id)
+		if err != nil {
+			if err.Error() == "organization not found: not found" {
+				c.JSON(http.StatusNotFound, gin.H{"error": "Organization not found"})
+				return
+			}
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get organization: " + err.Error()})
+			return
+		}
+
+		// Check if user has permission to view this organization
+		hasAccess, err := h.checkOrganizationAccess(c, organization.OrganizationID)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to verify permissions: " + err.Error()})
+			return
+		}
+		if !hasAccess {
+			c.JSON(http.StatusForbidden, gin.H{"error": "You don't have permission to view this organization"})
+			return
+		}
+
+		c.JSON(http.StatusOK, organization)
+	}
 }
 
 // UpdateOrganizationRequest defines the request for updating an organization

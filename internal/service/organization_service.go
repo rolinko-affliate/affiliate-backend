@@ -23,6 +23,7 @@ type OrganizationService interface {
 	CreateOrganization(ctx context.Context, name string, orgType domain.OrganizationType) (*domain.Organization, error)
 	CreateOrganizationWithExtraInfo(ctx context.Context, req *CreateOrganizationWithExtraInfoRequest) (*domain.Organization, error)
 	GetOrganizationByID(ctx context.Context, id int64) (*domain.Organization, error)
+	GetOrganizationByIDWithExtraInfo(ctx context.Context, id int64) (*domain.OrganizationWithExtraInfo, error)
 	UpdateOrganization(ctx context.Context, org *domain.Organization) error
 	ListOrganizations(ctx context.Context, page, pageSize int) ([]*domain.Organization, error)
 	DeleteOrganization(ctx context.Context, id int64) error
@@ -125,6 +126,47 @@ func (s *organizationService) CreateOrganizationWithExtraInfo(ctx context.Contex
 // GetOrganizationByID retrieves an organization by ID
 func (s *organizationService) GetOrganizationByID(ctx context.Context, id int64) (*domain.Organization, error) {
 	return s.orgRepo.GetOrganizationByID(ctx, id)
+}
+
+// GetOrganizationByIDWithExtraInfo retrieves an organization by ID with its extra info
+func (s *organizationService) GetOrganizationByIDWithExtraInfo(ctx context.Context, id int64) (*domain.OrganizationWithExtraInfo, error) {
+	// Get the organization first
+	org, err := s.orgRepo.GetOrganizationByID(ctx, id)
+	if err != nil {
+		return nil, err
+	}
+
+	// Create the response with organization data
+	result := &domain.OrganizationWithExtraInfo{
+		OrganizationID: org.OrganizationID,
+		Name:           org.Name,
+		Type:           org.Type,
+		CreatedAt:      org.CreatedAt,
+		UpdatedAt:      org.UpdatedAt,
+	}
+
+	// Get extra info based on organization type
+	switch org.Type {
+	case domain.OrganizationTypeAdvertiser:
+		advertiserExtraInfo, err := s.advertiserRepo.GetAdvertiserExtraInfo(ctx, org.OrganizationID)
+		if err != nil && err.Error() != "advertiser extra info not found: not found" {
+			return nil, fmt.Errorf("failed to get advertiser extra info: %w", err)
+		}
+		if advertiserExtraInfo != nil {
+			result.AdvertiserExtraInfo = advertiserExtraInfo
+		}
+
+	case domain.OrganizationTypeAffiliate:
+		affiliateExtraInfo, err := s.affiliateRepo.GetAffiliateExtraInfo(ctx, org.OrganizationID)
+		if err != nil && err.Error() != "affiliate extra info not found: not found" {
+			return nil, fmt.Errorf("failed to get affiliate extra info: %w", err)
+		}
+		if affiliateExtraInfo != nil {
+			result.AffiliateExtraInfo = affiliateExtraInfo
+		}
+	}
+
+	return result, nil
 }
 
 // UpdateOrganization updates an organization

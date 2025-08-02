@@ -4070,7 +4070,7 @@ const docTemplate = `{
                         "BearerAuth": []
                     }
                 ],
-                "description": "Retrieves an organization by its ID",
+                "description": "Retrieves an organization by its ID, optionally with extra info",
                 "consumes": [
                     "application/json"
                 ],
@@ -4088,13 +4088,19 @@ const docTemplate = `{
                         "name": "id",
                         "in": "path",
                         "required": true
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "Include extra info (advertiser_extra_info or affiliate_extra_info)",
+                        "name": "with_extra",
+                        "in": "query"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Organization details",
+                        "description": "Organization details (with extra info)",
                         "schema": {
-                            "$ref": "#/definitions/domain.Organization"
+                            "$ref": "#/definitions/domain.OrganizationWithExtraInfo"
                         }
                     },
                     "400": {
@@ -6035,6 +6041,34 @@ const docTemplate = `{
                 }
             }
         },
+        "domain.AdvertiserExtraInfo": {
+            "type": "object",
+            "properties": {
+                "company_size": {
+                    "description": "'startup', 'small', 'medium', 'large', 'enterprise'",
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "extra_info_id": {
+                    "type": "integer"
+                },
+                "organization_id": {
+                    "type": "integer"
+                },
+                "updated_at": {
+                    "type": "string"
+                },
+                "website": {
+                    "type": "string"
+                },
+                "website_type": {
+                    "description": "'shopify', 'amazon', 'shopline', 'tiktok_shop'",
+                    "type": "string"
+                }
+            }
+        },
         "domain.AdvertiserProviderMapping": {
             "type": "object",
             "properties": {
@@ -6130,6 +6164,36 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.AffiliateExtraInfo": {
+            "type": "object",
+            "properties": {
+                "affiliate_type": {
+                    "description": "'cashback', 'blog', 'incentive', 'content', 'forum', 'sub_affiliate_network'",
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "extra_info_id": {
+                    "type": "integer"
+                },
+                "logo_url": {
+                    "type": "string"
+                },
+                "organization_id": {
+                    "type": "integer"
+                },
+                "self_description": {
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
+                },
+                "website": {
                     "type": "string"
                 }
             }
@@ -7329,6 +7393,32 @@ const docTemplate = `{
                 "OrganizationTypePlatformOwner",
                 "OrganizationTypeAgency"
             ]
+        },
+        "domain.OrganizationWithExtraInfo": {
+            "type": "object",
+            "properties": {
+                "advertiser_extra_info": {
+                    "$ref": "#/definitions/domain.AdvertiserExtraInfo"
+                },
+                "affiliate_extra_info": {
+                    "$ref": "#/definitions/domain.AffiliateExtraInfo"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "organization_id": {
+                    "type": "integer"
+                },
+                "type": {
+                    "$ref": "#/definitions/domain.OrganizationType"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
         },
         "domain.PaymentDetails": {
             "type": "object",

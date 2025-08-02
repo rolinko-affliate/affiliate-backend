@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"log"
 	"net/http"
 	"strconv"
 
@@ -352,6 +353,7 @@ func (h *OrganizationAssociationHandler) UpdateVisibility(c *gin.Context) {
 // @Accept json
 // @Produce json
 // @Param id path int true "Association ID"
+// @Param with_details query bool false "Include organization and user details" default(false)
 // @Success 200 {object} domain.OrganizationAssociation
 // @Failure 400 {object} ErrorResponse
 // @Failure 401 {object} ErrorResponse
@@ -368,16 +370,38 @@ func (h *OrganizationAssociationHandler) GetAssociation(c *gin.Context) {
 		return
 	}
 
-	association, err := h.associationService.GetAssociationByID(c.Request.Context(), associationID)
-	if err != nil {
-		c.JSON(http.StatusNotFound, ErrorResponse{
-			Error:   "Association not found",
-			Details: err.Error(),
-		})
-		return
-	}
+	// Check if details are requested
+	withDetails := c.Query("with_details") == "true"
+	log.Printf("DEBUG: with_details query param: %s, parsed as: %v", c.Query("with_details"), withDetails)
+	println("PRINTLN DEBUG: with_details query param:", c.Query("with_details"), "parsed as:", withDetails)
 
-	c.JSON(http.StatusOK, association)
+	if withDetails {
+		log.Printf("DEBUG: Fetching association with details for ID: %d", associationID)
+		println("PRINTLN DEBUG: Fetching association with details for ID:", associationID)
+		association, err := h.associationService.GetAssociationByIDWithDetails(c.Request.Context(), associationID)
+		if err != nil {
+			log.Printf("DEBUG: Error fetching association with details: %v", err)
+			c.JSON(http.StatusNotFound, ErrorResponse{
+				Error:   "Association not found",
+				Details: err.Error(),
+			})
+			return
+		}
+		log.Printf("DEBUG: Successfully fetched association with details")
+		c.JSON(http.StatusOK, association)
+	} else {
+		log.Printf("DEBUG: Fetching basic association for ID: %d", associationID)
+		println("PRINTLN DEBUG: Fetching basic association for ID:", associationID)
+		association, err := h.associationService.GetAssociationByID(c.Request.Context(), associationID)
+		if err != nil {
+			c.JSON(http.StatusNotFound, ErrorResponse{
+				Error:   "Association not found",
+				Details: err.Error(),
+			})
+			return
+		}
+		c.JSON(http.StatusOK, association)
+	}
 }
 
 // ListAssociations lists organization associations with optional filtering

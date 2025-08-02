@@ -3447,6 +3447,13 @@ const docTemplate = `{
                         "name": "id",
                         "in": "path",
                         "required": true
+                    },
+                    {
+                        "type": "boolean",
+                        "default": false,
+                        "description": "Include organization and user details",
+                        "name": "with_details",
+                        "in": "query"
                     }
                 ],
                 "responses": {

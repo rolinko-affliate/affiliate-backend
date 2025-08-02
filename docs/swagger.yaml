@@ -4562,6 +4562,11 @@ paths:
         name: id
         required: true
         type: integer
+      - default: false
+        description: Include organization and user details
+        in: query
+        name: with_details
+        type: boolean
       produces:
       - application/json
       responses:

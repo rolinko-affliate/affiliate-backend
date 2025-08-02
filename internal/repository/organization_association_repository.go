@@ -17,6 +17,7 @@ import (
 type OrganizationAssociationRepository interface {
 	CreateAssociation(ctx context.Context, association *domain.OrganizationAssociation) error
 	GetAssociationByID(ctx context.Context, id int64) (*domain.OrganizationAssociation, error)
+	GetAssociationByIDWithDetails(ctx context.Context, id int64) (*domain.OrganizationAssociationWithDetails, error)
 	GetAssociationByOrganizations(ctx context.Context, advertiserOrgID, affiliateOrgID int64) (*domain.OrganizationAssociation, error)
 	UpdateAssociation(ctx context.Context, association *domain.OrganizationAssociation) error
 	ListAssociations(ctx context.Context, filter *domain.AssociationListFilter) ([]*domain.OrganizationAssociation, error)
@@ -102,6 +103,99 @@ func (r *pgxOrganizationAssociationRepository) GetAssociationByID(ctx context.Co
 	}
 
 	return association, nil
+}
+
+// GetAssociationByIDWithDetails retrieves an association by ID with organization and user details
+func (r *pgxOrganizationAssociationRepository) GetAssociationByIDWithDetails(ctx context.Context, id int64) (*domain.OrganizationAssociationWithDetails, error) {
+	query := `SELECT 
+		oa.association_id, oa.advertiser_org_id, oa.affiliate_org_id, oa.status, oa.association_type,
+		oa.visible_affiliate_ids, oa.visible_campaign_ids, oa.all_affiliates_visible, oa.all_campaigns_visible,
+		oa.requested_by_user_id, oa.approved_by_user_id, oa.message, oa.created_at, oa.updated_at, oa.approved_at,
+		adv_org.name as advertiser_name, adv_org.type as advertiser_type,
+		aff_org.name as affiliate_name, aff_org.type as affiliate_type,
+		req_user.first_name as req_first_name, req_user.last_name as req_last_name, req_user.email as req_email,
+		app_user.first_name as app_first_name, app_user.last_name as app_last_name, app_user.email as app_email
+		FROM public.organization_associations oa
+		LEFT JOIN public.organizations adv_org ON oa.advertiser_org_id = adv_org.organization_id
+		LEFT JOIN public.organizations aff_org ON oa.affiliate_org_id = aff_org.organization_id
+		LEFT JOIN public.profiles req_user ON oa.requested_by_user_id = req_user.id
+		LEFT JOIN public.profiles app_user ON oa.approved_by_user_id = app_user.id
+		WHERE oa.association_id = $1`
+
+	association := &domain.OrganizationAssociation{}
+	advOrg := &domain.Organization{}
+	affOrg := &domain.Organization{}
+	var reqFirstName, reqLastName, reqEmail *string
+	var appFirstName, appLastName, appEmail *string
+
+	err := r.db.QueryRow(ctx, query, id).Scan(
+		&association.AssociationID,
+		&association.AdvertiserOrgID,
+		&association.AffiliateOrgID,
+		&association.Status,
+		&association.AssociationType,
+		&association.VisibleAffiliateIDs,
+		&association.VisibleCampaignIDs,
+		&association.AllAffiliatesVisible,
+		&association.AllCampaignsVisible,
+		&association.RequestedByUserID,
+		&association.ApprovedByUserID,
+		&association.Message,
+		&association.CreatedAt,
+		&association.UpdatedAt,
+		&association.ApprovedAt,
+		&advOrg.Name,
+		&advOrg.Type,
+		&affOrg.Name,
+		&affOrg.Type,
+		&reqFirstName,
+		&reqLastName,
+		&reqEmail,
+		&appFirstName,
+		&appLastName,
+		&appEmail,
+	)
+
+	if err != nil {
+		if err == pgx.ErrNoRows {
+			return nil, fmt.Errorf("organization association not found")
+		}
+		return nil, fmt.Errorf("error getting organization association with details: %w", err)
+	}
+
+	// Set organization IDs
+	advOrg.OrganizationID = association.AdvertiserOrgID
+	affOrg.OrganizationID = association.AffiliateOrgID
+
+	// Create the detailed association
+	detailedAssociation := &domain.OrganizationAssociationWithDetails{
+		OrganizationAssociation: association,
+		AdvertiserOrganization:  advOrg,
+		AffiliateOrganization:   affOrg,
+	}
+
+	// Add user details if available
+	if association.RequestedByUserID != nil && (reqFirstName != nil || reqLastName != nil || reqEmail != nil) {
+		reqUserID, _ := uuid.Parse(*association.RequestedByUserID)
+		detailedAssociation.RequestedByUser = &domain.Profile{
+			ID:        reqUserID,
+			FirstName: reqFirstName,
+			LastName:  reqLastName,
+			Email:     *reqEmail,
+		}
+	}
+
+	if association.ApprovedByUserID != nil && (appFirstName != nil || appLastName != nil || appEmail != nil) {
+		appUserID, _ := uuid.Parse(*association.ApprovedByUserID)
+		detailedAssociation.ApprovedByUser = &domain.Profile{
+			ID:        appUserID,
+			FirstName: appFirstName,
+			LastName:  appLastName,
+			Email:     *appEmail,
+		}
+	}
+
+	return detailedAssociation, nil
 }
 
 // GetAssociationByOrganizations retrieves an association by advertiser and affiliate organization IDs

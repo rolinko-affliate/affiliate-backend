@@ -26,6 +26,7 @@ type OrganizationAssociationService interface {
 	
 	// Retrieval
 	GetAssociationByID(ctx context.Context, id int64) (*domain.OrganizationAssociation, error)
+	GetAssociationByIDWithDetails(ctx context.Context, id int64) (*domain.OrganizationAssociationWithDetails, error)
 	GetAssociationByOrganizations(ctx context.Context, advertiserOrgID, affiliateOrgID int64) (*domain.OrganizationAssociation, error)
 	ListAssociations(ctx context.Context, filter *domain.AssociationListFilter) ([]*domain.OrganizationAssociation, error)
 	ListAssociationsWithDetails(ctx context.Context, filter *domain.AssociationListFilter) ([]*domain.OrganizationAssociationWithDetails, error)
@@ -351,6 +352,11 @@ func (s *organizationAssociationService) UpdateVisibility(ctx context.Context, a
 // GetAssociationByID retrieves an association by ID
 func (s *organizationAssociationService) GetAssociationByID(ctx context.Context, id int64) (*domain.OrganizationAssociation, error) {
 	return s.associationRepo.GetAssociationByID(ctx, id)
+}
+
+// GetAssociationByIDWithDetails retrieves an association by ID with organization and user details
+func (s *organizationAssociationService) GetAssociationByIDWithDetails(ctx context.Context, id int64) (*domain.OrganizationAssociationWithDetails, error) {
+	return s.associationRepo.GetAssociationByIDWithDetails(ctx, id)
 }
 
 // GetAssociationByOrganizations retrieves an association by organization IDs

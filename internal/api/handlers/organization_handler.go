@@ -134,16 +134,18 @@ func (h *OrganizationHandler) CreateOrganization(c *gin.Context) {
 }
 
 // CreateOrganizationPublic creates a new organization (public endpoint)
-// @Summary      Create a new organization (Public)
-// @Description  Creates a new organization with the given name and optional extra info. No authentication required.
+// @Summary      Create a new organization
+// @Description  Creates a new organization with the given name and optional extra info. Requires JWT authentication.
 // @Tags         organizations
 // @Accept       json
 // @Produce      json
 // @Param        request  body      CreateOrganizationRequest  true  "Organization details"
 // @Success      201      {object}  domain.Organization        "Created organization"
 // @Failure      400      {object}  map[string]string          "Invalid request"
+// @Failure      401      {object}  map[string]string          "Unauthorized - JWT token required"
 // @Failure      500      {object}  map[string]string          "Internal server error"
-// @Router       /public/organizations [post]
+// @Security     BearerAuth
+// @Router       /organizations [post]
 func (h *OrganizationHandler) CreateOrganizationPublic(c *gin.Context) {
 	var req CreateOrganizationRequest
 	if err := c.ShouldBindJSON(&req); err != nil {

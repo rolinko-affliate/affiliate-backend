@@ -275,6 +275,11 @@ const docTemplate = `{
         },
         "/advertisers/{advertiser_id}/campaigns": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Retrieve campaigns for a specific advertiser with pagination",
                 "produces": [
                     "application/json"
@@ -1420,6 +1425,11 @@ const docTemplate = `{
         },
         "/affiliates/{id}/tracking-links": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Retrieve a list of tracking links for a specific affiliate",
                 "produces": [
                     "application/json"
@@ -1487,6 +1497,11 @@ const docTemplate = `{
         },
         "/analytics/advertisers": {
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Create a new advertiser analytics entry",
                 "consumes": [
                     "application/json"
@@ -1545,6 +1560,11 @@ const docTemplate = `{
         },
         "/analytics/advertisers/{id}": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Retrieve detailed analytics data for a specific advertiser",
                 "consumes": [
                     "application/json"
@@ -1607,6 +1627,11 @@ const docTemplate = `{
         },
         "/analytics/affiliates": {
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Create a new publisher analytics entry",
                 "consumes": [
                     "application/json"
@@ -1665,6 +1690,11 @@ const docTemplate = `{
         },
         "/analytics/affiliates/domain/{domain}": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Retrieve detailed analytics data for a specific publisher (affiliate) by domain name",
                 "consumes": [
                     "application/json"
@@ -1727,6 +1757,11 @@ const docTemplate = `{
         },
         "/analytics/affiliates/{id}": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Retrieve detailed analytics data for a specific publisher (affiliate)",
                 "consumes": [
                     "application/json"
@@ -1789,6 +1824,11 @@ const docTemplate = `{
         },
         "/analytics/autocomplete": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Search advertisers and/or publishers by domain name for autocompletion (minimum 3 characters)",
                 "consumes": [
                     "application/json"
@@ -2246,6 +2286,11 @@ const docTemplate = `{
         },
         "/campaigns": {
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Create a new campaign with the provided details",
                 "consumes": [
                     "application/json"
@@ -2292,6 +2337,11 @@ const docTemplate = `{
         },
         "/campaigns/{id}": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Retrieve a campaign by its ID",
                 "produces": [
                     "application/json"
@@ -2337,6 +2387,11 @@ const docTemplate = `{
                 }
             },
             "put": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Update an existing campaign with the provided details",
                 "consumes": [
                     "application/json"
@@ -2394,6 +2449,11 @@ const docTemplate = `{
                 }
             },
             "delete": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Delete a campaign by its ID",
                 "tags": [
                     "campaigns"
@@ -2435,6 +2495,11 @@ const docTemplate = `{
         },
         "/campaigns/{id}/tracking-links": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Retrieve a list of tracking links for a specific campaign",
                 "produces": [
                     "application/json"
@@ -3116,6 +3181,11 @@ const docTemplate = `{
         },
         "/favorite-publisher-lists/{list_id}/publishers/{domain}/status": {
             "patch": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Updates the status of a publisher in a favorite list (added -\u003e contacted -\u003e accepted)",
                 "consumes": [
                     "application/json"
@@ -3212,6 +3282,11 @@ const docTemplate = `{
         },
         "/organization-associations": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "List organization associations with optional filtering",
                 "consumes": [
                     "application/json"
@@ -3313,6 +3388,11 @@ const docTemplate = `{
         },
         "/organization-associations/invitations": {
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Create a new invitation from advertiser organization to affiliate organization",
                 "consumes": [
                     "application/json"
@@ -3371,6 +3451,11 @@ const docTemplate = `{
         },
         "/organization-associations/requests": {
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Create a new request from affiliate organization to advertiser organization",
                 "consumes": [
                     "application/json"
@@ -3429,6 +3514,11 @@ const docTemplate = `{
         },
         "/organization-associations/{id}": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Get an organization association by ID",
                 "consumes": [
                     "application/json"
@@ -3498,6 +3588,11 @@ const docTemplate = `{
         },
         "/organization-associations/{id}/approve": {
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Approve a pending organization association",
                 "consumes": [
                     "application/json"
@@ -3560,6 +3655,11 @@ const docTemplate = `{
         },
         "/organization-associations/{id}/reactivate": {
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Reactivate a suspended organization association",
                 "consumes": [
                     "application/json"
@@ -3622,6 +3722,11 @@ const docTemplate = `{
         },
         "/organization-associations/{id}/reject": {
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Reject a pending organization association",
                 "consumes": [
                     "application/json"
@@ -3684,6 +3789,11 @@ const docTemplate = `{
         },
         "/organization-associations/{id}/suspend": {
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Suspend an active organization association",
                 "consumes": [
                     "application/json"
@@ -3746,6 +3856,11 @@ const docTemplate = `{
         },
         "/organization-associations/{id}/visibility": {
             "put": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Update the visibility settings of an organization association",
                 "consumes": [
                     "application/json"
@@ -3874,7 +3989,7 @@ const docTemplate = `{
                         "BearerAuth": []
                     }
                 ],
-                "description": "Creates a new organization with the given name. Requires Admin role.",
+                "description": "Creates a new organization with the given name and optional extra info. Requires JWT authentication.",
                 "consumes": [
                     "application/json"
                 ],
@@ -3884,7 +3999,7 @@ const docTemplate = `{
                 "tags": [
                     "organizations"
                 ],
-                "summary": "Create a new organization (Admin only)",
+                "summary": "Create a new organization",
                 "parameters": [
                     {
                         "description": "Organization details",
@@ -3912,8 +4027,8 @@ const docTemplate = `{
                             }
                         }
                     },
-                    "403": {
-                        "description": "Forbidden - Only admins can create organizations",
+                    "401": {
+                        "description": "Unauthorized - JWT token required",
                         "schema": {
                             "type": "object",
                             "additionalProperties": {
@@ -3935,6 +4050,11 @@ const docTemplate = `{
         },
         "/organizations/{advertiser_org_id}/visible-affiliates": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Get all affiliates from affiliate organizations that are visible to the specified advertiser organization based on active associations",
                 "consumes": [
                     "application/json"
@@ -4000,6 +4120,11 @@ const docTemplate = `{
         },
         "/organizations/{affiliate_org_id}/visible-campaigns": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Get all campaigns from advertiser organizations that are visible to the specified affiliate organization based on active associations",
                 "consumes": [
                     "application/json"
@@ -4441,6 +4566,11 @@ const docTemplate = `{
         },
         "/organizations/{id}/associations": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Get all associations for a specific organization (advertiser or affiliate)",
                 "consumes": [
                     "application/json"
@@ -4513,6 +4643,11 @@ const docTemplate = `{
         },
         "/organizations/{organization_id}/campaigns": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Retrieve campaigns for a specific organization with pagination",
                 "produces": [
                     "application/json"
@@ -4566,6 +4701,11 @@ const docTemplate = `{
         },
         "/organizations/{organization_id}/tracking-links": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Retrieve a list of tracking links for a specific organization",
                 "produces": [
                     "application/json"
@@ -4631,6 +4771,11 @@ const docTemplate = `{
                 }
             },
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Create a new tracking link for a campaign and affiliate",
                 "consumes": [
                     "application/json"
@@ -4696,6 +4841,11 @@ const docTemplate = `{
         },
         "/organizations/{organization_id}/tracking-links/generate": {
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Generate a new tracking link with provider integration for a campaign and affiliate",
                 "consumes": [
                     "application/json"
@@ -4761,6 +4911,11 @@ const docTemplate = `{
         },
         "/organizations/{organization_id}/tracking-links/{tracking_link_id}": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Retrieve a tracking link by its ID",
                 "produces": [
                     "application/json"
@@ -4825,6 +4980,11 @@ const docTemplate = `{
                 }
             },
             "put": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Update an existing tracking link",
                 "consumes": [
                     "application/json"
@@ -4901,6 +5061,11 @@ const docTemplate = `{
                 }
             },
             "delete": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Delete a tracking link by its ID",
                 "tags": [
                     "tracking-links"
@@ -4961,6 +5126,11 @@ const docTemplate = `{
         },
         "/organizations/{organization_id}/tracking-links/{tracking_link_id}/qr": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Generate and return a QR code image for a tracking link",
                 "produces": [
                     "image/png"
@@ -5027,6 +5197,11 @@ const docTemplate = `{
         },
         "/organizations/{organization_id}/tracking-links/{tracking_link_id}/regenerate": {
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Regenerate an existing tracking link with provider integration",
                 "produces": [
                     "application/json"
@@ -5337,58 +5512,6 @@ const docTemplate = `{
                 }
             }
         },
-        "/public/organizations": {
-            "post": {
-                "description": "Creates a new organization with the given name and optional extra info. No authentication required.",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "organizations"
-                ],
-                "summary": "Create a new organization (Public)",
-                "parameters": [
-                    {
-                        "description": "Organization details",
-                        "name": "request",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/handlers.CreateOrganizationRequest"
-                        }
-                    }
-                ],
-                "responses": {
-                    "201": {
-                        "description": "Created organization",
-                        "schema": {
-                            "$ref": "#/definitions/domain.Organization"
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid request",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "/public/webhooks/supabase/new-user": {
             "post": {
                 "description": "Process webhook from Supabase when a new user is created",
@@ -5446,6 +5569,11 @@ const docTemplate = `{
         },
         "/publisher-messaging/conversations": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Retrieves a paginated list of conversations for the organization",
                 "produces": [
                     "application/json"
@@ -5496,6 +5624,11 @@ const docTemplate = `{
                 }
             },
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Initiates a new conversation with a publisher from a favorite list",
                 "consumes": [
                     "application/json"
@@ -5560,6 +5693,11 @@ const docTemplate = `{
         },
         "/publisher-messaging/conversations/{conversation_id}": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Retrieves a specific conversation along with its messages",
                 "produces": [
                     "application/json"
@@ -5611,6 +5749,11 @@ const docTemplate = `{
                 }
             },
             "delete": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Deletes a conversation and all associated messages",
                 "produces": [
                     "application/json"
@@ -5661,6 +5804,11 @@ const docTemplate = `{
         },
         "/publisher-messaging/conversations/{conversation_id}/external-messages": {
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Allows external services to add messages to existing conversations (e.g., publisher replies)",
                 "consumes": [
                     "application/json"
@@ -5720,6 +5868,11 @@ const docTemplate = `{
         },
         "/publisher-messaging/conversations/{conversation_id}/messages": {
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Adds a new message to an existing conversation",
                 "consumes": [
                     "application/json"
@@ -5785,6 +5938,11 @@ const docTemplate = `{
         },
         "/publisher-messaging/conversations/{conversation_id}/status": {
             "put": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Updates the status of a conversation (e.g., close conversation)",
                 "consumes": [
                     "application/json"

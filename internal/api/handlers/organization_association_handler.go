@@ -34,6 +34,7 @@ func NewOrganizationAssociationHandler(associationService service.OrganizationAs
 // @Failure 401 {object} ErrorResponse
 // @Failure 403 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /organization-associations/invitations [post]
 func (h *OrganizationAssociationHandler) CreateInvitation(c *gin.Context) {
 	var req domain.CreateAssociationRequest
@@ -81,6 +82,7 @@ func (h *OrganizationAssociationHandler) CreateInvitation(c *gin.Context) {
 // @Failure 401 {object} ErrorResponse
 // @Failure 403 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /organization-associations/requests [post]
 func (h *OrganizationAssociationHandler) CreateRequest(c *gin.Context) {
 	var req domain.CreateAssociationRequest
@@ -129,6 +131,7 @@ func (h *OrganizationAssociationHandler) CreateRequest(c *gin.Context) {
 // @Failure 403 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /organization-associations/{id}/approve [post]
 func (h *OrganizationAssociationHandler) ApproveAssociation(c *gin.Context) {
 	associationID, err := strconv.ParseInt(c.Param("id"), 10, 64)
@@ -173,6 +176,7 @@ func (h *OrganizationAssociationHandler) ApproveAssociation(c *gin.Context) {
 // @Failure 403 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /organization-associations/{id}/reject [post]
 func (h *OrganizationAssociationHandler) RejectAssociation(c *gin.Context) {
 	associationID, err := strconv.ParseInt(c.Param("id"), 10, 64)
@@ -217,6 +221,7 @@ func (h *OrganizationAssociationHandler) RejectAssociation(c *gin.Context) {
 // @Failure 403 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /organization-associations/{id}/suspend [post]
 func (h *OrganizationAssociationHandler) SuspendAssociation(c *gin.Context) {
 	associationID, err := strconv.ParseInt(c.Param("id"), 10, 64)
@@ -261,6 +266,7 @@ func (h *OrganizationAssociationHandler) SuspendAssociation(c *gin.Context) {
 // @Failure 403 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /organization-associations/{id}/reactivate [post]
 func (h *OrganizationAssociationHandler) ReactivateAssociation(c *gin.Context) {
 	associationID, err := strconv.ParseInt(c.Param("id"), 10, 64)
@@ -306,6 +312,7 @@ func (h *OrganizationAssociationHandler) ReactivateAssociation(c *gin.Context) {
 // @Failure 403 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /organization-associations/{id}/visibility [put]
 func (h *OrganizationAssociationHandler) UpdateVisibility(c *gin.Context) {
 	associationID, err := strconv.ParseInt(c.Param("id"), 10, 64)
@@ -360,6 +367,7 @@ func (h *OrganizationAssociationHandler) UpdateVisibility(c *gin.Context) {
 // @Failure 403 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /organization-associations/{id} [get]
 func (h *OrganizationAssociationHandler) GetAssociation(c *gin.Context) {
 	associationID, err := strconv.ParseInt(c.Param("id"), 10, 64)
@@ -421,6 +429,7 @@ func (h *OrganizationAssociationHandler) GetAssociation(c *gin.Context) {
 // @Failure 400 {object} ErrorResponse
 // @Failure 401 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /organization-associations [get]
 func (h *OrganizationAssociationHandler) ListAssociations(c *gin.Context) {
 	filter := &domain.AssociationListFilter{}
@@ -507,6 +516,7 @@ func (h *OrganizationAssociationHandler) ListAssociations(c *gin.Context) {
 // @Failure 400 {object} ErrorResponse
 // @Failure 401 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /organizations/{id}/associations [get]
 func (h *OrganizationAssociationHandler) GetAssociationsForOrganization(c *gin.Context) {
 	orgID, err := strconv.ParseInt(c.Param("id"), 10, 64)
@@ -599,6 +609,7 @@ func (h *OrganizationAssociationHandler) GetAssociationsForOrganization(c *gin.C
 // @Failure 401 {object} ErrorResponse
 // @Failure 403 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /organizations/{advertiser_org_id}/visible-affiliates [get]
 func (h *OrganizationAssociationHandler) GetVisibleAffiliatesForAdvertiser(c *gin.Context) {
 	advertiserOrgID, err := strconv.ParseInt(c.Param("id"), 10, 64)
@@ -646,6 +657,7 @@ func (h *OrganizationAssociationHandler) GetVisibleAffiliatesForAdvertiser(c *gi
 // @Failure 401 {object} ErrorResponse
 // @Failure 403 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /organizations/{affiliate_org_id}/visible-campaigns [get]
 func (h *OrganizationAssociationHandler) GetVisibleCampaignsForAffiliate(c *gin.Context) {
 	affiliateOrgID, err := strconv.ParseInt(c.Param("id"), 10, 64)

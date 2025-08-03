@@ -42,6 +42,7 @@ type AutocompleteRequest struct {
 // @Success 200 {object} SuccessResponse{data=[]domain.AutocompleteResult} "Autocompletion results"
 // @Failure 400 {object} ErrorResponse "Bad request - invalid parameters"
 // @Failure 500 {object} ErrorResponse "Internal server error"
+// @Security BearerAuth
 // @Router /analytics/autocomplete [get]
 func (h *AnalyticsHandler) AutocompleteOrganizations(c *gin.Context) {
 	var req AutocompleteRequest
@@ -84,6 +85,7 @@ func (h *AnalyticsHandler) AutocompleteOrganizations(c *gin.Context) {
 // @Failure 400 {object} ErrorResponse "Bad request - invalid ID"
 // @Failure 404 {object} ErrorResponse "Advertiser not found"
 // @Failure 500 {object} ErrorResponse "Internal server error"
+// @Security BearerAuth
 // @Router /analytics/advertisers/{id} [get]
 func (h *AnalyticsHandler) GetAdvertiserByID(c *gin.Context) {
 	idStr := c.Param("id")
@@ -129,6 +131,7 @@ func (h *AnalyticsHandler) GetAdvertiserByID(c *gin.Context) {
 // @Failure 400 {object} ErrorResponse "Bad request - invalid ID"
 // @Failure 404 {object} ErrorResponse "Publisher not found"
 // @Failure 500 {object} ErrorResponse "Internal server error"
+// @Security BearerAuth
 // @Router /analytics/affiliates/{id} [get]
 func (h *AnalyticsHandler) GetPublisherByID(c *gin.Context) {
 	idStr := c.Param("id")
@@ -174,6 +177,7 @@ func (h *AnalyticsHandler) GetPublisherByID(c *gin.Context) {
 // @Failure 400 {object} ErrorResponse "Bad request - invalid domain"
 // @Failure 404 {object} ErrorResponse "Publisher not found"
 // @Failure 500 {object} ErrorResponse "Internal server error"
+// @Security BearerAuth
 // @Router /analytics/affiliates/domain/{domain} [get]
 func (h *AnalyticsHandler) GetPublisherByDomain(c *gin.Context) {
 	domainParam := c.Param("domain")
@@ -225,6 +229,7 @@ type CreateAdvertiserRequest struct {
 // @Success 201 {object} SuccessResponse{data=domain.AnalyticsAdvertiser} "Advertiser created successfully"
 // @Failure 400 {object} ErrorResponse "Bad request - invalid data"
 // @Failure 500 {object} ErrorResponse "Internal server error"
+// @Security BearerAuth
 // @Router /analytics/advertisers [post]
 func (h *AnalyticsHandler) CreateAdvertiser(c *gin.Context) {
 	var req CreateAdvertiserRequest
@@ -288,6 +293,7 @@ type CreatePublisherRequest struct {
 // @Success 201 {object} SuccessResponse{data=domain.AnalyticsPublisher} "Publisher created successfully"
 // @Failure 400 {object} ErrorResponse "Bad request - invalid data"
 // @Failure 500 {object} ErrorResponse "Internal server error"
+// @Security BearerAuth
 // @Router /analytics/affiliates [post]
 func (h *AnalyticsHandler) CreatePublisher(c *gin.Context) {
 	var req CreatePublisherRequest

@@ -48,9 +48,6 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		public.POST("/organizations", opts.OrganizationHandler.CreateOrganizationPublic)
 	}
 
-	// Organization creation endpoint moved to main API (no authentication required)
-	r.POST("/api/v1/organizations", opts.OrganizationHandler.CreateOrganizationPublic)
-
 	// Authenticated routes
 	v1 := r.Group("/api/v1")
 	v1.Use(middleware.AuthMiddleware()) // Apply JWT auth middleware
@@ -68,26 +65,27 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 	// --- Profile Routes ---
 	v1.GET("/users/me", opts.ProfileHandler.GetMyProfile)
 
-	// Profile management routes
+	// Profile management routes - accessible to all authenticated users (JWT required)
+	// TODO: Add granular RBAC after implementing more detailed role permissions
 	profiles := v1.Group("/profiles")
 	{
 		profiles.POST("", opts.ProfileHandler.CreateProfile)
 		profiles.POST("/upsert", opts.ProfileHandler.UpsertProfile)
-		profiles.PUT("/:id", opts.ProfileHandler.UpdateProfile)
-		profiles.DELETE("/:id", opts.ProfileHandler.DeleteProfile)
+		profiles.PUT("/:id", opts.ProfileHandler.UpdateProfile) // TODO: Add user-specific access control
+		profiles.DELETE("/:id", opts.ProfileHandler.DeleteProfile) // TODO: Add appropriate RBAC restrictions
 	}
 
 	// --- Organization Routes ---
 	organizations := v1.Group("/organizations")
 	{
-		// Admin-only routes for organization management
+		// Basic organization operations - accessible to all authenticated users (JWT required, no RBAC)
+		organizations.POST("", opts.OrganizationHandler.CreateOrganizationPublic) // Merged from public route
+		organizations.GET("", opts.OrganizationHandler.ListOrganizations)
+		organizations.GET("/:id", opts.OrganizationHandler.GetOrganization)
 
+		// Admin-only routes for organization management
 		organizations.PUT("/:id", rbacMW("Admin"), opts.OrganizationHandler.UpdateOrganization)
 		organizations.DELETE("/:id", rbacMW("Admin"), opts.OrganizationHandler.DeleteOrganization)
-
-		// Read-only routes accessible by users who belong to organizations
-		organizations.GET("", rbacMW("Admin", "AdvertiserManager", "AffiliateManager", "User"), opts.OrganizationHandler.ListOrganizations)
-		organizations.GET("/:id", rbacMW("Admin", "AdvertiserManager", "AffiliateManager", "User"), opts.OrganizationHandler.GetOrganization)
 
 		// Organization's resources - accessible by managers and admins
 		organizations.GET("/:id/advertisers", rbacMW("Admin", "AdvertiserManager"), opts.AdvertiserHandler.ListAdvertisersByOrganization)

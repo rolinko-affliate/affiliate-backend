@@ -77,6 +77,7 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 
 	// --- Organization Routes ---
 	organizations := v1.Group("/organizations")
+	organizations.Use(profileMW()) // Load profile for access control validation in handlers
 	{
 		// Basic organization operations - accessible to all authenticated users (JWT required, no RBAC)
 		organizations.POST("", opts.OrganizationHandler.CreateOrganizationPublic) // Merged from public route
@@ -102,6 +103,7 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 
 	// --- Advertiser Routes ---
 	advertisers := v1.Group("/advertisers")
+	advertisers.Use(profileMW()) // Load profile first to get user role
 	advertisers.Use(rbacMW("AdvertiserManager", "Admin"))
 	{
 		advertisers.POST("", opts.AdvertiserHandler.CreateAdvertiser)
@@ -123,6 +125,7 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 
 	// Advertiser provider mappings
 	advProviderMappings := v1.Group("/advertiser-provider-mappings")
+	advProviderMappings.Use(profileMW()) // Load profile first to get user role
 	advProviderMappings.Use(rbacMW("AdvertiserManager", "Admin"))
 	{
 		advProviderMappings.POST("", opts.AdvertiserHandler.CreateProviderMapping)
@@ -132,6 +135,7 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 
 	// --- Affiliate Routes ---
 	affiliates := v1.Group("/affiliates")
+	affiliates.Use(profileMW()) // Load profile first to get user role
 	affiliates.Use(rbacMW("AffiliateManager", "Admin"))
 	{
 		affiliates.POST("", opts.AffiliateHandler.CreateAffiliate)
@@ -144,10 +148,11 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 	}
 
 	// Affiliate Search - accessible by both advertisers and affiliate managers
-	v1.POST("/affiliates/search", rbacMW("AdvertiserManager", "AffiliateManager", "Admin"), opts.AffiliateHandler.AffiliatesSearch)
+	v1.POST("/affiliates/search", profileMW(), rbacMW("AdvertiserManager", "AffiliateManager", "Admin"), opts.AffiliateHandler.AffiliatesSearch)
 
 	// Affiliate provider mappings
 	affProviderMappings := v1.Group("/affiliate-provider-mappings")
+	affProviderMappings.Use(profileMW()) // Load profile first to get user role
 	affProviderMappings.Use(rbacMW("AffiliateManager", "Admin"))
 	{
 		affProviderMappings.POST("", opts.AffiliateHandler.CreateAffiliateProviderMapping)
@@ -157,6 +162,7 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 
 	// --- Campaign Routes ---
 	campaigns := v1.Group("/campaigns")
+	campaigns.Use(profileMW()) // Load profile first to get user role
 	campaigns.Use(rbacMW("AdvertiserManager", "Admin"))
 	{
 		campaigns.POST("", opts.CampaignHandler.CreateCampaign)
@@ -184,6 +190,7 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 
 	// --- Analytics Routes ---
 	analytics := v1.Group("/analytics")
+	analytics.Use(profileMW()) // Load profile first to get user role
 	analytics.Use(rbacMW("AdvertiserManager", "AffiliateManager", "Admin")) // Allow all managers and admins
 	{
 		// Autocompletion endpoint
@@ -201,6 +208,7 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 
 	// --- Favorite Publisher Lists Routes ---
 	favoritePublisherLists := v1.Group("/favorite-publisher-lists")
+	favoritePublisherLists.Use(profileMW()) // Load profile first to get user role
 	favoritePublisherLists.Use(rbacMW("AdvertiserManager", "AffiliateManager", "Admin")) // Allow all managers and admins
 	{
 		// List management
@@ -223,6 +231,7 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 
 	// --- Publisher Messaging Routes ---
 	publisherMessaging := v1.Group("/publisher-messaging")
+	publisherMessaging.Use(profileMW()) // Load profile first to get user role
 	publisherMessaging.Use(rbacMW("AdvertiserManager", "AffiliateManager", "Admin")) // Allow all managers and admins
 	{
 		// Conversation management
@@ -258,6 +267,7 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 
 	// --- Organization Association Routes ---
 	orgAssociations := v1.Group("/organization-associations")
+	orgAssociations.Use(profileMW()) // Load profile first to get user role
 	orgAssociations.Use(rbacMW("Admin", "AdvertiserManager", "AffiliateManager"))
 	{
 		// Create invitations and requests

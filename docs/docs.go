@@ -24,6 +24,511 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
+        "/advertiser-association-invitations": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "List advertiser association invitations with optional filters",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "advertiser-association-invitations"
+                ],
+                "summary": "List invitations",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Advertiser Organization ID",
+                        "name": "advertiser_org_id",
+                        "in": "query"
+                    },
+                    {
+                        "enum": [
+                            "active",
+                            "disabled",
+                            "expired"
+                        ],
+                        "type": "string",
+                        "description": "Invitation Status",
+                        "name": "status",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Created By User ID",
+                        "name": "created_by_user_id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "Include Expired Invitations",
+                        "name": "include_expired",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Limit",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Offset",
+                        "name": "offset",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/domain.AdvertiserAssociationInvitationWithDetails"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Create a new advertiser association invitation link",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "advertiser-association-invitations"
+                ],
+                "summary": "Create invitation",
+                "parameters": [
+                    {
+                        "description": "Create invitation request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.CreateInvitationRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/domain.AdvertiserAssociationInvitation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/advertiser-association-invitations/use": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Use an invitation link to create an organization association request",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "advertiser-association-invitations"
+                ],
+                "summary": "Use invitation",
+                "parameters": [
+                    {
+                        "description": "Use invitation request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.UseInvitationRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.UseInvitationResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/advertiser-association-invitations/{id}": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Get an advertiser association invitation by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "advertiser-association-invitations"
+                ],
+                "summary": "Get invitation",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Invitation ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.AdvertiserAssociationInvitationWithDetails"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Update an advertiser association invitation",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "advertiser-association-invitations"
+                ],
+                "summary": "Update invitation",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Invitation ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Update invitation request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.UpdateInvitationRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.AdvertiserAssociationInvitation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Delete an advertiser association invitation",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "advertiser-association-invitations"
+                ],
+                "summary": "Delete invitation",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Invitation ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/advertiser-association-invitations/{id}/link": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Generate a full invitation link for sharing",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "advertiser-association-invitations"
+                ],
+                "summary": "Generate invitation link",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Invitation ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Base URL (defaults to request host)",
+                        "name": "base_url",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/advertiser-association-invitations/{id}/usage-history": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Get usage history for an advertiser association invitation",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "advertiser-association-invitations"
+                ],
+                "summary": "Get invitation usage history",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Invitation ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Limit (default 50)",
+                        "name": "limit",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/domain.InvitationUsageLog"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/advertiser-provider-mappings": {
             "post": {
                 "security": [
@@ -5512,6 +6017,50 @@ const docTemplate = `{
                 }
             }
         },
+        "/public/invitations/{token}": {
+            "get": {
+                "description": "Get an advertiser association invitation by token (public endpoint for invitation links)",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "advertiser-association-invitations"
+                ],
+                "summary": "Get invitation by token",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Invitation Token",
+                        "name": "token",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.AdvertiserAssociationInvitationWithDetails"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/public/webhooks/supabase/new-user": {
             "post": {
                 "description": "Process webhook from Supabase when a new user is created",
@@ -6196,6 +6745,161 @@ const docTemplate = `{
                 },
                 "updated_at": {
                     "type": "string"
+                }
+            }
+        },
+        "domain.AdvertiserAssociationInvitation": {
+            "type": "object",
+            "properties": {
+                "advertiser_org_id": {
+                    "type": "integer"
+                },
+                "allowed_affiliate_org_ids": {
+                    "description": "Access control",
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "created_by_user_id": {
+                    "type": "string"
+                },
+                "current_uses": {
+                    "type": "integer"
+                },
+                "default_all_affiliates_visible": {
+                    "description": "Default visibility settings for associations created through this invitation",
+                    "type": "boolean"
+                },
+                "default_all_campaigns_visible": {
+                    "type": "boolean"
+                },
+                "default_visible_affiliate_ids": {
+                    "description": "JSONB array",
+                    "type": "string"
+                },
+                "default_visible_campaign_ids": {
+                    "description": "JSONB array",
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "expires_at": {
+                    "description": "Expiration",
+                    "type": "string"
+                },
+                "invitation_id": {
+                    "type": "integer"
+                },
+                "invitation_token": {
+                    "type": "string"
+                },
+                "max_uses": {
+                    "description": "Usage limits",
+                    "type": "integer"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "status": {
+                    "description": "Status and metadata",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/domain.InvitationStatus"
+                        }
+                    ]
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.AdvertiserAssociationInvitationWithDetails": {
+            "type": "object",
+            "properties": {
+                "advertiser_org_id": {
+                    "type": "integer"
+                },
+                "advertiser_organization": {
+                    "$ref": "#/definitions/domain.Organization"
+                },
+                "allowed_affiliate_org_ids": {
+                    "description": "Access control",
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "created_by_user": {
+                    "$ref": "#/definitions/domain.Profile"
+                },
+                "created_by_user_id": {
+                    "type": "string"
+                },
+                "current_uses": {
+                    "type": "integer"
+                },
+                "default_all_affiliates_visible": {
+                    "description": "Default visibility settings for associations created through this invitation",
+                    "type": "boolean"
+                },
+                "default_all_campaigns_visible": {
+                    "type": "boolean"
+                },
+                "default_visible_affiliate_ids": {
+                    "description": "JSONB array",
+                    "type": "string"
+                },
+                "default_visible_campaign_ids": {
+                    "description": "JSONB array",
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "expires_at": {
+                    "description": "Expiration",
+                    "type": "string"
+                },
+                "invitation_id": {
+                    "type": "integer"
+                },
+                "invitation_token": {
+                    "type": "string"
+                },
+                "max_uses": {
+                    "description": "Usage limits",
+                    "type": "integer"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "recent_usages": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.InvitationUsageLog"
+                    }
+                },
+                "status": {
+                    "description": "Status and metadata",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/domain.InvitationStatus"
+                        }
+                    ]
+                },
+                "updated_at": {
+                    "type": "string"
+                },
+                "usage_count": {
+                    "type": "integer"
                 }
             }
         },
@@ -7205,6 +7909,57 @@ const docTemplate = `{
                 }
             }
         },
+        "domain.CreateInvitationRequest": {
+            "type": "object",
+            "required": [
+                "advertiser_org_id",
+                "name"
+            ],
+            "properties": {
+                "advertiser_org_id": {
+                    "type": "integer"
+                },
+                "allowed_affiliate_org_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "default_all_affiliates_visible": {
+                    "type": "boolean"
+                },
+                "default_all_campaigns_visible": {
+                    "type": "boolean"
+                },
+                "default_visible_affiliate_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "default_visible_campaign_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "description": {
+                    "type": "string"
+                },
+                "expires_at": {
+                    "type": "string"
+                },
+                "max_uses": {
+                    "type": "integer"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
         "domain.CreatePaymentMethodRequest": {
             "type": "object",
             "required": [
@@ -7280,6 +8035,55 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "status": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.InvitationStatus": {
+            "type": "string",
+            "enum": [
+                "active",
+                "disabled",
+                "expired"
+            ],
+            "x-enum-varnames": [
+                "InvitationStatusActive",
+                "InvitationStatusDisabled",
+                "InvitationStatusExpired"
+            ]
+        },
+        "domain.InvitationUsageLog": {
+            "type": "object",
+            "properties": {
+                "affiliate_org_id": {
+                    "type": "integer"
+                },
+                "association_id": {
+                    "type": "integer"
+                },
+                "error_message": {
+                    "type": "string"
+                },
+                "invitation_id": {
+                    "type": "integer"
+                },
+                "ip_address": {
+                    "description": "Usage metadata",
+                    "type": "string"
+                },
+                "success": {
+                    "type": "boolean"
+                },
+                "usage_id": {
+                    "type": "integer"
+                },
+                "used_at": {
+                    "type": "string"
+                },
+                "used_by_user_id": {
+                    "type": "string"
+                },
+                "user_agent": {
                     "type": "string"
                 }
             }
@@ -8156,6 +8960,53 @@ const docTemplate = `{
                 }
             }
         },
+        "domain.UpdateInvitationRequest": {
+            "type": "object",
+            "properties": {
+                "allowed_affiliate_org_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "default_all_affiliates_visible": {
+                    "type": "boolean"
+                },
+                "default_all_campaigns_visible": {
+                    "type": "boolean"
+                },
+                "default_visible_affiliate_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "default_visible_campaign_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "description": {
+                    "type": "string"
+                },
+                "expires_at": {
+                    "type": "string"
+                },
+                "max_uses": {
+                    "type": "integer"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "status": {
+                    "$ref": "#/definitions/domain.InvitationStatus"
+                }
+            }
+        },
         "domain.UpdatePublisherInListRequest": {
             "type": "object",
             "properties": {
@@ -8178,6 +9029,47 @@ const docTemplate = `{
                         "contacted",
                         "accepted"
                     ]
+                }
+            }
+        },
+        "domain.UseInvitationRequest": {
+            "type": "object",
+            "required": [
+                "affiliate_org_id",
+                "invitation_token"
+            ],
+            "properties": {
+                "affiliate_org_id": {
+                    "type": "integer"
+                },
+                "invitation_token": {
+                    "type": "string"
+                },
+                "ip_address": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "user_agent": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.UseInvitationResponse": {
+            "type": "object",
+            "properties": {
+                "association": {
+                    "$ref": "#/definitions/domain.OrganizationAssociation"
+                },
+                "error_message": {
+                    "type": "string"
+                },
+                "invitation": {
+                    "$ref": "#/definitions/domain.AdvertiserAssociationInvitation"
+                },
+                "success": {
+                    "type": "boolean"
                 }
             }
         },

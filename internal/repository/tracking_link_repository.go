@@ -192,7 +192,7 @@ func (r *trackingLinkRepository) ListTrackingLinksByCampaign(ctx context.Context
 	}
 	defer rows.Close()
 
-	var trackingLinks []*domain.TrackingLink
+	trackingLinks := make([]*domain.TrackingLink, 0)
 	for rows.Next() {
 		trackingLink := &domain.TrackingLink{}
 		err := rows.Scan(
@@ -246,7 +246,7 @@ func (r *trackingLinkRepository) ListTrackingLinksByAffiliate(ctx context.Contex
 	}
 	defer rows.Close()
 
-	var trackingLinks []*domain.TrackingLink
+	trackingLinks := make([]*domain.TrackingLink, 0)
 	for rows.Next() {
 		trackingLink := &domain.TrackingLink{}
 		err := rows.Scan(
@@ -300,7 +300,7 @@ func (r *trackingLinkRepository) ListTrackingLinksByOrganization(ctx context.Con
 	}
 	defer rows.Close()
 
-	var trackingLinks []*domain.TrackingLink
+	trackingLinks := make([]*domain.TrackingLink, 0)
 	for rows.Next() {
 		trackingLink := &domain.TrackingLink{}
 		err := rows.Scan(

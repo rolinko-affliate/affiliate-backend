@@ -187,7 +187,7 @@ func (r *PgxPaymentMethodRepository) GetByOrganizationID(ctx context.Context, or
 	}
 	defer rows.Close()
 
-	var paymentMethods []domain.StripePaymentMethod
+	paymentMethods := make([]domain.StripePaymentMethod, 0)
 	for rows.Next() {
 		paymentMethod := domain.StripePaymentMethod{}
 		var metadataJSON []byte
@@ -410,7 +410,7 @@ func (r *PgxPaymentMethodRepository) List(ctx context.Context, limit, offset int
 	}
 	defer rows.Close()
 
-	var paymentMethods []domain.StripePaymentMethod
+	paymentMethods := make([]domain.StripePaymentMethod, 0)
 	for rows.Next() {
 		paymentMethod := domain.StripePaymentMethod{}
 		var metadataJSON []byte

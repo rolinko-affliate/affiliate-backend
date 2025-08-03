@@ -275,7 +275,7 @@ func (r *PgxWebhookEventRepository) IncrementRetryCount(ctx context.Context, web
 
 // scanWebhookEvents is a helper method to scan multiple webhook events from rows
 func (r *PgxWebhookEventRepository) scanWebhookEvents(rows pgx.Rows) ([]domain.WebhookEvent, error) {
-	var events []domain.WebhookEvent
+	events := make([]domain.WebhookEvent, 0)
 	for rows.Next() {
 		event := domain.WebhookEvent{}
 		var eventDataJSON []byte

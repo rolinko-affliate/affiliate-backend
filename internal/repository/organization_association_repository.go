@@ -322,7 +322,7 @@ func (r *pgxOrganizationAssociationRepository) ListAssociations(ctx context.Cont
 	}
 	defer rows.Close()
 
-	var associations []*domain.OrganizationAssociation
+	associations := make([]*domain.OrganizationAssociation, 0)
 	for rows.Next() {
 		association := &domain.OrganizationAssociation{}
 		err := rows.Scan(
@@ -418,7 +418,7 @@ func (r *pgxOrganizationAssociationRepository) ListAssociationsWithDetails(ctx c
 	}
 	defer rows.Close()
 
-	var associations []*domain.OrganizationAssociationWithDetails
+	associations := make([]*domain.OrganizationAssociationWithDetails, 0)
 	for rows.Next() {
 		association := &domain.OrganizationAssociation{}
 		advOrg := &domain.Organization{}

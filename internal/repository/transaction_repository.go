@@ -360,7 +360,7 @@ func (r *PgxTransactionRepository) GetBalance(ctx context.Context, billingAccoun
 
 // scanTransactions is a helper method to scan multiple transactions from rows
 func (r *PgxTransactionRepository) scanTransactions(rows pgx.Rows) ([]domain.Transaction, error) {
-	var transactions []domain.Transaction
+	transactions := make([]domain.Transaction, 0)
 	for rows.Next() {
 		transaction := domain.Transaction{}
 		var metadataJSON []byte

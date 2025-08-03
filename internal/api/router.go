@@ -79,10 +79,12 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 	organizations := v1.Group("/organizations")
 	{
 		// Basic organization operations - accessible to all authenticated users (JWT required, no RBAC)
-		// These don't need ProfileMiddleware since users might not have profiles yet
+		// POST doesn't need ProfileMiddleware since users might not have profiles yet
 		organizations.POST("", opts.OrganizationHandler.CreateOrganizationPublic) // Merged from public route
-		organizations.GET("", opts.OrganizationHandler.ListOrganizations)
-		organizations.GET("/:id", opts.OrganizationHandler.GetOrganization)
+		
+		// GET operations need ProfileMiddleware for access control checks
+		organizations.GET("", profileMW(), opts.OrganizationHandler.ListOrganizations)
+		organizations.GET("/:id", profileMW(), opts.OrganizationHandler.GetOrganization)
 
 		// Admin-only routes for organization management - need ProfileMiddleware for RBAC
 		organizations.PUT("/:id", profileMW(), rbacMW("Admin"), opts.OrganizationHandler.UpdateOrganization)
@@ -268,7 +270,6 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 	// --- Organization Association Routes ---
 	orgAssociations := v1.Group("/organization-associations")
 	orgAssociations.Use(profileMW()) // Load profile first to get user role
-	orgAssociations.Use(rbacMW("Admin", "AdvertiserManager", "AffiliateManager"))
 	{
 		// Create invitations and requests
 		orgAssociations.POST("/invitations", opts.OrganizationAssociationHandler.CreateInvitation)

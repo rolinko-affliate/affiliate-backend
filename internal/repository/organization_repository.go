@@ -93,7 +93,7 @@ func (r *pgxOrganizationRepository) ListOrganizations(ctx context.Context, limit
 	}
 	defer rows.Close()
 
-	var organizations []*domain.Organization
+	organizations := make([]*domain.Organization, 0)
 	for rows.Next() {
 		var org domain.Organization
 		if err := rows.Scan(&org.OrganizationID, &org.Name, &org.Type, &org.CreatedAt, &org.UpdatedAt); err != nil {

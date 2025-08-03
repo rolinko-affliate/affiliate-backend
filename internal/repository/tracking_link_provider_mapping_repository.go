@@ -189,7 +189,7 @@ func (r *trackingLinkProviderMappingRepository) ListTrackingLinkProviderMappings
 	}
 	defer rows.Close()
 
-	var mappings []*domain.TrackingLinkProviderMapping
+	mappings := make([]*domain.TrackingLinkProviderMapping, 0)
 	for rows.Next() {
 		mapping := &domain.TrackingLinkProviderMapping{}
 		err := rows.Scan(
@@ -230,7 +230,7 @@ func (r *trackingLinkProviderMappingRepository) ListTrackingLinkProviderMappings
 	}
 	defer rows.Close()
 
-	var mappings []*domain.TrackingLinkProviderMapping
+	mappings := make([]*domain.TrackingLinkProviderMapping, 0)
 	for rows.Next() {
 		mapping := &domain.TrackingLinkProviderMapping{}
 		err := rows.Scan(

@@ -380,7 +380,7 @@ func (r *PgxUsageRecordRepository) GetMonthlyUsage(ctx context.Context, organiza
 
 // scanUsageRecords is a helper method to scan multiple usage records from rows
 func (r *PgxUsageRecordRepository) scanUsageRecords(rows pgx.Rows) ([]domain.UsageRecord, error) {
-	var records []domain.UsageRecord
+	records := make([]domain.UsageRecord, 0)
 	for rows.Next() {
 		record := domain.UsageRecord{}
 		var campaignBreakdownJSON, affiliateBreakdownJSON, metadataJSON []byte

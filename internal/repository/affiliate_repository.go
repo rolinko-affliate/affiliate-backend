@@ -273,7 +273,7 @@ func (r *pgxAffiliateRepository) GetAffiliatesByOrganization(ctx context.Context
 	}
 	defer rows.Close()
 
-	var affiliates []*domain.Affiliate
+	affiliates := make([]*domain.Affiliate, 0)
 
 	for rows.Next() {
 		affiliate := &domain.Affiliate{}
@@ -429,7 +429,7 @@ func (r *pgxAffiliateRepository) ListAffiliatesByOrganization(ctx context.Contex
 	}
 	defer rows.Close()
 
-	var affiliates []*domain.Affiliate
+	affiliates := make([]*domain.Affiliate, 0)
 	for rows.Next() {
 		affiliate := &domain.Affiliate{}
 		var contactEmail, paymentDetails, internalNotes, defaultCurrencyID, contactAddress, billingInfo, labels sql.NullString

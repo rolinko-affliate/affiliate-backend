@@ -194,7 +194,7 @@ func (r *pgxAdvertiserRepository) ListAdvertisersByOrganization(ctx context.Cont
 	}
 	defer rows.Close()
 
-	var advertisers []*domain.Advertiser
+	advertisers := make([]*domain.Advertiser, 0)
 	for rows.Next() {
 		var advertiser domain.Advertiser
 		var contactEmail, billingDetails sql.NullString

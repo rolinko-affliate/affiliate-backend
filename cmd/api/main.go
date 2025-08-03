@@ -230,6 +230,7 @@ func main() {
 	profileRepo := repository.NewPgxProfileRepository(repository.DB)
 	organizationRepo := repository.NewPgxOrganizationRepository(repository.DB)
 	organizationAssociationRepo := repository.NewPgxOrganizationAssociationRepository(repository.DB)
+	advertiserAssociationInvitationRepo := repository.NewPgxAdvertiserAssociationInvitationRepository(repository.DB)
 	advertiserRepo := repository.NewPgxAdvertiserRepository(repository.DB)
 	advertiserProviderMappingRepo := repository.NewAdvertiserProviderMappingRepository(repository.DB)
 	affiliateRepo := repository.NewPgxAffiliateRepository(repository.DB)
@@ -302,6 +303,7 @@ func main() {
 	profileService := service.NewProfileService(profileRepo)
 	organizationService := service.NewOrganizationService(organizationRepo, advertiserRepo, affiliateRepo)
 	organizationAssociationService := service.NewOrganizationAssociationService(organizationAssociationRepo, organizationRepo, profileRepo, affiliateRepo, campaignRepo)
+	advertiserAssociationInvitationService := service.NewAdvertiserAssociationInvitationService(advertiserAssociationInvitationRepo, organizationAssociationRepo, organizationRepo, profileRepo, organizationAssociationService)
 	advertiserService := service.NewAdvertiserService(advertiserRepo, advertiserProviderMappingRepo, organizationRepo, cryptoService, integrationService)
 	affiliateService := service.NewAffiliateService(affiliateRepo, affiliateProviderMappingRepo, organizationRepo, integrationService)
 	campaignService := service.NewCampaignService(campaignRepo)
@@ -319,6 +321,7 @@ func main() {
 	profileHandler := handlers.NewProfileHandler(profileService)
 	organizationHandler := handlers.NewOrganizationHandler(organizationService, profileService)
 	organizationAssociationHandler := handlers.NewOrganizationAssociationHandler(organizationAssociationService)
+	advertiserAssociationInvitationHandler := handlers.NewAdvertiserAssociationInvitationHandler(advertiserAssociationInvitationService)
 	advertiserHandler := handlers.NewAdvertiserHandler(advertiserService, profileService)
 	affiliateHandler := handlers.NewAffiliateHandler(affiliateService, profileService, analyticsService)
 	campaignHandler := handlers.NewCampaignHandler(campaignService)
@@ -333,19 +336,20 @@ func main() {
 
 	// Setup Router
 	router := api.SetupRouter(api.RouterOptions{
-		ProfileHandler:                    profileHandler,
-		ProfileService:                    profileService,
-		OrganizationHandler:               organizationHandler,
-		OrganizationAssociationHandler:    organizationAssociationHandler,
-		AdvertiserHandler:                 advertiserHandler,
-		AffiliateHandler:             affiliateHandler,
-		CampaignHandler:              campaignHandler,
-		TrackingLinkHandler:          trackingLinkHandler,
-		AnalyticsHandler:             analyticsHandler,
-		FavoritePublisherListHandler: favoritePublisherListHandler,
-		PublisherMessagingHandler:    publisherMessagingHandler,
-		BillingHandler:               billingHandler,
-		WebhookHandler:               webhookHandler,
+		ProfileHandler:                            profileHandler,
+		ProfileService:                            profileService,
+		OrganizationHandler:                       organizationHandler,
+		OrganizationAssociationHandler:            organizationAssociationHandler,
+		AdvertiserAssociationInvitationHandler:    advertiserAssociationInvitationHandler,
+		AdvertiserHandler:                         advertiserHandler,
+		AffiliateHandler:                          affiliateHandler,
+		CampaignHandler:                           campaignHandler,
+		TrackingLinkHandler:                       trackingLinkHandler,
+		AnalyticsHandler:                          analyticsHandler,
+		FavoritePublisherListHandler:              favoritePublisherListHandler,
+		PublisherMessagingHandler:                 publisherMessagingHandler,
+		BillingHandler:                            billingHandler,
+		WebhookHandler:                            webhookHandler,
 	})
 
 	// Start Server

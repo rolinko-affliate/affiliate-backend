@@ -11,19 +11,20 @@ import (
 
 // RouterOptions contains dependencies for the router
 type RouterOptions struct {
-	ProfileHandler                     *handlers.ProfileHandler
-	ProfileService                     service.ProfileService
-	OrganizationHandler                *handlers.OrganizationHandler
-	OrganizationAssociationHandler     *handlers.OrganizationAssociationHandler
-	AdvertiserHandler                  *handlers.AdvertiserHandler
-	AffiliateHandler                   *handlers.AffiliateHandler
-	CampaignHandler                    *handlers.CampaignHandler
-	TrackingLinkHandler                *handlers.TrackingLinkHandler
-	AnalyticsHandler                   *handlers.AnalyticsHandler
-	FavoritePublisherListHandler       *handlers.FavoritePublisherListHandler
-	PublisherMessagingHandler          *handlers.PublisherMessagingHandler
-	BillingHandler                     *handlers.BillingHandler
-	WebhookHandler                     *handlers.WebhookHandler
+	ProfileHandler                            *handlers.ProfileHandler
+	ProfileService                            service.ProfileService
+	OrganizationHandler                       *handlers.OrganizationHandler
+	OrganizationAssociationHandler            *handlers.OrganizationAssociationHandler
+	AdvertiserAssociationInvitationHandler    *handlers.AdvertiserAssociationInvitationHandler
+	AdvertiserHandler                         *handlers.AdvertiserHandler
+	AffiliateHandler                          *handlers.AffiliateHandler
+	CampaignHandler                           *handlers.CampaignHandler
+	TrackingLinkHandler                       *handlers.TrackingLinkHandler
+	AnalyticsHandler                          *handlers.AnalyticsHandler
+	FavoritePublisherListHandler              *handlers.FavoritePublisherListHandler
+	PublisherMessagingHandler                 *handlers.PublisherMessagingHandler
+	BillingHandler                            *handlers.BillingHandler
+	WebhookHandler                            *handlers.WebhookHandler
 }
 
 // SetupRouter sets up the API router
@@ -46,6 +47,8 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		public.POST("/webhooks/stripe", opts.WebhookHandler.HandleStripeWebhook)
 		// Organization creation endpoint (no authentication required)
 		public.POST("/organizations", opts.OrganizationHandler.CreateOrganizationPublic)
+		// Public invitation endpoint (no authentication required for viewing invitations)
+		public.GET("/invitations/:token", opts.AdvertiserAssociationInvitationHandler.GetInvitationByToken)
 	}
 
 	// Authenticated routes
@@ -287,6 +290,25 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		
 		// Update visibility settings
 		orgAssociations.PUT("/:id/visibility", opts.OrganizationAssociationHandler.UpdateVisibility)
+	}
+
+	// --- Advertiser Association Invitation Routes ---
+	advInvitations := v1.Group("/advertiser-association-invitations")
+	advInvitations.Use(profileMW()) // Load profile first to get user role
+	{
+		// Invitation management - primarily for advertisers
+		advInvitations.POST("", rbacMW("AdvertiserManager", "Admin"), opts.AdvertiserAssociationInvitationHandler.CreateInvitation)
+		advInvitations.GET("", rbacMW("AdvertiserManager", "AffiliateManager", "Admin"), opts.AdvertiserAssociationInvitationHandler.ListInvitations)
+		advInvitations.GET("/:id", rbacMW("AdvertiserManager", "AffiliateManager", "Admin"), opts.AdvertiserAssociationInvitationHandler.GetInvitation)
+		advInvitations.PUT("/:id", rbacMW("AdvertiserManager", "Admin"), opts.AdvertiserAssociationInvitationHandler.UpdateInvitation)
+		advInvitations.DELETE("/:id", rbacMW("AdvertiserManager", "Admin"), opts.AdvertiserAssociationInvitationHandler.DeleteInvitation)
+		
+		// Invitation usage - for affiliates to use invitations
+		advInvitations.POST("/use", rbacMW("AffiliateManager", "Admin"), opts.AdvertiserAssociationInvitationHandler.UseInvitation)
+		
+		// Invitation analytics and management
+		advInvitations.GET("/:id/usage-history", rbacMW("AdvertiserManager", "Admin"), opts.AdvertiserAssociationInvitationHandler.GetInvitationUsageHistory)
+		advInvitations.GET("/:id/link", rbacMW("AdvertiserManager", "Admin"), opts.AdvertiserAssociationInvitationHandler.GenerateInvitationLink)
 	}
 
 	return r

@@ -77,28 +77,28 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 
 	// --- Organization Routes ---
 	organizations := v1.Group("/organizations")
-	organizations.Use(profileMW()) // Load profile for access control validation in handlers
 	{
 		// Basic organization operations - accessible to all authenticated users (JWT required, no RBAC)
+		// These don't need ProfileMiddleware since users might not have profiles yet
 		organizations.POST("", opts.OrganizationHandler.CreateOrganizationPublic) // Merged from public route
 		organizations.GET("", opts.OrganizationHandler.ListOrganizations)
 		organizations.GET("/:id", opts.OrganizationHandler.GetOrganization)
 
-		// Admin-only routes for organization management
-		organizations.PUT("/:id", rbacMW("Admin"), opts.OrganizationHandler.UpdateOrganization)
-		organizations.DELETE("/:id", rbacMW("Admin"), opts.OrganizationHandler.DeleteOrganization)
+		// Admin-only routes for organization management - need ProfileMiddleware for RBAC
+		organizations.PUT("/:id", profileMW(), rbacMW("Admin"), opts.OrganizationHandler.UpdateOrganization)
+		organizations.DELETE("/:id", profileMW(), rbacMW("Admin"), opts.OrganizationHandler.DeleteOrganization)
 
-		// Organization's resources - accessible by managers and admins
-		organizations.GET("/:id/advertisers", rbacMW("Admin", "AdvertiserManager"), opts.AdvertiserHandler.ListAdvertisersByOrganization)
-		organizations.GET("/:id/affiliates", rbacMW("Admin", "AffiliateManager"), opts.AffiliateHandler.ListAffiliatesByOrganization)
-		organizations.GET("/:id/campaigns", rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.CampaignHandler.ListCampaignsByOrganization)
+		// Organization's resources - accessible by managers and admins - need ProfileMiddleware for RBAC
+		organizations.GET("/:id/advertisers", profileMW(), rbacMW("Admin", "AdvertiserManager"), opts.AdvertiserHandler.ListAdvertisersByOrganization)
+		organizations.GET("/:id/affiliates", profileMW(), rbacMW("Admin", "AffiliateManager"), opts.AffiliateHandler.ListAffiliatesByOrganization)
+		organizations.GET("/:id/campaigns", profileMW(), rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.CampaignHandler.ListCampaignsByOrganization)
 		
-		// Organization associations
-		organizations.GET("/:id/associations", rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.OrganizationAssociationHandler.GetAssociationsForOrganization)
+		// Organization associations - need ProfileMiddleware for RBAC
+		organizations.GET("/:id/associations", profileMW(), rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.OrganizationAssociationHandler.GetAssociationsForOrganization)
 		
-		// Visibility endpoints - get visible resources based on associations
-		organizations.GET("/:id/visible-affiliates", rbacMW("Admin", "AdvertiserManager"), opts.OrganizationAssociationHandler.GetVisibleAffiliatesForAdvertiser)
-		organizations.GET("/:id/visible-campaigns", rbacMW("Admin", "AffiliateManager"), opts.OrganizationAssociationHandler.GetVisibleCampaignsForAffiliate)
+		// Visibility endpoints - get visible resources based on associations - need ProfileMiddleware for RBAC
+		organizations.GET("/:id/visible-affiliates", profileMW(), rbacMW("Admin", "AdvertiserManager"), opts.OrganizationAssociationHandler.GetVisibleAffiliatesForAdvertiser)
+		organizations.GET("/:id/visible-campaigns", profileMW(), rbacMW("Admin", "AffiliateManager"), opts.OrganizationAssociationHandler.GetVisibleCampaignsForAffiliate)
 	}
 
 	// --- Advertiser Routes ---
@@ -172,15 +172,15 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 	}
 
 	// --- Tracking Link Routes ---
-	// Organization-level tracking link routes
-	organizations.GET("/:id/tracking-links", rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.TrackingLinkHandler.ListTrackingLinksByOrganization)
-	organizations.POST("/:id/tracking-links", rbacMW("Admin", "AdvertiserManager"), opts.TrackingLinkHandler.CreateTrackingLink)
-	organizations.POST("/:id/tracking-links/generate", rbacMW("Admin", "AdvertiserManager"), opts.TrackingLinkHandler.GenerateTrackingLink)
-	organizations.GET("/:id/tracking-links/:link_id", rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.TrackingLinkHandler.GetTrackingLink)
-	organizations.PUT("/:id/tracking-links/:link_id", rbacMW("Admin", "AdvertiserManager"), opts.TrackingLinkHandler.UpdateTrackingLink)
-	organizations.DELETE("/:id/tracking-links/:link_id", rbacMW("Admin", "AdvertiserManager"), opts.TrackingLinkHandler.DeleteTrackingLink)
-	organizations.POST("/:id/tracking-links/:link_id/regenerate", rbacMW("Admin", "AdvertiserManager"), opts.TrackingLinkHandler.RegenerateTrackingLink)
-	organizations.GET("/:id/tracking-links/:link_id/qr", rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.TrackingLinkHandler.GetTrackingLinkQR)
+	// Organization-level tracking link routes - need ProfileMiddleware for RBAC
+	organizations.GET("/:id/tracking-links", profileMW(), rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.TrackingLinkHandler.ListTrackingLinksByOrganization)
+	organizations.POST("/:id/tracking-links", profileMW(), rbacMW("Admin", "AdvertiserManager"), opts.TrackingLinkHandler.CreateTrackingLink)
+	organizations.POST("/:id/tracking-links/generate", profileMW(), rbacMW("Admin", "AdvertiserManager"), opts.TrackingLinkHandler.GenerateTrackingLink)
+	organizations.GET("/:id/tracking-links/:link_id", profileMW(), rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.TrackingLinkHandler.GetTrackingLink)
+	organizations.PUT("/:id/tracking-links/:link_id", profileMW(), rbacMW("Admin", "AdvertiserManager"), opts.TrackingLinkHandler.UpdateTrackingLink)
+	organizations.DELETE("/:id/tracking-links/:link_id", profileMW(), rbacMW("Admin", "AdvertiserManager"), opts.TrackingLinkHandler.DeleteTrackingLink)
+	organizations.POST("/:id/tracking-links/:link_id/regenerate", profileMW(), rbacMW("Admin", "AdvertiserManager"), opts.TrackingLinkHandler.RegenerateTrackingLink)
+	organizations.GET("/:id/tracking-links/:link_id/qr", profileMW(), rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.TrackingLinkHandler.GetTrackingLinkQR)
 
 	// Campaign-specific tracking link routes
 	campaigns.GET("/:id/tracking-links", rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.TrackingLinkHandler.ListTrackingLinksByCampaign)

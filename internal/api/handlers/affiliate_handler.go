@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"net/http"
 	"strconv"
@@ -131,7 +132,7 @@ func (h *AffiliateHandler) GetAffiliate(c *gin.Context) {
 
 	affiliate, err := h.affiliateService.GetAffiliateByID(c.Request.Context(), id)
 	if err != nil {
-		if err.Error() == "affiliate not found: not found" {
+		if errors.Is(err, domain.ErrNotFound) {
 			c.JSON(http.StatusNotFound, gin.H{"error": "Affiliate not found"})
 			return
 		}
@@ -187,7 +188,7 @@ func (h *AffiliateHandler) UpdateAffiliate(c *gin.Context) {
 	// Get existing affiliate
 	affiliate, err := h.affiliateService.GetAffiliateByID(c.Request.Context(), id)
 	if err != nil {
-		if err.Error() == "affiliate not found: not found" {
+		if errors.Is(err, domain.ErrNotFound) {
 			c.JSON(http.StatusNotFound, gin.H{"error": "Affiliate not found"})
 			return
 		}
@@ -279,7 +280,7 @@ func (h *AffiliateHandler) DeleteAffiliate(c *gin.Context) {
 	}
 
 	if err := h.affiliateService.DeleteAffiliate(c.Request.Context(), id); err != nil {
-		if err.Error() == "affiliate not found: not found" {
+		if errors.Is(err, domain.ErrNotFound) {
 			c.JSON(http.StatusNotFound, gin.H{"error": "Affiliate not found"})
 			return
 		}
@@ -373,7 +374,7 @@ func (h *AffiliateHandler) GetAffiliateProviderMapping(c *gin.Context) {
 
 	mapping, err := h.affiliateService.GetAffiliateProviderMapping(c.Request.Context(), affiliateID, providerType)
 	if err != nil {
-		if err.Error() == "affiliate provider mapping not found: not found" {
+		if errors.Is(err, domain.ErrNotFound) {
 			c.JSON(http.StatusNotFound, gin.H{"error": "Affiliate provider mapping not found"})
 			return
 		}
@@ -439,7 +440,7 @@ func (h *AffiliateHandler) UpdateAffiliateProviderMapping(c *gin.Context) {
 	}
 
 	if err := h.affiliateService.UpdateAffiliateProviderMapping(c.Request.Context(), mapping); err != nil {
-		if err.Error() == "affiliate provider mapping not found: not found" {
+		if errors.Is(err, domain.ErrNotFound) {
 			c.JSON(http.StatusNotFound, gin.H{"error": "Affiliate provider mapping not found"})
 			return
 		}
@@ -558,7 +559,7 @@ func (h *AffiliateHandler) DeleteAffiliateProviderMapping(c *gin.Context) {
 	}
 
 	if err := h.affiliateService.DeleteAffiliateProviderMapping(c.Request.Context(), mappingID); err != nil {
-		if err.Error() == "affiliate provider mapping not found: not found" {
+		if errors.Is(err, domain.ErrNotFound) {
 			c.JSON(http.StatusNotFound, gin.H{"error": "Affiliate provider mapping not found"})
 			return
 		}

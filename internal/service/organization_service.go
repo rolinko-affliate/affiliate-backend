@@ -2,6 +2,7 @@ package service
 
 import (
 	"context"
+	"errors"
 	"fmt"
 
 	"github.com/affiliate-backend/internal/domain"
@@ -149,19 +150,19 @@ func (s *organizationService) GetOrganizationByIDWithExtraInfo(ctx context.Conte
 	switch org.Type {
 	case domain.OrganizationTypeAdvertiser:
 		advertiserExtraInfo, err := s.advertiserRepo.GetAdvertiserExtraInfo(ctx, org.OrganizationID)
-		if err != nil && err.Error() != "advertiser extra info not found: not found" {
+		if err != nil && !errors.Is(err, domain.ErrNotFound) {
 			return nil, fmt.Errorf("failed to get advertiser extra info: %w", err)
 		}
-		if advertiserExtraInfo != nil {
+		if err == nil {
 			result.AdvertiserExtraInfo = advertiserExtraInfo
 		}
 
 	case domain.OrganizationTypeAffiliate:
 		affiliateExtraInfo, err := s.affiliateRepo.GetAffiliateExtraInfo(ctx, org.OrganizationID)
-		if err != nil && err.Error() != "affiliate extra info not found: not found" {
+		if err != nil && !errors.Is(err, domain.ErrNotFound) {
 			return nil, fmt.Errorf("failed to get affiliate extra info: %w", err)
 		}
-		if affiliateExtraInfo != nil {
+		if err == nil {
 			result.AffiliateExtraInfo = affiliateExtraInfo
 		}
 	}

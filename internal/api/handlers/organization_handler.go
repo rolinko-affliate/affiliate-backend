@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"errors"
 	"fmt"
 	"net/http"
 	"strconv"
@@ -222,7 +223,7 @@ func (h *OrganizationHandler) GetOrganization(c *gin.Context) {
 		// Get organization with extra info
 		organizationWithExtra, err := h.organizationService.GetOrganizationByIDWithExtraInfo(c.Request.Context(), id)
 		if err != nil {
-			if err.Error() == "organization not found: not found" {
+			if errors.Is(err, domain.ErrNotFound) {
 				c.JSON(http.StatusNotFound, gin.H{"error": "Organization not found"})
 				return
 			}
@@ -246,7 +247,7 @@ func (h *OrganizationHandler) GetOrganization(c *gin.Context) {
 		// Get basic organization info
 		organization, err := h.organizationService.GetOrganizationByID(c.Request.Context(), id)
 		if err != nil {
-			if err.Error() == "organization not found: not found" {
+			if errors.Is(err, domain.ErrNotFound) {
 				c.JSON(http.StatusNotFound, gin.H{"error": "Organization not found"})
 				return
 			}
@@ -311,7 +312,7 @@ func (h *OrganizationHandler) UpdateOrganization(c *gin.Context) {
 	// Get existing organization
 	organization, err := h.organizationService.GetOrganizationByID(c.Request.Context(), id)
 	if err != nil {
-		if err.Error() == "organization not found: not found" {
+		if errors.Is(err, domain.ErrNotFound) {
 			c.JSON(http.StatusNotFound, gin.H{"error": "Organization not found"})
 			return
 		}
@@ -431,7 +432,7 @@ func (h *OrganizationHandler) DeleteOrganization(c *gin.Context) {
 	// Get the organization first to check permissions
 	organization, err := h.organizationService.GetOrganizationByID(c.Request.Context(), id)
 	if err != nil {
-		if err.Error() == "organization not found: not found" {
+		if errors.Is(err, domain.ErrNotFound) {
 			c.JSON(http.StatusNotFound, gin.H{"error": "Organization not found"})
 			return
 		}

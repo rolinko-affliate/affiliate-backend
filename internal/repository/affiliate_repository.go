@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/affiliate-backend/internal/domain"
+	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/pgxpool"
 )
 
@@ -538,7 +539,7 @@ func (r *pgxAffiliateRepository) GetAffiliateExtraInfo(ctx context.Context, orga
 	)
 
 	if err != nil {
-		if err == sql.ErrNoRows {
+		if err == pgx.ErrNoRows {
 			return nil, domain.ErrNotFound
 		}
 		return nil, fmt.Errorf("error getting affiliate extra info: %w", err)
@@ -565,7 +566,7 @@ func (r *pgxAffiliateRepository) UpdateAffiliateExtraInfo(ctx context.Context, e
 	).Scan(&extraInfo.UpdatedAt)
 
 	if err != nil {
-		if err == sql.ErrNoRows {
+		if err == pgx.ErrNoRows {
 			return domain.ErrNotFound
 		}
 		return fmt.Errorf("error updating affiliate extra info: %w", err)

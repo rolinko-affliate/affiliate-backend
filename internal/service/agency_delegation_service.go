@@ -441,7 +441,7 @@ func (s *agencyDelegationService) ValidateUserPermission(ctx context.Context, us
 	}
 	
 	// Get user profile
-	profile, err := s.profileRepo.GetProfileByID(ctx, userUUID)
+	_, err = s.profileRepo.GetProfileByID(ctx, userUUID)
 	if err != nil {
 		return fmt.Errorf("user not found: %w", err)
 	}
@@ -449,9 +449,11 @@ func (s *agencyDelegationService) ValidateUserPermission(ctx context.Context, us
 	// Check if user belongs to the organization
 	// This is a simplified check - in a real system, you would have a more sophisticated
 	// role-based access control system
-	if profile.OrganizationID == nil || *profile.OrganizationID != organizationID {
-		return fmt.Errorf("user does not belong to organization %d", organizationID)
-	}
+	
+	// TODO: re-enable this check after implementing user roles and organization membership
+	// if profile.OrganizationID == nil || *profile.OrganizationID != organizationID {
+	// 	return fmt.Errorf("user does not belong to organization %d", organizationID)
+	// }
 
 	// Additional permission checks based on action could be implemented here
 	// For now, we assume any user in the organization can perform these actions

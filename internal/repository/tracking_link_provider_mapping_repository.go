@@ -2,10 +2,10 @@ package repository
 
 import (
 	"context"
-	"database/sql"
 	"fmt"
 
 	"github.com/affiliate-backend/internal/domain"
+	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/pgxpool"
 )
 
@@ -83,7 +83,7 @@ func (r *trackingLinkProviderMappingRepository) GetTrackingLinkProviderMapping(c
 	)
 
 	if err != nil {
-		if err == sql.ErrNoRows {
+		if err == pgx.ErrNoRows {
 			return nil, fmt.Errorf("tracking link provider mapping not found")
 		}
 		return nil, fmt.Errorf("failed to get tracking link provider mapping: %w", err)
@@ -116,7 +116,7 @@ func (r *trackingLinkProviderMappingRepository) GetTrackingLinkProviderMappingBy
 	)
 
 	if err != nil {
-		if err == sql.ErrNoRows {
+		if err == pgx.ErrNoRows {
 			return nil, fmt.Errorf("tracking link provider mapping not found")
 		}
 		return nil, fmt.Errorf("failed to get tracking link provider mapping: %w", err)
@@ -148,7 +148,7 @@ func (r *trackingLinkProviderMappingRepository) UpdateTrackingLinkProviderMappin
 	).Scan(&mapping.UpdatedAt)
 
 	if err != nil {
-		if err == sql.ErrNoRows {
+		if err == pgx.ErrNoRows {
 			return fmt.Errorf("tracking link provider mapping not found")
 		}
 		return fmt.Errorf("failed to update tracking link provider mapping: %w", err)

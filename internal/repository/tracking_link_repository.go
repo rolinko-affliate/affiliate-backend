@@ -2,10 +2,10 @@ package repository
 
 import (
 	"context"
-	"database/sql"
 	"fmt"
 
 	"github.com/affiliate-backend/internal/domain"
+	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/pgxpool"
 )
 
@@ -108,7 +108,7 @@ func (r *trackingLinkRepository) GetTrackingLinkByID(ctx context.Context, tracki
 	)
 
 	if err != nil {
-		if err == sql.ErrNoRows {
+		if err == pgx.ErrNoRows {
 			return nil, fmt.Errorf("tracking link not found")
 		}
 		return nil, fmt.Errorf("failed to get tracking link: %w", err)
@@ -148,7 +148,7 @@ func (r *trackingLinkRepository) UpdateTrackingLink(ctx context.Context, trackin
 	).Scan(&trackingLink.UpdatedAt)
 
 	if err != nil {
-		if err == sql.ErrNoRows {
+		if err == pgx.ErrNoRows {
 			return fmt.Errorf("tracking link not found")
 		}
 		return fmt.Errorf("failed to update tracking link: %w", err)
@@ -377,7 +377,7 @@ func (r *trackingLinkRepository) GetTrackingLinkByCampaignAndAffiliate(ctx conte
 	)
 
 	if err != nil {
-		if err == sql.ErrNoRows {
+		if err == pgx.ErrNoRows {
 			return nil, fmt.Errorf("tracking link not found")
 		}
 		return nil, fmt.Errorf("failed to get tracking link: %w", err)

@@ -31,6 +31,7 @@ func NewCampaignHandler(campaignService service.CampaignService) *CampaignHandle
 // @Success 201 {object} models.CampaignResponse
 // @Failure 400 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /campaigns [post]
 func (h *CampaignHandler) CreateCampaign(c *gin.Context) {
 	var req models.CreateCampaignRequest
@@ -69,6 +70,7 @@ func (h *CampaignHandler) CreateCampaign(c *gin.Context) {
 // @Failure 400 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /campaigns/{id} [get]
 func (h *CampaignHandler) GetCampaign(c *gin.Context) {
 	idStr := c.Param("id")
@@ -113,6 +115,7 @@ func (h *CampaignHandler) GetCampaign(c *gin.Context) {
 // @Failure 400 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /campaigns/{id} [put]
 func (h *CampaignHandler) UpdateCampaign(c *gin.Context) {
 	idStr := c.Param("id")
@@ -179,6 +182,7 @@ func (h *CampaignHandler) UpdateCampaign(c *gin.Context) {
 // @Success 200 {object} models.CampaignListResponse
 // @Failure 400 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /advertisers/{advertiser_id}/campaigns [get]
 func (h *CampaignHandler) ListCampaignsByAdvertiser(c *gin.Context) {
 	advertiserIDStr := c.Param("advertiser_id")
@@ -220,6 +224,7 @@ func (h *CampaignHandler) ListCampaignsByAdvertiser(c *gin.Context) {
 // @Success 200 {object} models.CampaignListResponse
 // @Failure 400 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /organizations/{organization_id}/campaigns [get]
 func (h *CampaignHandler) ListCampaignsByOrganization(c *gin.Context) {
 	orgIDStr := c.Param("id")
@@ -259,6 +264,7 @@ func (h *CampaignHandler) ListCampaignsByOrganization(c *gin.Context) {
 // @Failure 400 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /campaigns/{id} [delete]
 func (h *CampaignHandler) DeleteCampaign(c *gin.Context) {
 	idStr := c.Param("id")

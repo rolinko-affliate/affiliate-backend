@@ -362,7 +362,7 @@ func (r *PgxBillingAccountRepository) List(ctx context.Context, limit, offset in
 	}
 	defer rows.Close()
 
-	var accounts []domain.BillingAccount
+	accounts := make([]domain.BillingAccount, 0)
 	for rows.Next() {
 		account := domain.BillingAccount{}
 		var billingAddressJSON, taxInfoJSON []byte

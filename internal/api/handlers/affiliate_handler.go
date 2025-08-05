@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"net/http"
 	"strconv"
@@ -78,7 +79,7 @@ type CreateAffiliateRequest struct {
 // @Success      201      {object}  domain.Affiliate        "Created affiliate"
 // @Failure      400      {object}  map[string]string       "Invalid request"
 // @Failure      500      {object}  map[string]string       "Internal server error"
-// @Security     BearerAuth
+// @Security BearerAuth
 // @Router       /affiliates [post]
 func (h *AffiliateHandler) CreateAffiliate(c *gin.Context) {
 	var req CreateAffiliateRequest
@@ -119,7 +120,7 @@ func (h *AffiliateHandler) CreateAffiliate(c *gin.Context) {
 // @Failure      400  {object}  map[string]string "Invalid affiliate ID"
 // @Failure      404  {object}  map[string]string "Affiliate not found"
 // @Failure      500  {object}  map[string]string "Internal server error"
-// @Security     BearerAuth
+// @Security BearerAuth
 // @Router       /affiliates/{id} [get]
 func (h *AffiliateHandler) GetAffiliate(c *gin.Context) {
 	idStr := c.Param("id")
@@ -131,7 +132,7 @@ func (h *AffiliateHandler) GetAffiliate(c *gin.Context) {
 
 	affiliate, err := h.affiliateService.GetAffiliateByID(c.Request.Context(), id)
 	if err != nil {
-		if err.Error() == "affiliate not found: not found" {
+		if errors.Is(err, domain.ErrNotFound) {
 			c.JSON(http.StatusNotFound, gin.H{"error": "Affiliate not found"})
 			return
 		}
@@ -168,7 +169,7 @@ type UpdateAffiliateRequest struct {
 // @Failure      400      {object}  map[string]string       "Invalid request"
 // @Failure      404      {object}  map[string]string       "Affiliate not found"
 // @Failure      500      {object}  map[string]string       "Internal server error"
-// @Security     BearerAuth
+// @Security BearerAuth
 // @Router       /affiliates/{id} [put]
 func (h *AffiliateHandler) UpdateAffiliate(c *gin.Context) {
 	idStr := c.Param("id")
@@ -187,7 +188,7 @@ func (h *AffiliateHandler) UpdateAffiliate(c *gin.Context) {
 	// Get existing affiliate
 	affiliate, err := h.affiliateService.GetAffiliateByID(c.Request.Context(), id)
 	if err != nil {
-		if err.Error() == "affiliate not found: not found" {
+		if errors.Is(err, domain.ErrNotFound) {
 			c.JSON(http.StatusNotFound, gin.H{"error": "Affiliate not found"})
 			return
 		}
@@ -225,7 +226,7 @@ func (h *AffiliateHandler) UpdateAffiliate(c *gin.Context) {
 // @Success      200            {array}   domain.Affiliate      "List of affiliates"
 // @Failure      400            {object}  map[string]string     "Invalid organization ID"
 // @Failure      500            {object}  map[string]string     "Internal server error"
-// @Security     BearerAuth
+// @Security BearerAuth
 // @Router       /organizations/{id}/affiliates [get]
 func (h *AffiliateHandler) ListAffiliatesByOrganization(c *gin.Context) {
 	orgIDStr := c.Param("id")
@@ -268,7 +269,7 @@ func (h *AffiliateHandler) ListAffiliatesByOrganization(c *gin.Context) {
 // @Failure      400  {object}  map[string]string  "Invalid affiliate ID"
 // @Failure      404  {object}  map[string]string  "Affiliate not found"
 // @Failure      500  {object}  map[string]string  "Internal server error"
-// @Security     BearerAuth
+// @Security BearerAuth
 // @Router       /affiliates/{id} [delete]
 func (h *AffiliateHandler) DeleteAffiliate(c *gin.Context) {
 	idStr := c.Param("id")
@@ -279,7 +280,7 @@ func (h *AffiliateHandler) DeleteAffiliate(c *gin.Context) {
 	}
 
 	if err := h.affiliateService.DeleteAffiliate(c.Request.Context(), id); err != nil {
-		if err.Error() == "affiliate not found: not found" {
+		if errors.Is(err, domain.ErrNotFound) {
 			c.JSON(http.StatusNotFound, gin.H{"error": "Affiliate not found"})
 			return
 		}
@@ -314,7 +315,7 @@ type CreateAffiliateProviderMappingRequest struct {
 // @Success      201      {object}  domain.AffiliateProviderMapping        "Created mapping"
 // @Failure      400      {object}  map[string]string                      "Invalid request"
 // @Failure      500      {object}  map[string]string                      "Internal server error"
-// @Security     BearerAuth
+// @Security BearerAuth
 // @Router       /affiliate-provider-mappings [post]
 func (h *AffiliateHandler) CreateAffiliateProviderMapping(c *gin.Context) {
 	var req CreateAffiliateProviderMappingRequest
@@ -355,7 +356,7 @@ func (h *AffiliateHandler) CreateAffiliateProviderMapping(c *gin.Context) {
 // @Failure      400           {object}  map[string]string                "Invalid request"
 // @Failure      404           {object}  map[string]string                "Mapping not found"
 // @Failure      500           {object}  map[string]string                "Internal server error"
-// @Security     BearerAuth
+// @Security BearerAuth
 // @Router       /affiliates/{id}/provider-mappings/{providerType} [get]
 func (h *AffiliateHandler) GetAffiliateProviderMapping(c *gin.Context) {
 	affiliateIDStr := c.Param("id")
@@ -373,7 +374,7 @@ func (h *AffiliateHandler) GetAffiliateProviderMapping(c *gin.Context) {
 
 	mapping, err := h.affiliateService.GetAffiliateProviderMapping(c.Request.Context(), affiliateID, providerType)
 	if err != nil {
-		if err.Error() == "affiliate provider mapping not found: not found" {
+		if errors.Is(err, domain.ErrNotFound) {
 			c.JSON(http.StatusNotFound, gin.H{"error": "Affiliate provider mapping not found"})
 			return
 		}
@@ -406,7 +407,7 @@ type UpdateAffiliateProviderMappingRequest struct {
 // @Failure      400        {object}  map[string]string                      "Invalid request"
 // @Failure      404        {object}  map[string]string                      "Mapping not found"
 // @Failure      500        {object}  map[string]string                      "Internal server error"
-// @Security     BearerAuth
+// @Security BearerAuth
 // @Router       /affiliate-provider-mappings/{mappingId} [put]
 func (h *AffiliateHandler) UpdateAffiliateProviderMapping(c *gin.Context) {
 	mappingIDStr := c.Param("mappingId")
@@ -439,7 +440,7 @@ func (h *AffiliateHandler) UpdateAffiliateProviderMapping(c *gin.Context) {
 	}
 
 	if err := h.affiliateService.UpdateAffiliateProviderMapping(c.Request.Context(), mapping); err != nil {
-		if err.Error() == "affiliate provider mapping not found: not found" {
+		if errors.Is(err, domain.ErrNotFound) {
 			c.JSON(http.StatusNotFound, gin.H{"error": "Affiliate provider mapping not found"})
 			return
 		}
@@ -492,7 +493,7 @@ type AffiliatesSearchResponse struct {
 // @Success      200      {object}  AffiliatesSearchResponse                  "Search results with data array and total count"
 // @Failure      400      {object}  ErrorResponse                             "Invalid request"
 // @Failure      500      {object}  ErrorResponse                             "Internal server error"
-// @Security     BearerAuth
+// @Security BearerAuth
 // @Router       /affiliates/search [post]
 func (h *AffiliateHandler) AffiliatesSearch(c *gin.Context) {
 	var aff AffiliatesSearchRequest
@@ -547,7 +548,7 @@ func (h *AffiliateHandler) AffiliatesSearch(c *gin.Context) {
 // @Failure      400        {object}  map[string]string  "Invalid mapping ID"
 // @Failure      404        {object}  map[string]string  "Mapping not found"
 // @Failure      500        {object}  map[string]string  "Internal server error"
-// @Security     BearerAuth
+// @Security BearerAuth
 // @Router       /affiliate-provider-mappings/{mappingId} [delete]
 func (h *AffiliateHandler) DeleteAffiliateProviderMapping(c *gin.Context) {
 	mappingIDStr := c.Param("mappingId")
@@ -558,7 +559,7 @@ func (h *AffiliateHandler) DeleteAffiliateProviderMapping(c *gin.Context) {
 	}
 
 	if err := h.affiliateService.DeleteAffiliateProviderMapping(c.Request.Context(), mappingID); err != nil {
-		if err.Error() == "affiliate provider mapping not found: not found" {
+		if errors.Is(err, domain.ErrNotFound) {
 			c.JSON(http.StatusNotFound, gin.H{"error": "Affiliate provider mapping not found"})
 			return
 		}

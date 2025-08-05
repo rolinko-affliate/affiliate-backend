@@ -163,7 +163,7 @@ func (r *publisherMessagingRepository) GetConversationsByOrganization(ctx contex
 	}
 	defer rows.Close()
 
-	var conversations []domain.PublisherConversation
+	conversations := make([]domain.PublisherConversation, 0)
 	for rows.Next() {
 		var conversation domain.PublisherConversation
 		err := rows.Scan(
@@ -313,7 +313,7 @@ func (r *publisherMessagingRepository) GetMessagesByConversation(ctx context.Con
 	}
 	defer rows.Close()
 
-	var messages []domain.PublisherMessage
+	messages := make([]domain.PublisherMessage, 0)
 	for rows.Next() {
 		var message domain.PublisherMessage
 		var metadataJSON JSONB

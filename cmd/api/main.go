@@ -34,6 +34,7 @@ import (
 	"syscall"
 	"time"
 
+	_ "github.com/affiliate-backend/docs" // Import for swagger docs
 	"github.com/affiliate-backend/internal/api"
 	"github.com/affiliate-backend/internal/api/handlers"
 	"github.com/affiliate-backend/internal/config"
@@ -228,6 +229,9 @@ func main() {
 	// Initialize Repositories
 	profileRepo := repository.NewPgxProfileRepository(repository.DB)
 	organizationRepo := repository.NewPgxOrganizationRepository(repository.DB)
+	organizationAssociationRepo := repository.NewPgxOrganizationAssociationRepository(repository.DB)
+	advertiserAssociationInvitationRepo := repository.NewPgxAdvertiserAssociationInvitationRepository(repository.DB)
+	agencyDelegationRepo := repository.NewPgxAgencyDelegationRepository(repository.DB)
 	advertiserRepo := repository.NewPgxAdvertiserRepository(repository.DB)
 	advertiserProviderMappingRepo := repository.NewAdvertiserProviderMappingRepository(repository.DB)
 	affiliateRepo := repository.NewPgxAffiliateRepository(repository.DB)
@@ -298,11 +302,14 @@ func main() {
 
 	// Initialize Domain Services
 	profileService := service.NewProfileService(profileRepo)
-	organizationService := service.NewOrganizationService(organizationRepo)
+	organizationService := service.NewOrganizationService(organizationRepo, advertiserRepo, affiliateRepo)
+	organizationAssociationService := service.NewOrganizationAssociationService(organizationAssociationRepo, organizationRepo, profileRepo, affiliateRepo, campaignRepo)
+	advertiserAssociationInvitationService := service.NewAdvertiserAssociationInvitationService(advertiserAssociationInvitationRepo, organizationAssociationRepo, organizationRepo, profileRepo, organizationAssociationService)
+	agencyDelegationService := service.NewAgencyDelegationService(agencyDelegationRepo, organizationRepo, profileRepo)
 	advertiserService := service.NewAdvertiserService(advertiserRepo, advertiserProviderMappingRepo, organizationRepo, cryptoService, integrationService)
 	affiliateService := service.NewAffiliateService(affiliateRepo, affiliateProviderMappingRepo, organizationRepo, integrationService)
 	campaignService := service.NewCampaignService(campaignRepo)
-	trackingLinkService := service.NewTrackingLinkService(trackingLinkRepo, trackingLinkProviderMappingRepo, campaignRepo, affiliateRepo, campaignProviderMappingRepo, affiliateProviderMappingRepo, integrationService)
+	trackingLinkService := service.NewTrackingLinkService(trackingLinkRepo, trackingLinkProviderMappingRepo, campaignRepo, affiliateRepo, campaignProviderMappingRepo, affiliateProviderMappingRepo, integrationService, organizationAssociationService)
 	analyticsService := service.NewAnalyticsService(analyticsRepo)
 	favoritePublisherListService := service.NewFavoritePublisherListService(favoritePublisherListRepo, analyticsRepo)
 	publisherMessagingService := service.NewPublisherMessagingService(publisherMessagingRepo, analyticsRepo, favoritePublisherListRepo)
@@ -315,6 +322,9 @@ func main() {
 	// Initialize Handlers
 	profileHandler := handlers.NewProfileHandler(profileService)
 	organizationHandler := handlers.NewOrganizationHandler(organizationService, profileService)
+	organizationAssociationHandler := handlers.NewOrganizationAssociationHandler(organizationAssociationService)
+	advertiserAssociationInvitationHandler := handlers.NewAdvertiserAssociationInvitationHandler(advertiserAssociationInvitationService)
+	agencyDelegationHandler := handlers.NewAgencyDelegationHandler(agencyDelegationService)
 	advertiserHandler := handlers.NewAdvertiserHandler(advertiserService, profileService)
 	affiliateHandler := handlers.NewAffiliateHandler(affiliateService, profileService, analyticsService)
 	campaignHandler := handlers.NewCampaignHandler(campaignService)
@@ -329,18 +339,21 @@ func main() {
 
 	// Setup Router
 	router := api.SetupRouter(api.RouterOptions{
-		ProfileHandler:               profileHandler,
-		ProfileService:               profileService,
-		OrganizationHandler:          organizationHandler,
-		AdvertiserHandler:            advertiserHandler,
-		AffiliateHandler:             affiliateHandler,
-		CampaignHandler:              campaignHandler,
-		TrackingLinkHandler:          trackingLinkHandler,
-		AnalyticsHandler:             analyticsHandler,
-		FavoritePublisherListHandler: favoritePublisherListHandler,
-		PublisherMessagingHandler:    publisherMessagingHandler,
-		BillingHandler:               billingHandler,
-		WebhookHandler:               webhookHandler,
+		ProfileHandler:                            profileHandler,
+		ProfileService:                            profileService,
+		OrganizationHandler:                       organizationHandler,
+		OrganizationAssociationHandler:            organizationAssociationHandler,
+		AdvertiserAssociationInvitationHandler:    advertiserAssociationInvitationHandler,
+		AgencyDelegationHandler:                   agencyDelegationHandler,
+		AdvertiserHandler:                         advertiserHandler,
+		AffiliateHandler:                          affiliateHandler,
+		CampaignHandler:                           campaignHandler,
+		TrackingLinkHandler:                       trackingLinkHandler,
+		AnalyticsHandler:                          analyticsHandler,
+		FavoritePublisherListHandler:              favoritePublisherListHandler,
+		PublisherMessagingHandler:                 publisherMessagingHandler,
+		BillingHandler:                            billingHandler,
+		WebhookHandler:                            webhookHandler,
 	})
 
 	// Start Server

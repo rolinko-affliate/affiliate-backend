@@ -409,7 +409,7 @@ func (r *analyticsRepository) SearchAdvertisers(ctx context.Context, query strin
 	}
 	defer rows.Close()
 
-	var results []domain.AutocompleteResult
+	results := make([]domain.AutocompleteResult, 0)
 	for rows.Next() {
 		var result domain.AutocompleteResult
 		err := rows.Scan(&result.ID, &result.Domain)
@@ -444,7 +444,7 @@ func (r *analyticsRepository) SearchPublishers(ctx context.Context, query string
 	}
 	defer rows.Close()
 
-	var results []domain.AutocompleteResult
+	results := make([]domain.AutocompleteResult, 0)
 	for rows.Next() {
 		var result domain.AutocompleteResult
 		err := rows.Scan(&result.ID, &result.Domain)
@@ -481,7 +481,7 @@ func (r *analyticsRepository) SearchBoth(ctx context.Context, query string, limi
 	}
 	defer rows.Close()
 
-	var results []domain.AutocompleteResult
+	results := make([]domain.AutocompleteResult, 0)
 	for rows.Next() {
 		var result domain.AutocompleteResult
 		err := rows.Scan(&result.ID, &result.Domain, &result.Type)

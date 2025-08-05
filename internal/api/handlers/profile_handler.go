@@ -65,7 +65,7 @@ func (h *ProfileHandler) HandleSupabaseNewUserWebhook(c *gin.Context) {
 	// MVP: Assign a default role and potentially create/assign to a default organization
 	// This logic needs to be defined based on your business requirements.
 	var defaultOrgID int64 = 1 // Example: Assume org ID 1 exists
-	var defaultRoleID int = 4  // Example: 'Affiliate' role ID
+	var defaultRoleID int = 100000  // Default user role
 
 	_, err := h.profileService.CreateNewUserProfile(c.Request.Context(), userID, email, &defaultOrgID, defaultRoleID)
 	if err != nil {

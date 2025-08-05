@@ -385,7 +385,7 @@ func (r *pgxCampaignRepository) ListCampaignsByAdvertiser(ctx context.Context, a
 	}
 	defer rows.Close()
 
-	var campaigns []*domain.Campaign
+	campaigns := make([]*domain.Campaign, 0)
 	for rows.Next() {
 		campaign := &domain.Campaign{}
 		var description, destinationURL, thumbnailURL, previewURL, visibility, currencyID sql.NullString
@@ -525,7 +525,7 @@ func (r *pgxCampaignRepository) ListCampaignsByOrganization(ctx context.Context,
 	}
 	defer rows.Close()
 
-	var campaigns []*domain.Campaign
+	campaigns := make([]*domain.Campaign, 0)
 	for rows.Next() {
 		campaign := &domain.Campaign{}
 		var description, destinationURL, thumbnailURL, previewURL, visibility, currencyID sql.NullString

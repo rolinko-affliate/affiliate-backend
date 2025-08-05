@@ -1,6 +1,7 @@
 package domain
 
 import (
+	"fmt"
 	"time"
 )
 
@@ -64,6 +65,43 @@ type AffiliateProviderMapping struct {
 
 	CreatedAt time.Time `json:"created_at" db:"created_at"`
 	UpdatedAt time.Time `json:"updated_at" db:"updated_at"`
+}
+
+// AffiliateExtraInfo represents additional information for an affiliate organization
+type AffiliateExtraInfo struct {
+	ExtraInfoID     int64     `json:"extra_info_id" db:"extra_info_id"`
+	OrganizationID  int64     `json:"organization_id" db:"organization_id"`
+	Website         *string   `json:"website,omitempty" db:"website"`
+	AffiliateType   *string   `json:"affiliate_type,omitempty" db:"affiliate_type"` // 'cashback', 'blog', 'incentive', 'content', 'forum', 'sub_affiliate_network'
+	SelfDescription *string   `json:"self_description,omitempty" db:"self_description"`
+	LogoURL         *string   `json:"logo_url,omitempty" db:"logo_url"`
+	CreatedAt       time.Time `json:"created_at" db:"created_at"`
+	UpdatedAt       time.Time `json:"updated_at" db:"updated_at"`
+}
+
+// Validate validates the affiliate extra info data
+func (aei *AffiliateExtraInfo) Validate() error {
+	if aei.OrganizationID <= 0 {
+		return fmt.Errorf("valid organization ID is required")
+	}
+	
+	if aei.AffiliateType != nil {
+		validTypes := map[string]bool{
+			"cashback": true, "blog": true, "incentive": true, 
+			"content": true, "forum": true, "sub_affiliate_network": true,
+		}
+		if !validTypes[*aei.AffiliateType] {
+			return fmt.Errorf("invalid affiliate type: %s", *aei.AffiliateType)
+		}
+	}
+	
+	return nil
+}
+
+// AffiliateWithExtraInfo represents an affiliate with its extra information
+type AffiliateWithExtraInfo struct {
+	*Affiliate
+	ExtraInfo *AffiliateExtraInfo `json:"extra_info,omitempty"`
 }
 
 // EverflowProviderData represents Everflow-specific data stored in ProviderData field

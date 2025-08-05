@@ -739,7 +739,8 @@ func (h *FavoritePublisherListHandler) GetListsContainingPublisher(c *gin.Contex
 // @Failure 401 {object} ErrorResponse "Unauthorized"
 // @Failure 404 {object} ErrorResponse "List or publisher not found"
 // @Failure 500 {object} ErrorResponse "Internal server error"
-// @Router /api/v1/favorite-publisher-lists/{list_id}/publishers/{domain}/status [patch]
+// @Security BearerAuth
+// @Router /favorite-publisher-lists/{list_id}/publishers/{domain}/status [patch]
 func (h *FavoritePublisherListHandler) UpdatePublisherStatus(c *gin.Context) {
 	orgID, ok := h.getOrganizationID(c)
 	if !ok {

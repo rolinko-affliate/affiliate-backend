@@ -17,6 +17,14 @@ type AdvertiserRepository interface {
 	UpdateAdvertiser(ctx context.Context, advertiser *domain.Advertiser) error
 	ListAdvertisersByOrganization(ctx context.Context, orgID int64, limit, offset int) ([]*domain.Advertiser, error)
 	DeleteAdvertiser(ctx context.Context, id int64) error
+	
+	// Extra info methods
+	CreateAdvertiserExtraInfo(ctx context.Context, extraInfo *domain.AdvertiserExtraInfo) error
+	GetAdvertiserExtraInfo(ctx context.Context, organizationID int64) (*domain.AdvertiserExtraInfo, error)
+	UpdateAdvertiserExtraInfo(ctx context.Context, extraInfo *domain.AdvertiserExtraInfo) error
+	UpsertAdvertiserExtraInfo(ctx context.Context, extraInfo *domain.AdvertiserExtraInfo) error
+	DeleteAdvertiserExtraInfo(ctx context.Context, organizationID int64) error
+	GetAdvertiserWithExtraInfo(ctx context.Context, advertiserID int64) (*domain.AdvertiserWithExtraInfo, error)
 }
 
 type pgxAdvertiserRepository struct {
@@ -186,7 +194,7 @@ func (r *pgxAdvertiserRepository) ListAdvertisersByOrganization(ctx context.Cont
 	}
 	defer rows.Close()
 
-	var advertisers []*domain.Advertiser
+	advertisers := make([]*domain.Advertiser, 0)
 	for rows.Next() {
 		var advertiser domain.Advertiser
 		var contactEmail, billingDetails sql.NullString
@@ -250,4 +258,150 @@ func (r *pgxAdvertiserRepository) DeleteAdvertiser(ctx context.Context, id int64
 	}
 
 	return nil
+}
+
+// CreateAdvertiserExtraInfo creates extra info for an advertiser organization
+func (r *pgxAdvertiserRepository) CreateAdvertiserExtraInfo(ctx context.Context, extraInfo *domain.AdvertiserExtraInfo) error {
+	query := `INSERT INTO public.advertiser_extra_info (
+		organization_id, website, website_type, company_size, created_at, updated_at
+	) VALUES ($1, $2, $3, $4, $5, $6) 
+	RETURNING extra_info_id, created_at, updated_at`
+
+	now := time.Now()
+	err := r.db.QueryRow(ctx, query,
+		extraInfo.OrganizationID,
+		extraInfo.Website,
+		extraInfo.WebsiteType,
+		extraInfo.CompanySize,
+		now,
+		now,
+	).Scan(&extraInfo.ExtraInfoID, &extraInfo.CreatedAt, &extraInfo.UpdatedAt)
+
+	if err != nil {
+		return fmt.Errorf("error creating advertiser extra info: %w", err)
+	}
+
+	return nil
+}
+
+// GetAdvertiserExtraInfo retrieves extra info for an advertiser organization
+func (r *pgxAdvertiserRepository) GetAdvertiserExtraInfo(ctx context.Context, organizationID int64) (*domain.AdvertiserExtraInfo, error) {
+	query := `SELECT extra_info_id, organization_id, website, website_type, company_size, created_at, updated_at
+		FROM public.advertiser_extra_info WHERE organization_id = $1`
+
+	extraInfo := &domain.AdvertiserExtraInfo{}
+	err := r.db.QueryRow(ctx, query, organizationID).Scan(
+		&extraInfo.ExtraInfoID,
+		&extraInfo.OrganizationID,
+		&extraInfo.Website,
+		&extraInfo.WebsiteType,
+		&extraInfo.CompanySize,
+		&extraInfo.CreatedAt,
+		&extraInfo.UpdatedAt,
+	)
+
+	if err != nil {
+		if err == pgx.ErrNoRows {
+			return nil, domain.ErrNotFound
+		}
+		return nil, fmt.Errorf("error getting advertiser extra info: %w", err)
+	}
+
+	return extraInfo, nil
+}
+
+// UpdateAdvertiserExtraInfo updates extra info for an advertiser organization
+func (r *pgxAdvertiserRepository) UpdateAdvertiserExtraInfo(ctx context.Context, extraInfo *domain.AdvertiserExtraInfo) error {
+	query := `UPDATE public.advertiser_extra_info SET 
+		website = $2, website_type = $3, company_size = $4, updated_at = $5
+		WHERE organization_id = $1
+		RETURNING updated_at`
+
+	now := time.Now()
+	err := r.db.QueryRow(ctx, query,
+		extraInfo.OrganizationID,
+		extraInfo.Website,
+		extraInfo.WebsiteType,
+		extraInfo.CompanySize,
+		now,
+	).Scan(&extraInfo.UpdatedAt)
+
+	if err != nil {
+		if err == pgx.ErrNoRows {
+			return domain.ErrNotFound
+		}
+		return fmt.Errorf("error updating advertiser extra info: %w", err)
+	}
+
+	return nil
+}
+
+// UpsertAdvertiserExtraInfo creates or updates extra info for an advertiser organization
+func (r *pgxAdvertiserRepository) UpsertAdvertiserExtraInfo(ctx context.Context, extraInfo *domain.AdvertiserExtraInfo) error {
+	query := `INSERT INTO public.advertiser_extra_info (
+		organization_id, website, website_type, company_size, created_at, updated_at
+	) VALUES ($1, $2, $3, $4, $5, $6)
+	ON CONFLICT (organization_id) DO UPDATE SET
+		website = EXCLUDED.website,
+		website_type = EXCLUDED.website_type,
+		company_size = EXCLUDED.company_size,
+		updated_at = EXCLUDED.updated_at
+	RETURNING extra_info_id, created_at, updated_at`
+
+	now := time.Now()
+	err := r.db.QueryRow(ctx, query,
+		extraInfo.OrganizationID,
+		extraInfo.Website,
+		extraInfo.WebsiteType,
+		extraInfo.CompanySize,
+		now,
+		now,
+	).Scan(&extraInfo.ExtraInfoID, &extraInfo.CreatedAt, &extraInfo.UpdatedAt)
+
+	if err != nil {
+		return fmt.Errorf("error upserting advertiser extra info: %w", err)
+	}
+
+	return nil
+}
+
+// DeleteAdvertiserExtraInfo deletes extra info for an advertiser organization
+func (r *pgxAdvertiserRepository) DeleteAdvertiserExtraInfo(ctx context.Context, organizationID int64) error {
+	query := `DELETE FROM public.advertiser_extra_info WHERE organization_id = $1`
+
+	commandTag, err := r.db.Exec(ctx, query, organizationID)
+	if err != nil {
+		return fmt.Errorf("error deleting advertiser extra info: %w", err)
+	}
+
+	if commandTag.RowsAffected() == 0 {
+		return domain.ErrNotFound
+	}
+
+	return nil
+}
+
+// GetAdvertiserWithExtraInfo retrieves an advertiser with its extra info
+func (r *pgxAdvertiserRepository) GetAdvertiserWithExtraInfo(ctx context.Context, advertiserID int64) (*domain.AdvertiserWithExtraInfo, error) {
+	// Get the advertiser first
+	advertiser, err := r.GetAdvertiserByID(ctx, advertiserID)
+	if err != nil {
+		return nil, err
+	}
+
+	// Get the extra info (may not exist) - use organization ID
+	extraInfo, err := r.GetAdvertiserExtraInfo(ctx, advertiser.OrganizationID)
+	if err != nil && err != domain.ErrNotFound {
+		return nil, err
+	}
+
+	result := &domain.AdvertiserWithExtraInfo{
+		Advertiser: advertiser,
+	}
+
+	if err != domain.ErrNotFound {
+		result.ExtraInfo = extraInfo
+	}
+
+	return result, nil
 }

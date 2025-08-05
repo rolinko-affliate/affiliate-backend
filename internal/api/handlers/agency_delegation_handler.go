@@ -525,6 +525,10 @@ func (h *AgencyDelegationHandler) ListDelegations(c *gin.Context) {
 			})
 			return
 		}
+		// Ensure we return empty array instead of null
+		if delegations == nil {
+			delegations = []*domain.AgencyDelegationWithDetails{}
+		}
 		c.JSON(http.StatusOK, delegations)
 	} else {
 		delegations, err := h.delegationService.ListDelegations(c.Request.Context(), filter)
@@ -534,6 +538,10 @@ func (h *AgencyDelegationHandler) ListDelegations(c *gin.Context) {
 				Details: err.Error(),
 			})
 			return
+		}
+		// Ensure we return empty array instead of null
+		if delegations == nil {
+			delegations = []*domain.AgencyDelegation{}
 		}
 		c.JSON(http.StatusOK, delegations)
 	}
@@ -605,6 +613,10 @@ func (h *AgencyDelegationHandler) GetAgencyDelegations(c *gin.Context) {
 		return
 	}
 
+	// Ensure we return empty array instead of null
+	if delegations == nil {
+		delegations = []*domain.AgencyDelegation{}
+	}
 	c.JSON(http.StatusOK, delegations)
 }
 
@@ -639,6 +651,10 @@ func (h *AgencyDelegationHandler) GetAdvertiserDelegations(c *gin.Context) {
 		return
 	}
 
+	// Ensure we return empty array instead of null
+	if delegations == nil {
+		delegations = []*domain.AgencyDelegation{}
+	}
 	c.JSON(http.StatusOK, delegations)
 }
 

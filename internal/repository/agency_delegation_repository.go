@@ -318,7 +318,9 @@ func (r *agencyDelegationRepository) List(ctx context.Context, filter domain.Del
 	}
 	defer rows.Close()
 
-	var delegations []*domain.AgencyDelegation
+	// Initialize with empty slice to ensure we never return nil
+	delegations := make([]*domain.AgencyDelegation, 0)
+	
 	for rows.Next() {
 		var delegation domain.AgencyDelegation
 
@@ -358,8 +360,10 @@ func (r *agencyDelegationRepository) ListWithDetails(ctx context.Context, filter
 		return nil, err
 	}
 
+	// Initialize with empty slice to ensure we never return nil
+	result := make([]*domain.AgencyDelegationWithDetails, 0)
+	
 	// Then get details for each delegation
-	var result []*domain.AgencyDelegationWithDetails
 	for _, delegation := range delegations {
 		details, err := r.GetByIDWithDetails(ctx, delegation.DelegationID)
 		if err != nil {

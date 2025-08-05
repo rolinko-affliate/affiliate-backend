@@ -231,6 +231,7 @@ func main() {
 	organizationRepo := repository.NewPgxOrganizationRepository(repository.DB)
 	organizationAssociationRepo := repository.NewPgxOrganizationAssociationRepository(repository.DB)
 	advertiserAssociationInvitationRepo := repository.NewPgxAdvertiserAssociationInvitationRepository(repository.DB)
+	agencyDelegationRepo := repository.NewPgxAgencyDelegationRepository(repository.DB)
 	advertiserRepo := repository.NewPgxAdvertiserRepository(repository.DB)
 	advertiserProviderMappingRepo := repository.NewAdvertiserProviderMappingRepository(repository.DB)
 	affiliateRepo := repository.NewPgxAffiliateRepository(repository.DB)
@@ -304,6 +305,7 @@ func main() {
 	organizationService := service.NewOrganizationService(organizationRepo, advertiserRepo, affiliateRepo)
 	organizationAssociationService := service.NewOrganizationAssociationService(organizationAssociationRepo, organizationRepo, profileRepo, affiliateRepo, campaignRepo)
 	advertiserAssociationInvitationService := service.NewAdvertiserAssociationInvitationService(advertiserAssociationInvitationRepo, organizationAssociationRepo, organizationRepo, profileRepo, organizationAssociationService)
+	agencyDelegationService := service.NewAgencyDelegationService(agencyDelegationRepo, organizationRepo, profileRepo)
 	advertiserService := service.NewAdvertiserService(advertiserRepo, advertiserProviderMappingRepo, organizationRepo, cryptoService, integrationService)
 	affiliateService := service.NewAffiliateService(affiliateRepo, affiliateProviderMappingRepo, organizationRepo, integrationService)
 	campaignService := service.NewCampaignService(campaignRepo)
@@ -322,6 +324,7 @@ func main() {
 	organizationHandler := handlers.NewOrganizationHandler(organizationService, profileService)
 	organizationAssociationHandler := handlers.NewOrganizationAssociationHandler(organizationAssociationService)
 	advertiserAssociationInvitationHandler := handlers.NewAdvertiserAssociationInvitationHandler(advertiserAssociationInvitationService)
+	agencyDelegationHandler := handlers.NewAgencyDelegationHandler(agencyDelegationService)
 	advertiserHandler := handlers.NewAdvertiserHandler(advertiserService, profileService)
 	affiliateHandler := handlers.NewAffiliateHandler(affiliateService, profileService, analyticsService)
 	campaignHandler := handlers.NewCampaignHandler(campaignService)
@@ -341,6 +344,7 @@ func main() {
 		OrganizationHandler:                       organizationHandler,
 		OrganizationAssociationHandler:            organizationAssociationHandler,
 		AdvertiserAssociationInvitationHandler:    advertiserAssociationInvitationHandler,
+		AgencyDelegationHandler:                   agencyDelegationHandler,
 		AdvertiserHandler:                         advertiserHandler,
 		AffiliateHandler:                          affiliateHandler,
 		CampaignHandler:                           campaignHandler,

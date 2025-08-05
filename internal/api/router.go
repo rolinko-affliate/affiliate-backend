@@ -15,6 +15,7 @@ type RouterOptions struct {
 	ProfileService                            service.ProfileService
 	OrganizationHandler                       *handlers.OrganizationHandler
 	OrganizationAssociationHandler            *handlers.OrganizationAssociationHandler
+	AgencyDelegationHandler                   *handlers.AgencyDelegationHandler
 	AdvertiserAssociationInvitationHandler    *handlers.AdvertiserAssociationInvitationHandler
 	AdvertiserHandler                         *handlers.AdvertiserHandler
 	AffiliateHandler                          *handlers.AffiliateHandler
@@ -309,6 +310,35 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		// Invitation analytics and management
 		advInvitations.GET("/:id/usage-history", rbacMW("AdvertiserManager", "Admin"), opts.AdvertiserAssociationInvitationHandler.GetInvitationUsageHistory)
 		advInvitations.GET("/:id/link", rbacMW("AdvertiserManager", "Admin"), opts.AdvertiserAssociationInvitationHandler.GenerateInvitationLink)
+	}
+
+	// --- Agency Delegation Routes ---
+	agencyDelegations := v1.Group("/agency-delegations")
+	agencyDelegations.Use(profileMW()) // Load profile first to get user role
+	{
+		// Delegation management
+		agencyDelegations.POST("", rbacMW("AdvertiserManager", "Admin"), opts.AgencyDelegationHandler.CreateDelegation)
+		agencyDelegations.GET("", rbacMW("AdvertiserManager", "AgencyManager", "Admin"), opts.AgencyDelegationHandler.ListDelegations)
+		agencyDelegations.GET("/:id", rbacMW("AdvertiserManager", "AgencyManager", "Admin"), opts.AgencyDelegationHandler.GetDelegation)
+		
+		// Delegation status management
+		agencyDelegations.POST("/:id/accept", rbacMW("AgencyManager", "Admin"), opts.AgencyDelegationHandler.AcceptDelegation)
+		agencyDelegations.POST("/:id/reject", rbacMW("AdvertiserManager", "AgencyManager", "Admin"), opts.AgencyDelegationHandler.RejectDelegation)
+		agencyDelegations.POST("/:id/suspend", rbacMW("AdvertiserManager", "AgencyManager", "Admin"), opts.AgencyDelegationHandler.SuspendDelegation)
+		agencyDelegations.POST("/:id/reactivate", rbacMW("AdvertiserManager", "AgencyManager", "Admin"), opts.AgencyDelegationHandler.ReactivateDelegation)
+		agencyDelegations.POST("/:id/revoke", rbacMW("AdvertiserManager", "AgencyManager", "Admin"), opts.AgencyDelegationHandler.RevokeDelegation)
+		
+		// Delegation configuration
+		agencyDelegations.PUT("/:id/permissions", rbacMW("AdvertiserManager", "Admin"), opts.AgencyDelegationHandler.UpdatePermissions)
+		agencyDelegations.PUT("/:id/expiration", rbacMW("AdvertiserManager", "Admin"), opts.AgencyDelegationHandler.UpdateExpiration)
+		
+		// Permission checking and utility endpoints
+		agencyDelegations.POST("/check-permissions", rbacMW("AdvertiserManager", "AgencyManager", "Admin"), opts.AgencyDelegationHandler.CheckPermissions)
+		agencyDelegations.GET("/permissions", opts.AgencyDelegationHandler.GetAvailablePermissions)
+		
+		// Organization-specific delegation endpoints
+		agencyDelegations.GET("/agency/:agency_org_id", rbacMW("AgencyManager", "Admin"), opts.AgencyDelegationHandler.GetAgencyDelegations)
+		agencyDelegations.GET("/advertiser/:advertiser_org_id", rbacMW("AdvertiserManager", "Admin"), opts.AgencyDelegationHandler.GetAdvertiserDelegations)
 	}
 
 	return r

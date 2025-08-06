@@ -44,21 +44,24 @@ func (h *AdvertiserHandler) CreateAdvertiser(c *gin.Context) {
 		return
 	}
 
-	userOrgID, exists := c.Get("organizationID")
-	if !exists {
-		c.JSON(http.StatusUnauthorized, gin.H{"error": "Organization ID not found in context"})
-		return
-	}
-
 	userRole, exists := c.Get(middleware.UserRoleKey)
 	if !exists {
 		c.JSON(http.StatusUnauthorized, gin.H{"error": "User role not found in context"})
 		return
 	}
 
-	if userRole.(string) != "Admin" && userOrgID.(int64) != req.OrganizationID {
-		c.JSON(http.StatusForbidden, gin.H{"error": "Cannot create advertiser for different organization"})
-		return
+	// Admin users can create advertisers for any organization
+	if userRole.(string) != "Admin" {
+		userOrgID, exists := c.Get("organizationID")
+		if !exists {
+			c.JSON(http.StatusUnauthorized, gin.H{"error": "Organization ID not found in context"})
+			return
+		}
+		
+		if userOrgID.(int64) != req.OrganizationID {
+			c.JSON(http.StatusForbidden, gin.H{"error": "Cannot create advertiser for different organization"})
+			return
+		}
 	}
 
 	advertiser := req.ToDomain()

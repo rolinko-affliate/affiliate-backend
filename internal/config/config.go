@@ -23,6 +23,9 @@ type Config struct {
 	Environment   string `mapstructure:"ENVIRONMENT"`    // "development" or "production"
 	DebugMode     bool   `mapstructure:"DEBUG_MODE"`     // Enable debug logging for API requests/responses
 	MockMode      bool   `mapstructure:"MOCK_MODE"`      // Enable mock integration service instead of real provider
+	
+	// Everflow API configuration
+	EverflowAPIKey string `mapstructure:"EVERFLOW_API_KEY"` // Everflow API key for authentication
 }
 
 var AppConfig Config

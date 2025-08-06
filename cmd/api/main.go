@@ -287,7 +287,7 @@ func main() {
 		// Initialize integration service with Everflow configuration
 		everflowConfig := everflow.Config{
 			BaseURL: "https://api.eflow.team",
-			APIKey:  "your-api-key-here", // TODO: Load from environment
+			APIKey:  appConf.EverflowAPIKey,
 		}
 		integrationService = everflow.NewIntegrationServiceWithClients(
 			everflowConfig,
@@ -308,7 +308,7 @@ func main() {
 	agencyDelegationService := service.NewAgencyDelegationService(agencyDelegationRepo, organizationRepo, profileRepo)
 	advertiserService := service.NewAdvertiserService(advertiserRepo, advertiserProviderMappingRepo, organizationRepo, cryptoService, integrationService)
 	affiliateService := service.NewAffiliateService(affiliateRepo, affiliateProviderMappingRepo, organizationRepo, integrationService)
-	campaignService := service.NewCampaignService(campaignRepo)
+	campaignService := service.NewCampaignService(campaignRepo, integrationService)
 	trackingLinkService := service.NewTrackingLinkService(trackingLinkRepo, trackingLinkProviderMappingRepo, campaignRepo, affiliateRepo, campaignProviderMappingRepo, affiliateProviderMappingRepo, integrationService, organizationAssociationService)
 	analyticsService := service.NewAnalyticsService(analyticsRepo)
 	favoritePublisherListService := service.NewFavoritePublisherListService(favoritePublisherListRepo, analyticsRepo)

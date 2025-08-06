@@ -78,6 +78,7 @@ func (h *ProfileHandler) HandleSupabaseNewUserWebhook(c *gin.Context) {
 
 // ProfileRequest represents the request body for creating a profile
 type ProfileRequest struct {
+	ID             *string `json:"id,omitempty"` // TODO: Remove this field when access control is restored
 	OrganizationID *int64  `json:"organization_id,omitempty"`
 	RoleID         int     `json:"role_id"`
 	Email          string  `json:"email"`
@@ -135,7 +136,7 @@ func (h *ProfileHandler) GetMyProfile(c *gin.Context) {
 
 // CreateProfile creates a new profile
 // @Summary      Create a new profile
-// @Description  Creates a new user profile
+// @Description  Creates a new user profile (TODO: Temporarily without access control)
 // @Tags         profile
 // @Accept       json
 // @Produce      json
@@ -158,17 +159,30 @@ func (h *ProfileHandler) CreateProfile(c *gin.Context) {
 		return
 	}
 
-	// Get the user ID from the JWT token (set by auth middleware)
-	userIDStr, exists := c.Get(middleware.UserIDKey)
-	if !exists {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "User ID not found in context"})
-		return
-	}
+	var profileID uuid.UUID
+	var err error
 
-	profileID, err := uuid.Parse(userIDStr.(string))
-	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid user ID format"})
-		return
+	// TODO: Remove this temporary logic when access control is restored
+	// Try to get user ID from request body first (for open access), then from JWT context
+	if req.ID != nil && *req.ID != "" {
+		profileID, err = uuid.Parse(*req.ID)
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid profile ID format in request"})
+			return
+		}
+	} else {
+		// Fallback to JWT token (when auth middleware is present)
+		userIDStr, exists := c.Get(middleware.UserIDKey)
+		if !exists {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "Profile ID is required when not authenticated"})
+			return
+		}
+
+		profileID, err = uuid.Parse(userIDStr.(string))
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid user ID format"})
+			return
+		}
 	}
 
 	// Create the profile using the service

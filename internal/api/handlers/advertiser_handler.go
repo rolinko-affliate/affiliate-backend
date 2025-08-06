@@ -770,3 +770,31 @@ func (h *AdvertiserHandler) CompareAdvertiserWithEverflow(c *gin.Context) {
 
 	c.JSON(http.StatusOK, comparison)
 }
+
+// SyncAllAdvertisersToEverflow syncs all advertisers without Everflow mappings to Everflow
+// @Summary      Sync all advertisers to Everflow
+// @Description  Creates Everflow advertisers for all local advertisers that don't have provider mappings
+// @Tags         advertisers
+// @Produce      json
+// @Success      200      {object}  domain.BulkSyncResult           "Sync results"
+// @Failure      401      {object}  map[string]string               "Unauthorized"
+// @Failure      403      {object}  map[string]string               "Forbidden"
+// @Failure      500      {object}  map[string]string               "Internal server error"
+// @Security     BearerAuth
+// @Router       /advertisers/sync-all-to-everflow [post]
+func (h *AdvertiserHandler) SyncAllAdvertisersToEverflow(c *gin.Context) {
+	// Check if user has admin permissions
+	userRole, exists := c.Get("userRole")
+	if !exists || userRole != "Admin" {
+		c.JSON(http.StatusForbidden, gin.H{"error": "Admin access required"})
+		return
+	}
+
+	result, err := h.advertiserService.SyncAllAdvertisersToProvider(c.Request.Context(), "everflow")
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to sync advertisers to Everflow: " + err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, result)
+}

@@ -8,26 +8,22 @@ import (
 )
 
 func TestAffiliateMapping(t *testing.T) {
-	t.Run("placeholder tests for stubbed mappers", func(t *testing.T) {
-		// TODO: Implement proper tests when Everflow integration is fully implemented
-		// The mappers are currently stubbed out and return "not implemented" errors
-		// These tests should be updated when the actual Everflow API integration is completed
-
+	t.Run("mapper methods handle nil inputs correctly", func(t *testing.T) {
 		mapper := NewAffiliateProviderMapper()
 		assert.NotNil(t, mapper)
 
-		// Test that mapper methods exist and return expected errors for now
+		// Test that mapper methods exist and handle nil inputs properly
 		_, err := mapper.MapAffiliateToEverflowRequest(nil, nil)
 		assert.Error(t, err)
-		assert.Contains(t, err.Error(), "not implemented")
+		assert.Contains(t, err.Error(), "affiliate cannot be nil")
 
 		err = mapper.MapEverflowResponseToAffiliate(nil, nil)
 		assert.Error(t, err)
-		assert.Contains(t, err.Error(), "not implemented")
+		assert.Contains(t, err.Error(), "response and affiliate cannot be nil")
 
 		_, err = mapper.MapEverflowResponseToProviderData(nil)
 		assert.Error(t, err)
-		assert.Contains(t, err.Error(), "not implemented")
+		assert.Contains(t, err.Error(), "response cannot be nil")
 
 		err = mapper.MapEverflowResponseToProviderMapping(nil, nil)
 		assert.Error(t, err)
@@ -80,7 +76,4 @@ func TestStatusMapping(t *testing.T) {
 	})
 }
 
-// Helper functions for creating pointers
-func int32Ptr(i int32) *int32 {
-	return &i
-}
+

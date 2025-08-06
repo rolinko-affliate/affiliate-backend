@@ -73,7 +73,8 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 	// TODO: Add granular RBAC after implementing more detailed role permissions
 	profiles := v1.Group("/profiles")
 	{
-		profiles.POST("", opts.ProfileHandler.CreateProfile)
+		// TODO: Remove open access to CreateProfile - should have proper access control in production
+		profiles.POST("", opts.ProfileHandler.CreateProfile) // Temporarily without access control
 		profiles.POST("/upsert", opts.ProfileHandler.UpsertProfile)
 		profiles.PUT("/:id", opts.ProfileHandler.UpdateProfile) // TODO: Add user-specific access control
 		profiles.DELETE("/:id", opts.ProfileHandler.DeleteProfile) // TODO: Add appropriate RBAC restrictions
@@ -121,6 +122,7 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		advertisers.POST("/:id/sync-to-everflow", opts.AdvertiserHandler.SyncAdvertiserToEverflow)
 		advertisers.POST("/:id/sync-from-everflow", opts.AdvertiserHandler.SyncAdvertiserFromEverflow)
 		advertisers.GET("/:id/compare-with-everflow", opts.AdvertiserHandler.CompareAdvertiserWithEverflow)
+		advertisers.POST("/sync-all-to-everflow", rbacMW("Admin"), opts.AdvertiserHandler.SyncAllAdvertisersToEverflow)
 
 		// Advertiser's campaigns
 		advertisers.GET("/:id/campaigns", opts.CampaignHandler.ListCampaignsByAdvertiser)

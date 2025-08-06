@@ -37,6 +37,7 @@ func ProfileMiddleware(profileService service.ProfileService) gin.HandlerFunc {
 
 		// Set profile in context for handlers
 		c.Set("profile", profile)
+		c.Set(UserRoleKey, profile.RoleName) // Set user role for RBAC
 		if profile.OrganizationID != nil {
 			c.Set("organizationID", *profile.OrganizationID)
 		}

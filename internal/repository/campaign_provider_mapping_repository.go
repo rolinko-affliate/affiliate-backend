@@ -230,7 +230,7 @@ func (r *pgxCampaignProviderMappingRepository) ListCampaignProviderMappingsByCam
 	}
 	defer rows.Close()
 
-	var mappings []*domain.CampaignProviderMapping
+	mappings := make([]*domain.CampaignProviderMapping, 0)
 	for rows.Next() {
 		mapping := &domain.CampaignProviderMapping{}
 		var providerCampaignID sql.NullString

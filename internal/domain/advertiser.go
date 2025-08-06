@@ -133,6 +133,50 @@ type AdvertiserWithProviderData struct {
 	SyncStatus    string                  `json:"sync_status"` // 'synced', 'out_of_sync', 'not_synced', 'error'
 }
 
+// AdvertiserExtraInfo represents additional information for an advertiser organization
+type AdvertiserExtraInfo struct {
+	ExtraInfoID    int64     `json:"extra_info_id" db:"extra_info_id"`
+	OrganizationID int64     `json:"organization_id" db:"organization_id"`
+	Website        *string   `json:"website,omitempty" db:"website"`
+	WebsiteType    *string   `json:"website_type,omitempty" db:"website_type"` // 'shopify', 'amazon', 'shopline', 'tiktok_shop'
+	CompanySize    *string   `json:"company_size,omitempty" db:"company_size"`  // 'startup', 'small', 'medium', 'large', 'enterprise'
+	CreatedAt      time.Time `json:"created_at" db:"created_at"`
+	UpdatedAt      time.Time `json:"updated_at" db:"updated_at"`
+}
+
+// Validate validates the advertiser extra info data
+func (aei *AdvertiserExtraInfo) Validate() error {
+	if aei.OrganizationID <= 0 {
+		return fmt.Errorf("valid organization ID is required")
+	}
+	
+	if aei.WebsiteType != nil {
+		validTypes := map[string]bool{
+			"shopify": true, "amazon": true, "shopline": true, "tiktok_shop": true,
+		}
+		if !validTypes[*aei.WebsiteType] {
+			return fmt.Errorf("invalid website type: %s", *aei.WebsiteType)
+		}
+	}
+	
+	if aei.CompanySize != nil {
+		validSizes := map[string]bool{
+			"startup": true, "small": true, "medium": true, "large": true, "enterprise": true,
+		}
+		if !validSizes[*aei.CompanySize] {
+			return fmt.Errorf("invalid company size: %s", *aei.CompanySize)
+		}
+	}
+	
+	return nil
+}
+
+// AdvertiserWithExtraInfo represents an advertiser with its extra information
+type AdvertiserWithExtraInfo struct {
+	*Advertiser
+	ExtraInfo *AdvertiserExtraInfo `json:"extra_info,omitempty"`
+}
+
 // AdvertiserWithEverflowData is an alias for backward compatibility
 type AdvertiserWithEverflowData = AdvertiserWithProviderData
 

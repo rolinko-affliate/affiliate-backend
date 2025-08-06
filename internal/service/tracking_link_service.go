@@ -2,6 +2,7 @@ package service
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"time"
 
@@ -47,6 +48,7 @@ type trackingLinkService struct {
 	campaignProviderRepo     repository.CampaignProviderMappingRepository
 	affiliateProviderRepo    repository.AffiliateProviderMappingRepository
 	integrationService       provider.IntegrationService
+	orgAssociationService    OrganizationAssociationService
 }
 
 // NewTrackingLinkService creates a new tracking link service
@@ -58,6 +60,7 @@ func NewTrackingLinkService(
 	campaignProviderRepo repository.CampaignProviderMappingRepository,
 	affiliateProviderRepo repository.AffiliateProviderMappingRepository,
 	integrationService provider.IntegrationService,
+	orgAssociationService OrganizationAssociationService,
 ) TrackingLinkService {
 	return &trackingLinkService{
 		trackingLinkRepo:         trackingLinkRepo,
@@ -67,6 +70,7 @@ func NewTrackingLinkService(
 		campaignProviderRepo:     campaignProviderRepo,
 		affiliateProviderRepo:    affiliateProviderRepo,
 		integrationService:       integrationService,
+		orgAssociationService:    orgAssociationService,
 	}
 }
 
@@ -173,9 +177,16 @@ func (s *trackingLinkService) GenerateTrackingLink(ctx context.Context, req *dom
 	}
 
 	// Validate affiliate exists
-	_, err = s.affiliateRepo.GetAffiliateByID(ctx, req.AffiliateID)
+	affiliate, err := s.affiliateRepo.GetAffiliateByID(ctx, req.AffiliateID)
 	if err != nil {
 		return nil, fmt.Errorf("failed to get affiliate: %w", err)
+	}
+
+	// Verify that there's an active association between the advertiser and affiliate organizations
+	// and that the campaign and affiliate are visible to each other
+	err = s.verifyAssociationAndVisibility(ctx, campaign.OrganizationID, affiliate.OrganizationID, req.CampaignID, req.AffiliateID)
+	if err != nil {
+		return nil, fmt.Errorf("association verification failed: %w", err)
 	}
 
 	// Check if tracking link already exists with same parameters
@@ -441,6 +452,73 @@ func (s *trackingLinkService) validateTrackingLinkGenerationRequest(req *domain.
 
 	if req.AffiliateID <= 0 {
 		return fmt.Errorf("valid affiliate ID is required")
+	}
+
+	return nil
+}
+
+// verifyAssociationAndVisibility verifies that there's an active association between organizations
+// and that the campaign and affiliate are visible to each other
+func (s *trackingLinkService) verifyAssociationAndVisibility(ctx context.Context, advertiserOrgID, affiliateOrgID, campaignID, affiliateID int64) error {
+	// Get the association between the organizations
+	association, err := s.orgAssociationService.GetAssociationByOrganizations(ctx, advertiserOrgID, affiliateOrgID)
+	if err != nil {
+		return fmt.Errorf("no association found between organizations %d and %d: %w", advertiserOrgID, affiliateOrgID, err)
+	}
+
+	// Verify the association is active
+	if association.Status != "active" {
+		return fmt.Errorf("association between organizations %d and %d is not active (status: %s)", advertiserOrgID, affiliateOrgID, association.Status)
+	}
+
+	// Check if the campaign is visible to the affiliate organization
+	if !association.AllCampaignsVisible {
+		// Parse the visible campaign IDs from JSON
+		if association.VisibleCampaignIDs == nil {
+			return fmt.Errorf("campaign %d is not visible to affiliate organization %d (no visible campaigns configured)", campaignID, affiliateOrgID)
+		}
+		
+		var visibleCampaignIDs []int64
+		if err := json.Unmarshal([]byte(*association.VisibleCampaignIDs), &visibleCampaignIDs); err != nil {
+			return fmt.Errorf("failed to parse visible campaign IDs: %w", err)
+		}
+		
+		// Check if the specific campaign is in the visible list
+		campaignVisible := false
+		for _, visibleCampaignID := range visibleCampaignIDs {
+			if visibleCampaignID == campaignID {
+				campaignVisible = true
+				break
+			}
+		}
+		if !campaignVisible {
+			return fmt.Errorf("campaign %d is not visible to affiliate organization %d", campaignID, affiliateOrgID)
+		}
+	}
+
+	// Check if the affiliate is visible to the advertiser organization
+	if !association.AllAffiliatesVisible {
+		// Parse the visible affiliate IDs from JSON
+		if association.VisibleAffiliateIDs == nil {
+			return fmt.Errorf("affiliate %d is not visible to advertiser organization %d (no visible affiliates configured)", affiliateID, advertiserOrgID)
+		}
+		
+		var visibleAffiliateIDs []int64
+		if err := json.Unmarshal([]byte(*association.VisibleAffiliateIDs), &visibleAffiliateIDs); err != nil {
+			return fmt.Errorf("failed to parse visible affiliate IDs: %w", err)
+		}
+		
+		// Check if the specific affiliate is in the visible list
+		affiliateVisible := false
+		for _, visibleAffiliateID := range visibleAffiliateIDs {
+			if visibleAffiliateID == affiliateID {
+				affiliateVisible = true
+				break
+			}
+		}
+		if !affiliateVisible {
+			return fmt.Errorf("affiliate %d is not visible to advertiser organization %d", affiliateID, advertiserOrgID)
+		}
 	}
 
 	return nil

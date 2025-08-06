@@ -4,9 +4,9 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/gin-gonic/gin"
 	"github.com/affiliate-backend/internal/domain"
 	"github.com/affiliate-backend/internal/service"
+	"github.com/gin-gonic/gin"
 )
 
 // PublisherMessagingHandler handles HTTP requests for publisher messaging
@@ -34,7 +34,8 @@ func NewPublisherMessagingHandler(messagingService service.PublisherMessagingSer
 // @Failure 404 {object} ErrorResponse "Publisher or favorite list not found"
 // @Failure 409 {object} ErrorResponse "Active conversation with publisher already exists"
 // @Failure 500 {object} ErrorResponse "Internal server error"
-// @Router /api/v1/publisher-messaging/conversations [post]
+// @Security BearerAuth
+// @Router /publisher-messaging/conversations [post]
 func (h *PublisherMessagingHandler) CreateConversation(c *gin.Context) {
 	userOrgID, exists := c.Get("organizationID")
 	if !exists {
@@ -91,7 +92,8 @@ func (h *PublisherMessagingHandler) CreateConversation(c *gin.Context) {
 // @Success 200 {object} domain.ConversationListResponse "Conversations retrieved successfully"
 // @Failure 401 {object} ErrorResponse "Organization ID not found in context"
 // @Failure 500 {object} ErrorResponse "Internal server error"
-// @Router /api/v1/publisher-messaging/conversations [get]
+// @Security BearerAuth
+// @Router /publisher-messaging/conversations [get]
 func (h *PublisherMessagingHandler) GetConversations(c *gin.Context) {
 	userOrgID, exists := c.Get("organizationID")
 	if !exists {
@@ -130,7 +132,8 @@ func (h *PublisherMessagingHandler) GetConversations(c *gin.Context) {
 // @Failure 401 {object} ErrorResponse "Organization ID not found in context"
 // @Failure 404 {object} ErrorResponse "Conversation not found"
 // @Failure 500 {object} ErrorResponse "Internal server error"
-// @Router /api/v1/publisher-messaging/conversations/{conversation_id} [get]
+// @Security BearerAuth
+// @Router /publisher-messaging/conversations/{conversation_id} [get]
 func (h *PublisherMessagingHandler) GetConversation(c *gin.Context) {
 	userOrgID, exists := c.Get("organizationID")
 	if !exists {
@@ -184,7 +187,8 @@ func (h *PublisherMessagingHandler) GetConversation(c *gin.Context) {
 // @Failure 401 {object} ErrorResponse "Organization ID not found in context"
 // @Failure 404 {object} ErrorResponse "Conversation not found"
 // @Failure 500 {object} ErrorResponse "Internal server error"
-// @Router /api/v1/publisher-messaging/conversations/{conversation_id}/messages [post]
+// @Security BearerAuth
+// @Router /publisher-messaging/conversations/{conversation_id}/messages [post]
 func (h *PublisherMessagingHandler) AddMessage(c *gin.Context) {
 	userOrgID, exists := c.Get("organizationID")
 	if !exists {
@@ -247,7 +251,8 @@ func (h *PublisherMessagingHandler) AddMessage(c *gin.Context) {
 // @Failure 401 {object} ErrorResponse "Organization ID not found in context"
 // @Failure 404 {object} ErrorResponse "Conversation not found"
 // @Failure 500 {object} ErrorResponse "Internal server error"
-// @Router /api/v1/publisher-messaging/conversations/{conversation_id}/status [put]
+// @Security BearerAuth
+// @Router /publisher-messaging/conversations/{conversation_id}/status [put]
 func (h *PublisherMessagingHandler) UpdateConversationStatus(c *gin.Context) {
 	userOrgID, exists := c.Get("organizationID")
 	if !exists {
@@ -319,7 +324,8 @@ func (h *PublisherMessagingHandler) UpdateConversationStatus(c *gin.Context) {
 // @Failure 400 {object} ErrorResponse "Invalid request body or conversation ID"
 // @Failure 404 {object} ErrorResponse "Conversation not found"
 // @Failure 500 {object} ErrorResponse "Internal server error"
-// @Router /api/v1/publisher-messaging/conversations/{conversation_id}/external-messages [post]
+// @Security BearerAuth
+// @Router /publisher-messaging/conversations/{conversation_id}/external-messages [post]
 func (h *PublisherMessagingHandler) AddExternalMessage(c *gin.Context) {
 	conversationIDStr := c.Param("conversation_id")
 	conversationID, err := strconv.ParseInt(conversationIDStr, 10, 64)
@@ -373,7 +379,8 @@ func (h *PublisherMessagingHandler) AddExternalMessage(c *gin.Context) {
 // @Failure 401 {object} ErrorResponse "Organization ID not found in context"
 // @Failure 404 {object} ErrorResponse "Conversation not found"
 // @Failure 500 {object} ErrorResponse "Internal server error"
-// @Router /api/v1/publisher-messaging/conversations/{conversation_id} [delete]
+// @Security BearerAuth
+// @Router /publisher-messaging/conversations/{conversation_id} [delete]
 func (h *PublisherMessagingHandler) DeleteConversation(c *gin.Context) {
 	userOrgID, exists := c.Get("organizationID")
 	if !exists {

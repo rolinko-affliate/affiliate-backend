@@ -131,7 +131,7 @@ func (r *pgxAdvertiserProviderMappingRepository) GetMappingsByAdvertiserID(ctx c
 	}
 	defer rows.Close()
 
-	var mappings []*domain.AdvertiserProviderMapping
+	mappings := make([]*domain.AdvertiserProviderMapping, 0)
 	for rows.Next() {
 		var mapping domain.AdvertiserProviderMapping
 		var providerAdvertiserID, apiCredentials, providerConfig, providerData sql.NullString

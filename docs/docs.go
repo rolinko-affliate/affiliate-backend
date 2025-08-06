@@ -24,6 +24,511 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
+        "/advertiser-association-invitations": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "List advertiser association invitations with optional filters",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "advertiser-association-invitations"
+                ],
+                "summary": "List invitations",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Advertiser Organization ID",
+                        "name": "advertiser_org_id",
+                        "in": "query"
+                    },
+                    {
+                        "enum": [
+                            "active",
+                            "disabled",
+                            "expired"
+                        ],
+                        "type": "string",
+                        "description": "Invitation Status",
+                        "name": "status",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Created By User ID",
+                        "name": "created_by_user_id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "Include Expired Invitations",
+                        "name": "include_expired",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Limit",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Offset",
+                        "name": "offset",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/domain.AdvertiserAssociationInvitationWithDetails"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Create a new advertiser association invitation link",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "advertiser-association-invitations"
+                ],
+                "summary": "Create invitation",
+                "parameters": [
+                    {
+                        "description": "Create invitation request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.CreateInvitationRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/domain.AdvertiserAssociationInvitation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/advertiser-association-invitations/use": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Use an invitation link to create an organization association request",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "advertiser-association-invitations"
+                ],
+                "summary": "Use invitation",
+                "parameters": [
+                    {
+                        "description": "Use invitation request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.UseInvitationRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.UseInvitationResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/advertiser-association-invitations/{id}": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Get an advertiser association invitation by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "advertiser-association-invitations"
+                ],
+                "summary": "Get invitation",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Invitation ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.AdvertiserAssociationInvitationWithDetails"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Update an advertiser association invitation",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "advertiser-association-invitations"
+                ],
+                "summary": "Update invitation",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Invitation ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Update invitation request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.UpdateInvitationRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.AdvertiserAssociationInvitation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Delete an advertiser association invitation",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "advertiser-association-invitations"
+                ],
+                "summary": "Delete invitation",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Invitation ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/advertiser-association-invitations/{id}/link": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Generate a full invitation link for sharing",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "advertiser-association-invitations"
+                ],
+                "summary": "Generate invitation link",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Invitation ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Base URL (defaults to request host)",
+                        "name": "base_url",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/advertiser-association-invitations/{id}/usage-history": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Get usage history for an advertiser association invitation",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "advertiser-association-invitations"
+                ],
+                "summary": "Get invitation usage history",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Invitation ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Limit (default 50)",
+                        "name": "limit",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/domain.InvitationUsageLog"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/advertiser-provider-mappings": {
             "post": {
                 "security": [
@@ -275,6 +780,11 @@ const docTemplate = `{
         },
         "/advertisers/{advertiser_id}/campaigns": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Retrieve campaigns for a specific advertiser with pagination",
                 "produces": [
                     "application/json"
@@ -1420,6 +1930,11 @@ const docTemplate = `{
         },
         "/affiliates/{id}/tracking-links": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Retrieve a list of tracking links for a specific affiliate",
                 "produces": [
                     "application/json"
@@ -1485,8 +2000,942 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/v1/analytics/advertisers": {
+        "/agency-delegations": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "List agency delegations with optional filtering",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "agency-delegations"
+                ],
+                "summary": "List delegations",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Agency organization ID",
+                        "name": "agency_org_id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Advertiser organization ID",
+                        "name": "advertiser_org_id",
+                        "in": "query"
+                    },
+                    {
+                        "enum": [
+                            "pending",
+                            "active",
+                            "suspended",
+                            "revoked"
+                        ],
+                        "type": "string",
+                        "description": "Delegation status",
+                        "name": "status",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "default": false,
+                        "description": "Include expired delegations",
+                        "name": "include_expired",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "default": 50,
+                        "description": "Limit",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "default": 0,
+                        "description": "Offset",
+                        "name": "offset",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "default": false,
+                        "description": "Include organization and user details",
+                        "name": "with_details",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/domain.AgencyDelegation"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            },
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Create a new delegation from advertiser organization to agency organization",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "agency-delegations"
+                ],
+                "summary": "Create agency delegation",
+                "parameters": [
+                    {
+                        "description": "Create delegation request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.CreateDelegationRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/domain.AgencyDelegation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/agency-delegations/advertiser/{advertiser_org_id}": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Get all active delegations for an advertiser organization",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "agency-delegations"
+                ],
+                "summary": "Get advertiser delegations",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Advertiser organization ID",
+                        "name": "advertiser_org_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/domain.AgencyDelegation"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/agency-delegations/agency/{agency_org_id}": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Get all active delegations for an agency organization",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "agency-delegations"
+                ],
+                "summary": "Get agency delegations",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Agency organization ID",
+                        "name": "agency_org_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/domain.AgencyDelegation"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/agency-delegations/check-permissions": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Check if an agency has specific permissions for an advertiser organization",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "agency-delegations"
+                ],
+                "summary": "Check permissions",
+                "parameters": [
+                    {
+                        "description": "Permission check request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.PermissionCheckRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.PermissionCheckResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/agency-delegations/permissions": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Get all available delegation permissions",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "agency-delegations"
+                ],
+                "summary": "Get available permissions",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/agency-delegations/{id}": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Get an agency delegation by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "agency-delegations"
+                ],
+                "summary": "Get delegation",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Delegation ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "boolean",
+                        "default": false,
+                        "description": "Include organization and user details",
+                        "name": "with_details",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.AgencyDelegation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/agency-delegations/{id}/accept": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Accept a pending agency delegation",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "agency-delegations"
+                ],
+                "summary": "Accept delegation",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Delegation ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.AgencyDelegation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/agency-delegations/{id}/expiration": {
+            "put": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Update the expiration date of an agency delegation",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "agency-delegations"
+                ],
+                "summary": "Update delegation expiration",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Delegation ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Update expiration request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/handlers.UpdateExpirationRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.AgencyDelegation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/agency-delegations/{id}/permissions": {
+            "put": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Update the permissions of an agency delegation",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "agency-delegations"
+                ],
+                "summary": "Update delegation permissions",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Delegation ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Update permissions request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/handlers.UpdatePermissionsRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.AgencyDelegation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/agency-delegations/{id}/reactivate": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Reactivate a suspended agency delegation",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "agency-delegations"
+                ],
+                "summary": "Reactivate delegation",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Delegation ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.AgencyDelegation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/agency-delegations/{id}/reject": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Reject a pending agency delegation",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "agency-delegations"
+                ],
+                "summary": "Reject delegation",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Delegation ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.AgencyDelegation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/agency-delegations/{id}/revoke": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Revoke an agency delegation",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "agency-delegations"
+                ],
+                "summary": "Revoke delegation",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Delegation ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.AgencyDelegation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/agency-delegations/{id}/suspend": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Suspend an active agency delegation",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "agency-delegations"
+                ],
+                "summary": "Suspend delegation",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Delegation ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.AgencyDelegation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/analytics/advertisers": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Create a new advertiser analytics entry",
                 "consumes": [
                     "application/json"
@@ -1543,8 +2992,13 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/v1/analytics/advertisers/{id}": {
+        "/analytics/advertisers/{id}": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Retrieve detailed analytics data for a specific advertiser",
                 "consumes": [
                     "application/json"
@@ -1605,8 +3059,13 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/v1/analytics/affiliates": {
+        "/analytics/affiliates": {
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Create a new publisher analytics entry",
                 "consumes": [
                     "application/json"
@@ -1663,8 +3122,13 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/v1/analytics/affiliates/domain/{domain}": {
+        "/analytics/affiliates/domain/{domain}": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Retrieve detailed analytics data for a specific publisher (affiliate) by domain name",
                 "consumes": [
                     "application/json"
@@ -1725,8 +3189,13 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/v1/analytics/affiliates/{id}": {
+        "/analytics/affiliates/{id}": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Retrieve detailed analytics data for a specific publisher (affiliate)",
                 "consumes": [
                     "application/json"
@@ -1787,8 +3256,13 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/v1/analytics/autocomplete": {
+        "/analytics/autocomplete": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Search advertisers and/or publishers by domain name for autocompletion (minimum 3 characters)",
                 "consumes": [
                     "application/json"
@@ -1855,483 +3329,6 @@ const docTemplate = `{
                     },
                     "400": {
                         "description": "Bad request - invalid parameters",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    }
-                }
-            }
-        },
-        "/api/v1/favorite-publisher-lists/{list_id}/publishers/{domain}/status": {
-            "patch": {
-                "description": "Updates the status of a publisher in a favorite list (added -\u003e contacted -\u003e accepted)",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "favorite-publisher-lists"
-                ],
-                "summary": "Update publisher status in favorite list",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "List ID",
-                        "name": "list_id",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "type": "string",
-                        "description": "Publisher domain",
-                        "name": "domain",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "description": "Status update request",
-                        "name": "request",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/domain.UpdatePublisherStatusRequest"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Status updated successfully",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": true
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid request",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "404": {
-                        "description": "List or publisher not found",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    }
-                }
-            }
-        },
-        "/api/v1/publisher-messaging/conversations": {
-            "get": {
-                "description": "Retrieves a paginated list of conversations for the organization",
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "Publisher Messaging"
-                ],
-                "summary": "Get conversations for organization",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "Filter by conversation status (active, closed)",
-                        "name": "status",
-                        "in": "query"
-                    },
-                    {
-                        "type": "integer",
-                        "description": "Page number (default: 1)",
-                        "name": "page",
-                        "in": "query"
-                    },
-                    {
-                        "type": "integer",
-                        "description": "Page size (default: 20)",
-                        "name": "page_size",
-                        "in": "query"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Conversations retrieved successfully",
-                        "schema": {
-                            "$ref": "#/definitions/domain.ConversationListResponse"
-                        }
-                    },
-                    "401": {
-                        "description": "Organization ID not found in context",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    }
-                }
-            },
-            "post": {
-                "description": "Initiates a new conversation with a publisher from a favorite list",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "Publisher Messaging"
-                ],
-                "summary": "Create a new conversation with a publisher",
-                "parameters": [
-                    {
-                        "description": "Conversation creation request",
-                        "name": "request",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/domain.CreateConversationRequest"
-                        }
-                    }
-                ],
-                "responses": {
-                    "201": {
-                        "description": "Conversation created successfully",
-                        "schema": {
-                            "$ref": "#/definitions/domain.PublisherConversation"
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid request body or validation error",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "401": {
-                        "description": "Organization ID not found in context",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "404": {
-                        "description": "Publisher or favorite list not found",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "409": {
-                        "description": "Active conversation with publisher already exists",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    }
-                }
-            }
-        },
-        "/api/v1/publisher-messaging/conversations/{conversation_id}": {
-            "get": {
-                "description": "Retrieves a specific conversation along with its messages",
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "Publisher Messaging"
-                ],
-                "summary": "Get conversation with messages",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "Conversation ID",
-                        "name": "conversation_id",
-                        "in": "path",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Conversation retrieved successfully",
-                        "schema": {
-                            "$ref": "#/definitions/domain.ConversationWithMessagesResponse"
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid conversation ID",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "401": {
-                        "description": "Organization ID not found in context",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "404": {
-                        "description": "Conversation not found",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    }
-                }
-            },
-            "delete": {
-                "description": "Deletes a conversation and all associated messages",
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "Publisher Messaging"
-                ],
-                "summary": "Delete conversation",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "Conversation ID",
-                        "name": "conversation_id",
-                        "in": "path",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "204": {
-                        "description": "Conversation deleted successfully"
-                    },
-                    "400": {
-                        "description": "Invalid conversation ID",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "401": {
-                        "description": "Organization ID not found in context",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "404": {
-                        "description": "Conversation not found",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    }
-                }
-            }
-        },
-        "/api/v1/publisher-messaging/conversations/{conversation_id}/external-messages": {
-            "post": {
-                "description": "Allows external services to add messages to existing conversations (e.g., publisher replies)",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "Publisher Messaging"
-                ],
-                "summary": "Add external message to conversation",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "Conversation ID",
-                        "name": "conversation_id",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "description": "External message request",
-                        "name": "request",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/domain.AddExternalMessageRequest"
-                        }
-                    }
-                ],
-                "responses": {
-                    "201": {
-                        "description": "Message added successfully",
-                        "schema": {
-                            "$ref": "#/definitions/domain.PublisherMessage"
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid request body or conversation ID",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "404": {
-                        "description": "Conversation not found",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    }
-                }
-            }
-        },
-        "/api/v1/publisher-messaging/conversations/{conversation_id}/messages": {
-            "post": {
-                "description": "Adds a new message to an existing conversation",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "Publisher Messaging"
-                ],
-                "summary": "Add message to conversation",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "Conversation ID",
-                        "name": "conversation_id",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "description": "Message request",
-                        "name": "request",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/domain.SendMessageRequest"
-                        }
-                    }
-                ],
-                "responses": {
-                    "201": {
-                        "description": "Message added successfully",
-                        "schema": {
-                            "$ref": "#/definitions/domain.PublisherMessage"
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid request body or conversation ID",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "401": {
-                        "description": "Organization ID not found in context",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "404": {
-                        "description": "Conversation not found",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    }
-                }
-            }
-        },
-        "/api/v1/publisher-messaging/conversations/{conversation_id}/status": {
-            "put": {
-                "description": "Updates the status of a conversation (e.g., close conversation)",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "Publisher Messaging"
-                ],
-                "summary": "Update conversation status",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "Conversation ID",
-                        "name": "conversation_id",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "description": "Status update request",
-                        "name": "request",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/domain.UpdateConversationStatusRequest"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Conversation status updated successfully",
-                        "schema": {
-                            "$ref": "#/definitions/domain.PublisherConversation"
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid request body or conversation ID",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "401": {
-                        "description": "Organization ID not found in context",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "404": {
-                        "description": "Conversation not found",
                         "schema": {
                             "$ref": "#/definitions/handlers.ErrorResponse"
                         }
@@ -2723,6 +3720,11 @@ const docTemplate = `{
         },
         "/campaigns": {
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Create a new campaign with the provided details",
                 "consumes": [
                     "application/json"
@@ -2769,6 +3771,11 @@ const docTemplate = `{
         },
         "/campaigns/{id}": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Retrieve a campaign by its ID",
                 "produces": [
                     "application/json"
@@ -2814,6 +3821,11 @@ const docTemplate = `{
                 }
             },
             "put": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Update an existing campaign with the provided details",
                 "consumes": [
                     "application/json"
@@ -2871,6 +3883,11 @@ const docTemplate = `{
                 }
             },
             "delete": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Delete a campaign by its ID",
                 "tags": [
                     "campaigns"
@@ -2912,6 +3929,11 @@ const docTemplate = `{
         },
         "/campaigns/{id}/tracking-links": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Retrieve a list of tracking links for a specific campaign",
                 "produces": [
                     "application/json"
@@ -3591,6 +4613,84 @@ const docTemplate = `{
                 }
             }
         },
+        "/favorite-publisher-lists/{list_id}/publishers/{domain}/status": {
+            "patch": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Updates the status of a publisher in a favorite list (added -\u003e contacted -\u003e accepted)",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "favorite-publisher-lists"
+                ],
+                "summary": "Update publisher status in favorite list",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "List ID",
+                        "name": "list_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Publisher domain",
+                        "name": "domain",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Status update request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.UpdatePublisherStatusRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Status updated successfully",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "List or publisher not found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/health": {
             "get": {
                 "description": "Returns the health status of the API",
@@ -3609,6 +4709,656 @@ const docTemplate = `{
                             "additionalProperties": {
                                 "type": "string"
                             }
+                        }
+                    }
+                }
+            }
+        },
+        "/organization-associations": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "List organization associations with optional filtering",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "organization-associations"
+                ],
+                "summary": "List associations",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Advertiser organization ID",
+                        "name": "advertiser_org_id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Affiliate organization ID",
+                        "name": "affiliate_org_id",
+                        "in": "query"
+                    },
+                    {
+                        "enum": [
+                            "pending",
+                            "active",
+                            "suspended",
+                            "rejected"
+                        ],
+                        "type": "string",
+                        "description": "Association status",
+                        "name": "status",
+                        "in": "query"
+                    },
+                    {
+                        "enum": [
+                            "invitation",
+                            "request"
+                        ],
+                        "type": "string",
+                        "description": "Association type",
+                        "name": "association_type",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "default": 50,
+                        "description": "Limit",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "default": 0,
+                        "description": "Offset",
+                        "name": "offset",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "default": false,
+                        "description": "Include organization and user details",
+                        "name": "with_details",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/domain.OrganizationAssociation"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/organization-associations/invitations": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Create a new invitation from advertiser organization to affiliate organization",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "organization-associations"
+                ],
+                "summary": "Create invitation",
+                "parameters": [
+                    {
+                        "description": "Create invitation request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.CreateAssociationRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/domain.OrganizationAssociation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/organization-associations/requests": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Create a new request from affiliate organization to advertiser organization",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "organization-associations"
+                ],
+                "summary": "Create request",
+                "parameters": [
+                    {
+                        "description": "Create request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.CreateAssociationRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/domain.OrganizationAssociation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/organization-associations/{id}": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Get an organization association by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "organization-associations"
+                ],
+                "summary": "Get association",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Association ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "boolean",
+                        "default": false,
+                        "description": "Include organization and user details",
+                        "name": "with_details",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.OrganizationAssociation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/organization-associations/{id}/approve": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Approve a pending organization association",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "organization-associations"
+                ],
+                "summary": "Approve association",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Association ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.OrganizationAssociation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/organization-associations/{id}/reactivate": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Reactivate a suspended organization association",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "organization-associations"
+                ],
+                "summary": "Reactivate association",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Association ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.OrganizationAssociation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/organization-associations/{id}/reject": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Reject a pending organization association",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "organization-associations"
+                ],
+                "summary": "Reject association",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Association ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.OrganizationAssociation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/organization-associations/{id}/suspend": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Suspend an active organization association",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "organization-associations"
+                ],
+                "summary": "Suspend association",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Association ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.OrganizationAssociation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/organization-associations/{id}/visibility": {
+            "put": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Update the visibility settings of an organization association",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "organization-associations"
+                ],
+                "summary": "Update visibility",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Association ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Update visibility request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.UpdateAssociationRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.OrganizationAssociation"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
                         }
                     }
                 }
@@ -3673,7 +5423,7 @@ const docTemplate = `{
                         "BearerAuth": []
                     }
                 ],
-                "description": "Creates a new organization with the given name",
+                "description": "Creates a new organization with the given name and optional extra info. Requires JWT authentication.",
                 "consumes": [
                     "application/json"
                 ],
@@ -3711,8 +5461,8 @@ const docTemplate = `{
                             }
                         }
                     },
-                    "403": {
-                        "description": "Forbidden - Only admins can create organizations",
+                    "401": {
+                        "description": "Unauthorized - JWT token required",
                         "schema": {
                             "type": "object",
                             "additionalProperties": {
@@ -3732,6 +5482,146 @@ const docTemplate = `{
                 }
             }
         },
+        "/organizations/{advertiser_org_id}/visible-affiliates": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Get all affiliates from affiliate organizations that are visible to the specified advertiser organization based on active associations",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "organization-associations"
+                ],
+                "summary": "Get visible affiliates for advertiser",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Advertiser Organization ID",
+                        "name": "advertiser_org_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Filter by specific affiliate organization ID",
+                        "name": "affiliate_org_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/domain.Affiliate"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/organizations/{affiliate_org_id}/visible-campaigns": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Get all campaigns from advertiser organizations that are visible to the specified affiliate organization based on active associations",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "organization-associations"
+                ],
+                "summary": "Get visible campaigns for affiliate",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Affiliate Organization ID",
+                        "name": "affiliate_org_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Filter by specific advertiser organization ID",
+                        "name": "advertiser_org_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/domain.Campaign"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/organizations/{id}": {
             "get": {
                 "security": [
@@ -3739,7 +5629,7 @@ const docTemplate = `{
                         "BearerAuth": []
                     }
                 ],
-                "description": "Retrieves an organization by its ID",
+                "description": "Retrieves an organization by its ID, optionally with extra info",
                 "consumes": [
                     "application/json"
                 ],
@@ -3757,13 +5647,19 @@ const docTemplate = `{
                         "name": "id",
                         "in": "path",
                         "required": true
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "Include extra info (advertiser_extra_info or affiliate_extra_info)",
+                        "name": "with_extra",
+                        "in": "query"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Organization details",
+                        "description": "Organization details (with extra info)",
                         "schema": {
-                            "$ref": "#/definitions/domain.Organization"
+                            "$ref": "#/definitions/domain.OrganizationWithExtraInfo"
                         }
                     },
                     "400": {
@@ -4102,8 +5998,90 @@ const docTemplate = `{
                 }
             }
         },
+        "/organizations/{id}/associations": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Get all associations for a specific organization (advertiser or affiliate)",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "organization-associations"
+                ],
+                "summary": "Get associations for organization",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Organization ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "enum": [
+                            "pending",
+                            "active",
+                            "suspended",
+                            "rejected"
+                        ],
+                        "type": "string",
+                        "description": "Association status",
+                        "name": "status",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "default": false,
+                        "description": "Include organization and user details",
+                        "name": "with_details",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/domain.OrganizationAssociation"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/organizations/{organization_id}/campaigns": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Retrieve campaigns for a specific organization with pagination",
                 "produces": [
                     "application/json"
@@ -4157,6 +6135,11 @@ const docTemplate = `{
         },
         "/organizations/{organization_id}/tracking-links": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Retrieve a list of tracking links for a specific organization",
                 "produces": [
                     "application/json"
@@ -4222,6 +6205,11 @@ const docTemplate = `{
                 }
             },
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Create a new tracking link for a campaign and affiliate",
                 "consumes": [
                     "application/json"
@@ -4287,6 +6275,11 @@ const docTemplate = `{
         },
         "/organizations/{organization_id}/tracking-links/generate": {
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Generate a new tracking link with provider integration for a campaign and affiliate",
                 "consumes": [
                     "application/json"
@@ -4352,6 +6345,11 @@ const docTemplate = `{
         },
         "/organizations/{organization_id}/tracking-links/{tracking_link_id}": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Retrieve a tracking link by its ID",
                 "produces": [
                     "application/json"
@@ -4416,6 +6414,11 @@ const docTemplate = `{
                 }
             },
             "put": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Update an existing tracking link",
                 "consumes": [
                     "application/json"
@@ -4492,6 +6495,11 @@ const docTemplate = `{
                 }
             },
             "delete": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Delete a tracking link by its ID",
                 "tags": [
                     "tracking-links"
@@ -4552,6 +6560,11 @@ const docTemplate = `{
         },
         "/organizations/{organization_id}/tracking-links/{tracking_link_id}/qr": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Generate and return a QR code image for a tracking link",
                 "produces": [
                     "image/png"
@@ -4618,6 +6631,11 @@ const docTemplate = `{
         },
         "/organizations/{organization_id}/tracking-links/{tracking_link_id}/regenerate": {
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Regenerate an existing tracking link with provider integration",
                 "produces": [
                     "application/json"
@@ -4928,6 +6946,50 @@ const docTemplate = `{
                 }
             }
         },
+        "/public/invitations/{token}": {
+            "get": {
+                "description": "Get an advertiser association invitation by token (public endpoint for invitation links)",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "advertiser-association-invitations"
+                ],
+                "summary": "Get invitation by token",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Invitation Token",
+                        "name": "token",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.AdvertiserAssociationInvitationWithDetails"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/public/webhooks/supabase/new-user": {
             "post": {
                 "description": "Process webhook from Supabase when a new user is created",
@@ -4978,6 +7040,445 @@ const docTemplate = `{
                             "additionalProperties": {
                                 "type": "string"
                             }
+                        }
+                    }
+                }
+            }
+        },
+        "/publisher-messaging/conversations": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Retrieves a paginated list of conversations for the organization",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Publisher Messaging"
+                ],
+                "summary": "Get conversations for organization",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Filter by conversation status (active, closed)",
+                        "name": "status",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Page number (default: 1)",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Page size (default: 20)",
+                        "name": "page_size",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Conversations retrieved successfully",
+                        "schema": {
+                            "$ref": "#/definitions/domain.ConversationListResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Organization ID not found in context",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Initiates a new conversation with a publisher from a favorite list",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Publisher Messaging"
+                ],
+                "summary": "Create a new conversation with a publisher",
+                "parameters": [
+                    {
+                        "description": "Conversation creation request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.CreateConversationRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Conversation created successfully",
+                        "schema": {
+                            "$ref": "#/definitions/domain.PublisherConversation"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request body or validation error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Organization ID not found in context",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Publisher or favorite list not found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Active conversation with publisher already exists",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/publisher-messaging/conversations/{conversation_id}": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Retrieves a specific conversation along with its messages",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Publisher Messaging"
+                ],
+                "summary": "Get conversation with messages",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Conversation ID",
+                        "name": "conversation_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Conversation retrieved successfully",
+                        "schema": {
+                            "$ref": "#/definitions/domain.ConversationWithMessagesResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid conversation ID",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Organization ID not found in context",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Conversation not found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Deletes a conversation and all associated messages",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Publisher Messaging"
+                ],
+                "summary": "Delete conversation",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Conversation ID",
+                        "name": "conversation_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Conversation deleted successfully"
+                    },
+                    "400": {
+                        "description": "Invalid conversation ID",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Organization ID not found in context",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Conversation not found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/publisher-messaging/conversations/{conversation_id}/external-messages": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Allows external services to add messages to existing conversations (e.g., publisher replies)",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Publisher Messaging"
+                ],
+                "summary": "Add external message to conversation",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Conversation ID",
+                        "name": "conversation_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "External message request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.AddExternalMessageRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Message added successfully",
+                        "schema": {
+                            "$ref": "#/definitions/domain.PublisherMessage"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request body or conversation ID",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Conversation not found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/publisher-messaging/conversations/{conversation_id}/messages": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Adds a new message to an existing conversation",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Publisher Messaging"
+                ],
+                "summary": "Add message to conversation",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Conversation ID",
+                        "name": "conversation_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Message request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.SendMessageRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Message added successfully",
+                        "schema": {
+                            "$ref": "#/definitions/domain.PublisherMessage"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request body or conversation ID",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Organization ID not found in context",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Conversation not found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/publisher-messaging/conversations/{conversation_id}/status": {
+            "put": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Updates the status of a conversation (e.g., close conversation)",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Publisher Messaging"
+                ],
+                "summary": "Update conversation status",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Conversation ID",
+                        "name": "conversation_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Status update request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.UpdateConversationStatusRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Conversation status updated successfully",
+                        "schema": {
+                            "$ref": "#/definitions/domain.PublisherConversation"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request body or conversation ID",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Organization ID not found in context",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Conversation not found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
                         }
                     }
                 }
@@ -5176,6 +7677,189 @@ const docTemplate = `{
                 }
             }
         },
+        "domain.AdvertiserAssociationInvitation": {
+            "type": "object",
+            "properties": {
+                "advertiser_org_id": {
+                    "type": "integer"
+                },
+                "allowed_affiliate_org_ids": {
+                    "description": "Access control",
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "created_by_user_id": {
+                    "type": "string"
+                },
+                "current_uses": {
+                    "type": "integer"
+                },
+                "default_all_affiliates_visible": {
+                    "description": "Default visibility settings for associations created through this invitation",
+                    "type": "boolean"
+                },
+                "default_all_campaigns_visible": {
+                    "type": "boolean"
+                },
+                "default_visible_affiliate_ids": {
+                    "description": "JSONB array",
+                    "type": "string"
+                },
+                "default_visible_campaign_ids": {
+                    "description": "JSONB array",
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "expires_at": {
+                    "description": "Expiration",
+                    "type": "string"
+                },
+                "invitation_id": {
+                    "type": "integer"
+                },
+                "invitation_token": {
+                    "type": "string"
+                },
+                "max_uses": {
+                    "description": "Usage limits",
+                    "type": "integer"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "status": {
+                    "description": "Status and metadata",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/domain.InvitationStatus"
+                        }
+                    ]
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.AdvertiserAssociationInvitationWithDetails": {
+            "type": "object",
+            "properties": {
+                "advertiser_org_id": {
+                    "type": "integer"
+                },
+                "advertiser_organization": {
+                    "$ref": "#/definitions/domain.Organization"
+                },
+                "allowed_affiliate_org_ids": {
+                    "description": "Access control",
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "created_by_user": {
+                    "$ref": "#/definitions/domain.Profile"
+                },
+                "created_by_user_id": {
+                    "type": "string"
+                },
+                "current_uses": {
+                    "type": "integer"
+                },
+                "default_all_affiliates_visible": {
+                    "description": "Default visibility settings for associations created through this invitation",
+                    "type": "boolean"
+                },
+                "default_all_campaigns_visible": {
+                    "type": "boolean"
+                },
+                "default_visible_affiliate_ids": {
+                    "description": "JSONB array",
+                    "type": "string"
+                },
+                "default_visible_campaign_ids": {
+                    "description": "JSONB array",
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "expires_at": {
+                    "description": "Expiration",
+                    "type": "string"
+                },
+                "invitation_id": {
+                    "type": "integer"
+                },
+                "invitation_token": {
+                    "type": "string"
+                },
+                "max_uses": {
+                    "description": "Usage limits",
+                    "type": "integer"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "recent_usages": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.InvitationUsageLog"
+                    }
+                },
+                "status": {
+                    "description": "Status and metadata",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/domain.InvitationStatus"
+                        }
+                    ]
+                },
+                "updated_at": {
+                    "type": "string"
+                },
+                "usage_count": {
+                    "type": "integer"
+                }
+            }
+        },
+        "domain.AdvertiserExtraInfo": {
+            "type": "object",
+            "properties": {
+                "company_size": {
+                    "description": "'startup', 'small', 'medium', 'large', 'enterprise'",
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "extra_info_id": {
+                    "type": "integer"
+                },
+                "organization_id": {
+                    "type": "integer"
+                },
+                "updated_at": {
+                    "type": "string"
+                },
+                "website": {
+                    "type": "string"
+                },
+                "website_type": {
+                    "description": "'shopify', 'amazon', 'shopline', 'tiktok_shop'",
+                    "type": "string"
+                }
+            }
+        },
         "domain.AdvertiserProviderMapping": {
             "type": "object",
             "properties": {
@@ -5275,6 +7959,36 @@ const docTemplate = `{
                 }
             }
         },
+        "domain.AffiliateExtraInfo": {
+            "type": "object",
+            "properties": {
+                "affiliate_type": {
+                    "description": "'cashback', 'blog', 'incentive', 'content', 'forum', 'sub_affiliate_network'",
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "extra_info_id": {
+                    "type": "integer"
+                },
+                "logo_url": {
+                    "type": "string"
+                },
+                "organization_id": {
+                    "type": "integer"
+                },
+                "self_description": {
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
+                },
+                "website": {
+                    "type": "string"
+                }
+            }
+        },
         "domain.AffiliateNetworkData": {
             "type": "object",
             "properties": {
@@ -5336,6 +8050,52 @@ const docTemplate = `{
                 "sync_status": {
                     "description": "Synchronization metadata",
                     "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.AgencyDelegation": {
+            "type": "object",
+            "properties": {
+                "accepted_at": {
+                    "type": "string"
+                },
+                "accepted_by_user_id": {
+                    "description": "UUID of agency user who accepted delegation",
+                    "type": "string"
+                },
+                "advertiser_org_id": {
+                    "type": "integer"
+                },
+                "agency_org_id": {
+                    "type": "integer"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "delegated_by_user_id": {
+                    "description": "Delegation metadata",
+                    "type": "string"
+                },
+                "delegation_id": {
+                    "type": "integer"
+                },
+                "expires_at": {
+                    "description": "Expiration settings",
+                    "type": "string"
+                },
+                "message": {
+                    "description": "Optional message with delegation",
+                    "type": "string"
+                },
+                "permissions": {
+                    "description": "Permissions granted to the agency (JSONB array of permission strings)",
+                    "type": "string"
+                },
+                "status": {
+                    "$ref": "#/definitions/domain.DelegationStatus"
                 },
                 "updated_at": {
                     "type": "string"
@@ -5497,6 +8257,36 @@ const docTemplate = `{
                     }
                 }
             }
+        },
+        "domain.AssociationStatus": {
+            "type": "string",
+            "enum": [
+                "pending",
+                "active",
+                "suspended",
+                "rejected"
+            ],
+            "x-enum-varnames": [
+                "AssociationStatusPending",
+                "AssociationStatusActive",
+                "AssociationStatusSuspended",
+                "AssociationStatusRejected"
+            ]
+        },
+        "domain.AssociationType": {
+            "type": "string",
+            "enum": [
+                "invitation",
+                "request"
+            ],
+            "x-enum-comments": {
+                "AssociationTypeInvitation": "Advertiser invites affiliate",
+                "AssociationTypeRequest": "Affiliate requests to join advertiser"
+            },
+            "x-enum-varnames": [
+                "AssociationTypeInvitation",
+                "AssociationTypeRequest"
+            ]
         },
         "domain.AutocompleteResult": {
             "type": "object",
@@ -5776,6 +8566,122 @@ const docTemplate = `{
                 }
             }
         },
+        "domain.Campaign": {
+            "type": "object",
+            "properties": {
+                "advertiser_id": {
+                    "type": "integer"
+                },
+                "campaign_id": {
+                    "type": "integer"
+                },
+                "conversion_method": {
+                    "description": "'server_postback', 'pixel', etc.",
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "currency_id": {
+                    "description": "'USD', 'EUR', etc.",
+                    "type": "string"
+                },
+                "daily_click_cap": {
+                    "type": "integer"
+                },
+                "daily_conversion_cap": {
+                    "type": "integer"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "destination_url": {
+                    "description": "Core campaign fields (provider-agnostic)",
+                    "type": "string"
+                },
+                "end_date": {
+                    "type": "string"
+                },
+                "fixed_click_amount": {
+                    "description": "Fixed amount paid to affiliates per click",
+                    "type": "number"
+                },
+                "fixed_conversion_amount": {
+                    "description": "Fixed amount paid to affiliates per conversion",
+                    "type": "number"
+                },
+                "fixed_revenue": {
+                    "description": "Simplified billing configuration",
+                    "type": "number"
+                },
+                "global_click_cap": {
+                    "type": "integer"
+                },
+                "global_conversion_cap": {
+                    "type": "integer"
+                },
+                "internal_notes": {
+                    "type": "string"
+                },
+                "is_caps_enabled": {
+                    "description": "Caps and limits",
+                    "type": "boolean"
+                },
+                "monthly_click_cap": {
+                    "type": "integer"
+                },
+                "monthly_conversion_cap": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "organization_id": {
+                    "type": "integer"
+                },
+                "percentage_conversion_amount": {
+                    "description": "Percentage of revenue paid to affiliates per conversion (0-100)",
+                    "type": "number"
+                },
+                "preview_url": {
+                    "type": "string"
+                },
+                "session_definition": {
+                    "description": "'cookie', 'ip', 'fingerprint'",
+                    "type": "string"
+                },
+                "session_duration": {
+                    "description": "in hours",
+                    "type": "integer"
+                },
+                "start_date": {
+                    "type": "string"
+                },
+                "status": {
+                    "description": "'draft', 'active', 'paused', 'archived'",
+                    "type": "string"
+                },
+                "terms_and_conditions": {
+                    "type": "string"
+                },
+                "thumbnail_url": {
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
+                },
+                "visibility": {
+                    "description": "'public', 'require_approval', 'private'",
+                    "type": "string"
+                },
+                "weekly_click_cap": {
+                    "type": "integer"
+                },
+                "weekly_conversion_cap": {
+                    "type": "integer"
+                }
+            }
+        },
         "domain.ContactEmailData": {
             "type": "object",
             "properties": {
@@ -5891,6 +8797,48 @@ const docTemplate = `{
                 }
             }
         },
+        "domain.CreateAssociationRequest": {
+            "type": "object",
+            "required": [
+                "advertiser_org_id",
+                "affiliate_org_id",
+                "association_type"
+            ],
+            "properties": {
+                "advertiser_org_id": {
+                    "type": "integer"
+                },
+                "affiliate_org_id": {
+                    "type": "integer"
+                },
+                "all_affiliates_visible": {
+                    "type": "boolean"
+                },
+                "all_campaigns_visible": {
+                    "type": "boolean"
+                },
+                "association_type": {
+                    "$ref": "#/definitions/domain.AssociationType"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "visible_affiliate_ids": {
+                    "description": "For invitations from advertiser",
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "visible_campaign_ids": {
+                    "description": "For requests from affiliate",
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                }
+            }
+        },
         "domain.CreateConversationRequest": {
             "type": "object",
             "required": [
@@ -5919,6 +8867,34 @@ const docTemplate = `{
                 }
             }
         },
+        "domain.CreateDelegationRequest": {
+            "type": "object",
+            "required": [
+                "advertiser_org_id",
+                "agency_org_id",
+                "permissions"
+            ],
+            "properties": {
+                "advertiser_org_id": {
+                    "type": "integer"
+                },
+                "agency_org_id": {
+                    "type": "integer"
+                },
+                "expires_at": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "permissions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.DelegationPermission"
+                    }
+                }
+            }
+        },
         "domain.CreateFavoritePublisherListRequest": {
             "type": "object",
             "required": [
@@ -5933,6 +8909,57 @@ const docTemplate = `{
                     "type": "string",
                     "maxLength": 255,
                     "minLength": 1
+                }
+            }
+        },
+        "domain.CreateInvitationRequest": {
+            "type": "object",
+            "required": [
+                "advertiser_org_id",
+                "name"
+            ],
+            "properties": {
+                "advertiser_org_id": {
+                    "type": "integer"
+                },
+                "allowed_affiliate_org_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "default_all_affiliates_visible": {
+                    "type": "boolean"
+                },
+                "default_all_campaigns_visible": {
+                    "type": "boolean"
+                },
+                "default_visible_affiliate_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "default_visible_campaign_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "description": {
+                    "type": "string"
+                },
+                "expires_at": {
+                    "type": "string"
+                },
+                "max_uses": {
+                    "type": "integer"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
                 }
             }
         },
@@ -5953,6 +8980,60 @@ const docTemplate = `{
                     "type": "boolean"
                 }
             }
+        },
+        "domain.DelegationPermission": {
+            "type": "string",
+            "enum": [
+                "campaign_create",
+                "campaign_manage",
+                "campaign_view",
+                "campaign_delete",
+                "association_invite",
+                "association_manage",
+                "association_view",
+                "invitation_create",
+                "invitation_manage",
+                "invitation_view",
+                "analytics_view",
+                "analytics_export",
+                "billing_view",
+                "billing_manage",
+                "organization_view",
+                "organization_manage"
+            ],
+            "x-enum-varnames": [
+                "PermissionCampaignCreate",
+                "PermissionCampaignManage",
+                "PermissionCampaignView",
+                "PermissionCampaignDelete",
+                "PermissionAssociationInvite",
+                "PermissionAssociationManage",
+                "PermissionAssociationView",
+                "PermissionInvitationCreate",
+                "PermissionInvitationManage",
+                "PermissionInvitationView",
+                "PermissionAnalyticsView",
+                "PermissionAnalyticsExport",
+                "PermissionBillingView",
+                "PermissionBillingManage",
+                "PermissionOrganizationView",
+                "PermissionOrganizationManage"
+            ]
+        },
+        "domain.DelegationStatus": {
+            "type": "string",
+            "enum": [
+                "pending",
+                "active",
+                "suspended",
+                "revoked"
+            ],
+            "x-enum-varnames": [
+                "DelegationStatusPending",
+                "DelegationStatusActive",
+                "DelegationStatusSuspended",
+                "DelegationStatusRevoked"
+            ]
         },
         "domain.FavoritePublisherList": {
             "type": "object",
@@ -6011,6 +9092,55 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "status": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.InvitationStatus": {
+            "type": "string",
+            "enum": [
+                "active",
+                "disabled",
+                "expired"
+            ],
+            "x-enum-varnames": [
+                "InvitationStatusActive",
+                "InvitationStatusDisabled",
+                "InvitationStatusExpired"
+            ]
+        },
+        "domain.InvitationUsageLog": {
+            "type": "object",
+            "properties": {
+                "affiliate_org_id": {
+                    "type": "integer"
+                },
+                "association_id": {
+                    "type": "integer"
+                },
+                "error_message": {
+                    "type": "string"
+                },
+                "invitation_id": {
+                    "type": "integer"
+                },
+                "ip_address": {
+                    "description": "Usage metadata",
+                    "type": "string"
+                },
+                "success": {
+                    "type": "boolean"
+                },
+                "usage_id": {
+                    "type": "integer"
+                },
+                "used_at": {
+                    "type": "string"
+                },
+                "used_by_user_id": {
+                    "type": "string"
+                },
+                "user_agent": {
                     "type": "string"
                 }
             }
@@ -6212,18 +9342,102 @@ const docTemplate = `{
                 }
             }
         },
+        "domain.OrganizationAssociation": {
+            "type": "object",
+            "properties": {
+                "advertiser_org_id": {
+                    "type": "integer"
+                },
+                "affiliate_org_id": {
+                    "type": "integer"
+                },
+                "all_affiliates_visible": {
+                    "description": "Default visibility flags (when true, all affiliates/campaigns are visible)",
+                    "type": "boolean"
+                },
+                "all_campaigns_visible": {
+                    "type": "boolean"
+                },
+                "approved_at": {
+                    "type": "string"
+                },
+                "approved_by_user_id": {
+                    "description": "UUID of user who approved",
+                    "type": "string"
+                },
+                "association_id": {
+                    "type": "integer"
+                },
+                "association_type": {
+                    "$ref": "#/definitions/domain.AssociationType"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "message": {
+                    "description": "Optional message with request/invitation",
+                    "type": "string"
+                },
+                "requested_by_user_id": {
+                    "description": "Request/invitation metadata",
+                    "type": "string"
+                },
+                "status": {
+                    "$ref": "#/definitions/domain.AssociationStatus"
+                },
+                "updated_at": {
+                    "type": "string"
+                },
+                "visible_affiliate_ids": {
+                    "description": "Visibility settings - JSON arrays of IDs",
+                    "type": "string"
+                },
+                "visible_campaign_ids": {
+                    "description": "JSONB array of campaign IDs visible to affiliate",
+                    "type": "string"
+                }
+            }
+        },
         "domain.OrganizationType": {
             "type": "string",
             "enum": [
                 "advertiser",
                 "affiliate",
-                "platform_owner"
+                "platform_owner",
+                "agency"
             ],
             "x-enum-varnames": [
                 "OrganizationTypeAdvertiser",
                 "OrganizationTypeAffiliate",
-                "OrganizationTypePlatformOwner"
+                "OrganizationTypePlatformOwner",
+                "OrganizationTypeAgency"
             ]
+        },
+        "domain.OrganizationWithExtraInfo": {
+            "type": "object",
+            "properties": {
+                "advertiser_extra_info": {
+                    "$ref": "#/definitions/domain.AdvertiserExtraInfo"
+                },
+                "affiliate_extra_info": {
+                    "$ref": "#/definitions/domain.AffiliateExtraInfo"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "organization_id": {
+                    "type": "integer"
+                },
+                "type": {
+                    "$ref": "#/definitions/domain.OrganizationType"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
         },
         "domain.PaymentDetails": {
             "type": "object",
@@ -6337,6 +9551,48 @@ const docTemplate = `{
                 "PaymentTypeCrypto",
                 "PaymentTypeOther"
             ]
+        },
+        "domain.PermissionCheckRequest": {
+            "type": "object",
+            "required": [
+                "advertiser_org_id",
+                "agency_org_id",
+                "permissions"
+            ],
+            "properties": {
+                "advertiser_org_id": {
+                    "type": "integer"
+                },
+                "agency_org_id": {
+                    "type": "integer"
+                },
+                "permissions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.DelegationPermission"
+                    }
+                }
+            }
+        },
+        "domain.PermissionCheckResponse": {
+            "type": "object",
+            "properties": {
+                "delegation_status": {
+                    "$ref": "#/definitions/domain.DelegationStatus"
+                },
+                "has_permissions": {
+                    "type": "boolean"
+                },
+                "is_expired": {
+                    "type": "boolean"
+                },
+                "permission_results": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "boolean"
+                    }
+                }
+            }
         },
         "domain.Profile": {
             "type": "object",
@@ -6721,6 +9977,32 @@ const docTemplate = `{
                 "TransactionTypeTransfer"
             ]
         },
+        "domain.UpdateAssociationRequest": {
+            "type": "object",
+            "properties": {
+                "all_affiliates_visible": {
+                    "type": "boolean"
+                },
+                "all_campaigns_visible": {
+                    "type": "boolean"
+                },
+                "status": {
+                    "$ref": "#/definitions/domain.AssociationStatus"
+                },
+                "visible_affiliate_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "visible_campaign_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                }
+            }
+        },
         "domain.UpdateBillingConfigRequest": {
             "type": "object",
             "properties": {
@@ -6777,6 +10059,53 @@ const docTemplate = `{
                 }
             }
         },
+        "domain.UpdateInvitationRequest": {
+            "type": "object",
+            "properties": {
+                "allowed_affiliate_org_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "default_all_affiliates_visible": {
+                    "type": "boolean"
+                },
+                "default_all_campaigns_visible": {
+                    "type": "boolean"
+                },
+                "default_visible_affiliate_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "default_visible_campaign_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "description": {
+                    "type": "string"
+                },
+                "expires_at": {
+                    "type": "string"
+                },
+                "max_uses": {
+                    "type": "integer"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "status": {
+                    "$ref": "#/definitions/domain.InvitationStatus"
+                }
+            }
+        },
         "domain.UpdatePublisherInListRequest": {
             "type": "object",
             "properties": {
@@ -6799,6 +10128,47 @@ const docTemplate = `{
                         "contacted",
                         "accepted"
                     ]
+                }
+            }
+        },
+        "domain.UseInvitationRequest": {
+            "type": "object",
+            "required": [
+                "affiliate_org_id",
+                "invitation_token"
+            ],
+            "properties": {
+                "affiliate_org_id": {
+                    "type": "integer"
+                },
+                "invitation_token": {
+                    "type": "string"
+                },
+                "ip_address": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "user_agent": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.UseInvitationResponse": {
+            "type": "object",
+            "properties": {
+                "association": {
+                    "$ref": "#/definitions/domain.OrganizationAssociation"
+                },
+                "error_message": {
+                    "type": "string"
+                },
+                "invitation": {
+                    "$ref": "#/definitions/domain.AdvertiserAssociationInvitation"
+                },
+                "success": {
+                    "type": "boolean"
                 }
             }
         },
@@ -6838,6 +10208,60 @@ const docTemplate = `{
                             }
                         }
                     }
+                }
+            }
+        },
+        "handlers.AdvertiserExtraInfoRequest": {
+            "type": "object",
+            "properties": {
+                "company_size": {
+                    "type": "string",
+                    "enum": [
+                        "startup",
+                        "small",
+                        "medium",
+                        "large",
+                        "enterprise"
+                    ]
+                },
+                "website": {
+                    "type": "string"
+                },
+                "website_type": {
+                    "type": "string",
+                    "enum": [
+                        "shopify",
+                        "amazon",
+                        "shopline",
+                        "tiktok_shop",
+                        "other"
+                    ]
+                }
+            }
+        },
+        "handlers.AffiliateExtraInfoRequest": {
+            "type": "object",
+            "properties": {
+                "affiliate_type": {
+                    "type": "string",
+                    "enum": [
+                        "cashback",
+                        "blog",
+                        "incentive",
+                        "content",
+                        "forum",
+                        "sub_affiliate_network",
+                        "other"
+                    ]
+                },
+                "logo_url": {
+                    "type": "string"
+                },
+                "self_description": {
+                    "type": "string"
+                },
+                "website": {
+                    "type": "string"
                 }
             }
         },
@@ -6996,6 +10420,18 @@ const docTemplate = `{
                 "type"
             ],
             "properties": {
+                "advertiser_extra_info": {
+                    "$ref": "#/definitions/handlers.AdvertiserExtraInfoRequest"
+                },
+                "affiliate_extra_info": {
+                    "$ref": "#/definitions/handlers.AffiliateExtraInfoRequest"
+                },
+                "contact_email": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
                 "name": {
                     "type": "string"
                 },
@@ -7004,7 +10440,8 @@ const docTemplate = `{
                     "enum": [
                         "advertiser",
                         "affiliate",
-                        "platform_owner"
+                        "platform_owner",
+                        "agency"
                     ]
                 }
             }
@@ -7131,6 +10568,14 @@ const docTemplate = `{
                 }
             }
         },
+        "handlers.UpdateExpirationRequest": {
+            "type": "object",
+            "properties": {
+                "expires_at": {
+                    "type": "string"
+                }
+            }
+        },
         "handlers.UpdateOrganizationRequest": {
             "type": "object",
             "required": [
@@ -7138,6 +10583,18 @@ const docTemplate = `{
                 "type"
             ],
             "properties": {
+                "advertiser_extra_info": {
+                    "$ref": "#/definitions/handlers.AdvertiserExtraInfoRequest"
+                },
+                "affiliate_extra_info": {
+                    "$ref": "#/definitions/handlers.AffiliateExtraInfoRequest"
+                },
+                "contact_email": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
                 "name": {
                     "type": "string"
                 },
@@ -7146,8 +10603,23 @@ const docTemplate = `{
                     "enum": [
                         "advertiser",
                         "affiliate",
-                        "platform_owner"
+                        "platform_owner",
+                        "agency"
                     ]
+                }
+            }
+        },
+        "handlers.UpdatePermissionsRequest": {
+            "type": "object",
+            "required": [
+                "permissions"
+            ],
+            "properties": {
+                "permissions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.DelegationPermission"
+                    }
                 }
             }
         },

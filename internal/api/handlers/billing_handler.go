@@ -48,12 +48,12 @@ func (h *BillingHandler) validateBillingAccess(userProfile *domain.Profile) (int
 // @Tags billing
 // @Accept json
 // @Produce json
-// @Security BearerAuth
 // @Success 200 {object} domain.BillingDashboardResponse
 // @Failure 400 {object} ErrorResponse
 // @Failure 401 {object} ErrorResponse
 // @Failure 403 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /billing/dashboard [get]
 func (h *BillingHandler) GetBillingDashboard(c *gin.Context) {
 	// Get user profile from context (set by auth middleware)
@@ -97,13 +97,13 @@ func (h *BillingHandler) GetBillingDashboard(c *gin.Context) {
 // @Tags billing
 // @Accept json
 // @Produce json
-// @Security BearerAuth
 // @Param request body domain.CreatePaymentMethodRequest true "Payment method details"
 // @Success 201 {object} domain.StripePaymentMethod
 // @Failure 400 {object} ErrorResponse
 // @Failure 401 {object} ErrorResponse
 // @Failure 403 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /billing/payment-methods [post]
 func (h *BillingHandler) AddPaymentMethod(c *gin.Context) {
 	// Get user profile from context
@@ -157,7 +157,6 @@ func (h *BillingHandler) AddPaymentMethod(c *gin.Context) {
 // @Tags billing
 // @Accept json
 // @Produce json
-// @Security BearerAuth
 // @Param id path int true "Payment Method ID"
 // @Success 204
 // @Failure 400 {object} ErrorResponse
@@ -165,6 +164,7 @@ func (h *BillingHandler) AddPaymentMethod(c *gin.Context) {
 // @Failure 403 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /billing/payment-methods/{id} [delete]
 func (h *BillingHandler) RemovePaymentMethod(c *gin.Context) {
 	// Get user profile from context
@@ -219,13 +219,13 @@ func (h *BillingHandler) RemovePaymentMethod(c *gin.Context) {
 // @Tags billing
 // @Accept json
 // @Produce json
-// @Security BearerAuth
 // @Param request body domain.RechargeRequest true "Recharge details"
 // @Success 201 {object} domain.Transaction
 // @Failure 400 {object} ErrorResponse
 // @Failure 401 {object} ErrorResponse
 // @Failure 403 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /billing/recharge [post]
 func (h *BillingHandler) Recharge(c *gin.Context) {
 	// Get user profile from context
@@ -279,13 +279,13 @@ func (h *BillingHandler) Recharge(c *gin.Context) {
 // @Tags billing
 // @Accept json
 // @Produce json
-// @Security BearerAuth
 // @Param request body domain.UpdateBillingConfigRequest true "Billing configuration"
 // @Success 200 {object} domain.BillingAccount
 // @Failure 400 {object} ErrorResponse
 // @Failure 401 {object} ErrorResponse
 // @Failure 403 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /billing/config [put]
 func (h *BillingHandler) UpdateBillingConfig(c *gin.Context) {
 	// Get user profile from context
@@ -339,7 +339,6 @@ func (h *BillingHandler) UpdateBillingConfig(c *gin.Context) {
 // @Tags billing
 // @Accept json
 // @Produce json
-// @Security BearerAuth
 // @Param limit query int false "Limit" default(20)
 // @Param offset query int false "Offset" default(0)
 // @Success 200 {array} domain.Transaction
@@ -347,6 +346,7 @@ func (h *BillingHandler) UpdateBillingConfig(c *gin.Context) {
 // @Failure 401 {object} ErrorResponse
 // @Failure 403 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /billing/transactions [get]
 func (h *BillingHandler) GetTransactionHistory(c *gin.Context) {
 	// Get user profile from context

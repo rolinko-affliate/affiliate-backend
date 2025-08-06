@@ -36,6 +36,7 @@ func NewTrackingLinkHandler(trackingLinkService service.TrackingLinkService) *Tr
 // @Failure 401 {object} ErrorResponse
 // @Failure 403 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /organizations/{organization_id}/tracking-links [post]
 func (h *TrackingLinkHandler) CreateTrackingLink(c *gin.Context) {
 	organizationID, err := strconv.ParseInt(c.Param("id"), 10, 64)
@@ -86,6 +87,7 @@ func (h *TrackingLinkHandler) CreateTrackingLink(c *gin.Context) {
 // @Failure 401 {object} ErrorResponse
 // @Failure 403 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /organizations/{organization_id}/tracking-links/generate [post]
 func (h *TrackingLinkHandler) GenerateTrackingLink(c *gin.Context) {
 	_, err := strconv.ParseInt(c.Param("id"), 10, 64)
@@ -138,6 +140,7 @@ func (h *TrackingLinkHandler) GenerateTrackingLink(c *gin.Context) {
 // @Failure 403 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /organizations/{organization_id}/tracking-links/{tracking_link_id} [get]
 func (h *TrackingLinkHandler) GetTrackingLink(c *gin.Context) {
 	trackingLinkID, err := strconv.ParseInt(c.Param("link_id"), 10, 64)
@@ -177,6 +180,7 @@ func (h *TrackingLinkHandler) GetTrackingLink(c *gin.Context) {
 // @Failure 403 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /organizations/{organization_id}/tracking-links/{tracking_link_id} [put]
 func (h *TrackingLinkHandler) UpdateTrackingLink(c *gin.Context) {
 	organizationID, err := strconv.ParseInt(c.Param("id"), 10, 64)
@@ -263,6 +267,7 @@ func (h *TrackingLinkHandler) UpdateTrackingLink(c *gin.Context) {
 // @Failure 403 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /organizations/{organization_id}/tracking-links/{tracking_link_id} [delete]
 func (h *TrackingLinkHandler) DeleteTrackingLink(c *gin.Context) {
 	trackingLinkID, err := strconv.ParseInt(c.Param("link_id"), 10, 64)
@@ -298,6 +303,7 @@ func (h *TrackingLinkHandler) DeleteTrackingLink(c *gin.Context) {
 // @Failure 401 {object} ErrorResponse
 // @Failure 403 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /campaigns/{id}/tracking-links [get]
 func (h *TrackingLinkHandler) ListTrackingLinksByCampaign(c *gin.Context) {
 	campaignID, err := strconv.ParseInt(c.Param("id"), 10, 64)
@@ -354,6 +360,7 @@ func (h *TrackingLinkHandler) ListTrackingLinksByCampaign(c *gin.Context) {
 // @Failure 401 {object} ErrorResponse
 // @Failure 403 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /affiliates/{id}/tracking-links [get]
 func (h *TrackingLinkHandler) ListTrackingLinksByAffiliate(c *gin.Context) {
 	affiliateID, err := strconv.ParseInt(c.Param("id"), 10, 64)
@@ -410,6 +417,7 @@ func (h *TrackingLinkHandler) ListTrackingLinksByAffiliate(c *gin.Context) {
 // @Failure 401 {object} ErrorResponse
 // @Failure 403 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /organizations/{organization_id}/tracking-links [get]
 func (h *TrackingLinkHandler) ListTrackingLinksByOrganization(c *gin.Context) {
 	organizationID, err := strconv.ParseInt(c.Param("id"), 10, 64)
@@ -466,6 +474,7 @@ func (h *TrackingLinkHandler) ListTrackingLinksByOrganization(c *gin.Context) {
 // @Failure 403 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /organizations/{organization_id}/tracking-links/{tracking_link_id}/regenerate [post]
 func (h *TrackingLinkHandler) RegenerateTrackingLink(c *gin.Context) {
 	trackingLinkID, err := strconv.ParseInt(c.Param("link_id"), 10, 64)
@@ -505,6 +514,7 @@ func (h *TrackingLinkHandler) RegenerateTrackingLink(c *gin.Context) {
 // @Failure 403 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
 // @Router /organizations/{organization_id}/tracking-links/{tracking_link_id}/qr [get]
 func (h *TrackingLinkHandler) GetTrackingLinkQR(c *gin.Context) {
 	trackingLinkID, err := strconv.ParseInt(c.Param("link_id"), 10, 64)

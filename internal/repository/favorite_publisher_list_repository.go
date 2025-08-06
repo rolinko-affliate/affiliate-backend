@@ -121,7 +121,7 @@ func (r *favoritePublisherListRepository) GetListsByOrganization(ctx context.Con
 	}
 	defer rows.Close()
 
-	var lists []*domain.FavoritePublisherListWithStats
+	lists := make([]*domain.FavoritePublisherListWithStats, 0)
 	for rows.Next() {
 		list := &domain.FavoritePublisherListWithStats{}
 		err := rows.Scan(
@@ -217,7 +217,7 @@ func (r *favoritePublisherListRepository) GetListItems(ctx context.Context, list
 	}
 	defer rows.Close()
 
-	var items []*domain.FavoritePublisherListItem
+	items := make([]*domain.FavoritePublisherListItem, 0)
 	for rows.Next() {
 		item := &domain.FavoritePublisherListItem{}
 		err := rows.Scan(&item.ItemID, &item.ListID, &item.PublisherDomain, &item.Notes, &item.Status, &item.AddedAt)
@@ -248,7 +248,7 @@ func (r *favoritePublisherListRepository) GetListItemsWithPublisherDetails(ctx c
 	}
 	defer rows.Close()
 
-	var items []*domain.FavoritePublisherListItem
+	items := make([]*domain.FavoritePublisherListItem, 0)
 	for rows.Next() {
 		item := &domain.FavoritePublisherListItem{}
 		var publisher domain.AnalyticsPublisher
@@ -354,7 +354,7 @@ func (r *favoritePublisherListRepository) GetListsContainingPublisher(ctx contex
 	}
 	defer rows.Close()
 
-	var lists []*domain.FavoritePublisherList
+	lists := make([]*domain.FavoritePublisherList, 0)
 	for rows.Next() {
 		list := &domain.FavoritePublisherList{}
 		err := rows.Scan(&list.ListID, &list.OrganizationID, &list.Name, &list.Description, &list.CreatedAt, &list.UpdatedAt)

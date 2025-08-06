@@ -1,0 +1,631 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Impact"
+      ],
+      "value": [
+        "Impact"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "fr",
+        "score": 0.7
+      },
+      "sampleValue": [
+        {
+          "countryCode": "fr",
+          "score": 0.7
+        },
+        {
+          "countryCode": "ca",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "fr",
+          "score": 0.7
+        },
+        {
+          "countryCode": "ca",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "aujourdhuilemonde.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "acorn"
+        },
+        {
+          "score": 0.6892591,
+          "value": "investment"
+        },
+        {
+          "score": 0.35852495,
+          "value": "acorns"
+        },
+        {
+          "score": 0.27019882,
+          "value": "fee"
+        },
+        {
+          "score": 0.25775853,
+          "value": "client"
+        },
+        {
+          "score": 0.2458736,
+          "value": "portfolio"
+        },
+        {
+          "score": 0.20710874,
+          "value": "fund"
+        },
+        {
+          "score": 0.20213263,
+          "value": "risk"
+        },
+        {
+          "score": 0.17425303,
+          "value": "partner"
+        },
+        {
+          "score": 0.1589248,
+          "value": "bank"
+        },
+        {
+          "score": 0.15879151,
+          "value": "money"
+        },
+        {
+          "score": 0.14995001,
+          "value": "bitcoin"
+        },
+        {
+          "score": 0.14397423,
+          "value": "label"
+        },
+        {
+          "score": 0.14181939,
+          "value": "performance"
+        },
+        {
+          "score": 0.13582139,
+          "value": "investor"
+        },
+        {
+          "score": 0.113539934,
+          "value": "card"
+        },
+        {
+          "score": 0.09901144,
+          "value": "objective"
+        },
+        {
+          "score": 0.09896701,
+          "value": "financial"
+        },
+        {
+          "score": 0.09830057,
+          "value": "investing"
+        },
+        {
+          "score": 0.089659005,
+          "value": "loss"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "acorn"
+        },
+        {
+          "score": 0.6892591,
+          "value": "investment"
+        },
+        {
+          "score": 0.35852495,
+          "value": "acorns"
+        },
+        {
+          "score": 0.27019882,
+          "value": "fee"
+        },
+        {
+          "score": 0.25775853,
+          "value": "client"
+        },
+        {
+          "score": 0.2458736,
+          "value": "portfolio"
+        },
+        {
+          "score": 0.20710874,
+          "value": "fund"
+        },
+        {
+          "score": 0.20213263,
+          "value": "risk"
+        },
+        {
+          "score": 0.17425303,
+          "value": "partner"
+        },
+        {
+          "score": 0.1589248,
+          "value": "bank"
+        },
+        {
+          "score": 0.15879151,
+          "value": "money"
+        },
+        {
+          "score": 0.14995001,
+          "value": "bitcoin"
+        },
+        {
+          "score": 0.14397423,
+          "value": "label"
+        },
+        {
+          "score": 0.14181939,
+          "value": "performance"
+        },
+        {
+          "score": 0.13582139,
+          "value": "investor"
+        },
+        {
+          "score": 0.113539934,
+          "value": "card"
+        },
+        {
+          "score": 0.09901144,
+          "value": "objective"
+        },
+        {
+          "score": 0.09896701,
+          "value": "financial"
+        },
+        {
+          "score": 0.09830057,
+          "value": "investing"
+        },
+        {
+          "score": 0.089659005,
+          "value": "loss"
+        },
+        {
+          "score": 0.08883706,
+          "value": "market"
+        },
+        {
+          "score": 0.08879262,
+          "value": "tax"
+        },
+        {
+          "score": 0.085260466,
+          "value": "asset"
+        },
+        {
+          "score": 0.08519383,
+          "value": "future"
+        },
+        {
+          "score": 0.084793955,
+          "value": "etfs"
+        },
+        {
+          "score": 0.083216704,
+          "value": "real"
+        },
+        {
+          "score": 0.08057314,
+          "value": "fdic"
+        },
+        {
+          "score": 0.07668555,
+          "value": "real time"
+        },
+        {
+          "score": 0.076396756,
+          "value": "active"
+        },
+        {
+          "score": 0.069621235,
+          "value": "retirement"
+        },
+        {
+          "score": 0.06833278,
+          "value": "source"
+        },
+        {
+          "score": 0.06824392,
+          "value": "feature"
+        },
+        {
+          "score": 0.06748862,
+          "value": "deposit"
+        },
+        {
+          "score": 0.06733311,
+          "value": "disclosure"
+        },
+        {
+          "score": 0.06711096,
+          "value": "app"
+        },
+        {
+          "score": 0.06604465,
+          "value": "funding"
+        },
+        {
+          "score": 0.06500056,
+          "value": "referral"
+        },
+        {
+          "score": 0.06384539,
+          "value": "advertising"
+        },
+        {
+          "score": 0.063445516,
+          "value": "trademark"
+        },
+        {
+          "score": 0.062423635,
+          "value": "preference"
+        },
+        {
+          "score": 0.061957125,
+          "value": "switch"
+        },
+        {
+          "score": 0.06129068,
+          "value": "oak"
+        },
+        {
+          "score": 0.06106853,
+          "value": "insurance"
+        },
+        {
+          "score": 0.061046317,
+          "value": "pricing"
+        },
+        {
+          "score": 0.06022437,
+          "value": "stock"
+        },
+        {
+          "score": 0.05940242,
+          "value": "nbkc"
+        },
+        {
+          "score": 0.05675886,
+          "value": "invest"
+        },
+        {
+          "score": 0.056603353,
+          "value": "principal"
+        },
+        {
+          "score": 0.05649228,
+          "value": "credit"
+        },
+        {
+          "score": 0.05620349,
+          "value": "offer"
+        },
+        {
+          "score": 0.05564812,
+          "value": "expense"
+        },
+        {
+          "score": 0.055314895,
+          "value": "custom"
+        },
+        {
+          "score": 0.054559592,
+          "value": "etf"
+        },
+        {
+          "score": 0.052871265,
+          "value": "adviser"
+        },
+        {
+          "score": 0.052782405,
+          "value": "individual"
+        },
+        {
+          "score": 0.052449185,
+          "value": "esg"
+        },
+        {
+          "score": 0.050649785,
+          "value": "network"
+        },
+        {
+          "score": 0.050183274,
+          "value": "promotion"
+        },
+        {
+          "score": 0.049983338,
+          "value": "reward"
+        },
+        {
+          "score": 0.048717093,
+          "value": "advisor"
+        },
+        {
+          "score": 0.04796179,
+          "value": "goal"
+        },
+        {
+          "score": 0.046606686,
+          "value": "guarantee"
+        },
+        {
+          "score": 0.04551816,
+          "value": "debit"
+        },
+        {
+          "score": 0.045229368,
+          "value": "rate"
+        },
+        {
+          "score": 0.045118295,
+          "value": "exposure"
+        },
+        {
+          "score": 0.04500722,
+          "value": "receive"
+        },
+        {
+          "score": 0.04496279,
+          "value": "banking"
+        },
+        {
+          "score": 0.044829503,
+          "value": "form"
+        },
+        {
+          "score": 0.044673998,
+          "value": "promotional"
+        },
+        {
+          "score": 0.044118628,
+          "value": "allocation"
+        },
+        {
+          "score": 0.044096414,
+          "value": "profit"
+        },
+        {
+          "score": 0.043696545,
+          "value": "overdraft"
+        },
+        {
+          "score": 0.04367433,
+          "value": "center"
+        },
+        {
+          "score": 0.04336332,
+          "value": "diversification"
+        },
+        {
+          "score": 0.04329668,
+          "value": "recommendation"
+        },
+        {
+          "score": 0.04311896,
+          "value": "saving"
+        },
+        {
+          "score": 0.04311896,
+          "value": "institution"
+        },
+        {
+          "score": 0.043096747,
+          "value": "gohenry"
+        },
+        {
+          "score": 0.043052316,
+          "value": "holder"
+        },
+        {
+          "score": 0.042785738,
+          "value": "factor"
+        },
+        {
+          "score": 0.042719092,
+          "value": "prospectus"
+        },
+        {
+          "score": 0.042274795,
+          "value": "tolerance"
+        },
+        {
+          "score": 0.04200822,
+          "value": "apy"
+        },
+        {
+          "score": 0.04191936,
+          "value": "ability"
+        },
+        {
+          "score": 0.041097414,
+          "value": "active cookie"
+        },
+        {
+          "score": 0.040875264,
+          "value": "legal"
+        },
+        {
+          "score": 0.040786404,
+          "value": "mighty"
+        },
+        {
+          "score": 0.040564258,
+          "value": "change"
+        },
+        {
+          "score": 0.0400311,
+          "value": "balance"
+        },
+        {
+          "score": 0.0400311,
+          "value": "partnership"
+        },
+        {
+          "score": 0.039209154,
+          "value": "mighty oak"
+        },
+        {
+          "score": 0.038675997,
+          "value": "investments"
+        },
+        {
+          "score": 0.038009554,
+          "value": "statement"
+        },
+        {
+          "score": 0.037965123,
+          "value": "positive"
+        },
+        {
+          "score": 0.037654117,
+          "value": "subscriber"
+        },
+        {
+          "score": 0.03727646,
+          "value": "sustainable"
+        },
+        {
+          "score": 0.03712096,
+          "value": "bond"
+        },
+        {
+          "score": 0.036965456,
+          "value": "actual"
+        },
+        {
+          "score": 0.03592136,
+          "value": "cash"
+        },
+        {
+          "score": 0.035854716,
+          "value": "advice"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://aujourdhuilemonde.com/",
+        "https://www.aujourdhuilemonde.com/",
+        "http://aujourdhuilemonde.com/",
+        "http://www.aujourdhuilemonde.com/"
+      ]
+    },
+    "metaData": {
+      "description": "Magazine en ligne pour les astuces et trucs de la vie quotidienne : jardinage, internet, travail, famille, voyage , technologie",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/aujourdhuilemonde.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://aujourdhuilemonde.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 2,
+        "value": [
+          "acorns.com",
+          "cashstar.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 0.95,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Investments"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 2,
+      "value": [
+        "acorns.com",
+        "cashstar.com"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 6,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "linkedin",
+        "instagram",
+        "pinterest"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/webaujourdhuilemonde",
+        "instagram": "https://instagram.com/passionvietnam",
+        "linkedin": "https://linkedin.com/in/voyagevietnam123",
+        "pinterest": "https://pinterest.com/blogvoyagevietnam",
+        "twitter": "https://twitter.com/blogecommerce1",
+        "youtube": "https://youtube.com/channel/ucq_pnk4qfdckibwzv6szq3a"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 1,
+      "sampleValue": "Online / Services",
+      "value": [
+        "Online / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Online / Services",
+        "rank": 1,
+        "score": 70
+      },
+      "value": [
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

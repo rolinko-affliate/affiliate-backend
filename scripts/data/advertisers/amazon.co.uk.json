@@ -1,0 +1,2059 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 21,
+      "sampleValue": [
+        "Accesstrade",
+        "Awin",
+        "Business Insider"
+      ],
+      "value": [
+        "Accesstrade",
+        "Awin",
+        "Business Insider",
+        "CJ Affiliate",
+        "ClickMagick",
+        "CueLinks",
+        "Digidip",
+        "Impact",
+        "Linkbux",
+        "Linkby",
+        "Partnerize",
+        "Rewardstyle",
+        "Shopnomix",
+        "ShopStyle",
+        "Skimlinks",
+        "SourceKnowledge",
+        "Takeads",
+        "Tradedoubler",
+        "TRX",
+        "Viglink",
+        "Yieldkit"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 6,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "ad-feedback@amazon.co.uk"
+        },
+        {
+          "department": "it",
+          "value": "defamation-notice@amazon.co.uk"
+        },
+        {
+          "department": "legal",
+          "value": "eu-privacy@amazon.co.uk"
+        },
+        {
+          "department": "support",
+          "value": "odr-eu@amazon.com"
+        },
+        {
+          "department": null,
+          "value": "privacyshield@amazon.com"
+        },
+        {
+          "department": "support",
+          "value": "stop-spoofing@amazon.com"
+        }
+      ]
+    },
+    "domain": "amazon.co.uk",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "health"
+        },
+        {
+          "score": 0.6494415,
+          "value": "store"
+        },
+        {
+          "score": 0.49738988,
+          "value": "dog"
+        },
+        {
+          "score": 0.4968951,
+          "value": "food"
+        },
+        {
+          "score": 0.4581564,
+          "value": "team"
+        },
+        {
+          "score": 0.39631897,
+          "value": "info"
+        },
+        {
+          "score": 0.38718975,
+          "value": "super fashion"
+        },
+        {
+          "score": 0.38718975,
+          "value": "organic"
+        },
+        {
+          "score": 0.38718975,
+          "value": "expiry"
+        },
+        {
+          "score": 0.38480976,
+          "value": "community"
+        },
+        {
+          "score": 0.38067627,
+          "value": "seed"
+        },
+        {
+          "score": 0.3785051,
+          "value": "science"
+        },
+        {
+          "score": 0.3749466,
+          "value": "smoothie"
+        },
+        {
+          "score": 0.3641711,
+          "value": "category"
+        },
+        {
+          "score": 0.36377263,
+          "value": "immune"
+        },
+        {
+          "score": 0.35014763,
+          "value": "fashion"
+        },
+        {
+          "score": 0.34075928,
+          "value": "sleep"
+        },
+        {
+          "score": 0.3369191,
+          "value": "human"
+        },
+        {
+          "score": 0.33209553,
+          "value": "professional"
+        },
+        {
+          "score": 0.32056898,
+          "value": "healthy"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "health"
+        },
+        {
+          "score": 0.6494415,
+          "value": "store"
+        },
+        {
+          "score": 0.49738988,
+          "value": "dog"
+        },
+        {
+          "score": 0.4968951,
+          "value": "food"
+        },
+        {
+          "score": 0.4581564,
+          "value": "team"
+        },
+        {
+          "score": 0.39631897,
+          "value": "info"
+        },
+        {
+          "score": 0.38718975,
+          "value": "super fashion"
+        },
+        {
+          "score": 0.38718975,
+          "value": "organic"
+        },
+        {
+          "score": 0.38718975,
+          "value": "expiry"
+        },
+        {
+          "score": 0.38480976,
+          "value": "community"
+        },
+        {
+          "score": 0.38067627,
+          "value": "seed"
+        },
+        {
+          "score": 0.3785051,
+          "value": "science"
+        },
+        {
+          "score": 0.3749466,
+          "value": "smoothie"
+        },
+        {
+          "score": 0.3641711,
+          "value": "category"
+        },
+        {
+          "score": 0.36377263,
+          "value": "immune"
+        },
+        {
+          "score": 0.35014763,
+          "value": "fashion"
+        },
+        {
+          "score": 0.34075928,
+          "value": "sleep"
+        },
+        {
+          "score": 0.3369191,
+          "value": "human"
+        },
+        {
+          "score": 0.33209553,
+          "value": "professional"
+        },
+        {
+          "score": 0.32056898,
+          "value": "healthy"
+        },
+        {
+          "score": 0.31985238,
+          "value": "site"
+        },
+        {
+          "score": 0.31766084,
+          "value": "body"
+        },
+        {
+          "score": 0.3096519,
+          "value": "download"
+        },
+        {
+          "score": 0.30867976,
+          "value": "fine jewelry"
+        },
+        {
+          "score": 0.29806235,
+          "value": "program"
+        },
+        {
+          "score": 0.2879601,
+          "value": "communication"
+        },
+        {
+          "score": 0.28312293,
+          "value": "tusol"
+        },
+        {
+          "score": 0.28246388,
+          "value": "wild jewelry"
+        },
+        {
+          "score": 0.27241018,
+          "value": "blocker"
+        },
+        {
+          "score": 0.27050796,
+          "value": "stress"
+        },
+        {
+          "score": 0.2699383,
+          "value": "jewelry"
+        },
+        {
+          "score": 0.26952597,
+          "value": "loss"
+        },
+        {
+          "score": 0.269042,
+          "value": "box"
+        },
+        {
+          "score": 0.26343375,
+          "value": "probiotic"
+        },
+        {
+          "score": 0.26339293,
+          "value": "notice"
+        },
+        {
+          "score": 0.2621212,
+          "value": "law"
+        },
+        {
+          "score": 0.26158184,
+          "value": "story"
+        },
+        {
+          "score": 0.25785443,
+          "value": "card"
+        },
+        {
+          "score": 0.2515243,
+          "value": "terri"
+        },
+        {
+          "score": 0.2472707,
+          "value": "internal"
+        },
+        {
+          "score": 0.24570732,
+          "value": "pet"
+        },
+        {
+          "score": 0.24552037,
+          "value": "partner"
+        },
+        {
+          "score": 0.24307817,
+          "value": "action"
+        },
+        {
+          "score": 0.24233538,
+          "value": "fancy gem"
+        },
+        {
+          "score": 0.23618978,
+          "value": "nutramedix"
+        },
+        {
+          "score": 0.23415032,
+          "value": "refund"
+        },
+        {
+          "score": 0.23128404,
+          "value": "performance"
+        },
+        {
+          "score": 0.22802874,
+          "value": "superfood"
+        },
+        {
+          "score": 0.22462754,
+          "value": "functional"
+        },
+        {
+          "score": 0.22343755,
+          "value": "audio"
+        },
+        {
+          "score": 0.22019368,
+          "value": "partnership"
+        },
+        {
+          "score": 0.2192869,
+          "value": "synbiotic"
+        },
+        {
+          "score": 0.21615888,
+          "value": "activity"
+        },
+        {
+          "score": 0.21281347,
+          "value": "key"
+        },
+        {
+          "score": 0.21172073,
+          "value": "platform"
+        },
+        {
+          "score": 0.20967518,
+          "value": "immunity"
+        },
+        {
+          "score": 0.209664,
+          "value": "stream"
+        },
+        {
+          "score": 0.20736852,
+          "value": "dress"
+        },
+        {
+          "score": 0.20660321,
+          "value": "blend"
+        },
+        {
+          "score": 0.2055084,
+          "value": "raisedrightpet"
+        },
+        {
+          "score": 0.20354243,
+          "value": "studio"
+        },
+        {
+          "score": 0.20354243,
+          "value": "latte"
+        },
+        {
+          "score": 0.20297113,
+          "value": "adult"
+        },
+        {
+          "score": 0.20120774,
+          "value": "issue"
+        },
+        {
+          "score": 0.19895124,
+          "value": "deck"
+        },
+        {
+          "score": 0.19895124,
+          "value": "chroma"
+        },
+        {
+          "score": 0.19832109,
+          "value": "bracelet"
+        },
+        {
+          "score": 0.19788972,
+          "value": "people"
+        },
+        {
+          "score": 0.19750315,
+          "value": "responsible"
+        },
+        {
+          "score": 0.19612789,
+          "value": "ecosystem"
+        },
+        {
+          "score": 0.19482969,
+          "value": "cozy fleece"
+        },
+        {
+          "score": 0.19385031,
+          "value": "colorful gem"
+        },
+        {
+          "score": 0.19188358,
+          "value": "necklace"
+        },
+        {
+          "score": 0.19106185,
+          "value": "development"
+        },
+        {
+          "score": 0.19059035,
+          "value": "browser"
+        },
+        {
+          "score": 0.18976888,
+          "value": "multi"
+        },
+        {
+          "score": 0.18976888,
+          "value": "energy"
+        },
+        {
+          "score": 0.18860924,
+          "value": "glamour"
+        },
+        {
+          "score": 0.18823849,
+          "value": "organic superfood"
+        },
+        {
+          "score": 0.1867081,
+          "value": "keying"
+        },
+        {
+          "score": 0.18235551,
+          "value": "applicable"
+        },
+        {
+          "score": 0.17976245,
+          "value": "source"
+        },
+        {
+          "score": 0.17948234,
+          "value": "project"
+        },
+        {
+          "score": 0.17905612,
+          "value": "corsair"
+        },
+        {
+          "score": 0.17831771,
+          "value": "vogue"
+        },
+        {
+          "score": 0.17446494,
+          "value": "connection"
+        },
+        {
+          "score": 0.17323548,
+          "value": "instyle"
+        },
+        {
+          "score": 0.17140415,
+          "value": "protection"
+        },
+        {
+          "score": 0.17140415,
+          "value": "professional chroma"
+        },
+        {
+          "score": 0.17118281,
+          "value": "supplement"
+        },
+        {
+          "score": 0.1696407,
+          "value": "form"
+        },
+        {
+          "score": 0.16956145,
+          "value": "ritzy diamond"
+        },
+        {
+          "score": 0.16834337,
+          "value": "workflow"
+        },
+        {
+          "score": 0.16811702,
+          "value": "meal"
+        },
+        {
+          "score": 0.16717912,
+          "value": "impact"
+        },
+        {
+          "score": 0.16694246,
+          "value": "link"
+        },
+        {
+          "score": 0.16544801,
+          "value": "fancy"
+        },
+        {
+          "score": 0.16479826,
+          "value": "risk"
+        },
+        {
+          "score": 0.16433363,
+          "value": "colorful"
+        },
+        {
+          "score": 0.16375218,
+          "value": "synergy"
+        }
+      ]
+    },
+    "metaData": {
+      "description": "Sign up to Amazon Prime for unlimited free delivery. Low prices at Amazon on digital cameras, MP3, sports, books, music, DVDs, video games, home & garden and much more.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazon.co.uk.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazon.co.uk"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 3074
+      },
+      "partnersAdded": {
+        "count": 81,
+        "value": [
+          {
+            "domain": "dailytrendingspots.online"
+          },
+          {
+            "domain": "happygaytravel.com"
+          },
+          {
+            "domain": "123.123.enodoworks.com"
+          },
+          {
+            "domain": "bern27uy.blogspot.com"
+          },
+          {
+            "domain": "ad-magazin.de"
+          },
+          {
+            "domain": "techbullion.site"
+          },
+          {
+            "domain": "komputer-servise.com"
+          },
+          {
+            "domain": "nationalto.com"
+          },
+          {
+            "domain": "petitchampignondeparis.fr"
+          },
+          {
+            "domain": "whichmobile.net.pk"
+          },
+          {
+            "domain": "leicesterbbs.com"
+          },
+          {
+            "domain": "techbuzzpost.com"
+          },
+          {
+            "domain": "dealverge.info"
+          },
+          {
+            "domain": "beverlyhillsexaminer.com"
+          },
+          {
+            "domain": "interteiment.com"
+          },
+          {
+            "domain": "qa.countingup.com"
+          },
+          {
+            "domain": "androidportal.sk"
+          },
+          {
+            "domain": "newsmag.uk"
+          },
+          {
+            "domain": "4me.news"
+          },
+          {
+            "domain": "euroasiatimes.com"
+          },
+          {
+            "domain": "trimgoldwellness.com"
+          },
+          {
+            "domain": "bodiesofevidence.com"
+          },
+          {
+            "domain": "us.matildagoad.com"
+          },
+          {
+            "domain": "mediazone24.com"
+          },
+          {
+            "domain": "guardianoftheearth.org"
+          },
+          {
+            "domain": "proteinforward.org"
+          },
+          {
+            "domain": "libertaddigitalhn.com"
+          },
+          {
+            "domain": "everyparcel.co.uk"
+          },
+          {
+            "domain": "ianlazar.net"
+          },
+          {
+            "domain": "kerrylockwoodindetail.co.uk"
+          },
+          {
+            "domain": "ca.matildagoad.com"
+          },
+          {
+            "domain": "newyorkexaminernews.com"
+          },
+          {
+            "domain": "vr6oc.com"
+          },
+          {
+            "domain": "globalpolicyjournal.com"
+          },
+          {
+            "domain": "onlinenews.pro"
+          },
+          {
+            "domain": "sheknows.com"
+          },
+          {
+            "domain": "info-galore.com"
+          },
+          {
+            "domain": "streambutter.com"
+          },
+          {
+            "domain": "styleandminimalism.com"
+          },
+          {
+            "domain": "balancedvigor.com"
+          },
+          {
+            "domain": "techtrendfeed.com"
+          },
+          {
+            "domain": "gb.readly.com"
+          },
+          {
+            "domain": "cathoughts.net"
+          },
+          {
+            "domain": "learnxt.uk"
+          },
+          {
+            "domain": "clicsud.site"
+          },
+          {
+            "domain": "balancerootshealth.com"
+          },
+          {
+            "domain": "cherryblossomhandbook.blogspot.com"
+          },
+          {
+            "domain": "beyondlink.live"
+          },
+          {
+            "domain": "exam-lib.com"
+          },
+          {
+            "domain": "connectcomm.net"
+          },
+          {
+            "domain": "texasdreams.net"
+          },
+          {
+            "domain": "healthiestpathnow.com"
+          },
+          {
+            "domain": "voxfilme.site"
+          },
+          {
+            "domain": "techbullion.cfd"
+          },
+          {
+            "domain": "uk.news.yahoo.com"
+          },
+          {
+            "domain": "serialehd.site"
+          },
+          {
+            "domain": "dailyinsightbrew.com"
+          },
+          {
+            "domain": "uk.style.yahoo.com"
+          },
+          {
+            "domain": "korting-en-acties.nl"
+          },
+          {
+            "domain": "googlebreaking.com"
+          },
+          {
+            "domain": "theprimeupdate.com"
+          },
+          {
+            "domain": "techembed.com"
+          },
+          {
+            "domain": "nutrabalancezone.com"
+          },
+          {
+            "domain": "eclipsemedias.com"
+          },
+          {
+            "domain": "ponloaprueba.com"
+          },
+          {
+            "domain": "crownbread.com"
+          },
+          {
+            "domain": "target.georiot.com"
+          },
+          {
+            "domain": "trendluxe.blog"
+          },
+          {
+            "domain": "1stgamers.com"
+          },
+          {
+            "domain": "catalyst4change.org.uk"
+          },
+          {
+            "domain": "zephr.com"
+          },
+          {
+            "domain": "newsstreetdaily.com"
+          },
+          {
+            "domain": "cbsitepro.com"
+          },
+          {
+            "domain": "aicentral.site"
+          },
+          {
+            "domain": "vouchers4free.co.uk"
+          },
+          {
+            "domain": "lakewoodnewsbreak.com"
+          },
+          {
+            "domain": "mgaimports.com.br"
+          },
+          {
+            "domain": "donnaida.com"
+          },
+          {
+            "domain": "forbesau.xyz"
+          },
+          {
+            "domain": "hosteldiablo.com"
+          },
+          {
+            "domain": "roadbikeunder500uk.blogspot.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 95,
+        "value": [
+          {
+            "domain": "wlky.com"
+          },
+          {
+            "domain": "writerselite.com"
+          },
+          {
+            "domain": "housebeautiful.com"
+          },
+          {
+            "domain": "sendfox.com"
+          },
+          {
+            "domain": "zaraevans.com"
+          },
+          {
+            "domain": "sweetsandnibbles.com"
+          },
+          {
+            "domain": "investorminute.com"
+          },
+          {
+            "domain": "usmagazine.com"
+          },
+          {
+            "domain": "merrickvilleanglicans.org"
+          },
+          {
+            "domain": "buildmytalent.com"
+          },
+          {
+            "domain": "euntia.shop"
+          },
+          {
+            "domain": "kalaimoscope.com"
+          },
+          {
+            "domain": "claptonite.com"
+          },
+          {
+            "domain": "truescope.site"
+          },
+          {
+            "domain": "beauty2000.org"
+          },
+          {
+            "domain": "bbcnewswire.com"
+          },
+          {
+            "domain": "elevenhacks.net"
+          },
+          {
+            "domain": "paradigmacreation.com"
+          },
+          {
+            "domain": "stephtaylor.co"
+          },
+          {
+            "domain": "live95fm.ie"
+          },
+          {
+            "domain": "foxqualityknives.com"
+          },
+          {
+            "domain": "hamuesgyemant.hu"
+          },
+          {
+            "domain": "healthtodayboost.com"
+          },
+          {
+            "domain": "allcannings.net"
+          },
+          {
+            "domain": "pakjournal.com"
+          },
+          {
+            "domain": "mercedesbenzxentrysoftwaresubscription.store"
+          },
+          {
+            "domain": "thevessel.io"
+          },
+          {
+            "domain": "inews.co.uk"
+          },
+          {
+            "domain": "news.giga0.com"
+          },
+          {
+            "domain": "no1fashion.fashion"
+          },
+          {
+            "domain": "predicttowin.com"
+          },
+          {
+            "domain": "eejssdfsdfdfjsd.com"
+          },
+          {
+            "domain": "stylecaster.com"
+          },
+          {
+            "domain": "bytezone.it"
+          },
+          {
+            "domain": "clairebriston.com"
+          },
+          {
+            "domain": "buzzechos.com"
+          },
+          {
+            "domain": "vacacionesenoropesa.com"
+          },
+          {
+            "domain": "georgev.eu"
+          },
+          {
+            "domain": "superhipadx.com"
+          },
+          {
+            "domain": "francesgarrood.com"
+          },
+          {
+            "domain": "muddyfeetaussies.com"
+          },
+          {
+            "domain": "blog.scottlogic.com"
+          },
+          {
+            "domain": "ballowlaw.com"
+          },
+          {
+            "domain": "storytimedolls.net"
+          },
+          {
+            "domain": "sophiesmakeupface.blogspot.com"
+          },
+          {
+            "domain": "nuearte.blogspot.com"
+          },
+          {
+            "domain": "allanbogle.blogspot.com"
+          },
+          {
+            "domain": "chaudhary.website"
+          },
+          {
+            "domain": "thereviewloft.com"
+          },
+          {
+            "domain": "mailletarte.com"
+          },
+          {
+            "domain": "slabup.blogspot.com"
+          },
+          {
+            "domain": "bellytrimsolutions.com"
+          },
+          {
+            "domain": "cherryredsreads.com"
+          },
+          {
+            "domain": "arquidiocesisdelosaltos.org"
+          },
+          {
+            "domain": "waterdamagerestorationtroyllc.com"
+          },
+          {
+            "domain": "ascambalkon.com"
+          },
+          {
+            "domain": "zaixznaiiz.com"
+          },
+          {
+            "domain": "newsinterlink.com"
+          },
+          {
+            "domain": "exhortationplace.com"
+          },
+          {
+            "domain": "businessfast.co.uk"
+          },
+          {
+            "domain": "benchmark.rs"
+          },
+          {
+            "domain": "registrypalace.com"
+          },
+          {
+            "domain": "local2209.org"
+          },
+          {
+            "domain": "filmexxx.biz"
+          },
+          {
+            "domain": "scandideals.co.uk"
+          },
+          {
+            "domain": "readly.com"
+          },
+          {
+            "domain": "shopbuttler.com"
+          },
+          {
+            "domain": "225323.com"
+          },
+          {
+            "domain": "sadinfo.net"
+          },
+          {
+            "domain": "wired2change.com"
+          },
+          {
+            "domain": "ftvine.com"
+          },
+          {
+            "domain": "swiftnewsbyte.com"
+          },
+          {
+            "domain": "smysa.org"
+          },
+          {
+            "domain": "legalvideographer.com"
+          },
+          {
+            "domain": "fscrypto.co"
+          },
+          {
+            "domain": "gearpatrol.com"
+          },
+          {
+            "domain": "soundhealthandlastingwealth.com"
+          },
+          {
+            "domain": "leanandmeanbody.com"
+          },
+          {
+            "domain": "mommasaystoread.com"
+          },
+          {
+            "domain": "allevamentodelma.com"
+          },
+          {
+            "domain": "wishlistr.com"
+          },
+          {
+            "domain": "kyloot.com"
+          },
+          {
+            "domain": "karikaturokulu.com"
+          },
+          {
+            "domain": "yoaxx.com"
+          },
+          {
+            "domain": "18bmxbikesforsaleuk.blogspot.com"
+          },
+          {
+            "domain": "artcasso.com"
+          },
+          {
+            "domain": "stoneyacres.biz"
+          },
+          {
+            "domain": "funcraftskids.com"
+          },
+          {
+            "domain": "newsazi.com"
+          },
+          {
+            "domain": "news.apkwolo.com"
+          },
+          {
+            "domain": "thedailypost.org"
+          },
+          {
+            "domain": "alwaysbeteaching.com"
+          },
+          {
+            "domain": "cursillohamilton.org"
+          },
+          {
+            "domain": "giir.net"
+          },
+          {
+            "domain": "staugustine.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 268,
+            "promotype": "student",
+            "value": [
+              "10millionshow.ru",
+              "1fortlauderdale.com",
+              "100nutrix.com",
+              "atibaiaconnection.com.br",
+              "banburyguardian.co.uk",
+              "beautifaire.com",
+              "britishforcesdiscounts.co.uk",
+              "budget-air-flights.co.uk",
+              "buxtonadvertiser.co.uk",
+              "catskill.news",
+              "americanceo.club",
+              "aneditedlifestyle.com",
+              "applerecenze.cz",
+              "associattedpress.com",
+              "bandaancha.eu",
+              "bestforfilm.com",
+              "bhadohiinfo.com",
+              "americansforabetteramerica.com",
+              "buckinghamshirelive.com",
+              "annieelizabethm.com",
+              "annvosspeterson.com",
+              "antlifeacademy.com",
+              "bustle.com",
+              "buyveg.com",
+              "caloriez.net",
+              "carinavardie.com",
+              "charlottescollection.blogspot.com",
+              "cherriesinthesnow.co.uk",
+              "cheshiremum.co.uk",
+              "biggleswadetoday.co.uk",
+              "bodybalancee.com",
+              "boredpanda.com",
+              "concordia.ca",
+              "creativebloq.com",
+              "corkbeo.ie",
+              "dancehealthfitness.com",
+              "daventryexpress.co.uk",
+              "discerningcyclist.com",
+              "dangerouspress.com",
+              "dressingandtoppings.com",
+              "edinburghlive.co.uk",
+              "eletiofe.com",
+              "dietpillreviewer.co.uk",
+              "dietpillsupermarket.com",
+              "donnaida.com",
+              "eatingbirdfood.com",
+              "editbykatie.co.uk",
+              "buzz.ie",
+              "bylynny.com",
+              "cheap4.co.uk",
+              "croydonadvertiser.co.uk",
+              "fashionistanygirl.com",
+              "fynefettle.com",
+              "giftcardbalance.co.uk",
+              "glamourmagazine.co.uk",
+              "gq.com",
+              "dsouthsider.blogspot.com",
+              "dublinlive.ie",
+              "easytrafficbuilder.com",
+              "eatwiseuk.com",
+              "examinerlive.co.uk",
+              "elle.com",
+              "englishemigre.com",
+              "fashion-kitchen.com",
+              "fashionandfashion.net",
+              "fashionsdigest.co.uk",
+              "feedingonchrist.org",
+              "findabet.co.uk",
+              "floorfurnitures.uk",
+              "freep.com",
+              "fsa-sky.org",
+              "fresh.yiaap.com",
+              "freshairgenie.com",
+              "friendsofthebrule.com",
+              "game-experience.it",
+              "gablesgardens.co.uk",
+              "gazettelive.co.uk",
+              "gb.readly.com",
+              "gettingstuffdoneinheels.com",
+              "giftlog.co.uk",
+              "glamour.es",
+              "grillo-designs.com",
+              "goodreads.com",
+              "grimsbytelegraph.co.uk",
+              "halifaxcourier.co.uk",
+              "hertfordshiremercury.co.uk",
+              "happywheels4game.com",
+              "howlynn.com",
+              "huffingtonpost.co.uk",
+              "hemeltoday.co.uk",
+              "idontgiveachic.com",
+              "hipandhealthy.com",
+              "emstris.com",
+              "en.pickture.com",
+              "houseofclassy.com",
+              "indieerotica.com",
+              "indiemusicnews.org",
+              "leightonbuzzardonline.co.uk",
+              "lifestylebyalexis.com",
+              "janisensucre.com",
+              "lucyfelton.com",
+              "manchesterworld.uk",
+              "manofmany.com",
+              "inkarlcerating.net",
+              "newsconcerns.com",
+              "katemiddletonstyle.org",
+              "kentlive.news",
+              "northernirelandworld.com",
+              "northumberlandgazette.co.uk",
+              "location.best",
+              "lovestylemindfulness.co.uk",
+              "m.teenvogueinsider.com",
+              "magical-menagerie.com",
+              "pinktealatte.ca",
+              "pix-host.com",
+              "popxo.com",
+              "porhomme.com",
+              "heartmybackpack.com",
+              "propermag.com",
+              "homebunch.com",
+              "homedecorshopp.com",
+              "honeypotblogs.com",
+              "quicklion.eu",
+              "rachelkhoo.com",
+              "radrss.com",
+              "indianhousedesign.com",
+              "rafasgeek.com.br",
+              "releads.ca",
+              "rjscott.co.uk",
+              "rouleur.it",
+              "staging-driving.co.uk",
+              "stampdemon.com",
+              "sunderlandecho.com",
+              "sebastianpremici.com",
+              "sylviassparkles.com",
+              "teachmestyle.com",
+              "slimmersreview.com",
+              "adonisholiday.com",
+              "snipca.com",
+              "amateurphotographer.com",
+              "amyepeters.ca",
+              "emeatribune.com",
+              "bangpurecreation.com",
+              "bestpixeldesign.com",
+              "eshoppinguk.com",
+              "followin.io",
+              "bns.is",
+              "foreignstudents.com",
+              "carnetsnature.com",
+              "collagerie.com",
+              "mamamitus.com",
+              "hngn.com",
+              "kariskelton.com",
+              "metro.co.uk",
+              "kerrylockwoodindetail.co.uk",
+              "mundotecnologia.net",
+              "mvnavidr.com",
+              "nationalworld.com",
+              "thedailycheck.net",
+              "news.repithwin.com",
+              "thehecticvegan.com",
+              "thehouseupstairs.co.uk",
+              "nicsnutrition.com",
+              "thepeakoftreschic.com",
+              "theslimmingfoodie.com",
+              "theswish.dk",
+              "topglobe.news",
+              "kentgarden.co.uk",
+              "lawdonut.co.uk",
+              "lfcreds.com",
+              "lifestylespread.net",
+              "lifewithscoliosis.com",
+              "limfic.com",
+              "trackednews.com",
+              "literatiliteraturelovers.com",
+              "londongreenleft.blogspot.com",
+              "lowfatliving.org",
+              "onlinephilosophyclub.com",
+              "magicofclothes.com",
+              "metabee.de",
+              "mirrorlessrumors.com",
+              "peoria-cartitleloans.com",
+              "peugeotforums.com",
+              "musicman.co.jp",
+              "plymouthherald.co.uk",
+              "mywildsparrows.com",
+              "proweblinks.com",
+              "mamadaily.com",
+              "marylandheightsresidents.com",
+              "masecom.net",
+              "royalmeg.com",
+              "rsvplive.ie",
+              "nationalclubgolfer.com",
+              "newsfose.com",
+              "nextgov.com",
+              "techregister.co.uk",
+              "tedore.at",
+              "popsugar.co.uk",
+              "portsmouth.co.uk",
+              "primereviewz.com",
+              "psmag.com",
+              "oscartimes.com",
+              "q102.ie",
+              "quakercitymercantile.com",
+              "otherb.com",
+              "racingbetter.co.uk",
+              "pcforalla.se",
+              "readerlinks.com",
+              "rebelangel.co.uk",
+              "reporthy.net",
+              "rippleffectgroup.com",
+              "sgtbilko0.tripod.com",
+              "rockmystyle.co.uk",
+              "shieldsgazette.com",
+              "ukwinsforum.co.uk",
+              "vogue.sg",
+              "spten.com",
+              "wekerle100.eu",
+              "stilgenuss.com",
+              "scillyholiday.co.uk",
+              "wigantoday.net",
+              "wiltshirelive.co.uk",
+              "seculartimes.com",
+              "tonywideman.com",
+              "slimmersweekly.com",
+              "vouchersavvy.com",
+              "vwaudiforum.co.uk",
+              "warrior.do",
+              "somucheasier.co.uk",
+              "sports-teams.co.uk",
+              "stepstostyle.com",
+              "yahoo.com",
+              "thecaringcatalyst.com",
+              "thecluelessgirl.com",
+              "thegirlinthetartanscarf.com",
+              "zambianmusicblog.co",
+              "susiesoso.blogspot.com",
+              "thesouthamptongirl.co.uk",
+              "theveganword.com",
+              "thewilddecoelis.com",
+              "techcaro.com",
+              "techcodex.com",
+              "techcratic.com",
+              "mushuverse.com",
+              "techtelegraph.co.uk",
+              "news-of-madonna.com",
+              "teenvogue.com",
+              "tees-n-cheese.co.uk",
+              "tendanceclaire.org",
+              "pausemag.co.uk",
+              "theguardian.com",
+              "thescarboroughnews.co.uk",
+              "sts.ac",
+              "survivefrance.com",
+              "turnozero.com",
+              "twentytravel.com",
+              "ublogu.com",
+              "viewbook.at",
+              "urbanknit.blogspot.com",
+              "vouchercodesparade.com",
+              "watchitalia.it",
+              "wemakeiteasy.co.uk",
+              "voucherx.co.uk",
+              "voxvine.com",
+              "www-dev.uat-thesun.ie",
+              "windowtothebeautypl.com",
+              "yepoffers.com",
+              "yuliabeauty.com"
+            ]
+          },
+          {
+            "count": 547,
+            "promotype": "blog",
+            "value": [
+              "10reviewsplus.com",
+              "10ws.co",
+              "1385.topnews.com",
+              "247shop.co.uk",
+              "aboutaberdeen.com",
+              "admiddleeast.com",
+              "afashionfix.co.uk",
+              "abalancedbelly.co.uk",
+              "aberdeenlive.news",
+              "ad-magazin.de",
+              "admhduj.com",
+              "aeo-inc.com",
+              "aldubailuxury.com",
+              "allure.com",
+              "amandazipsitup.com",
+              "animalsaroundtheglobe.com",
+              "appndex.com",
+              "arigato-ipod.com",
+              "arsenal-world.co.uk",
+              "ativanx.com",
+              "atnumber43.co.uk",
+              "audi-sport.net",
+              "ayearofboxes.com",
+              "beashadegreener.com",
+              "beautifulwithbrains.com",
+              "beautybysian.co.uk",
+              "beautydramaqueen.com",
+              "belachaos.com",
+              "bern27uy.blogspot.com",
+              "1398.topnews.com",
+              "4menshop.com",
+              "7newstv.com",
+              "aandp.co.uk",
+              "ablackbirdsepiphany.co.uk",
+              "bkkbazaar.com",
+              "blakecoinmining.com",
+              "bodiesofevidence.com",
+              "bucksherald.co.uk",
+              "burfon.com",
+              "cambridge-news.co.uk",
+              "canarywharfshoppingcentre.com",
+              "chad.co.uk",
+              "chroniclelive.co.uk",
+              "chronicleslive.com",
+              "cityandcoffee.com",
+              "compsositetextiles.com",
+              "alicemooreuk.blogspot.com",
+              "aljazeeranewstoday.com",
+              "allzone.eu",
+              "androidbuzz.net",
+              "anewmuse.blogspot.com",
+              "animefillerlists.com",
+              "bbcgoodfood.com",
+              "bbcworldnewstoday.com",
+              "beatykasa.com",
+              "beautyqueenuk.co.uk",
+              "becauselondon.com",
+              "billboard.com",
+              "birminghammail.co.uk",
+              "birminghamworld.uk",
+              "blackpoolgazette.co.uk",
+              "bristolpost.co.uk",
+              "airbrushly.com",
+              "aliceanne.co.uk",
+              "bristolworld.com",
+              "burnleyexpress.net",
+              "business-live.co.uk",
+              "businessinsider.com",
+              "businessinsider.in",
+              "businessremark.com",
+              "busy-crafting.blogspot.com",
+              "cafebiblioart.com",
+              "beautyandfashionadvice.com",
+              "carrotsncake.com",
+              "celiecechannet.com",
+              "belfastlive.co.uk",
+              "changeable-style.com",
+              "betebetx.com",
+              "chicjournal.com",
+              "chuyangtra.com",
+              "cmbreweryroadhouse-hub.com",
+              "boards.ie",
+              "codwarfare.com",
+              "boredpanda.es",
+              "cornwalllive.com",
+              "cosmopolitan.com",
+              "coventrytelegraph.net",
+              "confetti.co.uk",
+              "cornerstoneharvest.net",
+              "cottage-fever.ca",
+              "daisybutter.com",
+              "crypto-current.co",
+              "dalmarosec.com",
+              "dailymail.co.uk",
+              "davidbyrne.com",
+              "demdigest.org",
+              "devonlive.com",
+              "dewsburyreporter.co.uk",
+              "diadebeaute.com",
+              "dietandbeauty.co.uk",
+              "dailypost.co.uk",
+              "directionhome.uk",
+              "dld.bz",
+              "dnyuz.com",
+              "delectant.com",
+              "earlychildhoodlinks.com",
+              "departmentshopping.com",
+              "derbytelegraph.co.uk",
+              "derbyworld.co.uk",
+              "derryjournal.com",
+              "digitalspy.com",
+              "dividendwealth.co.uk",
+              "dlsserve.com",
+              "easytorecall.com",
+              "eat-travel-love.com",
+              "eclectichome.co.uk",
+              "buro247.ru",
+              "buzzfeed.com",
+              "bywaterhideout.com",
+              "c103.ie",
+              "calis-beach.co.uk",
+              "cambriatourism.org",
+              "capitalnewshub.com",
+              "captivate.fm",
+              "ceriselle.org",
+              "chainarticles.com",
+              "cherryblossomhandbook.blogspot.com",
+              "cheshire-live.co.uk",
+              "countingup.com",
+              "culturewedding.ca",
+              "falkirkherald.co.uk",
+              "farminglife.com",
+              "fashionjackson.com",
+              "fashionstylebyjohanna.com",
+              "fastnews.site",
+              "fifetoday.co.uk",
+              "footballinberkshire.co.uk",
+              "freevouchercode.com",
+              "frequentflyerbonuses.com",
+              "frommilestosmiles.com",
+              "dailynewser.com",
+              "dailypopnews.com",
+              "fronteirasx.com.br",
+              "dailystar.co.uk",
+              "gaymediareviews.weebly.com",
+              "geocities.ws",
+              "getpodcast.com",
+              "derbyshiretimes.co.uk",
+              "glasgowlive.co.uk",
+              "globalpolicyjournal.com",
+              "derektmckinney.com",
+              "doncasterfreepress.co.uk",
+              "ebm.gr",
+              "effieyoung.com",
+              "eldemocrata.cl",
+              "emeraldterrace.co.uk",
+              "emtalks.co.uk",
+              "extraterrestres.info",
+              "fallfordiy.com",
+              "exteriorhome.uk",
+              "fabricjam.blogspot.com",
+              "fashionista-top.com",
+              "femalewardrobe.com",
+              "fastday.com",
+              "finwinners.com",
+              "forbes.com",
+              "forum.mx5oc.co.uk",
+              "forumotion.com",
+              "freecoursesguru.com",
+              "gadgetzninja.com",
+              "galwaybeo.ie",
+              "fucial.com",
+              "gamereactor.dk",
+              "geekyinsider.com",
+              "georiot.co",
+              "gay2stay.eu",
+              "gcn.eu",
+              "globalaffiliateprograms.co.uk",
+              "globalcoinews.com",
+              "geni.us",
+              "glowsly.com",
+              "genusswerke.eu",
+              "getpocket.com",
+              "good-summary.com",
+              "getsurrey.co.uk",
+              "globalfashionreport.com",
+              "habr.com",
+              "harboroughmail.co.uk",
+              "gloucestershirelive.co.uk",
+              "harrogateadvertiser.co.uk",
+              "hasenchat.uk",
+              "hampshirelive.news",
+              "heimisdottir.co.uk",
+              "happygaytravel.com",
+              "happymatters.co",
+              "harmonywellnesspath.com",
+              "homepage.eircom.net",
+              "hartlepoolmail.co.uk",
+              "headphonesnao.com",
+              "healthek.eu",
+              "hellogorgblog.com",
+              "hucknalldispatch.co.uk",
+              "hulldailymail.co.uk",
+              "idobi.com",
+              "highlifenorth.com",
+              "highstreetguide.co.uk",
+              "emmajhill.com",
+              "honestlywtf.com",
+              "in2.wales",
+              "express.co.uk",
+              "lancasterguardian.co.uk",
+              "leaderonomics.com",
+              "leicestermercury.co.uk",
+              "lesbischemensen.net",
+              "irishmirror.ie",
+              "letswebshop.co.uk",
+              "levisfly.typepad.co.uk",
+              "isavetoday.com",
+              "it.emcelettronica.com",
+              "jacquardflower.uk",
+              "lisae.me.uk",
+              "live-betting.co.uk",
+              "karenandtheworld.com",
+              "lmfm.ie",
+              "london24news.co.uk",
+              "lovesales.com",
+              "lutontoday.co.uk",
+              "m-prod.teenvogueinsider.com",
+              "katescloset.com.au",
+              "malegrooming.net",
+              "katmango.com",
+              "kauf-online.info",
+              "kg611.tripod.com",
+              "mariasadler.com",
+              "marieclaire.co.uk",
+              "miltonkeynes.co.uk",
+              "marshsounddesign.com",
+              "mindandmatter.net",
+              "mirror.co.uk",
+              "medium.com",
+              "missouridigitalnews.com",
+              "menshealth.com",
+              "mylondon.news",
+              "natalierushdie.com",
+              "innovationwarrior.com",
+              "newscabal.co.uk",
+              "irishstar.com",
+              "newsoflatest.com",
+              "newzz.co.uk",
+              "kaylahadlington.com",
+              "northantslive.news",
+              "northantstelegraph.co.uk",
+              "northcarolinadigitalnews.com",
+              "korting-acties.nl",
+              "krasa-russia.ru",
+              "nottinghampost.com",
+              "lancs.live",
+              "obonappetite.com",
+              "leeds-live.co.uk",
+              "lep.co.uk",
+              "lincolnshirelive.co.uk",
+              "littlehouseonthecorner.com",
+              "olidesignhouse.com",
+              "liverpoolecho.co.uk",
+              "palmbeachdailynews.com",
+              "lublin.today",
+              "macworld.com",
+              "macworld.se",
+              "madrid2012.com",
+              "parentherald.com",
+              "passiontreasure.com",
+              "greenweddingshoes.com",
+              "pitchfork.com",
+              "plussizeclothing.co.uk",
+              "healthfuljourneyjoy.com",
+              "healthstaffdiscounts.co.uk",
+              "power-tools-pro.co.uk",
+              "prod.teenvogueinsider.com",
+              "healthytofitness.com",
+              "helpmevote.com",
+              "highstreetuk.com",
+              "hillington.net",
+              "purejo.com",
+              "pvsm.ru",
+              "queeromanceink.com",
+              "infocancha.com",
+              "redefiningmenopause.com",
+              "refinery29.com",
+              "interteiment.com",
+              "italnews.info",
+              "roselinelondon.com",
+              "runnersworld.com",
+              "safehomediy.com",
+              "stampdemon.net",
+              "sakhtafzarmag.com",
+              "samio.co.uk",
+              "sassystreet.com",
+              "stokesentinel.co.uk",
+              "savingarena.com",
+              "strikeapose.co.uk",
+              "scandinaviastandard.com",
+              "stylebee.ca",
+              "seaofshoes.com",
+              "sullivanprogressplaza.com",
+              "supergiving.com",
+              "sussexexpress.co.uk",
+              "swoon.love",
+              "swoonworthy.co.uk",
+              "shinyshiny.tv",
+              "tambulimedia.com",
+              "skinfacebeauty.co.uk",
+              "techadvisor.com",
+              "skinnyisbest.co.uk",
+              "adomonline.com",
+              "aol.com",
+              "eseracingoe.com",
+              "eshoppinguk.co.uk",
+              "findie.in",
+              "bitcointrading.net",
+              "britsonpole.com",
+              "foresight.org",
+              "fujirumors.com",
+              "greenfootsteps.com",
+              "concilio-biennalevenezia.org",
+              "highdefmale.com",
+              "manchestereveningnews.co.uk",
+              "highfieldschurch.org.uk",
+              "inside.wales",
+              "mediabiznet.com.au",
+              "meltontimes.co.uk",
+              "milkwoodhernehill.co.uk",
+              "ladymarielle.com",
+              "mnnofa.com",
+              "laptopmag.com",
+              "londontourpackage.com",
+              "loudersound.com",
+              "thebuzzly.com",
+              "thedot.gr",
+              "nexusnewsfeed.com",
+              "thenewsintel.com",
+              "northcyprusfreepress.com",
+              "nutritioninpill.com",
+              "thestar.co.uk",
+              "thestrategist.co.uk",
+              "thetechfront.com",
+              "jibberjabberuk.co.uk",
+              "thewellgang.com",
+              "jillianharris.com",
+              "jirnal.com",
+              "thisisglamorous.com",
+              "thriveinbalance.com",
+              "josecos.org",
+              "jurovalendo.com.br",
+              "korting-en-acties.nl",
+              "kruakhunyahashland.com",
+              "lifestylelinked.com",
+              "topworldnewstoday.com",
+              "travel-uk.org",
+              "londoncheapo.com",
+              "trvcountdown.com",
+              "londoniete.com",
+              "londonmumma.com",
+              "lookwhatigot.co.uk",
+              "lucysstash.com",
+              "twin.pk",
+              "lukemurphypt.co.uk",
+              "lyliarose.com",
+              "twistedfood.co.uk",
+              "machomoda.com.br",
+              "madriddaily.net",
+              "mammafulzo.com",
+              "mcgrawcenter.org",
+              "mediamarmalade.com",
+              "organisemyhouse.com",
+              "otaku-dojo.com",
+              "ouielle.com",
+              "penniesatatime.com",
+              "missboux.com",
+              "penniesforapound.blogspot.com",
+              "peterboroughtoday.co.uk",
+              "piccolo-rosso.com",
+              "mrsnk.com",
+              "pkmongobot.com",
+              "mysportsanalysis.com",
+              "lydiaelisemillen.com",
+              "makeupatelier.com.br",
+              "margarethahopfner.net",
+              "quadraphonicquad.com",
+              "readingdj.com",
+              "redonline.co.uk",
+              "redpapayaales.com",
+              "rockhate.com",
+              "safeherbalmedicines.com",
+              "naturalwellbeingnow.com",
+              "nerdata.com",
+              "news.24x7report.com",
+              "ninajohnson.com",
+              "telegraph.co.uk",
+              "nintenderos.com",
+              "northamptonchron.co.uk",
+              "plussize.ie",
+              "plussizeclothes.co.uk",
+              "nshep.org.uk",
+              "officialfamemagazine.com",
+              "powerpilatesuk.com",
+              "profindsearch.com",
+              "psu.com",
+              "qa.countingup.com",
+              "quietlycurious.co.uk",
+              "oxfordshirelive.co.uk",
+              "rachelparcell.com",
+              "radiotimes.com",
+              "ramokromok.com",
+              "sachini.co.uk",
+              "repair-notebook.com",
+              "seasons-boutique.com",
+              "retailplanningblog.com",
+              "rjema.com",
+              "rss2.com",
+              "shirtsdoctors.com",
+              "smartcitiesdive.com",
+              "vegethai.com",
+              "snackmagic.com",
+              "vibranthealthventure.com",
+              "vico.vn",
+              "sneakerb0b.de",
+              "solent-renegades.co.uk",
+              "vintageframescompany.com",
+              "sonyalpharumors.com",
+              "soulmete.com",
+              "speakingbeautyuk.com",
+              "speedybrakecentre.com",
+              "walesonline.co.uk",
+              "wandereroftheworld.co.uk",
+              "staciedwardsdesign.com",
+              "stampdemon.co.uk",
+              "weddingaffair.co.in",
+              "startupoverseas.co.uk",
+              "styleandsushi.net",
+              "whatculture.com",
+              "whatslimmingpills.com",
+              "stylonylon.com",
+              "whatsnew2day.com",
+              "wired.me",
+              "womenshealthmag.com",
+              "world68.com",
+              "theannaedit.com",
+              "scotsman.com",
+              "scottishdailyexpress.co.uk",
+              "shoppingvideos.club",
+              "top10christmas.co.uk",
+              "uat-driving.co.uk",
+              "unpolishedmagazine.com",
+              "snkrb0b.de",
+              "sobergirlsociety.com",
+              "whattowatch.com",
+              "song-gamersworld.blogspot.com",
+              "wiredprnews.com",
+              "sookhouse.net",
+              "ymlp218.net",
+              "zzb.bz",
+              "t9oor.com",
+              "staffordshire-live.co.uk",
+              "talkmagic.co.uk",
+              "stockroom.org.uk",
+              "stornowaygazette.co.uk",
+              "techosmo.com",
+              "styleandminimalism.com",
+              "terracelinks.info",
+              "suffolklive.com",
+              "testosteroneboostersuk.co.uk",
+              "worthpromotions.co.uk",
+              "thebigproject.co.uk",
+              "thedolcedays.com",
+              "yodack.com",
+              "yorkshireeveningpost.co.uk",
+              "yourchoiceway.com",
+              "thelayoverlife.com",
+              "zszhair.com",
+              "thelittleblogofvegan.com",
+              "tasteandtipple.ca",
+              "techradar.com",
+              "mp3easy.co.uk",
+              "myjoyonline.com",
+              "nytimesnewstoday.com",
+              "thefortyfive.com",
+              "ofm.co.za",
+              "omega-level.net",
+              "peonylim.com",
+              "thelondonmummy.com",
+              "theoldreader.com",
+              "reportwire.org",
+              "thesleepadvisors.co.uk",
+              "theuk.one",
+              "scunthorpetelegraph.co.uk",
+              "thezoereport.com",
+              "timesnewsnetwork.com",
+              "shopman.co.uk",
+              "today24.pro",
+              "stuff.tv",
+              "t3.com",
+              "techzonedaily.com",
+              "trending24x7.com",
+              "topbuzzmagazine.com",
+              "toptechnicalsolutions.com",
+              "trustedutilities.com",
+              "tube4vids.com",
+              "uncle-nics-general-store.com",
+              "twinperspectives.co.uk",
+              "u105.com",
+              "uk.style.yahoo.com",
+              "ukfinancialoptions.co.uk",
+              "vicongly.com",
+              "ukmotoringdirectory.co.uk",
+              "vanityfair.it",
+              "voguescandinavia.com",
+              "vesect.com",
+              "vouchercodesparade.co.uk",
+              "wakefieldexpress.co.uk",
+              "video.getpvd.com",
+              "washingtonweeklytimes.com",
+              "vogue.fr",
+              "vouchercodeocean.co.uk",
+              "westfield.com",
+              "voucherforless.com",
+              "throne.com",
+              "tilestwra.com",
+              "tinaa.org",
+              "which.co.uk",
+              "wild1067.com",
+              "womanandhome.com",
+              "ztec100.com",
+              "web01.teenvogueinsider.com",
+              "webadictos.com",
+              "webloganycar.co.uk",
+              "webtimes.uk",
+              "wighthosting.info",
+              "windowtothebeauty.com",
+              "worksopguardian.co.uk",
+              "worldnl.com",
+              "www-dev.uat-thescottishsun.co.uk",
+              "xacobeogalicia.org",
+              "yespleasemademoiselle.blogspot.com",
+              "yorkshirepost.co.uk",
+              "youhuima.de",
+              "zannebikinis.com",
+              "znetwork.org"
+            ]
+          },
+          {
+            "count": 18,
+            "promotype": "incentive",
+            "value": [
+              "2geescoupon.com",
+              "43rumors.com",
+              "chicatanyage.com",
+              "couponwahm.com",
+              "dealmakerz.co.uk",
+              "glasgowworld.com",
+              "hotukdeals.com",
+              "estilistas.co.uk",
+              "inyourarea.co.uk",
+              "m3.se",
+              "shopdeals.site",
+              "newsletter.co.uk",
+              "jpnewss.com",
+              "linkmydeals.com",
+              "mydealz.de",
+              "remedydeals.com",
+              "smugdeals.com",
+              "vogue.it"
+            ]
+          },
+          {
+            "count": 50,
+            "promotype": "content",
+            "value": [
+              "aborat.com",
+              "apiv2.nextgenshopping.com",
+              "bedfordtoday.co.uk",
+              "catalyst4change.org.uk",
+              "cheaper.co.uk",
+              "businessmayor.com",
+              "curiousfancy.com",
+              "dailytimes247.com",
+              "electric-bicycle.site",
+              "discount-voucher.co.uk",
+              "educatorsden.com",
+              "community-posts.com",
+              "fashionrec.com",
+              "emanoncreations.com",
+              "exactnewz.com",
+              "football.london",
+              "funnyvot.com",
+              "info-galore.com",
+              "homemoneysavingtips.com",
+              "ethy.co.uk",
+              "inkl.com",
+              "luxuo.com",
+              "manforhimself.com",
+              "menswearstyle.co.uk",
+              "mymidlifefashion.com",
+              "knowdemia.com",
+              "healthnourishpath.com",
+              "hegemorris.com",
+              "ign.com",
+              "mingooland.com",
+              "neverhollowed.com",
+              "thesouthernreporter.co.uk",
+              "londonworld.com",
+              "loughboroughecho.net",
+              "maronihealth.com",
+              "medicalcases.eu",
+              "oribatejo.pt",
+              "miaouornever.blogspot.com",
+              "techagekids.com",
+              "nrbm-music.com",
+              "reviewfithealth.com",
+              "serendibnews.com.au",
+              "youtube.com",
+              "theseconddisc.com",
+              "townandcountrymag.com",
+              "uk.electronic.partners",
+              "us.matildagoad.com",
+              "vogue.com",
+              "voucherbin.co.uk",
+              "whentravel.com"
+            ]
+          },
+          {
+            "count": 9,
+            "promotype": "forum",
+            "value": [
+              "allaboutwindowsphone.com",
+              "bedfordshirelive.co.uk",
+              "joe.co.uk",
+              "rapidtelecast.com",
+              "simonamoona.blogspot.com",
+              "timedesignstudio.com",
+              "theaustralian.info",
+              "topukdirectory.co.uk",
+              "wornon.tv"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 2,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 2,
+          "score": 100
+        },
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 2,
+          "score": 100
+        }
+      ]
+    }
+  }
+}

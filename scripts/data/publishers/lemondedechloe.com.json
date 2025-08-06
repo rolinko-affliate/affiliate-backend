@@ -1,0 +1,651 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 3,
+      "sampleValue": [
+        "Awin",
+        "Impact",
+        "Private Network"
+      ],
+      "value": [
+        "Awin",
+        "Impact",
+        "Private Network"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "fr",
+        "score": 0.85
+      },
+      "sampleValue": [
+        {
+          "countryCode": "fr",
+          "score": 0.85
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "fr",
+          "score": 0.85
+        }
+      ]
+    },
+    "domain": "lemondedechloe.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "location"
+        },
+        {
+          "score": 0.5637097,
+          "value": "camping"
+        },
+        {
+          "score": 0.14274193,
+          "value": "vacance"
+        },
+        {
+          "score": 0.12903225,
+          "value": "prix"
+        },
+        {
+          "score": 0.11370968,
+          "value": "véhicule"
+        },
+        {
+          "score": 0.091129035,
+          "value": "voyage"
+        },
+        {
+          "score": 0.075,
+          "value": "camperday"
+        },
+        {
+          "score": 0.06854839,
+          "value": "état"
+        },
+        {
+          "score": 0.05403226,
+          "value": "réservation"
+        },
+        {
+          "score": 0.053225808,
+          "value": "agence"
+        },
+        {
+          "score": 0.053225808,
+          "value": "gratuit"
+        },
+        {
+          "score": 0.052419353,
+          "value": "expérience"
+        },
+        {
+          "score": 0.05080645,
+          "value": "donnée"
+        },
+        {
+          "score": 0.04919355,
+          "value": "jour"
+        },
+        {
+          "score": 0.046774194,
+          "value": "route"
+        },
+        {
+          "score": 0.046774194,
+          "value": "monde"
+        },
+        {
+          "score": 0.045161292,
+          "value": "enfant"
+        },
+        {
+          "score": 0.043548387,
+          "value": "entier"
+        },
+        {
+          "score": 0.04032258,
+          "value": "loueur"
+        },
+        {
+          "score": 0.03951613,
+          "value": "national"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "location"
+        },
+        {
+          "score": 0.5637097,
+          "value": "camping"
+        },
+        {
+          "score": 0.14274193,
+          "value": "vacance"
+        },
+        {
+          "score": 0.12903225,
+          "value": "prix"
+        },
+        {
+          "score": 0.11370968,
+          "value": "véhicule"
+        },
+        {
+          "score": 0.091129035,
+          "value": "voyage"
+        },
+        {
+          "score": 0.075,
+          "value": "camperday"
+        },
+        {
+          "score": 0.06854839,
+          "value": "état"
+        },
+        {
+          "score": 0.05403226,
+          "value": "réservation"
+        },
+        {
+          "score": 0.053225808,
+          "value": "agence"
+        },
+        {
+          "score": 0.053225808,
+          "value": "gratuit"
+        },
+        {
+          "score": 0.052419353,
+          "value": "expérience"
+        },
+        {
+          "score": 0.05080645,
+          "value": "donnée"
+        },
+        {
+          "score": 0.04919355,
+          "value": "jour"
+        },
+        {
+          "score": 0.046774194,
+          "value": "route"
+        },
+        {
+          "score": 0.046774194,
+          "value": "monde"
+        },
+        {
+          "score": 0.045161292,
+          "value": "enfant"
+        },
+        {
+          "score": 0.043548387,
+          "value": "entier"
+        },
+        {
+          "score": 0.04032258,
+          "value": "loueur"
+        },
+        {
+          "score": 0.03951613,
+          "value": "national"
+        },
+        {
+          "score": 0.03951613,
+          "value": "meilleur"
+        },
+        {
+          "score": 0.03951613,
+          "value": "sécurité"
+        },
+        {
+          "score": 0.03951613,
+          "value": "équipement"
+        },
+        {
+          "score": 0.037903227,
+          "value": "protection"
+        },
+        {
+          "score": 0.037903227,
+          "value": "offre"
+        },
+        {
+          "score": 0.037096772,
+          "value": "accessible"
+        },
+        {
+          "score": 0.037096772,
+          "value": "disponible"
+        },
+        {
+          "score": 0.03629032,
+          "value": "recherche"
+        },
+        {
+          "score": 0.03467742,
+          "value": "besoin"
+        },
+        {
+          "score": 0.03467742,
+          "value": "société"
+        },
+        {
+          "score": 0.03387097,
+          "value": "ville"
+        },
+        {
+          "score": 0.03387097,
+          "value": "carte"
+        },
+        {
+          "score": 0.033064514,
+          "value": "départ"
+        },
+        {
+          "score": 0.031451613,
+          "value": "réduction"
+        },
+        {
+          "score": 0.031451613,
+          "value": "affiliation"
+        },
+        {
+          "score": 0.031451613,
+          "value": "légal"
+        },
+        {
+          "score": 0.030645162,
+          "value": "avance"
+        },
+        {
+          "score": 0.02983871,
+          "value": "numéro"
+        },
+        {
+          "score": 0.029032258,
+          "value": "oakland"
+        },
+        {
+          "score": 0.029032258,
+          "value": "site"
+        },
+        {
+          "score": 0.029032258,
+          "value": "aventure"
+        },
+        {
+          "score": 0.029032258,
+          "value": "point"
+        },
+        {
+          "score": 0.028225806,
+          "value": "bébé"
+        },
+        {
+          "score": 0.028225806,
+          "value": "exemple"
+        },
+        {
+          "score": 0.028225806,
+          "value": "férié"
+        },
+        {
+          "score": 0.028225806,
+          "value": "âge"
+        },
+        {
+          "score": 0.028225806,
+          "value": "guid"
+        },
+        {
+          "score": 0.028225806,
+          "value": "cruise"
+        },
+        {
+          "score": 0.028225806,
+          "value": "grâce"
+        },
+        {
+          "score": 0.028225806,
+          "value": "conducteur"
+        },
+        {
+          "score": 0.028225806,
+          "value": "conseil"
+        },
+        {
+          "score": 0.027419355,
+          "value": "national numéro"
+        },
+        {
+          "score": 0.027419355,
+          "value": "cgv"
+        },
+        {
+          "score": 0.027419355,
+          "value": "programm"
+        },
+        {
+          "score": 0.027419355,
+          "value": "étudiant"
+        },
+        {
+          "score": 0.027419355,
+          "value": "mention"
+        },
+        {
+          "score": 0.026612904,
+          "value": "guid jour"
+        },
+        {
+          "score": 0.026612904,
+          "value": "eur"
+        },
+        {
+          "score": 0.026612904,
+          "value": "affiliation réduction"
+        },
+        {
+          "score": 0.025806451,
+          "value": "avantageux"
+        },
+        {
+          "score": 0.025806451,
+          "value": "grand"
+        },
+        {
+          "score": 0.025806451,
+          "value": "crédit"
+        },
+        {
+          "score": 0.025,
+          "value": "angele"
+        },
+        {
+          "score": 0.025,
+          "value": "idéal"
+        },
+        {
+          "score": 0.024193548,
+          "value": "car"
+        },
+        {
+          "score": 0.024193548,
+          "value": "destination"
+        },
+        {
+          "score": 0.023387097,
+          "value": "promesse"
+        },
+        {
+          "score": 0.023387097,
+          "value": "winnebago"
+        },
+        {
+          "score": 0.022580646,
+          "value": "rêve"
+        },
+        {
+          "score": 0.022580646,
+          "value": "inoubliable"
+        },
+        {
+          "score": 0.021774193,
+          "value": "année"
+        },
+        {
+          "score": 0.021774193,
+          "value": "transparent"
+        },
+        {
+          "score": 0.020967742,
+          "value": "coup"
+        },
+        {
+          "score": 0.020967742,
+          "value": "professionnel"
+        },
+        {
+          "score": 0.020967742,
+          "value": "œil"
+        },
+        {
+          "score": 0.02016129,
+          "value": "minimum"
+        },
+        {
+          "score": 0.02016129,
+          "value": "permis"
+        },
+        {
+          "score": 0.02016129,
+          "value": "heureux"
+        },
+        {
+          "score": 0.02016129,
+          "value": "meilleur prix"
+        },
+        {
+          "score": 0.019354839,
+          "value": "garanti"
+        },
+        {
+          "score": 0.019354839,
+          "value": "idéal vacance"
+        },
+        {
+          "score": 0.019354839,
+          "value": "avantageux réservation"
+        },
+        {
+          "score": 0.019354839,
+          "value": "transparent coup"
+        },
+        {
+          "score": 0.019354839,
+          "value": "garanti prix"
+        },
+        {
+          "score": 0.019354839,
+          "value": "orlando"
+        },
+        {
+          "score": 0.019354839,
+          "value": "supplémentaire"
+        },
+        {
+          "score": 0.018548386,
+          "value": "oui"
+        },
+        {
+          "score": 0.018548386,
+          "value": "intermédiaire"
+        },
+        {
+          "score": 0.018548386,
+          "value": "siège"
+        },
+        {
+          "score": 0.018548386,
+          "value": "heureux grâce"
+        },
+        {
+          "score": 0.018548386,
+          "value": "manière"
+        },
+        {
+          "score": 0.018548386,
+          "value": "inoubliable monde"
+        },
+        {
+          "score": 0.018548386,
+          "value": "louez"
+        },
+        {
+          "score": 0.018548386,
+          "value": "sentiment"
+        },
+        {
+          "score": 0.018548386,
+          "value": "famille"
+        },
+        {
+          "score": 0.018548386,
+          "value": "louez intermédiaire"
+        },
+        {
+          "score": 0.018548386,
+          "value": "animal"
+        },
+        {
+          "score": 0.018548386,
+          "value": "fauteuil"
+        },
+        {
+          "score": 0.018548386,
+          "value": "disponible prix"
+        },
+        {
+          "score": 0.017741935,
+          "value": "intéressant"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://lemondedechloe.com/",
+        "https://www.lemondedechloe.com/",
+        "http://lemondedechloe.com/",
+        "http://www.lemondedechloe.com/"
+      ]
+    },
+    "metaData": {
+      "description": "",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/lemondedechloe.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://lemondedechloe.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 5,
+        "value": [
+          "camperdays.fr",
+          "chapkadirect.fr",
+          "esim.holafly.com",
+          "skyscanner.com",
+          "skyscanner.fr"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1.95,
+            "vertical": "Travel / Flights"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Insurance"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Esim"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Travel / Car Hire"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 5,
+      "value": [
+        "camperdays.fr",
+        "chapkadirect.fr",
+        "esim.holafly.com",
+        "skyscanner.com",
+        "skyscanner.fr"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 5,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "instagram",
+        "pinterest"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/chloereunion",
+        "instagram": "https://instagram.com/lemondedechloe.974",
+        "pinterest": "https://pinterest.com/lemondedechloe",
+        "twitter": "https://twitter.com/lemondedechloe_",
+        "youtube": "https://youtube.com/c/lemondedechloé"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Online / Services",
+      "value": [
+        "Online / Services",
+        "Fashion / Clothing",
+        "Health / Beauty"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Online / Services",
+        "rank": 1,
+        "score": 80
+      },
+      "value": [
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 80
+        },
+        {
+          "name": "Fashion / Clothing",
+          "rank": 1,
+          "score": 60
+        },
+        {
+          "name": "Health / Beauty",
+          "rank": 1,
+          "score": 50
+        }
+      ]
+    }
+  }
+}

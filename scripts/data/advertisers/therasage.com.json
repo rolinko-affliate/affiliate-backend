@@ -1,0 +1,363 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 2,
+      "sampleValue": [
+        "Refersion",
+        "Skimlinks"
+      ],
+      "value": [
+        "Refersion",
+        "Skimlinks"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 2,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "info@therasage.com"
+        },
+        {
+          "department": "sales",
+          "value": "shipping@therasage.com"
+        }
+      ]
+    },
+    "domain": "therasage.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "Feel the power of healing with full spectrum infrared ! Therasage featuring infrared therapy with our amazing personal saunas, heating pads and much more!!",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/therasage.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://therasage.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 412
+      },
+      "partnersAdded": {
+        "count": 38,
+        "value": [
+          {
+            "domain": "bestpricetrend.com"
+          },
+          {
+            "domain": "crazydealsgo.com"
+          },
+          {
+            "domain": "topdealshopping.com"
+          },
+          {
+            "domain": "newonlinefinds.com"
+          },
+          {
+            "domain": "eoupon.site"
+          },
+          {
+            "domain": "quicksavingmart.store"
+          },
+          {
+            "domain": "toptrendbox.com"
+          },
+          {
+            "domain": "eazyas.online"
+          },
+          {
+            "domain": "stellarbargainstore.com"
+          },
+          {
+            "domain": "primeshop1.com"
+          },
+          {
+            "domain": "healthtotheday.com"
+          },
+          {
+            "domain": "ponloaprueba.com"
+          },
+          {
+            "domain": "hollyhealthspan.com"
+          },
+          {
+            "domain": "evergreenpicks.com"
+          },
+          {
+            "domain": "prodealsdirect.com"
+          },
+          {
+            "domain": "buystellargoods.com"
+          },
+          {
+            "domain": "choosehealthwc.com"
+          },
+          {
+            "domain": "fitflare.in"
+          },
+          {
+            "domain": "savvyfindsmart.com"
+          },
+          {
+            "domain": "makekidshealthyagain.com"
+          },
+          {
+            "domain": "stealthetrend.com"
+          },
+          {
+            "domain": "peppermintpetty79.net"
+          },
+          {
+            "domain": "fastdealsmart.com"
+          },
+          {
+            "domain": "notjustformen.com"
+          },
+          {
+            "domain": "savvyfindsonline.com"
+          },
+          {
+            "domain": "fitnesstantra4u.blogspot.com"
+          },
+          {
+            "domain": "icumusthaves.com"
+          },
+          {
+            "domain": "buzzybuyz.com"
+          },
+          {
+            "domain": "loudhdtv.com"
+          },
+          {
+            "domain": "au.lvluphealth.com"
+          },
+          {
+            "domain": "nowandtrendy.com"
+          },
+          {
+            "domain": "cutespets.com"
+          },
+          {
+            "domain": "buytrendydeals.com"
+          },
+          {
+            "domain": "top-dealshub.com"
+          },
+          {
+            "domain": "unihup.com"
+          },
+          {
+            "domain": "findperfectdeals.com"
+          },
+          {
+            "domain": "energyzonefitness.org"
+          },
+          {
+            "domain": "dealsandfinds.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 15,
+        "value": [
+          {
+            "domain": "swiftsavingsmart.com"
+          },
+          {
+            "domain": "cassmd.com"
+          },
+          {
+            "domain": "therasageemc76543.answerblogs.com"
+          },
+          {
+            "domain": "buyprowl.com"
+          },
+          {
+            "domain": "checkpricelow.com"
+          },
+          {
+            "domain": "newsquo.com"
+          },
+          {
+            "domain": "exclusivedealz.com"
+          },
+          {
+            "domain": "befitlist.com"
+          },
+          {
+            "domain": "tmas.tv"
+          },
+          {
+            "domain": "topstellarfinds.com"
+          },
+          {
+            "domain": "allbestbuydeals.com"
+          },
+          {
+            "domain": "app.signtechsupport.org"
+          },
+          {
+            "domain": "trustreviewssite.com"
+          },
+          {
+            "domain": "priceslashpro.com"
+          },
+          {
+            "domain": "codexia.online"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 47,
+            "promotype": "blog",
+            "value": [
+              "1topproduct.com",
+              "amazon.co.uk",
+              "annmariegianni.com",
+              "autoimmunewarrior.com",
+              "bestratefinders.com",
+              "bio.site",
+              "birchwell.clinic",
+              "brighteningcare.com",
+              "cleanlivinghealthandwellness.net",
+              "closequartersmom.com",
+              "crossmap.com",
+              "decodingsuperhuman.com",
+              "deliciousobsessions.com",
+              "dirtdoctor.com",
+              "doctordoni.com",
+              "dralexischesney.com",
+              "drameet.com",
+              "drcherylwinter.com",
+              "edifyingnewsworld.com",
+              "fastnews.site",
+              "fatsec.com",
+              "footballoogy.com",
+              "fyht.com",
+              "goodpods.com",
+              "greenlivingtribe.com",
+              "holisticnootropics.com",
+              "jessegolden.com",
+              "knowliketrust.net",
+              "lacocinaholistica.com",
+              "medium.com",
+              "msha.ke",
+              "naturepluscbd.ca",
+              "player.fm",
+              "primefindshub.com",
+              "regenerateproject.com",
+              "saborholistico.com",
+              "sendfox.com",
+              "shorturl.at",
+              "stephencabral.com",
+              "taragarrison.com",
+              "tgtbuy.com",
+              "theconsciousnutritionist.com",
+              "thrive-holistic.com",
+              "ubestpick.com",
+              "unlimitedhealthy.com",
+              "wanderwellliving.com",
+              "welloflifecenter.com"
+            ]
+          },
+          {
+            "count": 26,
+            "promotype": "student",
+            "value": [
+              "aferg.co",
+              "amazon.com.au",
+              "angelabrown.org",
+              "awakenedwellnessllc.com",
+              "castos.com",
+              "coremotus.com",
+              "dietitianforall.com",
+              "droppricetoday.com",
+              "drtyna.com",
+              "energymdmethod.com",
+              "evanbrand.com",
+              "fresh.yiaap.com",
+              "getdetoxinated.com",
+              "grazedandenthused.com",
+              "ivoox.com",
+              "justingredients.us",
+              "kristenblakewellness.com",
+              "lindywell.com",
+              "originsofhealth.com",
+              "panaceabiomedical.com",
+              "reikiinmedicine.org",
+              "share.snipd.com",
+              "solutionfreedom.com",
+              "southardliving.com",
+              "thenutritionalspectrum.com",
+              "wavesofhealthcda.com"
+            ]
+          },
+          {
+            "count": 4,
+            "promotype": "content",
+            "value": [
+              "attractwell.com",
+              "myersdetox.com",
+              "podparadise.com",
+              "thehive.health"
+            ]
+          },
+          {
+            "count": 2,
+            "promotype": "incentive",
+            "value": [
+              "couponupto.com",
+              "infrared-light-therapy.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/therasage",
+        "instagram": "https://instagram.com/therasageinfrared",
+        "twitter": "https://twitter.com/therasagefir",
+        "youtube": "https://youtube.com/channel/ucuyleclzueoabo4_-3rqfvg"
+      }
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Health / Wellbeing",
+        "rank": 2,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Health / Wellbeing",
+          "rank": 2,
+          "score": 90
+        },
+        {
+          "name": "Technology / Electronics",
+          "rank": 2,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

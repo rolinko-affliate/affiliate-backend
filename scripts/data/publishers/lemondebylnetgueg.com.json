@@ -1,0 +1,605 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Private Network"
+      ],
+      "value": [
+        "Private Network"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "fr",
+        "score": 0.7
+      },
+      "sampleValue": [
+        {
+          "countryCode": "fr",
+          "score": 0.7
+        },
+        {
+          "countryCode": "be",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "fr",
+          "score": 0.7
+        },
+        {
+          "countryCode": "be",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "lemondebylnetgueg.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "tour"
+        },
+        {
+          "score": 0.31860727,
+          "value": "hour"
+        },
+        {
+          "score": 0.31448895,
+          "value": "activity"
+        },
+        {
+          "score": 0.2631973,
+          "value": "ticket"
+        },
+        {
+          "score": 0.25383753,
+          "value": "person"
+        },
+        {
+          "score": 0.23324597,
+          "value": "city"
+        },
+        {
+          "score": 0.21827032,
+          "value": "duration"
+        },
+        {
+          "score": 0.19168851,
+          "value": "guide"
+        },
+        {
+          "score": 0.17783602,
+          "value": "trip"
+        },
+        {
+          "score": 0.16772744,
+          "value": "edinburgh"
+        },
+        {
+          "score": 0.1516286,
+          "value": "reykjavik"
+        },
+        {
+          "score": 0.13852489,
+          "value": "hop"
+        },
+        {
+          "score": 0.13253464,
+          "value": "cruise"
+        },
+        {
+          "score": 0.12654437,
+          "value": "museum"
+        },
+        {
+          "score": 0.109322354,
+          "value": "friendly"
+        },
+        {
+          "score": 0.10894796,
+          "value": "peso"
+        },
+        {
+          "score": 0.10894796,
+          "value": "dollar"
+        },
+        {
+          "score": 0.10857357,
+          "value": "sightseeing"
+        },
+        {
+          "score": 0.09771621,
+          "value": "family"
+        },
+        {
+          "score": 0.09734182,
+          "value": "river"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "tour"
+        },
+        {
+          "score": 0.31860727,
+          "value": "hour"
+        },
+        {
+          "score": 0.31448895,
+          "value": "activity"
+        },
+        {
+          "score": 0.2631973,
+          "value": "ticket"
+        },
+        {
+          "score": 0.25383753,
+          "value": "person"
+        },
+        {
+          "score": 0.23324597,
+          "value": "city"
+        },
+        {
+          "score": 0.21827032,
+          "value": "duration"
+        },
+        {
+          "score": 0.19168851,
+          "value": "guide"
+        },
+        {
+          "score": 0.17783602,
+          "value": "trip"
+        },
+        {
+          "score": 0.16772744,
+          "value": "edinburgh"
+        },
+        {
+          "score": 0.1516286,
+          "value": "reykjavik"
+        },
+        {
+          "score": 0.13852489,
+          "value": "hop"
+        },
+        {
+          "score": 0.13253464,
+          "value": "cruise"
+        },
+        {
+          "score": 0.12654437,
+          "value": "museum"
+        },
+        {
+          "score": 0.109322354,
+          "value": "friendly"
+        },
+        {
+          "score": 0.10894796,
+          "value": "peso"
+        },
+        {
+          "score": 0.10894796,
+          "value": "dollar"
+        },
+        {
+          "score": 0.10857357,
+          "value": "sightseeing"
+        },
+        {
+          "score": 0.09771621,
+          "value": "family"
+        },
+        {
+          "score": 0.09734182,
+          "value": "river"
+        },
+        {
+          "score": 0.09509547,
+          "value": "attraction"
+        },
+        {
+          "score": 0.09284912,
+          "value": "boat"
+        },
+        {
+          "score": 0.091351554,
+          "value": "bus"
+        },
+        {
+          "score": 0.08873081,
+          "value": "south"
+        },
+        {
+          "score": 0.0801198,
+          "value": "friendly activity"
+        },
+        {
+          "score": 0.0801198,
+          "value": "history"
+        },
+        {
+          "score": 0.07937102,
+          "value": "water"
+        },
+        {
+          "score": 0.07675028,
+          "value": "private"
+        },
+        {
+          "score": 0.07412954,
+          "value": "whale"
+        },
+        {
+          "score": 0.07188319,
+          "value": "bath"
+        },
+        {
+          "score": 0.07188319,
+          "value": "tower"
+        },
+        {
+          "score": 0.071508795,
+          "value": "minute"
+        },
+        {
+          "score": 0.0711344,
+          "value": "popular"
+        },
+        {
+          "score": 0.06851366,
+          "value": "beatle"
+        },
+        {
+          "score": 0.062897794,
+          "value": "iceland"
+        },
+        {
+          "score": 0.062149007,
+          "value": "entry"
+        },
+        {
+          "score": 0.061774615,
+          "value": "famous"
+        },
+        {
+          "score": 0.06102583,
+          "value": "ghost"
+        },
+        {
+          "score": 0.06065144,
+          "value": "walking"
+        },
+        {
+          "score": 0.06065144,
+          "value": "getyourguide"
+        },
+        {
+          "score": 0.06027705,
+          "value": "stonehenge"
+        },
+        {
+          "score": 0.057656307,
+          "value": "sight"
+        },
+        {
+          "score": 0.05503557,
+          "value": "light"
+        },
+        {
+          "score": 0.054661177,
+          "value": "glaci"
+        },
+        {
+          "score": 0.053538002,
+          "value": "palace"
+        },
+        {
+          "score": 0.05316361,
+          "value": "liverpool"
+        },
+        {
+          "score": 0.047922127,
+          "value": "beautiful"
+        },
+        {
+          "score": 0.046798952,
+          "value": "art"
+        },
+        {
+          "score": 0.045675777,
+          "value": "pickup"
+        },
+        {
+          "score": 0.045301385,
+          "value": "circle"
+        },
+        {
+          "score": 0.044552602,
+          "value": "british"
+        },
+        {
+          "score": 0.043429427,
+          "value": "getyourguide customer"
+        },
+        {
+          "score": 0.04155747,
+          "value": "optional"
+        },
+        {
+          "score": 0.041183077,
+          "value": "florence"
+        },
+        {
+          "score": 0.040808685,
+          "value": "valid"
+        },
+        {
+          "score": 0.040434293,
+          "value": "bike"
+        },
+        {
+          "score": 0.040434293,
+          "value": "wine"
+        },
+        {
+          "score": 0.038936727,
+          "value": "amazing"
+        },
+        {
+          "score": 0.038187943,
+          "value": "night"
+        },
+        {
+          "score": 0.03781355,
+          "value": "partner"
+        },
+        {
+          "score": 0.03781355,
+          "value": "helpful"
+        },
+        {
+          "score": 0.03781355,
+          "value": "volcano"
+        },
+        {
+          "score": 0.03743916,
+          "value": "supplier"
+        },
+        {
+          "score": 0.03743916,
+          "value": "gettysburg"
+        },
+        {
+          "score": 0.03706477,
+          "value": "russian"
+        },
+        {
+          "score": 0.03706477,
+          "value": "thame"
+        },
+        {
+          "score": 0.036690377,
+          "value": "food"
+        },
+        {
+          "score": 0.036690377,
+          "value": "egyptian"
+        },
+        {
+          "score": 0.036690377,
+          "value": "euro"
+        },
+        {
+          "score": 0.036690377,
+          "value": "japanese"
+        },
+        {
+          "score": 0.036690377,
+          "value": "african"
+        },
+        {
+          "score": 0.036690377,
+          "value": "sitemap"
+        },
+        {
+          "score": 0.036690377,
+          "value": "golden"
+        },
+        {
+          "score": 0.036315985,
+          "value": "transfer"
+        },
+        {
+          "score": 0.036315985,
+          "value": "dansk"
+        },
+        {
+          "score": 0.036315985,
+          "value": "deutschland"
+        },
+        {
+          "score": 0.036315985,
+          "value": "dansk deutschland"
+        },
+        {
+          "score": 0.036315985,
+          "value": "sterreich"
+        },
+        {
+          "score": 0.036315985,
+          "value": "schweiz"
+        },
+        {
+          "score": 0.036315985,
+          "value": "brasil"
+        },
+        {
+          "score": 0.036315985,
+          "value": "suoman"
+        },
+        {
+          "score": 0.036315985,
+          "value": "argentine"
+        },
+        {
+          "score": 0.036315985,
+          "value": "argentine peso"
+        },
+        {
+          "score": 0.036315985,
+          "value": "australian"
+        },
+        {
+          "score": 0.036315985,
+          "value": "australian dollar"
+        },
+        {
+          "score": 0.036315985,
+          "value": "bulgarian"
+        },
+        {
+          "score": 0.036315985,
+          "value": "canadian"
+        },
+        {
+          "score": 0.036315985,
+          "value": "canadian dollar"
+        },
+        {
+          "score": 0.036315985,
+          "value": "swiss"
+        },
+        {
+          "score": 0.036315985,
+          "value": "chf"
+        },
+        {
+          "score": 0.036315985,
+          "value": "swiss chf"
+        },
+        {
+          "score": 0.036315985,
+          "value": "colombian"
+        },
+        {
+          "score": 0.036315985,
+          "value": "egyptian euro"
+        },
+        {
+          "score": 0.036315985,
+          "value": "british ft"
+        },
+        {
+          "score": 0.036315985,
+          "value": "israeli"
+        },
+        {
+          "score": 0.036315985,
+          "value": "yen"
+        },
+        {
+          "score": 0.036315985,
+          "value": "japanese yen"
+        },
+        {
+          "score": 0.036315985,
+          "value": "mexican"
+        },
+        {
+          "score": 0.036315985,
+          "value": "norwegian"
+        },
+        {
+          "score": 0.036315985,
+          "value": "philippine"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/lemondebylnetgueg.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://lemondebylnetgueg.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1,
+        "value": [
+          "getyourguide.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 0.95,
+            "vertical": "Travel / Attractions"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 1,
+      "value": [
+        "getyourguide.com"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 1,
+      "sampleValue": "Online / Services",
+      "value": [
+        "Online / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Online / Services",
+        "rank": 1,
+        "score": 40
+      },
+      "value": [
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 40
+        }
+      ]
+    }
+  }
+}

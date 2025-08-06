@@ -1,0 +1,1134 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 4,
+      "sampleValue": [
+        "CommissionFactory",
+        "Linkby",
+        "Private Network"
+      ],
+      "value": [
+        "CommissionFactory",
+        "Linkby",
+        "Private Network",
+        "Skimlinks"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "au",
+        "score": 0.95
+      },
+      "sampleValue": [
+        {
+          "countryCode": "au",
+          "score": 0.95
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "au",
+          "score": 0.95
+        }
+      ]
+    },
+    "domain": "maitlandmercury.com.au",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "hair"
+        },
+        {
+          "score": 0.9243072,
+          "value": "accessory"
+        },
+        {
+          "score": 0.5888894,
+          "value": "shave"
+        },
+        {
+          "score": 0.535006,
+          "value": "massage"
+        },
+        {
+          "score": 0.5288322,
+          "value": "clipper"
+        },
+        {
+          "score": 0.39442092,
+          "value": "store"
+        },
+        {
+          "score": 0.349806,
+          "value": "oral"
+        },
+        {
+          "score": 0.31668514,
+          "value": "swimwear"
+        },
+        {
+          "score": 0.30495033,
+          "value": "body"
+        },
+        {
+          "score": 0.29256535,
+          "value": "clothing"
+        },
+        {
+          "score": 0.27139917,
+          "value": "activewear"
+        },
+        {
+          "score": 0.2438156,
+          "value": "skin"
+        },
+        {
+          "score": 0.24328433,
+          "value": "dresses"
+        },
+        {
+          "score": 0.24085003,
+          "value": "trimmer"
+        },
+        {
+          "score": 0.23936485,
+          "value": "jackets"
+        },
+        {
+          "score": 0.23797634,
+          "value": "knitwear"
+        },
+        {
+          "score": 0.23474713,
+          "value": "post"
+        },
+        {
+          "score": 0.23016681,
+          "value": "shirts"
+        },
+        {
+          "score": 0.22888535,
+          "value": "underwear"
+        },
+        {
+          "score": 0.21135919,
+          "value": "card"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "hair"
+        },
+        {
+          "score": 0.9243072,
+          "value": "accessory"
+        },
+        {
+          "score": 0.5888894,
+          "value": "shave"
+        },
+        {
+          "score": 0.535006,
+          "value": "massage"
+        },
+        {
+          "score": 0.5288322,
+          "value": "clipper"
+        },
+        {
+          "score": 0.39442092,
+          "value": "store"
+        },
+        {
+          "score": 0.349806,
+          "value": "oral"
+        },
+        {
+          "score": 0.31668514,
+          "value": "swimwear"
+        },
+        {
+          "score": 0.30495033,
+          "value": "body"
+        },
+        {
+          "score": 0.29256535,
+          "value": "clothing"
+        },
+        {
+          "score": 0.27139917,
+          "value": "activewear"
+        },
+        {
+          "score": 0.2438156,
+          "value": "skin"
+        },
+        {
+          "score": 0.24328433,
+          "value": "dresses"
+        },
+        {
+          "score": 0.24085003,
+          "value": "trimmer"
+        },
+        {
+          "score": 0.23936485,
+          "value": "jackets"
+        },
+        {
+          "score": 0.23797634,
+          "value": "knitwear"
+        },
+        {
+          "score": 0.23474713,
+          "value": "post"
+        },
+        {
+          "score": 0.23016681,
+          "value": "shirts"
+        },
+        {
+          "score": 0.22888535,
+          "value": "underwear"
+        },
+        {
+          "score": 0.21135919,
+          "value": "card"
+        },
+        {
+          "score": 0.20722544,
+          "value": "dress"
+        },
+        {
+          "score": 0.20358351,
+          "value": "pants"
+        },
+        {
+          "score": 0.19828933,
+          "value": "dryer"
+        },
+        {
+          "score": 0.19814722,
+          "value": "lingerie"
+        },
+        {
+          "score": 0.19683385,
+          "value": "shoes"
+        },
+        {
+          "score": 0.19457711,
+          "value": "balm"
+        },
+        {
+          "score": 0.19260281,
+          "value": "bags"
+        },
+        {
+          "score": 0.18931149,
+          "value": "shirt"
+        },
+        {
+          "score": 0.1873278,
+          "value": "shavershop"
+        },
+        {
+          "score": 0.18731235,
+          "value": "colour"
+        },
+        {
+          "score": 0.18260577,
+          "value": "sleepwear"
+        },
+        {
+          "score": 0.1790446,
+          "value": "shaver"
+        },
+        {
+          "score": 0.17852211,
+          "value": "australia"
+        },
+        {
+          "score": 0.1745839,
+          "value": "sunglasses"
+        },
+        {
+          "score": 0.17265677,
+          "value": "neck"
+        },
+        {
+          "score": 0.1722631,
+          "value": "sneakers"
+        },
+        {
+          "score": 0.169949,
+          "value": "designer"
+        },
+        {
+          "score": 0.16850671,
+          "value": "exercise"
+        },
+        {
+          "score": 0.16799213,
+          "value": "hand"
+        },
+        {
+          "score": 0.16582759,
+          "value": "gun"
+        },
+        {
+          "score": 0.16375254,
+          "value": "scissor"
+        },
+        {
+          "score": 0.16311537,
+          "value": "circulation"
+        },
+        {
+          "score": 0.15992951,
+          "value": "ultrasound"
+        },
+        {
+          "score": 0.15801801,
+          "value": "booster"
+        },
+        {
+          "score": 0.15785997,
+          "value": "jeans"
+        },
+        {
+          "score": 0.15738514,
+          "value": "foot"
+        },
+        {
+          "score": 0.15284269,
+          "value": "irrigation"
+        },
+        {
+          "score": 0.15175578,
+          "value": "travel"
+        },
+        {
+          "score": 0.15164632,
+          "value": "oral exercise"
+        },
+        {
+          "score": 0.15164632,
+          "value": "oral irrigation"
+        },
+        {
+          "score": 0.15115193,
+          "value": "beauty"
+        },
+        {
+          "score": 0.15084217,
+          "value": "kit"
+        },
+        {
+          "score": 0.14654896,
+          "value": "blade"
+        },
+        {
+          "score": 0.14468883,
+          "value": "shorts"
+        },
+        {
+          "score": 0.14304599,
+          "value": "sleeve"
+        },
+        {
+          "score": 0.1421747,
+          "value": "women"
+        },
+        {
+          "score": 0.13612312,
+          "value": "express"
+        },
+        {
+          "score": 0.13488622,
+          "value": "socks"
+        },
+        {
+          "score": 0.13444793,
+          "value": "polos"
+        },
+        {
+          "score": 0.13174744,
+          "value": "maternity"
+        },
+        {
+          "score": 0.1308241,
+          "value": "blankets"
+        },
+        {
+          "score": 0.13057558,
+          "value": "food"
+        },
+        {
+          "score": 0.13007766,
+          "value": "competitive"
+        },
+        {
+          "score": 0.12961654,
+          "value": "replacement"
+        },
+        {
+          "score": 0.12915902,
+          "value": "appliances"
+        },
+        {
+          "score": 0.1286952,
+          "value": "watches"
+        },
+        {
+          "score": 0.12715286,
+          "value": "cardigans"
+        },
+        {
+          "score": 0.12642348,
+          "value": "skincare"
+        },
+        {
+          "score": 0.12552238,
+          "value": "nose"
+        },
+        {
+          "score": 0.12466455,
+          "value": "makeup"
+        },
+        {
+          "score": 0.122973695,
+          "value": "lithium"
+        },
+        {
+          "score": 0.121447526,
+          "value": "brush"
+        },
+        {
+          "score": 0.11780831,
+          "value": "casual"
+        },
+        {
+          "score": 0.117533244,
+          "value": "coats"
+        },
+        {
+          "score": 0.11621187,
+          "value": "electric"
+        },
+        {
+          "score": 0.11582604,
+          "value": "manual"
+        },
+        {
+          "score": 0.11244372,
+          "value": "wallets"
+        },
+        {
+          "score": 0.109748766,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.10827773,
+          "value": "sport"
+        },
+        {
+          "score": 0.10768163,
+          "value": "groomer"
+        },
+        {
+          "score": 0.10530574,
+          "value": "styling"
+        },
+        {
+          "score": 0.10467948,
+          "value": "wide"
+        },
+        {
+          "score": 0.10332852,
+          "value": "straightener"
+        },
+        {
+          "score": 0.10181211,
+          "value": "inspiration"
+        },
+        {
+          "score": 0.10167336,
+          "value": "browser"
+        },
+        {
+          "score": 0.10078598,
+          "value": "style"
+        },
+        {
+          "score": 0.09988106,
+          "value": "suiting"
+        },
+        {
+          "score": 0.09864498,
+          "value": "history"
+        },
+        {
+          "score": 0.0983975,
+          "value": "grooming"
+        },
+        {
+          "score": 0.097558245,
+          "value": "suit"
+        },
+        {
+          "score": 0.097290695,
+          "value": "amazon"
+        },
+        {
+          "score": 0.09336937,
+          "value": "australian"
+        },
+        {
+          "score": 0.092742875,
+          "value": "stainless"
+        },
+        {
+          "score": 0.09086401,
+          "value": "samsung"
+        },
+        {
+          "score": 0.088169694,
+          "value": "destacado"
+        },
+        {
+          "score": 0.08729221,
+          "value": "cape"
+        },
+        {
+          "score": 0.08700142,
+          "value": "update"
+        },
+        {
+          "score": 0.086487174,
+          "value": "pet"
+        },
+        {
+          "score": 0.086418554,
+          "value": "pro"
+        },
+        {
+          "score": 0.08607819,
+          "value": "sign"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://maitlandmercury.com.au/",
+        "https://www.maitlandmercury.com.au/",
+        "http://maitlandmercury.com.au/",
+        "http://www.maitlandmercury.com.au/"
+      ]
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/maitlandmercury.com.au.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://maitlandmercury.com.au"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 150,
+        "value": [
+          "1001optometry.com.au",
+          "microsoft.com",
+          "nike.com",
+          "lenovo.com",
+          "samsung.com",
+          "adidas.com.au",
+          "adorebeauty.com.au",
+          "aerre.co",
+          "klook.com",
+          "airyday.co",
+          "ajeworld.com.au",
+          "alifeplus.com.au",
+          "amazon.com.au",
+          "americantourister.com.au",
+          "angusrobertson.com.au",
+          "antler.com.au",
+          "hp.com",
+          "asos.com",
+          "au.danielwellington.com",
+          "au.gymshark.com",
+          "au.swann.com",
+          "au.tommy.com",
+          "ihg.com",
+          "babybunting.com.au",
+          "rmwilliams.com.au",
+          "babyvillage.com.au",
+          "balsamhill.com.au",
+          "bedbathntable.com.au",
+          "belkin.com",
+          "myer.com.au",
+          "bigw.com.au",
+          "koraorganics.com",
+          "boody.com.au",
+          "bonny.com.au",
+          "bonds.com.au",
+          "breville.com",
+          "net-a-porter.com",
+          "calvinklein.com.au",
+          "camplify.com.au",
+          "canningvale.com",
+          "gotoskincare.com",
+          "lululemon.com.au",
+          "vetsupply.com.au",
+          "charlottetilbury.com",
+          "ciroabeauty.com",
+          "cloudninehair.com.au",
+          "coachaustralia.com",
+          "delonghi.com",
+          "eufy.com",
+          "nespresso.com",
+          "coolthings.com.au",
+          "cottonon.com",
+          "countryroad.com.au",
+          "cultiver.com.au",
+          "currentbody.com.au",
+          "davidjones.com",
+          "davidlawrence.com.au",
+          "luxuryescapes.com",
+          "dunelondon.com.au",
+          "dyson.com.au",
+          "ecovacs.com",
+          "ecosa.com.au",
+          "emma-sleep.com.au",
+          "endotaspa.com.au",
+          "ergopouch.com.au",
+          "jshealthvitamins.com",
+          "maisonbalzac.com",
+          "eva.com.au",
+          "uniqlo.com",
+          "hugoboss.com",
+          "feverup.com",
+          "firstchoiceliquor.com.au",
+          "floraandfauna.com.au",
+          "foreo.com",
+          "gettonik.com",
+          "ghdhair.com",
+          "moroccanoil.com",
+          "sennheiser-hearing.com",
+          "gluestore.com.au",
+          "gormanshop.com.au",
+          "harveynorman.com.au",
+          "hellofresh.com.au",
+          "kogan.com",
+          "hexclad.com.au",
+          "woolworths.com.au",
+          "jd-sports.com.au",
+          "katespade.com.au",
+          "kiehls.com.au",
+          "kinfertility.com.au",
+          "kivari.com.au",
+          "kitchenwarehouse.com.au",
+          "kitchenaid.com.au",
+          "lacoste.com.au",
+          "lanolips.com.au",
+          "lg.com",
+          "lookfantastic.com.au",
+          "lornajane.com.au",
+          "macros.com.au",
+          "mcobeauty.com",
+          "mermadehair.com.au",
+          "mocka.com.au",
+          "monos.au",
+          "nakedsundays.com",
+          "ninewest.com.au",
+          "nimbleactivewear.com",
+          "ninjakitchen.com.au",
+          "nordictrack.com",
+          "nordictrackfitness.com.au",
+          "nourishedlife.com.au",
+          "ocosmedics.com",
+          "originmattress.com.au",
+          "theiconic.com.au",
+          "paceathletic.com",
+          "papinelle.com",
+          "petzyo.com.au",
+          "ticketek.com.au",
+          "priceline.com.au",
+          "purebaby.com.au",
+          "qbd.com.au",
+          "qthotels.com",
+          "rebelsport.com.au",
+          "redballoon.com.au",
+          "reebok.com.au",
+          "samsonite.com.au",
+          "sephora.com.au",
+          "sharkclean.com.au",
+          "sheikestik.com",
+          "sheridanoutlet.com.au",
+          "sharkninja.com",
+          "shavershop.com.au",
+          "shiels.com.au",
+          "templeandwebster.com.au",
+          "target.com.au",
+          "sony.com.au",
+          "spotlightstores.com",
+          "stax.com.au",
+          "strandbags.com.au",
+          "thebeautychef.com",
+          "thecollagen.co",
+          "thegoodguys.com.au",
+          "theoodie.com",
+          "thenorthface.com.au",
+          "uniworld.com",
+          "urldefense.com",
+          "vhc-sleep.com.au",
+          "vidaxl.com.au",
+          "wendywutours.com.au",
+          "whoiselijah.com.au",
+          "wrangler.com.au",
+          "zeroco.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 10,
+        "value": [
+          {
+            "domain": "alifeplus.com.au"
+          },
+          {
+            "domain": "au.gymshark.com"
+          },
+          {
+            "domain": "kogan.com"
+          },
+          {
+            "domain": "zeroco.com"
+          },
+          {
+            "domain": "au.swann.com"
+          },
+          {
+            "domain": "au.tommy.com"
+          },
+          {
+            "domain": "au.danielwellington.com"
+          },
+          {
+            "domain": "macros.com.au"
+          },
+          {
+            "domain": "nourishedlife.com.au"
+          },
+          {
+            "domain": "floraandfauna.com.au"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 6,
+        "value": [
+          {
+            "domain": "vodafone.com.au"
+          },
+          {
+            "domain": "danielwellington.com"
+          },
+          {
+            "domain": "gymshark.com"
+          },
+          {
+            "domain": "tommy.com"
+          },
+          {
+            "domain": "marleyspoon.com.au"
+          },
+          {
+            "domain": "swann.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 19.8,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 19.649998,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 9.45,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 8.7,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 7.3,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 6.6499996,
+            "vertical": "Home / Beds & Bedding"
+          },
+          {
+            "count": 5.75,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 5.7000003,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 4.3999996,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 3.8500001,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 3.8500001,
+            "vertical": "Travel / Accessories"
+          },
+          {
+            "count": 3.75,
+            "vertical": "Home / Babycare"
+          },
+          {
+            "count": 3.7,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 2.95,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 2,
+            "vertical": "Travel / Vacation"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Home / Pets"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Home / Security"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Travel / Car Hire"
+          },
+          {
+            "count": 1.8,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 1,
+            "vertical": "Food / Alcohol"
+          },
+          {
+            "count": 1,
+            "vertical": "Health / Eyecare"
+          },
+          {
+            "count": 1,
+            "vertical": "Online / Security"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Jewellery"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Gifts / Experience Days"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Travel / Cruises"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Gifts / Personalised"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Health / Drinks"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Health / Fragrances"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Health / Weight Loss"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Travel / Attractions"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Travel / Flights"
+          },
+          {
+            "count": 0.5,
+            "vertical": "Online / Services"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 150,
+      "value": [
+        "1001optometry.com.au",
+        "microsoft.com",
+        "nike.com",
+        "lenovo.com",
+        "samsung.com",
+        "adidas.com.au",
+        "adorebeauty.com.au",
+        "aerre.co",
+        "klook.com",
+        "airyday.co",
+        "ajeworld.com.au",
+        "alifeplus.com.au",
+        "amazon.com.au",
+        "americantourister.com.au",
+        "angusrobertson.com.au",
+        "antler.com.au",
+        "hp.com",
+        "asos.com",
+        "au.danielwellington.com",
+        "au.gymshark.com",
+        "au.swann.com",
+        "au.tommy.com",
+        "ihg.com",
+        "babybunting.com.au",
+        "rmwilliams.com.au",
+        "babyvillage.com.au",
+        "balsamhill.com.au",
+        "bedbathntable.com.au",
+        "belkin.com",
+        "myer.com.au",
+        "bigw.com.au",
+        "koraorganics.com",
+        "boody.com.au",
+        "bonny.com.au",
+        "bonds.com.au",
+        "breville.com",
+        "net-a-porter.com",
+        "calvinklein.com.au",
+        "camplify.com.au",
+        "canningvale.com",
+        "gotoskincare.com",
+        "lululemon.com.au",
+        "vetsupply.com.au",
+        "charlottetilbury.com",
+        "ciroabeauty.com",
+        "cloudninehair.com.au",
+        "coachaustralia.com",
+        "delonghi.com",
+        "eufy.com",
+        "nespresso.com",
+        "coolthings.com.au",
+        "cottonon.com",
+        "countryroad.com.au",
+        "cultiver.com.au",
+        "currentbody.com.au",
+        "davidjones.com",
+        "davidlawrence.com.au",
+        "luxuryescapes.com",
+        "dunelondon.com.au",
+        "dyson.com.au",
+        "ecovacs.com",
+        "ecosa.com.au",
+        "emma-sleep.com.au",
+        "endotaspa.com.au",
+        "ergopouch.com.au",
+        "jshealthvitamins.com",
+        "maisonbalzac.com",
+        "eva.com.au",
+        "uniqlo.com",
+        "hugoboss.com",
+        "feverup.com",
+        "firstchoiceliquor.com.au",
+        "floraandfauna.com.au",
+        "foreo.com",
+        "gettonik.com",
+        "ghdhair.com",
+        "moroccanoil.com",
+        "sennheiser-hearing.com",
+        "gluestore.com.au",
+        "gormanshop.com.au",
+        "harveynorman.com.au",
+        "hellofresh.com.au",
+        "kogan.com",
+        "hexclad.com.au",
+        "woolworths.com.au",
+        "jd-sports.com.au",
+        "katespade.com.au",
+        "kiehls.com.au",
+        "kinfertility.com.au",
+        "kivari.com.au",
+        "kitchenwarehouse.com.au",
+        "kitchenaid.com.au",
+        "lacoste.com.au",
+        "lanolips.com.au",
+        "lg.com",
+        "lookfantastic.com.au",
+        "lornajane.com.au",
+        "macros.com.au",
+        "mcobeauty.com",
+        "mermadehair.com.au",
+        "mocka.com.au",
+        "monos.au",
+        "nakedsundays.com",
+        "ninewest.com.au",
+        "nimbleactivewear.com",
+        "ninjakitchen.com.au",
+        "nordictrack.com",
+        "nordictrackfitness.com.au",
+        "nourishedlife.com.au",
+        "ocosmedics.com",
+        "originmattress.com.au",
+        "theiconic.com.au",
+        "paceathletic.com",
+        "papinelle.com",
+        "petzyo.com.au",
+        "ticketek.com.au",
+        "priceline.com.au",
+        "purebaby.com.au",
+        "qbd.com.au",
+        "qthotels.com",
+        "rebelsport.com.au",
+        "redballoon.com.au",
+        "reebok.com.au",
+        "samsonite.com.au",
+        "sephora.com.au",
+        "sharkclean.com.au",
+        "sheikestik.com",
+        "sheridanoutlet.com.au",
+        "sharkninja.com",
+        "shavershop.com.au",
+        "shiels.com.au",
+        "templeandwebster.com.au",
+        "target.com.au",
+        "sony.com.au",
+        "spotlightstores.com",
+        "stax.com.au",
+        "strandbags.com.au",
+        "thebeautychef.com",
+        "thecollagen.co",
+        "thegoodguys.com.au",
+        "theoodie.com",
+        "thenorthface.com.au",
+        "uniworld.com",
+        "urldefense.com",
+        "vhc-sleep.com.au",
+        "vidaxl.com.au",
+        "wendywutours.com.au",
+        "whoiselijah.com.au",
+        "wrangler.com.au",
+        "zeroco.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 3,
+      "socialsAvailable": [
+        "twitter",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/maitlandmercury",
+        "instagram": "https://instagram.com/michaelturtle",
+        "twitter": "https://twitter.com/maitlandmercury"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Online / Services",
+      "value": [
+        "Online / Services",
+        "Business / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Online / Services",
+        "rank": 1,
+        "score": 70
+      },
+      "value": [
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 70
+        },
+        {
+          "name": "Business / Services",
+          "rank": 1,
+          "score": 60
+        }
+      ]
+    }
+  }
+}

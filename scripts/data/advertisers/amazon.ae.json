@@ -1,0 +1,127 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 7,
+      "sampleValue": [
+        "Admitad",
+        "CueLinks",
+        "DCMnetwork"
+      ],
+      "value": [
+        "Admitad",
+        "CueLinks",
+        "DCMnetwork",
+        "Skimlinks",
+        "SourceKnowledge",
+        "TradeTracker",
+        "Viglink"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 1,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "ahs-feedback@amazon.ae"
+        }
+      ]
+    },
+    "domain": "amazon.ae",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "Everything you love is in Amazon.ae. Discover and buy electronics, computers, apparel & accessories, shoes, watches, furniture, home and kitchen goods, beauty & personal care, grocery, gourmet food & more. Enjoy great deals, fastest delivery and cash on delivery in UAE.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazon.ae.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazon.ae"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 33
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "vouchercodes.ae"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "hlqxc.org"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 4,
+            "promotype": "blog",
+            "value": [
+              "admiddleeast.com",
+              "easss.com",
+              "gopromocodes.com",
+              "stealherstyle.net"
+            ]
+          },
+          {
+            "count": 3,
+            "promotype": "incentive",
+            "value": [
+              "automaticcoupons.com",
+              "couponrovers.com",
+              "couponstruck.com"
+            ]
+          },
+          {
+            "count": 3,
+            "promotype": "student",
+            "value": [
+              "glamourmagazine.co.uk",
+              "metabee.de",
+              "svztechinfo.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 2,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 2,
+          "score": 90
+        },
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 2,
+          "score": 100
+        }
+      ]
+    }
+  }
+}

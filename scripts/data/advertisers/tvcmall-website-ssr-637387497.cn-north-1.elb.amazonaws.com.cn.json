@@ -1,0 +1,111 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Impact"
+      ],
+      "value": [
+        "Impact"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 0,
+      "error": false,
+      "value": []
+    },
+    "domain": "tvcmall-website-ssr-637387497.cn-north-1.elb.amazonaws.com.cn",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/tvcmall-website-ssr-637387497.cn-north-1.elb.amazonaws.com.cn.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://tvcmall-website-ssr-637387497.cn-north-1.elb.amazonaws.com.cn"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 44
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 5,
+        "value": [
+          {
+            "domain": "shopsmartmom.com"
+          },
+          {
+            "domain": "vouchercodesuae.com"
+          },
+          {
+            "domain": "checkpricelow.com"
+          },
+          {
+            "domain": "buyersguidetv.com"
+          },
+          {
+            "domain": "buypopularproducts.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 5,
+            "promotype": "blog",
+            "value": [
+              "500toprated.com",
+              "adpump.com",
+              "trendythreads.net",
+              "ubestpick.com",
+              "voucheralarm.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "student",
+            "value": [
+              "delightedtime.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Technology / Electronics",
+        "rank": 2,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 2,
+          "score": 80
+        },
+        {
+          "name": "Technology / Electronics",
+          "rank": 2,
+          "score": 90
+        }
+      ]
+    }
+  }
+}

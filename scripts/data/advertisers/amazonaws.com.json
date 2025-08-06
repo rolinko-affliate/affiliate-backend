@@ -1,0 +1,1388 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 15,
+      "sampleValue": [
+        "A8",
+        "Awin",
+        "CJ Affiliate"
+      ],
+      "value": [
+        "A8",
+        "Awin",
+        "CJ Affiliate",
+        "ClickMagick",
+        "Digidip",
+        "Flexoffers",
+        "Impact",
+        "Linkbux",
+        "Optimise",
+        "Rewardstyle",
+        "ShareASale",
+        "Skimlinks",
+        "Tradedoubler",
+        "vCommission",
+        "Viglink"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 0,
+      "error": false,
+      "value": []
+    },
+    "domain": "amazonaws.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "flight"
+        },
+        {
+          "score": 0.9315861,
+          "value": "hotels"
+        },
+        {
+          "score": 0.9192891,
+          "value": "course"
+        },
+        {
+          "score": 0.73196054,
+          "value": "skills"
+        },
+        {
+          "score": 0.72339046,
+          "value": "degrees"
+        },
+        {
+          "score": 0.68248546,
+          "value": "clothing"
+        },
+        {
+          "score": 0.67625505,
+          "value": "travel"
+        },
+        {
+          "score": 0.6692433,
+          "value": "courses"
+        },
+        {
+          "score": 0.6158524,
+          "value": "furniture"
+        },
+        {
+          "score": 0.6137966,
+          "value": "career"
+        },
+        {
+          "score": 0.60293704,
+          "value": "fashion"
+        },
+        {
+          "score": 0.5651362,
+          "value": "star"
+        },
+        {
+          "score": 0.54770434,
+          "value": "complete"
+        },
+        {
+          "score": 0.52967584,
+          "value": "style"
+        },
+        {
+          "score": 0.5212501,
+          "value": "activewear"
+        },
+        {
+          "score": 0.50952864,
+          "value": "filled star"
+        },
+        {
+          "score": 0.50952864,
+          "value": "filled"
+        },
+        {
+          "score": 0.49605796,
+          "value": "certificate"
+        },
+        {
+          "score": 0.4788989,
+          "value": "товар"
+        },
+        {
+          "score": 0.4756457,
+          "value": "science"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "flight"
+        },
+        {
+          "score": 0.9315861,
+          "value": "hotels"
+        },
+        {
+          "score": 0.9192891,
+          "value": "course"
+        },
+        {
+          "score": 0.73196054,
+          "value": "skills"
+        },
+        {
+          "score": 0.72339046,
+          "value": "degrees"
+        },
+        {
+          "score": 0.68248546,
+          "value": "clothing"
+        },
+        {
+          "score": 0.67625505,
+          "value": "travel"
+        },
+        {
+          "score": 0.6692433,
+          "value": "courses"
+        },
+        {
+          "score": 0.6158524,
+          "value": "furniture"
+        },
+        {
+          "score": 0.6137966,
+          "value": "career"
+        },
+        {
+          "score": 0.60293704,
+          "value": "fashion"
+        },
+        {
+          "score": 0.5651362,
+          "value": "star"
+        },
+        {
+          "score": 0.54770434,
+          "value": "complete"
+        },
+        {
+          "score": 0.52967584,
+          "value": "style"
+        },
+        {
+          "score": 0.5212501,
+          "value": "activewear"
+        },
+        {
+          "score": 0.50952864,
+          "value": "filled star"
+        },
+        {
+          "score": 0.50952864,
+          "value": "filled"
+        },
+        {
+          "score": 0.49605796,
+          "value": "certificate"
+        },
+        {
+          "score": 0.4788989,
+          "value": "товар"
+        },
+        {
+          "score": 0.4756457,
+          "value": "science"
+        },
+        {
+          "score": 0.47229344,
+          "value": "доставка"
+        },
+        {
+          "score": 0.46664646,
+          "value": "cloud"
+        },
+        {
+          "score": 0.46313137,
+          "value": "dresses"
+        },
+        {
+          "score": 0.45404765,
+          "value": "sneakers"
+        },
+        {
+          "score": 0.450798,
+          "value": "dress"
+        },
+        {
+          "score": 0.4456428,
+          "value": "hours complete"
+        },
+        {
+          "score": 0.44018912,
+          "value": "ibm"
+        },
+        {
+          "score": 0.43294862,
+          "value": "property"
+        },
+        {
+          "score": 0.41908273,
+          "value": "certificates"
+        },
+        {
+          "score": 0.41569027,
+          "value": "program"
+        },
+        {
+          "score": 0.4138758,
+          "value": "error"
+        },
+        {
+          "score": 0.40870577,
+          "value": "degree"
+        },
+        {
+          "score": 0.40434498,
+          "value": "shirts"
+        },
+        {
+          "score": 0.40316498,
+          "value": "financial"
+        },
+        {
+          "score": 0.39725494,
+          "value": "blankets"
+        },
+        {
+          "score": 0.39258373,
+          "value": "shoes"
+        },
+        {
+          "score": 0.38628343,
+          "value": "university"
+        },
+        {
+          "score": 0.38501406,
+          "value": "заказ"
+        },
+        {
+          "score": 0.3849225,
+          "value": "popular"
+        },
+        {
+          "score": 0.3784061,
+          "value": "jewelry"
+        },
+        {
+          "score": 0.37637362,
+          "value": "luxury"
+        },
+        {
+          "score": 0.3722037,
+          "value": "mile"
+        },
+        {
+          "score": 0.3633385,
+          "value": "professional"
+        },
+        {
+          "score": 0.36305866,
+          "value": "coursera"
+        },
+        {
+          "score": 0.36141235,
+          "value": "digital"
+        },
+        {
+          "score": 0.3613223,
+          "value": "eyewear"
+        },
+        {
+          "score": 0.35191363,
+          "value": "boots"
+        },
+        {
+          "score": 0.34254518,
+          "value": "магазин"
+        },
+        {
+          "score": 0.34135976,
+          "value": "underwear"
+        },
+        {
+          "score": 0.3411231,
+          "value": "offer"
+        },
+        {
+          "score": 0.33928126,
+          "value": "decor"
+        },
+        {
+          "score": 0.3351389,
+          "value": "handbags"
+        },
+        {
+          "score": 0.3349417,
+          "value": "аксессуар"
+        },
+        {
+          "score": 0.3342138,
+          "value": "bedroom"
+        },
+        {
+          "score": 0.3327093,
+          "value": "permission"
+        },
+        {
+          "score": 0.3327093,
+          "value": "reference"
+        },
+        {
+          "score": 0.33016613,
+          "value": "google"
+        },
+        {
+          "score": 0.32139722,
+          "value": "sweaters"
+        },
+        {
+          "score": 0.31614617,
+          "value": "health"
+        },
+        {
+          "score": 0.31414816,
+          "value": "bags"
+        },
+        {
+          "score": 0.3103069,
+          "value": "vegan"
+        },
+        {
+          "score": 0.30830517,
+          "value": "store"
+        },
+        {
+          "score": 0.30228928,
+          "value": "корзина"
+        },
+        {
+          "score": 0.30143464,
+          "value": "jeans"
+        },
+        {
+          "score": 0.30076924,
+          "value": "sunglasses"
+        },
+        {
+          "score": 0.29798204,
+          "value": "video"
+        },
+        {
+          "score": 0.2969119,
+          "value": "скидка"
+        },
+        {
+          "score": 0.2967767,
+          "value": "jackets"
+        },
+        {
+          "score": 0.29344964,
+          "value": "stylists"
+        },
+        {
+          "score": 0.29077202,
+          "value": "designer"
+        },
+        {
+          "score": 0.2898797,
+          "value": "bedding"
+        },
+        {
+          "score": 0.28848898,
+          "value": "stock"
+        },
+        {
+          "score": 0.28552204,
+          "value": "акция"
+        },
+        {
+          "score": 0.2841338,
+          "value": "partner"
+        },
+        {
+          "score": 0.28014126,
+          "value": "backpacks"
+        },
+        {
+          "score": 0.276633,
+          "value": "duvet"
+        },
+        {
+          "score": 0.2748179,
+          "value": "pants"
+        },
+        {
+          "score": 0.27282164,
+          "value": "mattresses"
+        },
+        {
+          "score": 0.2723921,
+          "value": "outdoor"
+        },
+        {
+          "score": 0.27112535,
+          "value": "data science"
+        },
+        {
+          "score": 0.26803896,
+          "value": "luggage"
+        },
+        {
+          "score": 0.2673156,
+          "value": "руб"
+        },
+        {
+          "score": 0.26616746,
+          "value": "capital"
+        },
+        {
+          "score": 0.26616746,
+          "value": "portugal"
+        },
+        {
+          "score": 0.26616746,
+          "value": "refunds"
+        },
+        {
+          "score": 0.2650265,
+          "value": "credit"
+        },
+        {
+          "score": 0.26444206,
+          "value": "learning"
+        },
+        {
+          "score": 0.26396188,
+          "value": "hair"
+        },
+        {
+          "score": 0.26113766,
+          "value": "leather"
+        },
+        {
+          "score": 0.26057494,
+          "value": "vacation"
+        },
+        {
+          "score": 0.26016945,
+          "value": "mattress"
+        },
+        {
+          "score": 0.25965172,
+          "value": "personal capital"
+        },
+        {
+          "score": 0.25949118,
+          "value": "reading"
+        },
+        {
+          "score": 0.2547194,
+          "value": "internet"
+        },
+        {
+          "score": 0.2528591,
+          "value": "nike"
+        },
+        {
+          "score": 0.25247875,
+          "value": "color"
+        },
+        {
+          "score": 0.25195718,
+          "value": "обувь"
+        },
+        {
+          "score": 0.25152826,
+          "value": "styling"
+        },
+        {
+          "score": 0.25079495,
+          "value": "category"
+        },
+        {
+          "score": 0.24730714,
+          "value": "code"
+        }
+      ]
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazonaws.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazonaws.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1153
+      },
+      "partnersAdded": {
+        "count": 84,
+        "value": [
+          {
+            "domain": "superbhubdirectory.com"
+          },
+          {
+            "domain": "decapitalist.com"
+          },
+          {
+            "domain": "linkpitcherdirectory.com"
+          },
+          {
+            "domain": "affiliateunguru.com"
+          },
+          {
+            "domain": "cntraveller.com"
+          },
+          {
+            "domain": "marionstar.com"
+          },
+          {
+            "domain": "trimgoldwellness.com"
+          },
+          {
+            "domain": "99ranks.com"
+          },
+          {
+            "domain": "ianlazar.net"
+          },
+          {
+            "domain": "semrushdirectory.com"
+          },
+          {
+            "domain": "fixandflippers.com"
+          },
+          {
+            "domain": "ewfneu.rs-flyfishing.de"
+          },
+          {
+            "domain": "korting-en-acties.nl"
+          },
+          {
+            "domain": "seobooastdirectory.com"
+          },
+          {
+            "domain": "couponcodegroup.com"
+          },
+          {
+            "domain": "toptierdirectory.com"
+          },
+          {
+            "domain": "topoda.com"
+          },
+          {
+            "domain": "rankmeetsitesdirectory.com"
+          },
+          {
+            "domain": "theislandnow.com"
+          },
+          {
+            "domain": "seotechdirectory.com"
+          },
+          {
+            "domain": "amarillo.com"
+          },
+          {
+            "domain": "seoprodirectory.com"
+          },
+          {
+            "domain": "kauf-online.info"
+          },
+          {
+            "domain": "be.freelancersunion.org"
+          },
+          {
+            "domain": "searchstackdirectory.com"
+          },
+          {
+            "domain": "save-money.org"
+          },
+          {
+            "domain": "waterfilterspruce.com"
+          },
+          {
+            "domain": "eclipsemedias.com"
+          },
+          {
+            "domain": "primedirectoryzone.com"
+          },
+          {
+            "domain": "tablu.com.br"
+          },
+          {
+            "domain": "craze4coupons.com"
+          },
+          {
+            "domain": "serialehd.site"
+          },
+          {
+            "domain": "variousnews.lol"
+          },
+          {
+            "domain": "fasttv.biz"
+          },
+          {
+            "domain": "themasterdirectory.com"
+          },
+          {
+            "domain": "the-happy-now.com"
+          },
+          {
+            "domain": "beverlyhillsexaminer.com"
+          },
+          {
+            "domain": "rabattfieber.de"
+          },
+          {
+            "domain": "lucydylanweddings.com"
+          },
+          {
+            "domain": "techbullion.site"
+          },
+          {
+            "domain": "ztec100.com"
+          },
+          {
+            "domain": "reporternews.com"
+          },
+          {
+            "domain": "savings24x7.com"
+          },
+          {
+            "domain": "downtowndallasnews.com"
+          },
+          {
+            "domain": "renewsmiles.com"
+          },
+          {
+            "domain": "hostseolinks.com"
+          },
+          {
+            "domain": "bestworkbootsideas.com"
+          },
+          {
+            "domain": "linkdirectoryzone.com"
+          },
+          {
+            "domain": "webseodirectory.com"
+          },
+          {
+            "domain": "prodirectoryguide.com"
+          },
+          {
+            "domain": "webranksdirectory.com"
+          },
+          {
+            "domain": "proseoarticles.com"
+          },
+          {
+            "domain": "directorycloudhub.com"
+          },
+          {
+            "domain": "newyorkexaminernews.com"
+          },
+          {
+            "domain": "balancedvigor.com"
+          },
+          {
+            "domain": "netaliva.com"
+          },
+          {
+            "domain": "healthiestpathnow.com"
+          },
+          {
+            "domain": "voxfilme.site"
+          },
+          {
+            "domain": "usdirectorylist.com"
+          },
+          {
+            "domain": "techbullion.cfd"
+          },
+          {
+            "domain": "dailytrendingspots.online"
+          },
+          {
+            "domain": "affiliates.routy.app"
+          },
+          {
+            "domain": "happygaytravel.com"
+          },
+          {
+            "domain": "ikujinooasis.com"
+          },
+          {
+            "domain": "foodworldlife.com"
+          },
+          {
+            "domain": "socialzonedirectory.com"
+          },
+          {
+            "domain": "globalmaxdirectory.com"
+          },
+          {
+            "domain": "ailistingdirectory.com"
+          },
+          {
+            "domain": "icarussignals.com"
+          },
+          {
+            "domain": "info-galore.com"
+          },
+          {
+            "domain": "newsleader.com"
+          },
+          {
+            "domain": "beinnow.online"
+          },
+          {
+            "domain": "jupiternews.online"
+          },
+          {
+            "domain": "viralzonedirectory.com"
+          },
+          {
+            "domain": "press-citizen.com"
+          },
+          {
+            "domain": "eveningsun.com"
+          },
+          {
+            "domain": "absoluclic.com"
+          },
+          {
+            "domain": "ohiovarsity.com"
+          },
+          {
+            "domain": "items.com"
+          },
+          {
+            "domain": "solodirectoryzone.com"
+          },
+          {
+            "domain": "lasvegasnews.media"
+          },
+          {
+            "domain": "timesrecordnews.com"
+          },
+          {
+            "domain": "inspekto.se"
+          },
+          {
+            "domain": "wayseolinks.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 43,
+        "value": [
+          {
+            "domain": "insightfulusstudies.com"
+          },
+          {
+            "domain": "kyloot.com"
+          },
+          {
+            "domain": "cincinnati.com"
+          },
+          {
+            "domain": "activealiveaura.com"
+          },
+          {
+            "domain": "cleanlivingera.com"
+          },
+          {
+            "domain": "timewarnerent.com"
+          },
+          {
+            "domain": "wellkeptwallet.com"
+          },
+          {
+            "domain": "staugustine.com"
+          },
+          {
+            "domain": "inkl.com"
+          },
+          {
+            "domain": "wellnesswarriorwhisperer.com"
+          },
+          {
+            "domain": "mindfulnutritionplan.com"
+          },
+          {
+            "domain": "livingnutraboost.com"
+          },
+          {
+            "domain": "fitfocusjourney.com"
+          },
+          {
+            "domain": "wellnesswhisperguide.com"
+          },
+          {
+            "domain": "allnews.ltd"
+          },
+          {
+            "domain": "fitfusionformula.com"
+          },
+          {
+            "domain": "activeauralife.com"
+          },
+          {
+            "domain": "activevitalbites.com"
+          },
+          {
+            "domain": "uticaod.com"
+          },
+          {
+            "domain": "today.com"
+          },
+          {
+            "domain": "pjstar.com"
+          },
+          {
+            "domain": "techatlasts.com"
+          },
+          {
+            "domain": "digitaltrends.com"
+          },
+          {
+            "domain": "harmonicvitality.com"
+          },
+          {
+            "domain": "nourishcorelife.com"
+          },
+          {
+            "domain": "holisticlifefocus.com"
+          },
+          {
+            "domain": "healthtodayboost.com"
+          },
+          {
+            "domain": "radianthealthrenaissance.com"
+          },
+          {
+            "domain": "weforum.org"
+          },
+          {
+            "domain": "webqia.com"
+          },
+          {
+            "domain": "vitalityvaultpro.com"
+          },
+          {
+            "domain": "leanandmeanbody.com"
+          },
+          {
+            "domain": "ballowlaw.com"
+          },
+          {
+            "domain": "hellosubscription.com"
+          },
+          {
+            "domain": "1027vgs.com"
+          },
+          {
+            "domain": "tradetactichub.com"
+          },
+          {
+            "domain": "empoweredyourhealth.com"
+          },
+          {
+            "domain": "creditscoresensei.com"
+          },
+          {
+            "domain": "wallstreetsgossip.com"
+          },
+          {
+            "domain": "thrivinghealthtrends.com"
+          },
+          {
+            "domain": "thesoftware.shop"
+          },
+          {
+            "domain": "zenithhealthwave.com"
+          },
+          {
+            "domain": "headaibuloffer.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 92,
+            "promotype": "student",
+            "value": [
+              "1051thebounce.com",
+              "1fortlauderdale.com",
+              "247specials.com",
+              "995qyk.com",
+              "99ranks.com",
+              "abeautifullittlelife.com",
+              "absmho.com",
+              "adonisholiday.com",
+              "aglomerando.com.br",
+              "android-hilfe.de",
+              "atafirst.com",
+              "bangpurecreation.com",
+              "bessettepitney.net",
+              "blog.repithwin.com",
+              "budgetandthebees.com",
+              "chroniclereviews.com",
+              "classifieddirectoy.com",
+              "clk.omgt3.com",
+              "commercialappeal.com",
+              "computerworld.pl",
+              "country1037fm.com",
+              "cuttretail.com",
+              "delightedtime.com",
+              "desmoinesregister.com",
+              "diggz.co",
+              "droppricetoday.com",
+              "dugoutmugs.com",
+              "eletiofe.com",
+              "fashionsdigest.co.uk",
+              "feeds.usatodaysports.com",
+              "fintechlabs.com",
+              "foodworldlife.com",
+              "freeloanfinders.com",
+              "freep.com",
+              "freshnss.com",
+              "fresh.yiaap.com",
+              "fwd.nl",
+              "gadsdentimes.com",
+              "gainesville.com",
+              "globalseoarticles.com",
+              "gq.com",
+              "greener-dayz.com",
+              "hot969boston.com",
+              "hotukstores.com",
+              "items.com",
+              "kristitrimmer.com",
+              "livvyland.com",
+              "lovesavingsgroup.com",
+              "marionstar.com",
+              "mcanism.com",
+              "montgomeryadvertiser.com",
+              "musthaves.la",
+              "mvnavidr.com",
+              "mychicagomommy.com",
+              "netweather.tv",
+              "news.repithwin.com",
+              "optimalhealingremedies.com",
+              "pandassports.com",
+              "pcforalla.se",
+              "picksbuy.com",
+              "primewomen.com",
+              "promocodes.com",
+              "promoswithin.com",
+              "proweblinks.com",
+              "releads.ca",
+              "rickorford.com",
+              "saledays.io",
+              "saveteach.com",
+              "senamsuccess.com",
+              "seruniversitario.com.br",
+              "sevenforums.com",
+              "spy.com",
+              "staymoon.com",
+              "techkee.com",
+              "theaffiliatedoctor.com",
+              "thefinancialgeek.com",
+              "timesrecordnews.com",
+              "topglobe.news",
+              "tradeburn.com",
+              "usadailydose.com",
+              "usbannerads.com",
+              "v1019.com",
+              "vegasbikeshop.com",
+              "voxvine.com",
+              "watersoftenergurus.com",
+              "wayseodirectory.com",
+              "whizbangoffers.com",
+              "wmtram.com",
+              "worldwaterreserve.com",
+              "www-dn.appspot.com",
+              "yahoo.com",
+              "ycontent.com.br"
+            ]
+          },
+          {
+            "count": 228,
+            "promotype": "blog",
+            "value": [
+              "10reviewsplus.com",
+              "1392.topnews.com",
+              "1topproduct.com",
+              "49ig0.bemobtrk.com",
+              "500toprated.com",
+              "7newstv.com",
+              "925xtu.com",
+              "adpump.com",
+              "affiliateunguru.com",
+              "aljazeeranewstoday.com",
+              "allcountygazette.com",
+              "anti-crise.fr",
+              "aob-news.com",
+              "appndex.com",
+              "argusleader.com",
+              "articlecity.com",
+              "articlement.com",
+              "backlinktime.com",
+              "bannercho.com",
+              "bestcards.com",
+              "best-osmosis-systems.com",
+              "bestrelocation.com",
+              "bestwebhostingsites.net",
+              "bestworkbootsideas.com",
+              "beyondblackwhite.com",
+              "blakecoinmining.com",
+              "bloggingawaydebt.com",
+              "bloggingmomof4.com",
+              "bloggymoms.com",
+              "bloombargain.com",
+              "bodybuildingrule.com",
+              "bonvera.com",
+              "budgetgainer.com",
+              "businessremark.com",
+              "buying.expert",
+              "canajunfinances.com",
+              "cantonrep.com",
+              "cgtool.com",
+              "chainarticles.com",
+              "checkbuy.net",
+              "chillicothegazette.com",
+              "chronicleslive.com",
+              "chuyangtra.com",
+              "codeabo.com",
+              "collegeandjuniortennis.com",
+              "columbiadailyherald.com",
+              "coshoctontribune.com",
+              "courier-journal.com",
+              "courierpress.com",
+              "creditmashup.com",
+              "dartmouthvision.com",
+              "digmycart.com",
+              "discountsforum.com",
+              "dispatch.com",
+              "dlsserve.com",
+              "easydiscountcodes.com",
+              "easyfinancetips.com",
+              "elpasotimes.com",
+              "esthetic-tunisie.com",
+              "eveningsun.com",
+              "eyeglasses.com",
+              "famsho.com",
+              "fayobserver.com",
+              "feelthetop.com",
+              "financhill.com",
+              "findthediscounts.com",
+              "finspot.guide",
+              "floridatoday.com",
+              "focusbiz.net",
+              "forbes.com",
+              "foxsportsradionewjersey.com",
+              "foxy99.com",
+              "freelancersunion.org",
+              "futurism.com",
+              "gardeningcenter.org",
+              "gay2stay.eu",
+              "getfinaltake.com",
+              "googlechrom.casa",
+              "gopromocodes.com",
+              "happygaytravel.com",
+              "harmonywellnesspath.com",
+              "healthfitness.ws",
+              "healthfuljourneyjoy.com",
+              "heavenarticle.com",
+              "heraldmailmedia.com",
+              "heraldtribune.com",
+              "hi.switchy.io",
+              "hostseolinks.com",
+              "hotaugusta.com",
+              "householdmag.com",
+              "imakedollar.com",
+              "indoorbreathing.com",
+              "inspekto.se",
+              "intimacytravel.com",
+              "invoca.net",
+              "i-store.me",
+              "jacksonsun.com",
+              "jacksonville.com",
+              "jirnal.com",
+              "johngold.net",
+              "joinitems.net",
+              "jugfree.com",
+              "k1047.com",
+              "kauf-online.info",
+              "knoxnews.com",
+              "korting-en-acties.nl",
+              "ldnews.com",
+              "lendedu.com",
+              "lesbonsplansdenaima.fr",
+              "lifecare24hr.blogspot.com",
+              "luckysaving.com",
+              "lucydylanweddings.com",
+              "macworld.com",
+              "macworld.se",
+              "mlive.com",
+              "mommysavesbig.com",
+              "mvhssportsboosters.org",
+              "mymillennialguide.com",
+              "naplesnews.com",
+              "naturalwellbeingnow.com",
+              "newsavemoney.com",
+              "newsblur.com",
+              "newsconquest.com",
+              "news-journalonline.com",
+              "newsleader.com",
+              "news-press.com",
+              "nwfdailynews.com",
+              "nytimesnewstoday.com",
+              "oakridger.com",
+              "obiztools.com",
+              "opera.news",
+              "oscarbistrobar.com",
+              "oursentinel.com",
+              "palmbeachdailynews.com",
+              "palmbeachpost.com",
+              "paradisearticle.com",
+              "pcworld.com",
+              "plungedindebt.com",
+              "pnj.com",
+              "poconorecord.com",
+              "pod.prodegemr.com",
+              "press-citizen.com",
+              "priceflavor.com",
+              "prolinksdirectory.com",
+              "promosinn.com",
+              "proseoarticles.com",
+              "prospectathletics.com",
+              "protectourelections.org",
+              "queleparece.com",
+              "redpapayaales.com",
+              "reporternews.com",
+              "retailmallusa.net",
+              "rickrea.com",
+              "rinf.com",
+              "safehomediy.com",
+              "sandysspiel.com",
+              "saveatcart.com",
+              "saveonbest.com",
+              "savingadvice.com",
+              "savingarena.com",
+              "savingmojo.com",
+              "saynoto0870.com",
+              "scomimi01.com",
+              "scratchmommy.com",
+              "senioraffair.com",
+              "seohelperdirectory.com",
+              "smarttfix.com",
+              "solatatech.com",
+              "soulmete.com",
+              "sportsnewshistory.com",
+              "stargazette.com",
+              "statesman.com",
+              "stravageek.com",
+              "sunny1063.com",
+              "suohk.com",
+              "techadvisor.com",
+              "techosmo.com",
+              "techtimes.com",
+              "techzonedaily.com",
+              "tennessean.com",
+              "teuscherfifthavenue.com",
+              "texashsfootball.com",
+              "thebostoncourier.com",
+              "thecryptowolf.net",
+              "thedigitalsparks.com",
+              "thefreefinancialadvisor.com",
+              "theinterwebs.space",
+              "thenewsintel.com",
+              "theoldreader.com",
+              "thinksaveretire.com",
+              "thoughtfulparent.com",
+              "thriveinbalance.com",
+              "tiffaniatbretonbay.com",
+              "times-gazette.com",
+              "timesreporter.com",
+              "toners-and-inks.atspace.com",
+              "top5.com",
+              "topbuzzmagazine.com",
+              "top-recommendations.com",
+              "toptenreviews.com",
+              "tuscaloosanews.com",
+              "ubestpick.com",
+              "usatodayhss.com",
+              "verifiedpromocode.com",
+              "verifiedvouchercode.com",
+              "vibranthealthventure.com",
+              "washingtonweeklytimes.com",
+              "waterfilterdata.org",
+              "waterfilterspot.com",
+              "waterfilterspruce.com",
+              "watertechadvice.com",
+              "wayseolinks.com",
+              "wdhafm.com",
+              "webranksdirectory.com",
+              "webtimes.uk",
+              "welovelights.com",
+              "whowhatwear.com",
+              "wild1067.com",
+              "wiredprnews.com",
+              "wjrz.com",
+              "worldwidetopsite.link",
+              "wrat.com",
+              "xn--q9j2gvdt13mouk9z5egbf.com",
+              "yourchoiceway.com",
+              "zanesvilletimesrecorder.com",
+              "zeediscount.com",
+              "zoacum.com",
+              "ztec100.com"
+            ]
+          },
+          {
+            "count": 22,
+            "promotype": "content",
+            "value": [
+              "96krock.com",
+              "alkalinewatermachinesource.com",
+              "amestrib.com",
+              "apiv2.nextgenshopping.com",
+              "beaconjournal.com",
+              "fduty.com",
+              "fixandflippers.com",
+              "getdiscountcodes.net",
+              "healthnourishpath.com",
+              "healthword.xyz",
+              "homemoneysavingtips.com",
+              "info-galore.com",
+              "iproperty.com.my",
+              "jammin1057.com",
+              "nextpit.es",
+              "ohiovarsity.com",
+              "power98fm.com",
+              "retirementinvestments.com",
+              "the-leader.com",
+              "theleafchronicle.com",
+              "ukbargaincentral.com",
+              "ydr.com"
+            ]
+          },
+          {
+            "count": 7,
+            "promotype": "forum",
+            "value": [
+              "agrifreshfarms.com",
+              "getjaybe.com",
+              "linkbux.com",
+              "rapidtelecast.com",
+              "saveourwaterfrontnow.com",
+              "tablu.com.br",
+              "wornon.tv"
+            ]
+          },
+          {
+            "count": 37,
+            "promotype": "incentive",
+            "value": [
+              "all4coupons.com",
+              "allamericandeals.net",
+              "apollo.deals",
+              "automaticcoupons.com",
+              "championcashloans.com",
+              "couponata.com",
+              "couponcodegroup.com",
+              "couponhideout.com",
+              "couponhp.com",
+              "couponhubb.com",
+              "couponking.me",
+              "couponorcouponcode.com",
+              "couponorcoupon.com",
+              "couponrelish.com",
+              "couponscroll.com",
+              "couponsgot.com",
+              "couponsvolcano.com",
+              "couponworldz.com",
+              "crashingdeals.com",
+              "craze4coupons.com",
+              "dealslist.com",
+              "dealswell.com",
+              "devotedcoupons.com",
+              "edealstoday.net",
+              "familycash.net",
+              "jpnewss.com",
+              "m3.se",
+              "okaycoupons.com",
+              "powercoupons.com",
+              "rankmakerdirectory.com",
+              "remedydeals.com",
+              "seasonscoupon.com",
+              "someofthebestdeals.com",
+              "thebeststoredeals.com",
+              "usmagazine.com",
+              "uttercoupons.com",
+              "wheelndealmama.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 3,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/amazonwebservices",
+        "twitter": "https://twitter.com/awscloud",
+        "youtube": "https://youtube.com/user/amazonwebservices/cloud"
+      }
+    },
+    "verticals": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Technology / Software",
+        "rank": 2,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Business / Software",
+          "rank": 2,
+          "score": 90
+        },
+        {
+          "name": "Online / Web Hosting",
+          "rank": 2,
+          "score": 80
+        },
+        {
+          "name": "Technology / Software",
+          "rank": 2,
+          "score": 95
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,692 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 3,
+      "sampleValue": [
+        "Awin",
+        "CommissionFactory",
+        "Skimlinks"
+      ],
+      "value": [
+        "Awin",
+        "CommissionFactory",
+        "Skimlinks"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "au",
+        "score": 0.9
+      },
+      "sampleValue": [
+        {
+          "countryCode": "au",
+          "score": 0.9
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "au",
+          "score": 0.9
+        }
+      ]
+    },
+    "domain": "organisedhq.com.au",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 0.13378446,
+          "value": "bags"
+        },
+        {
+          "score": 1,
+          "value": "toy"
+        },
+        {
+          "score": 0.66381603,
+          "value": "catch"
+        },
+        {
+          "score": 0.5793544,
+          "value": "kid"
+        },
+        {
+          "score": 0.514143,
+          "value": "baby"
+        },
+        {
+          "score": 0.41741982,
+          "value": "bag"
+        },
+        {
+          "score": 0.38261738,
+          "value": "lunch"
+        },
+        {
+          "score": 0.36774006,
+          "value": "club"
+        },
+        {
+          "score": 0.33119002,
+          "value": "bottle"
+        },
+        {
+          "score": 0.31975883,
+          "value": "wooden"
+        },
+        {
+          "score": 0.30698496,
+          "value": "food"
+        },
+        {
+          "score": 0.28671014,
+          "value": "card"
+        },
+        {
+          "score": 0.26752487,
+          "value": "book"
+        },
+        {
+          "score": 0.2658409,
+          "value": "box"
+        },
+        {
+          "score": 0.2632195,
+          "value": "clothing"
+        },
+        {
+          "score": 0.26128724,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.25810942,
+          "value": "water"
+        },
+        {
+          "score": 0.25531387,
+          "value": "swimwear"
+        },
+        {
+          "score": 0.24259497,
+          "value": "reusable"
+        },
+        {
+          "score": 0.24050236,
+          "value": "bpa"
+        }
+      ],
+      "value": [
+        {
+          "score": 0.13378446,
+          "value": "bags"
+        },
+        {
+          "score": 1,
+          "value": "toy"
+        },
+        {
+          "score": 0.66381603,
+          "value": "catch"
+        },
+        {
+          "score": 0.5793544,
+          "value": "kid"
+        },
+        {
+          "score": 0.514143,
+          "value": "baby"
+        },
+        {
+          "score": 0.41741982,
+          "value": "bag"
+        },
+        {
+          "score": 0.38261738,
+          "value": "lunch"
+        },
+        {
+          "score": 0.36774006,
+          "value": "club"
+        },
+        {
+          "score": 0.33119002,
+          "value": "bottle"
+        },
+        {
+          "score": 0.31975883,
+          "value": "wooden"
+        },
+        {
+          "score": 0.30698496,
+          "value": "food"
+        },
+        {
+          "score": 0.28671014,
+          "value": "card"
+        },
+        {
+          "score": 0.26752487,
+          "value": "book"
+        },
+        {
+          "score": 0.2658409,
+          "value": "box"
+        },
+        {
+          "score": 0.2632195,
+          "value": "clothing"
+        },
+        {
+          "score": 0.26128724,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.25810942,
+          "value": "water"
+        },
+        {
+          "score": 0.25531387,
+          "value": "swimwear"
+        },
+        {
+          "score": 0.24259497,
+          "value": "reusable"
+        },
+        {
+          "score": 0.24050236,
+          "value": "bpa"
+        },
+        {
+          "score": 0.2374419,
+          "value": "activewear"
+        },
+        {
+          "score": 0.2196671,
+          "value": "guide"
+        },
+        {
+          "score": 0.21956992,
+          "value": "knitwear"
+        },
+        {
+          "score": 0.21798459,
+          "value": "steel"
+        },
+        {
+          "score": 0.21560186,
+          "value": "wooden toy"
+        },
+        {
+          "score": 0.21074323,
+          "value": "stainless steel"
+        },
+        {
+          "score": 0.21074323,
+          "value": "stainless"
+        },
+        {
+          "score": 0.20709926,
+          "value": "sandwich"
+        },
+        {
+          "score": 0.20497361,
+          "value": "container"
+        },
+        {
+          "score": 0.20011497,
+          "value": "snack"
+        },
+        {
+          "score": 0.19897328,
+          "value": "accessory"
+        },
+        {
+          "score": 0.18462008,
+          "value": "credit"
+        },
+        {
+          "score": 0.1824643,
+          "value": "jackets"
+        },
+        {
+          "score": 0.18178347,
+          "value": "shirts"
+        },
+        {
+          "score": 0.18106951,
+          "value": "dress"
+        },
+        {
+          "score": 0.17880829,
+          "value": "care"
+        },
+        {
+          "score": 0.1787197,
+          "value": "dresses"
+        },
+        {
+          "score": 0.17855479,
+          "value": "doll"
+        },
+        {
+          "score": 0.17616656,
+          "value": "underwear"
+        },
+        {
+          "score": 0.17411976,
+          "value": "trial"
+        },
+        {
+          "score": 0.17227067,
+          "value": "cutter"
+        },
+        {
+          "score": 0.16755721,
+          "value": "sheet"
+        },
+        {
+          "score": 0.16094224,
+          "value": "soft"
+        },
+        {
+          "score": 0.16084774,
+          "value": "lingerie"
+        },
+        {
+          "score": 0.16063857,
+          "value": "sleep"
+        },
+        {
+          "score": 0.15982647,
+          "value": "appliances"
+        },
+        {
+          "score": 0.15972757,
+          "value": "ice"
+        },
+        {
+          "score": 0.15912025,
+          "value": "plastic"
+        },
+        {
+          "score": 0.1579056,
+          "value": "soft toy"
+        },
+        {
+          "score": 0.15729827,
+          "value": "backpack"
+        },
+        {
+          "score": 0.15593116,
+          "value": "shirt"
+        },
+        {
+          "score": 0.15574145,
+          "value": "sleepwear"
+        },
+        {
+          "score": 0.15243962,
+          "value": "balance"
+        },
+        {
+          "score": 0.15061764,
+          "value": "bamboo"
+        },
+        {
+          "score": 0.148492,
+          "value": "motor"
+        },
+        {
+          "score": 0.14808205,
+          "value": "sunglasses"
+        },
+        {
+          "score": 0.14644185,
+          "value": "outdoor"
+        },
+        {
+          "score": 0.145759,
+          "value": "children"
+        },
+        {
+          "score": 0.1455289,
+          "value": "pants"
+        },
+        {
+          "score": 0.14365691,
+          "value": "bike"
+        },
+        {
+          "score": 0.14297576,
+          "value": "designer"
+        },
+        {
+          "score": 0.14297576,
+          "value": "competitive"
+        },
+        {
+          "score": 0.14164299,
+          "value": "store"
+        },
+        {
+          "score": 0.14135031,
+          "value": "oil"
+        },
+        {
+          "score": 0.14120673,
+          "value": "activity"
+        },
+        {
+          "score": 0.13866483,
+          "value": "bath"
+        },
+        {
+          "score": 0.13786949,
+          "value": "sneakers"
+        },
+        {
+          "score": 0.13786949,
+          "value": "jeans"
+        },
+        {
+          "score": 0.13619834,
+          "value": "buying"
+        },
+        {
+          "score": 0.13560958,
+          "value": "child"
+        },
+        {
+          "score": 0.13515814,
+          "value": "smart"
+        },
+        {
+          "score": 0.13450111,
+          "value": "travel"
+        },
+        {
+          "score": 0.13434282,
+          "value": "car"
+        },
+        {
+          "score": 0.1327632,
+          "value": "cardigans"
+        },
+        {
+          "score": 0.12667966,
+          "value": "hot"
+        },
+        {
+          "score": 0.124198824,
+          "value": "block"
+        },
+        {
+          "score": 0.12358494,
+          "value": "hot deal"
+        },
+        {
+          "score": 0.12338563,
+          "value": "furniture"
+        },
+        {
+          "score": 0.12255065,
+          "value": "watches"
+        },
+        {
+          "score": 0.119997516,
+          "value": "casual"
+        },
+        {
+          "score": 0.11744438,
+          "value": "polos"
+        },
+        {
+          "score": 0.11721454,
+          "value": "straw"
+        },
+        {
+          "score": 0.115664914,
+          "value": "kogan"
+        },
+        {
+          "score": 0.11552637,
+          "value": "essential oil"
+        },
+        {
+          "score": 0.11508888,
+          "value": "music"
+        },
+        {
+          "score": 0.11489124,
+          "value": "shoes"
+        },
+        {
+          "score": 0.10992658,
+          "value": "rubber"
+        },
+        {
+          "score": 0.10978496,
+          "value": "suiting"
+        },
+        {
+          "score": 0.10978496,
+          "value": "sleeve"
+        },
+        {
+          "score": 0.109274335,
+          "value": "blankets"
+        },
+        {
+          "score": 0.107231826,
+          "value": "suit"
+        },
+        {
+          "score": 0.10507497,
+          "value": "standard"
+        },
+        {
+          "score": 0.10229576,
+          "value": "bathroom"
+        },
+        {
+          "score": 0.10212555,
+          "value": "coats"
+        },
+        {
+          "score": 0.10212555,
+          "value": "socks"
+        },
+        {
+          "score": 0.09973618,
+          "value": "kitchen"
+        },
+        {
+          "score": 0.09701927,
+          "value": "shorts"
+        },
+        {
+          "score": 0.09546554,
+          "value": "house"
+        },
+        {
+          "score": 0.095162444,
+          "value": "rug"
+        },
+        {
+          "score": 0.09504702,
+          "value": "puzzle"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": "Organised HQ's extensive collection of instant access digital products features checklists, calendars, routine charts, ebooks, and more. Simplify your daily routines, boost organisation, and create a harmonious home effortlessly.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/organisedhq.com.au.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://organisedhq.com.au"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 19,
+        "value": [
+          "etsy.com",
+          "amazon.com.au",
+          "myer.com.au",
+          "bigw.com.au",
+          "biome.com.au",
+          "brosa.com.au",
+          "catch.com.au",
+          "ebay.com.au",
+          "thebodyshop.com",
+          "ecomodernessentials.com.au",
+          "ecoya.com.au",
+          "kogan.com",
+          "josephjoseph.com.au",
+          "limetreekids.com.au",
+          "matchbox.com.au",
+          "minimax.com.au",
+          "mydeal.com.au",
+          "nisbets.com.au",
+          "temu.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 7.6,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 1,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Kids"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Entertainment / Hobbies"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Health / Fragrances"
+          },
+          {
+            "count": 0.85,
+            "vertical": "Food / Groceries"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 19,
+      "value": [
+        "etsy.com",
+        "amazon.com.au",
+        "myer.com.au",
+        "bigw.com.au",
+        "biome.com.au",
+        "brosa.com.au",
+        "catch.com.au",
+        "ebay.com.au",
+        "thebodyshop.com",
+        "ecomodernessentials.com.au",
+        "ecoya.com.au",
+        "kogan.com",
+        "josephjoseph.com.au",
+        "limetreekids.com.au",
+        "matchbox.com.au",
+        "minimax.com.au",
+        "mydeal.com.au",
+        "nisbets.com.au",
+        "temu.com"
+      ]
+    },
+    "promotype": {
+      "value": "student"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 2,
+      "socialsAvailable": [
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/theorganisedhousewife",
+        "instagram": "https://instagram.com/theorganisedhousewife"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Business / Services",
+      "value": [
+        "Business / Services",
+        "Business / Office",
+        "Home / Homeware"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Business / Services",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Business / Services",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Business / Office",
+          "rank": 1,
+          "score": 70
+        },
+        {
+          "name": "Home / Homeware",
+          "rank": 1,
+          "score": 50
+        }
+      ]
+    }
+  }
+}

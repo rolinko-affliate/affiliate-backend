@@ -1,0 +1,619 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Fiverr"
+      ],
+      "value": [
+        "Fiverr"
+      ]
+    },
+    "countryRankings": {
+      "count": 3,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.4
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.4
+        },
+        {
+          "countryCode": "other",
+          "score": 0.36
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.4
+        },
+        {
+          "countryCode": "other",
+          "score": 0.36
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "sitemunky.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "fiverr"
+        },
+        {
+          "score": 0.42251563,
+          "value": "seller"
+        },
+        {
+          "score": 0.26198748,
+          "value": "logo"
+        },
+        {
+          "score": 0.18832523,
+          "value": "video"
+        },
+        {
+          "score": 0.16052814,
+          "value": "community"
+        },
+        {
+          "score": 0.15427381,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.14176512,
+          "value": "pro"
+        },
+        {
+          "score": 0.12995136,
+          "value": "guide"
+        },
+        {
+          "score": 0.12786658,
+          "value": "connect"
+        },
+        {
+          "score": 0.11744267,
+          "value": "social medium"
+        },
+        {
+          "score": 0.104239054,
+          "value": "style"
+        },
+        {
+          "score": 0.10215428,
+          "value": "digital"
+        },
+        {
+          "score": 0.092425294,
+          "value": "gig"
+        },
+        {
+          "score": 0.09034052,
+          "value": "maker"
+        },
+        {
+          "score": 0.08617095,
+          "value": "programming"
+        },
+        {
+          "score": 0.085476026,
+          "value": "investor"
+        },
+        {
+          "score": 0.085476026,
+          "value": "card"
+        },
+        {
+          "score": 0.07922168,
+          "value": "invitation"
+        },
+        {
+          "score": 0.07852676,
+          "value": "freelancer"
+        },
+        {
+          "score": 0.07644197,
+          "value": "step"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "fiverr"
+        },
+        {
+          "score": 0.42251563,
+          "value": "seller"
+        },
+        {
+          "score": 0.26198748,
+          "value": "logo"
+        },
+        {
+          "score": 0.18832523,
+          "value": "video"
+        },
+        {
+          "score": 0.16052814,
+          "value": "community"
+        },
+        {
+          "score": 0.15427381,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.14176512,
+          "value": "pro"
+        },
+        {
+          "score": 0.12995136,
+          "value": "guide"
+        },
+        {
+          "score": 0.12786658,
+          "value": "connect"
+        },
+        {
+          "score": 0.11744267,
+          "value": "social medium"
+        },
+        {
+          "score": 0.104239054,
+          "value": "style"
+        },
+        {
+          "score": 0.10215428,
+          "value": "digital"
+        },
+        {
+          "score": 0.092425294,
+          "value": "gig"
+        },
+        {
+          "score": 0.09034052,
+          "value": "maker"
+        },
+        {
+          "score": 0.08617095,
+          "value": "programming"
+        },
+        {
+          "score": 0.085476026,
+          "value": "investor"
+        },
+        {
+          "score": 0.085476026,
+          "value": "card"
+        },
+        {
+          "score": 0.07922168,
+          "value": "invitation"
+        },
+        {
+          "score": 0.07852676,
+          "value": "freelancer"
+        },
+        {
+          "score": 0.07644197,
+          "value": "step"
+        },
+        {
+          "score": 0.07157748,
+          "value": "sign"
+        },
+        {
+          "score": 0.07088256,
+          "value": "dollar"
+        },
+        {
+          "score": 0.07018763,
+          "value": "pro seller"
+        },
+        {
+          "score": 0.06740792,
+          "value": "buyer"
+        },
+        {
+          "score": 0.06740792,
+          "value": "character"
+        },
+        {
+          "score": 0.066713,
+          "value": "event"
+        },
+        {
+          "score": 0.06601807,
+          "value": "post"
+        },
+        {
+          "score": 0.06393329,
+          "value": "portrait"
+        },
+        {
+          "score": 0.06323836,
+          "value": "album"
+        },
+        {
+          "score": 0.06254343,
+          "value": "fashion"
+        },
+        {
+          "score": 0.0590688,
+          "value": "art"
+        },
+        {
+          "score": 0.058373872,
+          "value": "photography"
+        },
+        {
+          "score": 0.058373872,
+          "value": "digital marketing"
+        },
+        {
+          "score": 0.057678945,
+          "value": "explainer"
+        },
+        {
+          "score": 0.056289088,
+          "value": "shirt"
+        },
+        {
+          "score": 0.05559416,
+          "value": "flyer"
+        },
+        {
+          "score": 0.054204307,
+          "value": "packaging"
+        },
+        {
+          "score": 0.05350938,
+          "value": "caricature"
+        },
+        {
+          "score": 0.052814454,
+          "value": "nft"
+        },
+        {
+          "score": 0.052814454,
+          "value": "standard"
+        },
+        {
+          "score": 0.050034747,
+          "value": "property"
+        },
+        {
+          "score": 0.048644893,
+          "value": "intellectual"
+        },
+        {
+          "score": 0.048644893,
+          "value": "tech"
+        },
+        {
+          "score": 0.048644893,
+          "value": "poster"
+        },
+        {
+          "score": 0.047949966,
+          "value": "intellectual property"
+        },
+        {
+          "score": 0.047949966,
+          "value": "music"
+        },
+        {
+          "score": 0.047949966,
+          "value": "short"
+        },
+        {
+          "score": 0.046560112,
+          "value": "color"
+        },
+        {
+          "score": 0.045865186,
+          "value": "concept"
+        },
+        {
+          "score": 0.04517026,
+          "value": "studio"
+        },
+        {
+          "score": 0.04517026,
+          "value": "short video"
+        },
+        {
+          "score": 0.044475332,
+          "value": "tool"
+        },
+        {
+          "score": 0.044475332,
+          "value": "gaming"
+        },
+        {
+          "score": 0.0437804,
+          "value": "claim"
+        },
+        {
+          "score": 0.043085475,
+          "value": "peso"
+        },
+        {
+          "score": 0.043085475,
+          "value": "partnership"
+        },
+        {
+          "score": 0.043085475,
+          "value": "background"
+        },
+        {
+          "score": 0.042390548,
+          "value": "professional"
+        },
+        {
+          "score": 0.042390548,
+          "value": "platform"
+        },
+        {
+          "score": 0.042390548,
+          "value": "quarter"
+        },
+        {
+          "score": 0.04169562,
+          "value": "book"
+        },
+        {
+          "score": 0.03961084,
+          "value": "mobile invitation"
+        },
+        {
+          "score": 0.03961084,
+          "value": "pro shop"
+        },
+        {
+          "score": 0.038220987,
+          "value": "friend"
+        },
+        {
+          "score": 0.038220987,
+          "value": "animation"
+        },
+        {
+          "score": 0.03752606,
+          "value": "zar"
+        },
+        {
+          "score": 0.03752606,
+          "value": "beautiful"
+        },
+        {
+          "score": 0.036831133,
+          "value": "freelance"
+        },
+        {
+          "score": 0.036136206,
+          "value": "software"
+        },
+        {
+          "score": 0.036136206,
+          "value": "category"
+        },
+        {
+          "score": 0.03544128,
+          "value": "minimalist"
+        },
+        {
+          "score": 0.034746353,
+          "value": "commission"
+        },
+        {
+          "score": 0.0333565,
+          "value": "forum"
+        },
+        {
+          "score": 0.032661572,
+          "value": "relation"
+        },
+        {
+          "score": 0.032661572,
+          "value": "course"
+        },
+        {
+          "score": 0.032661572,
+          "value": "app"
+        },
+        {
+          "score": 0.032661572,
+          "value": "graphic"
+        },
+        {
+          "score": 0.031966645,
+          "value": "career"
+        },
+        {
+          "score": 0.031271715,
+          "value": "project"
+        },
+        {
+          "score": 0.031271715,
+          "value": "link"
+        },
+        {
+          "score": 0.031271715,
+          "value": "license"
+        },
+        {
+          "score": 0.03057679,
+          "value": "global"
+        },
+        {
+          "score": 0.029881863,
+          "value": "story"
+        },
+        {
+          "score": 0.029881863,
+          "value": "activity"
+        },
+        {
+          "score": 0.029881863,
+          "value": "virtual"
+        },
+        {
+          "score": 0.029186936,
+          "value": "hand"
+        },
+        {
+          "score": 0.029186936,
+          "value": "commercial"
+        },
+        {
+          "score": 0.02779708,
+          "value": "team"
+        },
+        {
+          "score": 0.02779708,
+          "value": "online course"
+        },
+        {
+          "score": 0.027102154,
+          "value": "share"
+        },
+        {
+          "score": 0.026407227,
+          "value": "code"
+        },
+        {
+          "score": 0.026407227,
+          "value": "real"
+        },
+        {
+          "score": 0.026407227,
+          "value": "guideline"
+        },
+        {
+          "score": 0.026407227,
+          "value": "people"
+        },
+        {
+          "score": 0.0257123,
+          "value": "modern"
+        },
+        {
+          "score": 0.0257123,
+          "value": "level"
+        },
+        {
+          "score": 0.025017373,
+          "value": "skill"
+        },
+        {
+          "score": 0.025017373,
+          "value": "store"
+        },
+        {
+          "score": 0.025017373,
+          "value": "game"
+        },
+        {
+          "score": 0.025017373,
+          "value": "branding"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/sitemunky.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://sitemunky.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1,
+        "value": [
+          "fiverr.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1,
+            "vertical": "Business / Services"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 1,
+      "value": [
+        "fiverr.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Online / Web Design",
+      "value": [
+        "Online / Web Design",
+        "Online / Web Hosting"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Online / Web Design",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Online / Web Design",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Online / Web Hosting",
+          "rank": 1,
+          "score": 80
+        }
+      ]
+    }
+  }
+}

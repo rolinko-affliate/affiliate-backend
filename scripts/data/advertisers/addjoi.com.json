@@ -1,0 +1,638 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 4,
+      "sampleValue": [
+        "Refersion",
+        "Skimlinks",
+        "SourceKnowledge"
+      ],
+      "value": [
+        "Refersion",
+        "Skimlinks",
+        "SourceKnowledge",
+        "Viglink"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 4,
+      "error": false,
+      "value": [
+        {
+          "department": "communication",
+          "value": "ali@addjoi.com"
+        },
+        {
+          "department": "support",
+          "value": "hello@addjoi.com"
+        },
+        {
+          "department": "communication",
+          "value": "media@addjoi.com"
+        },
+        {
+          "department": null,
+          "value": "no-reply@addjoi.com"
+        }
+      ]
+    },
+    "domain": "addjoi.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "coupon"
+        },
+        {
+          "score": 0.9941292,
+          "value": "coupon codes"
+        },
+        {
+          "score": 0.9334638,
+          "value": "save"
+        },
+        {
+          "score": 0.8962818,
+          "value": "code"
+        },
+        {
+          "score": 0.8806262,
+          "value": "get code"
+        },
+        {
+          "score": 0.8238748,
+          "value": "details"
+        },
+        {
+          "score": 0.82191783,
+          "value": "click get"
+        },
+        {
+          "score": 0.82191783,
+          "value": "code save"
+        },
+        {
+          "score": 0.76516634,
+          "value": "categories"
+        },
+        {
+          "score": 0.3776908,
+          "value": "get deal"
+        },
+        {
+          "score": 0.29549903,
+          "value": "sign"
+        },
+        {
+          "score": 0.28962818,
+          "value": "good"
+        },
+        {
+          "score": 0.27005872,
+          "value": "free shipping"
+        },
+        {
+          "score": 0.26027396,
+          "value": "links"
+        },
+        {
+          "score": 0.25636008,
+          "value": "privacy policy"
+        },
+        {
+          "score": 0.25440314,
+          "value": "get coupon"
+        },
+        {
+          "score": 0.25244617,
+          "value": "coupons"
+        },
+        {
+          "score": 0.25244617,
+          "value": "orders"
+        },
+        {
+          "score": 0.2485323,
+          "value": "offerings"
+        },
+        {
+          "score": 0.2485323,
+          "value": "codes offerings"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "coupon"
+        },
+        {
+          "score": 0.9941292,
+          "value": "coupon codes"
+        },
+        {
+          "score": 0.9334638,
+          "value": "save"
+        },
+        {
+          "score": 0.8962818,
+          "value": "code"
+        },
+        {
+          "score": 0.8806262,
+          "value": "get code"
+        },
+        {
+          "score": 0.8238748,
+          "value": "details"
+        },
+        {
+          "score": 0.82191783,
+          "value": "click get"
+        },
+        {
+          "score": 0.82191783,
+          "value": "code save"
+        },
+        {
+          "score": 0.76516634,
+          "value": "categories"
+        },
+        {
+          "score": 0.3776908,
+          "value": "get deal"
+        },
+        {
+          "score": 0.29549903,
+          "value": "sign"
+        },
+        {
+          "score": 0.28962818,
+          "value": "good"
+        },
+        {
+          "score": 0.27005872,
+          "value": "free shipping"
+        },
+        {
+          "score": 0.26027396,
+          "value": "links"
+        },
+        {
+          "score": 0.25636008,
+          "value": "privacy policy"
+        },
+        {
+          "score": 0.25440314,
+          "value": "get coupon"
+        },
+        {
+          "score": 0.25244617,
+          "value": "coupons"
+        },
+        {
+          "score": 0.25244617,
+          "value": "orders"
+        },
+        {
+          "score": 0.2485323,
+          "value": "offerings"
+        },
+        {
+          "score": 0.2485323,
+          "value": "codes offerings"
+        },
+        {
+          "score": 0.2485323,
+          "value": "offerings good"
+        },
+        {
+          "score": 0.2485323,
+          "value": "good deals"
+        },
+        {
+          "score": 0.2485323,
+          "value": "deals coupon"
+        },
+        {
+          "score": 0.2485323,
+          "value": "codes discount"
+        },
+        {
+          "score": 0.2485323,
+          "value": "quick links"
+        },
+        {
+          "score": 0.23091976,
+          "value": "rate"
+        },
+        {
+          "score": 0.22896282,
+          "value": "sitewide"
+        },
+        {
+          "score": 0.22700587,
+          "value": "coupons deals"
+        },
+        {
+          "score": 0.22700587,
+          "value": "deals sep"
+        },
+        {
+          "score": 0.22700587,
+          "value": "ratings"
+        },
+        {
+          "score": 0.22700587,
+          "value": "average"
+        },
+        {
+          "score": 0.22700587,
+          "value": "ratings average"
+        },
+        {
+          "score": 0.22700587,
+          "value": "stars"
+        },
+        {
+          "score": 0.22700587,
+          "value": "average stars"
+        },
+        {
+          "score": 0.22113504,
+          "value": "cbd"
+        },
+        {
+          "score": 0.21526419,
+          "value": "beauty"
+        },
+        {
+          "score": 0.16046967,
+          "value": "hair"
+        },
+        {
+          "score": 0.15459883,
+          "value": "usa"
+        },
+        {
+          "score": 0.14481409,
+          "value": "jewelry"
+        },
+        {
+          "score": 0.13894325,
+          "value": "box"
+        },
+        {
+          "score": 0.1369863,
+          "value": "subscrbie"
+        },
+        {
+          "score": 0.13502936,
+          "value": "health"
+        },
+        {
+          "score": 0.12720157,
+          "value": "organics"
+        },
+        {
+          "score": 0.119373776,
+          "value": "skincare"
+        },
+        {
+          "score": 0.11741683,
+          "value": "coffee"
+        },
+        {
+          "score": 0.11545988,
+          "value": "supply"
+        },
+        {
+          "score": 0.113502935,
+          "value": "american"
+        },
+        {
+          "score": 0.113502935,
+          "value": "sitewide click"
+        },
+        {
+          "score": 0.11154599,
+          "value": "orders click"
+        },
+        {
+          "score": 0.10958904,
+          "value": "extra"
+        },
+        {
+          "score": 0.10763209,
+          "value": "water"
+        },
+        {
+          "score": 0.105675146,
+          "value": "skin"
+        },
+        {
+          "score": 0.10176125,
+          "value": "clothing"
+        },
+        {
+          "score": 0.09589041,
+          "value": "pet"
+        },
+        {
+          "score": 0.08806262,
+          "value": "shipping orders"
+        },
+        {
+          "score": 0.08806262,
+          "value": "life"
+        },
+        {
+          "score": 0.086105675,
+          "value": "care"
+        },
+        {
+          "score": 0.08219178,
+          "value": "sports"
+        },
+        {
+          "score": 0.08219178,
+          "value": "wellness"
+        },
+        {
+          "score": 0.08219178,
+          "value": "dog"
+        },
+        {
+          "score": 0.08219178,
+          "value": "house"
+        },
+        {
+          "score": 0.08219178,
+          "value": "club"
+        },
+        {
+          "score": 0.08023483,
+          "value": "apparel"
+        },
+        {
+          "score": 0.07436399,
+          "value": "purchase subscrbie"
+        },
+        {
+          "score": 0.07436399,
+          "value": "first order"
+        },
+        {
+          "score": 0.072407044,
+          "value": "direct"
+        },
+        {
+          "score": 0.072407044,
+          "value": "cosmetics"
+        },
+        {
+          "score": 0.0704501,
+          "value": "subscrbie click"
+        },
+        {
+          "score": 0.0704501,
+          "value": "rose"
+        },
+        {
+          "score": 0.0704501,
+          "value": "sleep"
+        },
+        {
+          "score": 0.06849315,
+          "value": "great"
+        },
+        {
+          "score": 0.06849315,
+          "value": "storewide"
+        },
+        {
+          "score": 0.064579256,
+          "value": "store"
+        },
+        {
+          "score": 0.064579256,
+          "value": "golf"
+        },
+        {
+          "score": 0.06262231,
+          "value": "pillow"
+        },
+        {
+          "score": 0.06066536,
+          "value": "tactical"
+        },
+        {
+          "score": 0.06066536,
+          "value": "baby"
+        },
+        {
+          "score": 0.06066536,
+          "value": "monkey"
+        },
+        {
+          "score": 0.058708414,
+          "value": "kids"
+        },
+        {
+          "score": 0.058708414,
+          "value": "purchase click"
+        },
+        {
+          "score": 0.058708414,
+          "value": "canada"
+        },
+        {
+          "score": 0.058708414,
+          "value": "pure"
+        },
+        {
+          "score": 0.058708414,
+          "value": "energy"
+        },
+        {
+          "score": 0.058708414,
+          "value": "shoes"
+        },
+        {
+          "score": 0.058708414,
+          "value": "eyewear"
+        },
+        {
+          "score": 0.056751467,
+          "value": "wide"
+        },
+        {
+          "score": 0.056751467,
+          "value": "baseball"
+        },
+        {
+          "score": 0.05479452,
+          "value": "art"
+        },
+        {
+          "score": 0.05479452,
+          "value": "shipping click"
+        },
+        {
+          "score": 0.052837573,
+          "value": "york"
+        },
+        {
+          "score": 0.052837573,
+          "value": "hemp"
+        },
+        {
+          "score": 0.050880626,
+          "value": "order subscrbie"
+        },
+        {
+          "score": 0.050880626,
+          "value": "lifestyle"
+        },
+        {
+          "score": 0.050880626,
+          "value": "market"
+        },
+        {
+          "score": 0.050880626,
+          "value": "style"
+        },
+        {
+          "score": 0.04892368,
+          "value": "source"
+        },
+        {
+          "score": 0.04696673,
+          "value": "kitchen"
+        },
+        {
+          "score": 0.04696673,
+          "value": "bully"
+        },
+        {
+          "score": 0.04696673,
+          "value": "earth"
+        },
+        {
+          "score": 0.04696673,
+          "value": "star"
+        }
+      ]
+    },
+    "metaData": {
+      "description": "JOI creates plant milk concentrates made from single, whole ingredients, with zero preservatives or added sugar. Customize to your liking and make as much as you need. Say goodbye to non-recyclable cartons and spoiled milk forever.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/addjoi.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://addjoi.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 45
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "amazon.co.uk"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "platefulhealth.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 11,
+            "promotype": "blog",
+            "value": [
+              "10reviewsplus.com",
+              "amazon.co.uk",
+              "fashiondailytips.com",
+              "msha.ke",
+              "nutmegnotebook.com",
+              "shopmy.us",
+              "spreaker.com",
+              "tjstaste.com",
+              "veginspired.com",
+              "vegnews.com",
+              "whitnessnutrition.com"
+            ]
+          },
+          {
+            "count": 5,
+            "promotype": "student",
+            "value": [
+              "droppricetoday.com",
+              "eonline.com",
+              "fashionheir.com",
+              "pamelasalzman.com",
+              "wholesomellc.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "content",
+            "value": [
+              "townandcountrymag.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 3,
+      "socialsAvailable": [
+        "facebook",
+        "linkedin",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/madewithjoi",
+        "instagram": "https://instagram.com/addjoi",
+        "linkedin": "https://linkedin.com/company/addjoi"
+      }
+    },
+    "verticals": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Business / Software",
+        "rank": 2,
+        "score": 80
+      },
+      "value": [
+        {
+          "name": "Business / Services",
+          "rank": 2,
+          "score": 60
+        },
+        {
+          "name": "Business / Software",
+          "rank": 2,
+          "score": 80
+        },
+        {
+          "name": "Online / Web Design",
+          "rank": 2,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1210 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 10,
+      "sampleValue": [
+        "Digidip",
+        "Duomai",
+        "Flexoffers"
+      ],
+      "value": [
+        "Digidip",
+        "Duomai",
+        "Flexoffers",
+        "Impact",
+        "Linkbux",
+        "PartnerStack",
+        "Skimlinks",
+        "SourceKnowledge",
+        "Takeads",
+        "Viglink"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 4,
+      "error": false,
+      "value": [
+        {
+          "department": "marketing",
+          "value": "agency@manychat.com"
+        },
+        {
+          "department": null,
+          "value": "businesspro@manychat.com"
+        },
+        {
+          "department": null,
+          "value": "example@manychat.com"
+        },
+        {
+          "department": "support",
+          "value": "support@manychat.com"
+        }
+      ]
+    },
+    "domain": "manychat.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "lego"
+        },
+        {
+          "score": 0.37802908,
+          "value": "utilisation"
+        },
+        {
+          "score": 0.36672053,
+          "value": "pric"
+        },
+        {
+          "score": 0.365105,
+          "value": "adida"
+        },
+        {
+          "score": 0.26494345,
+          "value": "ensemble"
+        },
+        {
+          "score": 0.23909532,
+          "value": "boutique"
+        },
+        {
+          "score": 0.23263328,
+          "value": "lgal"
+        },
+        {
+          "score": 0.22617124,
+          "value": "mention"
+        },
+        {
+          "score": 0.2180937,
+          "value": "accueil"
+        },
+        {
+          "score": 0.2180937,
+          "value": "appareil"
+        },
+        {
+          "score": 0.21647818,
+          "value": "achat"
+        },
+        {
+          "score": 0.20516963,
+          "value": "brique"
+        },
+        {
+          "score": 0.20355412,
+          "value": "vie"
+        },
+        {
+          "score": 0.20193861,
+          "value": "site"
+        },
+        {
+          "score": 0.1825525,
+          "value": "enfant"
+        },
+        {
+          "score": 0.1825525,
+          "value": "accessibilit"
+        },
+        {
+          "score": 0.1825525,
+          "value": "classic"
+        },
+        {
+          "score": 0.17124394,
+          "value": "politique"
+        },
+        {
+          "score": 0.17124394,
+          "value": "harry"
+        },
+        {
+          "score": 0.16666667,
+          "value": "webgain"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "lego"
+        },
+        {
+          "score": 0.37802908,
+          "value": "utilisation"
+        },
+        {
+          "score": 0.36672053,
+          "value": "pric"
+        },
+        {
+          "score": 0.365105,
+          "value": "adida"
+        },
+        {
+          "score": 0.26494345,
+          "value": "ensemble"
+        },
+        {
+          "score": 0.23909532,
+          "value": "boutique"
+        },
+        {
+          "score": 0.23263328,
+          "value": "lgal"
+        },
+        {
+          "score": 0.22617124,
+          "value": "mention"
+        },
+        {
+          "score": 0.2180937,
+          "value": "accueil"
+        },
+        {
+          "score": 0.2180937,
+          "value": "appareil"
+        },
+        {
+          "score": 0.21647818,
+          "value": "achat"
+        },
+        {
+          "score": 0.20516963,
+          "value": "brique"
+        },
+        {
+          "score": 0.20355412,
+          "value": "vie"
+        },
+        {
+          "score": 0.20193861,
+          "value": "site"
+        },
+        {
+          "score": 0.1825525,
+          "value": "enfant"
+        },
+        {
+          "score": 0.1825525,
+          "value": "accessibilit"
+        },
+        {
+          "score": 0.1825525,
+          "value": "classic"
+        },
+        {
+          "score": 0.17124394,
+          "value": "politique"
+        },
+        {
+          "score": 0.17124394,
+          "value": "harry"
+        },
+        {
+          "score": 0.16666667,
+          "value": "webgain"
+        },
+        {
+          "score": 0.1453958,
+          "value": "membre"
+        },
+        {
+          "score": 0.14378029,
+          "value": "groupe"
+        },
+        {
+          "score": 0.14378029,
+          "value": "ligne"
+        },
+        {
+          "score": 0.13893376,
+          "value": "adida lego"
+        },
+        {
+          "score": 0.13731825,
+          "value": "jurassic"
+        },
+        {
+          "score": 0.12277868,
+          "value": "guid"
+        },
+        {
+          "score": 0.12116317,
+          "value": "ninjago"
+        },
+        {
+          "score": 0.12116317,
+          "value": "produit"
+        },
+        {
+          "score": 0.11954766,
+          "value": "shirt"
+        },
+        {
+          "score": 0.11631664,
+          "value": "vip"
+        },
+        {
+          "score": 0.11631664,
+          "value": "instruction"
+        },
+        {
+          "score": 0.11308562,
+          "value": "montage"
+        },
+        {
+          "score": 0.10823909,
+          "value": "ensembl"
+        },
+        {
+          "score": 0.10823909,
+          "value": "donne"
+        },
+        {
+          "score": 0.10662359,
+          "value": "figurine"
+        },
+        {
+          "score": 0.10500808,
+          "value": "duplo"
+        },
+        {
+          "score": 0.10339257,
+          "value": "officiel"
+        },
+        {
+          "score": 0.10339257,
+          "value": "jeu"
+        },
+        {
+          "score": 0.10339257,
+          "value": "chteau"
+        },
+        {
+          "score": 0.10339257,
+          "value": "droit"
+        },
+        {
+          "score": 0.10339257,
+          "value": "poudlard"
+        },
+        {
+          "score": 0.10177706,
+          "value": "logo"
+        },
+        {
+          "score": 0.10016155,
+          "value": "personnel"
+        },
+        {
+          "score": 0.093699515,
+          "value": "lgal mention"
+        },
+        {
+          "score": 0.092084005,
+          "value": "pice"
+        },
+        {
+          "score": 0.09132495,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.090468496,
+          "value": "sweat"
+        },
+        {
+          "score": 0.090468496,
+          "value": "guid appareil"
+        },
+        {
+          "score": 0.090330705,
+          "value": "store"
+        },
+        {
+          "score": 0.08885299,
+          "value": "marque"
+        },
+        {
+          "score": 0.08562197,
+          "value": "voiture"
+        },
+        {
+          "score": 0.0855484,
+          "value": "friend"
+        },
+        {
+          "score": 0.08400646,
+          "value": "pantalon"
+        },
+        {
+          "score": 0.08400646,
+          "value": "configuration"
+        },
+        {
+          "score": 0.083333336,
+          "value": "meta"
+        },
+        {
+          "score": 0.083333336,
+          "value": "twitter"
+        },
+        {
+          "score": 0.083333336,
+          "value": "lead"
+        },
+        {
+          "score": 0.083333336,
+          "value": "meal"
+        },
+        {
+          "score": 0.08239096,
+          "value": "petit"
+        },
+        {
+          "score": 0.08239096,
+          "value": "lgal condition"
+        },
+        {
+          "score": 0.08239096,
+          "value": "lego dk"
+        },
+        {
+          "score": 0.08239096,
+          "value": "billund"
+        },
+        {
+          "score": 0.08239096,
+          "value": "denmark"
+        },
+        {
+          "score": 0.08239096,
+          "value": "g e"
+        },
+        {
+          "score": 0.08239096,
+          "value": "legend"
+        },
+        {
+          "score": 0.08239096,
+          "value": "chima"
+        },
+        {
+          "score": 0.08239096,
+          "value": "chima ninjago"
+        },
+        {
+          "score": 0.08239096,
+          "value": "mindstorm"
+        },
+        {
+          "score": 0.08239096,
+          "value": "mixel"
+        },
+        {
+          "score": 0.08239096,
+          "value": "mixel marque"
+        },
+        {
+          "score": 0.08239096,
+          "value": "group droit"
+        },
+        {
+          "score": 0.08239096,
+          "value": "impliqu"
+        },
+        {
+          "score": 0.08239096,
+          "value": "impliqu condition"
+        },
+        {
+          "score": 0.08239096,
+          "value": "limit"
+        },
+        {
+          "score": 0.08109227,
+          "value": "messenger"
+        },
+        {
+          "score": 0.08077545,
+          "value": "stock"
+        },
+        {
+          "score": 0.08077545,
+          "value": "compte"
+        },
+        {
+          "score": 0.07972757,
+          "value": "protein"
+        },
+        {
+          "score": 0.079385966,
+          "value": "tratamiento"
+        },
+        {
+          "score": 0.07915994,
+          "value": "foir"
+        },
+        {
+          "score": 0.07915994,
+          "value": "foir question"
+        },
+        {
+          "score": 0.07754443,
+          "value": "super"
+        },
+        {
+          "score": 0.07754443,
+          "value": "nouveau"
+        },
+        {
+          "score": 0.07754443,
+          "value": "vasion"
+        },
+        {
+          "score": 0.0769962,
+          "value": "bot"
+        },
+        {
+          "score": 0.07491987,
+          "value": "meat"
+        },
+        {
+          "score": 0.07431341,
+          "value": "nouveau ensemble"
+        },
+        {
+          "score": 0.07431341,
+          "value": "volant"
+        },
+        {
+          "score": 0.07431341,
+          "value": "transformable"
+        },
+        {
+          "score": 0.07108239,
+          "value": "ensembl voiture"
+        },
+        {
+          "score": 0.07108239,
+          "value": "transformable membre"
+        },
+        {
+          "score": 0.070911646,
+          "value": "partner"
+        },
+        {
+          "score": 0.06946688,
+          "value": "disponible"
+        },
+        {
+          "score": 0.06939164,
+          "value": "conversation"
+        },
+        {
+          "score": 0.06785137,
+          "value": "confidentialit"
+        },
+        {
+          "score": 0.06623586,
+          "value": "systme"
+        },
+        {
+          "score": 0.06368821,
+          "value": "manychat"
+        },
+        {
+          "score": 0.06337135,
+          "value": "social medium"
+        },
+        {
+          "score": 0.06315789,
+          "value": "dato"
+        },
+        {
+          "score": 0.063004844,
+          "value": "avis"
+        }
+      ]
+    },
+    "metaData": {
+      "description": "Automate two-way, interactive conversations in Instagram Direct Messages, Facebook Messenger, and SMS to grow your brand",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/manychat.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://manychat.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 935
+      },
+      "partnersAdded": {
+        "count": 84,
+        "value": [
+          {
+            "domain": "jodieminto.com"
+          },
+          {
+            "domain": "enzvia.com"
+          },
+          {
+            "domain": "freshbargaindeals.com"
+          },
+          {
+            "domain": "hostseolinks.com"
+          },
+          {
+            "domain": "scaleup.community"
+          },
+          {
+            "domain": "a2zseoarticles.com"
+          },
+          {
+            "domain": "libsyn.com"
+          },
+          {
+            "domain": "carmenercilia.com"
+          },
+          {
+            "domain": "99ranks.com"
+          },
+          {
+            "domain": "viralzonedirectory.com"
+          },
+          {
+            "domain": "prodirectoryguide.com"
+          },
+          {
+            "domain": "imarketics.com"
+          },
+          {
+            "domain": "wavely.com.br"
+          },
+          {
+            "domain": "swaggbuzz.com"
+          },
+          {
+            "domain": "sitescoupon.com"
+          },
+          {
+            "domain": "highauthoritydirectory.com"
+          },
+          {
+            "domain": "bento.me"
+          },
+          {
+            "domain": "aifutureadda.com"
+          },
+          {
+            "domain": "financialmanagement.blog"
+          },
+          {
+            "domain": "semrushdirectory.com"
+          },
+          {
+            "domain": "rankeddirectory.com"
+          },
+          {
+            "domain": "nextgenaifinder.com"
+          },
+          {
+            "domain": "socialsight.ai"
+          },
+          {
+            "domain": "promotemyisland.com"
+          },
+          {
+            "domain": "newstimes25.com"
+          },
+          {
+            "domain": "aisubscriptions.io"
+          },
+          {
+            "domain": "snagdiscount.com"
+          },
+          {
+            "domain": "gcmaff.com"
+          },
+          {
+            "domain": "api-prod.nex-ad.com"
+          },
+          {
+            "domain": "bridalbabessociety.com"
+          },
+          {
+            "domain": "afrikashowbiz.blogspot.com"
+          },
+          {
+            "domain": "playbooknewsletter.net"
+          },
+          {
+            "domain": "weliveagency.com"
+          },
+          {
+            "domain": "prml.ink"
+          },
+          {
+            "domain": "automations.agency"
+          },
+          {
+            "domain": "digitweaks.fr"
+          },
+          {
+            "domain": "renatagramos.com"
+          },
+          {
+            "domain": "lauraniese.com"
+          },
+          {
+            "domain": "usdirectorylist.com"
+          },
+          {
+            "domain": "webranksdirectory.com"
+          },
+          {
+            "domain": "izidigi.fr"
+          },
+          {
+            "domain": "epokai.xyz"
+          },
+          {
+            "domain": "aitoolsguide.info"
+          },
+          {
+            "domain": "proseoarticles.com"
+          },
+          {
+            "domain": "techqueenblog.com"
+          },
+          {
+            "domain": "directorycloudhub.com"
+          },
+          {
+            "domain": "blog.aleenashahid.com"
+          },
+          {
+            "domain": "avmdevs.com"
+          },
+          {
+            "domain": "trendatual.com"
+          },
+          {
+            "domain": "carrd.co"
+          },
+          {
+            "domain": "erfolg-mit-systeme.de"
+          },
+          {
+            "domain": "digiplug.co.za"
+          },
+          {
+            "domain": "oai-market.com"
+          },
+          {
+            "domain": "primedirectoryzone.com"
+          },
+          {
+            "domain": "salesenzine.com"
+          },
+          {
+            "domain": "goreviewrite.com"
+          },
+          {
+            "domain": "apdirahmanhamud.com"
+          },
+          {
+            "domain": "asadmarket.com"
+          },
+          {
+            "domain": "ai.openpedia.io"
+          },
+          {
+            "domain": "globalmaxdirectory.com"
+          },
+          {
+            "domain": "mattiadistasi.com"
+          },
+          {
+            "domain": "aicovery.com"
+          },
+          {
+            "domain": "myreviews25.com"
+          },
+          {
+            "domain": "johntool.com"
+          },
+          {
+            "domain": "solodirectoryzone.com"
+          },
+          {
+            "domain": "prosperwithb.com"
+          },
+          {
+            "domain": "vogue-getaway.com"
+          },
+          {
+            "domain": "wayseolinks.com"
+          },
+          {
+            "domain": "ai-compact.com"
+          },
+          {
+            "domain": "thelocalspace.ca"
+          },
+          {
+            "domain": "coupmy.com"
+          },
+          {
+            "domain": "backlinktime.com"
+          },
+          {
+            "domain": "ahmedwrite.com"
+          },
+          {
+            "domain": "infinitycanada.com"
+          },
+          {
+            "domain": "aucepstemplates.com"
+          },
+          {
+            "domain": "oportunea.com"
+          },
+          {
+            "domain": "productland.co.il"
+          },
+          {
+            "domain": "affiliatetotal.com"
+          },
+          {
+            "domain": "superbhubdirectory.com"
+          },
+          {
+            "domain": "nexuhospitality.com"
+          },
+          {
+            "domain": "successwithsoul.co"
+          },
+          {
+            "domain": "sortdealz.com"
+          },
+          {
+            "domain": "mirell.digital"
+          },
+          {
+            "domain": "manychat.us"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 24,
+        "value": [
+          {
+            "domain": "hallebordson.com"
+          },
+          {
+            "domain": "emaillistbuildingtechniques.com"
+          },
+          {
+            "domain": "perfectclicks.com"
+          },
+          {
+            "domain": "digitalmillions.org"
+          },
+          {
+            "domain": "lafabriquedunet.fr"
+          },
+          {
+            "domain": "amazoniappc.com"
+          },
+          {
+            "domain": "podseeker.co"
+          },
+          {
+            "domain": "yourssocial.com"
+          },
+          {
+            "domain": "tebiko.com"
+          },
+          {
+            "domain": "onlinebusinesspros.nl"
+          },
+          {
+            "domain": "icecct.com"
+          },
+          {
+            "domain": "sweepsify.com"
+          },
+          {
+            "domain": "growthhackingwiki.blogspot.com"
+          },
+          {
+            "domain": "creatorgist.com"
+          },
+          {
+            "domain": "entrepreneur.com"
+          },
+          {
+            "domain": "allasware.com"
+          },
+          {
+            "domain": "soughtafterstudio.com"
+          },
+          {
+            "domain": "841719.vu0ni.group"
+          },
+          {
+            "domain": "erianmarketing.com"
+          },
+          {
+            "domain": "aiplorify.com"
+          },
+          {
+            "domain": "top-ai-directory.com"
+          },
+          {
+            "domain": "aivault.com"
+          },
+          {
+            "domain": "mhitendra.in"
+          },
+          {
+            "domain": "startupnewsxp.blogspot.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 159,
+            "promotype": "blog",
+            "value": [
+              "10reviewsplus.com",
+              "1topproduct.com",
+              "500toprated.com",
+              "adminvista.com",
+              "adpump.com",
+              "afconsultingteam.com",
+              "affluencecorner.com",
+              "aihaven.com",
+              "alanspicer.com",
+              "alejandrorioja.com",
+              "altmarketingschool.com",
+              "amazonim.co.il",
+              "amitsarda.xyz",
+              "andreadeckard.com",
+              "antoniomariggio.com",
+              "apprentimillionnaire.com",
+              "aurelius.link",
+              "ausha.co",
+              "aventuredentrepreneur.com",
+              "backlinktime.com",
+              "barzantechqatar.com",
+              "bestaito.com",
+              "bestschemes.com",
+              "beyond-boss.com",
+              "bicardo.com",
+              "blkpodnews.com",
+              "bodybuildingrule.com",
+              "borjagiron.com",
+              "brock.tv",
+              "bself.in",
+              "caseymarketingcreations.com",
+              "chatimize.com",
+              "commerceguides.com",
+              "consigue-seguidores.com",
+              "cristianefaria.com",
+              "designplus.co",
+              "dianehill.co.uk",
+              "digital-affin.de",
+              "digitales-infoprodukt.de",
+              "digitoolsadvice.com",
+              "digitweaks.com",
+              "dimarketing.it",
+              "diygenius.com",
+              "diymybrand.com",
+              "elizabethalarcon.com",
+              "elizabethmccravy.com",
+              "emprendomex.com",
+              "etechpt.com",
+              "everythingonlinestore.com",
+              "explainthis.io",
+              "findstack.com",
+              "frankknow.com",
+              "ganhecupons.com.br",
+              "getpodcast.com",
+              "globaladstorm.com",
+              "globalalldigital.com",
+              "grasspink.com",
+              "growthbuster.com",
+              "growthinfluencer.com",
+              "highlevelbots.com",
+              "hostseolinks.com",
+              "imperiowp.com.br",
+              "insg.co",
+              "intercom.help",
+              "izidigi.fr",
+              "johnbellamy.com",
+              "joinsecret.com",
+              "katewaldoandco.com",
+              "kobedigital.com",
+              "kochiesbusinessbuilders.com.au",
+              "kristisoomer.com",
+              "kuajingyuan.com",
+              "lastartup.co.il",
+              "laurenoflove.com",
+              "ldp.to",
+              "leadingmrk.com",
+              "lessecretsdumarketing.com",
+              "libsyn.com",
+              "linkedin.com",
+              "lisandraramos.com",
+              "loriballen.com",
+              "loudmoneymoves.com",
+              "mageplaza.com",
+              "manuelsuarez.com",
+              "marketinglogiq.com",
+              "mavenwit.com",
+              "medium.com",
+              "messengerblogger.com",
+              "msha.ke",
+              "mustketing.com",
+              "my.sumit.co.il",
+              "nexlaunch.com",
+              "notretailme.com",
+              "nursingflowsheet.com",
+              "ojdigitalsolutions.com",
+              "online-business-pros.builderallwppro.com",
+              "optinmonster.com",
+              "otos.link",
+              "pcfix411.net",
+              "productlondondesign.com",
+              "proseoarticles.com",
+              "purshology.com",
+              "rakily.com",
+              "refinerfireweb.com",
+              "reviewanyoption.com",
+              "risesocialmedia.com",
+              "saasmaster.net",
+              "salesenzine.com",
+              "sarahlminordesign.com",
+              "saveatcart.com",
+              "saveonbest.com",
+              "savingarena.com",
+              "savvyonsocials.com",
+              "savvypropertyinvestor.com",
+              "seohelperdirectory.com",
+              "seotoolscenters.com",
+              "shopsmarts.ai",
+              "slickbusiness.co",
+              "slickmedia.io",
+              "smartsitespro.com",
+              "smarttfix.com",
+              "smbguide.com",
+              "socialchefs.com",
+              "startupcheckr.com",
+              "stickpng.com",
+              "storevep.eksido.io",
+              "suohk.com",
+              "szeneputzen.de",
+              "taizj.com",
+              "tanyaaliza.com",
+              "teachercareerchanger.com",
+              "techmania.guru",
+              "technologycoachingonline.com",
+              "thecopywriterclub.com",
+              "thefitcookie.com",
+              "thekimsutton.com",
+              "toolassistant.com",
+              "toolpilot.ai",
+              "toptips.fr",
+              "toptohigh.com",
+              "trendgems.com",
+              "tribeagency.org",
+              "tryootech.com",
+              "ubestpick.com",
+              "upformusic.com",
+              "utm.io",
+              "veebimajutus.ee",
+              "victorytale.com",
+              "vivre-de-son-site-internet.com",
+              "wattzupp.com",
+              "wayseolinks.com",
+              "wealthtribune.com",
+              "webranksdirectory.com",
+              "wetravelfast.com",
+              "worldwidetopsite.com",
+              "yercum.com",
+              "yourcompanyformations.co.uk",
+              "zoacum.com",
+              "zomatt.com"
+            ]
+          },
+          {
+            "count": 67,
+            "promotype": "student",
+            "value": [
+              "99ranks.com",
+              "absmho.com",
+              "adsy.me",
+              "affiliateweapons.com",
+              "aligow.com",
+              "amazon.ca",
+              "businesssavvycompany.com",
+              "carmentune.com",
+              "christophtrappe.com",
+              "churchfuel.com",
+              "comparatif-logiciels.fr",
+              "did.li",
+              "digicuratoragency.com",
+              "digimoneysteps.com",
+              "digitalivan.com",
+              "digitalthinking.com.mx",
+              "docs.sendly.co.uk",
+              "droppricetoday.com",
+              "ecommercetraining.live",
+              "edigilab.com",
+              "factifying.com",
+              "farhadmoradi.com",
+              "girlmeansbusiness.com",
+              "globalseoarticles.com",
+              "goldpigtech.com",
+              "goreviewrite.com",
+              "gosupercreative.com",
+              "grindpretty.com",
+              "hypelifebrands.com",
+              "johntool.com",
+              "keithbest.com",
+              "linkhaitao.com",
+              "linktr.ee",
+              "logiciels.pro",
+              "lovefightwrite.com",
+              "mattiadistasi.com",
+              "moneyquicks.com",
+              "nettsz.com",
+              "nichoseo.com",
+              "ninjamarketing.solutions",
+              "ocupom.com.br",
+              "oddballwealth.com",
+              "omr.com",
+              "ondernemenopslippers.nl",
+              "pixistock.com",
+              "priceindanger.com",
+              "ramirogarces.com",
+              "rankerdirectory.com",
+              "reneedalo.com",
+              "saveteach.com",
+              "skillshare.com",
+              "spotify.com",
+              "strategystorming.co",
+              "teachable.com",
+              "thefittestagency.com",
+              "thenomadbrad.com",
+              "thetravelcheck.com",
+              "uho.com.br",
+              "uniqueseo.pl",
+              "vevioz.com",
+              "vibrantmarketing.net",
+              "vicvideos.com",
+              "viral-loops.com",
+              "vocal.media",
+              "wayseodirectory.com",
+              "xyloyl.com",
+              "zoebizsolutions.com"
+            ]
+          },
+          {
+            "count": 17,
+            "promotype": "content",
+            "value": [
+              "apptuts.net",
+              "automatiking.com",
+              "bento.me",
+              "bestdiscountsforyou.com",
+              "businessolution.org",
+              "carmenercilia.com",
+              "digitalnomadrockstar.com",
+              "fduty.com",
+              "marcodasta.com",
+              "monday.com",
+              "netolink.co.il",
+              "podparadise.com",
+              "purposefullday.com",
+              "silicondales.com",
+              "vaslou.com",
+              "vectorwiki.com",
+              "vitaminapublicitaria.com.br"
+            ]
+          },
+          {
+            "count": 8,
+            "promotype": "incentive",
+            "value": [
+              "couponsbee.com",
+              "couponzguru.com",
+              "couponzguruusa.com",
+              "devotedcoupons.com",
+              "domainhostcoupon.com",
+              "influxcoupons.com",
+              "remedydeals.com",
+              "superdealscheck.com"
+            ]
+          },
+          {
+            "count": 6,
+            "promotype": "forum",
+            "value": [
+              "dotpim.com",
+              "getjaybe.com",
+              "kavanahmedia.com",
+              "linkbux.com",
+              "rankwebdirectory.com",
+              "theventurer.co"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 1,
+      "socialsAvailable": [
+        "facebook"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/groups/manychat"
+      }
+    },
+    "verticals": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Business / Software",
+        "rank": 2,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Business / CRM",
+          "rank": 2,
+          "score": 70
+        },
+        {
+          "name": "Business / Software",
+          "rank": 2,
+          "score": 90
+        },
+        {
+          "name": "Online / Services",
+          "rank": 2,
+          "score": 60
+        }
+      ]
+    }
+  }
+}

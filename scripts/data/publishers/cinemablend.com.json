@@ -1,0 +1,1854 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 12,
+      "sampleValue": [
+        "Awin",
+        "CJ Affiliate",
+        "Impact"
+      ],
+      "value": [
+        "Awin",
+        "CJ Affiliate",
+        "Impact",
+        "Partnerize",
+        "Pepperjam",
+        "Rakuten",
+        "ShareASale",
+        "Skimlinks",
+        "Tradedoubler",
+        "TUNE",
+        "Viglink",
+        "Webgains"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.75
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.75
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.75
+        }
+      ]
+    },
+    "domain": "cinemablend.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "movie"
+        },
+        {
+          "score": 0.8908421,
+          "value": "star"
+        },
+        {
+          "score": 0.6404283,
+          "value": "max"
+        },
+        {
+          "score": 0.6130015,
+          "value": "original"
+        },
+        {
+          "score": 0.56922024,
+          "value": "story"
+        },
+        {
+          "score": 0.5595629,
+          "value": "girls"
+        },
+        {
+          "score": 0.55122304,
+          "value": "ready"
+        },
+        {
+          "score": 0.5439955,
+          "value": "tumblr"
+        },
+        {
+          "score": 0.538297,
+          "value": "life"
+        },
+        {
+          "score": 0.519635,
+          "value": "card"
+        },
+        {
+          "score": 0.5141958,
+          "value": "video"
+        },
+        {
+          "score": 0.50542736,
+          "value": "streaming"
+        },
+        {
+          "score": 0.47960913,
+          "value": "live"
+        },
+        {
+          "score": 0.4752901,
+          "value": "friends"
+        },
+        {
+          "score": 0.44748604,
+          "value": "girl"
+        },
+        {
+          "score": 0.44289702,
+          "value": "phone"
+        },
+        {
+          "score": 0.43989152,
+          "value": "sign"
+        },
+        {
+          "score": 0.42189974,
+          "value": "dates"
+        },
+        {
+          "score": 0.41653928,
+          "value": "christmas"
+        },
+        {
+          "score": 0.37427622,
+          "value": "game"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "movie"
+        },
+        {
+          "score": 0.8908421,
+          "value": "star"
+        },
+        {
+          "score": 0.6404283,
+          "value": "max"
+        },
+        {
+          "score": 0.6130015,
+          "value": "original"
+        },
+        {
+          "score": 0.56922024,
+          "value": "story"
+        },
+        {
+          "score": 0.5595629,
+          "value": "girls"
+        },
+        {
+          "score": 0.55122304,
+          "value": "ready"
+        },
+        {
+          "score": 0.5439955,
+          "value": "tumblr"
+        },
+        {
+          "score": 0.538297,
+          "value": "life"
+        },
+        {
+          "score": 0.519635,
+          "value": "card"
+        },
+        {
+          "score": 0.5141958,
+          "value": "video"
+        },
+        {
+          "score": 0.50542736,
+          "value": "streaming"
+        },
+        {
+          "score": 0.47960913,
+          "value": "live"
+        },
+        {
+          "score": 0.4752901,
+          "value": "friends"
+        },
+        {
+          "score": 0.44748604,
+          "value": "girl"
+        },
+        {
+          "score": 0.44289702,
+          "value": "phone"
+        },
+        {
+          "score": 0.43989152,
+          "value": "sign"
+        },
+        {
+          "score": 0.42189974,
+          "value": "dates"
+        },
+        {
+          "score": 0.41653928,
+          "value": "christmas"
+        },
+        {
+          "score": 0.37427622,
+          "value": "game"
+        },
+        {
+          "score": 0.36081064,
+          "value": "butterfly"
+        },
+        {
+          "score": 0.33860692,
+          "value": "hulu"
+        },
+        {
+          "score": 0.3383323,
+          "value": "stream"
+        },
+        {
+          "score": 0.33305597,
+          "value": "assets"
+        },
+        {
+          "score": 0.3240004,
+          "value": "love"
+        },
+        {
+          "score": 0.32347122,
+          "value": "young"
+        },
+        {
+          "score": 0.32102624,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.3207353,
+          "value": "health"
+        },
+        {
+          "score": 0.32065853,
+          "value": "people"
+        },
+        {
+          "score": 0.31630576,
+          "value": "language"
+        },
+        {
+          "score": 0.31515226,
+          "value": "success"
+        },
+        {
+          "score": 0.31413522,
+          "value": "significance"
+        },
+        {
+          "score": 0.31268603,
+          "value": "season"
+        },
+        {
+          "score": 0.30522296,
+          "value": "unique"
+        },
+        {
+          "score": 0.30419534,
+          "value": "diverse"
+        },
+        {
+          "score": 0.30407414,
+          "value": "iconic"
+        },
+        {
+          "score": 0.3040579,
+          "value": "mountain"
+        },
+        {
+          "score": 0.30395037,
+          "value": "iconic star"
+        },
+        {
+          "score": 0.30395037,
+          "value": "favourite star"
+        },
+        {
+          "score": 0.30395037,
+          "value": "live movie"
+        },
+        {
+          "score": 0.30395037,
+          "value": "diverse collection"
+        },
+        {
+          "score": 0.30395037,
+          "value": "blockbuster"
+        },
+        {
+          "score": 0.30395037,
+          "value": "exclusive blockbuster"
+        },
+        {
+          "score": 0.30395037,
+          "value": "worth term"
+        },
+        {
+          "score": 0.2908273,
+          "value": "exclusives"
+        },
+        {
+          "score": 0.2852081,
+          "value": "entertainment"
+        },
+        {
+          "score": 0.2827513,
+          "value": "legal"
+        },
+        {
+          "score": 0.27641824,
+          "value": "play"
+        },
+        {
+          "score": 0.2649426,
+          "value": "popular"
+        },
+        {
+          "score": 0.26227793,
+          "value": "family"
+        },
+        {
+          "score": 0.26226747,
+          "value": "comedy"
+        },
+        {
+          "score": 0.25988114,
+          "value": "unlimited"
+        },
+        {
+          "score": 0.25790828,
+          "value": "notice"
+        },
+        {
+          "score": 0.2514434,
+          "value": "legal notice"
+        },
+        {
+          "score": 0.2511391,
+          "value": "fee"
+        },
+        {
+          "score": 0.25088173,
+          "value": "investor"
+        },
+        {
+          "score": 0.24984427,
+          "value": "speed"
+        },
+        {
+          "score": 0.24982812,
+          "value": "contract"
+        },
+        {
+          "score": 0.24952684,
+          "value": "kid"
+        },
+        {
+          "score": 0.24937063,
+          "value": "smart"
+        },
+        {
+          "score": 0.24888816,
+          "value": "favorite"
+        },
+        {
+          "score": 0.2483188,
+          "value": "laptop"
+        },
+        {
+          "score": 0.24693446,
+          "value": "ready email"
+        },
+        {
+          "score": 0.24693446,
+          "value": "unlimited movie"
+        },
+        {
+          "score": 0.24090949,
+          "value": "real"
+        },
+        {
+          "score": 0.23996957,
+          "value": "watch"
+        },
+        {
+          "score": 0.23958474,
+          "value": "tech"
+        },
+        {
+          "score": 0.2392286,
+          "value": "subscribers"
+        },
+        {
+          "score": 0.23514578,
+          "value": "remove"
+        },
+        {
+          "score": 0.22703865,
+          "value": "extras"
+        },
+        {
+          "score": 0.20715658,
+          "value": "episode"
+        },
+        {
+          "score": 0.20185712,
+          "value": "city"
+        },
+        {
+          "score": 0.19496286,
+          "value": "team"
+        },
+        {
+          "score": 0.19431126,
+          "value": "saved"
+        },
+        {
+          "score": 0.19428265,
+          "value": "watching"
+        },
+        {
+          "score": 0.18769978,
+          "value": "subscribe"
+        },
+        {
+          "score": 0.18543828,
+          "value": "start"
+        },
+        {
+          "score": 0.1831808,
+          "value": "defines"
+        },
+        {
+          "score": 0.18021412,
+          "value": "starz"
+        },
+        {
+          "score": 0.18003605,
+          "value": "save"
+        },
+        {
+          "score": 0.17208321,
+          "value": "device"
+        },
+        {
+          "score": 0.17207892,
+          "value": "publicity"
+        },
+        {
+          "score": 0.1681691,
+          "value": "episodes"
+        },
+        {
+          "score": 0.16324869,
+          "value": "press"
+        },
+        {
+          "score": 0.15829524,
+          "value": "opportunity"
+        },
+        {
+          "score": 0.15822591,
+          "value": "king"
+        },
+        {
+          "score": 0.15623716,
+          "value": "apple"
+        },
+        {
+          "score": 0.15370958,
+          "value": "preference"
+        },
+        {
+          "score": 0.14987826,
+          "value": "verification"
+        },
+        {
+          "score": 0.13577123,
+          "value": "player"
+        },
+        {
+          "score": 0.13090332,
+          "value": "technology"
+        },
+        {
+          "score": 0.12973334,
+          "value": "cancellation"
+        },
+        {
+          "score": 0.12943175,
+          "value": "playstation"
+        },
+        {
+          "score": 0.12919381,
+          "value": "chromecast"
+        },
+        {
+          "score": 0.12830523,
+          "value": "monthly"
+        },
+        {
+          "score": 0.12790887,
+          "value": "blu"
+        },
+        {
+          "score": 0.12690613,
+          "value": "adventure"
+        },
+        {
+          "score": 0.12666062,
+          "value": "ray"
+        },
+        {
+          "score": 0.12592654,
+          "value": "space"
+        },
+        {
+          "score": 0.124776945,
+          "value": "tablet"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/cinemablend.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://cinemablend.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 393,
+        "value": [
+          "etsy.com",
+          "1stdibs.com",
+          "eventbrite.com",
+          "adobe.com",
+          "80sthrowdown.files.wordpress.com",
+          "apple.com",
+          "aarp.org",
+          "amazon.com",
+          "runnersworld.com",
+          "att.com",
+          "babbel.com",
+          "dish.com",
+          "hm.com",
+          "meta.com",
+          "netflix.com",
+          "king.com",
+          "nordstrom.com",
+          "restaurant.com",
+          "philo.com",
+          "dell.com",
+          "sky.com",
+          "musiciansfriend.com",
+          "ee.co.uk",
+          "three.co.uk",
+          "kickscrew.com",
+          "lenovo.com",
+          "nba.com",
+          "msi.com",
+          "nowtv.com",
+          "samsung.com",
+          "surfshark.com",
+          "sony.com",
+          "ubisoft.com",
+          "t-mobile.com",
+          "o2.co.uk",
+          "shutterstock.com",
+          "morrisons.com",
+          "acornonline.com",
+          "hbomax.com",
+          "adidas.co.uk",
+          "everlane.com",
+          "usatoday.com",
+          "hulu.com",
+          "roku.com",
+          "amazon.co.jp",
+          "espn.com",
+          "allposters.com",
+          "sideshowtoy.com",
+          "agentprovocateur.com",
+          "steelseries.com",
+          "ajc.com",
+          "logitech.com",
+          "aldoshoes.com",
+          "alienseries.wordpress.com",
+          "alienware.com",
+          "aliexpress.us",
+          "madametussauds.com",
+          "aloyoga.com",
+          "virginmedia.com",
+          "alpinetrek.co.uk",
+          "zoom.us",
+          "americangirl.com",
+          "americangolf.co.uk",
+          "americanhatmakers.com",
+          "tmz.com",
+          "revolve.com",
+          "andieswim.com",
+          "ancestry.com",
+          "andertons.co.uk",
+          "anthropologie.com",
+          "miumiu.com",
+          "bestbuy.com",
+          "greenmangaming.com",
+          "fanatical.com",
+          "plex.tv",
+          "primevideo.com",
+          "kohls.com",
+          "lego.com",
+          "arcadegirl64.wordpress.com",
+          "argos.co.uk",
+          "netgear.com",
+          "bulova.com",
+          "asos.com",
+          "sephora.co.uk",
+          "goop.com",
+          "xfinity.com",
+          "fandango.com",
+          "mlb.com",
+          "samsclub.com",
+          "audiovisualonline.co.uk",
+          "discoveryplus.com",
+          "max.com",
+          "zappos.com",
+          "livenation.com",
+          "awin.com",
+          "cdon.se",
+          "backstage.com",
+          "tesco.com",
+          "balenciaga.com",
+          "gapfactory.com",
+          "newspapers.com",
+          "barnesandnoble.com",
+          "barstoolsports.com",
+          "beautybay.com",
+          "harrods.com",
+          "belkin.com",
+          "glassesusa.com",
+          "bergdorfgoodman.com",
+          "benzinga.com",
+          "dazn.com",
+          "curiositystream.com",
+          "fool.com",
+          "bestwigoutlet.com",
+          "sling.com",
+          "odeon.co.uk",
+          "biblegateway.com",
+          "urbanoutfitters.com",
+          "merlincycles.com",
+          "binge.com.au",
+          "blacks.co.uk",
+          "game.co.uk",
+          "homedepot.com",
+          "lowes.com",
+          "caesars.com",
+          "columbia.com",
+          "casumo.com",
+          "debenhams.com",
+          "ebay.com",
+          "fabletics.com",
+          "forever21.com",
+          "freepeople.com",
+          "groupon.com",
+          "humblebundle.com",
+          "gooutdoors.co.uk",
+          "ibuypower.com",
+          "lulus.com",
+          "match.com",
+          "libro.fm",
+          "modcloth.com",
+          "lovereading.co.uk",
+          "rei.com",
+          "siriusxm.com",
+          "greatergood.com",
+          "ticketmaster.com",
+          "very.co.uk",
+          "vudu.com",
+          "vegas.com",
+          "nfl.com",
+          "womanizer.com",
+          "bloomingdales.com",
+          "boohoo.com",
+          "selfridges.com",
+          "bookshop.org",
+          "boots.com",
+          "boxlunch.com",
+          "coach.com",
+          "zales.com",
+          "britbox.com",
+          "bt.com",
+          "buildabear.com",
+          "currys.co.uk",
+          "udemy.com",
+          "talkspace.com",
+          "net-a-porter.com",
+          "mrporter.com",
+          "marvel.com",
+          "lululemon.com",
+          "thewhitecompany.com",
+          "hmv.com",
+          "carlsgolfland.com",
+          "macys.com",
+          "cbs.com",
+          "cdkeys.com",
+          "cclonline.com",
+          "directv.com",
+          "centr.com",
+          "funko.com",
+          "chewy.com",
+          "scholastic.com",
+          "cnbc.com",
+          "linksynergy.com",
+          "cnmsarchive.wordpress.com",
+          "paypal.com",
+          "colourpop.com",
+          "comixology.com",
+          "foxtel.com.au",
+          "verizon.com",
+          "fender.com",
+          "turtlebeach.com",
+          "ww.com",
+          "wwe.com",
+          "walgreens.com",
+          "crateandbarrel.com",
+          "crunchyroll.com",
+          "hasbro.com",
+          "g2a.com",
+          "davelozo.wordpress.com",
+          "elitesingles.com",
+          "deliveroo.co.uk",
+          "designbyhumans.com",
+          "gamefly.com",
+          "nolo.com",
+          "discussingfilm.wordpress.com",
+          "disneyworld.co.uk",
+          "displate.com",
+          "disneystore.com",
+          "drizly.com",
+          "redbubble.com",
+          "zavvi.com",
+          "electricalworld.com",
+          "gamersgate.com",
+          "newegg.com",
+          "entertainmentearth.com",
+          "topshop.com",
+          "sunspel.com",
+          "evereve.com",
+          "johnlewis.com",
+          "falconmovies.wordpress.com",
+          "fanartexhibit.wordpress.com",
+          "fanatics.com",
+          "fandangonow.com",
+          "fastestvpn.com",
+          "fayecarrwilson.wordpress.com",
+          "feverup.com",
+          "firstclasswatches.co.uk",
+          "flobowling.com",
+          "forhers.com",
+          "warthunder.com",
+          "worldofwarships.com",
+          "fourseasons.com",
+          "freewheel.co.uk",
+          "frndlytv.com",
+          "fye.com",
+          "gamestop.com",
+          "gamezone.no",
+          "worldoftanks.com",
+          "geappliances.com",
+          "gear4music.com",
+          "starz.com",
+          "joinhoney.com",
+          "gettyimages.co.uk",
+          "giantbomb.com",
+          "ginacarbone.wordpress.com",
+          "llbean.com",
+          "gog.com",
+          "goodsam.com",
+          "goodamerican.com",
+          "guestinresidence.com",
+          "lookfantastic.com",
+          "halloweencostumes.com",
+          "happybeds.co.uk",
+          "harveynichols.com",
+          "hastebin.com",
+          "wbshop.com",
+          "itv.com",
+          "magnolia.com",
+          "lovehoney.com",
+          "paramountplus.com",
+          "society6.com",
+          "showtime.com",
+          "savagex.com",
+          "vimeo.com",
+          "thereformation.com",
+          "vrbo.com",
+          "yoox.com",
+          "heroicheadlines.wordpress.com",
+          "hmssweblog.wordpress.com",
+          "hokaoneone.eu",
+          "hottopic.com",
+          "hrkgame.com",
+          "httpspercent3apercent2fpercent2fwww.hulu.comp.c2fstart",
+          "wayfair.com",
+          "hypebeast.com",
+          "inkbox.com",
+          "reverb.com",
+          "skechers.com",
+          "ir.netflix.com",
+          "ipsos.com",
+          "it.shein.com",
+          "itunes.com",
+          "jameco.com",
+          "jejoue.co.uk",
+          "jessicasimpson.com",
+          "jlobeauty.com",
+          "thetimes.co.uk",
+          "josephmallozzi.wordpress.com",
+          "jurawatches.co.uk",
+          "laptopsdirect.co.uk",
+          "larissabelkis.files.wordpress.com",
+          "masterclass.com",
+          "lelo.com",
+          "lg.com",
+          "libertylondon.com",
+          "plarium.com",
+          "myfavouritemagazines.co.uk",
+          "notonthehighstreet.com",
+          "magazinesdirect.com",
+          "magzter.com",
+          "maingear.com",
+          "mamasandpapas.com",
+          "manomano.co.uk",
+          "merchoid.com",
+          "midnightmovietrain.wordpress.com",
+          "millets.co.uk",
+          "olympics.com",
+          "monicavinader.com",
+          "msupdate.wordpress.com",
+          "music.amazon.com",
+          "mykitsch.com",
+          "myspideysenseistingling.files.wordpress.com",
+          "nchsoftware.com",
+          "nbcstore.com",
+          "nesn.com",
+          "netflix.shop",
+          "nintendo.co.uk",
+          "notino.co.uk",
+          "nyxcosmetics.com",
+          "oakley.com",
+          "paramountshop.com",
+          "parkcameras.com",
+          "patmcgrath.com",
+          "ssense.com",
+          "petertyson.co.uk",
+          "petsvilla.co.uk",
+          "play.google.com",
+          "pmcdeadline2.files.wordpress.com",
+          "pmtonline.co.uk",
+          "pr.netflix.com",
+          "powerrangersnow.wordpress.com",
+          "thehalara.com",
+          "projectcasting.com",
+          "thestar.com",
+          "quibi.com",
+          "rhms200fall15.wordpress.com",
+          "ringthedamnbell.wordpress.com",
+          "ripleys.com",
+          "rocketdog.com",
+          "rosecoloredgaming.wordpress.com",
+          "saksfifthavenue.com",
+          "samueljohnston.com",
+          "samash.com",
+          "savethecat.com",
+          "sciencedummy.wordpress.com",
+          "scottsdalegolf.co.uk",
+          "script-o-rama.com",
+          "seaworld.com",
+          "sesameplace.com",
+          "shirleybassey.wordpress.com",
+          "shmoop.com",
+          "taschen.com",
+          "shopdisney.com",
+          "shophorne.com",
+          "shoppremiumoutlets.com",
+          "shudder.com",
+          "spirithalloween.com",
+          "squattypotty.com",
+          "store.google.com",
+          "valentino.com",
+          "study.com",
+          "sweetwater.com",
+          "tejiendoelmundo.files.wordpress.com",
+          "teepublic.com",
+          "thanley.wordpress.com",
+          "thebigblogtheory.wordpress.com",
+          "therange.co.uk",
+          "thriftbooks.com",
+          "toynk.com",
+          "lengow.com",
+          "tredz.co.uk",
+          "tv.apple.com",
+          "tvstoreonline.com",
+          "uk.gamersgate.com",
+          "uncommonjames.com",
+          "us.allsaints.com",
+          "us.asos.com",
+          "us.amazon.com",
+          "us.princesspolly.com",
+          "us.shein.com",
+          "uswitch.com",
+          "viovet.co.uk",
+          "waterstones.com",
+          "wbworldabudhabi.com",
+          "westmarine.com",
+          "wexphotovideo.com",
+          "windycitizensports.files.wordpress.com",
+          "wilson.com",
+          "xbmc.org",
+          "wine.com",
+          "wix.com",
+          "wordpress.com",
+          "worthpoint.com",
+          "zernerlaw.wordpress.com",
+          "zzounds.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 18,
+        "value": [
+          {
+            "domain": "us.shein.com"
+          },
+          {
+            "domain": "ir.netflix.com"
+          },
+          {
+            "domain": "crateandbarrel.com"
+          },
+          {
+            "domain": "fender.com"
+          },
+          {
+            "domain": "us.asos.com"
+          },
+          {
+            "domain": "it.shein.com"
+          },
+          {
+            "domain": "us.princesspolly.com"
+          },
+          {
+            "domain": "ibuypower.com"
+          },
+          {
+            "domain": "uk.gamersgate.com"
+          },
+          {
+            "domain": "lowes.com"
+          },
+          {
+            "domain": "us.allsaints.com"
+          },
+          {
+            "domain": "1stdibs.com"
+          },
+          {
+            "domain": "pr.netflix.com"
+          },
+          {
+            "domain": "ipsos.com"
+          },
+          {
+            "domain": "oakley.com"
+          },
+          {
+            "domain": "us.amazon.com"
+          },
+          {
+            "domain": "lovehoney.com"
+          },
+          {
+            "domain": "greatergood.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 33,
+        "value": [
+          {
+            "domain": "roystanross.wordpress.com"
+          },
+          {
+            "domain": "laredoute.co.uk"
+          },
+          {
+            "domain": "princesspolly.com"
+          },
+          {
+            "domain": "100grana.files.wordpress.com"
+          },
+          {
+            "domain": "hasbropulse.com"
+          },
+          {
+            "domain": "officialavajade.com"
+          },
+          {
+            "domain": "loewshotels.com"
+          },
+          {
+            "domain": "allsaints.com"
+          },
+          {
+            "domain": "legoland.com"
+          },
+          {
+            "domain": "undeathmatch.files.wordpress.com"
+          },
+          {
+            "domain": "cliftoncameras.co.uk"
+          },
+          {
+            "domain": "garyswine.com"
+          },
+          {
+            "domain": "dickssportinggoods.com"
+          },
+          {
+            "domain": "intimissimi.com"
+          },
+          {
+            "domain": "ticketek.com.au"
+          },
+          {
+            "domain": "princessbride4ist130.wordpress.com"
+          },
+          {
+            "domain": "nature.com"
+          },
+          {
+            "domain": "ao.com"
+          },
+          {
+            "domain": "shein.com"
+          },
+          {
+            "domain": "raganfox.wordpress.com"
+          },
+          {
+            "domain": "blogs.mcafee.com"
+          },
+          {
+            "domain": "kinguin.net"
+          },
+          {
+            "domain": "dior.com"
+          },
+          {
+            "domain": "mgmresorts.com"
+          },
+          {
+            "domain": "ysl.com"
+          },
+          {
+            "domain": "lovehoney.co.uk"
+          },
+          {
+            "domain": "barkbox.com"
+          },
+          {
+            "domain": "cinemark.com"
+          },
+          {
+            "domain": "dunelm.com"
+          },
+          {
+            "domain": "gucci.com"
+          },
+          {
+            "domain": "office.co.uk"
+          },
+          {
+            "domain": "modaoperandi.com"
+          },
+          {
+            "domain": "egoshoes.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 36.40001,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 35.00001,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 27.550003,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 27.5,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 18.6,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 15.499999,
+            "vertical": "Entertainment / Movies"
+          },
+          {
+            "count": 14.249998,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 12.549999,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 11.949999,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 10.549999,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 10.449999,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 9.499999,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 8.9,
+            "vertical": "Entertainment / Hobbies"
+          },
+          {
+            "count": 8.099999,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 6.7499995,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 6.6499996,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 6.5,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 6.45,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 5.8,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 5.75,
+            "vertical": "Sports / Outdoor"
+          },
+          {
+            "count": 5.6499996,
+            "vertical": "Home / Art"
+          },
+          {
+            "count": 5.6,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 5.6,
+            "vertical": "Travel / Attractions"
+          },
+          {
+            "count": 4.8,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 4.6499996,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 4.55,
+            "vertical": "Gifts / Kids"
+          },
+          {
+            "count": 3.8,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 2.95,
+            "vertical": "Fashion / Jewellery"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Home / Pets"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Health / Adult"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Sports / Cycling"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Home / DIY"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 2,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 2,
+            "vertical": "Online / VPN"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Business / Website Builder"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Fashion / Lingerie"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Food / Alcohol"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Gambling / Casino"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Home / Babycare"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Online / Dating"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Travel / Vacation"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Finance"
+          },
+          {
+            "count": 1,
+            "vertical": "Finance / Trading"
+          },
+          {
+            "count": 1,
+            "vertical": "Health / Eyecare"
+          },
+          {
+            "count": 1,
+            "vertical": "Online / Freebies"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Banking"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Investments"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Gifts / Personalised"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Fragrances"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Beds & Bedding"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Garden"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Utilities"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Food / Take Out"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Gifts / Experience Days"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 393,
+      "value": [
+        "etsy.com",
+        "1stdibs.com",
+        "eventbrite.com",
+        "adobe.com",
+        "80sthrowdown.files.wordpress.com",
+        "apple.com",
+        "aarp.org",
+        "amazon.com",
+        "runnersworld.com",
+        "att.com",
+        "babbel.com",
+        "dish.com",
+        "hm.com",
+        "meta.com",
+        "netflix.com",
+        "king.com",
+        "nordstrom.com",
+        "restaurant.com",
+        "philo.com",
+        "dell.com",
+        "sky.com",
+        "musiciansfriend.com",
+        "ee.co.uk",
+        "three.co.uk",
+        "kickscrew.com",
+        "lenovo.com",
+        "nba.com",
+        "msi.com",
+        "nowtv.com",
+        "samsung.com",
+        "surfshark.com",
+        "sony.com",
+        "ubisoft.com",
+        "t-mobile.com",
+        "o2.co.uk",
+        "shutterstock.com",
+        "morrisons.com",
+        "acornonline.com",
+        "hbomax.com",
+        "adidas.co.uk",
+        "everlane.com",
+        "usatoday.com",
+        "hulu.com",
+        "roku.com",
+        "amazon.co.jp",
+        "espn.com",
+        "allposters.com",
+        "sideshowtoy.com",
+        "agentprovocateur.com",
+        "steelseries.com",
+        "ajc.com",
+        "logitech.com",
+        "aldoshoes.com",
+        "alienseries.wordpress.com",
+        "alienware.com",
+        "aliexpress.us",
+        "madametussauds.com",
+        "aloyoga.com",
+        "virginmedia.com",
+        "alpinetrek.co.uk",
+        "zoom.us",
+        "americangirl.com",
+        "americangolf.co.uk",
+        "americanhatmakers.com",
+        "tmz.com",
+        "revolve.com",
+        "andieswim.com",
+        "ancestry.com",
+        "andertons.co.uk",
+        "anthropologie.com",
+        "miumiu.com",
+        "bestbuy.com",
+        "greenmangaming.com",
+        "fanatical.com",
+        "plex.tv",
+        "primevideo.com",
+        "kohls.com",
+        "lego.com",
+        "arcadegirl64.wordpress.com",
+        "argos.co.uk",
+        "netgear.com",
+        "bulova.com",
+        "asos.com",
+        "sephora.co.uk",
+        "goop.com",
+        "xfinity.com",
+        "fandango.com",
+        "mlb.com",
+        "samsclub.com",
+        "audiovisualonline.co.uk",
+        "discoveryplus.com",
+        "max.com",
+        "zappos.com",
+        "livenation.com",
+        "awin.com",
+        "cdon.se",
+        "backstage.com",
+        "tesco.com",
+        "balenciaga.com",
+        "gapfactory.com",
+        "newspapers.com",
+        "barnesandnoble.com",
+        "barstoolsports.com",
+        "beautybay.com",
+        "harrods.com",
+        "belkin.com",
+        "glassesusa.com",
+        "bergdorfgoodman.com",
+        "benzinga.com",
+        "dazn.com",
+        "curiositystream.com",
+        "fool.com",
+        "bestwigoutlet.com",
+        "sling.com",
+        "odeon.co.uk",
+        "biblegateway.com",
+        "urbanoutfitters.com",
+        "merlincycles.com",
+        "binge.com.au",
+        "blacks.co.uk",
+        "game.co.uk",
+        "homedepot.com",
+        "lowes.com",
+        "caesars.com",
+        "columbia.com",
+        "casumo.com",
+        "debenhams.com",
+        "ebay.com",
+        "fabletics.com",
+        "forever21.com",
+        "freepeople.com",
+        "groupon.com",
+        "humblebundle.com",
+        "gooutdoors.co.uk",
+        "ibuypower.com",
+        "lulus.com",
+        "match.com",
+        "libro.fm",
+        "modcloth.com",
+        "lovereading.co.uk",
+        "rei.com",
+        "siriusxm.com",
+        "greatergood.com",
+        "ticketmaster.com",
+        "very.co.uk",
+        "vudu.com",
+        "vegas.com",
+        "nfl.com",
+        "womanizer.com",
+        "bloomingdales.com",
+        "boohoo.com",
+        "selfridges.com",
+        "bookshop.org",
+        "boots.com",
+        "boxlunch.com",
+        "coach.com",
+        "zales.com",
+        "britbox.com",
+        "bt.com",
+        "buildabear.com",
+        "currys.co.uk",
+        "udemy.com",
+        "talkspace.com",
+        "net-a-porter.com",
+        "mrporter.com",
+        "marvel.com",
+        "lululemon.com",
+        "thewhitecompany.com",
+        "hmv.com",
+        "carlsgolfland.com",
+        "macys.com",
+        "cbs.com",
+        "cdkeys.com",
+        "cclonline.com",
+        "directv.com",
+        "centr.com",
+        "funko.com",
+        "chewy.com",
+        "scholastic.com",
+        "cnbc.com",
+        "linksynergy.com",
+        "cnmsarchive.wordpress.com",
+        "paypal.com",
+        "colourpop.com",
+        "comixology.com",
+        "foxtel.com.au",
+        "verizon.com",
+        "fender.com",
+        "turtlebeach.com",
+        "ww.com",
+        "wwe.com",
+        "walgreens.com",
+        "crateandbarrel.com",
+        "crunchyroll.com",
+        "hasbro.com",
+        "g2a.com",
+        "davelozo.wordpress.com",
+        "elitesingles.com",
+        "deliveroo.co.uk",
+        "designbyhumans.com",
+        "gamefly.com",
+        "nolo.com",
+        "discussingfilm.wordpress.com",
+        "disneyworld.co.uk",
+        "displate.com",
+        "disneystore.com",
+        "drizly.com",
+        "redbubble.com",
+        "zavvi.com",
+        "electricalworld.com",
+        "gamersgate.com",
+        "newegg.com",
+        "entertainmentearth.com",
+        "topshop.com",
+        "sunspel.com",
+        "evereve.com",
+        "johnlewis.com",
+        "falconmovies.wordpress.com",
+        "fanartexhibit.wordpress.com",
+        "fanatics.com",
+        "fandangonow.com",
+        "fastestvpn.com",
+        "fayecarrwilson.wordpress.com",
+        "feverup.com",
+        "firstclasswatches.co.uk",
+        "flobowling.com",
+        "forhers.com",
+        "warthunder.com",
+        "worldofwarships.com",
+        "fourseasons.com",
+        "freewheel.co.uk",
+        "frndlytv.com",
+        "fye.com",
+        "gamestop.com",
+        "gamezone.no",
+        "worldoftanks.com",
+        "geappliances.com",
+        "gear4music.com",
+        "starz.com",
+        "joinhoney.com",
+        "gettyimages.co.uk",
+        "giantbomb.com",
+        "ginacarbone.wordpress.com",
+        "llbean.com",
+        "gog.com",
+        "goodsam.com",
+        "goodamerican.com",
+        "guestinresidence.com",
+        "lookfantastic.com",
+        "halloweencostumes.com",
+        "happybeds.co.uk",
+        "harveynichols.com",
+        "hastebin.com",
+        "wbshop.com",
+        "itv.com",
+        "magnolia.com",
+        "lovehoney.com",
+        "paramountplus.com",
+        "society6.com",
+        "showtime.com",
+        "savagex.com",
+        "vimeo.com",
+        "thereformation.com",
+        "vrbo.com",
+        "yoox.com",
+        "heroicheadlines.wordpress.com",
+        "hmssweblog.wordpress.com",
+        "hokaoneone.eu",
+        "hottopic.com",
+        "hrkgame.com",
+        "httpspercent3apercent2fpercent2fwww.hulu.comp.c2fstart",
+        "wayfair.com",
+        "hypebeast.com",
+        "inkbox.com",
+        "reverb.com",
+        "skechers.com",
+        "ir.netflix.com",
+        "ipsos.com",
+        "it.shein.com",
+        "itunes.com",
+        "jameco.com",
+        "jejoue.co.uk",
+        "jessicasimpson.com",
+        "jlobeauty.com",
+        "thetimes.co.uk",
+        "josephmallozzi.wordpress.com",
+        "jurawatches.co.uk",
+        "laptopsdirect.co.uk",
+        "larissabelkis.files.wordpress.com",
+        "masterclass.com",
+        "lelo.com",
+        "lg.com",
+        "libertylondon.com",
+        "plarium.com",
+        "myfavouritemagazines.co.uk",
+        "notonthehighstreet.com",
+        "magazinesdirect.com",
+        "magzter.com",
+        "maingear.com",
+        "mamasandpapas.com",
+        "manomano.co.uk",
+        "merchoid.com",
+        "midnightmovietrain.wordpress.com",
+        "millets.co.uk",
+        "olympics.com",
+        "monicavinader.com",
+        "msupdate.wordpress.com",
+        "music.amazon.com",
+        "mykitsch.com",
+        "myspideysenseistingling.files.wordpress.com",
+        "nchsoftware.com",
+        "nbcstore.com",
+        "nesn.com",
+        "netflix.shop",
+        "nintendo.co.uk",
+        "notino.co.uk",
+        "nyxcosmetics.com",
+        "oakley.com",
+        "paramountshop.com",
+        "parkcameras.com",
+        "patmcgrath.com",
+        "ssense.com",
+        "petertyson.co.uk",
+        "petsvilla.co.uk",
+        "play.google.com",
+        "pmcdeadline2.files.wordpress.com",
+        "pmtonline.co.uk",
+        "pr.netflix.com",
+        "powerrangersnow.wordpress.com",
+        "thehalara.com",
+        "projectcasting.com",
+        "thestar.com",
+        "quibi.com",
+        "rhms200fall15.wordpress.com",
+        "ringthedamnbell.wordpress.com",
+        "ripleys.com",
+        "rocketdog.com",
+        "rosecoloredgaming.wordpress.com",
+        "saksfifthavenue.com",
+        "samueljohnston.com",
+        "samash.com",
+        "savethecat.com",
+        "sciencedummy.wordpress.com",
+        "scottsdalegolf.co.uk",
+        "script-o-rama.com",
+        "seaworld.com",
+        "sesameplace.com",
+        "shirleybassey.wordpress.com",
+        "shmoop.com",
+        "taschen.com",
+        "shopdisney.com",
+        "shophorne.com",
+        "shoppremiumoutlets.com",
+        "shudder.com",
+        "spirithalloween.com",
+        "squattypotty.com",
+        "store.google.com",
+        "valentino.com",
+        "study.com",
+        "sweetwater.com",
+        "tejiendoelmundo.files.wordpress.com",
+        "teepublic.com",
+        "thanley.wordpress.com",
+        "thebigblogtheory.wordpress.com",
+        "therange.co.uk",
+        "thriftbooks.com",
+        "toynk.com",
+        "lengow.com",
+        "tredz.co.uk",
+        "tv.apple.com",
+        "tvstoreonline.com",
+        "uk.gamersgate.com",
+        "uncommonjames.com",
+        "us.allsaints.com",
+        "us.asos.com",
+        "us.amazon.com",
+        "us.princesspolly.com",
+        "us.shein.com",
+        "uswitch.com",
+        "viovet.co.uk",
+        "waterstones.com",
+        "wbworldabudhabi.com",
+        "westmarine.com",
+        "wexphotovideo.com",
+        "windycitizensports.files.wordpress.com",
+        "wilson.com",
+        "xbmc.org",
+        "wine.com",
+        "wix.com",
+        "wordpress.com",
+        "worthpoint.com",
+        "zernerlaw.wordpress.com",
+        "zzounds.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 53,
+      "value": [
+        "blend.cinemablend.com",
+        "guitarplayer.com",
+        "livingetc.com",
+        "marieclaire.com",
+        "tomsguide.com",
+        "fitandwell.com",
+        "tvtechnology.com",
+        "laptopmag.com",
+        "itpro.com",
+        "whattowatch.com",
+        "digitalcameraworld.com",
+        "wallpaper.com",
+        "nexttv.com",
+        "goodto.com",
+        "livescience.com",
+        "gardeningetc.com",
+        "myimperfectlife.com",
+        "fourfourtwo.com",
+        "gamesradar.com",
+        "whowhatwear.com",
+        "golfmonthly.com",
+        "androidcentral.com",
+        "cinemablend.uk",
+        "womanandhome.com",
+        "creativebloq.com",
+        "toptenreviews.com",
+        "idealhome.co.uk",
+        "ia.cinemablend.com",
+        "techradar.com",
+        "realhomes.com",
+        "avnetwork.com",
+        "imore.com",
+        "homesandgardens.com",
+        "kiplinger.com",
+        "windowscentral.com",
+        "guitarworld.com",
+        "amp.cinemablend.com",
+        "whathifi.com",
+        "loudersound.com",
+        "marieclaire.co.uk",
+        "theweek.com",
+        "musicradar.com",
+        "moneyweek.com",
+        "space.com",
+        "tomshardware.com",
+        "advnture.com",
+        "itproportal.com",
+        "petsradar.com",
+        "homebuilding.co.uk",
+        "cyclingnews.com",
+        "cyclingweekly.com",
+        "techlearning.com",
+        "newsarama.com"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/cinemablendnews",
+        "instagram": "https://instagram.com/cinemablend",
+        "twitter": "https://twitter.com/cinemablend",
+        "youtube": "https://youtube.com/channel/ucq-o4sq5kfgfgjn2jcgo8hw"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 1,
+      "sampleValue": "Entertainment / Movies",
+      "value": [
+        "Entertainment / Movies"
+      ]
+    },
+    "verticalsV2": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Entertainment / Movies",
+        "rank": 1,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Entertainment / Movies",
+          "rank": 1,
+          "score": 100
+        }
+      ]
+    }
+  }
+}

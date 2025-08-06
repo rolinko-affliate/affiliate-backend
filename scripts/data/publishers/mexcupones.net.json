@@ -1,0 +1,794 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 6,
+      "sampleValue": [
+        "Awin",
+        "CJ Affiliate",
+        "Flexoffers"
+      ],
+      "value": [
+        "Awin",
+        "CJ Affiliate",
+        "Flexoffers",
+        "Linkbux",
+        "TradeTracker",
+        "Webgains"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "mx",
+        "score": 0.95
+      },
+      "sampleValue": [
+        {
+          "countryCode": "mx",
+          "score": 0.95
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "mx",
+          "score": 0.95
+        }
+      ]
+    },
+    "domain": "mexcupones.net",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 0.39576885,
+          "value": "your browser"
+        },
+        {
+          "score": 1,
+          "value": "clothing"
+        },
+        {
+          "score": 0.81435144,
+          "value": "park"
+        },
+        {
+          "score": 0.80253124,
+          "value": "pedido"
+        },
+        {
+          "score": 0.75899667,
+          "value": "seguridad"
+        },
+        {
+          "score": 0.68964255,
+          "value": "servicio"
+        },
+        {
+          "score": 0.66884935,
+          "value": "jewelry"
+        },
+        {
+          "score": 0.6676249,
+          "value": "info"
+        },
+        {
+          "score": 0.65168947,
+          "value": "tour"
+        },
+        {
+          "score": 0.6173994,
+          "value": "boutique"
+        },
+        {
+          "score": 0.56817955,
+          "value": "code"
+        },
+        {
+          "score": 0.5046053,
+          "value": "inclusive"
+        },
+        {
+          "score": 0.49518287,
+          "value": "browser"
+        },
+        {
+          "score": 0.4949553,
+          "value": "style"
+        },
+        {
+          "score": 0.47888032,
+          "value": "earrings"
+        },
+        {
+          "score": 0.45513418,
+          "value": "singapore"
+        },
+        {
+          "score": 0.4518361,
+          "value": "coupon"
+        },
+        {
+          "score": 0.44128227,
+          "value": "fashion"
+        },
+        {
+          "score": 0.43878123,
+          "value": "mejor"
+        },
+        {
+          "score": 0.42582723,
+          "value": "error"
+        }
+      ],
+      "value": [
+        {
+          "score": 0.39576885,
+          "value": "your browser"
+        },
+        {
+          "score": 1,
+          "value": "clothing"
+        },
+        {
+          "score": 0.81435144,
+          "value": "park"
+        },
+        {
+          "score": 0.80253124,
+          "value": "pedido"
+        },
+        {
+          "score": 0.75899667,
+          "value": "seguridad"
+        },
+        {
+          "score": 0.68964255,
+          "value": "servicio"
+        },
+        {
+          "score": 0.66884935,
+          "value": "jewelry"
+        },
+        {
+          "score": 0.6676249,
+          "value": "info"
+        },
+        {
+          "score": 0.65168947,
+          "value": "tour"
+        },
+        {
+          "score": 0.6173994,
+          "value": "boutique"
+        },
+        {
+          "score": 0.56817955,
+          "value": "code"
+        },
+        {
+          "score": 0.5046053,
+          "value": "inclusive"
+        },
+        {
+          "score": 0.49518287,
+          "value": "browser"
+        },
+        {
+          "score": 0.4949553,
+          "value": "style"
+        },
+        {
+          "score": 0.47888032,
+          "value": "earrings"
+        },
+        {
+          "score": 0.45513418,
+          "value": "singapore"
+        },
+        {
+          "score": 0.4518361,
+          "value": "coupon"
+        },
+        {
+          "score": 0.44128227,
+          "value": "fashion"
+        },
+        {
+          "score": 0.43878123,
+          "value": "mejor"
+        },
+        {
+          "score": 0.42582723,
+          "value": "error"
+        },
+        {
+          "score": 0.42545152,
+          "value": "secure"
+        },
+        {
+          "score": 0.41505772,
+          "value": "request"
+        },
+        {
+          "score": 0.41061017,
+          "value": "campo"
+        },
+        {
+          "score": 0.40849835,
+          "value": "site"
+        },
+        {
+          "score": 0.39701912,
+          "value": "category"
+        },
+        {
+          "score": 0.3962823,
+          "value": "promotion"
+        },
+        {
+          "score": 0.39576885,
+          "value": "evitemos bots"
+        },
+        {
+          "score": 0.39576885,
+          "value": "página"
+        },
+        {
+          "score": 0.39576885,
+          "value": "evitemos"
+        },
+        {
+          "score": 0.39576885,
+          "value": "fin"
+        },
+        {
+          "score": 0.39576885,
+          "value": "brindarle"
+        },
+        {
+          "score": 0.39576885,
+          "value": "pedimos"
+        },
+        {
+          "score": 0.39576885,
+          "value": "llene"
+        },
+        {
+          "score": 0.39576885,
+          "value": "siguiente"
+        },
+        {
+          "score": 0.39576885,
+          "value": "acceder"
+        },
+        {
+          "score": 0.39576885,
+          "value": "innovasport"
+        },
+        {
+          "score": 0.39576885,
+          "value": "bots"
+        },
+        {
+          "score": 0.39576885,
+          "value": "stand"
+        },
+        {
+          "score": 0.39576885,
+          "value": "checking"
+        },
+        {
+          "score": 0.39576885,
+          "value": "redirecting"
+        },
+        {
+          "score": 0.39576885,
+          "value": "enable"
+        },
+        {
+          "score": 0.39576885,
+          "value": "reload"
+        },
+        {
+          "score": 0.39576885,
+          "value": "razones"
+        },
+        {
+          "score": 0.39576885,
+          "value": "bots ubicación"
+        },
+        {
+          "score": 0.39576885,
+          "value": "ubicación"
+        },
+        {
+          "score": 0.39576885,
+          "value": "ubicación be"
+        },
+        {
+          "score": 0.39576885,
+          "value": "be razones"
+        },
+        {
+          "score": 0.39576885,
+          "value": "razones seguridad"
+        },
+        {
+          "score": 0.39576885,
+          "value": "seguridad página"
+        },
+        {
+          "score": 0.39576885,
+          "value": "página fin"
+        },
+        {
+          "score": 0.39576885,
+          "value": "fin brindarle"
+        },
+        {
+          "score": 0.39576885,
+          "value": "brindarle mejor"
+        },
+        {
+          "score": 0.39576885,
+          "value": "mejor servicio"
+        },
+        {
+          "score": 0.39576885,
+          "value": "servicio pedimos"
+        },
+        {
+          "score": 0.39576885,
+          "value": "pedimos llene"
+        },
+        {
+          "score": 0.39576885,
+          "value": "llene siguiente"
+        },
+        {
+          "score": 0.39576885,
+          "value": "siguiente campo"
+        },
+        {
+          "score": 0.39576885,
+          "value": "campo acceder"
+        },
+        {
+          "score": 0.39576885,
+          "value": "acceder innovasport"
+        },
+        {
+          "score": 0.39576885,
+          "value": "innovasport com"
+        },
+        {
+          "score": 0.39576885,
+          "value": "com please"
+        },
+        {
+          "score": 0.39576885,
+          "value": "please stand"
+        },
+        {
+          "score": 0.39576885,
+          "value": "stand by"
+        },
+        {
+          "score": 0.39576885,
+          "value": "by while"
+        },
+        {
+          "score": 0.39576885,
+          "value": "while we"
+        },
+        {
+          "score": 0.39576885,
+          "value": "we are"
+        },
+        {
+          "score": 0.39576885,
+          "value": "are checking"
+        },
+        {
+          "score": 0.39576885,
+          "value": "checking your"
+        },
+        {
+          "score": 0.39576885,
+          "value": "browser redirecting"
+        },
+        {
+          "score": 0.39576885,
+          "value": "redirecting please"
+        },
+        {
+          "score": 0.39576885,
+          "value": "please enable"
+        },
+        {
+          "score": 0.39576885,
+          "value": "enable cookies"
+        },
+        {
+          "score": 0.39576885,
+          "value": "cookies and"
+        },
+        {
+          "score": 0.39576885,
+          "value": "and reload"
+        },
+        {
+          "score": 0.39576885,
+          "value": "reload the"
+        },
+        {
+          "score": 0.39576885,
+          "value": "the page"
+        },
+        {
+          "score": 0.39576885,
+          "value": "page error"
+        },
+        {
+          "score": 0.39576885,
+          "value": "error code"
+        },
+        {
+          "score": 0.39576885,
+          "value": "sneaker"
+        },
+        {
+          "score": 0.39576885,
+          "value": "hawkers"
+        },
+        {
+          "score": 0.39576885,
+          "value": "iberia"
+        },
+        {
+          "score": 0.39576885,
+          "value": "passwords"
+        },
+        {
+          "score": 0.39576885,
+          "value": "luisaviaroma"
+        },
+        {
+          "score": 0.39576885,
+          "value": "préstamo"
+        },
+        {
+          "score": 0.39576885,
+          "value": "barceló"
+        },
+        {
+          "score": 0.39576885,
+          "value": "game"
+        },
+        {
+          "score": 0.39576885,
+          "value": "sorteo"
+        },
+        {
+          "score": 0.39576885,
+          "value": "tours"
+        },
+        {
+          "score": 0.39313915,
+          "value": "globo"
+        },
+        {
+          "score": 0.38989183,
+          "value": "travel"
+        },
+        {
+          "score": 0.38389578,
+          "value": "internet"
+        },
+        {
+          "score": 0.3614522,
+          "value": "ticket"
+        },
+        {
+          "score": 0.36014965,
+          "value": "secureline"
+        },
+        {
+          "score": 0.3581708,
+          "value": "protection"
+        },
+        {
+          "score": 0.35619196,
+          "value": "antivirus"
+        },
+        {
+          "score": 0.35223427,
+          "value": "swimwear"
+        },
+        {
+          "score": 0.34629774,
+          "value": "visit"
+        },
+        {
+          "score": 0.34489068,
+          "value": "destination"
+        },
+        {
+          "score": 0.3444898,
+          "value": "regalo"
+        },
+        {
+          "score": 0.3443189,
+          "value": "necklaces"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://mexcupones.net/",
+        "https://www.mexcupones.net/",
+        "http://mexcupones.net/",
+        "http://www.mexcupones.net/"
+      ]
+    },
+    "metaData": {
+      "description": "Portal del cupones de descuento en México. Códigos y cupones de descuento para las tiendas más visitadas en Internet. Actualización diaria, cupones exclusivos.Ayuda para comprar más barato gracias a los cupones de descuento que Ud. solicite cuando realice el pedido. El descuento se aplica al precio original y Ud. pagará menos.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/mexcupones.net.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://mexcupones.net"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 25,
+        "value": [
+          "lenovo.com",
+          "banggood.com",
+          "jcpenney.com",
+          "hp.com",
+          "au.edreams.com",
+          "avast.com",
+          "barcelo.com",
+          "calvinklein.mx",
+          "kiwi.com",
+          "tradedoubler.com",
+          "southwest.com",
+          "enviaflores.com",
+          "loccitane.com",
+          "galeriaseltriunfo.com",
+          "iberia.com",
+          "undiz.com",
+          "lovelywholesale.com",
+          "viator.com",
+          "mcafee.com",
+          "music.amazon.com",
+          "mx.tienda.eset-la.com",
+          "oldnavy.mx",
+          "skechers.co.uk",
+          "tenvinilo.com",
+          "xcaret.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 5,
+        "value": [
+          {
+            "domain": "lenovo.com"
+          },
+          {
+            "domain": "oldnavy.mx"
+          },
+          {
+            "domain": "au.edreams.com"
+          },
+          {
+            "domain": "mx.tienda.eset-la.com"
+          },
+          {
+            "domain": "undiz.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 2,
+        "value": [
+          {
+            "domain": "hawkersmexico.com"
+          },
+          {
+            "domain": "edreams.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 3.8500001,
+            "vertical": "Travel / Flights"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Business / Cyber Security"
+          },
+          {
+            "count": 2,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Travel / Attractions"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Online / Security"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 1,
+            "vertical": "Gifts / Flowers"
+          },
+          {
+            "count": 1,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Lingerie"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Technology / Software"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 25,
+      "value": [
+        "lenovo.com",
+        "banggood.com",
+        "jcpenney.com",
+        "hp.com",
+        "au.edreams.com",
+        "avast.com",
+        "barcelo.com",
+        "calvinklein.mx",
+        "kiwi.com",
+        "tradedoubler.com",
+        "southwest.com",
+        "enviaflores.com",
+        "loccitane.com",
+        "galeriaseltriunfo.com",
+        "iberia.com",
+        "undiz.com",
+        "lovelywholesale.com",
+        "viator.com",
+        "mcafee.com",
+        "music.amazon.com",
+        "mx.tienda.eset-la.com",
+        "oldnavy.mx",
+        "skechers.co.uk",
+        "tenvinilo.com",
+        "xcaret.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 36,
+      "value": [
+        "malicoupons.net",
+        "hncupones.net",
+        "uycupones.net",
+        "escupones.net",
+        "clcupones.net",
+        "fin24.net.ua",
+        "htcoupons.net",
+        "eccupones.net",
+        "couponsreduction.info",
+        "fin24.ro",
+        "fin24.lv",
+        "vecupones.net",
+        "arcupones.net",
+        "cdcoupons.net",
+        "fin24bg.com",
+        "bfcoupons.net",
+        "fin24.it",
+        "monacocoupons.net",
+        "cicoupons.net",
+        "fin-24.co.uk",
+        "nicupones.net",
+        "salvacupones.net",
+        "cupoanereducere.net",
+        "costacupones.net",
+        "cubancupones.net",
+        "gtcupones.net",
+        "prcupones.net",
+        "docupones.net",
+        "fin24.com.de",
+        "percupones.net",
+        "colcupones.net",
+        "bjcoupons.net",
+        "pacupones.net",
+        "rabattkupong.info",
+        "fin24.com.hr",
+        "fin-24.ch"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 2,
+      "socialsAvailable": [
+        "twitter",
+        "facebook"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/cuponescodigo",
+        "twitter": "https://twitter.com/validcouponsnet"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Online / Freebies",
+      "value": [
+        "Online / Freebies",
+        "Shopping / Department Stores"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Online / Freebies",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Online / Freebies",
+          "rank": 1,
+          "score": 95
+        },
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 1,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

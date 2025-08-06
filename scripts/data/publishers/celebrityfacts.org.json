@@ -1,0 +1,649 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 2,
+      "sampleValue": [
+        "Skimlinks",
+        "Viglink"
+      ],
+      "value": [
+        "Skimlinks",
+        "Viglink"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.65
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.65
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.65
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "celebrityfacts.org",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "story"
+        },
+        {
+          "score": 0.7038951,
+          "value": "accessibility"
+        },
+        {
+          "score": 0.6756757,
+          "value": "epicurious"
+        },
+        {
+          "score": 0.6621622,
+          "value": "brides"
+        },
+        {
+          "score": 0.6148649,
+          "value": "sites"
+        },
+        {
+          "score": 0.5810811,
+          "value": "teen"
+        },
+        {
+          "score": 0.5472973,
+          "value": "sitemap"
+        },
+        {
+          "score": 0.52331746,
+          "value": "life"
+        },
+        {
+          "score": 0.5135135,
+          "value": "crossword"
+        },
+        {
+          "score": 0.47972974,
+          "value": "people"
+        },
+        {
+          "score": 0.46820349,
+          "value": "currency"
+        },
+        {
+          "score": 0.45945945,
+          "value": "glamour"
+        },
+        {
+          "score": 0.4391892,
+          "value": "sports"
+        },
+        {
+          "score": 0.43243244,
+          "value": "video"
+        },
+        {
+          "score": 0.40606782,
+          "value": "play"
+        },
+        {
+          "score": 0.39864865,
+          "value": "report"
+        },
+        {
+          "score": 0.3918919,
+          "value": "store"
+        },
+        {
+          "score": 0.3783784,
+          "value": "cartoons"
+        },
+        {
+          "score": 0.3783784,
+          "value": "backchannel"
+        },
+        {
+          "score": 0.3716216,
+          "value": "rights"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "story"
+        },
+        {
+          "score": 0.7038951,
+          "value": "accessibility"
+        },
+        {
+          "score": 0.6756757,
+          "value": "epicurious"
+        },
+        {
+          "score": 0.6621622,
+          "value": "brides"
+        },
+        {
+          "score": 0.6148649,
+          "value": "sites"
+        },
+        {
+          "score": 0.5810811,
+          "value": "teen"
+        },
+        {
+          "score": 0.5472973,
+          "value": "sitemap"
+        },
+        {
+          "score": 0.52331746,
+          "value": "life"
+        },
+        {
+          "score": 0.5135135,
+          "value": "crossword"
+        },
+        {
+          "score": 0.47972974,
+          "value": "people"
+        },
+        {
+          "score": 0.46820349,
+          "value": "currency"
+        },
+        {
+          "score": 0.45945945,
+          "value": "glamour"
+        },
+        {
+          "score": 0.4391892,
+          "value": "sports"
+        },
+        {
+          "score": 0.43243244,
+          "value": "video"
+        },
+        {
+          "score": 0.40606782,
+          "value": "play"
+        },
+        {
+          "score": 0.39864865,
+          "value": "report"
+        },
+        {
+          "score": 0.3918919,
+          "value": "store"
+        },
+        {
+          "score": 0.3783784,
+          "value": "cartoons"
+        },
+        {
+          "score": 0.3783784,
+          "value": "backchannel"
+        },
+        {
+          "score": 0.3716216,
+          "value": "rights"
+        },
+        {
+          "score": 0.36486486,
+          "value": "listen"
+        },
+        {
+          "score": 0.36486486,
+          "value": "article"
+        },
+        {
+          "score": 0.36486486,
+          "value": "choices"
+        },
+        {
+          "score": 0.35135135,
+          "value": "allure"
+        },
+        {
+          "score": 0.35135135,
+          "value": "cards"
+        },
+        {
+          "score": 0.35135135,
+          "value": "contest"
+        },
+        {
+          "score": 0.3445946,
+          "value": "letter"
+        },
+        {
+          "score": 0.33783785,
+          "value": "press"
+        },
+        {
+          "score": 0.33783785,
+          "value": "apptit"
+        },
+        {
+          "score": 0.3310811,
+          "value": "portfolio"
+        },
+        {
+          "score": 0.3310811,
+          "value": "midterms"
+        },
+        {
+          "score": 0.33055115,
+          "value": "night"
+        },
+        {
+          "score": 0.3108108,
+          "value": "recommends"
+        },
+        {
+          "score": 0.2972973,
+          "value": "photography"
+        },
+        {
+          "score": 0.2972973,
+          "value": "wired"
+        },
+        {
+          "score": 0.29054055,
+          "value": "style"
+        },
+        {
+          "score": 0.29054055,
+          "value": "cartoon"
+        },
+        {
+          "score": 0.29054055,
+          "value": "food"
+        },
+        {
+          "score": 0.2837838,
+          "value": "bank"
+        },
+        {
+          "score": 0.2837838,
+          "value": "puzzle"
+        },
+        {
+          "score": 0.2837838,
+          "value": "tech"
+        },
+        {
+          "score": 0.27702704,
+          "value": "voice"
+        },
+        {
+          "score": 0.27702704,
+          "value": "shouts"
+        },
+        {
+          "score": 0.27702704,
+          "value": "traveler"
+        },
+        {
+          "score": 0.27702704,
+          "value": "pitchfork"
+        },
+        {
+          "score": 0.27027026,
+          "value": "desk"
+        },
+        {
+          "score": 0.27027026,
+          "value": "newyorker"
+        },
+        {
+          "score": 0.2635135,
+          "value": "photo"
+        },
+        {
+          "score": 0.2635135,
+          "value": "care"
+        },
+        {
+          "score": 0.25675675,
+          "value": "sorkin"
+        },
+        {
+          "score": 0.25675675,
+          "value": "jigsaw"
+        },
+        {
+          "score": 0.25,
+          "value": "humor"
+        },
+        {
+          "score": 0.24324325,
+          "value": "elements"
+        },
+        {
+          "score": 0.24324325,
+          "value": "music"
+        },
+        {
+          "score": 0.24324325,
+          "value": "sections"
+        },
+        {
+          "score": 0.23648648,
+          "value": "cassidy"
+        },
+        {
+          "score": 0.23648648,
+          "value": "newsletters"
+        },
+        {
+          "score": 0.23317435,
+          "value": "rich"
+        },
+        {
+          "score": 0.22390038,
+          "value": "rich list"
+        },
+        {
+          "score": 0.22297297,
+          "value": "yorker"
+        },
+        {
+          "score": 0.21621622,
+          "value": "subscribe"
+        },
+        {
+          "score": 0.21621622,
+          "value": "comment"
+        },
+        {
+          "score": 0.21621622,
+          "value": "reporter"
+        },
+        {
+          "score": 0.21065183,
+          "value": "billing"
+        },
+        {
+          "score": 0.20945945,
+          "value": "fiction"
+        },
+        {
+          "score": 0.1536831,
+          "value": "advertising"
+        },
+        {
+          "score": 0.15235823,
+          "value": "complaint"
+        },
+        {
+          "score": 0.14970854,
+          "value": "culture"
+        },
+        {
+          "score": 0.13513513,
+          "value": "energy"
+        },
+        {
+          "score": 0.12718602,
+          "value": "british"
+        },
+        {
+          "score": 0.1245363,
+          "value": "club"
+        },
+        {
+          "score": 0.11526232,
+          "value": "booster"
+        },
+        {
+          "score": 0.11526232,
+          "value": "leader"
+        },
+        {
+          "score": 0.11261261,
+          "value": "league"
+        },
+        {
+          "score": 0.09936407,
+          "value": "guide"
+        },
+        {
+          "score": 0.09803922,
+          "value": "football"
+        },
+        {
+          "score": 0.09671436,
+          "value": "school"
+        },
+        {
+          "score": 0.09538951,
+          "value": "charge"
+        },
+        {
+          "score": 0.09538951,
+          "value": "investor"
+        },
+        {
+          "score": 0.09406465,
+          "value": "minister"
+        },
+        {
+          "score": 0.0927398,
+          "value": "topic"
+        },
+        {
+          "score": 0.09141494,
+          "value": "population"
+        },
+        {
+          "score": 0.08744038,
+          "value": "country"
+        },
+        {
+          "score": 0.08744038,
+          "value": "trouble"
+        },
+        {
+          "score": 0.086115524,
+          "value": "researcher"
+        },
+        {
+          "score": 0.086115524,
+          "value": "award"
+        },
+        {
+          "score": 0.08479067,
+          "value": "mother"
+        },
+        {
+          "score": 0.08479067,
+          "value": "archive"
+        },
+        {
+          "score": 0.08479067,
+          "value": "display"
+        },
+        {
+          "score": 0.08479067,
+          "value": "podcast"
+        },
+        {
+          "score": 0.08346582,
+          "value": "woman"
+        },
+        {
+          "score": 0.08346582,
+          "value": "large"
+        },
+        {
+          "score": 0.08214097,
+          "value": "game"
+        },
+        {
+          "score": 0.08081611,
+          "value": "mortgage"
+        },
+        {
+          "score": 0.08081611,
+          "value": "police"
+        },
+        {
+          "score": 0.08081611,
+          "value": "foot"
+        },
+        {
+          "score": 0.0781664,
+          "value": "investment"
+        },
+        {
+          "score": 0.07684155,
+          "value": "brain"
+        },
+        {
+          "score": 0.07684155,
+          "value": "newcastle"
+        },
+        {
+          "score": 0.07684155,
+          "value": "tonight"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/celebrityfacts.org.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://celebrityfacts.org"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 4,
+        "value": [
+          "aboutamazon.com",
+          "newyorker.com",
+          "golflefleur.com",
+          "thetimes.co.uk"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 0.95,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 0.6,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 0.6,
+            "vertical": "Entertainment / Movies"
+          },
+          {
+            "count": 0.6,
+            "vertical": "Entertainment / Music"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 4,
+      "value": [
+        "aboutamazon.com",
+        "newyorker.com",
+        "golflefleur.com",
+        "thetimes.co.uk"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 1,
+      "socialsAvailable": [
+        "twitter"
+      ],
+      "value": {
+        "twitter": "https://twitter.com/celeb_insiders"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Entertainment / Movies",
+      "value": [
+        "Entertainment / Movies",
+        "Entertainment / Music",
+        "Online / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Entertainment / Music",
+        "rank": 1,
+        "score": 70
+      },
+      "value": [
+        {
+          "name": "Entertainment / Movies",
+          "rank": 1,
+          "score": 70
+        },
+        {
+          "name": "Entertainment / Music",
+          "rank": 1,
+          "score": 70
+        },
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 50
+        }
+      ]
+    }
+  }
+}

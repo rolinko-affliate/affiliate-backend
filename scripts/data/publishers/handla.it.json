@@ -1,0 +1,1133 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 18,
+      "sampleValue": [
+        "Admitad",
+        "Awin",
+        "CJ Affiliate"
+      ],
+      "value": [
+        "Admitad",
+        "Awin",
+        "CJ Affiliate",
+        "CommissionFactory",
+        "Flexoffers",
+        "Impact",
+        "Optimise",
+        "Partnerize",
+        "Private Network",
+        "Rakuten",
+        "Refersion",
+        "ShareASale",
+        "Skimlinks",
+        "Tradedoubler",
+        "TradeTracker",
+        "TUNE",
+        "Viglink",
+        "Webgains"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "it",
+        "score": 0.9
+      },
+      "sampleValue": [
+        {
+          "countryCode": "it",
+          "score": 0.9
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "it",
+          "score": 0.9
+        }
+      ]
+    },
+    "domain": "handla.it",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "phone"
+        },
+        {
+          "score": 0.8629581,
+          "value": "iphone"
+        },
+        {
+          "score": 0.8344887,
+          "value": "sky"
+        },
+        {
+          "score": 0.44249347,
+          "value": "apple"
+        },
+        {
+          "score": 0.3735934,
+          "value": "sim"
+        },
+        {
+          "score": 0.3589544,
+          "value": "phones"
+        },
+        {
+          "score": 0.34035453,
+          "value": "network"
+        },
+        {
+          "score": 0.32487768,
+          "value": "device"
+        },
+        {
+          "score": 0.32014984,
+          "value": "personal datum"
+        },
+        {
+          "score": 0.30484498,
+          "value": "contract"
+        },
+        {
+          "score": 0.2702343,
+          "value": "app"
+        },
+        {
+          "score": 0.26053455,
+          "value": "pro"
+        },
+        {
+          "score": 0.2602187,
+          "value": "monthly"
+        },
+        {
+          "score": 0.25307778,
+          "value": "newegg"
+        },
+        {
+          "score": 0.24979427,
+          "value": "laptop"
+        },
+        {
+          "score": 0.24593653,
+          "value": "broadband"
+        },
+        {
+          "score": 0.24586287,
+          "value": "cloud"
+        },
+        {
+          "score": 0.23815,
+          "value": "microsoft"
+        },
+        {
+          "score": 0.21702325,
+          "value": "gaming"
+        },
+        {
+          "score": 0.20753258,
+          "value": "upgrade"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "phone"
+        },
+        {
+          "score": 0.8629581,
+          "value": "iphone"
+        },
+        {
+          "score": 0.8344887,
+          "value": "sky"
+        },
+        {
+          "score": 0.44249347,
+          "value": "apple"
+        },
+        {
+          "score": 0.3735934,
+          "value": "sim"
+        },
+        {
+          "score": 0.3589544,
+          "value": "phones"
+        },
+        {
+          "score": 0.34035453,
+          "value": "network"
+        },
+        {
+          "score": 0.32487768,
+          "value": "device"
+        },
+        {
+          "score": 0.32014984,
+          "value": "personal datum"
+        },
+        {
+          "score": 0.30484498,
+          "value": "contract"
+        },
+        {
+          "score": 0.2702343,
+          "value": "app"
+        },
+        {
+          "score": 0.26053455,
+          "value": "pro"
+        },
+        {
+          "score": 0.2602187,
+          "value": "monthly"
+        },
+        {
+          "score": 0.25307778,
+          "value": "newegg"
+        },
+        {
+          "score": 0.24979427,
+          "value": "laptop"
+        },
+        {
+          "score": 0.24593653,
+          "value": "broadband"
+        },
+        {
+          "score": 0.24586287,
+          "value": "cloud"
+        },
+        {
+          "score": 0.23815,
+          "value": "microsoft"
+        },
+        {
+          "score": 0.21702325,
+          "value": "gaming"
+        },
+        {
+          "score": 0.20753258,
+          "value": "upgrade"
+        },
+        {
+          "score": 0.20244668,
+          "value": "speed"
+        },
+        {
+          "score": 0.20036842,
+          "value": "superfast"
+        },
+        {
+          "score": 0.19359286,
+          "value": "technology"
+        },
+        {
+          "score": 0.19138674,
+          "value": "contracts"
+        },
+        {
+          "score": 0.18650645,
+          "value": "card"
+        },
+        {
+          "score": 0.18173875,
+          "value": "platform"
+        },
+        {
+          "score": 0.1796901,
+          "value": "smartphone"
+        },
+        {
+          "score": 0.17112201,
+          "value": "software"
+        },
+        {
+          "score": 0.16914637,
+          "value": "request"
+        },
+        {
+          "score": 0.16810183,
+          "value": "unlimited"
+        },
+        {
+          "score": 0.16475166,
+          "value": "provision"
+        },
+        {
+          "score": 0.16386819,
+          "value": "accessory"
+        },
+        {
+          "score": 0.16094966,
+          "value": "solution"
+        },
+        {
+          "score": 0.1604175,
+          "value": "legal"
+        },
+        {
+          "score": 0.15089084,
+          "value": "provider"
+        },
+        {
+          "score": 0.14242332,
+          "value": "cheap"
+        },
+        {
+          "score": 0.13845971,
+          "value": "desktop"
+        },
+        {
+          "score": 0.13482614,
+          "value": "seller"
+        },
+        {
+          "score": 0.1320862,
+          "value": "tariff"
+        },
+        {
+          "score": 0.1314171,
+          "value": "oplossing"
+        },
+        {
+          "score": 0.12810263,
+          "value": "tech"
+        },
+        {
+          "score": 0.12701157,
+          "value": "video"
+        },
+        {
+          "score": 0.12440215,
+          "value": "store"
+        },
+        {
+          "score": 0.12413119,
+          "value": "smart"
+        },
+        {
+          "score": 0.12398843,
+          "value": "mobile phone"
+        },
+        {
+          "score": 0.12254884,
+          "value": "download"
+        },
+        {
+          "score": 0.12176722,
+          "value": "legitimate"
+        },
+        {
+          "score": 0.117448494,
+          "value": "team"
+        },
+        {
+          "score": 0.11639984,
+          "value": "performance"
+        },
+        {
+          "score": 0.11264131,
+          "value": "pay"
+        },
+        {
+          "score": 0.11214171,
+          "value": "apex"
+        },
+        {
+          "score": 0.11183433,
+          "value": "accessoire"
+        },
+        {
+          "score": 0.11112097,
+          "value": "glass"
+        },
+        {
+          "score": 0.110958435,
+          "value": "gratis"
+        },
+        {
+          "score": 0.10819858,
+          "value": "camera"
+        },
+        {
+          "score": 0.10454438,
+          "value": "partner"
+        },
+        {
+          "score": 0.10284241,
+          "value": "window"
+        },
+        {
+          "score": 0.101881005,
+          "value": "handset"
+        },
+        {
+          "score": 0.10113611,
+          "value": "minute"
+        },
+        {
+          "score": 0.09637811,
+          "value": "developer"
+        },
+        {
+          "score": 0.09530361,
+          "value": "credit"
+        },
+        {
+          "score": 0.093876466,
+          "value": "power"
+        },
+        {
+          "score": 0.09328997,
+          "value": "tariffs"
+        },
+        {
+          "score": 0.09310441,
+          "value": "wireless"
+        },
+        {
+          "score": 0.09221065,
+          "value": "code"
+        },
+        {
+          "score": 0.091757424,
+          "value": "report"
+        },
+        {
+          "score": 0.09170878,
+          "value": "cheapest"
+        },
+        {
+          "score": 0.09170878,
+          "value": "sim-only"
+        },
+        {
+          "score": 0.09170878,
+          "value": "sim-free"
+        },
+        {
+          "score": 0.09170878,
+          "value": "calls"
+        },
+        {
+          "score": 0.09170878,
+          "value": "texts"
+        },
+        {
+          "score": 0.09081089,
+          "value": "charge"
+        },
+        {
+          "score": 0.08821696,
+          "value": "feature"
+        },
+        {
+          "score": 0.08672758,
+          "value": "monitor"
+        },
+        {
+          "score": 0.08643216,
+          "value": "windows"
+        },
+        {
+          "score": 0.0862182,
+          "value": "program"
+        },
+        {
+          "score": 0.084800966,
+          "value": "tablet"
+        },
+        {
+          "score": 0.08368699,
+          "value": "community"
+        },
+        {
+          "score": 0.08159194,
+          "value": "info"
+        },
+        {
+          "score": 0.080454625,
+          "value": "text"
+        },
+        {
+          "score": 0.08032065,
+          "value": "protection"
+        },
+        {
+          "score": 0.079283565,
+          "value": "enterprise"
+        },
+        {
+          "score": 0.07904408,
+          "value": "channel"
+        },
+        {
+          "score": 0.07778391,
+          "value": "agreement"
+        },
+        {
+          "score": 0.07705416,
+          "value": "office"
+        },
+        {
+          "score": 0.0770064,
+          "value": "studio"
+        },
+        {
+          "score": 0.07624088,
+          "value": "game"
+        },
+        {
+          "score": 0.07430207,
+          "value": "student"
+        },
+        {
+          "score": 0.074208364,
+          "value": "workstation"
+        },
+        {
+          "score": 0.0739192,
+          "value": "digital"
+        },
+        {
+          "score": 0.07374654,
+          "value": "law"
+        },
+        {
+          "score": 0.07277499,
+          "value": "tool"
+        },
+        {
+          "score": 0.07259671,
+          "value": "technologie"
+        },
+        {
+          "score": 0.07245363,
+          "value": "transaction"
+        },
+        {
+          "score": 0.07244407,
+          "value": "setting"
+        },
+        {
+          "score": 0.071979396,
+          "value": "article"
+        },
+        {
+          "score": 0.071836874,
+          "value": "bestelling"
+        },
+        {
+          "score": 0.07040635,
+          "value": "obligation"
+        },
+        {
+          "score": 0.07036786,
+          "value": "bit"
+        },
+        {
+          "score": 0.06944007,
+          "value": "verzending"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://handla.it/",
+        "https://www.handla.it/",
+        "http://handla.it/",
+        "http://www.handla.it/"
+      ]
+    },
+    "metaData": {
+      "description": "handla.it is your computer, laptop, software and cyber security website. We provide you with the latest breaking news and videos straight from the computer industry.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/handla.it.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://handla.it"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 177,
+        "value": [
+          "aliexpress.com",
+          "1more.com",
+          "1password.com",
+          "adobe.com",
+          "jd.com",
+          "365games.co.uk",
+          "apple.com",
+          "autodesk.com",
+          "amazon.com",
+          "microsoft.com",
+          "linkedin.com",
+          "meta.com",
+          "netflix.com",
+          "abt.com",
+          "nvidia.com",
+          "ray-ban.com",
+          "dell.com",
+          "ee.co.uk",
+          "sky.com",
+          "woot.com",
+          "lenovo.com",
+          "nowtv.com",
+          "oneplus.com",
+          "samsung.com",
+          "surfshark.com",
+          "t-mobile.com",
+          "ubisoft.com",
+          "evernote.com",
+          "codespark.com",
+          "o2.co.uk",
+          "fitbit.com",
+          "acer.com",
+          "hbomax.com",
+          "alibaba.com",
+          "adorama.com",
+          "huawei.com",
+          "hulu.com",
+          "affordablemobiles.co.uk",
+          "steelseries.com",
+          "logitech.com",
+          "alpakagear.com",
+          "virginmedia.com",
+          "alternate.de",
+          "philips.com",
+          "mi.com",
+          "wpengine.com",
+          "andaseat.com",
+          "hp.com",
+          "ao.com",
+          "anycubic.com",
+          "greenmangaming.com",
+          "grammarly.com",
+          "plex.tv",
+          "pixlr.com",
+          "garmin.com",
+          "argos.co.uk",
+          "netgear.com",
+          "vive.com",
+          "sonos.com",
+          "bose.com",
+          "asus.com",
+          "nature.com",
+          "parallels.com",
+          "bartesian.com",
+          "bestware.com",
+          "sling.com",
+          "vodafone.co.uk",
+          "dashlane.com",
+          "coinbase.com",
+          "ebay.com",
+          "freepeople.com",
+          "ipvanish.com",
+          "keepersecurity.com",
+          "lastpass.com",
+          "malwarebytes.com",
+          "nzxt.com",
+          "ticketmaster.com",
+          "very.co.uk",
+          "office.com",
+          "nfl.com",
+          "westerndigital.com",
+          "bluedesigns.com",
+          "bowerswilkins.com",
+          "box.co.uk",
+          "privateinternetaccess.com",
+          "browsershark.com",
+          "currys.co.uk",
+          "udemy.com",
+          "easeus.com",
+          "buymobiles.net",
+          "buydig.com",
+          "nothing.tech",
+          "carphonewarehouse.com",
+          "theinformation.com",
+          "mintmobile.com",
+          "foxtel.com.au",
+          "verizon.com",
+          "meetup.com",
+          "coolmod.com",
+          "corsair.com",
+          "costcomembershipoffer.com",
+          "couponseeker.com",
+          "creality3d.shop",
+          "crucial.com",
+          "kinguin.net",
+          "cyberghostvpn.com",
+          "dbrand.com",
+          "staples.com",
+          "ledger.com",
+          "oculus.com",
+          "revouninstaller.com",
+          "monoprice.com",
+          "e2save.com",
+          "ebuyer.com",
+          "newegg.com",
+          "tech21.com",
+          "johnlewis.com",
+          "flexispot.co.uk",
+          "fonehouse.co.uk",
+          "overclockers.co.uk",
+          "gamestop.com",
+          "gamesir.hk",
+          "joinhoney.com",
+          "giantbomb.com",
+          "gridstudio.cc",
+          "paramountplus.com",
+          "playbackbone.com",
+          "hihonor.com",
+          "httpspercent3apercent2fpercent2fwww.hulu.comp.c2fstart",
+          "studio.co.uk",
+          "hypebeast.com",
+          "hyte.com",
+          "idmobile.co.uk",
+          "thermacell.com",
+          "jlab.com",
+          "ir.logitech.com",
+          "ithemes.com",
+          "kaspersky.co.uk",
+          "laptopsdirect.co.uk",
+          "lg.com",
+          "tigerdirect.com",
+          "macmagazine.com.br",
+          "masterdynamic.com",
+          "matterhackers.com",
+          "mcafee.com",
+          "otterbox.com",
+          "mobilephonesdirect.co.uk",
+          "mobilepixels.us",
+          "mobiles.co.uk",
+          "music.amazon.com",
+          "na.redmagic.gg",
+          "newurtopia.com",
+          "nexcess.net",
+          "originpc.com",
+          "nordpass.com",
+          "nordace.com",
+          "ozgameshop.com",
+          "pcrichard.com",
+          "proshop.de",
+          "rev.com",
+          "safeweb.norton.com",
+          "scan.co.uk",
+          "secretlab.co",
+          "shargeek.com",
+          "shopping.google.com",
+          "shopto.net",
+          "smallrig.com",
+          "stacksocial.com",
+          "store.google.com",
+          "theeventscalendar.com",
+          "treblab.com",
+          "tynker.com",
+          "urbanarmorgear.com",
+          "us.norton.com",
+          "vertagear.com",
+          "wayfair.co.uk",
+          "wellbots.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 2,
+        "value": [
+          {
+            "domain": "ir.logitech.com"
+          },
+          {
+            "domain": "na.redmagic.gg"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 3,
+        "value": [
+          {
+            "domain": "att.com"
+          },
+          {
+            "domain": "music.apple.com"
+          },
+          {
+            "domain": "redmagic.gg"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 37.700012,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 21.150003,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 20.099998,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 14.149999,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 10.999999,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 9.4,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 8.8,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 6.6999993,
+            "vertical": "Business / Cyber Security"
+          },
+          {
+            "count": 4.75,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 3.95,
+            "vertical": "Online / VPN"
+          },
+          {
+            "count": 3.9,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 2.95,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Online / Security"
+          },
+          {
+            "count": 2.65,
+            "vertical": "Online / Web Design"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Finance / Forex & Crypto"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Online / Freebies"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Online / Web Hosting"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Business / Office"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 1.8,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 1.7,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 1.45,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Jobs & Careers"
+          },
+          {
+            "count": 1,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 1,
+            "vertical": "Travel / Accessories"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Eyecare"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Editing Software"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Entertainment / Hobbies"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Garden"
+          },
+          {
+            "count": 0.8,
+            "vertical": "Sports / Outdoor"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 177,
+      "value": [
+        "aliexpress.com",
+        "1more.com",
+        "1password.com",
+        "adobe.com",
+        "jd.com",
+        "365games.co.uk",
+        "apple.com",
+        "autodesk.com",
+        "amazon.com",
+        "microsoft.com",
+        "linkedin.com",
+        "meta.com",
+        "netflix.com",
+        "abt.com",
+        "nvidia.com",
+        "ray-ban.com",
+        "dell.com",
+        "ee.co.uk",
+        "sky.com",
+        "woot.com",
+        "lenovo.com",
+        "nowtv.com",
+        "oneplus.com",
+        "samsung.com",
+        "surfshark.com",
+        "t-mobile.com",
+        "ubisoft.com",
+        "evernote.com",
+        "codespark.com",
+        "o2.co.uk",
+        "fitbit.com",
+        "acer.com",
+        "hbomax.com",
+        "alibaba.com",
+        "adorama.com",
+        "huawei.com",
+        "hulu.com",
+        "affordablemobiles.co.uk",
+        "steelseries.com",
+        "logitech.com",
+        "alpakagear.com",
+        "virginmedia.com",
+        "alternate.de",
+        "philips.com",
+        "mi.com",
+        "wpengine.com",
+        "andaseat.com",
+        "hp.com",
+        "ao.com",
+        "anycubic.com",
+        "greenmangaming.com",
+        "grammarly.com",
+        "plex.tv",
+        "pixlr.com",
+        "garmin.com",
+        "argos.co.uk",
+        "netgear.com",
+        "vive.com",
+        "sonos.com",
+        "bose.com",
+        "asus.com",
+        "nature.com",
+        "parallels.com",
+        "bartesian.com",
+        "bestware.com",
+        "sling.com",
+        "vodafone.co.uk",
+        "dashlane.com",
+        "coinbase.com",
+        "ebay.com",
+        "freepeople.com",
+        "ipvanish.com",
+        "keepersecurity.com",
+        "lastpass.com",
+        "malwarebytes.com",
+        "nzxt.com",
+        "ticketmaster.com",
+        "very.co.uk",
+        "office.com",
+        "nfl.com",
+        "westerndigital.com",
+        "bluedesigns.com",
+        "bowerswilkins.com",
+        "box.co.uk",
+        "privateinternetaccess.com",
+        "browsershark.com",
+        "currys.co.uk",
+        "udemy.com",
+        "easeus.com",
+        "buymobiles.net",
+        "buydig.com",
+        "nothing.tech",
+        "carphonewarehouse.com",
+        "theinformation.com",
+        "mintmobile.com",
+        "foxtel.com.au",
+        "verizon.com",
+        "meetup.com",
+        "coolmod.com",
+        "corsair.com",
+        "costcomembershipoffer.com",
+        "couponseeker.com",
+        "creality3d.shop",
+        "crucial.com",
+        "kinguin.net",
+        "cyberghostvpn.com",
+        "dbrand.com",
+        "staples.com",
+        "ledger.com",
+        "oculus.com",
+        "revouninstaller.com",
+        "monoprice.com",
+        "e2save.com",
+        "ebuyer.com",
+        "newegg.com",
+        "tech21.com",
+        "johnlewis.com",
+        "flexispot.co.uk",
+        "fonehouse.co.uk",
+        "overclockers.co.uk",
+        "gamestop.com",
+        "gamesir.hk",
+        "joinhoney.com",
+        "giantbomb.com",
+        "gridstudio.cc",
+        "paramountplus.com",
+        "playbackbone.com",
+        "hihonor.com",
+        "httpspercent3apercent2fpercent2fwww.hulu.comp.c2fstart",
+        "studio.co.uk",
+        "hypebeast.com",
+        "hyte.com",
+        "idmobile.co.uk",
+        "thermacell.com",
+        "jlab.com",
+        "ir.logitech.com",
+        "ithemes.com",
+        "kaspersky.co.uk",
+        "laptopsdirect.co.uk",
+        "lg.com",
+        "tigerdirect.com",
+        "macmagazine.com.br",
+        "masterdynamic.com",
+        "matterhackers.com",
+        "mcafee.com",
+        "otterbox.com",
+        "mobilephonesdirect.co.uk",
+        "mobilepixels.us",
+        "mobiles.co.uk",
+        "music.amazon.com",
+        "na.redmagic.gg",
+        "newurtopia.com",
+        "nexcess.net",
+        "originpc.com",
+        "nordpass.com",
+        "nordace.com",
+        "ozgameshop.com",
+        "pcrichard.com",
+        "proshop.de",
+        "rev.com",
+        "safeweb.norton.com",
+        "scan.co.uk",
+        "secretlab.co",
+        "shargeek.com",
+        "shopping.google.com",
+        "shopto.net",
+        "smallrig.com",
+        "stacksocial.com",
+        "store.google.com",
+        "theeventscalendar.com",
+        "treblab.com",
+        "tynker.com",
+        "urbanarmorgear.com",
+        "us.norton.com",
+        "vertagear.com",
+        "wayfair.co.uk",
+        "wellbots.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Shopping / Department Stores",
+      "value": [
+        "Shopping / Department Stores",
+        "Business / Ecommerce"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 1,
+        "score": 85
+      },
+      "value": [
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 1,
+          "score": 85
+        },
+        {
+          "name": "Business / Ecommerce",
+          "rank": 1,
+          "score": 80
+        }
+      ]
+    }
+  }
+}

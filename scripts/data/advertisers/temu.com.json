@@ -1,0 +1,830 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 25,
+      "sampleValue": [
+        "Accesstrade",
+        "Admitad",
+        "ChineseAN"
+      ],
+      "value": [
+        "Accesstrade",
+        "Admitad",
+        "ChineseAN",
+        "CJ Affiliate",
+        "CueLinks",
+        "DCMnetwork",
+        "Digidip",
+        "Flexoffers",
+        "Impact",
+        "Kwanko",
+        "Linkbux",
+        "LinkConnector",
+        "LinkPrice",
+        "Linkwise",
+        "Optimise",
+        "Partnermatic",
+        "Rakuten",
+        "Rewardstyle",
+        "Skimlinks",
+        "SourceKnowledge",
+        "Takeads",
+        "Tradedoubler",
+        "TradeTracker",
+        "Viglink",
+        "Yieldkit"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 8,
+      "error": false,
+      "value": [
+        {
+          "department": "legal",
+          "value": "legal@eur.temu.com"
+        },
+        {
+          "department": "legal",
+          "value": "legal@temu.com"
+        },
+        {
+          "department": "communication",
+          "value": "media@temu.com"
+        },
+        {
+          "department": "it",
+          "value": "merchandise@temu.com"
+        },
+        {
+          "department": "legal",
+          "value": "privacy@eur.temu.com"
+        },
+        {
+          "department": "legal",
+          "value": "privacy@temu.com"
+        },
+        {
+          "department": "legal",
+          "value": "privacy@uk.temu.com"
+        },
+        {
+          "department": "it",
+          "value": "shippingpartner@temu.com"
+        }
+      ]
+    },
+    "domain": "temu.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/temu.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://temu.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1048
+      },
+      "partnersAdded": {
+        "count": 57,
+        "value": [
+          {
+            "domain": "games4u.me"
+          },
+          {
+            "domain": "curlstrip.com"
+          },
+          {
+            "domain": "vilaitideals.com"
+          },
+          {
+            "domain": "mycouponstock.com"
+          },
+          {
+            "domain": "savepath.com"
+          },
+          {
+            "domain": "forwarddeals.com"
+          },
+          {
+            "domain": "najeshopy.sk"
+          },
+          {
+            "domain": "craze4coupons.com"
+          },
+          {
+            "domain": "angebotrabatt.de"
+          },
+          {
+            "domain": "ad.soicos.com"
+          },
+          {
+            "domain": "thevougeclub.com"
+          },
+          {
+            "domain": "bestsnowthrowerreviews.com"
+          },
+          {
+            "domain": "kouponfinder.com"
+          },
+          {
+            "domain": "us.gymfluencers.com"
+          },
+          {
+            "domain": "korting-en-acties.nl"
+          },
+          {
+            "domain": "herbsmedicine.net"
+          },
+          {
+            "domain": "komputer-servise.com"
+          },
+          {
+            "domain": "track.shoptrk.com"
+          },
+          {
+            "domain": "hacco.de"
+          },
+          {
+            "domain": "sunshinerewards.com"
+          },
+          {
+            "domain": "stircrazycrafts.com"
+          },
+          {
+            "domain": "voucherupdate.com"
+          },
+          {
+            "domain": "sk.stankova.cz"
+          },
+          {
+            "domain": "productlisting.co.uk"
+          },
+          {
+            "domain": "udan.co.kr"
+          },
+          {
+            "domain": "shop.booncy.com"
+          },
+          {
+            "domain": "maatr.gotrackier.com"
+          },
+          {
+            "domain": "supershopdeals.com"
+          },
+          {
+            "domain": "maxcashreturn.com"
+          },
+          {
+            "domain": "tankdl.com"
+          },
+          {
+            "domain": "everyparcel.co.uk"
+          },
+          {
+            "domain": "octaads.gotrackier.com"
+          },
+          {
+            "domain": "couponenyy.com"
+          },
+          {
+            "domain": "listasecreta.com.br"
+          },
+          {
+            "domain": "dealfoxes.com"
+          },
+          {
+            "domain": "us.joinmoolah.com"
+          },
+          {
+            "domain": "tomshardware.com"
+          },
+          {
+            "domain": "couponsoffer.shop"
+          },
+          {
+            "domain": "ad.admitad.com"
+          },
+          {
+            "domain": "rewardanyone.com"
+          },
+          {
+            "domain": "dk.costadelsolavisen.no"
+          },
+          {
+            "domain": "ippies.be"
+          },
+          {
+            "domain": "moneymakertimes.com"
+          },
+          {
+            "domain": "au.copacoupona.com"
+          },
+          {
+            "domain": "jp.hao123.com"
+          },
+          {
+            "domain": "puntanela.cz"
+          },
+          {
+            "domain": "theygames.com"
+          },
+          {
+            "domain": "dealmoon.co.uk"
+          },
+          {
+            "domain": "buckinghamshirelive.com"
+          },
+          {
+            "domain": "oxfordshirelive.co.uk"
+          },
+          {
+            "domain": "etail-cashback.com"
+          },
+          {
+            "domain": "billycodes.com"
+          },
+          {
+            "domain": "temu.reviews"
+          },
+          {
+            "domain": "discountsgcc.com"
+          },
+          {
+            "domain": "voucherforme.com"
+          },
+          {
+            "domain": "terracoupons.com"
+          },
+          {
+            "domain": "savingclip.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 36,
+        "value": [
+          {
+            "domain": "mine-3m.com"
+          },
+          {
+            "domain": "promocodesdeals.com"
+          },
+          {
+            "domain": "dlm9trk.com"
+          },
+          {
+            "domain": "valeges-advended.icu"
+          },
+          {
+            "domain": "gizmosshoppe.com"
+          },
+          {
+            "domain": "unblockyoutubeindonesia.com"
+          },
+          {
+            "domain": "uwindowshop.com"
+          },
+          {
+            "domain": "fitnessfreako.com"
+          },
+          {
+            "domain": "womanandhome.com"
+          },
+          {
+            "domain": "mktrc.gotrackier.com"
+          },
+          {
+            "domain": "hip2save.com"
+          },
+          {
+            "domain": "swiftdealsmart.com"
+          },
+          {
+            "domain": "afflat3b3.com"
+          },
+          {
+            "domain": "milled.com"
+          },
+          {
+            "domain": "actualarticle.com"
+          },
+          {
+            "domain": "whathifi.com"
+          },
+          {
+            "domain": "lovecoupons.com"
+          },
+          {
+            "domain": "freestufffinder.com"
+          },
+          {
+            "domain": "dealguru.se"
+          },
+          {
+            "domain": "hao123.com"
+          },
+          {
+            "domain": "gajaworld.com"
+          },
+          {
+            "domain": "getmostofcoins.com"
+          },
+          {
+            "domain": "iz5.xyz"
+          },
+          {
+            "domain": "stankova.cz"
+          },
+          {
+            "domain": "couponscodi.com"
+          },
+          {
+            "domain": "saversksa.com"
+          },
+          {
+            "domain": "tag24.de"
+          },
+          {
+            "domain": "themediafinity.gotrackier.com"
+          },
+          {
+            "domain": "minesgoods.com"
+          },
+          {
+            "domain": "admitad.com"
+          },
+          {
+            "domain": "reviewsbird.com"
+          },
+          {
+            "domain": "auctera.gotrackier.com"
+          },
+          {
+            "domain": "copacoupona.com"
+          },
+          {
+            "domain": "offers.markadspro.com"
+          },
+          {
+            "domain": "gymfluencers.com"
+          },
+          {
+            "domain": "dealsfig.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 210,
+            "promotype": "blog",
+            "value": [
+              "10reviewsplus.com",
+              "1topproduct.com",
+              "247cybermonday.com",
+              "3djuegos.com",
+              "500toprated.com",
+              "abujaonline.info",
+              "adpump.com",
+              "advnture.com",
+              "afilio.com.br",
+              "afterpay.com",
+              "ahouseinthehills.com",
+              "androidcentral.com",
+              "anmedhealthemployeediscounts.com",
+              "anywise.pl",
+              "aob-news.com",
+              "atriumhealthextras.com",
+              "aumo.jp",
+              "availers.net",
+              "belfastlive.co.uk",
+              "bembarato.org",
+              "bigbasketshop.com",
+              "bigknowle.com",
+              "birminghammail.co.uk",
+              "black-friday.ch",
+              "bodymuscletips.com",
+              "bristolpost.co.uk",
+              "budgetgainer.com",
+              "buyit4peanuts.com",
+              "buykers.co.uk",
+              "byc-news.de",
+              "cheapdfw.com",
+              "cheshire-live.co.uk",
+              "codicisconto.com",
+              "cupi.ro",
+              "cupoestafixe.com",
+              "cuponado.ro",
+              "cuponplus.ro",
+              "curlstrip.com",
+              "dailypost.co.uk",
+              "derbytelegraph.co.uk",
+              "descuento.guru",
+              "devonlive.com",
+              "digitalspy.com",
+              "discountcode2020.com",
+              "dlsserve.com",
+              "dutchnews.co",
+              "escapeatx.com",
+              "escape.flights",
+              "e-shopy.eu",
+              "everythingonlinestore.com",
+              "fashion-50age.com",
+              "fashiondailytips.com",
+              "fashiontimesglobal.com",
+              "feeds.feedburner.com",
+              "findershopping.com.au",
+              "findwyse.com",
+              "flexoffers.com",
+              "forbes.com",
+              "francoischarron.com",
+              "freestuffguru.com",
+              "fringuesdeseries.com",
+              "frontceleb.com",
+              "gaja9.com",
+              "gatsbyflappergirl.com",
+              "getmecodes.co.uk",
+              "gloucestershirelive.co.uk",
+              "gopromocodes.com",
+              "greenweddingshoes.com",
+              "guidantech.com",
+              "guruhitech.com",
+              "haishangsou.com",
+              "hampshirelive.news",
+              "hermagic.com",
+              "hitrendsetter.com",
+              "homebuilding.co.uk",
+              "honglingjinuk.com",
+              "hoststheory.com",
+              "housesmarketplace.com",
+              "iharstad.no",
+              "imore.com",
+              "incomexchange.com",
+              "invertirads.club",
+              "invle.co",
+              "invol.co",
+              "irishmirror.ie",
+              "isavetoday.com",
+              "johngold.net",
+              "joinmoolah.com",
+              "kadaza.ca",
+              "kadaza.fr",
+              "katescloset.com.au",
+              "khasm.net",
+              "koboni.com",
+              "korting-en-acties.nl",
+              "kouponcode.us",
+              "kuplio.bg",
+              "kuplio.pl",
+              "kuplio.si",
+              "kuplio-ua.com.ua",
+              "kuponigo.com",
+              "laptopmag.com",
+              "lcoffers.com",
+              "leparisien.fr",
+              "lesremises.fr",
+              "lincolnshirelive.co.uk",
+              "linnstyle.com",
+              "littleyouknow.com",
+              "liverpoolecho.co.uk",
+              "livoffers.com",
+              "macodepromo.fr",
+              "macworld.com",
+              "media-shop.app",
+              "mentesliberadas.com",
+              "mommythejournalist.com",
+              "mouthsofmums.com.au",
+              "mummytotwinsplusone.com",
+              "myvouchercodes.co.uk",
+              "najeshopy.sk",
+              "neverpaidfull.com",
+              "news.24x7report.com",
+              "newsbuck.com",
+              "northantslive.news",
+              "notretailme.com",
+              "novanthealthemployeediscounts.com",
+              "nowandlive.com",
+              "oferta9.ro",
+              "onlybrisbane.com.au",
+              "onlydarwin.com.au",
+              "only-lifestyle.com",
+              "onlymelbourne.com.au",
+              "oxfordshirelive.co.uk",
+              "pandakupony.cz",
+              "paylaterfinder.com",
+              "paypo.pl",
+              "peepintomarvels.com",
+              "pod.prodegemr.com",
+              "preispirat.ch",
+              "promobit.com.br",
+              "promokod.com.ua",
+              "proxygeeko.com",
+              "rabattewelt.de",
+              "r.bttn.io",
+              "realhomes.com",
+              "recenzer.cz",
+              "redonline.co.uk",
+              "remedysumo.com",
+              "reviewvideos.club",
+              "saleduck.ch",
+              "savewithnerds.com",
+              "savingarena.com",
+              "savingtactics.com",
+              "sbmk.us",
+              "semana.es",
+              "shop-online24.eu",
+              "shoppinglifestyle.com",
+              "simpleandsereneliving.com",
+              "slevovakocka.cz",
+              "slevove.cz",
+              "socialmediaasia.com",
+              "space.com",
+              "spartanburgregionalemployeediscounts.com",
+              "spidershopping.com",
+              "spreekbuis.nl",
+              "spun.pl",
+              "stokesentinel.co.uk",
+              "strimoo.com",
+              "suffolklive.com",
+              "supercartsavers.com",
+              "supermall.com",
+              "sweettntmagazine.com",
+              "t3.com",
+              "tasteofhome.com",
+              "techradar.com",
+              "thareview.com",
+              "thecumberlandmall.com",
+              "thefreshcooky.com",
+              "themodestman.com",
+              "thesleepadvisors.co.uk",
+              "theygames.com",
+              "thishousesecurity.com",
+              "today-is-the-day.com",
+              "toftiaxa.gr",
+              "tomsguide.com",
+              "tomshardware.com",
+              "toptenreviews.com",
+              "track.omguk.com",
+              "trailfollow.com",
+              "trendingcult.com",
+              "trendythreads.net",
+              "twisto.cz",
+              "ubestpick.com",
+              "ukgoshop.co.uk",
+              "utemployeediscounts.com",
+              "varsity.co.uk",
+              "voucheralarm.com",
+              "vouchercodesuae.com",
+              "walesonline.co.uk",
+              "wantlocker.com",
+              "weather.com",
+              "wetravelfast.com",
+              "wishlistr.com",
+              "wittysparks.com",
+              "wmtw.com",
+              "wmur.com",
+              "womenshealthmag.com",
+              "wowcher.co.uk",
+              "yesmissy.com",
+              "zdnet.com",
+              "zerads.com",
+              "zmails.co"
+            ]
+          },
+          {
+            "count": 92,
+            "promotype": "student",
+            "value": [
+              "4yuuu.com",
+              "aeropost.com",
+              "alerabat.com",
+              "big4fashion.com",
+              "boredpanda.com",
+              "buckinghamshirelive.com",
+              "catchadiscount.com",
+              "ccsworkperks.com",
+              "clk.omgt3.com",
+              "cmsemployeediscounts.com",
+              "compartoo.es",
+              "costadelsolavisen.no",
+              "creativebloq.com",
+              "cursotecaplus.com",
+              "decoholic.org",
+              "dierabatt.de",
+              "droppricetoday.com",
+              "edinburghlive.co.uk",
+              "einfach-sparsam.de",
+              "elegantfaces.com",
+              "erfahrungenscout.ch",
+              "feedhour.com",
+              "feednexus.com",
+              "fone.tips",
+              "fyndrea.se",
+              "gazettelive.co.uk",
+              "hertfordshiremercury.co.uk",
+              "heybucketlist.com",
+              "homeroad.net",
+              "imamother.com",
+              "indirimkodu.com",
+              "ippies.be",
+              "julieleah.com",
+              "kadaza.com.br",
+              "kentlive.news",
+              "kuplio.gr",
+              "kupon.net",
+              "letsgrowbetter.com",
+              "likethevibe.com",
+              "linkhaitao.com",
+              "linkprefer.com",
+              "littlepinktop.com",
+              "location.best",
+              "lovesavingsgroup.com",
+              "lustrelife.com",
+              "magicofclothes.com",
+              "masslive.com",
+              "mcanism.com",
+              "metabee.de",
+              "mobilexpectation.com",
+              "mothersday2009.com",
+              "mydesires.com",
+              "nakupyzciny.cz",
+              "noblepuma.com",
+              "onlyadelaide.com.au",
+              "onlyalicesprings.com.au",
+              "onlycanberra.com.au",
+              "onlyperth.com.au",
+              "onlysydney.com.au",
+              "onlytasmania.com.au",
+              "onsuttonplace.com",
+              "organisedhq.com.au",
+              "otherb.com",
+              "pgcpsperks.com",
+              "plantyourroots.org",
+              "prettysweet.com",
+              "puertoricodigitalnews.com",
+              "rentracks.asia",
+              "revoupon.com",
+              "sales-hacking.com",
+              "saramoura.com",
+              "saveteach.com",
+              "seleqt.net",
+              "shopclever.de",
+              "soldesduck.ch",
+              "soleretriever.com",
+              "sparenrabatt.de",
+              "studentsaviour.com",
+              "tankdl.com",
+              "techcratic.com",
+              "techsocialnet.com",
+              "telefonbutiken.nu",
+              "thefreebieguy.com",
+              "thenewsgod.com",
+              "tmhcolleaguediscounts.com",
+              "topsfordays.com",
+              "uzit.co.il",
+              "viraltalky.com",
+              "webmeup.com",
+              "wiltshirelive.co.uk",
+              "zlavove.sk",
+              "zopoyo.com"
+            ]
+          },
+          {
+            "count": 45,
+            "promotype": "incentive",
+            "value": [
+              "advantagecoupons.com",
+              "apollo.deals",
+              "cashbackgeneration.com",
+              "cashbackrabat.pl",
+              "cashbackreduction.fr",
+              "couponalexa.com",
+              "couponcat.jp",
+              "couponcodego.com",
+              "couponfreeonline.com",
+              "couponit.com",
+              "couponorg.co.in",
+              "couponsbee.com",
+              "couponsnake.com",
+              "couponstruck.com",
+              "couponvampire.com",
+              "couponzguru.my",
+              "couponzguru.ph",
+              "couponzguruusa.com",
+              "craaazydeal.com",
+              "craze4coupons.com",
+              "dealrated.com",
+              "dealsarium.com",
+              "dealsinfotech.com",
+              "edeals24.com",
+              "freedealshub.com",
+              "freshbargaindeals.co.uk",
+              "gcsrewards.org",
+              "gutscheinkiller.de",
+              "idealhome.co.uk",
+              "inyourarea.co.uk",
+              "kisspr.com",
+              "linkmydeals.com",
+              "maxcashreturn.com",
+              "onlineshoppers.ca",
+              "retailmecoupons.com",
+              "saving-deals.com",
+              "seasonscoupon.com",
+              "shogundeals.com",
+              "singlesdaydeals.ch",
+              "supershopdeals.com",
+              "thesavercoupons.com",
+              "topcashback.com.au",
+              "topcashback.de",
+              "trycoupon.net",
+              "vogue.it"
+            ]
+          },
+          {
+            "count": 5,
+            "promotype": "forum",
+            "value": [
+              "bedfordshirelive.co.uk",
+              "kadaza.it",
+              "linkbux.com",
+              "malaysiafreebies.com",
+              "mcleodhealthmerchantdiscounts.com"
+            ]
+          },
+          {
+            "count": 18,
+            "promotype": "content",
+            "value": [
+              "bestdiscountsforyou.com",
+              "cxfmt.com",
+              "hercampus.com",
+              "kadaza.be",
+              "kuplio.hu",
+              "lexmedemployeediscounts.com",
+              "lisbonlions1967.com",
+              "merci-nanou.com",
+              "mttag.com",
+              "mynet.com",
+              "oglooks.com",
+              "quantumsafelist.com",
+              "scontiebuoni.it",
+              "seokeeper.com",
+              "snowboardhow.com",
+              "theshoppingfriendly.com",
+              "ukhotelbooking.com",
+              "whimsysoul.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 5,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "instagram",
+        "pinterest"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/shoptemu",
+        "instagram": "https://instagram.com/shoptemu",
+        "pinterest": "https://pinterest.com/shoptemu",
+        "twitter": "https://twitter.com/@shoptemu",
+        "youtube": "https://youtube.com/channel/uckmeihdd0mgrkdfglz8bayq"
+      }
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Business / Ecommerce",
+        "rank": 2,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 2,
+          "score": 95
+        },
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 2,
+          "score": 90
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Digidip"
+      ],
+      "value": [
+        "Digidip"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 0,
+      "error": false,
+      "value": []
+    },
+    "domain": "amazongames.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazongames.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazongames.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 3
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "tgchannels.org"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 1,
+            "promotype": "blog",
+            "value": [
+              "chollo.to"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "forum",
+            "value": [
+              "tgchannels.org"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "verticals": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Entertainment / Gaming",
+        "rank": 2,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Entertainment / Gaming",
+          "rank": 2,
+          "score": 100
+        }
+      ]
+    }
+  }
+}

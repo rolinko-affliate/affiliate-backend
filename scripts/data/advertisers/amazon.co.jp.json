@@ -1,0 +1,2538 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 11,
+      "sampleValue": [
+        "A8",
+        "ChineseAN",
+        "Digidip"
+      ],
+      "value": [
+        "A8",
+        "ChineseAN",
+        "Digidip",
+        "Duomai",
+        "Impact",
+        "Shopnomix",
+        "Skimlinks",
+        "SourceKnowledge",
+        "Takeads",
+        "Viglink",
+        "Yieldkit"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 1,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "jasper@amazon.com"
+        }
+      ]
+    },
+    "domain": "amazon.co.jp",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "seller"
+        },
+        {
+          "score": 0.8963366,
+          "value": "privacidad"
+        },
+        {
+          "score": 0.875,
+          "value": "partner"
+        },
+        {
+          "score": 0.875,
+          "value": "protein"
+        },
+        {
+          "score": 0.875,
+          "value": "hair"
+        },
+        {
+          "score": 0.82589287,
+          "value": "ebay"
+        },
+        {
+          "score": 0.805,
+          "value": "privacidade"
+        },
+        {
+          "score": 0.8035714,
+          "value": "choice"
+        },
+        {
+          "score": 0.69125,
+          "value": "informativa"
+        },
+        {
+          "score": 0.67126465,
+          "value": "preference"
+        },
+        {
+          "score": 0.65625,
+          "value": "godaddy"
+        },
+        {
+          "score": 0.62053573,
+          "value": "accessory"
+        },
+        {
+          "score": 0.58035713,
+          "value": "community"
+        },
+        {
+          "score": 0.56696427,
+          "value": "buyer"
+        },
+        {
+          "score": 0.55803573,
+          "value": "transaction"
+        },
+        {
+          "score": 0.55375,
+          "value": "video"
+        },
+        {
+          "score": 0.5425,
+          "value": "remote"
+        },
+        {
+          "score": 0.52678573,
+          "value": "supplement"
+        },
+        {
+          "score": 0.45330492,
+          "value": "technology"
+        },
+        {
+          "score": 0.44642857,
+          "value": "oil"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "seller"
+        },
+        {
+          "score": 0.8963366,
+          "value": "privacidad"
+        },
+        {
+          "score": 0.875,
+          "value": "partner"
+        },
+        {
+          "score": 0.875,
+          "value": "protein"
+        },
+        {
+          "score": 0.875,
+          "value": "hair"
+        },
+        {
+          "score": 0.82589287,
+          "value": "ebay"
+        },
+        {
+          "score": 0.805,
+          "value": "privacidade"
+        },
+        {
+          "score": 0.8035714,
+          "value": "choice"
+        },
+        {
+          "score": 0.69125,
+          "value": "informativa"
+        },
+        {
+          "score": 0.67126465,
+          "value": "preference"
+        },
+        {
+          "score": 0.65625,
+          "value": "godaddy"
+        },
+        {
+          "score": 0.62053573,
+          "value": "accessory"
+        },
+        {
+          "score": 0.58035713,
+          "value": "community"
+        },
+        {
+          "score": 0.56696427,
+          "value": "buyer"
+        },
+        {
+          "score": 0.55803573,
+          "value": "transaction"
+        },
+        {
+          "score": 0.55375,
+          "value": "video"
+        },
+        {
+          "score": 0.5425,
+          "value": "remote"
+        },
+        {
+          "score": 0.52678573,
+          "value": "supplement"
+        },
+        {
+          "score": 0.45330492,
+          "value": "technology"
+        },
+        {
+          "score": 0.44642857,
+          "value": "oil"
+        },
+        {
+          "score": 0.44625,
+          "value": "developers"
+        },
+        {
+          "score": 0.4419643,
+          "value": "sport"
+        },
+        {
+          "score": 0.4375,
+          "value": "llc"
+        },
+        {
+          "score": 0.4375,
+          "value": "legitimate"
+        },
+        {
+          "score": 0.4375,
+          "value": "setting"
+        },
+        {
+          "score": 0.41964287,
+          "value": "agreement"
+        },
+        {
+          "score": 0.41964287,
+          "value": "live"
+        },
+        {
+          "score": 0.41125,
+          "value": "supporto"
+        },
+        {
+          "score": 0.3980865,
+          "value": "hairclub"
+        },
+        {
+          "score": 0.39285713,
+          "value": "krill"
+        },
+        {
+          "score": 0.38796246,
+          "value": "health"
+        },
+        {
+          "score": 0.385,
+          "value": "precios"
+        },
+        {
+          "score": 0.3675,
+          "value": "prezzi"
+        },
+        {
+          "score": 0.35875,
+          "value": "files"
+        },
+        {
+          "score": 0.35267857,
+          "value": "power"
+        },
+        {
+          "score": 0.35267857,
+          "value": "shoe"
+        },
+        {
+          "score": 0.34375,
+          "value": "category"
+        },
+        {
+          "score": 0.3392857,
+          "value": "advertising"
+        },
+        {
+          "score": 0.33482143,
+          "value": "retro"
+        },
+        {
+          "score": 0.33482143,
+          "value": "dispute"
+        },
+        {
+          "score": 0.3325,
+          "value": "issues"
+        },
+        {
+          "score": 0.32375,
+          "value": "setapp"
+        },
+        {
+          "score": 0.32375,
+          "value": "funciona"
+        },
+        {
+          "score": 0.32142857,
+          "value": "watch"
+        },
+        {
+          "score": 0.3169643,
+          "value": "ecoflow"
+        },
+        {
+          "score": 0.3125,
+          "value": "green"
+        },
+        {
+          "score": 0.3080357,
+          "value": "mocha"
+        },
+        {
+          "score": 0.30625,
+          "value": "portugus"
+        },
+        {
+          "score": 0.30357143,
+          "value": "sleep"
+        },
+        {
+          "score": 0.2975,
+          "value": "editor"
+        },
+        {
+          "score": 0.29464287,
+          "value": "strength"
+        },
+        {
+          "score": 0.29017857,
+          "value": "law"
+        },
+        {
+          "score": 0.29017857,
+          "value": "payout"
+        },
+        {
+          "score": 0.28875,
+          "value": "mojave"
+        },
+        {
+          "score": 0.2857143,
+          "value": "entity"
+        },
+        {
+          "score": 0.2857143,
+          "value": "fnx"
+        },
+        {
+          "score": 0.28125,
+          "value": "helpful"
+        },
+        {
+          "score": 0.28125,
+          "value": "financial"
+        },
+        {
+          "score": 0.28125,
+          "value": "categoría"
+        },
+        {
+          "score": 0.27861416,
+          "value": "woman"
+        },
+        {
+          "score": 0.2767857,
+          "value": "card"
+        },
+        {
+          "score": 0.2767857,
+          "value": "applicable"
+        },
+        {
+          "score": 0.2767857,
+          "value": "hat"
+        },
+        {
+          "score": 0.27232143,
+          "value": "notice"
+        },
+        {
+          "score": 0.27125,
+          "value": "funziona"
+        },
+        {
+          "score": 0.2625,
+          "value": "images"
+        },
+        {
+          "score": 0.2544643,
+          "value": "claim"
+        },
+        {
+          "score": 0.2544643,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.2544643,
+          "value": "fund"
+        },
+        {
+          "score": 0.25375,
+          "value": "suporte"
+        },
+        {
+          "score": 0.25,
+          "value": "live community"
+        },
+        {
+          "score": 0.25,
+          "value": "shaker"
+        },
+        {
+          "score": 0.24799818,
+          "value": "center"
+        },
+        {
+          "score": 0.24553572,
+          "value": "jewelry"
+        },
+        {
+          "score": 0.245,
+          "value": "photos"
+        },
+        {
+          "score": 0.245,
+          "value": "pricing"
+        },
+        {
+          "score": 0.245,
+          "value": "usar"
+        },
+        {
+          "score": 0.24107143,
+          "value": "guarantee"
+        },
+        {
+          "score": 0.24107143,
+          "value": "blend"
+        },
+        {
+          "score": 0.2377159,
+          "value": "store"
+        },
+        {
+          "score": 0.23625,
+          "value": "pode"
+        },
+        {
+          "score": 0.23625,
+          "value": "macos"
+        },
+        {
+          "score": 0.23625,
+          "value": "condiciones"
+        },
+        {
+          "score": 0.22321428,
+          "value": "financial account"
+        },
+        {
+          "score": 0.21875,
+          "value": "pro"
+        },
+        {
+          "score": 0.21875,
+          "value": "site"
+        },
+        {
+          "score": 0.21875,
+          "value": "link"
+        },
+        {
+          "score": 0.21875,
+          "value": "footer"
+        },
+        {
+          "score": 0.21875,
+          "value": "object"
+        },
+        {
+          "score": 0.21875,
+          "value": "tag"
+        },
+        {
+          "score": 0.21875,
+          "value": "unique"
+        },
+        {
+          "score": 0.21875,
+          "value": "courtesy"
+        },
+        {
+          "score": 0.21875,
+          "value": "device"
+        },
+        {
+          "score": 0.21875,
+          "value": "beacon"
+        },
+        {
+          "score": 0.21875,
+          "value": "mind"
+        },
+        {
+          "score": 0.21875,
+          "value": "disclaimer"
+        },
+        {
+          "score": 0.21875,
+          "value": "reference"
+        },
+        {
+          "score": 0.21875,
+          "value": "specific"
+        },
+        {
+          "score": 0.21875,
+          "value": "association"
+        },
+        {
+          "score": 0.21875,
+          "value": "endorsement"
+        }
+      ]
+    },
+    "metaData": {
+      "description": "Amazon.co.jp 公式サイト。アマゾンで本, 日用品, ファッション, 食品, ベビー用品, カー用品ほか一億種の商品をいつでもお安く。通常配送無料(一部を除く)",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazon.co.jp.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazon.co.jp"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 5972
+      },
+      "partnersAdded": {
+        "count": 163,
+        "value": [
+          {
+            "domain": "e-can-z.com"
+          },
+          {
+            "domain": "kapaac.jimdofree.com"
+          },
+          {
+            "domain": "cshawa.net"
+          },
+          {
+            "domain": "folsomhistorymuseum.org"
+          },
+          {
+            "domain": "geikuchi.com"
+          },
+          {
+            "domain": "manihaman.com"
+          },
+          {
+            "domain": "nagomi.gooside.com"
+          },
+          {
+            "domain": "doodlenote.net"
+          },
+          {
+            "domain": "scary.jp"
+          },
+          {
+            "domain": "senior-mirainote.com"
+          },
+          {
+            "domain": "takasuefarm.com"
+          },
+          {
+            "domain": "gift-cd.com"
+          },
+          {
+            "domain": "romiblog.com"
+          },
+          {
+            "domain": "tomoyo.com"
+          },
+          {
+            "domain": "tayuraka.com"
+          },
+          {
+            "domain": "web-yakko.net"
+          },
+          {
+            "domain": "it-passport.info"
+          },
+          {
+            "domain": "bokuno.ugmemo.net"
+          },
+          {
+            "domain": "baumplanning.com"
+          },
+          {
+            "domain": "sawadeemusic.com"
+          },
+          {
+            "domain": "ch.nicovideo.jp"
+          },
+          {
+            "domain": "anigames.info"
+          },
+          {
+            "domain": "hajimete-kaigairyoko.com"
+          },
+          {
+            "domain": "mooohblog.com"
+          },
+          {
+            "domain": "jigusopazuru.blogspot.com"
+          },
+          {
+            "domain": "rarejob-fan.com"
+          },
+          {
+            "domain": "gmooodjeu.blog.fc2.com"
+          },
+          {
+            "domain": "bookmaria.com"
+          },
+          {
+            "domain": "nendai-gift.com"
+          },
+          {
+            "domain": "gaolalife.blogspot.com"
+          },
+          {
+            "domain": "jp.ranobe-mori.net"
+          },
+          {
+            "domain": "kaji-navi.co.jp"
+          },
+          {
+            "domain": "omosiro.hb449.com"
+          },
+          {
+            "domain": "cmclean.com.br"
+          },
+          {
+            "domain": "invisaligndiary.blog.jp"
+          },
+          {
+            "domain": "bz.gusuku.org"
+          },
+          {
+            "domain": "thnote.jp"
+          },
+          {
+            "domain": "videodouga.blogspot.com"
+          },
+          {
+            "domain": "bottimhf.blog.fc2.com"
+          },
+          {
+            "domain": "medaruotosigemu.blogspot.com"
+          },
+          {
+            "domain": "xn--wlrt32o.com"
+          },
+          {
+            "domain": "kansai-sanpo.com"
+          },
+          {
+            "domain": "torekuma-af.com"
+          },
+          {
+            "domain": "xn--9ck2ara4gc1ewd.xyz"
+          },
+          {
+            "domain": "afdoh.com"
+          },
+          {
+            "domain": "ymb-mobile-comment.com"
+          },
+          {
+            "domain": "tanpure.com"
+          },
+          {
+            "domain": "now-yattoko.net"
+          },
+          {
+            "domain": "kurashi-kosodate.com"
+          },
+          {
+            "domain": "azure.topaz.ne.jp"
+          },
+          {
+            "domain": "mofyhobby.blog"
+          },
+          {
+            "domain": "taiya7.com"
+          },
+          {
+            "domain": "xn--jbyo4q1oat46d.jp"
+          },
+          {
+            "domain": "lifeupnavi.com"
+          },
+          {
+            "domain": "lpsec.net"
+          },
+          {
+            "domain": "oyakosyukatsu.com"
+          },
+          {
+            "domain": "honest-partners.com"
+          },
+          {
+            "domain": "leoleo-sport.com"
+          },
+          {
+            "domain": "penguinisland.jp"
+          },
+          {
+            "domain": "amusingly.net"
+          },
+          {
+            "domain": "hiiron.club"
+          },
+          {
+            "domain": "cleaninghikaku.com"
+          },
+          {
+            "domain": "watashinoyasuragihimitukichi.com"
+          },
+          {
+            "domain": "boxer-suki.com"
+          },
+          {
+            "domain": "kazunie.net"
+          },
+          {
+            "domain": "nekokick3.com"
+          },
+          {
+            "domain": "viva-niwa.com"
+          },
+          {
+            "domain": "kinyo.fit"
+          },
+          {
+            "domain": "worldwview.com"
+          },
+          {
+            "domain": "wifi-park.net"
+          },
+          {
+            "domain": "regiad.com"
+          },
+          {
+            "domain": "eigochat.site"
+          },
+          {
+            "domain": "call-of-duty2.kouryaku.red"
+          },
+          {
+            "domain": "hokkiko.jp"
+          },
+          {
+            "domain": "monokatsu.com"
+          },
+          {
+            "domain": "niigata-yukiaji.com"
+          },
+          {
+            "domain": "3mitsu.blogspot.com"
+          },
+          {
+            "domain": "hikinzokuchen.blogspot.com"
+          },
+          {
+            "domain": "sep.doorblog.jp"
+          },
+          {
+            "domain": "alisa.link"
+          },
+          {
+            "domain": "it.english-and-paso.com"
+          },
+          {
+            "domain": "titecha5.blogspot.com"
+          },
+          {
+            "domain": "kate-bangkok.com"
+          },
+          {
+            "domain": "xn--ecka7j.biz"
+          },
+          {
+            "domain": "mc.server-memo.net"
+          },
+          {
+            "domain": "innovate.co.jp"
+          },
+          {
+            "domain": "job-ht.com"
+          },
+          {
+            "domain": "tenzero.jp"
+          },
+          {
+            "domain": "viewse.blogspot.com"
+          },
+          {
+            "domain": "balitaksu.com"
+          },
+          {
+            "domain": "iimono--iikoto.com"
+          },
+          {
+            "domain": "monster-energy-ultra.blog.jp"
+          },
+          {
+            "domain": "xn--l8jhd8l3b6b.com"
+          },
+          {
+            "domain": "xn--1rw61ac06crfd.xyz"
+          },
+          {
+            "domain": "meetroid.com"
+          },
+          {
+            "domain": "gradatimlab.com"
+          },
+          {
+            "domain": "mokky.net"
+          },
+          {
+            "domain": "sbanana4377.blogspot.com"
+          },
+          {
+            "domain": "hajimete-bikeryoko.com"
+          },
+          {
+            "domain": "ponkonet.com"
+          },
+          {
+            "domain": "mino-take.blog.jp"
+          },
+          {
+            "domain": "newsnews.today"
+          },
+          {
+            "domain": "everyday-newsky.com"
+          },
+          {
+            "domain": "kodaira-soccer.mints.ne.jp"
+          },
+          {
+            "domain": "yagio.blogo.jp"
+          },
+          {
+            "domain": "ittoukai.com"
+          },
+          {
+            "domain": "kinyucard.info"
+          },
+          {
+            "domain": "camping-car-rental.net"
+          },
+          {
+            "domain": "gbiz.jp"
+          },
+          {
+            "domain": "iroiro123.com"
+          },
+          {
+            "domain": "attackontitan.info-native.com"
+          },
+          {
+            "domain": "issm2011.com"
+          },
+          {
+            "domain": "0755szjj.com"
+          },
+          {
+            "domain": "npohemp.localinfo.jp"
+          },
+          {
+            "domain": "takuhaisyokuji.xyz"
+          },
+          {
+            "domain": "ryo-sk.com"
+          },
+          {
+            "domain": "cap-games.jp"
+          },
+          {
+            "domain": "uq-hack.com"
+          },
+          {
+            "domain": "hiroroom.blog"
+          },
+          {
+            "domain": "muterium.com"
+          },
+          {
+            "domain": "skyskysky.net"
+          },
+          {
+            "domain": "fire-shugyou.com"
+          },
+          {
+            "domain": "happy-life365.com"
+          },
+          {
+            "domain": "otera.net"
+          },
+          {
+            "domain": "travel-hack.jp"
+          },
+          {
+            "domain": "hshfii-orpsp.com"
+          },
+          {
+            "domain": "sapporoclubeventdj.blogspot.com"
+          },
+          {
+            "domain": "dreamparadaisu.com"
+          },
+          {
+            "domain": "yochobo.info"
+          },
+          {
+            "domain": "hinkon666.blog.fc2.com"
+          },
+          {
+            "domain": "endcard.blog.fc2.com"
+          },
+          {
+            "domain": "jituyoukouza.blogspot.com"
+          },
+          {
+            "domain": "xn--n8ja0k5cv195b05xa.com"
+          },
+          {
+            "domain": "canda.jp"
+          },
+          {
+            "domain": "maildewa.com"
+          },
+          {
+            "domain": "yasai.fujiyamasan.com"
+          },
+          {
+            "domain": "ryugukozo.com"
+          },
+          {
+            "domain": "shirasusolo.net"
+          },
+          {
+            "domain": "jp.ntdtv.com"
+          },
+          {
+            "domain": "nozeiplan.com"
+          },
+          {
+            "domain": "xn--zcktap0g6cw578bixoy0v131a.com"
+          },
+          {
+            "domain": "garden-of-ethel.com"
+          },
+          {
+            "domain": "sputoyo877.com"
+          },
+          {
+            "domain": "shinkokuday.com"
+          },
+          {
+            "domain": "rakuten-entry.com"
+          },
+          {
+            "domain": "bepiyblog.com"
+          },
+          {
+            "domain": "masumasudiary.com"
+          },
+          {
+            "domain": "kazuzuka.blog.jp"
+          },
+          {
+            "domain": "womengym-review.com"
+          },
+          {
+            "domain": "robo-omotya.com"
+          },
+          {
+            "domain": "turf-ball.com"
+          },
+          {
+            "domain": "wdplu.com"
+          },
+          {
+            "domain": "odik.co.jp"
+          },
+          {
+            "domain": "founy.com"
+          },
+          {
+            "domain": "naraaisai.com"
+          },
+          {
+            "domain": "chuugakujyuken.jimdofree.com"
+          },
+          {
+            "domain": "kigyo-lab.jp"
+          },
+          {
+            "domain": "kimmo77.com"
+          },
+          {
+            "domain": "bl.ranobe-mori.net"
+          },
+          {
+            "domain": "xn--89xw0k.biz"
+          },
+          {
+            "domain": "komputer-servise.com"
+          },
+          {
+            "domain": "frame-diy.com"
+          },
+          {
+            "domain": "shiratama55.net"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 85,
+        "value": [
+          {
+            "domain": "windowscentral.com"
+          },
+          {
+            "domain": "loudersound.com"
+          },
+          {
+            "domain": "monew.jp"
+          },
+          {
+            "domain": "ranarara.com"
+          },
+          {
+            "domain": "nikiniki230115.com"
+          },
+          {
+            "domain": "bestholiday.blog.ss-blog.jp"
+          },
+          {
+            "domain": "businessshoesbusiness.blogspot.com"
+          },
+          {
+            "domain": "polyglotlab.com"
+          },
+          {
+            "domain": "ikeikeiketeru2.blog.ss-blog.jp"
+          },
+          {
+            "domain": "sumihamigakiko.blogspot.com"
+          },
+          {
+            "domain": "annee.hatenadiary.com"
+          },
+          {
+            "domain": "bakuon.info-native.com"
+          },
+          {
+            "domain": "kokonattuoil.com"
+          },
+          {
+            "domain": "marukidosado.blog.ss-blog.jp"
+          },
+          {
+            "domain": "cocochi1.net"
+          },
+          {
+            "domain": "e-kitchen.biz"
+          },
+          {
+            "domain": "macworld.com"
+          },
+          {
+            "domain": "sweetroad5.com"
+          },
+          {
+            "domain": "camo.jp"
+          },
+          {
+            "domain": "iphonecase99.blog.jp"
+          },
+          {
+            "domain": "fanthuhan.com"
+          },
+          {
+            "domain": "studioneko.net"
+          },
+          {
+            "domain": "getalife.jp"
+          },
+          {
+            "domain": "xn--t8j4aa4n5fma5bz4a3dqa.com"
+          },
+          {
+            "domain": "hot-trendnews2014.blog.ss-blog.jp"
+          },
+          {
+            "domain": "tomofreeblog.com"
+          },
+          {
+            "domain": "tdr-toranomaki.com"
+          },
+          {
+            "domain": "ayumuandme.blogspot.com"
+          },
+          {
+            "domain": "hameflaghameflag.info-native.com"
+          },
+          {
+            "domain": "kerbonhita.blogspot.com"
+          },
+          {
+            "domain": "wlignm.blog.ss-blog.jp"
+          },
+          {
+            "domain": "web-novel.site"
+          },
+          {
+            "domain": "eijicycle.com"
+          },
+          {
+            "domain": "gourmet-prono1.jp"
+          },
+          {
+            "domain": "448yoshiya.com"
+          },
+          {
+            "domain": "taku0126jp.me"
+          },
+          {
+            "domain": "tmpfree.com"
+          },
+          {
+            "domain": "subcul.livedoor.biz"
+          },
+          {
+            "domain": "ntdtv.com"
+          },
+          {
+            "domain": "imore.com"
+          },
+          {
+            "domain": "sinnsi550306.livedoor.blog"
+          },
+          {
+            "domain": "nerdlog.it"
+          },
+          {
+            "domain": "ez-dictionary.com"
+          },
+          {
+            "domain": "agri.mynavi.jp"
+          },
+          {
+            "domain": "5min-massage.com"
+          },
+          {
+            "domain": "my-fun.net"
+          },
+          {
+            "domain": "namashiitake.com"
+          },
+          {
+            "domain": "xn--eckp2gt40po3dzol33jxl7aj0gprkoxmlzz.jp"
+          },
+          {
+            "domain": "smile-rinalog.com"
+          },
+          {
+            "domain": "wanko-living.com"
+          },
+          {
+            "domain": "sealegal.academy"
+          },
+          {
+            "domain": "aquosphone.ldblog.jp"
+          },
+          {
+            "domain": "donoubukuro.blogspot.com"
+          },
+          {
+            "domain": "allblue.xyz"
+          },
+          {
+            "domain": "kitemi.net"
+          },
+          {
+            "domain": "furu-market.com"
+          },
+          {
+            "domain": "inhurukuuki.blogspot.com"
+          },
+          {
+            "domain": "tulipfestival.noramba.net"
+          },
+          {
+            "domain": "tsurinow.com"
+          },
+          {
+            "domain": "bbq.ikora.tv"
+          },
+          {
+            "domain": "directresp.com"
+          },
+          {
+            "domain": "ceokai.com"
+          },
+          {
+            "domain": "guitarstringmania.com"
+          },
+          {
+            "domain": "coco-camp.com"
+          },
+          {
+            "domain": "carlsauerdreamtacreepydream.blogspot.com"
+          },
+          {
+            "domain": "soccer-tribe.blog.ss-blog.jp"
+          },
+          {
+            "domain": "mex-matsuda.co.jp"
+          },
+          {
+            "domain": "kigyoudamashii.net"
+          },
+          {
+            "domain": "neko1100f.com"
+          },
+          {
+            "domain": "smile-egao.conohawing.com"
+          },
+          {
+            "domain": "pandaloves-investor.com"
+          },
+          {
+            "domain": "musickai.blog.jp"
+          },
+          {
+            "domain": "osssy7.com"
+          },
+          {
+            "domain": "hiyokkokosodate.hateblo.jp"
+          },
+          {
+            "domain": "aquariongenesis.info-native.com"
+          },
+          {
+            "domain": "dqnsnowboarder.com"
+          },
+          {
+            "domain": "romanchea.blogspot.com"
+          },
+          {
+            "domain": "p-scope.com"
+          },
+          {
+            "domain": "resortcasinoinfo.com"
+          },
+          {
+            "domain": "xn--u9jthxb9c9bud3f0263a923b887e.com"
+          },
+          {
+            "domain": "nicovideo.jp"
+          },
+          {
+            "domain": "hagoitakazari.blogspot.com"
+          },
+          {
+            "domain": "one-oclock.net"
+          },
+          {
+            "domain": "tengmu.blogspot.com"
+          },
+          {
+            "domain": "32marine.net"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 744,
+            "promotype": "blog",
+            "value": [
+              "03interior.com",
+              "10to1travel.com",
+              "1yume.com",
+              "20tensyoku.jp",
+              "25ans.jp",
+              "28.ldblog.jp",
+              "2do-3.com",
+              "3000-hp.com",
+              "40otoko-gensen.site",
+              "4109.jp",
+              "41sake.com",
+              "4k.smartstartechnology.com",
+              "5nza.com",
+              "8bees.net",
+              "8dexpress.cn",
+              "975mix.com",
+              "abitguner.com",
+              "adafruit.com",
+              "afdoh.com",
+              "affiliate-beginning-gently.com",
+              "aff.yokotyo.jp",
+              "agehaing.com",
+              "aicayama2.com",
+              "aikou-golf.com",
+              "aivy.blog",
+              "akachanpic-mama.com",
+              "akahoshi-poteco.com",
+              "antiwhitehair.com",
+              "akaishitaizo.com",
+              "any-thyme.com",
+              "aoyama.info-native.com",
+              "aki-ichi.com",
+              "apple100juice.blog.jp",
+              "ar0.biz",
+              "aldnoahzero.info-native.com",
+              "all-be-happy.com",
+              "a-rail.com",
+              "all-natural-sweet.com",
+              "arekorebibouroku.hateblo.jp",
+              "arfotur.net",
+              "aroma-beauty40.com",
+              "amanchuadvance.info-native.com",
+              "aminosansupplement-tsuhantengoku.com",
+              "around50beauty.com",
+              "androidcentral.com",
+              "anglers-sound.com",
+              "aruku-taipei.com",
+              "animeha-netemate.blogspot.com",
+              "asks.jp",
+              "asobinet.com",
+              "bag-ks.net",
+              "baicho.com",
+              "astaire.hanadaisuki.info",
+              "ballbox.hatenadiary.jp",
+              "ballet.blue",
+              "at99.net",
+              "bandlive.net",
+              "atelierkobato.com",
+              "baristacoffee.work",
+              "athaitao.com",
+              "basket-sugoi.com",
+              "bass.co2kara.com",
+              "automaton-media.com",
+              "awaji-omiyage.com",
+              "beauty-habi.com",
+              "beauty-life.jp",
+              "bfsfupqi.hateblo.jp",
+              "bhzhu203.com",
+              "beauty-quest.com",
+              "bibo.geo.jp",
+              "bijin.click",
+              "bike-blog-10-20-30-maintenance.com",
+              "bike.little-tabito.com",
+              "being-s.com",
+              "belleginza.jp",
+              "bepiyblog.com",
+              "bkojoho.com",
+              "bokunoseikatsu.com",
+              "blog2.hunaki.net",
+              "bokuno.ugmemo.net",
+              "bookget.net",
+              "bookspresence.info-native.com",
+              "boost-web.com",
+              "bosobakucho.jp",
+              "blog.creative-plus.net",
+              "blog.ez-one.tokyo",
+              "blog.goo.ne.jp",
+              "brand-master.net",
+              "blog.honeylab.jp",
+              "brats-nest.blog.jp",
+              "bto-textbook.com",
+              "blog.livedoor.jp",
+              "bubukiburanki.info-native.com",
+              "blog.naosan.jp",
+              "blog.shinichiro.org",
+              "business-up286.com",
+              "blog.washo3.com",
+              "bluefourrhythm.info-native.com",
+              "cafe-machine.info",
+              "car-kaitori11510.com",
+              "camp373.com",
+              "car-teach.com",
+              "clutch-s.jp",
+              "cdv3k.com",
+              "coanime.net",
+              "cocokura.net",
+              "celebritystyle.doorblog.jp",
+              "ch03.info",
+              "challengedrive.net",
+              "colognetravel.info-native.com",
+              "comfy-lab.net",
+              "comicreadbrowse.com",
+              "computer-beginner.com",
+              "cheerapps.hatenablog.jp",
+              "concrerevolutio.info-native.com",
+              "c-ongaku.com",
+              "coolamericanenglish.com",
+              "cosme-review.com",
+              "cosmeview.com",
+              "child-programmer.com",
+              "cotononebook.com",
+              "cou-ecru.com",
+              "chirigamisan.com",
+              "creators-group.ws",
+              "cruise-life.com",
+              "chu2.jp",
+              "cute-love.net",
+              "c-i-h.net",
+              "cinemablend.com",
+              "cinema-step.com",
+              "dahonkaizou.doorblog.jp",
+              "civcraftgame.com",
+              "daigamax.com",
+              "c-leath.com",
+              "daigoujiyun.com",
+              "daikokuten03.com",
+              "dairylifelog.com",
+              "eikeis.com",
+              "elements-for-fortune.com",
+              "datsusaranimpu.site",
+              "dc-medical.net",
+              "elotrolado.net",
+              "emu-project.org",
+              "delmot-tea.org",
+              "den3-navi.com",
+              "engineer-ninaritai.com",
+              "den-ken.net",
+              "denken-review.com",
+              "denshi-syoseki.biz",
+              "enjoy-kosodate.com",
+              "design1229.com",
+              "detarame.jp",
+              "dethein.net",
+              "enpitu-motikata.com",
+              "esakakurashi.com",
+              "di-gadget.com",
+              "digi-1-beginner.com",
+              "digimonowalker.com",
+              "digital-ichi-camera.site",
+              "esinote.com",
+              "esportscatch.com",
+              "dokodemogo.jp",
+              "dokusho.shiyouze.com",
+              "etc.miscmemo.com",
+              "eu-alps.com",
+              "eurowrc.net",
+              "everyone-english.com",
+              "extenbai.com",
+              "dream-f2016.com",
+              "dreamjump1.xsrv.jp",
+              "eye-jp.com",
+              "familiate.com",
+              "dr-owl.net",
+              "dtm.review-preview.net",
+              "famiresu.com",
+              "eauduciel.com",
+              "ebisugardenplace.info-native.com",
+              "ebitsu.net",
+              "ecobooks.jp",
+              "fat-stem-cell.info",
+              "fblo.info",
+              "eiga.com",
+              "field-mafia.com",
+              "eigo-excellent.com",
+              "eigo-ikuji.info",
+              "eiidoryoku.com",
+              "fieldon.net",
+              "figureskate.blog.jp",
+              "freesim.tokyo",
+              "frenchohlala.com",
+              "from40beauty.com",
+              "fruits.jp",
+              "finito-web.com",
+              "fitsearch.jp",
+              "fudousanshimane.com",
+              "fuew-fks.com",
+              "fujifilmmuseum.com",
+              "flottareflood.net",
+              "foldwallet-coinpurse-select.org",
+              "folk-media.com",
+              "funinguide.jp",
+              "funnews.pink",
+              "furaijie.com",
+              "foroactivo.com",
+              "fuwafuwa-af.com",
+              "fuwafuwa-sheep.com",
+              "fx.an-exclusive.net",
+              "four-leaved.net",
+              "fxhiropi-turbo.com",
+              "fx.icecafe.biz",
+              "fx-winwin.com",
+              "franceeuropeeu.info-native.com",
+              "fx-zukan.com",
+              "freeandeconomy.com",
+              "gaiheki-katorihome.com",
+              "free-love.pink",
+              "galileofukuyama.info-native.com",
+              "golf-iron.net",
+              "gamalive.com",
+              "gamedowntown.com",
+              "gamepc-club.com",
+              "game.shiyouze.com",
+              "good-luck.org",
+              "game-specialday.com",
+              "goodslist.net",
+              "game.www12.net",
+              "google-jp.ldblog.jp",
+              "gaming-nerd.jp",
+              "gamingpc2.com",
+              "gamingpc-now.com",
+              "gorosetsuyaku.com",
+              "ganpurasyosinsya.com",
+              "gottarocks.com",
+              "graphics-net.com",
+              "geen-probleem.com",
+              "gtm.co.jp",
+              "gekiyasu-lab.net",
+              "geninformatics.com",
+              "genkeishi.jp",
+              "genki-mama.com",
+              "guitar.erabi-kata.com",
+              "gundamexvsfb.info-native.com",
+              "gift-cd.com",
+              "gundamunicorn.info-native.com",
+              "gusuku.org",
+              "girls-job-change.com",
+              "girlspolish.jp",
+              "glasswine.net",
+              "hachiwaresystem.com",
+              "haerumo.jp",
+              "hagecyatta.livedoor.biz",
+              "haisha-help.com",
+              "haitaobang.org",
+              "haitaohou.com",
+              "haitaolab.com",
+              "hajimetecamera.com",
+              "hal.ne.jp",
+              "harugotatsu.com",
+              "hanatooyatsu.com",
+              "happylucky.biz",
+              "heabyobject.info-native.com",
+              "healing-gut.hateblo.jp",
+              "heatorabo.com",
+              "happymail-login.com",
+              "helvetica-neue.com",
+              "heppirisuper.com",
+              "hiekashi.com",
+              "hikari-sedori.com",
+              "hietorinarumamani.our-favorite-things.com",
+              "hillclimblist.com",
+              "horaires-contact.com",
+              "hosoiblog.com",
+              "hotnews.publog.jp",
+              "houbye.com",
+              "hiromon-affiliate.com",
+              "hirosanta.com",
+              "hpsfan.com",
+              "hiroshima3.com",
+              "hskr.info",
+              "hobby-review-blog.com",
+              "ichijikikoku.sonnaanatani.com",
+              "icocana.com",
+              "hocchi.com",
+              "ictv.ne.jp",
+              "ipo-prediction.com",
+              "iguangdiu.com",
+              "iicotto.com",
+              "iimono-gift.com",
+              "ikesai.com",
+              "iki-miyagi.jp",
+              "iroiro.geo.jp",
+              "ikumen-life.com",
+              "imasarakan.com",
+              "isavetoday.com",
+              "ishikawa.fun",
+              "issm2011.com",
+              "i-tai.net",
+              "infini-lab.com",
+              "infinityloves.net",
+              "itsmo117.info",
+              "itukicreation.com",
+              "izuhako.com",
+              "japanfuturecommunication.blogspot.com",
+              "jyouhoukk.com",
+              "japanlove.info",
+              "kabuaf.com",
+              "j-cc.net",
+              "jibn.info",
+              "kacho.growp-fa.com",
+              "kacky-investment.net",
+              "kagari-bi.net",
+              "jo2.doorblog.jp",
+              "jobiken.com",
+              "kaimono24h.net",
+              "kaitayo.com",
+              "josecchi.com",
+              "jp4seasons.com",
+              "jpnblog.net",
+              "kakaneba.com",
+              "kakisan.com",
+              "kamihositu.com",
+              "kc-technology.info",
+              "kankokudorama.net",
+              "kansyanokimochi.com",
+              "kanzenkokuchi.jp",
+              "ken-ny.com",
+              "karfrw.com",
+              "kasatabi.com",
+              "ken-voyage.com",
+              "ketaifan.com",
+              "kate-bangkok.com",
+              "kikaikogu.com",
+              "kiki-wedding.jp",
+              "koitsutohitsuzi.xyz",
+              "kimono-oyaji.com",
+              "kinacoblog.com",
+              "kininaru.biz",
+              "kininarugurume.info",
+              "kokebito.com",
+              "kokochino.net",
+              "kireinohimitsu40s.com",
+              "koneta.click",
+              "korea15.com",
+              "kisai-area.net",
+              "kisetsuneta.info",
+              "kisotu.com",
+              "kissa-nostalgia.net",
+              "kosodate1616.info",
+              "kitemasu.blog.jp",
+              "kittysan55.com",
+              "kizinblog.com",
+              "kouenirai.net",
+              "kounryusui.net",
+              "koyohito.net",
+              "kochan.com",
+              "kuronekono.doorblog.jp",
+              "kurasinoiroiro.blog.ss-blog.jp",
+              "kuzumisan.com",
+              "kyakusituroten.com",
+              "kyoshipapa.com",
+              "lip-hokkaido.com",
+              "kyosuisearch.ebb.jp",
+              "lisatabi.com",
+              "ll-voice.com",
+              "lacachette2006.com",
+              "local-china.click",
+              "ladiesdown.com",
+              "lady-mappli.net",
+              "lagoon-net.com",
+              "logg-in.com",
+              "lovehome.blog.jp",
+              "laratravel.info",
+              "larry-ea.com",
+              "luasol.net",
+              "lesson1.biz",
+              "lgmi.jp",
+              "lifetopiclabo.net",
+              "mainichi-ga-everyday.com",
+              "linklink.oroti.net",
+              "mamades.info",
+              "mamaiku.biz",
+              "manabihiroba.net",
+              "mazourkairis.com",
+              "manabinoinfo.net",
+              "managementmaru.com",
+              "mcdonalds-menu.com",
+              "mangakasan.com",
+              "manyaddress.com",
+              "megurulife.net",
+              "mariaazzura-nishi.com",
+              "mellow-eye.com",
+              "maro.us",
+              "marronroy-recipes.com",
+              "memorou.com",
+              "marugameseimen-menu-calorie.com",
+              "masadayome.com",
+              "masaru0.com",
+              "mens-supple.info",
+              "masu-blog.net",
+              "micane.jp",
+              "matomeofmatome.2chblog.jp",
+              "moguramama.com",
+              "mile-points.com",
+              "mono-dept.com",
+              "monu-life.com",
+              "moomoo2015.com",
+              "more-be.com",
+              "moteru-s.com",
+              "miy5.info",
+              "miya-kabunusiyuutai.com",
+              "mott-factory.com",
+              "miyuto-log.com",
+              "mottilog.com",
+              "motto-kireini.com",
+              "moturealestate.com",
+              "mklabo.jp",
+              "mobile.k05.biz",
+              "moco358.com",
+              "msports.an-exclusive.net",
+              "msstyle.jp",
+              "mygarden.click",
+              "myhome-dream.net",
+              "m-uroko.com",
+              "my-web-note.com",
+              "n2apps.jp",
+              "mususuma.com",
+              "nagomi.gooside.com",
+              "nagumosan.com",
+              "mutoblog.com",
+              "namakeru.com",
+              "namizaru.com",
+              "mydigigoods.blogspot.com",
+              "nanakuru.com",
+              "natural-elements.jp",
+              "nanarokub.net",
+              "n-da.jp",
+              "neco.aitec-inc.co.jp",
+              "necokoucan.com",
+              "naokit.info",
+              "nekokick3.com",
+              "na-ru.com",
+              "national-anthem.jp",
+              "nemiruku.com",
+              "natuko3.net",
+              "nendai-gift.com",
+              "nijikaishop.com",
+              "neri-ne.com",
+              "nijinohashi.info",
+              "net-bizz.net",
+              "netdefree.com",
+              "net-focus.info",
+              "netkaisenhikakunavi.com",
+              "netnewsr.com",
+              "nisshy-tencho.com",
+              "n-e-u.jp",
+              "news-staynight.com",
+              "nextwebsearch.com",
+              "non-alcoholic.net",
+              "niche.muragon.com",
+              "non-magic.com",
+              "noribase.net",
+              "nosukenosusume.info",
+              "ohananomachiwedding.com",
+              "ohimaneta.com",
+              "notepc-kaiteki.com",
+              "oiwai-kimono.com",
+              "okane.pw",
+              "okane-yy.com",
+              "oki-kan.okinawa",
+              "nukutoi.com",
+              "nyo-nyo-nyo.net",
+              "nzjplink.com",
+              "oneflag-blog.com",
+              "onep.jpn.com",
+              "onisyoukai.com",
+              "onlineeikaiwahikaku.com",
+              "ono-nobu.com",
+              "ouenbu.com",
+              "oushi.hateblo.jp",
+              "onsenpapa.com",
+              "outdoor-fishingfun.com",
+              "osanaiyuta.com",
+              "pal-blog.jp",
+              "panda-pan.com",
+              "otak-lab.com",
+              "otaku2shuume.jp",
+              "otenbamusume.com",
+              "otoko-mono.com",
+              "otoku777.com",
+              "pcbaby.com.cn",
+              "otokulife-ayamasa.com",
+              "otokunajyouhousaito.com",
+              "pclifeblog.net",
+              "pcworld.com",
+              "pedrorupio.com",
+              "penguinisland.jp",
+              "petdiaryofme.com",
+              "portebonheur.hatenablog.jp",
+              "petitpretty.net",
+              "petitroom-3.com",
+              "petty.jp",
+              "poseroboegaki.com",
+              "presearch.info",
+              "phkkoomde.com",
+              "photo.urashinjuku.com",
+              "princess-biz.com",
+              "pinky-gossip-girl.webnode.jp",
+              "prlog.ru",
+              "pjoy.net",
+              "pluslifeblog.com",
+              "poddtoppen.se",
+              "puredietboutique.storeblog.jp",
+              "review-diary.com",
+              "purikei1.gooside.com",
+              "qiita.com",
+              "rifnet.or.jp",
+              "rikemama.com",
+              "rikimarukan.com",
+              "quanmama.com",
+              "rinrin7.com",
+              "riyu-haru.com",
+              "rankingotoriyose.sakura.ne.jp",
+              "rare-zaiko.blog.jp",
+              "rua-3732.hatenablog.jp",
+              "rucksack.sonnaanatani.com",
+              "runningforwine.com",
+              "rutab.net",
+              "ryoge.com",
+              "ryokan1123.com",
+              "ryoko-mama.hatenablog.jp",
+              "saku-ara.com",
+              "sadie4lady.com",
+              "sakura0508.com",
+              "sakura168.com",
+              "saisokufx.com",
+              "sakurakosan.info-native.com",
+              "sakamaki21.com",
+              "sakura-soft.jp",
+              "sep.doorblog.jp",
+              "sandi-hp.blogspot.com",
+              "savings-blog.com",
+              "shakkin-ol.com",
+              "second-biz.com",
+              "share-terrace.com",
+              "sharkorca.com",
+              "seiko-deivers.com",
+              "shibetsu.net",
+              "seki-jp.net",
+              "shihuo.cn",
+              "shikaku-en.jp",
+              "shikaku-pass.net",
+              "seniorlife.me",
+              "shinka.net",
+              "senior-tuuhan.com",
+              "shinkendeai.com",
+              "shirom.com",
+              "shitsumonaru.com",
+              "shonanfujisawa-shobo.com",
+              "simatei.com",
+              "sim-free-fun.com",
+              "shoppingjing.com",
+              "simple61.com",
+              "shortcut-en.com",
+              "shota-sato.net",
+              "shou2.hatenadiary.jp",
+              "simplelife-blog.net",
+              "shoushoulife.net",
+              "simpleliv.change.jp",
+              "shuhu-navi.com",
+              "sim.sokunavi.com",
+              "single-player.info",
+              "siragiku.tsukuba.ch",
+              "sowlive.info",
+              "spaceless.jp",
+              "sparkle-design.jp",
+              "skincareradiance.com",
+              "specialstore.net",
+              "spec.sokunavi.com",
+              "starandrain.com",
+              "starjp.net",
+              "starnotes.jp",
+              "smaho-dictionary.net",
+              "smile39love.com",
+              "smile-ny.com",
+              "sudachihappy.com",
+              "sugasugashii.com",
+              "sneaker-peace.com",
+              "sohobridge01.work",
+              "solvege.net",
+              "supomeka.com",
+              "soranews24.com",
+              "sotoikomai.com",
+              "suzushiroblog.com",
+              "sweets.hatenadiary.jp",
+              "tambulimedia.com",
+              "swift-calling.com",
+              "tarot-plot.com",
+              "syakouchou.com",
+              "syashintetyo.com",
+              "system-its.xyz",
+              "syufuude.com",
+              "tarumi-liftup.jp",
+              "syuhu-iroiro.com",
+              "tarumi-up.net",
+              "tatsumarutimes.com",
+              "tabi-tsuuka.com",
+              "tailog.com",
+              "taiya7.click",
+              "taiyoproject.com",
+              "tavilog.com",
+              "taxicab.jp",
+              "td-familyfishing.com",
+              "takarazuka.officialblog.jp",
+              "techadvisor.com",
+              "take-life.com",
+              "taktakblog.com",
+              "takublo.net",
+              "techradar.com",
+              "talentbrut.com",
+              "tekito-otome.com",
+              "teknologi.id",
+              "tekokoro.com",
+              "t-energy.jp",
+              "tensyoku-sokuhou.doorblog.jp",
+              "term.jp",
+              "tomo-zy.com",
+              "tomsguide.com",
+              "tomshardware.com",
+              "test.mxhtgw.com",
+              "thaiinfor.com",
+              "toptrip.jp",
+              "torimoge.com",
+              "thankyoujun.com",
+              "thetechstreetnow.com",
+              "toshidensetsu-kowai.blog.jp",
+              "to-sky-blue.com",
+              "toyosukukan.com",
+              "toyweapon.com",
+              "tkicpic.com",
+              "travelkojin.com",
+              "travel-photo-curiosity.com",
+              "travel-review.info",
+              "treatment-programs.com",
+              "trendmusicnews.com",
+              "trend.sundesign-s.com",
+              "trilltrill.jp",
+              "tokka1147.com",
+              "toku-mori.com",
+              "trpgnewsnow.blog.jp",
+              "url.os7.biz",
+              "useful-lab.com",
+              "tuckf.work",
+              "t-ueda-gamesedori.com",
+              "usuge-nukege-taisaku.com",
+              "u-tai.com",
+              "vamoboegaki.com",
+              "tyty44.net",
+              "uchiagehanabi.info-native.com",
+              "victory-blog.net",
+              "uhyou.com",
+              "video-viewing.net",
+              "unisc.jp",
+              "virtualmoney-investment.com",
+              "upyca.com",
+              "wdplu.com",
+              "vsd1104.com",
+              "vwgolf-gti.com",
+              "wadaiwosaguru.com",
+              "wakeup-bdg.com",
+              "websteer.net",
+              "walkabout-world.com",
+              "waraukado.biz",
+              "wifi-park.net",
+              "wimax-campaign-hikaku.com",
+              "wimax-lab.com",
+              "xn--cckcabc7e3a4loa5kojla5j1880epth.biz",
+              "wired.jp",
+              "wish.car-lineup.com",
+              "with-baby.net",
+              "xn--cckdl7af4be4jvi6h4ck.net",
+              "xn--ccke8cxd9a0u309qdm5dlncn23dg0h.com",
+              "xn--dckvcvat7gz728dgbf.biz",
+              "working-pure.com",
+              "world-beer.jp",
+              "xn--eckb3ak0a2b3ar9bd63azbr.com",
+              "xn--ecklz8ppb5cc7e3858d8zc.com",
+              "www2.otokuchan.mixk.net",
+              "xn--eckwa0f2a7ksd.com",
+              "xn--18j0a7b4d3bzb9471b8hpm34a93oy94e.net",
+              "xn--h3tr8ze4g.net",
+              "xn--1-eeuf7gtb0ae3xua7561hfzta.net",
+              "xn--1ldk-y83cnlo86pskas35p.com",
+              "xn--1rw61ac06crfd.xyz",
+              "xn--h9j8cva9a7593auhqyr2f24f.com",
+              "xn--icknowf7fc1fvkub6c7fb5638ppx0b.com",
+              "xn--kckb0bzb6gxj.com",
+              "xn--78j2ayab5gu09u1hxe.com",
+              "xn--l8jhd8l3b6b.com",
+              "xn--88jtbhg1ftf26a4178aw09ar30a7ez.com",
+              "xn--mck5erc195p4enu79dgbf.net",
+              "xn--n8j742g92iwv8c.xn--tckwe",
+              "xn--n8jvb1c3bv397b6oh8lo9i1d.jp",
+              "xn--nckg3oobb8486buu7a1gce5q.com",
+              "xn--qckua0a7141a3r1c.net",
+              "xn--sim-mj4bzf4l824xciva.jp",
+              "xn--o9j0bk5t4fra3757ecivaymhp98g.com",
+              "xn--t8j0a7bp8j5b2ipa02ammhd8d9149box5byfk.com",
+              "xn--t8j0j8a8fpb9gvcz448bt2b135ai3v.xyz",
+              "xn--t8j4aa4nr75yqx4avxrv9v.jp",
+              "xn--pbk5b0g6e037tiiyd.com",
+              "xn--t8j4aa4nwipf5iscy368gersb.net",
+              "xn--t8j4aa4nwjihzew722ayuwe.jp",
+              "xn--t8j4cxcta.com",
+              "xn--t8jvfmpy43lw4evyt4qyl0z.com",
+              "yama-king.com",
+              "xn--tckm4gsdz60u8v1b.com",
+              "xn--u8jp7nka.com",
+              "yappalie.com",
+              "yaroslava-shvedova.com",
+              "yes1.hateblo.jp",
+              "xn--u9jwa791u1g0aivgk9ej22evqe.net",
+              "xn--vuqr2en5h2rglk1bbow0kh.net",
+              "xn--w8j4c2cxc5f3fva2f1loge2455j.xyz",
+              "xn--w8jujjcyc1i6042ab2c.net",
+              "yesmvno.com",
+              "xn--x8jte5cb.com",
+              "yj-chem.net",
+              "ymg7.net",
+              "xn--zbs7by0rd88bnfnjxr.com",
+              "yolandabobeldijk.com",
+              "yagio.blogo.jp",
+              "yometoryokou.com",
+              "zbzdm.com",
+              "zdhaitao.com",
+              "you-new.net",
+              "younger10.net",
+              "yuamama.com",
+              "zontheworld.com",
+              "yubunet.com",
+              "zubora-shufu.hateblo.jp",
+              "yumehiroi.net",
+              "yutaro1.com",
+              "yuzuusagi.com",
+              "zakkame.net"
+            ]
+          },
+          {
+            "count": 324,
+            "promotype": "student",
+            "value": [
+              "100kounen.com",
+              "1maki7.blog.jp",
+              "2maki7.blog.jp",
+              "5cebu.com",
+              "875s.com",
+              "8dexpress.com",
+              "abychan3.com",
+              "actsystem.com",
+              "advanceffort.com",
+              "advanceffort.jp",
+              "anketo-tatsujin.com",
+              "anti-aging-care.net",
+              "akibastation.es",
+              "akira-fukunaga.surikogi.net",
+              "alisa-free.com",
+              "alwtog.com",
+              "amsterdamtimes.info",
+              "arpeggiobluestel.info-native.com",
+              "babuchin.com",
+              "asobi-sound.com",
+              "asp-plaza.jp",
+              "bamy.jp",
+              "bara100.com",
+              "auryga.com",
+              "australia1.biz",
+              "austriavienna.info-native.com",
+              "beauty-hacks.com",
+              "beautynewstokyo.jp",
+              "bensukezamurai.com",
+              "bit-start.com",
+              "bodyproblem.com",
+              "bkw.jp",
+              "bonodori-tokyo.com",
+              "blog.bikatsudo-skincare.com",
+              "blog.hikosama.com",
+              "bsm40.com",
+              "btopcs.jp",
+              "blog-madness-capture.ldblog.jp",
+              "bungostraydogs.info-native.com",
+              "blog.systemjp.net",
+              "bluevarycosmos.com",
+              "bns.is",
+              "camera-doctor.jp",
+              "canda.jp",
+              "cat-abc.jp",
+              "chacharekishi.blog.jp",
+              "challenge-shikaku.com",
+              "charingress.tokyo",
+              "charity.storeblog.jp",
+              "connoisseur12.com",
+              "chikujyo.info",
+              "chimachimaburogu.com",
+              "chiochanschoolroad.info-native.com",
+              "creativebloq.com",
+              "chuyouding.com",
+              "cyari2.com",
+              "daizumayuge.com",
+              "clever-body-training.com",
+              "clg-sv.com",
+              "eikaiwa-study.com",
+              "ddo.jp",
+              "energydrinkgeeks.com",
+              "dexcreative.jp",
+              "dhito.info",
+              "dopr.net",
+              "dtv.website",
+              "familys-talk.com",
+              "easy-life.work",
+              "fantastic-works.com",
+              "effectsmt.blog.jp",
+              "fc2web.com",
+              "fei-ren.com",
+              "fem-life.com",
+              "frytiger.com",
+              "firehack.net",
+              "flap-flap.jp",
+              "float.fun",
+              "fukugyou365.com",
+              "fooddiversity.today",
+              "funnysoul.com",
+              "furi-ta-jinseiyosaraba.com",
+              "football-bear.com",
+              "furusatojp.com",
+              "foppish.site",
+              "foryou5stars.fun",
+              "founy.com",
+              "fp-shima.ne.jp",
+              "gaku-weblog.com",
+              "g-onegolf.net",
+              "gamerchiko.com",
+              "gamereservation.hatenablog.jp",
+              "gamingpc-jiten.com",
+              "gamitaka.com",
+              "goriluckey.com",
+              "gatti-garden.com",
+              "graygoo.jp",
+              "guidebook.world",
+              "gyouseishoshi-get.jp",
+              "glam.jp",
+              "gogaku-manabu.net",
+              "hairiron-moka.work",
+              "golden-cmajor.com",
+              "golf-driver.jp",
+              "harumamblog.net",
+              "hikari-au.net",
+              "heroine-love.com",
+              "hetareslotter.jp",
+              "hotopi.com",
+              "houshajou.com",
+              "hozumi-iin.jp",
+              "hiruton.com",
+              "hu-maga.com",
+              "hitori-de-golf.com",
+              "huyosoku.com",
+              "hwaje.com",
+              "hyoujin.com",
+              "iimono--iikoto.com",
+              "ikelogue.com",
+              "irancaravan.com",
+              "it-passport.info",
+              "infobrain.net",
+              "info.yoneyamatalk.biz",
+              "itsbar.com",
+              "i-tsunagu.com",
+              "interior-style.tokyo",
+              "itudatte-iphone.doorblog.jp",
+              "iyh.jp",
+              "junku.com",
+              "jun-tsuchiya.com",
+              "jw-town.com",
+              "japanlifeandreligion.com",
+              "jashinchandrop.info-native.com",
+              "kabu-net.com",
+              "jinjin-unyou.com",
+              "jitensya-genki.com",
+              "kaimin.shiawase-life.net",
+              "jojo80.com",
+              "kawaninon.com",
+              "kazunie.net",
+              "kazworld.net",
+              "kamikamidaioh.com",
+              "kamometomachi.com",
+              "kanagaku.com",
+              "keitalife.com",
+              "kenken-study.com",
+              "kidskaka.com",
+              "kidukilife.net",
+              "katus-gifani.sakura.ne.jp",
+              "kawahara-zakki.com",
+              "kimagure-blog.com",
+              "kininarublog2.com",
+              "konetacho.com",
+              "kirei-journal.com",
+              "kirei.k245.net",
+              "kisagai.com",
+              "kitchen-tips.jp",
+              "kiyase.info",
+              "k-kikaku1996.com",
+              "kumariair.com",
+              "kuririn007.net",
+              "livefree.jp",
+              "llc-myself.com",
+              "laby-plus.jp",
+              "lovelybaby-mk.com",
+              "luxelife01.com",
+              "leyifan.com",
+              "matusin-otoriyose.com",
+              "makken.net",
+              "mayosayo.com",
+              "mblg.tv",
+              "megu00000nikki.hatenadiary.jp",
+              "mens-item.net",
+              "masayume-japan.com",
+              "merutore.com",
+              "metabee.de",
+              "micky-info.com",
+              "miharugohan83.site",
+              "mico7.com",
+              "mikaponchan.com",
+              "mokky.net",
+              "monocatalog.com",
+              "minibonsai22.com",
+              "mooohblog.com",
+              "mops-germany.com",
+              "morishitaya.com",
+              "mirrorlessrumors.com",
+              "motanai.net",
+              "motto-diy.com",
+              "mr-b9.net",
+              "mks-japan.com",
+              "myflets.com",
+              "mugai.com",
+              "myhobbies-blog.net",
+              "nabeblo.com",
+              "najimari.com",
+              "nakameguro.info-native.com",
+              "mychiebukuro.com",
+              "myfairthings.com",
+              "nanatabi.com",
+              "naturallyaspiratedbricks.com",
+              "nanausagi.com",
+              "nanawp.net",
+              "nayami-navi.com",
+              "nandemo.oshieru.blog",
+              "nikerandoseru.com",
+              "nikki.geo.jp",
+              "nom-hiyakedome.com",
+              "ng-branding.net",
+              "ohpado.com",
+              "note-s.net",
+              "o-ism.com",
+              "okitan.jp",
+              "omosiro.hb449.com",
+              "nyanto.net",
+              "oa-vdt.com",
+              "onlinephilosophyclub.com",
+              "overwhelming-growth.com",
+              "oyubab.com",
+              "osechis.info",
+              "pc-hikaku1.com",
+              "peraichi.com",
+              "pinokogarden.com",
+              "plusalpha1.com",
+              "retrygogo.com",
+              "reviewdays.com",
+              "rhymelimelab.rouge22.com",
+              "rakumani.net",
+              "ranklabo.com",
+              "rougo2000.com",
+              "ranransel.info",
+              "rc-blog-rc.com",
+              "reinette-color.com",
+              "s2g.jp",
+              "saifu7.com",
+              "sansyasanyou.info-native.com",
+              "saro-zu.jp",
+              "satodaisuke.com",
+              "sharoushi-get.biz",
+              "sherlock.crime-story.info",
+              "self-talk.info",
+              "shikikyoko.com",
+              "senpis-koujuuzai.jp",
+              "sentaiheros.com",
+              "shizuka-office.com",
+              "sikikan.jp",
+              "shoes.mediamarker.net",
+              "shonai-tsukaeru.info",
+              "simpleism.net",
+              "sirite.net",
+              "sphinxegg.com",
+              "skybll.info",
+              "staffsolution.jp",
+              "skyperfectv.ldblog.jp",
+              "slangeigo.com",
+              "smaclub.jp",
+              "smcomemory.com",
+              "stuglish.net",
+              "sugarchiccouture.com",
+              "sukinakotode-ikiteiku.com",
+              "societycache.com",
+              "soki.jp",
+              "sonicaride.com",
+              "syokutaku.club",
+              "tabi1.com",
+              "taguch.com",
+              "taiwan-oolong.com",
+              "takafumi-blog.net",
+              "taka-music.com",
+              "techcratic.com",
+              "takopi.hateblo.jp",
+              "takupon.net",
+              "teibansite.com",
+              "tom49.com",
+              "toshiravi.com",
+              "threedkanojo.info-native.com",
+              "tpseto.com",
+              "training-craftsman.com",
+              "tochisagashi-kotsu.net",
+              "tokipe.com",
+              "u-style.info",
+              "tubuyaki3.com",
+              "tukiseki.com",
+              "veganfoodism.com",
+              "uenopandapanda.info-native.com",
+              "vippers.jp",
+              "vnr.jp",
+              "vogue.co.jp",
+              "web-transport.co.jp",
+              "wakutra.net",
+              "wedding-hack.com",
+              "watanoya.com",
+              "wineninja.net",
+              "wis-dom.net",
+              "xn--ccker1snci2861dhm6d.com",
+              "xn--d-veu0d0b.net",
+              "wowow.livedoor.biz",
+              "wrcs.biz",
+              "xn--ecko3irh725snyl.com",
+              "xn--ecktcwf811qjev.biz",
+              "xn--f9j3azc4bw78x1px311dhre.com",
+              "xn--08j3aj0a9r8csz.com",
+              "xn--28j1agubkg5tnbz838i.com",
+              "xn--hdks729t3e2bqvd3wv4ygmmh.com",
+              "xn--j9jk8d8b2jtc8czq.com",
+              "xn--l8j7a0c7a5g2497avwxa.com",
+              "xn--mck5e585m.com",
+              "xn--9ckk2d5c4051a8fm.com",
+              "xn--pqq79suta38thqqkwr.com",
+              "xn--nckgb5ab8dxoycb7fc3842gb1zd.jp",
+              "xn--t8j0ayyrbygugz225d.com",
+              "xn--tckel6cwe8eefl4m.net",
+              "xn--u8ja3ab9873h.biz",
+              "xn--u9jtgmcxgy073b6p4a.com",
+              "xn--u9jwc972ktmn7ri5stgv5b.net",
+              "yiyiso.com",
+              "yokaome.net",
+              "yaemons.com",
+              "yagichanblog.com",
+              "yondeyaru.info",
+              "youce.co.jp",
+              "zubora-mom.com",
+              "yuko-london.com",
+              "zyxcba.net",
+              "yuzumaru.info"
+            ]
+          },
+          {
+            "count": 87,
+            "promotype": "content",
+            "value": [
+              "100yen.ichiran.net",
+              "52-36t.com",
+              "9056.net",
+              "ahogirl.info-native.com",
+              "allshopping.biz",
+              "amamainazuma.info-native.com",
+              "amusingly.net",
+              "asiaparts.jp",
+              "better-web.jp",
+              "bitdey.com",
+              "blogersnet.com",
+              "blog.k05.biz",
+              "bto-mania.com",
+              "blog.keyspace.info",
+              "btorrent.ldblog.jp",
+              "blog.u-hg.com",
+              "chotto.news",
+              "dddazhe.com",
+              "dekiru-note.com",
+              "doramovie.net",
+              "free-plat.com",
+              "frog-pod.com",
+              "finding-gift.com",
+              "futarinikki.com",
+              "futen.net",
+              "freelance-jak.com",
+              "gps-tracker.fun",
+              "hachidory.com",
+              "hack-le-blog.com",
+              "gogo-manabi.com",
+              "golfashions.com",
+              "hashigodaca.com",
+              "hirokin001.com",
+              "hoshinomeguri.com",
+              "hydrogen-and-health.com",
+              "ikigokogood.com",
+              "kabu-toushi.com",
+              "keiri-manager.com",
+              "kanasyoku.net",
+              "kasenjiki.com",
+              "kijikun.com",
+              "kinyo.fit",
+              "kirei-co.jp",
+              "kiritsusei.com",
+              "kobegasuki.com",
+              "kyoto-town.net",
+              "lifemate4u.com",
+              "ma9ra.com",
+              "maaz-blog.net",
+              "maddonna.net",
+              "maxrebates.com",
+              "mayuyu.jp",
+              "meetroid.com",
+              "marine-snow8817.jp",
+              "menz-wallets.shiawase-life.net",
+              "mi-ni.biz",
+              "myspystory.com",
+              "nadeoba.com",
+              "mvnomania.xyz",
+              "nicocha.com",
+              "net-t.net",
+              "nonbirimattari.com",
+              "note.com",
+              "nrbm-music.com",
+              "okurakaigan.com",
+              "organic-life.click",
+              "oyakolog.net",
+              "parisfrance.info-native.com",
+              "ponkonet.com",
+              "sanadamaru.fululu.info",
+              "seowebsitetool.com",
+              "setsuyaku-chie.com",
+              "shimokitazawa.info-native.com",
+              "siamthaigo.com",
+              "sinko-net.com",
+              "sneaker-love.dreamlog.jp",
+              "sunsimai.com",
+              "syufu-privateimport.com",
+              "syugyou.net",
+              "techoo.net",
+              "tomori1039.com",
+              "trend-wall.com",
+              "usako.co",
+              "utam-design.com",
+              "xn--eckp2gz283b.com",
+              "xn--smart-w83d8512aoxxd.com",
+              "xn--u9j2g4aap6e5e7b5fya2fu733gv3zf.com"
+            ]
+          },
+          {
+            "count": 16,
+            "promotype": "forum",
+            "value": [
+              "39st.net",
+              "antiaging-life.tokyo",
+              "bihadamethod.com",
+              "blog.6vox.com",
+              "blog.felt-life.info",
+              "honmono-lab.com",
+              "invadergraphix.com",
+              "mxhaitao.com",
+              "officeliberty.com",
+              "ohananomachi.com",
+              "pairkoi.com",
+              "punjabtimes.com.au",
+              "roadto-100.com",
+              "syotenso.com",
+              "tatsushi-life-blog.com",
+              "y-you-km25.com"
+            ]
+          },
+          {
+            "count": 14,
+            "promotype": "incentive",
+            "value": [
+              "dealhaitao.com",
+              "dealtw.com",
+              "fanblogs.jp",
+              "lc358.com",
+              "mscn.net",
+              "nonsabo.com",
+              "omotelog.com",
+              "oslonorge.info-native.com",
+              "otoku-coupon.com",
+              "serialdealer.fr",
+              "sweetydeals.com",
+              "u2u2-couple.com",
+              "xn--0kqq9u214a63oetm.xyz",
+              "yu-gi-ohsoubacashiki.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 2,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 2,
+          "score": 80
+        },
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 2,
+          "score": 95
+        }
+      ]
+    }
+  }
+}

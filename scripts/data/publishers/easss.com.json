@@ -1,0 +1,1861 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 4,
+      "sampleValue": [
+        "Amazon CA",
+        "CJ Affiliate",
+        "Impact"
+      ],
+      "value": [
+        "Amazon CA",
+        "CJ Affiliate",
+        "Impact",
+        "Viglink"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.6
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "easss.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "seller"
+        },
+        {
+          "score": 0.9216674,
+          "value": "ebay"
+        },
+        {
+          "score": 0.6353067,
+          "value": "buyer"
+        },
+        {
+          "score": 0.62428004,
+          "value": "transaction"
+        },
+        {
+          "score": 0.47685274,
+          "value": "agreement"
+        },
+        {
+          "score": 0.45513353,
+          "value": "accessory"
+        },
+        {
+          "score": 0.43608475,
+          "value": "shoe"
+        },
+        {
+          "score": 0.41779384,
+          "value": "category"
+        },
+        {
+          "score": 0.40118617,
+          "value": "power"
+        },
+        {
+          "score": 0.37455052,
+          "value": "dispute"
+        },
+        {
+          "score": 0.37383807,
+          "value": "retro"
+        },
+        {
+          "score": 0.36164078,
+          "value": "watch"
+        },
+        {
+          "score": 0.353721,
+          "value": "ecoflow"
+        },
+        {
+          "score": 0.3495837,
+          "value": "card"
+        },
+        {
+          "score": 0.34375703,
+          "value": "mocha"
+        },
+        {
+          "score": 0.34157577,
+          "value": "jewelry"
+        },
+        {
+          "score": 0.33037385,
+          "value": "law"
+        },
+        {
+          "score": 0.32653436,
+          "value": "helpful"
+        },
+        {
+          "score": 0.32386777,
+          "value": "payout"
+        },
+        {
+          "score": 0.3212457,
+          "value": "entity"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "seller"
+        },
+        {
+          "score": 0.9216674,
+          "value": "ebay"
+        },
+        {
+          "score": 0.6353067,
+          "value": "buyer"
+        },
+        {
+          "score": 0.62428004,
+          "value": "transaction"
+        },
+        {
+          "score": 0.47685274,
+          "value": "agreement"
+        },
+        {
+          "score": 0.45513353,
+          "value": "accessory"
+        },
+        {
+          "score": 0.43608475,
+          "value": "shoe"
+        },
+        {
+          "score": 0.41779384,
+          "value": "category"
+        },
+        {
+          "score": 0.40118617,
+          "value": "power"
+        },
+        {
+          "score": 0.37455052,
+          "value": "dispute"
+        },
+        {
+          "score": 0.37383807,
+          "value": "retro"
+        },
+        {
+          "score": 0.36164078,
+          "value": "watch"
+        },
+        {
+          "score": 0.353721,
+          "value": "ecoflow"
+        },
+        {
+          "score": 0.3495837,
+          "value": "card"
+        },
+        {
+          "score": 0.34375703,
+          "value": "mocha"
+        },
+        {
+          "score": 0.34157577,
+          "value": "jewelry"
+        },
+        {
+          "score": 0.33037385,
+          "value": "law"
+        },
+        {
+          "score": 0.32653436,
+          "value": "helpful"
+        },
+        {
+          "score": 0.32386777,
+          "value": "payout"
+        },
+        {
+          "score": 0.3212457,
+          "value": "entity"
+        },
+        {
+          "score": 0.32023025,
+          "value": "financial"
+        },
+        {
+          "score": 0.3138651,
+          "value": "categoría"
+        },
+        {
+          "score": 0.31294405,
+          "value": "applicable"
+        },
+        {
+          "score": 0.31046212,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.30926758,
+          "value": "notice"
+        },
+        {
+          "score": 0.28795967,
+          "value": "claim"
+        },
+        {
+          "score": 0.28458604,
+          "value": "fund"
+        },
+        {
+          "score": 0.27914742,
+          "value": "guarantee"
+        },
+        {
+          "score": 0.2667122,
+          "value": "woman"
+        },
+        {
+          "score": 0.25276914,
+          "value": "pro"
+        },
+        {
+          "score": 0.24909928,
+          "value": "financial account"
+        },
+        {
+          "score": 0.24136354,
+          "value": "money"
+        },
+        {
+          "score": 0.23978502,
+          "value": "speaker"
+        },
+        {
+          "score": 0.23976657,
+          "value": "industrial"
+        },
+        {
+          "score": 0.23917815,
+          "value": "equipo"
+        },
+        {
+          "score": 0.23830225,
+          "value": "collectible"
+        },
+        {
+          "score": 0.23666963,
+          "value": "sport"
+        },
+        {
+          "score": 0.23439147,
+          "value": "settlement"
+        },
+        {
+          "score": 0.23324487,
+          "value": "fee"
+        },
+        {
+          "score": 0.22954318,
+          "value": "garden"
+        },
+        {
+          "score": 0.22917135,
+          "value": "generator"
+        },
+        {
+          "score": 0.22763516,
+          "value": "event"
+        },
+        {
+          "score": 0.2245907,
+          "value": "oferta"
+        },
+        {
+          "score": 0.21443284,
+          "value": "authenticity"
+        },
+        {
+          "score": 0.21040471,
+          "value": "arbitration"
+        },
+        {
+          "score": 0.20982657,
+          "value": "station"
+        },
+        {
+          "score": 0.20426142,
+          "value": "rolex"
+        },
+        {
+          "score": 0.20416746,
+          "value": "pant"
+        },
+        {
+          "score": 0.20246194,
+          "value": "community"
+        },
+        {
+          "score": 0.20245007,
+          "value": "provider"
+        },
+        {
+          "score": 0.19455262,
+          "value": "vehicle"
+        },
+        {
+          "score": 0.18922642,
+          "value": "legal"
+        },
+        {
+          "score": 0.18760563,
+          "value": "rating"
+        },
+        {
+          "score": 0.18733427,
+          "value": "outdoor"
+        },
+        {
+          "score": 0.18730214,
+          "value": "white"
+        },
+        {
+          "score": 0.185702,
+          "value": "audio"
+        },
+        {
+          "score": 0.18442048,
+          "value": "wireless"
+        },
+        {
+          "score": 0.18433347,
+          "value": "dickie"
+        },
+        {
+          "score": 0.1838435,
+          "value": "popular"
+        },
+        {
+          "score": 0.18347391,
+          "value": "health"
+        },
+        {
+          "score": 0.1797318,
+          "value": "accesorio"
+        },
+        {
+          "score": 0.1791226,
+          "value": "center"
+        },
+        {
+          "score": 0.1743695,
+          "value": "receivable"
+        },
+        {
+          "score": 0.1743695,
+          "value": "puma"
+        },
+        {
+          "score": 0.17395204,
+          "value": "supply"
+        },
+        {
+          "score": 0.17385767,
+          "value": "portable"
+        },
+        {
+          "score": 0.17378534,
+          "value": "electronic"
+        },
+        {
+          "score": 0.17227343,
+          "value": "live"
+        },
+        {
+          "score": 0.16988434,
+          "value": "choice"
+        },
+        {
+          "score": 0.16938752,
+          "value": "attribute"
+        },
+        {
+          "score": 0.16938752,
+          "value": "delta"
+        },
+        {
+          "score": 0.16938752,
+          "value": "submariner"
+        },
+        {
+          "score": 0.16812547,
+          "value": "video"
+        },
+        {
+          "score": 0.16729704,
+          "value": "toy"
+        },
+        {
+          "score": 0.16539821,
+          "value": "risk"
+        },
+        {
+          "score": 0.16513462,
+          "value": "solar"
+        },
+        {
+          "score": 0.16440552,
+          "value": "pdt"
+        },
+        {
+          "score": 0.16314958,
+          "value": "game"
+        },
+        {
+          "score": 0.16194749,
+          "value": "country"
+        },
+        {
+          "score": 0.16084379,
+          "value": "obligation"
+        },
+        {
+          "score": 0.1603654,
+          "value": "court"
+        },
+        {
+          "score": 0.15405867,
+          "value": "camera"
+        },
+        {
+          "score": 0.15241282,
+          "value": "update"
+        },
+        {
+          "score": 0.15140933,
+          "value": "battery"
+        },
+        {
+          "score": 0.15140344,
+          "value": "provision"
+        },
+        {
+          "score": 0.1511072,
+          "value": "debit"
+        },
+        {
+          "score": 0.1495857,
+          "value": "genuine"
+        },
+        {
+          "score": 0.14945957,
+          "value": "musical"
+        },
+        {
+          "score": 0.14845526,
+          "value": "tablet"
+        },
+        {
+          "score": 0.14579304,
+          "value": "protection"
+        },
+        {
+          "score": 0.14447759,
+          "value": "proceed"
+        },
+        {
+          "score": 0.14429493,
+          "value": "sneaker"
+        },
+        {
+          "score": 0.14422493,
+          "value": "fit"
+        },
+        {
+          "score": 0.1397792,
+          "value": "advertising"
+        },
+        {
+          "score": 0.13885911,
+          "value": "previous"
+        },
+        {
+          "score": 0.13645424,
+          "value": "reserve"
+        },
+        {
+          "score": 0.1364053,
+          "value": "hogar"
+        },
+        {
+          "score": 0.13451362,
+          "value": "genuine dickie"
+        },
+        {
+          "score": 0.13451362,
+          "value": "trophy"
+        },
+        {
+          "score": 0.13451362,
+          "value": "ecuk"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://easss.com/",
+        "https://www.easss.com/",
+        "http://easss.com/",
+        "http://www.easss.com/"
+      ]
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/easss.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://easss.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 416,
+        "value": [
+          "1800getlens.com",
+          "1800contacts.com",
+          "marriott.com",
+          "39dollarglasses.com",
+          "sportsmansguide.com",
+          "6pm.com",
+          "apple.com",
+          "aaptiv.com",
+          "amazon.com",
+          "abcmouse.com",
+          "abebooks.de",
+          "abebooks.fr",
+          "abebooks.it",
+          "abebooks.co.uk",
+          "abebooks.com",
+          "att.com",
+          "instagram.com",
+          "nike.com",
+          "redshelf.com",
+          "fedex.com",
+          "investopedia.com",
+          "novica.com",
+          "snapchat.com",
+          "acmemarkets.com",
+          "aclens.com",
+          "activeforever.com",
+          "ticketweb.com",
+          "adventureacademy.com",
+          "ae.com",
+          "banggood.com",
+          "walmart.com",
+          "amazon.in",
+          "privatevpn.com",
+          "agapea.com",
+          "quora.com",
+          "aol.com",
+          "airbnb.co.in",
+          "airbnb.com",
+          "allenedmonds.com",
+          "amazfit.com",
+          "amazon.ae",
+          "amazon.ca",
+          "amazon.de",
+          "amberalertgps.com",
+          "amazon.es",
+          "amazon.fr",
+          "amazon.it",
+          "amazon.cn",
+          "amazon.com.au",
+          "amazon.com.br",
+          "amazon.com.mx",
+          "amiclubwear.com",
+          "jcpenney.com",
+          "anntaylor.com",
+          "hp.com",
+          "shein.com",
+          "shein.co.uk",
+          "twitch.tv",
+          "appliancesconnection.com",
+          "blair.com",
+          "garmin.com",
+          "klm.com",
+          "asos.com",
+          "asmc.de",
+          "surlatable.com",
+          "at.intimissimi.com",
+          "gap.com",
+          "fandango.com",
+          "au.hotels.com",
+          "ihg.com",
+          "uber.com",
+          "avacaremedical.com",
+          "awbridal.com",
+          "backcountry.com",
+          "babylon.com",
+          "baseballmonkey.com",
+          "baseballrampage.com",
+          "beachcamera.com",
+          "gucci.com",
+          "beautiesltd.com",
+          "bedandbreakfast.com",
+          "bellelily.com",
+          "berries.com",
+          "bestdealpetsupply.com",
+          "betterworldbooks.com",
+          "bigapplecollectibles.com",
+          "biblio.com",
+          "biggerbooks.com",
+          "ivacy.com",
+          "campingworld.com",
+          "customink.com",
+          "ebay.com",
+          "finishline.com",
+          "jibjab.com",
+          "missoma.com",
+          "modcloth.com",
+          "personalizationmall.com",
+          "ticketmaster.com",
+          "theknot.com",
+          "forbes.com",
+          "bodybuilding.com",
+          "bodyspartan.com",
+          "bonjourglobal.com",
+          "bookbyte.com",
+          "bookdepository.com",
+          "priceline.com",
+          "booking.com",
+          "bookstore.western.edu",
+          "botanicchoice.com",
+          "clarksusa.com",
+          "privateinternetaccess.com",
+          "hostelworld.com",
+          "brighton.com",
+          "zales.com",
+          "brooksbrothers.com",
+          "yandex.com",
+          "build.com",
+          "buffered.com",
+          "buydig.com",
+          "buyorganicnuts.com",
+          "mrporter.com",
+          "lanebryant.com",
+          "cabelas.ca",
+          "cabelas.com",
+          "cafebritt.com",
+          "camillejewelry.com",
+          "campusbookrentals.com",
+          "hotels.com",
+          "target.com",
+          "caseluggage.com",
+          "catherines.com",
+          "klarna.com",
+          "equestriancollections.com",
+          "cengageasia.com",
+          "ivrose.com",
+          "chadwicks.com",
+          "championusa.com",
+          "champssports.com",
+          "charlestyrwhitt.com",
+          "driversed.com",
+          "chefscatalog.com",
+          "cheryls.com",
+          "chicme.com",
+          "deciem.com",
+          "choicehotels.com",
+          "chicwish.com",
+          "chowsangsang.com",
+          "citysports.com",
+          "discountwatchstore.com",
+          "telescope.com",
+          "tunnelbear.com",
+          "clinkhostels.com",
+          "strawberrynet.com",
+          "qvc.com",
+          "contactsdirect.com",
+          "cookiesbydesign.com",
+          "cooking.com",
+          "ticketnetwork.com",
+          "cosmopayment.com",
+          "walgreens.com",
+          "countrywidepaintball.co.uk",
+          "safeway.com",
+          "couturecandy.com",
+          "coursehero.com",
+          "crateandbarrel.com",
+          "creativemarket.com",
+          "ctshirts.com",
+          "cyber-florist.com",
+          "cyber-florist.ru",
+          "cymax.com",
+          "cwimedical.com",
+          "davisbigandtall.com",
+          "de.amazfit.com",
+          "de.intimissimi.com",
+          "depositfiles.com",
+          "ross-simons.com",
+          "dickssportinggoods.com",
+          "discountschoolsupply.com",
+          "hubpages.com",
+          "dragondoor.com",
+          "dressilyme.com",
+          "dronesetc.com",
+          "redbubble.com",
+          "eastbay.com",
+          "ebags.com",
+          "edcskincare.com",
+          "ems.com",
+          "sierra.com",
+          "enjoyflowers.com",
+          "newegg.com",
+          "equestrian.com",
+          "epayservices.com",
+          "justanswer.com",
+          "es.amazfit.com",
+          "es.intimissimi.com",
+          "extendedstayamerica.com",
+          "esprit.de",
+          "esprit.fr",
+          "forzieri.com",
+          "worx.com",
+          "shopmarriott.com",
+          "everbank.com",
+          "ticketliquidator.com",
+          "ewatches.com",
+          "fanduel.com",
+          "fansedge.com",
+          "kelkoo.co.uk",
+          "fathead.com",
+          "fastestvpn.com",
+          "final-score.com",
+          "fingerhut.com",
+          "reebok.com",
+          "fleurop.de",
+          "footlocker.com",
+          "fossil.com",
+          "fr.amazfit.com",
+          "garmin.ru",
+          "getlambs.com",
+          "gettextbooks.com",
+          "kroger.com",
+          "moneygram.com",
+          "globalrose.com",
+          "purehockey.com",
+          "goldmedalwineclub.com",
+          "goldenfrog.com",
+          "greatclubs.com",
+          "greatermedical.com",
+          "vimeo.com",
+          "zazzle.com",
+          "hidden24.co.uk",
+          "hobbytron.com",
+          "monster.com",
+          "hockeymonkey.com",
+          "holabirdsports.com",
+          "horizonfitness.com",
+          "hostelsclub.com",
+          "hotelopia.com",
+          "travelguru.com",
+          "houseofnutrition.com",
+          "travelocity.com",
+          "hpcommandcenter.com",
+          "iberlibro.com",
+          "idrive.com",
+          "illyusa.com",
+          "infinitestylebyanntaylor.com",
+          "spartan.com",
+          "instaslim.com",
+          "inspiredsilver.com",
+          "intimissimi.com",
+          "irvs.com",
+          "irvsluggage.com",
+          "isabellegracejewelry.com",
+          "it.intimissimi.com",
+          "it.amazfit.com",
+          "jessicalondon.com",
+          "shawacademy.com",
+          "jomashop.com",
+          "journeyed.com",
+          "jp.hotels.com",
+          "juicebeauty.com",
+          "justlenses.com",
+          "katom.com",
+          "kingsize.com",
+          "kingsize.com.au",
+          "knowem.com",
+          "kqzyfj.com",
+          "le-vpn.com",
+          "masterclass.com",
+          "leftcoastraw.com",
+          "lens.com",
+          "lids.com",
+          "lingo.com",
+          "liingoeyewear.com",
+          "maurices.com",
+          "westernunion.com",
+          "luggage.co.nz",
+          "reebok.co.uk",
+          "macphun.com",
+          "mandarinaduck.com",
+          "mantis.com",
+          "maxstudio.com",
+          "medexsupply.com",
+          "medicalsupplydepot.com",
+          "megasuits.com",
+          "megabonus.com",
+          "mensusa.com",
+          "mensitaly.com",
+          "mexgrocer.com",
+          "mikasa.com",
+          "mizunousa.com",
+          "mixi.jp",
+          "mizuno.com.au",
+          "modernspartansystems.com",
+          "modlily.com",
+          "monicavinader.com",
+          "movietickets.com",
+          "mrrebates.com",
+          "msgmyth.com",
+          "msgtruth.org",
+          "mybanktracker.com",
+          "payoneer.com",
+          "tomtom.com",
+          "myvega.com",
+          "myweddingfavors.com",
+          "n95maskco.com",
+          "naturebox.com",
+          "naturehills.com",
+          "nerdwallet.com",
+          "newbalance.com",
+          "neweracap.com",
+          "newbalance.co.uk",
+          "newegg.ca",
+          "taylormadegolf.com",
+          "nike.com.br",
+          "nl.intimissimi.com",
+          "nordstromrack.com",
+          "nyandcompany.com",
+          "nz.hotels.com",
+          "ohnuts.com",
+          "omegajuicers.com",
+          "oneluckyduck.com",
+          "onlinedegreenavigator.org",
+          "onlinesports.com",
+          "opensky.com",
+          "organifishop.com",
+          "ovpn.com",
+          "paintball-online.com",
+          "paintballsports.de",
+          "pandahall.com",
+          "parkseed.com",
+          "parksleepfly.com",
+          "pcmag.com",
+          "peapod.com",
+          "perfumania.com",
+          "perfectlensworld.com",
+          "petmate.com",
+          "pfaltzgraff.com",
+          "stamps.com",
+          "vitaminshoppe.com",
+          "pricespy.co.uk",
+          "proozy.com",
+          "quill.com",
+          "rapidgator.net",
+          "readingiq.com",
+          "reddotpaintball.com",
+          "reebok.ca",
+          "rejuvenatewellnesscenter.com",
+          "riamoneytransfer.com",
+          "roadrunnersports.com",
+          "rocketlanguages.com",
+          "roamans.com",
+          "robinsonsshoes.com",
+          "rosewe.com",
+          "ru.pandahall.com",
+          "saucony.com",
+          "safervpn.com",
+          "saucony.com.au",
+          "satyajewelry.com",
+          "searspartsdirect.com",
+          "secure.unicef.org.br",
+          "tagged.com",
+          "selectaticket.com",
+          "serenityhealth.com",
+          "sg.hotels.com",
+          "sharefile.com",
+          "vons.com",
+          "shopdisney.com",
+          "silpada.com",
+          "soccergarage.com",
+          "spartancarton.com",
+          "spartanien.de",
+          "spartansuppz.com",
+          "sportsfanfare.com",
+          "startpage.com",
+          "steepandcheap.com",
+          "statelinetack.com",
+          "stockx.com",
+          "stonewallkitchen.com",
+          "sunglasshut.com",
+          "superboleteria.com",
+          "territoryfoods.com",
+          "switchvpn.net",
+          "systran.net",
+          "trip.com",
+          "textbooks.com",
+          "thefryecompany.com",
+          "thetightspot.com",
+          "tipalti.com",
+          "trueleafmarket.com",
+          "truthinlabeling.org",
+          "tvstoreonline.com",
+          "tw.hotels.com",
+          "udans.com",
+          "uk.amazfit.com",
+          "uk.intimissimi.com",
+          "ukpaintball.co.uk",
+          "us.amazfit.com",
+          "usoutdoor.com",
+          "usjewelryfactory.com",
+          "valorebooks.com",
+          "vitalsource.com",
+          "vitacost.com",
+          "vonage.com",
+          "vpn4all.com",
+          "vpnbuilder.com",
+          "watchshop.com",
+          "wearamasknow.com",
+          "westportbigandtall.com",
+          "windandweather.com",
+          "winstonprivacy.com",
+          "womanwithin.com",
+          "worldsoccershop.com",
+          "yousendit.com",
+          "zazzle.co.uk",
+          "zazzle.de",
+          "zennioptical.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 46,
+        "value": [
+          {
+            "domain": "uk.amazfit.com"
+          },
+          {
+            "domain": "abebooks.com"
+          },
+          {
+            "domain": "charlestyrwhitt.com"
+          },
+          {
+            "domain": "msgtruth.org"
+          },
+          {
+            "domain": "globalrose.com"
+          },
+          {
+            "domain": "abebooks.co.uk"
+          },
+          {
+            "domain": "nz.hotels.com"
+          },
+          {
+            "domain": "it.amazfit.com"
+          },
+          {
+            "domain": "de.amazfit.com"
+          },
+          {
+            "domain": "bestdealpetsupply.com"
+          },
+          {
+            "domain": "de.intimissimi.com"
+          },
+          {
+            "domain": "at.intimissimi.com"
+          },
+          {
+            "domain": "petmate.com"
+          },
+          {
+            "domain": "es.amazfit.com"
+          },
+          {
+            "domain": "tw.hotels.com"
+          },
+          {
+            "domain": "bookdepository.com"
+          },
+          {
+            "domain": "abebooks.fr"
+          },
+          {
+            "domain": "creativemarket.com"
+          },
+          {
+            "domain": "msgmyth.com"
+          },
+          {
+            "domain": "uk.intimissimi.com"
+          },
+          {
+            "domain": "intimissimi.com"
+          },
+          {
+            "domain": "isabellegracejewelry.com"
+          },
+          {
+            "domain": "ctshirts.com"
+          },
+          {
+            "domain": "rejuvenatewellnesscenter.com"
+          },
+          {
+            "domain": "usjewelryfactory.com"
+          },
+          {
+            "domain": "ru.pandahall.com"
+          },
+          {
+            "domain": "vonage.com"
+          },
+          {
+            "domain": "au.hotels.com"
+          },
+          {
+            "domain": "jp.hotels.com"
+          },
+          {
+            "domain": "nl.intimissimi.com"
+          },
+          {
+            "domain": "iberlibro.com"
+          },
+          {
+            "domain": "cyber-florist.com"
+          },
+          {
+            "domain": "satyajewelry.com"
+          },
+          {
+            "domain": "cyber-florist.ru"
+          },
+          {
+            "domain": "truthinlabeling.org"
+          },
+          {
+            "domain": "enjoyflowers.com"
+          },
+          {
+            "domain": "camillejewelry.com"
+          },
+          {
+            "domain": "worldsoccershop.com"
+          },
+          {
+            "domain": "abebooks.it"
+          },
+          {
+            "domain": "us.amazfit.com"
+          },
+          {
+            "domain": "es.intimissimi.com"
+          },
+          {
+            "domain": "sg.hotels.com"
+          },
+          {
+            "domain": "abebooks.de"
+          },
+          {
+            "domain": "soccergarage.com"
+          },
+          {
+            "domain": "fr.amazfit.com"
+          },
+          {
+            "domain": "it.intimissimi.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 3,
+        "value": [
+          {
+            "domain": "petwellbeing.com"
+          },
+          {
+            "domain": "florsheimshoes.ca"
+          },
+          {
+            "domain": "barnesandnoble.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 39.900005,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 23.150002,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 20.3,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 19.149998,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 18.799997,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 14.949999,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 13.65,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 13.549999,
+            "vertical": "Online / VPN"
+          },
+          {
+            "count": 12.899999,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 12.499999,
+            "vertical": "Fashion / Jewellery"
+          },
+          {
+            "count": 11.549999,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 11.099998,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 10.799999,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 10.45,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 10.349998,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 9.7,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 9.7,
+            "vertical": "Health / Eyecare"
+          },
+          {
+            "count": 9.349999,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 8.299999,
+            "vertical": "Sports / Outdoor"
+          },
+          {
+            "count": 7.7999997,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 7.7000003,
+            "vertical": "Fashion / Lingerie"
+          },
+          {
+            "count": 7.4999995,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 6.65,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 6.55,
+            "vertical": "Entertainment / Hobbies"
+          },
+          {
+            "count": 6.5499997,
+            "vertical": "Finance / Banking"
+          },
+          {
+            "count": 5.8,
+            "vertical": "Gifts / Personalised"
+          },
+          {
+            "count": 5.5999994,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 4.75,
+            "vertical": "Gifts / Flowers"
+          },
+          {
+            "count": 4.75,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 4.7,
+            "vertical": "Travel / Flights"
+          },
+          {
+            "count": 3.75,
+            "vertical": "Home / Garden"
+          },
+          {
+            "count": 3.7,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 3,
+            "vertical": "Travel / Accessories"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Shopping / Wedding"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Home / Pets"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 2.75,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 2.55,
+            "vertical": "Online / Security"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Business / Finance"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Motoring / Cars"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Business / Office"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Finance / Currency"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Food / Confectionery"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Home / Art"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Home / DIY"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Travel / Car Hire"
+          },
+          {
+            "count": 1.8,
+            "vertical": "Finance / Cards"
+          },
+          {
+            "count": 1.8,
+            "vertical": "Online / Freebies"
+          },
+          {
+            "count": 1,
+            "vertical": "Health / Fragrances"
+          },
+          {
+            "count": 1,
+            "vertical": "Travel / Parking Transfers"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Jobs & Careers"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Investments"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Food / Alcohol"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Weight Loss"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Online / Dating"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Entertainment / Movies"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Finance / Loans"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Finance / Mortgages & Loans"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Food / Take Out"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Gambling / Sportsbook"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Security"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Travel / Vacation"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 416,
+      "value": [
+        "1800getlens.com",
+        "1800contacts.com",
+        "marriott.com",
+        "39dollarglasses.com",
+        "sportsmansguide.com",
+        "6pm.com",
+        "apple.com",
+        "aaptiv.com",
+        "amazon.com",
+        "abcmouse.com",
+        "abebooks.de",
+        "abebooks.fr",
+        "abebooks.it",
+        "abebooks.co.uk",
+        "abebooks.com",
+        "att.com",
+        "instagram.com",
+        "nike.com",
+        "redshelf.com",
+        "fedex.com",
+        "investopedia.com",
+        "novica.com",
+        "snapchat.com",
+        "acmemarkets.com",
+        "aclens.com",
+        "activeforever.com",
+        "ticketweb.com",
+        "adventureacademy.com",
+        "ae.com",
+        "banggood.com",
+        "walmart.com",
+        "amazon.in",
+        "privatevpn.com",
+        "agapea.com",
+        "quora.com",
+        "aol.com",
+        "airbnb.co.in",
+        "airbnb.com",
+        "allenedmonds.com",
+        "amazfit.com",
+        "amazon.ae",
+        "amazon.ca",
+        "amazon.de",
+        "amberalertgps.com",
+        "amazon.es",
+        "amazon.fr",
+        "amazon.it",
+        "amazon.cn",
+        "amazon.com.au",
+        "amazon.com.br",
+        "amazon.com.mx",
+        "amiclubwear.com",
+        "jcpenney.com",
+        "anntaylor.com",
+        "hp.com",
+        "shein.com",
+        "shein.co.uk",
+        "twitch.tv",
+        "appliancesconnection.com",
+        "blair.com",
+        "garmin.com",
+        "klm.com",
+        "asos.com",
+        "asmc.de",
+        "surlatable.com",
+        "at.intimissimi.com",
+        "gap.com",
+        "fandango.com",
+        "au.hotels.com",
+        "ihg.com",
+        "uber.com",
+        "avacaremedical.com",
+        "awbridal.com",
+        "backcountry.com",
+        "babylon.com",
+        "baseballmonkey.com",
+        "baseballrampage.com",
+        "beachcamera.com",
+        "gucci.com",
+        "beautiesltd.com",
+        "bedandbreakfast.com",
+        "bellelily.com",
+        "berries.com",
+        "bestdealpetsupply.com",
+        "betterworldbooks.com",
+        "bigapplecollectibles.com",
+        "biblio.com",
+        "biggerbooks.com",
+        "ivacy.com",
+        "campingworld.com",
+        "customink.com",
+        "ebay.com",
+        "finishline.com",
+        "jibjab.com",
+        "missoma.com",
+        "modcloth.com",
+        "personalizationmall.com",
+        "ticketmaster.com",
+        "theknot.com",
+        "forbes.com",
+        "bodybuilding.com",
+        "bodyspartan.com",
+        "bonjourglobal.com",
+        "bookbyte.com",
+        "bookdepository.com",
+        "priceline.com",
+        "booking.com",
+        "bookstore.western.edu",
+        "botanicchoice.com",
+        "clarksusa.com",
+        "privateinternetaccess.com",
+        "hostelworld.com",
+        "brighton.com",
+        "zales.com",
+        "brooksbrothers.com",
+        "yandex.com",
+        "build.com",
+        "buffered.com",
+        "buydig.com",
+        "buyorganicnuts.com",
+        "mrporter.com",
+        "lanebryant.com",
+        "cabelas.ca",
+        "cabelas.com",
+        "cafebritt.com",
+        "camillejewelry.com",
+        "campusbookrentals.com",
+        "hotels.com",
+        "target.com",
+        "caseluggage.com",
+        "catherines.com",
+        "klarna.com",
+        "equestriancollections.com",
+        "cengageasia.com",
+        "ivrose.com",
+        "chadwicks.com",
+        "championusa.com",
+        "champssports.com",
+        "charlestyrwhitt.com",
+        "driversed.com",
+        "chefscatalog.com",
+        "cheryls.com",
+        "chicme.com",
+        "deciem.com",
+        "choicehotels.com",
+        "chicwish.com",
+        "chowsangsang.com",
+        "citysports.com",
+        "discountwatchstore.com",
+        "telescope.com",
+        "tunnelbear.com",
+        "clinkhostels.com",
+        "strawberrynet.com",
+        "qvc.com",
+        "contactsdirect.com",
+        "cookiesbydesign.com",
+        "cooking.com",
+        "ticketnetwork.com",
+        "cosmopayment.com",
+        "walgreens.com",
+        "countrywidepaintball.co.uk",
+        "safeway.com",
+        "couturecandy.com",
+        "coursehero.com",
+        "crateandbarrel.com",
+        "creativemarket.com",
+        "ctshirts.com",
+        "cyber-florist.com",
+        "cyber-florist.ru",
+        "cymax.com",
+        "cwimedical.com",
+        "davisbigandtall.com",
+        "de.amazfit.com",
+        "de.intimissimi.com",
+        "depositfiles.com",
+        "ross-simons.com",
+        "dickssportinggoods.com",
+        "discountschoolsupply.com",
+        "hubpages.com",
+        "dragondoor.com",
+        "dressilyme.com",
+        "dronesetc.com",
+        "redbubble.com",
+        "eastbay.com",
+        "ebags.com",
+        "edcskincare.com",
+        "ems.com",
+        "sierra.com",
+        "enjoyflowers.com",
+        "newegg.com",
+        "equestrian.com",
+        "epayservices.com",
+        "justanswer.com",
+        "es.amazfit.com",
+        "es.intimissimi.com",
+        "extendedstayamerica.com",
+        "esprit.de",
+        "esprit.fr",
+        "forzieri.com",
+        "worx.com",
+        "shopmarriott.com",
+        "everbank.com",
+        "ticketliquidator.com",
+        "ewatches.com",
+        "fanduel.com",
+        "fansedge.com",
+        "kelkoo.co.uk",
+        "fathead.com",
+        "fastestvpn.com",
+        "final-score.com",
+        "fingerhut.com",
+        "reebok.com",
+        "fleurop.de",
+        "footlocker.com",
+        "fossil.com",
+        "fr.amazfit.com",
+        "garmin.ru",
+        "getlambs.com",
+        "gettextbooks.com",
+        "kroger.com",
+        "moneygram.com",
+        "globalrose.com",
+        "purehockey.com",
+        "goldmedalwineclub.com",
+        "goldenfrog.com",
+        "greatclubs.com",
+        "greatermedical.com",
+        "vimeo.com",
+        "zazzle.com",
+        "hidden24.co.uk",
+        "hobbytron.com",
+        "monster.com",
+        "hockeymonkey.com",
+        "holabirdsports.com",
+        "horizonfitness.com",
+        "hostelsclub.com",
+        "hotelopia.com",
+        "travelguru.com",
+        "houseofnutrition.com",
+        "travelocity.com",
+        "hpcommandcenter.com",
+        "iberlibro.com",
+        "idrive.com",
+        "illyusa.com",
+        "infinitestylebyanntaylor.com",
+        "spartan.com",
+        "instaslim.com",
+        "inspiredsilver.com",
+        "intimissimi.com",
+        "irvs.com",
+        "irvsluggage.com",
+        "isabellegracejewelry.com",
+        "it.intimissimi.com",
+        "it.amazfit.com",
+        "jessicalondon.com",
+        "shawacademy.com",
+        "jomashop.com",
+        "journeyed.com",
+        "jp.hotels.com",
+        "juicebeauty.com",
+        "justlenses.com",
+        "katom.com",
+        "kingsize.com",
+        "kingsize.com.au",
+        "knowem.com",
+        "kqzyfj.com",
+        "le-vpn.com",
+        "masterclass.com",
+        "leftcoastraw.com",
+        "lens.com",
+        "lids.com",
+        "lingo.com",
+        "liingoeyewear.com",
+        "maurices.com",
+        "westernunion.com",
+        "luggage.co.nz",
+        "reebok.co.uk",
+        "macphun.com",
+        "mandarinaduck.com",
+        "mantis.com",
+        "maxstudio.com",
+        "medexsupply.com",
+        "medicalsupplydepot.com",
+        "megasuits.com",
+        "megabonus.com",
+        "mensusa.com",
+        "mensitaly.com",
+        "mexgrocer.com",
+        "mikasa.com",
+        "mizunousa.com",
+        "mixi.jp",
+        "mizuno.com.au",
+        "modernspartansystems.com",
+        "modlily.com",
+        "monicavinader.com",
+        "movietickets.com",
+        "mrrebates.com",
+        "msgmyth.com",
+        "msgtruth.org",
+        "mybanktracker.com",
+        "payoneer.com",
+        "tomtom.com",
+        "myvega.com",
+        "myweddingfavors.com",
+        "n95maskco.com",
+        "naturebox.com",
+        "naturehills.com",
+        "nerdwallet.com",
+        "newbalance.com",
+        "neweracap.com",
+        "newbalance.co.uk",
+        "newegg.ca",
+        "taylormadegolf.com",
+        "nike.com.br",
+        "nl.intimissimi.com",
+        "nordstromrack.com",
+        "nyandcompany.com",
+        "nz.hotels.com",
+        "ohnuts.com",
+        "omegajuicers.com",
+        "oneluckyduck.com",
+        "onlinedegreenavigator.org",
+        "onlinesports.com",
+        "opensky.com",
+        "organifishop.com",
+        "ovpn.com",
+        "paintball-online.com",
+        "paintballsports.de",
+        "pandahall.com",
+        "parkseed.com",
+        "parksleepfly.com",
+        "pcmag.com",
+        "peapod.com",
+        "perfumania.com",
+        "perfectlensworld.com",
+        "petmate.com",
+        "pfaltzgraff.com",
+        "stamps.com",
+        "vitaminshoppe.com",
+        "pricespy.co.uk",
+        "proozy.com",
+        "quill.com",
+        "rapidgator.net",
+        "readingiq.com",
+        "reddotpaintball.com",
+        "reebok.ca",
+        "rejuvenatewellnesscenter.com",
+        "riamoneytransfer.com",
+        "roadrunnersports.com",
+        "rocketlanguages.com",
+        "roamans.com",
+        "robinsonsshoes.com",
+        "rosewe.com",
+        "ru.pandahall.com",
+        "saucony.com",
+        "safervpn.com",
+        "saucony.com.au",
+        "satyajewelry.com",
+        "searspartsdirect.com",
+        "secure.unicef.org.br",
+        "tagged.com",
+        "selectaticket.com",
+        "serenityhealth.com",
+        "sg.hotels.com",
+        "sharefile.com",
+        "vons.com",
+        "shopdisney.com",
+        "silpada.com",
+        "soccergarage.com",
+        "spartancarton.com",
+        "spartanien.de",
+        "spartansuppz.com",
+        "sportsfanfare.com",
+        "startpage.com",
+        "steepandcheap.com",
+        "statelinetack.com",
+        "stockx.com",
+        "stonewallkitchen.com",
+        "sunglasshut.com",
+        "superboleteria.com",
+        "territoryfoods.com",
+        "switchvpn.net",
+        "systran.net",
+        "trip.com",
+        "textbooks.com",
+        "thefryecompany.com",
+        "thetightspot.com",
+        "tipalti.com",
+        "trueleafmarket.com",
+        "truthinlabeling.org",
+        "tvstoreonline.com",
+        "tw.hotels.com",
+        "udans.com",
+        "uk.amazfit.com",
+        "uk.intimissimi.com",
+        "ukpaintball.co.uk",
+        "us.amazfit.com",
+        "usoutdoor.com",
+        "usjewelryfactory.com",
+        "valorebooks.com",
+        "vitalsource.com",
+        "vitacost.com",
+        "vonage.com",
+        "vpn4all.com",
+        "vpnbuilder.com",
+        "watchshop.com",
+        "wearamasknow.com",
+        "westportbigandtall.com",
+        "windandweather.com",
+        "winstonprivacy.com",
+        "womanwithin.com",
+        "worldsoccershop.com",
+        "yousendit.com",
+        "zazzle.co.uk",
+        "zazzle.de",
+        "zennioptical.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 2,
+      "socialsAvailable": [
+        "twitter",
+        "facebook"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/easss1",
+        "twitter": "https://twitter.com/easss"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 1,
+      "sampleValue": "Online / Services",
+      "value": [
+        "Online / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Online / Services",
+        "rank": 1,
+        "score": 10
+      },
+      "value": [
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 10
+        }
+      ]
+    }
+  }
+}

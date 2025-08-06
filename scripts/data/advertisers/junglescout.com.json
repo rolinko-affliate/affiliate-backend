@@ -1,0 +1,953 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 5,
+      "sampleValue": [
+        "ClickMagick",
+        "Flexoffers",
+        "PartnerStack"
+      ],
+      "value": [
+        "ClickMagick",
+        "Flexoffers",
+        "PartnerStack",
+        "Skimlinks",
+        "Takeads"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 1,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "support@junglescout.com"
+        }
+      ]
+    },
+    "domain": "junglescout.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "amazon"
+        },
+        {
+          "score": 0.94964415,
+          "value": "seller"
+        },
+        {
+          "score": 0.30884922,
+          "value": "individual"
+        },
+        {
+          "score": 0.2981066,
+          "value": "professional"
+        },
+        {
+          "score": 0.2066604,
+          "value": "arbitrage"
+        },
+        {
+          "score": 0.20531757,
+          "value": "retail"
+        },
+        {
+          "score": 0.18530951,
+          "value": "store"
+        },
+        {
+          "score": 0.1650329,
+          "value": "fba"
+        },
+        {
+          "score": 0.16328722,
+          "value": "professional seller"
+        },
+        {
+          "score": 0.15012757,
+          "value": "box"
+        },
+        {
+          "score": 0.1407278,
+          "value": "listing"
+        },
+        {
+          "score": 0.13105948,
+          "value": "unit"
+        },
+        {
+          "score": 0.115079895,
+          "value": "retail arbitrage"
+        },
+        {
+          "score": 0.1036659,
+          "value": "category"
+        },
+        {
+          "score": 0.1036659,
+          "value": "article"
+        },
+        {
+          "score": 0.10326306,
+          "value": "request"
+        },
+        {
+          "score": 0.1021888,
+          "value": "individual seller"
+        },
+        {
+          "score": 0.09789177,
+          "value": "scout"
+        },
+        {
+          "score": 0.09480327,
+          "value": "step"
+        },
+        {
+          "score": 0.087686315,
+          "value": "fee"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "amazon"
+        },
+        {
+          "score": 0.94964415,
+          "value": "seller"
+        },
+        {
+          "score": 0.30884922,
+          "value": "individual"
+        },
+        {
+          "score": 0.2981066,
+          "value": "professional"
+        },
+        {
+          "score": 0.2066604,
+          "value": "arbitrage"
+        },
+        {
+          "score": 0.20531757,
+          "value": "retail"
+        },
+        {
+          "score": 0.18530951,
+          "value": "store"
+        },
+        {
+          "score": 0.1650329,
+          "value": "fba"
+        },
+        {
+          "score": 0.16328722,
+          "value": "professional seller"
+        },
+        {
+          "score": 0.15012757,
+          "value": "box"
+        },
+        {
+          "score": 0.1407278,
+          "value": "listing"
+        },
+        {
+          "score": 0.13105948,
+          "value": "unit"
+        },
+        {
+          "score": 0.115079895,
+          "value": "retail arbitrage"
+        },
+        {
+          "score": 0.1036659,
+          "value": "category"
+        },
+        {
+          "score": 0.1036659,
+          "value": "article"
+        },
+        {
+          "score": 0.10326306,
+          "value": "request"
+        },
+        {
+          "score": 0.1021888,
+          "value": "individual seller"
+        },
+        {
+          "score": 0.09789177,
+          "value": "scout"
+        },
+        {
+          "score": 0.09480327,
+          "value": "step"
+        },
+        {
+          "score": 0.087686315,
+          "value": "fee"
+        },
+        {
+          "score": 0.076406606,
+          "value": "app"
+        },
+        {
+          "score": 0.0734524,
+          "value": "tool"
+        },
+        {
+          "score": 0.07251242,
+          "value": "individual account"
+        },
+        {
+          "score": 0.070766754,
+          "value": "profitable"
+        },
+        {
+          "score": 0.06955821,
+          "value": "money"
+        },
+        {
+          "score": 0.06633544,
+          "value": "shipment"
+        },
+        {
+          "score": 0.060292736,
+          "value": "advertising"
+        },
+        {
+          "score": 0.059755605,
+          "value": "reply"
+        },
+        {
+          "score": 0.059218477,
+          "value": "feature"
+        },
+        {
+          "score": 0.056667116,
+          "value": "pricing"
+        },
+        {
+          "score": 0.05586142,
+          "value": "jungle"
+        },
+        {
+          "score": 0.055592857,
+          "value": "profit"
+        },
+        {
+          "score": 0.05411575,
+          "value": "label"
+        },
+        {
+          "score": 0.05183295,
+          "value": "retail store"
+        },
+        {
+          "score": 0.050355848,
+          "value": "resource"
+        },
+        {
+          "score": 0.04941587,
+          "value": "difference"
+        },
+        {
+          "score": 0.048878744,
+          "value": "monthly"
+        },
+        {
+          "score": 0.04807305,
+          "value": "lot"
+        },
+        {
+          "score": 0.04753592,
+          "value": "roi"
+        },
+        {
+          "score": 0.047133073,
+          "value": "professional account"
+        },
+        {
+          "score": 0.046730228,
+          "value": "central"
+        },
+        {
+          "score": 0.046730228,
+          "value": "extension"
+        },
+        {
+          "score": 0.045924533,
+          "value": "fulfillment"
+        },
+        {
+          "score": 0.044850275,
+          "value": "invoice"
+        },
+        {
+          "score": 0.043641735,
+          "value": "demo"
+        },
+        {
+          "score": 0.04270176,
+          "value": "button"
+        },
+        {
+          "score": 0.04095609,
+          "value": "book"
+        },
+        {
+          "score": 0.037599035,
+          "value": "rank"
+        },
+        {
+          "score": 0.037061904,
+          "value": "fbm"
+        },
+        {
+          "score": 0.035987645,
+          "value": "current"
+        },
+        {
+          "score": 0.035987645,
+          "value": "retailer"
+        },
+        {
+          "score": 0.035853364,
+          "value": "ready"
+        },
+        {
+          "score": 0.03571908,
+          "value": "automation"
+        },
+        {
+          "score": 0.035450518,
+          "value": "trend"
+        },
+        {
+          "score": 0.03504767,
+          "value": "pro"
+        },
+        {
+          "score": 0.034913387,
+          "value": "private"
+        },
+        {
+          "score": 0.03383913,
+          "value": "people"
+        },
+        {
+          "score": 0.033704847,
+          "value": "low"
+        },
+        {
+          "score": 0.033570565,
+          "value": "barcode"
+        },
+        {
+          "score": 0.033302,
+          "value": "fnsku"
+        },
+        {
+          "score": 0.03316772,
+          "value": "online arbitrage"
+        },
+        {
+          "score": 0.03276487,
+          "value": "dollar"
+        },
+        {
+          "score": 0.03209346,
+          "value": "sku"
+        },
+        {
+          "score": 0.03195918,
+          "value": "decision"
+        },
+        {
+          "score": 0.03155633,
+          "value": "community"
+        },
+        {
+          "score": 0.03142205,
+          "value": "wholesale"
+        },
+        {
+          "score": 0.03142205,
+          "value": "strategy"
+        },
+        {
+          "score": 0.03142205,
+          "value": "solution"
+        },
+        {
+          "score": 0.031019202,
+          "value": "program"
+        },
+        {
+          "score": 0.031019202,
+          "value": "asin"
+        },
+        {
+          "score": 0.03088492,
+          "value": "feedback"
+        },
+        {
+          "score": 0.030079227,
+          "value": "reason"
+        },
+        {
+          "score": 0.029944945,
+          "value": "ppc"
+        },
+        {
+          "score": 0.029407816,
+          "value": "walmart"
+        },
+        {
+          "score": 0.02913925,
+          "value": "historical"
+        },
+        {
+          "score": 0.029004969,
+          "value": "phone"
+        },
+        {
+          "score": 0.029004969,
+          "value": "link"
+        },
+        {
+          "score": 0.028602121,
+          "value": "informative"
+        },
+        {
+          "score": 0.028064992,
+          "value": "grocery"
+        },
+        {
+          "score": 0.028064992,
+          "value": "offer"
+        },
+        {
+          "score": 0.027796429,
+          "value": "idea"
+        },
+        {
+          "score": 0.0272593,
+          "value": "couple"
+        },
+        {
+          "score": 0.0272593,
+          "value": "post"
+        },
+        {
+          "score": 0.027125016,
+          "value": "supplier"
+        },
+        {
+          "score": 0.027125016,
+          "value": "issue"
+        },
+        {
+          "score": 0.027125016,
+          "value": "rule"
+        },
+        {
+          "score": 0.026990734,
+          "value": "low price"
+        },
+        {
+          "score": 0.026856452,
+          "value": "helpful"
+        },
+        {
+          "score": 0.026856452,
+          "value": "receipt"
+        },
+        {
+          "score": 0.02672217,
+          "value": "model"
+        },
+        {
+          "score": 0.02672217,
+          "value": "insight"
+        },
+        {
+          "score": 0.026587889,
+          "value": "practice"
+        },
+        {
+          "score": 0.025647912,
+          "value": "monthly sale"
+        },
+        {
+          "score": 0.02551363,
+          "value": "message"
+        },
+        {
+          "score": 0.025379347,
+          "value": "vat"
+        },
+        {
+          "score": 0.025245065,
+          "value": "buyer"
+        },
+        {
+          "score": 0.024976501,
+          "value": "video"
+        },
+        {
+          "score": 0.024573654,
+          "value": "opportunity"
+        },
+        {
+          "score": 0.024305088,
+          "value": "private label"
+        },
+        {
+          "score": 0.024170807,
+          "value": "report"
+        }
+      ]
+    },
+    "metaData": {
+      "description": "The leading all-in-one platform for selling on Amazon, with the mission of providing data & insights to help entrepreneurs and brands grow their businesses.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/junglescout.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://junglescout.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 422
+      },
+      "partnersAdded": {
+        "count": 33,
+        "value": [
+          {
+            "domain": "linkdirectoryzone.com"
+          },
+          {
+            "domain": "webseodirectory.com"
+          },
+          {
+            "domain": "webranksdirectory.com"
+          },
+          {
+            "domain": "proseoarticles.com"
+          },
+          {
+            "domain": "directorycloudhub.com"
+          },
+          {
+            "domain": "giuseppemattina.com"
+          },
+          {
+            "domain": "primedirectoryzone.com"
+          },
+          {
+            "domain": "globalmaxdirectory.com"
+          },
+          {
+            "domain": "feetmoney365.blogspot.com"
+          },
+          {
+            "domain": "brittanysirtonskitherapist.com"
+          },
+          {
+            "domain": "de.moyens.net"
+          },
+          {
+            "domain": "rockmroll.com"
+          },
+          {
+            "domain": "usdirectorylist.com"
+          },
+          {
+            "domain": "wayseolinks.com"
+          },
+          {
+            "domain": "backlinktime.com"
+          },
+          {
+            "domain": "ivoox.com"
+          },
+          {
+            "domain": "rankmeetsitesdirectory.com"
+          },
+          {
+            "domain": "princepatni.com"
+          },
+          {
+            "domain": "busimanmarketing.com"
+          },
+          {
+            "domain": "a2zseoarticles.com"
+          },
+          {
+            "domain": "toptierdirectory.com"
+          },
+          {
+            "domain": "99ranks.com"
+          },
+          {
+            "domain": "ailistingdirectory.com"
+          },
+          {
+            "domain": "viralzonedirectory.com"
+          },
+          {
+            "domain": "prodirectoryguide.com"
+          },
+          {
+            "domain": "searchstackdirectory.com"
+          },
+          {
+            "domain": "globalseoarticles.com"
+          },
+          {
+            "domain": "globalseodirectory.com"
+          },
+          {
+            "domain": "semrushdirectory.com"
+          },
+          {
+            "domain": "aidirectoryzone.com"
+          },
+          {
+            "domain": "seotechdirectory.com"
+          },
+          {
+            "domain": "wayseodirectory.com"
+          },
+          {
+            "domain": "fr.fslocal.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 15,
+        "value": [
+          {
+            "domain": "clicktoselldirectoy.com"
+          },
+          {
+            "domain": "ecommercebug.com"
+          },
+          {
+            "domain": "socialyta.com"
+          },
+          {
+            "domain": "growthdevil.com"
+          },
+          {
+            "domain": "publishsquare.com"
+          },
+          {
+            "domain": "trainingdigitale.tv"
+          },
+          {
+            "domain": "sellright.co.il"
+          },
+          {
+            "domain": "paying4prayers.weebly.com"
+          },
+          {
+            "domain": "intellectsoftware.online"
+          },
+          {
+            "domain": "busniessdirectory.com"
+          },
+          {
+            "domain": "rankmakerdirectory.com"
+          },
+          {
+            "domain": "04q.com"
+          },
+          {
+            "domain": "hit.teratracker.com"
+          },
+          {
+            "domain": "ceoroopa.com"
+          },
+          {
+            "domain": "madronify.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 134,
+            "promotype": "blog",
+            "value": [
+              "10reviewsplus.com",
+              "1topproduct.com",
+              "2b2c.com",
+              "500toprated.com",
+              "60secondtraffic.com",
+              "a-data-driven-guy.com",
+              "affiliate.blog",
+              "aifsy.com",
+              "altool.net",
+              "amz520.com",
+              "amzadvisers.com",
+              "amzseller-tools.com",
+              "arbitrageinfo.com",
+              "armandosuenos.com",
+              "articlecity.com",
+              "avada.io",
+              "backlinktime.com",
+              "barcodestalk.com",
+              "battleworldsonline.com",
+              "bestideas4u.com",
+              "bestsitesdirectory.com",
+              "blogbrandz.com",
+              "bluetuskr.com",
+              "bneur.com",
+              "brock.tv",
+              "californiarecorder.com",
+              "captivate.fm",
+              "ciroapp.com",
+              "commercecaffeine.com",
+              "de.moyens.net",
+              "denisewalsh.com",
+              "detailedguideonhowto.com",
+              "digiexe.com",
+              "digitalmarketingsupermarket.com",
+              "egainnews.com",
+              "entreresource.com",
+              "espacioemprendedores.net",
+              "eu-startups.com",
+              "facebook520.com",
+              "fmdbusiness.com",
+              "freelancepreneur.com",
+              "fslocal.com",
+              "garlicpressseller.com",
+              "hel10review.com",
+              "hi.switchy.io",
+              "hitbiz.net",
+              "hopatoo.com",
+              "hunxia.com",
+              "india2germany.com",
+              "indiadirectsourcing.com",
+              "infinitefba.com",
+              "insiderapps.com",
+              "junglescout.com",
+              "junglescout.nl",
+              "kobedigital.com",
+              "landingcube.com",
+              "launchpro.us",
+              "lcaimperial.com",
+              "linkedin.com",
+              "listodirectory.com",
+              "livinthatlife.com",
+              "logo.com",
+              "mailinvest.blog",
+              "mastersofmarketplace.com",
+              "mediakonsult.no",
+              "medium.com",
+              "mercherworld.com",
+              "moyens.net",
+              "msha.ke",
+              "newsavemoney.com",
+              "nextwhatbusiness.com",
+              "offerstoreview.com",
+              "onlinereviewpage.com",
+              "onlinesellingindia.com",
+              "orcadigitals.com",
+              "parimadtarkvarad.ee",
+              "partnershare.cn",
+              "perksona.com",
+              "picaro.co.jp",
+              "pklea.com",
+              "privatelabeljourney.com",
+              "projectlifemastery.com",
+              "proseoarticles.com",
+              "purshology.com",
+              "raindrop.io",
+              "raretopsitesdirectory.com",
+              "readyjetroam.com",
+              "resonaterecordings.com",
+              "reviewsnguides.com",
+              "reviewvideos.club",
+              "rigorousthemes.com",
+              "ruizhidong.com",
+              "saveatcart.com",
+              "savingmojo.com",
+              "sellermetrics.app",
+              "senkebangmenu.com",
+              "seohelperdirectory.com",
+              "sg-educate.com",
+              "shoppingvideos.club",
+              "slickmedia.io",
+              "smart-minded.com",
+              "strategiza.com",
+              "syncbricks.com",
+              "t1p.de",
+              "techmania.guru",
+              "technoven.com",
+              "techradar.com",
+              "tomsguide.com",
+              "topamztools.club",
+              "toptohigh.com",
+              "trendgems.com",
+              "twinstrata.com",
+              "ubestpick.com",
+              "unicornaccounting.co.uk",
+              "vendlab.com",
+              "vgmc.cn",
+              "victorytale.com",
+              "video.getpvd.com",
+              "virtualassistantuk.org",
+              "volusion.com",
+              "wayseolinks.com",
+              "webranksdirectory.com",
+              "wise4buy.com",
+              "withintheflow.com",
+              "workathome.in.net",
+              "worldofwebsites.org",
+              "worldwidetopsite.com",
+              "worldwidetopsite.link",
+              "xpressreviews.com",
+              "yijuhw.com",
+              "yoding.cn",
+              "yoosten.com",
+              "zomatt.com",
+              "zrvps.com"
+            ]
+          },
+          {
+            "count": 48,
+            "promotype": "student",
+            "value": [
+              "99ranks.com",
+              "absmho.com",
+              "aligow.com",
+              "bilalarticles.com",
+              "blogprocess.com",
+              "brock.mykajabi.com",
+              "castos.com",
+              "chuyouding.com",
+              "digi-tester.de",
+              "dontworkanotherday.com",
+              "droppricetoday.com",
+              "entrepreneurbizpro.com",
+              "esa.gg",
+              "etrend.com",
+              "evergreenaffiliatemarketing.com",
+              "fbaisland.com",
+              "finansdirekt24.se",
+              "giuseppemattina.com",
+              "globalseoarticles.com",
+              "growthchannel.io",
+              "hdwh.de",
+              "helpineedhelp.com",
+              "hifast.cn",
+              "ivoox.com",
+              "launchgrowjoy.com",
+              "madebybrain.com",
+              "makemoneyvideos.club",
+              "megareviewer.info",
+              "mommyincome.com",
+              "mronn.com",
+              "nettsz.com",
+              "newgenmax.com",
+              "projectofmylife.com",
+              "rankerdirectory.com",
+              "risorse-dal-web.it",
+              "salesmarket.com",
+              "seller-union.com",
+              "smarthumanblogger.com",
+              "sourcing-monster.com",
+              "sowyourseedtoday.com",
+              "staffcloud.net",
+              "swiy.co",
+              "techaxy.com",
+              "thenicheguru.com",
+              "wayseodirectory.com",
+              "wearegrowthhack.com",
+              "www-dn.appspot.com",
+              "zeamzseller.com"
+            ]
+          },
+          {
+            "count": 5,
+            "promotype": "content",
+            "value": [
+              "alibabaguojizhan.com",
+              "amzing.fr",
+              "mofluid.com",
+              "studyingecommerce.com",
+              "thenationalhonestyindex.com"
+            ]
+          },
+          {
+            "count": 6,
+            "promotype": "incentive",
+            "value": [
+              "all4marketplaces.com",
+              "cashbacksvergleichen.de",
+              "couponay.com",
+              "couponsohot.com",
+              "couponstroller.com",
+              "internetmarketingdeals.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "forum",
+            "value": [
+              "dotpim.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 5,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "linkedin",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/amazonjunglescout",
+        "instagram": "https://instagram.com/junglescout_",
+        "linkedin": "https://linkedin.com/company/6608249?trk=tyah&trkinfo=clickedvertical%3acompany%2cclickedentityid%3a6608249%2cidx%3a2-1-2%2ctarid%3a1469809982331%2ctas%3ajungle%20scout",
+        "twitter": "https://twitter.com/junglescout",
+        "youtube": "https://youtube.com/channel/uc0ij3ldvdugiupfgiiifzvq"
+      }
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Business / Software",
+        "rank": 2,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 2,
+          "score": 85
+        },
+        {
+          "name": "Business / Software",
+          "rank": 2,
+          "score": 95
+        }
+      ]
+    }
+  }
+}

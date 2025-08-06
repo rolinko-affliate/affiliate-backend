@@ -1,0 +1,1516 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 18,
+      "sampleValue": [
+        "Affilae",
+        "Amazon CA",
+        "Avantlink"
+      ],
+      "value": [
+        "Affilae",
+        "Amazon CA",
+        "Avantlink",
+        "Awin",
+        "Cello",
+        "CJ Affiliate",
+        "Daisycon",
+        "FinanceAds",
+        "Impact",
+        "PartnerStack",
+        "PostAffiliatePro",
+        "Private Network",
+        "Rakuten",
+        "Refersion",
+        "Rewardstyle",
+        "ShareASale",
+        "Skimlinks",
+        "TUNE"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.7
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.7
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.7
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "getpodcast.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "makeup"
+        },
+        {
+          "score": 0.9802121,
+          "value": "skin"
+        },
+        {
+          "score": 0.93228096,
+          "value": "beauty"
+        },
+        {
+          "score": 0.9226336,
+          "value": "hair"
+        },
+        {
+          "score": 0.7245611,
+          "value": "store"
+        },
+        {
+          "score": 0.7216364,
+          "value": "body"
+        },
+        {
+          "score": 0.6211445,
+          "value": "care"
+        },
+        {
+          "score": 0.6038482,
+          "value": "health"
+        },
+        {
+          "score": 0.57374454,
+          "value": "colour"
+        },
+        {
+          "score": 0.56409264,
+          "value": "haircare"
+        },
+        {
+          "score": 0.5406442,
+          "value": "skincare"
+        },
+        {
+          "score": 0.4976948,
+          "value": "supplements"
+        },
+        {
+          "score": 0.48987842,
+          "value": "skinstitut"
+        },
+        {
+          "score": 0.47383648,
+          "value": "professional"
+        },
+        {
+          "score": 0.44091406,
+          "value": "night"
+        },
+        {
+          "score": 0.42638633,
+          "value": "exfoliators"
+        },
+        {
+          "score": 0.41989544,
+          "value": "cosmetics"
+        },
+        {
+          "score": 0.41660175,
+          "value": "travel"
+        },
+        {
+          "score": 0.40950587,
+          "value": "hyaluronic"
+        },
+        {
+          "score": 0.4078553,
+          "value": "dermalogica"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "makeup"
+        },
+        {
+          "score": 0.9802121,
+          "value": "skin"
+        },
+        {
+          "score": 0.93228096,
+          "value": "beauty"
+        },
+        {
+          "score": 0.9226336,
+          "value": "hair"
+        },
+        {
+          "score": 0.7245611,
+          "value": "store"
+        },
+        {
+          "score": 0.7216364,
+          "value": "body"
+        },
+        {
+          "score": 0.6211445,
+          "value": "care"
+        },
+        {
+          "score": 0.6038482,
+          "value": "health"
+        },
+        {
+          "score": 0.57374454,
+          "value": "colour"
+        },
+        {
+          "score": 0.56409264,
+          "value": "haircare"
+        },
+        {
+          "score": 0.5406442,
+          "value": "skincare"
+        },
+        {
+          "score": 0.4976948,
+          "value": "supplements"
+        },
+        {
+          "score": 0.48987842,
+          "value": "skinstitut"
+        },
+        {
+          "score": 0.47383648,
+          "value": "professional"
+        },
+        {
+          "score": 0.44091406,
+          "value": "night"
+        },
+        {
+          "score": 0.42638633,
+          "value": "exfoliators"
+        },
+        {
+          "score": 0.41989544,
+          "value": "cosmetics"
+        },
+        {
+          "score": 0.41660175,
+          "value": "travel"
+        },
+        {
+          "score": 0.40950587,
+          "value": "hyaluronic"
+        },
+        {
+          "score": 0.4078553,
+          "value": "dermalogica"
+        },
+        {
+          "score": 0.4031308,
+          "value": "sunscreen"
+        },
+        {
+          "score": 0.4026528,
+          "value": "exfoliator"
+        },
+        {
+          "score": 0.39549038,
+          "value": "treatment"
+        },
+        {
+          "score": 0.39381546,
+          "value": "clinique"
+        },
+        {
+          "score": 0.37267563,
+          "value": "category"
+        },
+        {
+          "score": 0.36901507,
+          "value": "cleansing"
+        },
+        {
+          "score": 0.36781102,
+          "value": "boutique"
+        },
+        {
+          "score": 0.36367956,
+          "value": "ageing"
+        },
+        {
+          "score": 0.3633204,
+          "value": "cosmetic"
+        },
+        {
+          "score": 0.3602418,
+          "value": "wishlist"
+        },
+        {
+          "score": 0.35979435,
+          "value": "ethical"
+        },
+        {
+          "score": 0.35771427,
+          "value": "conditioner"
+        },
+        {
+          "score": 0.35529643,
+          "value": "exfoliating"
+        },
+        {
+          "score": 0.3528861,
+          "value": "benefit"
+        },
+        {
+          "score": 0.35210833,
+          "value": "shampoo"
+        },
+        {
+          "score": 0.35099918,
+          "value": "fragrance"
+        },
+        {
+          "score": 0.3502419,
+          "value": "revlon"
+        },
+        {
+          "score": 0.347416,
+          "value": "organic"
+        },
+        {
+          "score": 0.34595558,
+          "value": "helpful"
+        },
+        {
+          "score": 0.34414986,
+          "value": "desktop"
+        },
+        {
+          "score": 0.3429852,
+          "value": "face"
+        },
+        {
+          "score": 0.34124237,
+          "value": "categories"
+        },
+        {
+          "score": 0.32529896,
+          "value": "red"
+        },
+        {
+          "score": 0.32340282,
+          "value": "australia"
+        },
+        {
+          "score": 0.32312652,
+          "value": "wishlist email"
+        },
+        {
+          "score": 0.32312652,
+          "value": "red shopping"
+        },
+        {
+          "score": 0.31807387,
+          "value": "treatments"
+        },
+        {
+          "score": 0.31616846,
+          "value": "serums"
+        },
+        {
+          "score": 0.3064512,
+          "value": "heat"
+        },
+        {
+          "score": 0.30471528,
+          "value": "bath"
+        },
+        {
+          "score": 0.30086145,
+          "value": "cleansers"
+        },
+        {
+          "score": 0.29454273,
+          "value": "brow"
+        },
+        {
+          "score": 0.29352617,
+          "value": "brush"
+        },
+        {
+          "score": 0.29230735,
+          "value": "pigmentation"
+        },
+        {
+          "score": 0.29168436,
+          "value": "cleanser"
+        },
+        {
+          "score": 0.28222027,
+          "value": "amazon"
+        },
+        {
+          "score": 0.2787388,
+          "value": "oreal"
+        },
+        {
+          "score": 0.2775617,
+          "value": "nature"
+        },
+        {
+          "score": 0.277107,
+          "value": "sign"
+        },
+        {
+          "score": 0.275328,
+          "value": "contribution"
+        },
+        {
+          "score": 0.2700917,
+          "value": "acne"
+        },
+        {
+          "score": 0.26349297,
+          "value": "mascara"
+        },
+        {
+          "score": 0.2608849,
+          "value": "palettes"
+        },
+        {
+          "score": 0.25992584,
+          "value": "real"
+        },
+        {
+          "score": 0.25855008,
+          "value": "women"
+        },
+        {
+          "score": 0.25408125,
+          "value": "seller"
+        },
+        {
+          "score": 0.25324687,
+          "value": "wash"
+        },
+        {
+          "score": 0.24324515,
+          "value": "vitamin"
+        },
+        {
+          "score": 0.24193268,
+          "value": "london"
+        },
+        {
+          "score": 0.24057576,
+          "value": "card"
+        },
+        {
+          "score": 0.24009363,
+          "value": "organics"
+        },
+        {
+          "score": 0.23888874,
+          "value": "eyeliner"
+        },
+        {
+          "score": 0.23858939,
+          "value": "tanning"
+        },
+        {
+          "score": 0.23157947,
+          "value": "video"
+        },
+        {
+          "score": 0.22818263,
+          "value": "mother"
+        },
+        {
+          "score": 0.2227316,
+          "value": "brows"
+        },
+        {
+          "score": 0.22222814,
+          "value": "room"
+        },
+        {
+          "score": 0.22153397,
+          "value": "samples"
+        },
+        {
+          "score": 0.22136298,
+          "value": "foundation"
+        },
+        {
+          "score": 0.2186211,
+          "value": "color"
+        },
+        {
+          "score": 0.21833105,
+          "value": "express"
+        },
+        {
+          "score": 0.21794873,
+          "value": "pharmacy"
+        },
+        {
+          "score": 0.21660908,
+          "value": "team"
+        },
+        {
+          "score": 0.21524742,
+          "value": "event"
+        },
+        {
+          "score": 0.2151845,
+          "value": "fine"
+        },
+        {
+          "score": 0.21117997,
+          "value": "concealer"
+        },
+        {
+          "score": 0.20784643,
+          "value": "popular"
+        },
+        {
+          "score": 0.20759061,
+          "value": "coverage"
+        },
+        {
+          "score": 0.20571265,
+          "value": "brown"
+        },
+        {
+          "score": 0.20355171,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.20133165,
+          "value": "balm"
+        },
+        {
+          "score": 0.19870847,
+          "value": "liquid"
+        },
+        {
+          "score": 0.19782925,
+          "value": "lashes"
+        },
+        {
+          "score": 0.19741102,
+          "value": "normal"
+        },
+        {
+          "score": 0.19549763,
+          "value": "book"
+        },
+        {
+          "score": 0.19299787,
+          "value": "alpha"
+        },
+        {
+          "score": 0.19071601,
+          "value": "naturopathica"
+        },
+        {
+          "score": 0.19031198,
+          "value": "law"
+        },
+        {
+          "score": 0.18863142,
+          "value": "app"
+        },
+        {
+          "score": 0.18841477,
+          "value": "waterproof"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://getpodcast.com/",
+        "https://www.getpodcast.com/",
+        "http://getpodcast.com/",
+        "http://www.getpodcast.com/"
+      ]
+    },
+    "metaData": {
+      "description": "Listen to podcasts from more than 600,000 international podcasts of different categories. Listen online on the GetPodcast Website now.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/getpodcast.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://getpodcast.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 301,
+        "value": [
+          "1000hour.com.au",
+          "sjv.io",
+          "etsy.com",
+          "apple.com",
+          "amazon.com",
+          "ableclothing.com",
+          "intuit.com",
+          "linkedin.com",
+          "nordstrom.com",
+          "absoluteskin.com.au",
+          "nordvpn.com",
+          "activeskin.com.au",
+          "adagio.com",
+          "adorebeauty.com.au",
+          "ae.com",
+          "walmart.com",
+          "amazon.co.uk",
+          "notion.so",
+          "aidabicaj.com",
+          "airyday.co",
+          "alivebyscience.com",
+          "allmodern.com",
+          "aloyoga.com",
+          "alpha-h.com",
+          "amazon.ca",
+          "amazon.fr",
+          "amazon.com.au",
+          "amex-kreditkarten.de",
+          "revolve.com",
+          "anadey.com.au",
+          "ancestralsupplements.com",
+          "teachable.com",
+          "sephora.com",
+          "anthropologie.com",
+          "grammarly.com",
+          "setapp.com",
+          "artifactuprising.com",
+          "asos.com",
+          "verishop.com",
+          "au.fragrancenet.com",
+          "au.rejuvaus.com",
+          "au.iherb.com",
+          "au.loccitane.com",
+          "au.louisvuitton.com",
+          "jamescosmetics.com",
+          "audiobooks.com",
+          "australiscosmetics.com.au",
+          "ausnz.vidaglow.com",
+          "ava.fr",
+          "awin.com",
+          "bakerpublishinggroup.com",
+          "beautyamora.com.au",
+          "beautybay.com",
+          "bedbathandbeyond.com",
+          "benefitcosmetics.com",
+          "myer.com.au",
+          "urbanoutfitters.com",
+          "bigw.com.au",
+          "binglee.com.au",
+          "birkenstock.com.au",
+          "bioptimizers.com",
+          "biologiquerecherche.com.au",
+          "booktopia.com.au",
+          "freepeople.com",
+          "shopbop.com",
+          "ticketmaster.com",
+          "very.co.uk",
+          "blublox.com",
+          "blueguardian.com",
+          "bluemercury.com",
+          "bol.com",
+          "bonds.com.au",
+          "boody.com.au",
+          "bondiboost.com.au",
+          "bondisands.com.au",
+          "selfridges.com",
+          "boostlabco.com",
+          "bottegaveneta.com",
+          "brandnewday.nl",
+          "brillobeauty.com",
+          "buecher.de",
+          "butcherbox.com",
+          "cosmeticsnow.com.au",
+          "bys.com.au",
+          "calderalab.com",
+          "lululemon.com",
+          "carolbike.com",
+          "target.com",
+          "upside.com",
+          "macys.com",
+          "catch.com.au",
+          "feelunique.com",
+          "gotoskincare.com",
+          "charlottetilbury.com",
+          "indigo.ca",
+          "charliesociete.com",
+          "cheekyglo.com",
+          "chemistwarehouse.com.au",
+          "vacation.inc",
+          "thebodyshop.com",
+          "circleback.com",
+          "cleanshot.com",
+          "clearweatherbrand.com",
+          "clipstudio.net",
+          "clinique.com.au",
+          "cobaboard.com",
+          "coles.com.au",
+          "shopltk.com",
+          "compassmining.io",
+          "contendersclothing.com",
+          "cosmeticcapital.com.au",
+          "couponseeker.com",
+          "cultbeauty.co.uk",
+          "cultbeauty.com",
+          "curednutrition.com",
+          "cymbiotika.com",
+          "pnwcomponents.com",
+          "dashingdiva.com.au",
+          "davidjones.com",
+          "dermstore.com",
+          "dermalogica.com.au",
+          "dermaltherapy.com.au",
+          "dressamed.com",
+          "drinklmnt.com",
+          "drnaomi.com",
+          "drlewinns.com.au",
+          "dryfarmwines.com",
+          "eagle.cool",
+          "eatonhemp.com",
+          "ecoya.com.au",
+          "elizabetharden.com.au",
+          "ellabache.com.au",
+          "emmalewisham.com.au",
+          "equipfoods.com",
+          "eskcare.com",
+          "esteelauder.com.au",
+          "frankbody.com",
+          "yeti.com",
+          "fnac.com",
+          "everlywell.com",
+          "eyrolles.com",
+          "fentybeauty.com",
+          "fitcover.com",
+          "flamingoestate.com",
+          "floraandfauna.com.au",
+          "foursigmatic.com",
+          "fromourplace.com",
+          "mylabbox.com",
+          "getlambs.com",
+          "giorgioarmanibeauty.com.au",
+          "glamraider.com",
+          "ulta.com",
+          "glossier.com",
+          "skimresources.com",
+          "goaxil.com",
+          "goodmolecules.com",
+          "hatch.co",
+          "healthylife.com.au",
+          "hellobubble.com",
+          "supergoop.com",
+          "hero.co",
+          "hiyahealth.com",
+          "holmebeauty.com",
+          "hvmn.com",
+          "iatiseguros.com",
+          "ilmakiage.com",
+          "insuremytrip.com",
+          "woolworths.com.au",
+          "reverb.com",
+          "italki.com",
+          "jigsawhealth.com",
+          "jurlique.com.au",
+          "justthrivehealth.com",
+          "katefarms.com",
+          "keto-mojo.com",
+          "kiehls.com.au",
+          "knackbags.com",
+          "kmart.com.au",
+          "koena.com.au",
+          "lavantcollective.com",
+          "lebasebeauty.com",
+          "lelabofragrances.com.au",
+          "libertineparfumerie.com.au",
+          "libertylondon.com",
+          "lightpathled.com",
+          "lilabeauty.com.au",
+          "lindsayletters.co",
+          "lookfantastic.com.au",
+          "semrush.com",
+          "lulaeyemask.com.au",
+          "maccosmetics.com",
+          "maccosmetics.com.au",
+          "mandaofscandinavia.com.au",
+          "manukora.com",
+          "manychat.com",
+          "marieveronique.com",
+          "mariobadescu.com",
+          "mcobeauty.com",
+          "mecca.com",
+          "mecca.com.au",
+          "megababebeauty.com",
+          "meritbeauty.com",
+          "mountainroseherbs.com",
+          "mudwtr.com",
+          "mypatriotsupply.com",
+          "myserenitykids.com",
+          "mytapscore.com",
+          "nakedsundays.com",
+          "natalieannehaircare.com",
+          "naturium.com.au",
+          "noosabronze.com.au",
+          "nudieglow.com",
+          "nurx.com",
+          "nutrisense.io",
+          "octopus.energy",
+          "olynvolt.com",
+          "theiconic.com.au",
+          "ozsale.com.au",
+          "ozhairandbeauty.com",
+          "parier-sport.com",
+          "paulaschoice.com",
+          "paulaschoice.com.au",
+          "personalabs.com",
+          "pipedrive.com",
+          "piper.de",
+          "piquelife.com",
+          "piquetea.com",
+          "policygenius.com",
+          "portal.thebreathsource.app",
+          "practicebetter.io",
+          "priceline.com.au",
+          "rstyle.me",
+          "pwccmarketplace.com",
+          "qbd.com.au",
+          "rationale.com",
+          "readingeggs.com",
+          "rebelsport.com.au",
+          "recentworkpress.com",
+          "revolutionbeauty.com.au",
+          "revolveclothing.com.au",
+          "rocskincare.com.au",
+          "roguebeauty.com.au",
+          "ruggedroadoutdoors.com",
+          "ry.com.au",
+          "safetywing.com",
+          "saksfifthavenue.com",
+          "scarletperiod.com",
+          "scotchandsoda.com",
+          "semainehealth.com",
+          "sephora.com.au",
+          "shareasale-analytics.com",
+          "shop.bibacosmetics.com.au",
+          "taschen.com",
+          "shopchakredy.com",
+          "siblingskincare.com",
+          "silencercentral.com",
+          "silverbiotics.com",
+          "sisley-paris.com",
+          "skinstitut.com",
+          "skinceuticals.com.au",
+          "skinstore.com",
+          "skinmart.com.au",
+          "skinpluspharmacy.com.au",
+          "skinsocial.com.au",
+          "stardiscountchemist.com.au",
+          "steadyhq.com",
+          "straand.com.au",
+          "stylevana.com",
+          "sundaebody.com",
+          "sunsetdaze.com.au",
+          "superfoods.de",
+          "tbhskincare.com",
+          "theartistslawyer.com",
+          "theclinic.net.au",
+          "thememo.com.au",
+          "thelaborganics.com.au",
+          "theordinary.com",
+          "thetot.com",
+          "thisisneeded.com",
+          "tidalhair.com.au",
+          "tinyhealth.com",
+          "tonymoly.com.au",
+          "trinnylondon.com",
+          "troscriptions.com",
+          "tslskincare.com.au",
+          "ultraviolette.com.au",
+          "ultraceuticals.com.au",
+          "us.lookfantastic.com",
+          "us.foursigmatic.com",
+          "usetemper.com",
+          "usebutton.com",
+          "victoriabeckhambeauty.com",
+          "videopoker.com",
+          "waterandwellness.com",
+          "waveblock.com",
+          "waterstones.com",
+          "wenatal.com",
+          "whoiselijah.com.au",
+          "wildone.com",
+          "withprimeskin.com",
+          "yesstyle.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 9,
+        "value": [
+          {
+            "domain": "us.lookfantastic.com"
+          },
+          {
+            "domain": "semainehealth.com"
+          },
+          {
+            "domain": "us.foursigmatic.com"
+          },
+          {
+            "domain": "notion.so"
+          },
+          {
+            "domain": "au.fragrancenet.com"
+          },
+          {
+            "domain": "parier-sport.com"
+          },
+          {
+            "domain": "au.loccitane.com"
+          },
+          {
+            "domain": "au.louisvuitton.com"
+          },
+          {
+            "domain": "au.iherb.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 5,
+        "value": [
+          {
+            "domain": "lookfantastic.com"
+          },
+          {
+            "domain": "louisvuitton.com"
+          },
+          {
+            "domain": "iherb.com"
+          },
+          {
+            "domain": "loccitane.com"
+          },
+          {
+            "domain": "fragrancenet.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 96.44996,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 23.300001,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 19.300001,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 17.999998,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 12.049999,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 10.5,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 7.55,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 6.4999995,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 5.7,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 5.6,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 4.75,
+            "vertical": "Health / Fragrances"
+          },
+          {
+            "count": 4.65,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 3.8,
+            "vertical": "Health / Drinks"
+          },
+          {
+            "count": 3.7,
+            "vertical": "Finance / Insurance"
+          },
+          {
+            "count": 3.35,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 2.6499999,
+            "vertical": "Home / Babycare"
+          },
+          {
+            "count": 2.6,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 2.55,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 2.55,
+            "vertical": "Sports / Outdoor"
+          },
+          {
+            "count": 2.4499998,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 2.3999999,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Business / CRM"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 1.8,
+            "vertical": "Home / Utilities"
+          },
+          {
+            "count": 1.8,
+            "vertical": "Travel / Flights"
+          },
+          {
+            "count": 1.75,
+            "vertical": "Health / CBD"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Jobs & Careers"
+          },
+          {
+            "count": 1,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 1,
+            "vertical": "Finance / Accounts"
+          },
+          {
+            "count": 1,
+            "vertical": "Gambling / Casino"
+          },
+          {
+            "count": 1,
+            "vertical": "Gambling / Sportsbook"
+          },
+          {
+            "count": 1,
+            "vertical": "Health / Eyecare"
+          },
+          {
+            "count": 1,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 1,
+            "vertical": "Online / VPN"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Energy"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Cards"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Investments"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Food / Alcohol"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Gifts / Personalised"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Beds & Bedding"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Motoring / Motorcycles"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Online / Freebies"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Sports / Cycling"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Travel / Vacation"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Finance / Forex & Crypto"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Finance / Trading"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Art"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Pets"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Sports / Hunting"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Travel / Car Hire"
+          },
+          {
+            "count": 0.8,
+            "vertical": "Business / Cyber Security"
+          },
+          {
+            "count": 0.8,
+            "vertical": "Online / Security"
+          },
+          {
+            "count": 0.5,
+            "vertical": "Entertainment / Hobbies"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 301,
+      "value": [
+        "1000hour.com.au",
+        "sjv.io",
+        "etsy.com",
+        "apple.com",
+        "amazon.com",
+        "ableclothing.com",
+        "intuit.com",
+        "linkedin.com",
+        "nordstrom.com",
+        "absoluteskin.com.au",
+        "nordvpn.com",
+        "activeskin.com.au",
+        "adagio.com",
+        "adorebeauty.com.au",
+        "ae.com",
+        "walmart.com",
+        "amazon.co.uk",
+        "notion.so",
+        "aidabicaj.com",
+        "airyday.co",
+        "alivebyscience.com",
+        "allmodern.com",
+        "aloyoga.com",
+        "alpha-h.com",
+        "amazon.ca",
+        "amazon.fr",
+        "amazon.com.au",
+        "amex-kreditkarten.de",
+        "revolve.com",
+        "anadey.com.au",
+        "ancestralsupplements.com",
+        "teachable.com",
+        "sephora.com",
+        "anthropologie.com",
+        "grammarly.com",
+        "setapp.com",
+        "artifactuprising.com",
+        "asos.com",
+        "verishop.com",
+        "au.fragrancenet.com",
+        "au.rejuvaus.com",
+        "au.iherb.com",
+        "au.loccitane.com",
+        "au.louisvuitton.com",
+        "jamescosmetics.com",
+        "audiobooks.com",
+        "australiscosmetics.com.au",
+        "ausnz.vidaglow.com",
+        "ava.fr",
+        "awin.com",
+        "bakerpublishinggroup.com",
+        "beautyamora.com.au",
+        "beautybay.com",
+        "bedbathandbeyond.com",
+        "benefitcosmetics.com",
+        "myer.com.au",
+        "urbanoutfitters.com",
+        "bigw.com.au",
+        "binglee.com.au",
+        "birkenstock.com.au",
+        "bioptimizers.com",
+        "biologiquerecherche.com.au",
+        "booktopia.com.au",
+        "freepeople.com",
+        "shopbop.com",
+        "ticketmaster.com",
+        "very.co.uk",
+        "blublox.com",
+        "blueguardian.com",
+        "bluemercury.com",
+        "bol.com",
+        "bonds.com.au",
+        "boody.com.au",
+        "bondiboost.com.au",
+        "bondisands.com.au",
+        "selfridges.com",
+        "boostlabco.com",
+        "bottegaveneta.com",
+        "brandnewday.nl",
+        "brillobeauty.com",
+        "buecher.de",
+        "butcherbox.com",
+        "cosmeticsnow.com.au",
+        "bys.com.au",
+        "calderalab.com",
+        "lululemon.com",
+        "carolbike.com",
+        "target.com",
+        "upside.com",
+        "macys.com",
+        "catch.com.au",
+        "feelunique.com",
+        "gotoskincare.com",
+        "charlottetilbury.com",
+        "indigo.ca",
+        "charliesociete.com",
+        "cheekyglo.com",
+        "chemistwarehouse.com.au",
+        "vacation.inc",
+        "thebodyshop.com",
+        "circleback.com",
+        "cleanshot.com",
+        "clearweatherbrand.com",
+        "clipstudio.net",
+        "clinique.com.au",
+        "cobaboard.com",
+        "coles.com.au",
+        "shopltk.com",
+        "compassmining.io",
+        "contendersclothing.com",
+        "cosmeticcapital.com.au",
+        "couponseeker.com",
+        "cultbeauty.co.uk",
+        "cultbeauty.com",
+        "curednutrition.com",
+        "cymbiotika.com",
+        "pnwcomponents.com",
+        "dashingdiva.com.au",
+        "davidjones.com",
+        "dermstore.com",
+        "dermalogica.com.au",
+        "dermaltherapy.com.au",
+        "dressamed.com",
+        "drinklmnt.com",
+        "drnaomi.com",
+        "drlewinns.com.au",
+        "dryfarmwines.com",
+        "eagle.cool",
+        "eatonhemp.com",
+        "ecoya.com.au",
+        "elizabetharden.com.au",
+        "ellabache.com.au",
+        "emmalewisham.com.au",
+        "equipfoods.com",
+        "eskcare.com",
+        "esteelauder.com.au",
+        "frankbody.com",
+        "yeti.com",
+        "fnac.com",
+        "everlywell.com",
+        "eyrolles.com",
+        "fentybeauty.com",
+        "fitcover.com",
+        "flamingoestate.com",
+        "floraandfauna.com.au",
+        "foursigmatic.com",
+        "fromourplace.com",
+        "mylabbox.com",
+        "getlambs.com",
+        "giorgioarmanibeauty.com.au",
+        "glamraider.com",
+        "ulta.com",
+        "glossier.com",
+        "skimresources.com",
+        "goaxil.com",
+        "goodmolecules.com",
+        "hatch.co",
+        "healthylife.com.au",
+        "hellobubble.com",
+        "supergoop.com",
+        "hero.co",
+        "hiyahealth.com",
+        "holmebeauty.com",
+        "hvmn.com",
+        "iatiseguros.com",
+        "ilmakiage.com",
+        "insuremytrip.com",
+        "woolworths.com.au",
+        "reverb.com",
+        "italki.com",
+        "jigsawhealth.com",
+        "jurlique.com.au",
+        "justthrivehealth.com",
+        "katefarms.com",
+        "keto-mojo.com",
+        "kiehls.com.au",
+        "knackbags.com",
+        "kmart.com.au",
+        "koena.com.au",
+        "lavantcollective.com",
+        "lebasebeauty.com",
+        "lelabofragrances.com.au",
+        "libertineparfumerie.com.au",
+        "libertylondon.com",
+        "lightpathled.com",
+        "lilabeauty.com.au",
+        "lindsayletters.co",
+        "lookfantastic.com.au",
+        "semrush.com",
+        "lulaeyemask.com.au",
+        "maccosmetics.com",
+        "maccosmetics.com.au",
+        "mandaofscandinavia.com.au",
+        "manukora.com",
+        "manychat.com",
+        "marieveronique.com",
+        "mariobadescu.com",
+        "mcobeauty.com",
+        "mecca.com",
+        "mecca.com.au",
+        "megababebeauty.com",
+        "meritbeauty.com",
+        "mountainroseherbs.com",
+        "mudwtr.com",
+        "mypatriotsupply.com",
+        "myserenitykids.com",
+        "mytapscore.com",
+        "nakedsundays.com",
+        "natalieannehaircare.com",
+        "naturium.com.au",
+        "noosabronze.com.au",
+        "nudieglow.com",
+        "nurx.com",
+        "nutrisense.io",
+        "octopus.energy",
+        "olynvolt.com",
+        "theiconic.com.au",
+        "ozsale.com.au",
+        "ozhairandbeauty.com",
+        "parier-sport.com",
+        "paulaschoice.com",
+        "paulaschoice.com.au",
+        "personalabs.com",
+        "pipedrive.com",
+        "piper.de",
+        "piquelife.com",
+        "piquetea.com",
+        "policygenius.com",
+        "portal.thebreathsource.app",
+        "practicebetter.io",
+        "priceline.com.au",
+        "rstyle.me",
+        "pwccmarketplace.com",
+        "qbd.com.au",
+        "rationale.com",
+        "readingeggs.com",
+        "rebelsport.com.au",
+        "recentworkpress.com",
+        "revolutionbeauty.com.au",
+        "revolveclothing.com.au",
+        "rocskincare.com.au",
+        "roguebeauty.com.au",
+        "ruggedroadoutdoors.com",
+        "ry.com.au",
+        "safetywing.com",
+        "saksfifthavenue.com",
+        "scarletperiod.com",
+        "scotchandsoda.com",
+        "semainehealth.com",
+        "sephora.com.au",
+        "shareasale-analytics.com",
+        "shop.bibacosmetics.com.au",
+        "taschen.com",
+        "shopchakredy.com",
+        "siblingskincare.com",
+        "silencercentral.com",
+        "silverbiotics.com",
+        "sisley-paris.com",
+        "skinstitut.com",
+        "skinceuticals.com.au",
+        "skinstore.com",
+        "skinmart.com.au",
+        "skinpluspharmacy.com.au",
+        "skinsocial.com.au",
+        "stardiscountchemist.com.au",
+        "steadyhq.com",
+        "straand.com.au",
+        "stylevana.com",
+        "sundaebody.com",
+        "sunsetdaze.com.au",
+        "superfoods.de",
+        "tbhskincare.com",
+        "theartistslawyer.com",
+        "theclinic.net.au",
+        "thememo.com.au",
+        "thelaborganics.com.au",
+        "theordinary.com",
+        "thetot.com",
+        "thisisneeded.com",
+        "tidalhair.com.au",
+        "tinyhealth.com",
+        "tonymoly.com.au",
+        "trinnylondon.com",
+        "troscriptions.com",
+        "tslskincare.com.au",
+        "ultraviolette.com.au",
+        "ultraceuticals.com.au",
+        "us.lookfantastic.com",
+        "us.foursigmatic.com",
+        "usetemper.com",
+        "usebutton.com",
+        "victoriabeckhambeauty.com",
+        "videopoker.com",
+        "waterandwellness.com",
+        "waveblock.com",
+        "waterstones.com",
+        "wenatal.com",
+        "whoiselijah.com.au",
+        "wildone.com",
+        "withprimeskin.com",
+        "yesstyle.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Entertainment / Music",
+      "value": [
+        "Entertainment / Music",
+        "Entertainment / Streaming"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Entertainment / Music",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Entertainment / Music",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Entertainment / Streaming",
+          "rank": 1,
+          "score": 85
+        }
+      ]
+    }
+  }
+}

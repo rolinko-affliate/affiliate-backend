@@ -1,0 +1,772 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 7,
+      "sampleValue": [
+        "Awin",
+        "CJ Affiliate",
+        "Impact"
+      ],
+      "value": [
+        "Awin",
+        "CJ Affiliate",
+        "Impact",
+        "Partnerize",
+        "Rakuten",
+        "Skimlinks",
+        "Webgains"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.4
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.4
+        },
+        {
+          "countryCode": "jp",
+          "score": 0.15
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.4
+        },
+        {
+          "countryCode": "jp",
+          "score": 0.15
+        }
+      ]
+    },
+    "domain": "kenkofishing-tackle.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "issue"
+        },
+        {
+          "score": 0.97674406,
+          "value": "magazine"
+        },
+        {
+          "score": 0.8191321,
+          "value": "country"
+        },
+        {
+          "score": 0.4192516,
+          "value": "gaming"
+        },
+        {
+          "score": 0.30417612,
+          "value": "basket"
+        },
+        {
+          "score": 0.29844394,
+          "value": "woman"
+        },
+        {
+          "score": 0.29706025,
+          "value": "idea"
+        },
+        {
+          "score": 0.28774276,
+          "value": "single"
+        },
+        {
+          "score": 0.28719506,
+          "value": "single issue"
+        },
+        {
+          "score": 0.2731718,
+          "value": "fashion"
+        },
+        {
+          "score": 0.27168736,
+          "value": "hobby"
+        },
+        {
+          "score": 0.26964033,
+          "value": "equestrian"
+        },
+        {
+          "score": 0.26893815,
+          "value": "celebrity"
+        },
+        {
+          "score": 0.2661294,
+          "value": "equestrian fashion"
+        },
+        {
+          "score": 0.2661294,
+          "value": "leisure"
+        },
+        {
+          "score": 0.2647136,
+          "value": "edition"
+        },
+        {
+          "score": 0.21416746,
+          "value": "photography"
+        },
+        {
+          "score": 0.1820029,
+          "value": "future"
+        },
+        {
+          "score": 0.16908863,
+          "value": "digital"
+        },
+        {
+          "score": 0.16501427,
+          "value": "binder"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "issue"
+        },
+        {
+          "score": 0.97674406,
+          "value": "magazine"
+        },
+        {
+          "score": 0.8191321,
+          "value": "country"
+        },
+        {
+          "score": 0.4192516,
+          "value": "gaming"
+        },
+        {
+          "score": 0.30417612,
+          "value": "basket"
+        },
+        {
+          "score": 0.29844394,
+          "value": "woman"
+        },
+        {
+          "score": 0.29706025,
+          "value": "idea"
+        },
+        {
+          "score": 0.28774276,
+          "value": "single"
+        },
+        {
+          "score": 0.28719506,
+          "value": "single issue"
+        },
+        {
+          "score": 0.2731718,
+          "value": "fashion"
+        },
+        {
+          "score": 0.27168736,
+          "value": "hobby"
+        },
+        {
+          "score": 0.26964033,
+          "value": "equestrian"
+        },
+        {
+          "score": 0.26893815,
+          "value": "celebrity"
+        },
+        {
+          "score": 0.2661294,
+          "value": "equestrian fashion"
+        },
+        {
+          "score": 0.2661294,
+          "value": "leisure"
+        },
+        {
+          "score": 0.2647136,
+          "value": "edition"
+        },
+        {
+          "score": 0.21416746,
+          "value": "photography"
+        },
+        {
+          "score": 0.1820029,
+          "value": "future"
+        },
+        {
+          "score": 0.16908863,
+          "value": "digital"
+        },
+        {
+          "score": 0.16501427,
+          "value": "binder"
+        },
+        {
+          "score": 0.16338925,
+          "value": "tech"
+        },
+        {
+          "score": 0.16080114,
+          "value": "postage"
+        },
+        {
+          "score": 0.13385645,
+          "value": "team"
+        },
+        {
+          "score": 0.13314652,
+          "value": "offer"
+        },
+        {
+          "score": 0.1207764,
+          "value": "guarantee"
+        },
+        {
+          "score": 0.115376644,
+          "value": "cover"
+        },
+        {
+          "score": 0.113480896,
+          "value": "style"
+        },
+        {
+          "score": 0.10673264,
+          "value": "difference"
+        },
+        {
+          "score": 0.10651325,
+          "value": "cheap"
+        },
+        {
+          "score": 0.10125896,
+          "value": "music"
+        },
+        {
+          "score": 0.10041294,
+          "value": "beautiful"
+        },
+        {
+          "score": 0.09830637,
+          "value": "covermount"
+        },
+        {
+          "score": 0.09798653,
+          "value": "card"
+        },
+        {
+          "score": 0.097286865,
+          "value": "sport"
+        },
+        {
+          "score": 0.09601079,
+          "value": "dedicated"
+        },
+        {
+          "score": 0.09356951,
+          "value": "field"
+        },
+        {
+          "score": 0.092688866,
+          "value": "dedicated service"
+        },
+        {
+          "score": 0.092688866,
+          "value": "digital magazine"
+        },
+        {
+          "score": 0.092688866,
+          "value": "inclusive"
+        },
+        {
+          "score": 0.09198668,
+          "value": "change"
+        },
+        {
+          "score": 0.09128449,
+          "value": "beautiful home"
+        },
+        {
+          "score": 0.08917792,
+          "value": "covermount gift"
+        },
+        {
+          "score": 0.08822327,
+          "value": "student"
+        },
+        {
+          "score": 0.08752552,
+          "value": "download"
+        },
+        {
+          "score": 0.08707136,
+          "value": "magazinesdirect"
+        },
+        {
+          "score": 0.084736325,
+          "value": "print"
+        },
+        {
+          "score": 0.083560415,
+          "value": "future publishing"
+        },
+        {
+          "score": 0.083560415,
+          "value": "publishing"
+        },
+        {
+          "score": 0.08288326,
+          "value": "step"
+        },
+        {
+          "score": 0.08145385,
+          "value": "promise"
+        },
+        {
+          "score": 0.08145385,
+          "value": "cheap subscription"
+        },
+        {
+          "score": 0.08145385,
+          "value": "z photography"
+        },
+        {
+          "score": 0.08145385,
+          "value": "inclusive magazine"
+        },
+        {
+          "score": 0.0786451,
+          "value": "mymagazine"
+        },
+        {
+          "score": 0.0781192,
+          "value": "update"
+        },
+        {
+          "score": 0.07724072,
+          "value": "illustrative purpose"
+        },
+        {
+          "score": 0.07724072,
+          "value": "illustrative"
+        },
+        {
+          "score": 0.07621845,
+          "value": "ultimate"
+        },
+        {
+          "score": 0.07384408,
+          "value": "direct"
+        },
+        {
+          "score": 0.07162321,
+          "value": "annual"
+        },
+        {
+          "score": 0.0672068,
+          "value": "life"
+        },
+        {
+          "score": 0.06600571,
+          "value": "format"
+        },
+        {
+          "score": 0.06566461,
+          "value": "international"
+        },
+        {
+          "score": 0.06496476,
+          "value": "guide"
+        },
+        {
+          "score": 0.061060414,
+          "value": "location"
+        },
+        {
+          "score": 0.060759187,
+          "value": "phone"
+        },
+        {
+          "score": 0.05952355,
+          "value": "people"
+        },
+        {
+          "score": 0.058725443,
+          "value": "specific"
+        },
+        {
+          "score": 0.058281638,
+          "value": "trouble"
+        },
+        {
+          "score": 0.057606507,
+          "value": "tablet"
+        },
+        {
+          "score": 0.057153046,
+          "value": "requirement"
+        },
+        {
+          "score": 0.05702592,
+          "value": "region"
+        },
+        {
+          "score": 0.05617507,
+          "value": "pricing"
+        },
+        {
+          "score": 0.05547288,
+          "value": "international delivery"
+        },
+        {
+          "score": 0.05547288,
+          "value": "independent"
+        },
+        {
+          "score": 0.05547288,
+          "value": "independent customer"
+        },
+        {
+          "score": 0.05547288,
+          "value": "specific delivery"
+        },
+        {
+          "score": 0.05547288,
+          "value": "mailing"
+        },
+        {
+          "score": 0.05196194,
+          "value": "rolling"
+        },
+        {
+          "score": 0.0438176,
+          "value": "instant"
+        },
+        {
+          "score": 0.03862036,
+          "value": "direct magazine"
+        },
+        {
+          "score": 0.037215985,
+          "value": "preferred"
+        },
+        {
+          "score": 0.034777295,
+          "value": "story"
+        },
+        {
+          "score": 0.033597,
+          "value": "subject"
+        },
+        {
+          "score": 0.033002853,
+          "value": "debit"
+        },
+        {
+          "score": 0.033002853,
+          "value": "book"
+        },
+        {
+          "score": 0.032032054,
+          "value": "bundle"
+        },
+        {
+          "score": 0.03159848,
+          "value": "rule"
+        },
+        {
+          "score": 0.031050183,
+          "value": "complete"
+        },
+        {
+          "score": 0.030977825,
+          "value": "range"
+        },
+        {
+          "score": 0.03089629,
+          "value": "digital bundle"
+        },
+        {
+          "score": 0.029695848,
+          "value": "wireless"
+        },
+        {
+          "score": 0.0296656,
+          "value": "monthly"
+        },
+        {
+          "score": 0.029594852,
+          "value": "summary"
+        },
+        {
+          "score": 0.029491913,
+          "value": "surprise"
+        },
+        {
+          "score": 0.029491913,
+          "value": "renewal"
+        },
+        {
+          "score": 0.02880094,
+          "value": "charge"
+        },
+        {
+          "score": 0.028789723,
+          "value": "continuous"
+        },
+        {
+          "score": 0.028789723,
+          "value": "mind"
+        },
+        {
+          "score": 0.028087536,
+          "value": "paint"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 2,
+      "value": [
+        "http://kenkofishing-tackle.com/",
+        "http://www.kenkofishing-tackle.com/"
+      ]
+    },
+    "metaData": {
+      "description": "澳洲幸运8官网开奖最快 2022澳洲幸运8开奖结果体彩网站 168澳洲8现场直播结果 2022澳洲幸运8开奖结果中国体彩：体彩网 开奖结果官方 开奖视频直播 查询历史记录 免费提供数据分析 预测码计划 单双大小路珠 胜率极高 开奖速度全网最快 官网官方平台 | Growth starts with engaged users. From user onboarding through adoption and retention. Get started for free.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/kenkofishing-tackle.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://kenkofishing-tackle.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 42,
+        "value": [
+          "aliexpress.com",
+          "apple.com",
+          "microsoft.com",
+          "netflix.com",
+          "dell.com",
+          "msi.com",
+          "lenovo.com",
+          "xbox.com",
+          "acer.com",
+          "steelseries.com",
+          "hp.com",
+          "soundcloud.com",
+          "argos.co.uk",
+          "sonos.com",
+          "ibuypower.com",
+          "macsales.com",
+          "very.co.uk",
+          "westerndigital.com",
+          "box.co.uk",
+          "currys.co.uk",
+          "cdkeys.com",
+          "cclonline.com",
+          "corsair.com",
+          "kinguin.net",
+          "sennheiser.com",
+          "staples.com",
+          "epson.com",
+          "monoprice.com",
+          "ebuyer.com",
+          "eneba.com",
+          "newegg.com",
+          "overclockers.co.uk",
+          "hermanmiller.com",
+          "gamestop.com",
+          "gamivo.com",
+          "jlab.com",
+          "laptopsdirect.co.uk",
+          "lg.com",
+          "magazinesdirect.com",
+          "music.amazon.com",
+          "originpc.com",
+          "scan.co.uk"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 6,
+        "value": [
+          {
+            "domain": "autodesk.com"
+          },
+          {
+            "domain": "ubi.com"
+          },
+          {
+            "domain": "tp-link.com"
+          },
+          {
+            "domain": "ubisoft.com"
+          },
+          {
+            "domain": "gog.com"
+          },
+          {
+            "domain": "asus.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 16.349998,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 9.599999,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 6.4999995,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 1.75,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Office"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Mobile & Broadband"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 42,
+      "value": [
+        "aliexpress.com",
+        "apple.com",
+        "microsoft.com",
+        "netflix.com",
+        "dell.com",
+        "msi.com",
+        "lenovo.com",
+        "xbox.com",
+        "acer.com",
+        "steelseries.com",
+        "hp.com",
+        "soundcloud.com",
+        "argos.co.uk",
+        "sonos.com",
+        "ibuypower.com",
+        "macsales.com",
+        "very.co.uk",
+        "westerndigital.com",
+        "box.co.uk",
+        "currys.co.uk",
+        "cdkeys.com",
+        "cclonline.com",
+        "corsair.com",
+        "kinguin.net",
+        "sennheiser.com",
+        "staples.com",
+        "epson.com",
+        "monoprice.com",
+        "ebuyer.com",
+        "eneba.com",
+        "newegg.com",
+        "overclockers.co.uk",
+        "hermanmiller.com",
+        "gamestop.com",
+        "gamivo.com",
+        "jlab.com",
+        "laptopsdirect.co.uk",
+        "lg.com",
+        "magazinesdirect.com",
+        "music.amazon.com",
+        "originpc.com",
+        "scan.co.uk"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Sports / Equipment",
+      "value": [
+        "Sports / Equipment",
+        "Entertainment / Hobbies"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Sports / Equipment",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Sports / Equipment",
+          "rank": 1,
+          "score": 95
+        },
+        {
+          "name": "Entertainment / Hobbies",
+          "rank": 1,
+          "score": 80
+        }
+      ]
+    }
+  }
+}

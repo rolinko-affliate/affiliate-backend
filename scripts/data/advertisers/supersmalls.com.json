@@ -1,0 +1,285 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 8,
+      "sampleValue": [
+        "Impact",
+        "Linkbux",
+        "Partnermatic"
+      ],
+      "value": [
+        "Impact",
+        "Linkbux",
+        "Partnermatic",
+        "Skimlinks",
+        "SourceKnowledge",
+        "Takeads",
+        "Viglink",
+        "Yieldkit"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 1,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "hello@supersmalls.com"
+        }
+      ]
+    },
+    "domain": "supersmalls.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "Super Smalls is a feel good accessories brand that celebrates the sparkle in all of us. At Super Smalls, we prioritize play, we love to laugh and we add a little umph to the everyday!",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/supersmalls.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://supersmalls.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 228
+      },
+      "partnersAdded": {
+        "count": 4,
+        "value": [
+          {
+            "domain": "nvxingwang.net"
+          },
+          {
+            "domain": "brand-site-purewow-production.us-east-1.k8s.gallerymediagroup.net"
+          },
+          {
+            "domain": "verifiedpromocode.com"
+          },
+          {
+            "domain": "promocodes.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 4,
+        "value": [
+          {
+            "domain": "av-5858.com"
+          },
+          {
+            "domain": "tarique.net"
+          },
+          {
+            "domain": "thisishealthyworld.com"
+          },
+          {
+            "domain": "doggiesandkittys.co.uk"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 81,
+            "promotype": "blog",
+            "value": [
+              "amazon.co.uk",
+              "aol.com",
+              "augustachronicle.com",
+              "aynasguide.com",
+              "beautyandfashionadvice.com",
+              "bucyrustelegraphforum.com",
+              "budgetgainer.com",
+              "burlingtonfreepress.com",
+              "buzzfeed.com",
+              "chillicothegazette.com",
+              "chillicothetimesbulletin.com",
+              "codeabo.com",
+              "codesfit.com",
+              "cosmopolitan.com",
+              "courier-journal.com",
+              "dietkeg.com",
+              "dogster.com",
+              "ellwoodcityledger.com",
+              "elpasoymas.com",
+              "emilyreviews.com",
+              "fdlreporter.com",
+              "femalewardrobe.com",
+              "flidbe.com",
+              "forbes.com",
+              "heraldtribune.com",
+              "hkfashionmall.com",
+              "hollywoodentertainmentnews.com",
+              "houmatoday.com",
+              "htrnews.com",
+              "huffpost.com",
+              "iheartcats.com",
+              "iheartdogs.com",
+              "indy100.com",
+              "ithacajournal.com",
+              "jesscaticles-helpdesk.teachery.co",
+              "joinitems.net",
+              "journalstandard.com",
+              "lifetimewebdesigns.com",
+              "luminablog.com",
+              "marieclaire.com",
+              "marshfieldnewsherald.com",
+              "mysubscriptionaddiction.com",
+              "newarkadvocate.com",
+              "newportri.com",
+              "newsleader.com",
+              "nwfdailynews.com",
+              "nytimesnewstoday.com",
+              "oprahdaily.com",
+              "pal-item.com",
+              "palmbeachpost.com",
+              "peoplelovinganimals.com",
+              "petguide.com",
+              "petkeen.com",
+              "petnewslive.com",
+              "petsinformers.com",
+              "poconorecord.com",
+              "publicopiniononline.com",
+              "rover.com",
+              "shopmy.us",
+              "shreveporttimes.com",
+              "siskiyoudaily.com",
+              "southcoasttoday.com",
+              "stargazette.com",
+              "thecut.com",
+              "thedailyjournal.com",
+              "the-daily-record.com",
+              "thedigitalsparks.com",
+              "thepioneerwoman.com",
+              "time.com",
+              "tinybeans.com",
+              "tuscaloosanews.com",
+              "usagag.com",
+              "verifiedpromocode.com",
+              "vvdailypress.com",
+              "wadav.com",
+              "wagtopia.com",
+              "wallpaper.com",
+              "whowhatwear.com",
+              "wisconsinrapidstribune.com",
+              "womansday.com",
+              "zeediscount.com"
+            ]
+          },
+          {
+            "count": 8,
+            "promotype": "incentive",
+            "value": [
+              "bestverified.coupons",
+              "couponkin.com",
+              "couponorcouponcode.com",
+              "couponsnake.com",
+              "couponzguruusa.com",
+              "especialcoupons.com",
+              "shopcoupondeal.com",
+              "usmagazine.com"
+            ]
+          },
+          {
+            "count": 20,
+            "promotype": "student",
+            "value": [
+              "blueridgenow.com",
+              "catster.com",
+              "goodmorningamerica.com",
+              "gosanangelo.com",
+              "goupstate.com",
+              "huffingtonpost.co.uk",
+              "masandpas.com",
+              "metabee.de",
+              "onlinenichestores.com",
+              "promocodes.com",
+              "proweblinks.com",
+              "realestateinvestmenttrust.vip",
+              "redbookmag.com",
+              "saulttribeguardian.com",
+              "swtimes.com",
+              "thenews-messenger.com",
+              "timesrecordnews.com",
+              "urbantastebud.com",
+              "write.as",
+              "yahoo.com"
+            ]
+          },
+          {
+            "count": 13,
+            "promotype": "content",
+            "value": [
+              "burlingtoncountytimes.com",
+              "catological.com",
+              "coachtoursltd.com",
+              "dailytimes247.com",
+              "entertainmentnewsboom.com",
+              "greatfallstribune.com",
+              "harpersbazaar.com",
+              "mealfinds.com",
+              "progress-index.com",
+              "the-leader.com",
+              "townandcountrymag.com",
+              "vogue.com",
+              "worldpetinfo.com"
+            ]
+          },
+          {
+            "count": 2,
+            "promotype": "forum",
+            "value": [
+              "housebeautiful.com",
+              "linkbux.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 3,
+      "socialsAvailable": [
+        "facebook",
+        "instagram",
+        "pinterest"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/supersmallsnyc",
+        "instagram": "https://instagram.com/super.smalls",
+        "pinterest": "https://pinterest.com/super_smalls"
+      }
+    },
+    "verticals": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Business / Ecommerce",
+        "rank": 2,
+        "score": 60
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 2,
+          "score": 60
+        },
+        {
+          "name": "Fashion / Lingerie",
+          "rank": 2,
+          "score": 50
+        },
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 2,
+          "score": 40
+        }
+      ]
+    }
+  }
+}

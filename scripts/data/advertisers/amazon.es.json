@@ -1,0 +1,163 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 9,
+      "sampleValue": [
+        "ClickMagick",
+        "CueLinks",
+        "Digidip"
+      ],
+      "value": [
+        "ClickMagick",
+        "CueLinks",
+        "Digidip",
+        "Rewardstyle",
+        "Shopnomix",
+        "Skimlinks",
+        "TradeTracker",
+        "Viglink",
+        "Yieldkit"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 2,
+      "error": false,
+      "value": [
+        {
+          "department": "legal",
+          "value": "eu-privacy@amazon.es"
+        },
+        {
+          "department": null,
+          "value": "privacyshield@amazon.com"
+        }
+      ]
+    },
+    "domain": "amazon.es",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "Descubre y compra online: electrónica, moda, hogar, libros, deporte y mucho más a precios bajos en Amazon.es. Envío gratis con Amazon Prime.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazon.es.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazon.es"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 75
+      },
+      "partnersAdded": {
+        "count": 3,
+        "value": [
+          {
+            "domain": "hr.actualidadiphone.com"
+          },
+          {
+            "domain": "vi.actualidadiphone.com"
+          },
+          {
+            "domain": "hidefninja.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "peggynelson.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 21,
+            "promotype": "blog",
+            "value": [
+              "actualidadgadget.com",
+              "actualidadiphone.com",
+              "androidsis.com",
+              "cupoes-e-promocoes.pt",
+              "derektmckinney.com",
+              "descuento.guru",
+              "easss.com",
+              "geni.us",
+              "glowsly.com",
+              "greenweddingshoes.com",
+              "mesenvies.fr",
+              "preispirat.ch",
+              "q-chic.blogspot.com",
+              "tambulimedia.com",
+              "techadvisor.com",
+              "theoldreader.com",
+              "vein.es",
+              "web01.teenvogueinsider.com",
+              "wishlistr.com",
+              "xombit.com",
+              "zszhair.com"
+            ]
+          },
+          {
+            "count": 9,
+            "promotype": "student",
+            "value": [
+              "americansforabetteramerica.com",
+              "blog.ecosyllaba.info",
+              "glamour.es",
+              "mydesires.com",
+              "notjust.fashion",
+              "onlinephilosophyclub.com",
+              "techtelegraph.co.uk",
+              "teenvogue.com",
+              "v2.fi"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "forum",
+            "value": [
+              "fashionworldvip.com"
+            ]
+          },
+          {
+            "count": 2,
+            "promotype": "incentive",
+            "value": [
+              "linkmydeals.com",
+              "smugdeals.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "verticals": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 2,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 2,
+          "score": 95
+        }
+      ]
+    }
+  }
+}

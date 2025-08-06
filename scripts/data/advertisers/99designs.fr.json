@@ -1,0 +1,189 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "CJ Affiliate"
+      ],
+      "value": [
+        "CJ Affiliate"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 10,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "affiliates@99designs.com"
+        },
+        {
+          "department": "support",
+          "value": "caitlin.collins@99designs.com"
+        },
+        {
+          "department": "support",
+          "value": "emma.maidment@99designs.com"
+        },
+        {
+          "department": null,
+          "value": "influencers@99designs.com"
+        },
+        {
+          "department": "support",
+          "value": "jason@99designs.com"
+        },
+        {
+          "department": "support",
+          "value": "lauren.gard@99designs.com"
+        },
+        {
+          "department": null,
+          "value": "pr@99designs.com"
+        },
+        {
+          "department": "communication",
+          "value": "press@99designs.com"
+        },
+        {
+          "department": "legal",
+          "value": "privacy@99designs.com"
+        },
+        {
+          "department": "support",
+          "value": "support@99designs.com"
+        }
+      ]
+    },
+    "domain": "99designs.fr",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "La plateforme créative internationale pour des designs personnalisés : logos, designs de site internet et plus. Engagez un designer talentueux ou commencez un concours de design. Plus de 500,000 clients satisfaits se sont déjà servis de 99designs pour faire grandir leur entreprise.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/99designs.fr.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://99designs.fr"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 30
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "thisit.de"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "makingsenseofcents.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 10,
+            "promotype": "blog",
+            "value": [
+              "constantstrategies.com",
+              "devlatino.com",
+              "elevatesociety.com",
+              "incomeactivator.com",
+              "neatpedia.com",
+              "obiztools.com",
+              "survivingeurope.com",
+              "theapiguys.com",
+              "thedigitalmerchant.com",
+              "vouchercodesuae.com"
+            ]
+          },
+          {
+            "count": 2,
+            "promotype": "content",
+            "value": [
+              "eyewebmaster.com",
+              "newandnoteworthy.net"
+            ]
+          },
+          {
+            "count": 6,
+            "promotype": "student",
+            "value": [
+              "marketingaccesspass.com",
+              "mirexmarketing.com",
+              "oddballwealth.com",
+              "thisit.de",
+              "webcid.com",
+              "writehacked.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "incentive",
+            "value": [
+              "millo.co"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 6,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "linkedin",
+        "instagram",
+        "pinterest"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/99designs.fr",
+        "instagram": "https://instagram.com/99designs",
+        "linkedin": "https://linkedin.com/company/99designs",
+        "pinterest": "https://pinterest.com/99designs",
+        "twitter": "https://twitter.com/99designs_fr",
+        "youtube": "https://youtube.com/channel/uc-xu--xxsovzjq07jwmzrsw"
+      }
+    },
+    "verticals": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Online / Web Design",
+        "rank": 2,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Business / Services",
+          "rank": 2,
+          "score": 90
+        },
+        {
+          "name": "Online / Web Design",
+          "rank": 2,
+          "score": 95
+        },
+        {
+          "name": "Technology / Software",
+          "rank": 2,
+          "score": 60
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 3,
+      "sampleValue": [
+        "ShareASale",
+        "Skimlinks",
+        "Viglink"
+      ],
+      "value": [
+        "ShareASale",
+        "Skimlinks",
+        "Viglink"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 3,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "admin@inventorylab.com"
+        },
+        {
+          "department": null,
+          "value": "admin@inventorylab.com."
+        },
+        {
+          "department": "support",
+          "value": "support@inventorylab.com"
+        }
+      ]
+    },
+    "domain": "inventorylab.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "Take your eCommerce business to the next level with InventoryLab. Scout products, simplify your listing process, track key accounting figures, and more!",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/inventorylab.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://inventorylab.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 41
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 15,
+            "promotype": "blog",
+            "value": [
+              "10reviewsplus.com",
+              "1topproduct.com",
+              "500toprated.com",
+              "amazonsellersclub.co",
+              "arbitrage411.com",
+              "booktothefuture.com",
+              "brock.tv",
+              "cleartheshelf.com",
+              "liveworktravelusa.com",
+              "meersworld.net",
+              "notyourdadscpa.com",
+              "ruizhidong.com",
+              "shift4shop.com",
+              "thebookflipper.com",
+              "ubestpick.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "incentive",
+            "value": [
+              "awesomecoupons.org"
+            ]
+          },
+          {
+            "count": 3,
+            "promotype": "student",
+            "value": [
+              "droppricetoday.com",
+              "madronify.com",
+              "mommyincome.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 3,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/inventorylab",
+        "twitter": "https://twitter.com/inventorylab?lang=en",
+        "youtube": "https://youtube.com/channel/uc44-wgkoyp0bxwol70bu7jg"
+      }
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Business / Software",
+        "rank": 2,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 2,
+          "score": 90
+        },
+        {
+          "name": "Business / Software",
+          "rank": 2,
+          "score": 100
+        }
+      ]
+    }
+  }
+}

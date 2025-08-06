@@ -1,0 +1,710 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 7,
+      "sampleValue": [
+        "Awin",
+        "CommissionFactory",
+        "Impact"
+      ],
+      "value": [
+        "Awin",
+        "CommissionFactory",
+        "Impact",
+        "Partnerize",
+        "Refersion",
+        "ShareASale",
+        "Skimlinks"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "au",
+        "score": 0.9
+      },
+      "sampleValue": [
+        {
+          "countryCode": "au",
+          "score": 0.9
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "au",
+          "score": 0.9
+        }
+      ]
+    },
+    "domain": "sleepsociety.com.au",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "blankets"
+        },
+        {
+          "score": 0.5,
+          "value": "okereviews"
+        },
+        {
+          "score": 0.49664634,
+          "value": "autocomplete"
+        },
+        {
+          "score": 0.3929452,
+          "value": "sleep"
+        },
+        {
+          "score": 0.35135135,
+          "value": "blanket"
+        },
+        {
+          "score": 0.34170055,
+          "value": "spd"
+        },
+        {
+          "score": 0.3,
+          "value": "finance"
+        },
+        {
+          "score": 0.2949695,
+          "value": "facet"
+        },
+        {
+          "score": 0.28707656,
+          "value": "container"
+        },
+        {
+          "score": 0.27799737,
+          "value": "furniture"
+        },
+        {
+          "score": 0.264563,
+          "value": "simple furniture"
+        },
+        {
+          "score": 0.25693873,
+          "value": "sofa"
+        },
+        {
+          "score": 0.24789973,
+          "value": "icon"
+        },
+        {
+          "score": 0.24140124,
+          "value": "comfort"
+        },
+        {
+          "score": 0.23995428,
+          "value": "mattress"
+        },
+        {
+          "score": 0.2375,
+          "value": "oke"
+        },
+        {
+          "score": 0.22049458,
+          "value": "color"
+        },
+        {
+          "score": 0.20982385,
+          "value": "button"
+        },
+        {
+          "score": 0.20824383,
+          "value": "firm pillow"
+        },
+        {
+          "score": 0.20234996,
+          "value": "warranty"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "blankets"
+        },
+        {
+          "score": 0.5,
+          "value": "okereviews"
+        },
+        {
+          "score": 0.49664634,
+          "value": "autocomplete"
+        },
+        {
+          "score": 0.3929452,
+          "value": "sleep"
+        },
+        {
+          "score": 0.35135135,
+          "value": "blanket"
+        },
+        {
+          "score": 0.34170055,
+          "value": "spd"
+        },
+        {
+          "score": 0.3,
+          "value": "finance"
+        },
+        {
+          "score": 0.2949695,
+          "value": "facet"
+        },
+        {
+          "score": 0.28707656,
+          "value": "container"
+        },
+        {
+          "score": 0.27799737,
+          "value": "furniture"
+        },
+        {
+          "score": 0.264563,
+          "value": "simple furniture"
+        },
+        {
+          "score": 0.25693873,
+          "value": "sofa"
+        },
+        {
+          "score": 0.24789973,
+          "value": "icon"
+        },
+        {
+          "score": 0.24140124,
+          "value": "comfort"
+        },
+        {
+          "score": 0.23995428,
+          "value": "mattress"
+        },
+        {
+          "score": 0.2375,
+          "value": "oke"
+        },
+        {
+          "score": 0.22049458,
+          "value": "color"
+        },
+        {
+          "score": 0.20982385,
+          "value": "button"
+        },
+        {
+          "score": 0.20824383,
+          "value": "firm pillow"
+        },
+        {
+          "score": 0.20234996,
+          "value": "warranty"
+        },
+        {
+          "score": 0.2,
+          "value": "meditation"
+        },
+        {
+          "score": 0.19662814,
+          "value": "fabric"
+        },
+        {
+          "score": 0.18738143,
+          "value": "grid"
+        },
+        {
+          "score": 0.18724523,
+          "value": "card"
+        },
+        {
+          "score": 0.18571699,
+          "value": "frame"
+        },
+        {
+          "score": 0.18124415,
+          "value": "space"
+        },
+        {
+          "score": 0.17187609,
+          "value": "household"
+        },
+        {
+          "score": 0.16737805,
+          "value": "sidebar"
+        },
+        {
+          "score": 0.16571961,
+          "value": "helpful"
+        },
+        {
+          "score": 0.16463415,
+          "value": "autocomplete ss"
+        },
+        {
+          "score": 0.163092,
+          "value": "living"
+        },
+        {
+          "score": 0.1628837,
+          "value": "homeware"
+        },
+        {
+          "score": 0.15542589,
+          "value": "cleaning"
+        },
+        {
+          "score": 0.15365854,
+          "value": "target"
+        },
+        {
+          "score": 0.15365854,
+          "value": "autocomplete target"
+        },
+        {
+          "score": 0.1532332,
+          "value": "eligible return"
+        },
+        {
+          "score": 0.15089417,
+          "value": "bedroom"
+        },
+        {
+          "score": 0.15016937,
+          "value": "slider"
+        },
+        {
+          "score": 0.14920393,
+          "value": "border"
+        },
+        {
+          "score": 0.14891227,
+          "value": "firmness"
+        },
+        {
+          "score": 0.14814472,
+          "value": "base"
+        },
+        {
+          "score": 0.14602113,
+          "value": "star"
+        },
+        {
+          "score": 0.1425281,
+          "value": "office"
+        },
+        {
+          "score": 0.13855842,
+          "value": "adjustable"
+        },
+        {
+          "score": 0.13748306,
+          "value": "var"
+        },
+        {
+          "score": 0.1365559,
+          "value": "mindfulness"
+        },
+        {
+          "score": 0.13534892,
+          "value": "block"
+        },
+        {
+          "score": 0.13433291,
+          "value": "close warehouse"
+        },
+        {
+          "score": 0.13333334,
+          "value": "mattresses"
+        },
+        {
+          "score": 0.13000175,
+          "value": "life"
+        },
+        {
+          "score": 0.1288534,
+          "value": "firm"
+        },
+        {
+          "score": 0.12645791,
+          "value": "community"
+        },
+        {
+          "score": 0.12379914,
+          "value": "warehouse"
+        },
+        {
+          "score": 0.123349324,
+          "value": "range"
+        },
+        {
+          "score": 0.121056646,
+          "value": "pocket"
+        },
+        {
+          "score": 0.118666664,
+          "value": "fabrics"
+        },
+        {
+          "score": 0.11760824,
+          "value": "comfy"
+        },
+        {
+          "score": 0.116,
+          "value": "headboard"
+        },
+        {
+          "score": 0.11333334,
+          "value": "armchair"
+        },
+        {
+          "score": 0.11314363,
+          "value": "margin"
+        },
+        {
+          "score": 0.11296276,
+          "value": "independent"
+        },
+        {
+          "score": 0.1110332,
+          "value": "coffee"
+        },
+        {
+          "score": 0.10999673,
+          "value": "friendly"
+        },
+        {
+          "score": 0.109173425,
+          "value": "label"
+        },
+        {
+          "score": 0.108821765,
+          "value": "duvet"
+        },
+        {
+          "score": 0.10862821,
+          "value": "fibre"
+        },
+        {
+          "score": 0.1051742,
+          "value": "hour"
+        },
+        {
+          "score": 0.10484161,
+          "value": "post"
+        },
+        {
+          "score": 0.10460467,
+          "value": "minute"
+        },
+        {
+          "score": 0.10437534,
+          "value": "style"
+        },
+        {
+          "score": 0.10395989,
+          "value": "rating"
+        },
+        {
+          "score": 0.10133082,
+          "value": "refund"
+        },
+        {
+          "score": 0.10087284,
+          "value": "australia"
+        },
+        {
+          "score": 0.10037893,
+          "value": "factory"
+        },
+        {
+          "score": 0.1,
+          "value": "cushions"
+        },
+        {
+          "score": 0.09876506,
+          "value": "cloud"
+        },
+        {
+          "score": 0.09871872,
+          "value": "owner"
+        },
+        {
+          "score": 0.09854425,
+          "value": "unique"
+        },
+        {
+          "score": 0.097977206,
+          "value": "packaging"
+        },
+        {
+          "score": 0.09742108,
+          "value": "safe"
+        },
+        {
+          "score": 0.09669715,
+          "value": "padding"
+        },
+        {
+          "score": 0.09603658,
+          "value": "palette"
+        },
+        {
+          "score": 0.09541947,
+          "value": "spring"
+        },
+        {
+          "score": 0.09469851,
+          "value": "modal"
+        },
+        {
+          "score": 0.09439507,
+          "value": "land"
+        },
+        {
+          "score": 0.09425331,
+          "value": "cushion"
+        },
+        {
+          "score": 0.09383621,
+          "value": "manufacturer"
+        },
+        {
+          "score": 0.09327463,
+          "value": "choice"
+        },
+        {
+          "score": 0.09322556,
+          "value": "sturdy"
+        },
+        {
+          "score": 0.09233139,
+          "value": "charity"
+        },
+        {
+          "score": 0.09206968,
+          "value": "colour"
+        },
+        {
+          "score": 0.092,
+          "value": "sofas"
+        },
+        {
+          "score": 0.09156262,
+          "value": "friend"
+        },
+        {
+          "score": 0.090185925,
+          "value": "chat"
+        },
+        {
+          "score": 0.088,
+          "value": "comfortable"
+        },
+        {
+          "score": 0.08737009,
+          "value": "people"
+        },
+        {
+          "score": 0.086775534,
+          "value": "sydney"
+        },
+        {
+          "score": 0.086666666,
+          "value": "beds"
+        },
+        {
+          "score": 0.08533333,
+          "value": "prices"
+        },
+        {
+          "score": 0.085297965,
+          "value": "flax"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 1,
+      "value": [
+        "http://sleepsociety.com.au/"
+      ]
+    },
+    "metaData": {
+      "description": "1000's of reviews to help you sleep better, in-depth mattress reviews, pillows, side-by-side mattress comparisons. Everything you need for a great night's sleep",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/sleepsociety.com.au.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://sleepsociety.com.au"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 16,
+        "value": [
+          "ikea.com",
+          "amazon.com.au",
+          "bcf.com.au",
+          "bedworks.com.au",
+          "koala.com",
+          "calmingblankets.com.au",
+          "noahome.com",
+          "duskanddawn.com.au",
+          "eva.com.au",
+          "goodmorningsnoresolution.com",
+          "mindfulness.com",
+          "octasmart.com.au",
+          "t.cfjump.com",
+          "thegoodguys.com.au",
+          "theoodie.com",
+          "zensleep.com.au"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 3.75,
+            "vertical": "Home / Beds & Bedding"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 1,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 1,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Sports / Outdoor"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 0.8,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 0.7,
+            "vertical": "Entertainment / Hobbies"
+          },
+          {
+            "count": 0.6,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 0.5,
+            "vertical": "Online / Services"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 16,
+      "value": [
+        "ikea.com",
+        "amazon.com.au",
+        "bcf.com.au",
+        "bedworks.com.au",
+        "koala.com",
+        "calmingblankets.com.au",
+        "noahome.com",
+        "duskanddawn.com.au",
+        "eva.com.au",
+        "goodmorningsnoresolution.com",
+        "mindfulness.com",
+        "octasmart.com.au",
+        "t.cfjump.com",
+        "thegoodguys.com.au",
+        "theoodie.com",
+        "zensleep.com.au"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 1,
+      "value": [
+        "sleepysexpress.com.au"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 2,
+      "socialsAvailable": [
+        "twitter",
+        "facebook"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/sleepysexpress-111218477247582",
+        "twitter": "https://twitter.com/sleepyse"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Health / Healthcare",
+      "value": [
+        "Health / Healthcare",
+        "Health / Wellbeing",
+        "Business / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Health / Healthcare",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Health / Healthcare",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Health / Wellbeing",
+          "rank": 1,
+          "score": 85
+        },
+        {
+          "name": "Business / Services",
+          "rank": 1,
+          "score": 60
+        }
+      ]
+    }
+  }
+}

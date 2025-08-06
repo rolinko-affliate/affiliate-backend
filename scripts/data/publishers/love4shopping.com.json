@@ -1,0 +1,946 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 9,
+      "sampleValue": [
+        "Business Insider",
+        "CJ Affiliate",
+        "Flexoffers"
+      ],
+      "value": [
+        "Business Insider",
+        "CJ Affiliate",
+        "Flexoffers",
+        "Impact",
+        "Partnerize",
+        "Pepperjam",
+        "Rakuten",
+        "ShareASale",
+        "TUNE"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.6
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "love4shopping.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "amazon"
+        },
+        {
+          "score": 0.8769945,
+          "value": "seller"
+        },
+        {
+          "score": 0.58403957,
+          "value": "sign"
+        },
+        {
+          "score": 0.53054124,
+          "value": "video"
+        },
+        {
+          "score": 0.5197906,
+          "value": "device"
+        },
+        {
+          "score": 0.4506044,
+          "value": "store"
+        },
+        {
+          "score": 0.45051044,
+          "value": "vpn"
+        },
+        {
+          "score": 0.4288305,
+          "value": "health"
+        },
+        {
+          "score": 0.41059092,
+          "value": "team"
+        },
+        {
+          "score": 0.38227245,
+          "value": "food"
+        },
+        {
+          "score": 0.36941856,
+          "value": "policygenius"
+        },
+        {
+          "score": 0.3465465,
+          "value": "central"
+        },
+        {
+          "score": 0.3455449,
+          "value": "solution"
+        },
+        {
+          "score": 0.327703,
+          "value": "fee"
+        },
+        {
+          "score": 0.31036904,
+          "value": "card"
+        },
+        {
+          "score": 0.3016332,
+          "value": "software"
+        },
+        {
+          "score": 0.29761943,
+          "value": "contribution"
+        },
+        {
+          "score": 0.28159907,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.2682364,
+          "value": "digital"
+        },
+        {
+          "score": 0.26657423,
+          "value": "fba"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "amazon"
+        },
+        {
+          "score": 0.8769945,
+          "value": "seller"
+        },
+        {
+          "score": 0.58403957,
+          "value": "sign"
+        },
+        {
+          "score": 0.53054124,
+          "value": "video"
+        },
+        {
+          "score": 0.5197906,
+          "value": "device"
+        },
+        {
+          "score": 0.4506044,
+          "value": "store"
+        },
+        {
+          "score": 0.45051044,
+          "value": "vpn"
+        },
+        {
+          "score": 0.4288305,
+          "value": "health"
+        },
+        {
+          "score": 0.41059092,
+          "value": "team"
+        },
+        {
+          "score": 0.38227245,
+          "value": "food"
+        },
+        {
+          "score": 0.36941856,
+          "value": "policygenius"
+        },
+        {
+          "score": 0.3465465,
+          "value": "central"
+        },
+        {
+          "score": 0.3455449,
+          "value": "solution"
+        },
+        {
+          "score": 0.327703,
+          "value": "fee"
+        },
+        {
+          "score": 0.31036904,
+          "value": "card"
+        },
+        {
+          "score": 0.3016332,
+          "value": "software"
+        },
+        {
+          "score": 0.29761943,
+          "value": "contribution"
+        },
+        {
+          "score": 0.28159907,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.2682364,
+          "value": "digital"
+        },
+        {
+          "score": 0.26657423,
+          "value": "fba"
+        },
+        {
+          "score": 0.26643187,
+          "value": "healthcare"
+        },
+        {
+          "score": 0.2614227,
+          "value": "prime"
+        },
+        {
+          "score": 0.24083649,
+          "value": "restriction"
+        },
+        {
+          "score": 0.22832961,
+          "value": "care"
+        },
+        {
+          "score": 0.21882364,
+          "value": "enterprise"
+        },
+        {
+          "score": 0.21492422,
+          "value": "nature"
+        },
+        {
+          "score": 0.21356878,
+          "value": "program"
+        },
+        {
+          "score": 0.20767967,
+          "value": "mattress"
+        },
+        {
+          "score": 0.19825038,
+          "value": "nutrition"
+        },
+        {
+          "score": 0.19760676,
+          "value": "animal"
+        },
+        {
+          "score": 0.19593206,
+          "value": "kindle"
+        },
+        {
+          "score": 0.19177726,
+          "value": "life"
+        },
+        {
+          "score": 0.18966115,
+          "value": "career"
+        },
+        {
+          "score": 0.18798184,
+          "value": "warranty"
+        },
+        {
+          "score": 0.18231115,
+          "value": "creative"
+        },
+        {
+          "score": 0.1819257,
+          "value": "cleaning"
+        },
+        {
+          "score": 0.17905387,
+          "value": "credit"
+        },
+        {
+          "score": 0.17686987,
+          "value": "pharmacy"
+        },
+        {
+          "score": 0.17681435,
+          "value": "category"
+        },
+        {
+          "score": 0.17330632,
+          "value": "veterinary"
+        },
+        {
+          "score": 0.17268859,
+          "value": "box"
+        },
+        {
+          "score": 0.17230025,
+          "value": "requirement"
+        },
+        {
+          "score": 0.17119397,
+          "value": "clean pack"
+        },
+        {
+          "score": 0.17054127,
+          "value": "live"
+        },
+        {
+          "score": 0.1659734,
+          "value": "industry"
+        },
+        {
+          "score": 0.16507523,
+          "value": "fulfillment"
+        },
+        {
+          "score": 0.1640671,
+          "value": "floor"
+        },
+        {
+          "score": 0.16230097,
+          "value": "plant"
+        },
+        {
+          "score": 0.1602899,
+          "value": "offer"
+        },
+        {
+          "score": 0.16004828,
+          "value": "stock"
+        },
+        {
+          "score": 0.15957727,
+          "value": "bottle"
+        },
+        {
+          "score": 0.159038,
+          "value": "money"
+        },
+        {
+          "score": 0.15689574,
+          "value": "pets"
+        },
+        {
+          "score": 0.15616094,
+          "value": "accessory"
+        },
+        {
+          "score": 0.15461305,
+          "value": "prime video"
+        },
+        {
+          "score": 0.15354002,
+          "value": "code"
+        },
+        {
+          "score": 0.153508,
+          "value": "wellness"
+        },
+        {
+          "score": 0.15079114,
+          "value": "phone"
+        },
+        {
+          "score": 0.15034725,
+          "value": "feed"
+        },
+        {
+          "score": 0.15020655,
+          "value": "travel"
+        },
+        {
+          "score": 0.14953174,
+          "value": "getty"
+        },
+        {
+          "score": 0.14744888,
+          "value": "strategy"
+        },
+        {
+          "score": 0.14704275,
+          "value": "region"
+        },
+        {
+          "score": 0.14629206,
+          "value": "setting"
+        },
+        {
+          "score": 0.14485605,
+          "value": "story"
+        },
+        {
+          "score": 0.14361022,
+          "value": "book"
+        },
+        {
+          "score": 0.14142111,
+          "value": "toxic"
+        },
+        {
+          "score": 0.14117843,
+          "value": "original"
+        },
+        {
+          "score": 0.1392011,
+          "value": "app"
+        },
+        {
+          "score": 0.13784342,
+          "value": "star"
+        },
+        {
+          "score": 0.13573316,
+          "value": "espn"
+        },
+        {
+          "score": 0.13515313,
+          "value": "activation"
+        },
+        {
+          "score": 0.13490257,
+          "value": "protein"
+        },
+        {
+          "score": 0.13475756,
+          "value": "fresh"
+        },
+        {
+          "score": 0.1337049,
+          "value": "capital"
+        },
+        {
+          "score": 0.13353129,
+          "value": "aquariums"
+        },
+        {
+          "score": 0.13337195,
+          "value": "skin"
+        },
+        {
+          "score": 0.13329598,
+          "value": "vitamins"
+        },
+        {
+          "score": 0.13297904,
+          "value": "international"
+        },
+        {
+          "score": 0.13254017,
+          "value": "supplements"
+        },
+        {
+          "score": 0.13153282,
+          "value": "art"
+        },
+        {
+          "score": 0.13150282,
+          "value": "contact us"
+        },
+        {
+          "score": 0.13108915,
+          "value": "play"
+        },
+        {
+          "score": 0.12846662,
+          "value": "feedback"
+        },
+        {
+          "score": 0.12496957,
+          "value": "financial"
+        },
+        {
+          "score": 0.1237704,
+          "value": "pricing"
+        },
+        {
+          "score": 0.12343998,
+          "value": "sport"
+        },
+        {
+          "score": 0.12313952,
+          "value": "team policygenius"
+        },
+        {
+          "score": 0.12313952,
+          "value": "policygenius com"
+        },
+        {
+          "score": 0.12313952,
+          "value": "copyright policygenius"
+        },
+        {
+          "score": 0.12213849,
+          "value": "technology"
+        },
+        {
+          "score": 0.12205556,
+          "value": "community"
+        },
+        {
+          "score": 0.12145005,
+          "value": "manager"
+        },
+        {
+          "score": 0.1203463,
+          "value": "expressvpn"
+        },
+        {
+          "score": 0.11944123,
+          "value": "agreement"
+        },
+        {
+          "score": 0.11862553,
+          "value": "automotive"
+        },
+        {
+          "score": 0.11774416,
+          "value": "stream"
+        },
+        {
+          "score": 0.116831906,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.11653872,
+          "value": "game"
+        },
+        {
+          "score": 0.11616858,
+          "value": "info"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 3,
+      "value": [
+        "https://love4shopping.com/",
+        "http://love4shopping.com/",
+        "http://www.love4shopping.com/"
+      ]
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/love4shopping.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://love4shopping.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 75,
+        "value": [
+          "sjv.io",
+          "adobe.com",
+          "pxf.io",
+          "apple.com",
+          "amazon.com",
+          "linkedin.com",
+          "aboutamazon.com",
+          "nvidia.com",
+          "ritual.com",
+          "hbomax.com",
+          "walmart.com",
+          "espn.com",
+          "insider.com",
+          "airbnb.com",
+          "gettyimages.com",
+          "disneyplus.com",
+          "nature.com",
+          "barclaysus.com",
+          "dazn.com",
+          "sling.com",
+          "betterment.com",
+          "urbanoutfitters.com",
+          "myollie.com",
+          "vudu.com",
+          "wsj.com",
+          "boppy.com",
+          "wacoal-america.com",
+          "build.com",
+          "nomnomnow.com",
+          "dyson.com",
+          "target.com",
+          "theinformation.com",
+          "chewy.com",
+          "linksynergy.com",
+          "transunion.com",
+          "credible.com",
+          "crowdstreet.4cl7.net",
+          "curiouselixirs.com",
+          "istockphoto.com",
+          "ellevest.com",
+          "esadoctors.com",
+          "expressvpn.com",
+          "fetchpet.com",
+          "fiona.com",
+          "fundrise.com",
+          "fundera.com",
+          "gunner.com",
+          "paramountplus.com",
+          "vimeo.com",
+          "wayfair.com",
+          "imp.i146998.net",
+          "scribd.com",
+          "prioritypass.com",
+          "lectricebikes.com",
+          "loandepot.com",
+          "m1finance.8bxp97.net",
+          "oc.brcclx.com",
+          "openfarmpet.com",
+          "peacocktv.com",
+          "policygenius.com",
+          "psychedelicwater.com",
+          "sofi.com",
+          "shelterlogic.com",
+          "spotonfence.com",
+          "sundayscaries.com",
+          "tb12sports.com",
+          "thehonestkitchen.com",
+          "truebill.com",
+          "trulyfreehome.com",
+          "trustedhousesitters.com",
+          "trupanion.com",
+          "tv.apple.com",
+          "us.shein.com",
+          "wealthfront.4fq8.net",
+          "yieldstreet.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "us.shein.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "shein.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 8.65,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 7.6499996,
+            "vertical": "Finance / Investments"
+          },
+          {
+            "count": 6.6499996,
+            "vertical": "Home / Pets"
+          },
+          {
+            "count": 2.95,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 2,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Finance / Banking"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Finance / Loans"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Finance / Insurance"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 1.8,
+            "vertical": "Finance / Accounts"
+          },
+          {
+            "count": 1.8,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 1.55,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Jobs & Careers"
+          },
+          {
+            "count": 1,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 1,
+            "vertical": "Finance / Mortgages & Loans"
+          },
+          {
+            "count": 1,
+            "vertical": "Home / Garden"
+          },
+          {
+            "count": 1,
+            "vertical": "Online / VPN"
+          },
+          {
+            "count": 1,
+            "vertical": "Sports / Cycling"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Lingerie"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Trading"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Drinks"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Babycare"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / DIY"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Property / Property"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Entertainment / Hobbies"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Food / Alcohol"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Health / CBD"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Travel / Accessories"
+          },
+          {
+            "count": 0.6,
+            "vertical": "Sports / Hunting"
+          },
+          {
+            "count": 0.5,
+            "vertical": "Business / Software"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 75,
+      "value": [
+        "sjv.io",
+        "adobe.com",
+        "pxf.io",
+        "apple.com",
+        "amazon.com",
+        "linkedin.com",
+        "aboutamazon.com",
+        "nvidia.com",
+        "ritual.com",
+        "hbomax.com",
+        "walmart.com",
+        "espn.com",
+        "insider.com",
+        "airbnb.com",
+        "gettyimages.com",
+        "disneyplus.com",
+        "nature.com",
+        "barclaysus.com",
+        "dazn.com",
+        "sling.com",
+        "betterment.com",
+        "urbanoutfitters.com",
+        "myollie.com",
+        "vudu.com",
+        "wsj.com",
+        "boppy.com",
+        "wacoal-america.com",
+        "build.com",
+        "nomnomnow.com",
+        "dyson.com",
+        "target.com",
+        "theinformation.com",
+        "chewy.com",
+        "linksynergy.com",
+        "transunion.com",
+        "credible.com",
+        "crowdstreet.4cl7.net",
+        "curiouselixirs.com",
+        "istockphoto.com",
+        "ellevest.com",
+        "esadoctors.com",
+        "expressvpn.com",
+        "fetchpet.com",
+        "fiona.com",
+        "fundrise.com",
+        "fundera.com",
+        "gunner.com",
+        "paramountplus.com",
+        "vimeo.com",
+        "wayfair.com",
+        "imp.i146998.net",
+        "scribd.com",
+        "prioritypass.com",
+        "lectricebikes.com",
+        "loandepot.com",
+        "m1finance.8bxp97.net",
+        "oc.brcclx.com",
+        "openfarmpet.com",
+        "peacocktv.com",
+        "policygenius.com",
+        "psychedelicwater.com",
+        "sofi.com",
+        "shelterlogic.com",
+        "spotonfence.com",
+        "sundayscaries.com",
+        "tb12sports.com",
+        "thehonestkitchen.com",
+        "truebill.com",
+        "trulyfreehome.com",
+        "trustedhousesitters.com",
+        "trupanion.com",
+        "tv.apple.com",
+        "us.shein.com",
+        "wealthfront.4fq8.net",
+        "yieldstreet.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 3,
+      "socialsAvailable": [
+        "youtube",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/love4shopping1",
+        "instagram": "https://instagram.com/love4shopping01",
+        "youtube": "https://youtube.com/@love4shopping"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Shopping / Department Stores",
+      "value": [
+        "Shopping / Department Stores",
+        "Business / Ecommerce"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Business / Ecommerce",
+          "rank": 1,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

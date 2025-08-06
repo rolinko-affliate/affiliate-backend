@@ -1,0 +1,1114 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 6,
+      "sampleValue": [
+        "Awin",
+        "Impact",
+        "Linkby"
+      ],
+      "value": [
+        "Awin",
+        "Impact",
+        "Linkby",
+        "Optimise",
+        "Private Network",
+        "Skimlinks"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.7
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.7
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.7
+        }
+      ]
+    },
+    "domain": "whatsnew2day.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "amazon"
+        },
+        {
+          "score": 0.8777712,
+          "value": "seller"
+        },
+        {
+          "score": 0.46945557,
+          "value": "sign"
+        },
+        {
+          "score": 0.44746658,
+          "value": "device"
+        },
+        {
+          "score": 0.3784169,
+          "value": "store"
+        },
+        {
+          "score": 0.34874204,
+          "value": "central"
+        },
+        {
+          "score": 0.3360327,
+          "value": "video"
+        },
+        {
+          "score": 0.32667506,
+          "value": "fee"
+        },
+        {
+          "score": 0.29213277,
+          "value": "card"
+        },
+        {
+          "score": 0.27547172,
+          "value": "fba"
+        },
+        {
+          "score": 0.25574687,
+          "value": "prime"
+        },
+        {
+          "score": 0.24607651,
+          "value": "accessory"
+        },
+        {
+          "score": 0.24515297,
+          "value": "restriction"
+        },
+        {
+          "score": 0.23775837,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.20626651,
+          "value": "investment"
+        },
+        {
+          "score": 0.19414449,
+          "value": "phone"
+        },
+        {
+          "score": 0.19134782,
+          "value": "kindle"
+        },
+        {
+          "score": 0.1803706,
+          "value": "program"
+        },
+        {
+          "score": 0.17676122,
+          "value": "requirement"
+        },
+        {
+          "score": 0.17195712,
+          "value": "book"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "amazon"
+        },
+        {
+          "score": 0.8777712,
+          "value": "seller"
+        },
+        {
+          "score": 0.46945557,
+          "value": "sign"
+        },
+        {
+          "score": 0.44746658,
+          "value": "device"
+        },
+        {
+          "score": 0.3784169,
+          "value": "store"
+        },
+        {
+          "score": 0.34874204,
+          "value": "central"
+        },
+        {
+          "score": 0.3360327,
+          "value": "video"
+        },
+        {
+          "score": 0.32667506,
+          "value": "fee"
+        },
+        {
+          "score": 0.29213277,
+          "value": "card"
+        },
+        {
+          "score": 0.27547172,
+          "value": "fba"
+        },
+        {
+          "score": 0.25574687,
+          "value": "prime"
+        },
+        {
+          "score": 0.24607651,
+          "value": "accessory"
+        },
+        {
+          "score": 0.24515297,
+          "value": "restriction"
+        },
+        {
+          "score": 0.23775837,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.20626651,
+          "value": "investment"
+        },
+        {
+          "score": 0.19414449,
+          "value": "phone"
+        },
+        {
+          "score": 0.19134782,
+          "value": "kindle"
+        },
+        {
+          "score": 0.1803706,
+          "value": "program"
+        },
+        {
+          "score": 0.17676122,
+          "value": "requirement"
+        },
+        {
+          "score": 0.17195712,
+          "value": "book"
+        },
+        {
+          "score": 0.17115739,
+          "value": "category"
+        },
+        {
+          "score": 0.1604514,
+          "value": "warranty"
+        },
+        {
+          "score": 0.15399453,
+          "value": "fulfillment"
+        },
+        {
+          "score": 0.15099557,
+          "value": "prime video"
+        },
+        {
+          "score": 0.14495417,
+          "value": "flight"
+        },
+        {
+          "score": 0.1422124,
+          "value": "box"
+        },
+        {
+          "score": 0.13650236,
+          "value": "care"
+        },
+        {
+          "score": 0.13536525,
+          "value": "software"
+        },
+        {
+          "score": 0.13501367,
+          "value": "money"
+        },
+        {
+          "score": 0.13325265,
+          "value": "feedback"
+        },
+        {
+          "score": 0.13047798,
+          "value": "app"
+        },
+        {
+          "score": 0.12256583,
+          "value": "health"
+        },
+        {
+          "score": 0.12210549,
+          "value": "share"
+        },
+        {
+          "score": 0.12210343,
+          "value": "digital"
+        },
+        {
+          "score": 0.121569246,
+          "value": "global"
+        },
+        {
+          "score": 0.119551286,
+          "value": "setting"
+        },
+        {
+          "score": 0.11751588,
+          "value": "travel"
+        },
+        {
+          "score": 0.116747946,
+          "value": "automotive"
+        },
+        {
+          "score": 0.11557704,
+          "value": "hair"
+        },
+        {
+          "score": 0.11473839,
+          "value": "fund"
+        },
+        {
+          "score": 0.11442499,
+          "value": "fashion"
+        },
+        {
+          "score": 0.1141516,
+          "value": "food"
+        },
+        {
+          "score": 0.11111571,
+          "value": "packaging"
+        },
+        {
+          "score": 0.11024174,
+          "value": "carrier"
+        },
+        {
+          "score": 0.10958957,
+          "value": "art"
+        },
+        {
+          "score": 0.10731817,
+          "value": "investor"
+        },
+        {
+          "score": 0.10356759,
+          "value": "financial"
+        },
+        {
+          "score": 0.10247343,
+          "value": "skin"
+        },
+        {
+          "score": 0.10157541,
+          "value": "dress"
+        },
+        {
+          "score": 0.1012245,
+          "value": "unit"
+        },
+        {
+          "score": 0.100795865,
+          "value": "technology"
+        },
+        {
+          "score": 0.10075534,
+          "value": "sports"
+        },
+        {
+          "score": 0.09966607,
+          "value": "guideline"
+        },
+        {
+          "score": 0.099327765,
+          "value": "solution"
+        },
+        {
+          "score": 0.099240735,
+          "value": "listing"
+        },
+        {
+          "score": 0.09759475,
+          "value": "electronic"
+        },
+        {
+          "score": 0.09602778,
+          "value": "department"
+        },
+        {
+          "score": 0.09588145,
+          "value": "kids"
+        },
+        {
+          "score": 0.094782755,
+          "value": "currency"
+        },
+        {
+          "score": 0.093713656,
+          "value": "event"
+        },
+        {
+          "score": 0.09328992,
+          "value": "refund"
+        },
+        {
+          "score": 0.09288185,
+          "value": "investments"
+        },
+        {
+          "score": 0.092676,
+          "value": "collagen"
+        },
+        {
+          "score": 0.09266307,
+          "value": "rate"
+        },
+        {
+          "score": 0.09134314,
+          "value": "iphone"
+        },
+        {
+          "score": 0.08933208,
+          "value": "language"
+        },
+        {
+          "score": 0.08897763,
+          "value": "sport"
+        },
+        {
+          "score": 0.088453606,
+          "value": "stock"
+        },
+        {
+          "score": 0.08508964,
+          "value": "mattress"
+        },
+        {
+          "score": 0.0846455,
+          "value": "pesticide"
+        },
+        {
+          "score": 0.083232716,
+          "value": "investing"
+        },
+        {
+          "score": 0.08289596,
+          "value": "agreement"
+        },
+        {
+          "score": 0.08283814,
+          "value": "pension"
+        },
+        {
+          "score": 0.08107501,
+          "value": "cell"
+        },
+        {
+          "score": 0.07993337,
+          "value": "reader"
+        },
+        {
+          "score": 0.07952422,
+          "value": "credit"
+        },
+        {
+          "score": 0.07861336,
+          "value": "standard"
+        },
+        {
+          "score": 0.07845465,
+          "value": "baby"
+        },
+        {
+          "score": 0.07802577,
+          "value": "body"
+        },
+        {
+          "score": 0.077370316,
+          "value": "apple"
+        },
+        {
+          "score": 0.07670509,
+          "value": "light"
+        },
+        {
+          "score": 0.076322146,
+          "value": "investors"
+        },
+        {
+          "score": 0.07593787,
+          "value": "example"
+        },
+        {
+          "score": 0.07401563,
+          "value": "pro"
+        },
+        {
+          "score": 0.073574886,
+          "value": "bamboo"
+        },
+        {
+          "score": 0.073377565,
+          "value": "issue"
+        },
+        {
+          "score": 0.07319119,
+          "value": "label"
+        },
+        {
+          "score": 0.07190589,
+          "value": "jacket"
+        },
+        {
+          "score": 0.07162136,
+          "value": "watch"
+        },
+        {
+          "score": 0.07092628,
+          "value": "market"
+        },
+        {
+          "score": 0.07014376,
+          "value": "forum"
+        },
+        {
+          "score": 0.068456024,
+          "value": "woman"
+        },
+        {
+          "score": 0.06838754,
+          "value": "desktop"
+        },
+        {
+          "score": 0.06814929,
+          "value": "country"
+        },
+        {
+          "score": 0.06804005,
+          "value": "manufacturer"
+        },
+        {
+          "score": 0.06733474,
+          "value": "star"
+        },
+        {
+          "score": 0.06715606,
+          "value": "makeup"
+        },
+        {
+          "score": 0.06668876,
+          "value": "child"
+        },
+        {
+          "score": 0.06643173,
+          "value": "invest"
+        },
+        {
+          "score": 0.066343755,
+          "value": "education"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": "Latest news and breaking headlines from the U.S. and the World. Exclusives, live updates, pictures, video and comment from WhatsNew2Day.com.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/whatsnew2day.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://whatsnew2day.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 68,
+        "value": [
+          "apple.com",
+          "amazon.com",
+          "xbox.com",
+          "nintendo.com",
+          "adorebeauty.com.au",
+          "walmart.com",
+          "amazon.co.uk",
+          "aleck.io",
+          "amazon.com.au",
+          "factor75.com",
+          "shopmoment.com",
+          "lego.com",
+          "wired.com",
+          "asus.com",
+          "beistravel.com",
+          "playstation.com",
+          "bhphotovideo.com",
+          "homedepot.com",
+          "nzxt.com",
+          "nfl.com",
+          "bluntumbrellas.com",
+          "branchfurniture.com",
+          "wish.com",
+          "steampowered.com",
+          "razer.com",
+          "peakdesign.com",
+          "confused.com",
+          "consent.google.com",
+          "decathlon.co.uk",
+          "emmalewisham.com.au",
+          "epicgames.com",
+          "zagg.com",
+          "eyewearindex.com",
+          "hermanmiller.com",
+          "gocompare.com",
+          "getyourguide.com",
+          "ghdhair.com",
+          "gilley.uk",
+          "quince.com",
+          "helix-sleep.tkjf.net",
+          "hexbrand.com",
+          "roseskinco.com",
+          "reverb.com",
+          "jaggad.com",
+          "kwikset.com",
+          "marmot.com",
+          "moneysupermarket.com",
+          "myq.com",
+          "nanuk.com",
+          "nomadgoods.com",
+          "presonus.com",
+          "primaloft.com",
+          "quietmark.com",
+          "vitamix.com",
+          "sephora.com.au",
+          "shapeshifters.co",
+          "shareasale-analytics.com",
+          "shedrain.com",
+          "shimodadesigns.com",
+          "smilie.com.au",
+          "haworth.com",
+          "suunto.com",
+          "swisse.com.au",
+          "the-citizenry.com",
+          "thebeautychef.com",
+          "therabody.com",
+          "uswitch.com",
+          "wotancraft.tw"
+        ]
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "roseskinco.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 71,
+        "value": [
+          {
+            "domain": "youtube.com"
+          },
+          {
+            "domain": "dell.com"
+          },
+          {
+            "domain": "logitech.com"
+          },
+          {
+            "domain": "theatlantic.com"
+          },
+          {
+            "domain": "otterbox.com"
+          },
+          {
+            "domain": "ifixit.com"
+          },
+          {
+            "domain": "cafebrujula.com"
+          },
+          {
+            "domain": "charles-stanley.co.uk"
+          },
+          {
+            "domain": "ravewonderland.com"
+          },
+          {
+            "domain": "esmi.com.au"
+          },
+          {
+            "domain": "canva.com"
+          },
+          {
+            "domain": "forhers.com"
+          },
+          {
+            "domain": "bodyblendz.com"
+          },
+          {
+            "domain": "bigsur.ai"
+          },
+          {
+            "domain": "cisco.com"
+          },
+          {
+            "domain": "play.google.com"
+          },
+          {
+            "domain": "pompomathome.com"
+          },
+          {
+            "domain": "thelightphone.com"
+          },
+          {
+            "domain": "theknot.com"
+          },
+          {
+            "domain": "oneadaptr.com"
+          },
+          {
+            "domain": "kotia.com.au"
+          },
+          {
+            "domain": "bestinvest.co.uk"
+          },
+          {
+            "domain": "hl.co.uk"
+          },
+          {
+            "domain": "ii.co.uk"
+          },
+          {
+            "domain": "brewista.co"
+          },
+          {
+            "domain": "fidelity.co.uk"
+          },
+          {
+            "domain": "id.me"
+          },
+          {
+            "domain": "marksandspencer.com"
+          },
+          {
+            "domain": "ecosa.com.au"
+          },
+          {
+            "domain": "lucyd.co"
+          },
+          {
+            "domain": "ajbell.co.uk"
+          },
+          {
+            "domain": "monsoon.co.uk"
+          },
+          {
+            "domain": "sleeprepublic.com.au"
+          },
+          {
+            "domain": "logitechg.com"
+          },
+          {
+            "domain": "wsj.com"
+          },
+          {
+            "domain": "womanizer.com"
+          },
+          {
+            "domain": "cognitoforms.com"
+          },
+          {
+            "domain": "ettitude.com"
+          },
+          {
+            "domain": "breville.com"
+          },
+          {
+            "domain": "speckproducts.com"
+          },
+          {
+            "domain": "samsung.com"
+          },
+          {
+            "domain": "meijer.com"
+          },
+          {
+            "domain": "bluebottlecoffee.com"
+          },
+          {
+            "domain": "facebook.com"
+          },
+          {
+            "domain": "flowtoys.com"
+          },
+          {
+            "domain": "sheerid.com"
+          },
+          {
+            "domain": "lionwild.com.au"
+          },
+          {
+            "domain": "teacherspayteachers.com"
+          },
+          {
+            "domain": "hydroflask.com"
+          },
+          {
+            "domain": "clicks.tech"
+          },
+          {
+            "domain": "bloomberg.com"
+          },
+          {
+            "domain": "sundaycitizen.co"
+          },
+          {
+            "domain": "wikipedia.org"
+          },
+          {
+            "domain": "buyfiberflies.com"
+          },
+          {
+            "domain": "theknicker.com"
+          },
+          {
+            "domain": "crayola.com"
+          },
+          {
+            "domain": "studentbeans.com"
+          },
+          {
+            "domain": "target.com"
+          },
+          {
+            "domain": "mossman.com.au"
+          },
+          {
+            "domain": "backmarket.com"
+          },
+          {
+            "domain": "iheartraves.com"
+          },
+          {
+            "domain": "thehappyplanner.com"
+          },
+          {
+            "domain": "ulta.com"
+          },
+          {
+            "domain": "oomee.life"
+          },
+          {
+            "domain": "hmd.com"
+          },
+          {
+            "domain": "littleripples.com"
+          },
+          {
+            "domain": "withjoy.com"
+          },
+          {
+            "domain": "freetrade.io"
+          },
+          {
+            "domain": "evenrealities.com"
+          },
+          {
+            "domain": "reincubate.com"
+          },
+          {
+            "domain": "microsoft.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 7.1,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 5.85,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 4.9,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 4.85,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 3.8000002,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 3.75,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Finance / Insurance"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 2.6999998,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 1.8,
+            "vertical": "Home / Security"
+          },
+          {
+            "count": 1.6,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 1.5999999,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 1,
+            "vertical": "Sports / Outdoor"
+          },
+          {
+            "count": 1,
+            "vertical": "Travel / Accessories"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Loans"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Mortgages & Loans"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Food / Take Out"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Beds & Bedding"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Utilities"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Travel / Attractions"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Travel / Vacation"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Gifts / Kids"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / DIY"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Online / Security"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Online / Web Design"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 0.5,
+            "vertical": "Entertainment / Hobbies"
+          },
+          {
+            "count": 0.5,
+            "vertical": "Home / Art"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 68,
+      "value": [
+        "apple.com",
+        "amazon.com",
+        "xbox.com",
+        "nintendo.com",
+        "adorebeauty.com.au",
+        "walmart.com",
+        "amazon.co.uk",
+        "aleck.io",
+        "amazon.com.au",
+        "factor75.com",
+        "shopmoment.com",
+        "lego.com",
+        "wired.com",
+        "asus.com",
+        "beistravel.com",
+        "playstation.com",
+        "bhphotovideo.com",
+        "homedepot.com",
+        "nzxt.com",
+        "nfl.com",
+        "bluntumbrellas.com",
+        "branchfurniture.com",
+        "wish.com",
+        "steampowered.com",
+        "razer.com",
+        "peakdesign.com",
+        "confused.com",
+        "consent.google.com",
+        "decathlon.co.uk",
+        "emmalewisham.com.au",
+        "epicgames.com",
+        "zagg.com",
+        "eyewearindex.com",
+        "hermanmiller.com",
+        "gocompare.com",
+        "getyourguide.com",
+        "ghdhair.com",
+        "gilley.uk",
+        "quince.com",
+        "helix-sleep.tkjf.net",
+        "hexbrand.com",
+        "roseskinco.com",
+        "reverb.com",
+        "jaggad.com",
+        "kwikset.com",
+        "marmot.com",
+        "moneysupermarket.com",
+        "myq.com",
+        "nanuk.com",
+        "nomadgoods.com",
+        "presonus.com",
+        "primaloft.com",
+        "quietmark.com",
+        "vitamix.com",
+        "sephora.com.au",
+        "shapeshifters.co",
+        "shareasale-analytics.com",
+        "shedrain.com",
+        "shimodadesigns.com",
+        "smilie.com.au",
+        "haworth.com",
+        "suunto.com",
+        "swisse.com.au",
+        "the-citizenry.com",
+        "thebeautychef.com",
+        "therabody.com",
+        "uswitch.com",
+        "wotancraft.tw"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 6,
+      "value": [
+        "eumail24.com",
+        "proxima24.com",
+        "cerespost.com",
+        "nybreaking.com",
+        "sports2daynews.com",
+        "9breakingnews.com"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 2,
+      "socialsAvailable": [
+        "twitter",
+        "facebook"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/whatsnew2da",
+        "twitter": "https://twitter.com/whatsn2day"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 1,
+      "sampleValue": "Online / Services",
+      "value": [
+        "Online / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Online / Services",
+        "rank": 1,
+        "score": 60
+      },
+      "value": [
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 60
+        }
+      ]
+    }
+  }
+}

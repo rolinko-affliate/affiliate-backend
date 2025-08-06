@@ -1,0 +1,2003 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 20,
+      "sampleValue": [
+        "Amazon CA",
+        "Awin",
+        "Business Insider"
+      ],
+      "value": [
+        "Amazon CA",
+        "Awin",
+        "Business Insider",
+        "CJ Affiliate",
+        "Digidip",
+        "Fiverr",
+        "Flexoffers",
+        "Impact",
+        "Partnerize",
+        "PartnerStack",
+        "Pepperjam",
+        "Private Network",
+        "Rakuten",
+        "Refersion",
+        "ShareASale",
+        "Skimlinks",
+        "Tradedoubler",
+        "TUNE",
+        "Viglink",
+        "Wix"
+      ]
+    },
+    "countryRankings": {
+      "count": 3,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.3
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.3
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.15
+        },
+        {
+          "countryCode": "de",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.3
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.15
+        },
+        {
+          "countryCode": "de",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "mailinvest.blog",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "software"
+        },
+        {
+          "score": 0.92143804,
+          "value": "nintendo"
+        },
+        {
+          "score": 0.8617924,
+          "value": "microsoft"
+        },
+        {
+          "score": 0.8412355,
+          "value": "amazon"
+        },
+        {
+          "score": 0.7988164,
+          "value": "steam"
+        },
+        {
+          "score": 0.7985674,
+          "value": "xbox"
+        },
+        {
+          "score": 0.7982178,
+          "value": "itunes"
+        },
+        {
+          "score": 0.7370619,
+          "value": "crafting"
+        },
+        {
+          "score": 0.73132664,
+          "value": "card"
+        },
+        {
+          "score": 0.7275804,
+          "value": "games"
+        },
+        {
+          "score": 0.72710484,
+          "value": "windows"
+        },
+        {
+          "score": 0.71687365,
+          "value": "upgrade"
+        },
+        {
+          "score": 0.7064599,
+          "value": "playstation"
+        },
+        {
+          "score": 0.633261,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.62864625,
+          "value": "game"
+        },
+        {
+          "score": 0.5856841,
+          "value": "popular"
+        },
+        {
+          "score": 0.583343,
+          "value": "hack"
+        },
+        {
+          "score": 0.5833304,
+          "value": "magic"
+        },
+        {
+          "score": 0.5632152,
+          "value": "helpful"
+        },
+        {
+          "score": 0.5628459,
+          "value": "bethesda"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "software"
+        },
+        {
+          "score": 0.92143804,
+          "value": "nintendo"
+        },
+        {
+          "score": 0.8617924,
+          "value": "microsoft"
+        },
+        {
+          "score": 0.8412355,
+          "value": "amazon"
+        },
+        {
+          "score": 0.7988164,
+          "value": "steam"
+        },
+        {
+          "score": 0.7985674,
+          "value": "xbox"
+        },
+        {
+          "score": 0.7982178,
+          "value": "itunes"
+        },
+        {
+          "score": 0.7370619,
+          "value": "crafting"
+        },
+        {
+          "score": 0.73132664,
+          "value": "card"
+        },
+        {
+          "score": 0.7275804,
+          "value": "games"
+        },
+        {
+          "score": 0.72710484,
+          "value": "windows"
+        },
+        {
+          "score": 0.71687365,
+          "value": "upgrade"
+        },
+        {
+          "score": 0.7064599,
+          "value": "playstation"
+        },
+        {
+          "score": 0.633261,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.62864625,
+          "value": "game"
+        },
+        {
+          "score": 0.5856841,
+          "value": "popular"
+        },
+        {
+          "score": 0.583343,
+          "value": "hack"
+        },
+        {
+          "score": 0.5833304,
+          "value": "magic"
+        },
+        {
+          "score": 0.5632152,
+          "value": "helpful"
+        },
+        {
+          "score": 0.5628459,
+          "value": "bethesda"
+        },
+        {
+          "score": 0.5628459,
+          "value": "playerunknown"
+        },
+        {
+          "score": 0.53782356,
+          "value": "action"
+        },
+        {
+          "score": 0.51321244,
+          "value": "sports"
+        },
+        {
+          "score": 0.51177275,
+          "value": "path"
+        },
+        {
+          "score": 0.51167804,
+          "value": "uplay"
+        },
+        {
+          "score": 0.50862294,
+          "value": "ons"
+        },
+        {
+          "score": 0.48101172,
+          "value": "oldest"
+        },
+        {
+          "score": 0.48097736,
+          "value": "mmorpg"
+        },
+        {
+          "score": 0.48097736,
+          "value": "starcraft"
+        },
+        {
+          "score": 0.4707438,
+          "value": "pathfinder"
+        },
+        {
+          "score": 0.45078817,
+          "value": "season"
+        },
+        {
+          "score": 0.44037044,
+          "value": "platformer"
+        },
+        {
+          "score": 0.44020736,
+          "value": "puzzle"
+        },
+        {
+          "score": 0.42991653,
+          "value": "works"
+        },
+        {
+          "score": 0.4196967,
+          "value": "promotion"
+        },
+        {
+          "score": 0.4193134,
+          "value": "theme"
+        },
+        {
+          "score": 0.4056171,
+          "value": "fantasy"
+        },
+        {
+          "score": 0.38249192,
+          "value": "music"
+        },
+        {
+          "score": 0.37887627,
+          "value": "rating"
+        },
+        {
+          "score": 0.368868,
+          "value": "building"
+        },
+        {
+          "score": 0.3686906,
+          "value": "adventure"
+        },
+        {
+          "score": 0.3684082,
+          "value": "warcraft"
+        },
+        {
+          "score": 0.36181405,
+          "value": "story"
+        },
+        {
+          "score": 0.35879505,
+          "value": "designer"
+        },
+        {
+          "score": 0.35855982,
+          "value": "sandbox"
+        },
+        {
+          "score": 0.3581944,
+          "value": "legacy"
+        },
+        {
+          "score": 0.3484897,
+          "value": "prepaid"
+        },
+        {
+          "score": 0.34824935,
+          "value": "football"
+        },
+        {
+          "score": 0.3481351,
+          "value": "random"
+        },
+        {
+          "score": 0.33898193,
+          "value": "program"
+        },
+        {
+          "score": 0.3389017,
+          "value": "protection"
+        },
+        {
+          "score": 0.33824027,
+          "value": "person"
+        },
+        {
+          "score": 0.3379725,
+          "value": "indie"
+        },
+        {
+          "score": 0.33774963,
+          "value": "cheap"
+        },
+        {
+          "score": 0.33770752,
+          "value": "sims"
+        },
+        {
+          "score": 0.33770752,
+          "value": "scrolls"
+        },
+        {
+          "score": 0.32747665,
+          "value": "trustpilot"
+        },
+        {
+          "score": 0.31831518,
+          "value": "texture"
+        },
+        {
+          "score": 0.3177099,
+          "value": "open"
+        },
+        {
+          "score": 0.3172404,
+          "value": "gamivo"
+        },
+        {
+          "score": 0.3158587,
+          "value": "template"
+        },
+        {
+          "score": 0.30783576,
+          "value": "country"
+        },
+        {
+          "score": 0.3072563,
+          "value": "latest"
+        },
+        {
+          "score": 0.3072325,
+          "value": "fast"
+        },
+        {
+          "score": 0.30714223,
+          "value": "arcade"
+        },
+        {
+          "score": 0.3070588,
+          "value": "blade"
+        },
+        {
+          "score": 0.3070392,
+          "value": "origin"
+        },
+        {
+          "score": 0.3070138,
+          "value": "logic"
+        },
+        {
+          "score": 0.29958645,
+          "value": "creative"
+        },
+        {
+          "score": 0.29678345,
+          "value": "earn"
+        },
+        {
+          "score": 0.28699988,
+          "value": "multiplayer"
+        },
+        {
+          "score": 0.28662288,
+          "value": "currently"
+        },
+        {
+          "score": 0.2865397,
+          "value": "innocence"
+        },
+        {
+          "score": 0.27630615,
+          "value": "simulator"
+        },
+        {
+          "score": 0.27630615,
+          "value": "anime"
+        },
+        {
+          "score": 0.27280042,
+          "value": "trend"
+        },
+        {
+          "score": 0.2677896,
+          "value": "social medium"
+        },
+        {
+          "score": 0.26714715,
+          "value": "graphic"
+        },
+        {
+          "score": 0.24379018,
+          "value": "mockup"
+        },
+        {
+          "score": 0.2429951,
+          "value": "animal"
+        },
+        {
+          "score": 0.24287097,
+          "value": "market"
+        },
+        {
+          "score": 0.23851676,
+          "value": "creative market"
+        },
+        {
+          "score": 0.23591691,
+          "value": "illustrator"
+        },
+        {
+          "score": 0.2306627,
+          "value": "photoshop"
+        },
+        {
+          "score": 0.20362857,
+          "value": "icon"
+        },
+        {
+          "score": 0.19748718,
+          "value": "community"
+        },
+        {
+          "score": 0.19467178,
+          "value": "procreate"
+        },
+        {
+          "score": 0.19294602,
+          "value": "staff"
+        },
+        {
+          "score": 0.19169167,
+          "value": "photo"
+        },
+        {
+          "score": 0.18009275,
+          "value": "landing"
+        },
+        {
+          "score": 0.17888758,
+          "value": "affinity"
+        },
+        {
+          "score": 0.17746426,
+          "value": "print"
+        },
+        {
+          "score": 0.17389873,
+          "value": "kit"
+        },
+        {
+          "score": 0.17293507,
+          "value": "plugin"
+        },
+        {
+          "score": 0.16780831,
+          "value": "character"
+        },
+        {
+          "score": 0.16680673,
+          "value": "furniture"
+        },
+        {
+          "score": 0.16583559,
+          "value": "people"
+        },
+        {
+          "score": 0.16457404,
+          "value": "food"
+        },
+        {
+          "score": 0.16321756,
+          "value": "environment"
+        },
+        {
+          "score": 0.16163102,
+          "value": "flyer"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 1,
+      "value": [
+        "https://mailinvest.blog/"
+      ]
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/mailinvest.blog.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://mailinvest.blog"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 526,
+        "value": [
+          "1password.com",
+          "adobe.com",
+          "23andme.com",
+          "ford.com",
+          "yahoo.com",
+          "ferrari.com",
+          "typeform.com",
+          "nytimes.com",
+          "9to5mac.com",
+          "7news.com.au",
+          "apple.com",
+          "mail.ru",
+          "autodesk.com",
+          "a4c.com",
+          "amazon.com",
+          "abc.com",
+          "abc.net.au",
+          "abbyy.com",
+          "microsoft.com",
+          "americanexpress.com",
+          "wyze.com",
+          "att.com",
+          "doordash.com",
+          "dish.com",
+          "ikea.com",
+          "linkedin.com",
+          "intuit.com",
+          "netflix.com",
+          "nike.com",
+          "nordstrom.com",
+          "aboutamazon.com",
+          "nvidia.com",
+          "cnn.com",
+          "hubspot.com",
+          "shopify.com",
+          "dell.com",
+          "sky.com",
+          "ee.co.uk",
+          "woot.com",
+          "bbc.com",
+          "bluettipower.com",
+          "jackery.com",
+          "box.com",
+          "lenovo.com",
+          "nba.com",
+          "nowtv.com",
+          "nordvpn.com",
+          "onepeloton.com",
+          "oneplus.com",
+          "ring.com",
+          "protonvpn.com",
+          "samsung.com",
+          "t-mobile.com",
+          "surfshark.com",
+          "ubisoft.com",
+          "xbox.com",
+          "fitbit.com",
+          "spotify.com",
+          "nintendo.com",
+          "shutterstock.com",
+          "theatlantic.com",
+          "hbomax.com",
+          "popsugar.com",
+          "opera.com",
+          "usatoday.com",
+          "adorama.com",
+          "inc.com",
+          "advisorator.com",
+          "nationalgeographic.com",
+          "flexoffers.com",
+          "roku.com",
+          "hulu.com",
+          "consumerreports.org",
+          "walmart.com",
+          "espn.com",
+          "namecheap.com",
+          "fiverr.com",
+          "aftvnews.com",
+          "quora.com",
+          "steelseries.com",
+          "sensibo.com",
+          "airbnb.com",
+          "ajo.com",
+          "imdb.com",
+          "alphabidet.com",
+          "zoom.us",
+          "amazon.ca",
+          "amd.com",
+          "philips.com",
+          "ampere.shop",
+          "svsound.com",
+          "mi.com",
+          "amymyersmd.com",
+          "anandtech.com",
+          "vattenfall.de",
+          "anker.com",
+          "annke.com",
+          "awake.com",
+          "anonaddy.com",
+          "antennaweb.org",
+          "ao.com",
+          "hp.com",
+          "jabra.com",
+          "hollywoodreporter.com",
+          "youtube.com",
+          "govee.com",
+          "grammarly.com",
+          "intel.com",
+          "plex.tv",
+          "neilpatel.com",
+          "setapp.com",
+          "omnisend.com",
+          "garmin.com",
+          "fcc.gov",
+          "xero.com",
+          "arstechnica.com",
+          "lego.com",
+          "argos.co.uk",
+          "netgear.com",
+          "arlo.com",
+          "vive.com",
+          "cnet.com",
+          "sonos.com",
+          "bose.com",
+          "klipsch.com",
+          "xfinity.com",
+          "asthmaandallergyfriendly.com",
+          "asus.com",
+          "nature.com",
+          "incipio.com",
+          "audacityteam.org",
+          "godaddy.com",
+          "uow.edu.au",
+          "audio46.com",
+          "samsclub.com",
+          "audible.com",
+          "aura.com",
+          "max.com",
+          "australia.com",
+          "discoveryplus.com",
+          "uber.com",
+          "autodaily.com.au",
+          "autonomous.ai",
+          "avast.com",
+          "avis.com",
+          "aws.amazon.com",
+          "parallels.com",
+          "backgroovedistribution.com",
+          "bakerlaw.com",
+          "bali.com",
+          "ballysportsplus.com",
+          "barnesandnoble.com",
+          "bbalance.io",
+          "beamjobs.com",
+          "be.chewy.com",
+          "belibaby.com",
+          "belkin.com",
+          "bellroy.com",
+          "dazn.com",
+          "cyberlink.com",
+          "sling.com",
+          "techcrunch.com",
+          "billboard.com",
+          "blackview.hk",
+          "homedepot.com",
+          "lowes.com",
+          "creditkarma.com",
+          "ebay.com",
+          "humblebundle.com",
+          "kensington.com",
+          "macsales.com",
+          "logmein.com",
+          "motorola.com",
+          "nzxt.com",
+          "nasm.org",
+          "myheritage.com",
+          "ouraring.com",
+          "otter.ai",
+          "reddit.com",
+          "saatva.com",
+          "reelgood.com",
+          "sucuri.net",
+          "ticketmaster.com",
+          "very.co.uk",
+          "vudu.com",
+          "vidgo.com",
+          "blog.youtube",
+          "vodafone.com.au",
+          "indiewire.com",
+          "ieee.org",
+          "nfl.com",
+          "telegraph.co.uk",
+          "disney.com",
+          "wing.com",
+          "bloomberg.com",
+          "wsj.com",
+          "bluehost.com",
+          "bluos.net",
+          "books.google.com",
+          "boots.com",
+          "braneaudio.com",
+          "brightdata.com",
+          "britannica.com",
+          "bt.com",
+          "bullstrap.co",
+          "currys.co.uk",
+          "gazelle.com",
+          "buydig.com",
+          "macrumors.com",
+          "engadget.com",
+          "linksys.com",
+          "calendar.google.com",
+          "cambridgeaudio.com",
+          "optus.com.au",
+          "canon.com",
+          "fubo.tv",
+          "dyson.com",
+          "carphonewarehouse.com",
+          "hostinger.com",
+          "target.com",
+          "casetify.com",
+          "casper.com",
+          "cbssports.com",
+          "ccleaner.com",
+          "directv.com",
+          "steampowered.com",
+          "theinformation.com",
+          "celemony.com",
+          "razer.com",
+          "colgate.com",
+          "peakdesign.com",
+          "chess.com",
+          "chewy.com",
+          "chiark.greenend.org.uk",
+          "gm.com",
+          "chirpbooks.com",
+          "chrome.google.com",
+          "cnbc.com",
+          "linksynergy.com",
+          "sharkclean.co.uk",
+          "clickup.com",
+          "cloud.google.com",
+          "digitalocean.com",
+          "reolink.com",
+          "codesector.com",
+          "mbusa.com",
+          "foxtel.com.au",
+          "today.com",
+          "freshbooks.com",
+          "eufy.com",
+          "gopro.com",
+          "mayoclinic.org",
+          "verizon.com",
+          "visible.com",
+          "wd.com",
+          "contabo.com",
+          "costco.com",
+          "nespresso.com",
+          "dji.com",
+          "cordcuttersnews.com",
+          "cordcutterweekly.com",
+          "corepoweryoga.com",
+          "formula1.com",
+          "corsair.com",
+          "cox.com",
+          "creality.com",
+          "creativemarket.com",
+          "cricut.com",
+          "cricketwireless.com",
+          "crowdfireapp.com",
+          "csa-iot.org",
+          "esrgear.com",
+          "cuisinart.com",
+          "peugeot.com",
+          "dailyburn.com",
+          "davisinstruments.com",
+          "podia.com",
+          "deadline.com",
+          "decluttr.com",
+          "decider.com",
+          "staples.com",
+          "irrigreen.com",
+          "yubico.com",
+          "sharkclean.com",
+          "epson.com",
+          "docs.google.com",
+          "gravityforms.com",
+          "doctorofcredit.com",
+          "domains.google",
+          "winzip.com",
+          "springer.com",
+          "monoprice.com",
+          "dreame.com.au",
+          "dreametech.com",
+          "dreamcloudsleep.com",
+          "drive.google.com",
+          "drop.com",
+          "duckduckgo.com",
+          "dunelm.com",
+          "dynadot.com",
+          "dyson.co.uk",
+          "dyson.com.au",
+          "dysoncanada.ca",
+          "elementor.com",
+          "emma-mattress.co.uk",
+          "polkaudio.com",
+          "thelec.kr",
+          "energystar.gov",
+          "newegg.com",
+          "enterprise.com",
+          "skyscanner.com",
+          "stardock.com",
+          "formovie.com",
+          "nanoleaf.me",
+          "jbl.com",
+          "harmankardon.com",
+          "meaco.com",
+          "ipitaka.com",
+          "stanley1913.com",
+          "victrola.com",
+          "vocolinc.com",
+          "hrblock.com",
+          "johnlewis.com",
+          "expercom.com",
+          "expertreviews.co.uk",
+          "expressvpn.com",
+          "fastcompany.com",
+          "variety.com",
+          "fiido.com",
+          "filmora.wondershare.com",
+          "flexjobs.com",
+          "flobikes.com",
+          "flograppling.com",
+          "flo.com",
+          "flosports.tv",
+          "overclockers.co.uk",
+          "foxnews.com",
+          "taxslayer.com",
+          "tempurpedic.com",
+          "g.co",
+          "fweda.com",
+          "gamivo.com",
+          "geekompc.com",
+          "geektime.co.il",
+          "nextiva.com",
+          "getcasely.com",
+          "vyprvpn.com",
+          "getgocube.com",
+          "unbounce.com",
+          "momondo.com",
+          "samsungdisplay.com",
+          "gmktec.com",
+          "nordvpn.net",
+          "gog.com",
+          "google.com",
+          "googleblog.blogspot.com",
+          "graphicaudio.net",
+          "renault.com",
+          "volvocars.com",
+          "hagerty.com",
+          "harmanaudio.com",
+          "health.com",
+          "haval.com.au",
+          "itv.com",
+          "kogan.com",
+          "molekule.com",
+          "paramountplus.com",
+          "redpocket.com",
+          "vrbo.com",
+          "x.com",
+          "here.com",
+          "hertz.com",
+          "hide.me",
+          "hmd.com",
+          "holden.com.au",
+          "wayfair.com",
+          "theverge.com",
+          "idrive.com",
+          "monday.com",
+          "incfile.com",
+          "indeed.com",
+          "incase.com",
+          "insta360.com",
+          "hpconnected.com",
+          "instapage.com",
+          "invideo.io",
+          "xperi.com",
+          "ir.amd.com",
+          "ironvest.com",
+          "issuetracker.google.com",
+          "ithemes.com",
+          "scribd.com",
+          "jarednewman.com",
+          "jessops.com",
+          "thetimes.co.uk",
+          "junglescout.com",
+          "justwatch.com",
+          "kaspersky.com",
+          "kia.com",
+          "kittl.com",
+          "pcloud.com",
+          "yarbo.com",
+          "ldvautomotive.com.au",
+          "lectricebikes.com",
+          "masterclass.com",
+          "nextbase.com",
+          "lg.com",
+          "pdfexpert.com",
+          "vulture.com",
+          "lofree.co",
+          "prweb.com",
+          "semrush.com",
+          "lululook.com",
+          "prnewswire.com",
+          "viator.com",
+          "magshop.com.au",
+          "mail.google.com",
+          "makeheadway.com",
+          "marshallheadphones.com",
+          "ar.al",
+          "mcafee.com",
+          "otterbox.com",
+          "mindbodygreen.com",
+          "olympics.com",
+          "moft.us",
+          "mujjo.com",
+          "myactivity.google.com",
+          "nektony.com",
+          "news.google.com",
+          "nexttv.com",
+          "ninjakitchen.co.uk",
+          "nintendo.co.uk",
+          "nissanusa.com",
+          "nomadgoods.com",
+          "northwestregisteredagent.com",
+          "ntea.com",
+          "ocenaudio.com",
+          "oed.com",
+          "omgubuntu.co.uk",
+          "one.google.com",
+          "optinmonster.com",
+          "pdf.wondershare.com",
+          "peacocktv.com",
+          "penguin.co.uk",
+          "perfapi.hpicorp.com",
+          "philips-hue.com",
+          "photos.google.com",
+          "play.google.com",
+          "playon.tv",
+          "podium.com",
+          "popsockets.com",
+          "ppv.com",
+          "prnewswire.co.uk",
+          "shipbob.com",
+          "protocol.com",
+          "proscenic.com",
+          "prowritingaid.com",
+          "psbspeakers.com",
+          "viglink.com",
+          "purple.com",
+          "rabbitears.info",
+          "radpowerbikes.com",
+          "rd.com",
+          "rev.com",
+          "retropie.org.uk",
+          "ride1up.com",
+          "roborockstore.com.au",
+          "sandstraw.com",
+          "satechi.net",
+          "seekingalpha.com",
+          "sheets.google.com",
+          "simkl.com",
+          "smartproxy.com",
+          "snext-final.com",
+          "socialbee.io",
+          "space.com",
+          "speak.com",
+          "sproutsocial.com",
+          "ssls.com",
+          "ui.com",
+          "store.google.com",
+          "thewaltdisneycompany.com",
+          "streamtvinsider.com",
+          "supremecourt.gov",
+          "support.google.com",
+          "switchbot.vip",
+          "sync.com",
+          "taxact.com",
+          "theathletic.com",
+          "thegoodguys.com.au",
+          "thestreamable.com",
+          "thesource.ca",
+          "thewrap.com",
+          "tide.com",
+          "timeline.google.com",
+          "tile.com",
+          "toolstation.com",
+          "totousa.com",
+          "trakt.tv",
+          "trusens.com",
+          "tti.com",
+          "tvtechnology.com",
+          "tvtime.com",
+          "tvline.com",
+          "twelvesouth.com",
+          "tvanswerman.com",
+          "updf.com",
+          "urbanarmorgear.com",
+          "us.govee.com",
+          "us.eufy.com",
+          "us.lgappstv.com",
+          "us.pg.com",
+          "us.roborock.com",
+          "us.soundcore.com",
+          "vactidy.com",
+          "veed.io",
+          "venaproducts.com",
+          "vicohome.io",
+          "vinfastauto.us",
+          "watchnextgentv.com",
+          "weatherlink.com",
+          "wellbots.com",
+          "wired.co.uk",
+          "wix.com",
+          "writing.exchange",
+          "zapperbox.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 10,
+        "value": [
+          {
+            "domain": "us.soundcore.com"
+          },
+          {
+            "domain": "contabo.com"
+          },
+          {
+            "domain": "be.chewy.com"
+          },
+          {
+            "domain": "us.pg.com"
+          },
+          {
+            "domain": "us.govee.com"
+          },
+          {
+            "domain": "ir.amd.com"
+          },
+          {
+            "domain": "t-mobile.com"
+          },
+          {
+            "domain": "gazelle.com"
+          },
+          {
+            "domain": "us.eufy.com"
+          },
+          {
+            "domain": "us.roborock.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 10,
+        "value": [
+          {
+            "domain": "three.co.uk"
+          },
+          {
+            "domain": "go.dev"
+          },
+          {
+            "domain": "roborock.com"
+          },
+          {
+            "domain": "microcenter.com"
+          },
+          {
+            "domain": "originpc.com"
+          },
+          {
+            "domain": "live.com"
+          },
+          {
+            "domain": "soundcore.com"
+          },
+          {
+            "domain": "privateinternetaccess.com"
+          },
+          {
+            "domain": "pg.com"
+          },
+          {
+            "domain": "asana.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 72.95003,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 41.55001,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 39.15001,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 25.45,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 24.349998,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 24.3,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 22.050001,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 21.749998,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 16.899998,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 16.399998,
+            "vertical": "Motoring / Cars"
+          },
+          {
+            "count": 14.25,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 13.049999,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 11.499999,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 11.05,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 10.2,
+            "vertical": "Entertainment / Movies"
+          },
+          {
+            "count": 8.599999,
+            "vertical": "Online / Web Hosting"
+          },
+          {
+            "count": 8.25,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 7.9,
+            "vertical": "Online / VPN"
+          },
+          {
+            "count": 6.7499995,
+            "vertical": "Technology / Editing Software"
+          },
+          {
+            "count": 6.7,
+            "vertical": "Finance / Accounts"
+          },
+          {
+            "count": 6.6,
+            "vertical": "Business / Cyber Security"
+          },
+          {
+            "count": 6.55,
+            "vertical": "Home / Security"
+          },
+          {
+            "count": 5.75,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 5.75,
+            "vertical": "Home / Beds & Bedding"
+          },
+          {
+            "count": 5.7000003,
+            "vertical": "Online / Security"
+          },
+          {
+            "count": 5.6,
+            "vertical": "Finance / Investments"
+          },
+          {
+            "count": 4.9,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 4.9,
+            "vertical": "Business / Website Builder"
+          },
+          {
+            "count": 4.85,
+            "vertical": "Sports / Cycling"
+          },
+          {
+            "count": 4.6,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 4.4,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 3.95,
+            "vertical": "Business / Jobs & Careers"
+          },
+          {
+            "count": 3.9,
+            "vertical": "Business / Office"
+          },
+          {
+            "count": 3.9,
+            "vertical": "Travel / Car Hire"
+          },
+          {
+            "count": 3.8,
+            "vertical": "Home / DIY"
+          },
+          {
+            "count": 3.7,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 2.95,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Business / CRM"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Travel / Vacation"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Home / Pets"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Travel / Flights"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Entertainment / Hobbies"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Finance / Cards"
+          },
+          {
+            "count": 1.7,
+            "vertical": "Business / Energy"
+          },
+          {
+            "count": 1.7,
+            "vertical": "Business / Finance"
+          },
+          {
+            "count": 1.65,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 1,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 1,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 1,
+            "vertical": "Home / Babycare"
+          },
+          {
+            "count": 1,
+            "vertical": "Home / Garden"
+          },
+          {
+            "count": 1,
+            "vertical": "Travel / Accessories"
+          },
+          {
+            "count": 1,
+            "vertical": "Travel / Attractions"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Trading"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Online / Web Design"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Food / Take Out"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Gifts / Kids"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Sports / Outdoor"
+          },
+          {
+            "count": 0.85,
+            "vertical": "Home / Solar"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 526,
+      "value": [
+        "1password.com",
+        "adobe.com",
+        "23andme.com",
+        "ford.com",
+        "yahoo.com",
+        "ferrari.com",
+        "typeform.com",
+        "nytimes.com",
+        "9to5mac.com",
+        "7news.com.au",
+        "apple.com",
+        "mail.ru",
+        "autodesk.com",
+        "a4c.com",
+        "amazon.com",
+        "abc.com",
+        "abc.net.au",
+        "abbyy.com",
+        "microsoft.com",
+        "americanexpress.com",
+        "wyze.com",
+        "att.com",
+        "doordash.com",
+        "dish.com",
+        "ikea.com",
+        "linkedin.com",
+        "intuit.com",
+        "netflix.com",
+        "nike.com",
+        "nordstrom.com",
+        "aboutamazon.com",
+        "nvidia.com",
+        "cnn.com",
+        "hubspot.com",
+        "shopify.com",
+        "dell.com",
+        "sky.com",
+        "ee.co.uk",
+        "woot.com",
+        "bbc.com",
+        "bluettipower.com",
+        "jackery.com",
+        "box.com",
+        "lenovo.com",
+        "nba.com",
+        "nowtv.com",
+        "nordvpn.com",
+        "onepeloton.com",
+        "oneplus.com",
+        "ring.com",
+        "protonvpn.com",
+        "samsung.com",
+        "t-mobile.com",
+        "surfshark.com",
+        "ubisoft.com",
+        "xbox.com",
+        "fitbit.com",
+        "spotify.com",
+        "nintendo.com",
+        "shutterstock.com",
+        "theatlantic.com",
+        "hbomax.com",
+        "popsugar.com",
+        "opera.com",
+        "usatoday.com",
+        "adorama.com",
+        "inc.com",
+        "advisorator.com",
+        "nationalgeographic.com",
+        "flexoffers.com",
+        "roku.com",
+        "hulu.com",
+        "consumerreports.org",
+        "walmart.com",
+        "espn.com",
+        "namecheap.com",
+        "fiverr.com",
+        "aftvnews.com",
+        "quora.com",
+        "steelseries.com",
+        "sensibo.com",
+        "airbnb.com",
+        "ajo.com",
+        "imdb.com",
+        "alphabidet.com",
+        "zoom.us",
+        "amazon.ca",
+        "amd.com",
+        "philips.com",
+        "ampere.shop",
+        "svsound.com",
+        "mi.com",
+        "amymyersmd.com",
+        "anandtech.com",
+        "vattenfall.de",
+        "anker.com",
+        "annke.com",
+        "awake.com",
+        "anonaddy.com",
+        "antennaweb.org",
+        "ao.com",
+        "hp.com",
+        "jabra.com",
+        "hollywoodreporter.com",
+        "youtube.com",
+        "govee.com",
+        "grammarly.com",
+        "intel.com",
+        "plex.tv",
+        "neilpatel.com",
+        "setapp.com",
+        "omnisend.com",
+        "garmin.com",
+        "fcc.gov",
+        "xero.com",
+        "arstechnica.com",
+        "lego.com",
+        "argos.co.uk",
+        "netgear.com",
+        "arlo.com",
+        "vive.com",
+        "cnet.com",
+        "sonos.com",
+        "bose.com",
+        "klipsch.com",
+        "xfinity.com",
+        "asthmaandallergyfriendly.com",
+        "asus.com",
+        "nature.com",
+        "incipio.com",
+        "audacityteam.org",
+        "godaddy.com",
+        "uow.edu.au",
+        "audio46.com",
+        "samsclub.com",
+        "audible.com",
+        "aura.com",
+        "max.com",
+        "australia.com",
+        "discoveryplus.com",
+        "uber.com",
+        "autodaily.com.au",
+        "autonomous.ai",
+        "avast.com",
+        "avis.com",
+        "aws.amazon.com",
+        "parallels.com",
+        "backgroovedistribution.com",
+        "bakerlaw.com",
+        "bali.com",
+        "ballysportsplus.com",
+        "barnesandnoble.com",
+        "bbalance.io",
+        "beamjobs.com",
+        "be.chewy.com",
+        "belibaby.com",
+        "belkin.com",
+        "bellroy.com",
+        "dazn.com",
+        "cyberlink.com",
+        "sling.com",
+        "techcrunch.com",
+        "billboard.com",
+        "blackview.hk",
+        "homedepot.com",
+        "lowes.com",
+        "creditkarma.com",
+        "ebay.com",
+        "humblebundle.com",
+        "kensington.com",
+        "macsales.com",
+        "logmein.com",
+        "motorola.com",
+        "nzxt.com",
+        "nasm.org",
+        "myheritage.com",
+        "ouraring.com",
+        "otter.ai",
+        "reddit.com",
+        "saatva.com",
+        "reelgood.com",
+        "sucuri.net",
+        "ticketmaster.com",
+        "very.co.uk",
+        "vudu.com",
+        "vidgo.com",
+        "blog.youtube",
+        "vodafone.com.au",
+        "indiewire.com",
+        "ieee.org",
+        "nfl.com",
+        "telegraph.co.uk",
+        "disney.com",
+        "wing.com",
+        "bloomberg.com",
+        "wsj.com",
+        "bluehost.com",
+        "bluos.net",
+        "books.google.com",
+        "boots.com",
+        "braneaudio.com",
+        "brightdata.com",
+        "britannica.com",
+        "bt.com",
+        "bullstrap.co",
+        "currys.co.uk",
+        "gazelle.com",
+        "buydig.com",
+        "macrumors.com",
+        "engadget.com",
+        "linksys.com",
+        "calendar.google.com",
+        "cambridgeaudio.com",
+        "optus.com.au",
+        "canon.com",
+        "fubo.tv",
+        "dyson.com",
+        "carphonewarehouse.com",
+        "hostinger.com",
+        "target.com",
+        "casetify.com",
+        "casper.com",
+        "cbssports.com",
+        "ccleaner.com",
+        "directv.com",
+        "steampowered.com",
+        "theinformation.com",
+        "celemony.com",
+        "razer.com",
+        "colgate.com",
+        "peakdesign.com",
+        "chess.com",
+        "chewy.com",
+        "chiark.greenend.org.uk",
+        "gm.com",
+        "chirpbooks.com",
+        "chrome.google.com",
+        "cnbc.com",
+        "linksynergy.com",
+        "sharkclean.co.uk",
+        "clickup.com",
+        "cloud.google.com",
+        "digitalocean.com",
+        "reolink.com",
+        "codesector.com",
+        "mbusa.com",
+        "foxtel.com.au",
+        "today.com",
+        "freshbooks.com",
+        "eufy.com",
+        "gopro.com",
+        "mayoclinic.org",
+        "verizon.com",
+        "visible.com",
+        "wd.com",
+        "contabo.com",
+        "costco.com",
+        "nespresso.com",
+        "dji.com",
+        "cordcuttersnews.com",
+        "cordcutterweekly.com",
+        "corepoweryoga.com",
+        "formula1.com",
+        "corsair.com",
+        "cox.com",
+        "creality.com",
+        "creativemarket.com",
+        "cricut.com",
+        "cricketwireless.com",
+        "crowdfireapp.com",
+        "csa-iot.org",
+        "esrgear.com",
+        "cuisinart.com",
+        "peugeot.com",
+        "dailyburn.com",
+        "davisinstruments.com",
+        "podia.com",
+        "deadline.com",
+        "decluttr.com",
+        "decider.com",
+        "staples.com",
+        "irrigreen.com",
+        "yubico.com",
+        "sharkclean.com",
+        "epson.com",
+        "docs.google.com",
+        "gravityforms.com",
+        "doctorofcredit.com",
+        "domains.google",
+        "winzip.com",
+        "springer.com",
+        "monoprice.com",
+        "dreame.com.au",
+        "dreametech.com",
+        "dreamcloudsleep.com",
+        "drive.google.com",
+        "drop.com",
+        "duckduckgo.com",
+        "dunelm.com",
+        "dynadot.com",
+        "dyson.co.uk",
+        "dyson.com.au",
+        "dysoncanada.ca",
+        "elementor.com",
+        "emma-mattress.co.uk",
+        "polkaudio.com",
+        "thelec.kr",
+        "energystar.gov",
+        "newegg.com",
+        "enterprise.com",
+        "skyscanner.com",
+        "stardock.com",
+        "formovie.com",
+        "nanoleaf.me",
+        "jbl.com",
+        "harmankardon.com",
+        "meaco.com",
+        "ipitaka.com",
+        "stanley1913.com",
+        "victrola.com",
+        "vocolinc.com",
+        "hrblock.com",
+        "johnlewis.com",
+        "expercom.com",
+        "expertreviews.co.uk",
+        "expressvpn.com",
+        "fastcompany.com",
+        "variety.com",
+        "fiido.com",
+        "filmora.wondershare.com",
+        "flexjobs.com",
+        "flobikes.com",
+        "flograppling.com",
+        "flo.com",
+        "flosports.tv",
+        "overclockers.co.uk",
+        "foxnews.com",
+        "taxslayer.com",
+        "tempurpedic.com",
+        "g.co",
+        "fweda.com",
+        "gamivo.com",
+        "geekompc.com",
+        "geektime.co.il",
+        "nextiva.com",
+        "getcasely.com",
+        "vyprvpn.com",
+        "getgocube.com",
+        "unbounce.com",
+        "momondo.com",
+        "samsungdisplay.com",
+        "gmktec.com",
+        "nordvpn.net",
+        "gog.com",
+        "google.com",
+        "googleblog.blogspot.com",
+        "graphicaudio.net",
+        "renault.com",
+        "volvocars.com",
+        "hagerty.com",
+        "harmanaudio.com",
+        "health.com",
+        "haval.com.au",
+        "itv.com",
+        "kogan.com",
+        "molekule.com",
+        "paramountplus.com",
+        "redpocket.com",
+        "vrbo.com",
+        "x.com",
+        "here.com",
+        "hertz.com",
+        "hide.me",
+        "hmd.com",
+        "holden.com.au",
+        "wayfair.com",
+        "theverge.com",
+        "idrive.com",
+        "monday.com",
+        "incfile.com",
+        "indeed.com",
+        "incase.com",
+        "insta360.com",
+        "hpconnected.com",
+        "instapage.com",
+        "invideo.io",
+        "xperi.com",
+        "ir.amd.com",
+        "ironvest.com",
+        "issuetracker.google.com",
+        "ithemes.com",
+        "scribd.com",
+        "jarednewman.com",
+        "jessops.com",
+        "thetimes.co.uk",
+        "junglescout.com",
+        "justwatch.com",
+        "kaspersky.com",
+        "kia.com",
+        "kittl.com",
+        "pcloud.com",
+        "yarbo.com",
+        "ldvautomotive.com.au",
+        "lectricebikes.com",
+        "masterclass.com",
+        "nextbase.com",
+        "lg.com",
+        "pdfexpert.com",
+        "vulture.com",
+        "lofree.co",
+        "prweb.com",
+        "semrush.com",
+        "lululook.com",
+        "prnewswire.com",
+        "viator.com",
+        "magshop.com.au",
+        "mail.google.com",
+        "makeheadway.com",
+        "marshallheadphones.com",
+        "ar.al",
+        "mcafee.com",
+        "otterbox.com",
+        "mindbodygreen.com",
+        "olympics.com",
+        "moft.us",
+        "mujjo.com",
+        "myactivity.google.com",
+        "nektony.com",
+        "news.google.com",
+        "nexttv.com",
+        "ninjakitchen.co.uk",
+        "nintendo.co.uk",
+        "nissanusa.com",
+        "nomadgoods.com",
+        "northwestregisteredagent.com",
+        "ntea.com",
+        "ocenaudio.com",
+        "oed.com",
+        "omgubuntu.co.uk",
+        "one.google.com",
+        "optinmonster.com",
+        "pdf.wondershare.com",
+        "peacocktv.com",
+        "penguin.co.uk",
+        "perfapi.hpicorp.com",
+        "philips-hue.com",
+        "photos.google.com",
+        "play.google.com",
+        "playon.tv",
+        "podium.com",
+        "popsockets.com",
+        "ppv.com",
+        "prnewswire.co.uk",
+        "shipbob.com",
+        "protocol.com",
+        "proscenic.com",
+        "prowritingaid.com",
+        "psbspeakers.com",
+        "viglink.com",
+        "purple.com",
+        "rabbitears.info",
+        "radpowerbikes.com",
+        "rd.com",
+        "rev.com",
+        "retropie.org.uk",
+        "ride1up.com",
+        "roborockstore.com.au",
+        "sandstraw.com",
+        "satechi.net",
+        "seekingalpha.com",
+        "sheets.google.com",
+        "simkl.com",
+        "smartproxy.com",
+        "snext-final.com",
+        "socialbee.io",
+        "space.com",
+        "speak.com",
+        "sproutsocial.com",
+        "ssls.com",
+        "ui.com",
+        "store.google.com",
+        "thewaltdisneycompany.com",
+        "streamtvinsider.com",
+        "supremecourt.gov",
+        "support.google.com",
+        "switchbot.vip",
+        "sync.com",
+        "taxact.com",
+        "theathletic.com",
+        "thegoodguys.com.au",
+        "thestreamable.com",
+        "thesource.ca",
+        "thewrap.com",
+        "tide.com",
+        "timeline.google.com",
+        "tile.com",
+        "toolstation.com",
+        "totousa.com",
+        "trakt.tv",
+        "trusens.com",
+        "tti.com",
+        "tvtechnology.com",
+        "tvtime.com",
+        "tvline.com",
+        "twelvesouth.com",
+        "tvanswerman.com",
+        "updf.com",
+        "urbanarmorgear.com",
+        "us.govee.com",
+        "us.eufy.com",
+        "us.lgappstv.com",
+        "us.pg.com",
+        "us.roborock.com",
+        "us.soundcore.com",
+        "vactidy.com",
+        "veed.io",
+        "venaproducts.com",
+        "vicohome.io",
+        "vinfastauto.us",
+        "watchnextgentv.com",
+        "weatherlink.com",
+        "wellbots.com",
+        "wired.co.uk",
+        "wix.com",
+        "writing.exchange",
+        "zapperbox.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 1,
+      "socialsAvailable": [
+        "youtube"
+      ],
+      "value": {
+        "youtube": "https://youtube.com/channel/uc84bc7mmu1zqp0ytjxzyhra"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Business / Software",
+      "value": [
+        "Business / Software",
+        "Finance / Investments"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Business / Software",
+        "rank": 1,
+        "score": 70
+      },
+      "value": [
+        {
+          "name": "Business / Software",
+          "rank": 1,
+          "score": 70
+        },
+        {
+          "name": "Finance / Investments",
+          "rank": 1,
+          "score": 60
+        }
+      ]
+    }
+  }
+}

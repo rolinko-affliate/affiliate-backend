@@ -1,0 +1,129 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Skimlinks"
+      ],
+      "value": [
+        "Skimlinks"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 0,
+      "error": false,
+      "value": []
+    },
+    "domain": "uk.amazonforum.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/uk.amazonforum.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://uk.amazonforum.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 14
+      },
+      "partnersAdded": {
+        "count": 14,
+        "value": [
+          {
+            "domain": "cyclenews.blog"
+          },
+          {
+            "domain": "techzonedaily.com"
+          },
+          {
+            "domain": "aiandtechs.com"
+          },
+          {
+            "domain": "topat10.com"
+          },
+          {
+            "domain": "topworldnewstoday.com"
+          },
+          {
+            "domain": "faulknernewsnetwork.online"
+          },
+          {
+            "domain": "getreview.org"
+          },
+          {
+            "domain": "carbonchemist.com"
+          },
+          {
+            "domain": "uniqueindiatech.com"
+          },
+          {
+            "domain": "ebtis.com"
+          },
+          {
+            "domain": "systmadeinc.com"
+          },
+          {
+            "domain": "dlsserve.com"
+          },
+          {
+            "domain": "wired.com"
+          },
+          {
+            "domain": "timeoutnews.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 3,
+            "promotype": "blog",
+            "value": [
+              "dlsserve.com",
+              "techzonedaily.com",
+              "topworldnewstoday.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Online / Services",
+        "rank": 2,
+        "score": 70
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 2,
+          "score": 60
+        },
+        {
+          "name": "Online / Services",
+          "rank": 2,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

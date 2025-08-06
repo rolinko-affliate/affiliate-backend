@@ -1,0 +1,862 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 10,
+      "sampleValue": [
+        "Amazon CA",
+        "Business Insider",
+        "Impact"
+      ],
+      "value": [
+        "Amazon CA",
+        "Business Insider",
+        "Impact",
+        "Partnerize",
+        "PartnerStack",
+        "Plus500",
+        "Rakuten",
+        "Skimlinks",
+        "TRX",
+        "TUNE"
+      ]
+    },
+    "countryRankings": {
+      "count": 3,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.45
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.45
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.12
+        },
+        {
+          "countryCode": "ca",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.45
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.12
+        },
+        {
+          "countryCode": "ca",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "thewealthiestinvestor.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "insurance"
+        },
+        {
+          "score": 0.7876884,
+          "value": "stock"
+        },
+        {
+          "score": 0.4466097,
+          "value": "trading"
+        },
+        {
+          "score": 0.36559334,
+          "value": "health"
+        },
+        {
+          "score": 0.2839098,
+          "value": "broker"
+        },
+        {
+          "score": 0.25375408,
+          "value": "market"
+        },
+        {
+          "score": 0.23353858,
+          "value": "investment"
+        },
+        {
+          "score": 0.2307831,
+          "value": "credit"
+        },
+        {
+          "score": 0.20522718,
+          "value": "financial"
+        },
+        {
+          "score": 0.20392406,
+          "value": "course"
+        },
+        {
+          "score": 0.1928675,
+          "value": "card"
+        },
+        {
+          "score": 0.19131081,
+          "value": "future"
+        },
+        {
+          "score": 0.1820457,
+          "value": "mortgage"
+        },
+        {
+          "score": 0.18062158,
+          "value": "calendar"
+        },
+        {
+          "score": 0.17839138,
+          "value": "penny"
+        },
+        {
+          "score": 0.17075023,
+          "value": "investor"
+        },
+        {
+          "score": 0.14927034,
+          "value": "cryptocurrency"
+        },
+        {
+          "score": 0.14335018,
+          "value": "cheap"
+        },
+        {
+          "score": 0.14309067,
+          "value": "fund"
+        },
+        {
+          "score": 0.14123403,
+          "value": "life"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "insurance"
+        },
+        {
+          "score": 0.7876884,
+          "value": "stock"
+        },
+        {
+          "score": 0.4466097,
+          "value": "trading"
+        },
+        {
+          "score": 0.36559334,
+          "value": "health"
+        },
+        {
+          "score": 0.2839098,
+          "value": "broker"
+        },
+        {
+          "score": 0.25375408,
+          "value": "market"
+        },
+        {
+          "score": 0.23353858,
+          "value": "investment"
+        },
+        {
+          "score": 0.2307831,
+          "value": "credit"
+        },
+        {
+          "score": 0.20522718,
+          "value": "financial"
+        },
+        {
+          "score": 0.20392406,
+          "value": "course"
+        },
+        {
+          "score": 0.1928675,
+          "value": "card"
+        },
+        {
+          "score": 0.19131081,
+          "value": "future"
+        },
+        {
+          "score": 0.1820457,
+          "value": "mortgage"
+        },
+        {
+          "score": 0.18062158,
+          "value": "calendar"
+        },
+        {
+          "score": 0.17839138,
+          "value": "penny"
+        },
+        {
+          "score": 0.17075023,
+          "value": "investor"
+        },
+        {
+          "score": 0.14927034,
+          "value": "cryptocurrency"
+        },
+        {
+          "score": 0.14335018,
+          "value": "cheap"
+        },
+        {
+          "score": 0.14309067,
+          "value": "fund"
+        },
+        {
+          "score": 0.14123403,
+          "value": "life"
+        },
+        {
+          "score": 0.13641079,
+          "value": "short"
+        },
+        {
+          "score": 0.1359353,
+          "value": "app"
+        },
+        {
+          "score": 0.13411097,
+          "value": "platform"
+        },
+        {
+          "score": 0.13231243,
+          "value": "forex"
+        },
+        {
+          "score": 0.12313041,
+          "value": "capital"
+        },
+        {
+          "score": 0.12153387,
+          "value": "idea"
+        },
+        {
+          "score": 0.12153279,
+          "value": "loan"
+        },
+        {
+          "score": 0.12133139,
+          "value": "money"
+        },
+        {
+          "score": 0.11962348,
+          "value": "dental"
+        },
+        {
+          "score": 0.11531091,
+          "value": "guide"
+        },
+        {
+          "score": 0.11489322,
+          "value": "real"
+        },
+        {
+          "score": 0.113117136,
+          "value": "share"
+        },
+        {
+          "score": 0.11093277,
+          "value": "pet"
+        },
+        {
+          "score": 0.1096615,
+          "value": "earning"
+        },
+        {
+          "score": 0.10795641,
+          "value": "trader"
+        },
+        {
+          "score": 0.10657865,
+          "value": "rate"
+        },
+        {
+          "score": 0.101748586,
+          "value": "lender"
+        },
+        {
+          "score": 0.09496251,
+          "value": "analyst"
+        },
+        {
+          "score": 0.09431497,
+          "value": "advisor"
+        },
+        {
+          "score": 0.09184768,
+          "value": "car"
+        },
+        {
+          "score": 0.09112884,
+          "value": "coverage"
+        },
+        {
+          "score": 0.09041316,
+          "value": "software"
+        },
+        {
+          "score": 0.0889696,
+          "value": "portfolio"
+        },
+        {
+          "score": 0.08769617,
+          "value": "dividend"
+        },
+        {
+          "score": 0.08741723,
+          "value": "event"
+        },
+        {
+          "score": 0.08728545,
+          "value": "strategy"
+        },
+        {
+          "score": 0.08189035,
+          "value": "feed"
+        },
+        {
+          "score": 0.08159376,
+          "value": "financial advisor"
+        },
+        {
+          "score": 0.08115337,
+          "value": "press"
+        },
+        {
+          "score": 0.07932163,
+          "value": "dental insurance"
+        },
+        {
+          "score": 0.077527404,
+          "value": "markets"
+        },
+        {
+          "score": 0.07705799,
+          "value": "vision"
+        },
+        {
+          "score": 0.0767701,
+          "value": "contribution"
+        },
+        {
+          "score": 0.07635941,
+          "value": "binary"
+        },
+        {
+          "score": 0.0762853,
+          "value": "student"
+        },
+        {
+          "score": 0.07518227,
+          "value": "digital"
+        },
+        {
+          "score": 0.0741358,
+          "value": "global"
+        },
+        {
+          "score": 0.07247007,
+          "value": "finance"
+        },
+        {
+          "score": 0.07237896,
+          "value": "tool"
+        },
+        {
+          "score": 0.07069254,
+          "value": "nft"
+        },
+        {
+          "score": 0.07010922,
+          "value": "hour"
+        },
+        {
+          "score": 0.069725454,
+          "value": "ticket"
+        },
+        {
+          "score": 0.068218246,
+          "value": "crypto"
+        },
+        {
+          "score": 0.06809663,
+          "value": "cap"
+        },
+        {
+          "score": 0.06597344,
+          "value": "video"
+        },
+        {
+          "score": 0.064323224,
+          "value": "companies"
+        },
+        {
+          "score": 0.0641814,
+          "value": "insider"
+        },
+        {
+          "score": 0.061674707,
+          "value": "industry"
+        },
+        {
+          "score": 0.06082684,
+          "value": "rating"
+        },
+        {
+          "score": 0.059031095,
+          "value": "cryptocurrencie"
+        },
+        {
+          "score": 0.059029907,
+          "value": "pet insurance"
+        },
+        {
+          "score": 0.059028286,
+          "value": "commission"
+        },
+        {
+          "score": 0.05876058,
+          "value": "taxis"
+        },
+        {
+          "score": 0.0585861,
+          "value": "motorcycle"
+        },
+        {
+          "score": 0.058230214,
+          "value": "investments"
+        },
+        {
+          "score": 0.058108993,
+          "value": "estate"
+        },
+        {
+          "score": 0.05782574,
+          "value": "team"
+        },
+        {
+          "score": 0.05754798,
+          "value": "real estate"
+        },
+        {
+          "score": 0.05701787,
+          "value": "short term"
+        },
+        {
+          "score": 0.05697675,
+          "value": "mutual"
+        },
+        {
+          "score": 0.056766257,
+          "value": "minute"
+        },
+        {
+          "score": 0.056424014,
+          "value": "alternative"
+        },
+        {
+          "score": 0.053360477,
+          "value": "retail"
+        },
+        {
+          "score": 0.05325483,
+          "value": "investing"
+        },
+        {
+          "score": 0.05263097,
+          "value": "gold"
+        },
+        {
+          "score": 0.05142877,
+          "value": "technology"
+        },
+        {
+          "score": 0.049376242,
+          "value": "offering"
+        },
+        {
+          "score": 0.049314335,
+          "value": "enterprise"
+        },
+        {
+          "score": 0.049074646,
+          "value": "cloud"
+        },
+        {
+          "score": 0.048908297,
+          "value": "blue"
+        },
+        {
+          "score": 0.048712038,
+          "value": "webull"
+        },
+        {
+          "score": 0.047888402,
+          "value": "provider"
+        },
+        {
+          "score": 0.047882207,
+          "value": "activity"
+        },
+        {
+          "score": 0.047445174,
+          "value": "investors"
+        },
+        {
+          "score": 0.047395498,
+          "value": "premarket"
+        },
+        {
+          "score": 0.047395498,
+          "value": "binary option"
+        },
+        {
+          "score": 0.04689478,
+          "value": "coinbase"
+        },
+        {
+          "score": 0.04668621,
+          "value": "investigations"
+        },
+        {
+          "score": 0.04643486,
+          "value": "brokerage"
+        },
+        {
+          "score": 0.045091547,
+          "value": "forex trading"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://thewealthiestinvestor.com/",
+        "https://www.thewealthiestinvestor.com/",
+        "http://thewealthiestinvestor.com/",
+        "http://www.thewealthiestinvestor.com/"
+      ]
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/thewealthiestinvestor.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://thewealthiestinvestor.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 45,
+        "value": [
+          "sjv.io",
+          "nytimes.com",
+          "apple.com",
+          "linkedin.com",
+          "aboutamazon.com",
+          "dell.com",
+          "chase.com",
+          "hulu.com",
+          "amazon.ca",
+          "apmaffiliates.com",
+          "kohls.com",
+          "arrivedhomes.com",
+          "auratenewyork.com",
+          "balenciaga.com",
+          "bankrate.com",
+          "gucci.com",
+          "benzinga.com",
+          "fool.com",
+          "ticketmaster.com",
+          "chanel.com",
+          "bottegaveneta.com",
+          "reservebar.com",
+          "theinformation.com",
+          "stubhub.com",
+          "cnbc.com",
+          "corporatefinanceinstitute.com",
+          "danelfin.com",
+          "m1.com",
+          "morningstar.com",
+          "quince.com",
+          "hsastore.com",
+          "ir.homedepot.com",
+          "magnifi.com",
+          "money.com",
+          "oc.brcclx.com",
+          "plus500.com",
+          "prada.com",
+          "pwccmarketplace.com",
+          "quontic.com",
+          "tryq.ai",
+          "rocketdollar.com",
+          "smws.com",
+          "truebill.com",
+          "vividseats.com",
+          "yieldstreet.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 5,
+        "value": [
+          {
+            "domain": "amazon.ca"
+          },
+          {
+            "domain": "ir.homedepot.com"
+          },
+          {
+            "domain": "smws.com"
+          },
+          {
+            "domain": "reservebar.com"
+          },
+          {
+            "domain": "pwccmarketplace.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 3,
+        "value": [
+          {
+            "domain": "homedepot.com"
+          },
+          {
+            "domain": "adobe.com"
+          },
+          {
+            "domain": "music.amazon.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 5.8,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 4.8,
+            "vertical": "Finance / Investments"
+          },
+          {
+            "count": 3.6,
+            "vertical": "Business / Finance"
+          },
+          {
+            "count": 3,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Finance / Banking"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Finance / Trading"
+          },
+          {
+            "count": 2,
+            "vertical": "Food / Alcohol"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 1.6500001,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Jobs & Careers"
+          },
+          {
+            "count": 1,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 1,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 1,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 1,
+            "vertical": "Home / DIY"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Jewellery"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Property / Property"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Finance / Accounts"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Technology / Editing Software"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 0.5,
+            "vertical": "Business / Software"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 45,
+      "value": [
+        "sjv.io",
+        "nytimes.com",
+        "apple.com",
+        "linkedin.com",
+        "aboutamazon.com",
+        "dell.com",
+        "chase.com",
+        "hulu.com",
+        "amazon.ca",
+        "apmaffiliates.com",
+        "kohls.com",
+        "arrivedhomes.com",
+        "auratenewyork.com",
+        "balenciaga.com",
+        "bankrate.com",
+        "gucci.com",
+        "benzinga.com",
+        "fool.com",
+        "ticketmaster.com",
+        "chanel.com",
+        "bottegaveneta.com",
+        "reservebar.com",
+        "theinformation.com",
+        "stubhub.com",
+        "cnbc.com",
+        "corporatefinanceinstitute.com",
+        "danelfin.com",
+        "m1.com",
+        "morningstar.com",
+        "quince.com",
+        "hsastore.com",
+        "ir.homedepot.com",
+        "magnifi.com",
+        "money.com",
+        "oc.brcclx.com",
+        "plus500.com",
+        "prada.com",
+        "pwccmarketplace.com",
+        "quontic.com",
+        "tryq.ai",
+        "rocketdollar.com",
+        "smws.com",
+        "truebill.com",
+        "vividseats.com",
+        "yieldstreet.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 9,
+      "value": [
+        "investingideasdaily.com",
+        "dailystockadvisor.com",
+        "premiummarketnews.com",
+        "myoptionalerts.com",
+        "investingvibe.com",
+        "bullishmindset.com",
+        "stocksdelivered.com",
+        "theamericaninvestordaily.com",
+        "bullsfortech.com"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Finance / Investments",
+      "value": [
+        "Finance / Investments",
+        "Finance / Trading",
+        "Business / Online Training"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Finance / Investments",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Finance / Investments",
+          "rank": 1,
+          "score": 95
+        },
+        {
+          "name": "Finance / Trading",
+          "rank": 1,
+          "score": 70
+        },
+        {
+          "name": "Business / Online Training",
+          "rank": 1,
+          "score": 50
+        }
+      ]
+    }
+  }
+}

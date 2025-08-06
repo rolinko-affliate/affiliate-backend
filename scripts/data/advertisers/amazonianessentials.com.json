@@ -1,0 +1,89 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 3,
+      "sampleValue": [
+        "Digidip",
+        "ShareASale",
+        "Skimlinks"
+      ],
+      "value": [
+        "Digidip",
+        "ShareASale",
+        "Skimlinks"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 0,
+      "error": false,
+      "value": []
+    },
+    "domain": "amazonianessentials.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazonianessentials.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazonianessentials.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 7
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 1,
+            "promotype": "incentive",
+            "value": [
+              "dealsavv.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Home / Homeware",
+        "rank": 2,
+        "score": 70
+      },
+      "value": [
+        {
+          "name": "Health / Wellbeing",
+          "rank": 2,
+          "score": 60
+        },
+        {
+          "name": "Home / Homeware",
+          "rank": 2,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

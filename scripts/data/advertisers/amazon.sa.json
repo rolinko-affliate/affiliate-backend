@@ -1,0 +1,125 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 4,
+      "sampleValue": [
+        "Admitad",
+        "Skimlinks",
+        "TradeTracker"
+      ],
+      "value": [
+        "Admitad",
+        "Skimlinks",
+        "TradeTracker",
+        "Viglink"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 1,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "support@anghami.com"
+        }
+      ]
+    },
+    "domain": "amazon.sa",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "كل شيء تحبه في سوق.كوم الان اصبح على أمازون السعودية. استكشف و اشتري الالكترونيات, الكمبيوترات, الملابس, الاكسسوارات, الاحذية ,الساعات , الاثاث, مستلزمات المنزل و المطبخ, منتجات الجمال , و العناية الشخصية , البقالة و الكثير. استمتع بأفضل العروض, خدمات التوصيل السريعة و الدفع عن الاستلام.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazon.sa.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazon.sa"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 11
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "sa.mamarate.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "mamarate.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 1,
+            "promotype": "incentive",
+            "value": [
+              "couponato.com"
+            ]
+          },
+          {
+            "count": 2,
+            "promotype": "blog",
+            "value": [
+              "gopromocodes.com",
+              "sa.mamarate.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "student",
+            "value": [
+              "metabee.de"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "content",
+            "value": [
+              "tech-gram.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 2,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 2,
+          "score": 90
+        },
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 2,
+          "score": 100
+        }
+      ]
+    }
+  }
+}

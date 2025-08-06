@@ -1,0 +1,2496 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 12,
+      "sampleValue": [
+        "Affiliate Future",
+        "Awin",
+        "CJ Affiliate"
+      ],
+      "value": [
+        "Affiliate Future",
+        "Awin",
+        "CJ Affiliate",
+        "CommissionFactory",
+        "Impact",
+        "Linkby",
+        "Partnerize",
+        "Private Network",
+        "Rakuten",
+        "Refersion",
+        "Rewardstyle",
+        "Skimlinks"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "au",
+        "score": 0.7
+      },
+      "sampleValue": [
+        {
+          "countryCode": "au",
+          "score": 0.7
+        },
+        {
+          "countryCode": "nz",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "au",
+          "score": 0.7
+        },
+        {
+          "countryCode": "nz",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "theurbanlist.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "candle"
+        },
+        {
+          "score": 0.9939602,
+          "value": "hotel"
+        },
+        {
+          "score": 0.8790256,
+          "value": "swimwear"
+        },
+        {
+          "score": 0.81650984,
+          "value": "dresses"
+        },
+        {
+          "score": 0.80196714,
+          "value": "clothing"
+        },
+        {
+          "score": 0.73762894,
+          "value": "oil"
+        },
+        {
+          "score": 0.7374327,
+          "value": "dress"
+        },
+        {
+          "score": 0.7156195,
+          "value": "designer"
+        },
+        {
+          "score": 0.69814146,
+          "value": "sportswear"
+        },
+        {
+          "score": 0.6394823,
+          "value": "jackets"
+        },
+        {
+          "score": 0.6091146,
+          "value": "underwear"
+        },
+        {
+          "score": 0.6082675,
+          "value": "bags"
+        },
+        {
+          "score": 0.6006796,
+          "value": "lingerie"
+        },
+        {
+          "score": 0.596683,
+          "value": "shirts"
+        },
+        {
+          "score": 0.5962232,
+          "value": "shirt"
+        },
+        {
+          "score": 0.59285295,
+          "value": "sunglasses"
+        },
+        {
+          "score": 0.58239996,
+          "value": "sneakers"
+        },
+        {
+          "score": 0.5809773,
+          "value": "adidas"
+        },
+        {
+          "score": 0.5608398,
+          "value": "shoes"
+        },
+        {
+          "score": 0.54015875,
+          "value": "diffuser"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "candle"
+        },
+        {
+          "score": 0.9939602,
+          "value": "hotel"
+        },
+        {
+          "score": 0.8790256,
+          "value": "swimwear"
+        },
+        {
+          "score": 0.81650984,
+          "value": "dresses"
+        },
+        {
+          "score": 0.80196714,
+          "value": "clothing"
+        },
+        {
+          "score": 0.73762894,
+          "value": "oil"
+        },
+        {
+          "score": 0.7374327,
+          "value": "dress"
+        },
+        {
+          "score": 0.7156195,
+          "value": "designer"
+        },
+        {
+          "score": 0.69814146,
+          "value": "sportswear"
+        },
+        {
+          "score": 0.6394823,
+          "value": "jackets"
+        },
+        {
+          "score": 0.6091146,
+          "value": "underwear"
+        },
+        {
+          "score": 0.6082675,
+          "value": "bags"
+        },
+        {
+          "score": 0.6006796,
+          "value": "lingerie"
+        },
+        {
+          "score": 0.596683,
+          "value": "shirts"
+        },
+        {
+          "score": 0.5962232,
+          "value": "shirt"
+        },
+        {
+          "score": 0.59285295,
+          "value": "sunglasses"
+        },
+        {
+          "score": 0.58239996,
+          "value": "sneakers"
+        },
+        {
+          "score": 0.5809773,
+          "value": "adidas"
+        },
+        {
+          "score": 0.5608398,
+          "value": "shoes"
+        },
+        {
+          "score": 0.54015875,
+          "value": "diffuser"
+        },
+        {
+          "score": 0.532665,
+          "value": "pants"
+        },
+        {
+          "score": 0.5126333,
+          "value": "sleepwear"
+        },
+        {
+          "score": 0.49556887,
+          "value": "workwear"
+        },
+        {
+          "score": 0.4949859,
+          "value": "wardrobe"
+        },
+        {
+          "score": 0.49065152,
+          "value": "sport"
+        },
+        {
+          "score": 0.4617278,
+          "value": "jeans"
+        },
+        {
+          "score": 0.44612512,
+          "value": "leggings"
+        },
+        {
+          "score": 0.44010016,
+          "value": "watches"
+        },
+        {
+          "score": 0.4371366,
+          "value": "skirts"
+        },
+        {
+          "score": 0.43045402,
+          "value": "denim"
+        },
+        {
+          "score": 0.42662007,
+          "value": "sleeve"
+        },
+        {
+          "score": 0.42231622,
+          "value": "polos"
+        },
+        {
+          "score": 0.4129627,
+          "value": "clothes"
+        },
+        {
+          "score": 0.4063638,
+          "value": "australia"
+        },
+        {
+          "score": 0.3941695,
+          "value": "cardigans"
+        },
+        {
+          "score": 0.3880537,
+          "value": "travel"
+        },
+        {
+          "score": 0.38757423,
+          "value": "sports"
+        },
+        {
+          "score": 0.38651446,
+          "value": "unisex"
+        },
+        {
+          "score": 0.38540277,
+          "value": "hilfiger"
+        },
+        {
+          "score": 0.38522965,
+          "value": "topshop"
+        },
+        {
+          "score": 0.37890065,
+          "value": "coats"
+        },
+        {
+          "score": 0.37691218,
+          "value": "nike"
+        },
+        {
+          "score": 0.37422404,
+          "value": "womens"
+        },
+        {
+          "score": 0.37381452,
+          "value": "essential oil"
+        },
+        {
+          "score": 0.37197682,
+          "value": "playsuits"
+        },
+        {
+          "score": 0.36829436,
+          "value": "heels"
+        },
+        {
+          "score": 0.3680923,
+          "value": "store"
+        },
+        {
+          "score": 0.3667231,
+          "value": "jumpsuits"
+        },
+        {
+          "score": 0.36302456,
+          "value": "sneakerhub"
+        },
+        {
+          "score": 0.34626925,
+          "value": "jacket"
+        },
+        {
+          "score": 0.34460354,
+          "value": "women"
+        },
+        {
+          "score": 0.3422458,
+          "value": "trending"
+        },
+        {
+          "score": 0.34212387,
+          "value": "hotels"
+        },
+        {
+          "score": 0.3402792,
+          "value": "socks"
+        },
+        {
+          "score": 0.34025988,
+          "value": "vans"
+        },
+        {
+          "score": 0.3350996,
+          "value": "notificationitemcount"
+        },
+        {
+          "score": 0.3312249,
+          "value": "lace"
+        },
+        {
+          "score": 0.3310492,
+          "value": "shorts"
+        },
+        {
+          "score": 0.321823,
+          "value": "knit"
+        },
+        {
+          "score": 0.31634092,
+          "value": "luxury"
+        },
+        {
+          "score": 0.31173024,
+          "value": "leather"
+        },
+        {
+          "score": 0.309203,
+          "value": "suits"
+        },
+        {
+          "score": 0.30566877,
+          "value": "card"
+        },
+        {
+          "score": 0.3038857,
+          "value": "hoodies"
+        },
+        {
+          "score": 0.3006051,
+          "value": "idea"
+        },
+        {
+          "score": 0.3005814,
+          "value": "wallet"
+        },
+        {
+          "score": 0.2952659,
+          "value": "lacoste"
+        },
+        {
+          "score": 0.2910768,
+          "value": "wishlist"
+        },
+        {
+          "score": 0.29065442,
+          "value": "hoodie"
+        },
+        {
+          "score": 0.29034522,
+          "value": "sandals"
+        },
+        {
+          "score": 0.28661084,
+          "value": "asics"
+        },
+        {
+          "score": 0.28431815,
+          "value": "converse"
+        },
+        {
+          "score": 0.28252146,
+          "value": "exclusives"
+        },
+        {
+          "score": 0.27879584,
+          "value": "trip"
+        },
+        {
+          "score": 0.27647683,
+          "value": "beauty"
+        },
+        {
+          "score": 0.27441472,
+          "value": "night"
+        },
+        {
+          "score": 0.26696274,
+          "value": "resorts"
+        },
+        {
+          "score": 0.2657954,
+          "value": "blazers"
+        },
+        {
+          "score": 0.264859,
+          "value": "hair"
+        },
+        {
+          "score": 0.26434922,
+          "value": "cotton"
+        },
+        {
+          "score": 0.26256573,
+          "value": "hotels resorts"
+        },
+        {
+          "score": 0.26167694,
+          "value": "sweatshirt"
+        },
+        {
+          "score": 0.26150653,
+          "value": "polo"
+        },
+        {
+          "score": 0.2584767,
+          "value": "skechers"
+        },
+        {
+          "score": 0.2535832,
+          "value": "lauren"
+        },
+        {
+          "score": 0.25319558,
+          "value": "oakley"
+        },
+        {
+          "score": 0.25306913,
+          "value": "room"
+        },
+        {
+          "score": 0.25219497,
+          "value": "stock"
+        },
+        {
+          "score": 0.24827476,
+          "value": "boots"
+        },
+        {
+          "score": 0.24434346,
+          "value": "wishlistitemcount"
+        },
+        {
+          "score": 0.24239866,
+          "value": "maternity"
+        },
+        {
+          "score": 0.2364603,
+          "value": "skirt"
+        },
+        {
+          "score": 0.234503,
+          "value": "accessory"
+        },
+        {
+          "score": 0.2318651,
+          "value": "tights"
+        },
+        {
+          "score": 0.22838062,
+          "value": "backpack"
+        },
+        {
+          "score": 0.22831036,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.22670357,
+          "value": "curvy"
+        },
+        {
+          "score": 0.22009952,
+          "value": "activewear"
+        },
+        {
+          "score": 0.2164185,
+          "value": "cartitemcount"
+        },
+        {
+          "score": 0.21125822,
+          "value": "wear"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/theurbanlist.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://theurbanlist.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 716,
+        "value": [
+          "prf.hn",
+          "marriott.com",
+          "apple.com",
+          "singaporeair.com",
+          "abiinteriors.com.au",
+          "instagram.com",
+          "hm.com",
+          "nike.com",
+          "ray-ban.com",
+          "girlfriend.com",
+          "lenovo.com",
+          "samsung.com",
+          "acer.com",
+          "activetruth.com.au",
+          "adairs.com.au",
+          "adidas.com.au",
+          "adorebeauty.co.nz",
+          "everlane.com",
+          "adorebeauty.com.au",
+          "adrenaline.com.au",
+          "aeyde.com",
+          "aesop.com",
+          "afends.com",
+          "klook.com",
+          "agoda.com",
+          "ajeathletica.com.au",
+          "ajeworld.com.au",
+          "logitech.com",
+          "allbirds.co.nz",
+          "allbirds.com.au",
+          "alltrails.com",
+          "allyfashion.com",
+          "aloyoga.com",
+          "alpha-h.com",
+          "amazon.com.au",
+          "americantourister.com.au",
+          "intercontinental.com",
+          "anacondastores.com",
+          "sephora.com",
+          "antler.com.au",
+          "anthropologie.com",
+          "hp.com",
+          "hilton.com",
+          "appliancesonline.com.au",
+          "xero.com",
+          "lego.com",
+          "arket.com",
+          "arlo.com",
+          "artbid.com.au",
+          "aslanskin.com",
+          "sonos.com",
+          "asos.com",
+          "modaoperandi.com",
+          "atlantissleep.com.au",
+          "au.danielwellington.com",
+          "au.ecoflow.com",
+          "au.elemis.com",
+          "au.eunorau-ebike.com",
+          "au.faithfullthebrand.com",
+          "au.gozney.com",
+          "au.augustethelabel.com",
+          "au.ooni.com",
+          "au.gymshark.com",
+          "au.hotels.com",
+          "au.iamgia.com",
+          "au.sandandsky.com",
+          "au.coachoutlet.com",
+          "au.iherb.com",
+          "au.cocoandeve.com",
+          "au.kirstinash.com",
+          "au.koala.com",
+          "au.kobobooks.com",
+          "au.lndr.com",
+          "au.tommy.com",
+          "au.typebea.com",
+          "au.loccitane.com",
+          "au.vushstimulation.com",
+          "au.whogivesacrap.org",
+          "au.mihigh.com",
+          "jamescosmetics.com",
+          "ihg.com",
+          "aurahome.com.au",
+          "augustinusbader.com",
+          "ausnz.vidaglow.com",
+          "lounge.com",
+          "sixbarrelsoda.co",
+          "awin.com",
+          "babybunting.com.au",
+          "babyvillage.com.au",
+          "baggu.com",
+          "baileynelson.com.au",
+          "banditrunning.com",
+          "bandolierstyle.com",
+          "barbequesgalore.com.au",
+          "bassike.com",
+          "barniskin.com",
+          "bcf.com.au",
+          "beautyamora.com.au",
+          "beautybay.com",
+          "dior.com",
+          "bedbathntable.com.au",
+          "beisydney.com",
+          "bedthreads.com.au",
+          "beistravel.com",
+          "beginningboutique.com.au",
+          "bellandbone.com.au",
+          "bellabox.com.au",
+          "bellroy.com",
+          "belkin.com",
+          "benefitcosmetics.com",
+          "bestgiftcards.com.au",
+          "myer.com.au",
+          "betts.com.au",
+          "bigw.com.au",
+          "billini.com",
+          "binglee.com.au",
+          "birchal.com",
+          "biome.com.au",
+          "blackmilkclothing.com",
+          "visitsealife.com",
+          "booktopia.com.au",
+          "endclothing.com",
+          "freepeople.com",
+          "kkday.com",
+          "koala.com",
+          "koraorganics.com",
+          "mrandmrssmith.com",
+          "nastygal.com",
+          "ouraring.com",
+          "remarkable.com",
+          "shopbop.com",
+          "trekbikes.com",
+          "virginaustralia.com",
+          "bloomeroo.com.au",
+          "withings.com",
+          "bobbibrown.com.au",
+          "bobabarista.com.au",
+          "bodyblendz.com",
+          "boia.au",
+          "bonds.com.au",
+          "boniik.com.au",
+          "bondiwash.com.au",
+          "boody.com.au",
+          "bookdepository.com",
+          "booking.com",
+          "boostlabco.com",
+          "bosscurlco.com",
+          "bose.co.nz",
+          "bose.com.au",
+          "brasnthings.com",
+          "brewquets.com.au",
+          "breville.com",
+          "brosa.com.au",
+          "bubble-planet.com",
+          "brushbythevines.com.au",
+          "bugaboo.com",
+          "bydeeaus.com",
+          "mrporter.com",
+          "net-a-porter.com",
+          "calvinklein.com.au",
+          "calmingblankets.com.au",
+          "camillaandmarc.com",
+          "camplify.com.au",
+          "tracksmith.com",
+          "canadiandownandfeather.com",
+          "canningvale.com",
+          "cardigang.com.au",
+          "superdry.com",
+          "castlery.com",
+          "catbirdnyc.com",
+          "catch.com.au",
+          "celebritycruises.com",
+          "celestyal.com",
+          "fantasticfurniture.com.au",
+          "gethommey.com",
+          "cettire.com",
+          "glasshousefragrances.com",
+          "glassons.com",
+          "gotoskincare.com",
+          "intheroundhouse.com",
+          "jomercer.com.au",
+          "lululemon.com.au",
+          "modibodi.com",
+          "shineon.co.nz",
+          "noahome.com",
+          "champion.com.au",
+          "championusa.com.au",
+          "showpo.com",
+          "stylerunner.com",
+          "ebay.com.au",
+          "visiondirect.com.au",
+          "charlottetilbury.com",
+          "tonybianco.com",
+          "chemistwarehouse.com.au",
+          "chefgood.com.au",
+          "chemistwarehouse.co.nz",
+          "chouchouintimates.com",
+          "christopheresber.com.au",
+          "thebodyshop.com",
+          "citybeach.com",
+          "citychic.com.au",
+          "classbento.com.au",
+          "classpass.com",
+          "linksynergy.com",
+          "clinique.com.au",
+          "cloudninehair.com.au",
+          "cocoandeve.com",
+          "gopro.com",
+          "nespresso.com",
+          "contiki.com",
+          "converse.com.au",
+          "cosmiccookware.com.au",
+          "costumes.com.au",
+          "cos.com",
+          "countryroad.com.au",
+          "cottonon.com",
+          "craftcartel.com.au",
+          "crabtree-evelyn.com.au",
+          "cranel.co",
+          "cremajoe.com.au",
+          "crocs.com.au",
+          "cue.com",
+          "mytheresa.com",
+          "cultiver.com.au",
+          "currentbody.com.au",
+          "cultbeauty.com",
+          "culturekings.com.au",
+          "curatedwithconscience.com.au",
+          "currentbody.com",
+          "cuyana.com",
+          "dailyblooms.com.au",
+          "danmurphys.com.au",
+          "depop.com",
+          "desmondanddempsey.com",
+          "dicksmith.com.au",
+          "dieuxskin.com",
+          "digidirect.com.au",
+          "dinnerly.com.au",
+          "dinosaurdesigns.com.au",
+          "dineamic.com.au",
+          "dirodi.com.au",
+          "dispensed.com.au",
+          "dkactive.com",
+          "dopeskin.co",
+          "dreame.com.au",
+          "luxuryescapes.com",
+          "drinkmonday.co",
+          "drnaomi.com",
+          "drmartens.co.nz",
+          "drmartens.com.au",
+          "drydrinker.com",
+          "dusk.com.au",
+          "dymocks.com.au",
+          "dyson.com.au",
+          "dyson.co.nz",
+          "easydays.com.au",
+          "ecokids.net.au",
+          "ecomodernessentials.com.au",
+          "ecovacs.com",
+          "ecodownunder.com.au",
+          "ecosa.com.au",
+          "ediblebeautyaustralia.com",
+          "eimele.com",
+          "eightsleep.com",
+          "elixirplay.com",
+          "emma-sleep.co.nz",
+          "emma-sleep.com.au",
+          "emma-sleep.com.sg",
+          "emonholiday.com",
+          "emmalewisham.com",
+          "emmalewisham.com.au",
+          "longchamp.com",
+          "endotaspa.com.au",
+          "malaysiaairlines.com",
+          "newegg.com",
+          "epzen.com.au",
+          "ergoflex.com.au",
+          "erstwilder.com",
+          "esteelauder.com.au",
+          "esmi.com.au",
+          "etotadrinks.com",
+          "ettitude.com.au",
+          "nanoleaf.me",
+          "furla.com",
+          "jshealthvitamins.com",
+          "hismileteeth.com",
+          "maisonbalzac.com",
+          "insightvacations.com",
+          "mondayswimwear.com",
+          "eva.com.au",
+          "everyhuman.com.au",
+          "expedia.com.au",
+          "expedia.com",
+          "experienceoz.com.au",
+          "exposednaturals.com.au",
+          "jcrew.com",
+          "uniqlo.com",
+          "vestiairecollective.com",
+          "farfetch.com",
+          "feelgoodink.co",
+          "fentybeauty.com",
+          "feverup.com",
+          "finnishdesignshop.com",
+          "luisaviaroma.com",
+          "fitnessfirst.com.au",
+          "firstchoiceliquor.com.au",
+          "flavedoandalbedo.com",
+          "fleurdumal.com",
+          "flightcentre.com.au",
+          "floraandfauna.com.au",
+          "floraly.com.au",
+          "footlocker.com.au",
+          "forevernew.com.au",
+          "foreo.com",
+          "fr.vestiairecollective.com",
+          "frankgreen.com.au",
+          "freedom.com.au",
+          "providoor.com",
+          "fromourplace.com",
+          "g-star.com",
+          "fwrd.com",
+          "gadventures.com",
+          "ganni.com",
+          "gem-products.co",
+          "generalpants.com",
+          "generalpants.com.au",
+          "gestureeyewear.com",
+          "hayu.com",
+          "getfrenchie.com",
+          "getmicroglow.com",
+          "getvitalplus.com",
+          "getyourguide.com",
+          "ghdhair.com",
+          "giftarestaurant.com",
+          "giftcardstore.com.au",
+          "giftsaustralia.com.au",
+          "llbean.com",
+          "sennheiser-hearing.com",
+          "glossier.com",
+          "gluestore.com.au",
+          "goforzero.com.au",
+          "goldelucks.com.au",
+          "goodlife.com.au",
+          "goodpairdays.com",
+          "gormanshop.com.au",
+          "greenpan.com.au",
+          "groupon.com.au",
+          "grownalchemist.com",
+          "guess.com.au",
+          "guestinresidence.com",
+          "gymandfitness.com.au",
+          "hamiltonisland.com.au",
+          "halloweencostumes.com.au",
+          "hardtofind.com.au",
+          "harrisscarfe.com.au",
+          "helloperiod.com",
+          "hellodrinks.com.au",
+          "kogan.com",
+          "surfstitch.com",
+          "spacenk.com",
+          "hempcoaustralia.com",
+          "hexclad.com.au",
+          "heybudskincare.com",
+          "hillhousehome.com",
+          "hipkids.com.au",
+          "holeymoley.com.au",
+          "madeincookware.com",
+          "house.com.au",
+          "radissonhotels.com",
+          "pillowtalk.com.au",
+          "hubbl.com.au",
+          "hypedc.com",
+          "hydragun.co.nz",
+          "hydragun.com.au",
+          "ilovelinen.com.au",
+          "inessence.com.au",
+          "matteau-store.com",
+          "paredeyewear.com",
+          "interiorsecrets.com.au",
+          "woolworths.com.au",
+          "toteme.com",
+          "iscoot.com.au",
+          "itcosmetics.com.au",
+          "itsnormal.com",
+          "jacandjack.com",
+          "jameslane.com.au",
+          "jaggad.com",
+          "jd-sports.com.au",
+          "mango.com",
+          "jbl.com.au",
+          "josephjoseph.com.au",
+          "july.com",
+          "jurlique.com.au",
+          "juuni.co",
+          "kathmandu.com.au",
+          "katthelabel.com",
+          "katespade.com.au",
+          "kerastase.com.au",
+          "ketowines.com.au",
+          "kidstuff.com.au",
+          "kind-ly.com.au",
+          "kitchenaid.co.nz",
+          "kikki-k.com",
+          "kitchenaid.com.au",
+          "kokoblack.com",
+          "koh.com",
+          "ksubi.com.au",
+          "lafloreparis.com",
+          "lackofcolor.com.au",
+          "lacoste.com.au",
+          "lamptwist.com",
+          "lancome.com.au",
+          "lanolips.com.au",
+          "larkdistillery.com",
+          "laroche-posay.com.au",
+          "leatherology.com",
+          "leemathews.com.au",
+          "shopcider.com",
+          "lekkerbikes.com.au",
+          "libertineparfumerie.com.au",
+          "levis.com.au",
+          "lg.com",
+          "lifepharmacy.co.nz",
+          "linenhouse.com",
+          "liquorland.com.au",
+          "liquorloot.com",
+          "livingstyles.com.au",
+          "lookfantastic.com.au",
+          "lornajane.com.au",
+          "lornajane.nz",
+          "loungelovers.com.au",
+          "lovehoney.com.au",
+          "lovisa.com.au",
+          "lskd.co",
+          "luluandstone.com",
+          "luxoliving.com.au",
+          "luminskin.com",
+          "lyka.com.au",
+          "moshtix.com.au",
+          "saba.com.au",
+          "viator.com",
+          "maccosmetics.com.au",
+          "macoda.com.au",
+          "maisondesabre.com",
+          "makeoutmeals.com.au",
+          "manchesterfactory.com.au",
+          "shopee.sg",
+          "margauxny.com",
+          "marimekko.com",
+          "marleyspoon.com.au",
+          "maryyoung.com",
+          "matchesfashion.com",
+          "medcart.com.au",
+          "mcmullinandco.com",
+          "mecca.com.au",
+          "mcobeauty.com",
+          "meetargie.com",
+          "mejuri.com",
+          "merchant1948.co.nz",
+          "meritbeauty.com",
+          "mermadehair.com.au",
+          "metro-baby.com.au",
+          "merrellaustralia.com.au",
+          "michu.com.au",
+          "miaou.com",
+          "mimco.com.au",
+          "minimax.com.au",
+          "missamara.com.au",
+          "mixandmatch.co.nz",
+          "mjbale.com",
+          "mocka.com.au",
+          "mobeco.com.au",
+          "modibodi.co.nz",
+          "monicavinader.com",
+          "montlaurent.com.au",
+          "moshtix.co.nz",
+          "mrblack.co",
+          "mrroses.com.au",
+          "murad.com.au",
+          "mydeal.com.au",
+          "nail-snail.com",
+          "nakedharvestsupplements.com",
+          "nakedsundays.com",
+          "nattyworkwear.com",
+          "naternalvitamins.com.au",
+          "nativeunion.com",
+          "natvbasics.com",
+          "neuwdenim.com",
+          "newbalance.com.au",
+          "ninewest.com.au",
+          "niche-beauty.com",
+          "ninjakitchen.co.nz",
+          "ninjakitchen.com.au",
+          "nobodydenim.com",
+          "nobs.events",
+          "non.world",
+          "nourishd.com.au",
+          "nudelucy.com.au",
+          "novoshoes.com.au",
+          "nudiejeans.com",
+          "numeroquattroechobeach.com",
+          "oakywood.shop",
+          "nz.glasshousefragrances.com",
+          "nz.kowtowclothing.com",
+          "oakshotels.com",
+          "oakley.com",
+          "ocosmedics.com",
+          "off---white.com",
+          "oilgarden.com.au",
+          "omniluxled.com",
+          "oneelevenhealth.com",
+          "originmattress.com.au",
+          "originmattress.com.sg",
+          "oroton.com",
+          "ovolohotels.com",
+          "theiconic.com.au",
+          "owalalife.com",
+          "paceathletic.com",
+          "papinelle.com",
+          "parlourx.com",
+          "patricks.com.au",
+          "passionforfashion.au",
+          "partyinapaintbox.com.au",
+          "pbskn.com",
+          "paulaschoice.com.au",
+          "pe-nation.com",
+          "pearlii.page.link",
+          "peekneek.com",
+          "peonyswimwear.com",
+          "perfectpony.com.au",
+          "ssense.com",
+          "percivalclo.com",
+          "petalandpup.com.au",
+          "petals.co.nz",
+          "peterjacksons.com",
+          "petbarn.com.au",
+          "petstock.com.au",
+          "platypusshoes.com.au",
+          "poppylissiman.com",
+          "ticketek.com.au",
+          "priceline.com.au",
+          "prettylittlething.com.au",
+          "purau.com.au",
+          "qbd.com.au",
+          "rationale.com",
+          "rebeccavallance.com",
+          "rebelsport.com.au",
+          "redballoon.co.nz",
+          "redballoon.com.au",
+          "recyclesmart.com",
+          "redroostershop.com.au",
+          "reebok.com.au",
+          "theoutnet.com",
+          "replayjeans.com.au",
+          "revolveclothing.com.au",
+          "rideelectric.com.au",
+          "rhodeskin.com",
+          "rimowa.com",
+          "rjliving.com.au",
+          "robinsons.com.sg",
+          "rollasjeans.com",
+          "roserush.com.au",
+          "roxyaustralia.com.au",
+          "rothys.com",
+          "ry7ecollective.com",
+          "saintvalentinejewellery.com",
+          "samsonite.com.au",
+          "sarahsflowers.com.au",
+          "saucony.com.au",
+          "satisfyrunning.com",
+          "scarletperiod.com",
+          "scentbox.com",
+          "secretbottle.com.au",
+          "seedheritage.com",
+          "seedsprout.com.au",
+          "segwayonline.com.au",
+          "sephora.com.au",
+          "sephora.nz",
+          "serenebodyhealth.com",
+          "sharkclean.co.nz",
+          "sheike.com.au",
+          "sheikestik.com",
+          "sheridan.com.au",
+          "sheridanoutlet.com.au",
+          "sheetsociety.com",
+          "shavershop.co.nz",
+          "shavershop.com.au",
+          "shop.dior.com.au",
+          "shop.mcdowellsherbal.com",
+          "templeandwebster.com.au",
+          "target.com.au",
+          "shopback.com.au",
+          "shopcuup.com",
+          "shopvestirsi.com",
+          "shopthousandmiles.com.au",
+          "sirthelabel.com",
+          "skechers.com.au",
+          "skinceuticals.com.au",
+          "skincontrol.com",
+          "skipper.org",
+          "skittles.com.au",
+          "sleepfirm.com.au",
+          "sleepingduck.com",
+          "sleeprepublic.com.au",
+          "snooza.com.au",
+          "soulara.com.au",
+          "sozoaustralia.com",
+          "spiritofanation.com",
+          "spiritsoffrance.com.au",
+          "sportsgirl.com.au",
+          "squeakdesign.com",
+          "ssshair.com.au",
+          "st-agni.com",
+          "stax.com.au",
+          "stayz.com.au",
+          "steelelabel.com",
+          "staycourant.com",
+          "stockx.com",
+          "todaytix.com",
+          "tastegoldi.com",
+          "straand.com.au",
+          "strandbags.com.au",
+          "sukinnaturals.com.au",
+          "sunglasshut.com",
+          "sunnylife.com.au",
+          "supercheapauto.com.au",
+          "superdry.com.au",
+          "supsupplements.com",
+          "sussan.com.au",
+          "swiish.com",
+          "synthesisorganics.com",
+          "sydneytowereye.com.au",
+          "t.cfjump.com",
+          "tangs.com",
+          "tbhskincare.com",
+          "templeandgrace.com.au",
+          "theathletesfoot.co.nz",
+          "theathletesfoot.com.au",
+          "thebrandhannah.com.au",
+          "thebambooshop.com.au",
+          "thebeautychef.com",
+          "thecollagen.co",
+          "thegoodguys.com.au",
+          "theiconic.co.nz",
+          "themarket.com",
+          "theoodie.com",
+          "thenile.com.au",
+          "themistr.co",
+          "theordinary.com",
+          "theposse.com.au",
+          "therabody.com",
+          "thetenthco.com",
+          "thesecretskincare.com",
+          "theundone.com",
+          "theupside.com.au",
+          "thewinecollective.com.au",
+          "thomassabo.com.au",
+          "thompsonsherbals.com",
+          "threethousandthieves.com",
+          "threewarriors.com.au",
+          "thriday.com.au",
+          "tinnitots.com.au",
+          "timberland.com.au",
+          "tjswim.com",
+          "topendsafaricamp.com.au",
+          "toscatravelgoods.com.au",
+          "tourparavel.com",
+          "trafalgar.com",
+          "tripadvisor.com.au",
+          "tripadvisor.co.nz",
+          "trinnylondon.com",
+          "tribeskincare.com.au",
+          "trueprotein.com.au",
+          "try.nervaibs.com",
+          "tumi.com.au",
+          "twotags.com.au",
+          "uk.espres.so",
+          "ultraviolette.com.au",
+          "underarmour.com.au",
+          "unwritten.hair",
+          "up.com.au",
+          "urbancompany.com",
+          "us.sulwhasoo.com",
+          "youswim.com",
+          "valetstudio.com",
+          "vans.com.au",
+          "veralishoes.com.au",
+          "victoriastag.com",
+          "viktoriaandwoods.com.au",
+          "vintagecellars.com.au",
+          "vinomofo.com",
+          "vitalproteins.com.au",
+          "vitable.com.au",
+          "vivaia.com",
+          "vively.com.au",
+          "vushstimulation.com",
+          "welleco.com",
+          "wendywutours.com.au",
+          "wholesomemarket.com.au",
+          "whitepossum.com.au",
+          "wildsecrets.com.au",
+          "witchery.com.au",
+          "wittner.com.au",
+          "wolfandbadger.com",
+          "wotif.com",
+          "wrangler.com.au",
+          "ww1.pinkcosmeticscompany.com",
+          "yd.com.au",
+          "yinahla.com.au",
+          "yobiaustralia.com",
+          "yonipleasurepalace.com",
+          "youfoodz.com",
+          "youly.com.au",
+          "yslbeauty.com.au",
+          "zeallyherbs.com.au",
+          "zimmermann.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 28,
+        "value": [
+          {
+            "domain": "au.cocoandeve.com"
+          },
+          {
+            "domain": "au.augustethelabel.com"
+          },
+          {
+            "domain": "au.ecoflow.com"
+          },
+          {
+            "domain": "au.faithfullthebrand.com"
+          },
+          {
+            "domain": "uk.espres.so"
+          },
+          {
+            "domain": "au.gymshark.com"
+          },
+          {
+            "domain": "au.kirstinash.com"
+          },
+          {
+            "domain": "au.koala.com"
+          },
+          {
+            "domain": "au.loccitane.com"
+          },
+          {
+            "domain": "au.mihigh.com"
+          },
+          {
+            "domain": "au.coachoutlet.com"
+          },
+          {
+            "domain": "au.iherb.com"
+          },
+          {
+            "domain": "au.lndr.com"
+          },
+          {
+            "domain": "au.eunorau-ebike.com"
+          },
+          {
+            "domain": "au.kobobooks.com"
+          },
+          {
+            "domain": "au.tommy.com"
+          },
+          {
+            "domain": "au.vushstimulation.com"
+          },
+          {
+            "domain": "au.whogivesacrap.org"
+          },
+          {
+            "domain": "au.danielwellington.com"
+          },
+          {
+            "domain": "nz.kowtowclothing.com"
+          },
+          {
+            "domain": "au.sandandsky.com"
+          },
+          {
+            "domain": "au.iamgia.com"
+          },
+          {
+            "domain": "nz.glasshousefragrances.com"
+          },
+          {
+            "domain": "au.hotels.com"
+          },
+          {
+            "domain": "fr.vestiairecollective.com"
+          },
+          {
+            "domain": "au.elemis.com"
+          },
+          {
+            "domain": "us.sulwhasoo.com"
+          },
+          {
+            "domain": "au.gozney.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 30,
+        "value": [
+          {
+            "domain": "iamgia.com"
+          },
+          {
+            "domain": "danielwellington.com"
+          },
+          {
+            "domain": "mihigh.com"
+          },
+          {
+            "domain": "kobobooks.com"
+          },
+          {
+            "domain": "worldfitness.com.au"
+          },
+          {
+            "domain": "gozney.com"
+          },
+          {
+            "domain": "gymshark.com"
+          },
+          {
+            "domain": "beaudega.com.au"
+          },
+          {
+            "domain": "hotels.com"
+          },
+          {
+            "domain": "espres.so"
+          },
+          {
+            "domain": "argentsilversmith.com"
+          },
+          {
+            "domain": "kirstinash.com"
+          },
+          {
+            "domain": "lndr.com"
+          },
+          {
+            "domain": "tommy.com"
+          },
+          {
+            "domain": "tupperware.com.au"
+          },
+          {
+            "domain": "kowtowclothing.com"
+          },
+          {
+            "domain": "sulwhasoo.com"
+          },
+          {
+            "domain": "bypolso.com"
+          },
+          {
+            "domain": "thesilkstore.com.au"
+          },
+          {
+            "domain": "whogivesacrap.org"
+          },
+          {
+            "domain": "coachoutlet.com"
+          },
+          {
+            "domain": "eunorau-ebike.com"
+          },
+          {
+            "domain": "sandandsky.com"
+          },
+          {
+            "domain": "iherb.com"
+          },
+          {
+            "domain": "elemis.com"
+          },
+          {
+            "domain": "ecoflow.com"
+          },
+          {
+            "domain": "faithfullthebrand.com"
+          },
+          {
+            "domain": "augustethelabel.com"
+          },
+          {
+            "domain": "assemblylabel.com"
+          },
+          {
+            "domain": "loccitane.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 117.44993,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 90.84998,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 30.000004,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 28.7,
+            "vertical": "Home / Beds & Bedding"
+          },
+          {
+            "count": 26.949999,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 23,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 22.050001,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 21.25,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 18.299997,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 16.3,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 16.199999,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 15.249998,
+            "vertical": "Food / Alcohol"
+          },
+          {
+            "count": 15.099999,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 14.949998,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 14.049999,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 13.349998,
+            "vertical": "Travel / Vacation"
+          },
+          {
+            "count": 12.25,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 10.149999,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 9.549999,
+            "vertical": "Fashion / Jewellery"
+          },
+          {
+            "count": 8.400001,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 7.5,
+            "vertical": "Travel / Flights"
+          },
+          {
+            "count": 7.4999995,
+            "vertical": "Fashion / Lingerie"
+          },
+          {
+            "count": 7.45,
+            "vertical": "Gifts / Flowers"
+          },
+          {
+            "count": 6.7,
+            "vertical": "Home / Pets"
+          },
+          {
+            "count": 6.4,
+            "vertical": "Home / Babycare"
+          },
+          {
+            "count": 6.3999996,
+            "vertical": "Travel / Accessories"
+          },
+          {
+            "count": 5.65,
+            "vertical": "Travel / Attractions"
+          },
+          {
+            "count": 5.55,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 5.4,
+            "vertical": "Food / Take Out"
+          },
+          {
+            "count": 5.35,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 5.2999997,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 4.9,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 4.9,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 4.7999997,
+            "vertical": "Health / Eyecare"
+          },
+          {
+            "count": 4.7,
+            "vertical": "Health / Fragrances"
+          },
+          {
+            "count": 4.6,
+            "vertical": "Gifts / Experience Days"
+          },
+          {
+            "count": 4.6,
+            "vertical": "Health / Adult"
+          },
+          {
+            "count": 3.65,
+            "vertical": "Gifts / Personalised"
+          },
+          {
+            "count": 3.6,
+            "vertical": "Motoring / Motorcycles"
+          },
+          {
+            "count": 3.3,
+            "vertical": "Entertainment / Hobbies"
+          },
+          {
+            "count": 3.3,
+            "vertical": "Sports / Outdoor"
+          },
+          {
+            "count": 3.1000001,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Finance / Accounts"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Home / Garden"
+          },
+          {
+            "count": 2.75,
+            "vertical": "Sports / Cycling"
+          },
+          {
+            "count": 2.7,
+            "vertical": "Health / Drinks"
+          },
+          {
+            "count": 2.6999998,
+            "vertical": "Food / Confectionery"
+          },
+          {
+            "count": 2.65,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Travel / Cruises"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Travel / Car Hire"
+          },
+          {
+            "count": 1.75,
+            "vertical": "Fashion / Kids"
+          },
+          {
+            "count": 1.7,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 1.7,
+            "vertical": "Gifts / Kids"
+          },
+          {
+            "count": 1.65,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Banking"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Cards"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / CBD"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Art"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Motoring / Cars"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Online / Web Design"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Property / Property"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Finance / Investments"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Security"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Utilities"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 716,
+      "value": [
+        "prf.hn",
+        "marriott.com",
+        "apple.com",
+        "singaporeair.com",
+        "abiinteriors.com.au",
+        "instagram.com",
+        "hm.com",
+        "nike.com",
+        "ray-ban.com",
+        "girlfriend.com",
+        "lenovo.com",
+        "samsung.com",
+        "acer.com",
+        "activetruth.com.au",
+        "adairs.com.au",
+        "adidas.com.au",
+        "adorebeauty.co.nz",
+        "everlane.com",
+        "adorebeauty.com.au",
+        "adrenaline.com.au",
+        "aeyde.com",
+        "aesop.com",
+        "afends.com",
+        "klook.com",
+        "agoda.com",
+        "ajeathletica.com.au",
+        "ajeworld.com.au",
+        "logitech.com",
+        "allbirds.co.nz",
+        "allbirds.com.au",
+        "alltrails.com",
+        "allyfashion.com",
+        "aloyoga.com",
+        "alpha-h.com",
+        "amazon.com.au",
+        "americantourister.com.au",
+        "intercontinental.com",
+        "anacondastores.com",
+        "sephora.com",
+        "antler.com.au",
+        "anthropologie.com",
+        "hp.com",
+        "hilton.com",
+        "appliancesonline.com.au",
+        "xero.com",
+        "lego.com",
+        "arket.com",
+        "arlo.com",
+        "artbid.com.au",
+        "aslanskin.com",
+        "sonos.com",
+        "asos.com",
+        "modaoperandi.com",
+        "atlantissleep.com.au",
+        "au.danielwellington.com",
+        "au.ecoflow.com",
+        "au.elemis.com",
+        "au.eunorau-ebike.com",
+        "au.faithfullthebrand.com",
+        "au.gozney.com",
+        "au.augustethelabel.com",
+        "au.ooni.com",
+        "au.gymshark.com",
+        "au.hotels.com",
+        "au.iamgia.com",
+        "au.sandandsky.com",
+        "au.coachoutlet.com",
+        "au.iherb.com",
+        "au.cocoandeve.com",
+        "au.kirstinash.com",
+        "au.koala.com",
+        "au.kobobooks.com",
+        "au.lndr.com",
+        "au.tommy.com",
+        "au.typebea.com",
+        "au.loccitane.com",
+        "au.vushstimulation.com",
+        "au.whogivesacrap.org",
+        "au.mihigh.com",
+        "jamescosmetics.com",
+        "ihg.com",
+        "aurahome.com.au",
+        "augustinusbader.com",
+        "ausnz.vidaglow.com",
+        "lounge.com",
+        "sixbarrelsoda.co",
+        "awin.com",
+        "babybunting.com.au",
+        "babyvillage.com.au",
+        "baggu.com",
+        "baileynelson.com.au",
+        "banditrunning.com",
+        "bandolierstyle.com",
+        "barbequesgalore.com.au",
+        "bassike.com",
+        "barniskin.com",
+        "bcf.com.au",
+        "beautyamora.com.au",
+        "beautybay.com",
+        "dior.com",
+        "bedbathntable.com.au",
+        "beisydney.com",
+        "bedthreads.com.au",
+        "beistravel.com",
+        "beginningboutique.com.au",
+        "bellandbone.com.au",
+        "bellabox.com.au",
+        "bellroy.com",
+        "belkin.com",
+        "benefitcosmetics.com",
+        "bestgiftcards.com.au",
+        "myer.com.au",
+        "betts.com.au",
+        "bigw.com.au",
+        "billini.com",
+        "binglee.com.au",
+        "birchal.com",
+        "biome.com.au",
+        "blackmilkclothing.com",
+        "visitsealife.com",
+        "booktopia.com.au",
+        "endclothing.com",
+        "freepeople.com",
+        "kkday.com",
+        "koala.com",
+        "koraorganics.com",
+        "mrandmrssmith.com",
+        "nastygal.com",
+        "ouraring.com",
+        "remarkable.com",
+        "shopbop.com",
+        "trekbikes.com",
+        "virginaustralia.com",
+        "bloomeroo.com.au",
+        "withings.com",
+        "bobbibrown.com.au",
+        "bobabarista.com.au",
+        "bodyblendz.com",
+        "boia.au",
+        "bonds.com.au",
+        "boniik.com.au",
+        "bondiwash.com.au",
+        "boody.com.au",
+        "bookdepository.com",
+        "booking.com",
+        "boostlabco.com",
+        "bosscurlco.com",
+        "bose.co.nz",
+        "bose.com.au",
+        "brasnthings.com",
+        "brewquets.com.au",
+        "breville.com",
+        "brosa.com.au",
+        "bubble-planet.com",
+        "brushbythevines.com.au",
+        "bugaboo.com",
+        "bydeeaus.com",
+        "mrporter.com",
+        "net-a-porter.com",
+        "calvinklein.com.au",
+        "calmingblankets.com.au",
+        "camillaandmarc.com",
+        "camplify.com.au",
+        "tracksmith.com",
+        "canadiandownandfeather.com",
+        "canningvale.com",
+        "cardigang.com.au",
+        "superdry.com",
+        "castlery.com",
+        "catbirdnyc.com",
+        "catch.com.au",
+        "celebritycruises.com",
+        "celestyal.com",
+        "fantasticfurniture.com.au",
+        "gethommey.com",
+        "cettire.com",
+        "glasshousefragrances.com",
+        "glassons.com",
+        "gotoskincare.com",
+        "intheroundhouse.com",
+        "jomercer.com.au",
+        "lululemon.com.au",
+        "modibodi.com",
+        "shineon.co.nz",
+        "noahome.com",
+        "champion.com.au",
+        "championusa.com.au",
+        "showpo.com",
+        "stylerunner.com",
+        "ebay.com.au",
+        "visiondirect.com.au",
+        "charlottetilbury.com",
+        "tonybianco.com",
+        "chemistwarehouse.com.au",
+        "chefgood.com.au",
+        "chemistwarehouse.co.nz",
+        "chouchouintimates.com",
+        "christopheresber.com.au",
+        "thebodyshop.com",
+        "citybeach.com",
+        "citychic.com.au",
+        "classbento.com.au",
+        "classpass.com",
+        "linksynergy.com",
+        "clinique.com.au",
+        "cloudninehair.com.au",
+        "cocoandeve.com",
+        "gopro.com",
+        "nespresso.com",
+        "contiki.com",
+        "converse.com.au",
+        "cosmiccookware.com.au",
+        "costumes.com.au",
+        "cos.com",
+        "countryroad.com.au",
+        "cottonon.com",
+        "craftcartel.com.au",
+        "crabtree-evelyn.com.au",
+        "cranel.co",
+        "cremajoe.com.au",
+        "crocs.com.au",
+        "cue.com",
+        "mytheresa.com",
+        "cultiver.com.au",
+        "currentbody.com.au",
+        "cultbeauty.com",
+        "culturekings.com.au",
+        "curatedwithconscience.com.au",
+        "currentbody.com",
+        "cuyana.com",
+        "dailyblooms.com.au",
+        "danmurphys.com.au",
+        "depop.com",
+        "desmondanddempsey.com",
+        "dicksmith.com.au",
+        "dieuxskin.com",
+        "digidirect.com.au",
+        "dinnerly.com.au",
+        "dinosaurdesigns.com.au",
+        "dineamic.com.au",
+        "dirodi.com.au",
+        "dispensed.com.au",
+        "dkactive.com",
+        "dopeskin.co",
+        "dreame.com.au",
+        "luxuryescapes.com",
+        "drinkmonday.co",
+        "drnaomi.com",
+        "drmartens.co.nz",
+        "drmartens.com.au",
+        "drydrinker.com",
+        "dusk.com.au",
+        "dymocks.com.au",
+        "dyson.com.au",
+        "dyson.co.nz",
+        "easydays.com.au",
+        "ecokids.net.au",
+        "ecomodernessentials.com.au",
+        "ecovacs.com",
+        "ecodownunder.com.au",
+        "ecosa.com.au",
+        "ediblebeautyaustralia.com",
+        "eimele.com",
+        "eightsleep.com",
+        "elixirplay.com",
+        "emma-sleep.co.nz",
+        "emma-sleep.com.au",
+        "emma-sleep.com.sg",
+        "emonholiday.com",
+        "emmalewisham.com",
+        "emmalewisham.com.au",
+        "longchamp.com",
+        "endotaspa.com.au",
+        "malaysiaairlines.com",
+        "newegg.com",
+        "epzen.com.au",
+        "ergoflex.com.au",
+        "erstwilder.com",
+        "esteelauder.com.au",
+        "esmi.com.au",
+        "etotadrinks.com",
+        "ettitude.com.au",
+        "nanoleaf.me",
+        "furla.com",
+        "jshealthvitamins.com",
+        "hismileteeth.com",
+        "maisonbalzac.com",
+        "insightvacations.com",
+        "mondayswimwear.com",
+        "eva.com.au",
+        "everyhuman.com.au",
+        "expedia.com.au",
+        "expedia.com",
+        "experienceoz.com.au",
+        "exposednaturals.com.au",
+        "jcrew.com",
+        "uniqlo.com",
+        "vestiairecollective.com",
+        "farfetch.com",
+        "feelgoodink.co",
+        "fentybeauty.com",
+        "feverup.com",
+        "finnishdesignshop.com",
+        "luisaviaroma.com",
+        "fitnessfirst.com.au",
+        "firstchoiceliquor.com.au",
+        "flavedoandalbedo.com",
+        "fleurdumal.com",
+        "flightcentre.com.au",
+        "floraandfauna.com.au",
+        "floraly.com.au",
+        "footlocker.com.au",
+        "forevernew.com.au",
+        "foreo.com",
+        "fr.vestiairecollective.com",
+        "frankgreen.com.au",
+        "freedom.com.au",
+        "providoor.com",
+        "fromourplace.com",
+        "g-star.com",
+        "fwrd.com",
+        "gadventures.com",
+        "ganni.com",
+        "gem-products.co",
+        "generalpants.com",
+        "generalpants.com.au",
+        "gestureeyewear.com",
+        "hayu.com",
+        "getfrenchie.com",
+        "getmicroglow.com",
+        "getvitalplus.com",
+        "getyourguide.com",
+        "ghdhair.com",
+        "giftarestaurant.com",
+        "giftcardstore.com.au",
+        "giftsaustralia.com.au",
+        "llbean.com",
+        "sennheiser-hearing.com",
+        "glossier.com",
+        "gluestore.com.au",
+        "goforzero.com.au",
+        "goldelucks.com.au",
+        "goodlife.com.au",
+        "goodpairdays.com",
+        "gormanshop.com.au",
+        "greenpan.com.au",
+        "groupon.com.au",
+        "grownalchemist.com",
+        "guess.com.au",
+        "guestinresidence.com",
+        "gymandfitness.com.au",
+        "hamiltonisland.com.au",
+        "halloweencostumes.com.au",
+        "hardtofind.com.au",
+        "harrisscarfe.com.au",
+        "helloperiod.com",
+        "hellodrinks.com.au",
+        "kogan.com",
+        "surfstitch.com",
+        "spacenk.com",
+        "hempcoaustralia.com",
+        "hexclad.com.au",
+        "heybudskincare.com",
+        "hillhousehome.com",
+        "hipkids.com.au",
+        "holeymoley.com.au",
+        "madeincookware.com",
+        "house.com.au",
+        "radissonhotels.com",
+        "pillowtalk.com.au",
+        "hubbl.com.au",
+        "hypedc.com",
+        "hydragun.co.nz",
+        "hydragun.com.au",
+        "ilovelinen.com.au",
+        "inessence.com.au",
+        "matteau-store.com",
+        "paredeyewear.com",
+        "interiorsecrets.com.au",
+        "woolworths.com.au",
+        "toteme.com",
+        "iscoot.com.au",
+        "itcosmetics.com.au",
+        "itsnormal.com",
+        "jacandjack.com",
+        "jameslane.com.au",
+        "jaggad.com",
+        "jd-sports.com.au",
+        "mango.com",
+        "jbl.com.au",
+        "josephjoseph.com.au",
+        "july.com",
+        "jurlique.com.au",
+        "juuni.co",
+        "kathmandu.com.au",
+        "katthelabel.com",
+        "katespade.com.au",
+        "kerastase.com.au",
+        "ketowines.com.au",
+        "kidstuff.com.au",
+        "kind-ly.com.au",
+        "kitchenaid.co.nz",
+        "kikki-k.com",
+        "kitchenaid.com.au",
+        "kokoblack.com",
+        "koh.com",
+        "ksubi.com.au",
+        "lafloreparis.com",
+        "lackofcolor.com.au",
+        "lacoste.com.au",
+        "lamptwist.com",
+        "lancome.com.au",
+        "lanolips.com.au",
+        "larkdistillery.com",
+        "laroche-posay.com.au",
+        "leatherology.com",
+        "leemathews.com.au",
+        "shopcider.com",
+        "lekkerbikes.com.au",
+        "libertineparfumerie.com.au",
+        "levis.com.au",
+        "lg.com",
+        "lifepharmacy.co.nz",
+        "linenhouse.com",
+        "liquorland.com.au",
+        "liquorloot.com",
+        "livingstyles.com.au",
+        "lookfantastic.com.au",
+        "lornajane.com.au",
+        "lornajane.nz",
+        "loungelovers.com.au",
+        "lovehoney.com.au",
+        "lovisa.com.au",
+        "lskd.co",
+        "luluandstone.com",
+        "luxoliving.com.au",
+        "luminskin.com",
+        "lyka.com.au",
+        "moshtix.com.au",
+        "saba.com.au",
+        "viator.com",
+        "maccosmetics.com.au",
+        "macoda.com.au",
+        "maisondesabre.com",
+        "makeoutmeals.com.au",
+        "manchesterfactory.com.au",
+        "shopee.sg",
+        "margauxny.com",
+        "marimekko.com",
+        "marleyspoon.com.au",
+        "maryyoung.com",
+        "matchesfashion.com",
+        "medcart.com.au",
+        "mcmullinandco.com",
+        "mecca.com.au",
+        "mcobeauty.com",
+        "meetargie.com",
+        "mejuri.com",
+        "merchant1948.co.nz",
+        "meritbeauty.com",
+        "mermadehair.com.au",
+        "metro-baby.com.au",
+        "merrellaustralia.com.au",
+        "michu.com.au",
+        "miaou.com",
+        "mimco.com.au",
+        "minimax.com.au",
+        "missamara.com.au",
+        "mixandmatch.co.nz",
+        "mjbale.com",
+        "mocka.com.au",
+        "mobeco.com.au",
+        "modibodi.co.nz",
+        "monicavinader.com",
+        "montlaurent.com.au",
+        "moshtix.co.nz",
+        "mrblack.co",
+        "mrroses.com.au",
+        "murad.com.au",
+        "mydeal.com.au",
+        "nail-snail.com",
+        "nakedharvestsupplements.com",
+        "nakedsundays.com",
+        "nattyworkwear.com",
+        "naternalvitamins.com.au",
+        "nativeunion.com",
+        "natvbasics.com",
+        "neuwdenim.com",
+        "newbalance.com.au",
+        "ninewest.com.au",
+        "niche-beauty.com",
+        "ninjakitchen.co.nz",
+        "ninjakitchen.com.au",
+        "nobodydenim.com",
+        "nobs.events",
+        "non.world",
+        "nourishd.com.au",
+        "nudelucy.com.au",
+        "novoshoes.com.au",
+        "nudiejeans.com",
+        "numeroquattroechobeach.com",
+        "oakywood.shop",
+        "nz.glasshousefragrances.com",
+        "nz.kowtowclothing.com",
+        "oakshotels.com",
+        "oakley.com",
+        "ocosmedics.com",
+        "off---white.com",
+        "oilgarden.com.au",
+        "omniluxled.com",
+        "oneelevenhealth.com",
+        "originmattress.com.au",
+        "originmattress.com.sg",
+        "oroton.com",
+        "ovolohotels.com",
+        "theiconic.com.au",
+        "owalalife.com",
+        "paceathletic.com",
+        "papinelle.com",
+        "parlourx.com",
+        "patricks.com.au",
+        "passionforfashion.au",
+        "partyinapaintbox.com.au",
+        "pbskn.com",
+        "paulaschoice.com.au",
+        "pe-nation.com",
+        "pearlii.page.link",
+        "peekneek.com",
+        "peonyswimwear.com",
+        "perfectpony.com.au",
+        "ssense.com",
+        "percivalclo.com",
+        "petalandpup.com.au",
+        "petals.co.nz",
+        "peterjacksons.com",
+        "petbarn.com.au",
+        "petstock.com.au",
+        "platypusshoes.com.au",
+        "poppylissiman.com",
+        "ticketek.com.au",
+        "priceline.com.au",
+        "prettylittlething.com.au",
+        "purau.com.au",
+        "qbd.com.au",
+        "rationale.com",
+        "rebeccavallance.com",
+        "rebelsport.com.au",
+        "redballoon.co.nz",
+        "redballoon.com.au",
+        "recyclesmart.com",
+        "redroostershop.com.au",
+        "reebok.com.au",
+        "theoutnet.com",
+        "replayjeans.com.au",
+        "revolveclothing.com.au",
+        "rideelectric.com.au",
+        "rhodeskin.com",
+        "rimowa.com",
+        "rjliving.com.au",
+        "robinsons.com.sg",
+        "rollasjeans.com",
+        "roserush.com.au",
+        "roxyaustralia.com.au",
+        "rothys.com",
+        "ry7ecollective.com",
+        "saintvalentinejewellery.com",
+        "samsonite.com.au",
+        "sarahsflowers.com.au",
+        "saucony.com.au",
+        "satisfyrunning.com",
+        "scarletperiod.com",
+        "scentbox.com",
+        "secretbottle.com.au",
+        "seedheritage.com",
+        "seedsprout.com.au",
+        "segwayonline.com.au",
+        "sephora.com.au",
+        "sephora.nz",
+        "serenebodyhealth.com",
+        "sharkclean.co.nz",
+        "sheike.com.au",
+        "sheikestik.com",
+        "sheridan.com.au",
+        "sheridanoutlet.com.au",
+        "sheetsociety.com",
+        "shavershop.co.nz",
+        "shavershop.com.au",
+        "shop.dior.com.au",
+        "shop.mcdowellsherbal.com",
+        "templeandwebster.com.au",
+        "target.com.au",
+        "shopback.com.au",
+        "shopcuup.com",
+        "shopvestirsi.com",
+        "shopthousandmiles.com.au",
+        "sirthelabel.com",
+        "skechers.com.au",
+        "skinceuticals.com.au",
+        "skincontrol.com",
+        "skipper.org",
+        "skittles.com.au",
+        "sleepfirm.com.au",
+        "sleepingduck.com",
+        "sleeprepublic.com.au",
+        "snooza.com.au",
+        "soulara.com.au",
+        "sozoaustralia.com",
+        "spiritofanation.com",
+        "spiritsoffrance.com.au",
+        "sportsgirl.com.au",
+        "squeakdesign.com",
+        "ssshair.com.au",
+        "st-agni.com",
+        "stax.com.au",
+        "stayz.com.au",
+        "steelelabel.com",
+        "staycourant.com",
+        "stockx.com",
+        "todaytix.com",
+        "tastegoldi.com",
+        "straand.com.au",
+        "strandbags.com.au",
+        "sukinnaturals.com.au",
+        "sunglasshut.com",
+        "sunnylife.com.au",
+        "supercheapauto.com.au",
+        "superdry.com.au",
+        "supsupplements.com",
+        "sussan.com.au",
+        "swiish.com",
+        "synthesisorganics.com",
+        "sydneytowereye.com.au",
+        "t.cfjump.com",
+        "tangs.com",
+        "tbhskincare.com",
+        "templeandgrace.com.au",
+        "theathletesfoot.co.nz",
+        "theathletesfoot.com.au",
+        "thebrandhannah.com.au",
+        "thebambooshop.com.au",
+        "thebeautychef.com",
+        "thecollagen.co",
+        "thegoodguys.com.au",
+        "theiconic.co.nz",
+        "themarket.com",
+        "theoodie.com",
+        "thenile.com.au",
+        "themistr.co",
+        "theordinary.com",
+        "theposse.com.au",
+        "therabody.com",
+        "thetenthco.com",
+        "thesecretskincare.com",
+        "theundone.com",
+        "theupside.com.au",
+        "thewinecollective.com.au",
+        "thomassabo.com.au",
+        "thompsonsherbals.com",
+        "threethousandthieves.com",
+        "threewarriors.com.au",
+        "thriday.com.au",
+        "tinnitots.com.au",
+        "timberland.com.au",
+        "tjswim.com",
+        "topendsafaricamp.com.au",
+        "toscatravelgoods.com.au",
+        "tourparavel.com",
+        "trafalgar.com",
+        "tripadvisor.com.au",
+        "tripadvisor.co.nz",
+        "trinnylondon.com",
+        "tribeskincare.com.au",
+        "trueprotein.com.au",
+        "try.nervaibs.com",
+        "tumi.com.au",
+        "twotags.com.au",
+        "uk.espres.so",
+        "ultraviolette.com.au",
+        "underarmour.com.au",
+        "unwritten.hair",
+        "up.com.au",
+        "urbancompany.com",
+        "us.sulwhasoo.com",
+        "youswim.com",
+        "valetstudio.com",
+        "vans.com.au",
+        "veralishoes.com.au",
+        "victoriastag.com",
+        "viktoriaandwoods.com.au",
+        "vintagecellars.com.au",
+        "vinomofo.com",
+        "vitalproteins.com.au",
+        "vitable.com.au",
+        "vivaia.com",
+        "vively.com.au",
+        "vushstimulation.com",
+        "welleco.com",
+        "wendywutours.com.au",
+        "wholesomemarket.com.au",
+        "whitepossum.com.au",
+        "wildsecrets.com.au",
+        "witchery.com.au",
+        "wittner.com.au",
+        "wolfandbadger.com",
+        "wotif.com",
+        "wrangler.com.au",
+        "ww1.pinkcosmeticscompany.com",
+        "yd.com.au",
+        "yinahla.com.au",
+        "yobiaustralia.com",
+        "yonipleasurepalace.com",
+        "youfoodz.com",
+        "youly.com.au",
+        "yslbeauty.com.au",
+        "zeallyherbs.com.au",
+        "zimmermann.com"
+      ]
+    },
+    "promotype": {
+      "value": "student"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Travel / Attractions",
+      "value": [
+        "Travel / Attractions",
+        "Online / Services",
+        "Food / Take Out"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Travel / Attractions",
+        "rank": 1,
+        "score": 80
+      },
+      "value": [
+        {
+          "name": "Travel / Attractions",
+          "rank": 1,
+          "score": 80
+        },
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 70
+        },
+        {
+          "name": "Food / Take Out",
+          "rank": 1,
+          "score": 60
+        }
+      ]
+    }
+  }
+}

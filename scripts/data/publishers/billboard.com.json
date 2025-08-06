@@ -1,0 +1,1128 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 11,
+      "sampleValue": [
+        "CJ Affiliate",
+        "Impact",
+        "Linkby"
+      ],
+      "value": [
+        "CJ Affiliate",
+        "Impact",
+        "Linkby",
+        "Partnerize",
+        "Pepperjam",
+        "Rakuten",
+        "Rewardstyle",
+        "ShareASale",
+        "Skimlinks",
+        "TRX",
+        "Viglink"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.6
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        }
+      ]
+    },
+    "domain": "billboard.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "amazon"
+        },
+        {
+          "score": 0.7488041,
+          "value": "characters"
+        },
+        {
+          "score": 0.7488041,
+          "value": "make sure"
+        },
+        {
+          "score": 0.7488041,
+          "value": "characters see"
+        },
+        {
+          "score": 0.57259375,
+          "value": "seller"
+        },
+        {
+          "score": 0.42073768,
+          "value": "sign"
+        },
+        {
+          "score": 0.40820226,
+          "value": "amazon com"
+        },
+        {
+          "score": 0.40653336,
+          "value": "robot"
+        },
+        {
+          "score": 0.39268717,
+          "value": "conditions"
+        },
+        {
+          "score": 0.39260218,
+          "value": "conditions use"
+        },
+        {
+          "score": 0.38886258,
+          "value": "privacy policy"
+        },
+        {
+          "score": 0.3838043,
+          "value": "program"
+        },
+        {
+          "score": 0.3786604,
+          "value": "browser"
+        },
+        {
+          "score": 0.37552065,
+          "value": "enter"
+        },
+        {
+          "score": 0.37440205,
+          "value": "sure robot"
+        },
+        {
+          "score": 0.37440205,
+          "value": "different image"
+        },
+        {
+          "score": 0.37440205,
+          "value": "try different"
+        },
+        {
+          "score": 0.37440205,
+          "value": "see image"
+        },
+        {
+          "score": 0.37440205,
+          "value": "robot best"
+        },
+        {
+          "score": 0.37440205,
+          "value": "accepting"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "amazon"
+        },
+        {
+          "score": 0.7488041,
+          "value": "characters"
+        },
+        {
+          "score": 0.7488041,
+          "value": "make sure"
+        },
+        {
+          "score": 0.7488041,
+          "value": "characters see"
+        },
+        {
+          "score": 0.57259375,
+          "value": "seller"
+        },
+        {
+          "score": 0.42073768,
+          "value": "sign"
+        },
+        {
+          "score": 0.40820226,
+          "value": "amazon com"
+        },
+        {
+          "score": 0.40653336,
+          "value": "robot"
+        },
+        {
+          "score": 0.39268717,
+          "value": "conditions"
+        },
+        {
+          "score": 0.39260218,
+          "value": "conditions use"
+        },
+        {
+          "score": 0.38886258,
+          "value": "privacy policy"
+        },
+        {
+          "score": 0.3838043,
+          "value": "program"
+        },
+        {
+          "score": 0.3786604,
+          "value": "browser"
+        },
+        {
+          "score": 0.37552065,
+          "value": "enter"
+        },
+        {
+          "score": 0.37440205,
+          "value": "sure robot"
+        },
+        {
+          "score": 0.37440205,
+          "value": "different image"
+        },
+        {
+          "score": 0.37440205,
+          "value": "try different"
+        },
+        {
+          "score": 0.37440205,
+          "value": "see image"
+        },
+        {
+          "score": 0.37440205,
+          "value": "robot best"
+        },
+        {
+          "score": 0.37440205,
+          "value": "accepting"
+        },
+        {
+          "score": 0.37440205,
+          "value": "accepting cookies"
+        },
+        {
+          "score": 0.37440205,
+          "value": "sorry just"
+        },
+        {
+          "score": 0.37440205,
+          "value": "please make"
+        },
+        {
+          "score": 0.37440205,
+          "value": "enter characters"
+        },
+        {
+          "score": 0.37440205,
+          "value": "browser accepting"
+        },
+        {
+          "score": 0.37440205,
+          "value": "type characters"
+        },
+        {
+          "score": 0.37440205,
+          "value": "sure browser"
+        },
+        {
+          "score": 0.37440205,
+          "value": "just need"
+        },
+        {
+          "score": 0.37440205,
+          "value": "best results"
+        },
+        {
+          "score": 0.37440205,
+          "value": "need make"
+        },
+        {
+          "score": 0.37440205,
+          "value": "results please"
+        },
+        {
+          "score": 0.36245185,
+          "value": "commission"
+        },
+        {
+          "score": 0.35421458,
+          "value": "commerce"
+        },
+        {
+          "score": 0.33975667,
+          "value": "junction"
+        },
+        {
+          "score": 0.3351582,
+          "value": "store"
+        },
+        {
+          "score": 0.3185552,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.3084352,
+          "value": "commission junction"
+        },
+        {
+          "score": 0.2614775,
+          "value": "tech"
+        },
+        {
+          "score": 0.22896646,
+          "value": "device"
+        },
+        {
+          "score": 0.21160735,
+          "value": "howl"
+        },
+        {
+          "score": 0.2084627,
+          "value": "supplier"
+        },
+        {
+          "score": 0.19817239,
+          "value": "industry"
+        },
+        {
+          "score": 0.19698153,
+          "value": "revenue"
+        },
+        {
+          "score": 0.19670327,
+          "value": "walmart"
+        },
+        {
+          "score": 0.1940157,
+          "value": "fee"
+        },
+        {
+          "score": 0.1742392,
+          "value": "article"
+        },
+        {
+          "score": 0.17312084,
+          "value": "video"
+        },
+        {
+          "score": 0.16918904,
+          "value": "shop now"
+        },
+        {
+          "score": 0.1668165,
+          "value": "event"
+        },
+        {
+          "score": 0.16120107,
+          "value": "prime"
+        },
+        {
+          "score": 0.15941581,
+          "value": "central"
+        },
+        {
+          "score": 0.1589276,
+          "value": "merchant"
+        },
+        {
+          "score": 0.1578207,
+          "value": "bizdev"
+        },
+        {
+          "score": 0.15569983,
+          "value": "subscribe"
+        },
+        {
+          "score": 0.15464501,
+          "value": "money"
+        },
+        {
+          "score": 0.15087812,
+          "value": "platform"
+        },
+        {
+          "score": 0.14480905,
+          "value": "publisher"
+        },
+        {
+          "score": 0.14476365,
+          "value": "target"
+        },
+        {
+          "score": 0.14118066,
+          "value": "planet"
+        },
+        {
+          "score": 0.14107157,
+          "value": "planet howl"
+        },
+        {
+          "score": 0.14107157,
+          "value": "dispatches planet"
+        },
+        {
+          "score": 0.14107157,
+          "value": "subscribe dispatches"
+        },
+        {
+          "score": 0.14107157,
+          "value": "dispatches"
+        },
+        {
+          "score": 0.13610278,
+          "value": "advertisers"
+        },
+        {
+          "score": 0.1350041,
+          "value": "human"
+        },
+        {
+          "score": 0.13435261,
+          "value": "kindle"
+        },
+        {
+          "score": 0.13342647,
+          "value": "link"
+        },
+        {
+          "score": 0.13210158,
+          "value": "partner"
+        },
+        {
+          "score": 0.13042738,
+          "value": "fashion"
+        },
+        {
+          "score": 0.12972176,
+          "value": "care"
+        },
+        {
+          "score": 0.12967479,
+          "value": "supply"
+        },
+        {
+          "score": 0.1291264,
+          "value": "technology"
+        },
+        {
+          "score": 0.123899244,
+          "value": "publishers"
+        },
+        {
+          "score": 0.123007864,
+          "value": "investor"
+        },
+        {
+          "score": 0.122640826,
+          "value": "fba"
+        },
+        {
+          "score": 0.12125086,
+          "value": "requirement"
+        },
+        {
+          "score": 0.11387141,
+          "value": "global"
+        },
+        {
+          "score": 0.11054638,
+          "value": "category"
+        },
+        {
+          "score": 0.110277206,
+          "value": "restriction"
+        },
+        {
+          "score": 0.1092724,
+          "value": "installation"
+        },
+        {
+          "score": 0.10810901,
+          "value": "provider"
+        },
+        {
+          "score": 0.10725516,
+          "value": "regulatory"
+        },
+        {
+          "score": 0.107237145,
+          "value": "consumers"
+        },
+        {
+          "score": 0.10581555,
+          "value": "logo"
+        },
+        {
+          "score": 0.10389329,
+          "value": "chain"
+        },
+        {
+          "score": 0.10369683,
+          "value": "associate"
+        },
+        {
+          "score": 0.10366268,
+          "value": "fulfillment"
+        },
+        {
+          "score": 0.10285658,
+          "value": "solution"
+        },
+        {
+          "score": 0.10256162,
+          "value": "merchants"
+        },
+        {
+          "score": 0.10138857,
+          "value": "legal"
+        },
+        {
+          "score": 0.09797517,
+          "value": "referral"
+        },
+        {
+          "score": 0.097064674,
+          "value": "sellers"
+        },
+        {
+          "score": 0.09695093,
+          "value": "digital"
+        },
+        {
+          "score": 0.095864266,
+          "value": "agency"
+        },
+        {
+          "score": 0.09558412,
+          "value": "career"
+        },
+        {
+          "score": 0.094941385,
+          "value": "partnership"
+        },
+        {
+          "score": 0.093681656,
+          "value": "experts"
+        },
+        {
+          "score": 0.09360051,
+          "value": "top sellers"
+        },
+        {
+          "score": 0.09272402,
+          "value": "editor"
+        },
+        {
+          "score": 0.09178718,
+          "value": "performance"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": "Music Charts, News, Photos & Video",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/billboard.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://billboard.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 159,
+        "value": [
+          "sjv.io",
+          "1800flowers.com",
+          "prf.hn",
+          "pxf.io",
+          "775j.net",
+          "7eer.net",
+          "awin1.com",
+          "apple.com",
+          "aax-us-east.amazon-adsystem.com",
+          "amazon.com",
+          "hm.com",
+          "grubhub.com",
+          "nordstrom.com",
+          "nordvpn.com",
+          "samsung.com",
+          "hbomax.com",
+          "adidas.njih.net",
+          "evyy.net",
+          "rosettastone.com",
+          "walmart.com",
+          "amazon.co.uk",
+          "espn.com",
+          "airbnb.pvxt.net",
+          "ojrq.net",
+          "amzn.to",
+          "sephora.com",
+          "anrdoezrs.net",
+          "ariat.dkkdet.net",
+          "avantlink.com",
+          "backcountry.tnu8.net",
+          "veeps.com",
+          "barclayscenter.com",
+          "bestbuy.7tiv.net",
+          "sling.com",
+          "billboard.com",
+          "ebay.com",
+          "ticketmaster.com",
+          "bloomberg.com",
+          "bombas.com",
+          "bonobos.soyxmd.net",
+          "boohooman.com",
+          "fubo.tv",
+          "target.com",
+          "casetify.hyyc7q.net",
+          "qflm.net",
+          "directv.com",
+          "chacos.com",
+          "stubhub.com",
+          "linksynergy.com",
+          "clicks.trx-hub.com",
+          "consumeracquisition.jtlo.net",
+          "couponseeker.com",
+          "crocs.com",
+          "crocs-us.xkpq.net",
+          "cutsclothing.com",
+          "cuyana.64ud.net",
+          "daddyyankeecustom.com",
+          "dicks-sporting-goods.ryvx.net",
+          "disneyplus.bn5x.net",
+          "doordash.7zd4df.net",
+          "dpbolvw.net",
+          "drizly.com",
+          "dsw.am3t9s.net",
+          "echelonfit.com",
+          "tommy.com",
+          "expressvpn.com",
+          "fanatics.93n6tx.net",
+          "fave.co",
+          "fineartamerica.com",
+          "reebok.com",
+          "fite.tv",
+          "footlocker.8s4u9r.net",
+          "foco.vegb.net",
+          "frankiesbikinis.com",
+          "vistaprint.com",
+          "gametime.hnyj8s.net",
+          "gap.igs4ds.net",
+          "keenfootwear.com",
+          "glossier.79ic8e.net",
+          "skimresources.com",
+          "goop.6noy.net",
+          "gopjn.com",
+          "quince.com",
+          "harryanddavid.2xc8.net",
+          "lootcrate.com",
+          "paramountplus.com",
+          "savagex.com",
+          "hickoryfarms.e8i7.net",
+          "hotwire.com",
+          "hottopic.com",
+          "howl.me",
+          "hsn.uqhv.net",
+          "imp.i182465.net",
+          "imp.i254217.net",
+          "imp.i384100.net",
+          "imp.i142493.net",
+          "imp.i305175.net",
+          "imp.i309903.net",
+          "imp.i312864.net",
+          "imp.i335971.net",
+          "instacart.oloiyb.net",
+          "jdoqocy.com",
+          "jerkxjollof.com",
+          "justfab.fzsu.net",
+          "kqzyfj.com",
+          "kosas.7zgd.net",
+          "masterclass.com",
+          "levis.pfm4.net",
+          "logitech.cfzu.net",
+          "mlbshop.ue7a.net",
+          "music.apple.com",
+          "music.amazon.com",
+          "nakedwolfe.com",
+          "nautilus.atkw.net",
+          "nbastore.vwz6.net",
+          "newbalance.com",
+          "nflshop.k77v.net",
+          "oliveandjune.kk2kau.net",
+          "peacocktv.com",
+          "petco.9zpg.net",
+          "pjtra.com",
+          "pjatr.com",
+          "pntrs.com",
+          "pntra.com",
+          "pntrac.com",
+          "purple.e9jo.net",
+          "qvc.uikc.net",
+          "quayaustralia.com",
+          "razer.a9yw.net",
+          "robinhood.c3me6x.net",
+          "seatgeek.com",
+          "sesacmusicgroup.com",
+          "shareasale.com",
+          "shop-links.co",
+          "showtime.i7cdw9.net",
+          "skillshare.eqcm.net",
+          "skims.wsktbf.net",
+          "spaseekers.com",
+          "stockx.pvxt.net",
+          "swa.eyjo.net",
+          "the-realreal.2pxhba.net",
+          "theragun.xibx.net",
+          "ticketmaster-uk.tm7559.net",
+          "ticketnetwork.lusg.net",
+          "tkqlhce.com",
+          "tryamazonmusic.com",
+          "tv.apple.com",
+          "ubertrk.com",
+          "ultimate-ears.dubn.net",
+          "ulta.ztk5.net",
+          "united.elfm.net",
+          "us.mcmworldwide.com",
+          "us.puma.com",
+          "viagogo.com",
+          "vividseats.com",
+          "linkinpark.com",
+          "winc.mivh.net",
+          "wilson.aqpq.net",
+          "ziprecruiter.fdcm73.net"
+        ]
+      },
+      "partnersAdded": {
+        "count": 4,
+        "value": [
+          {
+            "domain": "us.puma.com"
+          },
+          {
+            "domain": "petco.9zpg.net"
+          },
+          {
+            "domain": "us.mcmworldwide.com"
+          },
+          {
+            "domain": "backcountry.tnu8.net"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 8,
+        "value": [
+          {
+            "domain": "nike.com"
+          },
+          {
+            "domain": "anta.com"
+          },
+          {
+            "domain": "puma.com"
+          },
+          {
+            "domain": "mcmworldwide.com"
+          },
+          {
+            "domain": "carters.com"
+          },
+          {
+            "domain": "hrc.org"
+          },
+          {
+            "domain": "janessaleone.com"
+          },
+          {
+            "domain": "amazon.ca"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 12.799998,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 10.399999,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 10.249999,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 9.9,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 7.95,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 7.7500005,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 7,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 6.55,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 4.7,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 4.7,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 4.6,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 4.6,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 4.35,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 2.95,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 2.75,
+            "vertical": "Food / Take Out"
+          },
+          {
+            "count": 2.65,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 2.6,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 2,
+            "vertical": "Online / VPN"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Fashion / Lingerie"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Finance / Investments"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Food / Alcohol"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 1.8,
+            "vertical": "Gifts / Personalised"
+          },
+          {
+            "count": 1.8,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 1.7,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 1.1,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 1,
+            "vertical": "Home / Art"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Jobs & Careers"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Gifts / Flowers"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Pets"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Online / Freebies"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Travel / Flights"
+          },
+          {
+            "count": 0.5,
+            "vertical": "Online / Security"
+          },
+          {
+            "count": 0.4,
+            "vertical": "Travel / Vacation"
+          },
+          {
+            "count": 0.3,
+            "vertical": "Entertainment / Hobbies"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 159,
+      "value": [
+        "sjv.io",
+        "1800flowers.com",
+        "prf.hn",
+        "pxf.io",
+        "775j.net",
+        "7eer.net",
+        "awin1.com",
+        "apple.com",
+        "aax-us-east.amazon-adsystem.com",
+        "amazon.com",
+        "hm.com",
+        "grubhub.com",
+        "nordstrom.com",
+        "nordvpn.com",
+        "samsung.com",
+        "hbomax.com",
+        "adidas.njih.net",
+        "evyy.net",
+        "rosettastone.com",
+        "walmart.com",
+        "amazon.co.uk",
+        "espn.com",
+        "airbnb.pvxt.net",
+        "ojrq.net",
+        "amzn.to",
+        "sephora.com",
+        "anrdoezrs.net",
+        "ariat.dkkdet.net",
+        "avantlink.com",
+        "backcountry.tnu8.net",
+        "veeps.com",
+        "barclayscenter.com",
+        "bestbuy.7tiv.net",
+        "sling.com",
+        "billboard.com",
+        "ebay.com",
+        "ticketmaster.com",
+        "bloomberg.com",
+        "bombas.com",
+        "bonobos.soyxmd.net",
+        "boohooman.com",
+        "fubo.tv",
+        "target.com",
+        "casetify.hyyc7q.net",
+        "qflm.net",
+        "directv.com",
+        "chacos.com",
+        "stubhub.com",
+        "linksynergy.com",
+        "clicks.trx-hub.com",
+        "consumeracquisition.jtlo.net",
+        "couponseeker.com",
+        "crocs.com",
+        "crocs-us.xkpq.net",
+        "cutsclothing.com",
+        "cuyana.64ud.net",
+        "daddyyankeecustom.com",
+        "dicks-sporting-goods.ryvx.net",
+        "disneyplus.bn5x.net",
+        "doordash.7zd4df.net",
+        "dpbolvw.net",
+        "drizly.com",
+        "dsw.am3t9s.net",
+        "echelonfit.com",
+        "tommy.com",
+        "expressvpn.com",
+        "fanatics.93n6tx.net",
+        "fave.co",
+        "fineartamerica.com",
+        "reebok.com",
+        "fite.tv",
+        "footlocker.8s4u9r.net",
+        "foco.vegb.net",
+        "frankiesbikinis.com",
+        "vistaprint.com",
+        "gametime.hnyj8s.net",
+        "gap.igs4ds.net",
+        "keenfootwear.com",
+        "glossier.79ic8e.net",
+        "skimresources.com",
+        "goop.6noy.net",
+        "gopjn.com",
+        "quince.com",
+        "harryanddavid.2xc8.net",
+        "lootcrate.com",
+        "paramountplus.com",
+        "savagex.com",
+        "hickoryfarms.e8i7.net",
+        "hotwire.com",
+        "hottopic.com",
+        "howl.me",
+        "hsn.uqhv.net",
+        "imp.i182465.net",
+        "imp.i254217.net",
+        "imp.i384100.net",
+        "imp.i142493.net",
+        "imp.i305175.net",
+        "imp.i309903.net",
+        "imp.i312864.net",
+        "imp.i335971.net",
+        "instacart.oloiyb.net",
+        "jdoqocy.com",
+        "jerkxjollof.com",
+        "justfab.fzsu.net",
+        "kqzyfj.com",
+        "kosas.7zgd.net",
+        "masterclass.com",
+        "levis.pfm4.net",
+        "logitech.cfzu.net",
+        "mlbshop.ue7a.net",
+        "music.apple.com",
+        "music.amazon.com",
+        "nakedwolfe.com",
+        "nautilus.atkw.net",
+        "nbastore.vwz6.net",
+        "newbalance.com",
+        "nflshop.k77v.net",
+        "oliveandjune.kk2kau.net",
+        "peacocktv.com",
+        "petco.9zpg.net",
+        "pjtra.com",
+        "pjatr.com",
+        "pntrs.com",
+        "pntra.com",
+        "pntrac.com",
+        "purple.e9jo.net",
+        "qvc.uikc.net",
+        "quayaustralia.com",
+        "razer.a9yw.net",
+        "robinhood.c3me6x.net",
+        "seatgeek.com",
+        "sesacmusicgroup.com",
+        "shareasale.com",
+        "shop-links.co",
+        "showtime.i7cdw9.net",
+        "skillshare.eqcm.net",
+        "skims.wsktbf.net",
+        "spaseekers.com",
+        "stockx.pvxt.net",
+        "swa.eyjo.net",
+        "the-realreal.2pxhba.net",
+        "theragun.xibx.net",
+        "ticketmaster-uk.tm7559.net",
+        "ticketnetwork.lusg.net",
+        "tkqlhce.com",
+        "tryamazonmusic.com",
+        "tv.apple.com",
+        "ubertrk.com",
+        "ultimate-ears.dubn.net",
+        "ulta.ztk5.net",
+        "united.elfm.net",
+        "us.mcmworldwide.com",
+        "us.puma.com",
+        "viagogo.com",
+        "vividseats.com",
+        "linkinpark.com",
+        "winc.mivh.net",
+        "wilson.aqpq.net",
+        "ziprecruiter.fdcm73.net"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 5,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "instagram",
+        "pinterest"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/billboard",
+        "instagram": "https://instagram.com/billboard",
+        "pinterest": "https://pinterest.com/billboard",
+        "twitter": "https://twitter.com/billboard",
+        "youtube": "https://youtube.com/c/billboard"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 1,
+      "sampleValue": "Entertainment / Music",
+      "value": [
+        "Entertainment / Music"
+      ]
+    },
+    "verticalsV2": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Entertainment / Music",
+        "rank": 1,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Entertainment / Music",
+          "rank": 1,
+          "score": 100
+        }
+      ]
+    }
+  }
+}

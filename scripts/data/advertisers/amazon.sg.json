@@ -1,0 +1,126 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 6,
+      "sampleValue": [
+        "CueLinks",
+        "Involve Asia",
+        "Linkbux"
+      ],
+      "value": [
+        "CueLinks",
+        "Involve Asia",
+        "Linkbux",
+        "Optimise",
+        "Skimlinks",
+        "Viglink"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 1,
+      "error": false,
+      "value": [
+        {
+          "department": null,
+          "value": "dataprivacy@amazon.com.sg"
+        }
+      ]
+    },
+    "domain": "amazon.sg",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "Shop online for Electronics, Computers, Books, Toys, Baby, Grocery, Beauty, Kitchen, Home, Personal Care & more on Amazon Singapore. Get Free Delivery on eligible orders in Singapore with Amazon Prime subscription.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazon.sg.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazon.sg"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 14
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "track.omguk.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 4,
+            "promotype": "student",
+            "value": [
+              "clk.omgt3.com",
+              "editingbeauty.com",
+              "metabee.de",
+              "straitstimes.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "blog",
+            "value": [
+              "sg.theasianparent.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "content",
+            "value": [
+              "sociallykeeda.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 3,
+      "socialsAvailable": [
+        "twitter",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/amazon.sg",
+        "instagram": "https://instagram.com/amazon.sg",
+        "twitter": "https://twitter.com/amazonsg"
+      }
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 2,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 2,
+          "score": 90
+        },
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 2,
+          "score": 100
+        }
+      ]
+    }
+  }
+}

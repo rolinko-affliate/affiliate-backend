@@ -1,0 +1,687 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 5,
+      "sampleValue": [
+        "ClickBank",
+        "Impact",
+        "Private Network"
+      ],
+      "value": [
+        "ClickBank",
+        "Impact",
+        "Private Network",
+        "Refersion",
+        "Viglink"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "nl",
+        "score": 0.7
+      },
+      "sampleValue": [
+        {
+          "countryCode": "nl",
+          "score": 0.7
+        },
+        {
+          "countryCode": "be",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "nl",
+          "score": 0.7
+        },
+        {
+          "countryCode": "be",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "robscholtemuseum.nl",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "technology"
+        },
+        {
+          "score": 1,
+          "value": "artikel"
+        },
+        {
+          "score": 0.9749739,
+          "value": "bol"
+        },
+        {
+          "score": 0.8920337,
+          "value": "internet"
+        },
+        {
+          "score": 0.85,
+          "value": "tech"
+        },
+        {
+          "score": 0.83107406,
+          "value": "bestelling"
+        },
+        {
+          "score": 0.7028154,
+          "value": "select"
+        },
+        {
+          "score": 0.68,
+          "value": "cellphones"
+        },
+        {
+          "score": 0.64,
+          "value": "technical"
+        },
+        {
+          "score": 0.63,
+          "value": "electromagnetic"
+        },
+        {
+          "score": 0.62,
+          "value": "industry"
+        },
+        {
+          "score": 0.58,
+          "value": "wireless"
+        },
+        {
+          "score": 0.57797205,
+          "value": "frequency"
+        },
+        {
+          "score": 0.55891556,
+          "value": "zakelijk"
+        },
+        {
+          "score": 0.55,
+          "value": "science"
+        },
+        {
+          "score": 0.49,
+          "value": "controller"
+        },
+        {
+          "score": 0.48070908,
+          "value": "optie"
+        },
+        {
+          "score": 0.48,
+          "value": "european"
+        },
+        {
+          "score": 0.45464024,
+          "value": "bekijk"
+        },
+        {
+          "score": 0.45,
+          "value": "component"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "technology"
+        },
+        {
+          "score": 1,
+          "value": "artikel"
+        },
+        {
+          "score": 0.9749739,
+          "value": "bol"
+        },
+        {
+          "score": 0.8920337,
+          "value": "internet"
+        },
+        {
+          "score": 0.85,
+          "value": "tech"
+        },
+        {
+          "score": 0.83107406,
+          "value": "bestelling"
+        },
+        {
+          "score": 0.7028154,
+          "value": "select"
+        },
+        {
+          "score": 0.68,
+          "value": "cellphones"
+        },
+        {
+          "score": 0.64,
+          "value": "technical"
+        },
+        {
+          "score": 0.63,
+          "value": "electromagnetic"
+        },
+        {
+          "score": 0.62,
+          "value": "industry"
+        },
+        {
+          "score": 0.58,
+          "value": "wireless"
+        },
+        {
+          "score": 0.57797205,
+          "value": "frequency"
+        },
+        {
+          "score": 0.55891556,
+          "value": "zakelijk"
+        },
+        {
+          "score": 0.55,
+          "value": "science"
+        },
+        {
+          "score": 0.49,
+          "value": "controller"
+        },
+        {
+          "score": 0.48070908,
+          "value": "optie"
+        },
+        {
+          "score": 0.48,
+          "value": "european"
+        },
+        {
+          "score": 0.45464024,
+          "value": "bekijk"
+        },
+        {
+          "score": 0.45,
+          "value": "component"
+        },
+        {
+          "score": 0.45,
+          "value": "integrated"
+        },
+        {
+          "score": 0.44,
+          "value": "enterprise"
+        },
+        {
+          "score": 0.44,
+          "value": "phone"
+        },
+        {
+          "score": 0.4327971,
+          "value": "program"
+        },
+        {
+          "score": 0.43,
+          "value": "adwords"
+        },
+        {
+          "score": 0.41,
+          "value": "designed"
+        },
+        {
+          "score": 0.39785218,
+          "value": "gold"
+        },
+        {
+          "score": 0.39711192,
+          "value": "silver"
+        },
+        {
+          "score": 0.38314858,
+          "value": "america"
+        },
+        {
+          "score": 0.38,
+          "value": "specific"
+        },
+        {
+          "score": 0.37,
+          "value": "analytics"
+        },
+        {
+          "score": 0.35766423,
+          "value": "tuin"
+        },
+        {
+          "score": 0.34619394,
+          "value": "beschikbaar"
+        },
+        {
+          "score": 0.33864802,
+          "value": "cell"
+        },
+        {
+          "score": 0.33333334,
+          "value": "tour"
+        },
+        {
+          "score": 0.33333334,
+          "value": "oil"
+        },
+        {
+          "score": 0.33333334,
+          "value": "wallet"
+        },
+        {
+          "score": 0.33333334,
+          "value": "automatic insurance"
+        },
+        {
+          "score": 0.33,
+          "value": "color"
+        },
+        {
+          "score": 0.3208768,
+          "value": "organic"
+        },
+        {
+          "score": 0.32,
+          "value": "shirts"
+        },
+        {
+          "score": 0.3092539,
+          "value": "subject"
+        },
+        {
+          "score": 0.3,
+          "value": "multi"
+        },
+        {
+          "score": 0.2961418,
+          "value": "lijst"
+        },
+        {
+          "score": 0.29092804,
+          "value": "cadeau"
+        },
+        {
+          "score": 0.2876775,
+          "value": "money"
+        },
+        {
+          "score": 0.2829345,
+          "value": "office"
+        },
+        {
+          "score": 0.28158844,
+          "value": "bitcoin"
+        },
+        {
+          "score": 0.28,
+          "value": "protect"
+        },
+        {
+          "score": 0.27320126,
+          "value": "cadeaukaart"
+        },
+        {
+          "score": 0.27246395,
+          "value": "insurance"
+        },
+        {
+          "score": 0.27,
+          "value": "elegant"
+        },
+        {
+          "score": 0.27,
+          "value": "currently"
+        },
+        {
+          "score": 0.27,
+          "value": "remarketing"
+        },
+        {
+          "score": 0.26,
+          "value": "provide"
+        },
+        {
+          "score": 0.25964546,
+          "value": "tijd"
+        },
+        {
+          "score": 0.25503558,
+          "value": "mint"
+        },
+        {
+          "score": 0.25266486,
+          "value": "mattress cover"
+        },
+        {
+          "score": 0.25,
+          "value": "multicolor"
+        },
+        {
+          "score": 0.24921794,
+          "value": "speelgoed"
+        },
+        {
+          "score": 0.24608968,
+          "value": "mooi"
+        },
+        {
+          "score": 0.24504693,
+          "value": "baby"
+        },
+        {
+          "score": 0.24191867,
+          "value": "korting"
+        },
+        {
+          "score": 0.24191867,
+          "value": "bezorging"
+        },
+        {
+          "score": 0.24087591,
+          "value": "voordeel"
+        },
+        {
+          "score": 0.24087591,
+          "value": "bezorgoptie"
+        },
+        {
+          "score": 0.24,
+          "value": "radiation"
+        },
+        {
+          "score": 0.24,
+          "value": "applicable"
+        },
+        {
+          "score": 0.23983316,
+          "value": "levertijd"
+        },
+        {
+          "score": 0.23983316,
+          "value": "geval"
+        },
+        {
+          "score": 0.23850094,
+          "value": "domestic shipping"
+        },
+        {
+          "score": 0.2367049,
+          "value": "muziek"
+        },
+        {
+          "score": 0.2367049,
+          "value": "omstandigheid"
+        },
+        {
+          "score": 0.2367049,
+          "value": "beschikbaar bestelling"
+        },
+        {
+          "score": 0.23044838,
+          "value": "gezond"
+        },
+        {
+          "score": 0.23,
+          "value": "advices"
+        },
+        {
+          "score": 0.23,
+          "value": "perform"
+        },
+        {
+          "score": 0.23,
+          "value": "story"
+        },
+        {
+          "score": 0.23,
+          "value": "laws"
+        },
+        {
+          "score": 0.23,
+          "value": "download"
+        },
+        {
+          "score": 0.23,
+          "value": "gdpr"
+        },
+        {
+          "score": 0.23,
+          "value": "continue"
+        },
+        {
+          "score": 0.22940563,
+          "value": "inlogg"
+        },
+        {
+          "score": 0.22732012,
+          "value": "school"
+        },
+        {
+          "score": 0.22627737,
+          "value": "film"
+        },
+        {
+          "score": 0.22210637,
+          "value": "inspiratie"
+        },
+        {
+          "score": 0.22210637,
+          "value": "thuiswinkel"
+        },
+        {
+          "score": 0.22002086,
+          "value": "factuur"
+        },
+        {
+          "score": 0.22002086,
+          "value": "voorwaarde"
+        },
+        {
+          "score": 0.22,
+          "value": "underwear"
+        },
+        {
+          "score": 0.22,
+          "value": "high"
+        },
+        {
+          "score": 0.22,
+          "value": "quit"
+        },
+        {
+          "score": 0.21793535,
+          "value": "accessoire"
+        },
+        {
+          "score": 0.2168926,
+          "value": "klantenservice"
+        },
+        {
+          "score": 0.21419221,
+          "value": "medical disclaimer"
+        },
+        {
+          "score": 0.2130497,
+          "value": "currency"
+        },
+        {
+          "score": 0.21272159,
+          "value": "nieuw"
+        },
+        {
+          "score": 0.21167883,
+          "value": "moment"
+        },
+        {
+          "score": 0.21164621,
+          "value": "coins"
+        },
+        {
+          "score": 0.20855057,
+          "value": "cadeaupagina"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://robscholtemuseum.nl/",
+        "https://www.robscholtemuseum.nl/",
+        "http://robscholtemuseum.nl/",
+        "http://www.robscholtemuseum.nl/"
+      ]
+    },
+    "metaData": {
+      "description": "Middenweg 172-174, 1782 BL Den Helder",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/robscholtemuseum.nl.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://robscholtemuseum.nl"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 12,
+        "value": [
+          "apmex.com",
+          "bol.com",
+          "earthing.com",
+          "getlambs.com",
+          "getyourguide.com",
+          "goascentnutrition.com",
+          "javaburn.com",
+          "mypatriotsupply.com",
+          "purec60oliveoil.com",
+          "revision20.us",
+          "patriotwholesaleclub.com",
+          "uphold.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1.9,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Forex & Crypto"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Investments"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Weight Loss"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Travel / Attractions"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 0.7,
+            "vertical": "Sports / Outdoor"
+          },
+          {
+            "count": 0.6,
+            "vertical": "Business / Online Training"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 12,
+      "value": [
+        "apmex.com",
+        "bol.com",
+        "earthing.com",
+        "getlambs.com",
+        "getyourguide.com",
+        "goascentnutrition.com",
+        "javaburn.com",
+        "mypatriotsupply.com",
+        "purec60oliveoil.com",
+        "revision20.us",
+        "patriotwholesaleclub.com",
+        "uphold.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 2,
+      "socialsAvailable": [
+        "twitter",
+        "facebook"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/robscholtemuseum",
+        "twitter": "https://twitter.com/rsmuseum"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Home / Art",
+      "value": [
+        "Home / Art",
+        "Entertainment / Hobbies"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Home / Art",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Home / Art",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Entertainment / Hobbies",
+          "rank": 1,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

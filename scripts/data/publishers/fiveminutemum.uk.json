@@ -1,0 +1,631 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 3,
+      "sampleValue": [
+        "PartnerStack",
+        "TradeTracker",
+        "TUNE"
+      ],
+      "value": [
+        "PartnerStack",
+        "TradeTracker",
+        "TUNE"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "gb",
+        "score": 0.85
+      },
+      "sampleValue": [
+        {
+          "countryCode": "gb",
+          "score": 0.85
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "gb",
+          "score": 0.85
+        }
+      ]
+    },
+    "domain": "fiveminutemum.uk",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "calls"
+        },
+        {
+          "score": 0.9,
+          "value": "texts"
+        },
+        {
+          "score": 0.725,
+          "value": "calls texts"
+        },
+        {
+          "score": 0.725,
+          "value": "number"
+        },
+        {
+          "score": 0.67113227,
+          "value": "checker"
+        },
+        {
+          "score": 0.5,
+          "value": "tool"
+        },
+        {
+          "score": 0.5,
+          "value": "texts calls"
+        },
+        {
+          "score": 0.5,
+          "value": "travel"
+        },
+        {
+          "score": 0.48,
+          "value": "getpriceatbus"
+        },
+        {
+          "score": 0.475,
+          "value": "great"
+        },
+        {
+          "score": 0.46588317,
+          "value": "log"
+        },
+        {
+          "score": 0.46,
+          "value": "luggage"
+        },
+        {
+          "score": 0.45,
+          "value": "text"
+        },
+        {
+          "score": 0.45,
+          "value": "tariff"
+        },
+        {
+          "score": 0.43159094,
+          "value": "team"
+        },
+        {
+          "score": 0.41117787,
+          "value": "grammar"
+        },
+        {
+          "score": 0.405,
+          "value": "destinations"
+        },
+        {
+          "score": 0.4,
+          "value": "payg"
+        },
+        {
+          "score": 0.4,
+          "value": "year"
+        },
+        {
+          "score": 0.395,
+          "value": "holiday"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "calls"
+        },
+        {
+          "score": 0.9,
+          "value": "texts"
+        },
+        {
+          "score": 0.725,
+          "value": "calls texts"
+        },
+        {
+          "score": 0.725,
+          "value": "number"
+        },
+        {
+          "score": 0.67113227,
+          "value": "checker"
+        },
+        {
+          "score": 0.5,
+          "value": "tool"
+        },
+        {
+          "score": 0.5,
+          "value": "texts calls"
+        },
+        {
+          "score": 0.5,
+          "value": "travel"
+        },
+        {
+          "score": 0.48,
+          "value": "getpriceatbus"
+        },
+        {
+          "score": 0.475,
+          "value": "great"
+        },
+        {
+          "score": 0.46588317,
+          "value": "log"
+        },
+        {
+          "score": 0.46,
+          "value": "luggage"
+        },
+        {
+          "score": 0.45,
+          "value": "text"
+        },
+        {
+          "score": 0.45,
+          "value": "tariff"
+        },
+        {
+          "score": 0.43159094,
+          "value": "team"
+        },
+        {
+          "score": 0.41117787,
+          "value": "grammar"
+        },
+        {
+          "score": 0.405,
+          "value": "destinations"
+        },
+        {
+          "score": 0.4,
+          "value": "payg"
+        },
+        {
+          "score": 0.4,
+          "value": "year"
+        },
+        {
+          "score": 0.395,
+          "value": "holiday"
+        },
+        {
+          "score": 0.3920584,
+          "value": "writing"
+        },
+        {
+          "score": 0.380328,
+          "value": "citation"
+        },
+        {
+          "score": 0.375,
+          "value": "advertising"
+        },
+        {
+          "score": 0.375,
+          "value": "cookie policy"
+        },
+        {
+          "score": 0.375,
+          "value": "accept"
+        },
+        {
+          "score": 0.375,
+          "value": "coverage"
+        },
+        {
+          "score": 0.375,
+          "value": "destination"
+        },
+        {
+          "score": 0.36579108,
+          "value": "education"
+        },
+        {
+          "score": 0.365,
+          "value": "airport"
+        },
+        {
+          "score": 0.36,
+          "value": "trip"
+        },
+        {
+          "score": 0.35,
+          "value": "unlimited"
+        },
+        {
+          "score": 0.34,
+          "value": "getweekdaystring"
+        },
+        {
+          "score": 0.33,
+          "value": "carriage"
+        },
+        {
+          "score": 0.32601738,
+          "value": "device"
+        },
+        {
+          "score": 0.325,
+          "value": "sim"
+        },
+        {
+          "score": 0.315,
+          "value": "passenger"
+        },
+        {
+          "score": 0.31,
+          "value": "booking"
+        },
+        {
+          "score": 0.3,
+          "value": "required"
+        },
+        {
+          "score": 0.3,
+          "value": "keep number"
+        },
+        {
+          "score": 0.3,
+          "value": "buses"
+        },
+        {
+          "score": 0.295,
+          "value": "route"
+        },
+        {
+          "score": 0.29,
+          "value": "journey"
+        },
+        {
+          "score": 0.285,
+          "value": "flixmobility"
+        },
+        {
+          "score": 0.28,
+          "value": "departure"
+        },
+        {
+          "score": 0.275,
+          "value": "charges"
+        },
+        {
+          "score": 0.27,
+          "value": "routes"
+        },
+        {
+          "score": 0.27,
+          "value": "prices"
+        },
+        {
+          "score": 0.265,
+          "value": "formatprice"
+        },
+        {
+          "score": 0.265,
+          "value": "outlets"
+        },
+        {
+          "score": 0.26,
+          "value": "amsterdam"
+        },
+        {
+          "score": 0.25138134,
+          "value": "student"
+        },
+        {
+          "score": 0.25,
+          "value": "allow"
+        },
+        {
+          "score": 0.25,
+          "value": "contact us"
+        },
+        {
+          "score": 0.25,
+          "value": "one year"
+        },
+        {
+          "score": 0.25,
+          "value": "payg one"
+        },
+        {
+          "score": 0.25,
+          "value": "coverage checker"
+        },
+        {
+          "score": 0.25,
+          "value": "change preferences"
+        },
+        {
+          "score": 0.25,
+          "value": "customer service"
+        },
+        {
+          "score": 0.25,
+          "value": "tariff charges"
+        },
+        {
+          "score": 0.25,
+          "value": "functional"
+        },
+        {
+          "score": 0.25,
+          "value": "use cookies"
+        },
+        {
+          "score": 0.25,
+          "value": "change"
+        },
+        {
+          "score": 0.25,
+          "value": "preferences"
+        },
+        {
+          "score": 0.25,
+          "value": "telecommunications management"
+        },
+        {
+          "score": 0.25,
+          "value": "management limited"
+        },
+        {
+          "score": 0.25,
+          "value": "telecommunications"
+        },
+        {
+          "score": 0.25,
+          "value": "streetwize"
+        },
+        {
+          "score": 0.25,
+          "value": "numbers"
+        },
+        {
+          "score": 0.25,
+          "value": "reservations"
+        },
+        {
+          "score": 0.25,
+          "value": "cancel"
+        },
+        {
+          "score": 0.24710578,
+          "value": "event"
+        },
+        {
+          "score": 0.245,
+          "value": "coach"
+        },
+        {
+          "score": 0.24,
+          "value": "flixbus"
+        },
+        {
+          "score": 0.23952815,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.23796263,
+          "value": "center"
+        },
+        {
+          "score": 0.235,
+          "value": "busses"
+        },
+        {
+          "score": 0.2316041,
+          "value": "plagiarism"
+        },
+        {
+          "score": 0.23049289,
+          "value": "press"
+        },
+        {
+          "score": 0.23,
+          "value": "ticket"
+        },
+        {
+          "score": 0.225,
+          "value": "roaming"
+        },
+        {
+          "score": 0.225,
+          "value": "comfortable"
+        },
+        {
+          "score": 0.225,
+          "value": "arrival"
+        },
+        {
+          "score": 0.215,
+          "value": "comfort"
+        },
+        {
+          "score": 0.215,
+          "value": "europe"
+        },
+        {
+          "score": 0.205,
+          "value": "timetable"
+        },
+        {
+          "score": 0.2,
+          "value": "unlimited calls"
+        },
+        {
+          "score": 0.2,
+          "value": "minute"
+        },
+        {
+          "score": 0.2,
+          "value": "classic"
+        },
+        {
+          "score": 0.195,
+          "value": "timetables"
+        },
+        {
+          "score": 0.195,
+          "value": "cities"
+        },
+        {
+          "score": 0.19422032,
+          "value": "tone"
+        },
+        {
+          "score": 0.19,
+          "value": "cityname"
+        },
+        {
+          "score": 0.19,
+          "value": "friendly"
+        },
+        {
+          "score": 0.19,
+          "value": "discover"
+        },
+        {
+          "score": 0.185,
+          "value": "marseille"
+        },
+        {
+          "score": 0.18411243,
+          "value": "paraphrasing"
+        },
+        {
+          "score": 0.1838274,
+          "value": "style"
+        },
+        {
+          "score": 0.18319155,
+          "value": "sentence"
+        },
+        {
+          "score": 0.1814594,
+          "value": "browser"
+        },
+        {
+          "score": 0.18049465,
+          "value": "trust"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/fiveminutemum.uk.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://fiveminutemum.uk"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 4,
+        "value": [
+          "1pmobile.com",
+          "grammarly.com",
+          "flixbus.co.uk",
+          "pandadoc.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1,
+            "vertical": "Travel / Rail & Coach"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Software"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 4,
+      "value": [
+        "1pmobile.com",
+        "grammarly.com",
+        "flixbus.co.uk",
+        "pandadoc.com"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Home / Babycare",
+      "value": [
+        "Home / Babycare",
+        "Health / Wellbeing",
+        "Business / Online Training"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Home / Babycare",
+        "rank": 1,
+        "score": 80
+      },
+      "value": [
+        {
+          "name": "Home / Babycare",
+          "rank": 1,
+          "score": 80
+        },
+        {
+          "name": "Health / Wellbeing",
+          "rank": 1,
+          "score": 60
+        },
+        {
+          "name": "Business / Online Training",
+          "rank": 1,
+          "score": 40
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,2073 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 8,
+      "sampleValue": [
+        "Awin",
+        "CJ Affiliate",
+        "Impact"
+      ],
+      "value": [
+        "Awin",
+        "CJ Affiliate",
+        "Impact",
+        "Partnerize",
+        "Rakuten",
+        "ShareASale",
+        "Skimlinks",
+        "TUNE"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.95
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.95
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.95
+        }
+      ]
+    },
+    "domain": "peoria-cartitleloans.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "amazon"
+        },
+        {
+          "score": 0.9038182,
+          "value": "seller"
+        },
+        {
+          "score": 0.53262985,
+          "value": "device"
+        },
+        {
+          "score": 0.47247332,
+          "value": "sign"
+        },
+        {
+          "score": 0.38904256,
+          "value": "video"
+        },
+        {
+          "score": 0.38058165,
+          "value": "central"
+        },
+        {
+          "score": 0.32336646,
+          "value": "fee"
+        },
+        {
+          "score": 0.2902525,
+          "value": "fba"
+        },
+        {
+          "score": 0.28838962,
+          "value": "prime"
+        },
+        {
+          "score": 0.25968665,
+          "value": "restriction"
+        },
+        {
+          "score": 0.25648805,
+          "value": "software"
+        },
+        {
+          "score": 0.23977405,
+          "value": "phone"
+        },
+        {
+          "score": 0.23586875,
+          "value": "store"
+        },
+        {
+          "score": 0.21333759,
+          "value": "kindle"
+        },
+        {
+          "score": 0.20860174,
+          "value": "program"
+        },
+        {
+          "score": 0.19981931,
+          "value": "card"
+        },
+        {
+          "score": 0.18906987,
+          "value": "category"
+        },
+        {
+          "score": 0.17861363,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.1785609,
+          "value": "app"
+        },
+        {
+          "score": 0.1781115,
+          "value": "gaming"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "amazon"
+        },
+        {
+          "score": 0.9038182,
+          "value": "seller"
+        },
+        {
+          "score": 0.53262985,
+          "value": "device"
+        },
+        {
+          "score": 0.47247332,
+          "value": "sign"
+        },
+        {
+          "score": 0.38904256,
+          "value": "video"
+        },
+        {
+          "score": 0.38058165,
+          "value": "central"
+        },
+        {
+          "score": 0.32336646,
+          "value": "fee"
+        },
+        {
+          "score": 0.2902525,
+          "value": "fba"
+        },
+        {
+          "score": 0.28838962,
+          "value": "prime"
+        },
+        {
+          "score": 0.25968665,
+          "value": "restriction"
+        },
+        {
+          "score": 0.25648805,
+          "value": "software"
+        },
+        {
+          "score": 0.23977405,
+          "value": "phone"
+        },
+        {
+          "score": 0.23586875,
+          "value": "store"
+        },
+        {
+          "score": 0.21333759,
+          "value": "kindle"
+        },
+        {
+          "score": 0.20860174,
+          "value": "program"
+        },
+        {
+          "score": 0.19981931,
+          "value": "card"
+        },
+        {
+          "score": 0.18906987,
+          "value": "category"
+        },
+        {
+          "score": 0.17861363,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.1785609,
+          "value": "app"
+        },
+        {
+          "score": 0.1781115,
+          "value": "gaming"
+        },
+        {
+          "score": 0.17673483,
+          "value": "requirement"
+        },
+        {
+          "score": 0.16881435,
+          "value": "fulfillment"
+        },
+        {
+          "score": 0.16763678,
+          "value": "prime video"
+        },
+        {
+          "score": 0.1540705,
+          "value": "book"
+        },
+        {
+          "score": 0.15397331,
+          "value": "accessory"
+        },
+        {
+          "score": 0.15093583,
+          "value": "solution"
+        },
+        {
+          "score": 0.14890952,
+          "value": "box"
+        },
+        {
+          "score": 0.14028753,
+          "value": "laptop"
+        },
+        {
+          "score": 0.1387503,
+          "value": "warranty"
+        },
+        {
+          "score": 0.13729171,
+          "value": "digital"
+        },
+        {
+          "score": 0.13502519,
+          "value": "setting"
+        },
+        {
+          "score": 0.13043167,
+          "value": "automotive"
+        },
+        {
+          "score": 0.11666219,
+          "value": "packaging"
+        },
+        {
+          "score": 0.114076495,
+          "value": "fashion"
+        },
+        {
+          "score": 0.1133815,
+          "value": "carrier"
+        },
+        {
+          "score": 0.113222376,
+          "value": "art"
+        },
+        {
+          "score": 0.111658044,
+          "value": "electronic"
+        },
+        {
+          "score": 0.110485844,
+          "value": "window"
+        },
+        {
+          "score": 0.10856792,
+          "value": "feedback"
+        },
+        {
+          "score": 0.10617052,
+          "value": "guideline"
+        },
+        {
+          "score": 0.1054176,
+          "value": "tech"
+        },
+        {
+          "score": 0.10465931,
+          "value": "food"
+        },
+        {
+          "score": 0.10208913,
+          "value": "listing"
+        },
+        {
+          "score": 0.101663955,
+          "value": "technology"
+        },
+        {
+          "score": 0.10048738,
+          "value": "unit"
+        },
+        {
+          "score": 0.099829026,
+          "value": "language"
+        },
+        {
+          "score": 0.099020906,
+          "value": "microsoft"
+        },
+        {
+          "score": 0.09634817,
+          "value": "cloud"
+        },
+        {
+          "score": 0.09486494,
+          "value": "forum"
+        },
+        {
+          "score": 0.09414005,
+          "value": "vpn"
+        },
+        {
+          "score": 0.09383518,
+          "value": "pesticide"
+        },
+        {
+          "score": 0.09369754,
+          "value": "global"
+        },
+        {
+          "score": 0.0927597,
+          "value": "cell"
+        },
+        {
+          "score": 0.09105025,
+          "value": "wireless"
+        },
+        {
+          "score": 0.086476356,
+          "value": "protection"
+        },
+        {
+          "score": 0.08587849,
+          "value": "reader"
+        },
+        {
+          "score": 0.08487082,
+          "value": "issue"
+        },
+        {
+          "score": 0.084341906,
+          "value": "example"
+        },
+        {
+          "score": 0.0828474,
+          "value": "department"
+        },
+        {
+          "score": 0.080102384,
+          "value": "event"
+        },
+        {
+          "score": 0.07979421,
+          "value": "internet"
+        },
+        {
+          "score": 0.079076186,
+          "value": "care"
+        },
+        {
+          "score": 0.079008915,
+          "value": "country"
+        },
+        {
+          "score": 0.07746148,
+          "value": "windows"
+        },
+        {
+          "score": 0.07653406,
+          "value": "label"
+        },
+        {
+          "score": 0.0762046,
+          "value": "manufacturer"
+        },
+        {
+          "score": 0.075553946,
+          "value": "sport"
+        },
+        {
+          "score": 0.075408,
+          "value": "apple"
+        },
+        {
+          "score": 0.07509711,
+          "value": "android"
+        },
+        {
+          "score": 0.0742808,
+          "value": "agreement"
+        },
+        {
+          "score": 0.073077254,
+          "value": "desktop"
+        },
+        {
+          "score": 0.07302794,
+          "value": "music"
+        },
+        {
+          "score": 0.07286102,
+          "value": "money"
+        },
+        {
+          "score": 0.072499245,
+          "value": "rate"
+        },
+        {
+          "score": 0.07152755,
+          "value": "community"
+        },
+        {
+          "score": 0.070528395,
+          "value": "animal"
+        },
+        {
+          "score": 0.069689214,
+          "value": "communication"
+        },
+        {
+          "score": 0.06967294,
+          "value": "game"
+        },
+        {
+          "score": 0.06909877,
+          "value": "currency"
+        },
+        {
+          "score": 0.06847074,
+          "value": "developer"
+        },
+        {
+          "score": 0.06808655,
+          "value": "platform"
+        },
+        {
+          "score": 0.06784985,
+          "value": "light"
+        },
+        {
+          "score": 0.06702717,
+          "value": "standard"
+        },
+        {
+          "score": 0.066682085,
+          "value": "power"
+        },
+        {
+          "score": 0.0664086,
+          "value": "health"
+        },
+        {
+          "score": 0.066090874,
+          "value": "credit"
+        },
+        {
+          "score": 0.065381154,
+          "value": "medical"
+        },
+        {
+          "score": 0.06496282,
+          "value": "central sign"
+        },
+        {
+          "score": 0.06496282,
+          "value": "central seller"
+        },
+        {
+          "score": 0.06418089,
+          "value": "performance"
+        },
+        {
+          "score": 0.0628725,
+          "value": "applicable"
+        },
+        {
+          "score": 0.06179341,
+          "value": "refund"
+        },
+        {
+          "score": 0.061509456,
+          "value": "smart"
+        },
+        {
+          "score": 0.061265267,
+          "value": "creative"
+        },
+        {
+          "score": 0.06049376,
+          "value": "pro"
+        },
+        {
+          "score": 0.059897784,
+          "value": "door"
+        },
+        {
+          "score": 0.059211127,
+          "value": "feature"
+        },
+        {
+          "score": 0.059188344,
+          "value": "medical device"
+        },
+        {
+          "score": 0.058743708,
+          "value": "network"
+        },
+        {
+          "score": 0.058190417,
+          "value": "region"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 2,
+      "value": [
+        "http://peoria-cartitleloans.com/",
+        "http://www.peoria-cartitleloans.com/"
+      ]
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/peoria-cartitleloans.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://peoria-cartitleloans.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 604,
+        "value": [
+          "itch.io",
+          "skype.com",
+          "123people.com",
+          "github.io",
+          "1password.com",
+          "twitter.com",
+          "adobe.com",
+          "23andme.com",
+          "2brightsparks.com",
+          "yahoo.com",
+          "7-zip.org",
+          "70mai.store",
+          "nytimes.com",
+          "9to5google.com",
+          "apple.com",
+          "avg.com",
+          "amazon.com",
+          "go.com",
+          "microsoft.com",
+          "trendmicro.com",
+          "att.com",
+          "facebook.com",
+          "ikea.com",
+          "instagram.com",
+          "linkedin.com",
+          "meta.com",
+          "netflix.com",
+          "absolute.com",
+          "cnn.com",
+          "nvidia.com",
+          "shopify.com",
+          "dell.com",
+          "woot.com",
+          "bluettipower.com",
+          "jackery.com",
+          "msi.com",
+          "lenovo.com",
+          "live.com",
+          "nordvpn.com",
+          "proton.me",
+          "oneplus.com",
+          "ring.com",
+          "protonvpn.com",
+          "samsung.com",
+          "surfshark.com",
+          "xbox.com",
+          "fitbit.com",
+          "mtv.com",
+          "acronis.com",
+          "boostmobile.com",
+          "ad.doubleclick.net",
+          "kodi.tv",
+          "opera.com",
+          "mozilla.org",
+          "thunderbird.net",
+          "adlice.com",
+          "evyy.net",
+          "softonic.com",
+          "harvard.edu",
+          "adriangranados.com",
+          "advisorator.com",
+          "sourceforge.net",
+          "roku.com",
+          "walmart.com",
+          "amazon.co.uk",
+          "serif.com",
+          "steelseries.com",
+          "airlivedrive.com",
+          "airexplorer.net",
+          "aka.ms",
+          "alcpu.com",
+          "aliexpress.us",
+          "alogic.co",
+          "almico.com",
+          "amazon.ca",
+          "amazon.de",
+          "amazon.com.au",
+          "brother-usa.com",
+          "amd.com",
+          "amplifi.com",
+          "tomshardware.com",
+          "ancestry.com",
+          "anandtech.com",
+          "github.com",
+          "uptodown.com",
+          "anonaddy.com",
+          "intego.com",
+          "aomeitech.com",
+          "hp.com",
+          "youtube.com",
+          "seagate.com",
+          "intel.com",
+          "twitch.tv",
+          "bostonglobe.com",
+          "elgato.com",
+          "garmin.com",
+          "fcc.gov",
+          "windows.com",
+          "npr.org",
+          "archive.org",
+          "arstechnica.com",
+          "wired.com",
+          "netgear.com",
+          "arqbackup.com",
+          "huffingtonpost.com",
+          "ashampoo.com",
+          "arzopa.com",
+          "assemblyai.com",
+          "documentcloud.org",
+          "assistant.google.com",
+          "assistant.trophi.ai",
+          "xfinity.com",
+          "astropad.com",
+          "astrogaming.com",
+          "asus.com",
+          "asus.se",
+          "asustor.com",
+          "au.norton.com",
+          "attorneygeneral.gov",
+          "audacityteam.org",
+          "audials.com",
+          "audio.com",
+          "redirectingat.com",
+          "aukey.com",
+          "openai.com",
+          "authy.com",
+          "av-comparatives.org",
+          "av-test.org",
+          "avast.com",
+          "avira.com",
+          "avlab.pl",
+          "b2c-contenthub.com",
+          "azeron.eu",
+          "backmarket.com",
+          "backblaze.com",
+          "backforce.gg",
+          "ballicom.co.uk",
+          "wordpress.org",
+          "synology.com",
+          "belkin.com",
+          "benchdepot.com",
+          "ul.com",
+          "benq.com",
+          "dreamstudio.ai",
+          "playstation.com",
+          "betanews.com",
+          "speedtest.net",
+          "techcrunch.com",
+          "bilibili.com",
+          "bing.com",
+          "bitwarden.com",
+          "bleepingcomputer.com",
+          "homedepot.com",
+          "blender.org",
+          "blizzard.com",
+          "chainalysis.com",
+          "dashlane.com",
+          "checkpoint.com",
+          "eero.com",
+          "ebay.com",
+          "familytreedna.com",
+          "eset.com",
+          "blog.google",
+          "hidemyass.com",
+          "ipvanish.com",
+          "kensington.com",
+          "keepersecurity.com",
+          "lastpass.com",
+          "malwarebytes.com",
+          "macsales.com",
+          "nzxt.com",
+          "roblox.com",
+          "reddit.com",
+          "smartthings.com",
+          "tello.com",
+          "ugreen.com",
+          "virustotal.com",
+          "westerndigital.com",
+          "whitepages.com",
+          "office.com",
+          "wikimedia.org",
+          "computerworld.com",
+          "csoonline.com",
+          "pcworld.com",
+          "reuters.com",
+          "windscribe.com",
+          "bloomberg.com",
+          "bluemic.com",
+          "bluehost.com",
+          "blurbusters.com",
+          "bodyguardz.com",
+          "boox.com",
+          "privateinternetaccess.com",
+          "vice.com",
+          "geekbench.com",
+          "bsi.bund.de",
+          "shure.com",
+          "falcon-nw.com",
+          "ftc.gov",
+          "businesswire.com",
+          "sophos.com",
+          "storagecraft.com",
+          "easeus.com",
+          "engadget.com",
+          "linksys.com",
+          "uscourts.gov",
+          "camelcamelcamel.com",
+          "canon.com",
+          "capcut.com",
+          "carbonite.com",
+          "cbsnews.com",
+          "cdw.com",
+          "steampowered.com",
+          "freepik.com",
+          "razer.com",
+          "chat.open-ai",
+          "ign.com",
+          "hostgator.com",
+          "cherryxtrfy.com",
+          "ibm.com",
+          "chrome.google.com",
+          "chromewebstore.google.com",
+          "cnbc.com",
+          "linksynergy.com",
+          "macpaw.com",
+          "tunnelbear.com",
+          "cloud.google.com",
+          "digitalocean.com",
+          "cloudmounter.net",
+          "cloudtrax.com",
+          "codebox.net",
+          "colorware.com",
+          "firefox.com",
+          "viewsonic.com",
+          "community.norton.com",
+          "frame.work",
+          "openhab.org",
+          "pcgamingwiki.com",
+          "verizon.com",
+          "home-assistant.io",
+          "tp-link.com",
+          "comparitech.com",
+          "visible.com",
+          "costco.com",
+          "transunion.com",
+          "cordcuttersnews.com",
+          "turtlebeach.com",
+          "corsair.com",
+          "cox.com",
+          "cpu-world.com",
+          "craiyon.com",
+          "crandalloffice.com",
+          "cricketwireless.com",
+          "infoworld.com",
+          "nist.gov",
+          "cucumberwifi.io",
+          "cyberghostvpn.com",
+          "cyberpowerpc.com",
+          "cutout.pro",
+          "daringfireball.net",
+          "datacolor.com",
+          "dd-wrt.com",
+          "de.steelseries.com",
+          "de.wikipedia.org",
+          "pcwelt.de",
+          "deovr.com",
+          "staples.com",
+          "developers.google.com",
+          "devdoc.net",
+          "oculus.com",
+          "pdffiller.com",
+          "yubico.com",
+          "devolo.com",
+          "digital.nhs.uk",
+          "digitaltrends.com",
+          "displayhdr.org",
+          "epson.com",
+          "dnsleaktest.com",
+          "dockcase.com",
+          "docfetcher.sourceforge.io",
+          "dongar.tech",
+          "dongartechnologies.com",
+          "macwelt.de",
+          "videolan.org",
+          "revouninstaller.com",
+          "guru3d.com",
+          "wisecleaner.com",
+          "monoprice.com",
+          "dreamstime.com",
+          "drivereasy.com",
+          "drive-image.com",
+          "drop.com",
+          "duckduckgo.com",
+          "duetdisplay.com",
+          "duplicacy.com",
+          "duplicati.com",
+          "dygma.com",
+          "dvdstyler.org",
+          "easeus-software.com",
+          "easeus.de",
+          "ebuyer.com",
+          "edifier-online.com",
+          "edifier.com",
+          "einova.com",
+          "eicar.org",
+          "outlook.com",
+          "encrypt.me",
+          "wikipedia.org",
+          "newegg.com",
+          "epomaker.com",
+          "ergoweb.com",
+          "epeat.net",
+          "thrustmaster.com",
+          "stardock.com",
+          "roccat.com",
+          "exiftool.org",
+          "expandrive.com",
+          "libreoffice.org",
+          "fast.com",
+          "fastmail.com",
+          "fastestvpn.com",
+          "fbackup.com",
+          "fileshadow.com",
+          "fi.google.com",
+          "firewalla.com",
+          "forums.mcafee.com",
+          "forwardemail.net",
+          "fosstodon.org",
+          "forum.avast.com",
+          "handbrake.fr",
+          "slickdeals.net",
+          "techpowerup.com",
+          "virtualbox.org",
+          "icann.org",
+          "fractal-design.com",
+          "humanscale.com",
+          "freedownloadmanager.org",
+          "hermanmiller.com",
+          "fully.com",
+          "gamestop.com",
+          "gamesir.hk",
+          "gargoyle-router.com",
+          "gear4.com",
+          "straighttalk.com",
+          "getimg.ai",
+          "getnomad.app",
+          "getpcpanel.com",
+          "ghisler.com",
+          "gigabyte.com",
+          "samsungdisplay.com",
+          "theregister.com",
+          "gofundme.com",
+          "goodnotes.com",
+          "gonimble.com",
+          "google.com",
+          "greenbot.com",
+          "gs.statcounter.com",
+          "h2owireless.com",
+          "haveibeenpwned.com",
+          "internxt.com",
+          "nextcloud.com",
+          "redpocket.com",
+          "x.com",
+          "hide.me",
+          "highspeedinternet.com",
+          "homebridge.io",
+          "huanuo.com",
+          "theverge.com",
+          "wayfair.com",
+          "hpi.de",
+          "humansecurity.com",
+          "huggingface.co",
+          "hwinfo.com",
+          "hybrid-analysis.com",
+          "hyperx.com",
+          "ic3.gov",
+          "ibb.co",
+          "ics-card-xe-hpg-review.html",
+          "iea.org",
+          "pexels.com",
+          "indiegogo.com",
+          "insight.com",
+          "innocn.com",
+          "hpconnected.com",
+          "inmotionhosting.com",
+          "microsoft365.com",
+          "nbcnews.com",
+          "iobit.com",
+          "iottie.com",
+          "ironvest.com",
+          "irisidentityprotection.com",
+          "sans.edu",
+          "isogg.org",
+          "ivpn.net",
+          "uni-bonn.de",
+          "jbl.se",
+          "johnstonmurphy.com",
+          "justgetflux.com",
+          "kcsoftwares.com",
+          "keepass.info",
+          "keepassxc.org",
+          "kbdfans.com",
+          "kenu.com",
+          "keychron.com",
+          "kitguru.net",
+          "knowem.com",
+          "kprepublic.com",
+          "lasso.security",
+          "lastpass.wo8g.net",
+          "lemokey.com",
+          "nextbase.com",
+          "lenovo.vzew.net",
+          "letsencrypt.org",
+          "levvvel.com",
+          "lg.com",
+          "lightningkeyboards.com",
+          "lifewire.com",
+          "literatureandlatte.com",
+          "livingdna.com",
+          "livedrive.com",
+          "llama2.ai",
+          "logmeonce.com",
+          "logitech.cfzu.net",
+          "logitechg.com",
+          "preply.com",
+          "tigerdirect.com",
+          "m3.se",
+          "windowscentral.com",
+          "mage.space",
+          "majorgeeks.com",
+          "maxon.net",
+          "mcafee.com",
+          "otterbox.com",
+          "mediawiki.org",
+          "messages.google.com",
+          "metrobyt-mobile.com",
+          "midjourney.com",
+          "microcenter.com",
+          "mjbpix.com",
+          "mocalliance.org",
+          "modelfkeyboards.com",
+          "monitortests.com",
+          "mountainduck.io",
+          "mspoweruser.com",
+          "mullvad.net",
+          "my.norton.com",
+          "my.tellmegen.com",
+          "myaccount.google.com",
+          "myaccount.mcafee.com",
+          "my.personalvpn.com",
+          "naps2.com",
+          "neushield.com",
+          "netmarketshare.com",
+          "netspotapp.com",
+          "networkworld.com",
+          "nexigo.com",
+          "ninite.com",
+          "nirsoft.net",
+          "nomadgoods.com",
+          "nomoreransom.org",
+          "nordpass.com",
+          "norton.com",
+          "nudgemail.com",
+          "nticorp.com",
+          "now.bt.co",
+          "nuphy.com",
+          "obsproject.com",
+          "zenmate.com",
+          "omen.com",
+          "one.google.com",
+          "oneadaptr.com",
+          "onlyoffice.com",
+          "openhardwaremonitor.org",
+          "ontrack.com",
+          "open-mesh.com",
+          "opensignal.com",
+          "sightful.com",
+          "ovpn.com",
+          "pagepluscellular.com",
+          "pandasecurity.com",
+          "partitionwizard.com",
+          "passwords.google.com",
+          "parsecgaming.com",
+          "passkey.org",
+          "passkeys.directory",
+          "passkeys.io",
+          "pcrisk.com",
+          "pcgamer.com",
+          "pcmag.com",
+          "personalvpn.com",
+          "ricoh.com",
+          "pi-hole.net",
+          "pickavance.com",
+          "photos.google.com",
+          "pinokio.computer",
+          "pixabay.com",
+          "pixart.com",
+          "pipl.com",
+          "pixiogaming.com",
+          "playgroundai.com",
+          "play.google.com",
+          "pny.com",
+          "pornhub.com",
+          "powera.com",
+          "ravpower.com",
+          "protection.mcafee.com",
+          "publicrecords.onlinesearches.com",
+          "psirt.canon",
+          "rentry.org",
+          "retrospect.com",
+          "rockpapershotgun.com",
+          "roboform.com",
+          "rovedashcam.com",
+          "rsaconference.com",
+          "sabrent.com",
+          "satechi.net",
+          "se.creative.com",
+          "seasonic.com",
+          "securemyemail.com",
+          "secretlab.co",
+          "security.org",
+          "selabs.uk",
+          "uni-potsdam.de",
+          "whois.com",
+          "simplelogin.io",
+          "sites.google.com",
+          "softperfect.com",
+          "softwareok.com",
+          "solveigmm.com",
+          "sonnetstore.com",
+          "soundblaster.com",
+          "speedify.com",
+          "speedof.me",
+          "spacedesk.net",
+          "speckproducts.com",
+          "spigen.com",
+          "spokeo.com",
+          "ssupd.co",
+          "srlabs.de",
+          "stacksocial.com",
+          "techadvisor.com",
+          "stability.ai",
+          "steamcommunity.com",
+          "statista.com",
+          "ui.com",
+          "tcl.com",
+          "support.avast.com",
+          "support.avira.com",
+          "support.google.com",
+          "support.logi.com",
+          "support.norton.com",
+          "sync.com",
+          "techadvisor.co.uk",
+          "techreport.com",
+          "techspot.com",
+          "testmy.net",
+          "testufo.com",
+          "thehackernews.com",
+          "theintelligence.com",
+          "thinkwarestore.com",
+          "thurrott.com",
+          "tile.com",
+          "tindie.com",
+          "tinybots.net",
+          "tingmobile.com",
+          "pdf24.org",
+          "top10vpn.com",
+          "torguard.net",
+          "torrentfreak.com",
+          "touch-portal.com",
+          "transparencyreport.google.com",
+          "troyhunt.com",
+          "trustinsights.ai",
+          "twcert.org.tw",
+          "ubackup.com",
+          "uk.crucial.com",
+          "uk.ugreen.com",
+          "uninstalr.com",
+          "untangle.com",
+          "uploadvr.com",
+          "unsplash.com",
+          "upscayl.org",
+          "us.dlink.com",
+          "us.creative.com",
+          "us.norton.com",
+          "usesignhouse.com",
+          "usmobile.com",
+          "vantrue.us",
+          "videocardz.com",
+          "viofo.com",
+          "voyageplay.ai",
+          "vr-compare.com",
+          "wasdkeyboards.com",
+          "wccftech.com",
+          "webauthn.io",
+          "wicar.org",
+          "winaero.com",
+          "winget.run",
+          "windowslatest.com",
+          "workspaceupdates.googleblog.com",
+          "yesvideo.com",
+          "yodlee.com",
+          "youtu.be",
+          "zealpc.net"
+        ]
+      },
+      "partnersAdded": {
+        "count": 11,
+        "value": [
+          {
+            "domain": "my.personalvpn.com"
+          },
+          {
+            "domain": "my.tellmegen.com"
+          },
+          {
+            "domain": "se.creative.com"
+          },
+          {
+            "domain": "gs.statcounter.com"
+          },
+          {
+            "domain": "us.dlink.com"
+          },
+          {
+            "domain": "ad.doubleclick.net"
+          },
+          {
+            "domain": "uk.crucial.com"
+          },
+          {
+            "domain": "de.steelseries.com"
+          },
+          {
+            "domain": "us.creative.com"
+          },
+          {
+            "domain": "uk.ugreen.com"
+          },
+          {
+            "domain": "de.wikipedia.org"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 6,
+        "value": [
+          {
+            "domain": "statcounter.com"
+          },
+          {
+            "domain": "crucial.com"
+          },
+          {
+            "domain": "creative.com"
+          },
+          {
+            "domain": "doubleclick.net"
+          },
+          {
+            "domain": "tellmegen.com"
+          },
+          {
+            "domain": "dlink.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 136.59991,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 76.95,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 66.65003,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 39.15001,
+            "vertical": "Online / Security"
+          },
+          {
+            "count": 37.400013,
+            "vertical": "Business / Cyber Security"
+          },
+          {
+            "count": 37.100006,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 29.95,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 24.65,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 22.300001,
+            "vertical": "Online / VPN"
+          },
+          {
+            "count": 20.35,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 12.199999,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 10.9,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 10.25,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 6.7499995,
+            "vertical": "Business / Office"
+          },
+          {
+            "count": 6.5499997,
+            "vertical": "Technology / Editing Software"
+          },
+          {
+            "count": 6,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 5.2999997,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 4.85,
+            "vertical": "Online / Web Hosting"
+          },
+          {
+            "count": 4.55,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 4.5,
+            "vertical": "Motoring / Cars"
+          },
+          {
+            "count": 3.7,
+            "vertical": "Finance / Investments"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Home / Art"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 2.65,
+            "vertical": "Business / Finance"
+          },
+          {
+            "count": 2.3,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 2,
+            "vertical": "Business / Website Builder"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Home / Security"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Home / DIY"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Online / Freebies"
+          },
+          {
+            "count": 1.7,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 1.7,
+            "vertical": "Travel / Vacation"
+          },
+          {
+            "count": 1.65,
+            "vertical": "Entertainment / Hobbies"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Jobs & Careers"
+          },
+          {
+            "count": 1,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 1,
+            "vertical": "Health / Adult"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Energy"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Food / Alcohol"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Esim"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Finance / Accounts"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Finance / Banking"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Finance / Forex & Crypto"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Garden"
+          },
+          {
+            "count": 0.85,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 0.85,
+            "vertical": "Home / Solar"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 604,
+      "value": [
+        "itch.io",
+        "skype.com",
+        "123people.com",
+        "github.io",
+        "1password.com",
+        "twitter.com",
+        "adobe.com",
+        "23andme.com",
+        "2brightsparks.com",
+        "yahoo.com",
+        "7-zip.org",
+        "70mai.store",
+        "nytimes.com",
+        "9to5google.com",
+        "apple.com",
+        "avg.com",
+        "amazon.com",
+        "go.com",
+        "microsoft.com",
+        "trendmicro.com",
+        "att.com",
+        "facebook.com",
+        "ikea.com",
+        "instagram.com",
+        "linkedin.com",
+        "meta.com",
+        "netflix.com",
+        "absolute.com",
+        "cnn.com",
+        "nvidia.com",
+        "shopify.com",
+        "dell.com",
+        "woot.com",
+        "bluettipower.com",
+        "jackery.com",
+        "msi.com",
+        "lenovo.com",
+        "live.com",
+        "nordvpn.com",
+        "proton.me",
+        "oneplus.com",
+        "ring.com",
+        "protonvpn.com",
+        "samsung.com",
+        "surfshark.com",
+        "xbox.com",
+        "fitbit.com",
+        "mtv.com",
+        "acronis.com",
+        "boostmobile.com",
+        "ad.doubleclick.net",
+        "kodi.tv",
+        "opera.com",
+        "mozilla.org",
+        "thunderbird.net",
+        "adlice.com",
+        "evyy.net",
+        "softonic.com",
+        "harvard.edu",
+        "adriangranados.com",
+        "advisorator.com",
+        "sourceforge.net",
+        "roku.com",
+        "walmart.com",
+        "amazon.co.uk",
+        "serif.com",
+        "steelseries.com",
+        "airlivedrive.com",
+        "airexplorer.net",
+        "aka.ms",
+        "alcpu.com",
+        "aliexpress.us",
+        "alogic.co",
+        "almico.com",
+        "amazon.ca",
+        "amazon.de",
+        "amazon.com.au",
+        "brother-usa.com",
+        "amd.com",
+        "amplifi.com",
+        "tomshardware.com",
+        "ancestry.com",
+        "anandtech.com",
+        "github.com",
+        "uptodown.com",
+        "anonaddy.com",
+        "intego.com",
+        "aomeitech.com",
+        "hp.com",
+        "youtube.com",
+        "seagate.com",
+        "intel.com",
+        "twitch.tv",
+        "bostonglobe.com",
+        "elgato.com",
+        "garmin.com",
+        "fcc.gov",
+        "windows.com",
+        "npr.org",
+        "archive.org",
+        "arstechnica.com",
+        "wired.com",
+        "netgear.com",
+        "arqbackup.com",
+        "huffingtonpost.com",
+        "ashampoo.com",
+        "arzopa.com",
+        "assemblyai.com",
+        "documentcloud.org",
+        "assistant.google.com",
+        "assistant.trophi.ai",
+        "xfinity.com",
+        "astropad.com",
+        "astrogaming.com",
+        "asus.com",
+        "asus.se",
+        "asustor.com",
+        "au.norton.com",
+        "attorneygeneral.gov",
+        "audacityteam.org",
+        "audials.com",
+        "audio.com",
+        "redirectingat.com",
+        "aukey.com",
+        "openai.com",
+        "authy.com",
+        "av-comparatives.org",
+        "av-test.org",
+        "avast.com",
+        "avira.com",
+        "avlab.pl",
+        "b2c-contenthub.com",
+        "azeron.eu",
+        "backmarket.com",
+        "backblaze.com",
+        "backforce.gg",
+        "ballicom.co.uk",
+        "wordpress.org",
+        "synology.com",
+        "belkin.com",
+        "benchdepot.com",
+        "ul.com",
+        "benq.com",
+        "dreamstudio.ai",
+        "playstation.com",
+        "betanews.com",
+        "speedtest.net",
+        "techcrunch.com",
+        "bilibili.com",
+        "bing.com",
+        "bitwarden.com",
+        "bleepingcomputer.com",
+        "homedepot.com",
+        "blender.org",
+        "blizzard.com",
+        "chainalysis.com",
+        "dashlane.com",
+        "checkpoint.com",
+        "eero.com",
+        "ebay.com",
+        "familytreedna.com",
+        "eset.com",
+        "blog.google",
+        "hidemyass.com",
+        "ipvanish.com",
+        "kensington.com",
+        "keepersecurity.com",
+        "lastpass.com",
+        "malwarebytes.com",
+        "macsales.com",
+        "nzxt.com",
+        "roblox.com",
+        "reddit.com",
+        "smartthings.com",
+        "tello.com",
+        "ugreen.com",
+        "virustotal.com",
+        "westerndigital.com",
+        "whitepages.com",
+        "office.com",
+        "wikimedia.org",
+        "computerworld.com",
+        "csoonline.com",
+        "pcworld.com",
+        "reuters.com",
+        "windscribe.com",
+        "bloomberg.com",
+        "bluemic.com",
+        "bluehost.com",
+        "blurbusters.com",
+        "bodyguardz.com",
+        "boox.com",
+        "privateinternetaccess.com",
+        "vice.com",
+        "geekbench.com",
+        "bsi.bund.de",
+        "shure.com",
+        "falcon-nw.com",
+        "ftc.gov",
+        "businesswire.com",
+        "sophos.com",
+        "storagecraft.com",
+        "easeus.com",
+        "engadget.com",
+        "linksys.com",
+        "uscourts.gov",
+        "camelcamelcamel.com",
+        "canon.com",
+        "capcut.com",
+        "carbonite.com",
+        "cbsnews.com",
+        "cdw.com",
+        "steampowered.com",
+        "freepik.com",
+        "razer.com",
+        "chat.open-ai",
+        "ign.com",
+        "hostgator.com",
+        "cherryxtrfy.com",
+        "ibm.com",
+        "chrome.google.com",
+        "chromewebstore.google.com",
+        "cnbc.com",
+        "linksynergy.com",
+        "macpaw.com",
+        "tunnelbear.com",
+        "cloud.google.com",
+        "digitalocean.com",
+        "cloudmounter.net",
+        "cloudtrax.com",
+        "codebox.net",
+        "colorware.com",
+        "firefox.com",
+        "viewsonic.com",
+        "community.norton.com",
+        "frame.work",
+        "openhab.org",
+        "pcgamingwiki.com",
+        "verizon.com",
+        "home-assistant.io",
+        "tp-link.com",
+        "comparitech.com",
+        "visible.com",
+        "costco.com",
+        "transunion.com",
+        "cordcuttersnews.com",
+        "turtlebeach.com",
+        "corsair.com",
+        "cox.com",
+        "cpu-world.com",
+        "craiyon.com",
+        "crandalloffice.com",
+        "cricketwireless.com",
+        "infoworld.com",
+        "nist.gov",
+        "cucumberwifi.io",
+        "cyberghostvpn.com",
+        "cyberpowerpc.com",
+        "cutout.pro",
+        "daringfireball.net",
+        "datacolor.com",
+        "dd-wrt.com",
+        "de.steelseries.com",
+        "de.wikipedia.org",
+        "pcwelt.de",
+        "deovr.com",
+        "staples.com",
+        "developers.google.com",
+        "devdoc.net",
+        "oculus.com",
+        "pdffiller.com",
+        "yubico.com",
+        "devolo.com",
+        "digital.nhs.uk",
+        "digitaltrends.com",
+        "displayhdr.org",
+        "epson.com",
+        "dnsleaktest.com",
+        "dockcase.com",
+        "docfetcher.sourceforge.io",
+        "dongar.tech",
+        "dongartechnologies.com",
+        "macwelt.de",
+        "videolan.org",
+        "revouninstaller.com",
+        "guru3d.com",
+        "wisecleaner.com",
+        "monoprice.com",
+        "dreamstime.com",
+        "drivereasy.com",
+        "drive-image.com",
+        "drop.com",
+        "duckduckgo.com",
+        "duetdisplay.com",
+        "duplicacy.com",
+        "duplicati.com",
+        "dygma.com",
+        "dvdstyler.org",
+        "easeus-software.com",
+        "easeus.de",
+        "ebuyer.com",
+        "edifier-online.com",
+        "edifier.com",
+        "einova.com",
+        "eicar.org",
+        "outlook.com",
+        "encrypt.me",
+        "wikipedia.org",
+        "newegg.com",
+        "epomaker.com",
+        "ergoweb.com",
+        "epeat.net",
+        "thrustmaster.com",
+        "stardock.com",
+        "roccat.com",
+        "exiftool.org",
+        "expandrive.com",
+        "libreoffice.org",
+        "fast.com",
+        "fastmail.com",
+        "fastestvpn.com",
+        "fbackup.com",
+        "fileshadow.com",
+        "fi.google.com",
+        "firewalla.com",
+        "forums.mcafee.com",
+        "forwardemail.net",
+        "fosstodon.org",
+        "forum.avast.com",
+        "handbrake.fr",
+        "slickdeals.net",
+        "techpowerup.com",
+        "virtualbox.org",
+        "icann.org",
+        "fractal-design.com",
+        "humanscale.com",
+        "freedownloadmanager.org",
+        "hermanmiller.com",
+        "fully.com",
+        "gamestop.com",
+        "gamesir.hk",
+        "gargoyle-router.com",
+        "gear4.com",
+        "straighttalk.com",
+        "getimg.ai",
+        "getnomad.app",
+        "getpcpanel.com",
+        "ghisler.com",
+        "gigabyte.com",
+        "samsungdisplay.com",
+        "theregister.com",
+        "gofundme.com",
+        "goodnotes.com",
+        "gonimble.com",
+        "google.com",
+        "greenbot.com",
+        "gs.statcounter.com",
+        "h2owireless.com",
+        "haveibeenpwned.com",
+        "internxt.com",
+        "nextcloud.com",
+        "redpocket.com",
+        "x.com",
+        "hide.me",
+        "highspeedinternet.com",
+        "homebridge.io",
+        "huanuo.com",
+        "theverge.com",
+        "wayfair.com",
+        "hpi.de",
+        "humansecurity.com",
+        "huggingface.co",
+        "hwinfo.com",
+        "hybrid-analysis.com",
+        "hyperx.com",
+        "ic3.gov",
+        "ibb.co",
+        "ics-card-xe-hpg-review.html",
+        "iea.org",
+        "pexels.com",
+        "indiegogo.com",
+        "insight.com",
+        "innocn.com",
+        "hpconnected.com",
+        "inmotionhosting.com",
+        "microsoft365.com",
+        "nbcnews.com",
+        "iobit.com",
+        "iottie.com",
+        "ironvest.com",
+        "irisidentityprotection.com",
+        "sans.edu",
+        "isogg.org",
+        "ivpn.net",
+        "uni-bonn.de",
+        "jbl.se",
+        "johnstonmurphy.com",
+        "justgetflux.com",
+        "kcsoftwares.com",
+        "keepass.info",
+        "keepassxc.org",
+        "kbdfans.com",
+        "kenu.com",
+        "keychron.com",
+        "kitguru.net",
+        "knowem.com",
+        "kprepublic.com",
+        "lasso.security",
+        "lastpass.wo8g.net",
+        "lemokey.com",
+        "nextbase.com",
+        "lenovo.vzew.net",
+        "letsencrypt.org",
+        "levvvel.com",
+        "lg.com",
+        "lightningkeyboards.com",
+        "lifewire.com",
+        "literatureandlatte.com",
+        "livingdna.com",
+        "livedrive.com",
+        "llama2.ai",
+        "logmeonce.com",
+        "logitech.cfzu.net",
+        "logitechg.com",
+        "preply.com",
+        "tigerdirect.com",
+        "m3.se",
+        "windowscentral.com",
+        "mage.space",
+        "majorgeeks.com",
+        "maxon.net",
+        "mcafee.com",
+        "otterbox.com",
+        "mediawiki.org",
+        "messages.google.com",
+        "metrobyt-mobile.com",
+        "midjourney.com",
+        "microcenter.com",
+        "mjbpix.com",
+        "mocalliance.org",
+        "modelfkeyboards.com",
+        "monitortests.com",
+        "mountainduck.io",
+        "mspoweruser.com",
+        "mullvad.net",
+        "my.norton.com",
+        "my.tellmegen.com",
+        "myaccount.google.com",
+        "myaccount.mcafee.com",
+        "my.personalvpn.com",
+        "naps2.com",
+        "neushield.com",
+        "netmarketshare.com",
+        "netspotapp.com",
+        "networkworld.com",
+        "nexigo.com",
+        "ninite.com",
+        "nirsoft.net",
+        "nomadgoods.com",
+        "nomoreransom.org",
+        "nordpass.com",
+        "norton.com",
+        "nudgemail.com",
+        "nticorp.com",
+        "now.bt.co",
+        "nuphy.com",
+        "obsproject.com",
+        "zenmate.com",
+        "omen.com",
+        "one.google.com",
+        "oneadaptr.com",
+        "onlyoffice.com",
+        "openhardwaremonitor.org",
+        "ontrack.com",
+        "open-mesh.com",
+        "opensignal.com",
+        "sightful.com",
+        "ovpn.com",
+        "pagepluscellular.com",
+        "pandasecurity.com",
+        "partitionwizard.com",
+        "passwords.google.com",
+        "parsecgaming.com",
+        "passkey.org",
+        "passkeys.directory",
+        "passkeys.io",
+        "pcrisk.com",
+        "pcgamer.com",
+        "pcmag.com",
+        "personalvpn.com",
+        "ricoh.com",
+        "pi-hole.net",
+        "pickavance.com",
+        "photos.google.com",
+        "pinokio.computer",
+        "pixabay.com",
+        "pixart.com",
+        "pipl.com",
+        "pixiogaming.com",
+        "playgroundai.com",
+        "play.google.com",
+        "pny.com",
+        "pornhub.com",
+        "powera.com",
+        "ravpower.com",
+        "protection.mcafee.com",
+        "publicrecords.onlinesearches.com",
+        "psirt.canon",
+        "rentry.org",
+        "retrospect.com",
+        "rockpapershotgun.com",
+        "roboform.com",
+        "rovedashcam.com",
+        "rsaconference.com",
+        "sabrent.com",
+        "satechi.net",
+        "se.creative.com",
+        "seasonic.com",
+        "securemyemail.com",
+        "secretlab.co",
+        "security.org",
+        "selabs.uk",
+        "uni-potsdam.de",
+        "whois.com",
+        "simplelogin.io",
+        "sites.google.com",
+        "softperfect.com",
+        "softwareok.com",
+        "solveigmm.com",
+        "sonnetstore.com",
+        "soundblaster.com",
+        "speedify.com",
+        "speedof.me",
+        "spacedesk.net",
+        "speckproducts.com",
+        "spigen.com",
+        "spokeo.com",
+        "ssupd.co",
+        "srlabs.de",
+        "stacksocial.com",
+        "techadvisor.com",
+        "stability.ai",
+        "steamcommunity.com",
+        "statista.com",
+        "ui.com",
+        "tcl.com",
+        "support.avast.com",
+        "support.avira.com",
+        "support.google.com",
+        "support.logi.com",
+        "support.norton.com",
+        "sync.com",
+        "techadvisor.co.uk",
+        "techreport.com",
+        "techspot.com",
+        "testmy.net",
+        "testufo.com",
+        "thehackernews.com",
+        "theintelligence.com",
+        "thinkwarestore.com",
+        "thurrott.com",
+        "tile.com",
+        "tindie.com",
+        "tinybots.net",
+        "tingmobile.com",
+        "pdf24.org",
+        "top10vpn.com",
+        "torguard.net",
+        "torrentfreak.com",
+        "touch-portal.com",
+        "transparencyreport.google.com",
+        "troyhunt.com",
+        "trustinsights.ai",
+        "twcert.org.tw",
+        "ubackup.com",
+        "uk.crucial.com",
+        "uk.ugreen.com",
+        "uninstalr.com",
+        "untangle.com",
+        "uploadvr.com",
+        "unsplash.com",
+        "upscayl.org",
+        "us.dlink.com",
+        "us.creative.com",
+        "us.norton.com",
+        "usesignhouse.com",
+        "usmobile.com",
+        "vantrue.us",
+        "videocardz.com",
+        "viofo.com",
+        "voyageplay.ai",
+        "vr-compare.com",
+        "wasdkeyboards.com",
+        "wccftech.com",
+        "webauthn.io",
+        "wicar.org",
+        "winaero.com",
+        "winget.run",
+        "windowslatest.com",
+        "workspaceupdates.googleblog.com",
+        "yesvideo.com",
+        "yodlee.com",
+        "youtu.be",
+        "zealpc.net"
+      ]
+    },
+    "promotype": {
+      "value": "student"
+    },
+    "relatedPublishers": {
+      "count": 7,
+      "value": [
+        "roundislandmedia.com",
+        "uncut.co.uk",
+        "nme.com",
+        "store.wallpaper.com",
+        "wallpaper-share.com",
+        "brightonlive.net",
+        "citybaby.org"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/nmemagazine",
+        "instagram": "https://instagram.com/nmemagazine",
+        "twitter": "https://twitter.com/nme",
+        "youtube": "https://youtube.com/nme"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Finance / Loans",
+      "value": [
+        "Finance / Loans",
+        "Motoring / Cars"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Finance / Loans",
+        "rank": 1,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Finance / Loans",
+          "rank": 1,
+          "score": 100
+        },
+        {
+          "name": "Motoring / Cars",
+          "rank": 1,
+          "score": 60
+        }
+      ]
+    }
+  }
+}

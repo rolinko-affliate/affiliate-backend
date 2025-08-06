@@ -1,0 +1,657 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 5,
+      "sampleValue": [
+        "CJ Affiliate",
+        "Rakuten",
+        "Rewardstyle"
+      ],
+      "value": [
+        "CJ Affiliate",
+        "Rakuten",
+        "Rewardstyle",
+        "ShareASale",
+        "ShopStyle"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.6
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        }
+      ]
+    },
+    "domain": "thesimpleglamazon.blogspot.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "body"
+        },
+        {
+          "score": 0.89067405,
+          "value": "mini"
+        },
+        {
+          "score": 0.76489437,
+          "value": "sign"
+        },
+        {
+          "score": 0.66319054,
+          "value": "makeup"
+        },
+        {
+          "score": 0.557068,
+          "value": "bath"
+        },
+        {
+          "score": 0.51239663,
+          "value": "hair"
+        },
+        {
+          "score": 0.49311703,
+          "value": "color"
+        },
+        {
+          "score": 0.42430273,
+          "value": "beauty"
+        },
+        {
+          "score": 0.40318945,
+          "value": "fragrance"
+        },
+        {
+          "score": 0.3824617,
+          "value": "tool"
+        },
+        {
+          "score": 0.3678086,
+          "value": "store"
+        },
+        {
+          "score": 0.353853,
+          "value": "dress"
+        },
+        {
+          "score": 0.3279138,
+          "value": "filter"
+        },
+        {
+          "score": 0.2817623,
+          "value": "sorting"
+        },
+        {
+          "score": 0.27572677,
+          "value": "style"
+        },
+        {
+          "score": 0.2412779,
+          "value": "skin"
+        },
+        {
+          "score": 0.21240747,
+          "value": "dresses"
+        },
+        {
+          "score": 0.20153627,
+          "value": "commission"
+        },
+        {
+          "score": 0.20153627,
+          "value": "junction"
+        },
+        {
+          "score": 0.20153627,
+          "value": "commission junction"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "body"
+        },
+        {
+          "score": 0.89067405,
+          "value": "mini"
+        },
+        {
+          "score": 0.76489437,
+          "value": "sign"
+        },
+        {
+          "score": 0.66319054,
+          "value": "makeup"
+        },
+        {
+          "score": 0.557068,
+          "value": "bath"
+        },
+        {
+          "score": 0.51239663,
+          "value": "hair"
+        },
+        {
+          "score": 0.49311703,
+          "value": "color"
+        },
+        {
+          "score": 0.42430273,
+          "value": "beauty"
+        },
+        {
+          "score": 0.40318945,
+          "value": "fragrance"
+        },
+        {
+          "score": 0.3824617,
+          "value": "tool"
+        },
+        {
+          "score": 0.3678086,
+          "value": "store"
+        },
+        {
+          "score": 0.353853,
+          "value": "dress"
+        },
+        {
+          "score": 0.3279138,
+          "value": "filter"
+        },
+        {
+          "score": 0.2817623,
+          "value": "sorting"
+        },
+        {
+          "score": 0.27572677,
+          "value": "style"
+        },
+        {
+          "score": 0.2412779,
+          "value": "skin"
+        },
+        {
+          "score": 0.21240747,
+          "value": "dresses"
+        },
+        {
+          "score": 0.20153627,
+          "value": "commission"
+        },
+        {
+          "score": 0.20153627,
+          "value": "junction"
+        },
+        {
+          "score": 0.20153627,
+          "value": "commission junction"
+        },
+        {
+          "score": 0.19087122,
+          "value": "sephora"
+        },
+        {
+          "score": 0.16151007,
+          "value": "set"
+        },
+        {
+          "score": 0.16146082,
+          "value": "code"
+        },
+        {
+          "score": 0.15882003,
+          "value": "cream"
+        },
+        {
+          "score": 0.15678708,
+          "value": "eye"
+        },
+        {
+          "score": 0.14607993,
+          "value": "accessory"
+        },
+        {
+          "score": 0.13952512,
+          "value": "vip"
+        },
+        {
+          "score": 0.13115562,
+          "value": "shoe"
+        },
+        {
+          "score": 0.12527892,
+          "value": "clothing"
+        },
+        {
+          "score": 0.12372198,
+          "value": "travel"
+        },
+        {
+          "score": 0.12259855,
+          "value": "skincare"
+        },
+        {
+          "score": 0.12085571,
+          "value": "oil"
+        },
+        {
+          "score": 0.11550798,
+          "value": "offer"
+        },
+        {
+          "score": 0.11150876,
+          "value": "category"
+        },
+        {
+          "score": 0.10804602,
+          "value": "perfume"
+        },
+        {
+          "score": 0.106796995,
+          "value": "rare"
+        },
+        {
+          "score": 0.106796995,
+          "value": "rare beauty"
+        },
+        {
+          "score": 0.104524724,
+          "value": "trial"
+        },
+        {
+          "score": 0.10330437,
+          "value": "jacket"
+        },
+        {
+          "score": 0.10045808,
+          "value": "shopify"
+        },
+        {
+          "score": 0.09906283,
+          "value": "ecommerce"
+        },
+        {
+          "score": 0.09689826,
+          "value": "care"
+        },
+        {
+          "score": 0.09688209,
+          "value": "sizes"
+        },
+        {
+          "score": 0.09583931,
+          "value": "jewelry"
+        },
+        {
+          "score": 0.09543561,
+          "value": "lash"
+        },
+        {
+          "score": 0.094992466,
+          "value": "arrival"
+        },
+        {
+          "score": 0.093893796,
+          "value": "quick view"
+        },
+        {
+          "score": 0.09224446,
+          "value": "designer"
+        },
+        {
+          "score": 0.09054156,
+          "value": "shirt"
+        },
+        {
+          "score": 0.08991274,
+          "value": "youth"
+        },
+        {
+          "score": 0.08930093,
+          "value": "boot"
+        },
+        {
+          "score": 0.08693376,
+          "value": "fashion"
+        },
+        {
+          "score": 0.086679064,
+          "value": "swimwear"
+        },
+        {
+          "score": 0.085127406,
+          "value": "bag"
+        },
+        {
+          "score": 0.0842824,
+          "value": "insider"
+        },
+        {
+          "score": 0.08368987,
+          "value": "kid"
+        },
+        {
+          "score": 0.08180196,
+          "value": "standard"
+        },
+        {
+          "score": 0.08147122,
+          "value": "people"
+        },
+        {
+          "score": 0.0813038,
+          "value": "exclusion"
+        },
+        {
+          "score": 0.080963194,
+          "value": "woman"
+        },
+        {
+          "score": 0.07946728,
+          "value": "promotion"
+        },
+        {
+          "score": 0.07885213,
+          "value": "baby"
+        },
+        {
+          "score": 0.0772574,
+          "value": "photo"
+        },
+        {
+          "score": 0.0772574,
+          "value": "velour"
+        },
+        {
+          "score": 0.07649107,
+          "value": "valid"
+        },
+        {
+          "score": 0.07615791,
+          "value": "project"
+        },
+        {
+          "score": 0.074767716,
+          "value": "card"
+        },
+        {
+          "score": 0.07401481,
+          "value": "pattern"
+        },
+        {
+          "score": 0.0738525,
+          "value": "short"
+        },
+        {
+          "score": 0.07351693,
+          "value": "modern"
+        },
+        {
+          "score": 0.072712846,
+          "value": "phluid"
+        },
+        {
+          "score": 0.072712846,
+          "value": "virtue"
+        },
+        {
+          "score": 0.07255305,
+          "value": "knit"
+        },
+        {
+          "score": 0.07208797,
+          "value": "sizing"
+        },
+        {
+          "score": 0.07189086,
+          "value": "fall"
+        },
+        {
+          "score": 0.0708634,
+          "value": "activewear"
+        },
+        {
+          "score": 0.070440575,
+          "value": "protein"
+        },
+        {
+          "score": 0.0681683,
+          "value": "vital protein"
+        },
+        {
+          "score": 0.0681683,
+          "value": "vital"
+        },
+        {
+          "score": 0.06763617,
+          "value": "floral"
+        },
+        {
+          "score": 0.06715305,
+          "value": "brush"
+        },
+        {
+          "score": 0.06652556,
+          "value": "pink"
+        },
+        {
+          "score": 0.06589602,
+          "value": "glow"
+        },
+        {
+          "score": 0.0648365,
+          "value": "cool"
+        },
+        {
+          "score": 0.0648023,
+          "value": "boy"
+        },
+        {
+          "score": 0.06418155,
+          "value": "measurements"
+        },
+        {
+          "score": 0.0639426,
+          "value": "eyeshadow"
+        },
+        {
+          "score": 0.062772155,
+          "value": "treatment"
+        },
+        {
+          "score": 0.06178907,
+          "value": "print"
+        },
+        {
+          "score": 0.060150824,
+          "value": "sleeveless"
+        },
+        {
+          "score": 0.060030587,
+          "value": "sole"
+        },
+        {
+          "score": 0.05945396,
+          "value": "white"
+        },
+        {
+          "score": 0.05907919,
+          "value": "bumble"
+        },
+        {
+          "score": 0.05907919,
+          "value": "selfless"
+        },
+        {
+          "score": 0.05736548,
+          "value": "blue"
+        },
+        {
+          "score": 0.05708876,
+          "value": "neck"
+        },
+        {
+          "score": 0.056806915,
+          "value": "spray"
+        },
+        {
+          "score": 0.056806915,
+          "value": "vitamin"
+        },
+        {
+          "score": 0.056771956,
+          "value": "pant"
+        },
+        {
+          "score": 0.05639937,
+          "value": "moisturizer"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://thesimpleglamazon.blogspot.com/",
+        "https://www.thesimpleglamazon.blogspot.com/",
+        "http://thesimpleglamazon.blogspot.com/",
+        "http://www.thesimpleglamazon.blogspot.com/"
+      ]
+    },
+    "metaData": {
+      "description": "A blog about plus size fashion on a budget",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/thesimpleglamazon.blogspot.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://thesimpleglamazon.blogspot.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 8,
+        "value": [
+          "affiliatetechnology.com",
+          "sephora.com",
+          "finishline.com",
+          "ulta.com",
+          "justfab.com",
+          "karinadresses.com",
+          "sallybeauty.com",
+          "saksfifthavenue.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 2.95,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 1,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 1,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 0.85,
+            "vertical": "Business / Software"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 8,
+      "value": [
+        "affiliatetechnology.com",
+        "sephora.com",
+        "finishline.com",
+        "ulta.com",
+        "justfab.com",
+        "karinadresses.com",
+        "sallybeauty.com",
+        "saksfifthavenue.com"
+      ]
+    },
+    "promotype": {
+      "value": "student"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 3,
+      "socialsAvailable": [
+        "twitter",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/thesimpleglamazon/?eid=arar-7cijeznpsdw9rnwnipzqbvui0mzsjy8rlcf38zm6n65xepuo7malcdokngxyi6dvgjlc429ixvl",
+        "instagram": "https://instagram.com/thesimpleglamazon/?hl=en",
+        "twitter": "https://twitter.com/simpleglamazon"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Health / Beauty",
+      "value": [
+        "Health / Beauty",
+        "Fashion / Clothing"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Health / Beauty",
+        "rank": 1,
+        "score": 85
+      },
+      "value": [
+        {
+          "name": "Health / Beauty",
+          "rank": 1,
+          "score": 85
+        },
+        {
+          "name": "Fashion / Clothing",
+          "rank": 1,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

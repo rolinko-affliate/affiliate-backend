@@ -1,0 +1,553 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Skimlinks"
+      ],
+      "value": [
+        "Skimlinks"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 0,
+      "error": false,
+      "value": []
+    },
+    "domain": "amazonfrontlines.org",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "sports"
+        },
+        {
+          "score": 0.7171315,
+          "value": "kids"
+        },
+        {
+          "score": 0.61752987,
+          "value": "family"
+        },
+        {
+          "score": 0.5139442,
+          "value": "video"
+        },
+        {
+          "score": 0.50223315,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.47808766,
+          "value": "shareasale"
+        },
+        {
+          "score": 0.47011954,
+          "value": "technology"
+        },
+        {
+          "score": 0.4302789,
+          "value": "education"
+        },
+        {
+          "score": 0.42629483,
+          "value": "entertainment"
+        },
+        {
+          "score": 0.3984064,
+          "value": "travel"
+        },
+        {
+          "score": 0.3984064,
+          "value": "girls"
+        },
+        {
+          "score": 0.3984064,
+          "value": "book"
+        },
+        {
+          "score": 0.39043826,
+          "value": "tumblr"
+        },
+        {
+          "score": 0.35059762,
+          "value": "play"
+        },
+        {
+          "score": 0.33864543,
+          "value": "destinations"
+        },
+        {
+          "score": 0.33864543,
+          "value": "friends"
+        },
+        {
+          "score": 0.3363734,
+          "value": "life"
+        },
+        {
+          "score": 0.33607066,
+          "value": "story"
+        },
+        {
+          "score": 0.32669324,
+          "value": "tours"
+        },
+        {
+          "score": 0.32408363,
+          "value": "girl"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "sports"
+        },
+        {
+          "score": 0.7171315,
+          "value": "kids"
+        },
+        {
+          "score": 0.61752987,
+          "value": "family"
+        },
+        {
+          "score": 0.5139442,
+          "value": "video"
+        },
+        {
+          "score": 0.50223315,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.47808766,
+          "value": "shareasale"
+        },
+        {
+          "score": 0.47011954,
+          "value": "technology"
+        },
+        {
+          "score": 0.4302789,
+          "value": "education"
+        },
+        {
+          "score": 0.42629483,
+          "value": "entertainment"
+        },
+        {
+          "score": 0.3984064,
+          "value": "travel"
+        },
+        {
+          "score": 0.3984064,
+          "value": "girls"
+        },
+        {
+          "score": 0.3984064,
+          "value": "book"
+        },
+        {
+          "score": 0.39043826,
+          "value": "tumblr"
+        },
+        {
+          "score": 0.35059762,
+          "value": "play"
+        },
+        {
+          "score": 0.33864543,
+          "value": "destinations"
+        },
+        {
+          "score": 0.33864543,
+          "value": "friends"
+        },
+        {
+          "score": 0.3363734,
+          "value": "life"
+        },
+        {
+          "score": 0.33607066,
+          "value": "story"
+        },
+        {
+          "score": 0.32669324,
+          "value": "tours"
+        },
+        {
+          "score": 0.32408363,
+          "value": "girl"
+        },
+        {
+          "score": 0.30278885,
+          "value": "dates"
+        },
+        {
+          "score": 0.2988048,
+          "value": "star"
+        },
+        {
+          "score": 0.2988048,
+          "value": "christmas"
+        },
+        {
+          "score": 0.29482073,
+          "value": "watch"
+        },
+        {
+          "score": 0.29083666,
+          "value": "tech"
+        },
+        {
+          "score": 0.2801866,
+          "value": "international"
+        },
+        {
+          "score": 0.27727422,
+          "value": "popular"
+        },
+        {
+          "score": 0.2749004,
+          "value": "luxury"
+        },
+        {
+          "score": 0.26294822,
+          "value": "lifestyle"
+        },
+        {
+          "score": 0.26294822,
+          "value": "streaming"
+        },
+        {
+          "score": 0.25896415,
+          "value": "butterfly"
+        },
+        {
+          "score": 0.2430279,
+          "value": "parenting"
+        },
+        {
+          "score": 0.2430279,
+          "value": "hulu"
+        },
+        {
+          "score": 0.23904383,
+          "value": "assets"
+        },
+        {
+          "score": 0.23904383,
+          "value": "health"
+        },
+        {
+          "score": 0.23536251,
+          "value": "love"
+        },
+        {
+          "score": 0.23505977,
+          "value": "game"
+        },
+        {
+          "score": 0.2310757,
+          "value": "coupons"
+        },
+        {
+          "score": 0.2310757,
+          "value": "young"
+        },
+        {
+          "score": 0.2310757,
+          "value": "feedback"
+        },
+        {
+          "score": 0.22709164,
+          "value": "live"
+        },
+        {
+          "score": 0.22310758,
+          "value": "explore"
+        },
+        {
+          "score": 0.21115538,
+          "value": "fashion"
+        },
+        {
+          "score": 0.21115538,
+          "value": "photos"
+        },
+        {
+          "score": 0.20717132,
+          "value": "exclusives"
+        },
+        {
+          "score": 0.20318726,
+          "value": "stay"
+        },
+        {
+          "score": 0.20318726,
+          "value": "gadgets"
+        },
+        {
+          "score": 0.20318726,
+          "value": "food"
+        },
+        {
+          "score": 0.19521913,
+          "value": "season"
+        },
+        {
+          "score": 0.19518161,
+          "value": "store"
+        },
+        {
+          "score": 0.1937107,
+          "value": "fiction"
+        },
+        {
+          "score": 0.19123507,
+          "value": "weather"
+        },
+        {
+          "score": 0.1886201,
+          "value": "history"
+        },
+        {
+          "score": 0.18781632,
+          "value": "woman"
+        },
+        {
+          "score": 0.18728046,
+          "value": "child"
+        },
+        {
+          "score": 0.187251,
+          "value": "asia"
+        },
+        {
+          "score": 0.1870179,
+          "value": "culture"
+        },
+        {
+          "score": 0.18326694,
+          "value": "videos"
+        },
+        {
+          "score": 0.17656341,
+          "value": "crime"
+        },
+        {
+          "score": 0.17529881,
+          "value": "clinton"
+        },
+        {
+          "score": 0.17529881,
+          "value": "australia"
+        },
+        {
+          "score": 0.17131475,
+          "value": "americas"
+        },
+        {
+          "score": 0.17131475,
+          "value": "subscribers"
+        },
+        {
+          "score": 0.17131475,
+          "value": "real"
+        },
+        {
+          "score": 0.16733068,
+          "value": "remove"
+        },
+        {
+          "score": 0.16334662,
+          "value": "india"
+        },
+        {
+          "score": 0.16334662,
+          "value": "gadget"
+        },
+        {
+          "score": 0.16334662,
+          "value": "comedy"
+        },
+        {
+          "score": 0.15537849,
+          "value": "newsletters"
+        },
+        {
+          "score": 0.15139443,
+          "value": "africa"
+        },
+        {
+          "score": 0.15139443,
+          "value": "america"
+        },
+        {
+          "score": 0.15139443,
+          "value": "europe"
+        },
+        {
+          "score": 0.15139443,
+          "value": "cities"
+        },
+        {
+          "score": 0.15139443,
+          "value": "stars"
+        },
+        {
+          "score": 0.15139443,
+          "value": "markets"
+        },
+        {
+          "score": 0.15139443,
+          "value": "extras"
+        },
+        {
+          "score": 0.1434263,
+          "value": "newsource"
+        },
+        {
+          "score": 0.1434263,
+          "value": "city"
+        },
+        {
+          "score": 0.13944224,
+          "value": "sitemap"
+        },
+        {
+          "score": 0.13944224,
+          "value": "sources"
+        },
+        {
+          "score": 0.13944224,
+          "value": "chat"
+        },
+        {
+          "score": 0.13944224,
+          "value": "digital"
+        },
+        {
+          "score": 0.13944224,
+          "value": "saved"
+        },
+        {
+          "score": 0.13944224,
+          "value": "watching"
+        },
+        {
+          "score": 0.13545817,
+          "value": "messenger"
+        },
+        {
+          "score": 0.13545817,
+          "value": "cable"
+        },
+        {
+          "score": 0.13147411,
+          "value": "start"
+        },
+        {
+          "score": 0.13147411,
+          "value": "defines"
+        },
+        {
+          "score": 0.13147411,
+          "value": "subscribe"
+        },
+        {
+          "score": 0.12749004,
+          "value": "arts"
+        },
+        {
+          "score": 0.12749004,
+          "value": "screen"
+        },
+        {
+          "score": 0.12749004,
+          "value": "episode"
+        },
+        {
+          "score": 0.12350598,
+          "value": "replay"
+        },
+        {
+          "score": 0.12350598,
+          "value": "olympics"
+        },
+        {
+          "score": 0.12350598,
+          "value": "cnnvr"
+        },
+        {
+          "score": 0.12350598,
+          "value": "college"
+        },
+        {
+          "score": 0.12350598,
+          "value": "schedule"
+        },
+        {
+          "score": 0.12350598,
+          "value": "team"
+        },
+        {
+          "score": 0.12350598,
+          "value": "publicity"
+        },
+        {
+          "score": 0.12350598,
+          "value": "save"
+        }
+      ]
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazonfrontlines.org.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazonfrontlines.org"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 5
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "promotypeMix": {
+        "value": []
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "verticals": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Online / Services",
+        "rank": 2,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Online / Services",
+          "rank": 2,
+          "score": 90
+        }
+      ]
+    }
+  }
+}

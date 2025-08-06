@@ -1,0 +1,621 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "CJ Affiliate"
+      ],
+      "value": [
+        "CJ Affiliate"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.7
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.7
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.7
+        }
+      ]
+    },
+    "domain": "amazonhits.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "cartridge"
+        },
+        {
+          "score": 0.80610424,
+          "value": "printer"
+        },
+        {
+          "score": 0.65789473,
+          "value": "printers"
+        },
+        {
+          "score": 0.65789473,
+          "value": "vacations"
+        },
+        {
+          "score": 0.6381579,
+          "value": "travel"
+        },
+        {
+          "score": 0.6269116,
+          "value": "color"
+        },
+        {
+          "score": 0.6017427,
+          "value": "laserjet"
+        },
+        {
+          "score": 0.5855263,
+          "value": "workforce"
+        },
+        {
+          "score": 0.57894737,
+          "value": "vacation"
+        },
+        {
+          "score": 0.5784376,
+          "value": "lexmark"
+        },
+        {
+          "score": 0.57236844,
+          "value": "destinations"
+        },
+        {
+          "score": 0.53289473,
+          "value": "toshiba"
+        },
+        {
+          "score": 0.5112304,
+          "value": "toner"
+        },
+        {
+          "score": 0.5,
+          "value": "workcentre"
+        },
+        {
+          "score": 0.49342105,
+          "value": "trips"
+        },
+        {
+          "score": 0.4868421,
+          "value": "dell"
+        },
+        {
+          "score": 0.4868421,
+          "value": "airports"
+        },
+        {
+          "score": 0.4740028,
+          "value": "manufacturer"
+        },
+        {
+          "score": 0.47151777,
+          "value": "deskjet"
+        },
+        {
+          "score": 0.47003633,
+          "value": "epson"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "cartridge"
+        },
+        {
+          "score": 0.80610424,
+          "value": "printer"
+        },
+        {
+          "score": 0.65789473,
+          "value": "printers"
+        },
+        {
+          "score": 0.65789473,
+          "value": "vacations"
+        },
+        {
+          "score": 0.6381579,
+          "value": "travel"
+        },
+        {
+          "score": 0.6269116,
+          "value": "color"
+        },
+        {
+          "score": 0.6017427,
+          "value": "laserjet"
+        },
+        {
+          "score": 0.5855263,
+          "value": "workforce"
+        },
+        {
+          "score": 0.57894737,
+          "value": "vacation"
+        },
+        {
+          "score": 0.5784376,
+          "value": "lexmark"
+        },
+        {
+          "score": 0.57236844,
+          "value": "destinations"
+        },
+        {
+          "score": 0.53289473,
+          "value": "toshiba"
+        },
+        {
+          "score": 0.5112304,
+          "value": "toner"
+        },
+        {
+          "score": 0.5,
+          "value": "workcentre"
+        },
+        {
+          "score": 0.49342105,
+          "value": "trips"
+        },
+        {
+          "score": 0.4868421,
+          "value": "dell"
+        },
+        {
+          "score": 0.4868421,
+          "value": "airports"
+        },
+        {
+          "score": 0.4740028,
+          "value": "manufacturer"
+        },
+        {
+          "score": 0.47151777,
+          "value": "deskjet"
+        },
+        {
+          "score": 0.47003633,
+          "value": "epson"
+        },
+        {
+          "score": 0.46710527,
+          "value": "resort"
+        },
+        {
+          "score": 0.46522558,
+          "value": "warranty"
+        },
+        {
+          "score": 0.4624538,
+          "value": "compatible"
+        },
+        {
+          "score": 0.45394737,
+          "value": "luxury"
+        },
+        {
+          "score": 0.45394737,
+          "value": "resorts"
+        },
+        {
+          "score": 0.4485313,
+          "value": "printing"
+        },
+        {
+          "score": 0.4473684,
+          "value": "cartridges"
+        },
+        {
+          "score": 0.4473684,
+          "value": "specifications"
+        },
+        {
+          "score": 0.44532943,
+          "value": "canon"
+        },
+        {
+          "score": 0.44293997,
+          "value": "replacement"
+        },
+        {
+          "score": 0.44172934,
+          "value": "inkjet"
+        },
+        {
+          "score": 0.44078946,
+          "value": "panasonic"
+        },
+        {
+          "score": 0.44078946,
+          "value": "honeymoon"
+        },
+        {
+          "score": 0.44078946,
+          "value": "hotels"
+        },
+        {
+          "score": 0.39473686,
+          "value": "xerox"
+        },
+        {
+          "score": 0.39147127,
+          "value": "ink"
+        },
+        {
+          "score": 0.3881579,
+          "value": "coupons"
+        },
+        {
+          "score": 0.3881579,
+          "value": "cables"
+        },
+        {
+          "score": 0.3881579,
+          "value": "pinterest"
+        },
+        {
+          "score": 0.38157895,
+          "value": "caribbean"
+        },
+        {
+          "score": 0.375,
+          "value": "retail"
+        },
+        {
+          "score": 0.36842105,
+          "value": "samsung"
+        },
+        {
+          "score": 0.3618421,
+          "value": "belize"
+        },
+        {
+          "score": 0.35526314,
+          "value": "aftermarket"
+        },
+        {
+          "score": 0.35526314,
+          "value": "ricoh"
+        },
+        {
+          "score": 0.35526314,
+          "value": "cancun"
+        },
+        {
+          "score": 0.34868422,
+          "value": "hotel"
+        },
+        {
+          "score": 0.34210527,
+          "value": "consumers"
+        },
+        {
+          "score": 0.34210527,
+          "value": "kodak"
+        },
+        {
+          "score": 0.34210527,
+          "value": "sheets"
+        },
+        {
+          "score": 0.33726266,
+          "value": "standard"
+        },
+        {
+          "score": 0.33093858,
+          "value": "officejet"
+        },
+        {
+          "score": 0.32894737,
+          "value": "rooms"
+        },
+        {
+          "score": 0.3223684,
+          "value": "orders"
+        },
+        {
+          "score": 0.3223684,
+          "value": "packard"
+        },
+        {
+          "score": 0.31578946,
+          "value": "curacao"
+        },
+        {
+          "score": 0.30921054,
+          "value": "multipurpose"
+        },
+        {
+          "score": 0.30921054,
+          "value": "cases"
+        },
+        {
+          "score": 0.30664584,
+          "value": "photosmart"
+        },
+        {
+          "score": 0.30438384,
+          "value": "paper"
+        },
+        {
+          "score": 0.3026316,
+          "value": "supplies"
+        },
+        {
+          "score": 0.3026316,
+          "value": "disabled"
+        },
+        {
+          "score": 0.3026316,
+          "value": "capacity"
+        },
+        {
+          "score": 0.29605263,
+          "value": "direct"
+        },
+        {
+          "score": 0.29605263,
+          "value": "packaging"
+        },
+        {
+          "score": 0.29605263,
+          "value": "discontinued"
+        },
+        {
+          "score": 0.29605263,
+          "value": "spas"
+        },
+        {
+          "score": 0.2928189,
+          "value": "stock"
+        },
+        {
+          "score": 0.28947368,
+          "value": "remanufactured"
+        },
+        {
+          "score": 0.28947368,
+          "value": "cartagena"
+        },
+        {
+          "score": 0.28289473,
+          "value": "cozumel"
+        },
+        {
+          "score": 0.27631578,
+          "value": "utilize"
+        },
+        {
+          "score": 0.26973686,
+          "value": "ships"
+        },
+        {
+          "score": 0.26973686,
+          "value": "clearance"
+        },
+        {
+          "score": 0.2631579,
+          "value": "repair"
+        },
+        {
+          "score": 0.2631579,
+          "value": "vegas"
+        },
+        {
+          "score": 0.25657895,
+          "value": "friendly"
+        },
+        {
+          "score": 0.25,
+          "value": "panama"
+        },
+        {
+          "score": 0.25,
+          "value": "portland"
+        },
+        {
+          "score": 0.24342105,
+          "value": "save"
+        },
+        {
+          "score": 0.24342105,
+          "value": "recommend"
+        },
+        {
+          "score": 0.24297503,
+          "value": "helpful"
+        },
+        {
+          "score": 0.24173251,
+          "value": "rating"
+        },
+        {
+          "score": 0.23684211,
+          "value": "receive"
+        },
+        {
+          "score": 0.23684211,
+          "value": "refill"
+        },
+        {
+          "score": 0.23684211,
+          "value": "americana"
+        },
+        {
+          "score": 0.23026316,
+          "value": "stylus"
+        },
+        {
+          "score": 0.23026316,
+          "value": "barbados"
+        },
+        {
+          "score": 0.22898878,
+          "value": "pro"
+        },
+        {
+          "score": 0.2236842,
+          "value": "light"
+        },
+        {
+          "score": 0.2236842,
+          "value": "enabled"
+        },
+        {
+          "score": 0.2236842,
+          "value": "replaces"
+        },
+        {
+          "score": 0.2236842,
+          "value": "cents"
+        },
+        {
+          "score": 0.2236842,
+          "value": "packages"
+        },
+        {
+          "score": 0.2236842,
+          "value": "budget"
+        },
+        {
+          "score": 0.21345738,
+          "value": "yield"
+        },
+        {
+          "score": 0.21305913,
+          "value": "imageclass"
+        },
+        {
+          "score": 0.21052632,
+          "value": "issues"
+        },
+        {
+          "score": 0.21052632,
+          "value": "currently"
+        },
+        {
+          "score": 0.21052632,
+          "value": "islands"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazonhits.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazonhits.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 4,
+        "value": [
+          "123inkjets.com",
+          "4inkjets.com",
+          "cheapcaribbean.com",
+          "vistaprint.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 1,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Office"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Travel / Vacation"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 4,
+      "value": [
+        "123inkjets.com",
+        "4inkjets.com",
+        "cheapcaribbean.com",
+        "vistaprint.com"
+      ]
+    },
+    "promotype": {
+      "value": "student"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": {}
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Business / Ecommerce",
+      "value": [
+        "Business / Ecommerce",
+        "Shopping / Department Stores"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Business / Ecommerce",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 1,
+          "score": 80
+        }
+      ]
+    }
+  }
+}

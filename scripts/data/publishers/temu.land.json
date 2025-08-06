@@ -1,0 +1,649 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 3,
+      "sampleValue": [
+        "Pepperjam",
+        "Rakuten",
+        "TUNE"
+      ],
+      "value": [
+        "Pepperjam",
+        "Rakuten",
+        "TUNE"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.25
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.25
+        },
+        {
+          "countryCode": "de",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.25
+        },
+        {
+          "countryCode": "de",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "temu.land",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 0.19367881,
+          "value": "study"
+        },
+        {
+          "score": 1,
+          "value": "software"
+        },
+        {
+          "score": 0.9177735,
+          "value": "music"
+        },
+        {
+          "score": 0.9030896,
+          "value": "development"
+        },
+        {
+          "score": 0.8825591,
+          "value": "course"
+        },
+        {
+          "score": 0.83413947,
+          "value": "language"
+        },
+        {
+          "score": 0.68825126,
+          "value": "tool"
+        },
+        {
+          "score": 0.6470633,
+          "value": "game"
+        },
+        {
+          "score": 0.62945616,
+          "value": "project"
+        },
+        {
+          "score": 0.6096481,
+          "value": "programming"
+        },
+        {
+          "score": 0.5634293,
+          "value": "engine"
+        },
+        {
+          "score": 0.54582214,
+          "value": "personal development"
+        },
+        {
+          "score": 0.49520153,
+          "value": "sql"
+        },
+        {
+          "score": 0.48639792,
+          "value": "science"
+        },
+        {
+          "score": 0.47099167,
+          "value": "skill"
+        },
+        {
+          "score": 0.46438897,
+          "value": "video"
+        },
+        {
+          "score": 0.44731116,
+          "value": "financial"
+        },
+        {
+          "score": 0.4467818,
+          "value": "finance"
+        },
+        {
+          "score": 0.43357643,
+          "value": "life"
+        },
+        {
+          "score": 0.40319398,
+          "value": "career"
+        }
+      ],
+      "value": [
+        {
+          "score": 0.19367881,
+          "value": "study"
+        },
+        {
+          "score": 1,
+          "value": "software"
+        },
+        {
+          "score": 0.9177735,
+          "value": "music"
+        },
+        {
+          "score": 0.9030896,
+          "value": "development"
+        },
+        {
+          "score": 0.8825591,
+          "value": "course"
+        },
+        {
+          "score": 0.83413947,
+          "value": "language"
+        },
+        {
+          "score": 0.68825126,
+          "value": "tool"
+        },
+        {
+          "score": 0.6470633,
+          "value": "game"
+        },
+        {
+          "score": 0.62945616,
+          "value": "project"
+        },
+        {
+          "score": 0.6096481,
+          "value": "programming"
+        },
+        {
+          "score": 0.5634293,
+          "value": "engine"
+        },
+        {
+          "score": 0.54582214,
+          "value": "personal development"
+        },
+        {
+          "score": 0.49520153,
+          "value": "sql"
+        },
+        {
+          "score": 0.48639792,
+          "value": "science"
+        },
+        {
+          "score": 0.47099167,
+          "value": "skill"
+        },
+        {
+          "score": 0.46438897,
+          "value": "video"
+        },
+        {
+          "score": 0.44731116,
+          "value": "financial"
+        },
+        {
+          "score": 0.4467818,
+          "value": "finance"
+        },
+        {
+          "score": 0.43357643,
+          "value": "life"
+        },
+        {
+          "score": 0.40319398,
+          "value": "career"
+        },
+        {
+          "score": 0.400563,
+          "value": "social medium"
+        },
+        {
+          "score": 0.3961612,
+          "value": "photography"
+        },
+        {
+          "score": 0.38075495,
+          "value": "step"
+        },
+        {
+          "score": 0.37635314,
+          "value": "office"
+        },
+        {
+          "score": 0.36700332,
+          "value": "developer"
+        },
+        {
+          "score": 0.3609469,
+          "value": "transformation"
+        },
+        {
+          "score": 0.3609469,
+          "value": "personal transformation"
+        },
+        {
+          "score": 0.3609469,
+          "value": "unreal"
+        },
+        {
+          "score": 0.3609469,
+          "value": "unreal engine"
+        },
+        {
+          "score": 0.33893794,
+          "value": "money"
+        },
+        {
+          "score": 0.33673704,
+          "value": "code"
+        },
+        {
+          "score": 0.3037236,
+          "value": "real"
+        },
+        {
+          "score": 0.27731284,
+          "value": "analysis"
+        },
+        {
+          "score": 0.27291107,
+          "value": "strategy"
+        },
+        {
+          "score": 0.27071017,
+          "value": "statement"
+        },
+        {
+          "score": 0.25886092,
+          "value": "manager"
+        },
+        {
+          "score": 0.2575048,
+          "value": "industry"
+        },
+        {
+          "score": 0.253103,
+          "value": "accounting"
+        },
+        {
+          "score": 0.25090212,
+          "value": "power"
+        },
+        {
+          "score": 0.24975723,
+          "value": "team"
+        },
+        {
+          "score": 0.24650031,
+          "value": "technique"
+        },
+        {
+          "score": 0.24429941,
+          "value": "sitemap"
+        },
+        {
+          "score": 0.24087375,
+          "value": "trading"
+        },
+        {
+          "score": 0.23769672,
+          "value": "leadership"
+        },
+        {
+          "score": 0.23736957,
+          "value": "solution"
+        },
+        {
+          "score": 0.23549584,
+          "value": "unity"
+        },
+        {
+          "score": 0.23109405,
+          "value": "practice"
+        },
+        {
+          "score": 0.23109405,
+          "value": "fundamental"
+        },
+        {
+          "score": 0.22889315,
+          "value": "art"
+        },
+        {
+          "score": 0.22229046,
+          "value": "creativity"
+        },
+        {
+          "score": 0.22008957,
+          "value": "amazon"
+        },
+        {
+          "score": 0.21348688,
+          "value": "cloud"
+        },
+        {
+          "score": 0.21348688,
+          "value": "udemy"
+        },
+        {
+          "score": 0.21320528,
+          "value": "network"
+        },
+        {
+          "score": 0.21128598,
+          "value": "native"
+        },
+        {
+          "score": 0.20908509,
+          "value": "memory"
+        },
+        {
+          "score": 0.20749398,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.20688419,
+          "value": "learning"
+        },
+        {
+          "score": 0.20468329,
+          "value": "modeling"
+        },
+        {
+          "score": 0.20468329,
+          "value": "building"
+        },
+        {
+          "score": 0.20468329,
+          "value": "automation"
+        },
+        {
+          "score": 0.20468329,
+          "value": "function"
+        },
+        {
+          "score": 0.2024824,
+          "value": "financial modeling"
+        },
+        {
+          "score": 0.2024824,
+          "value": "cognitive"
+        },
+        {
+          "score": 0.2002815,
+          "value": "productivity"
+        },
+        {
+          "score": 0.2002815,
+          "value": "virtual"
+        },
+        {
+          "score": 0.2002815,
+          "value": "behavioral"
+        },
+        {
+          "score": 0.2002815,
+          "value": "therapy"
+        },
+        {
+          "score": 0.2002815,
+          "value": "behavioral therapy"
+        },
+        {
+          "score": 0.1980806,
+          "value": "beginner"
+        },
+        {
+          "score": 0.19587971,
+          "value": "production"
+        },
+        {
+          "score": 0.19587971,
+          "value": "prep"
+        },
+        {
+          "score": 0.19587971,
+          "value": "academic"
+        },
+        {
+          "score": 0.19415852,
+          "value": "setting"
+        },
+        {
+          "score": 0.19367881,
+          "value": "operating"
+        },
+        {
+          "score": 0.19367881,
+          "value": "confidence"
+        },
+        {
+          "score": 0.19277225,
+          "value": "advertising"
+        },
+        {
+          "score": 0.19147792,
+          "value": "category"
+        },
+        {
+          "score": 0.19147792,
+          "value": "animation"
+        },
+        {
+          "score": 0.19147792,
+          "value": "growth"
+        },
+        {
+          "score": 0.19147792,
+          "value": "blueprint"
+        },
+        {
+          "score": 0.19147792,
+          "value": "internet"
+        },
+        {
+          "score": 0.19069992,
+          "value": "cryptocurrency"
+        },
+        {
+          "score": 0.1901424,
+          "value": "compliance"
+        },
+        {
+          "score": 0.18927702,
+          "value": "bookkeeping"
+        },
+        {
+          "score": 0.18927702,
+          "value": "health"
+        },
+        {
+          "score": 0.18927702,
+          "value": "startup"
+        },
+        {
+          "score": 0.18927702,
+          "value": "accessibility"
+        },
+        {
+          "score": 0.18707612,
+          "value": "esoteric"
+        },
+        {
+          "score": 0.18707612,
+          "value": "esoteric practice"
+        },
+        {
+          "score": 0.18707612,
+          "value": "religion"
+        },
+        {
+          "score": 0.18707612,
+          "value": "spirituality"
+        },
+        {
+          "score": 0.18707612,
+          "value": "personal brand"
+        },
+        {
+          "score": 0.18707612,
+          "value": "travel"
+        },
+        {
+          "score": 0.18707612,
+          "value": "dance"
+        },
+        {
+          "score": 0.18707612,
+          "value": "entrepreneurship"
+        },
+        {
+          "score": 0.18707612,
+          "value": "investor"
+        },
+        {
+          "score": 0.18487523,
+          "value": "optimization"
+        },
+        {
+          "score": 0.18487523,
+          "value": "coach"
+        },
+        {
+          "score": 0.18487523,
+          "value": "online business"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://temu.land/",
+        "https://www.temu.land/",
+        "http://temu.land/",
+        "http://www.temu.land/"
+      ]
+    },
+    "metaData": {
+      "description": "Jumpstart your learning journey at temuland with our extensive crypto glossary, who moves the crypto industry and much more, completely free.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/temu.land.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://temu.land"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 3,
+        "value": [
+          "trezor.io",
+          "udemy.com",
+          "yubico.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 0.95,
+            "vertical": "Business / Cyber Security"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Forex & Crypto"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Online / Security"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 3,
+      "value": [
+        "trezor.io",
+        "udemy.com",
+        "yubico.com"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 2,
+      "socialsAvailable": [
+        "twitter",
+        "linkedin"
+      ],
+      "value": {
+        "linkedin": "https://linkedin.com/company/temuland",
+        "twitter": "https://twitter.com/temuland"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Business / Ecommerce",
+      "value": [
+        "Business / Ecommerce",
+        "Shopping / Department Stores",
+        "Online / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Business / Ecommerce",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 1,
+          "score": 95
+        },
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

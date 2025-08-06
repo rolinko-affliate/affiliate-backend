@@ -7,6 +7,7 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"strconv"
 	"testing"
 	"time"
 
@@ -16,8 +17,8 @@ import (
 )
 
 const (
-	BaseURL        = "http://localhost:50220"
-	EverflowAPIURL = "https://api.eflow.team"
+	BaseURL        = "http://localhost:50221"
+	EverflowAPIURL = "https://api.eflow.team/v1"
 	JWTSecret      = "gDxsm/JerlPJiOObQLtfjViLBQF2ggmJpYCNW+9LPwL2QJksmiYlzRCJCKseCLxJtGysx+awZvoiS0MF0pLjnw=="
 )
 
@@ -203,11 +204,19 @@ func AssertErrorResponse(t *testing.T, resp *APIResponse, expectedStatus int) {
 
 // ExtractEverflowIDFromMapping extracts the Everflow ID from a provider mapping response
 func ExtractEverflowIDFromMapping(t *testing.T, resp *APIResponse) int {
-	var mapping struct {
-		EverflowID int `json:"everflow_id"`
+	var response struct {
+		ProviderMapping struct {
+			ProviderAdvertiserID string `json:"provider_advertiser_id"`
+		} `json:"provider_mapping"`
 	}
-	ParseJSONResponse(t, resp, &mapping)
-	return mapping.EverflowID
+	ParseJSONResponse(t, resp, &response)
+	
+	// Convert string ID to int
+	everflowID, err := strconv.Atoi(response.ProviderMapping.ProviderAdvertiserID)
+	if err != nil {
+		t.Fatalf("Failed to convert provider_advertiser_id to int: %v", err)
+	}
+	return everflowID
 }
 
 // EverflowAPIResponse represents a response from Everflow API

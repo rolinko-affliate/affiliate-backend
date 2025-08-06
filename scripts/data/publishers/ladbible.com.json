@@ -1,0 +1,772 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 6,
+      "sampleValue": [
+        "Awin",
+        "CJ Affiliate",
+        "Impact"
+      ],
+      "value": [
+        "Awin",
+        "CJ Affiliate",
+        "Impact",
+        "Linkby",
+        "Skimlinks",
+        "Viglink"
+      ]
+    },
+    "countryRankings": {
+      "count": 3,
+      "highestValue": {
+        "countryCode": "gb",
+        "score": 0.4
+      },
+      "sampleValue": [
+        {
+          "countryCode": "gb",
+          "score": 0.4
+        },
+        {
+          "countryCode": "us",
+          "score": 0.3
+        },
+        {
+          "countryCode": "au",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "gb",
+          "score": 0.4
+        },
+        {
+          "countryCode": "us",
+          "score": 0.3
+        },
+        {
+          "countryCode": "au",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "ladbible.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "sky"
+        },
+        {
+          "score": 0.8867597,
+          "value": "food"
+        },
+        {
+          "score": 0.7838443,
+          "value": "sport"
+        },
+        {
+          "score": 0.72427666,
+          "value": "travel"
+        },
+        {
+          "score": 0.5846156,
+          "value": "wine"
+        },
+        {
+          "score": 0.5748148,
+          "value": "reddit"
+        },
+        {
+          "score": 0.570579,
+          "value": "ticket"
+        },
+        {
+          "score": 0.5695133,
+          "value": "technology"
+        },
+        {
+          "score": 0.53558314,
+          "value": "chocolate"
+        },
+        {
+          "score": 0.52148145,
+          "value": "categories"
+        },
+        {
+          "score": 0.50361246,
+          "value": "video"
+        },
+        {
+          "score": 0.4938746,
+          "value": "store"
+        },
+        {
+          "score": 0.48004887,
+          "value": "local shopping"
+        },
+        {
+          "score": 0.47071102,
+          "value": "story"
+        },
+        {
+          "score": 0.46184507,
+          "value": "trendy clothe"
+        },
+        {
+          "score": 0.46001986,
+          "value": "favourite outfit"
+        },
+        {
+          "score": 0.45338026,
+          "value": "outdoor pyret"
+        },
+        {
+          "score": 0.4476543,
+          "value": "girls"
+        },
+        {
+          "score": 0.43367362,
+          "value": "health"
+        },
+        {
+          "score": 0.43351662,
+          "value": "bite"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "sky"
+        },
+        {
+          "score": 0.8867597,
+          "value": "food"
+        },
+        {
+          "score": 0.7838443,
+          "value": "sport"
+        },
+        {
+          "score": 0.72427666,
+          "value": "travel"
+        },
+        {
+          "score": 0.5846156,
+          "value": "wine"
+        },
+        {
+          "score": 0.5748148,
+          "value": "reddit"
+        },
+        {
+          "score": 0.570579,
+          "value": "ticket"
+        },
+        {
+          "score": 0.5695133,
+          "value": "technology"
+        },
+        {
+          "score": 0.53558314,
+          "value": "chocolate"
+        },
+        {
+          "score": 0.52148145,
+          "value": "categories"
+        },
+        {
+          "score": 0.50361246,
+          "value": "video"
+        },
+        {
+          "score": 0.4938746,
+          "value": "store"
+        },
+        {
+          "score": 0.48004887,
+          "value": "local shopping"
+        },
+        {
+          "score": 0.47071102,
+          "value": "story"
+        },
+        {
+          "score": 0.46184507,
+          "value": "trendy clothe"
+        },
+        {
+          "score": 0.46001986,
+          "value": "favourite outfit"
+        },
+        {
+          "score": 0.45338026,
+          "value": "outdoor pyret"
+        },
+        {
+          "score": 0.4476543,
+          "value": "girls"
+        },
+        {
+          "score": 0.43367362,
+          "value": "health"
+        },
+        {
+          "score": 0.43351662,
+          "value": "bite"
+        },
+        {
+          "score": 0.43079695,
+          "value": "activity"
+        },
+        {
+          "score": 0.41944528,
+          "value": "market"
+        },
+        {
+          "score": 0.41919732,
+          "value": "daily deal"
+        },
+        {
+          "score": 0.41064298,
+          "value": "commerce"
+        },
+        {
+          "score": 0.39506173,
+          "value": "français"
+        },
+        {
+          "score": 0.39044094,
+          "value": "clothing"
+        },
+        {
+          "score": 0.3842027,
+          "value": "live"
+        },
+        {
+          "score": 0.37925926,
+          "value": "countryside"
+        },
+        {
+          "score": 0.36892778,
+          "value": "technical"
+        },
+        {
+          "score": 0.3685531,
+          "value": "direct dressing"
+        },
+        {
+          "score": 0.3652742,
+          "value": "reference"
+        },
+        {
+          "score": 0.35982662,
+          "value": "fashion"
+        },
+        {
+          "score": 0.3587223,
+          "value": "device"
+        },
+        {
+          "score": 0.35602865,
+          "value": "code"
+        },
+        {
+          "score": 0.35063168,
+          "value": "boux"
+        },
+        {
+          "score": 0.35008758,
+          "value": "outfit"
+        },
+        {
+          "score": 0.34902015,
+          "value": "skincare"
+        },
+        {
+          "score": 0.34736887,
+          "value": "team"
+        },
+        {
+          "score": 0.34567901,
+          "value": "difficulty"
+        },
+        {
+          "score": 0.34567901,
+          "value": "apology"
+        },
+        {
+          "score": 0.34567901,
+          "value": "inconvenience"
+        },
+        {
+          "score": 0.34567901,
+          "value": "host"
+        },
+        {
+          "score": 0.34567901,
+          "value": "technical difficulty"
+        },
+        {
+          "score": 0.3438684,
+          "value": "tablet"
+        },
+        {
+          "score": 0.34247127,
+          "value": "country"
+        },
+        {
+          "score": 0.3412312,
+          "value": "love"
+        },
+        {
+          "score": 0.33897483,
+          "value": "holiday"
+        },
+        {
+          "score": 0.33760986,
+          "value": "share"
+        },
+        {
+          "score": 0.33514476,
+          "value": "accessory"
+        },
+        {
+          "score": 0.33185184,
+          "value": "latest"
+        },
+        {
+          "score": 0.330031,
+          "value": "gaming"
+        },
+        {
+          "score": 0.32493034,
+          "value": "entertainment"
+        },
+        {
+          "score": 0.32098764,
+          "value": "sentia"
+        },
+        {
+          "score": 0.32033333,
+          "value": "trendy"
+        },
+        {
+          "score": 0.32,
+          "value": "tweet"
+        },
+        {
+          "score": 0.31701353,
+          "value": "designer"
+        },
+        {
+          "score": 0.3157738,
+          "value": "conditioner"
+        },
+        {
+          "score": 0.3127907,
+          "value": "priority"
+        },
+        {
+          "score": 0.31259862,
+          "value": "basketload"
+        },
+        {
+          "score": 0.30937874,
+          "value": "outdoor"
+        },
+        {
+          "score": 0.30592927,
+          "value": "cosmetic"
+        },
+        {
+          "score": 0.30033186,
+          "value": "valueflora"
+        },
+        {
+          "score": 0.2980832,
+          "value": "theatre"
+        },
+        {
+          "score": 0.29275557,
+          "value": "voucher"
+        },
+        {
+          "score": 0.28430298,
+          "value": "skin"
+        },
+        {
+          "score": 0.2763999,
+          "value": "advertisement"
+        },
+        {
+          "score": 0.27561933,
+          "value": "stuff"
+        },
+        {
+          "score": 0.27300206,
+          "value": "fantastic"
+        },
+        {
+          "score": 0.2713077,
+          "value": "flower"
+        },
+        {
+          "score": 0.26448578,
+          "value": "nederlands"
+        },
+        {
+          "score": 0.2608642,
+          "value": "face"
+        },
+        {
+          "score": 0.2590134,
+          "value": "hair"
+        },
+        {
+          "score": 0.2581456,
+          "value": "component"
+        },
+        {
+          "score": 0.25362736,
+          "value": "paypal credit"
+        },
+        {
+          "score": 0.2532141,
+          "value": "bathroom"
+        },
+        {
+          "score": 0.25272566,
+          "value": "style"
+        },
+        {
+          "score": 0.25227466,
+          "value": "island"
+        },
+        {
+          "score": 0.25145778,
+          "value": "direct cancer"
+        },
+        {
+          "score": 0.25134757,
+          "value": "electronic device"
+        },
+        {
+          "score": 0.25106674,
+          "value": "alcohol"
+        },
+        {
+          "score": 0.249791,
+          "value": "cancer"
+        },
+        {
+          "score": 0.24948342,
+          "value": "deutsch"
+        },
+        {
+          "score": 0.2488889,
+          "value": "vote"
+        },
+        {
+          "score": 0.24554816,
+          "value": "esc"
+        },
+        {
+          "score": 0.24296296,
+          "value": "itvbe"
+        },
+        {
+          "score": 0.24296296,
+          "value": "wales"
+        },
+        {
+          "score": 0.24159022,
+          "value": "superfast"
+        },
+        {
+          "score": 0.23963134,
+          "value": "close esc"
+        },
+        {
+          "score": 0.23820612,
+          "value": "fantastic body"
+        },
+        {
+          "score": 0.23801877,
+          "value": "city"
+        },
+        {
+          "score": 0.23735324,
+          "value": "play"
+        },
+        {
+          "score": 0.23388185,
+          "value": "game"
+        },
+        {
+          "score": 0.23199502,
+          "value": "electronic"
+        },
+        {
+          "score": 0.23118706,
+          "value": "beauty"
+        },
+        {
+          "score": 0.22958979,
+          "value": "pound"
+        },
+        {
+          "score": 0.2294803,
+          "value": "artists"
+        },
+        {
+          "score": 0.22802469,
+          "value": "police"
+        },
+        {
+          "score": 0.22682032,
+          "value": "footer"
+        },
+        {
+          "score": 0.22665569,
+          "value": "green"
+        },
+        {
+          "score": 0.22455566,
+          "value": "stock"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": "LADbible is the home of entertainment, viral video, trending content and the latest news. We are the biggest community in the world for a social generation",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/ladbible.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://ladbible.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 24,
+        "value": [
+          "seetickets.com",
+          "nytimes.com",
+          "intuit.com",
+          "sky.com",
+          "o2.co.uk",
+          "amazon.com.au",
+          "annsummers.com",
+          "antler.co.uk",
+          "forbes.com",
+          "gousto.co.uk",
+          "nealsyardremedies.com",
+          "hardyakka.com",
+          "itv.com",
+          "simbasleep.com",
+          "prioritypass.com",
+          "lovehoney.co.uk",
+          "naturalpatch.com",
+          "natpat.com",
+          "newbalance.co.uk",
+          "orangecounty-wellbeing.com",
+          "wowcher.co.uk",
+          "savagex.co.uk",
+          "sentiaspirits.com",
+          "ticketclub.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 2,
+        "value": [
+          {
+            "domain": "cnn.com"
+          },
+          {
+            "domain": "harveynichols.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 2,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 2,
+            "vertical": "Fashion / Lingerie"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Travel / Accessories"
+          },
+          {
+            "count": 1.65,
+            "vertical": "Business / Finance"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 1,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 1,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 1,
+            "vertical": "Finance / Accounts"
+          },
+          {
+            "count": 1,
+            "vertical": "Food / Take Out"
+          },
+          {
+            "count": 1,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 1,
+            "vertical": "Home / Beds & Bedding"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Food / Alcohol"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Adult"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 0.5,
+            "vertical": "Online / Services"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 24,
+      "value": [
+        "seetickets.com",
+        "nytimes.com",
+        "intuit.com",
+        "sky.com",
+        "o2.co.uk",
+        "amazon.com.au",
+        "annsummers.com",
+        "antler.co.uk",
+        "forbes.com",
+        "gousto.co.uk",
+        "nealsyardremedies.com",
+        "hardyakka.com",
+        "itv.com",
+        "simbasleep.com",
+        "prioritypass.com",
+        "lovehoney.co.uk",
+        "naturalpatch.com",
+        "natpat.com",
+        "newbalance.co.uk",
+        "orangecounty-wellbeing.com",
+        "wowcher.co.uk",
+        "savagex.co.uk",
+        "sentiaspirits.com",
+        "ticketclub.com"
+      ]
+    },
+    "promotype": {
+      "value": "student"
+    },
+    "relatedPublishers": {
+      "count": 11,
+      "value": [
+        "pretty52.com",
+        "iframe.gamingbible.com",
+        "tyla.com",
+        "iframe.tyla.com",
+        "gamingbible.co.uk",
+        "sportbible.com",
+        "iframe.gamingbible.co.uk",
+        "wifri.net",
+        "wlylawyer.com",
+        "iframe.sportbible.com",
+        "gamingbible.com"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/ladbible",
+        "instagram": "https://instagram.com/ladbible",
+        "twitter": "https://twitter.com/ladbible",
+        "youtube": "https://youtube.com/c/ladbibleofficial"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 1,
+      "sampleValue": "Entertainment / Hobbies",
+      "value": [
+        "Entertainment / Hobbies"
+      ]
+    },
+    "verticalsV2": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Entertainment / Hobbies",
+        "rank": 1,
+        "score": 85
+      },
+      "value": [
+        {
+          "name": "Entertainment / Hobbies",
+          "rank": 1,
+          "score": 85
+        }
+      ]
+    }
+  }
+}

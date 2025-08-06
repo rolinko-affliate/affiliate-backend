@@ -1,0 +1,158 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 4,
+      "sampleValue": [
+        "Linkbux",
+        "ShareASale",
+        "Skimlinks"
+      ],
+      "value": [
+        "Linkbux",
+        "ShareASale",
+        "Skimlinks",
+        "SourceKnowledge"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 0,
+      "error": false,
+      "value": []
+    },
+    "domain": "wishgardenherbs.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/wishgardenherbs.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://wishgardenherbs.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 56
+      },
+      "partnersAdded": {
+        "count": 3,
+        "value": [
+          {
+            "domain": "us.gymfluencers.com"
+          },
+          {
+            "domain": "amazon.co.uk"
+          },
+          {
+            "domain": "fourcornerholistichealing.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 2,
+        "value": [
+          {
+            "domain": "trendsblend.com"
+          },
+          {
+            "domain": "gymfluencers.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 9,
+            "promotype": "student",
+            "value": [
+              "abagoflove.com",
+              "delightedtime.com",
+              "fertileoptimism.com",
+              "healingjourneyessentials.com",
+              "metabee.de",
+              "primewomen.com",
+              "spotify.com",
+              "unfoldingmatrix.com",
+              "wishgardenherbs.com"
+            ]
+          },
+          {
+            "count": 13,
+            "promotype": "blog",
+            "value": [
+              "amazon.co.uk",
+              "closequartersmom.com",
+              "feelmoregooder.com",
+              "findthediscounts.com",
+              "gadgetchronicle.com",
+              "gonetrending.com",
+              "insideouthealthco.com",
+              "msha.ke",
+              "player.fm",
+              "purposefulnutrition.com",
+              "senioraffair.com",
+              "storerelief.com",
+              "tonnesof.com"
+            ]
+          },
+          {
+            "count": 3,
+            "promotype": "incentive",
+            "value": [
+              "couponit.com",
+              "trycoupon.net",
+              "uttercoupons.com"
+            ]
+          },
+          {
+            "count": 3,
+            "promotype": "content",
+            "value": [
+              "herbalremedies.one",
+              "theshoppingeaze.com",
+              "yonkiz.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "forum",
+            "value": [
+              "linkbux.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Health / Wellbeing",
+        "rank": 2,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Health / CBD",
+          "rank": 2,
+          "score": 70
+        },
+        {
+          "name": "Health / Wellbeing",
+          "rank": 2,
+          "score": 90
+        }
+      ]
+    }
+  }
+}

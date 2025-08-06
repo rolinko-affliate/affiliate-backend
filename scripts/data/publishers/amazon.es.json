@@ -1,0 +1,152 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 4,
+      "sampleValue": [
+        "PartnerStack",
+        "Refersion",
+        "ShareASale"
+      ],
+      "value": [
+        "PartnerStack",
+        "Refersion",
+        "ShareASale",
+        "TUNE"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "es",
+        "score": 0.9
+      },
+      "sampleValue": [
+        {
+          "countryCode": "es",
+          "score": 0.9
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "es",
+          "score": 0.9
+        }
+      ]
+    },
+    "domain": "amazon.es",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://amazon.es/",
+        "https://www.amazon.es/",
+        "http://amazon.es/",
+        "http://www.amazon.es/"
+      ]
+    },
+    "metaData": {
+      "description": "Descubre y compra online: electrónica, moda, hogar, libros, deporte y mucho más a precios bajos en Amazon.es. Envío gratis con Amazon Prime.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazon.es.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazon.es"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 6,
+        "value": [
+          "curednutrition.com",
+          "earthharbor.com",
+          "get.nicejob.com",
+          "policygenius.com",
+          "ripstopbytheroll.com",
+          "soldejaneiro.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1.9,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Business / CRM"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Finance / Insurance"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / DIY"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 6,
+      "value": [
+        "curednutrition.com",
+        "earthharbor.com",
+        "get.nicejob.com",
+        "policygenius.com",
+        "ripstopbytheroll.com",
+        "soldejaneiro.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 1,
+      "sampleValue": "Shopping / Department Stores",
+      "value": [
+        "Shopping / Department Stores"
+      ]
+    },
+    "verticalsV2": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 1,
+          "score": 95
+        }
+      ]
+    }
+  }
+}

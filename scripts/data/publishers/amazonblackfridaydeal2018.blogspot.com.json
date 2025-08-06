@@ -1,0 +1,629 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Viglink"
+      ],
+      "value": [
+        "Viglink"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.6
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "amazonblackfridaydeal2018.blogspot.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "store"
+        },
+        {
+          "score": 0.7870739,
+          "value": "supplier"
+        },
+        {
+          "score": 0.74671113,
+          "value": "seller"
+        },
+        {
+          "score": 0.7426749,
+          "value": "walmart"
+        },
+        {
+          "score": 0.50857085,
+          "value": "human"
+        },
+        {
+          "score": 0.48838946,
+          "value": "supply"
+        },
+        {
+          "score": 0.4641718,
+          "value": "investor"
+        },
+        {
+          "score": 0.4480267,
+          "value": "program"
+        },
+        {
+          "score": 0.42380902,
+          "value": "event"
+        },
+        {
+          "score": 0.40704274,
+          "value": "provider"
+        },
+        {
+          "score": 0.39151883,
+          "value": "chain"
+        },
+        {
+          "score": 0.39151883,
+          "value": "associate"
+        },
+        {
+          "score": 0.35519233,
+          "value": "career"
+        },
+        {
+          "score": 0.35370746,
+          "value": "community"
+        },
+        {
+          "score": 0.33097467,
+          "value": "opportunity"
+        },
+        {
+          "score": 0.29868445,
+          "value": "marketplace"
+        },
+        {
+          "score": 0.27455676,
+          "value": "health"
+        },
+        {
+          "score": 0.2583217,
+          "value": "global"
+        },
+        {
+          "score": 0.25024915,
+          "value": "financial"
+        },
+        {
+          "score": 0.23410404,
+          "value": "diversity"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "store"
+        },
+        {
+          "score": 0.7870739,
+          "value": "supplier"
+        },
+        {
+          "score": 0.74671113,
+          "value": "seller"
+        },
+        {
+          "score": 0.7426749,
+          "value": "walmart"
+        },
+        {
+          "score": 0.50857085,
+          "value": "human"
+        },
+        {
+          "score": 0.48838946,
+          "value": "supply"
+        },
+        {
+          "score": 0.4641718,
+          "value": "investor"
+        },
+        {
+          "score": 0.4480267,
+          "value": "program"
+        },
+        {
+          "score": 0.42380902,
+          "value": "event"
+        },
+        {
+          "score": 0.40704274,
+          "value": "provider"
+        },
+        {
+          "score": 0.39151883,
+          "value": "chain"
+        },
+        {
+          "score": 0.39151883,
+          "value": "associate"
+        },
+        {
+          "score": 0.35519233,
+          "value": "career"
+        },
+        {
+          "score": 0.35370746,
+          "value": "community"
+        },
+        {
+          "score": 0.33097467,
+          "value": "opportunity"
+        },
+        {
+          "score": 0.29868445,
+          "value": "marketplace"
+        },
+        {
+          "score": 0.27455676,
+          "value": "health"
+        },
+        {
+          "score": 0.2583217,
+          "value": "global"
+        },
+        {
+          "score": 0.25024915,
+          "value": "financial"
+        },
+        {
+          "score": 0.23410404,
+          "value": "diversity"
+        },
+        {
+          "score": 0.23410404,
+          "value": "fee"
+        },
+        {
+          "score": 0.22789471,
+          "value": "center"
+        },
+        {
+          "score": 0.22447036,
+          "value": "issue"
+        },
+        {
+          "score": 0.22326021,
+          "value": "sign"
+        },
+        {
+          "score": 0.21649548,
+          "value": "tech"
+        },
+        {
+          "score": 0.21392265,
+          "value": "culture"
+        },
+        {
+          "score": 0.21108428,
+          "value": "resource"
+        },
+        {
+          "score": 0.20585011,
+          "value": "club"
+        },
+        {
+          "score": 0.20585011,
+          "value": "voluntary"
+        },
+        {
+          "score": 0.20181383,
+          "value": "recall"
+        },
+        {
+          "score": 0.20049256,
+          "value": "technology"
+        },
+        {
+          "score": 0.1940315,
+          "value": "care"
+        },
+        {
+          "score": 0.19374128,
+          "value": "requirement"
+        },
+        {
+          "score": 0.189705,
+          "value": "location"
+        },
+        {
+          "score": 0.189705,
+          "value": "request"
+        },
+        {
+          "score": 0.18515901,
+          "value": "device"
+        },
+        {
+          "score": 0.18275955,
+          "value": "solution"
+        },
+        {
+          "score": 0.17759617,
+          "value": "fresh"
+        },
+        {
+          "score": 0.17759617,
+          "value": "department"
+        },
+        {
+          "score": 0.17759617,
+          "value": "equity"
+        },
+        {
+          "score": 0.17759617,
+          "value": "retail"
+        },
+        {
+          "score": 0.16952361,
+          "value": "food"
+        },
+        {
+          "score": 0.16952361,
+          "value": "philanthropy"
+        },
+        {
+          "score": 0.16952361,
+          "value": "risk"
+        },
+        {
+          "score": 0.16952361,
+          "value": "capital"
+        },
+        {
+          "score": 0.15741478,
+          "value": "code"
+        },
+        {
+          "score": 0.15741478,
+          "value": "payoneer"
+        },
+        {
+          "score": 0.14530596,
+          "value": "character"
+        },
+        {
+          "score": 0.14530596,
+          "value": "undeclared"
+        },
+        {
+          "score": 0.14126968,
+          "value": "link"
+        },
+        {
+          "score": 0.14126968,
+          "value": "growth"
+        },
+        {
+          "score": 0.14126968,
+          "value": "sustainability"
+        },
+        {
+          "score": 0.1372334,
+          "value": "tool"
+        },
+        {
+          "score": 0.1372334,
+          "value": "partner"
+        },
+        {
+          "score": 0.1372334,
+          "value": "shareholder"
+        },
+        {
+          "score": 0.13319713,
+          "value": "javascript"
+        },
+        {
+          "score": 0.13319713,
+          "value": "meeting"
+        },
+        {
+          "score": 0.12916085,
+          "value": "alert"
+        },
+        {
+          "score": 0.12916085,
+          "value": "agency"
+        },
+        {
+          "score": 0.12512457,
+          "value": "stock"
+        },
+        {
+          "score": 0.12512457,
+          "value": "board"
+        },
+        {
+          "score": 0.12512457,
+          "value": "operation"
+        },
+        {
+          "score": 0.12512457,
+          "value": "standard"
+        },
+        {
+          "score": 0.12512457,
+          "value": "fulfillment"
+        },
+        {
+          "score": 0.121865,
+          "value": "tag"
+        },
+        {
+          "score": 0.121088296,
+          "value": "robot"
+        },
+        {
+          "score": 0.121088296,
+          "value": "activate"
+        },
+        {
+          "score": 0.121088296,
+          "value": "human activate"
+        },
+        {
+          "score": 0.121088296,
+          "value": "button"
+        },
+        {
+          "score": 0.121088296,
+          "value": "leadership"
+        },
+        {
+          "score": 0.121088296,
+          "value": "governance"
+        },
+        {
+          "score": 0.121088296,
+          "value": "people"
+        },
+        {
+          "score": 0.121088296,
+          "value": "salad"
+        },
+        {
+          "score": 0.121088296,
+          "value": "seat"
+        },
+        {
+          "score": 0.11705202,
+          "value": "money"
+        },
+        {
+          "score": 0.11705202,
+          "value": "tax"
+        },
+        {
+          "score": 0.11705202,
+          "value": "twoday"
+        },
+        {
+          "score": 0.11705202,
+          "value": "annual"
+        },
+        {
+          "score": 0.11705202,
+          "value": "ethic"
+        },
+        {
+          "score": 0.11485564,
+          "value": "law"
+        },
+        {
+          "score": 0.11325989,
+          "value": "label"
+        },
+        {
+          "score": 0.11301574,
+          "value": "financial stock"
+        },
+        {
+          "score": 0.11301574,
+          "value": "financial event"
+        },
+        {
+          "score": 0.11301574,
+          "value": "corporate governance"
+        },
+        {
+          "score": 0.11301574,
+          "value": "additional link"
+        },
+        {
+          "score": 0.11301574,
+          "value": "deforestation"
+        },
+        {
+          "score": 0.110554285,
+          "value": "feedback"
+        },
+        {
+          "score": 0.10897946,
+          "value": "verification"
+        },
+        {
+          "score": 0.10897946,
+          "value": "facility"
+        },
+        {
+          "score": 0.10897946,
+          "value": "earning"
+        },
+        {
+          "score": 0.104943186,
+          "value": "presence"
+        },
+        {
+          "score": 0.104943186,
+          "value": "employment"
+        },
+        {
+          "score": 0.100906916,
+          "value": "history"
+        },
+        {
+          "score": 0.100906916,
+          "value": "directory"
+        },
+        {
+          "score": 0.100906916,
+          "value": "infant"
+        },
+        {
+          "score": 0.100906916,
+          "value": "responsible"
+        },
+        {
+          "score": 0.100906916,
+          "value": "smart"
+        },
+        {
+          "score": 0.100906916,
+          "value": "pro"
+        },
+        {
+          "score": 0.100906916,
+          "value": "lot"
+        },
+        {
+          "score": 0.100906916,
+          "value": "sustainable"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazonblackfridaydeal2018.blogspot.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazonblackfridaydeal2018.blogspot.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 4,
+        "value": [
+          "walmart.com",
+          "bestbuy.com",
+          "homedepot.com",
+          "victoriassecret.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Lingerie"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / DIY"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 4,
+      "value": [
+        "walmart.com",
+        "bestbuy.com",
+        "homedepot.com",
+        "victoriassecret.com"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Shopping / Department Stores",
+      "value": [
+        "Shopping / Department Stores",
+        "Business / Ecommerce"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 1,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 1,
+          "score": 100
+        },
+        {
+          "name": "Business / Ecommerce",
+          "rank": 1,
+          "score": 90
+        }
+      ]
+    }
+  }
+}

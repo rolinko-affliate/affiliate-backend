@@ -1,0 +1,482 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "ShareASale"
+      ],
+      "value": [
+        "ShareASale"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.9
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.9
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.9
+        }
+      ]
+    },
+    "domain": "interstatemusic.com",
+    "keywords": {
+      "count": 68,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "adidas"
+        },
+        {
+          "score": 0.86,
+          "value": "apparel"
+        },
+        {
+          "score": 0.84,
+          "value": "fashion"
+        },
+        {
+          "score": 0.83,
+          "value": "underwear"
+        },
+        {
+          "score": 0.78,
+          "value": "clothing"
+        },
+        {
+          "score": 0.71,
+          "value": "sports"
+        },
+        {
+          "score": 0.71,
+          "value": "shoes"
+        },
+        {
+          "score": 0.64,
+          "value": "cosmetics"
+        },
+        {
+          "score": 0.6,
+          "value": "fitness"
+        },
+        {
+          "score": 0.57,
+          "value": "shirt"
+        },
+        {
+          "score": 0.56,
+          "value": "jewelry"
+        },
+        {
+          "score": 0.52,
+          "value": "style"
+        },
+        {
+          "score": 0.49,
+          "value": "boutique"
+        },
+        {
+          "score": 0.49,
+          "value": "categories"
+        },
+        {
+          "score": 0.49,
+          "value": "jersey"
+        },
+        {
+          "score": 0.46,
+          "value": "club"
+        },
+        {
+          "score": 0.46,
+          "value": "designs"
+        },
+        {
+          "score": 0.44,
+          "value": "beauty"
+        },
+        {
+          "score": 0.43,
+          "value": "hair"
+        },
+        {
+          "score": 0.42,
+          "value": "skin"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "adidas"
+        },
+        {
+          "score": 0.86,
+          "value": "apparel"
+        },
+        {
+          "score": 0.84,
+          "value": "fashion"
+        },
+        {
+          "score": 0.83,
+          "value": "underwear"
+        },
+        {
+          "score": 0.78,
+          "value": "clothing"
+        },
+        {
+          "score": 0.71,
+          "value": "sports"
+        },
+        {
+          "score": 0.71,
+          "value": "shoes"
+        },
+        {
+          "score": 0.64,
+          "value": "cosmetics"
+        },
+        {
+          "score": 0.6,
+          "value": "fitness"
+        },
+        {
+          "score": 0.57,
+          "value": "shirt"
+        },
+        {
+          "score": 0.56,
+          "value": "jewelry"
+        },
+        {
+          "score": 0.52,
+          "value": "style"
+        },
+        {
+          "score": 0.49,
+          "value": "boutique"
+        },
+        {
+          "score": 0.49,
+          "value": "categories"
+        },
+        {
+          "score": 0.49,
+          "value": "jersey"
+        },
+        {
+          "score": 0.46,
+          "value": "club"
+        },
+        {
+          "score": 0.46,
+          "value": "designs"
+        },
+        {
+          "score": 0.44,
+          "value": "beauty"
+        },
+        {
+          "score": 0.43,
+          "value": "hair"
+        },
+        {
+          "score": 0.42,
+          "value": "skin"
+        },
+        {
+          "score": 0.39,
+          "value": "trubikini"
+        },
+        {
+          "score": 0.38,
+          "value": "coupons"
+        },
+        {
+          "score": 0.36,
+          "value": "supplements"
+        },
+        {
+          "score": 0.36,
+          "value": "discounts"
+        },
+        {
+          "score": 0.35,
+          "value": "vapesourcing"
+        },
+        {
+          "score": 0.35,
+          "value": "store"
+        },
+        {
+          "score": 0.31,
+          "value": "coupon"
+        },
+        {
+          "score": 0.31,
+          "value": "skincare"
+        },
+        {
+          "score": 0.31,
+          "value": "women"
+        },
+        {
+          "score": 0.3,
+          "value": "dhgate"
+        },
+        {
+          "score": 0.3,
+          "value": "green"
+        },
+        {
+          "score": 0.3,
+          "value": "vape"
+        },
+        {
+          "score": 0.29,
+          "value": "promotional"
+        },
+        {
+          "score": 0.29,
+          "value": "body"
+        },
+        {
+          "score": 0.28,
+          "value": "cases"
+        },
+        {
+          "score": 0.28,
+          "value": "blue"
+        },
+        {
+          "score": 0.28,
+          "value": "botanicals"
+        },
+        {
+          "score": 0.28,
+          "value": "wide"
+        },
+        {
+          "score": 0.27,
+          "value": "nutrition"
+        },
+        {
+          "score": 0.26,
+          "value": "couponseeker"
+        },
+        {
+          "score": 0.26,
+          "value": "protein"
+        },
+        {
+          "score": 0.25,
+          "value": "ebay"
+        },
+        {
+          "score": 0.25,
+          "value": "baby"
+        },
+        {
+          "score": 0.25,
+          "value": "health"
+        },
+        {
+          "score": 0.25,
+          "value": "supply"
+        },
+        {
+          "score": 0.25,
+          "value": "apply"
+        },
+        {
+          "score": 0.25,
+          "value": "enjoy"
+        },
+        {
+          "score": 0.24,
+          "value": "promotion"
+        },
+        {
+          "score": 0.23,
+          "value": "direct"
+        },
+        {
+          "score": 0.23,
+          "value": "organics"
+        },
+        {
+          "score": 0.23,
+          "value": "latest"
+        },
+        {
+          "score": 0.23,
+          "value": "power"
+        },
+        {
+          "score": 0.22,
+          "value": "promo"
+        },
+        {
+          "score": 0.22,
+          "value": "orders"
+        },
+        {
+          "score": 0.22,
+          "value": "submit"
+        },
+        {
+          "score": 0.22,
+          "value": "voucher"
+        },
+        {
+          "score": 0.21,
+          "value": "promos"
+        },
+        {
+          "score": 0.21,
+          "value": "active"
+        },
+        {
+          "score": 0.21,
+          "value": "femme"
+        },
+        {
+          "score": 0.21,
+          "value": "unspecified"
+        },
+        {
+          "score": 0.21,
+          "value": "dear"
+        },
+        {
+          "score": 0.2,
+          "value": "offer"
+        },
+        {
+          "score": 0.2,
+          "value": "selected"
+        },
+        {
+          "score": 0.19,
+          "value": "dropinbuy"
+        },
+        {
+          "score": 0.19,
+          "value": "jarganics"
+        },
+        {
+          "score": 0.18,
+          "value": "elite"
+        },
+        {
+          "score": 0.18,
+          "value": "receive"
+        },
+        {
+          "score": 0.18,
+          "value": "sunshine"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": "Music is always changing... Interstate Music is here for it. The gear, brands and inspiration for musical artists, musicians, bands, orchestras and more.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/interstatemusic.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://interstatemusic.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1,
+        "value": [
+          "couponseeker.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 0.95,
+            "vertical": "Online / Freebies"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 1,
+      "value": [
+        "couponseeker.com"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 5,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "linkedin",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/interstatemusic",
+        "instagram": "https://instagram.com/interstatemusic",
+        "linkedin": "https://linkedin.com/company/interstate-music",
+        "twitter": "https://twitter.com/interstatemsc",
+        "youtube": "https://youtube.com/c/interstatemusic?reload=9"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 1,
+      "sampleValue": "Entertainment / Music",
+      "value": [
+        "Entertainment / Music"
+      ]
+    },
+    "verticalsV2": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Entertainment / Music",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Entertainment / Music",
+          "rank": 1,
+          "score": 95
+        }
+      ]
+    }
+  }
+}

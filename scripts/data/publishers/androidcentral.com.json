@@ -1,0 +1,2619 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 22,
+      "sampleValue": [
+        "Admitad",
+        "Amazon CA",
+        "Avantlink"
+      ],
+      "value": [
+        "Admitad",
+        "Amazon CA",
+        "Avantlink",
+        "Awin",
+        "CJ Affiliate",
+        "CommissionFactory",
+        "Flexoffers",
+        "Impact",
+        "Linkbux",
+        "Optimise",
+        "Partnerize",
+        "Pepperjam",
+        "Private Network",
+        "Rakuten",
+        "Refersion",
+        "ShareASale",
+        "Skimlinks",
+        "Tradedoubler",
+        "TradeTracker",
+        "TUNE",
+        "Viglink",
+        "Webgains"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.4
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.4
+        },
+        {
+          "countryCode": "in",
+          "score": 0.15
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.4
+        },
+        {
+          "countryCode": "in",
+          "score": 0.15
+        }
+      ]
+    },
+    "domain": "androidcentral.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "phone"
+        },
+        {
+          "score": 0.8925279,
+          "value": "device"
+        },
+        {
+          "score": 0.6908929,
+          "value": "iphone"
+        },
+        {
+          "score": 0.47588992,
+          "value": "google"
+        },
+        {
+          "score": 0.45328444,
+          "value": "accessory"
+        },
+        {
+          "score": 0.4336149,
+          "value": "store"
+        },
+        {
+          "score": 0.40295124,
+          "value": "internet"
+        },
+        {
+          "score": 0.3757916,
+          "value": "network"
+        },
+        {
+          "score": 0.3504469,
+          "value": "pro"
+        },
+        {
+          "score": 0.34942448,
+          "value": "apple"
+        },
+        {
+          "score": 0.34523818,
+          "value": "broadband"
+        },
+        {
+          "score": 0.31910247,
+          "value": "wireless"
+        },
+        {
+          "score": 0.31342757,
+          "value": "software"
+        },
+        {
+          "score": 0.30964634,
+          "value": "gaming"
+        },
+        {
+          "score": 0.3095464,
+          "value": "card"
+        },
+        {
+          "score": 0.2971142,
+          "value": "play"
+        },
+        {
+          "score": 0.28863066,
+          "value": "smart"
+        },
+        {
+          "score": 0.287323,
+          "value": "sign"
+        },
+        {
+          "score": 0.284103,
+          "value": "technology"
+        },
+        {
+          "score": 0.2783108,
+          "value": "monthly"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "phone"
+        },
+        {
+          "score": 0.8925279,
+          "value": "device"
+        },
+        {
+          "score": 0.6908929,
+          "value": "iphone"
+        },
+        {
+          "score": 0.47588992,
+          "value": "google"
+        },
+        {
+          "score": 0.45328444,
+          "value": "accessory"
+        },
+        {
+          "score": 0.4336149,
+          "value": "store"
+        },
+        {
+          "score": 0.40295124,
+          "value": "internet"
+        },
+        {
+          "score": 0.3757916,
+          "value": "network"
+        },
+        {
+          "score": 0.3504469,
+          "value": "pro"
+        },
+        {
+          "score": 0.34942448,
+          "value": "apple"
+        },
+        {
+          "score": 0.34523818,
+          "value": "broadband"
+        },
+        {
+          "score": 0.31910247,
+          "value": "wireless"
+        },
+        {
+          "score": 0.31342757,
+          "value": "software"
+        },
+        {
+          "score": 0.30964634,
+          "value": "gaming"
+        },
+        {
+          "score": 0.3095464,
+          "value": "card"
+        },
+        {
+          "score": 0.2971142,
+          "value": "play"
+        },
+        {
+          "score": 0.28863066,
+          "value": "smart"
+        },
+        {
+          "score": 0.287323,
+          "value": "sign"
+        },
+        {
+          "score": 0.284103,
+          "value": "technology"
+        },
+        {
+          "score": 0.2783108,
+          "value": "monthly"
+        },
+        {
+          "score": 0.27672958,
+          "value": "sim"
+        },
+        {
+          "score": 0.27572504,
+          "value": "app"
+        },
+        {
+          "score": 0.26502538,
+          "value": "credit"
+        },
+        {
+          "score": 0.24957581,
+          "value": "laptop"
+        },
+        {
+          "score": 0.2383054,
+          "value": "devices"
+        },
+        {
+          "score": 0.23688057,
+          "value": "international"
+        },
+        {
+          "score": 0.2266261,
+          "value": "upgrade"
+        },
+        {
+          "score": 0.22197045,
+          "value": "phones"
+        },
+        {
+          "score": 0.21902952,
+          "value": "unlimited"
+        },
+        {
+          "score": 0.20527963,
+          "value": "google play"
+        },
+        {
+          "score": 0.19837753,
+          "value": "speed"
+        },
+        {
+          "score": 0.19409727,
+          "value": "digital"
+        },
+        {
+          "score": 0.19373268,
+          "value": "accessibility"
+        },
+        {
+          "score": 0.190398,
+          "value": "warranty"
+        },
+        {
+          "score": 0.18873945,
+          "value": "star"
+        },
+        {
+          "score": 0.18813156,
+          "value": "community"
+        },
+        {
+          "score": 0.18506299,
+          "value": "prepaid"
+        },
+        {
+          "score": 0.18304126,
+          "value": "seller"
+        },
+        {
+          "score": 0.18247779,
+          "value": "video"
+        },
+        {
+          "score": 0.18245012,
+          "value": "family"
+        },
+        {
+          "score": 0.17227611,
+          "value": "center"
+        },
+        {
+          "score": 0.16632727,
+          "value": "sports"
+        },
+        {
+          "score": 0.16345453,
+          "value": "samsung"
+        },
+        {
+          "score": 0.15957375,
+          "value": "solution"
+        },
+        {
+          "score": 0.15830815,
+          "value": "activity"
+        },
+        {
+          "score": 0.15686756,
+          "value": "monitor"
+        },
+        {
+          "score": 0.15485223,
+          "value": "smartphone"
+        },
+        {
+          "score": 0.15272954,
+          "value": "verizon"
+        },
+        {
+          "score": 0.14908797,
+          "value": "furniture"
+        },
+        {
+          "score": 0.14906721,
+          "value": "pay"
+        },
+        {
+          "score": 0.1488087,
+          "value": "galaxy"
+        },
+        {
+          "score": 0.1476648,
+          "value": "investor"
+        },
+        {
+          "score": 0.14535879,
+          "value": "sky"
+        },
+        {
+          "score": 0.14521132,
+          "value": "legal"
+        },
+        {
+          "score": 0.14506386,
+          "value": "enterprise"
+        },
+        {
+          "score": 0.14420767,
+          "value": "tech"
+        },
+        {
+          "score": 0.13624254,
+          "value": "servicios"
+        },
+        {
+          "score": 0.13139473,
+          "value": "camera"
+        },
+        {
+          "score": 0.13120309,
+          "value": "offer"
+        },
+        {
+          "score": 0.12977576,
+          "value": "contract"
+        },
+        {
+          "score": 0.12776507,
+          "value": "servicio"
+        },
+        {
+          "score": 0.12667754,
+          "value": "directv"
+        },
+        {
+          "score": 0.12153361,
+          "value": "max"
+        },
+        {
+          "score": 0.12032952,
+          "value": "charge"
+        },
+        {
+          "score": 0.12025147,
+          "value": "baby"
+        },
+        {
+          "score": 0.120237984,
+          "value": "desktop"
+        },
+        {
+          "score": 0.116936736,
+          "value": "fios"
+        },
+        {
+          "score": 0.11505081,
+          "value": "tablet"
+        },
+        {
+          "score": 0.11308231,
+          "value": "share"
+        },
+        {
+          "score": 0.110629,
+          "value": "cloud"
+        },
+        {
+          "score": 0.108501956,
+          "value": "wishlist"
+        },
+        {
+          "score": 0.10803436,
+          "value": "power"
+        },
+        {
+          "score": 0.10781444,
+          "value": "coverage"
+        },
+        {
+          "score": 0.106652744,
+          "value": "oneplus"
+        },
+        {
+          "score": 0.105879664,
+          "value": "ultra"
+        },
+        {
+          "score": 0.104175605,
+          "value": "feedback"
+        },
+        {
+          "score": 0.10346764,
+          "value": "applicable"
+        },
+        {
+          "score": 0.1028267,
+          "value": "kids"
+        },
+        {
+          "score": 0.10280068,
+          "value": "property"
+        },
+        {
+          "score": 0.102259226,
+          "value": "market"
+        },
+        {
+          "score": 0.10201524,
+          "value": "entertainment"
+        },
+        {
+          "score": 0.101913184,
+          "value": "jewellery"
+        },
+        {
+          "score": 0.101547055,
+          "value": "career"
+        },
+        {
+          "score": 0.10148439,
+          "value": "streaming"
+        },
+        {
+          "score": 0.10125552,
+          "value": "shoes"
+        },
+        {
+          "score": 0.10054542,
+          "value": "ofertas"
+        },
+        {
+          "score": 0.10007743,
+          "value": "financial"
+        },
+        {
+          "score": 0.09949258,
+          "value": "care"
+        },
+        {
+          "score": 0.098826826,
+          "value": "connected"
+        },
+        {
+          "score": 0.097427726,
+          "value": "prices"
+        },
+        {
+          "score": 0.097055756,
+          "value": "hotspot"
+        },
+        {
+          "score": 0.0964154,
+          "value": "garden"
+        },
+        {
+          "score": 0.09559536,
+          "value": "screen"
+        },
+        {
+          "score": 0.09554776,
+          "value": "networking"
+        },
+        {
+          "score": 0.09504491,
+          "value": "clothing"
+        },
+        {
+          "score": 0.094415285,
+          "value": "billing"
+        },
+        {
+          "score": 0.09424167,
+          "value": "direct"
+        },
+        {
+          "score": 0.094153285,
+          "value": "fio"
+        },
+        {
+          "score": 0.09302718,
+          "value": "link"
+        },
+        {
+          "score": 0.09251912,
+          "value": "toys"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/androidcentral.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://androidcentral.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 675,
+        "value": [
+          "myshopify.com",
+          "aliexpress.com",
+          "skype.com",
+          "wacom.com",
+          "etsy.com",
+          "1password.com",
+          "1more.com",
+          "adobe.com",
+          "ford.com",
+          "jd.com",
+          "airtel.in",
+          "7eer.net",
+          "apple.com",
+          "avg.com",
+          "aaa.com",
+          "telekom.de",
+          "amazon.com",
+          "aaptiv.com",
+          "abcmouse.com",
+          "runnersworld.com",
+          "trendmicro.com",
+          "microsoft.com",
+          "wyze.com",
+          "att.com",
+          "doordash.com",
+          "facebook.com",
+          "dish.com",
+          "intuit.com",
+          "irobot.com",
+          "netflix.com",
+          "meta.com",
+          "nordstrom.com",
+          "underarmour.com",
+          "philo.com",
+          "fedex.com",
+          "telus.com",
+          "abt.com",
+          "dynabook.com",
+          "nvidia.com",
+          "shopify.com",
+          "ray-ban.com",
+          "viture.com",
+          "michaelkors.com",
+          "dell.com",
+          "ee.co.uk",
+          "sky.com",
+          "musiciansfriend.com",
+          "three.co.uk",
+          "woot.com",
+          "jackery.com",
+          "lenovo.com",
+          "box.com",
+          "nba.com",
+          "nowtv.com",
+          "onepeloton.com",
+          "protonvpn.com",
+          "lyft.com",
+          "oneplus.com",
+          "surfshark.com",
+          "sony.com",
+          "samsung.com",
+          "ubisoft.com",
+          "evernote.com",
+          "tablotv.com",
+          "o2.co.uk",
+          "t-mobile.com",
+          "fitbit.com",
+          "acer.com",
+          "hbomax.com",
+          "boostmobile.com",
+          "adguard.com",
+          "adidas.com",
+          "opera.com",
+          "adp.com",
+          "adorama.com",
+          "huawei.com",
+          "adventureacademy.com",
+          "flexoffers.com",
+          "hulu.com",
+          "roku.com",
+          "rosettastone.com",
+          "banggood.com",
+          "walmart.com",
+          "amazon.co.jp",
+          "espn.com",
+          "flipkart.com",
+          "geekbuying.com",
+          "namecheap.com",
+          "airalo.com",
+          "airdroid.com",
+          "airfarewatchdog.com",
+          "logitech.com",
+          "aliexpress.us",
+          "alltrails.com",
+          "amazfit.com",
+          "amazon.ca",
+          "zoom.us",
+          "philips.com",
+          "mi.com",
+          "economist.com",
+          "teachable.com",
+          "anker.com",
+          "antonline.com",
+          "hp.com",
+          "ao.com",
+          "hilton.com",
+          "jabra.com",
+          "greenmangaming.com",
+          "fanatical.com",
+          "grammarly.com",
+          "govee.com",
+          "seagate.com",
+          "plex.tv",
+          "nixplay.com",
+          "photobucket.com",
+          "pluralsight.com",
+          "primevideo.com",
+          "rocketmoney.com",
+          "appliancesdirect.co.uk",
+          "calm.com",
+          "kohls.com",
+          "pixlr.com",
+          "elgato.com",
+          "garmin.com",
+          "arc.cc",
+          "argos.co.uk",
+          "arlo.com",
+          "netgear.com",
+          "vive.com",
+          "asos.com",
+          "sonos.com",
+          "bose.com",
+          "xfinity.com",
+          "nature.com",
+          "asus.com",
+          "atamanoyare.wordpress.com",
+          "fandango.com",
+          "mlb.com",
+          "incipio.com",
+          "atomtickets.com",
+          "au.ecoflow.com",
+          "au.firstclasswatches.com",
+          "atttvnow.com",
+          "joybird.com",
+          "samsclub.com",
+          "audeze.com",
+          "audioadvice.com",
+          "august.com",
+          "audiovisualonline.co.uk",
+          "audiobooks.com",
+          "discoveryplus.com",
+          "max.com",
+          "autonomous.ai",
+          "avast.com",
+          "awin.com",
+          "aws.amazon.com",
+          "parallels.com",
+          "cdon.se",
+          "backmarket.co.uk",
+          "backbone.com",
+          "backmarket.com",
+          "tesco.com",
+          "ultimateears.com",
+          "bang-olufsen.com",
+          "barkbox.com",
+          "bark.us",
+          "barnesandnoble.com",
+          "bark.co",
+          "bathandbodyworks.com",
+          "htc.com",
+          "dailysteals.com",
+          "belkin.com",
+          "glassesusa.com",
+          "benks.com",
+          "bellroy.com",
+          "dazn.com",
+          "cyberlink.com",
+          "boostinfinite.com",
+          "curiositystream.com",
+          "f-secure.com",
+          "fool.com",
+          "myer.com.au",
+          "playstation.com",
+          "sling.com",
+          "urbanoutfitters.com",
+          "merlincycles.com",
+          "binge.com.au",
+          "bioliteenergy.com",
+          "bitdefender.com",
+          "vodafone.co.uk",
+          "bjs.com",
+          "game.co.uk",
+          "homedepot.com",
+          "lowes.com",
+          "blog.avast.com",
+          "clove.co.uk",
+          "dashlane.com",
+          "debenhams.com",
+          "deezer.com",
+          "ebay.com",
+          "ecoflow.com",
+          "freedompop.com",
+          "goruck.com",
+          "groupon.com",
+          "hidemyass.com",
+          "hellofresh.com",
+          "keepersecurity.com",
+          "malwarebytes.com",
+          "lastpass.com",
+          "mega.io",
+          "lovereading.co.uk",
+          "motorola.com",
+          "ouraring.com",
+          "poshmark.com",
+          "rei.com",
+          "remarkable.com",
+          "saatva.com",
+          "schuh.co.uk",
+          "siriusxm.com",
+          "ugreen.com",
+          "very.co.uk",
+          "tello.com",
+          "ultrahuman.com",
+          "vudu.com",
+          "webroot.com",
+          "vodafone.com.au",
+          "nfl.com",
+          "oreilly.com",
+          "westerndigital.com",
+          "withings.com",
+          "youmail.com",
+          "bluettipower.com.au",
+          "bodyguardz.com",
+          "bookshop.org",
+          "selfridges.com",
+          "boots.com",
+          "eharmony.com",
+          "bowerswilkins.com",
+          "bose.co.uk",
+          "brookstone.com",
+          "bt.com",
+          "burga.com",
+          "currys.co.uk",
+          "officedepot.com",
+          "udemy.com",
+          "wish.com",
+          "gazelle.com",
+          "buymobiles.net",
+          "realme.com",
+          "buydig.com",
+          "symantec.com",
+          "buypeel.com",
+          "ca.puma.com",
+          "linksys.com",
+          "nothing.tech",
+          "ca.shein.com",
+          "optus.com.au",
+          "oppo.com",
+          "marvel.com",
+          "cvs.com",
+          "dyson.com",
+          "carphonewarehouse.com",
+          "carluex.store",
+          "casio.com",
+          "casetify.com",
+          "case-mate.com",
+          "casper.com",
+          "macys.com",
+          "cbs.com",
+          "cdiscount.com",
+          "cdkeys.com",
+          "cclonline.com",
+          "directv.com",
+          "movavi.com",
+          "hasselblad.com",
+          "minitool.com",
+          "razer.com",
+          "headspace.com",
+          "funko.com",
+          "peakdesign.com",
+          "upliftdesk.com",
+          "chewy.com",
+          "chienpham.com",
+          "starwoodhotels.com",
+          "choosemuse.com",
+          "citizenwatch.com",
+          "cnbc.com",
+          "clicks.tech",
+          "tunnelbear.com",
+          "cloud.google.com",
+          "digitalocean.com",
+          "oneplus.in",
+          "cobra.com",
+          "paypal.com",
+          "codecademy.com",
+          "mintmobile.com",
+          "foxtel.com.au",
+          "giffgaff.com",
+          "qvc.com",
+          "verizon.com",
+          "sony.co.uk",
+          "gopro.com",
+          "republicwireless.com",
+          "tp-link.com",
+          "eufylife.com",
+          "teamviewer.com",
+          "visible.com",
+          "fender.com",
+          "consumercellular.com",
+          "containerstore.com",
+          "dji.com",
+          "kobo.com",
+          "cookandbecker.com",
+          "meetup.com",
+          "waitrose.com",
+          "formula1.com",
+          "ralphlauren.com",
+          "turtlebeach.com",
+          "corsair.com",
+          "walgreens.com",
+          "cox.com",
+          "cricketwireless.com",
+          "crunchyroll.com",
+          "kinguin.net",
+          "esrgear.com",
+          "qvcuk.com",
+          "g2a.com",
+          "dbrand.com",
+          "decathlon.co.uk",
+          "denon.com",
+          "staples.com",
+          "honor.com",
+          "oculus.com",
+          "yubico.com",
+          "dickssportinggoods.com",
+          "nolo.com",
+          "diy.com",
+          "dixons.co.uk",
+          "epson.com",
+          "docs.aws.amazon.com",
+          "onkyousa.com",
+          "springer.com",
+          "winzip.com",
+          "monoprice.com",
+          "gearbest.com",
+          "drop.com",
+          "dronenerds.com",
+          "redbubble.com",
+          "dyson.in",
+          "e-capcom.com",
+          "weibo.com",
+          "ebuyer.com",
+          "ebaystores.com",
+          "echelonfit.com",
+          "ecoatm.com",
+          "ecovacs.com",
+          "ecobee.com",
+          "electricshop.com",
+          "fastshop.com.br",
+          "gamersgate.com",
+          "roborock.com",
+          "newegg.com",
+          "entertainmentearth.com",
+          "espro.com",
+          "fnatic.com",
+          "nanoleaf.me",
+          "jbl.com",
+          "nubia.com",
+          "pelacase.com",
+          "scufgaming.com",
+          "soundcore.com",
+          "skullcandy.com",
+          "switch-bot.com",
+          "tech21.com",
+          "mous.co",
+          "xgimi.com",
+          "zagg.com",
+          "expedia.com",
+          "johnlewis.com",
+          "express.google.com",
+          "fandangonow.com",
+          "farfetch.com",
+          "fastestvpn.com",
+          "fi.google.com",
+          "firstclasswatches.co.uk",
+          "fite.tv",
+          "flexispot.com",
+          "flir.com",
+          "fluance.com",
+          "flosports.tv",
+          "polar.com",
+          "fonehouse.co.uk",
+          "overclockers.co.uk",
+          "fossil.com",
+          "framesdirect.com",
+          "frontier.com",
+          "gabb.com",
+          "gabbwireless.com",
+          "vistaprint.com",
+          "gamestop.com",
+          "gamstat.com",
+          "garmentory.com",
+          "guitarcenter.com",
+          "gdata-software.com",
+          "geappliances.com",
+          "gear4music.com",
+          "ringconn.com",
+          "starz.com",
+          "straighttalk.com",
+          "joinhoney.com",
+          "totalwireless.com",
+          "vyprvpn.com",
+          "getkeysmart.com",
+          "getcasely.com",
+          "ghostek.com",
+          "giftcards.com",
+          "kroger.com",
+          "giztop.com",
+          "sennheiser-hearing.com",
+          "globalgolf.com",
+          "glowforge.com",
+          "go-electrical.co.uk",
+          "gog.com",
+          "gonimble.com",
+          "gonoise.com",
+          "google.com",
+          "gorjana.com",
+          "kayosports.com.au",
+          "hairmax.com",
+          "hamleys.com",
+          "harrys.com",
+          "harmanaudio.com",
+          "hawaiianairlines.com",
+          "hellonomad.com",
+          "hotstar.com",
+          "itv.com",
+          "paramountplus.com",
+          "playbackbone.com",
+          "redpocket.com",
+          "showtime.com",
+          "vimeo.com",
+          "tinydeal.com",
+          "weber.com",
+          "massdrop.com",
+          "x.com",
+          "hide.me",
+          "hifigo.com",
+          "hihonor.com",
+          "hmd.com",
+          "hover.com",
+          "hrkgame.com",
+          "wayfair.com",
+          "hughes.co.uk",
+          "hwinfo.com",
+          "husqvarna.com",
+          "i-blason.com",
+          "igulu.com",
+          "idmobile.co.uk",
+          "in.amazfit.com",
+          "in.event.mi.com",
+          "indeed.com",
+          "instacart.com",
+          "jlab.com",
+          "ir.dish.com",
+          "itead.cc",
+          "sleepnumber.com",
+          "jabra.ca",
+          "jabra.fr",
+          "jellybelly.com",
+          "jessops.com",
+          "whoop.com",
+          "jurawatches.co.uk",
+          "kaspersky.com",
+          "keeps.com",
+          "kenu.com",
+          "universe.com",
+          "kiwico.com",
+          "kmart.com",
+          "laptopsdirect.co.uk",
+          "unihertz.com",
+          "leisurelakesbikes.com",
+          "lensabl.com",
+          "lg.com",
+          "lifeproof.com",
+          "lights.co.uk",
+          "tidal.com",
+          "lockly.com",
+          "targetoptical.com",
+          "lofree.co",
+          "tatacliq.com",
+          "sears.com",
+          "tigerdirect.com",
+          "mahoutofu.files.wordpress.com",
+          "protonmail.com",
+          "manfrotto.com",
+          "manscaped.com",
+          "marshallheadphones.com",
+          "masterdynamic.com",
+          "mcafee.com",
+          "otterbox.com",
+          "mecoolonline.com",
+          "metrofone.co.uk",
+          "metrobyt-mobile.com",
+          "millets.co.uk",
+          "olympics.com",
+          "misfit.com",
+          "mobiletopup.co.uk",
+          "mobilephonesdirect.co.uk",
+          "mobilefun.co.uk",
+          "mobiles.co.uk",
+          "mondaine-usa.com",
+          "montblanc.com",
+          "motorola.ca",
+          "morningsave.com",
+          "movado.com",
+          "munchkin.com",
+          "music.amazon.com",
+          "my.boostmobile.com",
+          "my.mintmobile.com",
+          "myearfun.com",
+          "tomtom.com",
+          "na.panasonic.com",
+          "na.redmagic.gg",
+          "neurable.com",
+          "newark.com",
+          "poly.com",
+          "nflgamepass.com",
+          "nomadgoods.com",
+          "noodlecake.com",
+          "notionink.wordpress.com",
+          "olloclip.com",
+          "otterbox.co.uk",
+          "ozgameshop.com",
+          "tescomobile.com",
+          "paylesspower.com",
+          "pcrichard.com",
+          "ssense.com",
+          "periodicpresidents.files.wordpress.com",
+          "petertyson.co.uk",
+          "pgatoursuperstore.com",
+          "philips-hue.com",
+          "phonesoap.com",
+          "picmonkey.com",
+          "pinwheel.com",
+          "places2explore.files.wordpress.com",
+          "play.google.com",
+          "plantronics.com",
+          "popsockets.com",
+          "porsche-design.com",
+          "powera.com",
+          "ravpower.com",
+          "projectorscreen.com",
+          "thestar.com",
+          "puls.com",
+          "qksrv.net",
+          "quibi.com",
+          "rayconglobal.com",
+          "raylin.wordpress.com",
+          "rayneo.com",
+          "readingiq.com",
+          "wework.com",
+          "rhone.com",
+          "ringkestore.com",
+          "robertdyas.co.uk",
+          "riverside.fm",
+          "rokform.com",
+          "ryman.co.uk",
+          "samash.com",
+          "satechi.net",
+          "scosche.com",
+          "scottevest.com",
+          "secretlab.co",
+          "shadow.tech",
+          "serversdirect.co.uk",
+          "temu.com",
+          "sharge.com",
+          "shargeek.com",
+          "shokz.com",
+          "simplemobile.com",
+          "vivint.com",
+          "troomi.com",
+          "toughmudder.com",
+          "tracfone.com",
+          "shopdisney.com",
+          "shopping.google.com",
+          "shopto.net",
+          "shudder.com",
+          "shopyalehome.com",
+          "simplisafe.com",
+          "skagen.com",
+          "slingtv.com",
+          "smartish.com",
+          "sodastream.com",
+          "sonicelectronix.com",
+          "soundboks.com",
+          "speckproducts.com",
+          "stacksocial.com",
+          "startselect.com",
+          "status.aws.amazon.com",
+          "status.cloud.google.com",
+          "status.co",
+          "store.google.com",
+          "thetileapp.com",
+          "textnow.com",
+          "support.cloud.google.com",
+          "support.kaspersky.com",
+          "suunto.com",
+          "sweetwater.com",
+          "swann.com",
+          "techrabbit.com",
+          "tervis.com",
+          "th.store.asus.com",
+          "thegamecollection.net",
+          "thegreatcoursesplus.com",
+          "thegoodguys.com.au",
+          "thehealthylivingstore.co",
+          "therange.co.uk",
+          "thermalmaster.com",
+          "timbuk2.com",
+          "tile.com",
+          "ting.com",
+          "totalbyverizon.com",
+          "torraslife.com",
+          "tracking.searchmarketing.com",
+          "tredz.co.uk",
+          "truebill.com",
+          "uk.creative.com",
+          "uk.gamersgate.com",
+          "uk.kokoon.io",
+          "uk.mous.co",
+          "uk.shokz.com",
+          "uk.redmagic.gg",
+          "uk.store.asus.com",
+          "uk.zagg.com",
+          "unrealmobile.com",
+          "urbanarmorgear.com",
+          "us.acer.com",
+          "us.answers.acer.com",
+          "us.amazfit.com",
+          "us.burberry.com",
+          "us.amazon.com",
+          "us.community.samsung.com",
+          "us.firstclasswatches.com",
+          "us.govee.com",
+          "us.norton.com",
+          "us.nothing.tech",
+          "us.roborock.com",
+          "us.shein.com",
+          "us.targus.com",
+          "usa.kaspersky.com",
+          "us.suunto.com",
+          "us.xgimi.com",
+          "uscellular.com",
+          "usmobile.com",
+          "uswitch.com",
+          "vari.com",
+          "vava.com",
+          "venaproducts.com",
+          "walmart.ca",
+          "wasserstein-home.com",
+          "wavecase.co.uk",
+          "watchafl.com.au",
+          "wayfair.co.uk",
+          "westmarine.com",
+          "whitestonedome.com",
+          "wix.com",
+          "wizconnected.com",
+          "wordpress.com",
+          "workspace.google.com",
+          "worldwidegolfshops.com",
+          "worldwidestereo.com",
+          "xinfrared.com",
+          "xfinity.ulvh.net",
+          "zoe.com",
+          "zzounds.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 54,
+        "value": [
+          {
+            "domain": "th.store.asus.com"
+          },
+          {
+            "domain": "us.nothing.tech"
+          },
+          {
+            "domain": "uk.store.asus.com"
+          },
+          {
+            "domain": "us.community.samsung.com"
+          },
+          {
+            "domain": "uk.redmagic.gg"
+          },
+          {
+            "domain": "bark.co"
+          },
+          {
+            "domain": "uk.zagg.com"
+          },
+          {
+            "domain": "uk.kokoon.io"
+          },
+          {
+            "domain": "ca.puma.com"
+          },
+          {
+            "domain": "merlincycles.com"
+          },
+          {
+            "domain": "gonimble.com"
+          },
+          {
+            "domain": "wework.com"
+          },
+          {
+            "domain": "us.roborock.com"
+          },
+          {
+            "domain": "my.mintmobile.com"
+          },
+          {
+            "domain": "na.panasonic.com"
+          },
+          {
+            "domain": "thegoodguys.com.au"
+          },
+          {
+            "domain": "jd.com"
+          },
+          {
+            "domain": "myer.com.au"
+          },
+          {
+            "domain": "entertainmentearth.com"
+          },
+          {
+            "domain": "na.redmagic.gg"
+          },
+          {
+            "domain": "vistaprint.com"
+          },
+          {
+            "domain": "us.suunto.com"
+          },
+          {
+            "domain": "au.ecoflow.com"
+          },
+          {
+            "domain": "vari.com"
+          },
+          {
+            "domain": "us.burberry.com"
+          },
+          {
+            "domain": "uk.shokz.com"
+          },
+          {
+            "domain": "blog.avast.com"
+          },
+          {
+            "domain": "in.amazfit.com"
+          },
+          {
+            "domain": "uk.mous.co"
+          },
+          {
+            "domain": "uk.gamersgate.com"
+          },
+          {
+            "domain": "dronenerds.com"
+          },
+          {
+            "domain": "farfetch.com"
+          },
+          {
+            "domain": "garmentory.com"
+          },
+          {
+            "domain": "us.answers.acer.com"
+          },
+          {
+            "domain": "us.xgimi.com"
+          },
+          {
+            "domain": "us.amazon.com"
+          },
+          {
+            "domain": "hrkgame.com"
+          },
+          {
+            "domain": "au.firstclasswatches.com"
+          },
+          {
+            "domain": "ir.dish.com"
+          },
+          {
+            "domain": "us.shein.com"
+          },
+          {
+            "domain": "e-capcom.com"
+          },
+          {
+            "domain": "audiobooks.com"
+          },
+          {
+            "domain": "us.targus.com"
+          },
+          {
+            "domain": "us.govee.com"
+          },
+          {
+            "domain": "ozgameshop.com"
+          },
+          {
+            "domain": "my.boostmobile.com"
+          },
+          {
+            "domain": "in.event.mi.com"
+          },
+          {
+            "domain": "us.acer.com"
+          },
+          {
+            "domain": "echelonfit.com"
+          },
+          {
+            "domain": "bluettipower.com.au"
+          },
+          {
+            "domain": "ca.shein.com"
+          },
+          {
+            "domain": "uk.creative.com"
+          },
+          {
+            "domain": "us.amazfit.com"
+          },
+          {
+            "domain": "metrobyt-mobile.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 43,
+        "value": [
+          {
+            "domain": "manomano.co.uk"
+          },
+          {
+            "domain": "nintendo.co.uk"
+          },
+          {
+            "domain": "blacks.co.uk"
+          },
+          {
+            "domain": "parkcameras.com"
+          },
+          {
+            "domain": "oxygenboutique.com"
+          },
+          {
+            "domain": "slickwraps.com"
+          },
+          {
+            "domain": "mujjo.com"
+          },
+          {
+            "domain": "humblebundle.com"
+          },
+          {
+            "domain": "vertu.com"
+          },
+          {
+            "domain": "gooutdoors.co.uk"
+          },
+          {
+            "domain": "shein.com"
+          },
+          {
+            "domain": "chipolo.net"
+          },
+          {
+            "domain": "creative.com"
+          },
+          {
+            "domain": "hekka.com"
+          },
+          {
+            "domain": "echelonfit.uk"
+          },
+          {
+            "domain": "tweekscycles.com"
+          },
+          {
+            "domain": "gomohu.com"
+          },
+          {
+            "domain": "redmagic.gg"
+          },
+          {
+            "domain": "wexphotovideo.com"
+          },
+          {
+            "domain": "thursdayboots.com"
+          },
+          {
+            "domain": "cwsellors.co.uk"
+          },
+          {
+            "domain": "novatech.co.uk"
+          },
+          {
+            "domain": "mrporter.com"
+          },
+          {
+            "domain": "burberry.com"
+          },
+          {
+            "domain": "asda.com"
+          },
+          {
+            "domain": "bestgymequipment.co.uk"
+          },
+          {
+            "domain": "stonerefurb.co.uk"
+          },
+          {
+            "domain": "ashleymadison.com"
+          },
+          {
+            "domain": "alomoves.com"
+          },
+          {
+            "domain": "targus.com"
+          },
+          {
+            "domain": "puretalkusa.com"
+          },
+          {
+            "domain": "qustodio.com"
+          },
+          {
+            "domain": "panasonic.com"
+          },
+          {
+            "domain": "puma.com"
+          },
+          {
+            "domain": "sidedeal.com"
+          },
+          {
+            "domain": "dunelm.com"
+          },
+          {
+            "domain": "kokoon.io"
+          },
+          {
+            "domain": "jcpenney.com"
+          },
+          {
+            "domain": "marshall.com"
+          },
+          {
+            "domain": "dellrefurbished.com"
+          },
+          {
+            "domain": "experian.com"
+          },
+          {
+            "domain": "pmtonline.co.uk"
+          },
+          {
+            "domain": "waterstones.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 131.44994,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 75.25001,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 37.050007,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 36.500008,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 29.55,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 26.400005,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 22.550001,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 18.999998,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 16.249998,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 15.999999,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 15.349998,
+            "vertical": "Business / Cyber Security"
+          },
+          {
+            "count": 11.899999,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 10.65,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 10.599999,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 10.549999,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 10.5,
+            "vertical": "Online / Security"
+          },
+          {
+            "count": 10.399999,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 9.5,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 9.45,
+            "vertical": "Home / Security"
+          },
+          {
+            "count": 8.349999,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 7.7499995,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 6.85,
+            "vertical": "Online / VPN"
+          },
+          {
+            "count": 6.6499996,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 6.5999994,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 5.8,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 5.6,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 4.85,
+            "vertical": "Health / Eyecare"
+          },
+          {
+            "count": 4.8,
+            "vertical": "Business / Office"
+          },
+          {
+            "count": 4.8,
+            "vertical": "Sports / Outdoor"
+          },
+          {
+            "count": 4.75,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 4.75,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 4.6000004,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 4.25,
+            "vertical": "Entertainment / Hobbies"
+          },
+          {
+            "count": 4.25,
+            "vertical": "Online / Web Hosting"
+          },
+          {
+            "count": 3.9,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 3.7,
+            "vertical": "Home / DIY"
+          },
+          {
+            "count": 3.4499998,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 2.95,
+            "vertical": "Business / Website Builder"
+          },
+          {
+            "count": 2.95,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Sports / Cycling"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Technology / Editing Software"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Travel / Flights"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Home / Beds & Bedding"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Home / Pets"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Finance / Accounts"
+          },
+          {
+            "count": 2.6499999,
+            "vertical": "Travel / Vacation"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Gifts / Kids"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Home / Utilities"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Technology / Esim"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Travel / Accessories"
+          },
+          {
+            "count": 1.85,
+            "vertical": "Business / Energy"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Finance / Investments"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Home / Garden"
+          },
+          {
+            "count": 1.8,
+            "vertical": "Entertainment / Movies"
+          },
+          {
+            "count": 1.75,
+            "vertical": "Motoring / Cars"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Finance"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Jobs & Careers"
+          },
+          {
+            "count": 1,
+            "vertical": "Home / Babycare"
+          },
+          {
+            "count": 1,
+            "vertical": "Online / Dating"
+          },
+          {
+            "count": 1,
+            "vertical": "Online / Freebies"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Jewellery"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Banking"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Cards"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Food / Confectionery"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Art"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Travel / Car Hire"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Finance / Trading"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Food / Take Out"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Motoring / Breakdown Cover"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 675,
+      "value": [
+        "myshopify.com",
+        "aliexpress.com",
+        "skype.com",
+        "wacom.com",
+        "etsy.com",
+        "1password.com",
+        "1more.com",
+        "adobe.com",
+        "ford.com",
+        "jd.com",
+        "airtel.in",
+        "7eer.net",
+        "apple.com",
+        "avg.com",
+        "aaa.com",
+        "telekom.de",
+        "amazon.com",
+        "aaptiv.com",
+        "abcmouse.com",
+        "runnersworld.com",
+        "trendmicro.com",
+        "microsoft.com",
+        "wyze.com",
+        "att.com",
+        "doordash.com",
+        "facebook.com",
+        "dish.com",
+        "intuit.com",
+        "irobot.com",
+        "netflix.com",
+        "meta.com",
+        "nordstrom.com",
+        "underarmour.com",
+        "philo.com",
+        "fedex.com",
+        "telus.com",
+        "abt.com",
+        "dynabook.com",
+        "nvidia.com",
+        "shopify.com",
+        "ray-ban.com",
+        "viture.com",
+        "michaelkors.com",
+        "dell.com",
+        "ee.co.uk",
+        "sky.com",
+        "musiciansfriend.com",
+        "three.co.uk",
+        "woot.com",
+        "jackery.com",
+        "lenovo.com",
+        "box.com",
+        "nba.com",
+        "nowtv.com",
+        "onepeloton.com",
+        "protonvpn.com",
+        "lyft.com",
+        "oneplus.com",
+        "surfshark.com",
+        "sony.com",
+        "samsung.com",
+        "ubisoft.com",
+        "evernote.com",
+        "tablotv.com",
+        "o2.co.uk",
+        "t-mobile.com",
+        "fitbit.com",
+        "acer.com",
+        "hbomax.com",
+        "boostmobile.com",
+        "adguard.com",
+        "adidas.com",
+        "opera.com",
+        "adp.com",
+        "adorama.com",
+        "huawei.com",
+        "adventureacademy.com",
+        "flexoffers.com",
+        "hulu.com",
+        "roku.com",
+        "rosettastone.com",
+        "banggood.com",
+        "walmart.com",
+        "amazon.co.jp",
+        "espn.com",
+        "flipkart.com",
+        "geekbuying.com",
+        "namecheap.com",
+        "airalo.com",
+        "airdroid.com",
+        "airfarewatchdog.com",
+        "logitech.com",
+        "aliexpress.us",
+        "alltrails.com",
+        "amazfit.com",
+        "amazon.ca",
+        "zoom.us",
+        "philips.com",
+        "mi.com",
+        "economist.com",
+        "teachable.com",
+        "anker.com",
+        "antonline.com",
+        "hp.com",
+        "ao.com",
+        "hilton.com",
+        "jabra.com",
+        "greenmangaming.com",
+        "fanatical.com",
+        "grammarly.com",
+        "govee.com",
+        "seagate.com",
+        "plex.tv",
+        "nixplay.com",
+        "photobucket.com",
+        "pluralsight.com",
+        "primevideo.com",
+        "rocketmoney.com",
+        "appliancesdirect.co.uk",
+        "calm.com",
+        "kohls.com",
+        "pixlr.com",
+        "elgato.com",
+        "garmin.com",
+        "arc.cc",
+        "argos.co.uk",
+        "arlo.com",
+        "netgear.com",
+        "vive.com",
+        "asos.com",
+        "sonos.com",
+        "bose.com",
+        "xfinity.com",
+        "nature.com",
+        "asus.com",
+        "atamanoyare.wordpress.com",
+        "fandango.com",
+        "mlb.com",
+        "incipio.com",
+        "atomtickets.com",
+        "au.ecoflow.com",
+        "au.firstclasswatches.com",
+        "atttvnow.com",
+        "joybird.com",
+        "samsclub.com",
+        "audeze.com",
+        "audioadvice.com",
+        "august.com",
+        "audiovisualonline.co.uk",
+        "audiobooks.com",
+        "discoveryplus.com",
+        "max.com",
+        "autonomous.ai",
+        "avast.com",
+        "awin.com",
+        "aws.amazon.com",
+        "parallels.com",
+        "cdon.se",
+        "backmarket.co.uk",
+        "backbone.com",
+        "backmarket.com",
+        "tesco.com",
+        "ultimateears.com",
+        "bang-olufsen.com",
+        "barkbox.com",
+        "bark.us",
+        "barnesandnoble.com",
+        "bark.co",
+        "bathandbodyworks.com",
+        "htc.com",
+        "dailysteals.com",
+        "belkin.com",
+        "glassesusa.com",
+        "benks.com",
+        "bellroy.com",
+        "dazn.com",
+        "cyberlink.com",
+        "boostinfinite.com",
+        "curiositystream.com",
+        "f-secure.com",
+        "fool.com",
+        "myer.com.au",
+        "playstation.com",
+        "sling.com",
+        "urbanoutfitters.com",
+        "merlincycles.com",
+        "binge.com.au",
+        "bioliteenergy.com",
+        "bitdefender.com",
+        "vodafone.co.uk",
+        "bjs.com",
+        "game.co.uk",
+        "homedepot.com",
+        "lowes.com",
+        "blog.avast.com",
+        "clove.co.uk",
+        "dashlane.com",
+        "debenhams.com",
+        "deezer.com",
+        "ebay.com",
+        "ecoflow.com",
+        "freedompop.com",
+        "goruck.com",
+        "groupon.com",
+        "hidemyass.com",
+        "hellofresh.com",
+        "keepersecurity.com",
+        "malwarebytes.com",
+        "lastpass.com",
+        "mega.io",
+        "lovereading.co.uk",
+        "motorola.com",
+        "ouraring.com",
+        "poshmark.com",
+        "rei.com",
+        "remarkable.com",
+        "saatva.com",
+        "schuh.co.uk",
+        "siriusxm.com",
+        "ugreen.com",
+        "very.co.uk",
+        "tello.com",
+        "ultrahuman.com",
+        "vudu.com",
+        "webroot.com",
+        "vodafone.com.au",
+        "nfl.com",
+        "oreilly.com",
+        "westerndigital.com",
+        "withings.com",
+        "youmail.com",
+        "bluettipower.com.au",
+        "bodyguardz.com",
+        "bookshop.org",
+        "selfridges.com",
+        "boots.com",
+        "eharmony.com",
+        "bowerswilkins.com",
+        "bose.co.uk",
+        "brookstone.com",
+        "bt.com",
+        "burga.com",
+        "currys.co.uk",
+        "officedepot.com",
+        "udemy.com",
+        "wish.com",
+        "gazelle.com",
+        "buymobiles.net",
+        "realme.com",
+        "buydig.com",
+        "symantec.com",
+        "buypeel.com",
+        "ca.puma.com",
+        "linksys.com",
+        "nothing.tech",
+        "ca.shein.com",
+        "optus.com.au",
+        "oppo.com",
+        "marvel.com",
+        "cvs.com",
+        "dyson.com",
+        "carphonewarehouse.com",
+        "carluex.store",
+        "casio.com",
+        "casetify.com",
+        "case-mate.com",
+        "casper.com",
+        "macys.com",
+        "cbs.com",
+        "cdiscount.com",
+        "cdkeys.com",
+        "cclonline.com",
+        "directv.com",
+        "movavi.com",
+        "hasselblad.com",
+        "minitool.com",
+        "razer.com",
+        "headspace.com",
+        "funko.com",
+        "peakdesign.com",
+        "upliftdesk.com",
+        "chewy.com",
+        "chienpham.com",
+        "starwoodhotels.com",
+        "choosemuse.com",
+        "citizenwatch.com",
+        "cnbc.com",
+        "clicks.tech",
+        "tunnelbear.com",
+        "cloud.google.com",
+        "digitalocean.com",
+        "oneplus.in",
+        "cobra.com",
+        "paypal.com",
+        "codecademy.com",
+        "mintmobile.com",
+        "foxtel.com.au",
+        "giffgaff.com",
+        "qvc.com",
+        "verizon.com",
+        "sony.co.uk",
+        "gopro.com",
+        "republicwireless.com",
+        "tp-link.com",
+        "eufylife.com",
+        "teamviewer.com",
+        "visible.com",
+        "fender.com",
+        "consumercellular.com",
+        "containerstore.com",
+        "dji.com",
+        "kobo.com",
+        "cookandbecker.com",
+        "meetup.com",
+        "waitrose.com",
+        "formula1.com",
+        "ralphlauren.com",
+        "turtlebeach.com",
+        "corsair.com",
+        "walgreens.com",
+        "cox.com",
+        "cricketwireless.com",
+        "crunchyroll.com",
+        "kinguin.net",
+        "esrgear.com",
+        "qvcuk.com",
+        "g2a.com",
+        "dbrand.com",
+        "decathlon.co.uk",
+        "denon.com",
+        "staples.com",
+        "honor.com",
+        "oculus.com",
+        "yubico.com",
+        "dickssportinggoods.com",
+        "nolo.com",
+        "diy.com",
+        "dixons.co.uk",
+        "epson.com",
+        "docs.aws.amazon.com",
+        "onkyousa.com",
+        "springer.com",
+        "winzip.com",
+        "monoprice.com",
+        "gearbest.com",
+        "drop.com",
+        "dronenerds.com",
+        "redbubble.com",
+        "dyson.in",
+        "e-capcom.com",
+        "weibo.com",
+        "ebuyer.com",
+        "ebaystores.com",
+        "echelonfit.com",
+        "ecoatm.com",
+        "ecovacs.com",
+        "ecobee.com",
+        "electricshop.com",
+        "fastshop.com.br",
+        "gamersgate.com",
+        "roborock.com",
+        "newegg.com",
+        "entertainmentearth.com",
+        "espro.com",
+        "fnatic.com",
+        "nanoleaf.me",
+        "jbl.com",
+        "nubia.com",
+        "pelacase.com",
+        "scufgaming.com",
+        "soundcore.com",
+        "skullcandy.com",
+        "switch-bot.com",
+        "tech21.com",
+        "mous.co",
+        "xgimi.com",
+        "zagg.com",
+        "expedia.com",
+        "johnlewis.com",
+        "express.google.com",
+        "fandangonow.com",
+        "farfetch.com",
+        "fastestvpn.com",
+        "fi.google.com",
+        "firstclasswatches.co.uk",
+        "fite.tv",
+        "flexispot.com",
+        "flir.com",
+        "fluance.com",
+        "flosports.tv",
+        "polar.com",
+        "fonehouse.co.uk",
+        "overclockers.co.uk",
+        "fossil.com",
+        "framesdirect.com",
+        "frontier.com",
+        "gabb.com",
+        "gabbwireless.com",
+        "vistaprint.com",
+        "gamestop.com",
+        "gamstat.com",
+        "garmentory.com",
+        "guitarcenter.com",
+        "gdata-software.com",
+        "geappliances.com",
+        "gear4music.com",
+        "ringconn.com",
+        "starz.com",
+        "straighttalk.com",
+        "joinhoney.com",
+        "totalwireless.com",
+        "vyprvpn.com",
+        "getkeysmart.com",
+        "getcasely.com",
+        "ghostek.com",
+        "giftcards.com",
+        "kroger.com",
+        "giztop.com",
+        "sennheiser-hearing.com",
+        "globalgolf.com",
+        "glowforge.com",
+        "go-electrical.co.uk",
+        "gog.com",
+        "gonimble.com",
+        "gonoise.com",
+        "google.com",
+        "gorjana.com",
+        "kayosports.com.au",
+        "hairmax.com",
+        "hamleys.com",
+        "harrys.com",
+        "harmanaudio.com",
+        "hawaiianairlines.com",
+        "hellonomad.com",
+        "hotstar.com",
+        "itv.com",
+        "paramountplus.com",
+        "playbackbone.com",
+        "redpocket.com",
+        "showtime.com",
+        "vimeo.com",
+        "tinydeal.com",
+        "weber.com",
+        "massdrop.com",
+        "x.com",
+        "hide.me",
+        "hifigo.com",
+        "hihonor.com",
+        "hmd.com",
+        "hover.com",
+        "hrkgame.com",
+        "wayfair.com",
+        "hughes.co.uk",
+        "hwinfo.com",
+        "husqvarna.com",
+        "i-blason.com",
+        "igulu.com",
+        "idmobile.co.uk",
+        "in.amazfit.com",
+        "in.event.mi.com",
+        "indeed.com",
+        "instacart.com",
+        "jlab.com",
+        "ir.dish.com",
+        "itead.cc",
+        "sleepnumber.com",
+        "jabra.ca",
+        "jabra.fr",
+        "jellybelly.com",
+        "jessops.com",
+        "whoop.com",
+        "jurawatches.co.uk",
+        "kaspersky.com",
+        "keeps.com",
+        "kenu.com",
+        "universe.com",
+        "kiwico.com",
+        "kmart.com",
+        "laptopsdirect.co.uk",
+        "unihertz.com",
+        "leisurelakesbikes.com",
+        "lensabl.com",
+        "lg.com",
+        "lifeproof.com",
+        "lights.co.uk",
+        "tidal.com",
+        "lockly.com",
+        "targetoptical.com",
+        "lofree.co",
+        "tatacliq.com",
+        "sears.com",
+        "tigerdirect.com",
+        "mahoutofu.files.wordpress.com",
+        "protonmail.com",
+        "manfrotto.com",
+        "manscaped.com",
+        "marshallheadphones.com",
+        "masterdynamic.com",
+        "mcafee.com",
+        "otterbox.com",
+        "mecoolonline.com",
+        "metrofone.co.uk",
+        "metrobyt-mobile.com",
+        "millets.co.uk",
+        "olympics.com",
+        "misfit.com",
+        "mobiletopup.co.uk",
+        "mobilephonesdirect.co.uk",
+        "mobilefun.co.uk",
+        "mobiles.co.uk",
+        "mondaine-usa.com",
+        "montblanc.com",
+        "motorola.ca",
+        "morningsave.com",
+        "movado.com",
+        "munchkin.com",
+        "music.amazon.com",
+        "my.boostmobile.com",
+        "my.mintmobile.com",
+        "myearfun.com",
+        "tomtom.com",
+        "na.panasonic.com",
+        "na.redmagic.gg",
+        "neurable.com",
+        "newark.com",
+        "poly.com",
+        "nflgamepass.com",
+        "nomadgoods.com",
+        "noodlecake.com",
+        "notionink.wordpress.com",
+        "olloclip.com",
+        "otterbox.co.uk",
+        "ozgameshop.com",
+        "tescomobile.com",
+        "paylesspower.com",
+        "pcrichard.com",
+        "ssense.com",
+        "periodicpresidents.files.wordpress.com",
+        "petertyson.co.uk",
+        "pgatoursuperstore.com",
+        "philips-hue.com",
+        "phonesoap.com",
+        "picmonkey.com",
+        "pinwheel.com",
+        "places2explore.files.wordpress.com",
+        "play.google.com",
+        "plantronics.com",
+        "popsockets.com",
+        "porsche-design.com",
+        "powera.com",
+        "ravpower.com",
+        "projectorscreen.com",
+        "thestar.com",
+        "puls.com",
+        "qksrv.net",
+        "quibi.com",
+        "rayconglobal.com",
+        "raylin.wordpress.com",
+        "rayneo.com",
+        "readingiq.com",
+        "wework.com",
+        "rhone.com",
+        "ringkestore.com",
+        "robertdyas.co.uk",
+        "riverside.fm",
+        "rokform.com",
+        "ryman.co.uk",
+        "samash.com",
+        "satechi.net",
+        "scosche.com",
+        "scottevest.com",
+        "secretlab.co",
+        "shadow.tech",
+        "serversdirect.co.uk",
+        "temu.com",
+        "sharge.com",
+        "shargeek.com",
+        "shokz.com",
+        "simplemobile.com",
+        "vivint.com",
+        "troomi.com",
+        "toughmudder.com",
+        "tracfone.com",
+        "shopdisney.com",
+        "shopping.google.com",
+        "shopto.net",
+        "shudder.com",
+        "shopyalehome.com",
+        "simplisafe.com",
+        "skagen.com",
+        "slingtv.com",
+        "smartish.com",
+        "sodastream.com",
+        "sonicelectronix.com",
+        "soundboks.com",
+        "speckproducts.com",
+        "stacksocial.com",
+        "startselect.com",
+        "status.aws.amazon.com",
+        "status.cloud.google.com",
+        "status.co",
+        "store.google.com",
+        "thetileapp.com",
+        "textnow.com",
+        "support.cloud.google.com",
+        "support.kaspersky.com",
+        "suunto.com",
+        "sweetwater.com",
+        "swann.com",
+        "techrabbit.com",
+        "tervis.com",
+        "th.store.asus.com",
+        "thegamecollection.net",
+        "thegreatcoursesplus.com",
+        "thegoodguys.com.au",
+        "thehealthylivingstore.co",
+        "therange.co.uk",
+        "thermalmaster.com",
+        "timbuk2.com",
+        "tile.com",
+        "ting.com",
+        "totalbyverizon.com",
+        "torraslife.com",
+        "tracking.searchmarketing.com",
+        "tredz.co.uk",
+        "truebill.com",
+        "uk.creative.com",
+        "uk.gamersgate.com",
+        "uk.kokoon.io",
+        "uk.mous.co",
+        "uk.shokz.com",
+        "uk.redmagic.gg",
+        "uk.store.asus.com",
+        "uk.zagg.com",
+        "unrealmobile.com",
+        "urbanarmorgear.com",
+        "us.acer.com",
+        "us.answers.acer.com",
+        "us.amazfit.com",
+        "us.burberry.com",
+        "us.amazon.com",
+        "us.community.samsung.com",
+        "us.firstclasswatches.com",
+        "us.govee.com",
+        "us.norton.com",
+        "us.nothing.tech",
+        "us.roborock.com",
+        "us.shein.com",
+        "us.targus.com",
+        "usa.kaspersky.com",
+        "us.suunto.com",
+        "us.xgimi.com",
+        "uscellular.com",
+        "usmobile.com",
+        "uswitch.com",
+        "vari.com",
+        "vava.com",
+        "venaproducts.com",
+        "walmart.ca",
+        "wasserstein-home.com",
+        "wavecase.co.uk",
+        "watchafl.com.au",
+        "wayfair.co.uk",
+        "westmarine.com",
+        "whitestonedome.com",
+        "wix.com",
+        "wizconnected.com",
+        "wordpress.com",
+        "workspace.google.com",
+        "worldwidegolfshops.com",
+        "worldwidestereo.com",
+        "xinfrared.com",
+        "xfinity.ulvh.net",
+        "zoe.com",
+        "zzounds.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 56,
+      "value": [
+        "guitarplayer.com",
+        "livingetc.com",
+        "marieclaire.com",
+        "tomsguide.com",
+        "fitandwell.com",
+        "tvtechnology.com",
+        "laptopmag.com",
+        "itpro.com",
+        "whattowatch.com",
+        "forums.androidcentral.com",
+        "digitalcameraworld.com",
+        "wallpaper.com",
+        "nexttv.com",
+        "goodto.com",
+        "livescience.com",
+        "gardeningetc.com",
+        "myimperfectlife.com",
+        "fourfourtwo.com",
+        "gamesradar.com",
+        "whowhatwear.com",
+        "golfmonthly.com",
+        "qingminqq.top",
+        "237804.com",
+        "thebestofthewayiseeit.com",
+        "womanandhome.com",
+        "creativebloq.com",
+        "toptenreviews.com",
+        "idealhome.co.uk",
+        "techradar.com",
+        "realhomes.com",
+        "avnetwork.com",
+        "imore.com",
+        "homesandgardens.com",
+        "kiplinger.com",
+        "windowscentral.com",
+        "flsrzt.cn",
+        "guitarworld.com",
+        "whathifi.com",
+        "loudersound.com",
+        "marieclaire.co.uk",
+        "theweek.com",
+        "323hospital.org",
+        "musicradar.com",
+        "moneyweek.com",
+        "space.com",
+        "advnture.com",
+        "tomshardware.com",
+        "itproportal.com",
+        "petsradar.com",
+        "cinemablend.com",
+        "homebuilding.co.uk",
+        "cyclingnews.com",
+        "m.androidcentral.com",
+        "cyclingweekly.com",
+        "techlearning.com",
+        "newsarama.com"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/androidcentral/?utm_source=ac&utm_medium=burger&utm_campaign=navigation",
+        "instagram": "https://instagram.com/androidcentral/?utm_source=ac&utm_medium=burger&utm_campaign=navigation",
+        "twitter": "https://twitter.com/androidcentral?utm_source=ac&utm_medium=burger&utm_campaign=navigation",
+        "youtube": "https://youtube.com/user/androidcentral"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Technology / Mobile & Broadband",
+      "value": [
+        "Technology / Mobile & Broadband",
+        "Technology / Electronics"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Technology / Mobile & Broadband",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Technology / Mobile & Broadband",
+          "rank": 1,
+          "score": 95
+        },
+        {
+          "name": "Technology / Electronics",
+          "rank": 1,
+          "score": 80
+        }
+      ]
+    }
+  }
+}

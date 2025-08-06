@@ -1,0 +1,503 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 5,
+      "sampleValue": [
+        "Business Insider",
+        "Refersion",
+        "ShareASale"
+      ],
+      "value": [
+        "Business Insider",
+        "Refersion",
+        "ShareASale",
+        "Skimlinks",
+        "Viglink"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 1,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "info@branchbasics.com"
+        }
+      ]
+    },
+    "domain": "branchbasics.com",
+    "keywords": {
+      "count": 53,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "health"
+        },
+        {
+          "score": 0.96,
+          "value": "healthy"
+        },
+        {
+          "score": 0.95,
+          "value": "wellness"
+        },
+        {
+          "score": 0.73,
+          "value": "holistic"
+        },
+        {
+          "score": 0.66,
+          "value": "charge"
+        },
+        {
+          "score": 0.65,
+          "value": "influencer"
+        },
+        {
+          "score": 0.65,
+          "value": "nourish"
+        },
+        {
+          "score": 0.59,
+          "value": "deodorant"
+        },
+        {
+          "score": 0.58,
+          "value": "inflammation"
+        },
+        {
+          "score": 0.57,
+          "value": "hair"
+        },
+        {
+          "score": 0.56,
+          "value": "skin"
+        },
+        {
+          "score": 0.55,
+          "value": "starter"
+        },
+        {
+          "score": 0.55,
+          "value": "complexion"
+        },
+        {
+          "score": 0.54,
+          "value": "fancy"
+        },
+        {
+          "score": 0.53,
+          "value": "acne"
+        },
+        {
+          "score": 0.52,
+          "value": "card"
+        },
+        {
+          "score": 0.51,
+          "value": "browse"
+        },
+        {
+          "score": 0.5,
+          "value": "retail"
+        },
+        {
+          "score": 0.49,
+          "value": "treatments"
+        },
+        {
+          "score": 0.48,
+          "value": "aging"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "health"
+        },
+        {
+          "score": 0.96,
+          "value": "healthy"
+        },
+        {
+          "score": 0.95,
+          "value": "wellness"
+        },
+        {
+          "score": 0.73,
+          "value": "holistic"
+        },
+        {
+          "score": 0.66,
+          "value": "charge"
+        },
+        {
+          "score": 0.65,
+          "value": "influencer"
+        },
+        {
+          "score": 0.65,
+          "value": "nourish"
+        },
+        {
+          "score": 0.59,
+          "value": "deodorant"
+        },
+        {
+          "score": 0.58,
+          "value": "inflammation"
+        },
+        {
+          "score": 0.57,
+          "value": "hair"
+        },
+        {
+          "score": 0.56,
+          "value": "skin"
+        },
+        {
+          "score": 0.55,
+          "value": "starter"
+        },
+        {
+          "score": 0.55,
+          "value": "complexion"
+        },
+        {
+          "score": 0.54,
+          "value": "fancy"
+        },
+        {
+          "score": 0.53,
+          "value": "acne"
+        },
+        {
+          "score": 0.52,
+          "value": "card"
+        },
+        {
+          "score": 0.51,
+          "value": "browse"
+        },
+        {
+          "score": 0.5,
+          "value": "retail"
+        },
+        {
+          "score": 0.49,
+          "value": "treatments"
+        },
+        {
+          "score": 0.48,
+          "value": "aging"
+        },
+        {
+          "score": 0.47,
+          "value": "bags"
+        },
+        {
+          "score": 0.47,
+          "value": "pickup"
+        },
+        {
+          "score": 0.46,
+          "value": "shampoo"
+        },
+        {
+          "score": 0.45,
+          "value": "normal"
+        },
+        {
+          "score": 0.43,
+          "value": "benefits"
+        },
+        {
+          "score": 0.42,
+          "value": "body"
+        },
+        {
+          "score": 0.4,
+          "value": "palmarosa"
+        },
+        {
+          "score": 0.39,
+          "value": "light"
+        },
+        {
+          "score": 0.39,
+          "value": "palo"
+        },
+        {
+          "score": 0.39,
+          "value": "nature"
+        },
+        {
+          "score": 0.39,
+          "value": "collections"
+        },
+        {
+          "score": 0.38,
+          "value": "cleansing"
+        },
+        {
+          "score": 0.38,
+          "value": "almond"
+        },
+        {
+          "score": 0.38,
+          "value": "connect"
+        },
+        {
+          "score": 0.37,
+          "value": "ingredients"
+        },
+        {
+          "score": 0.37,
+          "value": "deeply"
+        },
+        {
+          "score": 0.37,
+          "value": "oils"
+        },
+        {
+          "score": 0.37,
+          "value": "organic"
+        },
+        {
+          "score": 0.36,
+          "value": "fine"
+        },
+        {
+          "score": 0.35,
+          "value": "digital"
+        },
+        {
+          "score": 0.35,
+          "value": "blue"
+        },
+        {
+          "score": 0.35,
+          "value": "family"
+        },
+        {
+          "score": 0.35,
+          "value": "treatment"
+        },
+        {
+          "score": 0.34,
+          "value": "touch"
+        },
+        {
+          "score": 0.34,
+          "value": "facial"
+        },
+        {
+          "score": 0.34,
+          "value": "beauty"
+        },
+        {
+          "score": 0.34,
+          "value": "mini"
+        },
+        {
+          "score": 0.34,
+          "value": "ethically"
+        },
+        {
+          "score": 0.34,
+          "value": "ingredient"
+        },
+        {
+          "score": 0.33,
+          "value": "mint"
+        },
+        {
+          "score": 0.33,
+          "value": "open"
+        },
+        {
+          "score": 0.33,
+          "value": "baby"
+        },
+        {
+          "score": 0.33,
+          "value": "balm"
+        }
+      ]
+    },
+    "metaData": {
+      "description": "Our non-toxic cleaning products were created with the most sensitive in mind. They clean powerfully using only the highest quality, plant-based ingredients. Join us as we get back to basics and discover the power of pure!",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/branchbasics.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://branchbasics.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 125
+      },
+      "partnersAdded": {
+        "count": 4,
+        "value": [
+          {
+            "domain": "stilltoday.org"
+          },
+          {
+            "domain": "amazon.co.uk"
+          },
+          {
+            "domain": "solo.to"
+          },
+          {
+            "domain": "bokepina.net"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 3,
+        "value": [
+          {
+            "domain": "fitnessbeauty.fit"
+          },
+          {
+            "domain": "embracewellnesswithashley.com"
+          },
+          {
+            "domain": "celproceo.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 35,
+            "promotype": "blog",
+            "value": [
+              "10reviewsplus.com",
+              "amazon.co.uk",
+              "apaigeofpositivity.com",
+              "app.newpanda.com",
+              "beautyandfashionadvice.com",
+              "brapodcast.se",
+              "businessinsider.com",
+              "cbdnews24.com",
+              "couchpotatocamping.com",
+              "danielle-moss.com",
+              "diannecassidyconsulting.com",
+              "eastwesthealing.com",
+              "edgeintegrativewellness.com",
+              "fedandfit.com",
+              "fleurdille.com",
+              "flourish-living.com",
+              "forbes.com",
+              "goodlifeeats.com",
+              "greenwithless.com",
+              "growingupherbal.com",
+              "hormonesbalance.com",
+              "innatefertility.org",
+              "jessegolden.com",
+              "joyfullydomestic.com",
+              "livekindly.co",
+              "marthastewart.com",
+              "mother.ly",
+              "msha.ke",
+              "naturallynourishedrd.com",
+              "nourishingjoy.com",
+              "shopmy.us",
+              "stephencabral.com",
+              "thecut.com",
+              "thekitchn.com",
+              "usatoday.com"
+            ]
+          },
+          {
+            "count": 12,
+            "promotype": "student",
+            "value": [
+              "apartmenttherapy.com",
+              "ceh.org",
+              "gatherednutrition.com",
+              "justingredients.us",
+              "morningscoop.org",
+              "movingmountainssf.com",
+              "southardliving.com",
+              "spotify.com",
+              "tasteslovely.com",
+              "whatgreatgrandmaate.com",
+              "yahoo.com",
+              "yourhormonebalance.com"
+            ]
+          },
+          {
+            "count": 5,
+            "promotype": "incentive",
+            "value": [
+              "couponkin.com",
+              "couponsbiss.com",
+              "couponscatch.com",
+              "couponsforsaving.com",
+              "netzender.com"
+            ]
+          },
+          {
+            "count": 4,
+            "promotype": "content",
+            "value": [
+              "edithagoston.com",
+              "paultandesigns.com",
+              "shortgirltallorder.com",
+              "thehive.health"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "forum",
+            "value": [
+              "kenfeting.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "youtube",
+        "facebook",
+        "instagram",
+        "pinterest"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/branchbasics",
+        "instagram": "https://instagram.com/branchbasics/?hl=en",
+        "pinterest": "https://pinterest.com/branchbasics",
+        "youtube": "https://youtube.com/channel/ucohnjxwa7rthgdfmmv6y3ag"
+      }
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Home / Homeware",
+        "rank": 2,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Health / Wellbeing",
+          "rank": 2,
+          "score": 70
+        },
+        {
+          "name": "Home / Homeware",
+          "rank": 2,
+          "score": 90
+        }
+      ]
+    }
+  }
+}

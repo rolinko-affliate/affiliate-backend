@@ -1,0 +1,231 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 6,
+      "sampleValue": [
+        "Business Insider",
+        "Digidip",
+        "Linkbux"
+      ],
+      "value": [
+        "Business Insider",
+        "Digidip",
+        "Linkbux",
+        "Refersion",
+        "ShareASale",
+        "Skimlinks"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 2,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "feedback@getrocketbook.com"
+        },
+        {
+          "department": "support",
+          "value": "hello@getrocketbook.com"
+        }
+      ]
+    },
+    "domain": "getrocketbook.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "The Rocketbook Smart Notebook instantly connects and stores your notes, doodles and lists in the cloud with the free smart notebook app.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/getrocketbook.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://getrocketbook.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 134
+      },
+      "partnersAdded": {
+        "count": 5,
+        "value": [
+          {
+            "domain": "sarahlminordesign.com"
+          },
+          {
+            "domain": "macqueza.com"
+          },
+          {
+            "domain": "bokepina.net"
+          },
+          {
+            "domain": "goodpods.com"
+          },
+          {
+            "domain": "afoolsjourney.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 2,
+        "value": [
+          {
+            "domain": "diycanadavisa.ca"
+          },
+          {
+            "domain": "icelebnews.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 44,
+            "promotype": "blog",
+            "value": [
+              "10reviewsplus.com",
+              "1topproduct.com",
+              "500toprated.com",
+              "amazon.co.uk",
+              "babyboomer.org",
+              "businessremark.com",
+              "buzzsprout.com",
+              "collegeinfogeek.com",
+              "courageouschristianfather.com",
+              "dlsserve.com",
+              "esquire.com",
+              "forbes.com",
+              "goodpods.com",
+              "gridforcetech.com",
+              "homeschoolinginnovascotia.com",
+              "hotreview4u.com",
+              "imore.com",
+              "influenciveminds.com",
+              "ipoki.com",
+              "macqueza.com",
+              "marieclaire.com",
+              "masteritmedia.com",
+              "michaeltritthart.com",
+              "music.amazon.com",
+              "nerdyness.com.au",
+              "nonprofitenthusiast.com",
+              "offerstoreview.com",
+              "openhearthypnosis.com",
+              "oprahdaily.com",
+              "project-village.com",
+              "redditfavorites.com",
+              "sarahlminordesign.com",
+              "scalinguph2o.com",
+              "socialchefs.com",
+              "storerelief.com",
+              "techiemamma.com",
+              "tecnologiatop.club",
+              "theoccasionalgenealogist.com",
+              "time.com",
+              "tinybeans.com",
+              "tomsguide.com",
+              "ubestpick.com",
+              "whatallsay.com",
+              "youyou5.com"
+            ]
+          },
+          {
+            "count": 5,
+            "promotype": "content",
+            "value": [
+              "allgiftsconsidered.com",
+              "mitre.org",
+              "robbymiles.com",
+              "selinasims.com",
+              "townandcountrymag.com"
+            ]
+          },
+          {
+            "count": 15,
+            "promotype": "student",
+            "value": [
+              "asu.edu",
+              "castbox.fm",
+              "collegeedc.com",
+              "creativebloq.com",
+              "droppricetoday.com",
+              "egiftcardz.com",
+              "geniuslabgear.com",
+              "hellosubscription.com",
+              "helpineedhelp.com",
+              "iuemag.com",
+              "musthaves.la",
+              "newsbreak.com",
+              "peoplenewspapers.com",
+              "spotify.com",
+              "studentswhoknow.co.il"
+            ]
+          },
+          {
+            "count": 6,
+            "promotype": "incentive",
+            "value": [
+              "couponsnake.com",
+              "couponupto.com",
+              "especialcoupons.com",
+              "funcoupons.net",
+              "remedydeals.com",
+              "trycoupon.net"
+            ]
+          },
+          {
+            "count": 2,
+            "promotype": "forum",
+            "value": [
+              "getjaybe.com",
+              "housebeautiful.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 5,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "linkedin",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/getrocketbook",
+        "instagram": "https://instagram.com/getrocketbook",
+        "linkedin": "https://linkedin.com/company/rocket-innovations",
+        "twitter": "https://twitter.com/getrocketbook",
+        "youtube": "https://youtube.com/rocketbook"
+      }
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Business / Office",
+        "rank": 2,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Business / Office",
+          "rank": 2,
+          "score": 95
+        },
+        {
+          "name": "Technology / Electronics",
+          "rank": 2,
+          "score": 80
+        }
+      ]
+    }
+  }
+}

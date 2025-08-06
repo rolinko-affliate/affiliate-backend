@@ -128,15 +128,15 @@ func (m *AdvertiserProviderMapper) MapAdvertiserToEverflowRequest(adv *domain.Ad
 	// Set empty string values for optional fields to match Everflow format
 	emptyString := ""
 	req.SetAccountingContactEmail(emptyString)
-	req.SetOfferIdMacro(emptyString)
-	req.SetAffiliateIdMacro(emptyString)
+	req.SetOfferIdMacro("oid")
+	req.SetAffiliateIdMacro("affid")
 	req.SetPlatformName(emptyString)
 	req.SetPlatformUrl(emptyString)
 	req.SetPlatformUsername(emptyString)
 	
 	// Set required fields that might be missing
 	req.SetInternalNotes("Some notes not visible to the advertiser")
-	salesManagerId := int32(1)
+	salesManagerId := int32(0) // Use 0 to indicate no sales manager
 	req.SetSalesManagerId(salesManagerId)
 	
 	// Set labels array

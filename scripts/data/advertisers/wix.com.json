@@ -1,0 +1,2495 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 9,
+      "sampleValue": [
+        "Admarketplace",
+        "Cake",
+        "Digidip"
+      ],
+      "value": [
+        "Admarketplace",
+        "Cake",
+        "Digidip",
+        "Impact",
+        "Linkbux",
+        "Skimlinks",
+        "Viglink",
+        "Wix",
+        "Yieldkit"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 2,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "info@mystunningwebsite.com"
+        },
+        {
+          "department": "support",
+          "value": "support@mystunningwebsite.com.if"
+        }
+      ]
+    },
+    "domain": "wix.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "Create a professional website with the Wix website builder. Choose a customizable designer-made template and add the features you need. Get started today.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/wix.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://wix.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 3154
+      },
+      "partnersAdded": {
+        "count": 316,
+        "value": [
+          {
+            "domain": "wixsite.com"
+          },
+          {
+            "domain": "singherald.blogspot.com"
+          },
+          {
+            "domain": "webshop-factory.com"
+          },
+          {
+            "domain": "drtech.xyz"
+          },
+          {
+            "domain": "toffler.lol"
+          },
+          {
+            "domain": "quirkyfish88.click"
+          },
+          {
+            "domain": "jumpypanda11.click"
+          },
+          {
+            "domain": "jazzytiger88.click"
+          },
+          {
+            "domain": "wackybear111.click"
+          },
+          {
+            "domain": "strategicthinkers.click"
+          },
+          {
+            "domain": "fr.software.fish"
+          },
+          {
+            "domain": "iphotochannel.com.br"
+          },
+          {
+            "domain": "peppyfox1234.click"
+          },
+          {
+            "domain": "businessessentialhk.blogspot.com"
+          },
+          {
+            "domain": "aigoofansubs.com"
+          },
+          {
+            "domain": "jazzybee1234.click"
+          },
+          {
+            "domain": "digitalexperts.click"
+          },
+          {
+            "domain": "jazzylion999.click"
+          },
+          {
+            "domain": "brooksconkle.com"
+          },
+          {
+            "domain": "addc024.blogspot.com"
+          },
+          {
+            "domain": "tr.software.fish"
+          },
+          {
+            "domain": "futuristicleaders.click"
+          },
+          {
+            "domain": "smartbusinesses.click"
+          },
+          {
+            "domain": "loopyhawk66.click"
+          },
+          {
+            "domain": "whizzyzebra22.click"
+          },
+          {
+            "domain": "crazybear999.click"
+          },
+          {
+            "domain": "quirkyfrog22.click"
+          },
+          {
+            "domain": "zippyrabbit1.click"
+          },
+          {
+            "domain": "postach.io"
+          },
+          {
+            "domain": "digitaldynasty.click"
+          },
+          {
+            "domain": "peppysnap45.click"
+          },
+          {
+            "domain": "jumpyfox1234.click"
+          },
+          {
+            "domain": "wpdailylive.com"
+          },
+          {
+            "domain": "rmr1634.blogspot.com"
+          },
+          {
+            "domain": "futurecreators.click"
+          },
+          {
+            "domain": "iitmsindia.in"
+          },
+          {
+            "domain": "tecknihealth.com"
+          },
+          {
+            "domain": "livejagat.com"
+          },
+          {
+            "domain": "pt.strikingly.com"
+          },
+          {
+            "domain": "bi.cybernews.com"
+          },
+          {
+            "domain": "peppypanda11.click"
+          },
+          {
+            "domain": "whizzywhale1.click"
+          },
+          {
+            "domain": "gr.software.fish"
+          },
+          {
+            "domain": "depsite.ru"
+          },
+          {
+            "domain": "lyricsmetro.com"
+          },
+          {
+            "domain": "yx-boxx.com"
+          },
+          {
+            "domain": "webhostingvergleich24.ch"
+          },
+          {
+            "domain": "peppybear999.click"
+          },
+          {
+            "domain": "kozkoz.com.au"
+          },
+          {
+            "domain": "zippykoala88.click"
+          },
+          {
+            "domain": "funkyfox1234.click"
+          },
+          {
+            "domain": "site-seo.net"
+          },
+          {
+            "domain": "aiyoufeng.com"
+          },
+          {
+            "domain": "techtrends24.click"
+          },
+          {
+            "domain": "tr.wix.org"
+          },
+          {
+            "domain": "crazyfrog123.click"
+          },
+          {
+            "domain": "hustle3llc.com"
+          },
+          {
+            "domain": "zippygator1.click"
+          },
+          {
+            "domain": "zdnet.com"
+          },
+          {
+            "domain": "es.software.fish"
+          },
+          {
+            "domain": "smartthinkers.click"
+          },
+          {
+            "domain": "techentrepreneurs.click"
+          },
+          {
+            "domain": "digitalventures24.click"
+          },
+          {
+            "domain": "funkytiger88.click"
+          },
+          {
+            "domain": "marketshop24.weebly.com"
+          },
+          {
+            "domain": "jazzyzebra22.click"
+          },
+          {
+            "domain": "techinnovations.click"
+          },
+          {
+            "domain": "wackylion999.click"
+          },
+          {
+            "domain": "100922.com"
+          },
+          {
+            "domain": "agencyatlantic.com"
+          },
+          {
+            "domain": "picsartzone.com"
+          },
+          {
+            "domain": "addc099.blogspot.com"
+          },
+          {
+            "domain": "101christianevents.com"
+          },
+          {
+            "domain": "strategicideas.click"
+          },
+          {
+            "domain": "billohanlon.org"
+          },
+          {
+            "domain": "ar.jugomobile.com"
+          },
+          {
+            "domain": "crazymoose11.click"
+          },
+          {
+            "domain": "moovtali.co"
+          },
+          {
+            "domain": "sunnywave88.click"
+          },
+          {
+            "domain": "indexerio.site"
+          },
+          {
+            "domain": "snappybear99.click"
+          },
+          {
+            "domain": "creativeagency.click"
+          },
+          {
+            "domain": "funkygoose1.click"
+          },
+          {
+            "domain": "articlecity.com"
+          },
+          {
+            "domain": "freelancewithazad.com"
+          },
+          {
+            "domain": "businessinnovators.click"
+          },
+          {
+            "domain": "101christianmusic.com"
+          },
+          {
+            "domain": "jazzyfrog333.click"
+          },
+          {
+            "domain": "pn2358.blogspot.com"
+          },
+          {
+            "domain": "innovativeideas.click"
+          },
+          {
+            "domain": "motoweb.net"
+          },
+          {
+            "domain": "peppylark123.click"
+          },
+          {
+            "domain": "morebusiness.com"
+          },
+          {
+            "domain": "zippyfox999.click"
+          },
+          {
+            "domain": "jp.software.fish"
+          },
+          {
+            "domain": "webdesignhero.click"
+          },
+          {
+            "domain": "joptimisemonsite.fr"
+          },
+          {
+            "domain": "crazyfrog333.click"
+          },
+          {
+            "domain": "it.bytegain.com"
+          },
+          {
+            "domain": "whizzycrow11.click"
+          },
+          {
+            "domain": "futurethinkers.click"
+          },
+          {
+            "domain": "ultimategrowth.click"
+          },
+          {
+            "domain": "beststarwebtech.online"
+          },
+          {
+            "domain": "whizzybird1.click"
+          },
+          {
+            "domain": "strategicplans.click"
+          },
+          {
+            "domain": "sportsvideos.club"
+          },
+          {
+            "domain": "crazygoose22.click"
+          },
+          {
+            "domain": "quirkylion22.click"
+          },
+          {
+            "domain": "as.nktv.in"
+          },
+          {
+            "domain": "nl.dztecs.com"
+          },
+          {
+            "domain": "dk.software.fish"
+          },
+          {
+            "domain": "taylorlautnersource.com"
+          },
+          {
+            "domain": "snappyfrog88.click"
+          },
+          {
+            "domain": "funkyfox999.click"
+          },
+          {
+            "domain": "sincereratings.com"
+          },
+          {
+            "domain": "techenthusiasts.click"
+          },
+          {
+            "domain": "jazzybat1234.click"
+          },
+          {
+            "domain": "video4themes.blogspot.com"
+          },
+          {
+            "domain": "digitalthinkers24.click"
+          },
+          {
+            "domain": "digitalpartners.co.il"
+          },
+          {
+            "domain": "strategicfuture.click"
+          },
+          {
+            "domain": "garrettcvla09865.blogpixi.com"
+          },
+          {
+            "domain": "fizzylion123.click"
+          },
+          {
+            "domain": "zappybeebuzz.click"
+          },
+          {
+            "domain": "quirkylion11.click"
+          },
+          {
+            "domain": "ru.software.fish"
+          },
+          {
+            "domain": "murloc.fr"
+          },
+          {
+            "domain": "opini.unisma.ac.id"
+          },
+          {
+            "domain": "mzt3.weebly.com"
+          },
+          {
+            "domain": "creativebusiness.click"
+          },
+          {
+            "domain": "es.dztecs.com"
+          },
+          {
+            "domain": "trendsettersclub.click"
+          },
+          {
+            "domain": "jazzylion111.click"
+          },
+          {
+            "domain": "zippyfish123.click"
+          },
+          {
+            "domain": "quirkylark22.click"
+          },
+          {
+            "domain": "zippyfrog98.click"
+          },
+          {
+            "domain": "maham-2651.blogspot.com"
+          },
+          {
+            "domain": "strategicgenius.click"
+          },
+          {
+            "domain": "zippybear123.click"
+          },
+          {
+            "domain": "fizzyfox1234.click"
+          },
+          {
+            "domain": "ryazanintim.info"
+          },
+          {
+            "domain": "grundform.se"
+          },
+          {
+            "domain": "buzzybeebuzz.click"
+          },
+          {
+            "domain": "smartsolutionspro.click"
+          },
+          {
+            "domain": "it.software.fish"
+          },
+          {
+            "domain": "fr.wix.org"
+          },
+          {
+            "domain": "melhoreshospedagem.com"
+          },
+          {
+            "domain": "successfulbiz.click"
+          },
+          {
+            "domain": "interior-design-6.bizhk.top"
+          },
+          {
+            "domain": "kf366.xyz"
+          },
+          {
+            "domain": "visionaryideas.click"
+          },
+          {
+            "domain": "mzt2.weebly.com"
+          },
+          {
+            "domain": "futureinnovations.click"
+          },
+          {
+            "domain": "whizzybear999.click"
+          },
+          {
+            "domain": "sillygoose55.click"
+          },
+          {
+            "domain": "happyduck333.click"
+          },
+          {
+            "domain": "zippylion333.click"
+          },
+          {
+            "domain": "funkymonkey1.click"
+          },
+          {
+            "domain": "techtrends2024.click"
+          },
+          {
+            "domain": "sofun.today"
+          },
+          {
+            "domain": "zippytiger99.click"
+          },
+          {
+            "domain": "digitalmarketingtrends.in"
+          },
+          {
+            "domain": "bizclub.site"
+          },
+          {
+            "domain": "techinsiders.click"
+          },
+          {
+            "domain": "smartinnovations.click"
+          },
+          {
+            "domain": "zippydash99.click"
+          },
+          {
+            "domain": "aqfind24.it.gg"
+          },
+          {
+            "domain": "niepoddawajsie.pl"
+          },
+          {
+            "domain": "eckhartorthodontics.com"
+          },
+          {
+            "domain": "buzzylion111.click"
+          },
+          {
+            "domain": "funkylark88.click"
+          },
+          {
+            "domain": "techstartuppros.click"
+          },
+          {
+            "domain": "webdesigndev.com"
+          },
+          {
+            "domain": "digitalinnovators.click"
+          },
+          {
+            "domain": "tigraycommunitydc.org"
+          },
+          {
+            "domain": "definicionesforblogs.blogspot.com"
+          },
+          {
+            "domain": "addc00.blogspot.com"
+          },
+          {
+            "domain": "zippybat999.click"
+          },
+          {
+            "domain": "innovativeapps.click"
+          },
+          {
+            "domain": "funkyfish123.click"
+          },
+          {
+            "domain": "jumblemix123.click"
+          },
+          {
+            "domain": "seowebjoker.xyz"
+          },
+          {
+            "domain": "funkybird123.click"
+          },
+          {
+            "domain": "es.strikingly.com"
+          },
+          {
+            "domain": "idcrew.sk"
+          },
+          {
+            "domain": "newsveritas.net"
+          },
+          {
+            "domain": "peppyfish123.click"
+          },
+          {
+            "domain": "pt.software.fish"
+          },
+          {
+            "domain": "jumpyfrog123.click"
+          },
+          {
+            "domain": "rankinghostingow.pl"
+          },
+          {
+            "domain": "rs-3157.blogspot.com"
+          },
+          {
+            "domain": "quirkywhale.click"
+          },
+          {
+            "domain": "si-bon.ch"
+          },
+          {
+            "domain": "writingpppp.blogspot.com"
+          },
+          {
+            "domain": "ns100121.ip-147-135-1.us"
+          },
+          {
+            "domain": "kontinental.us"
+          },
+          {
+            "domain": "hu.software.fish"
+          },
+          {
+            "domain": "konsulent-it.dk"
+          },
+          {
+            "domain": "zippyvibes1.click"
+          },
+          {
+            "domain": "peppyfox999.click"
+          },
+          {
+            "domain": "seoviser.com"
+          },
+          {
+            "domain": "futuristichub.click"
+          },
+          {
+            "domain": "zestyzap999.click"
+          },
+          {
+            "domain": "addc101.blogspot.com"
+          },
+          {
+            "domain": "es.myconnectx.com"
+          },
+          {
+            "domain": "mejoreshostingweb.com"
+          },
+          {
+            "domain": "jumpyowl1234.click"
+          },
+          {
+            "domain": "snappywhale1.click"
+          },
+          {
+            "domain": "snappylark11.click"
+          },
+          {
+            "domain": "acowebs.com"
+          },
+          {
+            "domain": "aerocivil.gov.co"
+          },
+          {
+            "domain": "stepstone.at"
+          },
+          {
+            "domain": "whizzystar1.click"
+          },
+          {
+            "domain": "zippycat1234.click"
+          },
+          {
+            "domain": "baosinh.vn"
+          },
+          {
+            "domain": "techsavvyhub.click"
+          },
+          {
+            "domain": "web8portaliglobal24.it.gg"
+          },
+          {
+            "domain": "smarttechnologies.click"
+          },
+          {
+            "domain": "techgeniuses.click"
+          },
+          {
+            "domain": "ms.dztecs.com"
+          },
+          {
+            "domain": "101christiandatingadvice.com"
+          },
+          {
+            "domain": "peppytiger99.click"
+          },
+          {
+            "domain": "creativegenius.click"
+          },
+          {
+            "domain": "snappycat999.click"
+          },
+          {
+            "domain": "zanymoose333.click"
+          },
+          {
+            "domain": "stikwall.com"
+          },
+          {
+            "domain": "es.thefigco.com"
+          },
+          {
+            "domain": "bgrecepti.info"
+          },
+          {
+            "domain": "futurebusiness.click"
+          },
+          {
+            "domain": "fr.ecommerceceo.com"
+          },
+          {
+            "domain": "nic.br"
+          },
+          {
+            "domain": "peppylion999.click"
+          },
+          {
+            "domain": "vpninfo.me"
+          },
+          {
+            "domain": "futurefocused.click"
+          },
+          {
+            "domain": "peppyowl111.click"
+          },
+          {
+            "domain": "101christianmagazine.com"
+          },
+          {
+            "domain": "techstrategy.click"
+          },
+          {
+            "domain": "whizbang999.click"
+          },
+          {
+            "domain": "crazylion888.click"
+          },
+          {
+            "domain": "no.software.fish"
+          },
+          {
+            "domain": "techmavericks.click"
+          },
+          {
+            "domain": "marketingminds.click"
+          },
+          {
+            "domain": "digitaltrends24.click"
+          },
+          {
+            "domain": "pl.software.fish"
+          },
+          {
+            "domain": "it.review.visa.com"
+          },
+          {
+            "domain": "finitenetzero.org"
+          },
+          {
+            "domain": "wackycat999.click"
+          },
+          {
+            "domain": "job-online.club"
+          },
+          {
+            "domain": "niftychirp5.click"
+          },
+          {
+            "domain": "kudosit.com.au"
+          },
+          {
+            "domain": "marketingstrategies.click"
+          },
+          {
+            "domain": "digitaldesigners.click"
+          },
+          {
+            "domain": "joomlaconvert.com"
+          },
+          {
+            "domain": "snappyowl111.click"
+          },
+          {
+            "domain": "whizzyfish1.click"
+          },
+          {
+            "domain": "netutility.it.gg"
+          },
+          {
+            "domain": "futurevisions24.click"
+          },
+          {
+            "domain": "audruvissporthorses.lt"
+          },
+          {
+            "domain": "whizzyfox111.click"
+          },
+          {
+            "domain": "bradswebdesigns.com"
+          },
+          {
+            "domain": "addc100.blogspot.com"
+          },
+          {
+            "domain": "globalventures.click"
+          },
+          {
+            "domain": "funkybee999.click"
+          },
+          {
+            "domain": "webemail24.com"
+          },
+          {
+            "domain": "evitacozi.gr"
+          },
+          {
+            "domain": "se.software.fish"
+          },
+          {
+            "domain": "techstartupspro.click"
+          },
+          {
+            "domain": "growandbless.com"
+          },
+          {
+            "domain": "jazzygator11.click"
+          },
+          {
+            "domain": "asiancooking101.com"
+          },
+          {
+            "domain": "networkshop24.weebly.com"
+          },
+          {
+            "domain": "visionarytech.click"
+          },
+          {
+            "domain": "lifehacker.co.in"
+          },
+          {
+            "domain": "sactoweb.com"
+          },
+          {
+            "domain": "carlatrend.blogspot.com"
+          },
+          {
+            "domain": "informi.co.uk"
+          },
+          {
+            "domain": "makarar.blogspot.com"
+          },
+          {
+            "domain": "cnews.link"
+          },
+          {
+            "domain": "digitalvisionaries.click"
+          },
+          {
+            "domain": "loopypuppy1.click"
+          },
+          {
+            "domain": "quirkybox44.click"
+          },
+          {
+            "domain": "snappycat99.click"
+          },
+          {
+            "domain": "de.software.fish"
+          },
+          {
+            "domain": "nl.software.fish"
+          },
+          {
+            "domain": "quirkydino123.click"
+          },
+          {
+            "domain": "buzzybear999.click"
+          },
+          {
+            "domain": "techadventures.click"
+          },
+          {
+            "domain": "smartcreatives.click"
+          },
+          {
+            "domain": "activetrail.co.il"
+          },
+          {
+            "domain": "jazzybat999.click"
+          },
+          {
+            "domain": "101christianholidays.com"
+          },
+          {
+            "domain": "fizzbuzz1234.click"
+          },
+          {
+            "domain": "cm.vartoslo.no"
+          },
+          {
+            "domain": "crazyfox1234.click"
+          },
+          {
+            "domain": "funkygator88.click"
+          },
+          {
+            "domain": "fr.dztecs.com"
+          },
+          {
+            "domain": "nochankaba.cocolog-nifty.com"
+          },
+          {
+            "domain": "techstartuphub.click"
+          },
+          {
+            "domain": "creativegrowth.click"
+          },
+          {
+            "domain": "solvelevels.com"
+          },
+          {
+            "domain": "snappyeagle.click"
+          },
+          {
+            "domain": "innovativeleaders.click"
+          },
+          {
+            "domain": "funkyzebra9.click"
+          },
+          {
+            "domain": "spy777.com"
+          },
+          {
+            "domain": "strategicgrowth24.click"
+          },
+          {
+            "domain": "forestschoolcabins.com"
+          },
+          {
+            "domain": "saruwakakun.com"
+          },
+          {
+            "domain": "jazzypenguin.click"
+          },
+          {
+            "domain": "snappybird11.click"
+          },
+          {
+            "domain": "iamreallife.com"
+          },
+          {
+            "domain": "tokyopoliceclub.net"
+          },
+          {
+            "domain": "ijnet.org"
+          },
+          {
+            "domain": "snazzybird123.click"
+          },
+          {
+            "domain": "channel-finder.com"
+          },
+          {
+            "domain": "addc103.blogspot.com"
+          },
+          {
+            "domain": "smartsolutions24.click"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 118,
+        "value": [
+          {
+            "domain": "stylefactoryproductions.com"
+          },
+          {
+            "domain": "thepodcasthost.com"
+          },
+          {
+            "domain": "jhtydwhwej.xyz"
+          },
+          {
+            "domain": "alphaquest.buzz"
+          },
+          {
+            "domain": "jewelrystores.ru"
+          },
+          {
+            "domain": "amcho.com"
+          },
+          {
+            "domain": "nohawan.shop"
+          },
+          {
+            "domain": "townsendswebdesign.com"
+          },
+          {
+            "domain": "cybernews.com"
+          },
+          {
+            "domain": "spocket.coupons"
+          },
+          {
+            "domain": "dicuontwatch.shop"
+          },
+          {
+            "domain": "digideal.co.il"
+          },
+          {
+            "domain": "fave.co"
+          },
+          {
+            "domain": "trainual.com"
+          },
+          {
+            "domain": "yo6j1q.www-szablon.pl"
+          },
+          {
+            "domain": "smallbusinesshosts.com"
+          },
+          {
+            "domain": "blackstormdesign.com"
+          },
+          {
+            "domain": "topsite.click"
+          },
+          {
+            "domain": "ultrasonicinspectionserviceus.com"
+          },
+          {
+            "domain": "carregan.world"
+          },
+          {
+            "domain": "blogset0114.weebly.com"
+          },
+          {
+            "domain": "namnewsnetwork.org"
+          },
+          {
+            "domain": "unionautosales.com"
+          },
+          {
+            "domain": "wealthbuildertips.com"
+          },
+          {
+            "domain": "jhdkfydwu.xyz"
+          },
+          {
+            "domain": "justdenis.de"
+          },
+          {
+            "domain": "webinova.in"
+          },
+          {
+            "domain": "wixstats.com"
+          },
+          {
+            "domain": "ujhdnba.xyz"
+          },
+          {
+            "domain": "truesnow.jp"
+          },
+          {
+            "domain": "techshali.com"
+          },
+          {
+            "domain": "remote.co"
+          },
+          {
+            "domain": "indiaprimenews.net"
+          },
+          {
+            "domain": "redmobile.pt"
+          },
+          {
+            "domain": "gurur.online"
+          },
+          {
+            "domain": "123grants.co.uk"
+          },
+          {
+            "domain": "coddelhi.com"
+          },
+          {
+            "domain": "bytegain.com"
+          },
+          {
+            "domain": "nityajain.info"
+          },
+          {
+            "domain": "amandabmillerslp.com"
+          },
+          {
+            "domain": "ambienco.mx"
+          },
+          {
+            "domain": "thebizbud.co"
+          },
+          {
+            "domain": "cinak.online"
+          },
+          {
+            "domain": "melissamattapt.com"
+          },
+          {
+            "domain": "serp-promo.ru"
+          },
+          {
+            "domain": "innocore.biz"
+          },
+          {
+            "domain": "hostingnewsdaily.com"
+          },
+          {
+            "domain": "domainhostcoupon.com"
+          },
+          {
+            "domain": "caficulturadepanama.org"
+          },
+          {
+            "domain": "thefigco.com"
+          },
+          {
+            "domain": "fxprimer.ru"
+          },
+          {
+            "domain": "infernodigitalmedia.com"
+          },
+          {
+            "domain": "vartoslo.no"
+          },
+          {
+            "domain": "creativechristiancopywriter.com"
+          },
+          {
+            "domain": "cmscritic.com"
+          },
+          {
+            "domain": "aicraft.pro"
+          },
+          {
+            "domain": "ashikseo.xyz"
+          },
+          {
+            "domain": "thejoyfulfamily.com"
+          },
+          {
+            "domain": "worldon.site"
+          },
+          {
+            "domain": "websitebuilderexpert.com"
+          },
+          {
+            "domain": "binvo.weebly.com"
+          },
+          {
+            "domain": "khulnacd.xyz"
+          },
+          {
+            "domain": "sportsnewsmania.com"
+          },
+          {
+            "domain": "bitfiu.weebly.com"
+          },
+          {
+            "domain": "ovalsling.com"
+          },
+          {
+            "domain": "gameservercheck24.de"
+          },
+          {
+            "domain": "premiumcoding.com"
+          },
+          {
+            "domain": "unifa.ac.id"
+          },
+          {
+            "domain": "ly2818.com"
+          },
+          {
+            "domain": "okna.stroyproect.com.ua"
+          },
+          {
+            "domain": "logomakee.com"
+          },
+          {
+            "domain": "rassegna.lbit-solution.it"
+          },
+          {
+            "domain": "mhs1961.com"
+          },
+          {
+            "domain": "blogmaster78.xyz"
+          },
+          {
+            "domain": "jonathan-morales.com"
+          },
+          {
+            "domain": "jugomobile.com"
+          },
+          {
+            "domain": "frqsgk.xyz"
+          },
+          {
+            "domain": "metroplus.gov.co"
+          },
+          {
+            "domain": "sheffild.shop"
+          },
+          {
+            "domain": "plantationtavern.com"
+          },
+          {
+            "domain": "mercamultiple.blogspot.com"
+          },
+          {
+            "domain": "myradiostream.com"
+          },
+          {
+            "domain": "hnuda.shop"
+          },
+          {
+            "domain": "petliving.shop"
+          },
+          {
+            "domain": "dwy888.com"
+          },
+          {
+            "domain": "asatralang.ac.tz"
+          },
+          {
+            "domain": "3a-t.weebly.com"
+          },
+          {
+            "domain": "erzene.online"
+          },
+          {
+            "domain": "get-earn.com"
+          },
+          {
+            "domain": "casadelsolrvparktexas.com"
+          },
+          {
+            "domain": "notesstartup.com"
+          },
+          {
+            "domain": "zakiganjonline.com"
+          },
+          {
+            "domain": "nobita.biz"
+          },
+          {
+            "domain": "anblik.com"
+          },
+          {
+            "domain": "insuranceleadsguide.com"
+          },
+          {
+            "domain": "bigbazars.xyz"
+          },
+          {
+            "domain": "mosekaparis.fr"
+          },
+          {
+            "domain": "jurosko.cz"
+          },
+          {
+            "domain": "qualityprogamer.de"
+          },
+          {
+            "domain": "myconnectx.com"
+          },
+          {
+            "domain": "totovis.com"
+          },
+          {
+            "domain": "kristianole.dk"
+          },
+          {
+            "domain": "milimu.weebly.com"
+          },
+          {
+            "domain": "wealthdynamics.shop"
+          },
+          {
+            "domain": "bdnewschua.xyz"
+          },
+          {
+            "domain": "webhostingsecretrevealed.net"
+          },
+          {
+            "domain": "amaiagency.com"
+          },
+          {
+            "domain": "visa.com"
+          },
+          {
+            "domain": "izidigi.fr"
+          },
+          {
+            "domain": "maplems.net"
+          },
+          {
+            "domain": "fciwelfareandhealthfordogsworldwide.com"
+          },
+          {
+            "domain": "choosefi.com"
+          },
+          {
+            "domain": "bookmarkbux.com"
+          },
+          {
+            "domain": "thedigitalincome.com"
+          },
+          {
+            "domain": "klseo.net"
+          },
+          {
+            "domain": "notebooknoktasi.com"
+          },
+          {
+            "domain": "epanorama.net"
+          },
+          {
+            "domain": "fly-guy.club"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 697,
+            "promotype": "blog",
+            "value": [
+              "1099mom.com",
+              "10seos.com",
+              "10ws.co",
+              "15forum.com",
+              "7keult.zombeek.cz",
+              "99businessideas.com",
+              "abfind24.it.gg",
+              "activecampaign.com",
+              "adminclub.org",
+              "adminvista.com",
+              "adpump.com",
+              "aeres-evaluation.fr",
+              "affiliatewp.com",
+              "affinco.com",
+              "afhmseo.com",
+              "agencyatlantic.com",
+              "aiad.com.au",
+              "aioseo.com",
+              "aki-webdesign.com",
+              "alanspicer.com",
+              "alarab-sat.com",
+              "alaseoupe.com",
+              "albawaba.com",
+              "alejandrorioja.com",
+              "alexbirkett.com",
+              "alfind24.it.gg",
+              "allagesofgeek.com",
+              "alldigitalcontents.com",
+              "almrsal.com",
+              "androidcentral.com",
+              "anfind24.it.gg",
+              "angelfire.com",
+              "any-thyme.com",
+              "aoq8di.zombeek.cz",
+              "apacheleads.com",
+              "appinstitute.com",
+              "appsmav.com",
+              "area19delegate.org",
+              "arielle.com.au",
+              "arka-bahce.org",
+              "articlecity.com",
+              "aseaofblue.com",
+              "attentionisarbitrary.com",
+              "audiomentor.com",
+              "avada.io",
+              "awesomecreatoracademy.com",
+              "awuc.misis.ru",
+              "azobsj.zombeek.cz",
+              "battleredblog.com",
+              "bcportal24.it.gg",
+              "beelissa.com",
+              "beinweb.fr",
+              "belovdigital.agency",
+              "beokwebdesign.com",
+              "bestideas4u.com",
+              "bestschemes.com",
+              "be.themagicbeanfactory.com",
+              "bi.cybernews.com",
+              "bigfind24.it.gg",
+              "billonar.io",
+              "bitsdujour.com",
+              "bitsrush.com",
+              "bittbox.com",
+              "blagomedtaxi.ru",
+              "blocku.com",
+              "blog.500mails.com",
+              "blogeristit.com",
+              "blogfind24.it.gg",
+              "blog.nfnitloop.com",
+              "blogsepaise.com",
+              "blogsgeek.com",
+              "blogstellar.com",
+              "blogtyrant.com",
+              "blushop24.weebly.com",
+              "bnpl.shop",
+              "bolgernow.com",
+              "bookmarkpost.com",
+              "bporiver.com",
+              "bristechtonic.co.uk",
+              "brittanydarrington.com",
+              "brock.tv",
+              "brooksconkle.com",
+              "bsal.com.np",
+              "businesscreditfacts.com",
+              "businessenligne.com",
+              "businessresourcelist.com",
+              "buying.expert",
+              "bxwga1.zombeek.cz",
+              "bytefeld.com",
+              "by-volt.com",
+              "bzfind24.it.gg",
+              "cakeandlace.com",
+              "californiagoldenblogs.com",
+              "callthedesignguy.com",
+              "canalte.ch",
+              "capetownetc.com",
+              "capitaloneshopping.com",
+              "cartaoprepago.net",
+              "cassinimx.com",
+              "cast.writtn.com",
+              "cdfind24.it.gg",
+              "chambermaster.com",
+              "chancestolive.com",
+              "checkli.com",
+              "christinapiccoli.com",
+              "cinemablend.com",
+              "circleloop.com",
+              "circlo.io",
+              "clearfast.co.uk",
+              "clfind24.it.gg",
+              "clippings.me",
+              "commandlinefu.com",
+              "commentcamarche.net",
+              "commerceguides.com",
+              "comocrearunapaginaweb.com.mx",
+              "comparisun.com",
+              "computerbild.de",
+              "contactshop24.weebly.com",
+              "contentcreationresources.com",
+              "contentmeant.biz",
+              "cornertown.de",
+              "cosmopolitan.com",
+              "crazyegg.com",
+              "crazyleafdesign.com",
+              "creationsitefacile.fr",
+              "creativedesignblog.com",
+              "creativity-excellence.com",
+              "creatorpjs.com",
+              "crfind24.it.gg",
+              "cultr.com",
+              "cyberbiz.io",
+              "dailybulletin.com.au",
+              "dailytipsfinder.com",
+              "datafeedwatch.com",
+              "datafind24.it.gg",
+              "davidwalsh.name",
+              "dearteacher.com",
+              "dekorator.com.tr",
+              "del-rev.ru",
+              "demodia.com",
+              "derektmckinney.com",
+              "derimart.com",
+              "desainae.com",
+              "designbombs.com",
+              "designeverything.xyz",
+              "devojcicasmile.rs",
+              "dev.to",
+              "diaryfind24.it.gg",
+              "difran.co",
+              "digicube.de",
+              "digiexe.com",
+              "digitalmarketingtrends.in",
+              "digitalmediamaker.co",
+              "digitalsupertramp.com",
+              "digitiz.fr",
+              "discovervibe.blog",
+              "disruptiveadvertising.com",
+              "divineworks.biz",
+              "diymybrand.com",
+              "dlfind24.it.gg",
+              "dlsserve.com",
+              "dmfind24.it.gg",
+              "dognet.at.ua",
+              "domainadmintools.com",
+              "dominodesign.it",
+              "dotcom-tools.com",
+              "drfind24.it.gg",
+              "dungeonkeeper.jp",
+              "dutchcowboys.nl",
+              "dzone.com",
+              "e59yhv.zombeek.cz",
+              "earningguys.com",
+              "ebaqdesign.com",
+              "ecomm.design",
+              "ecommercebooth.com",
+              "ecommercefastlane.com",
+              "ecommerce-platforms.com",
+              "edosmr.zombeek.cz",
+              "ekad-co.ir",
+              "emailtooltester.com",
+              "emediacoach.com",
+              "emit.reviews",
+              "emprendomex.com",
+              "enduracon.com",
+              "epgn.ch",
+              "essaytrends.com",
+              "etoppc.com",
+              "everyincome.com",
+              "exactmetrics.com",
+              "exit.10meilleurscreateursdeblogs.fr",
+              "exit.betterbusiness.com",
+              "exit.shop-baukasten-testsieger.de",
+              "exit.thebest10-freehosting.com",
+              "exit.thebest10-freelogomaker.com",
+              "exit.top10best-ai-websitebuilders.com",
+              "exit.top10best-business-websitebuilders.com",
+              "exit.top10best-freewebsitebuilders.co.uk",
+              "exler.me",
+              "exler.ru",
+              "experian.com",
+              "expert-line.de",
+              "expertmarket.com",
+              "expshop24.weebly.com",
+              "facileshop24.weebly.com",
+              "factsplay.com",
+              "familymurders.com",
+              "fbmarket24.it.gg",
+              "fifetoday.co.uk",
+              "files.fm",
+              "findbestwebhosting.com",
+              "findgifts.org",
+              "findstack.com",
+              "findutility24.it.gg",
+              "fipise.com",
+              "firebearstudio.com",
+              "firmadesigngroup.com",
+              "floschi.info",
+              "fluxresource.com",
+              "forbes.com",
+              "formationsmarketing.fr",
+              "forum.meteoinmolise.com",
+              "forums.ps2dev.org",
+              "forum.swin.com",
+              "forum-tver.ru",
+              "founderjar.com",
+              "fourshop24.fws1.com",
+              "frankknow.com",
+              "freelance.today",
+              "freelancewritingstack.com",
+              "fr.software.fish",
+              "futures.rs",
+              "gaczik.zombeek.cz",
+              "gadgets-africa.com",
+              "gambarayambangkokasli.blogspot.com",
+              "getfind24.it.gg",
+              "gigantic.com",
+              "gigarefurb.co.uk",
+              "gjkewp.zombeek.cz",
+              "goccuaphu.com",
+              "goodpods.com",
+              "gostopsite.com",
+              "graphicdesignjunction.com",
+              "graphiste.com",
+              "greenaffiliateprograms.net",
+              "greendropship.com",
+              "grupomercadeo.com",
+              "gsfntv.zombeek.cz",
+              "guru99.live",
+              "haixiayou66.com",
+              "happytrailsstickers.com",
+              "heatherridgerentals.com",
+              "hebergementweb.info",
+              "help.ptminder.com",
+              "heyshop24.weebly.com",
+              "higion.com",
+              "hilfan.staff.telkomuniversity.ac.id",
+              "hipandhumblestyle.com",
+              "hive.blog",
+              "hochzeitsportal24.ch",
+              "holmes.guru",
+              "homepageanleitung.de",
+              "homepage-baukasten-testberichte.de",
+              "hongkongpoetry.com",
+              "hostadvice.com",
+              "hostagencyreviews.com",
+              "hostinger.com",
+              "hostinger.es",
+              "hostreview.com",
+              "hourpay.net",
+              "hypersku.com",
+              "iamreallife.com",
+              "ianforbesng.com",
+              "icons8.com",
+              "ideiasquelucram.com",
+              "igicanada.ca",
+              "ijnet.org",
+              "imore.com",
+              "informatykawfirmie.pl",
+              "informi.co.uk",
+              "injaincare.co.kr",
+              "inlogic.ae",
+              "inmotion.hostingexperto.net",
+              "intranet.candidatis.at",
+              "iperfind24.it.gg",
+              "isac.energy",
+              "iscle.com",
+              "isthemessage.net",
+              "italianbonsaidream.com",
+              "italyshop24.weebly.com",
+              "it-serviceshungary.hu",
+              "iwantmyname.com",
+              "iwordpower.com",
+              "jakwybrachosting.pl",
+              "jasonfox.me",
+              "jenstarmedia.com",
+              "jivochat.com",
+              "jivochat.es",
+              "jobfromhomeblog.com",
+              "johnlagoudakis.com",
+              "joinsecret.com",
+              "joomlaconvert.com",
+              "journalducm.com",
+              "jritech.8b.io",
+              "k9ofmine.com",
+              "kadaza.ca",
+              "kadaza.co.kr",
+              "kadaza.com.uy",
+              "kadaza.gr",
+              "kadaza.hu",
+              "kadaza.is",
+              "kadaza.ph",
+              "kadaza.pk",
+              "kadaza.sg",
+              "kadaza.si",
+              "kadaza.sk",
+              "kadaza.vn",
+              "kaitoko.com",
+              "kdbwebsolutions.com",
+              "khzj05.zombeek.cz",
+              "kiezcars.de",
+              "kingshop24.weebly.com",
+              "kodeblok.com",
+              "konsulent-it.dk",
+              "kritischer-webbaukasten-vergleich.de",
+              "lafabriquedunet.fr",
+              "lakesharkmedia.com",
+              "lambanner.com",
+              "lastfind24.it.gg",
+              "lastshop24.weebly.com",
+              "launchberg.com",
+              "leaderdesk.in",
+              "leconceptmarketing.com",
+              "leretro65.com",
+              "letscallitsteve.com",
+              "lgbfind24.it.gg",
+              "lgbmarket24.weebly.com",
+              "lifehacker.co.in",
+              "lifeshop24.bappy.com",
+              "line25.com",
+              "linkedin.com",
+              "listenmoneymatters.com",
+              "listography.com",
+              "litcommerce.com",
+              "loadshop24.weebly.com",
+              "logicinbound.com",
+              "logo.com",
+              "lookforzebras.com",
+              "loriballen.com",
+              "macworld.com",
+              "magicshop24.weebly.com",
+              "mailinvest.blog",
+              "makemoney.ng",
+              "makingthatwebsite.com",
+              "maktubes.com",
+              "mamboserver.com",
+              "managerocean.com",
+              "marketfind24.it.gg",
+              "marukumo.utodani.net",
+              "meautomata.com",
+              "mecosys.com",
+              "medium.com",
+              "megablogging.org",
+              "merchantmachine.co.uk",
+              "mercurytele.com",
+              "mersinege.com",
+              "metal-tracker.com",
+              "middesigner.org",
+              "mikeangels.fr",
+              "minilua.net",
+              "minner.hu",
+              "minshengtejian.com",
+              "miyukiblog.com",
+              "mockplus.com",
+              "mofeeed.com",
+              "monacodesign.it",
+              "montada.com",
+              "motocms.com",
+              "motoweb.net",
+              "mrwebcapitalist.com",
+              "musiclifecoach.com",
+              "mycodelesswebsite.com",
+              "mystrikingly.com",
+              "namefy.com",
+              "narupara.com",
+              "nastrojeproweb.cz",
+              "nativepublishingcompany.com",
+              "natlawreview.com",
+              "negociosemmente.com.br",
+              "net3portalieurofind24.it.gg",
+              "net6portalieurofind24.it.gg",
+              "net7portalieurofind24.it.gg",
+              "net9portalieurofind24.it.gg",
+              "netolink.com",
+              "netsdaily.com",
+              "netvez.com",
+              "networkshop24.weebly.com",
+              "netzleser.de",
+              "news.oneseocompany.com",
+              "newsplexnow.com",
+              "news.srl",
+              "nextwhatbusiness.com",
+              "nochankaba.cocolog-nifty.com",
+              "nomaddiva.com",
+              "noupe.com",
+              "obiztools.com",
+              "oikka.it",
+              "onehourprofessor.com",
+              "onko-nur-sultan.kz",
+              "onlinemagazine.co.il",
+              "onlinesellingindia.com",
+              "onrampfunds.com",
+              "openshop24.weebly.com",
+              "opensource.platon.org",
+              "opentutorials.org",
+              "optinmonster.com",
+              "otdyhsamostoyatelno.ru",
+              "outstandingthemes.com",
+              "overland25.com",
+              "owriters.com",
+              "pakamore.lt",
+              "paroomcity.com",
+              "path.company",
+              "peertopeermarketing.co",
+              "perfectdomains.domainpro.live",
+              "perfecthosting.live",
+              "photo.shelest.org",
+              "pianoheroes.co",
+              "pickfu.com",
+              "pierrelotichelsea.com",
+              "pinthemall.net",
+              "pixelsurplus.com",
+              "podiumcafe.com",
+              "point-black.com",
+              "pointofperfection.com",
+              "popupsmart.com",
+              "portaleshop24.mastertop100.net",
+              "portaleshop24.weebly.com",
+              "portalfind24.it.gg",
+              "portalig24.page.tl",
+              "portaliglobal24.forumfree.it",
+              "postach.io",
+              "postaffiliatepro.com",
+              "prchecker.info",
+              "predictiveanalyticstoday.com",
+              "prettylinks.com",
+              "printify.com",
+              "prj12.com",
+              "prlog.ru",
+              "problogger.link",
+              "progettodiciotto.it",
+              "propelabu.org",
+              "propelyourcompany.com",
+              "pro-smm.com",
+              "prototypr.io",
+              "prowess.org.uk",
+              "publish0x.com",
+              "qinghua76235.com",
+              "queenoftheforest.org",
+              "r9fj8o.zombeek.cz",
+              "rapidfind24.it.gg",
+              "realinfopoint.com",
+              "realwebsitehints.com",
+              "red360agency.com",
+              "refermate.com",
+              "refresher.sk",
+              "reiseblog.ulaika.de",
+              "relocationservicessingapore.xyz",
+              "rentry.co",
+              "revesdechasse.com",
+              "review-webhosting.com",
+              "rigorousthemes.com",
+              "ringcentral.com",
+              "robertoblake.com",
+              "rockcontent.com",
+              "rosinnet.com",
+              "rtl.de",
+              "ryrob.com",
+              "saitico.ru",
+              "sampriestley.com",
+              "samwebdesigner.com",
+              "sanalkolicim.com",
+              "sangfroidwebdesign.com",
+              "satgist.com",
+              "satoristudio.net",
+              "saudacoestricolores.com",
+              "savvyonsocials.com",
+              "savvypropertyinvestor.com",
+              "sc686.net",
+              "scottmax.com",
+              "sdesignlabo.com",
+              "sebastianpendino.com",
+              "seedprod.com",
+              "seo-consult.fr",
+              "seofreetool.com",
+              "seokicks.de",
+              "seomechanic.com",
+              "seopowa.com",
+              "sevdesk.de",
+              "shellbys.com",
+              "shopping-cart-migration.com",
+              "shopsmarts.ai",
+              "simtut.link",
+              "sitebuilderreview.com",
+              "sitepoint.com",
+              "sites.google.com",
+              "sitestud.io",
+              "situsjudibolaterbesardidunia.blogspot.com",
+              "situsnyasabungayam.blogspot.com",
+              "slickmedia.io",
+              "smartchurchmanagement.com",
+              "smartlinks.org",
+              "smb.brewtonstandard.com",
+              "smb.valleytimes-news.com",
+              "snri.net",
+              "socialshop24.weebly.com",
+              "software.fish",
+              "songwritersguild.org",
+              "sp.60333.ru",
+              "specialshop24.weebly.com",
+              "specialutility24.it.gg",
+              "sportsleo.com",
+              "sry6yk.zombeek.cz",
+              "stampedehosting.com",
+              "startfree.hk",
+              "startupcollections.com",
+              "startuptalky.com",
+              "stashlr.com",
+              "steveheine.com",
+              "stewartgauld.com",
+              "stikwall.com",
+              "storytellingco.com",
+              "stpetewaterfrontrentals.com",
+              "strategies-marketing.com",
+              "studyandliveinusa.com",
+              "succeedasyourownboss.com",
+              "sudasuta.com",
+              "superutility24.it.gg",
+              "swiatwp.pl",
+              "systematicblogging.com",
+              "t3n.de",
+              "takapon.net",
+              "takhtesefid.org",
+              "taodigitalmarketing.com",
+              "tbt.biz",
+              "tcart.net",
+              "techadvisor.com",
+              "techcov2.ecs.stg9.eu-west-1.mvfglobal.net",
+              "techieyouth.com",
+              "techieyouth.org",
+              "techmania.guru",
+              "techmie.com",
+              "technoven.com",
+              "techosmo.com",
+              "techradar.com",
+              "techzo.us",
+              "tecnoinver.cl",
+              "teknokrat.ac.id",
+              "templatetester.com",
+              "theauthorlife.com",
+              "theclose.com",
+              "thecoinstudy.com",
+              "thecxlead.com",
+              "thedevnews.com",
+              "thedigitalsizzle.com",
+              "theecommmanager.com",
+              "theinvestorpost.com",
+              "thelibertarianrepublic.com",
+              "themesseo.com",
+              "theoldreader.com",
+              "thepingpage.com",
+              "thesalonbusiness.com",
+              "thesureword.org.uk",
+              "thethrivingsmallbusiness.com",
+              "thetips.vn",
+              "thewanderinglens.com",
+              "thewebconsole.com",
+              "thewholesaleformula.com",
+              "thewordcracker.com",
+              "thinlinecreative.com",
+              "timrothephotography.com",
+              "tipsandcoffee.com",
+              "toddkendall.net",
+              "tofualan.net",
+              "tokyo-yorozu.com",
+              "tomahawknation.com",
+              "tomsguide.com",
+              "toools.design",
+              "top10dropshipping.com",
+              "top10vpn.net",
+              "top15webhost.com",
+              "top5hosting.co.uk",
+              "topcruisedestinations.com",
+              "topfind24.it.gg",
+              "topiqs.online",
+              "topshop24.weebly.com",
+              "top-sponsoring-tunisie.com",
+              "toptenreviews.com",
+              "top-ten-web-hosting.info",
+              "toptenwebhostingsites.com",
+              "toriemathis.com",
+              "totalfind24.it.gg",
+              "toutenkarbon.com",
+              "traduc.com",
+              "trendgems.com",
+              "trendlynews.in",
+              "trendy-innovation.com",
+              "troutpredator.com",
+              "truvisibility.net",
+              "turbologo.ru",
+              "tuttoshop24.weebly.com",
+              "tweeterbird.blogspot.com",
+              "twine.net",
+              "twinstrata.com",
+              "tytonmedia.com",
+              "uaeresults.com",
+              "ubezpieczeniaukowalskich.pl",
+              "ubrjls.zombeek.cz",
+              "ugtechmag.com",
+              "ultimateblocks.com",
+              "ultrapress.de",
+              "unicorn-blog.jp",
+              "upqode.com",
+              "urlfind24.it.gg",
+              "varninainternetu.si",
+              "vault.lozanotek.com",
+              "vereinshomepage-erstellen.de",
+              "vidabytes.com",
+              "videobourse.fr",
+              "video.getpvd.com",
+              "visiolending.com",
+              "visualmodo.com",
+              "vpseo.com",
+              "w-2-b.com",
+              "wattzupp.com",
+              "wcajhs.zombeek.cz",
+              "wealthvideos.club",
+              "web12portaliglobal24.it.gg",
+              "web35portaliglobal24.it.gg",
+              "web38portaliglobal24.it.gg",
+              "web51portaliglobal24.it.gg",
+              "web53portaliglobal24.it.gg",
+              "web5portaliglobal24.it.gg",
+              "web7portaliglobal24.it.gg",
+              "webbuildersguide.com",
+              "webconnection.fr",
+              "webcreatorbox.com",
+              "webdesigndev.com",
+              "webdev.ru",
+              "webhostingcentrum.sk",
+              "webhostingcheck.info",
+              "webhostingvergleich24.ch",
+              "webhost-solutions.co",
+              "webpagescientist.com",
+              "websae.net",
+              "web-savvy-marketing.com",
+              "webself.net",
+              "websitebuilderly.com",
+              "websitebuilder.org",
+              "websitebuilder.org.uk",
+              "websitebuilderpoint.net",
+              "websitebuildersvergelijken.nl",
+              "websitefabricator.com",
+              "websitelearners.com",
+              "websiteplanet.org",
+              "websitesetup.org",
+              "websitetooltester.com",
+              "websymphonies.com",
+              "welshop24.weebly.com",
+              "whatsthehost.com",
+              "whiteroseaccountants.com",
+              "whoishostingthis.com",
+              "wiki.reseauecoleetnature.org",
+              "wikitechy.com",
+              "winningwp.com",
+              "wolfgangherfurtner.com",
+              "work-home.online",
+              "worktoolsmith.com",
+              "worldlatestinfo.com",
+              "worldnl.com",
+              "wpdaddy.com",
+              "wpmanageninja.com",
+              "wpmarmalade.com",
+              "wpnovin.com",
+              "wpromotions.eu",
+              "wproom.de",
+              "wpworld.com.br",
+              "xpressengine.com",
+              "yashop24.weebly.com",
+              "yeswebdesigns.com",
+              "yoding.cn",
+              "yourbusinessgazette.com",
+              "yourchoiceway.com",
+              "yourcompanyformations.co.uk",
+              "zdnet.com",
+              "ze3ygb.zombeek.cz",
+              "zlavynahosting.sk",
+              "zoneshop24.weebly.com"
+            ]
+          },
+          {
+            "count": 250,
+            "promotype": "student",
+            "value": [
+              "18to10k.com",
+              "39504.org",
+              "actingresourceguru.com",
+              "alarmpol.eu",
+              "alexeifler.com",
+              "alldigitaltalk.com",
+              "allmyfaves.com",
+              "amphy.com",
+              "aovup.com",
+              "aqfind24.it.gg",
+              "arfind24.it.gg",
+              "artinvestment.ru",
+              "atfind24.it.gg",
+              "australianweddingforum.com",
+              "avtfind24.it.gg",
+              "beautifullife.info",
+              "bestwebhostingaustralia.org",
+              "bestwebhostingproviders.net",
+              "biblia.ru",
+              "bizshop24.weebly.com",
+              "blancer.com",
+              "blog.de",
+              "bloggingguide.com",
+              "bmfind24.it.gg",
+              "bnfind24.it.gg",
+              "bradbrown.co",
+              "bsfind24.it.gg",
+              "btfind24.it.gg",
+              "btsvq3.zombeek.cz",
+              "buildingthedam.com",
+              "businesssavvycompany.com",
+              "cartes-postales-anciennes.org",
+              "cgtsg.com",
+              "changecreator.com",
+              "clantonadvertiser.com",
+              "clickydrip.com",
+              "cloudflare-worker-3ew.pages.dev",
+              "cloverbusiness.co.uk",
+              "coffeecup.com",
+              "commerceplatforms.com",
+              "comparatif-logiciels.fr",
+              "comparatif-vpn.fr",
+              "creativebloq.com",
+              "dailybits.com",
+              "ddrcreations.com",
+              "dedanne.com",
+              "digitalninomadstvi.cz",
+              "digitalphoto.de",
+              "directglobal24.jimdofree.com",
+              "directoryfind24.it.gg",
+              "djtoptips.com",
+              "douchenbaggan.com",
+              "dqportal24.it.gg",
+              "dropshippingit.com",
+              "dunebook.com",
+              "ebusiness-cameroun.com",
+              "edlibre.com",
+              "educba.com",
+              "energigon.pt",
+              "entireweb.com",
+              "es.strikingly.com",
+              "eushop24.weebly.com",
+              "exit.10meilleurscreateursdesitesweb.fr",
+              "exit.homepage-ratgeber.de",
+              "exit.mejores10-creadoresdepaginasweb.es",
+              "exit.thebest10-logomaker.com",
+              "exit.top10best-ecommerce-websitebuilders.co.uk",
+              "exit.top10best-freewebsitebuilders.com",
+              "expertdigital.net",
+              "fashionwebgraphic.blogspot.com",
+              "fastutility24.it.gg",
+              "favy.com",
+              "fbfind24.it.gg",
+              "fieldedge.com",
+              "firstbase.io",
+              "firstshop24.weebly.com",
+              "firstsiteguide.com",
+              "flashshop24.weebly.com",
+              "forestschoolcabins.com",
+              "foy7w8.zombeek.cz",
+              "fxnewinfo.com",
+              "gfaloe.tech",
+              "gotofact.com",
+              "goworkship.com",
+              "growthmarketingpro.com",
+              "growthrocks.com",
+              "hackernoon.com",
+              "hb-themes.com",
+              "healthfacts.ng",
+              "hgvp0k.zombeek.cz",
+              "hobsoft.com",
+              "homepage-baukasten-testsieger.de",
+              "hostingadvice.com",
+              "hostingcanada.org",
+              "hostingexperto.es",
+              "hostupdates.com",
+              "hotshopping88.com",
+              "i1024.com",
+              "ibusinessday.com",
+              "idcm.co.in",
+              "idcrew.sk",
+              "innovatinglab.com",
+              "intelligencerinstitute.org",
+              "intouch-marketing.com",
+              "investidor.pt",
+              "ip-elec.fr",
+              "ivy.co",
+              "jadirectives.com",
+              "joker123tembakikanuangasli.blogspot.com",
+              "jonroc.com",
+              "joptimisemonsite.fr",
+              "junico.de",
+              "kadaza.co.id",
+              "kennysimmonsart.com",
+              "kommandotech.com",
+              "kristihines.com",
+              "lambda2.ca",
+              "larkins.org",
+              "lepetitgeek.com",
+              "linkfind24.page.tl",
+              "litextension.com",
+              "logiciels.pro",
+              "logocore.com",
+              "lycqd6.zombeek.cz",
+              "lynliving.dk",
+              "makino-totoro.com",
+              "mange-disque.tv",
+              "maputility24.it.gg",
+              "marketingartfully.com",
+              "marketingdesdecero.com",
+              "masstr.net",
+              "mediaman.com.au",
+              "mediastreet.ie",
+              "meridianthemes.net",
+              "mgbfind24.it.gg",
+              "mida1.com",
+              "millionformula.com",
+              "mrw.it",
+              "msg.blogfree.net",
+              "muvsi.in",
+              "mvpakketdienst.nl",
+              "myonlineincome.org",
+              "mypoco.net",
+              "needmorerentals.link",
+              "netglobal24.jimdofree.com",
+              "nexttv.com",
+              "ngaisrus.com",
+              "nickthrolson.com",
+              "nybreaking.com",
+              "omr.com",
+              "oneshop24.weebly.com",
+              "one-tab.com",
+              "online-homebased-business.com",
+              "onlinitis.com",
+              "paolomargari.it",
+              "paradiseprofitsnow.com",
+              "partnummedia.com",
+              "passivetactics.com",
+              "pcforalla.se",
+              "platformcreator.com",
+              "postergrind.com",
+              "pradeepsingh.com",
+              "premiumreferencement.com",
+              "productinfluencer.com",
+              "purewander.com",
+              "pythonsway.it",
+              "rankfind24.it.gg",
+              "rankutility24.it.gg",
+              "rapidutility24.it.gg",
+              "ravepartiescorp.com",
+              "reallexi.com",
+              "redsea.gov.eg",
+              "reebok.fuelstream.live",
+              "regionalposts.com",
+              "resources.turbify.com",
+              "restless.co.uk",
+              "sagepoint.com",
+              "sales-hacking.com",
+              "saruwakakun.com",
+              "selfpublishingformula.com",
+              "semesta.penelitimuda.com",
+              "seouytin.com",
+              "seoysocialmedia.com",
+              "several.com",
+              "sharecovid19story.com",
+              "shareshop24.weebly.com",
+              "shin-no-matome.com",
+              "shopboostr.de",
+              "sitebuilderreport.com",
+              "siteshop24.weebly.com",
+              "situsjudibolaonlineterbaik.blogspot.com",
+              "skillshare.com",
+              "slevynahosting.cz",
+              "snynetsolution.com",
+              "sourcelow.com",
+              "spotify.com",
+              "startbloggingonline.com",
+              "starthomejobs.com",
+              "superbthemes.com",
+              "svetwp.cz",
+              "synapticweb.co",
+              "syndication.cloud",
+              "targettrend.com",
+              "teatermanus.dk",
+              "techandsciencepost.com",
+              "techtelegraph.co.uk",
+              "teleshop24.weebly.com",
+              "thebetterwebmovement.com",
+              "theblogstarter.com",
+              "theformationscompany.com",
+              "theguidex.com",
+              "thinkcreatebuild.com",
+              "toadmin.ru",
+              "tokyopoliceclub.net",
+              "tooltester.com",
+              "top100beauty.ru",
+              "top10best-websitebuilders.com",
+              "top10incorporate.com",
+              "topzenith.com",
+              "trainwreckmarketing.com",
+              "u5ayr6.zombeek.cz",
+              "usabusiness.co.in",
+              "useproof.com",
+              "utechpia.com",
+              "vergelijkveel.nl",
+              "vistashop24.weebly.com",
+              "vx1aqp.zombeek.cz",
+              "web33portaliglobal24.it.gg",
+              "web34portaliglobal24.it.gg",
+              "webappmeister.com",
+              "webconfs.com",
+              "webdesignertrends.com",
+              "webhostingcentrum.cz",
+              "webhub.social",
+              "webmastersgallery.com",
+              "webseite-selbst-erstellen.de",
+              "webtechpreneur.com",
+              "webtopic.com",
+              "webypress.fr",
+              "werockyourweb.com",
+              "whoholdsthetitle.com",
+              "wjmfg.com",
+              "wl.tools",
+              "wookeeper.com",
+              "wowtravel.me",
+              "wproom.com",
+              "writeablog.net",
+              "writingrevolt.com",
+              "yahuui.blogspot.com",
+              "znizkinahosting.pl"
+            ]
+          },
+          {
+            "count": 23,
+            "promotype": "incentive",
+            "value": [
+              "1985weixin.com",
+              "bridesmaidforhire.com",
+              "couponcodes.store",
+              "coupongini.com",
+              "couponit.com",
+              "couponzguru.com",
+              "digitalsdaddy.club",
+              "dpcoupon.com",
+              "hareerdeals.com",
+              "hostingcoupon.com",
+              "how2freelance.com",
+              "masterworks.com",
+              "millo.co",
+              "orbitadigitale.com",
+              "pasosdeals.com",
+              "paylesswithcoupons.com",
+              "softocoupon.com",
+              "softwarediscountcoupon.com",
+              "taberelapredeal.ro",
+              "timepost.info",
+              "webgui.jp",
+              "wikishop24.blogfree.net",
+              "wp.sk"
+            ]
+          },
+          {
+            "count": 70,
+            "promotype": "content",
+            "value": [
+              "acfind24.it.gg",
+              "admin.phacility.com",
+              "artistecard.com",
+              "avasta.ch",
+              "bfhnxv.zombeek.cz",
+              "blogdebenjamin.fr",
+              "bloggingeclipse.com",
+              "blog.ploomes.com",
+              "bpcfamilytrust.org",
+              "bqzhjc.zombeek.cz",
+              "br.atsit.in",
+              "burhaanpattel.com",
+              "cafind24.it.gg",
+              "cira.ca",
+              "claudionasajon.com.br",
+              "designergraph.top",
+              "designshack.net",
+              "dialogoenlaoscuridad.org",
+              "droidy.net",
+              "easydigitaldownloads.com",
+              "eater.com",
+              "elizabethton.com",
+              "emprendedorinnovador.com",
+              "exit.blog-baukasten-testsieger.de",
+              "exit.top10best-blogsites.co.uk",
+              "exit.top10best-ecommerce-websitebuilders.com",
+              "exit.top10best-logodesign.com",
+              "exit.webschmoeker.de",
+              "flexbegin.com",
+              "forum.freeisrael.org.il",
+              "fulltimefba.com",
+              "hebergeur-web.info",
+              "hitech-world.net",
+              "homepage-reborn.com",
+              "hostinger.com.ar",
+              "indexfind24.it.gg",
+              "indexshop24.tripod.com",
+              "kadaza.com.mt",
+              "kejileida.net",
+              "kripeshadwani.com",
+              "logaster.com.ua",
+              "mapshop24.weebly.com",
+              "marketingsystemsrevealed.com",
+              "mediafind24.jimdofree.com",
+              "mijnonlineidentiteit.nl",
+              "mofluid.com",
+              "netolink.co.il",
+              "ogly.co",
+              "onehack.us",
+              "phdcc.com",
+              "photoworkout.com",
+              "postheaven.net",
+              "prnewswire.com",
+              "redfist.de",
+              "remont-etalon59.ru",
+              "siliconinvestor.com",
+              "sociallykeeda.com",
+              "starshop24.weebly.com",
+              "starutility24.it.gg",
+              "tech.co",
+              "themeisle.com",
+              "theproducewire.com",
+              "thesouthernreporter.co.uk",
+              "top10best-websitebuilders.co.uk",
+              "visualchemy.gallery",
+              "web60portaliglobal24.it.gg",
+              "webhostingratings.ca",
+              "websitebuilderninja.com",
+              "websitebuilder-test.com",
+              "wpvilaga.hu"
+            ]
+          },
+          {
+            "count": 10,
+            "promotype": "forum",
+            "value": [
+              "affiltools.com",
+              "asfind24.it.gg",
+              "atportal24.it.gg",
+              "bcfind24.it.gg",
+              "czfind24.it.gg",
+              "getjaybe.com",
+              "hp-labo.com",
+              "thespacelab.tv",
+              "theventurer.co",
+              "timesinternational.net"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 6,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "linkedin",
+        "instagram",
+        "pinterest"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/wix",
+        "instagram": "https://instagram.com/wix",
+        "linkedin": "https://linkedin.com/company/wix-com?trk=biz-companies-cym",
+        "pinterest": "https://pinterest.com/wixcom",
+        "twitter": "https://twitter.com/wix",
+        "youtube": "https://youtube.com/user/wix"
+      }
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Business / Website Builder",
+        "rank": 2,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Business / Website Builder",
+          "rank": 2,
+          "score": 100
+        },
+        {
+          "name": "Online / Web Design",
+          "rank": 2,
+          "score": 95
+        }
+      ]
+    }
+  }
+}

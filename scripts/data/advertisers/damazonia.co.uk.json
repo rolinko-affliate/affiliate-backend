@@ -1,0 +1,109 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 3,
+      "sampleValue": [
+        "Awin",
+        "Digidip",
+        "Skimlinks"
+      ],
+      "value": [
+        "Awin",
+        "Digidip",
+        "Skimlinks"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 1,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "contact@damazonia.uk"
+        }
+      ]
+    },
+    "domain": "damazonia.co.uk",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "A functional plant-based tea with the right mix of natural ingredients to support your goals! Fuel your wellness so you can look, feel and live your best, all the time! Coffee replacement / Pre-workout",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/damazonia.co.uk.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://damazonia.co.uk"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 8
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 1,
+            "promotype": "student",
+            "value": [
+              "afternoontea4two.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "blog",
+            "value": [
+              "kauf-online.info"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "incentive",
+            "value": [
+              "uttercoupons.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 2,
+      "socialsAvailable": [
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/damazonia-fitness-tea-105224681216742",
+        "instagram": "https://instagram.com/damazoniatea"
+      }
+    },
+    "verticals": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 2,
+        "score": 85
+      },
+      "value": [
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 2,
+          "score": 85
+        }
+      ]
+    }
+  }
+}

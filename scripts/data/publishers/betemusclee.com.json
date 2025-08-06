@@ -1,0 +1,627 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Awin"
+      ],
+      "value": [
+        "Awin"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.6
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "betemusclee.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "myprotein"
+        },
+        {
+          "score": 0.30723315,
+          "value": "protein"
+        },
+        {
+          "score": 0.1741573,
+          "value": "supplements"
+        },
+        {
+          "score": 0.15695225,
+          "value": "workout"
+        },
+        {
+          "score": 0.14975421,
+          "value": "clothing"
+        },
+        {
+          "score": 0.13570927,
+          "value": "whey"
+        },
+        {
+          "score": 0.109375,
+          "value": "basket"
+        },
+        {
+          "score": 0.10182584,
+          "value": "women"
+        },
+        {
+          "score": 0.10077247,
+          "value": "drinks"
+        },
+        {
+          "score": 0.09638343,
+          "value": "snacks"
+        },
+        {
+          "score": 0.094978936,
+          "value": "men"
+        },
+        {
+          "score": 0.09375,
+          "value": "vitamins"
+        },
+        {
+          "score": 0.09181882,
+          "value": "training"
+        },
+        {
+          "score": 0.084269665,
+          "value": "tops"
+        },
+        {
+          "score": 0.08339185,
+          "value": "code"
+        },
+        {
+          "score": 0.081636235,
+          "value": "vegan"
+        },
+        {
+          "score": 0.08005618,
+          "value": "bars"
+        },
+        {
+          "score": 0.07900281,
+          "value": "energy"
+        },
+        {
+          "score": 0.07601826,
+          "value": "best sellers"
+        },
+        {
+          "score": 0.07601826,
+          "value": "sellers"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "myprotein"
+        },
+        {
+          "score": 0.30723315,
+          "value": "protein"
+        },
+        {
+          "score": 0.1741573,
+          "value": "supplements"
+        },
+        {
+          "score": 0.15695225,
+          "value": "workout"
+        },
+        {
+          "score": 0.14975421,
+          "value": "clothing"
+        },
+        {
+          "score": 0.13570927,
+          "value": "whey"
+        },
+        {
+          "score": 0.109375,
+          "value": "basket"
+        },
+        {
+          "score": 0.10182584,
+          "value": "women"
+        },
+        {
+          "score": 0.10077247,
+          "value": "drinks"
+        },
+        {
+          "score": 0.09638343,
+          "value": "snacks"
+        },
+        {
+          "score": 0.094978936,
+          "value": "men"
+        },
+        {
+          "score": 0.09375,
+          "value": "vitamins"
+        },
+        {
+          "score": 0.09181882,
+          "value": "training"
+        },
+        {
+          "score": 0.084269665,
+          "value": "tops"
+        },
+        {
+          "score": 0.08339185,
+          "value": "code"
+        },
+        {
+          "score": 0.081636235,
+          "value": "vegan"
+        },
+        {
+          "score": 0.08005618,
+          "value": "bars"
+        },
+        {
+          "score": 0.07900281,
+          "value": "energy"
+        },
+        {
+          "score": 0.07601826,
+          "value": "best sellers"
+        },
+        {
+          "score": 0.07601826,
+          "value": "sellers"
+        },
+        {
+          "score": 0.07057584,
+          "value": "marl"
+        },
+        {
+          "score": 0.068644665,
+          "value": "nutrition"
+        },
+        {
+          "score": 0.06671348,
+          "value": "post"
+        },
+        {
+          "score": 0.06583568,
+          "value": "sports"
+        },
+        {
+          "score": 0.06425562,
+          "value": "domov"
+        },
+        {
+          "score": 0.06337781,
+          "value": "whey protein"
+        },
+        {
+          "score": 0.06302669,
+          "value": "post workout"
+        },
+        {
+          "score": 0.060919944,
+          "value": "key"
+        },
+        {
+          "score": 0.060042135,
+          "value": "sucralose"
+        },
+        {
+          "score": 0.05933989,
+          "value": "learn"
+        },
+        {
+          "score": 0.057935394,
+          "value": "xxs"
+        },
+        {
+          "score": 0.056882024,
+          "value": "colour"
+        },
+        {
+          "score": 0.056179777,
+          "value": "use code"
+        },
+        {
+          "score": 0.055828653,
+          "value": "leggings"
+        },
+        {
+          "score": 0.054599717,
+          "value": "goal"
+        },
+        {
+          "score": 0.053195223,
+          "value": "shorts"
+        },
+        {
+          "score": 0.052317414,
+          "value": "sign"
+        },
+        {
+          "score": 0.05179073,
+          "value": "green"
+        },
+        {
+          "score": 0.051439606,
+          "value": "xxl"
+        },
+        {
+          "score": 0.050561797,
+          "value": "home protein"
+        },
+        {
+          "score": 0.049683988,
+          "value": "guide"
+        },
+        {
+          "score": 0.049157303,
+          "value": "intra"
+        },
+        {
+          "score": 0.048279494,
+          "value": "pre workout"
+        },
+        {
+          "score": 0.04775281,
+          "value": "ago"
+        },
+        {
+          "score": 0.047226124,
+          "value": "blue"
+        },
+        {
+          "score": 0.04705056,
+          "value": "m l"
+        },
+        {
+          "score": 0.04669944,
+          "value": "stars"
+        },
+        {
+          "score": 0.046523876,
+          "value": "diet"
+        },
+        {
+          "score": 0.046523876,
+          "value": "stars reviews"
+        },
+        {
+          "score": 0.046523876,
+          "value": "milk"
+        },
+        {
+          "score": 0.046348315,
+          "value": "select"
+        },
+        {
+          "score": 0.046348315,
+          "value": "l xl"
+        },
+        {
+          "score": 0.046172753,
+          "value": "creatine"
+        },
+        {
+          "score": 0.04599719,
+          "value": "size guide"
+        },
+        {
+          "score": 0.045294944,
+          "value": "accessories home"
+        },
+        {
+          "score": 0.04494382,
+          "value": "home new"
+        },
+        {
+          "score": 0.04494382,
+          "value": "health"
+        },
+        {
+          "score": 0.04476826,
+          "value": "protéine"
+        },
+        {
+          "score": 0.044066012,
+          "value": "food"
+        },
+        {
+          "score": 0.043539327,
+          "value": "s m"
+        },
+        {
+          "score": 0.043539327,
+          "value": "xs s"
+        },
+        {
+          "score": 0.043539327,
+          "value": "xl xxl"
+        },
+        {
+          "score": 0.04301264,
+          "value": "canada"
+        },
+        {
+          "score": 0.042485956,
+          "value": "socks"
+        },
+        {
+          "score": 0.042134833,
+          "value": "meal"
+        },
+        {
+          "score": 0.041608147,
+          "value": "lait"
+        },
+        {
+          "score": 0.041081462,
+          "value": "underwear"
+        },
+        {
+          "score": 0.04002809,
+          "value": "clothing accessories"
+        },
+        {
+          "score": 0.039501406,
+          "value": "men sale"
+        },
+        {
+          "score": 0.039501406,
+          "value": "women sale"
+        },
+        {
+          "score": 0.039501406,
+          "value": "contact us"
+        },
+        {
+          "score": 0.039325844,
+          "value": "food snacks"
+        },
+        {
+          "score": 0.039325844,
+          "value": "soja"
+        },
+        {
+          "score": 0.039150283,
+          "value": "vitamins minerals"
+        },
+        {
+          "score": 0.039150283,
+          "value": "minerals"
+        },
+        {
+          "score": 0.038799156,
+          "value": "weight management"
+        },
+        {
+          "score": 0.038799156,
+          "value": "continue"
+        },
+        {
+          "score": 0.038799156,
+          "value": "bottoms"
+        },
+        {
+          "score": 0.038623594,
+          "value": "protéine whey"
+        },
+        {
+          "score": 0.038623594,
+          "value": "lécithine"
+        },
+        {
+          "score": 0.038448032,
+          "value": "pro"
+        },
+        {
+          "score": 0.038448032,
+          "value": "saveur"
+        },
+        {
+          "score": 0.03827247,
+          "value": "whey lait"
+        },
+        {
+          "score": 0.03827247,
+          "value": "lécithine soja"
+        },
+        {
+          "score": 0.03827247,
+          "value": "emulsifiant"
+        },
+        {
+          "score": 0.037921347,
+          "value": "emulsifiant lécithine"
+        },
+        {
+          "score": 0.037921347,
+          "value": "powder"
+        },
+        {
+          "score": 0.037745785,
+          "value": "continue shopping"
+        },
+        {
+          "score": 0.037745785,
+          "value": "snacks vitamins"
+        },
+        {
+          "score": 0.037745785,
+          "value": "energy drinks"
+        },
+        {
+          "score": 0.037570223,
+          "value": "lait emulsifiant"
+        },
+        {
+          "score": 0.03739466,
+          "value": "drinks snacks"
+        },
+        {
+          "score": 0.03739466,
+          "value": "bars drinks"
+        },
+        {
+          "score": 0.0372191,
+          "value": "myprotein canada"
+        },
+        {
+          "score": 0.037043538,
+          "value": "flavour"
+        },
+        {
+          "score": 0.03634129,
+          "value": "xxs xs"
+        },
+        {
+          "score": 0.035463482,
+          "value": "impact"
+        },
+        {
+          "score": 0.035463482,
+          "value": "performance"
+        },
+        {
+          "score": 0.03528792,
+          "value": "step"
+        },
+        {
+          "score": 0.034761235,
+          "value": "helpful"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://betemusclee.com/",
+        "https://www.betemusclee.com/",
+        "http://betemusclee.com/",
+        "http://www.betemusclee.com/"
+      ]
+    },
+    "metaData": {
+      "description": "Programmes et exercices de musculation. Conseils nutrition et compléments. Toutes vos questions sur la musculation trouvent une réponse sur la Bête Musclée.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/betemusclee.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://betemusclee.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1,
+        "value": [
+          "fr.myprotein.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "fr.myprotein.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "myprotein.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 0.95,
+            "vertical": "Sports / Fitness"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 1,
+      "value": [
+        "fr.myprotein.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 1,
+      "value": [
+        "questiondedroit.ch"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Sports / Fitness",
+      "value": [
+        "Sports / Fitness",
+        "Health / Wellbeing"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Sports / Fitness",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Sports / Fitness",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Health / Wellbeing",
+          "rank": 1,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

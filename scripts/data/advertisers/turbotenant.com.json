@@ -1,0 +1,157 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 9,
+      "sampleValue": [
+        "ClickMagick",
+        "Digidip",
+        "Flexoffers"
+      ],
+      "value": [
+        "ClickMagick",
+        "Digidip",
+        "Flexoffers",
+        "Impact",
+        "Linkbux",
+        "ShareASale",
+        "Skimlinks",
+        "SourceKnowledge",
+        "Takeads"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 0,
+      "error": false,
+      "value": []
+    },
+    "domain": "turbotenant.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "TurboTenant offers free landlord software for advertising rental properties, online applications, screening tenants, and collecting rent!",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/turbotenant.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://turbotenant.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 125
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "infinitycanada.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "podseeker.co"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 17,
+            "promotype": "blog",
+            "value": [
+              "10reviewsplus.com",
+              "1topproduct.com",
+              "amazon.co.uk",
+              "biggerpockets.com",
+              "elizabethmccravy.com",
+              "finspot.guide",
+              "landlordgurus.com",
+              "linkedin.com",
+              "ncreia.com",
+              "neworleansreia.com",
+              "realestatepromo.com",
+              "realhomes.com",
+              "toptenreviews.com",
+              "transplanthousing.com",
+              "trendythreads.net",
+              "ubestpick.com",
+              "vglobalholdings.com"
+            ]
+          },
+          {
+            "count": 8,
+            "promotype": "student",
+            "value": [
+              "alamoreia.org",
+              "amitbiwaal.com",
+              "delightedtime.com",
+              "financestu.com",
+              "highpayingaffiliateprograms.com",
+              "ipropertymanagement.com",
+              "nicsguide.com",
+              "showdigs.com"
+            ]
+          },
+          {
+            "count": 3,
+            "promotype": "forum",
+            "value": [
+              "investopedia.com",
+              "linkbux.com",
+              "techprimacy.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "twitter",
+        "facebook",
+        "linkedin",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/turbotenant",
+        "instagram": "https://instagram.com/turbotenant",
+        "linkedin": "https://linkedin.com/company/turbotenant",
+        "twitter": "https://twitter.com/turbotenant"
+      }
+    },
+    "verticals": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Property / Property",
+        "rank": 2,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Business / Services",
+          "rank": 2,
+          "score": 80
+        },
+        {
+          "name": "Business / Software",
+          "rank": 2,
+          "score": 90
+        },
+        {
+          "name": "Property / Property",
+          "rank": 2,
+          "score": 90
+        }
+      ]
+    }
+  }
+}

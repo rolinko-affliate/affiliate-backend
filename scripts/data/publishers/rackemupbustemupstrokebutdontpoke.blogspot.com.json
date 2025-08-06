@@ -1,0 +1,635 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Rakuten"
+      ],
+      "value": [
+        "Rakuten"
+      ]
+    },
+    "countryRankings": {
+      "count": 3,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.5
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.5
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.15
+        },
+        {
+          "countryCode": "ca",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.5
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.15
+        },
+        {
+          "countryCode": "ca",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "rackemupbustemupstrokebutdontpoke.blogspot.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "wine"
+        },
+        {
+          "score": 0.5837362,
+          "value": "limit"
+        },
+        {
+          "score": 0.36774862,
+          "value": "ship"
+        },
+        {
+          "score": 0.3656768,
+          "value": "rating"
+        },
+        {
+          "score": 0.32700276,
+          "value": "select"
+        },
+        {
+          "score": 0.29178175,
+          "value": "select cart"
+        },
+        {
+          "score": 0.29178175,
+          "value": "increment"
+        },
+        {
+          "score": 0.2546616,
+          "value": "filter"
+        },
+        {
+          "score": 0.23221685,
+          "value": "spirit"
+        },
+        {
+          "score": 0.22686464,
+          "value": "hour"
+        },
+        {
+          "score": 0.18939917,
+          "value": "blend"
+        },
+        {
+          "score": 0.16401933,
+          "value": "region"
+        },
+        {
+          "score": 0.16177486,
+          "value": "red"
+        },
+        {
+          "score": 0.13656768,
+          "value": "stewardship"
+        },
+        {
+          "score": 0.12275553,
+          "value": "white"
+        },
+        {
+          "score": 0.12171961,
+          "value": "bottle"
+        },
+        {
+          "score": 0.112741716,
+          "value": "sauvignon"
+        },
+        {
+          "score": 0.110324584,
+          "value": "set"
+        },
+        {
+          "score": 0.10997928,
+          "value": "pinot"
+        },
+        {
+          "score": 0.10877072,
+          "value": "whiskey"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "wine"
+        },
+        {
+          "score": 0.5837362,
+          "value": "limit"
+        },
+        {
+          "score": 0.36774862,
+          "value": "ship"
+        },
+        {
+          "score": 0.3656768,
+          "value": "rating"
+        },
+        {
+          "score": 0.32700276,
+          "value": "select"
+        },
+        {
+          "score": 0.29178175,
+          "value": "select cart"
+        },
+        {
+          "score": 0.29178175,
+          "value": "increment"
+        },
+        {
+          "score": 0.2546616,
+          "value": "filter"
+        },
+        {
+          "score": 0.23221685,
+          "value": "spirit"
+        },
+        {
+          "score": 0.22686464,
+          "value": "hour"
+        },
+        {
+          "score": 0.18939917,
+          "value": "blend"
+        },
+        {
+          "score": 0.16401933,
+          "value": "region"
+        },
+        {
+          "score": 0.16177486,
+          "value": "red"
+        },
+        {
+          "score": 0.13656768,
+          "value": "stewardship"
+        },
+        {
+          "score": 0.12275553,
+          "value": "white"
+        },
+        {
+          "score": 0.12171961,
+          "value": "bottle"
+        },
+        {
+          "score": 0.112741716,
+          "value": "sauvignon"
+        },
+        {
+          "score": 0.110324584,
+          "value": "set"
+        },
+        {
+          "score": 0.10997928,
+          "value": "pinot"
+        },
+        {
+          "score": 0.10877072,
+          "value": "whiskey"
+        },
+        {
+          "score": 0.106871545,
+          "value": "glassware"
+        },
+        {
+          "score": 0.10428177,
+          "value": "vintage"
+        },
+        {
+          "score": 0.10290055,
+          "value": "varietal"
+        },
+        {
+          "score": 0.09426796,
+          "value": "fine"
+        },
+        {
+          "score": 0.09375,
+          "value": "cabernet"
+        },
+        {
+          "score": 0.08874309,
+          "value": "bordeaux"
+        },
+        {
+          "score": 0.08857044,
+          "value": "code"
+        },
+        {
+          "score": 0.08753453,
+          "value": "setting"
+        },
+        {
+          "score": 0.08598066,
+          "value": "tasting"
+        },
+        {
+          "score": 0.082009666,
+          "value": "red wine"
+        },
+        {
+          "score": 0.0801105,
+          "value": "champagne"
+        },
+        {
+          "score": 0.077002764,
+          "value": "occasion"
+        },
+        {
+          "score": 0.07544889,
+          "value": "accessory"
+        },
+        {
+          "score": 0.074758284,
+          "value": "fine wine"
+        },
+        {
+          "score": 0.071305245,
+          "value": "white wine"
+        },
+        {
+          "score": 0.07044199,
+          "value": "care"
+        },
+        {
+          "score": 0.06940608,
+          "value": "guide"
+        },
+        {
+          "score": 0.06906077,
+          "value": "discover"
+        },
+        {
+          "score": 0.06526243,
+          "value": "food"
+        },
+        {
+          "score": 0.061982043,
+          "value": "preference"
+        },
+        {
+          "score": 0.06180939,
+          "value": "single"
+        },
+        {
+          "score": 0.059392266,
+          "value": "availability"
+        },
+        {
+          "score": 0.059219614,
+          "value": "variety"
+        },
+        {
+          "score": 0.05179558,
+          "value": "tuscany"
+        },
+        {
+          "score": 0.04903315,
+          "value": "popular"
+        },
+        {
+          "score": 0.04661602,
+          "value": "red blend"
+        },
+        {
+          "score": 0.04644337,
+          "value": "whisky"
+        },
+        {
+          "score": 0.046098065,
+          "value": "chardonnay"
+        },
+        {
+          "score": 0.045234807,
+          "value": "sign"
+        },
+        {
+          "score": 0.044198897,
+          "value": "cocktail"
+        },
+        {
+          "score": 0.044026244,
+          "value": "info"
+        },
+        {
+          "score": 0.043853592,
+          "value": "collectible"
+        },
+        {
+          "score": 0.04368094,
+          "value": "book"
+        },
+        {
+          "score": 0.04368094,
+          "value": "anytime"
+        },
+        {
+          "score": 0.04299033,
+          "value": "basket"
+        },
+        {
+          "score": 0.041609116,
+          "value": "friend"
+        },
+        {
+          "score": 0.04126381,
+          "value": "large"
+        },
+        {
+          "score": 0.04109116,
+          "value": "rare"
+        },
+        {
+          "score": 0.038674034,
+          "value": "saving"
+        },
+        {
+          "score": 0.037983425,
+          "value": "modal"
+        },
+        {
+          "score": 0.037983425,
+          "value": "chocolate"
+        },
+        {
+          "score": 0.036774863,
+          "value": "american"
+        },
+        {
+          "score": 0.036429558,
+          "value": "club"
+        },
+        {
+          "score": 0.0359116,
+          "value": "minimum"
+        },
+        {
+          "score": 0.0355663,
+          "value": "location"
+        },
+        {
+          "score": 0.035220996,
+          "value": "pickup"
+        },
+        {
+          "score": 0.03487569,
+          "value": "recipe"
+        },
+        {
+          "score": 0.03470304,
+          "value": "corporate gift"
+        },
+        {
+          "score": 0.034530386,
+          "value": "guest"
+        },
+        {
+          "score": 0.034530386,
+          "value": "wa wy"
+        },
+        {
+          "score": 0.033494476,
+          "value": "franc"
+        },
+        {
+          "score": 0.03297652,
+          "value": "box"
+        },
+        {
+          "score": 0.03228591,
+          "value": "tempranillo"
+        },
+        {
+          "score": 0.03211326,
+          "value": "noir"
+        },
+        {
+          "score": 0.031422652,
+          "value": "petite"
+        },
+        {
+          "score": 0.030904695,
+          "value": "green"
+        },
+        {
+          "score": 0.030904695,
+          "value": "standard"
+        },
+        {
+          "score": 0.030732045,
+          "value": "card"
+        },
+        {
+          "score": 0.03038674,
+          "value": "tuscan"
+        },
+        {
+          "score": 0.030041436,
+          "value": "stock"
+        },
+        {
+          "score": 0.029868785,
+          "value": "vintage vintage"
+        },
+        {
+          "score": 0.029696133,
+          "value": "montepulciano"
+        },
+        {
+          "score": 0.02952348,
+          "value": "sort"
+        },
+        {
+          "score": 0.029350828,
+          "value": "bourbon"
+        },
+        {
+          "score": 0.029178176,
+          "value": "white blend"
+        },
+        {
+          "score": 0.028832873,
+          "value": "blanc"
+        },
+        {
+          "score": 0.028660221,
+          "value": "tuscan blend"
+        },
+        {
+          "score": 0.028660221,
+          "value": "port"
+        },
+        {
+          "score": 0.028142266,
+          "value": "rye"
+        },
+        {
+          "score": 0.027969614,
+          "value": "primitivo"
+        },
+        {
+          "score": 0.027796961,
+          "value": "irish"
+        },
+        {
+          "score": 0.027796961,
+          "value": "style"
+        },
+        {
+          "score": 0.027451657,
+          "value": "irish whiskey"
+        },
+        {
+          "score": 0.026933702,
+          "value": "cinsault"
+        },
+        {
+          "score": 0.02676105,
+          "value": "sirah"
+        },
+        {
+          "score": 0.026588397,
+          "value": "petite sirah"
+        },
+        {
+          "score": 0.026588397,
+          "value": "petit"
+        },
+        {
+          "score": 0.026415747,
+          "value": "boutique"
+        },
+        {
+          "score": 0.026415747,
+          "value": "corkscrew"
+        },
+        {
+          "score": 0.026415747,
+          "value": "nero"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://rackemupbustemupstrokebutdontpoke.blogspot.com/",
+        "https://www.rackemupbustemupstrokebutdontpoke.blogspot.com/",
+        "http://rackemupbustemupstrokebutdontpoke.blogspot.com/",
+        "http://www.rackemupbustemupstrokebutdontpoke.blogspot.com/"
+      ]
+    },
+    "metaData": {
+      "description": "Billiards/Pool Stuff. Videos,  Players, Instructions, Games, and the Like. Brought to you from Donnie/ Sinbad the Sailor Man",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/rackemupbustemupstrokebutdontpoke.blogspot.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://rackemupbustemupstrokebutdontpoke.blogspot.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1,
+        "value": [
+          "wine.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 0.95,
+            "vertical": "Food / Alcohol"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 1,
+      "value": [
+        "wine.com"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "twitter",
+        "facebook",
+        "linkedin",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/jmks-babydog-traffic-solution-providers-165198316912065",
+        "instagram": "https://instagram.com/donaldberes/?ref=badge",
+        "linkedin": "https://linkedin.com/in/sinbadthesailorman",
+        "twitter": "https://twitter.com/sinbadsailorman"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Entertainment / Hobbies",
+      "value": [
+        "Entertainment / Hobbies",
+        "Health / Adult"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Entertainment / Hobbies",
+        "rank": 1,
+        "score": 70
+      },
+      "value": [
+        {
+          "name": "Entertainment / Hobbies",
+          "rank": 1,
+          "score": 70
+        },
+        {
+          "name": "Health / Adult",
+          "rank": 1,
+          "score": 40
+        }
+      ]
+    }
+  }
+}

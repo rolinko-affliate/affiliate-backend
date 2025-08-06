@@ -35,7 +35,14 @@ type IntegrationService struct {
 
 	// Provider mappers
 	affiliateProviderMapper  *AffiliateProviderMapper
-	advertiserProviderMapper *AdvertiserProviderMapper
+	advertiserProviderMapper AdvertiserMapper
+}
+
+// Mapper interfaces
+type AdvertiserMapper interface {
+	MapAdvertiserToEverflowRequest(adv *domain.Advertiser, mapping *domain.AdvertiserProviderMapping) (*advertiser.CreateAdvertiserRequest, error)
+	MapEverflowResponseToAdvertiser(resp *advertiser.Advertiser, adv *domain.Advertiser)
+	MapEverflowResponseToProviderMapping(resp *advertiser.Advertiser, mapping *domain.AdvertiserProviderMapping) error
 }
 
 // Repository interfaces
@@ -94,7 +101,7 @@ func NewIntegrationService(
 		affiliateProviderMappingRepo:  affiliateProviderMappingRepo,
 		campaignProviderMappingRepo:   campaignProviderMappingRepo,
 		affiliateProviderMapper:       NewAffiliateProviderMapper(),
-		advertiserProviderMapper:      NewAdvertiserProviderMapper(),
+		advertiserProviderMapper:      NewSimpleAdvertiserProviderMapper(),
 	}
 }
 

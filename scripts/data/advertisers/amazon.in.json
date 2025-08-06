@@ -1,0 +1,275 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 9,
+      "sampleValue": [
+        "CueLinks",
+        "Digidip",
+        "Linkbux"
+      ],
+      "value": [
+        "CueLinks",
+        "Digidip",
+        "Linkbux",
+        "Optimise",
+        "Skimlinks",
+        "SourceKnowledge",
+        "vCommission",
+        "Viglink",
+        "Yieldkit"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 0,
+      "error": false,
+      "value": []
+    },
+    "domain": "amazon.in",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "Amazon.in: Online Shopping India - Buy mobiles, laptops, cameras, books, watches, apparel, shoes and e-Gift Cards. Free Shipping & Cash on Delivery Available.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazon.in.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazon.in"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 252
+      },
+      "partnersAdded": {
+        "count": 15,
+        "value": [
+          {
+            "domain": "pushkaraminfo.blogspot.com"
+          },
+          {
+            "domain": "shop.laxmi.biz"
+          },
+          {
+            "domain": "whatprice.com"
+          },
+          {
+            "domain": "rohitvertexgoswami.blogspot.com"
+          },
+          {
+            "domain": "apkaabazar.com"
+          },
+          {
+            "domain": "earnrupeedollar.blogspot.com"
+          },
+          {
+            "domain": "fashionandyousale.blogspot.com"
+          },
+          {
+            "domain": "skhdigitech.blogspot.com"
+          },
+          {
+            "domain": "bestmobilesdeals.blogspot.com"
+          },
+          {
+            "domain": "da.gd"
+          },
+          {
+            "domain": "sirsacoupons.com"
+          },
+          {
+            "domain": "in.hottestoffers247.com"
+          },
+          {
+            "domain": "echoice.in"
+          },
+          {
+            "domain": "joytowrite.blogspot.com"
+          },
+          {
+            "domain": "shop26.in"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 5,
+        "value": [
+          {
+            "domain": "anytheeng.com"
+          },
+          {
+            "domain": "hottestoffers247.com"
+          },
+          {
+            "domain": "lootmind.com"
+          },
+          {
+            "domain": "magviewinfo.blogspot.com"
+          },
+          {
+            "domain": "neudeals.co"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 16,
+            "promotype": "incentive",
+            "value": [
+              "2geescoupon.com",
+              "a1dealsin.blogspot.com",
+              "ameradeals.com",
+              "badacashback.in",
+              "coupondealer.in",
+              "couponmall.in",
+              "deals4india.in",
+              "dealsdaaka.com",
+              "desicoupons.in",
+              "easycoupondeal.com",
+              "hotonlinedeals.in",
+              "indianhotdeal.com",
+              "pcskull.com",
+              "sarfras.in",
+              "sirsacoupons.com",
+              "swankydeal.com"
+            ]
+          },
+          {
+            "count": 57,
+            "promotype": "blog",
+            "value": [
+              "a2zdiscountcode.com",
+              "achanavi.com",
+              "adrevu.com",
+              "apkaabazar.com",
+              "arablelife.com",
+              "asconnects.in",
+              "basicsofcomputers.com",
+              "bigtricks.in",
+              "bookingbuddies.net",
+              "catchupdates.com",
+              "clutch.shop",
+              "da.gd",
+              "desparenting.com",
+              "dipslab.com",
+              "discountdukan.com",
+              "dtashion.com",
+              "easss.com",
+              "en.paperblog.com",
+              "fforfree.net",
+              "fitnessproguru.com",
+              "freekaloot.com",
+              "gizbot.com",
+              "graboffersindia.com",
+              "haleandbelle.com",
+              "hitricks.com",
+              "indiakaaoffer.com",
+              "jirnal.com",
+              "jugnionly.com",
+              "justalibrary.com",
+              "kwebby.com",
+              "laptopmedia.com",
+              "lifecrust.com",
+              "linkedin.com",
+              "medium.com",
+              "microadia.net",
+              "mustlookgood.blogspot.com",
+              "myglamm.com",
+              "natashabhatt.blogspot.com",
+              "offerofworld.com",
+              "otabrekingnews.blogspot.com",
+              "outsetbooks.com",
+              "pakkaoffer.com",
+              "reetarani.com",
+              "roadtosports.com",
+              "rotf.lol",
+              "samirasrecipe.com",
+              "sukanyadigital.com",
+              "tambulimedia.com",
+              "techadvisor.com",
+              "thegoandroid.com",
+              "w3buzz.in",
+              "way2offers.in",
+              "wishlistr.com",
+              "wordanova.com",
+              "yourchoiceway.com",
+              "zszhair.com",
+              "zupyak.com"
+            ]
+          },
+          {
+            "count": 9,
+            "promotype": "content",
+            "value": [
+              "acitygirlscloset.com",
+              "apiv2.nextgenshopping.com",
+              "askmeraja.com",
+              "buydekhke.com",
+              "frontwin.com",
+              "hotgoat.org",
+              "theapptimes.com",
+              "whatprice.com",
+              "whatthegift.in"
+            ]
+          },
+          {
+            "count": 17,
+            "promotype": "student",
+            "value": [
+              "beautyanomaly.com",
+              "bestsellinghub.com",
+              "bustle.com",
+              "day-technology.com",
+              "discountshop.ucoz.com",
+              "homeekart.blogspot.com",
+              "iprokart.com",
+              "kutt.it",
+              "mobilespoint.in",
+              "mrbalancecheck.in",
+              "news.maxabout.com",
+              "onlinephilosophyclub.com",
+              "popxo.com",
+              "rashtrakavi.blogspot.com",
+              "shopickr.com",
+              "windowtothebeautypl.com",
+              "womanbestshoes.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "forum",
+            "value": [
+              "bksociety.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "verticals": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 2,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 2,
+          "score": 95
+        }
+      ]
+    }
+  }
+}

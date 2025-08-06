@@ -1,0 +1,615 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Awin"
+      ],
+      "value": [
+        "Awin"
+      ]
+    },
+    "countryRankings": {
+      "count": 3,
+      "highestValue": {
+        "countryCode": "fr",
+        "score": 0.4
+      },
+      "sampleValue": [
+        {
+          "countryCode": "fr",
+          "score": 0.4
+        },
+        {
+          "countryCode": "ca",
+          "score": 0.15
+        },
+        {
+          "countryCode": "be",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "fr",
+          "score": 0.4
+        },
+        {
+          "countryCode": "ca",
+          "score": 0.15
+        },
+        {
+          "countryCode": "be",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "destinationlemonde.com",
+    "keywords": {
+      "count": 96,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "clothing"
+        },
+        {
+          "score": 1,
+          "value": "watches"
+        },
+        {
+          "score": 1,
+          "value": "video"
+        },
+        {
+          "score": 1,
+          "value": "kitchen"
+        },
+        {
+          "score": 1,
+          "value": "musical"
+        },
+        {
+          "score": 1,
+          "value": "games"
+        },
+        {
+          "score": 0.6666667,
+          "value": "toys"
+        },
+        {
+          "score": 0.6666667,
+          "value": "beauty"
+        },
+        {
+          "score": 0.6666667,
+          "value": "pet"
+        },
+        {
+          "score": 0.6666667,
+          "value": "shoes"
+        },
+        {
+          "score": 0.6666667,
+          "value": "travel"
+        },
+        {
+          "score": 0.6666667,
+          "value": "books"
+        },
+        {
+          "score": 0.6666667,
+          "value": "supplies"
+        },
+        {
+          "score": 0.6666667,
+          "value": "grocery"
+        },
+        {
+          "score": 0.6666667,
+          "value": "computers"
+        },
+        {
+          "score": 0.6666667,
+          "value": "fragrances"
+        },
+        {
+          "score": 0.6666667,
+          "value": "food"
+        },
+        {
+          "score": 0.6666667,
+          "value": "electricals"
+        },
+        {
+          "score": 0.6666667,
+          "value": "office"
+        },
+        {
+          "score": 0.6666667,
+          "value": "hifi"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "clothing"
+        },
+        {
+          "score": 1,
+          "value": "watches"
+        },
+        {
+          "score": 1,
+          "value": "video"
+        },
+        {
+          "score": 1,
+          "value": "kitchen"
+        },
+        {
+          "score": 1,
+          "value": "musical"
+        },
+        {
+          "score": 1,
+          "value": "games"
+        },
+        {
+          "score": 0.6666667,
+          "value": "toys"
+        },
+        {
+          "score": 0.6666667,
+          "value": "beauty"
+        },
+        {
+          "score": 0.6666667,
+          "value": "pet"
+        },
+        {
+          "score": 0.6666667,
+          "value": "shoes"
+        },
+        {
+          "score": 0.6666667,
+          "value": "travel"
+        },
+        {
+          "score": 0.6666667,
+          "value": "books"
+        },
+        {
+          "score": 0.6666667,
+          "value": "supplies"
+        },
+        {
+          "score": 0.6666667,
+          "value": "grocery"
+        },
+        {
+          "score": 0.6666667,
+          "value": "computers"
+        },
+        {
+          "score": 0.6666667,
+          "value": "fragrances"
+        },
+        {
+          "score": 0.6666667,
+          "value": "food"
+        },
+        {
+          "score": 0.6666667,
+          "value": "electricals"
+        },
+        {
+          "score": 0.6666667,
+          "value": "office"
+        },
+        {
+          "score": 0.6666667,
+          "value": "hifi"
+        },
+        {
+          "score": 0.6666667,
+          "value": "outdoor"
+        },
+        {
+          "score": 0.6666667,
+          "value": "electronics"
+        },
+        {
+          "score": 0.6666667,
+          "value": "audio"
+        },
+        {
+          "score": 0.6666667,
+          "value": "stationery"
+        },
+        {
+          "score": 0.6666667,
+          "value": "cards"
+        },
+        {
+          "score": 0.33333334,
+          "value": "office supplies"
+        },
+        {
+          "score": 0.33333334,
+          "value": "home office"
+        },
+        {
+          "score": 0.33333334,
+          "value": "pet supplies"
+        },
+        {
+          "score": 0.33333334,
+          "value": "cinema"
+        },
+        {
+          "score": 0.33333334,
+          "value": "sports goods"
+        },
+        {
+          "score": 0.33333334,
+          "value": "health & beauty"
+        },
+        {
+          "score": 0.33333334,
+          "value": "car"
+        },
+        {
+          "score": 0.33333334,
+          "value": "jewellery"
+        },
+        {
+          "score": 0.33333334,
+          "value": "beverages"
+        },
+        {
+          "score": 0.33333334,
+          "value": "memory cards & usb drives"
+        },
+        {
+          "score": 0.33333334,
+          "value": "diy & garden"
+        },
+        {
+          "score": 0.33333334,
+          "value": "camera"
+        },
+        {
+          "score": 0.33333334,
+          "value": "instruments"
+        },
+        {
+          "score": 0.33333334,
+          "value": "children's clothing"
+        },
+        {
+          "score": 0.33333334,
+          "value": "tv & video"
+        },
+        {
+          "score": 0.33333334,
+          "value": "spas"
+        },
+        {
+          "score": 0.33333334,
+          "value": "fashion"
+        },
+        {
+          "score": 0.33333334,
+          "value": "motorbike"
+        },
+        {
+          "score": 0.33333334,
+          "value": "perfumes"
+        },
+        {
+          "score": 0.33333334,
+          "value": "photo"
+        },
+        {
+          "score": 0.33333334,
+          "value": "textiles"
+        },
+        {
+          "score": 0.33333334,
+          "value": "home appliances"
+        },
+        {
+          "score": 0.33333334,
+          "value": "food & beverages"
+        },
+        {
+          "score": 0.33333334,
+          "value": "pool"
+        },
+        {
+          "score": 0.33333334,
+          "value": "diy"
+        },
+        {
+          "score": 0.33333334,
+          "value": "gifts & gadgets"
+        },
+        {
+          "score": 0.33333334,
+          "value": "home textiles"
+        },
+        {
+          "score": 0.33333334,
+          "value": "home security"
+        },
+        {
+          "score": 0.33333334,
+          "value": "bags"
+        },
+        {
+          "score": 0.33333334,
+          "value": "health"
+        },
+        {
+          "score": 0.33333334,
+          "value": "home cinema & hifi"
+        },
+        {
+          "score": 0.33333334,
+          "value": "audio & hifi"
+        },
+        {
+          "score": 0.33333334,
+          "value": "garden"
+        },
+        {
+          "score": 0.33333334,
+          "value": "home audio & video"
+        },
+        {
+          "score": 0.33333334,
+          "value": "camera & photo"
+        },
+        {
+          "score": 0.33333334,
+          "value": "usb"
+        },
+        {
+          "score": 0.33333334,
+          "value": "car & motorbike"
+        },
+        {
+          "score": 0.33333334,
+          "value": "cell"
+        },
+        {
+          "score": 0.33333334,
+          "value": "toys & games"
+        },
+        {
+          "score": 0.33333334,
+          "value": "furniture"
+        },
+        {
+          "score": 0.33333334,
+          "value": "children's"
+        },
+        {
+          "score": 0.33333334,
+          "value": "playstation"
+        },
+        {
+          "score": 0.33333334,
+          "value": "video games"
+        },
+        {
+          "score": 0.33333334,
+          "value": "baby"
+        },
+        {
+          "score": 0.33333334,
+          "value": "jewellery & watches"
+        },
+        {
+          "score": 0.33333334,
+          "value": "home & furniture"
+        },
+        {
+          "score": 0.33333334,
+          "value": "sports"
+        },
+        {
+          "score": 0.33333334,
+          "value": "pet food"
+        },
+        {
+          "score": 0.33333334,
+          "value": "bags & luggage"
+        },
+        {
+          "score": 0.33333334,
+          "value": "musical accessories"
+        },
+        {
+          "score": 0.33333334,
+          "value": "memory"
+        },
+        {
+          "score": 0.33333334,
+          "value": "motor accessories"
+        },
+        {
+          "score": 0.33333334,
+          "value": "drives"
+        },
+        {
+          "score": 0.33333334,
+          "value": "care"
+        },
+        {
+          "score": 0.33333334,
+          "value": "phones"
+        },
+        {
+          "score": 0.33333334,
+          "value": "cell phones"
+        },
+        {
+          "score": 0.33333334,
+          "value": "musical instruments"
+        },
+        {
+          "score": 0.33333334,
+          "value": "fashion accessories"
+        },
+        {
+          "score": 0.33333334,
+          "value": "appliances"
+        },
+        {
+          "score": 0.33333334,
+          "value": "luggage"
+        },
+        {
+          "score": 0.33333334,
+          "value": "gift cards"
+        },
+        {
+          "score": 0.33333334,
+          "value": "beauty & perfumes"
+        },
+        {
+          "score": 0.33333334,
+          "value": "motor"
+        },
+        {
+          "score": 0.33333334,
+          "value": "gadgets"
+        },
+        {
+          "score": 0.33333334,
+          "value": "goods"
+        },
+        {
+          "score": 0.33333334,
+          "value": "kitchen & dining"
+        },
+        {
+          "score": 0.33333334,
+          "value": "playstation games"
+        },
+        {
+          "score": 0.33333334,
+          "value": "pool & spas"
+        },
+        {
+          "score": 0.33333334,
+          "value": "musical toys"
+        },
+        {
+          "score": 0.33333334,
+          "value": "baby care"
+        },
+        {
+          "score": 0.33333334,
+          "value": "dining"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://destinationlemonde.com/",
+        "https://www.destinationlemonde.com/",
+        "http://destinationlemonde.com/",
+        "http://www.destinationlemonde.com/"
+      ]
+    },
+    "metaData": {
+      "description": "Idées voyage, destinations à découvrir et informations pratiques.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/destinationlemonde.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://destinationlemonde.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1,
+        "value": [
+          "cdiscount.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 0.95,
+            "vertical": "Shopping / Department Stores"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 1,
+      "value": [
+        "cdiscount.com"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Travel / Vacation",
+      "value": [
+        "Travel / Vacation",
+        "Travel / Flights",
+        "Travel / Accommodation"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Travel / Vacation",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Travel / Vacation",
+          "rank": 1,
+          "score": 95
+        },
+        {
+          "name": "Travel / Flights",
+          "rank": 1,
+          "score": 80
+        },
+        {
+          "name": "Travel / Accommodation",
+          "rank": 1,
+          "score": 75
+        }
+      ]
+    }
+  }
+}

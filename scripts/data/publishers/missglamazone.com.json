@@ -1,0 +1,707 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 2,
+      "sampleValue": [
+        "Kwanko",
+        "Rewardstyle"
+      ],
+      "value": [
+        "Kwanko",
+        "Rewardstyle"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.4
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.4
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.4
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "missglamazone.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "pull"
+        },
+        {
+          "score": 0.816051,
+          "value": "accessoire"
+        },
+        {
+          "score": 0.8090696,
+          "value": "shirt"
+        },
+        {
+          "score": 0.7427171,
+          "value": "manteal"
+        },
+        {
+          "score": 0.7289898,
+          "value": "pantalon"
+        },
+        {
+          "score": 0.7224056,
+          "value": "sélection"
+        },
+        {
+          "score": 0.7057808,
+          "value": "chaussure"
+        },
+        {
+          "score": 0.7054989,
+          "value": "veste"
+        },
+        {
+          "score": 0.7009475,
+          "value": "short"
+        },
+        {
+          "score": 0.69224286,
+          "value": "top shirt"
+        },
+        {
+          "score": 0.583613,
+          "value": "robe"
+        },
+        {
+          "score": 0.57795393,
+          "value": "doudoune"
+        },
+        {
+          "score": 0.5576641,
+          "value": "blouse"
+        },
+        {
+          "score": 0.5572412,
+          "value": "chemise"
+        },
+        {
+          "score": 0.55166155,
+          "value": "sac"
+        },
+        {
+          "score": 0.53442734,
+          "value": "vêtement"
+        },
+        {
+          "score": 0.53046304,
+          "value": "bijou"
+        },
+        {
+          "score": 0.5107557,
+          "value": "sweat"
+        },
+        {
+          "score": 0.4972641,
+          "value": "jogging"
+        },
+        {
+          "score": 0.48416415,
+          "value": "jupe"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "pull"
+        },
+        {
+          "score": 0.816051,
+          "value": "accessoire"
+        },
+        {
+          "score": 0.8090696,
+          "value": "shirt"
+        },
+        {
+          "score": 0.7427171,
+          "value": "manteal"
+        },
+        {
+          "score": 0.7289898,
+          "value": "pantalon"
+        },
+        {
+          "score": 0.7224056,
+          "value": "sélection"
+        },
+        {
+          "score": 0.7057808,
+          "value": "chaussure"
+        },
+        {
+          "score": 0.7054989,
+          "value": "veste"
+        },
+        {
+          "score": 0.7009475,
+          "value": "short"
+        },
+        {
+          "score": 0.69224286,
+          "value": "top shirt"
+        },
+        {
+          "score": 0.583613,
+          "value": "robe"
+        },
+        {
+          "score": 0.57795393,
+          "value": "doudoune"
+        },
+        {
+          "score": 0.5576641,
+          "value": "blouse"
+        },
+        {
+          "score": 0.5572412,
+          "value": "chemise"
+        },
+        {
+          "score": 0.55166155,
+          "value": "sac"
+        },
+        {
+          "score": 0.53442734,
+          "value": "vêtement"
+        },
+        {
+          "score": 0.53046304,
+          "value": "bijou"
+        },
+        {
+          "score": 0.5107557,
+          "value": "sweat"
+        },
+        {
+          "score": 0.4972641,
+          "value": "jogging"
+        },
+        {
+          "score": 0.48416415,
+          "value": "jupe"
+        },
+        {
+          "score": 0.4825679,
+          "value": "morgan"
+        },
+        {
+          "score": 0.47991768,
+          "value": "chup"
+        },
+        {
+          "score": 0.4706909,
+          "value": "jean"
+        },
+        {
+          "score": 0.44112036,
+          "value": "alerte"
+        },
+        {
+          "score": 0.4236668,
+          "value": "légal"
+        },
+        {
+          "score": 0.41723773,
+          "value": "combinaison"
+        },
+        {
+          "score": 0.4117763,
+          "value": "mention"
+        },
+        {
+          "score": 0.38479722,
+          "value": "confidentialité"
+        },
+        {
+          "score": 0.3494293,
+          "value": "lingeri"
+        },
+        {
+          "score": 0.34750867,
+          "value": "ceinture"
+        },
+        {
+          "score": 0.34371802,
+          "value": "mode"
+        },
+        {
+          "score": 0.34364718,
+          "value": "short combinaison"
+        },
+        {
+          "score": 0.34088632,
+          "value": "panier"
+        },
+        {
+          "score": 0.32069498,
+          "value": "nouveauté"
+        },
+        {
+          "score": 0.31197545,
+          "value": "gant"
+        },
+        {
+          "score": 0.3081207,
+          "value": "chemise blouse"
+        },
+        {
+          "score": 0.30727485,
+          "value": "aide"
+        },
+        {
+          "score": 0.28876194,
+          "value": "boutique"
+        },
+        {
+          "score": 0.27791506,
+          "value": "licence"
+        },
+        {
+          "score": 0.27682358,
+          "value": "besoin"
+        },
+        {
+          "score": 0.276296,
+          "value": "lingerie"
+        },
+        {
+          "score": 0.273688,
+          "value": "blouson"
+        },
+        {
+          "score": 0.26983324,
+          "value": "zeroetiquett"
+        },
+        {
+          "score": 0.2688459,
+          "value": "téléphone"
+        },
+        {
+          "score": 0.25826895,
+          "value": "clik"
+        },
+        {
+          "score": 0.25634158,
+          "value": "ball"
+        },
+        {
+          "score": 0.25634158,
+          "value": "dragon"
+        },
+        {
+          "score": 0.2557115,
+          "value": "fall"
+        },
+        {
+          "score": 0.2512229,
+          "value": "iri"
+        },
+        {
+          "score": 0.25079995,
+          "value": "iri morgan"
+        },
+        {
+          "score": 0.2503091,
+          "value": "bonnet"
+        },
+        {
+          "score": 0.25004357,
+          "value": "echarpe"
+        },
+        {
+          "score": 0.24863204,
+          "value": "clik bijou"
+        },
+        {
+          "score": 0.24732259,
+          "value": "animal"
+        },
+        {
+          "score": 0.24477728,
+          "value": "veste blouson"
+        },
+        {
+          "score": 0.24477728,
+          "value": "stitch"
+        },
+        {
+          "score": 0.24477728,
+          "value": "mayadorabl"
+        },
+        {
+          "score": 0.24477728,
+          "value": "harry"
+        },
+        {
+          "score": 0.24477728,
+          "value": "situation"
+        },
+        {
+          "score": 0.24477728,
+          "value": "crossing"
+        },
+        {
+          "score": 0.24477728,
+          "value": "mario"
+        },
+        {
+          "score": 0.2428499,
+          "value": "super"
+        },
+        {
+          "score": 0.2428499,
+          "value": "coca"
+        },
+        {
+          "score": 0.2428499,
+          "value": "mayadorabl d"
+        },
+        {
+          "score": 0.24216564,
+          "value": "chapeal"
+        },
+        {
+          "score": 0.24092253,
+          "value": "parfum"
+        },
+        {
+          "score": 0.24092253,
+          "value": "chaussette"
+        },
+        {
+          "score": 0.24092253,
+          "value": "casquette"
+        },
+        {
+          "score": 0.23899513,
+          "value": "disney"
+        },
+        {
+          "score": 0.23899513,
+          "value": "handy"
+        },
+        {
+          "score": 0.23899513,
+          "value": "mcfly"
+        },
+        {
+          "score": 0.23899513,
+          "value": "riverdal"
+        },
+        {
+          "score": 0.23899513,
+          "value": "jennyfer"
+        },
+        {
+          "score": 0.23899513,
+          "value": "university"
+        },
+        {
+          "score": 0.23899513,
+          "value": "pyjama"
+        },
+        {
+          "score": 0.23899513,
+          "value": "nfl"
+        },
+        {
+          "score": 0.23899513,
+          "value": "accessoire bijou"
+        },
+        {
+          "score": 0.23788546,
+          "value": "mail"
+        },
+        {
+          "score": 0.23706776,
+          "value": "charte"
+        },
+        {
+          "score": 0.23706776,
+          "value": "pull pantalon"
+        },
+        {
+          "score": 0.23706776,
+          "value": "mcfly d"
+        },
+        {
+          "score": 0.23706776,
+          "value": "nasa"
+        },
+        {
+          "score": 0.23706776,
+          "value": "coca bisounour"
+        },
+        {
+          "score": 0.23706776,
+          "value": "ceinture veste"
+        },
+        {
+          "score": 0.23706776,
+          "value": "chup fall"
+        },
+        {
+          "score": 0.23706776,
+          "value": "thing"
+        },
+        {
+          "score": 0.23706776,
+          "value": "papel"
+        },
+        {
+          "score": 0.23706776,
+          "value": "pyjama lingerie"
+        },
+        {
+          "score": 0.23706776,
+          "value": "bisounour"
+        },
+        {
+          "score": 0.23706776,
+          "value": "casa papel"
+        },
+        {
+          "score": 0.23706776,
+          "value": "vêtement nouveauté"
+        },
+        {
+          "score": 0.23706776,
+          "value": "cookie panier"
+        },
+        {
+          "score": 0.23706776,
+          "value": "short pantalon"
+        },
+        {
+          "score": 0.23706776,
+          "value": "formulaire"
+        },
+        {
+          "score": 0.23706776,
+          "value": "collab"
+        },
+        {
+          "score": 0.23706776,
+          "value": "manga"
+        },
+        {
+          "score": 0.23706776,
+          "value": "licence chup"
+        },
+        {
+          "score": 0.23706776,
+          "value": "sac bonnet"
+        },
+        {
+          "score": 0.23706776,
+          "value": "mickey"
+        },
+        {
+          "score": 0.23706776,
+          "value": "schtroumpf"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/missglamazone.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://missglamazone.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 25,
+        "value": [
+          "doubleclick.net",
+          "anthropologie.com",
+          "asos.bbgqo9.net",
+          "asos.com",
+          "shopbop.com",
+          "buckle.com",
+          "carnetdemode.com",
+          "target.com",
+          "shopltk.com",
+          "mytheresa.com",
+          "fwrd.com",
+          "proenzaschouler.com",
+          "google.com",
+          "gsell.fr",
+          "jennyfer.com",
+          "mim.fr",
+          "monnierfreres.fr",
+          "morgandetoi.fr",
+          "qksrv.net",
+          "thebodyshop.fr",
+          "shareasale.com",
+          "shoes.fr",
+          "starbagg.com",
+          "us.asos.com",
+          "vensto.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "us.asos.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 10.55,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 1,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 1,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 0.4,
+            "vertical": "Online / Web Hosting"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 25,
+      "value": [
+        "doubleclick.net",
+        "anthropologie.com",
+        "asos.bbgqo9.net",
+        "asos.com",
+        "shopbop.com",
+        "buckle.com",
+        "carnetdemode.com",
+        "target.com",
+        "shopltk.com",
+        "mytheresa.com",
+        "fwrd.com",
+        "proenzaschouler.com",
+        "google.com",
+        "gsell.fr",
+        "jennyfer.com",
+        "mim.fr",
+        "monnierfreres.fr",
+        "morgandetoi.fr",
+        "qksrv.net",
+        "thebodyshop.fr",
+        "shareasale.com",
+        "shoes.fr",
+        "starbagg.com",
+        "us.asos.com",
+        "vensto.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Fashion / Clothing",
+      "value": [
+        "Fashion / Clothing",
+        "Health / Beauty",
+        "Entertainment / Hobbies"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Fashion / Clothing",
+        "rank": 1,
+        "score": 80
+      },
+      "value": [
+        {
+          "name": "Fashion / Clothing",
+          "rank": 1,
+          "score": 80
+        },
+        {
+          "name": "Health / Beauty",
+          "rank": 1,
+          "score": 75
+        },
+        {
+          "name": "Entertainment / Hobbies",
+          "rank": 1,
+          "score": 50
+        }
+      ]
+    }
+  }
+}

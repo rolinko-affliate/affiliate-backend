@@ -1,0 +1,684 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 6,
+      "sampleValue": [
+        "Avantlink",
+        "CJ Affiliate",
+        "Fiverr"
+      ],
+      "value": [
+        "Avantlink",
+        "CJ Affiliate",
+        "Fiverr",
+        "Impact",
+        "PartnerStack",
+        "Refersion"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "jp",
+        "score": 0.9
+      },
+      "sampleValue": [
+        {
+          "countryCode": "jp",
+          "score": 0.9
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "jp",
+          "score": 0.9
+        }
+      ]
+    },
+    "domain": "amazon.co.jp",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "seller"
+        },
+        {
+          "score": 0.8963366,
+          "value": "privacidad"
+        },
+        {
+          "score": 0.875,
+          "value": "partner"
+        },
+        {
+          "score": 0.875,
+          "value": "protein"
+        },
+        {
+          "score": 0.875,
+          "value": "hair"
+        },
+        {
+          "score": 0.82589287,
+          "value": "ebay"
+        },
+        {
+          "score": 0.805,
+          "value": "privacidade"
+        },
+        {
+          "score": 0.8035714,
+          "value": "choice"
+        },
+        {
+          "score": 0.69125,
+          "value": "informativa"
+        },
+        {
+          "score": 0.67126465,
+          "value": "preference"
+        },
+        {
+          "score": 0.65625,
+          "value": "godaddy"
+        },
+        {
+          "score": 0.62053573,
+          "value": "accessory"
+        },
+        {
+          "score": 0.58035713,
+          "value": "community"
+        },
+        {
+          "score": 0.56696427,
+          "value": "buyer"
+        },
+        {
+          "score": 0.55803573,
+          "value": "transaction"
+        },
+        {
+          "score": 0.55375,
+          "value": "video"
+        },
+        {
+          "score": 0.5425,
+          "value": "remote"
+        },
+        {
+          "score": 0.52678573,
+          "value": "supplement"
+        },
+        {
+          "score": 0.45330492,
+          "value": "technology"
+        },
+        {
+          "score": 0.44642857,
+          "value": "oil"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "seller"
+        },
+        {
+          "score": 0.8963366,
+          "value": "privacidad"
+        },
+        {
+          "score": 0.875,
+          "value": "partner"
+        },
+        {
+          "score": 0.875,
+          "value": "protein"
+        },
+        {
+          "score": 0.875,
+          "value": "hair"
+        },
+        {
+          "score": 0.82589287,
+          "value": "ebay"
+        },
+        {
+          "score": 0.805,
+          "value": "privacidade"
+        },
+        {
+          "score": 0.8035714,
+          "value": "choice"
+        },
+        {
+          "score": 0.69125,
+          "value": "informativa"
+        },
+        {
+          "score": 0.67126465,
+          "value": "preference"
+        },
+        {
+          "score": 0.65625,
+          "value": "godaddy"
+        },
+        {
+          "score": 0.62053573,
+          "value": "accessory"
+        },
+        {
+          "score": 0.58035713,
+          "value": "community"
+        },
+        {
+          "score": 0.56696427,
+          "value": "buyer"
+        },
+        {
+          "score": 0.55803573,
+          "value": "transaction"
+        },
+        {
+          "score": 0.55375,
+          "value": "video"
+        },
+        {
+          "score": 0.5425,
+          "value": "remote"
+        },
+        {
+          "score": 0.52678573,
+          "value": "supplement"
+        },
+        {
+          "score": 0.45330492,
+          "value": "technology"
+        },
+        {
+          "score": 0.44642857,
+          "value": "oil"
+        },
+        {
+          "score": 0.44625,
+          "value": "developers"
+        },
+        {
+          "score": 0.4419643,
+          "value": "sport"
+        },
+        {
+          "score": 0.4375,
+          "value": "llc"
+        },
+        {
+          "score": 0.4375,
+          "value": "legitimate"
+        },
+        {
+          "score": 0.4375,
+          "value": "setting"
+        },
+        {
+          "score": 0.41964287,
+          "value": "agreement"
+        },
+        {
+          "score": 0.41964287,
+          "value": "live"
+        },
+        {
+          "score": 0.41125,
+          "value": "supporto"
+        },
+        {
+          "score": 0.3980865,
+          "value": "hairclub"
+        },
+        {
+          "score": 0.39285713,
+          "value": "krill"
+        },
+        {
+          "score": 0.38796246,
+          "value": "health"
+        },
+        {
+          "score": 0.385,
+          "value": "precios"
+        },
+        {
+          "score": 0.3675,
+          "value": "prezzi"
+        },
+        {
+          "score": 0.35875,
+          "value": "files"
+        },
+        {
+          "score": 0.35267857,
+          "value": "power"
+        },
+        {
+          "score": 0.35267857,
+          "value": "shoe"
+        },
+        {
+          "score": 0.34375,
+          "value": "category"
+        },
+        {
+          "score": 0.3392857,
+          "value": "advertising"
+        },
+        {
+          "score": 0.33482143,
+          "value": "retro"
+        },
+        {
+          "score": 0.33482143,
+          "value": "dispute"
+        },
+        {
+          "score": 0.3325,
+          "value": "issues"
+        },
+        {
+          "score": 0.32375,
+          "value": "setapp"
+        },
+        {
+          "score": 0.32375,
+          "value": "funciona"
+        },
+        {
+          "score": 0.32142857,
+          "value": "watch"
+        },
+        {
+          "score": 0.3169643,
+          "value": "ecoflow"
+        },
+        {
+          "score": 0.3125,
+          "value": "green"
+        },
+        {
+          "score": 0.3080357,
+          "value": "mocha"
+        },
+        {
+          "score": 0.30625,
+          "value": "portugus"
+        },
+        {
+          "score": 0.30357143,
+          "value": "sleep"
+        },
+        {
+          "score": 0.2975,
+          "value": "editor"
+        },
+        {
+          "score": 0.29464287,
+          "value": "strength"
+        },
+        {
+          "score": 0.29017857,
+          "value": "law"
+        },
+        {
+          "score": 0.29017857,
+          "value": "payout"
+        },
+        {
+          "score": 0.28875,
+          "value": "mojave"
+        },
+        {
+          "score": 0.2857143,
+          "value": "entity"
+        },
+        {
+          "score": 0.2857143,
+          "value": "fnx"
+        },
+        {
+          "score": 0.28125,
+          "value": "helpful"
+        },
+        {
+          "score": 0.28125,
+          "value": "financial"
+        },
+        {
+          "score": 0.28125,
+          "value": "categoría"
+        },
+        {
+          "score": 0.27861416,
+          "value": "woman"
+        },
+        {
+          "score": 0.2767857,
+          "value": "card"
+        },
+        {
+          "score": 0.2767857,
+          "value": "applicable"
+        },
+        {
+          "score": 0.2767857,
+          "value": "hat"
+        },
+        {
+          "score": 0.27232143,
+          "value": "notice"
+        },
+        {
+          "score": 0.27125,
+          "value": "funziona"
+        },
+        {
+          "score": 0.2625,
+          "value": "images"
+        },
+        {
+          "score": 0.2544643,
+          "value": "claim"
+        },
+        {
+          "score": 0.2544643,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.2544643,
+          "value": "fund"
+        },
+        {
+          "score": 0.25375,
+          "value": "suporte"
+        },
+        {
+          "score": 0.25,
+          "value": "live community"
+        },
+        {
+          "score": 0.25,
+          "value": "shaker"
+        },
+        {
+          "score": 0.24799818,
+          "value": "center"
+        },
+        {
+          "score": 0.24553572,
+          "value": "jewelry"
+        },
+        {
+          "score": 0.245,
+          "value": "photos"
+        },
+        {
+          "score": 0.245,
+          "value": "pricing"
+        },
+        {
+          "score": 0.245,
+          "value": "usar"
+        },
+        {
+          "score": 0.24107143,
+          "value": "guarantee"
+        },
+        {
+          "score": 0.24107143,
+          "value": "blend"
+        },
+        {
+          "score": 0.2377159,
+          "value": "store"
+        },
+        {
+          "score": 0.23625,
+          "value": "pode"
+        },
+        {
+          "score": 0.23625,
+          "value": "macos"
+        },
+        {
+          "score": 0.23625,
+          "value": "condiciones"
+        },
+        {
+          "score": 0.22321428,
+          "value": "financial account"
+        },
+        {
+          "score": 0.21875,
+          "value": "pro"
+        },
+        {
+          "score": 0.21875,
+          "value": "site"
+        },
+        {
+          "score": 0.21875,
+          "value": "link"
+        },
+        {
+          "score": 0.21875,
+          "value": "footer"
+        },
+        {
+          "score": 0.21875,
+          "value": "object"
+        },
+        {
+          "score": 0.21875,
+          "value": "tag"
+        },
+        {
+          "score": 0.21875,
+          "value": "unique"
+        },
+        {
+          "score": 0.21875,
+          "value": "courtesy"
+        },
+        {
+          "score": 0.21875,
+          "value": "device"
+        },
+        {
+          "score": 0.21875,
+          "value": "beacon"
+        },
+        {
+          "score": 0.21875,
+          "value": "mind"
+        },
+        {
+          "score": 0.21875,
+          "value": "disclaimer"
+        },
+        {
+          "score": 0.21875,
+          "value": "reference"
+        },
+        {
+          "score": 0.21875,
+          "value": "specific"
+        },
+        {
+          "score": 0.21875,
+          "value": "association"
+        },
+        {
+          "score": 0.21875,
+          "value": "endorsement"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://amazon.co.jp/",
+        "https://www.amazon.co.jp/",
+        "http://amazon.co.jp/",
+        "http://www.amazon.co.jp/"
+      ]
+    },
+    "metaData": {
+      "description": "Amazon.co.jp 公式サイト。アマゾンで本, 日用品, ファッション, 食品, ベビー用品, カー用品ほか一億種の商品をいつでもお安く。通常配送無料(一部を除く)",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazon.co.jp.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazon.co.jp"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 13,
+        "value": [
+          "fiverr.com",
+          "setapp.com",
+          "athiaskin.com",
+          "ebay.com",
+          "drinklmnt.com",
+          "fliplok.com",
+          "fondbonebroth.com",
+          "fnxfit.com",
+          "hairclub.com",
+          "healthrangerstore.com",
+          "mypatriotsupply.com",
+          "rexingusa.com",
+          "riverside.fm"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1.9,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 1,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 1,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Drinks"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 0.8,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 0.7,
+            "vertical": "Home / Security"
+          },
+          {
+            "count": 0.7,
+            "vertical": "Sports / Outdoor"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 13,
+      "value": [
+        "fiverr.com",
+        "setapp.com",
+        "athiaskin.com",
+        "ebay.com",
+        "drinklmnt.com",
+        "fliplok.com",
+        "fondbonebroth.com",
+        "fnxfit.com",
+        "hairclub.com",
+        "healthrangerstore.com",
+        "mypatriotsupply.com",
+        "rexingusa.com",
+        "riverside.fm"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Shopping / Department Stores",
+      "value": [
+        "Shopping / Department Stores",
+        "Business / Ecommerce"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 1,
+          "score": 95
+        },
+        {
+          "name": "Business / Ecommerce",
+          "rank": 1,
+          "score": 80
+        }
+      ]
+    }
+  }
+}

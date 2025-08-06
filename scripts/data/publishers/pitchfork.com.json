@@ -1,0 +1,780 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 6,
+      "sampleValue": [
+        "Awin",
+        "CJ Affiliate",
+        "Impact"
+      ],
+      "value": [
+        "Awin",
+        "CJ Affiliate",
+        "Impact",
+        "Rakuten",
+        "Skimlinks",
+        "Viglink"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.6
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        }
+      ]
+    },
+    "domain": "pitchfork.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "rough"
+        },
+        {
+          "score": 0.99663174,
+          "value": "rough trade"
+        },
+        {
+          "score": 0.621293,
+          "value": "vinyl"
+        },
+        {
+          "score": 0.43110445,
+          "value": "sports"
+        },
+        {
+          "score": 0.40606287,
+          "value": "roughtrade"
+        },
+        {
+          "score": 0.4053144,
+          "value": "roughtrade com"
+        },
+        {
+          "score": 0.38754803,
+          "value": "kids"
+        },
+        {
+          "score": 0.3743371,
+          "value": "youtube"
+        },
+        {
+          "score": 0.3645672,
+          "value": "pop"
+        },
+        {
+          "score": 0.3421543,
+          "value": "merch"
+        },
+        {
+          "score": 0.32146543,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.3130821,
+          "value": "video"
+        },
+        {
+          "score": 0.30930972,
+          "value": "store"
+        },
+        {
+          "score": 0.29277897,
+          "value": "punk"
+        },
+        {
+          "score": 0.28293413,
+          "value": "session"
+        },
+        {
+          "score": 0.28043735,
+          "value": "orders"
+        },
+        {
+          "score": 0.25756907,
+          "value": "shareasale"
+        },
+        {
+          "score": 0.25529355,
+          "value": "technology"
+        },
+        {
+          "score": 0.25423226,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.24700598,
+          "value": "websites"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "rough"
+        },
+        {
+          "score": 0.99663174,
+          "value": "rough trade"
+        },
+        {
+          "score": 0.621293,
+          "value": "vinyl"
+        },
+        {
+          "score": 0.43110445,
+          "value": "sports"
+        },
+        {
+          "score": 0.40606287,
+          "value": "roughtrade"
+        },
+        {
+          "score": 0.4053144,
+          "value": "roughtrade com"
+        },
+        {
+          "score": 0.38754803,
+          "value": "kids"
+        },
+        {
+          "score": 0.3743371,
+          "value": "youtube"
+        },
+        {
+          "score": 0.3645672,
+          "value": "pop"
+        },
+        {
+          "score": 0.3421543,
+          "value": "merch"
+        },
+        {
+          "score": 0.32146543,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.3130821,
+          "value": "video"
+        },
+        {
+          "score": 0.30930972,
+          "value": "store"
+        },
+        {
+          "score": 0.29277897,
+          "value": "punk"
+        },
+        {
+          "score": 0.28293413,
+          "value": "session"
+        },
+        {
+          "score": 0.28043735,
+          "value": "orders"
+        },
+        {
+          "score": 0.25756907,
+          "value": "shareasale"
+        },
+        {
+          "score": 0.25529355,
+          "value": "technology"
+        },
+        {
+          "score": 0.25423226,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.24700598,
+          "value": "websites"
+        },
+        {
+          "score": 0.24326347,
+          "value": "rsd"
+        },
+        {
+          "score": 0.24288923,
+          "value": "persistent"
+        },
+        {
+          "score": 0.24288923,
+          "value": "persistent html"
+        },
+        {
+          "score": 0.24176647,
+          "value": "soul"
+        },
+        {
+          "score": 0.23754649,
+          "value": "preferences"
+        },
+        {
+          "score": 0.23363815,
+          "value": "education"
+        },
+        {
+          "score": 0.22717066,
+          "value": "signed"
+        },
+        {
+          "score": 0.21519461,
+          "value": "books"
+        },
+        {
+          "score": 0.20733532,
+          "value": "titles"
+        },
+        {
+          "score": 0.20621258,
+          "value": "pre orders"
+        },
+        {
+          "score": 0.2020958,
+          "value": "best selling"
+        },
+        {
+          "score": 0.20121697,
+          "value": "ticket"
+        },
+        {
+          "score": 0.19686325,
+          "value": "classic"
+        },
+        {
+          "score": 0.19573353,
+          "value": "google"
+        },
+        {
+          "score": 0.19191161,
+          "value": "amazon"
+        },
+        {
+          "score": 0.18204366,
+          "value": "category"
+        },
+        {
+          "score": 0.18185998,
+          "value": "electronic"
+        },
+        {
+          "score": 0.18076347,
+          "value": "advertisement"
+        },
+        {
+          "score": 0.17252994,
+          "value": "day http"
+        },
+        {
+          "score": 0.17103294,
+          "value": "genres"
+        },
+        {
+          "score": 0.17028444,
+          "value": "vinyl vinyl"
+        },
+        {
+          "score": 0.16803892,
+          "value": "embedded"
+        },
+        {
+          "score": 0.16680571,
+          "value": "music"
+        },
+        {
+          "score": 0.16674897,
+          "value": "house"
+        },
+        {
+          "score": 0.16654192,
+          "value": "hip hop"
+        },
+        {
+          "score": 0.16654192,
+          "value": "hip"
+        },
+        {
+          "score": 0.16654192,
+          "value": "hop"
+        },
+        {
+          "score": 0.16607755,
+          "value": "seller"
+        },
+        {
+          "score": 0.16167665,
+          "value": "trade exclusive"
+        },
+        {
+          "score": 0.15786038,
+          "value": "site"
+        },
+        {
+          "score": 0.15755989,
+          "value": "registers"
+        },
+        {
+          "score": 0.15641595,
+          "value": "club"
+        },
+        {
+          "score": 0.15400821,
+          "value": "label"
+        },
+        {
+          "score": 0.15378255,
+          "value": "london"
+        },
+        {
+          "score": 0.15232036,
+          "value": "days http"
+        },
+        {
+          "score": 0.14998586,
+          "value": "modern"
+        },
+        {
+          "score": 0.14782934,
+          "value": "wave"
+        },
+        {
+          "score": 0.14747863,
+          "value": "jazz"
+        },
+        {
+          "score": 0.14670658,
+          "value": "post"
+        },
+        {
+          "score": 0.14595808,
+          "value": "microsoft"
+        },
+        {
+          "score": 0.14451915,
+          "value": "album"
+        },
+        {
+          "score": 0.14446108,
+          "value": "funk"
+        },
+        {
+          "score": 0.14408682,
+          "value": "post punk"
+        },
+        {
+          "score": 0.14371258,
+          "value": "new wave"
+        },
+        {
+          "score": 0.14365701,
+          "value": "family"
+        },
+        {
+          "score": 0.14281392,
+          "value": "feedback"
+        },
+        {
+          "score": 0.14235933,
+          "value": "releases"
+        },
+        {
+          "score": 0.14221556,
+          "value": "wave post"
+        },
+        {
+          "score": 0.14184132,
+          "value": "genre"
+        },
+        {
+          "score": 0.1410928,
+          "value": "funk soul"
+        },
+        {
+          "score": 0.14059786,
+          "value": "action"
+        },
+        {
+          "score": 0.1403443,
+          "value": "garage"
+        },
+        {
+          "score": 0.13997006,
+          "value": "multiple"
+        },
+        {
+          "score": 0.13997006,
+          "value": "statistics"
+        },
+        {
+          "score": 0.13962227,
+          "value": "super"
+        },
+        {
+          "score": 0.13962206,
+          "value": "health"
+        },
+        {
+          "score": 0.1395958,
+          "value": "figures"
+        },
+        {
+          "score": 0.1395958,
+          "value": "stereo"
+        },
+        {
+          "score": 0.13922156,
+          "value": "hardcore"
+        },
+        {
+          "score": 0.13922156,
+          "value": "gift shop"
+        },
+        {
+          "score": 0.13908488,
+          "value": "soundtracks"
+        },
+        {
+          "score": 0.13892753,
+          "value": "unique"
+        },
+        {
+          "score": 0.13847305,
+          "value": "reggae"
+        },
+        {
+          "score": 0.13847305,
+          "value": "trade essential"
+        },
+        {
+          "score": 0.13847305,
+          "value": "punk hardcore"
+        },
+        {
+          "score": 0.1380988,
+          "value": "rsd titles"
+        },
+        {
+          "score": 0.13622755,
+          "value": "action figures"
+        },
+        {
+          "score": 0.13585329,
+          "value": "super action"
+        },
+        {
+          "score": 0.13585329,
+          "value": "prints"
+        },
+        {
+          "score": 0.13585329,
+          "value": "speakers"
+        },
+        {
+          "score": 0.13585329,
+          "value": "signed books"
+        },
+        {
+          "score": 0.13547905,
+          "value": "turntables"
+        },
+        {
+          "score": 0.13547905,
+          "value": "trade merch"
+        },
+        {
+          "score": 0.13547905,
+          "value": "statistical"
+        },
+        {
+          "score": 0.13537583,
+          "value": "year"
+        },
+        {
+          "score": 0.13473053,
+          "value": "session html"
+        },
+        {
+          "score": 0.13473053,
+          "value": "selling vinyl"
+        },
+        {
+          "score": 0.13473053,
+          "value": "visits"
+        },
+        {
+          "score": 0.13473053,
+          "value": "stores user"
+        },
+        {
+          "score": 0.12799402,
+          "value": "stock"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": "The Most Trusted Voice in Music.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/pitchfork.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://pitchfork.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 50,
+        "value": [
+          "etsy.com",
+          "apple.com",
+          "amazon.com",
+          "ikea.com",
+          "netflix.com",
+          "spotify.com",
+          "adorama.com",
+          "evyy.net",
+          "hulu.com",
+          "amazon.co.uk",
+          "aiaiai.audio",
+          "twitch.tv",
+          "vinylmeplease.com",
+          "disneyplus.com",
+          "newyorker.com",
+          "bose.com",
+          "ticketmaster.co.uk",
+          "max.com",
+          "awin.com",
+          "bhphotovideo.com",
+          "homedepot.com",
+          "roughtrade.com",
+          "ticketmaster.com",
+          "target.com",
+          "cbssports.com",
+          "cbs.com",
+          "qflm.net",
+          "pitchfork.com",
+          "cj.dotomi.com",
+          "hbo.com",
+          "guitarcenter.com",
+          "gradolabs.com",
+          "paramountplus.com",
+          "imp.i305175.net",
+          "tidal.com",
+          "magnepan.com",
+          "seetickets.us",
+          "music.apple.com",
+          "music.amazon.com",
+          "parasound.com",
+          "play.google.com",
+          "roughtrade.queue-it.net",
+          "samash.com",
+          "shareasale-analytics.com",
+          "shop.playtronica.com",
+          "smarturl.it",
+          "tasosstamou.com",
+          "turntablelab.com",
+          "tv.apple.com",
+          "withoutgettingkilledorcaught.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 11.95,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 9.65,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 8.4,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 3.9,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 2.95,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 2.6,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 2.1499999,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 1.5,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / DIY"
+          },
+          {
+            "count": 0.6,
+            "vertical": "Entertainment / Movies"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 50,
+      "value": [
+        "etsy.com",
+        "apple.com",
+        "amazon.com",
+        "ikea.com",
+        "netflix.com",
+        "spotify.com",
+        "adorama.com",
+        "evyy.net",
+        "hulu.com",
+        "amazon.co.uk",
+        "aiaiai.audio",
+        "twitch.tv",
+        "vinylmeplease.com",
+        "disneyplus.com",
+        "newyorker.com",
+        "bose.com",
+        "ticketmaster.co.uk",
+        "max.com",
+        "awin.com",
+        "bhphotovideo.com",
+        "homedepot.com",
+        "roughtrade.com",
+        "ticketmaster.com",
+        "target.com",
+        "cbssports.com",
+        "cbs.com",
+        "qflm.net",
+        "pitchfork.com",
+        "cj.dotomi.com",
+        "hbo.com",
+        "guitarcenter.com",
+        "gradolabs.com",
+        "paramountplus.com",
+        "imp.i305175.net",
+        "tidal.com",
+        "magnepan.com",
+        "seetickets.us",
+        "music.apple.com",
+        "music.amazon.com",
+        "parasound.com",
+        "play.google.com",
+        "roughtrade.queue-it.net",
+        "samash.com",
+        "shareasale-analytics.com",
+        "shop.playtronica.com",
+        "smarturl.it",
+        "tasosstamou.com",
+        "turntablelab.com",
+        "tv.apple.com",
+        "withoutgettingkilledorcaught.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 2,
+      "value": [
+        "1classifiedscript.com",
+        "pitchforkmedia.com"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/pitchfork",
+        "instagram": "https://instagram.com/pitchfork",
+        "twitter": "https://twitter.com/pitchfork",
+        "youtube": "https://youtube.com/channel/uc7ki8wjpcffomsndurh_4la"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 1,
+      "sampleValue": "Entertainment / Music",
+      "value": [
+        "Entertainment / Music"
+      ]
+    },
+    "verticalsV2": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Entertainment / Music",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Entertainment / Music",
+          "rank": 1,
+          "score": 95
+        }
+      ]
+    }
+  }
+}

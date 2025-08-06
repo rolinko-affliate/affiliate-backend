@@ -1,0 +1,356 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 10,
+      "sampleValue": [
+        "Admitad",
+        "Business Insider",
+        "ClickMagick"
+      ],
+      "value": [
+        "Admitad",
+        "Business Insider",
+        "ClickMagick",
+        "Digidip",
+        "Flexoffers",
+        "Impact",
+        "Skimlinks",
+        "Takeads",
+        "Viglink",
+        "Yieldkit"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 2,
+      "error": false,
+      "value": [
+        {
+          "department": null,
+          "value": "knowmiacareteam@techsmith.com"
+        },
+        {
+          "department": "hr",
+          "value": "recruiting@techsmith.com"
+        }
+      ]
+    },
+    "domain": "techsmith.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "Start communicating more effectively. Check out Camtasia, Snagit, and TechSmith Relay. Visit the site to learn, buy, and get support.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/techsmith.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://techsmith.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 271
+      },
+      "partnersAdded": {
+        "count": 15,
+        "value": [
+          {
+            "domain": "rogersreads.com"
+          },
+          {
+            "domain": "dashlearn.app"
+          },
+          {
+            "domain": "fileformatpro.com"
+          },
+          {
+            "domain": "michaeleblair.com"
+          },
+          {
+            "domain": "hustle3llc.com"
+          },
+          {
+            "domain": "juleskalpauli.com"
+          },
+          {
+            "domain": "myeducationdiscount.com"
+          },
+          {
+            "domain": "geteditingnow.com"
+          },
+          {
+            "domain": "nl.global-discount-codes.com"
+          },
+          {
+            "domain": "no.global-discount-codes.com"
+          },
+          {
+            "domain": "lt.global-discount-codes.com"
+          },
+          {
+            "domain": "de.moyens.net"
+          },
+          {
+            "domain": "carteperformance.fr"
+          },
+          {
+            "domain": "sk.global-discount-codes.com"
+          },
+          {
+            "domain": "ytclass.co"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 7,
+        "value": [
+          {
+            "domain": "gizmodo.com"
+          },
+          {
+            "domain": "clickthrufunnels.com"
+          },
+          {
+            "domain": "imore.com"
+          },
+          {
+            "domain": "contentnitro.co.uk"
+          },
+          {
+            "domain": "pcforalla.se"
+          },
+          {
+            "domain": "wsk168.com"
+          },
+          {
+            "domain": "brunch.co.kr"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 89,
+            "promotype": "blog",
+            "value": [
+              "1000files.info",
+              "1topproduct.com",
+              "2createawebsite.com",
+              "askleo.com",
+              "avnetwork.com",
+              "aym4training.com",
+              "azurplus.fr",
+              "bestrewardsprograms.com",
+              "brock.tv",
+              "businessinsider.com",
+              "callouts.com",
+              "camta.cn",
+              "christinapiccoli.com",
+              "comtechies.com",
+              "connieragengreen.com",
+              "de.moyens.net",
+              "descuento.guru",
+              "digiscrapcampus.com",
+              "discovervibe.blog",
+              "earningguys.com",
+              "eduflip.net",
+              "excelnotes.com",
+              "faili.info",
+              "filehorse.com",
+              "frankdoorhof.com",
+              "geekyinsider.com",
+              "getmecoding.com",
+              "giveawaygator.com",
+              "goodpods.com",
+              "gopromocodes.com",
+              "hillmanacademy.se",
+              "homeworkingclub.com",
+              "howto.org",
+              "ideabook.com",
+              "influenceimmo.com",
+              "integu.net",
+              "iwordpower.com",
+              "jenebaspeaks.com",
+              "johngold.net",
+              "justlearnwp.com",
+              "laptopmag.com",
+              "libsyn.com",
+              "lonestarball.com",
+              "m33.wiki",
+              "macworld.com",
+              "maketecheasier.com",
+              "members.convergenttrading.com",
+              "moyens.net",
+              "no.global-discount-codes.com",
+              "obiztools.com",
+              "online-akademie.ch",
+              "onlinevideoausbildung.de",
+              "paul-hutchings.com",
+              "pcworld.com",
+              "philippvollenweider.com",
+              "poundingtherock.com",
+              "purshology.com",
+              "savingarena.com",
+              "schoolvideos.org",
+              "searchwings.org",
+              "selfmadesuccess.com",
+              "shoutmetech.com",
+              "simplyexplainit.com",
+              "socialmarketingwriting.com",
+              "softexia.com",
+              "softonic.nl",
+              "software4students.co.uk",
+              "startfree.hk",
+              "support.radiansolusi.co.id",
+              "susieellis.net",
+              "techadvisor.com",
+              "techfandu.com",
+              "techiesupdates.com",
+              "techofbusiness.com",
+              "techradar.com",
+              "techreviewpro.com",
+              "teknodestek.com.tr",
+              "teknodiot.com",
+              "theapprofessor.blogspot.com",
+              "thedigitalmerchant.com",
+              "thelinkforlife.com",
+              "trishfindlay.com",
+              "ultimatepocket.com",
+              "vecteursleviers.com",
+              "videomarkedsskolen.no",
+              "webbedxp.com",
+              "websitewizard.tv",
+              "wethegeek.com",
+              "winningpc.com"
+            ]
+          },
+          {
+            "count": 10,
+            "promotype": "incentive",
+            "value": [
+              "automaticcoupons.com",
+              "businessblueprint.com",
+              "couponcode2save.com",
+              "couponswebdeal.com",
+              "dealarious.com",
+              "dpcoupon.com",
+              "jackydeals.com",
+              "seasonscoupon.com",
+              "shopdeals.site",
+              "thecoolestcouple.com"
+            ]
+          },
+          {
+            "count": 13,
+            "promotype": "content",
+            "value": [
+              "cheptiony.com",
+              "cumsedeschide.com",
+              "hawkdive.com",
+              "masterteachingonline.com",
+              "myeducationdiscount.com",
+              "ohjelmistot.fi",
+              "pickedbox.com",
+              "selinasims.com",
+              "sk.global-discount-codes.com",
+              "teachonamission.com",
+              "techyaya.com",
+              "vajot.com",
+              "verifypromo.com"
+            ]
+          },
+          {
+            "count": 31,
+            "promotype": "student",
+            "value": [
+              "community.convergenttrading.com",
+              "connieloves.me",
+              "contentsparks.com",
+              "creativebloq.com",
+              "cyberguru.com.au",
+              "dailytut.com",
+              "davebailey.me",
+              "deladiscount.com",
+              "digitaltrailblazer.com",
+              "discountcode.vip",
+              "dontgetmadgetskills.com",
+              "fileinfo.com",
+              "fileproinfo.com",
+              "guadagnocolblog.it",
+              "hugeprofitstinylist.com",
+              "internet-scout.de",
+              "myfatblog.co.uk",
+              "nl.global-discount-codes.com",
+              "ozmattymac.com",
+              "promocodes.com",
+              "robertsproductions.net",
+              "smallbusinessmarketingtoolkit.net",
+              "spten.com",
+              "techtelegraph.co.uk",
+              "thegoatshowpodcast.com",
+              "tiedosto.info",
+              "tradeburn.com",
+              "trustinsights.ai",
+              "videomarkedsskolen.mykajabi.com",
+              "waerfa.com",
+              "wptrain.me"
+            ]
+          },
+          {
+            "count": 2,
+            "promotype": "forum",
+            "value": [
+              "linkbux.com",
+              "software4students.ie"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "linkedin"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/techsmith",
+        "linkedin": "https://linkedin.com/company/techsmith-corporation",
+        "twitter": "https://twitter.com/techsmith",
+        "youtube": "https://youtube.com/user/channeltechsmith"
+      }
+    },
+    "verticals": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Technology / Software",
+        "rank": 2,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Business / Software",
+          "rank": 2,
+          "score": 90
+        },
+        {
+          "name": "Technology / Editing Software",
+          "rank": 2,
+          "score": 95
+        },
+        {
+          "name": "Technology / Software",
+          "rank": 2,
+          "score": 95
+        }
+      ]
+    }
+  }
+}

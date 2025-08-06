@@ -1,0 +1,1408 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 15,
+      "sampleValue": [
+        "Avantlink",
+        "Awin",
+        "CJ Affiliate"
+      ],
+      "value": [
+        "Avantlink",
+        "Awin",
+        "CJ Affiliate",
+        "Effiliation",
+        "Heymondo",
+        "Impact",
+        "Partnerize",
+        "Pepperjam",
+        "Private Network",
+        "Refersion",
+        "Rewardstyle",
+        "ShareASale",
+        "Skimlinks",
+        "TradeTracker",
+        "TUNE"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "fr",
+        "score": 0.8
+      },
+      "sampleValue": [
+        {
+          "countryCode": "fr",
+          "score": 0.8
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "fr",
+          "score": 0.8
+        }
+      ]
+    },
+    "domain": "road2france.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "tour"
+        },
+        {
+          "score": 0.82047373,
+          "value": "amazon"
+        },
+        {
+          "score": 0.79270566,
+          "value": "seller"
+        },
+        {
+          "score": 0.4959579,
+          "value": "sign"
+        },
+        {
+          "score": 0.38500583,
+          "value": "food"
+        },
+        {
+          "score": 0.35157534,
+          "value": "store"
+        },
+        {
+          "score": 0.35145545,
+          "value": "device"
+        },
+        {
+          "score": 0.3247523,
+          "value": "hour"
+        },
+        {
+          "score": 0.31269372,
+          "value": "activity"
+        },
+        {
+          "score": 0.30933285,
+          "value": "central"
+        },
+        {
+          "score": 0.2827929,
+          "value": "card"
+        },
+        {
+          "score": 0.27948815,
+          "value": "ticket"
+        },
+        {
+          "score": 0.26787394,
+          "value": "city"
+        },
+        {
+          "score": 0.26766115,
+          "value": "fee"
+        },
+        {
+          "score": 0.26581797,
+          "value": "video"
+        },
+        {
+          "score": 0.24690986,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.2463761,
+          "value": "person"
+        },
+        {
+          "score": 0.2392868,
+          "value": "prime"
+        },
+        {
+          "score": 0.23688792,
+          "value": "fba"
+        },
+        {
+          "score": 0.21887107,
+          "value": "sports"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "tour"
+        },
+        {
+          "score": 0.82047373,
+          "value": "amazon"
+        },
+        {
+          "score": 0.79270566,
+          "value": "seller"
+        },
+        {
+          "score": 0.4959579,
+          "value": "sign"
+        },
+        {
+          "score": 0.38500583,
+          "value": "food"
+        },
+        {
+          "score": 0.35157534,
+          "value": "store"
+        },
+        {
+          "score": 0.35145545,
+          "value": "device"
+        },
+        {
+          "score": 0.3247523,
+          "value": "hour"
+        },
+        {
+          "score": 0.31269372,
+          "value": "activity"
+        },
+        {
+          "score": 0.30933285,
+          "value": "central"
+        },
+        {
+          "score": 0.2827929,
+          "value": "card"
+        },
+        {
+          "score": 0.27948815,
+          "value": "ticket"
+        },
+        {
+          "score": 0.26787394,
+          "value": "city"
+        },
+        {
+          "score": 0.26766115,
+          "value": "fee"
+        },
+        {
+          "score": 0.26581797,
+          "value": "video"
+        },
+        {
+          "score": 0.24690986,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.2463761,
+          "value": "person"
+        },
+        {
+          "score": 0.2392868,
+          "value": "prime"
+        },
+        {
+          "score": 0.23688792,
+          "value": "fba"
+        },
+        {
+          "score": 0.21887107,
+          "value": "sports"
+        },
+        {
+          "score": 0.21301949,
+          "value": "restriction"
+        },
+        {
+          "score": 0.21122904,
+          "value": "duration"
+        },
+        {
+          "score": 0.20990264,
+          "value": "guide"
+        },
+        {
+          "score": 0.1948919,
+          "value": "kids"
+        },
+        {
+          "score": 0.1869854,
+          "value": "trip"
+        },
+        {
+          "score": 0.18416323,
+          "value": "category"
+        },
+        {
+          "score": 0.17438653,
+          "value": "family"
+        },
+        {
+          "score": 0.17411262,
+          "value": "kindle"
+        },
+        {
+          "score": 0.17405735,
+          "value": "program"
+        },
+        {
+          "score": 0.17164968,
+          "value": "museum"
+        },
+        {
+          "score": 0.16972333,
+          "value": "technology"
+        },
+        {
+          "score": 0.16665727,
+          "value": "fashion"
+        },
+        {
+          "score": 0.16318202,
+          "value": "art"
+        },
+        {
+          "score": 0.16317073,
+          "value": "edinburgh"
+        },
+        {
+          "score": 0.15678859,
+          "value": "phone"
+        },
+        {
+          "score": 0.15501456,
+          "value": "health"
+        },
+        {
+          "score": 0.14831628,
+          "value": "feedback"
+        },
+        {
+          "score": 0.14574814,
+          "value": "recipe"
+        },
+        {
+          "score": 0.14523354,
+          "value": "reykjavik"
+        },
+        {
+          "score": 0.14339316,
+          "value": "requirement"
+        },
+        {
+          "score": 0.14288732,
+          "value": "furniture"
+        },
+        {
+          "score": 0.14217782,
+          "value": "box"
+        },
+        {
+          "score": 0.14215817,
+          "value": "fulfillment"
+        },
+        {
+          "score": 0.137395,
+          "value": "prime video"
+        },
+        {
+          "score": 0.13625523,
+          "value": "cruise"
+        },
+        {
+          "score": 0.13563886,
+          "value": "accessory"
+        },
+        {
+          "score": 0.13538235,
+          "value": "bath"
+        },
+        {
+          "score": 0.13425632,
+          "value": "style"
+        },
+        {
+          "score": 0.1326825,
+          "value": "hop"
+        },
+        {
+          "score": 0.13106267,
+          "value": "book"
+        },
+        {
+          "score": 0.1289263,
+          "value": "friendly"
+        },
+        {
+          "score": 0.12698804,
+          "value": "packaging"
+        },
+        {
+          "score": 0.12534028,
+          "value": "musea"
+        },
+        {
+          "score": 0.12463079,
+          "value": "sightseeing"
+        },
+        {
+          "score": 0.1237293,
+          "value": "shareasale"
+        },
+        {
+          "score": 0.122210145,
+          "value": "color"
+        },
+        {
+          "score": 0.121118,
+          "value": "water"
+        },
+        {
+          "score": 0.11876195,
+          "value": "kitchen"
+        },
+        {
+          "score": 0.117793605,
+          "value": "care"
+        },
+        {
+          "score": 0.116131015,
+          "value": "event"
+        },
+        {
+          "score": 0.113956295,
+          "value": "tours"
+        },
+        {
+          "score": 0.113007896,
+          "value": "education"
+        },
+        {
+          "score": 0.11147698,
+          "value": "light"
+        },
+        {
+          "score": 0.110731125,
+          "value": "dollar"
+        },
+        {
+          "score": 0.105805606,
+          "value": "peso"
+        },
+        {
+          "score": 0.10541513,
+          "value": "automotive"
+        },
+        {
+          "score": 0.1051371,
+          "value": "promotion"
+        },
+        {
+          "score": 0.1044343,
+          "value": "bus"
+        },
+        {
+          "score": 0.10372988,
+          "value": "vaticaanse"
+        },
+        {
+          "score": 0.10197629,
+          "value": "travel"
+        },
+        {
+          "score": 0.099123515,
+          "value": "cooking"
+        },
+        {
+          "score": 0.098373525,
+          "value": "river"
+        },
+        {
+          "score": 0.09804486,
+          "value": "clothing"
+        },
+        {
+          "score": 0.097726434,
+          "value": "digital"
+        },
+        {
+          "score": 0.097043924,
+          "value": "boat"
+        },
+        {
+          "score": 0.095895775,
+          "value": "cookware"
+        },
+        {
+          "score": 0.094273716,
+          "value": "private"
+        },
+        {
+          "score": 0.09419361,
+          "value": "minute"
+        },
+        {
+          "score": 0.09355386,
+          "value": "carrier"
+        },
+        {
+          "score": 0.09292469,
+          "value": "vaticaanse musea"
+        },
+        {
+          "score": 0.0925347,
+          "value": "setting"
+        },
+        {
+          "score": 0.09141428,
+          "value": "attraction"
+        },
+        {
+          "score": 0.09059552,
+          "value": "outdoor"
+        },
+        {
+          "score": 0.08908938,
+          "value": "unit"
+        },
+        {
+          "score": 0.086875625,
+          "value": "south"
+        },
+        {
+          "score": 0.08569106,
+          "value": "anthropologie"
+        },
+        {
+          "score": 0.085415654,
+          "value": "electronic"
+        },
+        {
+          "score": 0.08523845,
+          "value": "guideline"
+        },
+        {
+          "score": 0.08516763,
+          "value": "language"
+        },
+        {
+          "score": 0.08493508,
+          "value": "history"
+        },
+        {
+          "score": 0.083872154,
+          "value": "popular"
+        },
+        {
+          "score": 0.08320314,
+          "value": "global"
+        },
+        {
+          "score": 0.082910776,
+          "value": "listing"
+        },
+        {
+          "score": 0.0825136,
+          "value": "wine"
+        },
+        {
+          "score": 0.08204524,
+          "value": "pickup"
+        },
+        {
+          "score": 0.08166031,
+          "value": "dress"
+        },
+        {
+          "score": 0.08078778,
+          "value": "software"
+        },
+        {
+          "score": 0.08074606,
+          "value": "warranty"
+        },
+        {
+          "score": 0.07984519,
+          "value": "beauty"
+        },
+        {
+          "score": 0.07847592,
+          "value": "shoes"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://road2france.com/",
+        "https://www.road2france.com/",
+        "http://road2france.com/",
+        "http://www.road2france.com/"
+      ]
+    },
+    "metaData": {
+      "description": "Road2france is your all about #France related website. We provide you with the latest breaking news and videos straight from #France.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/road2france.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://road2france.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 277,
+        "value": [
+          "etsy.com",
+          "1stdibs.com",
+          "apple.com",
+          "amazon.com",
+          "abercrombie.com",
+          "babbel.com",
+          "freshly.com",
+          "hm.com",
+          "instagram.com",
+          "nordstrom.com",
+          "aboutamazon.com",
+          "fda.gov",
+          "ritual.com",
+          "samsung.com",
+          "tiktok.com",
+          "everlane.com",
+          "walmart.com",
+          "tiqets.com",
+          "airalo.com",
+          "airfrance.us",
+          "alaninu.com",
+          "alexandracooks.com",
+          "sncf-connect.com",
+          "americangirl.com",
+          "animamundiherbals.com",
+          "anovaculinary.com",
+          "sephora.com",
+          "anthropologie.com",
+          "wise.com",
+          "youtube.com",
+          "factor75.com",
+          "apothekeco.com",
+          "gigsky.com",
+          "appliancesconnection.com",
+          "kohls.com",
+          "bonappetit.com",
+          "latimes.com",
+          "ashadrynoodle.com",
+          "surlatable.com",
+          "gap.com",
+          "eater.com",
+          "atlascoffeeclub.com",
+          "zappos.com",
+          "baggu.com",
+          "bathandbodyworks.com",
+          "baublebar.com",
+          "bergdorfgoodman.com",
+          "bignightbk.com",
+          "urbanoutfitters.com",
+          "bioliteenergy.com",
+          "homedepot.com",
+          "lowes.com",
+          "blueapron.com",
+          "endclothing.com",
+          "hellofresh.com",
+          "potterybarn.com",
+          "solostove.com",
+          "spoonflower.com",
+          "thermoworks.com",
+          "westelm.com",
+          "williams-sonoma.com",
+          "bloomingdales.com",
+          "bloomsbury.com",
+          "boggbag.com",
+          "bokksu.com",
+          "bokksumarket.com",
+          "boleroadtextiles.com",
+          "breville.com",
+          "brightland.co",
+          "broilmaster.com",
+          "brooklinen.com",
+          "brooklynslate.com",
+          "reservebar.com",
+          "brumate.com",
+          "bubblegoods.com",
+          "carawayhome.com",
+          "carlfriedrik.com",
+          "target.com",
+          "casabosques.com",
+          "macys.com",
+          "cb2.com",
+          "chefsteps.com",
+          "greenchef.com",
+          "civitatis.com",
+          "cj.dotomi.com",
+          "murrayscheese.com",
+          "clinebellequipment.com",
+          "clubmonaco.com",
+          "cometeer.com",
+          "shopltk.com",
+          "converse.com",
+          "homechef.com",
+          "cookunity.com",
+          "lecreuset.com",
+          "corkcicle.com",
+          "cotopaxi.com",
+          "loewe.com",
+          "crateandbarrel.com",
+          "crocs.com",
+          "crustbymack.com",
+          "cup4cup.com",
+          "yamibuy.com",
+          "daphnisandchloe.com",
+          "delysia.com",
+          "diasporaco.com",
+          "dickblick.com",
+          "dickssportinggoods.com",
+          "dillards.com",
+          "dinnerly.com",
+          "diptyqueparis.com",
+          "dominiqueansel.com",
+          "drinktrade.com",
+          "dsw.com",
+          "dwr.com",
+          "eatcampogrande.com",
+          "hungryroot.com",
+          "eatwith.com",
+          "echonewyork.com",
+          "ediblebrooklyn.com",
+          "longchamp.com",
+          "encircled.ca",
+          "epicurious.com",
+          "stanley1913.com",
+          "everyplate.com",
+          "jcrew.com",
+          "fancysprinkles.com",
+          "purplecarrot.com",
+          "felixla.com",
+          "fineandraw.com",
+          "luisaviaroma.com",
+          "foodsofnations.com",
+          "food52.com",
+          "footlocker.com",
+          "formnutrition.com",
+          "fruitionchocolateworks.com",
+          "frontiercoop.com",
+          "fromourplace.com",
+          "gatorade.com",
+          "getopenspaces.com",
+          "getyourguide.com",
+          "ulta.com",
+          "quince.com",
+          "grandyorganics.com",
+          "greatjonesgoods.com",
+          "grillinfools.com",
+          "greenpan.us",
+          "grubstreet.com",
+          "haricotvert.shop",
+          "harney.com",
+          "harryanddavid.com",
+          "hedleyandbennett.com",
+          "magnolia.com",
+          "thereformation.com",
+          "thrivemarket.com",
+          "vrbo.com",
+          "zazzle.com",
+          "herocosmetics.us",
+          "hestanculinary.com",
+          "heymondo.com",
+          "hivebrands.com",
+          "hodofoods.com",
+          "madeincookware.com",
+          "housesandparties.com",
+          "ilolatea.com",
+          "worldmarket.com",
+          "pacsafe.com",
+          "tiffany.com",
+          "janieandjack.com",
+          "jinjichocolate.com",
+          "junesrose.com",
+          "kitchenaid.com",
+          "knifeaid.com",
+          "momofuku.com",
+          "kromawellness.com",
+          "lanolips.com",
+          "masterclass.com",
+          "lecreuset.ca",
+          "lenox.com",
+          "levainbakery.com",
+          "lesmillsondemand.com",
+          "lg.com",
+          "lisasaysgah.com",
+          "lookfantastic.fi",
+          "simons.com",
+          "sezane.com",
+          "viator.com",
+          "maisonette.com",
+          "marleyspoon.com",
+          "markandgraham.com",
+          "tripadvisor.com",
+          "mejuri.com",
+          "merriam-webster.com",
+          "miamifruit.org",
+          "micocina.com",
+          "mikasa.com",
+          "milkbarstore.com",
+          "moma.org",
+          "momosejulia.com",
+          "mosaicfoods.com",
+          "nannybag.com",
+          "nearlynatural.com",
+          "nikolasbentelstudio.com",
+          "nixtalicor.com",
+          "nyandcompany.com",
+          "nyshuk.com",
+          "oglmove.com",
+          "omio.com",
+          "orange.com",
+          "owalalife.com",
+          "pearsonranch.com",
+          "penzeys.com",
+          "phoenixbean.com",
+          "primalharvest.com",
+          "printique.com",
+          "punchdrink.com",
+          "purefish.com",
+          "rstyle.me",
+          "rachelantonoff.com",
+          "rangerchocolate.co",
+          "replacements.com",
+          "rincontropics.com",
+          "ruggable.com",
+          "royaldesign.com",
+          "safetywing.com",
+          "sakara.com",
+          "saintolio.com",
+          "saksfifthavenue.com",
+          "sarapnow.com",
+          "sayweee.com",
+          "seattlecoffeegear.com",
+          "vitamix.com",
+          "sendchinatownlove.com",
+          "sfoglini.com",
+          "shareasale-analytics.com",
+          "shareasale.com",
+          "zwilling.com",
+          "thejewishmuseum.org",
+          "simplehuman.com",
+          "skinstore.com",
+          "smithey.com",
+          "thetrainline.com",
+          "snowdays.com",
+          "snukfoods.com",
+          "speakeasytravelsupply.com",
+          "spicewallabrand.com",
+          "staud.clothing",
+          "wolffer.com",
+          "sunnoodle.com",
+          "sunbasket.com",
+          "territoryfoods.com",
+          "uncommongoods.com",
+          "susanalexandra.com",
+          "swell.com",
+          "swmsweets.com",
+          "the-vines.com",
+          "thecutlerycollection.com",
+          "thekitchn.com",
+          "thelaundress.com",
+          "theranchlife.com",
+          "tinglyteds.co.uk",
+          "torrisinyc.com",
+          "tripadvisor.co.nz",
+          "tripadvisor.co.uk",
+          "umamicart.com",
+          "us.amazon.com",
+          "us.burberry.com",
+          "us.saint-james.com",
+          "vosgeschocolate.com",
+          "webstaurantstore.com",
+          "wildgrain.com",
+          "willowoakscraftcider.com",
+          "wine.com",
+          "wusthof.com",
+          "yesplz.coffee",
+          "yslbeautyus.com",
+          "yummybazaar.com",
+          "zulily.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 3,
+        "value": [
+          {
+            "domain": "us.amazon.com"
+          },
+          {
+            "domain": "us.saint-james.com"
+          },
+          {
+            "domain": "us.burberry.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 2,
+        "value": [
+          {
+            "domain": "saint-james.com"
+          },
+          {
+            "domain": "burberry.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 47.200016,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 30.500002,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 20.050001,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 15.199999,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 12.149998,
+            "vertical": "Food / Take Out"
+          },
+          {
+            "count": 11.15,
+            "vertical": "Food / Confectionery"
+          },
+          {
+            "count": 8.7,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 6.75,
+            "vertical": "Food / Alcohol"
+          },
+          {
+            "count": 6.6499996,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 6.3999996,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 6.2499995,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 5.5499997,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 5.4,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 5.35,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 4.9,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 4.65,
+            "vertical": "Gifts / Personalised"
+          },
+          {
+            "count": 3.9,
+            "vertical": "Travel / Attractions"
+          },
+          {
+            "count": 3.8000002,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 3.75,
+            "vertical": "Travel / Vacation"
+          },
+          {
+            "count": 3.5500002,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 3.3,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Fashion / Jewellery"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Travel / Rail & Coach"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 2.75,
+            "vertical": "Home / Art"
+          },
+          {
+            "count": 2.65,
+            "vertical": "Sports / Outdoor"
+          },
+          {
+            "count": 2.5,
+            "vertical": "Entertainment / Hobbies"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Travel / Accessories"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Finance / Insurance"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Health / Drinks"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Home / DIY"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Technology / Esim"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Travel / Flights"
+          },
+          {
+            "count": 1.75,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 1.75,
+            "vertical": "Fashion / Kids"
+          },
+          {
+            "count": 1.5999999,
+            "vertical": "Property / Property"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Energy"
+          },
+          {
+            "count": 1,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Gifts / Kids"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Fragrances"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Beds & Bedding"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Garden"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Finance / Currency"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Shopping / Wedding"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 0.3,
+            "vertical": "Gifts / Flowers"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 277,
+      "value": [
+        "etsy.com",
+        "1stdibs.com",
+        "apple.com",
+        "amazon.com",
+        "abercrombie.com",
+        "babbel.com",
+        "freshly.com",
+        "hm.com",
+        "instagram.com",
+        "nordstrom.com",
+        "aboutamazon.com",
+        "fda.gov",
+        "ritual.com",
+        "samsung.com",
+        "tiktok.com",
+        "everlane.com",
+        "walmart.com",
+        "tiqets.com",
+        "airalo.com",
+        "airfrance.us",
+        "alaninu.com",
+        "alexandracooks.com",
+        "sncf-connect.com",
+        "americangirl.com",
+        "animamundiherbals.com",
+        "anovaculinary.com",
+        "sephora.com",
+        "anthropologie.com",
+        "wise.com",
+        "youtube.com",
+        "factor75.com",
+        "apothekeco.com",
+        "gigsky.com",
+        "appliancesconnection.com",
+        "kohls.com",
+        "bonappetit.com",
+        "latimes.com",
+        "ashadrynoodle.com",
+        "surlatable.com",
+        "gap.com",
+        "eater.com",
+        "atlascoffeeclub.com",
+        "zappos.com",
+        "baggu.com",
+        "bathandbodyworks.com",
+        "baublebar.com",
+        "bergdorfgoodman.com",
+        "bignightbk.com",
+        "urbanoutfitters.com",
+        "bioliteenergy.com",
+        "homedepot.com",
+        "lowes.com",
+        "blueapron.com",
+        "endclothing.com",
+        "hellofresh.com",
+        "potterybarn.com",
+        "solostove.com",
+        "spoonflower.com",
+        "thermoworks.com",
+        "westelm.com",
+        "williams-sonoma.com",
+        "bloomingdales.com",
+        "bloomsbury.com",
+        "boggbag.com",
+        "bokksu.com",
+        "bokksumarket.com",
+        "boleroadtextiles.com",
+        "breville.com",
+        "brightland.co",
+        "broilmaster.com",
+        "brooklinen.com",
+        "brooklynslate.com",
+        "reservebar.com",
+        "brumate.com",
+        "bubblegoods.com",
+        "carawayhome.com",
+        "carlfriedrik.com",
+        "target.com",
+        "casabosques.com",
+        "macys.com",
+        "cb2.com",
+        "chefsteps.com",
+        "greenchef.com",
+        "civitatis.com",
+        "cj.dotomi.com",
+        "murrayscheese.com",
+        "clinebellequipment.com",
+        "clubmonaco.com",
+        "cometeer.com",
+        "shopltk.com",
+        "converse.com",
+        "homechef.com",
+        "cookunity.com",
+        "lecreuset.com",
+        "corkcicle.com",
+        "cotopaxi.com",
+        "loewe.com",
+        "crateandbarrel.com",
+        "crocs.com",
+        "crustbymack.com",
+        "cup4cup.com",
+        "yamibuy.com",
+        "daphnisandchloe.com",
+        "delysia.com",
+        "diasporaco.com",
+        "dickblick.com",
+        "dickssportinggoods.com",
+        "dillards.com",
+        "dinnerly.com",
+        "diptyqueparis.com",
+        "dominiqueansel.com",
+        "drinktrade.com",
+        "dsw.com",
+        "dwr.com",
+        "eatcampogrande.com",
+        "hungryroot.com",
+        "eatwith.com",
+        "echonewyork.com",
+        "ediblebrooklyn.com",
+        "longchamp.com",
+        "encircled.ca",
+        "epicurious.com",
+        "stanley1913.com",
+        "everyplate.com",
+        "jcrew.com",
+        "fancysprinkles.com",
+        "purplecarrot.com",
+        "felixla.com",
+        "fineandraw.com",
+        "luisaviaroma.com",
+        "foodsofnations.com",
+        "food52.com",
+        "footlocker.com",
+        "formnutrition.com",
+        "fruitionchocolateworks.com",
+        "frontiercoop.com",
+        "fromourplace.com",
+        "gatorade.com",
+        "getopenspaces.com",
+        "getyourguide.com",
+        "ulta.com",
+        "quince.com",
+        "grandyorganics.com",
+        "greatjonesgoods.com",
+        "grillinfools.com",
+        "greenpan.us",
+        "grubstreet.com",
+        "haricotvert.shop",
+        "harney.com",
+        "harryanddavid.com",
+        "hedleyandbennett.com",
+        "magnolia.com",
+        "thereformation.com",
+        "thrivemarket.com",
+        "vrbo.com",
+        "zazzle.com",
+        "herocosmetics.us",
+        "hestanculinary.com",
+        "heymondo.com",
+        "hivebrands.com",
+        "hodofoods.com",
+        "madeincookware.com",
+        "housesandparties.com",
+        "ilolatea.com",
+        "worldmarket.com",
+        "pacsafe.com",
+        "tiffany.com",
+        "janieandjack.com",
+        "jinjichocolate.com",
+        "junesrose.com",
+        "kitchenaid.com",
+        "knifeaid.com",
+        "momofuku.com",
+        "kromawellness.com",
+        "lanolips.com",
+        "masterclass.com",
+        "lecreuset.ca",
+        "lenox.com",
+        "levainbakery.com",
+        "lesmillsondemand.com",
+        "lg.com",
+        "lisasaysgah.com",
+        "lookfantastic.fi",
+        "simons.com",
+        "sezane.com",
+        "viator.com",
+        "maisonette.com",
+        "marleyspoon.com",
+        "markandgraham.com",
+        "tripadvisor.com",
+        "mejuri.com",
+        "merriam-webster.com",
+        "miamifruit.org",
+        "micocina.com",
+        "mikasa.com",
+        "milkbarstore.com",
+        "moma.org",
+        "momosejulia.com",
+        "mosaicfoods.com",
+        "nannybag.com",
+        "nearlynatural.com",
+        "nikolasbentelstudio.com",
+        "nixtalicor.com",
+        "nyandcompany.com",
+        "nyshuk.com",
+        "oglmove.com",
+        "omio.com",
+        "orange.com",
+        "owalalife.com",
+        "pearsonranch.com",
+        "penzeys.com",
+        "phoenixbean.com",
+        "primalharvest.com",
+        "printique.com",
+        "punchdrink.com",
+        "purefish.com",
+        "rstyle.me",
+        "rachelantonoff.com",
+        "rangerchocolate.co",
+        "replacements.com",
+        "rincontropics.com",
+        "ruggable.com",
+        "royaldesign.com",
+        "safetywing.com",
+        "sakara.com",
+        "saintolio.com",
+        "saksfifthavenue.com",
+        "sarapnow.com",
+        "sayweee.com",
+        "seattlecoffeegear.com",
+        "vitamix.com",
+        "sendchinatownlove.com",
+        "sfoglini.com",
+        "shareasale-analytics.com",
+        "shareasale.com",
+        "zwilling.com",
+        "thejewishmuseum.org",
+        "simplehuman.com",
+        "skinstore.com",
+        "smithey.com",
+        "thetrainline.com",
+        "snowdays.com",
+        "snukfoods.com",
+        "speakeasytravelsupply.com",
+        "spicewallabrand.com",
+        "staud.clothing",
+        "wolffer.com",
+        "sunnoodle.com",
+        "sunbasket.com",
+        "territoryfoods.com",
+        "uncommongoods.com",
+        "susanalexandra.com",
+        "swell.com",
+        "swmsweets.com",
+        "the-vines.com",
+        "thecutlerycollection.com",
+        "thekitchn.com",
+        "thelaundress.com",
+        "theranchlife.com",
+        "tinglyteds.co.uk",
+        "torrisinyc.com",
+        "tripadvisor.co.nz",
+        "tripadvisor.co.uk",
+        "umamicart.com",
+        "us.amazon.com",
+        "us.burberry.com",
+        "us.saint-james.com",
+        "vosgeschocolate.com",
+        "webstaurantstore.com",
+        "wildgrain.com",
+        "willowoakscraftcider.com",
+        "wine.com",
+        "wusthof.com",
+        "yesplz.coffee",
+        "yslbeautyus.com",
+        "yummybazaar.com",
+        "zulily.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Travel / Vacation",
+      "value": [
+        "Travel / Vacation",
+        "Travel / Car Hire",
+        "Travel / Accommodation"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Travel / Vacation",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Travel / Vacation",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Travel / Car Hire",
+          "rank": 1,
+          "score": 60
+        },
+        {
+          "name": "Travel / Accommodation",
+          "rank": 1,
+          "score": 50
+        }
+      ]
+    }
+  }
+}

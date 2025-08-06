@@ -1,0 +1,603 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "A8"
+      ],
+      "value": [
+        "A8"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "jp",
+        "score": 0.9
+      },
+      "sampleValue": [
+        {
+          "countryCode": "jp",
+          "score": 0.9
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "jp",
+          "score": 0.9
+        }
+      ]
+    },
+    "domain": "osusume-aitemukan.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "justy"
+        },
+        {
+          "score": 0.8666667,
+          "value": "とってもかんたん"
+        },
+        {
+          "score": 0.23333333,
+          "value": "会社概要"
+        },
+        {
+          "score": 0.16666667,
+          "value": "net秋葉原営業所開設"
+        },
+        {
+          "score": 0.13333334,
+          "value": "お問い合わせ"
+        },
+        {
+          "score": 0.13333334,
+          "value": "初めての方へ"
+        },
+        {
+          "score": 0.13333334,
+          "value": "anniversary"
+        },
+        {
+          "score": 0.13333334,
+          "value": "tour"
+        },
+        {
+          "score": 0.13333334,
+          "value": "film"
+        },
+        {
+          "score": 0.13333334,
+          "value": "record"
+        },
+        {
+          "score": 0.13333334,
+          "value": "利用規約"
+        },
+        {
+          "score": 0.13333334,
+          "value": "サイトマップ"
+        },
+        {
+          "score": 0.1,
+          "value": "consul"
+        },
+        {
+          "score": 0.1,
+          "value": "今後ともよろしくお願いします"
+        },
+        {
+          "score": 0.1,
+          "value": "recycle"
+        },
+        {
+          "score": 0.1,
+          "value": "previous"
+        },
+        {
+          "score": 0.1,
+          "value": "previous net秋葉原営業所開設"
+        },
+        {
+          "score": 0.1,
+          "value": "ジャニーズw"
+        },
+        {
+          "score": 0.06666667,
+          "value": "取り扱いアーティスト一覧"
+        },
+        {
+          "score": 0.06666667,
+          "value": "航空グッズ"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "justy"
+        },
+        {
+          "score": 0.8666667,
+          "value": "とってもかんたん"
+        },
+        {
+          "score": 0.23333333,
+          "value": "会社概要"
+        },
+        {
+          "score": 0.16666667,
+          "value": "net秋葉原営業所開設"
+        },
+        {
+          "score": 0.13333334,
+          "value": "お問い合わせ"
+        },
+        {
+          "score": 0.13333334,
+          "value": "初めての方へ"
+        },
+        {
+          "score": 0.13333334,
+          "value": "anniversary"
+        },
+        {
+          "score": 0.13333334,
+          "value": "tour"
+        },
+        {
+          "score": 0.13333334,
+          "value": "film"
+        },
+        {
+          "score": 0.13333334,
+          "value": "record"
+        },
+        {
+          "score": 0.13333334,
+          "value": "利用規約"
+        },
+        {
+          "score": 0.13333334,
+          "value": "サイトマップ"
+        },
+        {
+          "score": 0.1,
+          "value": "consul"
+        },
+        {
+          "score": 0.1,
+          "value": "今後ともよろしくお願いします"
+        },
+        {
+          "score": 0.1,
+          "value": "recycle"
+        },
+        {
+          "score": 0.1,
+          "value": "previous"
+        },
+        {
+          "score": 0.1,
+          "value": "previous net秋葉原営業所開設"
+        },
+        {
+          "score": 0.1,
+          "value": "ジャニーズw"
+        },
+        {
+          "score": 0.06666667,
+          "value": "取り扱いアーティスト一覧"
+        },
+        {
+          "score": 0.06666667,
+          "value": "航空グッズ"
+        },
+        {
+          "score": 0.06666667,
+          "value": "exhibition"
+        },
+        {
+          "score": 0.06666667,
+          "value": "facebookでシェア"
+        },
+        {
+          "score": 0.06666667,
+          "value": "twitterでツイート"
+        },
+        {
+          "score": 0.06666667,
+          "value": "snow"
+        },
+        {
+          "score": 0.06666667,
+          "value": "memory"
+        },
+        {
+          "score": 0.06666667,
+          "value": "よくある質問"
+        },
+        {
+          "score": 0.06666667,
+          "value": "入社式"
+        },
+        {
+          "score": 0.06666667,
+          "value": "昭和アーティスト"
+        },
+        {
+          "score": 0.06666667,
+          "value": "landing"
+        },
+        {
+          "score": 0.06666667,
+          "value": "rampage"
+        },
+        {
+          "score": 0.06666667,
+          "value": "海外アーティスト"
+        },
+        {
+          "score": 0.06666667,
+          "value": "ジャニーズw c"
+        },
+        {
+          "score": 0.06666667,
+          "value": "グッズ買取専門店justy"
+        },
+        {
+          "score": 0.06666667,
+          "value": "対象の生写真まとめ売りで買取価格アップ"
+        },
+        {
+          "score": 0.06666667,
+          "value": "form"
+        },
+        {
+          "score": 0.06666667,
+          "value": "初めてだからよくわからない"
+        },
+        {
+          "score": 0.06666667,
+          "value": "買取を依頼するために必要な物は"
+        },
+        {
+          "score": 0.06666667,
+          "value": "自宅にある箱で商品を送りたい"
+        },
+        {
+          "score": 0.06666667,
+          "value": "blu"
+        },
+        {
+          "score": 0.06666667,
+          "value": "自宅にある箱で商品を送りたい 会社概要"
+        },
+        {
+          "score": 0.06666667,
+          "value": "bump"
+        },
+        {
+          "score": 0.06666667,
+          "value": "step"
+        },
+        {
+          "score": 0.033333335,
+          "value": "宅配買取申込"
+        },
+        {
+          "score": 0.033333335,
+          "value": "net"
+        },
+        {
+          "score": 0.033333335,
+          "value": "single collection"
+        },
+        {
+          "score": 0.033333335,
+          "value": "ジャニーズw step"
+        },
+        {
+          "score": 0.033333335,
+          "value": "single"
+        },
+        {
+          "score": 0.033333335,
+          "value": "リサイクルネット名古屋営業所開設"
+        },
+        {
+          "score": 0.033333335,
+          "value": "続きを読む"
+        },
+        {
+          "score": 0.033333335,
+          "value": "申し込む"
+        },
+        {
+          "score": 0.033333335,
+          "value": "秋葉原に営業所ができました"
+        },
+        {
+          "score": 0.033333335,
+          "value": "会員ページログイン"
+        },
+        {
+          "score": 0.033333335,
+          "value": "アイドルグッズ買取"
+        },
+        {
+          "score": 0.033333335,
+          "value": "アーティストグッズ買取"
+        },
+        {
+          "score": 0.033333335,
+          "value": "韓流グッズ買取"
+        },
+        {
+          "score": 0.033333335,
+          "value": "ジャニーズ買取"
+        },
+        {
+          "score": 0.033333335,
+          "value": "recruit"
+        },
+        {
+          "score": 0.033333335,
+          "value": "本日よりコーポレートサイトがフルリニューアルしました"
+        },
+        {
+          "score": 0.033333335,
+          "value": "本日よりコーポレートサイトがリニューアルしました"
+        },
+        {
+          "score": 0.033333335,
+          "value": "アクセス"
+        },
+        {
+          "score": 0.033333335,
+          "value": "個人情報保護方針"
+        },
+        {
+          "score": 0.033333335,
+          "value": "tel"
+        },
+        {
+          "score": 0.033333335,
+          "value": "b社様 生活雑貨販売"
+        },
+        {
+          "score": 0.033333335,
+          "value": "生活雑貨販売"
+        },
+        {
+          "score": 0.033333335,
+          "value": "b社様"
+        },
+        {
+          "score": 0.033333335,
+          "value": "a社様 美容器具販売"
+        },
+        {
+          "score": 0.033333335,
+          "value": "メニューを閉じる"
+        },
+        {
+          "score": 0.033333335,
+          "value": "宅配買取申し込み"
+        },
+        {
+          "score": 0.033333335,
+          "value": "会員ログイン"
+        },
+        {
+          "score": 0.033333335,
+          "value": "アイドル"
+        },
+        {
+          "score": 0.033333335,
+          "value": "アーティスト"
+        },
+        {
+          "score": 0.033333335,
+          "value": "ジャニーズ"
+        },
+        {
+          "score": 0.033333335,
+          "value": "mission"
+        },
+        {
+          "score": 0.033333335,
+          "value": "recycle net"
+        },
+        {
+          "score": 0.033333335,
+          "value": "店舗在庫"
+        },
+        {
+          "score": 0.033333335,
+          "value": "店舗在庫 com"
+        },
+        {
+          "score": 0.033333335,
+          "value": "ディズニー館"
+        },
+        {
+          "score": 0.033333335,
+          "value": "ももいろクローバーz"
+        },
+        {
+          "score": 0.033333335,
+          "value": "でんぱ組"
+        },
+        {
+          "score": 0.033333335,
+          "value": "でんぱ組 inc"
+        },
+        {
+          "score": 0.033333335,
+          "value": "生写真"
+        },
+        {
+          "score": 0.033333335,
+          "value": "宅配買取の申し込みはこちら"
+        },
+        {
+          "score": 0.033333335,
+          "value": "宅配買取は全国対応"
+        },
+        {
+          "score": 0.033333335,
+          "value": "宅配買取は全国対応 とってもかんたん"
+        },
+        {
+          "score": 0.033333335,
+          "value": "incグッズ宅配買取"
+        },
+        {
+          "score": 0.033333335,
+          "value": "美容器具販売"
+        },
+        {
+          "score": 0.033333335,
+          "value": "a社様"
+        },
+        {
+          "score": 0.033333335,
+          "value": "導入実績"
+        },
+        {
+          "score": 0.033333335,
+          "value": "台湾でよく使われるecモールを網羅"
+        },
+        {
+          "score": 0.033333335,
+          "value": "idol"
+        },
+        {
+          "score": 0.033333335,
+          "value": "ドレミソラシド"
+        },
+        {
+          "score": 0.033333335,
+          "value": "副代表挨拶"
+        },
+        {
+          "score": 0.033333335,
+          "value": "生写真買取"
+        },
+        {
+          "score": 0.033333335,
+          "value": "super"
+        },
+        {
+          "score": 0.033333335,
+          "value": "soul"
+        },
+        {
+          "score": 0.033333335,
+          "value": "super soul"
+        },
+        {
+          "score": 0.033333335,
+          "value": "missionグッズ買取"
+        },
+        {
+          "score": 0.033333335,
+          "value": "古物許可証番号"
+        },
+        {
+          "score": 0.033333335,
+          "value": "chickenグッズ宅配買取"
+        },
+        {
+          "score": 0.033333335,
+          "value": "rampageグッズ宅配買取"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/osusume-aitemukan.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://osusume-aitemukan.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1,
+        "value": [
+          "justy-consul.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 0.9,
+            "vertical": "Business / Services"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 1,
+      "value": [
+        "justy-consul.com"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Online / Services",
+      "value": [
+        "Online / Services",
+        "Shopping / Department Stores"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Online / Services",
+        "rank": 1,
+        "score": 85
+      },
+      "value": [
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 85
+        },
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 1,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

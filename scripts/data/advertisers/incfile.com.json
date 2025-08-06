@@ -1,0 +1,388 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 6,
+      "sampleValue": [
+        "Digidip",
+        "PartnerStack",
+        "ShareASale"
+      ],
+      "value": [
+        "Digidip",
+        "PartnerStack",
+        "ShareASale",
+        "Skimlinks",
+        "TUNE",
+        "Viglink"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 1,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "support@incfile.com"
+        }
+      ]
+    },
+    "domain": "incfile.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "Start your business today for as little as $0 + state fees. Incfile helps you quickly and easily create your LLC or other business entity. Learn more.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/incfile.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://incfile.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 446
+      },
+      "partnersAdded": {
+        "count": 30,
+        "value": [
+          {
+            "domain": "fave.co"
+          },
+          {
+            "domain": "venturesmarter.com"
+          },
+          {
+            "domain": "solodirectoryzone.com"
+          },
+          {
+            "domain": "theinformertimes.com"
+          },
+          {
+            "domain": "usdirectorylist.com"
+          },
+          {
+            "domain": "wayseolinks.com"
+          },
+          {
+            "domain": "webuildmuscle.com"
+          },
+          {
+            "domain": "atmfamilia.com"
+          },
+          {
+            "domain": "webdirectoryzone.com"
+          },
+          {
+            "domain": "themasterdirectory.com"
+          },
+          {
+            "domain": "superbhubdirectory.com"
+          },
+          {
+            "domain": "element316.com"
+          },
+          {
+            "domain": "primesolodirectory.com"
+          },
+          {
+            "domain": "smartwaydirectory.com"
+          },
+          {
+            "domain": "fundingtobiz.com"
+          },
+          {
+            "domain": "viralzonedirectory.com"
+          },
+          {
+            "domain": "prodirectoryguide.com"
+          },
+          {
+            "domain": "ultimatejobs.com"
+          },
+          {
+            "domain": "podbay.fm"
+          },
+          {
+            "domain": "rankmeetsitesdirectory.com"
+          },
+          {
+            "domain": "seoprodirectory.com"
+          },
+          {
+            "domain": "hostseolinks.com"
+          },
+          {
+            "domain": "linkdirectoryzone.com"
+          },
+          {
+            "domain": "llcgeek.com"
+          },
+          {
+            "domain": "proseoarticles.com"
+          },
+          {
+            "domain": "searchstackdirectory.com"
+          },
+          {
+            "domain": "semrushdirectory.com"
+          },
+          {
+            "domain": "rankhubdirectory.com"
+          },
+          {
+            "domain": "llcinsights.com"
+          },
+          {
+            "domain": "topicsmosaic.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 8,
+        "value": [
+          {
+            "domain": "searchtile.com"
+          },
+          {
+            "domain": "wrjkbr.com"
+          },
+          {
+            "domain": "savemyassoff.com"
+          },
+          {
+            "domain": "a2zseoarticles.com"
+          },
+          {
+            "domain": "ly2818.com"
+          },
+          {
+            "domain": "strivewithkristin.com"
+          },
+          {
+            "domain": "saucebosslifeacademyllc.com"
+          },
+          {
+            "domain": "collinswebconsulting.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 94,
+            "promotype": "blog",
+            "value": [
+              "10reviewsplus.com",
+              "1topproduct.com",
+              "500toprated.com",
+              "acespencer.com",
+              "adamriemer.me",
+              "allyoucanbooks.com",
+              "andigarcia.com",
+              "appsious.com",
+              "articlement.com",
+              "bestllcfilingservices.com",
+              "bizreport.com",
+              "blogsepaise.com",
+              "boostsuite.com",
+              "brandafy.com",
+              "braylenavy.com",
+              "brock.tv",
+              "casualfridaysrei.com",
+              "chamberofcommerce.org",
+              "crazyegg.com",
+              "crowdspring.com",
+              "danceteacherfinder.com",
+              "ddiy.co",
+              "detailedguideonhowto.com",
+              "dhowardassociates.com",
+              "ecommerceparadise.com",
+              "eidlapplication.com",
+              "flipn.pro",
+              "goodpods.com",
+              "gurusoftware.com",
+              "headwestguide.com",
+              "heavenarticle.com",
+              "hostseolinks.com",
+              "hussletips.com",
+              "iapath.com",
+              "jdcconsultancy.com",
+              "kiuly.com",
+              "lendzee.ai",
+              "licenselookup.org",
+              "linkedin.com",
+              "livingmyalife.com",
+              "llcreviews.com",
+              "magnoliamedianetwork.com",
+              "mailinvest.blog",
+              "makemanagegrowmoney.com",
+              "mazinooyolo.com",
+              "medium.com",
+              "moneyaisle.com",
+              "msha.ke",
+              "namu1099.com",
+              "nanoglobals.com",
+              "onlinereviewpage.com",
+              "papersuperheroes.com",
+              "player.fm",
+              "podchaser.com",
+              "prolinksdirectory.com",
+              "proseoarticles.com",
+              "qinghua76235.com",
+              "rakily.com",
+              "raretopsitesdirectory.com",
+              "readingwithyourkids.com",
+              "registeredagentsreviewed.com",
+              "scamreport.com",
+              "secstates.com",
+              "seohelperdirectory.com",
+              "sidehustleinc.net",
+              "smartmoneymamas.com",
+              "smbguide.com",
+              "soartraininginstitute.com",
+              "startuphoncho.com",
+              "stepbystepbusiness.com",
+              "storytellingco.com",
+              "suohk.com",
+              "thcaffiliates.com",
+              "theconversationproject.morebettermediacompany.com",
+              "thecumberlandmall.com",
+              "thedigitalmerchant.com",
+              "thelawdictionary.org",
+              "thepodiummedia.com",
+              "therightpro.com",
+              "top10llcformationsites.com",
+              "toptenwebhostingsites.com",
+              "ultimatecannabisjobs.com",
+              "video.getpvd.com",
+              "wattzupp.com",
+              "wayseolinks.com",
+              "webbizmarket.com",
+              "webranksdirectory.com",
+              "websitebuilder.org",
+              "websitetipsandtutorials.com",
+              "womenonbusiness.com",
+              "woosplendid.com",
+              "worldwidetopsite.com",
+              "worldwidetopsite.link",
+              "zenithtechs.com"
+            ]
+          },
+          {
+            "count": 4,
+            "promotype": "incentive",
+            "value": [
+              "awesomecoupons.org",
+              "brandingleaks.com",
+              "kidscashandchaos.com",
+              "usmagazine.com"
+            ]
+          },
+          {
+            "count": 8,
+            "promotype": "content",
+            "value": [
+              "bestincservices.com",
+              "businessformation.io",
+              "fduty.com",
+              "govdocfiling.com",
+              "kripeshadwani.com",
+              "pleiadesconsultinggroup.com",
+              "workfromhomelegitbusiness.com",
+              "yotsnp.org"
+            ]
+          },
+          {
+            "count": 34,
+            "promotype": "student",
+            "value": [
+              "bobclary.com",
+              "bossmomcollective.com",
+              "brock.mykajabi.com",
+              "business808.com",
+              "business.ginnysilver.com",
+              "castbox.fm",
+              "clicknowmarketing.com",
+              "cmcbridelaw.com",
+              "droppricetoday.com",
+              "firstsiteguide.com",
+              "gedlynk.com",
+              "getoutdoorjobs.beehiiv.com",
+              "getsetcodes.com",
+              "globalseoarticles.com",
+              "hawthornlaw.net",
+              "ivoox.com",
+              "kevinanye.com",
+              "llcgeek.com",
+              "llcuniversity.com",
+              "management.org",
+              "marketingbykevin.com",
+              "mylancehq.com",
+              "onefinancecoach.com",
+              "rnrmediagrp.com",
+              "rumble.com",
+              "smallbusinessbrain.com",
+              "solutionscout.com",
+              "startupsanonymous.com",
+              "startyourboutique.com",
+              "thedifferentmomblog.com",
+              "thefranchiseking.com",
+              "venturesmarter.com",
+              "wayseodirectory.com",
+              "wpfixall.com"
+            ]
+          },
+          {
+            "count": 2,
+            "promotype": "forum",
+            "value": [
+              "investopedia.com",
+              "ultimatejobs.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "youtube",
+        "facebook",
+        "linkedin",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/incfile",
+        "instagram": "https://instagram.com/incfile",
+        "linkedin": "https://linkedin.com/company/incfile-com",
+        "youtube": "https://youtube.com/embed/r_oigzyh7nu"
+      }
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Business / Services",
+        "rank": 2,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Business / Services",
+          "rank": 2,
+          "score": 95
+        },
+        {
+          "name": "Business / Software",
+          "rank": 2,
+          "score": 85
+        }
+      ]
+    }
+  }
+}

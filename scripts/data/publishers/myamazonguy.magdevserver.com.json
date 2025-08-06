@@ -1,0 +1,639 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 2,
+      "sampleValue": [
+        "PartnerStack",
+        "Refersion"
+      ],
+      "value": [
+        "PartnerStack",
+        "Refersion"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.7
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.7
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.7
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "myamazonguy.magdevserver.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "amazon"
+        },
+        {
+          "score": 0.7599716,
+          "value": "seller"
+        },
+        {
+          "score": 0.40013495,
+          "value": "pixelme"
+        },
+        {
+          "score": 0.32195368,
+          "value": "businesses"
+        },
+        {
+          "score": 0.30010122,
+          "value": "godaddy"
+        },
+        {
+          "score": 0.30010122,
+          "value": "veem"
+        },
+        {
+          "score": 0.28042245,
+          "value": "sellbrite"
+        },
+        {
+          "score": 0.24716271,
+          "value": "individual"
+        },
+        {
+          "score": 0.23856576,
+          "value": "professional"
+        },
+        {
+          "score": 0.23588619,
+          "value": "pricing"
+        },
+        {
+          "score": 0.23122552,
+          "value": "clause"
+        },
+        {
+          "score": 0.21607287,
+          "value": "industry"
+        },
+        {
+          "score": 0.20758526,
+          "value": "platform"
+        },
+        {
+          "score": 0.20106782,
+          "value": "training"
+        },
+        {
+          "score": 0.19186799,
+          "value": "incident"
+        },
+        {
+          "score": 0.17535594,
+          "value": "store"
+        },
+        {
+          "score": 0.1740587,
+          "value": "companies"
+        },
+        {
+          "score": 0.1653841,
+          "value": "arbitrage"
+        },
+        {
+          "score": 0.16430947,
+          "value": "retail"
+        },
+        {
+          "score": 0.16404887,
+          "value": "fba"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "amazon"
+        },
+        {
+          "score": 0.7599716,
+          "value": "seller"
+        },
+        {
+          "score": 0.40013495,
+          "value": "pixelme"
+        },
+        {
+          "score": 0.32195368,
+          "value": "businesses"
+        },
+        {
+          "score": 0.30010122,
+          "value": "godaddy"
+        },
+        {
+          "score": 0.30010122,
+          "value": "veem"
+        },
+        {
+          "score": 0.28042245,
+          "value": "sellbrite"
+        },
+        {
+          "score": 0.24716271,
+          "value": "individual"
+        },
+        {
+          "score": 0.23856576,
+          "value": "professional"
+        },
+        {
+          "score": 0.23588619,
+          "value": "pricing"
+        },
+        {
+          "score": 0.23122552,
+          "value": "clause"
+        },
+        {
+          "score": 0.21607287,
+          "value": "industry"
+        },
+        {
+          "score": 0.20758526,
+          "value": "platform"
+        },
+        {
+          "score": 0.20106782,
+          "value": "training"
+        },
+        {
+          "score": 0.19186799,
+          "value": "incident"
+        },
+        {
+          "score": 0.17535594,
+          "value": "store"
+        },
+        {
+          "score": 0.1740587,
+          "value": "companies"
+        },
+        {
+          "score": 0.1653841,
+          "value": "arbitrage"
+        },
+        {
+          "score": 0.16430947,
+          "value": "retail"
+        },
+        {
+          "score": 0.16404887,
+          "value": "fba"
+        },
+        {
+          "score": 0.16085398,
+          "value": "request"
+        },
+        {
+          "score": 0.16045316,
+          "value": "agreement"
+        },
+        {
+          "score": 0.15905364,
+          "value": "android"
+        },
+        {
+          "score": 0.15743014,
+          "value": "personal datum"
+        },
+        {
+          "score": 0.15368927,
+          "value": "start"
+        },
+        {
+          "score": 0.15305161,
+          "value": "designing"
+        },
+        {
+          "score": 0.15005061,
+          "value": "webinars"
+        },
+        {
+          "score": 0.14705807,
+          "value": "listing"
+        },
+        {
+          "score": 0.14021122,
+          "value": "channel"
+        },
+        {
+          "score": 0.13775137,
+          "value": "exporter"
+        },
+        {
+          "score": 0.13504554,
+          "value": "employees"
+        },
+        {
+          "score": 0.1340616,
+          "value": "guide"
+        },
+        {
+          "score": 0.13204454,
+          "value": "lifecycle"
+        },
+        {
+          "score": 0.13116877,
+          "value": "law"
+        },
+        {
+          "score": 0.13067386,
+          "value": "professional seller"
+        },
+        {
+          "score": 0.13049534,
+          "value": "demo"
+        },
+        {
+          "score": 0.12920903,
+          "value": "fee"
+        },
+        {
+          "score": 0.12871672,
+          "value": "learn"
+        },
+        {
+          "score": 0.12604252,
+          "value": "practices"
+        },
+        {
+          "score": 0.12604252,
+          "value": "action"
+        },
+        {
+          "score": 0.12604252,
+          "value": "benchmarks"
+        },
+        {
+          "score": 0.12545215,
+          "value": "subject"
+        },
+        {
+          "score": 0.1253492,
+          "value": "team"
+        },
+        {
+          "score": 0.123405896,
+          "value": "sign"
+        },
+        {
+          "score": 0.1229923,
+          "value": "ship"
+        },
+        {
+          "score": 0.12014257,
+          "value": "box"
+        },
+        {
+          "score": 0.120040484,
+          "value": "skills"
+        },
+        {
+          "score": 0.11972786,
+          "value": "step"
+        },
+        {
+          "score": 0.11703947,
+          "value": "desk"
+        },
+        {
+          "score": 0.114938706,
+          "value": "category"
+        },
+        {
+          "score": 0.11488822,
+          "value": "trial"
+        },
+        {
+          "score": 0.11474664,
+          "value": "feedback"
+        },
+        {
+          "score": 0.11103745,
+          "value": "messaging"
+        },
+        {
+          "score": 0.11103745,
+          "value": "engage"
+        },
+        {
+          "score": 0.11066127,
+          "value": "tom"
+        },
+        {
+          "score": 0.11025634,
+          "value": "link"
+        },
+        {
+          "score": 0.108036436,
+          "value": "building"
+        },
+        {
+          "score": 0.105035424,
+          "value": "education"
+        },
+        {
+          "score": 0.10488296,
+          "value": "unit"
+        },
+        {
+          "score": 0.102946945,
+          "value": "applicable"
+        },
+        {
+          "score": 0.10179442,
+          "value": "resource"
+        },
+        {
+          "score": 0.10174321,
+          "value": "multi"
+        },
+        {
+          "score": 0.0990334,
+          "value": "working"
+        },
+        {
+          "score": 0.0990334,
+          "value": "success"
+        },
+        {
+          "score": 0.0990334,
+          "value": "bases"
+        },
+        {
+          "score": 0.09872214,
+          "value": "money"
+        },
+        {
+          "score": 0.09851552,
+          "value": "benattar"
+        },
+        {
+          "score": 0.09851552,
+          "value": "tom benattar"
+        },
+        {
+          "score": 0.09691991,
+          "value": "transfer"
+        },
+        {
+          "score": 0.096854635,
+          "value": "payments"
+        },
+        {
+          "score": 0.096491225,
+          "value": "ads"
+        },
+        {
+          "score": 0.09603239,
+          "value": "work"
+        },
+        {
+          "score": 0.09603239,
+          "value": "designed"
+        },
+        {
+          "score": 0.095933996,
+          "value": "marketplace"
+        },
+        {
+          "score": 0.09347415,
+          "value": "measure"
+        },
+        {
+          "score": 0.09303138,
+          "value": "integrations"
+        },
+        {
+          "score": 0.09303138,
+          "value": "touch"
+        },
+        {
+          "score": 0.09303138,
+          "value": "connect"
+        },
+        {
+          "score": 0.09303138,
+          "value": "instant"
+        },
+        {
+          "score": 0.09264001,
+          "value": "chat"
+        },
+        {
+          "score": 0.09209498,
+          "value": "retail arbitrage"
+        },
+        {
+          "score": 0.091093116,
+          "value": "get started"
+        },
+        {
+          "score": 0.090030365,
+          "value": "helpu"
+        },
+        {
+          "score": 0.090030365,
+          "value": "handbook"
+        },
+        {
+          "score": 0.08702935,
+          "value": "sessions"
+        },
+        {
+          "score": 0.08702935,
+          "value": "remote"
+        },
+        {
+          "score": 0.08609461,
+          "value": "integration"
+        },
+        {
+          "score": 0.085695006,
+          "value": "retargeting"
+        },
+        {
+          "score": 0.08517282,
+          "value": "real"
+        },
+        {
+          "score": 0.08402834,
+          "value": "organized"
+        },
+        {
+          "score": 0.0829607,
+          "value": "article"
+        },
+        {
+          "score": 0.08177862,
+          "value": "individual seller"
+        },
+        {
+          "score": 0.08097166,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.07871507,
+          "value": "unlimited"
+        },
+        {
+          "score": 0.07833984,
+          "value": "scout"
+        },
+        {
+          "score": 0.07624831,
+          "value": "attribution"
+        },
+        {
+          "score": 0.075025305,
+          "value": "insights"
+        },
+        {
+          "score": 0.07456625,
+          "value": "advertising"
+        },
+        {
+          "score": 0.072913446,
+          "value": "liability"
+        },
+        {
+          "score": 0.07219973,
+          "value": "audience"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/myamazonguy.magdevserver.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://myamazonguy.magdevserver.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 8,
+        "value": [
+          "amzalert.com",
+          "veem.com",
+          "carbon6.io",
+          "fastproductphotographyservices.com",
+          "helpscout.com",
+          "junglescout.com",
+          "pixelme.me",
+          "sellbrite.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 3.6499999,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 1,
+            "vertical": "Finance / Banking"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 8,
+      "value": [
+        "amzalert.com",
+        "veem.com",
+        "carbon6.io",
+        "fastproductphotographyservices.com",
+        "helpscout.com",
+        "junglescout.com",
+        "pixelme.me",
+        "sellbrite.com"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Business / Ecommerce",
+      "value": [
+        "Business / Ecommerce",
+        "Business / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Business / Ecommerce",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Business / Services",
+          "rank": 1,
+          "score": 80
+        }
+      ]
+    }
+  }
+}

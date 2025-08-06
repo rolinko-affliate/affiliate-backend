@@ -1,0 +1,1024 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 4,
+      "sampleValue": [
+        "CJ Affiliate",
+        "Rakuten",
+        "Rewardstyle"
+      ],
+      "value": [
+        "CJ Affiliate",
+        "Rakuten",
+        "Rewardstyle",
+        "ShopStyle"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.7
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.7
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.7
+        }
+      ]
+    },
+    "domain": "glamazondiaries.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "body"
+        },
+        {
+          "score": 0.89205456,
+          "value": "mini"
+        },
+        {
+          "score": 0.76901793,
+          "value": "sign"
+        },
+        {
+          "score": 0.6716398,
+          "value": "makeup"
+        },
+        {
+          "score": 0.5543543,
+          "value": "bath"
+        },
+        {
+          "score": 0.49782494,
+          "value": "color"
+        },
+        {
+          "score": 0.4824013,
+          "value": "hair"
+        },
+        {
+          "score": 0.42427278,
+          "value": "beauty"
+        },
+        {
+          "score": 0.4164493,
+          "value": "fragrance"
+        },
+        {
+          "score": 0.3872673,
+          "value": "tool"
+        },
+        {
+          "score": 0.33538082,
+          "value": "store"
+        },
+        {
+          "score": 0.31222555,
+          "value": "filter"
+        },
+        {
+          "score": 0.28360876,
+          "value": "sorting"
+        },
+        {
+          "score": 0.2601514,
+          "value": "skin"
+        },
+        {
+          "score": 0.19212206,
+          "value": "sephora"
+        },
+        {
+          "score": 0.16290292,
+          "value": "dress"
+        },
+        {
+          "score": 0.15882473,
+          "value": "eye"
+        },
+        {
+          "score": 0.14786533,
+          "value": "set"
+        },
+        {
+          "score": 0.1387156,
+          "value": "cream"
+        },
+        {
+          "score": 0.13402873,
+          "value": "clothing"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "body"
+        },
+        {
+          "score": 0.89205456,
+          "value": "mini"
+        },
+        {
+          "score": 0.76901793,
+          "value": "sign"
+        },
+        {
+          "score": 0.6716398,
+          "value": "makeup"
+        },
+        {
+          "score": 0.5543543,
+          "value": "bath"
+        },
+        {
+          "score": 0.49782494,
+          "value": "color"
+        },
+        {
+          "score": 0.4824013,
+          "value": "hair"
+        },
+        {
+          "score": 0.42427278,
+          "value": "beauty"
+        },
+        {
+          "score": 0.4164493,
+          "value": "fragrance"
+        },
+        {
+          "score": 0.3872673,
+          "value": "tool"
+        },
+        {
+          "score": 0.33538082,
+          "value": "store"
+        },
+        {
+          "score": 0.31222555,
+          "value": "filter"
+        },
+        {
+          "score": 0.28360876,
+          "value": "sorting"
+        },
+        {
+          "score": 0.2601514,
+          "value": "skin"
+        },
+        {
+          "score": 0.19212206,
+          "value": "sephora"
+        },
+        {
+          "score": 0.16290292,
+          "value": "dress"
+        },
+        {
+          "score": 0.15882473,
+          "value": "eye"
+        },
+        {
+          "score": 0.14786533,
+          "value": "set"
+        },
+        {
+          "score": 0.1387156,
+          "value": "cream"
+        },
+        {
+          "score": 0.13402873,
+          "value": "clothing"
+        },
+        {
+          "score": 0.12610272,
+          "value": "travel"
+        },
+        {
+          "score": 0.121573426,
+          "value": "oil"
+        },
+        {
+          "score": 0.11091936,
+          "value": "perfume"
+        },
+        {
+          "score": 0.10949264,
+          "value": "skincare"
+        },
+        {
+          "score": 0.10782587,
+          "value": "fashion"
+        },
+        {
+          "score": 0.107496865,
+          "value": "rare"
+        },
+        {
+          "score": 0.107496865,
+          "value": "rare beauty"
+        },
+        {
+          "score": 0.1052097,
+          "value": "trial"
+        },
+        {
+          "score": 0.10378758,
+          "value": "style"
+        },
+        {
+          "score": 0.10216591,
+          "value": "designer"
+        },
+        {
+          "score": 0.09978261,
+          "value": "category"
+        },
+        {
+          "score": 0.09695388,
+          "value": "offer"
+        },
+        {
+          "score": 0.09631925,
+          "value": "lash"
+        },
+        {
+          "score": 0.09588178,
+          "value": "dresses"
+        },
+        {
+          "score": 0.090578616,
+          "value": "code"
+        },
+        {
+          "score": 0.087667346,
+          "value": "people"
+        },
+        {
+          "score": 0.086248904,
+          "value": "care"
+        },
+        {
+          "score": 0.08490476,
+          "value": "standard"
+        },
+        {
+          "score": 0.084531575,
+          "value": "photo"
+        },
+        {
+          "score": 0.082512006,
+          "value": "jewelry"
+        },
+        {
+          "score": 0.08233803,
+          "value": "insider"
+        },
+        {
+          "score": 0.080039755,
+          "value": "promotion"
+        },
+        {
+          "score": 0.07804392,
+          "value": "youth"
+        },
+        {
+          "score": 0.07776369,
+          "value": "velour"
+        },
+        {
+          "score": 0.07536635,
+          "value": "shoes"
+        },
+        {
+          "score": 0.07385729,
+          "value": "virtue"
+        },
+        {
+          "score": 0.07382957,
+          "value": "project"
+        },
+        {
+          "score": 0.07339695,
+          "value": "exclusion"
+        },
+        {
+          "score": 0.073189355,
+          "value": "phluid"
+        },
+        {
+          "score": 0.07090219,
+          "value": "protein"
+        },
+        {
+          "score": 0.07069181,
+          "value": "jackets"
+        },
+        {
+          "score": 0.070680164,
+          "value": "bags"
+        },
+        {
+          "score": 0.06861502,
+          "value": "vital protein"
+        },
+        {
+          "score": 0.06861502,
+          "value": "vital"
+        },
+        {
+          "score": 0.06694817,
+          "value": "brush"
+        },
+        {
+          "score": 0.0665,
+          "value": "glow"
+        },
+        {
+          "score": 0.06455251,
+          "value": "sneakers"
+        },
+        {
+          "score": 0.06406373,
+          "value": "spray"
+        },
+        {
+          "score": 0.063482046,
+          "value": "pants"
+        },
+        {
+          "score": 0.061518356,
+          "value": "vitamin"
+        },
+        {
+          "score": 0.060127653,
+          "value": "sunglasses"
+        },
+        {
+          "score": 0.059885986,
+          "value": "eyeliner"
+        },
+        {
+          "score": 0.05946635,
+          "value": "bumble"
+        },
+        {
+          "score": 0.05946635,
+          "value": "selfless"
+        },
+        {
+          "score": 0.057239432,
+          "value": "valid"
+        },
+        {
+          "score": 0.05626187,
+          "value": "eyeshadow"
+        },
+        {
+          "score": 0.055968266,
+          "value": "treatment"
+        },
+        {
+          "score": 0.055381663,
+          "value": "shirt"
+        },
+        {
+          "score": 0.054892015,
+          "value": "acid"
+        },
+        {
+          "score": 0.054540586,
+          "value": "luxury"
+        },
+        {
+          "score": 0.054330625,
+          "value": "shoe"
+        },
+        {
+          "score": 0.05398689,
+          "value": "cosmetic"
+        },
+        {
+          "score": 0.053820707,
+          "value": "sole"
+        },
+        {
+          "score": 0.053627227,
+          "value": "shirts"
+        },
+        {
+          "score": 0.052543283,
+          "value": "leather"
+        },
+        {
+          "score": 0.052520253,
+          "value": "underwear"
+        },
+        {
+          "score": 0.052264005,
+          "value": "accessory"
+        },
+        {
+          "score": 0.05224536,
+          "value": "moisturizer"
+        },
+        {
+          "score": 0.05186948,
+          "value": "activewear"
+        },
+        {
+          "score": 0.048030514,
+          "value": "perricone"
+        },
+        {
+          "score": 0.047831915,
+          "value": "facial"
+        },
+        {
+          "score": 0.047475576,
+          "value": "select"
+        },
+        {
+          "score": 0.046895724,
+          "value": "handbags"
+        },
+        {
+          "score": 0.046331357,
+          "value": "hyaluronic"
+        },
+        {
+          "score": 0.046282247,
+          "value": "discretion"
+        },
+        {
+          "score": 0.046165522,
+          "value": "bag"
+        },
+        {
+          "score": 0.045869134,
+          "value": "jeans"
+        },
+        {
+          "score": 0.045755673,
+          "value": "sneaker"
+        },
+        {
+          "score": 0.045743346,
+          "value": "sole discretion"
+        },
+        {
+          "score": 0.044458076,
+          "value": "kid"
+        },
+        {
+          "score": 0.04353456,
+          "value": "lotion"
+        },
+        {
+          "score": 0.04345618,
+          "value": "viktor"
+        },
+        {
+          "score": 0.043274462,
+          "value": "kit"
+        },
+        {
+          "score": 0.043188024,
+          "value": "coats"
+        },
+        {
+          "score": 0.043156434,
+          "value": "sizes"
+        },
+        {
+          "score": 0.04295437,
+          "value": "stylists"
+        },
+        {
+          "score": 0.042776708,
+          "value": "boots"
+        },
+        {
+          "score": 0.04225612,
+          "value": "swimwear"
+        },
+        {
+          "score": 0.041836094,
+          "value": "touch"
+        },
+        {
+          "score": 0.041653395,
+          "value": "sweaters"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/glamazondiaries.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://glamazondiaries.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 143,
+        "value": [
+          "etsy.com",
+          "apple.com",
+          "amazon.com",
+          "hm.com",
+          "nordstrom.com",
+          "doubleclick.net",
+          "ad.doubleclick.net",
+          "adjust.com",
+          "everlane.com",
+          "evyy.net",
+          "walmart.com",
+          "aldoshoes.com",
+          "alexandermcqueen.com",
+          "alloyapparel.com",
+          "americanapparel.net",
+          "revolve.com",
+          "anntaylor.com",
+          "sephora.com",
+          "anthropologie.com",
+          "shein.com",
+          "stories.com",
+          "asos.com",
+          "asos.bbgqo9.net",
+          "aspinaloflondon.com",
+          "modaoperandi.com",
+          "gap.com",
+          "zappos.com",
+          "awin.com",
+          "barenecessities.com",
+          "baublebar.com",
+          "bergdorfgoodman.com",
+          "levi.com",
+          "neimanmarcus.com",
+          "blissworld.com",
+          "draperjames.com",
+          "cosabella.com",
+          "forever21.com",
+          "freepeople.com",
+          "modcloth.com",
+          "potterybarn.com",
+          "shopbop.com",
+          "wallis.co.uk",
+          "westelm.com",
+          "williams-sonoma.com",
+          "bloomingdales.com",
+          "bluefly.com",
+          "bobbibrowncosmetics.com",
+          "selfridges.com",
+          "boutiquetoyou.com",
+          "brahmin.com",
+          "swarovski.com",
+          "brownsfashion.com",
+          "brooksbrothers.com",
+          "net-a-porter.com",
+          "mrporter.com",
+          "lanebryant.com",
+          "frenchconnection.com",
+          "target.com",
+          "macys.com",
+          "charleskeith.com",
+          "chicos.com",
+          "clinique.com",
+          "clubmonaco.com",
+          "shopltk.com",
+          "couturecandy.com",
+          "crateandbarrel.com",
+          "mytheresa.com",
+          "cuyana.com",
+          "dermstore.com",
+          "dillards.com",
+          "drizly.com",
+          "dsw.com",
+          "payless.com",
+          "eloquii.com",
+          "oscardelarenta.com",
+          "esteelauder.com",
+          "karenmillen.com",
+          "katespade.com",
+          "stuartweitzman.com",
+          "theory.com",
+          "express.com",
+          "lacoste.com",
+          "loft.com",
+          "jcrew.com",
+          "farfetch.com",
+          "luisaviaroma.com",
+          "footlocker.com",
+          "fragrancenet.com",
+          "victoriassecret.com",
+          "toms.com",
+          "ghbass.com",
+          "llbean.com",
+          "ulta.com",
+          "vineyardvines.com",
+          "google.com",
+          "gorjana-griffin.com",
+          "hankypanky.com",
+          "overstock.com",
+          "renttherunway.com",
+          "spacenk.com",
+          "yoox.com",
+          "hunterboots.com",
+          "journeys.com",
+          "kiehls.com",
+          "lagarconne.com",
+          "link.mercent.com",
+          "lordandtaylor.com",
+          "markandgraham.com",
+          "marissacollections.com",
+          "matchesfashion.com",
+          "maxandchloe.com",
+          "ninewest.com",
+          "ouidad.com",
+          "verabradley.com",
+          "pepperjamnetwork.com",
+          "posanhanguera.com.br",
+          "proactiv.rw9xb6.net",
+          "rstyle.me",
+          "qksrv.net",
+          "rag-bone.com",
+          "rebeccaminkoff.com",
+          "theoutnet.com",
+          "reiss.com",
+          "revolveclothing.com",
+          "saksfifthavenue.com",
+          "sallybeauty.com",
+          "savannahs.com",
+          "shareasale-analytics.com",
+          "shareasale.com",
+          "shopmanhattanite.com",
+          "shopping.com",
+          "stevemadden.com",
+          "stylebop.com",
+          "theperfumespot.com",
+          "tnuck.com",
+          "uk.forzieri.com",
+          "us.allsaints.com",
+          "us.asos.com",
+          "us.boohoo.com",
+          "vincecamuto.com",
+          "yves-rocher.ru",
+          "yvesrocherusa.com",
+          "zulily.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 5,
+        "value": [
+          {
+            "domain": "us.allsaints.com"
+          },
+          {
+            "domain": "ad.doubleclick.net"
+          },
+          {
+            "domain": "us.boohoo.com"
+          },
+          {
+            "domain": "uk.forzieri.com"
+          },
+          {
+            "domain": "us.asos.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 4,
+        "value": [
+          {
+            "domain": "boohoo.com"
+          },
+          {
+            "domain": "allsaints.com"
+          },
+          {
+            "domain": "fabletics.com"
+          },
+          {
+            "domain": "forzieri.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 60.150013,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 16.5,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 13.549999,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 13.549999,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 5.75,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 3.8,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 3.8,
+            "vertical": "Fashion / Lingerie"
+          },
+          {
+            "count": 3.75,
+            "vertical": "Fashion / Jewellery"
+          },
+          {
+            "count": 2.75,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 2.6999998,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 2.6999998,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Health / Fragrances"
+          },
+          {
+            "count": 1.35,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 1,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Food / Alcohol"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Food / Confectionery"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Gifts / Personalised"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 0.4,
+            "vertical": "Online / Web Hosting"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 143,
+      "value": [
+        "etsy.com",
+        "apple.com",
+        "amazon.com",
+        "hm.com",
+        "nordstrom.com",
+        "doubleclick.net",
+        "ad.doubleclick.net",
+        "adjust.com",
+        "everlane.com",
+        "evyy.net",
+        "walmart.com",
+        "aldoshoes.com",
+        "alexandermcqueen.com",
+        "alloyapparel.com",
+        "americanapparel.net",
+        "revolve.com",
+        "anntaylor.com",
+        "sephora.com",
+        "anthropologie.com",
+        "shein.com",
+        "stories.com",
+        "asos.com",
+        "asos.bbgqo9.net",
+        "aspinaloflondon.com",
+        "modaoperandi.com",
+        "gap.com",
+        "zappos.com",
+        "awin.com",
+        "barenecessities.com",
+        "baublebar.com",
+        "bergdorfgoodman.com",
+        "levi.com",
+        "neimanmarcus.com",
+        "blissworld.com",
+        "draperjames.com",
+        "cosabella.com",
+        "forever21.com",
+        "freepeople.com",
+        "modcloth.com",
+        "potterybarn.com",
+        "shopbop.com",
+        "wallis.co.uk",
+        "westelm.com",
+        "williams-sonoma.com",
+        "bloomingdales.com",
+        "bluefly.com",
+        "bobbibrowncosmetics.com",
+        "selfridges.com",
+        "boutiquetoyou.com",
+        "brahmin.com",
+        "swarovski.com",
+        "brownsfashion.com",
+        "brooksbrothers.com",
+        "net-a-porter.com",
+        "mrporter.com",
+        "lanebryant.com",
+        "frenchconnection.com",
+        "target.com",
+        "macys.com",
+        "charleskeith.com",
+        "chicos.com",
+        "clinique.com",
+        "clubmonaco.com",
+        "shopltk.com",
+        "couturecandy.com",
+        "crateandbarrel.com",
+        "mytheresa.com",
+        "cuyana.com",
+        "dermstore.com",
+        "dillards.com",
+        "drizly.com",
+        "dsw.com",
+        "payless.com",
+        "eloquii.com",
+        "oscardelarenta.com",
+        "esteelauder.com",
+        "karenmillen.com",
+        "katespade.com",
+        "stuartweitzman.com",
+        "theory.com",
+        "express.com",
+        "lacoste.com",
+        "loft.com",
+        "jcrew.com",
+        "farfetch.com",
+        "luisaviaroma.com",
+        "footlocker.com",
+        "fragrancenet.com",
+        "victoriassecret.com",
+        "toms.com",
+        "ghbass.com",
+        "llbean.com",
+        "ulta.com",
+        "vineyardvines.com",
+        "google.com",
+        "gorjana-griffin.com",
+        "hankypanky.com",
+        "overstock.com",
+        "renttherunway.com",
+        "spacenk.com",
+        "yoox.com",
+        "hunterboots.com",
+        "journeys.com",
+        "kiehls.com",
+        "lagarconne.com",
+        "link.mercent.com",
+        "lordandtaylor.com",
+        "markandgraham.com",
+        "marissacollections.com",
+        "matchesfashion.com",
+        "maxandchloe.com",
+        "ninewest.com",
+        "ouidad.com",
+        "verabradley.com",
+        "pepperjamnetwork.com",
+        "posanhanguera.com.br",
+        "proactiv.rw9xb6.net",
+        "rstyle.me",
+        "qksrv.net",
+        "rag-bone.com",
+        "rebeccaminkoff.com",
+        "theoutnet.com",
+        "reiss.com",
+        "revolveclothing.com",
+        "saksfifthavenue.com",
+        "sallybeauty.com",
+        "savannahs.com",
+        "shareasale-analytics.com",
+        "shareasale.com",
+        "shopmanhattanite.com",
+        "shopping.com",
+        "stevemadden.com",
+        "stylebop.com",
+        "theperfumespot.com",
+        "tnuck.com",
+        "uk.forzieri.com",
+        "us.allsaints.com",
+        "us.asos.com",
+        "us.boohoo.com",
+        "vincecamuto.com",
+        "yves-rocher.ru",
+        "yvesrocherusa.com",
+        "zulily.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 3,
+      "socialsAvailable": [
+        "facebook",
+        "instagram",
+        "pinterest"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/glamazondiaries",
+        "instagram": "https://instagram.com/glamazondiaries",
+        "pinterest": "https://pinterest.com/glamazondiaries"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Fashion / Clothing",
+      "value": [
+        "Fashion / Clothing",
+        "Health / Beauty",
+        "Entertainment / Hobbies"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Health / Beauty",
+        "rank": 1,
+        "score": 80
+      },
+      "value": [
+        {
+          "name": "Fashion / Clothing",
+          "rank": 1,
+          "score": 80
+        },
+        {
+          "name": "Health / Beauty",
+          "rank": 1,
+          "score": 80
+        },
+        {
+          "name": "Entertainment / Hobbies",
+          "rank": 1,
+          "score": 60
+        }
+      ]
+    }
+  }
+}

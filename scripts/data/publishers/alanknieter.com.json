@@ -1,0 +1,800 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 10,
+      "sampleValue": [
+        "Awin",
+        "CJ Affiliate",
+        "Impact"
+      ],
+      "value": [
+        "Awin",
+        "CJ Affiliate",
+        "Impact",
+        "Partnerize",
+        "PartnerStack",
+        "Pepperjam",
+        "Rakuten",
+        "Skimlinks",
+        "Tradedoubler",
+        "TUNE"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.75
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.75
+        },
+        {
+          "countryCode": "ca",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.75
+        },
+        {
+          "countryCode": "ca",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "alanknieter.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "guitar"
+        },
+        {
+          "score": 0.92377263,
+          "value": "accessory"
+        },
+        {
+          "score": 0.8780922,
+          "value": "seller"
+        },
+        {
+          "score": 0.8265163,
+          "value": "quick add"
+        },
+        {
+          "score": 0.8201413,
+          "value": "series"
+        },
+        {
+          "score": 0.7892927,
+          "value": "wishlist"
+        },
+        {
+          "score": 0.788533,
+          "value": "add wishlist"
+        },
+        {
+          "score": 0.73931324,
+          "value": "music"
+        },
+        {
+          "score": 0.7366777,
+          "value": "details"
+        },
+        {
+          "score": 0.7083136,
+          "value": "reverb"
+        },
+        {
+          "score": 0.6990219,
+          "value": "electric"
+        },
+        {
+          "score": 0.69506335,
+          "value": "power"
+        },
+        {
+          "score": 0.6503479,
+          "value": "tech"
+        },
+        {
+          "score": 0.59026027,
+          "value": "see details"
+        },
+        {
+          "score": 0.5723538,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.5645469,
+          "value": "fender"
+        },
+        {
+          "score": 0.5607407,
+          "value": "sound"
+        },
+        {
+          "score": 0.5605558,
+          "value": "pedal"
+        },
+        {
+          "score": 0.5463797,
+          "value": "microphone"
+        },
+        {
+          "score": 0.5314789,
+          "value": "shirt"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "guitar"
+        },
+        {
+          "score": 0.92377263,
+          "value": "accessory"
+        },
+        {
+          "score": 0.8780922,
+          "value": "seller"
+        },
+        {
+          "score": 0.8265163,
+          "value": "quick add"
+        },
+        {
+          "score": 0.8201413,
+          "value": "series"
+        },
+        {
+          "score": 0.7892927,
+          "value": "wishlist"
+        },
+        {
+          "score": 0.788533,
+          "value": "add wishlist"
+        },
+        {
+          "score": 0.73931324,
+          "value": "music"
+        },
+        {
+          "score": 0.7366777,
+          "value": "details"
+        },
+        {
+          "score": 0.7083136,
+          "value": "reverb"
+        },
+        {
+          "score": 0.6990219,
+          "value": "electric"
+        },
+        {
+          "score": 0.69506335,
+          "value": "power"
+        },
+        {
+          "score": 0.6503479,
+          "value": "tech"
+        },
+        {
+          "score": 0.59026027,
+          "value": "see details"
+        },
+        {
+          "score": 0.5723538,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.5645469,
+          "value": "fender"
+        },
+        {
+          "score": 0.5607407,
+          "value": "sound"
+        },
+        {
+          "score": 0.5605558,
+          "value": "pedal"
+        },
+        {
+          "score": 0.5463797,
+          "value": "microphone"
+        },
+        {
+          "score": 0.5314789,
+          "value": "shirt"
+        },
+        {
+          "score": 0.5252829,
+          "value": "wireless"
+        },
+        {
+          "score": 0.5210864,
+          "value": "industry"
+        },
+        {
+          "score": 0.5062412,
+          "value": "epiphone"
+        },
+        {
+          "score": 0.49847335,
+          "value": "store"
+        },
+        {
+          "score": 0.49590978,
+          "value": "eurorack"
+        },
+        {
+          "score": 0.49074405,
+          "value": "multimedia"
+        },
+        {
+          "score": 0.47802386,
+          "value": "digital"
+        },
+        {
+          "score": 0.4710293,
+          "value": "keyboard"
+        },
+        {
+          "score": 0.4689823,
+          "value": "popular"
+        },
+        {
+          "score": 0.4629559,
+          "value": "studio"
+        },
+        {
+          "score": 0.46033344,
+          "value": "shoe"
+        },
+        {
+          "score": 0.45172983,
+          "value": "amplifier"
+        },
+        {
+          "score": 0.44481117,
+          "value": "guitars"
+        },
+        {
+          "score": 0.4323913,
+          "value": "marketplace"
+        },
+        {
+          "score": 0.4289173,
+          "value": "personalized"
+        },
+        {
+          "score": 0.4287553,
+          "value": "technologies"
+        },
+        {
+          "score": 0.42820293,
+          "value": "recording"
+        },
+        {
+          "score": 0.4238869,
+          "value": "amp"
+        },
+        {
+          "score": 0.4171103,
+          "value": "piano"
+        },
+        {
+          "score": 0.3970013,
+          "value": "high"
+        },
+        {
+          "score": 0.39663637,
+          "value": "cable"
+        },
+        {
+          "score": 0.37303025,
+          "value": "string"
+        },
+        {
+          "score": 0.37193233,
+          "value": "backgrounds"
+        },
+        {
+          "score": 0.37193233,
+          "value": "handheld"
+        },
+        {
+          "score": 0.36810744,
+          "value": "speaker"
+        },
+        {
+          "score": 0.34459308,
+          "value": "stars"
+        },
+        {
+          "score": 0.34309497,
+          "value": "live"
+        },
+        {
+          "score": 0.32915714,
+          "value": "phone"
+        },
+        {
+          "score": 0.32665563,
+          "value": "event"
+        },
+        {
+          "score": 0.3164537,
+          "value": "books"
+        },
+        {
+          "score": 0.31213874,
+          "value": "card"
+        },
+        {
+          "score": 0.31119007,
+          "value": "drum"
+        },
+        {
+          "score": 0.30994362,
+          "value": "showroom"
+        },
+        {
+          "score": 0.3053274,
+          "value": "pro"
+        },
+        {
+          "score": 0.30088288,
+          "value": "original"
+        },
+        {
+          "score": 0.29771462,
+          "value": "tone"
+        },
+        {
+          "score": 0.29626963,
+          "value": "paperback"
+        },
+        {
+          "score": 0.29444644,
+          "value": "noise"
+        },
+        {
+          "score": 0.2943018,
+          "value": "promotional"
+        },
+        {
+          "score": 0.2925488,
+          "value": "ebay"
+        },
+        {
+          "score": 0.29196244,
+          "value": "bass"
+        },
+        {
+          "score": 0.2892807,
+          "value": "improve"
+        },
+        {
+          "score": 0.28715363,
+          "value": "current"
+        },
+        {
+          "score": 0.2856343,
+          "value": "available online"
+        },
+        {
+          "score": 0.28545243,
+          "value": "offer"
+        },
+        {
+          "score": 0.28381544,
+          "value": "band"
+        },
+        {
+          "score": 0.2833553,
+          "value": "current price"
+        },
+        {
+          "score": 0.2833553,
+          "value": "price original"
+        },
+        {
+          "score": 0.2833553,
+          "value": "original price"
+        },
+        {
+          "score": 0.28326622,
+          "value": "channel"
+        },
+        {
+          "score": 0.27805847,
+          "value": "story"
+        },
+        {
+          "score": 0.27679735,
+          "value": "press"
+        },
+        {
+          "score": 0.2737835,
+          "value": "latest"
+        },
+        {
+          "score": 0.2722392,
+          "value": "bag"
+        },
+        {
+          "score": 0.26563123,
+          "value": "hoodie"
+        },
+        {
+          "score": 0.26432008,
+          "value": "guide"
+        },
+        {
+          "score": 0.2531206,
+          "value": "catalog"
+        },
+        {
+          "score": 0.2531206,
+          "value": "receiver"
+        },
+        {
+          "score": 0.25056124,
+          "value": "category"
+        },
+        {
+          "score": 0.24278916,
+          "value": "professionals"
+        },
+        {
+          "score": 0.2408789,
+          "value": "sport"
+        },
+        {
+          "score": 0.23774318,
+          "value": "short"
+        },
+        {
+          "score": 0.23762344,
+          "value": "fingerboard"
+        },
+        {
+          "score": 0.23703353,
+          "value": "edition"
+        },
+        {
+          "score": 0.2370157,
+          "value": "hardcover"
+        },
+        {
+          "score": 0.23454598,
+          "value": "green"
+        },
+        {
+          "score": 0.23245771,
+          "value": "engineers"
+        },
+        {
+          "score": 0.23245771,
+          "value": "knowledgeable"
+        },
+        {
+          "score": 0.23245458,
+          "value": "jewelry"
+        },
+        {
+          "score": 0.23115964,
+          "value": "ebook"
+        },
+        {
+          "score": 0.22883365,
+          "value": "acoustic"
+        },
+        {
+          "score": 0.22868301,
+          "value": "supply"
+        },
+        {
+          "score": 0.22729197,
+          "value": "workshops"
+        },
+        {
+          "score": 0.22729197,
+          "value": "workshop"
+        },
+        {
+          "score": 0.22729197,
+          "value": "extensive"
+        },
+        {
+          "score": 0.22729197,
+          "value": "engineer"
+        },
+        {
+          "score": 0.2246341,
+          "value": "kit"
+        },
+        {
+          "score": 0.22106272,
+          "value": "fiction"
+        },
+        {
+          "score": 0.21882872,
+          "value": "body"
+        },
+        {
+          "score": 0.21696052,
+          "value": "demo"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://alanknieter.com/",
+        "https://www.alanknieter.com/",
+        "http://alanknieter.com/",
+        "http://www.alanknieter.com/"
+      ]
+    },
+    "metaData": {
+      "description": "",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/alanknieter.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://alanknieter.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 30,
+        "value": [
+          "apple.com",
+          "amazon.com",
+          "aboutamazon.com",
+          "musiciansfriend.com",
+          "spotify.com",
+          "hbomax.com",
+          "walmart.com",
+          "andertons.co.uk",
+          "barnesandnoble.com",
+          "goodrx.com",
+          "ebay.com",
+          "roughtrade.com",
+          "target.com",
+          "fender.com",
+          "crutchfield.com",
+          "positivegrid.com",
+          "guitarcenter.com",
+          "gear4music.com",
+          "hottopic.com",
+          "httpspercent3apercent2fpercent2fwww.hulu.comp.c2fstart",
+          "hygearfit.com",
+          "instacart.com",
+          "reverb.com",
+          "scribd.com",
+          "liteboxer.com",
+          "my.avid.com",
+          "musicroom.com",
+          "one.google.com",
+          "presonus.com",
+          "sweetwater.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 14,
+        "value": [
+          {
+            "domain": "liteboxer.com"
+          },
+          {
+            "domain": "roughtrade.com"
+          },
+          {
+            "domain": "spotify.com"
+          },
+          {
+            "domain": "scribd.com"
+          },
+          {
+            "domain": "aboutamazon.com"
+          },
+          {
+            "domain": "crutchfield.com"
+          },
+          {
+            "domain": "goodrx.com"
+          },
+          {
+            "domain": "httpspercent3apercent2fpercent2fwww.hulu.comp.c2fstart"
+          },
+          {
+            "domain": "one.google.com"
+          },
+          {
+            "domain": "walmart.com"
+          },
+          {
+            "domain": "my.avid.com"
+          },
+          {
+            "domain": "target.com"
+          },
+          {
+            "domain": "instacart.com"
+          },
+          {
+            "domain": "hygearfit.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 6,
+        "value": [
+          {
+            "domain": "tenthousand.cc"
+          },
+          {
+            "domain": "nike.com"
+          },
+          {
+            "domain": "underarmour.com"
+          },
+          {
+            "domain": "equinoxplus.com"
+          },
+          {
+            "domain": "avid.com"
+          },
+          {
+            "domain": "newbalance.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 9.499999,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 2.95,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 1.8,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Technology / Editing Software"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 30,
+      "value": [
+        "apple.com",
+        "amazon.com",
+        "aboutamazon.com",
+        "musiciansfriend.com",
+        "spotify.com",
+        "hbomax.com",
+        "walmart.com",
+        "andertons.co.uk",
+        "barnesandnoble.com",
+        "goodrx.com",
+        "ebay.com",
+        "roughtrade.com",
+        "target.com",
+        "fender.com",
+        "crutchfield.com",
+        "positivegrid.com",
+        "guitarcenter.com",
+        "gear4music.com",
+        "hottopic.com",
+        "httpspercent3apercent2fpercent2fwww.hulu.comp.c2fstart",
+        "hygearfit.com",
+        "instacart.com",
+        "reverb.com",
+        "scribd.com",
+        "liteboxer.com",
+        "my.avid.com",
+        "musicroom.com",
+        "one.google.com",
+        "presonus.com",
+        "sweetwater.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Entertainment / Hobbies",
+      "value": [
+        "Entertainment / Hobbies",
+        "Business / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Entertainment / Hobbies",
+        "rank": 1,
+        "score": 30
+      },
+      "value": [
+        {
+          "name": "Entertainment / Hobbies",
+          "rank": 1,
+          "score": 30
+        },
+        {
+          "name": "Business / Services",
+          "rank": 1,
+          "score": 20
+        }
+      ]
+    }
+  }
+}

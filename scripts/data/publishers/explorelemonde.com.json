@@ -1,0 +1,660 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 4,
+      "sampleValue": [
+        "Awin",
+        "CJ Affiliate",
+        "Private Network"
+      ],
+      "value": [
+        "Awin",
+        "CJ Affiliate",
+        "Private Network",
+        "Tradedoubler"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "fr",
+        "score": 0.5
+      },
+      "sampleValue": [
+        {
+          "countryCode": "fr",
+          "score": 0.5
+        },
+        {
+          "countryCode": "ca",
+          "score": 0.2
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "fr",
+          "score": 0.5
+        },
+        {
+          "countryCode": "ca",
+          "score": 0.2
+        }
+      ]
+    },
+    "domain": "explorelemonde.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "flight"
+        },
+        {
+          "score": 0.625,
+          "value": "collapsed"
+        },
+        {
+          "score": 0.625,
+          "value": "parking"
+        },
+        {
+          "score": 0.625,
+          "value": "publisher"
+        },
+        {
+          "score": 0.5625,
+          "value": "travel"
+        },
+        {
+          "score": 0.51187277,
+          "value": "awin"
+        },
+        {
+          "score": 0.50403225,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.4655612,
+          "value": "etihad"
+        },
+        {
+          "score": 0.46479592,
+          "value": "destinations"
+        },
+        {
+          "score": 0.44260204,
+          "value": "book"
+        },
+        {
+          "score": 0.43125,
+          "value": "airport"
+        },
+        {
+          "score": 0.40625,
+          "value": "voyage"
+        },
+        {
+          "score": 0.36875,
+          "value": "passagers"
+        },
+        {
+          "score": 0.35954303,
+          "value": "advertiser"
+        },
+        {
+          "score": 0.35625,
+          "value": "hotels"
+        },
+        {
+          "score": 0.35625,
+          "value": "ticket"
+        },
+        {
+          "score": 0.35282257,
+          "value": "legal"
+        },
+        {
+          "score": 0.3517025,
+          "value": "influencer"
+        },
+        {
+          "score": 0.35,
+          "value": "flights"
+        },
+        {
+          "score": 0.3375,
+          "value": "voyages"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "flight"
+        },
+        {
+          "score": 0.625,
+          "value": "collapsed"
+        },
+        {
+          "score": 0.625,
+          "value": "parking"
+        },
+        {
+          "score": 0.625,
+          "value": "publisher"
+        },
+        {
+          "score": 0.5625,
+          "value": "travel"
+        },
+        {
+          "score": 0.51187277,
+          "value": "awin"
+        },
+        {
+          "score": 0.50403225,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.4655612,
+          "value": "etihad"
+        },
+        {
+          "score": 0.46479592,
+          "value": "destinations"
+        },
+        {
+          "score": 0.44260204,
+          "value": "book"
+        },
+        {
+          "score": 0.43125,
+          "value": "airport"
+        },
+        {
+          "score": 0.40625,
+          "value": "voyage"
+        },
+        {
+          "score": 0.36875,
+          "value": "passagers"
+        },
+        {
+          "score": 0.35954303,
+          "value": "advertiser"
+        },
+        {
+          "score": 0.35625,
+          "value": "hotels"
+        },
+        {
+          "score": 0.35625,
+          "value": "ticket"
+        },
+        {
+          "score": 0.35282257,
+          "value": "legal"
+        },
+        {
+          "score": 0.3517025,
+          "value": "influencer"
+        },
+        {
+          "score": 0.35,
+          "value": "flights"
+        },
+        {
+          "score": 0.3375,
+          "value": "voyages"
+        },
+        {
+          "score": 0.31875,
+          "value": "baggage"
+        },
+        {
+          "score": 0.3125,
+          "value": "destination"
+        },
+        {
+          "score": 0.3125,
+          "value": "passengers"
+        },
+        {
+          "score": 0.3125,
+          "value": "voyager"
+        },
+        {
+          "score": 0.3091398,
+          "value": "law"
+        },
+        {
+          "score": 0.3,
+          "value": "gestion"
+        },
+        {
+          "score": 0.29375,
+          "value": "sites"
+        },
+        {
+          "score": 0.2875,
+          "value": "tarifs"
+        },
+        {
+          "score": 0.28125,
+          "value": "bagages"
+        },
+        {
+          "score": 0.27553764,
+          "value": "personal datum"
+        },
+        {
+          "score": 0.26545697,
+          "value": "network"
+        },
+        {
+          "score": 0.26321685,
+          "value": "compliance"
+        },
+        {
+          "score": 0.2625,
+          "value": "rserver"
+        },
+        {
+          "score": 0.2625,
+          "value": "cabines"
+        },
+        {
+          "score": 0.26020408,
+          "value": "guest"
+        },
+        {
+          "score": 0.26020408,
+          "value": "etihad guest"
+        },
+        {
+          "score": 0.25625,
+          "value": "caribbean"
+        },
+        {
+          "score": 0.25625,
+          "value": "fonctionnels"
+        },
+        {
+          "score": 0.2375,
+          "value": "departing"
+        },
+        {
+          "score": 0.2375,
+          "value": "assistance"
+        },
+        {
+          "score": 0.2375,
+          "value": "skypriority"
+        },
+        {
+          "score": 0.23452015,
+          "value": "country"
+        },
+        {
+          "score": 0.23125,
+          "value": "voitures"
+        },
+        {
+          "score": 0.22737455,
+          "value": "commission"
+        },
+        {
+          "score": 0.22625448,
+          "value": "provider"
+        },
+        {
+          "score": 0.22401434,
+          "value": "market"
+        },
+        {
+          "score": 0.21953405,
+          "value": "event"
+        },
+        {
+          "score": 0.21747449,
+          "value": "window"
+        },
+        {
+          "score": 0.2172939,
+          "value": "global"
+        },
+        {
+          "score": 0.2125,
+          "value": "guide"
+        },
+        {
+          "score": 0.2125,
+          "value": "informations"
+        },
+        {
+          "score": 0.20625,
+          "value": "acheter"
+        },
+        {
+          "score": 0.20408164,
+          "value": "label"
+        },
+        {
+          "score": 0.20267858,
+          "value": "share"
+        },
+        {
+          "score": 0.2,
+          "value": "abonnement"
+        },
+        {
+          "score": 0.2,
+          "value": "flying"
+        },
+        {
+          "score": 0.2,
+          "value": "htels"
+        },
+        {
+          "score": 0.2,
+          "value": "divertissements"
+        },
+        {
+          "score": 0.2,
+          "value": "amsterdam"
+        },
+        {
+          "score": 0.19387755,
+          "value": "third parties"
+        },
+        {
+          "score": 0.19387755,
+          "value": "parties"
+        },
+        {
+          "score": 0.1937724,
+          "value": "mailchimp"
+        },
+        {
+          "score": 0.19375,
+          "value": "entreprises"
+        },
+        {
+          "score": 0.19375,
+          "value": "europe"
+        },
+        {
+          "score": 0.19375,
+          "value": "billet"
+        },
+        {
+          "score": 0.1875,
+          "value": "bluebiz"
+        },
+        {
+          "score": 0.1875,
+          "value": "pays"
+        },
+        {
+          "score": 0.1875,
+          "value": "express"
+        },
+        {
+          "score": 0.18705197,
+          "value": "protection"
+        },
+        {
+          "score": 0.18481183,
+          "value": "request"
+        },
+        {
+          "score": 0.18125,
+          "value": "miles"
+        },
+        {
+          "score": 0.175,
+          "value": "skyteam"
+        },
+        {
+          "score": 0.17137097,
+          "value": "partner"
+        },
+        {
+          "score": 0.16913082,
+          "value": "sector"
+        },
+        {
+          "score": 0.16875,
+          "value": "pass"
+        },
+        {
+          "score": 0.16875,
+          "value": "seniors"
+        },
+        {
+          "score": 0.16709183,
+          "value": "strictly"
+        },
+        {
+          "score": 0.16709183,
+          "value": "strictly necessary"
+        },
+        {
+          "score": 0.16353047,
+          "value": "afiliado"
+        },
+        {
+          "score": 0.1625,
+          "value": "gastronomie"
+        },
+        {
+          "score": 0.1625,
+          "value": "carte"
+        },
+        {
+          "score": 0.1625,
+          "value": "rseaux"
+        },
+        {
+          "score": 0.15625,
+          "value": "seat"
+        },
+        {
+          "score": 0.15178572,
+          "value": "visit"
+        },
+        {
+          "score": 0.15,
+          "value": "programme"
+        },
+        {
+          "score": 0.15,
+          "value": "prix"
+        },
+        {
+          "score": 0.14540817,
+          "value": "provide"
+        },
+        {
+          "score": 0.14540817,
+          "value": "performance cookies"
+        },
+        {
+          "score": 0.14540817,
+          "value": "performance"
+        },
+        {
+          "score": 0.14448924,
+          "value": "personnel"
+        },
+        {
+          "score": 0.14413266,
+          "value": "remember"
+        },
+        {
+          "score": 0.14375,
+          "value": "avion"
+        },
+        {
+          "score": 0.14375,
+          "value": "menus"
+        },
+        {
+          "score": 0.14375,
+          "value": "contacter"
+        },
+        {
+          "score": 0.14285715,
+          "value": "necessary cookies"
+        },
+        {
+          "score": 0.14000896,
+          "value": "respect"
+        },
+        {
+          "score": 0.13776882,
+          "value": "insight"
+        },
+        {
+          "score": 0.1375,
+          "value": "cartes"
+        },
+        {
+          "score": 0.1375,
+          "value": "marseille"
+        },
+        {
+          "score": 0.13440861,
+          "value": "potential"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": "Depuis 2015 nous parcourons le Monde à la recherche de bons plans, d’astuces pour vous aider à voyager responsable dans une démarche de tourisme durable.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/explorelemonde.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://explorelemonde.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 7,
+        "value": [
+          "airfrance.fr",
+          "awin.com",
+          "qatarairways.com",
+          "etihad.com",
+          "chapkadirect.fr",
+          "homeexchange.fr",
+          "tripadvisor.fr"
+        ]
+      },
+      "partnersAdded": {
+        "count": 2,
+        "value": [
+          {
+            "domain": "tripadvisor.fr"
+          },
+          {
+            "domain": "homeexchange.fr"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 2.85,
+            "vertical": "Travel / Flights"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Insurance"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Travel / Vacation"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 7,
+      "value": [
+        "airfrance.fr",
+        "awin.com",
+        "qatarairways.com",
+        "etihad.com",
+        "chapkadirect.fr",
+        "homeexchange.fr",
+        "tripadvisor.fr"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 3,
+      "socialsAvailable": [
+        "twitter",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/explorelemonde",
+        "instagram": "https://instagram.com/explorelemonde",
+        "twitter": "https://twitter.com/explore_lemonde"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Travel / Vacation",
+      "value": [
+        "Travel / Vacation",
+        "Travel / Attractions"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Travel / Vacation",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Travel / Vacation",
+          "rank": 1,
+          "score": 95
+        },
+        {
+          "name": "Travel / Attractions",
+          "rank": 1,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

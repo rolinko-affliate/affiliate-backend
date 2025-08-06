@@ -1,0 +1,653 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 4,
+      "sampleValue": [
+        "Impact",
+        "Partnerize",
+        "Private Network"
+      ],
+      "value": [
+        "Impact",
+        "Partnerize",
+        "Private Network",
+        "Tradedoubler"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "fr",
+        "score": 0.65
+      },
+      "sampleValue": [
+        {
+          "countryCode": "fr",
+          "score": 0.65
+        },
+        {
+          "countryCode": "be",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "fr",
+          "score": 0.65
+        },
+        {
+          "countryCode": "be",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "rencontrelemonde.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "musea"
+        },
+        {
+          "score": 0.82758623,
+          "value": "vaticaanse"
+        },
+        {
+          "score": 0.7413793,
+          "value": "vaticaanse musea"
+        },
+        {
+          "score": 0.61206895,
+          "value": "vanaf"
+        },
+        {
+          "score": 0.5948276,
+          "value": "vanaf us"
+        },
+        {
+          "score": 0.5086207,
+          "value": "rome"
+        },
+        {
+          "score": 0.45689654,
+          "value": "amsterdam"
+        },
+        {
+          "score": 0.41379312,
+          "value": "sixtijnse"
+        },
+        {
+          "score": 0.41379312,
+          "value": "kapel"
+        },
+        {
+          "score": 0.41379312,
+          "value": "sixtijnse kapel"
+        },
+        {
+          "score": 0.31896552,
+          "value": "museum"
+        },
+        {
+          "score": 0.3125,
+          "value": "money"
+        },
+        {
+          "score": 0.31034482,
+          "value": "musea sixtijnse"
+        },
+        {
+          "score": 0.28448275,
+          "value": "toegang"
+        },
+        {
+          "score": 0.28448275,
+          "value": "boek"
+        },
+        {
+          "score": 0.22413793,
+          "value": "tiqets"
+        },
+        {
+          "score": 0.21760619,
+          "value": "york"
+        },
+        {
+          "score": 0.18965517,
+          "value": "colosseum"
+        },
+        {
+          "score": 0.18965517,
+          "value": "tussauds"
+        },
+        {
+          "score": 0.1875,
+          "value": "général"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "musea"
+        },
+        {
+          "score": 0.82758623,
+          "value": "vaticaanse"
+        },
+        {
+          "score": 0.7413793,
+          "value": "vaticaanse musea"
+        },
+        {
+          "score": 0.61206895,
+          "value": "vanaf"
+        },
+        {
+          "score": 0.5948276,
+          "value": "vanaf us"
+        },
+        {
+          "score": 0.5086207,
+          "value": "rome"
+        },
+        {
+          "score": 0.45689654,
+          "value": "amsterdam"
+        },
+        {
+          "score": 0.41379312,
+          "value": "sixtijnse"
+        },
+        {
+          "score": 0.41379312,
+          "value": "kapel"
+        },
+        {
+          "score": 0.41379312,
+          "value": "sixtijnse kapel"
+        },
+        {
+          "score": 0.31896552,
+          "value": "museum"
+        },
+        {
+          "score": 0.3125,
+          "value": "money"
+        },
+        {
+          "score": 0.31034482,
+          "value": "musea sixtijnse"
+        },
+        {
+          "score": 0.28448275,
+          "value": "toegang"
+        },
+        {
+          "score": 0.28448275,
+          "value": "boek"
+        },
+        {
+          "score": 0.22413793,
+          "value": "tiqets"
+        },
+        {
+          "score": 0.21760619,
+          "value": "york"
+        },
+        {
+          "score": 0.18965517,
+          "value": "colosseum"
+        },
+        {
+          "score": 0.18965517,
+          "value": "tussauds"
+        },
+        {
+          "score": 0.1875,
+          "value": "général"
+        },
+        {
+          "score": 0.18103448,
+          "value": "madame tussauds"
+        },
+        {
+          "score": 0.18103448,
+          "value": "madame"
+        },
+        {
+          "score": 0.18103448,
+          "value": "jouw"
+        },
+        {
+          "score": 0.1724138,
+          "value": "toon"
+        },
+        {
+          "score": 0.1724138,
+          "value": "wereld"
+        },
+        {
+          "score": 0.1724138,
+          "value": "rondleiding"
+        },
+        {
+          "score": 0.1637931,
+          "value": "tussauds amsterdam"
+        },
+        {
+          "score": 0.1637931,
+          "value": "alle"
+        },
+        {
+          "score": 0.1637931,
+          "value": "ervaring"
+        },
+        {
+          "score": 0.15746894,
+          "value": "transfer"
+        },
+        {
+          "score": 0.15517241,
+          "value": "gids"
+        },
+        {
+          "score": 0.15517241,
+          "value": "combinatie"
+        },
+        {
+          "score": 0.15517241,
+          "value": "bezoek"
+        },
+        {
+          "score": 0.14877544,
+          "value": "park"
+        },
+        {
+          "score": 0.14655173,
+          "value": "ter"
+        },
+        {
+          "score": 0.14655173,
+          "value": "ter wereld"
+        },
+        {
+          "score": 0.14655173,
+          "value": "us us"
+        },
+        {
+          "score": 0.13793103,
+          "value": "skip"
+        },
+        {
+          "score": 0.13793103,
+          "value": "the line"
+        },
+        {
+          "score": 0.13793103,
+          "value": "keer"
+        },
+        {
+          "score": 0.13793103,
+          "value": "handige"
+        },
+        {
+          "score": 0.13793103,
+          "value": "must sees"
+        },
+        {
+          "score": 0.13793103,
+          "value": "combinatie must"
+        },
+        {
+          "score": 0.13793103,
+          "value": "sees vanaf"
+        },
+        {
+          "score": 0.13793103,
+          "value": "skip the"
+        },
+        {
+          "score": 0.13793103,
+          "value": "keer breidt"
+        },
+        {
+          "score": 0.13793103,
+          "value": "boek keer"
+        },
+        {
+          "score": 0.13793103,
+          "value": "jouw ervaring"
+        },
+        {
+          "score": 0.13793103,
+          "value": "sees"
+        },
+        {
+          "score": 0.13793103,
+          "value": "ervaring handige"
+        },
+        {
+          "score": 0.13793103,
+          "value": "breidt jouw"
+        },
+        {
+          "score": 0.13793103,
+          "value": "handige combinatie"
+        },
+        {
+          "score": 0.13793103,
+          "value": "breidt"
+        },
+        {
+          "score": 0.13793103,
+          "value": "tuinen"
+        },
+        {
+          "score": 0.125,
+          "value": "hotel"
+        },
+        {
+          "score": 0.12068965,
+          "value": "beschikbaar"
+        },
+        {
+          "score": 0.12068965,
+          "value": "musea galerieën"
+        },
+        {
+          "score": 0.12068965,
+          "value": "tijd"
+        },
+        {
+          "score": 0.12068965,
+          "value": "galerieën"
+        },
+        {
+          "score": 0.117528275,
+          "value": "wise"
+        },
+        {
+          "score": 0.117183,
+          "value": "currencyfair"
+        },
+        {
+          "score": 0.112068966,
+          "value": "inbegrepen"
+        },
+        {
+          "score": 0.112068966,
+          "value": "beschrijving"
+        },
+        {
+          "score": 0.112068966,
+          "value": "gebouw"
+        },
+        {
+          "score": 0.112068966,
+          "value": "heineken"
+        },
+        {
+          "score": 0.112068966,
+          "value": "volgende"
+        },
+        {
+          "score": 0.112068966,
+          "value": "sint"
+        },
+        {
+          "score": 0.10861491,
+          "value": "rate"
+        },
+        {
+          "score": 0.10344828,
+          "value": "nederland"
+        },
+        {
+          "score": 0.10344828,
+          "value": "kunt"
+        },
+        {
+          "score": 0.10344828,
+          "value": "gebouwd"
+        },
+        {
+          "score": 0.10344828,
+          "value": "kunst"
+        },
+        {
+          "score": 0.10344828,
+          "value": "uur"
+        },
+        {
+          "score": 0.10344828,
+          "value": "stad"
+        },
+        {
+          "score": 0.10344828,
+          "value": "lees"
+        },
+        {
+          "score": 0.09717302,
+          "value": "bank"
+        },
+        {
+          "score": 0.094827585,
+          "value": "pietersbasiliek"
+        },
+        {
+          "score": 0.094827585,
+          "value": "sint pietersbasiliek"
+        },
+        {
+          "score": 0.094827585,
+          "value": "beschrijving vanaf"
+        },
+        {
+          "score": 0.094827585,
+          "value": "us boek"
+        },
+        {
+          "score": 0.094827585,
+          "value": "inbegrepen items"
+        },
+        {
+          "score": 0.094827585,
+          "value": "ontdek"
+        },
+        {
+          "score": 0.094827585,
+          "value": "bezoeken"
+        },
+        {
+          "score": 0.094827585,
+          "value": "collectie"
+        },
+        {
+          "score": 0.094827585,
+          "value": "lees beschrijving"
+        },
+        {
+          "score": 0.094827585,
+          "value": "beste"
+        },
+        {
+          "score": 0.094827585,
+          "value": "us rome"
+        },
+        {
+          "score": 0.094827585,
+          "value": "wel"
+        },
+        {
+          "score": 0.094827585,
+          "value": "vaticaan"
+        },
+        {
+          "score": 0.0862069,
+          "value": "grootste"
+        },
+        {
+          "score": 0.0862069,
+          "value": "toon inbegrepen"
+        },
+        {
+          "score": 0.0862069,
+          "value": "geverifieerde"
+        },
+        {
+          "score": 0.0862069,
+          "value": "barcelona"
+        },
+        {
+          "score": 0.0862069,
+          "value": "rij"
+        },
+        {
+          "score": 0.0862069,
+          "value": "vorige"
+        },
+        {
+          "score": 0.0862069,
+          "value": "brouwerij"
+        },
+        {
+          "score": 0.0862069,
+          "value": "zien"
+        },
+        {
+          "score": 0.08051747,
+          "value": "goed"
+        },
+        {
+          "score": 0.080155835,
+          "value": "currency"
+        },
+        {
+          "score": 0.07959965,
+          "value": "fee"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/rencontrelemonde.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://rencontrelemonde.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 6,
+        "value": [
+          "tiqets.com",
+          "wise.com",
+          "autoeurope.fr",
+          "currencyfair.com",
+          "chapkadirect.fr",
+          "skyscanner.fr"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1.8499999,
+            "vertical": "Finance / Currency"
+          },
+          {
+            "count": 1,
+            "vertical": "Travel / Flights"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Insurance"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Travel / Car Hire"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 6,
+      "value": [
+        "tiqets.com",
+        "wise.com",
+        "autoeurope.fr",
+        "currencyfair.com",
+        "chapkadirect.fr",
+        "skyscanner.fr"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/rencontrelemonde",
+        "instagram": "https://instagram.com/rencontrelemonde",
+        "twitter": "https://twitter.com/rencontre_monde",
+        "youtube": "https://youtube.com/channel/uczg1vm2d7hgintsmgbjrooa"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Online / Dating",
+      "value": [
+        "Online / Dating",
+        "Travel / Vacation"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Online / Dating",
+        "rank": 1,
+        "score": 80
+      },
+      "value": [
+        {
+          "name": "Online / Dating",
+          "rank": 1,
+          "score": 80
+        },
+        {
+          "name": "Travel / Vacation",
+          "rank": 1,
+          "score": 60
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,631 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 2,
+      "sampleValue": [
+        "CJ Affiliate",
+        "Skimlinks"
+      ],
+      "value": [
+        "CJ Affiliate",
+        "Skimlinks"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.7
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.7
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.7
+        }
+      ]
+    },
+    "domain": "artemusconsultinggroup.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "apple"
+        },
+        {
+          "score": 0.53524005,
+          "value": "app"
+        },
+        {
+          "score": 0.28575078,
+          "value": "credit"
+        },
+        {
+          "score": 0.2630235,
+          "value": "store"
+        },
+        {
+          "score": 0.22344229,
+          "value": "iphone"
+        },
+        {
+          "score": 0.21935649,
+          "value": "device"
+        },
+        {
+          "score": 0.14773579,
+          "value": "score"
+        },
+        {
+          "score": 0.14249234,
+          "value": "close apple"
+        },
+        {
+          "score": 0.12589377,
+          "value": "health"
+        },
+        {
+          "score": 0.11564821,
+          "value": "card"
+        },
+        {
+          "score": 0.10754219,
+          "value": "global"
+        },
+        {
+          "score": 0.09856997,
+          "value": "supplier"
+        },
+        {
+          "score": 0.098346666,
+          "value": "student"
+        },
+        {
+          "score": 0.09295199,
+          "value": "podcast"
+        },
+        {
+          "score": 0.09167518,
+          "value": "school"
+        },
+        {
+          "score": 0.08963228,
+          "value": "people"
+        },
+        {
+          "score": 0.08529111,
+          "value": "airpod"
+        },
+        {
+          "score": 0.077374876,
+          "value": "bag"
+        },
+        {
+          "score": 0.073289074,
+          "value": "developer"
+        },
+        {
+          "score": 0.07150153,
+          "value": "program"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "apple"
+        },
+        {
+          "score": 0.53524005,
+          "value": "app"
+        },
+        {
+          "score": 0.28575078,
+          "value": "credit"
+        },
+        {
+          "score": 0.2630235,
+          "value": "store"
+        },
+        {
+          "score": 0.22344229,
+          "value": "iphone"
+        },
+        {
+          "score": 0.21935649,
+          "value": "device"
+        },
+        {
+          "score": 0.14773579,
+          "value": "score"
+        },
+        {
+          "score": 0.14249234,
+          "value": "close apple"
+        },
+        {
+          "score": 0.12589377,
+          "value": "health"
+        },
+        {
+          "score": 0.11564821,
+          "value": "card"
+        },
+        {
+          "score": 0.10754219,
+          "value": "global"
+        },
+        {
+          "score": 0.09856997,
+          "value": "supplier"
+        },
+        {
+          "score": 0.098346666,
+          "value": "student"
+        },
+        {
+          "score": 0.09295199,
+          "value": "podcast"
+        },
+        {
+          "score": 0.09167518,
+          "value": "school"
+        },
+        {
+          "score": 0.08963228,
+          "value": "people"
+        },
+        {
+          "score": 0.08529111,
+          "value": "airpod"
+        },
+        {
+          "score": 0.077374876,
+          "value": "bag"
+        },
+        {
+          "score": 0.073289074,
+          "value": "developer"
+        },
+        {
+          "score": 0.07150153,
+          "value": "program"
+        },
+        {
+          "score": 0.06792646,
+          "value": "employee"
+        },
+        {
+          "score": 0.06639428,
+          "value": "story"
+        },
+        {
+          "score": 0.06511746,
+          "value": "photo"
+        },
+        {
+          "score": 0.06460674,
+          "value": "technology"
+        },
+        {
+          "score": 0.06358529,
+          "value": "community"
+        },
+        {
+          "score": 0.06307457,
+          "value": "overview"
+        },
+        {
+          "score": 0.06230848,
+          "value": "event"
+        },
+        {
+          "score": 0.06154239,
+          "value": "map"
+        },
+        {
+          "score": 0.057820503,
+          "value": "team"
+        },
+        {
+          "score": 0.05771195,
+          "value": "progress"
+        },
+        {
+          "score": 0.057456587,
+          "value": "responsibility"
+        },
+        {
+          "score": 0.0566905,
+          "value": "opportunity"
+        },
+        {
+          "score": 0.056506556,
+          "value": "report"
+        },
+        {
+          "score": 0.055735655,
+          "value": "equity"
+        },
+        {
+          "score": 0.055413686,
+          "value": "accessibility"
+        },
+        {
+          "score": 0.05362737,
+          "value": "education"
+        },
+        {
+          "score": 0.052093975,
+          "value": "teacher"
+        },
+        {
+          "score": 0.05158325,
+          "value": "career"
+        },
+        {
+          "score": 0.050669104,
+          "value": "legal"
+        },
+        {
+          "score": 0.048518896,
+          "value": "racial"
+        },
+        {
+          "score": 0.04753568,
+          "value": "record"
+        },
+        {
+          "score": 0.04698672,
+          "value": "location"
+        },
+        {
+          "score": 0.046475995,
+          "value": "racial equity"
+        },
+        {
+          "score": 0.045199182,
+          "value": "ipad"
+        },
+        {
+          "score": 0.044433095,
+          "value": "feature"
+        },
+        {
+          "score": 0.043665763,
+          "value": "compliance"
+        },
+        {
+          "score": 0.043433838,
+          "value": "diversity"
+        },
+        {
+          "score": 0.043411646,
+          "value": "menusection"
+        },
+        {
+          "score": 0.04290092,
+          "value": "government"
+        },
+        {
+          "score": 0.042065736,
+          "value": "inclusion"
+        },
+        {
+          "score": 0.041368745,
+          "value": "nav"
+        },
+        {
+          "score": 0.040347293,
+          "value": "local nav"
+        },
+        {
+          "score": 0.039566386,
+          "value": "investor"
+        },
+        {
+          "score": 0.03881512,
+          "value": "ipod"
+        },
+        {
+          "score": 0.038559753,
+          "value": "power"
+        },
+        {
+          "score": 0.038304392,
+          "value": "close shopping"
+        },
+        {
+          "score": 0.03804903,
+          "value": "retailer"
+        },
+        {
+          "score": 0.03804903,
+          "value": "game"
+        },
+        {
+          "score": 0.037793666,
+          "value": "airtag"
+        },
+        {
+          "score": 0.037538305,
+          "value": "genius"
+        },
+        {
+          "score": 0.037538305,
+          "value": "legal map"
+        },
+        {
+          "score": 0.03728294,
+          "value": "veteran"
+        },
+        {
+          "score": 0.03702758,
+          "value": "video"
+        },
+        {
+          "score": 0.03692518,
+          "value": "tool"
+        },
+        {
+          "score": 0.0366351,
+          "value": "experian"
+        },
+        {
+          "score": 0.036516853,
+          "value": "manager"
+        },
+        {
+          "score": 0.03600613,
+          "value": "clearance"
+        },
+        {
+          "score": 0.034984678,
+          "value": "software"
+        },
+        {
+          "score": 0.034729317,
+          "value": "close store"
+        },
+        {
+          "score": 0.034729317,
+          "value": "close shop"
+        },
+        {
+          "score": 0.034729317,
+          "value": "close accessibility"
+        },
+        {
+          "score": 0.034473952,
+          "value": "close airpod"
+        },
+        {
+          "score": 0.034473952,
+          "value": "ipod airtag"
+        },
+        {
+          "score": 0.034473952,
+          "value": "close podcast"
+        },
+        {
+          "score": 0.034473952,
+          "value": "close career"
+        },
+        {
+          "score": 0.034473952,
+          "value": "project"
+        },
+        {
+          "score": 0.03421859,
+          "value": "expert"
+        },
+        {
+          "score": 0.033452503,
+          "value": "organization"
+        },
+        {
+          "score": 0.032941777,
+          "value": "human"
+        },
+        {
+          "score": 0.032686416,
+          "value": "pro"
+        },
+        {
+          "score": 0.032686416,
+          "value": "impact"
+        },
+        {
+          "score": 0.03217569,
+          "value": "hardware"
+        },
+        {
+          "score": 0.03217569,
+          "value": "safe"
+        },
+        {
+          "score": 0.030898876,
+          "value": "entrepreneur"
+        },
+        {
+          "score": 0.030643513,
+          "value": "control"
+        },
+        {
+          "score": 0.030643513,
+          "value": "success"
+        },
+        {
+          "score": 0.03038815,
+          "value": "effort"
+        },
+        {
+          "score": 0.029877426,
+          "value": "guideline"
+        },
+        {
+          "score": 0.029111339,
+          "value": "touch"
+        },
+        {
+          "score": 0.02834525,
+          "value": "request"
+        },
+        {
+          "score": 0.028089888,
+          "value": "siri"
+        },
+        {
+          "score": 0.027834525,
+          "value": "amazing"
+        },
+        {
+          "score": 0.027834525,
+          "value": "standard"
+        },
+        {
+          "score": 0.027834525,
+          "value": "skill"
+        },
+        {
+          "score": 0.027666742,
+          "value": "family"
+        },
+        {
+          "score": 0.026813075,
+          "value": "guide"
+        },
+        {
+          "score": 0.026557712,
+          "value": "platform"
+        },
+        {
+          "score": 0.026302349,
+          "value": "life"
+        },
+        {
+          "score": 0.026046988,
+          "value": "environmental"
+        },
+        {
+          "score": 0.025791625,
+          "value": "permission"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://artemusconsultinggroup.com/",
+        "https://www.artemusconsultinggroup.com/",
+        "http://artemusconsultinggroup.com/",
+        "http://www.artemusconsultinggroup.com/"
+      ]
+    },
+    "metaData": {
+      "description": "Artemus Consulting Group TALENT AND EXPERIENCE Artemus Consulting Group is a network of skilled intelligence and security professionals with broad...",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/artemusconsultinggroup.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://artemusconsultinggroup.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 4,
+        "value": [
+          "apple.com",
+          "malwarebytes.com",
+          "experian.com",
+          "tapo.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 0.95,
+            "vertical": "Business / Cyber Security"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Accounts"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Security"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 4,
+      "value": [
+        "apple.com",
+        "malwarebytes.com",
+        "experian.com",
+        "tapo.com"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 1,
+      "sampleValue": "Business / Services",
+      "value": [
+        "Business / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Business / Services",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Business / Services",
+          "rank": 1,
+          "score": 95
+        }
+      ]
+    }
+  }
+}

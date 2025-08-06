@@ -1,0 +1,678 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 6,
+      "sampleValue": [
+        "Cello",
+        "CJ Affiliate",
+        "Impact"
+      ],
+      "value": [
+        "Cello",
+        "CJ Affiliate",
+        "Impact",
+        "PartnerStack",
+        "Refersion",
+        "Rewardstyle"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "mx",
+        "score": 0.9
+      },
+      "sampleValue": [
+        {
+          "countryCode": "mx",
+          "score": 0.9
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "mx",
+          "score": 0.9
+        }
+      ]
+    },
+    "domain": "amazon.com.mx",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "travel"
+        },
+        {
+          "score": 0.88214976,
+          "value": "backpacks"
+        },
+        {
+          "score": 0.8418575,
+          "value": "backpack"
+        },
+        {
+          "score": 0.7305627,
+          "value": "crossbody"
+        },
+        {
+          "score": 0.7057198,
+          "value": "bags"
+        },
+        {
+          "score": 0.57339734,
+          "value": "wallets"
+        },
+        {
+          "score": 0.42973387,
+          "value": "trip"
+        },
+        {
+          "score": 0.41517484,
+          "value": "tote"
+        },
+        {
+          "score": 0.40195948,
+          "value": "leather"
+        },
+        {
+          "score": 0.39917275,
+          "value": "straps"
+        },
+        {
+          "score": 0.36700177,
+          "value": "laptop"
+        },
+        {
+          "score": 0.3616814,
+          "value": "purse"
+        },
+        {
+          "score": 0.35727066,
+          "value": "adjustable"
+        },
+        {
+          "score": 0.30327892,
+          "value": "card"
+        },
+        {
+          "score": 0.28669867,
+          "value": "packs"
+        },
+        {
+          "score": 0.28228793,
+          "value": "arrivals"
+        },
+        {
+          "score": 0.27787718,
+          "value": "pouch"
+        },
+        {
+          "score": 0.27346644,
+          "value": "retail"
+        },
+        {
+          "score": 0.26412192,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.26243955,
+          "value": "carrying"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "travel"
+        },
+        {
+          "score": 0.88214976,
+          "value": "backpacks"
+        },
+        {
+          "score": 0.8418575,
+          "value": "backpack"
+        },
+        {
+          "score": 0.7305627,
+          "value": "crossbody"
+        },
+        {
+          "score": 0.7057198,
+          "value": "bags"
+        },
+        {
+          "score": 0.57339734,
+          "value": "wallets"
+        },
+        {
+          "score": 0.42973387,
+          "value": "trip"
+        },
+        {
+          "score": 0.41517484,
+          "value": "tote"
+        },
+        {
+          "score": 0.40195948,
+          "value": "leather"
+        },
+        {
+          "score": 0.39917275,
+          "value": "straps"
+        },
+        {
+          "score": 0.36700177,
+          "value": "laptop"
+        },
+        {
+          "score": 0.3616814,
+          "value": "purse"
+        },
+        {
+          "score": 0.35727066,
+          "value": "adjustable"
+        },
+        {
+          "score": 0.30327892,
+          "value": "card"
+        },
+        {
+          "score": 0.28669867,
+          "value": "packs"
+        },
+        {
+          "score": 0.28228793,
+          "value": "arrivals"
+        },
+        {
+          "score": 0.27787718,
+          "value": "pouch"
+        },
+        {
+          "score": 0.27346644,
+          "value": "retail"
+        },
+        {
+          "score": 0.26412192,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.26243955,
+          "value": "carrying"
+        },
+        {
+          "score": 0.2621483,
+          "value": "category"
+        },
+        {
+          "score": 0.26185057,
+          "value": "wallet"
+        },
+        {
+          "score": 0.24700193,
+          "value": "grocery"
+        },
+        {
+          "score": 0.23818043,
+          "value": "pockets"
+        },
+        {
+          "score": 0.23376969,
+          "value": "pouches"
+        },
+        {
+          "score": 0.22898789,
+          "value": "comfortable"
+        },
+        {
+          "score": 0.227736,
+          "value": "organic"
+        },
+        {
+          "score": 0.22699958,
+          "value": "bag"
+        },
+        {
+          "score": 0.22111987,
+          "value": "nylon"
+        },
+        {
+          "score": 0.22090194,
+          "value": "pocket"
+        },
+        {
+          "score": 0.22053744,
+          "value": "post"
+        },
+        {
+          "score": 0.22053744,
+          "value": "exterior"
+        },
+        {
+          "score": 0.22053744,
+          "value": "hauls"
+        },
+        {
+          "score": 0.22053744,
+          "value": "son"
+        },
+        {
+          "score": 0.21833207,
+          "value": "airlines"
+        },
+        {
+          "score": 0.21392131,
+          "value": "strap"
+        },
+        {
+          "score": 0.21392131,
+          "value": "flights"
+        },
+        {
+          "score": 0.21356392,
+          "value": "smoothie"
+        },
+        {
+          "score": 0.20987844,
+          "value": "health"
+        },
+        {
+          "score": 0.20289445,
+          "value": "shoes"
+        },
+        {
+          "score": 0.20289445,
+          "value": "detachable"
+        },
+        {
+          "score": 0.19848369,
+          "value": "airport"
+        },
+        {
+          "score": 0.19848369,
+          "value": "canvas"
+        },
+        {
+          "score": 0.19627832,
+          "value": "personalization"
+        },
+        {
+          "score": 0.19624011,
+          "value": "jewelry"
+        },
+        {
+          "score": 0.19407295,
+          "value": "interior"
+        },
+        {
+          "score": 0.18975663,
+          "value": "jean"
+        },
+        {
+          "score": 0.1896622,
+          "value": "sleeve"
+        },
+        {
+          "score": 0.1896622,
+          "value": "explorer"
+        },
+        {
+          "score": 0.1896622,
+          "value": "flight"
+        },
+        {
+          "score": 0.1896622,
+          "value": "handbag"
+        },
+        {
+          "score": 0.18525144,
+          "value": "drawstring"
+        },
+        {
+          "score": 0.18525144,
+          "value": "market"
+        },
+        {
+          "score": 0.18525144,
+          "value": "padded"
+        },
+        {
+          "score": 0.18525144,
+          "value": "sport"
+        },
+        {
+          "score": 0.1808407,
+          "value": "reusable"
+        },
+        {
+          "score": 0.17753957,
+          "value": "social medium"
+        },
+        {
+          "score": 0.17642996,
+          "value": "washable"
+        },
+        {
+          "score": 0.17191777,
+          "value": "woman"
+        },
+        {
+          "score": 0.169912,
+          "value": "weekender"
+        },
+        {
+          "score": 0.16987441,
+          "value": "custom"
+        },
+        {
+          "score": 0.16981383,
+          "value": "trips"
+        },
+        {
+          "score": 0.1691168,
+          "value": "merchant"
+        },
+        {
+          "score": 0.16783649,
+          "value": "sign"
+        },
+        {
+          "score": 0.16609797,
+          "value": "site"
+        },
+        {
+          "score": 0.16319771,
+          "value": "amazon"
+        },
+        {
+          "score": 0.16126256,
+          "value": "tusol"
+        },
+        {
+          "score": 0.16099232,
+          "value": "monogramming"
+        },
+        {
+          "score": 0.15878695,
+          "value": "wear"
+        },
+        {
+          "score": 0.15878695,
+          "value": "wholesale"
+        },
+        {
+          "score": 0.15802872,
+          "value": "program"
+        },
+        {
+          "score": 0.15658158,
+          "value": "monogram"
+        },
+        {
+          "score": 0.15437621,
+          "value": "voyage"
+        },
+        {
+          "score": 0.15437621,
+          "value": "microsoft"
+        },
+        {
+          "score": 0.15437621,
+          "value": "essentials"
+        },
+        {
+          "score": 0.15217084,
+          "value": "apparel"
+        },
+        {
+          "score": 0.15047804,
+          "value": "perfect"
+        },
+        {
+          "score": 0.14999163,
+          "value": "lightweight"
+        },
+        {
+          "score": 0.14996547,
+          "value": "macbook"
+        },
+        {
+          "score": 0.1455547,
+          "value": "toiletry"
+        },
+        {
+          "score": 0.14380056,
+          "value": "international"
+        },
+        {
+          "score": 0.14227375,
+          "value": "store"
+        },
+        {
+          "score": 0.14032122,
+          "value": "collections"
+        },
+        {
+          "score": 0.13893859,
+          "value": "valise"
+        },
+        {
+          "score": 0.13893859,
+          "value": "packing"
+        },
+        {
+          "score": 0.13860364,
+          "value": "color"
+        },
+        {
+          "score": 0.13673322,
+          "value": "necklace"
+        },
+        {
+          "score": 0.13673322,
+          "value": "cleaning"
+        },
+        {
+          "score": 0.13673322,
+          "value": "internet"
+        },
+        {
+          "score": 0.13673322,
+          "value": "baggu"
+        },
+        {
+          "score": 0.13673322,
+          "value": "goodies"
+        },
+        {
+          "score": 0.13543747,
+          "value": "plastic"
+        },
+        {
+          "score": 0.13452783,
+          "value": "planes"
+        },
+        {
+          "score": 0.13232246,
+          "value": "sunglasses"
+        },
+        {
+          "score": 0.13232246,
+          "value": "flat"
+        },
+        {
+          "score": 0.13232246,
+          "value": "browsehappy"
+        },
+        {
+          "score": 0.13232246,
+          "value": "mini"
+        },
+        {
+          "score": 0.12988174,
+          "value": "superfood"
+        },
+        {
+          "score": 0.12791172,
+          "value": "supports"
+        },
+        {
+          "score": 0.12570634,
+          "value": "country"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://amazon.com.mx/",
+        "https://www.amazon.com.mx/",
+        "http://amazon.com.mx/",
+        "http://www.amazon.com.mx/"
+      ]
+    },
+    "metaData": {
+      "description": "Envío gratis en pedidos elegibles. Pagos fáciles y seguros. Compra ahora electrónicos, libros, ropa y mucho más. Devoluciones fáciles. Inicia tu prueba de Amazon Prime gratis.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazon.com.mx.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazon.com.mx"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 14,
+        "value": [
+          "aa.com",
+          "baggu.com",
+          "clarev.com",
+          "drinklmnt.com",
+          "madewell.com",
+          "miro.com",
+          "loandsons.com",
+          "sessions.us",
+          "shareasale.com",
+          "socialbee.io",
+          "therasage.com",
+          "tourparavel.com",
+          "trafft.com",
+          "tusolwellness.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 2.8,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 1.8,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 1.2,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 1,
+            "vertical": "Travel / Flights"
+          },
+          {
+            "count": 1,
+            "vertical": "Travel / Vacation"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Drinks"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Travel / Accessories"
+          },
+          {
+            "count": 0.7,
+            "vertical": "Business / Online Training"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 14,
+      "value": [
+        "aa.com",
+        "baggu.com",
+        "clarev.com",
+        "drinklmnt.com",
+        "madewell.com",
+        "miro.com",
+        "loandsons.com",
+        "sessions.us",
+        "shareasale.com",
+        "socialbee.io",
+        "therasage.com",
+        "tourparavel.com",
+        "trafft.com",
+        "tusolwellness.com"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Shopping / Department Stores",
+      "value": [
+        "Shopping / Department Stores",
+        "Business / Ecommerce"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 1,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 1,
+          "score": 100
+        },
+        {
+          "name": "Business / Ecommerce",
+          "rank": 1,
+          "score": 95
+        }
+      ]
+    }
+  }
+}

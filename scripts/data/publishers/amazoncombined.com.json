@@ -1,0 +1,623 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Rakuten"
+      ],
+      "value": [
+        "Rakuten"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.6
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "amazoncombined.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "shoe"
+        },
+        {
+          "score": 0.8529639,
+          "value": "shirt"
+        },
+        {
+          "score": 0.8021123,
+          "value": "wishlist"
+        },
+        {
+          "score": 0.5601225,
+          "value": "accessory"
+        },
+        {
+          "score": 0.40523127,
+          "value": "boot"
+        },
+        {
+          "score": 0.40114105,
+          "value": "woman"
+        },
+        {
+          "score": 0.36779752,
+          "value": "bag"
+        },
+        {
+          "score": 0.34848484,
+          "value": "sac"
+        },
+        {
+          "score": 0.34848484,
+          "value": "retour"
+        },
+        {
+          "score": 0.33774534,
+          "value": "clothing"
+        },
+        {
+          "score": 0.3181818,
+          "value": "bijou"
+        },
+        {
+          "score": 0.3068182,
+          "value": "homme"
+        },
+        {
+          "score": 0.2902146,
+          "value": "jacket"
+        },
+        {
+          "score": 0.27850708,
+          "value": "arrival"
+        },
+        {
+          "score": 0.27355802,
+          "value": "kid"
+        },
+        {
+          "score": 0.25378788,
+          "value": "article"
+        },
+        {
+          "score": 0.25267443,
+          "value": "style"
+        },
+        {
+          "score": 0.25,
+          "value": "chaussure"
+        },
+        {
+          "score": 0.25,
+          "value": "eur"
+        },
+        {
+          "score": 0.24923378,
+          "value": "men"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "shoe"
+        },
+        {
+          "score": 0.8529639,
+          "value": "shirt"
+        },
+        {
+          "score": 0.8021123,
+          "value": "wishlist"
+        },
+        {
+          "score": 0.5601225,
+          "value": "accessory"
+        },
+        {
+          "score": 0.40523127,
+          "value": "boot"
+        },
+        {
+          "score": 0.40114105,
+          "value": "woman"
+        },
+        {
+          "score": 0.36779752,
+          "value": "bag"
+        },
+        {
+          "score": 0.34848484,
+          "value": "sac"
+        },
+        {
+          "score": 0.34848484,
+          "value": "retour"
+        },
+        {
+          "score": 0.33774534,
+          "value": "clothing"
+        },
+        {
+          "score": 0.3181818,
+          "value": "bijou"
+        },
+        {
+          "score": 0.3068182,
+          "value": "homme"
+        },
+        {
+          "score": 0.2902146,
+          "value": "jacket"
+        },
+        {
+          "score": 0.27850708,
+          "value": "arrival"
+        },
+        {
+          "score": 0.27355802,
+          "value": "kid"
+        },
+        {
+          "score": 0.25378788,
+          "value": "article"
+        },
+        {
+          "score": 0.25267443,
+          "value": "style"
+        },
+        {
+          "score": 0.25,
+          "value": "chaussure"
+        },
+        {
+          "score": 0.25,
+          "value": "eur"
+        },
+        {
+          "score": 0.24923378,
+          "value": "men"
+        },
+        {
+          "score": 0.24238123,
+          "value": "designer"
+        },
+        {
+          "score": 0.23827666,
+          "value": "leather"
+        },
+        {
+          "score": 0.23743992,
+          "value": "store"
+        },
+        {
+          "score": 0.22715546,
+          "value": "sneaker"
+        },
+        {
+          "score": 0.21969697,
+          "value": "voyage"
+        },
+        {
+          "score": 0.21129486,
+          "value": "quick view"
+        },
+        {
+          "score": 0.20833333,
+          "value": "femme"
+        },
+        {
+          "score": 0.20833333,
+          "value": "livraison"
+        },
+        {
+          "score": 0.20787643,
+          "value": "toggle"
+        },
+        {
+          "score": 0.20300117,
+          "value": "stock"
+        },
+        {
+          "score": 0.19790001,
+          "value": "footwear"
+        },
+        {
+          "score": 0.1969697,
+          "value": "accessoire"
+        },
+        {
+          "score": 0.1969697,
+          "value": "cadeau"
+        },
+        {
+          "score": 0.19527489,
+          "value": "change"
+        },
+        {
+          "score": 0.19318181,
+          "value": "homm"
+        },
+        {
+          "score": 0.19318181,
+          "value": "availabl"
+        },
+        {
+          "score": 0.18939394,
+          "value": "marque"
+        },
+        {
+          "score": 0.18939394,
+          "value": "cadeal"
+        },
+        {
+          "score": 0.18939394,
+          "value": "compte"
+        },
+        {
+          "score": 0.18646447,
+          "value": "hat"
+        },
+        {
+          "score": 0.17735298,
+          "value": "balance"
+        },
+        {
+          "score": 0.17424242,
+          "value": "liste"
+        },
+        {
+          "score": 0.17412375,
+          "value": "wide"
+        },
+        {
+          "score": 0.1701923,
+          "value": "refine"
+        },
+        {
+          "score": 0.16861594,
+          "value": "women"
+        },
+        {
+          "score": 0.16666667,
+          "value": "programm"
+        },
+        {
+          "score": 0.16397129,
+          "value": "sock"
+        },
+        {
+          "score": 0.16201559,
+          "value": "sleeve"
+        },
+        {
+          "score": 0.1590909,
+          "value": "deco"
+        },
+        {
+          "score": 0.15151516,
+          "value": "belgium"
+        },
+        {
+          "score": 0.1502463,
+          "value": "boy"
+        },
+        {
+          "score": 0.14772727,
+          "value": "cuir"
+        },
+        {
+          "score": 0.14772727,
+          "value": "panier"
+        },
+        {
+          "score": 0.14393939,
+          "value": "milano"
+        },
+        {
+          "score": 0.14393939,
+          "value": "soleil"
+        },
+        {
+          "score": 0.14312916,
+          "value": "fitness"
+        },
+        {
+          "score": 0.13636364,
+          "value": "commande"
+        },
+        {
+          "score": 0.13377985,
+          "value": "slipper"
+        },
+        {
+          "score": 0.13338341,
+          "value": "hoodie"
+        },
+        {
+          "score": 0.13257575,
+          "value": "lunette"
+        },
+        {
+          "score": 0.12878788,
+          "value": "wishlist size"
+        },
+        {
+          "score": 0.12878788,
+          "value": "solde"
+        },
+        {
+          "score": 0.1287296,
+          "value": "reward"
+        },
+        {
+          "score": 0.125,
+          "value": "germany"
+        },
+        {
+          "score": 0.125,
+          "value": "propos"
+        },
+        {
+          "score": 0.125,
+          "value": "montre"
+        },
+        {
+          "score": 0.125,
+          "value": "latin"
+        },
+        {
+          "score": 0.125,
+          "value": "switzerland"
+        },
+        {
+          "score": 0.125,
+          "value": "kingdom"
+        },
+        {
+          "score": 0.12402645,
+          "value": "seller"
+        },
+        {
+          "score": 0.12308527,
+          "value": "headband"
+        },
+        {
+          "score": 0.12192118,
+          "value": "girl"
+        },
+        {
+          "score": 0.121212125,
+          "value": "affiliation"
+        },
+        {
+          "score": 0.121212125,
+          "value": "carte"
+        },
+        {
+          "score": 0.121212125,
+          "value": "murano"
+        },
+        {
+          "score": 0.11980999,
+          "value": "toddler"
+        },
+        {
+          "score": 0.11742424,
+          "value": "terme"
+        },
+        {
+          "score": 0.1172813,
+          "value": "short"
+        },
+        {
+          "score": 0.11363637,
+          "value": "international"
+        },
+        {
+          "score": 0.11235316,
+          "value": "card"
+        },
+        {
+          "score": 0.109848484,
+          "value": "euro"
+        },
+        {
+          "score": 0.109848484,
+          "value": "denmark"
+        },
+        {
+          "score": 0.109848484,
+          "value": "veste"
+        },
+        {
+          "score": 0.109848484,
+          "value": "bracelet"
+        },
+        {
+          "score": 0.109848484,
+          "value": "sweatshirt"
+        },
+        {
+          "score": 0.109848484,
+          "value": "cravate"
+        },
+        {
+          "score": 0.109848484,
+          "value": "spain"
+        },
+        {
+          "score": 0.10925405,
+          "value": "infant"
+        },
+        {
+          "score": 0.10897436,
+          "value": "wide shoe"
+        },
+        {
+          "score": 0.104166664,
+          "value": "launch"
+        },
+        {
+          "score": 0.10320513,
+          "value": "covid"
+        },
+        {
+          "score": 0.10288461,
+          "value": "chain"
+        },
+        {
+          "score": 0.10227273,
+          "value": "sweden"
+        },
+        {
+          "score": 0.10227273,
+          "value": "australia"
+        },
+        {
+          "score": 0.10227273,
+          "value": "sensorial"
+        },
+        {
+          "score": 0.10227273,
+          "value": "spain euro"
+        },
+        {
+          "score": 0.10227273,
+          "value": "japan"
+        },
+        {
+          "score": 0.10227273,
+          "value": "italy"
+        },
+        {
+          "score": 0.10227273,
+          "value": "canada latin"
+        },
+        {
+          "score": 0.10227273,
+          "value": "austria belgium"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazoncombined.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazoncombined.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 4,
+        "value": [
+          "forzieri.com",
+          "fitflop.com",
+          "newbalance.com",
+          "saksfifthavenue.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1.95,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 1,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 1,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Accessories"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 4,
+      "value": [
+        "forzieri.com",
+        "fitflop.com",
+        "newbalance.com",
+        "saksfifthavenue.com"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 1,
+      "sampleValue": "Shopping / Department Stores",
+      "value": [
+        "Shopping / Department Stores"
+      ]
+    },
+    "verticalsV2": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 1,
+        "score": 80
+      },
+      "value": [
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 1,
+          "score": 80
+        }
+      ]
+    }
+  }
+}

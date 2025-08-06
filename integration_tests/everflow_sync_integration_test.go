@@ -7,7 +7,6 @@ import (
 	"time"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/require"
 )
 
 // TestMain sets up the test environment
@@ -31,13 +30,14 @@ func TestAdvertiserSynchronization(t *testing.T) {
 
 	t.Log("=== Testing Advertiser Synchronization ===")
 
-	// Check if we're in mock mode due to API key limitations
+	// Check if we're in mock mode
 	mockMode := os.Getenv("EVERFLOW_MOCK_MODE") == "true"
-	if !mockMode {
-		t.Log("⚠️  WARNING: Current API key has read-only permissions")
-		t.Log("⚠️  Set EVERFLOW_MOCK_MODE=true to run in mock mode")
-		t.Log("⚠️  See API_KEY_PERMISSIONS.md for details")
+	if mockMode {
+		t.Log("🔧 Running in mock mode")
+		t.Skip("Mock mode not yet implemented")
 	}
+	
+	t.Log("🔑 Using read-write API key for full integration testing")
 
 	// Step 1: Create a user profile first (required for authenticated operations)
 	profilePayload := map[string]interface{}{
@@ -71,7 +71,7 @@ func TestAdvertiserSynchronization(t *testing.T) {
 		ID int64 `json:"organization_id"`
 	}
 	ParseJSONResponse(t, orgResp, &orgResult)
-	cleanup.TrackOrganization(fmt.Sprintf("%d", orgResult.ID))
+	cleanup.TrackOrganization(orgResult.ID)
 
 	// Step 3: Create an advertiser via our API
 	advertiserPayload := map[string]interface{}{
@@ -86,27 +86,10 @@ func TestAdvertiserSynchronization(t *testing.T) {
 	t.Log("Creating advertiser via our API...")
 	advertiserResp := config.PlatformAPIRequest(t, "POST", "/api/v1/advertisers", advertiserPayload)
 	LogResponse(t, "Advertiser Creation", advertiserResp)
-	
-	// Handle API key permission limitations
-	if !mockMode && advertiserResp.StatusCode == 500 {
-		t.Log("❌ Advertiser creation failed due to Everflow API key permissions")
-		t.Log("📋 This is expected with the current read-only API key")
-		
-		// Verify we can at least read existing advertisers from Everflow
-		t.Log("Verifying Everflow API connectivity...")
-		everflowResp := callEverflowAPI(t, config, "GET", "/v1/networks/advertisers", nil)
-		t.Logf("Everflow Read Test: Status=%d, Body=%s", everflowResp.StatusCode, everflowResp.Body)
-		require.Equal(t, 200, everflowResp.StatusCode, "Failed to read from Everflow API")
-		t.Log("✅ Everflow API read access confirmed")
-		
-		// Skip the rest of the test
-		t.Skip("Skipping full test due to API key limitations - see API_KEY_PERMISSIONS.md")
-	}
-	
 	AssertSuccessResponse(t, advertiserResp, 201)
 
 	var advertiserResult struct {
-		ID   string `json:"id"`
+		ID   int64  `json:"advertiser_id"`
 		Name string `json:"name"`
 	}
 	ParseJSONResponse(t, advertiserResp, &advertiserResult)
@@ -119,21 +102,21 @@ func TestAdvertiserSynchronization(t *testing.T) {
 	// Step 5: Check if advertiser has Everflow mapping
 	t.Log("Checking Everflow provider mapping...")
 	mappingResp := config.PlatformAPIRequest(t, "GET", 
-		fmt.Sprintf("/api/v1/advertisers/%s/provider-mappings/everflow", advertiserResult.ID), nil)
+		fmt.Sprintf("/api/v1/advertisers/%d/provider-mappings/everflow", advertiserResult.ID), nil)
 	LogResponse(t, "Provider Mapping", mappingResp)
 
 	if mappingResp.StatusCode == 404 {
 		t.Log("No Everflow mapping found, triggering manual sync...")
 		// Trigger manual sync to Everflow
 		syncResp := config.PlatformAPIRequest(t, "POST", 
-			fmt.Sprintf("/api/v1/advertisers/%s/sync-to-everflow", advertiserResult.ID), nil)
+			fmt.Sprintf("/api/v1/advertisers/%d/sync-to-everflow", advertiserResult.ID), nil)
 		LogResponse(t, "Manual Sync", syncResp)
 		AssertSuccessResponse(t, syncResp, 200)
 
 		// Wait and check mapping again
 		config.WaitForSync(t, 5*time.Second)
 		mappingResp = config.PlatformAPIRequest(t, "GET", 
-			fmt.Sprintf("/api/v1/advertisers/%s/provider-mappings/everflow", advertiserResult.ID), nil)
+			fmt.Sprintf("/api/v1/advertisers/%d/provider-mappings/everflow", advertiserResult.ID), nil)
 		LogResponse(t, "Provider Mapping After Sync", mappingResp)
 	}
 
@@ -151,12 +134,12 @@ func TestAdvertiserSynchronization(t *testing.T) {
 
 	// Step 7: Verify advertiser attributes match
 	var everflowAdvertiser struct {
-		ID   int    `json:"id"`
-		Name string `json:"name"`
+		NetworkAdvertiserID int    `json:"network_advertiser_id"`
+		Name               string `json:"name"`
 	}
 	ParseJSONResponse(t, everflowResp, &everflowAdvertiser)
 
-	assert.Equal(t, everflowID, everflowAdvertiser.ID, "Everflow advertiser ID should match")
+	assert.Equal(t, everflowID, everflowAdvertiser.NetworkAdvertiserID, "Everflow advertiser ID should match")
 	assert.Equal(t, advertiserPayload["name"], everflowAdvertiser.Name, "Advertiser name should match")
 
 	t.Log("✅ Advertiser synchronization test passed!")
@@ -185,7 +168,7 @@ func TestAffiliateSynchronization(t *testing.T) {
 	AssertSuccessResponse(t, orgResp, 201)
 
 	var orgResult struct {
-		ID string `json:"id"`
+		ID int64 `json:"organization_id"`
 	}
 	ParseJSONResponse(t, orgResp, &orgResult)
 	cleanup.TrackOrganization(orgResult.ID)
@@ -276,7 +259,7 @@ func TestCampaignSynchronization(t *testing.T) {
 	AssertSuccessResponse(t, orgResp, 201)
 
 	var orgResult struct {
-		ID string `json:"id"`
+		ID int64 `json:"organization_id"`
 	}
 	ParseJSONResponse(t, orgResp, &orgResult)
 	cleanup.TrackOrganization(orgResult.ID)
@@ -295,7 +278,7 @@ func TestCampaignSynchronization(t *testing.T) {
 	AssertSuccessResponse(t, advertiserResp, 201)
 
 	var advertiserResult struct {
-		ID string `json:"id"`
+		ID int64 `json:"advertiser_id"`
 	}
 	ParseJSONResponse(t, advertiserResp, &advertiserResult)
 	cleanup.TrackAdvertiser(advertiserResult.ID)
@@ -361,7 +344,7 @@ func TestTrackingLinkSynchronization(t *testing.T) {
 	AssertSuccessResponse(t, advOrgResp, 201)
 
 	var advOrgResult struct {
-		ID string `json:"id"`
+		ID int64 `json:"organization_id"`
 	}
 	ParseJSONResponse(t, advOrgResp, &advOrgResult)
 	cleanup.TrackOrganization(advOrgResult.ID)
@@ -380,7 +363,7 @@ func TestTrackingLinkSynchronization(t *testing.T) {
 	AssertSuccessResponse(t, affOrgResp, 201)
 
 	var affOrgResult struct {
-		ID string `json:"id"`
+		ID int64 `json:"organization_id"`
 	}
 	ParseJSONResponse(t, affOrgResp, &affOrgResult)
 	cleanup.TrackOrganization(affOrgResult.ID)

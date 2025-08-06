@@ -1,0 +1,651 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 2,
+      "sampleValue": [
+        "Rakuten",
+        "Refersion"
+      ],
+      "value": [
+        "Rakuten",
+        "Refersion"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.6
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "hayaglamazonguides.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "bag"
+        },
+        {
+          "score": 0.94527364,
+          "value": "add bag"
+        },
+        {
+          "score": 0.59275055,
+          "value": "makeup"
+        },
+        {
+          "score": 0.52238804,
+          "value": "hair"
+        },
+        {
+          "score": 0.4410803,
+          "value": "beauty"
+        },
+        {
+          "score": 0.41932553,
+          "value": "request"
+        },
+        {
+          "score": 0.33745557,
+          "value": "skin"
+        },
+        {
+          "score": 0.32142857,
+          "value": "error"
+        },
+        {
+          "score": 0.32142857,
+          "value": "playwright"
+        },
+        {
+          "score": 0.32142857,
+          "value": "complete"
+        },
+        {
+          "score": 0.32142857,
+          "value": "error playwright"
+        },
+        {
+          "score": 0.32142857,
+          "value": "playwright complete"
+        },
+        {
+          "score": 0.32142857,
+          "value": "complete request"
+        },
+        {
+          "score": 0.32142857,
+          "value": "request time"
+        },
+        {
+          "score": 0.31840795,
+          "value": "care"
+        },
+        {
+          "score": 0.31755507,
+          "value": "skincare"
+        },
+        {
+          "score": 0.27022034,
+          "value": "lip"
+        },
+        {
+          "score": 0.24705046,
+          "value": "brushes"
+        },
+        {
+          "score": 0.2379531,
+          "value": "eye"
+        },
+        {
+          "score": 0.21890548,
+          "value": "treatments"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "bag"
+        },
+        {
+          "score": 0.94527364,
+          "value": "add bag"
+        },
+        {
+          "score": 0.59275055,
+          "value": "makeup"
+        },
+        {
+          "score": 0.52238804,
+          "value": "hair"
+        },
+        {
+          "score": 0.4410803,
+          "value": "beauty"
+        },
+        {
+          "score": 0.41932553,
+          "value": "request"
+        },
+        {
+          "score": 0.33745557,
+          "value": "skin"
+        },
+        {
+          "score": 0.32142857,
+          "value": "error"
+        },
+        {
+          "score": 0.32142857,
+          "value": "playwright"
+        },
+        {
+          "score": 0.32142857,
+          "value": "complete"
+        },
+        {
+          "score": 0.32142857,
+          "value": "error playwright"
+        },
+        {
+          "score": 0.32142857,
+          "value": "playwright complete"
+        },
+        {
+          "score": 0.32142857,
+          "value": "complete request"
+        },
+        {
+          "score": 0.32142857,
+          "value": "request time"
+        },
+        {
+          "score": 0.31840795,
+          "value": "care"
+        },
+        {
+          "score": 0.31755507,
+          "value": "skincare"
+        },
+        {
+          "score": 0.27022034,
+          "value": "lip"
+        },
+        {
+          "score": 0.24705046,
+          "value": "brushes"
+        },
+        {
+          "score": 0.2379531,
+          "value": "eye"
+        },
+        {
+          "score": 0.21890548,
+          "value": "treatments"
+        },
+        {
+          "score": 0.21393035,
+          "value": "feelunique"
+        },
+        {
+          "score": 0.21393035,
+          "value": "body"
+        },
+        {
+          "score": 0.20238096,
+          "value": "personal datum"
+        },
+        {
+          "score": 0.19900498,
+          "value": "cream"
+        },
+        {
+          "score": 0.17910448,
+          "value": "fragrance"
+        },
+        {
+          "score": 0.17910448,
+          "value": "brow"
+        },
+        {
+          "score": 0.17327647,
+          "value": "face"
+        },
+        {
+          "score": 0.1701272,
+          "value": "newegg"
+        },
+        {
+          "score": 0.16744848,
+          "value": "palettes"
+        },
+        {
+          "score": 0.1641791,
+          "value": "travel"
+        },
+        {
+          "score": 0.1641791,
+          "value": "masks"
+        },
+        {
+          "score": 0.15920398,
+          "value": "bath"
+        },
+        {
+          "score": 0.14925373,
+          "value": "rewards"
+        },
+        {
+          "score": 0.14925373,
+          "value": "minis"
+        },
+        {
+          "score": 0.14925373,
+          "value": "travel minis"
+        },
+        {
+          "score": 0.13930348,
+          "value": "sephora"
+        },
+        {
+          "score": 0.13930348,
+          "value": "sign"
+        },
+        {
+          "score": 0.13432837,
+          "value": "tan"
+        },
+        {
+          "score": 0.13432837,
+          "value": "oils"
+        },
+        {
+          "score": 0.12935324,
+          "value": "oily"
+        },
+        {
+          "score": 0.12935324,
+          "value": "creams"
+        },
+        {
+          "score": 0.12935324,
+          "value": "gifts sets"
+        },
+        {
+          "score": 0.11940298,
+          "value": "account sign"
+        },
+        {
+          "score": 0.11940298,
+          "value": "nail"
+        },
+        {
+          "score": 0.11940298,
+          "value": "anti"
+        },
+        {
+          "score": 0.11940298,
+          "value": "supplements"
+        },
+        {
+          "score": 0.11940298,
+          "value": "foot"
+        },
+        {
+          "score": 0.11940298,
+          "value": "samples"
+        },
+        {
+          "score": 0.11442786,
+          "value": "charlotte"
+        },
+        {
+          "score": 0.10945274,
+          "value": "tilbury"
+        },
+        {
+          "score": 0.10945274,
+          "value": "charlotte tilbury"
+        },
+        {
+          "score": 0.10945274,
+          "value": "elemis"
+        },
+        {
+          "score": 0.10811822,
+          "value": "provision"
+        },
+        {
+          "score": 0.09950249,
+          "value": "box"
+        },
+        {
+          "score": 0.09950249,
+          "value": "men"
+        },
+        {
+          "score": 0.09950249,
+          "value": "dry"
+        },
+        {
+          "score": 0.094527364,
+          "value": "huda"
+        },
+        {
+          "score": 0.094527364,
+          "value": "huda beauty"
+        },
+        {
+          "score": 0.094527364,
+          "value": "contact us"
+        },
+        {
+          "score": 0.094527364,
+          "value": "beauty box"
+        },
+        {
+          "score": 0.094527364,
+          "value": "organic"
+        },
+        {
+          "score": 0.094527364,
+          "value": "shower"
+        },
+        {
+          "score": 0.094527364,
+          "value": "high"
+        },
+        {
+          "score": 0.09367449,
+          "value": "haircare"
+        },
+        {
+          "score": 0.08955224,
+          "value": "milk"
+        },
+        {
+          "score": 0.08955224,
+          "value": "milk makeup"
+        },
+        {
+          "score": 0.08955224,
+          "value": "refer"
+        },
+        {
+          "score": 0.08955224,
+          "value": "friend"
+        },
+        {
+          "score": 0.08955224,
+          "value": "refer friend"
+        },
+        {
+          "score": 0.08955224,
+          "value": "wish list"
+        },
+        {
+          "score": 0.08955224,
+          "value": "gels"
+        },
+        {
+          "score": 0.08955224,
+          "value": "polish"
+        },
+        {
+          "score": 0.08955224,
+          "value": "nail polish"
+        },
+        {
+          "score": 0.08955224,
+          "value": "gel"
+        },
+        {
+          "score": 0.08955224,
+          "value": "shampoo"
+        },
+        {
+          "score": 0.08955224,
+          "value": "hand"
+        },
+        {
+          "score": 0.08955224,
+          "value": "baby"
+        },
+        {
+          "score": 0.08955224,
+          "value": "selected"
+        },
+        {
+          "score": 0.08869936,
+          "value": "eyeshadow"
+        },
+        {
+          "score": 0.08457711,
+          "value": "free gifts"
+        },
+        {
+          "score": 0.08457711,
+          "value": "acid"
+        },
+        {
+          "score": 0.08372424,
+          "value": "concealer"
+        },
+        {
+          "score": 0.081770085,
+          "value": "legitimate"
+        },
+        {
+          "score": 0.07960199,
+          "value": "low"
+        },
+        {
+          "score": 0.07462686,
+          "value": "complexion"
+        },
+        {
+          "score": 0.07462686,
+          "value": "moisturisers"
+        },
+        {
+          "score": 0.07462686,
+          "value": "advent"
+        },
+        {
+          "score": 0.07462686,
+          "value": "range"
+        },
+        {
+          "score": 0.06965174,
+          "value": "serums"
+        },
+        {
+          "score": 0.06965174,
+          "value": "free delivery"
+        },
+        {
+          "score": 0.06965174,
+          "value": "saving"
+        },
+        {
+          "score": 0.06467662,
+          "value": "mario"
+        },
+        {
+          "score": 0.06467662,
+          "value": "faced"
+        },
+        {
+          "score": 0.06467662,
+          "value": "life"
+        },
+        {
+          "score": 0.06467662,
+          "value": "sun tan"
+        },
+        {
+          "score": 0.06467662,
+          "value": "grooming"
+        },
+        {
+          "score": 0.06467662,
+          "value": "men grooming"
+        },
+        {
+          "score": 0.06467662,
+          "value": "balms"
+        },
+        {
+          "score": 0.06467662,
+          "value": "combination"
+        },
+        {
+          "score": 0.06467662,
+          "value": "cleansing"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://hayaglamazonguides.com/",
+        "https://www.hayaglamazonguides.com/",
+        "http://hayaglamazonguides.com/",
+        "http://www.hayaglamazonguides.com/"
+      ]
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/hayaglamazonguides.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://hayaglamazonguides.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 4,
+        "value": [
+          "newegg.com",
+          "klaiyihair.com",
+          "revolutionbeauty.com",
+          "us.feelunique.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "us.feelunique.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "feelunique.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 2.9,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Ecommerce"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 4,
+      "value": [
+        "newegg.com",
+        "klaiyihair.com",
+        "revolutionbeauty.com",
+        "us.feelunique.com"
+      ]
+    },
+    "promotype": {
+      "value": "student"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 3,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "instagram"
+      ],
+      "value": {
+        "instagram": "https://instagram.com/hayaglamazon",
+        "twitter": "https://twitter.com/hayaglamazon",
+        "youtube": "https://youtube.com/channel/ucvajals6dfmrasmr7rfym_g"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Health / Beauty",
+      "value": [
+        "Health / Beauty",
+        "Fashion / Clothing",
+        "Entertainment / Hobbies"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Health / Beauty",
+        "rank": 1,
+        "score": 80
+      },
+      "value": [
+        {
+          "name": "Health / Beauty",
+          "rank": 1,
+          "score": 80
+        },
+        {
+          "name": "Fashion / Clothing",
+          "rank": 1,
+          "score": 60
+        },
+        {
+          "name": "Entertainment / Hobbies",
+          "rank": 1,
+          "score": 40
+        }
+      ]
+    }
+  }
+}

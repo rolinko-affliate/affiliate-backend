@@ -1,0 +1,739 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 2,
+      "sampleValue": [
+        "Rakuten",
+        "Skimlinks"
+      ],
+      "value": [
+        "Rakuten",
+        "Skimlinks"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "fr",
+        "score": 1
+      },
+      "sampleValue": [
+        {
+          "countryCode": "fr",
+          "score": 1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "fr",
+          "score": 1
+        }
+      ]
+    },
+    "domain": "lemondeinformatique.fr",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "apple"
+        },
+        {
+          "score": 0.8838353,
+          "value": "laptop"
+        },
+        {
+          "score": 0.88346356,
+          "value": "twitter"
+        },
+        {
+          "score": 0.86844474,
+          "value": "gaming"
+        },
+        {
+          "score": 0.8510449,
+          "value": "window"
+        },
+        {
+          "score": 0.8155352,
+          "value": "video"
+        },
+        {
+          "score": 0.6517546,
+          "value": "community"
+        },
+        {
+          "score": 0.6391197,
+          "value": "platform"
+        },
+        {
+          "score": 0.63801277,
+          "value": "processor"
+        },
+        {
+          "score": 0.6214725,
+          "value": "performance"
+        },
+        {
+          "score": 0.61791945,
+          "value": "story"
+        },
+        {
+          "score": 0.61762464,
+          "value": "app"
+        },
+        {
+          "score": 0.6146878,
+          "value": "game"
+        },
+        {
+          "score": 0.57459915,
+          "value": "device"
+        },
+        {
+          "score": 0.57324857,
+          "value": "tech"
+        },
+        {
+          "score": 0.55595326,
+          "value": "verge"
+        },
+        {
+          "score": 0.551896,
+          "value": "pro"
+        },
+        {
+          "score": 0.54728246,
+          "value": "linux"
+        },
+        {
+          "score": 0.54063135,
+          "value": "microsoft"
+        },
+        {
+          "score": 0.4982293,
+          "value": "software"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "apple"
+        },
+        {
+          "score": 0.8838353,
+          "value": "laptop"
+        },
+        {
+          "score": 0.88346356,
+          "value": "twitter"
+        },
+        {
+          "score": 0.86844474,
+          "value": "gaming"
+        },
+        {
+          "score": 0.8510449,
+          "value": "window"
+        },
+        {
+          "score": 0.8155352,
+          "value": "video"
+        },
+        {
+          "score": 0.6517546,
+          "value": "community"
+        },
+        {
+          "score": 0.6391197,
+          "value": "platform"
+        },
+        {
+          "score": 0.63801277,
+          "value": "processor"
+        },
+        {
+          "score": 0.6214725,
+          "value": "performance"
+        },
+        {
+          "score": 0.61791945,
+          "value": "story"
+        },
+        {
+          "score": 0.61762464,
+          "value": "app"
+        },
+        {
+          "score": 0.6146878,
+          "value": "game"
+        },
+        {
+          "score": 0.57459915,
+          "value": "device"
+        },
+        {
+          "score": 0.57324857,
+          "value": "tech"
+        },
+        {
+          "score": 0.55595326,
+          "value": "verge"
+        },
+        {
+          "score": 0.551896,
+          "value": "pro"
+        },
+        {
+          "score": 0.54728246,
+          "value": "linux"
+        },
+        {
+          "score": 0.54063135,
+          "value": "microsoft"
+        },
+        {
+          "score": 0.4982293,
+          "value": "software"
+        },
+        {
+          "score": 0.45650014,
+          "value": "network"
+        },
+        {
+          "score": 0.45501986,
+          "value": "intel"
+        },
+        {
+          "score": 0.42589197,
+          "value": "iphone"
+        },
+        {
+          "score": 0.39127624,
+          "value": "phone"
+        },
+        {
+          "score": 0.38808924,
+          "value": "people"
+        },
+        {
+          "score": 0.37755185,
+          "value": "music"
+        },
+        {
+          "score": 0.37602413,
+          "value": "windows"
+        },
+        {
+          "score": 0.37199688,
+          "value": "developer"
+        },
+        {
+          "score": 0.3706355,
+          "value": "geekbench"
+        },
+        {
+          "score": 0.36845008,
+          "value": "code"
+        },
+        {
+          "score": 0.3661149,
+          "value": "graphic"
+        },
+        {
+          "score": 0.36283946,
+          "value": "camera"
+        },
+        {
+          "score": 0.35737047,
+          "value": "channel"
+        },
+        {
+          "score": 0.35555443,
+          "value": "feature"
+        },
+        {
+          "score": 0.34765998,
+          "value": "android"
+        },
+        {
+          "score": 0.3317075,
+          "value": "technology"
+        },
+        {
+          "score": 0.3283926,
+          "value": "driver"
+        },
+        {
+          "score": 0.3155946,
+          "value": "power"
+        },
+        {
+          "score": 0.31552762,
+          "value": "watch"
+        },
+        {
+          "score": 0.3111576,
+          "value": "source"
+        },
+        {
+          "score": 0.31005484,
+          "value": "surface"
+        },
+        {
+          "score": 0.30926087,
+          "value": "desktop"
+        },
+        {
+          "score": 0.30600497,
+          "value": "film"
+        },
+        {
+          "score": 0.30319652,
+          "value": "display"
+        },
+        {
+          "score": 0.3019873,
+          "value": "sign"
+        },
+        {
+          "score": 0.30181476,
+          "value": "team"
+        },
+        {
+          "score": 0.30032465,
+          "value": "share"
+        },
+        {
+          "score": 0.3000945,
+          "value": "movie"
+        },
+        {
+          "score": 0.29898006,
+          "value": "store"
+        },
+        {
+          "score": 0.2923402,
+          "value": "version"
+        },
+        {
+          "score": 0.28934342,
+          "value": "project"
+        },
+        {
+          "score": 0.28739902,
+          "value": "memory"
+        },
+        {
+          "score": 0.28596395,
+          "value": "google"
+        },
+        {
+          "score": 0.2833319,
+          "value": "core"
+        },
+        {
+          "score": 0.28292388,
+          "value": "amd"
+        },
+        {
+          "score": 0.28073332,
+          "value": "life"
+        },
+        {
+          "score": 0.27797663,
+          "value": "opens"
+        },
+        {
+          "score": 0.27797663,
+          "value": "broadcom"
+        },
+        {
+          "score": 0.27797663,
+          "value": "broadcom inc"
+        },
+        {
+          "score": 0.27797663,
+          "value": "connecting"
+        },
+        {
+          "score": 0.27797663,
+          "value": "inc connecting"
+        },
+        {
+          "score": 0.27797663,
+          "value": "connecting everything"
+        },
+        {
+          "score": 0.2778369,
+          "value": "opens new"
+        },
+        {
+          "score": 0.27769712,
+          "value": "new tab"
+        },
+        {
+          "score": 0.2740496,
+          "value": "web"
+        },
+        {
+          "score": 0.27101097,
+          "value": "series"
+        },
+        {
+          "score": 0.2702961,
+          "value": "raspberry"
+        },
+        {
+          "score": 0.26805893,
+          "value": "screen"
+        },
+        {
+          "score": 0.26772067,
+          "value": "credit"
+        },
+        {
+          "score": 0.26687878,
+          "value": "guide"
+        },
+        {
+          "score": 0.26304525,
+          "value": "post"
+        },
+        {
+          "score": 0.25996897,
+          "value": "learn"
+        },
+        {
+          "score": 0.2571567,
+          "value": "update"
+        },
+        {
+          "score": 0.24799833,
+          "value": "comment"
+        },
+        {
+          "score": 0.24739921,
+          "value": "cinema"
+        },
+        {
+          "score": 0.24471407,
+          "value": "url"
+        },
+        {
+          "score": 0.24056241,
+          "value": "advertise"
+        },
+        {
+          "score": 0.239163,
+          "value": "issue"
+        },
+        {
+          "score": 0.23865831,
+          "value": "entertainment"
+        },
+        {
+          "score": 0.23442811,
+          "value": "hardware"
+        },
+        {
+          "score": 0.23203978,
+          "value": "accessory"
+        },
+        {
+          "score": 0.22976048,
+          "value": "raspberry pi"
+        },
+        {
+          "score": 0.22910252,
+          "value": "ryzen"
+        },
+        {
+          "score": 0.22328892,
+          "value": "article"
+        },
+        {
+          "score": 0.22236751,
+          "value": "chrome"
+        },
+        {
+          "score": 0.22089396,
+          "value": "style"
+        },
+        {
+          "score": 0.22052427,
+          "value": "scooter"
+        },
+        {
+          "score": 0.21650212,
+          "value": "creator"
+        },
+        {
+          "score": 0.2154768,
+          "value": "games"
+        },
+        {
+          "score": 0.21531847,
+          "value": "tool"
+        },
+        {
+          "score": 0.21517476,
+          "value": "smart"
+        },
+        {
+          "score": 0.21389972,
+          "value": "duration"
+        },
+        {
+          "score": 0.21348514,
+          "value": "work"
+        },
+        {
+          "score": 0.21191879,
+          "value": "edge"
+        },
+        {
+          "score": 0.21170038,
+          "value": "pinterest"
+        },
+        {
+          "score": 0.21112226,
+          "value": "visual"
+        },
+        {
+          "score": 0.20850334,
+          "value": "reddit"
+        },
+        {
+          "score": 0.20786859,
+          "value": "link"
+        },
+        {
+          "score": 0.20764653,
+          "value": "twitter com"
+        },
+        {
+          "score": 0.20576529,
+          "value": "hour"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/lemondeinformatique.fr.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://lemondeinformatique.fr"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 40,
+        "value": [
+          "twitter.com",
+          "9to5mac.com",
+          "apple.com",
+          "substack.com",
+          "microsoft.com",
+          "tomshardware.com",
+          "github.com",
+          "youtube.com",
+          "intel.com",
+          "windows.com",
+          "asus.com",
+          "bleepingcomputer.com",
+          "reddit.com",
+          "pcworld.com",
+          "vmware.com",
+          "broadcom.com",
+          "geekbench.com",
+          "chromereleases.googleblog.com",
+          "commandlinefu.com",
+          "eufy.com",
+          "nist.gov",
+          "cve.report",
+          "mitre.org",
+          "raspberrypi.com",
+          "downfall.page",
+          "weibo.com",
+          "theregister.com",
+          "guardz.com",
+          "hix.ai",
+          "howtogeek.com",
+          "theverge.com",
+          "iu.edu",
+          "lapcatsoftware.com",
+          "maxon.net",
+          "phoronix.com",
+          "speedcheck.org",
+          "stackdiary.com",
+          "webmproject.org",
+          "windowslatest.com",
+          "youtu.be"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 13.249998,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 12.949999,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 3.9,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Business / Cyber Security"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 2,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Security"
+          },
+          {
+            "count": 0.85,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 0.5,
+            "vertical": "Entertainment / Gaming"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 40,
+      "value": [
+        "twitter.com",
+        "9to5mac.com",
+        "apple.com",
+        "substack.com",
+        "microsoft.com",
+        "tomshardware.com",
+        "github.com",
+        "youtube.com",
+        "intel.com",
+        "windows.com",
+        "asus.com",
+        "bleepingcomputer.com",
+        "reddit.com",
+        "pcworld.com",
+        "vmware.com",
+        "broadcom.com",
+        "geekbench.com",
+        "chromereleases.googleblog.com",
+        "commandlinefu.com",
+        "eufy.com",
+        "nist.gov",
+        "cve.report",
+        "mitre.org",
+        "raspberrypi.com",
+        "downfall.page",
+        "weibo.com",
+        "theregister.com",
+        "guardz.com",
+        "hix.ai",
+        "howtogeek.com",
+        "theverge.com",
+        "iu.edu",
+        "lapcatsoftware.com",
+        "maxon.net",
+        "phoronix.com",
+        "speedcheck.org",
+        "stackdiary.com",
+        "webmproject.org",
+        "windowslatest.com",
+        "youtu.be"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "twitter",
+        "facebook",
+        "linkedin",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/le-monde-informatique-103373896380515/?ref=sgm",
+        "instagram": "https://instagram.com/lemondeinformatique",
+        "linkedin": "https://linkedin.com/company/le-monde-informatique?trk=company_name",
+        "twitter": "https://twitter.com/mondeinformatiq"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Technology / Computers",
+      "value": [
+        "Technology / Computers",
+        "Technology / Software",
+        "Business / Software"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Technology / Computers",
+        "rank": 1,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Technology / Computers",
+          "rank": 1,
+          "score": 100
+        },
+        {
+          "name": "Technology / Software",
+          "rank": 1,
+          "score": 80
+        },
+        {
+          "name": "Business / Software",
+          "rank": 1,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

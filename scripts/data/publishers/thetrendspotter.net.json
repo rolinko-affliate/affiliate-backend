@@ -1,0 +1,1335 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 4,
+      "sampleValue": [
+        "CJ Affiliate",
+        "Rewardstyle",
+        "ShopStyle"
+      ],
+      "value": [
+        "CJ Affiliate",
+        "Rewardstyle",
+        "ShopStyle",
+        "Skimlinks"
+      ]
+    },
+    "countryRankings": {
+      "count": 4,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.3
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.3
+        },
+        {
+          "countryCode": "au",
+          "score": 0.2
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.15
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.3
+        },
+        {
+          "countryCode": "au",
+          "score": 0.2
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.15
+        },
+        {
+          "countryCode": "ca",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "thetrendspotter.net",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "bag"
+        },
+        {
+          "score": 0.8768677,
+          "value": "accessory"
+        },
+        {
+          "score": 0.8230314,
+          "value": "designer"
+        },
+        {
+          "score": 0.8118865,
+          "value": "shoe"
+        },
+        {
+          "score": 0.80680513,
+          "value": "clothing"
+        },
+        {
+          "score": 0.7834339,
+          "value": "dress"
+        },
+        {
+          "score": 0.721618,
+          "value": "shirt"
+        },
+        {
+          "score": 0.52116567,
+          "value": "fine"
+        },
+        {
+          "score": 0.48168072,
+          "value": "store"
+        },
+        {
+          "score": 0.44588974,
+          "value": "swimwear"
+        },
+        {
+          "score": 0.4387798,
+          "value": "beauty"
+        },
+        {
+          "score": 0.4123987,
+          "value": "sneaker"
+        },
+        {
+          "score": 0.40669551,
+          "value": "fashion"
+        },
+        {
+          "score": 0.4030925,
+          "value": "sunglass"
+        },
+        {
+          "score": 0.39653137,
+          "value": "conscious"
+        },
+        {
+          "score": 0.378657,
+          "value": "style"
+        },
+        {
+          "score": 0.37785876,
+          "value": "apparel"
+        },
+        {
+          "score": 0.3717932,
+          "value": "jacket"
+        },
+        {
+          "score": 0.36489186,
+          "value": "watch"
+        },
+        {
+          "score": 0.35646573,
+          "value": "seller"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "bag"
+        },
+        {
+          "score": 0.8768677,
+          "value": "accessory"
+        },
+        {
+          "score": 0.8230314,
+          "value": "designer"
+        },
+        {
+          "score": 0.8118865,
+          "value": "shoe"
+        },
+        {
+          "score": 0.80680513,
+          "value": "clothing"
+        },
+        {
+          "score": 0.7834339,
+          "value": "dress"
+        },
+        {
+          "score": 0.721618,
+          "value": "shirt"
+        },
+        {
+          "score": 0.52116567,
+          "value": "fine"
+        },
+        {
+          "score": 0.48168072,
+          "value": "store"
+        },
+        {
+          "score": 0.44588974,
+          "value": "swimwear"
+        },
+        {
+          "score": 0.4387798,
+          "value": "beauty"
+        },
+        {
+          "score": 0.4123987,
+          "value": "sneaker"
+        },
+        {
+          "score": 0.40669551,
+          "value": "fashion"
+        },
+        {
+          "score": 0.4030925,
+          "value": "sunglass"
+        },
+        {
+          "score": 0.39653137,
+          "value": "conscious"
+        },
+        {
+          "score": 0.378657,
+          "value": "style"
+        },
+        {
+          "score": 0.37785876,
+          "value": "apparel"
+        },
+        {
+          "score": 0.3717932,
+          "value": "jacket"
+        },
+        {
+          "score": 0.36489186,
+          "value": "watch"
+        },
+        {
+          "score": 0.35646573,
+          "value": "seller"
+        },
+        {
+          "score": 0.35426813,
+          "value": "repair"
+        },
+        {
+          "score": 0.34922373,
+          "value": "dresses"
+        },
+        {
+          "score": 0.33836147,
+          "value": "trainer"
+        },
+        {
+          "score": 0.30065554,
+          "value": "jackets"
+        },
+        {
+          "score": 0.2960779,
+          "value": "piece"
+        },
+        {
+          "score": 0.28575477,
+          "value": "body"
+        },
+        {
+          "score": 0.28301105,
+          "value": "shoes"
+        },
+        {
+          "score": 0.2771933,
+          "value": "browser"
+        },
+        {
+          "score": 0.27562815,
+          "value": "javascript"
+        },
+        {
+          "score": 0.27266148,
+          "value": "woman"
+        },
+        {
+          "score": 0.26015183,
+          "value": "trouser"
+        },
+        {
+          "score": 0.25920418,
+          "value": "supplier"
+        },
+        {
+          "score": 0.25825962,
+          "value": "bags"
+        },
+        {
+          "score": 0.25057954,
+          "value": "jewellery"
+        },
+        {
+          "score": 0.24905296,
+          "value": "human"
+        },
+        {
+          "score": 0.24889441,
+          "value": "activewear"
+        },
+        {
+          "score": 0.24772064,
+          "value": "online shopping"
+        },
+        {
+          "score": 0.24570982,
+          "value": "pants"
+        },
+        {
+          "score": 0.24355236,
+          "value": "handbag"
+        },
+        {
+          "score": 0.23416801,
+          "value": "color"
+        },
+        {
+          "score": 0.2333802,
+          "value": "boot"
+        },
+        {
+          "score": 0.2306733,
+          "value": "sport"
+        },
+        {
+          "score": 0.22951518,
+          "value": "pen"
+        },
+        {
+          "score": 0.22945558,
+          "value": "sustainability"
+        },
+        {
+          "score": 0.22909245,
+          "value": "walmart"
+        },
+        {
+          "score": 0.22393195,
+          "value": "card"
+        },
+        {
+          "score": 0.22110857,
+          "value": "sunglasses"
+        },
+        {
+          "score": 0.21641317,
+          "value": "sneakers"
+        },
+        {
+          "score": 0.20992802,
+          "value": "women"
+        },
+        {
+          "score": 0.20938921,
+          "value": "shirts"
+        },
+        {
+          "score": 0.20891996,
+          "value": "kid"
+        },
+        {
+          "score": 0.20439774,
+          "value": "suit"
+        },
+        {
+          "score": 0.20075129,
+          "value": "underwear"
+        },
+        {
+          "score": 0.19878897,
+          "value": "leather"
+        },
+        {
+          "score": 0.19624455,
+          "value": "denim"
+        },
+        {
+          "score": 0.19531247,
+          "value": "skirts"
+        },
+        {
+          "score": 0.19454727,
+          "value": "short"
+        },
+        {
+          "score": 0.1929609,
+          "value": "shorts"
+        },
+        {
+          "score": 0.19278347,
+          "value": "star"
+        },
+        {
+          "score": 0.18604076,
+          "value": "supply"
+        },
+        {
+          "score": 0.18307567,
+          "value": "jewelry"
+        },
+        {
+          "score": 0.18039668,
+          "value": "category"
+        },
+        {
+          "score": 0.17515,
+          "value": "classic"
+        },
+        {
+          "score": 0.17230004,
+          "value": "farfetch"
+        },
+        {
+          "score": 0.17066523,
+          "value": "hoodie"
+        },
+        {
+          "score": 0.1680289,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.16475414,
+          "value": "program"
+        },
+        {
+          "score": 0.16002078,
+          "value": "travel"
+        },
+        {
+          "score": 0.15465745,
+          "value": "event"
+        },
+        {
+          "score": 0.1486546,
+          "value": "iconic"
+        },
+        {
+          "score": 0.14619897,
+          "value": "coats"
+        },
+        {
+          "score": 0.14561357,
+          "value": "investor"
+        },
+        {
+          "score": 0.14534509,
+          "value": "hair"
+        },
+        {
+          "score": 0.14510375,
+          "value": "sign"
+        },
+        {
+          "score": 0.14346059,
+          "value": "club"
+        },
+        {
+          "score": 0.1434544,
+          "value": "care"
+        },
+        {
+          "score": 0.1417726,
+          "value": "provider"
+        },
+        {
+          "score": 0.14021537,
+          "value": "browsing"
+        },
+        {
+          "score": 0.13848582,
+          "value": "jeans"
+        },
+        {
+          "score": 0.13716,
+          "value": "arrival"
+        },
+        {
+          "score": 0.13660409,
+          "value": "edit"
+        },
+        {
+          "score": 0.13543916,
+          "value": "boots"
+        },
+        {
+          "score": 0.13449867,
+          "value": "sandal"
+        },
+        {
+          "score": 0.13437207,
+          "value": "chain"
+        },
+        {
+          "score": 0.13301185,
+          "value": "mini"
+        },
+        {
+          "score": 0.13027272,
+          "value": "career"
+        },
+        {
+          "score": 0.1294707,
+          "value": "device"
+        },
+        {
+          "score": 0.12890758,
+          "value": "skin"
+        },
+        {
+          "score": 0.12872858,
+          "value": "season"
+        },
+        {
+          "score": 0.12803428,
+          "value": "stock"
+        },
+        {
+          "score": 0.12686346,
+          "value": "hat"
+        },
+        {
+          "score": 0.12572294,
+          "value": "community"
+        },
+        {
+          "score": 0.12547162,
+          "value": "streetwear"
+        },
+        {
+          "score": 0.12478861,
+          "value": "sweater"
+        },
+        {
+          "score": 0.124577716,
+          "value": "luggage"
+        },
+        {
+          "score": 0.1242882,
+          "value": "lingerie"
+        },
+        {
+          "score": 0.12365082,
+          "value": "leggings"
+        },
+        {
+          "score": 0.123515934,
+          "value": "nike"
+        },
+        {
+          "score": 0.121409066,
+          "value": "backpack"
+        },
+        {
+          "score": 0.120771565,
+          "value": "associate"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://thetrendspotter.net/",
+        "https://www.thetrendspotter.net/",
+        "http://thetrendspotter.net/",
+        "http://www.thetrendspotter.net/"
+      ]
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/thetrendspotter.net.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://thetrendspotter.net"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 211,
+        "value": [
+          "etsy.com",
+          "2xu.com",
+          "24s.com",
+          "ikea.com",
+          "nike.com",
+          "nordstrom.com",
+          "girlfriend.com",
+          "acnestudios.com",
+          "adairs.com.au",
+          "adelanteshoes.com",
+          "adidas.com",
+          "everlane.com",
+          "adorebeauty.com.au",
+          "ae.com",
+          "walmart.com",
+          "agentprovocateur.com",
+          "ajeworld.com.au",
+          "alexandermcqueen.com",
+          "alicemccall.com.au",
+          "allbirds.com",
+          "allsaints.com",
+          "aloyoga.com",
+          "altrarunning.com",
+          "amazon.com.au",
+          "sephora.com",
+          "suitsupply.com",
+          "sneakersnstuff.com",
+          "stories.com",
+          "arloskye.com",
+          "asics.com",
+          "asos.bbgqo9.net",
+          "asos.com",
+          "marksandspencer.com",
+          "verishop.com",
+          "modaoperandi.com",
+          "gap.com",
+          "au.augustethelabel.com",
+          "au.puma.com",
+          "au.boohoo.com",
+          "au.burberry.com",
+          "au.ryderwear.com",
+          "au.iherb.com",
+          "au.urbanoutfitters.com",
+          "parachutehome.com",
+          "zappos.com",
+          "avenue.com",
+          "avon.com",
+          "b2cfurniture.com.au",
+          "rmwilliams.com.au",
+          "diesel.com",
+          "balenciaga.com",
+          "bareminerals.com",
+          "harrods.com",
+          "belstaff.com",
+          "glassesusa.com",
+          "bershka.com",
+          "myer.com.au",
+          "neimanmarcus.com",
+          "ebay.com",
+          "fabletics.com",
+          "endclothing.com",
+          "freepeople.com",
+          "forever21.com",
+          "merrell.com",
+          "modcloth.com",
+          "nastygal.com",
+          "shopbop.com",
+          "viviennewestwood.com",
+          "bloomingdales.com",
+          "bogner.com",
+          "bonds.com.au",
+          "boohoo.com",
+          "bondno9.com",
+          "selfridges.com",
+          "bricstore.com",
+          "bugatchi.com",
+          "net-a-porter.com",
+          "mrporter.com",
+          "camper.com",
+          "canva.com",
+          "casca.com",
+          "catch.com.au",
+          "macys.com",
+          "fashionbunker.com",
+          "cettire.com",
+          "championusa.com.au",
+          "showpo.com",
+          "iherb.com",
+          "tonybianco.com",
+          "church-footwear.com",
+          "on-running.com",
+          "strawberrynet.com",
+          "coggles.com",
+          "colehaan.com",
+          "torrid.com",
+          "converse.com.au",
+          "converse.com",
+          "mytheresa.com",
+          "culturekings.com.au",
+          "vans.com",
+          "davidarchy.com",
+          "davidjones.com.au",
+          "derek-rose.com",
+          "dickssportinggoods.com",
+          "dukeanddexter.com",
+          "dsw.com",
+          "dunhill.com",
+          "maisonmargiela.com",
+          "elizabetharden.com",
+          "tommy.com",
+          "escentual.com",
+          "riverisland.com",
+          "eyeglasses.com",
+          "lacoste.com",
+          "vestiairecollective.com",
+          "uniqlo.com",
+          "farfetch.com",
+          "hugoboss.com",
+          "firmoo.com",
+          "foreo.com",
+          "freedom.com.au",
+          "framesdirect.com",
+          "freshbeautyco.com.au",
+          "g-star.com",
+          "fwrd.com",
+          "generalpants.com",
+          "getjackblack.com",
+          "ghurka.com",
+          "giantvintage.com",
+          "tedbaker.com",
+          "glassesshop.com",
+          "ksubi.com",
+          "ulta.com",
+          "gluestore.com.au",
+          "goodamerican.com",
+          "grailed.com",
+          "grenson.com",
+          "groupon.com.au",
+          "lookfantastic.com",
+          "supergoop.com",
+          "yoox.com",
+          "hushpuppies.com.au",
+          "intimissimi.com",
+          "skechers.com",
+          "itcosmetics.com",
+          "jameslane.com.au",
+          "mango.com",
+          "jets.com.au",
+          "jomashop.com",
+          "juicebeauty.com",
+          "juliusmarlow.com.au",
+          "karmaloop.com",
+          "lackofcolor.com.au",
+          "leorever.com",
+          "lociwear.com",
+          "shoes.com",
+          "maccosmetics.com.au",
+          "macron.com",
+          "madrabbit.com",
+          "matchesfashion.com",
+          "mltd.com",
+          "newbalance.com.au",
+          "newbalance.com",
+          "nixon.com",
+          "nordstromrack.com",
+          "off---white.com",
+          "oliversapparel.com",
+          "theiconic.com.au",
+          "outdoorvoices.com",
+          "pacsun.com",
+          "ssense.com",
+          "unique-vintage.com",
+          "rag-bone.com",
+          "rebeccavallance.com",
+          "redballoon.com.au",
+          "theoutnet.com",
+          "revolveclothing.com.au",
+          "rockport.com",
+          "saksfifthavenue.com",
+          "sheike.com.au",
+          "shavershop.com.au",
+          "tropicfeel.com",
+          "shopcuup.com",
+          "sirthelabel.com",
+          "smythson.com",
+          "soniarykiel.com",
+          "specsavers.com.au",
+          "stonemen.com",
+          "streetwearofficial.com",
+          "uncommongoods.com",
+          "templeofthesun.com.au",
+          "thelittlemarket.com",
+          "theordinary.com",
+          "tradlands.com",
+          "tumi.com.au",
+          "underarmour.com.au",
+          "us.boohoo.com",
+          "us.vestiairecollective.com",
+          "vans.com.au",
+          "vintandyork.com",
+          "zadig-et-voltaire.com",
+          "von-routte.com",
+          "wantedshoes.com.au",
+          "watchesofswitzerland.com",
+          "watchfinder.com",
+          "wearcommando.com",
+          "wearpact.com",
+          "witchery.com.au",
+          "wolfandbadger.com",
+          "wolventhreads.com",
+          "zennioptical.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 22,
+        "value": [
+          {
+            "domain": "au.urbanoutfitters.com"
+          },
+          {
+            "domain": "au.burberry.com"
+          },
+          {
+            "domain": "allsaints.com"
+          },
+          {
+            "domain": "off---white.com"
+          },
+          {
+            "domain": "au.boohoo.com"
+          },
+          {
+            "domain": "us.vestiairecollective.com"
+          },
+          {
+            "domain": "streetwearofficial.com"
+          },
+          {
+            "domain": "au.puma.com"
+          },
+          {
+            "domain": "au.ryderwear.com"
+          },
+          {
+            "domain": "newbalance.com"
+          },
+          {
+            "domain": "us.boohoo.com"
+          },
+          {
+            "domain": "bershka.com"
+          },
+          {
+            "domain": "rmwilliams.com.au"
+          },
+          {
+            "domain": "adelanteshoes.com"
+          },
+          {
+            "domain": "juliusmarlow.com.au"
+          },
+          {
+            "domain": "escentual.com"
+          },
+          {
+            "domain": "karmaloop.com"
+          },
+          {
+            "domain": "au.augustethelabel.com"
+          },
+          {
+            "domain": "bugatchi.com"
+          },
+          {
+            "domain": "mango.com"
+          },
+          {
+            "domain": "au.iherb.com"
+          },
+          {
+            "domain": "arloskye.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 33,
+        "value": [
+          {
+            "domain": "xtratuf.com"
+          },
+          {
+            "domain": "augustethelabel.com"
+          },
+          {
+            "domain": "justmysize.com"
+          },
+          {
+            "domain": "urbanoutfitters.com"
+          },
+          {
+            "domain": "draperjames.com"
+          },
+          {
+            "domain": "stuartslondon.com"
+          },
+          {
+            "domain": "beyondyoga.com"
+          },
+          {
+            "domain": "merchant1948.com.au"
+          },
+          {
+            "domain": "puma.com"
+          },
+          {
+            "domain": "aquatalia.com"
+          },
+          {
+            "domain": "ugg.com"
+          },
+          {
+            "domain": "columbia.com"
+          },
+          {
+            "domain": "shein.com"
+          },
+          {
+            "domain": "pe-nation.com"
+          },
+          {
+            "domain": "culturekings.com"
+          },
+          {
+            "domain": "helmboots.com"
+          },
+          {
+            "domain": "boohooman.com"
+          },
+          {
+            "domain": "citybeach.com"
+          },
+          {
+            "domain": "barbellapparel.com"
+          },
+          {
+            "domain": "belstaff.co.uk"
+          },
+          {
+            "domain": "huckberry.com"
+          },
+          {
+            "domain": "burberry.com"
+          },
+          {
+            "domain": "rhone.com"
+          },
+          {
+            "domain": "echt.com.au"
+          },
+          {
+            "domain": "clarksusa.com"
+          },
+          {
+            "domain": "adidas.com.au"
+          },
+          {
+            "domain": "scentbox.com"
+          },
+          {
+            "domain": "wolverine.com"
+          },
+          {
+            "domain": "drmartens.com"
+          },
+          {
+            "domain": "jcrew.com"
+          },
+          {
+            "domain": "scoopon.com.au"
+          },
+          {
+            "domain": "ryderwear.com"
+          },
+          {
+            "domain": "citychic.com.au"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 85.049995,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 27.050003,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 18.3,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 16.449999,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 15.599999,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 7.65,
+            "vertical": "Health / Eyecare"
+          },
+          {
+            "count": 6.7000003,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 3.8,
+            "vertical": "Fashion / Lingerie"
+          },
+          {
+            "count": 3.75,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Travel / Accessories"
+          },
+          {
+            "count": 2,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Health / Fragrances"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Fashion / Jewellery"
+          },
+          {
+            "count": 1.1,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 1,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Gifts / Experience Days"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Gifts / Personalised"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 0.8,
+            "vertical": "Home / DIY"
+          },
+          {
+            "count": 0.70000005,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 0.7,
+            "vertical": "Entertainment / Hobbies"
+          },
+          {
+            "count": 0.7,
+            "vertical": "Home / Pets"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 211,
+      "value": [
+        "etsy.com",
+        "2xu.com",
+        "24s.com",
+        "ikea.com",
+        "nike.com",
+        "nordstrom.com",
+        "girlfriend.com",
+        "acnestudios.com",
+        "adairs.com.au",
+        "adelanteshoes.com",
+        "adidas.com",
+        "everlane.com",
+        "adorebeauty.com.au",
+        "ae.com",
+        "walmart.com",
+        "agentprovocateur.com",
+        "ajeworld.com.au",
+        "alexandermcqueen.com",
+        "alicemccall.com.au",
+        "allbirds.com",
+        "allsaints.com",
+        "aloyoga.com",
+        "altrarunning.com",
+        "amazon.com.au",
+        "sephora.com",
+        "suitsupply.com",
+        "sneakersnstuff.com",
+        "stories.com",
+        "arloskye.com",
+        "asics.com",
+        "asos.bbgqo9.net",
+        "asos.com",
+        "marksandspencer.com",
+        "verishop.com",
+        "modaoperandi.com",
+        "gap.com",
+        "au.augustethelabel.com",
+        "au.puma.com",
+        "au.boohoo.com",
+        "au.burberry.com",
+        "au.ryderwear.com",
+        "au.iherb.com",
+        "au.urbanoutfitters.com",
+        "parachutehome.com",
+        "zappos.com",
+        "avenue.com",
+        "avon.com",
+        "b2cfurniture.com.au",
+        "rmwilliams.com.au",
+        "diesel.com",
+        "balenciaga.com",
+        "bareminerals.com",
+        "harrods.com",
+        "belstaff.com",
+        "glassesusa.com",
+        "bershka.com",
+        "myer.com.au",
+        "neimanmarcus.com",
+        "ebay.com",
+        "fabletics.com",
+        "endclothing.com",
+        "freepeople.com",
+        "forever21.com",
+        "merrell.com",
+        "modcloth.com",
+        "nastygal.com",
+        "shopbop.com",
+        "viviennewestwood.com",
+        "bloomingdales.com",
+        "bogner.com",
+        "bonds.com.au",
+        "boohoo.com",
+        "bondno9.com",
+        "selfridges.com",
+        "bricstore.com",
+        "bugatchi.com",
+        "net-a-porter.com",
+        "mrporter.com",
+        "camper.com",
+        "canva.com",
+        "casca.com",
+        "catch.com.au",
+        "macys.com",
+        "fashionbunker.com",
+        "cettire.com",
+        "championusa.com.au",
+        "showpo.com",
+        "iherb.com",
+        "tonybianco.com",
+        "church-footwear.com",
+        "on-running.com",
+        "strawberrynet.com",
+        "coggles.com",
+        "colehaan.com",
+        "torrid.com",
+        "converse.com.au",
+        "converse.com",
+        "mytheresa.com",
+        "culturekings.com.au",
+        "vans.com",
+        "davidarchy.com",
+        "davidjones.com.au",
+        "derek-rose.com",
+        "dickssportinggoods.com",
+        "dukeanddexter.com",
+        "dsw.com",
+        "dunhill.com",
+        "maisonmargiela.com",
+        "elizabetharden.com",
+        "tommy.com",
+        "escentual.com",
+        "riverisland.com",
+        "eyeglasses.com",
+        "lacoste.com",
+        "vestiairecollective.com",
+        "uniqlo.com",
+        "farfetch.com",
+        "hugoboss.com",
+        "firmoo.com",
+        "foreo.com",
+        "freedom.com.au",
+        "framesdirect.com",
+        "freshbeautyco.com.au",
+        "g-star.com",
+        "fwrd.com",
+        "generalpants.com",
+        "getjackblack.com",
+        "ghurka.com",
+        "giantvintage.com",
+        "tedbaker.com",
+        "glassesshop.com",
+        "ksubi.com",
+        "ulta.com",
+        "gluestore.com.au",
+        "goodamerican.com",
+        "grailed.com",
+        "grenson.com",
+        "groupon.com.au",
+        "lookfantastic.com",
+        "supergoop.com",
+        "yoox.com",
+        "hushpuppies.com.au",
+        "intimissimi.com",
+        "skechers.com",
+        "itcosmetics.com",
+        "jameslane.com.au",
+        "mango.com",
+        "jets.com.au",
+        "jomashop.com",
+        "juicebeauty.com",
+        "juliusmarlow.com.au",
+        "karmaloop.com",
+        "lackofcolor.com.au",
+        "leorever.com",
+        "lociwear.com",
+        "shoes.com",
+        "maccosmetics.com.au",
+        "macron.com",
+        "madrabbit.com",
+        "matchesfashion.com",
+        "mltd.com",
+        "newbalance.com.au",
+        "newbalance.com",
+        "nixon.com",
+        "nordstromrack.com",
+        "off---white.com",
+        "oliversapparel.com",
+        "theiconic.com.au",
+        "outdoorvoices.com",
+        "pacsun.com",
+        "ssense.com",
+        "unique-vintage.com",
+        "rag-bone.com",
+        "rebeccavallance.com",
+        "redballoon.com.au",
+        "theoutnet.com",
+        "revolveclothing.com.au",
+        "rockport.com",
+        "saksfifthavenue.com",
+        "sheike.com.au",
+        "shavershop.com.au",
+        "tropicfeel.com",
+        "shopcuup.com",
+        "sirthelabel.com",
+        "smythson.com",
+        "soniarykiel.com",
+        "specsavers.com.au",
+        "stonemen.com",
+        "streetwearofficial.com",
+        "uncommongoods.com",
+        "templeofthesun.com.au",
+        "thelittlemarket.com",
+        "theordinary.com",
+        "tradlands.com",
+        "tumi.com.au",
+        "underarmour.com.au",
+        "us.boohoo.com",
+        "us.vestiairecollective.com",
+        "vans.com.au",
+        "vintandyork.com",
+        "zadig-et-voltaire.com",
+        "von-routte.com",
+        "wantedshoes.com.au",
+        "watchesofswitzerland.com",
+        "watchfinder.com",
+        "wearcommando.com",
+        "wearpact.com",
+        "witchery.com.au",
+        "wolfandbadger.com",
+        "wolventhreads.com",
+        "zennioptical.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 1,
+      "value": [
+        "staging.thetrendspotter.net"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "twitter",
+        "facebook",
+        "linkedin",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/thetrendspotter",
+        "instagram": "https://instagram.com/thetrendspotter",
+        "linkedin": "https://linkedin.com/company/thetrendspotter",
+        "twitter": "https://twitter.com/thetrendsptr"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Fashion / Clothing",
+      "value": [
+        "Fashion / Clothing",
+        "Fashion / Accessories",
+        "Health / Beauty"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Fashion / Clothing",
+        "rank": 1,
+        "score": 75
+      },
+      "value": [
+        {
+          "name": "Fashion / Clothing",
+          "rank": 1,
+          "score": 75
+        },
+        {
+          "name": "Fashion / Accessories",
+          "rank": 1,
+          "score": 65
+        },
+        {
+          "name": "Health / Beauty",
+          "rank": 1,
+          "score": 55
+        }
+      ]
+    }
+  }
+}

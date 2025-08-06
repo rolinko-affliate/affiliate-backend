@@ -1,0 +1,467 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 6,
+      "sampleValue": [
+        "Awin",
+        "CJ Affiliate",
+        "Impact"
+      ],
+      "value": [
+        "Awin",
+        "CJ Affiliate",
+        "Impact",
+        "Partnerize",
+        "Rakuten",
+        "Skimlinks"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.8
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.8
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.8
+        }
+      ]
+    },
+    "domain": "trvcountdown.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://trvcountdown.com/",
+        "https://www.trvcountdown.com/",
+        "http://trvcountdown.com/",
+        "http://www.trvcountdown.com/"
+      ]
+    },
+    "metaData": {
+      "description": "The Most Orgasmic Videos On The Planet - Discover The World Of Celebrity",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/trvcountdown.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://trvcountdown.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 96,
+        "value": [
+          "etsy.com",
+          "apple.com",
+          "amazon.com",
+          "hm.com",
+          "netflix.com",
+          "nordstrom.com",
+          "philo.com",
+          "sky.com",
+          "spotify.com",
+          "hbomax.com",
+          "usatoday.com",
+          "roku.com",
+          "hulu.com",
+          "ae.com",
+          "amazon.co.uk",
+          "walmart.com",
+          "espn.com",
+          "revolve.com",
+          "sephora.com",
+          "anthropologie.com",
+          "lego.com",
+          "fandango.com",
+          "discoveryplus.com",
+          "max.com",
+          "bando.com",
+          "gapfactory.com",
+          "myxfitness.com",
+          "harrods.com",
+          "neimanmarcus.com",
+          "saksoff5th.com",
+          "sling.com",
+          "urbanoutfitters.com",
+          "roughtrade.com",
+          "potterybarn.com",
+          "shopbop.com",
+          "toryburch.com",
+          "vudu.com",
+          "bombas.com",
+          "net-a-porter.com",
+          "lululemon.com",
+          "cbs.com",
+          "qflm.net",
+          "pitchfork.com",
+          "showpo.com",
+          "scholastic.com",
+          "linksynergy.com",
+          "coachoutlet.com",
+          "qvc.com",
+          "cupshe.com",
+          "daily-harvest.com",
+          "samsonite.com",
+          "devonwindsor.com",
+          "disneystore.com",
+          "madewell.com",
+          "ensorings.com",
+          "katespade.com",
+          "jcrew.com",
+          "farfetch.com",
+          "fentybeauty.com",
+          "reebok.com",
+          "fromourplace.com",
+          "starz.com",
+          "ulta.com",
+          "harryanddavid.com",
+          "paramountplus.com",
+          "yoox.com",
+          "httpspercent3apercent2fpercent2fsurprise.katespade.comp.c2fsurprise-sale-view-all",
+          "wayfair.com",
+          "intermixonline.com",
+          "intimissimi.com",
+          "itcosmetics.com",
+          "sleepnumber.com",
+          "tjx.com",
+          "lilyandbean.co.uk",
+          "marshalls.com",
+          "magazinesdirect.com",
+          "maxbone.com",
+          "morningsave.com",
+          "music.amazon.com",
+          "music.apple.com",
+          "naadam.co",
+          "nordstromrack.com",
+          "oliveandjune.com",
+          "peacocktv.com",
+          "peterthomasroth.com",
+          "play.google.com",
+          "spanx.com",
+          "thestar.com",
+          "saksfifthavenue.com",
+          "shopdisney.com",
+          "valentino.com",
+          "tv.apple.com",
+          "ugg.com",
+          "us.laneige.com",
+          "us.puma.com",
+          "venus.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 3,
+        "value": [
+          {
+            "domain": "thestar.com"
+          },
+          {
+            "domain": "us.puma.com"
+          },
+          {
+            "domain": "us.laneige.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 2,
+        "value": [
+          {
+            "domain": "puma.com"
+          },
+          {
+            "domain": "laneige.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 19.2,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 16.4,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 14.55,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 6.7999997,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 4.7999997,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 2.55,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 2.05,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 2,
+            "vertical": "Fashion / Lingerie"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 1.8,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 1,
+            "vertical": "Fashion / Jewellery"
+          },
+          {
+            "count": 1,
+            "vertical": "Travel / Accessories"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Beds & Bedding"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Pets"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Entertainment / Movies"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Gifts / Kids"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Gifts / Personalised"
+          },
+          {
+            "count": 0.85,
+            "vertical": "Fashion / Kids"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 96,
+      "value": [
+        "etsy.com",
+        "apple.com",
+        "amazon.com",
+        "hm.com",
+        "netflix.com",
+        "nordstrom.com",
+        "philo.com",
+        "sky.com",
+        "spotify.com",
+        "hbomax.com",
+        "usatoday.com",
+        "roku.com",
+        "hulu.com",
+        "ae.com",
+        "amazon.co.uk",
+        "walmart.com",
+        "espn.com",
+        "revolve.com",
+        "sephora.com",
+        "anthropologie.com",
+        "lego.com",
+        "fandango.com",
+        "discoveryplus.com",
+        "max.com",
+        "bando.com",
+        "gapfactory.com",
+        "myxfitness.com",
+        "harrods.com",
+        "neimanmarcus.com",
+        "saksoff5th.com",
+        "sling.com",
+        "urbanoutfitters.com",
+        "roughtrade.com",
+        "potterybarn.com",
+        "shopbop.com",
+        "toryburch.com",
+        "vudu.com",
+        "bombas.com",
+        "net-a-porter.com",
+        "lululemon.com",
+        "cbs.com",
+        "qflm.net",
+        "pitchfork.com",
+        "showpo.com",
+        "scholastic.com",
+        "linksynergy.com",
+        "coachoutlet.com",
+        "qvc.com",
+        "cupshe.com",
+        "daily-harvest.com",
+        "samsonite.com",
+        "devonwindsor.com",
+        "disneystore.com",
+        "madewell.com",
+        "ensorings.com",
+        "katespade.com",
+        "jcrew.com",
+        "farfetch.com",
+        "fentybeauty.com",
+        "reebok.com",
+        "fromourplace.com",
+        "starz.com",
+        "ulta.com",
+        "harryanddavid.com",
+        "paramountplus.com",
+        "yoox.com",
+        "httpspercent3apercent2fpercent2fsurprise.katespade.comp.c2fsurprise-sale-view-all",
+        "wayfair.com",
+        "intermixonline.com",
+        "intimissimi.com",
+        "itcosmetics.com",
+        "sleepnumber.com",
+        "tjx.com",
+        "lilyandbean.co.uk",
+        "marshalls.com",
+        "magazinesdirect.com",
+        "maxbone.com",
+        "morningsave.com",
+        "music.amazon.com",
+        "music.apple.com",
+        "naadam.co",
+        "nordstromrack.com",
+        "oliveandjune.com",
+        "peacocktv.com",
+        "peterthomasroth.com",
+        "play.google.com",
+        "spanx.com",
+        "thestar.com",
+        "saksfifthavenue.com",
+        "shopdisney.com",
+        "valentino.com",
+        "tv.apple.com",
+        "ugg.com",
+        "us.laneige.com",
+        "us.puma.com",
+        "venus.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 2,
+      "socialsAvailable": [
+        "twitter",
+        "facebook"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/toprequestedvideoscountdown",
+        "twitter": "https://twitter.com/trvcountdown"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Travel / Vacation",
+      "value": [
+        "Travel / Vacation",
+        "Online / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Travel / Vacation",
+        "rank": 1,
+        "score": 75
+      },
+      "value": [
+        {
+          "name": "Travel / Vacation",
+          "rank": 1,
+          "score": 75
+        },
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 65
+        }
+      ]
+    }
+  }
+}

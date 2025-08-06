@@ -8,11 +8,11 @@ import (
 // CleanupTracker tracks entities created during tests for cleanup
 type CleanupTracker struct {
 	config              *TestConfig
-	createdAdvertisers  []string // IDs of advertisers created in our platform
+	createdAdvertisers  []int64 // IDs of advertisers created in our platform
 	createdAffiliates   []string // IDs of affiliates created in our platform
 	createdCampaigns    []string // IDs of campaigns created in our platform
 	createdTrackingLinks []string // IDs of tracking links created in our platform
-	createdOrganizations []string // IDs of organizations created in our platform
+	createdOrganizations []int64 // IDs of organizations created in our platform
 	
 	// Everflow entity IDs for cleanup
 	everflowAdvertiserIDs []int // Everflow advertiser IDs
@@ -25,11 +25,11 @@ type CleanupTracker struct {
 func NewCleanupTracker(config *TestConfig) *CleanupTracker {
 	return &CleanupTracker{
 		config:                  config,
-		createdAdvertisers:      make([]string, 0),
+		createdAdvertisers:      make([]int64, 0),
 		createdAffiliates:       make([]string, 0),
 		createdCampaigns:        make([]string, 0),
 		createdTrackingLinks:    make([]string, 0),
-		createdOrganizations:    make([]string, 0),
+		createdOrganizations:    make([]int64, 0),
 		everflowAdvertiserIDs:   make([]int, 0),
 		everflowPartnerIDs:      make([]int, 0),
 		everflowOfferIDs:        make([]int, 0),
@@ -38,7 +38,7 @@ func NewCleanupTracker(config *TestConfig) *CleanupTracker {
 }
 
 // TrackAdvertiser adds an advertiser ID to the cleanup list
-func (ct *CleanupTracker) TrackAdvertiser(advertiserID string) {
+func (ct *CleanupTracker) TrackAdvertiser(advertiserID int64) {
 	ct.createdAdvertisers = append(ct.createdAdvertisers, advertiserID)
 }
 
@@ -58,7 +58,7 @@ func (ct *CleanupTracker) TrackTrackingLink(trackingLinkID string) {
 }
 
 // TrackOrganization adds an organization ID to the cleanup list
-func (ct *CleanupTracker) TrackOrganization(organizationID string) {
+func (ct *CleanupTracker) TrackOrganization(organizationID int64) {
 	ct.createdOrganizations = append(ct.createdOrganizations, organizationID)
 }
 
@@ -141,9 +141,9 @@ func (ct *CleanupTracker) cleanupAffiliates(t *testing.T) {
 // cleanupAdvertisers cleans up advertisers from our platform
 func (ct *CleanupTracker) cleanupAdvertisers(t *testing.T) {
 	for _, advertiserID := range ct.createdAdvertisers {
-		resp := ct.config.PlatformAPIRequest(t, "DELETE", fmt.Sprintf("/api/v1/advertisers/%s", advertiserID), nil)
+		resp := ct.config.PlatformAPIRequest(t, "DELETE", fmt.Sprintf("/api/v1/advertisers/%d", advertiserID), nil)
 		if resp.StatusCode != 200 && resp.StatusCode != 404 {
-			t.Logf("Warning: Failed to cleanup advertiser %s: %d", advertiserID, resp.StatusCode)
+			t.Logf("Warning: Failed to cleanup advertiser %d: %d", advertiserID, resp.StatusCode)
 		}
 	}
 }
@@ -151,9 +151,9 @@ func (ct *CleanupTracker) cleanupAdvertisers(t *testing.T) {
 // cleanupOrganizations cleans up organizations from our platform
 func (ct *CleanupTracker) cleanupOrganizations(t *testing.T) {
 	for _, organizationID := range ct.createdOrganizations {
-		resp := ct.config.PlatformAPIRequest(t, "DELETE", fmt.Sprintf("/api/v1/organizations/%s", organizationID), nil)
+		resp := ct.config.PlatformAPIRequest(t, "DELETE", fmt.Sprintf("/api/v1/organizations/%d", organizationID), nil)
 		if resp.StatusCode != 200 && resp.StatusCode != 404 {
-			t.Logf("Warning: Failed to cleanup organization %s: %d", organizationID, resp.StatusCode)
+			t.Logf("Warning: Failed to cleanup organization %d: %d", organizationID, resp.StatusCode)
 		}
 	}
 }

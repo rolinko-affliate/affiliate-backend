@@ -1,0 +1,183 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 2,
+      "sampleValue": [
+        "PartnerStack",
+        "Takeads"
+      ],
+      "value": [
+        "PartnerStack",
+        "Takeads"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 0,
+      "error": false,
+      "value": []
+    },
+    "domain": "revealbot.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "Easily scale and automate ad strategies for Facebook Ads, Instagram Ads, Google Ads, and Snapchat Ads with advanced, customizable automation rules.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/revealbot.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://revealbot.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 110
+      },
+      "partnersAdded": {
+        "count": 2,
+        "value": [
+          {
+            "domain": "webbiquity.com"
+          },
+          {
+            "domain": "tekpon.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "zigijob.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 34,
+            "promotype": "blog",
+            "value": [
+              "500toprated.com",
+              "adminvista.com",
+              "aihaven.com",
+              "bchcard.com",
+              "bots4home.com",
+              "brock.tv",
+              "ciroapp.com",
+              "cuihuanghuang.com",
+              "doshfunding.com",
+              "etechpt.com",
+              "etoppc.com",
+              "eu-startups.com",
+              "excellentwiki.com",
+              "grapheffect.com",
+              "hgz.io",
+              "icotoshi.com",
+              "joinelish.com",
+              "jorgeaguilar.org",
+              "lasopiniones.es",
+              "marketingdiscounts.io",
+              "medium.com",
+              "onaplatterofgold.com",
+              "parimadtarkvarad.ee",
+              "raindrop.io",
+              "realreviews.nl",
+              "samsiam.me",
+              "startupcheckr.com",
+              "tips.adsinthebox.com",
+              "toolpilot.ai",
+              "ubestpick.com",
+              "us-reviews.com",
+              "victorytale.com",
+              "ziginews.com",
+              "zigitrip.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "forum",
+            "value": [
+              "affiltools.com"
+            ]
+          },
+          {
+            "count": 7,
+            "promotype": "content",
+            "value": [
+              "allebewertungen.de",
+              "bloggingeclipse.com",
+              "burhaanpattel.com",
+              "businessavenue.onlc.fr",
+              "businessolution.org",
+              "greasyguide.com",
+              "mediabuyinginfo.com"
+            ]
+          },
+          {
+            "count": 4,
+            "promotype": "incentive",
+            "value": [
+              "couponay.com",
+              "domainhostcoupon.com",
+              "hotdeal4all.com",
+              "okaycoupons.com"
+            ]
+          },
+          {
+            "count": 8,
+            "promotype": "student",
+            "value": [
+              "digitalivan.com",
+              "droppricetoday.com",
+              "legalizecoin.com",
+              "madronify.com",
+              "shor.by",
+              "thenicheguru.com",
+              "webbiquity.com",
+              "zigiyo.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 3,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/groups/revealbot",
+        "twitter": "https://twitter.com/revealbot",
+        "youtube": "https://youtube.com/channel/uccshtes8ooe28xa4dhxcidw"
+      }
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Business / Software",
+        "rank": 2,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Business / Services",
+          "rank": 2,
+          "score": 75
+        },
+        {
+          "name": "Business / Software",
+          "rank": 2,
+          "score": 90
+        }
+      ]
+    }
+  }
+}

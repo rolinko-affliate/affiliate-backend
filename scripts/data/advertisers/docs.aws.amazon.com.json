@@ -1,0 +1,132 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 3,
+      "sampleValue": [
+        "Digidip",
+        "Skimlinks",
+        "Viglink"
+      ],
+      "value": [
+        "Digidip",
+        "Skimlinks",
+        "Viglink"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 4,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "all@once.amazon"
+        },
+        {
+          "department": "communication",
+          "value": "available@checkout.prepare"
+        },
+        {
+          "department": "support",
+          "value": "method@scale.logic"
+        },
+        {
+          "department": "support",
+          "value": "service@scale.natwest"
+        }
+      ]
+    },
+    "domain": "docs.aws.amazon.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/docs.aws.amazon.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://docs.aws.amazon.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 16
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 6,
+            "promotype": "blog",
+            "value": [
+              "androidcentral.com",
+              "cpab.ru",
+              "dlsserve.com",
+              "jirnal.com",
+              "techradar.com",
+              "tomshardware.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "incentive",
+            "value": [
+              "bilisimprofesyonelleri.com"
+            ]
+          },
+          {
+            "count": 3,
+            "promotype": "student",
+            "value": [
+              "computerworld.pl",
+              "freecapecodnews.com",
+              "topventes.fr"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "verticals": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Technology / Software",
+        "rank": 2,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Business / Software",
+          "rank": 2,
+          "score": 90
+        },
+        {
+          "name": "Online / Web Hosting",
+          "rank": 2,
+          "score": 80
+        },
+        {
+          "name": "Technology / Software",
+          "rank": 2,
+          "score": 90
+        }
+      ]
+    }
+  }
+}

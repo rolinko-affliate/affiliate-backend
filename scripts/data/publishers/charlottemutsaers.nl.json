@@ -1,0 +1,627 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Partnerize"
+      ],
+      "value": [
+        "Partnerize"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "nl",
+        "score": 0.8
+      },
+      "sampleValue": [
+        {
+          "countryCode": "nl",
+          "score": 0.8
+        },
+        {
+          "countryCode": "be",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "nl",
+          "score": 0.8
+        },
+        {
+          "countryCode": "be",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "charlottemutsaers.nl",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "bekijk"
+        },
+        {
+          "score": 0.8785175,
+          "value": "gratis"
+        },
+        {
+          "score": 0.7055594,
+          "value": "vergelijk"
+        },
+        {
+          "score": 0.70212764,
+          "value": "winkel"
+        },
+        {
+          "score": 0.6863418,
+          "value": "vergelijking"
+        },
+        {
+          "score": 0.6671242,
+          "value": "vergelijk product"
+        },
+        {
+          "score": 0.60192174,
+          "value": "uur"
+        },
+        {
+          "score": 0.594372,
+          "value": "persoonlijk"
+        },
+        {
+          "score": 0.5360329,
+          "value": "zakelijk"
+        },
+        {
+          "score": 0.49553877,
+          "value": "coolblu"
+        },
+        {
+          "score": 0.43925875,
+          "value": "bekijk vergelijking"
+        },
+        {
+          "score": 0.4152368,
+          "value": "webshop"
+        },
+        {
+          "score": 0.4138641,
+          "value": "klantvriendelijk"
+        },
+        {
+          "score": 0.4138641,
+          "value": "klantvriendelijk webshop"
+        },
+        {
+          "score": 0.40425533,
+          "value": "klantenservice"
+        },
+        {
+          "score": 0.34385723,
+          "value": "goed"
+        },
+        {
+          "score": 0.31914893,
+          "value": "inlogg"
+        },
+        {
+          "score": 0.3088538,
+          "value": "reparatie"
+        },
+        {
+          "score": 0.2793411,
+          "value": "advies"
+        },
+        {
+          "score": 0.23747426,
+          "value": "bestelling"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "bekijk"
+        },
+        {
+          "score": 0.8785175,
+          "value": "gratis"
+        },
+        {
+          "score": 0.7055594,
+          "value": "vergelijk"
+        },
+        {
+          "score": 0.70212764,
+          "value": "winkel"
+        },
+        {
+          "score": 0.6863418,
+          "value": "vergelijking"
+        },
+        {
+          "score": 0.6671242,
+          "value": "vergelijk product"
+        },
+        {
+          "score": 0.60192174,
+          "value": "uur"
+        },
+        {
+          "score": 0.594372,
+          "value": "persoonlijk"
+        },
+        {
+          "score": 0.5360329,
+          "value": "zakelijk"
+        },
+        {
+          "score": 0.49553877,
+          "value": "coolblu"
+        },
+        {
+          "score": 0.43925875,
+          "value": "bekijk vergelijking"
+        },
+        {
+          "score": 0.4152368,
+          "value": "webshop"
+        },
+        {
+          "score": 0.4138641,
+          "value": "klantvriendelijk"
+        },
+        {
+          "score": 0.4138641,
+          "value": "klantvriendelijk webshop"
+        },
+        {
+          "score": 0.40425533,
+          "value": "klantenservice"
+        },
+        {
+          "score": 0.34385723,
+          "value": "goed"
+        },
+        {
+          "score": 0.31914893,
+          "value": "inlogg"
+        },
+        {
+          "score": 0.3088538,
+          "value": "reparatie"
+        },
+        {
+          "score": 0.2793411,
+          "value": "advies"
+        },
+        {
+          "score": 0.23747426,
+          "value": "bestelling"
+        },
+        {
+          "score": 0.2299245,
+          "value": "samsung"
+        },
+        {
+          "score": 0.2134523,
+          "value": "assortiment"
+        },
+        {
+          "score": 0.19492108,
+          "value": "snel"
+        },
+        {
+          "score": 0.18737131,
+          "value": "functioneel"
+        },
+        {
+          "score": 0.18531229,
+          "value": "analytisch"
+        },
+        {
+          "score": 0.18531229,
+          "value": "chat"
+        },
+        {
+          "score": 0.1805079,
+          "value": "gratis uur"
+        },
+        {
+          "score": 0.17227179,
+          "value": "philip"
+        },
+        {
+          "score": 0.16334935,
+          "value": "uitleg"
+        },
+        {
+          "score": 0.16197667,
+          "value": "dag"
+        },
+        {
+          "score": 0.15579958,
+          "value": "app"
+        },
+        {
+          "score": 0.14962251,
+          "value": "vraag"
+        },
+        {
+          "score": 0.14001372,
+          "value": "gaming"
+        },
+        {
+          "score": 0.13932739,
+          "value": "werk"
+        },
+        {
+          "score": 0.13589567,
+          "value": "draadloos"
+        },
+        {
+          "score": 0.13040493,
+          "value": "budget"
+        },
+        {
+          "score": 0.12903225,
+          "value": "cadeaubonon"
+        },
+        {
+          "score": 0.12834592,
+          "value": "beoordeling"
+        },
+        {
+          "score": 0.12765957,
+          "value": "welkom"
+        },
+        {
+          "score": 0.12697323,
+          "value": "wifi"
+        },
+        {
+          "score": 0.12491421,
+          "value": "partij"
+        },
+        {
+          "score": 0.12422787,
+          "value": "internetgedrag"
+        },
+        {
+          "score": 0.12354153,
+          "value": "persoonlijk cookie"
+        },
+        {
+          "score": 0.12354153,
+          "value": "échte winkel"
+        },
+        {
+          "score": 0.12354153,
+          "value": "serie"
+        },
+        {
+          "score": 0.12354153,
+          "value": "échte"
+        },
+        {
+          "score": 0.12354153,
+          "value": "particulier"
+        },
+        {
+          "score": 0.12354153,
+          "value": "zakelijk winkel"
+        },
+        {
+          "score": 0.12354153,
+          "value": "analytisch cookie"
+        },
+        {
+          "score": 0.12354153,
+          "value": "persoonlijk content"
+        },
+        {
+          "score": 0.12354153,
+          "value": "français"
+        },
+        {
+          "score": 0.12354153,
+          "value": "functioneel cookie"
+        },
+        {
+          "score": 0.12354153,
+          "value": "gesprek"
+        },
+        {
+          "score": 0.12354153,
+          "value": "oeps"
+        },
+        {
+          "score": 0.12354153,
+          "value": "bedrijfswebsite"
+        },
+        {
+          "score": 0.12285518,
+          "value": "keuze"
+        },
+        {
+          "score": 0.12216884,
+          "value": "lamp"
+        },
+        {
+          "score": 0.11942347,
+          "value": "coolblue"
+        },
+        {
+          "score": 0.11942347,
+          "value": "tweedekans"
+        },
+        {
+          "score": 0.11873713,
+          "value": "groot"
+        },
+        {
+          "score": 0.113246396,
+          "value": "gebruik"
+        },
+        {
+          "score": 0.112560056,
+          "value": "tablet"
+        },
+        {
+          "score": 0.10706932,
+          "value": "camera"
+        },
+        {
+          "score": 0.10363761,
+          "value": "aanbieding"
+        },
+        {
+          "score": 0.100205906,
+          "value": "prijs"
+        },
+        {
+          "score": 0.09951956,
+          "value": "iphone"
+        },
+        {
+          "score": 0.09746054,
+          "value": "garantie"
+        },
+        {
+          "score": 0.09746054,
+          "value": "hoog"
+        },
+        {
+          "score": 0.09746054,
+          "value": "refurbished"
+        },
+        {
+          "score": 0.09402882,
+          "value": "klein"
+        },
+        {
+          "score": 0.089224435,
+          "value": "antwoord"
+        },
+        {
+          "score": 0.088538095,
+          "value": "voordelig"
+        },
+        {
+          "score": 0.08785175,
+          "value": "hoes"
+        },
+        {
+          "score": 0.08647907,
+          "value": "zwart"
+        },
+        {
+          "score": 0.08647907,
+          "value": "persoonlijk advies"
+        },
+        {
+          "score": 0.08579273,
+          "value": "voordelig tweedekans"
+        },
+        {
+          "score": 0.08579273,
+          "value": "verzekering"
+        },
+        {
+          "score": 0.08442004,
+          "value": "klant"
+        },
+        {
+          "score": 0.0837337,
+          "value": "koptelefoon"
+        },
+        {
+          "score": 0.08304736,
+          "value": "gegeven"
+        },
+        {
+          "score": 0.079615645,
+          "value": "slim"
+        },
+        {
+          "score": 0.078929305,
+          "value": "bring"
+        },
+        {
+          "score": 0.078929305,
+          "value": "makkelijk"
+        },
+        {
+          "score": 0.078242965,
+          "value": "cadeauwinkel"
+        },
+        {
+          "score": 0.077556625,
+          "value": "laag"
+        },
+        {
+          "score": 0.07618394,
+          "value": "ster"
+        },
+        {
+          "score": 0.07481126,
+          "value": "bedrijfswinkel"
+        },
+        {
+          "score": 0.07275223,
+          "value": "voorwaarde"
+        },
+        {
+          "score": 0.07206589,
+          "value": "hognoul"
+        },
+        {
+          "score": 0.07137955,
+          "value": "kuurn"
+        },
+        {
+          "score": 0.07137955,
+          "value": "ool"
+        },
+        {
+          "score": 0.07000686,
+          "value": "galaxy"
+        },
+        {
+          "score": 0.06932052,
+          "value": "accessoire"
+        },
+        {
+          "score": 0.06932052,
+          "value": "omgeving"
+        },
+        {
+          "score": 0.06932052,
+          "value": "algemeen"
+        },
+        {
+          "score": 0.067947835,
+          "value": "retour"
+        },
+        {
+          "score": 0.067947835,
+          "value": "categorie"
+        },
+        {
+          "score": 0.067261495,
+          "value": "nieuwsbrief"
+        },
+        {
+          "score": 0.067261495,
+          "value": "wilrijk"
+        },
+        {
+          "score": 0.067261495,
+          "value": "telefoon"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://charlottemutsaers.nl/",
+        "https://www.charlottemutsaers.nl/",
+        "http://charlottemutsaers.nl/",
+        "http://www.charlottemutsaers.nl/"
+      ]
+    },
+    "metaData": {
+      "description": "Lekker en gezond eten en drinken! Elke dag!",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/charlottemutsaers.nl.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://charlottemutsaers.nl"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1,
+        "value": [
+          "coolblue.be"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 0.95,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Electronics"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 1,
+      "value": [
+        "coolblue.be"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Business / Services",
+      "value": [
+        "Business / Services",
+        "Entertainment / Books",
+        "Home / Art"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Business / Services",
+        "rank": 1,
+        "score": 70
+      },
+      "value": [
+        {
+          "name": "Business / Services",
+          "rank": 1,
+          "score": 70
+        },
+        {
+          "name": "Entertainment / Books",
+          "rank": 1,
+          "score": 50
+        },
+        {
+          "name": "Home / Art",
+          "rank": 1,
+          "score": 50
+        }
+      ]
+    }
+  }
+}

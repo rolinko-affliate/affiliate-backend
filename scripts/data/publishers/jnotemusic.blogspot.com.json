@@ -1,0 +1,623 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Rakuten"
+      ],
+      "value": [
+        "Rakuten"
+      ]
+    },
+    "countryRankings": {
+      "count": 3,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.4
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.4
+        },
+        {
+          "countryCode": "other",
+          "score": 0.25
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.4
+        },
+        {
+          "countryCode": "other",
+          "score": 0.25
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "jnotemusic.blogspot.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "sheet"
+        },
+        {
+          "score": 1,
+          "value": "fiverr"
+        },
+        {
+          "score": 0.95454544,
+          "value": "piano"
+        },
+        {
+          "score": 0.8377227,
+          "value": "music"
+        },
+        {
+          "score": 0.42251563,
+          "value": "seller"
+        },
+        {
+          "score": 0.4034091,
+          "value": "instrument"
+        },
+        {
+          "score": 0.3512435,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.31427547,
+          "value": "digital"
+        },
+        {
+          "score": 0.28787878,
+          "value": "vocal"
+        },
+        {
+          "score": 0.26325756,
+          "value": "chord"
+        },
+        {
+          "score": 0.26198748,
+          "value": "logo"
+        },
+        {
+          "score": 0.25378788,
+          "value": "vocal chord"
+        },
+        {
+          "score": 0.24144502,
+          "value": "tool"
+        },
+        {
+          "score": 0.21401516,
+          "value": "easy piano"
+        },
+        {
+          "score": 0.1969697,
+          "value": "info"
+        },
+        {
+          "score": 0.1969697,
+          "value": "popular"
+        },
+        {
+          "score": 0.1969697,
+          "value": "popular sheet"
+        },
+        {
+          "score": 0.1969697,
+          "value": "transposition"
+        },
+        {
+          "score": 0.19318181,
+          "value": "digital sheet"
+        },
+        {
+          "score": 0.18832523,
+          "value": "video"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "sheet"
+        },
+        {
+          "score": 1,
+          "value": "fiverr"
+        },
+        {
+          "score": 0.95454544,
+          "value": "piano"
+        },
+        {
+          "score": 0.8377227,
+          "value": "music"
+        },
+        {
+          "score": 0.42251563,
+          "value": "seller"
+        },
+        {
+          "score": 0.4034091,
+          "value": "instrument"
+        },
+        {
+          "score": 0.3512435,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.31427547,
+          "value": "digital"
+        },
+        {
+          "score": 0.28787878,
+          "value": "vocal"
+        },
+        {
+          "score": 0.26325756,
+          "value": "chord"
+        },
+        {
+          "score": 0.26198748,
+          "value": "logo"
+        },
+        {
+          "score": 0.25378788,
+          "value": "vocal chord"
+        },
+        {
+          "score": 0.24144502,
+          "value": "tool"
+        },
+        {
+          "score": 0.21401516,
+          "value": "easy piano"
+        },
+        {
+          "score": 0.1969697,
+          "value": "info"
+        },
+        {
+          "score": 0.1969697,
+          "value": "popular"
+        },
+        {
+          "score": 0.1969697,
+          "value": "popular sheet"
+        },
+        {
+          "score": 0.1969697,
+          "value": "transposition"
+        },
+        {
+          "score": 0.19318181,
+          "value": "digital sheet"
+        },
+        {
+          "score": 0.18832523,
+          "value": "video"
+        },
+        {
+          "score": 0.1780303,
+          "value": "solo"
+        },
+        {
+          "score": 0.16052814,
+          "value": "community"
+        },
+        {
+          "score": 0.14176512,
+          "value": "pro"
+        },
+        {
+          "score": 0.13825758,
+          "value": "usd"
+        },
+        {
+          "score": 0.12995136,
+          "value": "guide"
+        },
+        {
+          "score": 0.12786658,
+          "value": "connect"
+        },
+        {
+          "score": 0.11744267,
+          "value": "social medium"
+        },
+        {
+          "score": 0.10863894,
+          "value": "step"
+        },
+        {
+          "score": 0.104239054,
+          "value": "style"
+        },
+        {
+          "score": 0.09280303,
+          "value": "alfred publishing"
+        },
+        {
+          "score": 0.09280303,
+          "value": "publishing"
+        },
+        {
+          "score": 0.09280303,
+          "value": "alfred"
+        },
+        {
+          "score": 0.092425294,
+          "value": "gig"
+        },
+        {
+          "score": 0.09090909,
+          "value": "trumpet"
+        },
+        {
+          "score": 0.09034052,
+          "value": "maker"
+        },
+        {
+          "score": 0.08960216,
+          "value": "share"
+        },
+        {
+          "score": 0.08617095,
+          "value": "programming"
+        },
+        {
+          "score": 0.085476026,
+          "value": "investor"
+        },
+        {
+          "score": 0.085476026,
+          "value": "card"
+        },
+        {
+          "score": 0.07922168,
+          "value": "invitation"
+        },
+        {
+          "score": 0.07852676,
+          "value": "freelancer"
+        },
+        {
+          "score": 0.077651516,
+          "value": "love"
+        },
+        {
+          "score": 0.071969695,
+          "value": "download"
+        },
+        {
+          "score": 0.07157748,
+          "value": "sign"
+        },
+        {
+          "score": 0.07088256,
+          "value": "dollar"
+        },
+        {
+          "score": 0.07018763,
+          "value": "pro seller"
+        },
+        {
+          "score": 0.06818182,
+          "value": "mandalorian"
+        },
+        {
+          "score": 0.06740792,
+          "value": "buyer"
+        },
+        {
+          "score": 0.06740792,
+          "value": "character"
+        },
+        {
+          "score": 0.066713,
+          "value": "event"
+        },
+        {
+          "score": 0.06601807,
+          "value": "post"
+        },
+        {
+          "score": 0.06393329,
+          "value": "portrait"
+        },
+        {
+          "score": 0.06323836,
+          "value": "album"
+        },
+        {
+          "score": 0.06254343,
+          "value": "fashion"
+        },
+        {
+          "score": 0.0590688,
+          "value": "art"
+        },
+        {
+          "score": 0.05871212,
+          "value": "sonata"
+        },
+        {
+          "score": 0.058373872,
+          "value": "photography"
+        },
+        {
+          "score": 0.058373872,
+          "value": "digital marketing"
+        },
+        {
+          "score": 0.057678945,
+          "value": "explainer"
+        },
+        {
+          "score": 0.056289088,
+          "value": "shirt"
+        },
+        {
+          "score": 0.05559416,
+          "value": "flyer"
+        },
+        {
+          "score": 0.054924242,
+          "value": "scavenger"
+        },
+        {
+          "score": 0.054204307,
+          "value": "packaging"
+        },
+        {
+          "score": 0.05350938,
+          "value": "caricature"
+        },
+        {
+          "score": 0.053030305,
+          "value": "skinny love"
+        },
+        {
+          "score": 0.053030305,
+          "value": "skinny"
+        },
+        {
+          "score": 0.052814454,
+          "value": "nft"
+        },
+        {
+          "score": 0.052814454,
+          "value": "standard"
+        },
+        {
+          "score": 0.050034747,
+          "value": "property"
+        },
+        {
+          "score": 0.048644893,
+          "value": "intellectual"
+        },
+        {
+          "score": 0.048644893,
+          "value": "tech"
+        },
+        {
+          "score": 0.048644893,
+          "value": "poster"
+        },
+        {
+          "score": 0.047949966,
+          "value": "intellectual property"
+        },
+        {
+          "score": 0.047949966,
+          "value": "short"
+        },
+        {
+          "score": 0.047348484,
+          "value": "piece"
+        },
+        {
+          "score": 0.047348484,
+          "value": "dress"
+        },
+        {
+          "score": 0.046560112,
+          "value": "color"
+        },
+        {
+          "score": 0.045865186,
+          "value": "concept"
+        },
+        {
+          "score": 0.045454547,
+          "value": "concert"
+        },
+        {
+          "score": 0.04517026,
+          "value": "studio"
+        },
+        {
+          "score": 0.04517026,
+          "value": "short video"
+        },
+        {
+          "score": 0.044475332,
+          "value": "gaming"
+        },
+        {
+          "score": 0.0437804,
+          "value": "claim"
+        },
+        {
+          "score": 0.043560605,
+          "value": "guitar"
+        },
+        {
+          "score": 0.043085475,
+          "value": "peso"
+        },
+        {
+          "score": 0.043085475,
+          "value": "partnership"
+        },
+        {
+          "score": 0.043085475,
+          "value": "background"
+        },
+        {
+          "score": 0.042390548,
+          "value": "professional"
+        },
+        {
+          "score": 0.042390548,
+          "value": "platform"
+        },
+        {
+          "score": 0.042390548,
+          "value": "quarter"
+        },
+        {
+          "score": 0.04169562,
+          "value": "book"
+        },
+        {
+          "score": 0.041666668,
+          "value": "bass"
+        },
+        {
+          "score": 0.041666668,
+          "value": "girl"
+        },
+        {
+          "score": 0.03961084,
+          "value": "mobile invitation"
+        },
+        {
+          "score": 0.03961084,
+          "value": "pro shop"
+        },
+        {
+          "score": 0.038220987,
+          "value": "friend"
+        },
+        {
+          "score": 0.038220987,
+          "value": "animation"
+        },
+        {
+          "score": 0.03787879,
+          "value": "trip"
+        },
+        {
+          "score": 0.03752606,
+          "value": "zar"
+        },
+        {
+          "score": 0.03752606,
+          "value": "beautiful"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/jnotemusic.blogspot.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://jnotemusic.blogspot.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 2,
+        "value": [
+          "fiverr.com",
+          "onlinesheetmusic.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Music"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 2,
+      "value": [
+        "fiverr.com",
+        "onlinesheetmusic.com"
+      ]
+    },
+    "promotype": {
+      "value": "student"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 1,
+      "socialsAvailable": [
+        "facebook"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/jnotemusic"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 1,
+      "sampleValue": "Entertainment / Music",
+      "value": [
+        "Entertainment / Music"
+      ]
+    },
+    "verticalsV2": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Entertainment / Music",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Entertainment / Music",
+          "rank": 1,
+          "score": 90
+        }
+      ]
+    }
+  }
+}

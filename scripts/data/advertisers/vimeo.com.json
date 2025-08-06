@@ -1,0 +1,1766 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 13,
+      "sampleValue": [
+        "Business Insider",
+        "CJ Affiliate",
+        "Digidip"
+      ],
+      "value": [
+        "Business Insider",
+        "CJ Affiliate",
+        "Digidip",
+        "Effiliation",
+        "Flexoffers",
+        "Gemius",
+        "Linkbux",
+        "Skimlinks",
+        "Takeads",
+        "Tradedoubler",
+        "TRX",
+        "Viglink",
+        "Yieldkit"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 0,
+      "error": false,
+      "value": []
+    },
+    "domain": "vimeo.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 0.26982626,
+          "value": "video"
+        },
+        {
+          "score": 0.26198748,
+          "value": "logo"
+        },
+        {
+          "score": 1,
+          "value": "fiverr"
+        },
+        {
+          "score": 0.42251563,
+          "value": "seller"
+        },
+        {
+          "score": 0.17339753,
+          "value": "community"
+        },
+        {
+          "score": 0.15427381,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.14814815,
+          "value": "dolby"
+        },
+        {
+          "score": 0.14468856,
+          "value": "pro"
+        },
+        {
+          "score": 0.13099164,
+          "value": "connect"
+        },
+        {
+          "score": 0.12995136,
+          "value": "guide"
+        },
+        {
+          "score": 0.11744267,
+          "value": "social medium"
+        },
+        {
+          "score": 0.104239054,
+          "value": "style"
+        },
+        {
+          "score": 0.10215428,
+          "value": "digital"
+        },
+        {
+          "score": 0.09491722,
+          "value": "maker"
+        },
+        {
+          "score": 0.09473727,
+          "value": "investor"
+        },
+        {
+          "score": 0.092425294,
+          "value": "gig"
+        },
+        {
+          "score": 0.08617095,
+          "value": "programming"
+        },
+        {
+          "score": 0.085476026,
+          "value": "card"
+        },
+        {
+          "score": 0.08419037,
+          "value": "event"
+        },
+        {
+          "score": 0.07922168,
+          "value": "invitation"
+        }
+      ],
+      "value": [
+        {
+          "score": 0.26982626,
+          "value": "video"
+        },
+        {
+          "score": 0.26198748,
+          "value": "logo"
+        },
+        {
+          "score": 1,
+          "value": "fiverr"
+        },
+        {
+          "score": 0.42251563,
+          "value": "seller"
+        },
+        {
+          "score": 0.17339753,
+          "value": "community"
+        },
+        {
+          "score": 0.15427381,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.14814815,
+          "value": "dolby"
+        },
+        {
+          "score": 0.14468856,
+          "value": "pro"
+        },
+        {
+          "score": 0.13099164,
+          "value": "connect"
+        },
+        {
+          "score": 0.12995136,
+          "value": "guide"
+        },
+        {
+          "score": 0.11744267,
+          "value": "social medium"
+        },
+        {
+          "score": 0.104239054,
+          "value": "style"
+        },
+        {
+          "score": 0.10215428,
+          "value": "digital"
+        },
+        {
+          "score": 0.09491722,
+          "value": "maker"
+        },
+        {
+          "score": 0.09473727,
+          "value": "investor"
+        },
+        {
+          "score": 0.092425294,
+          "value": "gig"
+        },
+        {
+          "score": 0.08617095,
+          "value": "programming"
+        },
+        {
+          "score": 0.085476026,
+          "value": "card"
+        },
+        {
+          "score": 0.08419037,
+          "value": "event"
+        },
+        {
+          "score": 0.07922168,
+          "value": "invitation"
+        },
+        {
+          "score": 0.07852676,
+          "value": "freelancer"
+        },
+        {
+          "score": 0.07644197,
+          "value": "step"
+        },
+        {
+          "score": 0.074074075,
+          "value": "globe"
+        },
+        {
+          "score": 0.07388348,
+          "value": "music"
+        },
+        {
+          "score": 0.07348774,
+          "value": "newswire"
+        },
+        {
+          "score": 0.07157748,
+          "value": "sign"
+        },
+        {
+          "score": 0.07088256,
+          "value": "dollar"
+        },
+        {
+          "score": 0.07018763,
+          "value": "pro seller"
+        },
+        {
+          "score": 0.06796129,
+          "value": "property"
+        },
+        {
+          "score": 0.06740792,
+          "value": "buyer"
+        },
+        {
+          "score": 0.06740792,
+          "value": "character"
+        },
+        {
+          "score": 0.06601807,
+          "value": "post"
+        },
+        {
+          "score": 0.06393329,
+          "value": "portrait"
+        },
+        {
+          "score": 0.06323836,
+          "value": "album"
+        },
+        {
+          "score": 0.06254343,
+          "value": "fashion"
+        },
+        {
+          "score": 0.0590688,
+          "value": "art"
+        },
+        {
+          "score": 0.058373872,
+          "value": "photography"
+        },
+        {
+          "score": 0.058373872,
+          "value": "digital marketing"
+        },
+        {
+          "score": 0.05793108,
+          "value": "gaming"
+        },
+        {
+          "score": 0.057678945,
+          "value": "explainer"
+        },
+        {
+          "score": 0.056289088,
+          "value": "shirt"
+        },
+        {
+          "score": 0.05559416,
+          "value": "flyer"
+        },
+        {
+          "score": 0.054204307,
+          "value": "packaging"
+        },
+        {
+          "score": 0.05350938,
+          "value": "caricature"
+        },
+        {
+          "score": 0.053231314,
+          "value": "intellectual"
+        },
+        {
+          "score": 0.052814454,
+          "value": "nft"
+        },
+        {
+          "score": 0.052814454,
+          "value": "standard"
+        },
+        {
+          "score": 0.052792836,
+          "value": "professional"
+        },
+        {
+          "score": 0.052536387,
+          "value": "intellectual property"
+        },
+        {
+          "score": 0.052075997,
+          "value": "partnership"
+        },
+        {
+          "score": 0.050445024,
+          "value": "real"
+        },
+        {
+          "score": 0.049622055,
+          "value": "platform"
+        },
+        {
+          "score": 0.048644893,
+          "value": "tech"
+        },
+        {
+          "score": 0.048644893,
+          "value": "poster"
+        },
+        {
+          "score": 0.047949966,
+          "value": "short"
+        },
+        {
+          "score": 0.046560112,
+          "value": "color"
+        },
+        {
+          "score": 0.045865186,
+          "value": "concept"
+        },
+        {
+          "score": 0.04579999,
+          "value": "book"
+        },
+        {
+          "score": 0.04540896,
+          "value": "commercial"
+        },
+        {
+          "score": 0.04517026,
+          "value": "studio"
+        },
+        {
+          "score": 0.04517026,
+          "value": "short video"
+        },
+        {
+          "score": 0.044475332,
+          "value": "tool"
+        },
+        {
+          "score": 0.0437804,
+          "value": "claim"
+        },
+        {
+          "score": 0.043085475,
+          "value": "peso"
+        },
+        {
+          "score": 0.043085475,
+          "value": "background"
+        },
+        {
+          "score": 0.042390548,
+          "value": "quarter"
+        },
+        {
+          "score": 0.03961084,
+          "value": "mobile invitation"
+        },
+        {
+          "score": 0.03961084,
+          "value": "pro shop"
+        },
+        {
+          "score": 0.038220987,
+          "value": "friend"
+        },
+        {
+          "score": 0.038220987,
+          "value": "animation"
+        },
+        {
+          "score": 0.037895154,
+          "value": "story"
+        },
+        {
+          "score": 0.03752606,
+          "value": "zar"
+        },
+        {
+          "score": 0.03752606,
+          "value": "beautiful"
+        },
+        {
+          "score": 0.036976553,
+          "value": "vimeo"
+        },
+        {
+          "score": 0.036939654,
+          "value": "project"
+        },
+        {
+          "score": 0.036831133,
+          "value": "freelance"
+        },
+        {
+          "score": 0.036201265,
+          "value": "team"
+        },
+        {
+          "score": 0.036136206,
+          "value": "software"
+        },
+        {
+          "score": 0.036136206,
+          "value": "category"
+        },
+        {
+          "score": 0.035950534,
+          "value": "virtual"
+        },
+        {
+          "score": 0.03544128,
+          "value": "minimalist"
+        },
+        {
+          "score": 0.03507205,
+          "value": "global"
+        },
+        {
+          "score": 0.034746353,
+          "value": "commission"
+        },
+        {
+          "score": 0.0333565,
+          "value": "forum"
+        },
+        {
+          "score": 0.032661572,
+          "value": "relation"
+        },
+        {
+          "score": 0.032661572,
+          "value": "course"
+        },
+        {
+          "score": 0.032661572,
+          "value": "app"
+        },
+        {
+          "score": 0.032661572,
+          "value": "graphic"
+        },
+        {
+          "score": 0.0326395,
+          "value": "greystone"
+        },
+        {
+          "score": 0.031966645,
+          "value": "career"
+        },
+        {
+          "score": 0.031271715,
+          "value": "link"
+        },
+        {
+          "score": 0.031271715,
+          "value": "license"
+        },
+        {
+          "score": 0.030902488,
+          "value": "people"
+        },
+        {
+          "score": 0.030207055,
+          "value": "share"
+        },
+        {
+          "score": 0.029881863,
+          "value": "activity"
+        },
+        {
+          "score": 0.029186936,
+          "value": "hand"
+        },
+        {
+          "score": 0.02779708,
+          "value": "online course"
+        },
+        {
+          "score": 0.026844053,
+          "value": "atmos"
+        },
+        {
+          "score": 0.026506817,
+          "value": "dolby atmos"
+        },
+        {
+          "score": 0.026407227,
+          "value": "code"
+        }
+      ]
+    },
+    "metaData": {
+      "description": "Unlock the power of video and join over 200M professionals, teams, and organizations who use Vimeo to create, collaborate and communicate.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/vimeo.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://vimeo.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1285
+      },
+      "partnersAdded": {
+        "count": 113,
+        "value": [
+          {
+            "domain": "is.promonix.com"
+          },
+          {
+            "domain": "it.promocode.ac"
+          },
+          {
+            "domain": "bg.promocode.ac"
+          },
+          {
+            "domain": "fi.promonix.com"
+          },
+          {
+            "domain": "sv.active-coupon-codes.com"
+          },
+          {
+            "domain": "hr.promonix.com"
+          },
+          {
+            "domain": "th.coupons-promo-code.com"
+          },
+          {
+            "domain": "la.racked.com"
+          },
+          {
+            "domain": "playbuzzly.com"
+          },
+          {
+            "domain": "hr.coupons-promo-code.com"
+          },
+          {
+            "domain": "vi.coupons-promo-code.com"
+          },
+          {
+            "domain": "pl.promocode.ac"
+          },
+          {
+            "domain": "tr.promocode.ac"
+          },
+          {
+            "domain": "pt.coupons-promo-code.com"
+          },
+          {
+            "domain": "no.promocode.ac"
+          },
+          {
+            "domain": "powerbits.org"
+          },
+          {
+            "domain": "ar.promocode.ac"
+          },
+          {
+            "domain": "couponforless.com"
+          },
+          {
+            "domain": "promohunters.info"
+          },
+          {
+            "domain": "pamelasskincareclinic.com"
+          },
+          {
+            "domain": "id.promonix.com"
+          },
+          {
+            "domain": "sv.promocode.ac"
+          },
+          {
+            "domain": "th.promocode.ac"
+          },
+          {
+            "domain": "kenjara.co.za"
+          },
+          {
+            "domain": "promocodis.co.il"
+          },
+          {
+            "domain": "lv.promocode.ac"
+          },
+          {
+            "domain": "medium.com"
+          },
+          {
+            "domain": "nl.active-coupon-codes.com"
+          },
+          {
+            "domain": "coastsidebuzz.com"
+          },
+          {
+            "domain": "pt.promocode.ac"
+          },
+          {
+            "domain": "lt.promonix.com"
+          },
+          {
+            "domain": "lv.promonix.com"
+          },
+          {
+            "domain": "it.promonix.com"
+          },
+          {
+            "domain": "1392.topnews.com"
+          },
+          {
+            "domain": "az.promonix.com"
+          },
+          {
+            "domain": "hr.active-coupon-codes.com"
+          },
+          {
+            "domain": "ro.global-discount-codes.com"
+          },
+          {
+            "domain": "bussplay.com"
+          },
+          {
+            "domain": "swissnewspaper.ch"
+          },
+          {
+            "domain": "la.curbed.com"
+          },
+          {
+            "domain": "ro.promonix.com"
+          },
+          {
+            "domain": "aceven.space"
+          },
+          {
+            "domain": "nvxingwang.net"
+          },
+          {
+            "domain": "pl.active-coupon-codes.com"
+          },
+          {
+            "domain": "sriwijayatv.com"
+          },
+          {
+            "domain": "cz.active-coupon-codes.com"
+          },
+          {
+            "domain": "nl.promocode.ac"
+          },
+          {
+            "domain": "la.eater.com"
+          },
+          {
+            "domain": "lt.coupons-promo-code.com"
+          },
+          {
+            "domain": "yorkshirepost.co.uk"
+          },
+          {
+            "domain": "no.active-coupon-codes.com"
+          },
+          {
+            "domain": "httpslink.me"
+          },
+          {
+            "domain": "ro.coupons-promo-code.com"
+          },
+          {
+            "domain": "fi.promocode.ac"
+          },
+          {
+            "domain": "fi.active-coupon-codes.com"
+          },
+          {
+            "domain": "de.promonix.com"
+          },
+          {
+            "domain": "fr.promocode.ac"
+          },
+          {
+            "domain": "urlmujer.com"
+          },
+          {
+            "domain": "ca.news.yahoo.com"
+          },
+          {
+            "domain": "et.promocode.ac"
+          },
+          {
+            "domain": "nl.promonix.com"
+          },
+          {
+            "domain": "ar.promonix.com"
+          },
+          {
+            "domain": "hr.promocode.ac"
+          },
+          {
+            "domain": "vi.promocode.ac"
+          },
+          {
+            "domain": "il.active-coupon-codes.com"
+          },
+          {
+            "domain": "sl.promocode.ac"
+          },
+          {
+            "domain": "livelifewelltt.org"
+          },
+          {
+            "domain": "ru.promonix.com"
+          },
+          {
+            "domain": "dailyrecord.co.uk"
+          },
+          {
+            "domain": "it.coupons-promo-code.com"
+          },
+          {
+            "domain": "hu.promocode.ac"
+          },
+          {
+            "domain": "sk.promocode.ac"
+          },
+          {
+            "domain": "vi.promonix.com"
+          },
+          {
+            "domain": "sv.promonix.com"
+          },
+          {
+            "domain": "tr.coupons-promo-code.com"
+          },
+          {
+            "domain": "de.global-discount-codes.com"
+          },
+          {
+            "domain": "sl.coupons-promo-code.com"
+          },
+          {
+            "domain": "gigumagame.com"
+          },
+          {
+            "domain": "gtnews.site"
+          },
+          {
+            "domain": "et.promonix.com"
+          },
+          {
+            "domain": "savingclip.com"
+          },
+          {
+            "domain": "lt.promocode.ac"
+          },
+          {
+            "domain": "es.promocode.ac"
+          },
+          {
+            "domain": "gr.active-coupon-codes.com"
+          },
+          {
+            "domain": "hu.active-coupon-codes.com"
+          },
+          {
+            "domain": "no.promonix.com"
+          },
+          {
+            "domain": "sk.promonix.com"
+          },
+          {
+            "domain": "elitepromocode.com"
+          },
+          {
+            "domain": "id.coupons-promo-code.com"
+          },
+          {
+            "domain": "ro.promocode.ac"
+          },
+          {
+            "domain": "pl.promonix.com"
+          },
+          {
+            "domain": "de.promocode.ac"
+          },
+          {
+            "domain": "nl.coupons-promo-code.com"
+          },
+          {
+            "domain": "ru.coupons-promo-code.com"
+          },
+          {
+            "domain": "fr.active-coupon-codes.com"
+          },
+          {
+            "domain": "sl.promonix.com"
+          },
+          {
+            "domain": "es.promonix.com"
+          },
+          {
+            "domain": "komputer-servise.com"
+          },
+          {
+            "domain": "bs.promonix.com"
+          },
+          {
+            "domain": "de.active-coupon-codes.com"
+          },
+          {
+            "domain": "ru.promocode.ac"
+          },
+          {
+            "domain": "th.active-coupon-codes.com"
+          },
+          {
+            "domain": "tw.active-coupon-codes.com"
+          },
+          {
+            "domain": "bg.promonix.com"
+          },
+          {
+            "domain": "id.promocode.ac"
+          },
+          {
+            "domain": "dutyfree-ome.ru"
+          },
+          {
+            "domain": "th.promonix.com"
+          },
+          {
+            "domain": "hu.promonix.com"
+          },
+          {
+            "domain": "az.promocode.ac"
+          },
+          {
+            "domain": "it.active-coupon-codes.com"
+          },
+          {
+            "domain": "fr.coupons-promo-code.com"
+          },
+          {
+            "domain": "de.drivereasy.com"
+          },
+          {
+            "domain": "pt.promonix.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 21,
+        "value": [
+          {
+            "domain": "ironbladeonline.com"
+          },
+          {
+            "domain": "wlwt.com"
+          },
+          {
+            "domain": "news.co.technology"
+          },
+          {
+            "domain": "usanews.lol"
+          },
+          {
+            "domain": "staging-driving.co.uk"
+          },
+          {
+            "domain": "lemoney.com"
+          },
+          {
+            "domain": "3arrafni.com"
+          },
+          {
+            "domain": "yahoo.com"
+          },
+          {
+            "domain": "wiseconsumers.biz"
+          },
+          {
+            "domain": "simplyshredded.com"
+          },
+          {
+            "domain": "gopromocodes.com"
+          },
+          {
+            "domain": "trustedreviews.com"
+          },
+          {
+            "domain": "drivereasy.com"
+          },
+          {
+            "domain": "baynardmedia.com"
+          },
+          {
+            "domain": "bobbygdavis.com"
+          },
+          {
+            "domain": "colemankempinski.com"
+          },
+          {
+            "domain": "outland-cigars.abans.su"
+          },
+          {
+            "domain": "zeh.media"
+          },
+          {
+            "domain": "121news.com"
+          },
+          {
+            "domain": "soulwestfest.com"
+          },
+          {
+            "domain": "techio.co"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 164,
+            "promotype": "student",
+            "value": [
+              "100nutrix.com",
+              "aimweb.pl",
+              "americansforabetteramerica.com",
+              "anchorofgold.com",
+              "andthevalleyshook.com",
+              "arkansasfight.com",
+              "arrowheadpride.com",
+              "athleticsnation.com",
+              "atlantasports.today",
+              "avforums.com",
+              "azdesertswarm.com",
+              "backingthepack.com",
+              "banburyguardian.co.uk",
+              "bcinterruption.com",
+              "bg.promonix.com",
+              "bicycling.com",
+              "bigcatcountry.com",
+              "bikkinpanda.com",
+              "biography.com",
+              "blackwhitereadallover.com",
+              "bloggersodear.com",
+              "blog.hava.solutions",
+              "blog.repithwin.com",
+              "brewcrewball.com",
+              "bulletsforever.com",
+              "buxtonadvertiser.co.uk",
+              "cardchronicle.com",
+              "cardiachill.com",
+              "chi.streetsblog.org",
+              "clubwyndhamprivileges.com",
+              "cochinopop.com",
+              "comparatif-logiciels.fr",
+              "computerworld.pl",
+              "conquestchronicles.com",
+              "creativebloq.com",
+              "cyberworldtechnologies.co.in",
+              "cyclingnews.com",
+              "dailyboard.org",
+              "dailynorseman.com",
+              "dasreinstewunder.de",
+              "daventryexpress.co.uk",
+              "defenddemocracy.press",
+              "de.promocode.ac",
+              "distinguishable-emanuel.blogspot.com",
+              "dutyfree-ome.ru",
+              "earny.link",
+              "edinburghlive.co.uk",
+              "elitepromocode.com",
+              "elle.com",
+              "elledecor.com",
+              "esportshispano.com",
+              "fandimeserialum.cz",
+              "fashionheir.com",
+              "fearthewall.com",
+              "fieldgulls.com",
+              "financeessence.com",
+              "finansdirekt24.se",
+              "fishstripes.com",
+              "forum.anarchiste-revolutionnaire.org",
+              "fresh.yiaap.com",
+              "gardneronline.co.uk",
+              "gazettelive.co.uk",
+              "geekshizzle.com",
+              "gfaloe.tech",
+              "gizmodo.jp",
+              "glamour.es",
+              "glamourmagazine.co.uk",
+              "grimsbytelegraph.co.uk",
+              "guitarworld.com",
+              "halifaxcourier.co.uk",
+              "hammerandrails.com",
+              "hemeltoday.co.uk",
+              "hertfordshiremercury.co.uk",
+              "historiek.net",
+              "houseofsparky.com",
+              "houstonsports.today",
+              "huffingtonpost.co.uk",
+              "id.promonix.com",
+              "inc.com",
+              "insidenu.com",
+              "ispr.info",
+              "it.promocode.ac",
+              "itstheeconomystupid.us",
+              "johnpierce.net",
+              "kentlive.news",
+              "keystonegazette.com",
+              "ktudo.com",
+              "leightonbuzzardonline.co.uk",
+              "livestrong.com",
+              "livingetc.com",
+              "logiciels.pro",
+              "lookoutlanding.com",
+              "makingitlovely.com",
+              "manchesterworld.uk",
+              "marieclaire.it",
+              "masslive.com",
+              "megacurioso.com.br",
+              "milehighhockey.com",
+              "mmamania.com",
+              "musthaves.la",
+              "nawalakarsa.id",
+              "nevermanagealone.com",
+              "newsbreak.com",
+              "nexttv.com",
+              "no.promonix.com",
+              "northernirelandworld.com",
+              "northumberlandgazette.co.uk",
+              "nzz.ch",
+              "onthebanks.com",
+              "ourculturemag.com",
+              "pacifictakes.com",
+              "pattifriday.ca",
+              "pcforalla.se",
+              "plymouthherald.co.uk",
+              "popsugar.co.uk",
+              "portsmouth.co.uk",
+              "prevention.com",
+              "proimagenescolombia.com",
+              "promocodes.com",
+              "rockchalktalk.com",
+              "ro.promonix.com",
+              "rsvplive.ie",
+              "rumbleinthegarden.com",
+              "sanfranciscosports.today",
+              "sciencetimes.com",
+              "seculartimes.com",
+              "shannonmattern.com",
+              "shieldsgazette.com",
+              "shop-with-style.com",
+              "silive.com",
+              "spten.com",
+              "stateoftheu.com",
+              "stlouisgametime.com",
+              "sts.ac",
+              "sturebanken.com",
+              "sunderlandecho.com",
+              "supereasy.com",
+              "techcodex.com",
+              "techtelegraph.co.uk",
+              "thebluetestament.com",
+              "thedailygopher.com",
+              "theguardian.com",
+              "thejournal.ie",
+              "theonlycolors.com",
+              "thescarboroughnews.co.uk",
+              "theuconnblog.com",
+              "trib.al",
+              "tvtechnology.com",
+              "typepad.com",
+              "ujjina.com",
+              "uncommonsportsman.com",
+              "usemetoshop.com",
+              "vanquishthefoe.com",
+              "veille-cyber.com",
+              "vivaelbirdos.com",
+              "vivathematadors.com",
+              "wanttoknow.info",
+              "webhostwhat.com",
+              "weboflove.org",
+              "wesh.com",
+              "wigantoday.net",
+              "wiltshirelive.co.uk",
+              "windycitygridiron.com",
+              "wisconsinsports.today"
+            ]
+          },
+          {
+            "count": 475,
+            "promotype": "blog",
+            "value": [
+              "1392.topnews.com",
+              "2the.space",
+              "400since1619.com",
+              "500toprated.com",
+              "a2zsaver.com",
+              "aberdeenlive.news",
+              "acmepackingcompany.com",
+              "addictedtoquack.com",
+              "ad-magazin.de",
+              "admhduj.com",
+              "advnture.com",
+              "aedicas.com",
+              "againstallenemies.com",
+              "alaxon.co.il",
+              "al.com",
+              "amazinavenue.com",
+              "americanninjawarriornation.com",
+              "androidauthority.com",
+              "androidcentral.com",
+              "anglersfile.blogspot.com",
+              "animeclick.it",
+              "anonymouseagle.com",
+              "arab-btc.net",
+              "aseaofblue.com",
+              "augustinefou.com",
+              "avnetwork.com",
+              "azher.com",
+              "azsnakepit.com",
+              "basicthinking.com",
+              "basportz.com",
+              "batterypower.com",
+              "battleofcali.com",
+              "battleredblog.com",
+              "bbcworldnewstoday.com",
+              "bearnishfly.com",
+              "behindthesteelcurtain.com",
+              "belfastlive.co.uk",
+              "beyondtheboxscore.com",
+              "big12hoops.com",
+              "bigblueview.com",
+              "bikeperfect.com",
+              "birminghamworld.uk",
+              "bjpenn.com",
+              "blackandredunited.com",
+              "blackheartgoldpants.com",
+              "blackpoolgazette.co.uk",
+              "blackshoediaries.com",
+              "blazersedge.com",
+              "bleedinggreennation.com",
+              "blocku.com",
+              "bloggingtheboys.com",
+              "blog.nfnitloop.com",
+              "blogtyrant.com",
+              "bloodyelbow.com",
+              "bloombargain.com",
+              "bluefish.org",
+              "bogley.com",
+              "bolchhanepal.com",
+              "boost-web.com",
+              "boredpanda.es",
+              "bostonsports.today",
+              "boxingconnect.com",
+              "braosa.com",
+              "bringonthecats.com",
+              "bristolpost.co.uk",
+              "bristolworld.com",
+              "brock.tv",
+              "brotherlygame.com",
+              "bruinsnation.com",
+              "brutalproof.net",
+              "bs.promonix.com",
+              "btpowerhouse.com",
+              "bubbyandbean.com",
+              "bucksherald.co.uk",
+              "bucsdugout.com",
+              "bucsnation.com",
+              "buffalorumblings.com",
+              "burnleyexpress.net",
+              "businessinsider.in",
+              "businessmag.al",
+              "business.rchp.com",
+              "businessremark.com",
+              "businessresourcelist.com",
+              "cagesideseats.com",
+              "californiagoldenblogs.com",
+              "cambridge-news.co.uk",
+              "camdenchat.com",
+              "canalstreetchronicles.com",
+              "canescountry.com",
+              "cdken.com",
+              "centroidpm.com",
+              "chad.co.uk",
+              "cheshire-live.co.uk",
+              "chicagosports.today",
+              "chiesaditotti.com",
+              "chitchatpost.com",
+              "cincinnatisports.today",
+              "cinemablend.com",
+              "clara.es",
+              "cleveland.com",
+              "clipsnation.com",
+              "cloudistro.com",
+              "coachweb.com",
+              "collegeandmagnolia.com",
+              "confluencedaily.com",
+              "constantstrategies.com",
+              "core77.com",
+              "cornwalllive.com",
+              "cosmopolitan.com",
+              "creammusicmagazine.com",
+              "crimsonandcreammachine.com",
+              "cristianosgays.com",
+              "cupom-novo.com.br",
+              "curacaonieuws.nu",
+              "dailypost.co.uk",
+              "dailystar.co.uk",
+              "dallassports.today",
+              "de.drivereasy.com",
+              "de.global-discount-codes.com",
+              "derbyshiretimes.co.uk",
+              "derbytelegraph.co.uk",
+              "derektmckinney.com",
+              "derryjournal.com",
+              "derwin2kgameplay.blogspot.com",
+              "descontostop.com.br",
+              "descuento.guru",
+              "detroitbadboys.com",
+              "devonlive.com",
+              "dewsburyreporter.co.uk",
+              "digitalspy.com",
+              "diyfilmfestival.blogspot.com",
+              "diyphotography.net",
+              "dlsserve.com",
+              "doncasterfreepress.co.uk",
+              "downthedrive.com",
+              "draysbay.com",
+              "drydenart.weebly.com",
+              "earningguys.com",
+              "easss.com",
+              "educatemotivate.com",
+              "educatormarketplace.com",
+              "electriccitymagazine.ca",
+              "elitedaily.com",
+              "elotrolado.net",
+              "entertainably.com",
+              "epgn.ch",
+              "es.promocode.ac",
+              "esquire.com",
+              "euroalter.com",
+              "evecorplogo.net",
+              "eve.demand-performance.com",
+              "express.co.uk",
+              "faketeams.com",
+              "falkirkherald.co.uk",
+              "farminglife.com",
+              "femalewardrobe.com",
+              "fifetoday.co.uk",
+              "fightful.com",
+              "fi.promocode.ac",
+              "firmadesigngroup.com",
+              "fitnesstowns.com",
+              "flexoffers.com",
+              "foliovision.com",
+              "forum.ottawagolf.com",
+              "fotogramas.es",
+              "fourfourtwo.com",
+              "fourmilab.ch",
+              "francoischarron.com",
+              "freemake.com",
+              "freshvouchers.co.uk",
+              "frogsowar.com",
+              "fromtherumbleseat.com",
+              "fr.promocode.ac",
+              "futsalnet.com",
+              "gamelud.com",
+              "ganggreennation.com",
+              "getbeststuff.com",
+              "getsurrey.co.uk",
+              "giftideas.usite.pro",
+              "gizchina.com",
+              "glasgowlive.co.uk",
+              "gloucestershirelive.co.uk",
+              "gobblercountry.com",
+              "goldenstateofmind.com",
+              "gratisafhalen.be",
+              "groupboard.com",
+              "habr.com",
+              "hacking.land",
+              "hampshirelive.news",
+              "harboroughmail.co.uk",
+              "harpersbazaar.my",
+              "harrogateadvertiser.co.uk",
+              "hartlepoolmail.co.uk",
+              "hastalagadget.com",
+              "healthitanswers.net",
+              "hightechbear.blogspot.com",
+              "hobt.ru",
+              "hogshaven.com",
+              "hollywoodentertainmentnews.com",
+              "hottimeinoldtown.com",
+              "hr.promocode.ac",
+              "hr.promonix.com",
+              "hucknalldispatch.co.uk",
+              "huffingtonpost.jp",
+              "huffpost.com",
+              "hulldailymail.co.uk",
+              "hu.promocode.ac",
+              "id.promocode.ac",
+              "imore.com",
+              "indy100.com",
+              "innovative-production.com",
+              "interboy.com",
+              "investmentnewsdaily.com",
+              "iorr.org",
+              "irishmirror.ie",
+              "irishstar.com",
+              "irivers.com",
+              "isfeed.com",
+              "jirnal.com",
+              "kaijugaming.com",
+              "kcapa.net",
+              "kissfm.ro",
+              "kompster.com",
+              "koninkrijksrelaties.nu",
+              "la.curbed.com",
+              "lancasterguardian.co.uk",
+              "lancs.live",
+              "landgrantholyland.com",
+              "laptopmag.com",
+              "largeformatphotography.info",
+              "laughtershub.blogspot.com",
+              "leicestermercury.co.uk",
+              "lep.co.uk",
+              "libertyballers.com",
+              "lifehacker.jp",
+              "lighthousehockey.com",
+              "lincolnshirelive.co.uk",
+              "listelist.com",
+              "listly.it",
+              "london24news.co.uk",
+              "lonestarball.com",
+              "loudersound.com",
+              "love4shopping.com",
+              "lt.promocode.ac",
+              "lt.promonix.com",
+              "lutontoday.co.uk",
+              "lv.promocode.ac",
+              "lv.promonix.com",
+              "macventurecapital.com",
+              "macworld.com",
+              "macworld.se",
+              "madriddaily.net",
+              "magazineoffice.com",
+              "maizenbrew.com",
+              "managingmadrid.com",
+              "manchestereveningnews.co.uk",
+              "marieclaire.com",
+              "marieclaire.co.uk",
+              "mavsmoneyball.com",
+              "mccoveychronicles.com",
+              "mediamatters.org",
+              "medium.com",
+              "mekan0.com",
+              "meltontimes.co.uk",
+              "menshealth.com",
+              "miblog.club",
+              "milehighreport.com",
+              "miltonkeynes.co.uk",
+              "minnesotasports.today",
+              "mirror.co.uk",
+              "mistvista.com",
+              "mixedmartialarts.com",
+              "mlbdailydish.com",
+              "mmafighting.com",
+              "mmaforreal.com",
+              "momentoflove.org",
+              "monbon.fr",
+              "moyens.net",
+              "mtb-forum.it",
+              "musiccitymiracles.com",
+              "musicnotes.com",
+              "mwcconnection.com",
+              "mxdwn.co.uk",
+              "myjoyonline.com",
+              "neoromance.info",
+              "nerdata.com",
+              "netsdaily.com",
+              "newestdiscounts.com",
+              "newsarticles.media",
+              "newsblur.com",
+              "newyorkupstate.com",
+              "nextgengamer.co.uk",
+              "nj.com",
+              "nofilmschool.com",
+              "northamptonchron.co.uk",
+              "northantstelegraph.co.uk",
+              "notabot.tech",
+              "nottinghampost.com",
+              "nps.k12.nj.us",
+              "nsaneforums.com",
+              "nunesmagician.com",
+              "nytimesnewstoday.com",
+              "obiztools.com",
+              "obnug.com",
+              "offbeathome.com",
+              "officialfamemagazine.com",
+              "offtackleempire.com",
+              "onceametro.com",
+              "oprahdaily.com",
+              "oregonlive.com",
+              "ottdaily.com",
+              "ourdailybears.com",
+              "outsports.com",
+              "panasiabiz.com",
+              "patriotgunnews.com",
+              "patspulpit.com",
+              "paul-graham-blog.com",
+              "pcworld.com",
+              "pcwplus.hu",
+              "peachtreehoops.com",
+              "peitsch-mich.com",
+              "pensburgh.com",
+              "peterboroughtoday.co.uk",
+              "phoenixsports.today",
+              "pinstripealley.com",
+              "player.hu",
+              "pl.promocode.ac",
+              "podiumcafe.com",
+              "polygon.com",
+              "poprazzi.com",
+              "popularmechanics.com",
+              "portalmidiacrista.com.br",
+              "pospapua.com",
+              "postingandtoasting.com",
+              "poundingtherock.com",
+              "prima.co.uk",
+              "progressiveboink.com",
+              "pt.promonix.com",
+              "purplerow.com",
+              "quepasomiami.com",
+              "racunalniske-novice.com",
+              "rapidpurple.com",
+              "rassegna.lbit-solution.it",
+              "realhomes.com",
+              "redonline.co.uk",
+              "religiousfreedomandbusiness.org",
+              "reportwire.org",
+              "revengeofthebirds.com",
+              "rickrea.com",
+              "rockcrawler.com",
+              "rockmnation.com",
+              "rockytoptalk.com",
+              "rollbamaroll.com",
+              "royalsreview.com",
+              "rslsoapbox.com",
+              "r.srvtrck.com",
+              "rss2.com",
+              "ruleoftree.com",
+              "runnersworld.com",
+              "ru.promocode.ac",
+              "ru.promonix.com",
+              "savingarena.com",
+              "sbnation.com",
+              "sbncollegehockey.com",
+              "scotsman.com",
+              "silverandblackpride.com",
+              "silverscreenandroll.com",
+              "sk.promonix.com",
+              "slcdunk.com",
+              "slevovakocka.cz",
+              "slipperstillfits.com",
+              "slpent.com",
+              "sl.promocode.ac",
+              "sl.promonix.com",
+              "smartcitieslibrary.com",
+              "smartworld.it",
+              "soch.cz",
+              "socialchefs.com",
+              "sodinheiro.com",
+              "sonicsrising.com",
+              "southsidesox.com",
+              "space.com",
+              "spiritofchange.org",
+              "sportskingpin.com",
+              "staffordshire-live.co.uk",
+              "stanleycupofchowder.com",
+              "starsandstripesfc.com",
+              "stokesentinel.co.uk",
+              "stornowaygazette.co.uk",
+              "strimoo.com",
+              "stumptownfooty.com",
+              "subminimal.org",
+              "succesfulphotography.blogspot.com",
+              "suffolklive.com",
+              "summamoney.com",
+              "supermall.com",
+              "sussexexpress.co.uk",
+              "sweettntmagazine.com",
+              "sx-z.com",
+              "t3.com",
+              "tarheelblog.com",
+              "teamspeedkills.com",
+              "techadvisor.com",
+              "techosmo.com",
+              "techradar.com",
+              "the42.ie",
+              "thealtworld.com",
+              "theaudacitytopodcast.com",
+              "the-digital-picture.com",
+              "thedreamshake.com",
+              "thefalcoholic.com",
+              "thenewstalkers.com",
+              "theoldreader.com",
+              "thestar.co.uk",
+              "thetechportal.com",
+              "thevgpress.com",
+              "theweek.com",
+              "thisweekintexas.com",
+              "th.promonix.com",
+              "tilestwra.com",
+              "today24.pro",
+              "tomahawknation.com",
+              "tomsguide.com",
+              "tomshardware.com",
+              "tomwademd.net",
+              "trendhunter.com",
+              "tr.promocode.ac",
+              "truebluela.com",
+              "trustmeimamom.com",
+              "turfshowtimes.com",
+              "tvshowsfinder.com",
+              "twinkietown.com",
+              "twin.pk",
+              "twirlme.co",
+              "ubestpick.com",
+              "unlitrader.com",
+              "uromivoice.com",
+              "vanityfair.it",
+              "vaseksura.com",
+              "venusdailleurs.fr",
+              "veranda.com",
+              "verum.world",
+              "vimeography.com",
+              "vi.promocode.ac",
+              "visionviral.com",
+              "vitaminpatchesonline.com",
+              "vogue.fr",
+              "voxmedia.com",
+              "wakefieldexpress.co.uk",
+              "walesonline.co.uk",
+              "wallpaper.com",
+              "wazupnaija.com",
+              "webnuz.com",
+              "webtimes.uk",
+              "webwire.com",
+              "whattowatch.com",
+              "whowhatwear.com",
+              "widerightnattylite.com",
+              "wild1067.com",
+              "wishlistr.com",
+              "wmur.com",
+              "wndrmuseum.com",
+              "womanandhome.com",
+              "womansday.com",
+              "womenonbusiness.com",
+              "womenshealthmag.com",
+              "worksopguardian.co.uk",
+              "worldnl.com",
+              "yardbarker.com",
+              "yezhu.in",
+              "yinovacenter.com",
+              "yorkshireeveningpost.co.uk",
+              "yorkshirepost.co.uk",
+              "yourchoiceway.com",
+              "zbored.com"
+            ]
+          },
+          {
+            "count": 47,
+            "promotype": "incentive",
+            "value": [
+              "1985weixin.com",
+              "2geescoupon.com",
+              "active-coupon-codes.com",
+              "awesomecoupons.org",
+              "cashbackgeneration.com",
+              "cougcenter.com",
+              "couponcodego.com",
+              "couponforless.com",
+              "coupongini.com",
+              "coupongranny.com",
+              "couponkin.com",
+              "couponsmoon.com",
+              "coupons-promo-code.com",
+              "couponzguru.ae",
+              "couponzguru.com",
+              "couponzguru.my",
+              "couponzguru.ph",
+              "couponzguru.sg",
+              "couponzguruusa.com",
+              "de.active-coupon-codes.com",
+              "domainhostcoupon.com",
+              "dpcoupon.com",
+              "edealstoday.net",
+              "fi.active-coupon-codes.com",
+              "fr.coupons-promo-code.com",
+              "glasgowworld.com",
+              "id.coupons-promo-code.com",
+              "jpnewss.com",
+              "legendcoupon.com",
+              "lt.coupons-promo-code.com",
+              "m3.se",
+              "newsletter.co.uk",
+              "nl.coupons-promo-code.com",
+              "oxideals.com",
+              "powercoupons.com",
+              "pt.coupons-promo-code.com",
+              "remedydeals.com",
+              "ro.coupons-promo-code.com",
+              "ru.coupons-promo-code.com",
+              "shopdeals.site",
+              "th.active-coupon-codes.com",
+              "th.coupons-promo-code.com",
+              "tr.coupons-promo-code.com",
+              "underdogdynasty.com",
+              "vi.coupons-promo-code.com",
+              "vi.promonix.com",
+              "vogue.it"
+            ]
+          },
+          {
+            "count": 50,
+            "promotype": "content",
+            "value": [
+              "alligatorarmy.com",
+              "bedfordtoday.co.uk",
+              "bestproducts.com",
+              "beyondthestagemagazine.com",
+              "bigeastcoastbias.com",
+              "blessyouboys.com",
+              "blog.familybringsjoy.com",
+              "br.atsit.in",
+              "brightsideofthesun.com",
+              "canishoopus.com",
+              "constructionsupplymagazine.com",
+              "coveringthecorner.com",
+              "crawfishboxes.com",
+              "diezminutos.es",
+              "eater.com",
+              "entertainmentnewsboom.com",
+              "et.promocode.ac",
+              "exactnewz.com",
+              "fearthesword.com",
+              "fujingaho.jp",
+              "gaslampball.com",
+              "getslimthick.com",
+              "gexperience.it",
+              "gotthebattlefeveron.com",
+              "hardware-infos.com",
+              "harpersbazaar.com",
+              "hollygstudios.com",
+              "inkl.com",
+              "jan-magazine.nl",
+              "la.eater.com",
+              "lisbonlions1967.com",
+              "londonworld.com",
+              "loughboroughecho.net",
+              "midmajormadness.com",
+              "minerrush.com",
+              "onehack.us",
+              "oribatejo.pt",
+              "overthemonster.com",
+              "pluginthemebr.com",
+              "prideofdetroit.com",
+              "promonix.com",
+              "redcuprebellion.com",
+              "redreporter.com",
+              "selinasims.com",
+              "siliconinvestor.com",
+              "smokingmusket.com",
+              "theproducewire.com",
+              "thesouthernreporter.co.uk",
+              "townandcountrymag.com",
+              "zofshop.com"
+            ]
+          },
+          {
+            "count": 7,
+            "promotype": "forum",
+            "value": [
+              "housebeautiful.com",
+              "lugi.org",
+              "news.artnet.com",
+              "promocode.ac",
+              "punjabtimes.com.au",
+              "rabbithealth101.com",
+              "sv.promocode.ac"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "twitter",
+        "facebook",
+        "linkedin",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/vimeo",
+        "instagram": "https://instagram.com/vimeo",
+        "linkedin": "https://linkedin.com/company/vimeo",
+        "twitter": "https://twitter.com/vimeo"
+      }
+    },
+    "verticals": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Entertainment / Streaming",
+        "rank": 2,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Entertainment / Streaming",
+          "rank": 2,
+          "score": 95
+        },
+        {
+          "name": "Online / Services",
+          "rank": 2,
+          "score": 85
+        },
+        {
+          "name": "Technology / Software",
+          "rank": 2,
+          "score": 75
+        }
+      ]
+    }
+  }
+}

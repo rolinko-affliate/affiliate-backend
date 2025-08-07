@@ -167,3 +167,9 @@ exit status 1
 )
 [GIN] 2025/08/06 - 15:19:36 | 500 |  235.847626ms |             ::1 | POST     "/api/v1/advertisers"
 [GIN] 2025/08/06 - 15:19:36 | 204 |    5.522166ms |             ::1 | DELETE   "/api/v1/organizations/17"
+2025/08/06 23:59:59 Running daily usage calculation for 2025-08-05
+2025/08/06 23:59:59 Starting daily usage calculation for date: 2025-08-05
+2025/08/06 23:59:59 Calculating usage for organization 1 on 2025-08-05
+2025/08/06 23:59:59 Successfully calculated usage for organization 1: spend=0, payout=0, revenue=0
+2025/08/06 23:59:59 Completed daily usage calculation for date: 2025-08-05
+2025/08/06 23:59:59 Daily usage calculation completed successfully for 2025-08-05

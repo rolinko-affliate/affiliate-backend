@@ -204,17 +204,24 @@ func AssertErrorResponse(t *testing.T, resp *APIResponse, expectedStatus int) {
 
 // ExtractEverflowIDFromMapping extracts the Everflow ID from a provider mapping response
 func ExtractEverflowIDFromMapping(t *testing.T, resp *APIResponse) int {
-	var response struct {
-		ProviderMapping struct {
-			ProviderAdvertiserID string `json:"provider_advertiser_id"`
-		} `json:"provider_mapping"`
-	}
+	// Parse the response as a generic map to handle different entity types
+	var response map[string]interface{}
 	ParseJSONResponse(t, resp, &response)
 	
+	// Try to find the provider ID field - could be advertiser or affiliate
+	var providerID string
+	if advertiserID, exists := response["provider_advertiser_id"].(string); exists && advertiserID != "" {
+		providerID = advertiserID
+	} else if affiliateID, exists := response["provider_affiliate_id"].(string); exists && affiliateID != "" {
+		providerID = affiliateID
+	} else {
+		t.Fatalf("Could not find provider_advertiser_id or provider_affiliate_id in response: %+v", response)
+	}
+	
 	// Convert string ID to int
-	everflowID, err := strconv.Atoi(response.ProviderMapping.ProviderAdvertiserID)
+	everflowID, err := strconv.Atoi(providerID)
 	if err != nil {
-		t.Fatalf("Failed to convert provider_advertiser_id to int: %v", err)
+		t.Fatalf("Failed to convert provider ID '%s' to int: %v", providerID, err)
 	}
 	return everflowID
 }

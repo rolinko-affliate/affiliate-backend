@@ -153,7 +153,24 @@ func TestAffiliateSynchronization(t *testing.T) {
 
 	t.Log("=== Testing Affiliate Synchronization ===")
 
-	// Step 1: Create an organization first (required for affiliate)
+	// Step 1: Create a test user profile first
+	profilePayload := map[string]interface{}{
+		"email":    GenerateTestEmail("test"),
+		"role_id":  1,
+	}
+
+	t.Log("Creating test user profile...")
+	profileResp := config.PlatformAPIRequest(t, "POST", "/api/v1/profiles", profilePayload)
+	LogResponse(t, "Profile Creation", profileResp)
+	AssertSuccessResponse(t, profileResp, 201)
+
+	var profileResult struct {
+		ID string `json:"id"`
+	}
+	ParseJSONResponse(t, profileResp, &profileResult)
+	cleanup.TrackProfile(profileResult.ID)
+
+	// Step 2: Create an organization (required for affiliate)
 	orgPayload := map[string]interface{}{
 		"name":         GenerateTestName("test_affiliate_org"),
 		"type":         "affiliate",
@@ -173,7 +190,7 @@ func TestAffiliateSynchronization(t *testing.T) {
 	ParseJSONResponse(t, orgResp, &orgResult)
 	cleanup.TrackOrganization(orgResult.ID)
 
-	// Step 2: Create an affiliate via our API
+	// Step 3: Create an affiliate via our API
 	affiliatePayload := map[string]interface{}{
 		"organization_id": orgResult.ID,
 		"name":           GenerateTestName("test_affiliate"),
@@ -189,11 +206,11 @@ func TestAffiliateSynchronization(t *testing.T) {
 	AssertSuccessResponse(t, affiliateResp, 201)
 
 	var affiliateResult struct {
-		ID   string `json:"id"`
+		ID   int `json:"affiliate_id"`
 		Name string `json:"name"`
 	}
 	ParseJSONResponse(t, affiliateResp, &affiliateResult)
-	cleanup.TrackAffiliate(affiliateResult.ID)
+	cleanup.TrackAffiliate(fmt.Sprintf("%d", affiliateResult.ID))
 
 	// Step 3: Wait for synchronization to complete
 	t.Log("Waiting for synchronization...")
@@ -202,7 +219,7 @@ func TestAffiliateSynchronization(t *testing.T) {
 	// Step 4: Check if affiliate has Everflow mapping
 	t.Log("Checking Everflow provider mapping...")
 	mappingResp := config.PlatformAPIRequest(t, "GET", 
-		fmt.Sprintf("/api/v1/affiliates/%s/provider-mappings/everflow", affiliateResult.ID), nil)
+		fmt.Sprintf("/api/v1/affiliates/%d/provider-mappings/everflow", affiliateResult.ID), nil)
 	LogResponse(t, "Provider Mapping", mappingResp)
 
 	if mappingResp.StatusCode == 404 {
@@ -226,7 +243,7 @@ func TestAffiliateSynchronization(t *testing.T) {
 
 	// Step 6: Verify partner attributes match
 	var everflowPartner struct {
-		ID   int    `json:"id"`
+		ID   int    `json:"network_affiliate_id"`
 		Name string `json:"name"`
 	}
 	ParseJSONResponse(t, everflowResp, &everflowPartner)

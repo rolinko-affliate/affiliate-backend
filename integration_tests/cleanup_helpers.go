@@ -8,6 +8,7 @@ import (
 // CleanupTracker tracks entities created during tests for cleanup
 type CleanupTracker struct {
 	config              *TestConfig
+	createdProfiles     []string // IDs of profiles created in our platform
 	createdAdvertisers  []int64 // IDs of advertisers created in our platform
 	createdAffiliates   []string // IDs of affiliates created in our platform
 	createdCampaigns    []string // IDs of campaigns created in our platform
@@ -25,6 +26,7 @@ type CleanupTracker struct {
 func NewCleanupTracker(config *TestConfig) *CleanupTracker {
 	return &CleanupTracker{
 		config:                  config,
+		createdProfiles:         make([]string, 0),
 		createdAdvertisers:      make([]int64, 0),
 		createdAffiliates:       make([]string, 0),
 		createdCampaigns:        make([]string, 0),
@@ -35,6 +37,11 @@ func NewCleanupTracker(config *TestConfig) *CleanupTracker {
 		everflowOfferIDs:        make([]int, 0),
 		everflowTrackingLinkIDs: make([]int, 0),
 	}
+}
+
+// TrackProfile adds a profile ID to the cleanup list
+func (ct *CleanupTracker) TrackProfile(profileID string) {
+	ct.createdProfiles = append(ct.createdProfiles, profileID)
 }
 
 // TrackAdvertiser adds an advertiser ID to the cleanup list
@@ -96,8 +103,11 @@ func (ct *CleanupTracker) Cleanup(t *testing.T) {
 	ct.cleanupAffiliates(t)
 	ct.cleanupAdvertisers(t)
 	
-	// Clean up organizations last
+	// Clean up organizations
 	ct.cleanupOrganizations(t)
+	
+	// Clean up profiles last (they might be referenced by other entities)
+	ct.cleanupProfiles(t)
 	
 	// Clean up Everflow entities
 	ct.cleanupEverflowEntities(t)
@@ -154,6 +164,16 @@ func (ct *CleanupTracker) cleanupOrganizations(t *testing.T) {
 		resp := ct.config.PlatformAPIRequest(t, "DELETE", fmt.Sprintf("/api/v1/organizations/%d", organizationID), nil)
 		if resp.StatusCode != 200 && resp.StatusCode != 404 {
 			t.Logf("Warning: Failed to cleanup organization %d: %d", organizationID, resp.StatusCode)
+		}
+	}
+}
+
+// cleanupProfiles cleans up profiles from our platform
+func (ct *CleanupTracker) cleanupProfiles(t *testing.T) {
+	for _, profileID := range ct.createdProfiles {
+		resp := ct.config.PlatformAPIRequest(t, "DELETE", fmt.Sprintf("/api/v1/profiles/%s", profileID), nil)
+		if resp.StatusCode != 200 && resp.StatusCode != 404 {
+			t.Logf("Warning: Failed to cleanup profile %s: %d", profileID, resp.StatusCode)
 		}
 	}
 }

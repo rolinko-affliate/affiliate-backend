@@ -223,3 +223,154 @@
 [GIN] 2025/08/06 - 15:29:21 | 200 |    3.007625ms |             ::1 | GET      "/api/v1/advertisers/19/provider-mappings/everflow"
 [GIN] 2025/08/06 - 15:29:21 | 204 |     4.18075ms |             ::1 | DELETE   "/api/v1/advertisers/19"
 [GIN] 2025/08/06 - 15:29:21 | 204 |   10.721042ms |             ::1 | DELETE   "/api/v1/organizations/23"
+[GIN] 2025/08/06 - 15:29:40 | 201 |    4.119916ms |             ::1 | POST     "/api/v1/organizations"
+2025/08/06 15:29:40 Error fetching profile: profile not found: requested item not found
+[GIN] 2025/08/06 - 15:29:40 | 401 |     534.833µs |             ::1 | POST     "/api/v1/affiliates"
+2025/08/06 15:29:40 Error fetching profile: profile not found: requested item not found
+[GIN] 2025/08/06 - 15:29:40 | 401 |      308.25µs |             ::1 | DELETE   "/api/v1/organizations/24"
+2025/08/06 23:59:59 Running daily usage calculation for 2025-08-05
+2025/08/06 23:59:59 Starting daily usage calculation for date: 2025-08-05
+2025/08/06 23:59:59 Calculating usage for organization 1 on 2025-08-05
+2025/08/06 23:59:59 Usage already calculated for organization 1 on 2025-08-05
+2025/08/06 23:59:59 Completed daily usage calculation for date: 2025-08-05
+2025/08/06 23:59:59 Daily usage calculation completed successfully for 2025-08-05
+[GIN] 2025/08/07 - 01:57:08 | 201 |   13.703375ms |             ::1 | POST     "/api/v1/profiles"
+[GIN] 2025/08/07 - 01:57:08 | 201 |     993.125µs |             ::1 | POST     "/api/v1/organizations"
+2025/08/07 01:57:08 🔧 EVERFLOW CreateAffiliate: Starting affiliate creation for ID 1, Name: test_affiliate_test_1754531828
+2025/08/07 01:57:08 🔍 EVERFLOW CreateAffiliate: No existing mapping found for affiliate 1 (error: affiliate provider mapping not found: requested item not found)
+2025/08/07 01:57:08 🔄 EVERFLOW CreateAffiliate: Mapping affiliate to Everflow request...
+2025/08/07 01:57:08 📤 EVERFLOW CreateAffiliate: Sending request to Everflow:
+{
+  "account_status": "active",
+  "billing": {
+    "billing_frequency": "monthly",
+    "default_invoice_is_hidden": false,
+    "default_payment_terms": 0,
+    "details": {
+      "day_of_month": 1
+    },
+    "invoice_amount_threshold": 0,
+    "invoice_generation_days_delay": 0,
+    "is_invoice_creation_auto": false,
+    "payment_type": "none",
+    "tax_id": "XXXXX"
+  },
+  "default_currency_id": "USD",
+  "enable_media_cost_tracking_links": false,
+  "is_contact_address_enabled": false,
+  "name": "test_affiliate_test_1754531828",
+  "network_employee_id": 1,
+  "referrer_id": 0
+}
+2025/08/07 01:57:08 🚀 EVERFLOW CreateAffiliate: Making API call to Everflow...
+2025/08/07 01:57:08 ✅ EVERFLOW CreateAffiliate: Successfully created affiliate in Everflow
+[GIN] 2025/08/07 - 01:57:08 | 201 |  693.889333ms |             ::1 | POST     "/api/v1/affiliates"
+[GIN] 2025/08/07 - 01:57:10 | 400 |    3.165166ms |             ::1 | GET      "/api/v1/affiliates//provider-mappings/everflow"
+[GIN] 2025/08/07 - 01:57:10 | 404 |       2.125µs |             ::1 | DELETE   "/api/v1/affiliates/"
+[GIN] 2025/08/07 - 01:57:11 | 204 |   19.539708ms |             ::1 | DELETE   "/api/v1/organizations/25"
+[GIN] 2025/08/07 - 01:57:11 | 204 |    1.339833ms |             ::1 | DELETE   "/api/v1/profiles/62bddce7-8370-4531-88ee-7888f03f95cb"
+[GIN] 2025/08/07 - 01:58:07 | 201 |    7.119125ms |             ::1 | POST     "/api/v1/profiles"
+[GIN] 2025/08/07 - 01:58:07 | 201 |     789.917µs |             ::1 | POST     "/api/v1/organizations"
+2025/08/07 01:58:07 🔧 EVERFLOW CreateAffiliate: Starting affiliate creation for ID 2, Name: test_affiliate_test_1754531887
+2025/08/07 01:58:07 🔍 EVERFLOW CreateAffiliate: No existing mapping found for affiliate 2 (error: affiliate provider mapping not found: requested item not found)
+2025/08/07 01:58:07 🔄 EVERFLOW CreateAffiliate: Mapping affiliate to Everflow request...
+2025/08/07 01:58:07 📤 EVERFLOW CreateAffiliate: Sending request to Everflow:
+{
+  "account_status": "active",
+  "billing": {
+    "billing_frequency": "monthly",
+    "default_invoice_is_hidden": false,
+    "default_payment_terms": 0,
+    "details": {
+      "day_of_month": 1
+    },
+    "invoice_amount_threshold": 0,
+    "invoice_generation_days_delay": 0,
+    "is_invoice_creation_auto": false,
+    "payment_type": "none",
+    "tax_id": "XXXXX"
+  },
+  "default_currency_id": "USD",
+  "enable_media_cost_tracking_links": false,
+  "is_contact_address_enabled": false,
+  "name": "test_affiliate_test_1754531887",
+  "network_employee_id": 1,
+  "referrer_id": 0
+}
+2025/08/07 01:58:07 🚀 EVERFLOW CreateAffiliate: Making API call to Everflow...
+2025/08/07 01:58:07 ✅ EVERFLOW CreateAffiliate: Successfully created affiliate in Everflow
+[GIN] 2025/08/07 - 01:58:07 | 201 |  249.036375ms |             ::1 | POST     "/api/v1/affiliates"
+[GIN] 2025/08/07 - 01:58:09 | 200 |    2.679833ms |             ::1 | GET      "/api/v1/affiliates/2/provider-mappings/everflow"
+[GIN] 2025/08/07 - 01:58:09 | 204 |    4.058042ms |             ::1 | DELETE   "/api/v1/affiliates/2"
+[GIN] 2025/08/07 - 01:58:09 | 204 |   14.733125ms |             ::1 | DELETE   "/api/v1/organizations/26"
+[GIN] 2025/08/07 - 01:58:09 | 204 |    1.239583ms |             ::1 | DELETE   "/api/v1/profiles/426c9f18-1ebb-47d8-87ad-c71baaf447e3"
+[GIN] 2025/08/07 - 01:58:39 | 201 |     9.89775ms |             ::1 | POST     "/api/v1/profiles"
+[GIN] 2025/08/07 - 01:58:39 | 201 |     595.375µs |             ::1 | POST     "/api/v1/organizations"
+2025/08/07 01:58:39 🔧 EVERFLOW CreateAffiliate: Starting affiliate creation for ID 3, Name: test_affiliate_test_1754531919
+2025/08/07 01:58:39 🔍 EVERFLOW CreateAffiliate: No existing mapping found for affiliate 3 (error: affiliate provider mapping not found: requested item not found)
+2025/08/07 01:58:39 🔄 EVERFLOW CreateAffiliate: Mapping affiliate to Everflow request...
+2025/08/07 01:58:39 📤 EVERFLOW CreateAffiliate: Sending request to Everflow:
+{
+  "account_status": "active",
+  "billing": {
+    "billing_frequency": "monthly",
+    "default_invoice_is_hidden": false,
+    "default_payment_terms": 0,
+    "details": {
+      "day_of_month": 1
+    },
+    "invoice_amount_threshold": 0,
+    "invoice_generation_days_delay": 0,
+    "is_invoice_creation_auto": false,
+    "payment_type": "none",
+    "tax_id": "XXXXX"
+  },
+  "default_currency_id": "USD",
+  "enable_media_cost_tracking_links": false,
+  "is_contact_address_enabled": false,
+  "name": "test_affiliate_test_1754531919",
+  "network_employee_id": 1,
+  "referrer_id": 0
+}
+2025/08/07 01:58:39 🚀 EVERFLOW CreateAffiliate: Making API call to Everflow...
+2025/08/07 01:58:40 ✅ EVERFLOW CreateAffiliate: Successfully created affiliate in Everflow
+[GIN] 2025/08/07 - 01:58:40 | 201 |  241.790667ms |             ::1 | POST     "/api/v1/affiliates"
+[GIN] 2025/08/07 - 01:58:42 | 200 |    1.486334ms |             ::1 | GET      "/api/v1/affiliates/3/provider-mappings/everflow"
+[GIN] 2025/08/07 - 01:58:42 | 204 |    5.035833ms |             ::1 | DELETE   "/api/v1/affiliates/3"
+[GIN] 2025/08/07 - 01:58:42 | 204 |    16.53575ms |             ::1 | DELETE   "/api/v1/organizations/27"
+[GIN] 2025/08/07 - 01:58:42 | 204 |    1.437875ms |             ::1 | DELETE   "/api/v1/profiles/c45a49ce-988c-484a-8f71-72aff33195af"
+[GIN] 2025/08/07 - 01:59:00 | 201 |      1.1305ms |             ::1 | POST     "/api/v1/profiles"
+[GIN] 2025/08/07 - 01:59:00 | 201 |      799.25µs |             ::1 | POST     "/api/v1/organizations"
+2025/08/07 01:59:00 🔧 EVERFLOW CreateAffiliate: Starting affiliate creation for ID 4, Name: test_affiliate_test_1754531940
+2025/08/07 01:59:00 🔍 EVERFLOW CreateAffiliate: No existing mapping found for affiliate 4 (error: affiliate provider mapping not found: requested item not found)
+2025/08/07 01:59:00 🔄 EVERFLOW CreateAffiliate: Mapping affiliate to Everflow request...
+2025/08/07 01:59:00 📤 EVERFLOW CreateAffiliate: Sending request to Everflow:
+{
+  "account_status": "active",
+  "billing": {
+    "billing_frequency": "monthly",
+    "default_invoice_is_hidden": false,
+    "default_payment_terms": 0,
+    "details": {
+      "day_of_month": 1
+    },
+    "invoice_amount_threshold": 0,
+    "invoice_generation_days_delay": 0,
+    "is_invoice_creation_auto": false,
+    "payment_type": "none",
+    "tax_id": "XXXXX"
+  },
+  "default_currency_id": "USD",
+  "enable_media_cost_tracking_links": false,
+  "is_contact_address_enabled": false,
+  "name": "test_affiliate_test_1754531940",
+  "network_employee_id": 1,
+  "referrer_id": 0
+}
+2025/08/07 01:59:00 🚀 EVERFLOW CreateAffiliate: Making API call to Everflow...
+2025/08/07 01:59:00 ✅ EVERFLOW CreateAffiliate: Successfully created affiliate in Everflow
+[GIN] 2025/08/07 - 01:59:00 | 201 |  241.946958ms |             ::1 | POST     "/api/v1/affiliates"
+[GIN] 2025/08/07 - 01:59:02 | 200 |    2.255958ms |             ::1 | GET      "/api/v1/affiliates/4/provider-mappings/everflow"
+[GIN] 2025/08/07 - 01:59:03 | 204 |    3.545375ms |             ::1 | DELETE   "/api/v1/affiliates/4"
+[GIN] 2025/08/07 - 01:59:03 | 204 |    4.554542ms |             ::1 | DELETE   "/api/v1/organizations/28"
+[GIN] 2025/08/07 - 01:59:03 | 204 |    1.047708ms |             ::1 | DELETE   "/api/v1/profiles/22d31095-09e8-42d5-833b-28779314c577"

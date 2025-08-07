@@ -1202,16 +1202,34 @@ func (s *IntegrationService) GenerateTrackingLink(ctx context.Context, req *doma
 		if campaignMapping.ProviderData != nil {
 			log.Printf("🔍 EVERFLOW GenerateTrackingLink: Parsing campaign provider data...")
 			log.Printf("🔍 EVERFLOW GenerateTrackingLink: Campaign provider data: %s", *campaignMapping.ProviderData)
-			var campaignProviderData domain.EverflowCampaignProviderData
-			if err := campaignProviderData.FromJSON(*campaignMapping.ProviderData); err == nil {
-				if campaignProviderData.NetworkCampaignID != nil {
-					networkOfferID = *campaignProviderData.NetworkCampaignID
-					log.Printf("✅ EVERFLOW GenerateTrackingLink: Found network_offer_id: %d", networkOfferID)
+			
+			// Try to parse as complex payload structure first (request/response format)
+			var payload map[string]interface{}
+			if err := json.Unmarshal([]byte(*campaignMapping.ProviderData), &payload); err == nil {
+				if response, ok := payload["response"].(map[string]interface{}); ok {
+					if networkOfferIDFloat, ok := response["network_offer_id"].(float64); ok {
+						networkOfferID = int32(networkOfferIDFloat)
+						log.Printf("✅ EVERFLOW GenerateTrackingLink: Found network_offer_id from response payload: %d", networkOfferID)
+					} else {
+						log.Printf("⚠️  EVERFLOW GenerateTrackingLink: network_offer_id not found in response payload")
+					}
 				} else {
-					log.Printf("⚠️  EVERFLOW GenerateTrackingLink: NetworkCampaignID is nil in campaign provider data")
+					log.Printf("⚠️  EVERFLOW GenerateTrackingLink: response object not found in payload")
 				}
 			} else {
-				log.Printf("⚠️  EVERFLOW GenerateTrackingLink: Failed to parse campaign provider data: %v", err)
+				// Fallback: try to parse as simple EverflowCampaignProviderData structure
+				log.Printf("🔄 EVERFLOW GenerateTrackingLink: Trying fallback parsing as EverflowCampaignProviderData...")
+				var campaignProviderData domain.EverflowCampaignProviderData
+				if err := campaignProviderData.FromJSON(*campaignMapping.ProviderData); err == nil {
+					if campaignProviderData.NetworkCampaignID != nil {
+						networkOfferID = *campaignProviderData.NetworkCampaignID
+						log.Printf("✅ EVERFLOW GenerateTrackingLink: Found network_offer_id from fallback: %d", networkOfferID)
+					} else {
+						log.Printf("⚠️  EVERFLOW GenerateTrackingLink: NetworkCampaignID is nil in campaign provider data")
+					}
+				} else {
+					log.Printf("⚠️  EVERFLOW GenerateTrackingLink: Failed to parse campaign provider data with both methods: %v", err)
+				}
 			}
 		} else {
 			log.Printf("⚠️  EVERFLOW GenerateTrackingLink: Campaign mapping exists but ProviderData is nil")

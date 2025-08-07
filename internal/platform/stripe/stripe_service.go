@@ -3,9 +3,9 @@ package stripe
 import (
 	"context"
 	"fmt"
-	"log/slog"
 
 	"github.com/affiliate-backend/internal/domain"
+	"github.com/affiliate-backend/internal/platform/logger"
 	"github.com/shopspring/decimal"
 	"github.com/stripe/stripe-go/v76"
 	"github.com/stripe/stripe-go/v76/customer"
@@ -50,7 +50,7 @@ func (s *Service) CreateCustomer(ctx context.Context, org *domain.Organization, 
 		return nil, fmt.Errorf("failed to create Stripe customer: %w", err)
 	}
 
-	slog.Info("Created Stripe customer",
+	logger.Info("Created Stripe customer",
 		"customer_id", customer.ID,
 		"organization_id", org.OrganizationID)
 	return customer, nil

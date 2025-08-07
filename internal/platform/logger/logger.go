@@ -5,6 +5,8 @@ import (
 	"log/slog"
 	"os"
 	"strings"
+
+	"github.com/affiliate-backend/internal/config"
 )
 
 // Logger wraps slog.Logger to provide a consistent logging interface
@@ -128,6 +130,48 @@ func Error(msg string, args ...any) {
 func Fatal(msg string, args ...any) {
 	GetDefault().Error(msg, args...)
 	os.Exit(1)
+}
+
+// Sanitized logging functions that automatically sanitize sensitive data
+func DebugSanitized(msg string, args ...any) {
+	GetDefault().LogSanitized(slog.LevelDebug, msg, args...)
+}
+
+func InfoSanitized(msg string, args ...any) {
+	GetDefault().LogSanitized(slog.LevelInfo, msg, args...)
+}
+
+func WarnSanitized(msg string, args ...any) {
+	GetDefault().LogSanitized(slog.LevelWarn, msg, args...)
+}
+
+func ErrorSanitized(msg string, args ...any) {
+	GetDefault().LogSanitized(slog.LevelError, msg, args...)
+}
+
+// LogSanitized logs with automatic sanitization of sensitive fields
+func (l *Logger) LogSanitized(level slog.Level, msg string, args ...any) {
+	if len(args)%2 != 0 {
+		// If odd number of args, just log normally
+		l.Logger.Log(context.Background(), level, msg, args...)
+		return
+	}
+
+	// Sanitize key-value pairs
+	sanitizedArgs := make([]any, len(args))
+	for i := 0; i < len(args); i += 2 {
+		key := args[i]
+		value := args[i+1]
+		
+		sanitizedArgs[i] = key
+		if keyStr, ok := key.(string); ok {
+			sanitizedArgs[i+1] = config.SanitizeForLogging(keyStr, value)
+		} else {
+			sanitizedArgs[i+1] = value
+		}
+	}
+
+	l.Logger.Log(context.Background(), level, msg, sanitizedArgs...)
 }
 
 // WithContext returns a logger with the given context

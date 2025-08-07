@@ -1,11 +1,11 @@
 package handlers
 
 import (
-	"log/slog"
 	"net/http"
 	"strconv"
 
 	"github.com/affiliate-backend/internal/domain"
+	"github.com/affiliate-backend/internal/platform/logger"
 	"github.com/affiliate-backend/internal/service"
 	"github.com/gin-gonic/gin"
 )
@@ -380,14 +380,14 @@ func (h *OrganizationAssociationHandler) GetAssociation(c *gin.Context) {
 
 	// Check if details are requested
 	withDetails := c.Query("with_details") == "true"
-	slog.Debug("Fetching organization association",
+	logger.Debug("Fetching organization association",
 		"association_id", associationID,
 		"with_details", withDetails)
 
 	if withDetails {
 		association, err := h.associationService.GetAssociationByIDWithDetails(c.Request.Context(), associationID)
 		if err != nil {
-			slog.Warn("Association not found with details",
+			logger.Warn("Association not found with details",
 				"association_id", associationID,
 				"error", err)
 			c.JSON(http.StatusNotFound, ErrorResponse{
@@ -396,7 +396,7 @@ func (h *OrganizationAssociationHandler) GetAssociation(c *gin.Context) {
 			})
 			return
 		}
-		slog.Debug("Successfully fetched association with details",
+		logger.Debug("Successfully fetched association with details",
 			"association_id", associationID)
 		c.JSON(http.StatusOK, association)
 	} else {

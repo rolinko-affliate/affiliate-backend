@@ -3,7 +3,6 @@ package repository
 import (
 	"context"
 	"fmt"
-	"log"
 	"time"
 
 	"github.com/affiliate-backend/internal/config"

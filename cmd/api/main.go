@@ -286,7 +286,7 @@ func main() {
 		log.Println("🔧 Starting in PRODUCTION MODE - using real Everflow integration")
 		// Initialize integration service with Everflow configuration
 		everflowConfig := everflow.Config{
-			BaseURL: "https://api.eflow.team",
+			BaseURL: "https://api.eflow.team/v1",
 			APIKey:  appConf.EverflowAPIKey,
 		}
 		integrationService = everflow.NewIntegrationServiceWithClients(

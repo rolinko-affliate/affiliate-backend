@@ -262,7 +262,24 @@ func TestCampaignSynchronization(t *testing.T) {
 
 	t.Log("=== Testing Campaign Synchronization ===")
 
-	// Step 1: Create prerequisite entities (organization and advertiser)
+	// Step 1: Create test user profile first
+	profilePayload := map[string]interface{}{
+		"email":    GenerateTestEmail("test"),
+		"role_id":  1, // Admin role
+	}
+
+	t.Log("Creating test user profile...")
+	profileResp := config.PlatformAPIRequest(t, "POST", "/api/v1/profiles", profilePayload)
+	LogResponse(t, "Profile Creation", profileResp)
+	AssertSuccessResponse(t, profileResp, 201)
+
+	var profileResult struct {
+		ID string `json:"id"`
+	}
+	ParseJSONResponse(t, profileResp, &profileResult)
+	cleanup.TrackProfile(profileResult.ID)
+
+	// Step 2: Create prerequisite entities (organization and advertiser)
 	orgPayload := map[string]interface{}{
 		"name":         GenerateTestName("test_campaign_org"),
 		"type":         "advertiser",
@@ -300,14 +317,15 @@ func TestCampaignSynchronization(t *testing.T) {
 	ParseJSONResponse(t, advertiserResp, &advertiserResult)
 	cleanup.TrackAdvertiser(advertiserResult.ID)
 
-	// Step 2: Create a campaign via our API
+	// Step 3: Create a campaign via our API
 	campaignPayload := map[string]interface{}{
-		"advertiser_id":  advertiserResult.ID,
-		"name":          GenerateTestName("test_campaign"),
-		"description":   "Test campaign for Everflow sync",
+		"organization_id": orgResult.ID,
+		"advertiser_id":   advertiserResult.ID,
+		"name":           GenerateTestName("test_campaign"),
+		"description":    "Test campaign for Everflow sync",
 		"landing_page_url": GenerateTestURL("test-campaign-landing"),
-		"status":        "active",
-		"payout_amount": 10.50,
+		"status":         "active",
+		"payout_amount":  10.50,
 		"payout_currency": "USD",
 	}
 
@@ -317,21 +335,50 @@ func TestCampaignSynchronization(t *testing.T) {
 	AssertSuccessResponse(t, campaignResp, 201)
 
 	var campaignResult struct {
-		ID   string `json:"id"`
+		ID   int `json:"campaign_id"`
 		Name string `json:"name"`
 	}
 	ParseJSONResponse(t, campaignResp, &campaignResult)
-	cleanup.TrackCampaign(campaignResult.ID)
+	cleanup.TrackCampaign(fmt.Sprintf("%d", campaignResult.ID))
 
-	// Step 3: Wait for synchronization to complete
+	// Step 4: Wait for synchronization to complete
 	t.Log("Waiting for synchronization...")
 	config.WaitForSync(t, 10*time.Second)
 
-	// Step 4: Check if campaign has Everflow mapping (as an offer)
+	// Step 5: Check if campaign has Everflow mapping (as an offer)
 	t.Log("Checking Everflow provider mapping...")
-	// Note: This endpoint might not exist yet - adjust based on your API structure
-	t.Log("Campaign sync to Everflow not yet implemented - this test will be skipped for now")
-	t.Skip("Campaign sync to Everflow not yet implemented")
+	mappingResp := config.PlatformAPIRequest(t, "GET", 
+		fmt.Sprintf("/api/v1/campaigns/%d/provider-mappings/everflow", campaignResult.ID), nil)
+	LogResponse(t, "Provider Mapping", mappingResp)
+
+	if mappingResp.StatusCode == 404 {
+		t.Log("No Everflow mapping found - this may indicate sync is not implemented yet")
+		// For now, we'll skip the rest of the test if mapping doesn't exist
+		// In a real scenario, you'd implement the sync functionality
+		t.Skip("Campaign sync to Everflow not yet implemented")
+	}
+
+	AssertSuccessResponse(t, mappingResp, 200)
+
+	// Step 6: Extract Everflow offer ID and verify it exists in Everflow
+	everflowID := ExtractEverflowIDFromMapping(t, mappingResp)
+	cleanup.TrackEverflowOffer(everflowID)
+
+	t.Logf("Verifying campaign exists in Everflow as Offer with ID: %d", everflowID)
+	everflowResp := config.EverflowAPIRequest(t, "GET", 
+		fmt.Sprintf("/networks/offers/%d", everflowID), nil)
+	LogResponse(t, "Everflow Offer", everflowResp)
+	AssertSuccessResponse(t, everflowResp, 200)
+
+	// Step 7: Verify offer attributes match
+	var everflowOffer struct {
+		ID   int    `json:"network_offer_id"`
+		Name string `json:"name"`
+	}
+	ParseJSONResponse(t, everflowResp, &everflowOffer)
+
+	assert.Equal(t, everflowID, everflowOffer.ID, "Everflow offer ID should match")
+	assert.Equal(t, campaignPayload["name"], everflowOffer.Name, "Offer name should match")
 
 	t.Log("✅ Campaign synchronization test passed!")
 }

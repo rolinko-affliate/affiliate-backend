@@ -2,6 +2,8 @@ package everflow
 
 import (
 	"fmt"
+	"strings"
+	"time"
 
 	"github.com/affiliate-backend/internal/domain"
 	"github.com/affiliate-backend/internal/platform/everflow/advertiser"
@@ -15,6 +17,19 @@ type SimpleAdvertiserProviderMapper struct{}
 func NewSimpleAdvertiserProviderMapper() *SimpleAdvertiserProviderMapper {
 	fmt.Printf("🏗️ SIMPLE MAPPER CONSTRUCTOR CALLED 🏗️\n")
 	return &SimpleAdvertiserProviderMapper{}
+}
+
+// generateUniqueEmail generates a unique email address for Everflow user creation
+func (m *SimpleAdvertiserProviderMapper) generateUniqueEmail(advertiserName string) string {
+	// Clean the advertiser name to make it email-safe
+	cleanName := strings.ToLower(strings.ReplaceAll(advertiserName, " ", "-"))
+	cleanName = strings.ReplaceAll(cleanName, "_", "-")
+	
+	// Generate timestamp for uniqueness
+	timestamp := time.Now().Unix()
+	
+	// Create unique email in format: advertiser-name-timestamp@everflow-test.com
+	return fmt.Sprintf("%s-%d@everflow-test.com", cleanName, timestamp)
 }
 
 // MapAdvertiserToEverflowRequest maps a domain advertiser to an Everflow CreateAdvertiserRequest
@@ -92,11 +107,14 @@ func (m *SimpleAdvertiserProviderMapper) MapAdvertiserToEverflowRequest(adv *dom
 	settings.SetExposedVariables(*exposedVars)
 	req.SetSettings(*settings)
 
-	// Set users exactly like the working example
-	email := "john.doe@example.com"
+	// Set users with unique email to avoid "Email address already in use" errors
+	email := m.generateUniqueEmail(adv.Name)
 	if adv.ContactEmail != nil && *adv.ContactEmail != "" {
-		email = *adv.ContactEmail
+		// If advertiser has a contact email, use it as base but still make it unique
+		email = m.generateUniqueEmail(*adv.ContactEmail)
 	}
+	
+	fmt.Printf("🔧 Generated unique email for advertiser '%s': %s\n", adv.Name, email)
 	
 	users := []advertiser.AdvertiserUser{
 		*advertiser.NewAdvertiserUser(

@@ -17,7 +17,7 @@ import (
 )
 
 const (
-	BaseURL        = "http://localhost:50221"
+	BaseURL        = "http://localhost:50222"
 	EverflowAPIURL = "https://api.eflow.team/v1"
 	JWTSecret      = "gDxsm/JerlPJiOObQLtfjViLBQF2ggmJpYCNW+9LPwL2QJksmiYlzRCJCKseCLxJtGysx+awZvoiS0MF0pLjnw=="
 )
@@ -208,14 +208,28 @@ func ExtractEverflowIDFromMapping(t *testing.T, resp *APIResponse) int {
 	var response map[string]interface{}
 	ParseJSONResponse(t, resp, &response)
 	
-	// Try to find the provider ID field - could be advertiser or affiliate
-	var providerID string
-	if advertiserID, exists := response["provider_advertiser_id"].(string); exists && advertiserID != "" {
-		providerID = advertiserID
-	} else if affiliateID, exists := response["provider_affiliate_id"].(string); exists && affiliateID != "" {
-		providerID = affiliateID
+	// Handle different response structures - some have provider_mapping wrapper, others don't
+	var providerMapping map[string]interface{}
+	if mapping, exists := response["provider_mapping"].(map[string]interface{}); exists {
+		// Advertiser format: {"provider_mapping": {...}}
+		providerMapping = mapping
 	} else {
-		t.Fatalf("Could not find provider_advertiser_id or provider_affiliate_id in response: %+v", response)
+		// Affiliate format: direct response without wrapper
+		providerMapping = response
+	}
+	
+	// Try to find the provider ID field - could be advertiser, affiliate, or campaign/offer
+	var providerID string
+	if advertiserID, exists := providerMapping["provider_advertiser_id"].(string); exists && advertiserID != "" {
+		providerID = advertiserID
+	} else if affiliateID, exists := providerMapping["provider_affiliate_id"].(string); exists && affiliateID != "" {
+		providerID = affiliateID
+	} else if campaignID, exists := providerMapping["provider_campaign_id"].(string); exists && campaignID != "" {
+		providerID = campaignID
+	} else if offerID, exists := providerMapping["provider_offer_id"].(string); exists && offerID != "" {
+		providerID = offerID
+	} else {
+		t.Fatalf("Could not find provider ID field in mapping: %+v", providerMapping)
 	}
 	
 	// Convert string ID to int

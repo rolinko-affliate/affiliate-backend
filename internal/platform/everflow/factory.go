@@ -1,6 +1,8 @@
 package everflow
 
 import (
+	"strings"
+
 	"github.com/affiliate-backend/internal/platform/everflow/advertiser"
 	"github.com/affiliate-backend/internal/platform/everflow/affiliate"
 	"github.com/affiliate-backend/internal/platform/everflow/offer"
@@ -24,10 +26,12 @@ func NewIntegrationServiceWithClients(
 	campaignProviderMappingRepo CampaignProviderMappingRepository,
 ) *IntegrationService {
 	// Configure advertiser client
+	// Note: Advertiser client uses /v1/networks/advertisers path, so we need base URL without /v1
+	advertiserBaseURL := strings.TrimSuffix(config.BaseURL, "/v1")
 	advertiserConfig := advertiser.NewConfiguration()
 	advertiserConfig.Servers = []advertiser.ServerConfiguration{
 		{
-			URL: config.BaseURL,
+			URL: advertiserBaseURL,
 		},
 	}
 	// Add Everflow API key header
@@ -38,7 +42,7 @@ func NewIntegrationServiceWithClients(
 	affiliateConfig := affiliate.NewConfiguration()
 	affiliateConfig.Servers = []affiliate.ServerConfiguration{
 		{
-			URL: config.BaseURL + "/v1", // Affiliate API expects /v1 in server URL
+			URL: config.BaseURL, // BaseURL already includes /v1
 		},
 	}
 	// Add Everflow API key header

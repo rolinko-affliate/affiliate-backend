@@ -51,11 +51,10 @@ type Campaign struct {
 
 // CampaignProviderMapping represents a mapping between a campaign and a provider following clean architecture
 type CampaignProviderMapping struct {
-	MappingID          int64   `json:"mapping_id" db:"mapping_id"`
-	CampaignID         int64   `json:"campaign_id" db:"campaign_id"`
-	ProviderType       string  `json:"provider_type" db:"provider_type"`                         // 'everflow' for MVP
-	ProviderCampaignID *string `json:"provider_campaign_id,omitempty" db:"provider_campaign_id"` // Provider's Campaign ID
-	ProviderOfferID    *string `json:"provider_offer_id,omitempty" db:"provider_offer_id"`       // Provider's Offer ID
+	MappingID       int64   `json:"mapping_id" db:"mapping_id"`
+	CampaignID      int64   `json:"campaign_id" db:"campaign_id"`
+	ProviderType    string  `json:"provider_type" db:"provider_type"`                   // 'everflow' for MVP
+	ProviderOfferID *string `json:"provider_offer_id,omitempty" db:"provider_offer_id"` // Provider's Offer ID (Everflow calls campaigns "offers")
 
 	// Provider-specific data stored as JSONB
 	ProviderData *string `json:"provider_data,omitempty" db:"provider_config"`

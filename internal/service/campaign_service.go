@@ -18,19 +18,22 @@ type CampaignService interface {
 	ListCampaignsByAdvertiser(ctx context.Context, advertiserID int64, limit, offset int) ([]*domain.Campaign, error)
 	ListCampaignsByOrganization(ctx context.Context, orgID int64, limit, offset int) ([]*domain.Campaign, error)
 	DeleteCampaign(ctx context.Context, id int64) error
+	GetProviderMapping(ctx context.Context, campaignID int64, providerType string) (*domain.CampaignProviderMapping, error)
 }
 
 // campaignService implements CampaignService
 type campaignService struct {
-	campaignRepo       repository.CampaignRepository
-	integrationService provider.IntegrationService
+	campaignRepo               repository.CampaignRepository
+	campaignProviderMappingRepo repository.CampaignProviderMappingRepository
+	integrationService         provider.IntegrationService
 }
 
 // NewCampaignService creates a new campaign service
-func NewCampaignService(campaignRepo repository.CampaignRepository, integrationService provider.IntegrationService) CampaignService {
+func NewCampaignService(campaignRepo repository.CampaignRepository, campaignProviderMappingRepo repository.CampaignProviderMappingRepository, integrationService provider.IntegrationService) CampaignService {
 	return &campaignService{
-		campaignRepo:       campaignRepo,
-		integrationService: integrationService,
+		campaignRepo:               campaignRepo,
+		campaignProviderMappingRepo: campaignProviderMappingRepo,
+		integrationService:         integrationService,
 	}
 }
 
@@ -157,4 +160,9 @@ func (s *campaignService) validateCampaign(campaign *domain.Campaign) error {
 	}
 
 	return nil
+}
+
+// GetProviderMapping retrieves a campaign provider mapping
+func (s *campaignService) GetProviderMapping(ctx context.Context, campaignID int64, providerType string) (*domain.CampaignProviderMapping, error) {
+	return s.campaignProviderMappingRepo.GetCampaignProviderMapping(ctx, campaignID, providerType)
 }

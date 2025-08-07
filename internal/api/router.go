@@ -177,6 +177,9 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		campaigns.GET("/:id", opts.CampaignHandler.GetCampaign)
 		campaigns.PUT("/:id", opts.CampaignHandler.UpdateCampaign)
 		campaigns.DELETE("/:id", opts.CampaignHandler.DeleteCampaign)
+		
+		// Campaign provider mappings
+		campaigns.GET("/:id/provider-mappings/:providerType", opts.CampaignHandler.GetProviderMapping)
 	}
 
 	// --- Tracking Link Routes ---

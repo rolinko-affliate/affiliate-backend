@@ -1089,10 +1089,10 @@ func (s *IntegrationService) mapEverflowResponseToCampaignMapping(resp *offer.Of
 		return fmt.Errorf("invalid response data")
 	}
 
-	// Set provider campaign ID
+	// Set provider offer ID (Everflow calls campaigns "offers")
 	if resp.HasNetworkOfferId() {
-		providerCampaignID := strconv.FormatInt(int64(resp.GetNetworkOfferId()), 10)
-		mapping.ProviderCampaignID = &providerCampaignID
+		providerOfferID := strconv.FormatInt(int64(resp.GetNetworkOfferId()), 10)
+		mapping.ProviderOfferID = &providerOfferID
 	}
 
 	// Create provider data structure

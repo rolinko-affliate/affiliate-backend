@@ -294,3 +294,59 @@ func (h *CampaignHandler) DeleteCampaign(c *gin.Context) {
 
 	c.Status(http.StatusNoContent)
 }
+
+// GetProviderMapping retrieves a campaign provider mapping
+// @Summary Get campaign provider mapping
+// @Description Retrieves a campaign provider mapping by campaign ID and provider type
+// @Tags campaigns
+// @Accept json
+// @Produce json
+// @Param id path int true "Campaign ID"
+// @Param providerType path string true "Provider type"
+// @Success 200 {object} models.GetCampaignProviderMappingResponse
+// @Failure 400 {object} ErrorResponse
+// @Failure 404 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
+// @Router /campaigns/{id}/provider-mappings/{providerType} [get]
+func (h *CampaignHandler) GetProviderMapping(c *gin.Context) {
+	campaignIDStr := c.Param("id")
+	campaignID, err := strconv.ParseInt(campaignIDStr, 10, 64)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, ErrorResponse{
+			Error:   "Invalid campaign ID",
+			Details: "Campaign ID must be a valid integer",
+		})
+		return
+	}
+
+	providerType := c.Param("providerType")
+	if providerType == "" {
+		c.JSON(http.StatusBadRequest, ErrorResponse{
+			Error:   "Provider type is required",
+			Details: "Provider type cannot be empty",
+		})
+		return
+	}
+
+	mapping, err := h.campaignService.GetProviderMapping(c.Request.Context(), campaignID, providerType)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, ErrorResponse{
+			Error:   "Failed to get provider mapping",
+			Details: err.Error(),
+		})
+		return
+	}
+
+	if mapping == nil {
+		c.JSON(http.StatusNotFound, ErrorResponse{
+			Error:   "Provider mapping not found",
+			Details: "No provider mapping found for the specified campaign and provider",
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"provider_mapping": mapping,
+	})
+}

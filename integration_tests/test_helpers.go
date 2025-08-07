@@ -224,8 +224,6 @@ func ExtractEverflowIDFromMapping(t *testing.T, resp *APIResponse) int {
 		providerID = advertiserID
 	} else if affiliateID, exists := providerMapping["provider_affiliate_id"].(string); exists && affiliateID != "" {
 		providerID = affiliateID
-	} else if campaignID, exists := providerMapping["provider_campaign_id"].(string); exists && campaignID != "" {
-		providerID = campaignID
 	} else if offerID, exists := providerMapping["provider_offer_id"].(string); exists && offerID != "" {
 		providerID = offerID
 	} else {

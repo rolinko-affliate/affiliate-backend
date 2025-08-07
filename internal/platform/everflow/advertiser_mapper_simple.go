@@ -20,15 +20,25 @@ func NewSimpleAdvertiserProviderMapper() *SimpleAdvertiserProviderMapper {
 }
 
 // generateUniqueEmail generates a unique email address for Everflow user creation
-func (m *SimpleAdvertiserProviderMapper) generateUniqueEmail(advertiserName string) string {
-	// Clean the advertiser name to make it email-safe
-	cleanName := strings.ToLower(strings.ReplaceAll(advertiserName, " ", "-"))
+func (m *SimpleAdvertiserProviderMapper) generateUniqueEmail(input string) string {
+	var cleanName string
+	
+	// If input contains @, extract the local part (before @)
+	if strings.Contains(input, "@") {
+		parts := strings.Split(input, "@")
+		cleanName = parts[0]
+	} else {
+		cleanName = input
+	}
+	
+	// Clean the name to make it email-safe
+	cleanName = strings.ToLower(strings.ReplaceAll(cleanName, " ", "-"))
 	cleanName = strings.ReplaceAll(cleanName, "_", "-")
 	
 	// Generate timestamp for uniqueness
 	timestamp := time.Now().Unix()
 	
-	// Create unique email in format: advertiser-name-timestamp@everflow-test.com
+	// Create unique email in format: clean-name-timestamp@everflow-test.com
 	return fmt.Sprintf("%s-%d@everflow-test.com", cleanName, timestamp)
 }
 

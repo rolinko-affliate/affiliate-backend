@@ -4,11 +4,11 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"log"
 	"strings"
 	"time"
 
 	"github.com/affiliate-backend/internal/domain"
+	"github.com/affiliate-backend/internal/platform/logger"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/mock"
 )
@@ -288,7 +288,7 @@ var _ IntegrationService = (*LoggingMockIntegrationService)(nil)
 
 // NewLoggingMockIntegrationService creates a new logging mock integration service
 func NewLoggingMockIntegrationService() *LoggingMockIntegrationService {
-	log.Println("🔧 Mock Integration Service initialized - all provider requests will be logged and simulated")
+	logger.Info("Mock Integration Service initialized - all provider requests will be logged and simulated")
 	return &LoggingMockIntegrationService{}
 }
 
@@ -296,22 +296,22 @@ func NewLoggingMockIntegrationService() *LoggingMockIntegrationService {
 func (l *LoggingMockIntegrationService) logRequest(operation string, entityType string, data interface{}) {
 	jsonData, err := json.MarshalIndent(data, "", "  ")
 	if err != nil {
-		log.Printf("🚀 MOCK %s %s: (failed to marshal data: %v)", operation, entityType, err)
+		logger.Error("Mock request logging failed", "operation", operation, "entity_type", entityType, "error", err)
 		return
 	}
 
-	log.Printf("🚀 MOCK %s %s:\n%s", operation, entityType, string(jsonData))
+	logger.Debug("Mock request", "operation", operation, "entity_type", entityType, "data", string(jsonData))
 }
 
 // logResponse logs the response details
 func (l *LoggingMockIntegrationService) logResponse(operation string, entityType string, data interface{}) {
 	jsonData, err := json.MarshalIndent(data, "", "  ")
 	if err != nil {
-		log.Printf("✅ MOCK %s %s Response: (failed to marshal data: %v)", operation, entityType, err)
+		logger.Error("Mock response logging failed", "operation", operation, "entity_type", entityType, "error", err)
 		return
 	}
 
-	log.Printf("✅ MOCK %s %s Response:\n%s", operation, entityType, string(jsonData))
+	logger.Debug("Mock response", "operation", operation, "entity_type", entityType, "data", string(jsonData))
 }
 
 // CreateAdvertiser logs the request and returns a simulated advertiser
@@ -341,7 +341,7 @@ func (l *LoggingMockIntegrationService) UpdateAdvertiser(ctx context.Context, ad
 	// Simulate processing time
 	time.Sleep(80 * time.Millisecond)
 
-	log.Printf("✅ MOCK UPDATE ADVERTISER: Successfully updated advertiser ID %d", adv.AdvertiserID)
+	logger.Info("Mock update advertiser completed", "advertiser_id", adv.AdvertiserID)
 	return nil
 }
 
@@ -396,7 +396,7 @@ func (l *LoggingMockIntegrationService) UpdateAffiliate(ctx context.Context, aff
 	// Simulate processing time
 	time.Sleep(90 * time.Millisecond)
 
-	log.Printf("✅ MOCK UPDATE AFFILIATE: Successfully updated affiliate ID %d", aff.AffiliateID)
+	logger.Info("Mock update affiliate completed", "affiliate_id", aff.AffiliateID)
 	return nil
 }
 
@@ -451,7 +451,7 @@ func (l *LoggingMockIntegrationService) UpdateCampaign(ctx context.Context, camp
 	// Simulate processing time
 	time.Sleep(100 * time.Millisecond)
 
-	log.Printf("✅ MOCK UPDATE CAMPAIGN: Successfully updated campaign ID %d", camp.CampaignID)
+	logger.Info("Mock update campaign completed", "campaign_id", camp.CampaignID)
 	return nil
 }
 
@@ -597,7 +597,7 @@ func (l *LoggingMockIntegrationService) GenerateTrackingLinkQR(ctx context.Conte
 	// Return a mock QR code (in real implementation, this would be a PNG image)
 	qrData := []byte("mock-qr-code-png-data-for-tracking-link")
 
-	log.Printf("✅ MOCK GENERATE TRACKING_LINK_QR: Generated QR code with %d bytes", len(qrData))
+	logger.Info("Mock QR code generation completed", "qr_data_size", len(qrData))
 	return qrData, nil
 }
 

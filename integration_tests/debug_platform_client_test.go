@@ -160,7 +160,7 @@ func TestDebugPlatformClient(t *testing.T) {
 
 	if httpResp.StatusCode == 200 && resp != nil {
 		t.Logf("Platform Client Success - Offer ID: %d", resp.GetNetworkOfferId())
-		t.Log("✅ Platform client configuration works!")
+		t.Log("Platform client configuration works!")
 		
 		// Clean up offer
 		t.Log("Cleaning up offer...")
@@ -170,7 +170,7 @@ func TestDebugPlatformClient(t *testing.T) {
 			t.Logf("Warning: Failed to delete offer %d (status %d)", resp.GetNetworkOfferId(), deleteResp.StatusCode)
 		}
 	} else {
-		t.Logf("❌ Platform client failed with status %d", httpResp.StatusCode)
+		t.Logf("Platform client failed with status %d", httpResp.StatusCode)
 		if httpResp != nil && httpResp.Body != nil {
 			// Try to read response body for debugging
 			t.Log("Response body available for debugging")

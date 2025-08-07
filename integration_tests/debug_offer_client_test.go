@@ -156,11 +156,11 @@ func TestDebugOfferClient(t *testing.T) {
 
 	// Check if it worked
 	if httpResp.StatusCode == 200 {
-		t.Log("✅ Generated client worked!")
+		t.Log("Generated client worked!")
 		assert.NotNil(t, resp)
 		assert.Greater(t, resp.GetNetworkOfferId(), int32(0))
 	} else {
-		t.Logf("❌ Generated client failed with status %d", httpResp.StatusCode)
+		t.Logf("Generated client failed with status %d", httpResp.StatusCode)
 		t.Fail()
 	}
 

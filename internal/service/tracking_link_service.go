@@ -4,10 +4,10 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"log"
 	"time"
 
 	"github.com/affiliate-backend/internal/domain"
+	"github.com/affiliate-backend/internal/platform/logger"
 	"github.com/affiliate-backend/internal/platform/provider"
 	"github.com/affiliate-backend/internal/repository"
 )
@@ -100,7 +100,9 @@ func (s *trackingLinkService) CreateTrackingLink(ctx context.Context, trackingLi
 	// Synchronize with provider (Everflow) - run in background to avoid blocking
 	go func() {
 		if err := s.synchronizeTrackingLinkWithProvider(context.Background(), trackingLink); err != nil {
-			log.Printf("⚠️ Warning: Failed to synchronize tracking link %d with provider: %v", trackingLink.TrackingLinkID, err)
+			logger.Warn("Failed to synchronize tracking link with provider", 
+				"tracking_link_id", trackingLink.TrackingLinkID, 
+				"error", err)
 		}
 	}()
 
@@ -534,7 +536,7 @@ func (s *trackingLinkService) verifyAssociationAndVisibility(ctx context.Context
 
 // synchronizeTrackingLinkWithProvider synchronizes a tracking link with the provider (Everflow)
 func (s *trackingLinkService) synchronizeTrackingLinkWithProvider(ctx context.Context, trackingLink *domain.TrackingLink) error {
-	log.Printf("🔄 Starting tracking link synchronization for tracking_link_id=%d", trackingLink.TrackingLinkID)
+	logger.Info("Starting tracking link synchronization", "tracking_link_id", trackingLink.TrackingLinkID)
 
 	// Get campaign provider mapping
 	campaignMapping, err := s.campaignProviderRepo.GetCampaignProviderMapping(ctx, trackingLink.CampaignID, "everflow")
@@ -556,11 +558,13 @@ func (s *trackingLinkService) synchronizeTrackingLinkWithProvider(ctx context.Co
 
 	// Store provider mapping
 	if err := s.trackingLinkProviderRepo.CreateTrackingLinkProviderMapping(ctx, providerMapping); err != nil {
-		log.Printf("⚠️ Warning: Failed to store tracking link provider mapping for tracking_link_id=%d: %v", trackingLink.TrackingLinkID, err)
+		logger.Warn("Failed to store tracking link provider mapping", 
+			"tracking_link_id", trackingLink.TrackingLinkID, 
+			"error", err)
 		// Don't return error here as the tracking link was successfully created in the provider
 	}
 
-	log.Printf("✅ Successfully synchronized tracking link %d with provider", trackingLink.TrackingLinkID)
+	logger.Info("Successfully synchronized tracking link with provider", "tracking_link_id", trackingLink.TrackingLinkID)
 	return nil
 }
 

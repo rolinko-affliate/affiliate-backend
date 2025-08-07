@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/affiliate-backend/internal/config"
+	"github.com/affiliate-backend/internal/platform/logger"
 	"github.com/jackc/pgx/v5/pgxpool"
 )
 
@@ -50,7 +51,7 @@ func InitDB(cfg *config.Config) {
 	// Parse the database connection string
 	dbConfig, err := pgxpool.ParseConfig(cfg.DatabaseURL)
 	if err != nil {
-		log.Fatalf("Unable to parse database URL: %v", err)
+		logger.Fatal("Unable to parse database URL", "error", err)
 	}
 
 	// Configure connection pool settings
@@ -59,25 +60,31 @@ func InitDB(cfg *config.Config) {
 	dbConfig.MaxConnLifetime = time.Hour
 	dbConfig.MaxConnIdleTime = 30 * time.Minute
 
+	logger.Debug("Database connection pool configuration", 
+		"max_conns", dbConfig.MaxConns,
+		"min_conns", dbConfig.MinConns,
+		"max_conn_lifetime", dbConfig.MaxConnLifetime,
+		"max_conn_idle_time", dbConfig.MaxConnIdleTime)
+
 	// Create the connection pool
 	DB, err = pgxpool.NewWithConfig(context.Background(), dbConfig)
 	if err != nil {
-		log.Fatalf("Unable to connect to database: %v\n", err)
+		logger.Fatal("Unable to connect to database", "error", err)
 	}
 
 	// Ping the database to ensure connectivity
 	err = DB.Ping(context.Background())
 	if err != nil {
-		log.Fatalf("Failed to ping database: %v\n", err)
+		logger.Fatal("Failed to ping database", "error", err)
 	}
 
-	log.Println("Successfully connected to the database!")
+	logger.Info("Successfully connected to the database")
 }
 
 // CloseDB closes the database connection pool
 func CloseDB() {
 	if DB != nil {
 		DB.Close()
-		log.Println("Database connection closed.")
+		logger.Info("Database connection closed")
 	}
 }

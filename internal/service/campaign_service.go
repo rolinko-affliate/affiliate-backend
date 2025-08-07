@@ -3,9 +3,9 @@ package service
 import (
 	"context"
 	"fmt"
-	"log"
 
 	"github.com/affiliate-backend/internal/domain"
+	"github.com/affiliate-backend/internal/platform/logger"
 	"github.com/affiliate-backend/internal/platform/provider"
 	"github.com/affiliate-backend/internal/repository"
 )
@@ -39,37 +39,36 @@ func NewCampaignService(campaignRepo repository.CampaignRepository, campaignProv
 
 // CreateCampaign creates a new campaign
 func (s *campaignService) CreateCampaign(ctx context.Context, campaign *domain.Campaign) error {
-	log.Printf("🚀 CAMPAIGN SERVICE: Starting campaign creation for campaign_id=%d, advertiser_id=%d, name='%s'", campaign.CampaignID, campaign.AdvertiserID, campaign.Name)
+	logger.Info("Starting campaign creation", "campaign_id", campaign.CampaignID, "advertiser_id", campaign.AdvertiserID, "name", campaign.Name)
 	
 	// Validate campaign data
-	log.Printf("🔍 CAMPAIGN SERVICE: Validating campaign data...")
+	logger.Debug("Validating campaign data", "campaign_id", campaign.CampaignID)
 	if err := s.validateCampaign(campaign); err != nil {
-		log.Printf("❌ CAMPAIGN SERVICE: Campaign validation failed: %v", err)
+		logger.Error("Campaign validation failed", "campaign_id", campaign.CampaignID, "error", err)
 		return fmt.Errorf("campaign validation failed: %w", err)
 	}
-	log.Printf("✅ CAMPAIGN SERVICE: Campaign validation passed")
+	logger.Debug("Campaign validation passed", "campaign_id", campaign.CampaignID)
 
 	// Step 1: Create campaign in local repository
-	log.Printf("🔄 CAMPAIGN SERVICE: Creating campaign in local repository...")
+	logger.Debug("Creating campaign in local repository", "campaign_id", campaign.CampaignID)
 	if err := s.campaignRepo.CreateCampaign(ctx, campaign); err != nil {
-		log.Printf("❌ CAMPAIGN SERVICE: Failed to create campaign in repository: %v", err)
+		logger.Error("Failed to create campaign in repository", "campaign_id", campaign.CampaignID, "error", err)
 		return fmt.Errorf("failed to create campaign: %w", err)
 	}
-	log.Printf("✅ CAMPAIGN SERVICE: Successfully created campaign in repository with ID=%d", campaign.CampaignID)
+	logger.Info("Successfully created campaign in repository", "campaign_id", campaign.CampaignID)
 
 	// Step 2: Call IntegrationService to create campaign in provider (Everflow)
 	// The integration service handles provider mapping creation internally
-	log.Printf("🔄 CAMPAIGN SERVICE: Calling integration service to create campaign in provider...")
+	logger.Debug("Calling integration service to create campaign in provider", "campaign_id", campaign.CampaignID)
 	_, err := s.integrationService.CreateCampaign(ctx, *campaign)
 	if err != nil {
 		// Log error but don't fail the operation since local creation succeeded
-		log.Printf("⚠️  CAMPAIGN SERVICE: Failed to create campaign in provider: %v", err)
-		fmt.Printf("Warning: failed to create campaign in provider: %v\n", err)
+		logger.Warn("Failed to create campaign in provider", "campaign_id", campaign.CampaignID, "error", err)
 		return nil
 	}
-	log.Printf("✅ CAMPAIGN SERVICE: Successfully created campaign in provider")
+	logger.Info("Successfully created campaign in provider", "campaign_id", campaign.CampaignID)
 
-	log.Printf("✅ CAMPAIGN SERVICE: Campaign creation completed successfully")
+	logger.Info("Campaign creation completed successfully", "campaign_id", campaign.CampaignID)
 	return nil
 }
 

@@ -5,11 +5,11 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"log"
 	"net/http"
 	"time"
 
 	"github.com/affiliate-backend/internal/domain"
+	"github.com/affiliate-backend/internal/platform/logger"
 	"github.com/affiliate-backend/internal/platform/stripe"
 	"github.com/affiliate-backend/internal/repository"
 	"github.com/affiliate-backend/internal/service"
@@ -52,7 +52,7 @@ func (h *WebhookHandler) HandleStripeWebhook(c *gin.Context) {
 	// Read the request body
 	body, err := io.ReadAll(c.Request.Body)
 	if err != nil {
-		log.Printf("Error reading webhook body: %v", err)
+		logger.Error("Error reading webhook body", "error", err)
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Error reading request body"})
 		return
 	}
@@ -60,7 +60,7 @@ func (h *WebhookHandler) HandleStripeWebhook(c *gin.Context) {
 	// Verify the webhook signature
 	event, err := webhook.ConstructEvent(body, c.GetHeader("Stripe-Signature"), h.webhookSecret)
 	if err != nil {
-		log.Printf("Error verifying webhook signature: %v", err)
+		logger.Error("Error verifying webhook signature", "error", err)
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid signature"})
 		return
 	}
@@ -81,14 +81,14 @@ func (h *WebhookHandler) HandleStripeWebhook(c *gin.Context) {
 	// Save webhook event to database
 	err = h.webhookEventRepo.Create(c.Request.Context(), webhookEvent)
 	if err != nil {
-		log.Printf("Error storing webhook event: %v", err)
+		logger.Error("Error storing webhook event", "event_id", event.ID, "error", err)
 		// Continue processing even if storage fails
 	}
 
 	// Process the event
 	err = h.processWebhookEvent(c.Request.Context(), &event, webhookEvent)
 	if err != nil {
-		log.Printf("Error processing webhook event %s: %v", event.ID, err)
+		logger.Error("Error processing webhook event", "event_id", event.ID, "event_type", event.Type, "error", err)
 
 		// Update webhook event status to failed
 		webhookEvent.Status = domain.WebhookEventStatusFailed
@@ -126,7 +126,7 @@ func (h *WebhookHandler) processWebhookEvent(ctx context.Context, event *stripeL
 	case "customer.subscription.deleted":
 		return h.handleSubscriptionDeleted(ctx, event, webhookEvent)
 	default:
-		log.Printf("Unhandled webhook event type: %s", event.Type)
+		logger.Warn("Unhandled webhook event type", "event_type", event.Type, "event_id", event.ID)
 		webhookEvent.Status = domain.WebhookEventStatusIgnored
 		return nil
 	}
@@ -140,7 +140,7 @@ func (h *WebhookHandler) handlePaymentIntentSucceeded(ctx context.Context, event
 		return fmt.Errorf("error parsing payment intent: %w", err)
 	}
 
-	log.Printf("Processing successful payment intent: %s", paymentIntent.ID)
+	logger.Info("Processing successful payment intent", "payment_intent_id", paymentIntent.ID)
 
 	// Find the corresponding transaction
 	transaction, err := h.transactionRepo.GetByStripePaymentIntentID(ctx, paymentIntent.ID)
@@ -174,7 +174,7 @@ func (h *WebhookHandler) handlePaymentIntentSucceeded(ctx context.Context, event
 	webhookEvent.OrganizationID = &transaction.OrganizationID
 	webhookEvent.TransactionID = &transaction.TransactionID
 
-	log.Printf("Successfully processed payment intent %s for organization %d", paymentIntent.ID, transaction.OrganizationID)
+	logger.Info("Successfully processed payment intent", "payment_intent_id", paymentIntent.ID, "organization_id", transaction.OrganizationID)
 	return nil
 }
 
@@ -186,7 +186,7 @@ func (h *WebhookHandler) handlePaymentIntentFailed(ctx context.Context, event *s
 		return fmt.Errorf("error parsing payment intent: %w", err)
 	}
 
-	log.Printf("Processing failed payment intent: %s", paymentIntent.ID)
+	logger.Info("Processing failed payment intent", "payment_intent_id", paymentIntent.ID)
 
 	// Find the corresponding transaction
 	transaction, err := h.transactionRepo.GetByStripePaymentIntentID(ctx, paymentIntent.ID)
@@ -216,7 +216,7 @@ func (h *WebhookHandler) handlePaymentIntentFailed(ctx context.Context, event *s
 	webhookEvent.OrganizationID = &transaction.OrganizationID
 	webhookEvent.TransactionID = &transaction.TransactionID
 
-	log.Printf("Successfully processed failed payment intent %s for organization %d", paymentIntent.ID, transaction.OrganizationID)
+	logger.Info("Successfully processed failed payment intent", "payment_intent_id", paymentIntent.ID, "organization_id", transaction.OrganizationID)
 	return nil
 }
 
@@ -228,7 +228,7 @@ func (h *WebhookHandler) handleInvoicePaymentSucceeded(ctx context.Context, even
 		return fmt.Errorf("error parsing invoice: %w", err)
 	}
 
-	log.Printf("Processing successful invoice payment: %s", invoice.ID)
+	logger.Info("Processing successful invoice payment", "invoice_id", invoice.ID)
 
 	// Find billing account by Stripe customer ID
 	billingAccount, err := h.billingAccountRepo.GetByStripeCustomerID(ctx, invoice.Customer.ID)
@@ -276,7 +276,7 @@ func (h *WebhookHandler) handleInvoicePaymentSucceeded(ctx context.Context, even
 	webhookEvent.OrganizationID = &billingAccount.OrganizationID
 	webhookEvent.TransactionID = &transaction.TransactionID
 
-	log.Printf("Successfully processed invoice payment %s for organization %d", invoice.ID, billingAccount.OrganizationID)
+	logger.Info("Successfully processed invoice payment", "invoice_id", invoice.ID, "organization_id", billingAccount.OrganizationID)
 	return nil
 }
 
@@ -288,7 +288,7 @@ func (h *WebhookHandler) handleInvoicePaymentFailed(ctx context.Context, event *
 		return fmt.Errorf("error parsing invoice: %w", err)
 	}
 
-	log.Printf("Processing failed invoice payment: %s", invoice.ID)
+	logger.Info("Processing failed invoice payment", "invoice_id", invoice.ID)
 
 	// Find billing account by Stripe customer ID
 	billingAccount, err := h.billingAccountRepo.GetByStripeCustomerID(ctx, invoice.Customer.ID)
@@ -304,14 +304,14 @@ func (h *WebhookHandler) handleInvoicePaymentFailed(ctx context.Context, event *
 	// - Update invoice status
 	// - Potentially suspend account if multiple failures
 
-	log.Printf("Successfully processed failed invoice payment %s for organization %d", invoice.ID, billingAccount.OrganizationID)
+	logger.Info("Successfully processed failed invoice payment", "invoice_id", invoice.ID, "organization_id", billingAccount.OrganizationID)
 	return nil
 }
 
 // handleSubscriptionCreated handles subscription creation events
 func (h *WebhookHandler) handleSubscriptionCreated(ctx context.Context, event *stripeLib.Event, webhookEvent *domain.WebhookEvent) error {
 	// TODO: Implement subscription handling if needed
-	log.Printf("Subscription created event received: %s", event.ID)
+	logger.Info("Subscription created event received", "event_id", event.ID)
 	webhookEvent.Status = domain.WebhookEventStatusIgnored
 	return nil
 }
@@ -319,7 +319,7 @@ func (h *WebhookHandler) handleSubscriptionCreated(ctx context.Context, event *s
 // handleSubscriptionUpdated handles subscription update events
 func (h *WebhookHandler) handleSubscriptionUpdated(ctx context.Context, event *stripeLib.Event, webhookEvent *domain.WebhookEvent) error {
 	// TODO: Implement subscription handling if needed
-	log.Printf("Subscription updated event received: %s", event.ID)
+	logger.Info("Subscription updated event received", "event_id", event.ID)
 	webhookEvent.Status = domain.WebhookEventStatusIgnored
 	return nil
 }
@@ -327,7 +327,7 @@ func (h *WebhookHandler) handleSubscriptionUpdated(ctx context.Context, event *s
 // handleSubscriptionDeleted handles subscription deletion events
 func (h *WebhookHandler) handleSubscriptionDeleted(ctx context.Context, event *stripeLib.Event, webhookEvent *domain.WebhookEvent) error {
 	// TODO: Implement subscription handling if needed
-	log.Printf("Subscription deleted event received: %s", event.ID)
+	logger.Info("Subscription deleted event received", "event_id", event.ID)
 	webhookEvent.Status = domain.WebhookEventStatusIgnored
 	return nil
 }

@@ -24,6 +24,12 @@ type Config struct {
 	DebugMode     bool   `mapstructure:"DEBUG_MODE"`     // Enable debug logging for API requests/responses
 	MockMode      bool   `mapstructure:"MOCK_MODE"`      // Enable mock integration service instead of real provider
 	
+	// Logging configuration
+	LogLevel     string `mapstructure:"LOG_LEVEL"`      // "DEBUG", "INFO", "WARN", "ERROR"
+	LogFormat    string `mapstructure:"LOG_FORMAT"`     // "json" or "text"
+	LogOutput    string `mapstructure:"LOG_OUTPUT"`     // "stdout", "stderr", or file path
+	LogAddSource bool   `mapstructure:"LOG_ADD_SOURCE"` // Add source file and line number
+	
 	// Everflow API configuration
 	EverflowAPIKey string `mapstructure:"EVERFLOW_API_KEY"` // Everflow API key for authentication
 }
@@ -52,6 +58,12 @@ func LoadConfig() {
 	viper.SetDefault("ENCRYPTION_KEY", "")      // Default password, should be overridden
 	viper.SetDefault("MockMode", false)
 
+	// Logging defaults
+	viper.SetDefault("LOG_LEVEL", "INFO")
+	viper.SetDefault("LOG_FORMAT", "text")
+	viper.SetDefault("LOG_OUTPUT", "stdout")
+	viper.SetDefault("LOG_ADD_SOURCE", false)
+
 	viper.AutomaticEnv() // Read in environment variables that match
 
 	if err := viper.ReadInConfig(); err != nil {
@@ -66,7 +78,8 @@ func LoadConfig() {
 		log.Fatalf("Unable to decode into struct: %v", err)
 	}
 
-	log.Printf("Loaded configuration: %+v", AppConfig)
+	// Log configuration without sensitive data
+	logSafeConfig()
 
 	// Basic validation
 	if AppConfig.DatabaseURL == "" {
@@ -116,4 +129,63 @@ func IsMockMode() bool {
 // IsMockMode returns true if mock mode is enabled (method on Config)
 func (c *Config) IsMockMode() bool {
 	return c.MockMode
+}
+
+// logSafeConfig logs configuration without sensitive data
+func logSafeConfig() {
+	safeConfig := struct {
+		Port             string `json:"port"`
+		DatabaseHost     string `json:"database_host"`
+		DatabasePort     string `json:"database_port"`
+		DatabaseName     string `json:"database_name"`
+		DatabaseUser     string `json:"database_user"`
+		DatabaseSSLMode  string `json:"database_ssl_mode"`
+		Environment      string `json:"environment"`
+		DebugMode        bool   `json:"debug_mode"`
+		MockMode         bool   `json:"mock_mode"`
+		LogLevel         string `json:"log_level"`
+		LogFormat        string `json:"log_format"`
+		LogOutput        string `json:"log_output"`
+		LogAddSource     bool   `json:"log_add_source"`
+		HasJWTSecret     bool   `json:"has_jwt_secret"`
+		HasEncryptionKey bool   `json:"has_encryption_key"`
+		HasEverflowKey   bool   `json:"has_everflow_key"`
+	}{
+		Port:             AppConfig.Port,
+		DatabaseHost:     AppConfig.DatabaseHost,
+		DatabasePort:     AppConfig.DatabasePort,
+		DatabaseName:     AppConfig.DatabaseName,
+		DatabaseUser:     AppConfig.DatabaseUser,
+		DatabaseSSLMode:  AppConfig.DatabaseSSLMode,
+		Environment:      AppConfig.Environment,
+		DebugMode:        AppConfig.DebugMode,
+		MockMode:         AppConfig.MockMode,
+		LogLevel:         AppConfig.LogLevel,
+		LogFormat:        AppConfig.LogFormat,
+		LogOutput:        AppConfig.LogOutput,
+		LogAddSource:     AppConfig.LogAddSource,
+		HasJWTSecret:     AppConfig.SupabaseJWTSecret != "",
+		HasEncryptionKey: AppConfig.EncryptionKey != "",
+		HasEverflowKey:   AppConfig.EverflowAPIKey != "",
+	}
+	
+	log.Printf("Loaded configuration: %+v", safeConfig)
+}
+
+// GetLoggerConfig returns logger configuration from app config
+func GetLoggerConfig() LoggerConfig {
+	return LoggerConfig{
+		Level:     AppConfig.LogLevel,
+		Format:    AppConfig.LogFormat,
+		Output:    AppConfig.LogOutput,
+		AddSource: AppConfig.LogAddSource,
+	}
+}
+
+// LoggerConfig represents logger configuration
+type LoggerConfig struct {
+	Level     string
+	Format    string
+	Output    string
+	AddSource bool
 }

@@ -143,7 +143,7 @@ func TestAdvertiserSynchronization(t *testing.T) {
 	assert.Equal(t, everflowID, everflowAdvertiser.NetworkAdvertiserID, "Everflow advertiser ID should match")
 	assert.Equal(t, advertiserPayload["name"], everflowAdvertiser.Name, "Advertiser name should match")
 
-	t.Log("✅ Advertiser synchronization test passed!")
+	t.Log("Advertiser synchronization test passed!")
 }
 
 // TestAffiliateSynchronization tests that affiliates created via our API are correctly synchronized with Everflow as Partners
@@ -252,7 +252,7 @@ func TestAffiliateSynchronization(t *testing.T) {
 	assert.Equal(t, everflowID, everflowPartner.ID, "Everflow partner ID should match")
 	assert.Equal(t, affiliatePayload["name"], everflowPartner.Name, "Partner name should match")
 
-	t.Log("✅ Affiliate synchronization test passed!")
+	t.Log("Affiliate synchronization test passed!")
 }
 
 // TestCampaignSynchronization tests that campaigns created via our API are correctly synchronized with Everflow as Offers
@@ -381,7 +381,7 @@ func TestCampaignSynchronization(t *testing.T) {
 	assert.Equal(t, everflowID, everflowOffer.ID, "Everflow offer ID should match")
 	assert.Equal(t, campaignPayload["name"], everflowOffer.Name, "Offer name should match")
 
-	t.Log("✅ Campaign synchronization test passed!")
+	t.Log("Campaign synchronization test passed!")
 }
 
 // TestTrackingLinkSynchronization tests that tracking links created via our API are correctly synchronized with Everflow
@@ -603,11 +603,11 @@ func TestTrackingLinkSynchronization(t *testing.T) {
 	assert.Equal(t, trackingLinkName, retrievedTrackingLink.Name, "Tracking link name should match")
 	assert.Equal(t, "active", retrievedTrackingLink.Status, "Tracking link status should be active")
 
-	t.Logf("✅ Tracking Link Synchronization Test PASSED!")
+	t.Logf("Tracking Link Synchronization Test PASSED!")
 	t.Logf("   Platform Tracking Link ID: %d", trackingLinkResult.ID)
 	t.Logf("   Tracking Link Name: %s", retrievedTrackingLink.Name)
 	t.Logf("   Tracking Link Status: %s", retrievedTrackingLink.Status)
-	t.Logf("   🔗 Tracking link created and synchronized successfully with Everflow!")
+	t.Logf("   Tracking link created and synchronized successfully with Everflow!")
 }
 
 // TestFullSynchronizationWorkflow tests the complete workflow of creating all entities and verifying their synchronization
@@ -622,5 +622,5 @@ func TestFullSynchronizationWorkflow(t *testing.T) {
 	// For now, we'll skip this as it depends on the individual entity sync implementations
 	t.Skip("Full workflow test pending individual entity sync implementations")
 
-	t.Log("✅ Full synchronization workflow test passed!")
+	t.Log("Full synchronization workflow test passed!")
 }

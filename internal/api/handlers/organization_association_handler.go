@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"log"
+	"log/slog"
 	"net/http"
 	"strconv"
 
@@ -380,26 +380,26 @@ func (h *OrganizationAssociationHandler) GetAssociation(c *gin.Context) {
 
 	// Check if details are requested
 	withDetails := c.Query("with_details") == "true"
-	log.Printf("DEBUG: with_details query param: %s, parsed as: %v", c.Query("with_details"), withDetails)
-	println("PRINTLN DEBUG: with_details query param:", c.Query("with_details"), "parsed as:", withDetails)
+	slog.Debug("Fetching organization association",
+		"association_id", associationID,
+		"with_details", withDetails)
 
 	if withDetails {
-		log.Printf("DEBUG: Fetching association with details for ID: %d", associationID)
-		println("PRINTLN DEBUG: Fetching association with details for ID:", associationID)
 		association, err := h.associationService.GetAssociationByIDWithDetails(c.Request.Context(), associationID)
 		if err != nil {
-			log.Printf("DEBUG: Error fetching association with details: %v", err)
+			slog.Warn("Association not found with details",
+				"association_id", associationID,
+				"error", err)
 			c.JSON(http.StatusNotFound, ErrorResponse{
 				Error:   "Association not found",
 				Details: err.Error(),
 			})
 			return
 		}
-		log.Printf("DEBUG: Successfully fetched association with details")
+		slog.Debug("Successfully fetched association with details",
+			"association_id", associationID)
 		c.JSON(http.StatusOK, association)
 	} else {
-		log.Printf("DEBUG: Fetching basic association for ID: %d", associationID)
-		println("PRINTLN DEBUG: Fetching basic association for ID:", associationID)
 		association, err := h.associationService.GetAssociationByID(c.Request.Context(), associationID)
 		if err != nil {
 			c.JSON(http.StatusNotFound, ErrorResponse{

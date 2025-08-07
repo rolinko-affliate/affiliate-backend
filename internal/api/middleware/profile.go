@@ -1,9 +1,9 @@
 package middleware
 
 import (
-	"log"
 	"net/http"
 
+	"github.com/affiliate-backend/internal/platform/logger"
 	"github.com/affiliate-backend/internal/service"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
@@ -15,14 +15,14 @@ func ProfileMiddleware(profileService service.ProfileService) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		userIDStr, exists := c.Get(UserIDKey)
 		if !exists {
-			log.Println("User ID not found in context")
+			logger.Error("User ID not found in context")
 			c.AbortWithStatusJSON(http.StatusInternalServerError, gin.H{"error": "User ID not found in context"})
 			return
 		}
 
 		userID, err := uuid.Parse(userIDStr.(string))
 		if err != nil {
-			log.Printf("Error parsing User ID: %v", err)
+			logger.Error("Error parsing User ID", "error", err)
 			c.AbortWithStatusJSON(http.StatusInternalServerError, gin.H{"error": "Invalid User ID format in context"})
 			return
 		}
@@ -30,7 +30,7 @@ func ProfileMiddleware(profileService service.ProfileService) gin.HandlerFunc {
 		// Fetch profile from database
 		profile, err := profileService.GetProfileByID(c.Request.Context(), userID)
 		if err != nil {
-			log.Printf("Error fetching profile: %v", err)
+			logger.Error("Error fetching profile", "user_id", userID, "error", err)
 			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "User profile not found"})
 			return
 		}

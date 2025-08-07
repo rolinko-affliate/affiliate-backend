@@ -3,10 +3,10 @@ package service
 import (
 	"context"
 	"fmt"
-	"log"
 	"time"
 
 	"github.com/affiliate-backend/internal/domain"
+	"github.com/affiliate-backend/internal/platform/logger"
 	"github.com/affiliate-backend/internal/platform/stripe"
 	"github.com/affiliate-backend/internal/repository"
 	"github.com/shopspring/decimal"
@@ -84,7 +84,7 @@ func (s *BillingService) GetOrCreateBillingAccount(ctx context.Context, organiza
 		return nil, fmt.Errorf("failed to create billing account: %w", err)
 	}
 
-	log.Printf("Created billing account %d for organization %d", account.BillingAccountID, organizationID)
+	logger.Info("Created billing account", "billing_account_id", account.BillingAccountID, "organization_id", organizationID)
 	return account, nil
 }
 
@@ -164,7 +164,7 @@ func (s *BillingService) AddPaymentMethod(ctx context.Context, organizationID in
 		}
 	}
 
-	log.Printf("Added payment method %d for organization %d", paymentMethod.PaymentMethodID, organizationID)
+	logger.Info("Added payment method", "payment_method_id", paymentMethod.PaymentMethodID, "organization_id", organizationID)
 	return paymentMethod, nil
 }
 
@@ -184,7 +184,7 @@ func (s *BillingService) RemovePaymentMethod(ctx context.Context, organizationID
 	// Detach from Stripe
 	_, err = s.stripeService.DetachPaymentMethod(ctx, paymentMethod.StripePaymentMethodID)
 	if err != nil {
-		log.Printf("Warning: failed to detach payment method from Stripe: %v", err)
+		logger.Warn("Failed to detach payment method from Stripe", "payment_method_id", paymentMethodID, "error", err)
 		// Continue with local deletion even if Stripe fails
 	}
 
@@ -194,7 +194,7 @@ func (s *BillingService) RemovePaymentMethod(ctx context.Context, organizationID
 		return fmt.Errorf("failed to delete payment method: %w", err)
 	}
 
-	log.Printf("Removed payment method %d for organization %d", paymentMethodID, organizationID)
+	logger.Info("Removed payment method", "payment_method_id", paymentMethodID, "organization_id", organizationID)
 	return nil
 }
 
@@ -281,8 +281,10 @@ func (s *BillingService) Recharge(ctx context.Context, organizationID int64, req
 		}
 	}
 
-	log.Printf("Created recharge transaction %d for organization %d, amount: %s",
-		transaction.TransactionID, organizationID, req.Amount.String())
+	logger.Info("Created recharge transaction", 
+		"transaction_id", transaction.TransactionID, 
+		"organization_id", organizationID, 
+		"amount", req.Amount.String())
 	return transaction, nil
 }
 
@@ -330,8 +332,10 @@ func (s *BillingService) DebitAccount(ctx context.Context, organizationID int64,
 		return nil, fmt.Errorf("failed to update account balance: %w", err)
 	}
 
-	log.Printf("Created debit transaction %d for organization %d, amount: %s",
-		transaction.TransactionID, organizationID, amount.String())
+	logger.Info("Created debit transaction", 
+		"transaction_id", transaction.TransactionID, 
+		"organization_id", organizationID, 
+		"amount", amount.String())
 	return transaction, nil
 }
 
@@ -372,7 +376,7 @@ func (s *BillingService) UpdateBillingConfig(ctx context.Context, organizationID
 		return nil, fmt.Errorf("failed to update billing account: %w", err)
 	}
 
-	log.Printf("Updated billing config for organization %d", organizationID)
+	logger.Info("Updated billing config", "organization_id", organizationID)
 	return account, nil
 }
 

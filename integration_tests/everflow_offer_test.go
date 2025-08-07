@@ -135,7 +135,7 @@ func TestEverflowDirectOfferCreation(t *testing.T) {
 		assert.Greater(t, offerResult.NetworkOfferID, 0, "Offer should have a valid ID")
 		assert.Equal(t, "Test Offer Direct", offerResult.Name, "Offer name should match")
 
-		t.Logf("✅ Successfully created offer with ID: %d", offerResult.NetworkOfferID)
+		t.Logf("Successfully created offer with ID: %d", offerResult.NetworkOfferID)
 
 		// Clean up - delete the offer
 		t.Log("Cleaning up offer...")
@@ -153,7 +153,7 @@ func TestEverflowDirectOfferCreation(t *testing.T) {
 			t.Logf("Warning: Failed to delete advertiser %d (status %d)", advertiserResult.NetworkAdvertiserID, deleteAdvResp.StatusCode)
 		}
 	} else {
-		t.Logf("❌ Offer creation failed with status %d", offerResp.StatusCode)
+		t.Logf("Offer creation failed with status %d", offerResp.StatusCode)
 		
 		// Still clean up the advertiser
 		t.Log("Cleaning up advertiser...")

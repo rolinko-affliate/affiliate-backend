@@ -8,6 +8,7 @@ import (
 	"fmt"
 
 	"github.com/affiliate-backend/internal/domain"
+	"github.com/affiliate-backend/internal/platform/logger"
 	"github.com/affiliate-backend/internal/repository"
 )
 
@@ -390,7 +391,7 @@ func (s *advertiserAssociationInvitationService) UseInvitation(ctx context.Conte
 	// Increment invitation usage count
 	if err := s.invitationRepo.IncrementInvitationUsage(ctx, invitation.InvitationID); err != nil {
 		// Log error but don't fail the operation
-		fmt.Printf("Warning: Failed to increment invitation usage count: %v\n", err)
+		logger.Warn("Failed to increment invitation usage count", "invitation_id", invitation.InvitationID, "error", err)
 	}
 
 	// Log successful usage
@@ -503,7 +504,7 @@ func (s *advertiserAssociationInvitationService) logInvitationUsage(ctx context.
 
 	if err := s.invitationRepo.LogInvitationUsage(ctx, usage); err != nil {
 		// Log error but don't fail the operation
-		fmt.Printf("Warning: Failed to log invitation usage: %v\n", err)
+		logger.Warn("Failed to log invitation usage", "invitation_id", usage.InvitationID, "error", err)
 	}
 }
 

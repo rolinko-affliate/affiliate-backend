@@ -81,13 +81,13 @@ func TestEverflowDirectAdvertiserCreation(t *testing.T) {
 	t.Logf("Response Body: %s", resp.Body)
 
 	if resp.StatusCode == 200 || resp.StatusCode == 201 {
-		t.Log("✅ Direct advertiser creation successful!")
+		t.Log("Direct advertiser creation successful!")
 		
 		// TODO: Parse response and cleanup the created advertiser
 		// For now, just log success
 		
 	} else {
-		t.Logf("❌ Direct advertiser creation failed with status %d", resp.StatusCode)
+		t.Logf("Direct advertiser creation failed with status %d", resp.StatusCode)
 		t.Logf("Response: %s", resp.Body)
 	}
 }
@@ -125,9 +125,9 @@ func TestEverflowDirectAffiliateCreation(t *testing.T) {
 	t.Logf("Response Body: %s", resp.Body)
 
 	if resp.StatusCode == 200 || resp.StatusCode == 201 {
-		t.Log("✅ Direct affiliate creation successful!")
+		t.Log("Direct affiliate creation successful!")
 	} else {
-		t.Logf("❌ Direct affiliate creation failed with status %d", resp.StatusCode)
+		t.Logf("Direct affiliate creation failed with status %d", resp.StatusCode)
 		t.Logf("Response: %s", resp.Body)
 	}
 }

@@ -8,6 +8,7 @@ import (
 
 	"github.com/affiliate-backend/internal/domain"
 	"github.com/affiliate-backend/internal/platform/crypto"
+	"github.com/affiliate-backend/internal/platform/logger"
 	"github.com/affiliate-backend/internal/platform/provider"
 	"github.com/affiliate-backend/internal/repository"
 	"github.com/google/uuid"
@@ -113,7 +114,7 @@ func (s *advertiserService) UpdateAdvertiser(ctx context.Context, advertiser *do
 	now := time.Now()
 	if err := s.integrationService.UpdateAdvertiser(ctx, *advertiser); err != nil {
 		// Log error but don't fail the operation since local update succeeded
-		fmt.Printf("Warning: failed to update advertiser in provider: %v\n", err)
+		logger.Warn("Failed to update advertiser in provider", "advertiser_id", advertiser.AdvertiserID, "error", err)
 
 		// Update mapping sync status to indicate sync failure
 		mapping.SyncStatus = stringPtr("failed")

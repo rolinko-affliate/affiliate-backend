@@ -13,6 +13,14 @@ import (
 
 // CampaignProviderMappingRepository defines the interface for campaign provider mapping operations
 type CampaignProviderMappingRepository interface {
+	CreateMapping(ctx context.Context, mapping *domain.CampaignProviderMapping) error
+	GetMappingByID(ctx context.Context, id int64) (*domain.CampaignProviderMapping, error)
+	GetMappingsByCampaignID(ctx context.Context, campaignID int64) ([]*domain.CampaignProviderMapping, error)
+	GetMappingByCampaignAndProvider(ctx context.Context, campaignID int64, providerType string) (*domain.CampaignProviderMapping, error)
+	UpdateMapping(ctx context.Context, mapping *domain.CampaignProviderMapping) error
+	DeleteMapping(ctx context.Context, id int64) error
+	
+	// Legacy methods for backward compatibility
 	CreateCampaignProviderMapping(ctx context.Context, mapping *domain.CampaignProviderMapping) error
 	GetCampaignProviderMapping(ctx context.Context, campaignID int64, providerType string) (*domain.CampaignProviderMapping, error)
 	GetCampaignProviderMappingByID(ctx context.Context, mappingID int64) (*domain.CampaignProviderMapping, error)
@@ -24,6 +32,11 @@ type CampaignProviderMappingRepository interface {
 // pgxCampaignProviderMappingRepository implements CampaignProviderMappingRepository using pgx
 type pgxCampaignProviderMappingRepository struct {
 	db *pgxpool.Pool
+}
+
+// NewCampaignProviderMappingRepository creates a new campaign provider mapping repository
+func NewCampaignProviderMappingRepository(db *pgxpool.Pool) CampaignProviderMappingRepository {
+	return &pgxCampaignProviderMappingRepository{db: db}
 }
 
 // NewPgxCampaignProviderMappingRepository creates a new campaign provider mapping repository
@@ -270,4 +283,30 @@ func (r *pgxCampaignProviderMappingRepository) DeleteCampaignProviderMapping(ctx
 	}
 
 	return nil
+}
+
+// New interface methods for sync script compatibility
+
+func (r *pgxCampaignProviderMappingRepository) CreateMapping(ctx context.Context, mapping *domain.CampaignProviderMapping) error {
+	return r.CreateCampaignProviderMapping(ctx, mapping)
+}
+
+func (r *pgxCampaignProviderMappingRepository) GetMappingByID(ctx context.Context, id int64) (*domain.CampaignProviderMapping, error) {
+	return r.GetCampaignProviderMappingByID(ctx, id)
+}
+
+func (r *pgxCampaignProviderMappingRepository) GetMappingsByCampaignID(ctx context.Context, campaignID int64) ([]*domain.CampaignProviderMapping, error) {
+	return r.ListCampaignProviderMappingsByCampaign(ctx, campaignID)
+}
+
+func (r *pgxCampaignProviderMappingRepository) GetMappingByCampaignAndProvider(ctx context.Context, campaignID int64, providerType string) (*domain.CampaignProviderMapping, error) {
+	return r.GetCampaignProviderMapping(ctx, campaignID, providerType)
+}
+
+func (r *pgxCampaignProviderMappingRepository) UpdateMapping(ctx context.Context, mapping *domain.CampaignProviderMapping) error {
+	return r.UpdateCampaignProviderMapping(ctx, mapping)
+}
+
+func (r *pgxCampaignProviderMappingRepository) DeleteMapping(ctx context.Context, id int64) error {
+	return r.DeleteCampaignProviderMapping(ctx, id)
 }

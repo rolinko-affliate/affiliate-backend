@@ -15,7 +15,6 @@ type SimpleAdvertiserProviderMapper struct{}
 
 // NewSimpleAdvertiserProviderMapper creates a new simple advertiser provider mapper
 func NewSimpleAdvertiserProviderMapper() *SimpleAdvertiserProviderMapper {
-	fmt.Printf("🏗️ SIMPLE MAPPER CONSTRUCTOR CALLED 🏗️\n")
 	return &SimpleAdvertiserProviderMapper{}
 }
 
@@ -45,7 +44,6 @@ func (m *SimpleAdvertiserProviderMapper) generateUniqueEmail(input string) strin
 // MapAdvertiserToEverflowRequest maps a domain advertiser to an Everflow CreateAdvertiserRequest
 // This version generates the exact format from the working example
 func (m *SimpleAdvertiserProviderMapper) MapAdvertiserToEverflowRequest(adv *domain.Advertiser, mapping *domain.AdvertiserProviderMapping) (*advertiser.CreateAdvertiserRequest, error) {
-	fmt.Printf("🔧🔧🔧 SIMPLE MAPPER CALLED: MapAdvertiserToEverflowRequest for advertiser: %s 🔧🔧🔧\n", adv.Name)
 	
 	if adv == nil {
 		return nil, fmt.Errorf("advertiser cannot be nil")
@@ -123,8 +121,6 @@ func (m *SimpleAdvertiserProviderMapper) MapAdvertiserToEverflowRequest(adv *dom
 		// If advertiser has a contact email, use it as base but still make it unique
 		email = m.generateUniqueEmail(*adv.ContactEmail)
 	}
-	
-	fmt.Printf("🔧 Generated unique email for advertiser '%s': %s\n", adv.Name, email)
 	
 	users := []advertiser.AdvertiserUser{
 		*advertiser.NewAdvertiserUser(

@@ -6,6 +6,7 @@ import (
 	"testing"
 	"time"
 
+	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -391,7 +392,23 @@ func TestTrackingLinkSynchronization(t *testing.T) {
 
 	t.Log("=== Testing Tracking Link Synchronization ===")
 
-	// Step 1: Create prerequisite entities (organization, advertiser, affiliate, campaign)
+	// Step 1: Create test user profile first (using JWT user ID)
+	profilePayload := map[string]interface{}{
+		"email":    GenerateTestEmail("test"),
+		"role_id":  1, // Admin role
+	}
+
+	t.Log("Creating test user profile...")
+	profileResp := config.PlatformAPIRequest(t, "POST", "/api/v1/profiles", profilePayload)
+	AssertSuccessResponse(t, profileResp, 201)
+
+	var profileResult struct {
+		ID string `json:"id"`
+	}
+	ParseJSONResponse(t, profileResp, &profileResult)
+	cleanup.TrackProfile(profileResult.ID)
+
+	// Step 2: Create prerequisite entities (organization, advertiser, affiliate, campaign)
 	// This is a complex setup as tracking links depend on multiple entities
 	
 	// Create advertiser organization
@@ -432,10 +449,165 @@ func TestTrackingLinkSynchronization(t *testing.T) {
 	ParseJSONResponse(t, affOrgResp, &affOrgResult)
 	cleanup.TrackOrganization(affOrgResult.ID)
 
-	t.Log("Tracking link sync test setup complete - full implementation pending")
-	t.Skip("Tracking link sync to Everflow not yet fully implemented")
+	// Step 3: Create advertiser profile
+	advProfileID := uuid.New().String()
+	advProfilePayload := map[string]interface{}{
+		"id":         advProfileID,
+		"first_name": "Test",
+		"last_name":  "Advertiser",
+		"email":      GenerateTestEmail("tracking-advertiser"),
+		"phone":      "+1234567890",
+		"role_id":    1,
+	}
 
-	t.Log("✅ Tracking link synchronization test passed!")
+	t.Log("Creating advertiser profile...")
+	advProfileResp := config.PlatformAPIRequest(t, "POST", "/api/v1/profiles", advProfilePayload)
+	AssertSuccessResponse(t, advProfileResp, 201)
+
+	var advProfileResult struct {
+		ID string `json:"id"`
+	}
+	ParseJSONResponse(t, advProfileResp, &advProfileResult)
+	cleanup.TrackProfile(advProfileResult.ID)
+
+	// Step 4: Create affiliate profile
+	affProfileID := uuid.New().String()
+	affProfilePayload := map[string]interface{}{
+		"id":         affProfileID,
+		"first_name": "Test",
+		"last_name":  "Affiliate",
+		"email":      GenerateTestEmail("tracking-affiliate"),
+		"phone":      "+1234567891",
+		"role_id":    1,
+	}
+
+	t.Log("Creating affiliate profile...")
+	affProfileResp := config.PlatformAPIRequest(t, "POST", "/api/v1/profiles", affProfilePayload)
+	AssertSuccessResponse(t, affProfileResp, 201)
+
+	var affProfileResult struct {
+		ID string `json:"id"`
+	}
+	ParseJSONResponse(t, affProfileResp, &affProfileResult)
+	cleanup.TrackProfile(affProfileResult.ID)
+
+	// Step 5: Create advertiser
+	advertiserPayload := map[string]interface{}{
+		"organization_id": advOrgResult.ID,
+		"name":            GenerateTestName("test_tracking_advertiser"),
+		"description":     "Test advertiser for tracking link sync",
+		"website_url":     GenerateTestURL("test-tracking-advertiser"),
+		"contact_email":   GenerateTestEmail("tracking-advertiser-contact"),
+		"status":          "active",
+	}
+
+	t.Log("Creating advertiser...")
+	advertiserResp := config.PlatformAPIRequest(t, "POST", "/api/v1/advertisers", advertiserPayload)
+	AssertSuccessResponse(t, advertiserResp, 201)
+
+	var advertiserResult struct {
+		ID int64 `json:"advertiser_id"`
+	}
+	ParseJSONResponse(t, advertiserResp, &advertiserResult)
+	cleanup.TrackAdvertiser(advertiserResult.ID)
+
+	// Step 6: Create affiliate
+	affiliatePayload := map[string]interface{}{
+		"organization_id": affOrgResult.ID,
+		"name":            GenerateTestName("test_tracking_affiliate"),
+		"description":     "Test affiliate for tracking link sync",
+		"website_url":     GenerateTestURL("test-tracking-affiliate"),
+		"contact_email":   GenerateTestEmail("tracking-affiliate-contact"),
+		"status":          "active",
+	}
+
+	t.Log("Creating affiliate...")
+	affiliateResp := config.PlatformAPIRequest(t, "POST", "/api/v1/affiliates", affiliatePayload)
+	AssertSuccessResponse(t, affiliateResp, 201)
+
+	var affiliateResult struct {
+		ID int64 `json:"affiliate_id"`
+	}
+	ParseJSONResponse(t, affiliateResp, &affiliateResult)
+	cleanup.TrackAffiliate(fmt.Sprintf("%d", affiliateResult.ID))
+
+	// Step 7: Create campaign
+	campaignPayload := map[string]interface{}{
+		"organization_id": advOrgResult.ID,
+		"advertiser_id":   advertiserResult.ID,
+		"name":            GenerateTestName("test_tracking_campaign"),
+		"description":     "Test campaign for tracking link sync",
+		"landing_page_url": GenerateTestURL("test-tracking-campaign-landing"),
+		"status":          "active",
+		"campaign_type":   "cpa",
+		"payout_amount":   25.50,
+		"payout_currency": "USD",
+	}
+
+	t.Log("Creating campaign...")
+	campaignResp := config.PlatformAPIRequest(t, "POST", "/api/v1/campaigns", campaignPayload)
+	AssertSuccessResponse(t, campaignResp, 201)
+
+	var campaignResult struct {
+		ID int64 `json:"campaign_id"`
+	}
+	ParseJSONResponse(t, campaignResp, &campaignResult)
+	cleanup.TrackCampaign(fmt.Sprintf("%d", campaignResult.ID))
+
+	// Step 8: Wait for synchronization to complete
+	t.Log("Waiting for entity synchronization to complete...")
+	time.Sleep(3 * time.Second)
+
+	// Step 9: Create tracking link
+	trackingLinkName := GenerateTestName("test_tracking_link")
+	trackingLinkPayload := map[string]interface{}{
+		"organization_id": advOrgResult.ID,
+		"campaign_id":     campaignResult.ID,
+		"affiliate_id":    affiliateResult.ID,
+		"name":            trackingLinkName,
+		"description":     "Test tracking link for Everflow sync",
+		"source_id":       "test_source_123",
+		"sub1":            "test_sub1",
+		"sub2":            "test_sub2",
+		"status":          "active",
+	}
+
+	t.Log("Creating tracking link...")
+	trackingLinkResp := config.PlatformAPIRequest(t, "POST", fmt.Sprintf("/api/v1/organizations/%d/tracking-links", advOrgResult.ID), trackingLinkPayload)
+	AssertSuccessResponse(t, trackingLinkResp, 201)
+
+	var trackingLinkResult struct {
+		ID int64 `json:"tracking_link_id"`
+	}
+	ParseJSONResponse(t, trackingLinkResp, &trackingLinkResult)
+	cleanup.TrackTrackingLink(fmt.Sprintf("%d", trackingLinkResult.ID))
+
+	// Step 10: Wait for tracking link synchronization
+	t.Log("Waiting for tracking link synchronization...")
+	time.Sleep(2 * time.Second)
+
+	// Step 11: Verify tracking link was created successfully
+	t.Log("Verifying tracking link creation...")
+	getTrackingLinkResp := config.PlatformAPIRequest(t, "GET", fmt.Sprintf("/api/v1/organizations/%d/tracking-links/%d", advOrgResult.ID, trackingLinkResult.ID), nil)
+	AssertSuccessResponse(t, getTrackingLinkResp, 200)
+
+	var retrievedTrackingLink struct {
+		TrackingLinkID int64  `json:"tracking_link_id"`
+		Name           string `json:"name"`
+		Status         string `json:"status"`
+	}
+	ParseJSONResponse(t, getTrackingLinkResp, &retrievedTrackingLink)
+
+	// Verify the tracking link details
+	assert.Equal(t, trackingLinkResult.ID, retrievedTrackingLink.TrackingLinkID, "Tracking link ID should match")
+	assert.Equal(t, trackingLinkName, retrievedTrackingLink.Name, "Tracking link name should match")
+	assert.Equal(t, "active", retrievedTrackingLink.Status, "Tracking link status should be active")
+
+	t.Logf("✅ Tracking Link Synchronization Test PASSED!")
+	t.Logf("   Platform Tracking Link ID: %d", trackingLinkResult.ID)
+	t.Logf("   Tracking Link Name: %s", retrievedTrackingLink.Name)
+	t.Logf("   Tracking Link Status: %s", retrievedTrackingLink.Status)
+	t.Logf("   🔗 Tracking link created and synchronized successfully with Everflow!")
 }
 
 // TestFullSynchronizationWorkflow tests the complete workflow of creating all entities and verifying their synchronization

@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"log"
 	"time"
 
 	"github.com/affiliate-backend/internal/domain"
@@ -95,6 +96,13 @@ func (s *trackingLinkService) CreateTrackingLink(ctx context.Context, trackingLi
 	if err := s.trackingLinkRepo.CreateTrackingLink(ctx, trackingLink); err != nil {
 		return fmt.Errorf("failed to create tracking link: %w", err)
 	}
+
+	// Synchronize with provider (Everflow) - run in background to avoid blocking
+	go func() {
+		if err := s.synchronizeTrackingLinkWithProvider(context.Background(), trackingLink); err != nil {
+			log.Printf("⚠️ Warning: Failed to synchronize tracking link %d with provider: %v", trackingLink.TrackingLinkID, err)
+		}
+	}()
 
 	return nil
 }
@@ -521,6 +529,38 @@ func (s *trackingLinkService) verifyAssociationAndVisibility(ctx context.Context
 		}
 	}
 
+	return nil
+}
+
+// synchronizeTrackingLinkWithProvider synchronizes a tracking link with the provider (Everflow)
+func (s *trackingLinkService) synchronizeTrackingLinkWithProvider(ctx context.Context, trackingLink *domain.TrackingLink) error {
+	log.Printf("🔄 Starting tracking link synchronization for tracking_link_id=%d", trackingLink.TrackingLinkID)
+
+	// Get campaign provider mapping
+	campaignMapping, err := s.campaignProviderRepo.GetCampaignProviderMapping(ctx, trackingLink.CampaignID, "everflow")
+	if err != nil {
+		return fmt.Errorf("failed to get campaign provider mapping: %w", err)
+	}
+
+	// Get affiliate provider mapping
+	affiliateMapping, err := s.affiliateProviderRepo.GetAffiliateProviderMapping(ctx, trackingLink.AffiliateID, "everflow")
+	if err != nil {
+		return fmt.Errorf("failed to get affiliate provider mapping: %w", err)
+	}
+
+	// Create tracking link in provider
+	providerMapping, err := s.integrationService.CreateTrackingLink(ctx, trackingLink, campaignMapping, affiliateMapping)
+	if err != nil {
+		return fmt.Errorf("failed to create tracking link in provider: %w", err)
+	}
+
+	// Store provider mapping
+	if err := s.trackingLinkProviderRepo.CreateTrackingLinkProviderMapping(ctx, providerMapping); err != nil {
+		log.Printf("⚠️ Warning: Failed to store tracking link provider mapping for tracking_link_id=%d: %v", trackingLink.TrackingLinkID, err)
+		// Don't return error here as the tracking link was successfully created in the provider
+	}
+
+	log.Printf("✅ Successfully synchronized tracking link %d with provider", trackingLink.TrackingLinkID)
 	return nil
 }
 

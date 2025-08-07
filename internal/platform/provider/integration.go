@@ -31,6 +31,7 @@ type IntegrationService interface {
 	GetCampaign(ctx context.Context, id uuid.UUID) (domain.Campaign, error)
 
 	// Tracking Links
+	CreateTrackingLink(ctx context.Context, trackingLink *domain.TrackingLink, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) (*domain.TrackingLinkProviderMapping, error)
 	GenerateTrackingLink(ctx context.Context, req *domain.TrackingLinkGenerationRequest, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) (*domain.TrackingLinkGenerationResponse, error)
 	GenerateTrackingLinkQR(ctx context.Context, req *domain.TrackingLinkGenerationRequest, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) ([]byte, error)
 }
@@ -109,6 +110,12 @@ func (m *MockIntegrationService) UpdateCampaign(ctx context.Context, camp domain
 func (m *MockIntegrationService) GetCampaign(ctx context.Context, id uuid.UUID) (domain.Campaign, error) {
 	args := m.Called(ctx, id)
 	return args.Get(0).(domain.Campaign), args.Error(1)
+}
+
+// CreateTrackingLink mocks tracking link creation
+func (m *MockIntegrationService) CreateTrackingLink(ctx context.Context, trackingLink *domain.TrackingLink, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) (*domain.TrackingLinkProviderMapping, error) {
+	args := m.Called(ctx, trackingLink, campaignMapping, affiliateMapping)
+	return args.Get(0).(*domain.TrackingLinkProviderMapping), args.Error(1)
 }
 
 // GenerateTrackingLink mocks tracking link generation
@@ -217,6 +224,32 @@ func (m *MockIntegrationServiceWithDefaults) GetCampaign(ctx context.Context, id
 		Status:         "active",
 		CreatedAt:      time.Now(),
 		UpdatedAt:      time.Now(),
+	}, nil
+}
+
+// CreateTrackingLink returns a simulated tracking link provider mapping
+func (m *MockIntegrationServiceWithDefaults) CreateTrackingLink(ctx context.Context, trackingLink *domain.TrackingLink, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) (*domain.TrackingLinkProviderMapping, error) {
+	// Create a simulated tracking URL
+	generatedURL := "http://mock-tracking-domain.test/ABC123/DEF456/?sub1=test&sub2=mock"
+
+	// Create provider data
+	providerData := &domain.EverflowTrackingLinkProviderData{
+		NetworkOfferID:     int32Ptr(12345),
+		NetworkAffiliateID: int32Ptr(67890),
+		GeneratedURL:       &generatedURL,
+	}
+
+	providerDataJSON, _ := providerData.ToJSON()
+
+	syncStatus := "synced"
+	now := time.Now()
+	return &domain.TrackingLinkProviderMapping{
+		TrackingLinkID:         trackingLink.TrackingLinkID,
+		ProviderType:           "everflow",
+		ProviderTrackingLinkID: nil, // Everflow doesn't assign persistent IDs to tracking links
+		ProviderData:           &providerDataJSON,
+		SyncStatus:             &syncStatus,
+		LastSyncAt:             &now,
 	}, nil
 }
 
@@ -444,6 +477,46 @@ func (l *LoggingMockIntegrationService) GetCampaign(ctx context.Context, id uuid
 	// Provider-specific data would be stored in CampaignProviderMapping
 
 	l.logResponse("GET", "CAMPAIGN", response)
+	return response, nil
+}
+
+// CreateTrackingLink logs the request and returns a simulated tracking link provider mapping
+func (l *LoggingMockIntegrationService) CreateTrackingLink(ctx context.Context, trackingLink *domain.TrackingLink, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) (*domain.TrackingLinkProviderMapping, error) {
+	l.logRequest("CREATE", "TRACKING_LINK", map[string]interface{}{
+		"tracking_link":     trackingLink,
+		"campaign_mapping":  campaignMapping,
+		"affiliate_mapping": affiliateMapping,
+	})
+
+	// Simulate processing time
+	time.Sleep(180 * time.Millisecond)
+
+	// Create a simulated tracking URL
+	generatedURL := fmt.Sprintf("http://mock-tracking-domain.test/TL%d/C%dA%d/?sub1=%s&sub2=%s", 
+		trackingLink.TrackingLinkID, trackingLink.CampaignID, trackingLink.AffiliateID, trackingLink.Sub1, trackingLink.Sub2)
+
+	// Create provider data
+	providerData := &domain.EverflowTrackingLinkProviderData{
+		NetworkOfferID:     int32Ptr(int32(trackingLink.CampaignID * 1000)), // Simulate network offer ID
+		NetworkAffiliateID: int32Ptr(int32(trackingLink.AffiliateID * 1000)), // Simulate network affiliate ID
+		GeneratedURL:       &generatedURL,
+	}
+
+	providerDataJSON, _ := providerData.ToJSON()
+
+	// Create response
+	syncStatus := "synced"
+	now := time.Now()
+	response := &domain.TrackingLinkProviderMapping{
+		TrackingLinkID:         trackingLink.TrackingLinkID,
+		ProviderType:           "everflow",
+		ProviderTrackingLinkID: nil, // Everflow doesn't assign persistent IDs to tracking links
+		ProviderData:           &providerDataJSON,
+		SyncStatus:             &syncStatus,
+		LastSyncAt:             &now,
+	}
+
+	l.logResponse("CREATE", "TRACKING_LINK", response)
 	return response, nil
 }
 

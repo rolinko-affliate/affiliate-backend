@@ -1348,6 +1348,41 @@ func (s *IntegrationService) GenerateTrackingLink(ctx context.Context, req *doma
 	}, nil
 }
 
+// CreateTrackingLink creates a tracking link synchronization with Everflow
+func (s *IntegrationService) CreateTrackingLink(ctx context.Context, trackingLink *domain.TrackingLink, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) (*domain.TrackingLinkProviderMapping, error) {
+	log.Printf("🔧 EVERFLOW CreateTrackingLink: Starting tracking link sync for tracking_link_id=%d", trackingLink.TrackingLinkID)
+
+	// Create a tracking link generation request to get the Everflow tracking URL
+	req := &domain.TrackingLinkGenerationRequest{
+		CampaignID:  trackingLink.CampaignID,
+		AffiliateID: trackingLink.AffiliateID,
+		SourceID:    trackingLink.SourceID,
+		Sub1:        trackingLink.Sub1,
+		Sub2:        trackingLink.Sub2,
+	}
+
+	// Generate the tracking link via Everflow API
+	response, err := s.GenerateTrackingLink(ctx, req, campaignMapping, affiliateMapping)
+	if err != nil {
+		return nil, fmt.Errorf("failed to generate tracking link via Everflow: %w", err)
+	}
+
+	// Create provider mapping
+	syncStatus := "synced"
+	now := time.Now()
+	mapping := &domain.TrackingLinkProviderMapping{
+		TrackingLinkID:         trackingLink.TrackingLinkID,
+		ProviderType:           "everflow",
+		ProviderTrackingLinkID: nil, // Everflow doesn't assign persistent IDs to tracking links
+		ProviderData:           response.ProviderData,
+		SyncStatus:             &syncStatus,
+		LastSyncAt:             &now,
+	}
+
+	log.Printf("✅ EVERFLOW CreateTrackingLink: Successfully created tracking link sync for tracking_link_id=%d", trackingLink.TrackingLinkID)
+	return mapping, nil
+}
+
 // GenerateTrackingLinkQR generates a QR code for a tracking link via Everflow API
 func (s *IntegrationService) GenerateTrackingLinkQR(ctx context.Context, req *domain.TrackingLinkGenerationRequest, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) ([]byte, error) {
 	// For now, simulate the Everflow QR API call since we don't have the tracking API client generated

@@ -827,20 +827,47 @@ func (s *IntegrationService) UpdateCampaign(ctx context.Context, camp domain.Cam
 	}
 
 	// Parse the provider data to get network_offer_id
-	var providerData map[string]interface{}
+	var networkOfferID int32
 	if campaignMapping.ProviderData == nil {
 		logger.Error("Campaign provider data is nil", "campaign_id", camp.CampaignID)
 		return fmt.Errorf("campaign provider data is nil")
 	}
-	if err := json.Unmarshal([]byte(*campaignMapping.ProviderData), &providerData); err != nil {
-		logger.Error("Failed to parse campaign provider data", "campaign_id", camp.CampaignID, "error", err)
-		return fmt.Errorf("failed to parse campaign provider data: %w", err)
+
+	logger.Debug("Parsing campaign provider data", "campaign_id", camp.CampaignID)
+	logger.Debug("Campaign provider data", "campaign_id", camp.CampaignID, "provider_data", *campaignMapping.ProviderData)
+
+	// Try to parse as complex payload structure first (request/response format)
+	var payload map[string]interface{}
+	if err := json.Unmarshal([]byte(*campaignMapping.ProviderData), &payload); err == nil {
+		if response, ok := payload["response"].(map[string]interface{}); ok {
+			if networkOfferIDFloat, ok := response["network_offer_id"].(float64); ok {
+				networkOfferID = int32(networkOfferIDFloat)
+				logger.Debug("Found network_offer_id from response payload", "campaign_id", camp.CampaignID, "network_offer_id", networkOfferID)
+			} else {
+				logger.Warn("network_offer_id not found in response payload", "campaign_id", camp.CampaignID)
+			}
+		} else {
+			logger.Warn("response object not found in payload", "campaign_id", camp.CampaignID)
+		}
+	} else {
+		// Fallback: try to parse as simple EverflowCampaignProviderData structure
+		logger.Debug("Trying fallback parsing as EverflowCampaignProviderData", "campaign_id", camp.CampaignID)
+		var campaignProviderData domain.EverflowCampaignProviderData
+		if err := campaignProviderData.FromJSON(*campaignMapping.ProviderData); err == nil {
+			if campaignProviderData.NetworkCampaignID != nil {
+				networkOfferID = *campaignProviderData.NetworkCampaignID
+				logger.Debug("Found network_offer_id from fallback", "campaign_id", camp.CampaignID, "network_offer_id", networkOfferID)
+			} else {
+				logger.Warn("NetworkCampaignID is nil in campaign provider data", "campaign_id", camp.CampaignID)
+			}
+		} else {
+			logger.Warn("Failed to parse campaign provider data with both methods", "campaign_id", camp.CampaignID, "error", err)
+		}
 	}
 
-	networkOfferID, ok := providerData["network_offer_id"].(float64)
-	if !ok {
-		logger.Error("Invalid network_offer_id in campaign provider data", "campaign_id", camp.CampaignID)
-		return fmt.Errorf("invalid network_offer_id in campaign provider data")
+	if networkOfferID == 0 {
+		logger.Error("Invalid or missing network_offer_id in campaign provider data", "campaign_id", camp.CampaignID)
+		return fmt.Errorf("invalid or missing network_offer_id in campaign provider data")
 	}
 
 	// Step 2: Get advertiser provider mapping to get network_advertiser_id
@@ -876,12 +903,27 @@ func (s *IntegrationService) UpdateCampaign(ctx context.Context, camp domain.Cam
 	}
 
 	// Step 4: Update offer in Everflow
-	logger.Debug("Updating offer in Everflow", "campaign_id", camp.CampaignID, "network_offer_id", int32(networkOfferID))
-	response, httpResp, err := s.offerClient.OffersAPI.UpdateOffer(ctx, int32(networkOfferID)).UpdateOfferRequest(*updateRequest).Execute()
+	logger.Debug("Updating offer in Everflow", "campaign_id", camp.CampaignID, "network_offer_id", networkOfferID)
+	
+	// Log the request payload for debugging
+	if requestJSON, err := json.MarshalIndent(updateRequest, "", "  "); err == nil {
+		logger.Info("Everflow UpdateOffer request payload", "campaign_id", camp.CampaignID, "network_offer_id", networkOfferID, "request", string(requestJSON))
+	} else {
+		logger.Warn("Failed to marshal request for logging", "campaign_id", camp.CampaignID, "error", err)
+	}
+	
+	response, httpResp, err := s.offerClient.OffersAPI.UpdateOffer(ctx, networkOfferID).UpdateOfferRequest(*updateRequest).Execute()
 	if err != nil {
-		logger.Error("Failed to update offer in Everflow", "campaign_id", camp.CampaignID, "network_offer_id", int32(networkOfferID), "error", err)
+		logger.Error("Failed to update offer in Everflow", "campaign_id", camp.CampaignID, "network_offer_id", networkOfferID, "error", err)
 		if httpResp != nil {
 			logger.Error("HTTP response details", "status_code", httpResp.StatusCode, "status", httpResp.Status)
+			
+			// Try to read and log the response body for more details
+			if httpResp.Body != nil {
+				if bodyBytes, readErr := io.ReadAll(httpResp.Body); readErr == nil {
+					logger.Error("HTTP response body", "campaign_id", camp.CampaignID, "body", string(bodyBytes))
+				}
+			}
 		}
 		return fmt.Errorf("failed to update offer in Everflow: %w", err)
 	}
@@ -1101,6 +1143,10 @@ func (s *IntegrationService) mapCampaignToEverflowRequest(camp *domain.Campaign,
 	// Set attribution methods
 	req.SetEmailAttributionMethod("first_affiliate_attribution")
 	req.SetAttributionMethod("last_touch")
+
+	// Set additional required fields to match update method
+	req.SetRedirectMode("standard")                    // Fixed: should be "standard"
+	req.SetIsDuplicateFilterEnabled(false)            // TODO: hardcoded as false for now
 
 	return req, nil
 }
@@ -1388,9 +1434,13 @@ func (s *IntegrationService) mapCampaignToEverflowUpdateRequest(camp *domain.Cam
 	updateRequest.SetCurrencyId("USD")
 	updateRequest.SetVisibility("public")
 	updateRequest.SetConversionMethod("server_postback")
-	updateRequest.SetRedirectMode("http_302")
+	updateRequest.SetRedirectMode("standard")  // Fixed: should be "standard"
 	updateRequest.SetSessionDefinition("ip_user_agent")
 	updateRequest.SetSessionDuration(24)
+
+	// Set hardcoded required fields
+	updateRequest.SetNetworkTrackingDomainId(12977)  // Added: hardcoded as 12977
+	updateRequest.SetNetworkCategoryId(1)            // Added: hardcoded as 1
 
 	// Set reasonable defaults for boolean fields
 	updateRequest.SetIsViewThroughEnabled(false)
@@ -1398,7 +1448,7 @@ func (s *IntegrationService) mapCampaignToEverflowUpdateRequest(camp *domain.Cam
 	updateRequest.SetIsForceTermsAndConditions(false)
 	updateRequest.SetIsCapsEnabled(false)
 	updateRequest.SetIsUsingSuppressionList(false)
-	updateRequest.SetIsDuplicateFilterEnabled(true)
+	updateRequest.SetIsDuplicateFilterEnabled(false)  // TODO: hardcoded as false for now
 	updateRequest.SetIsUseSecureLink(true)
 	updateRequest.SetIsAllowDeepLink(true)
 	updateRequest.SetIsSessionTrackingEnabled(true)

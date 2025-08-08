@@ -7,6 +7,7 @@ import (
 
 	"github.com/affiliate-backend/internal/domain"
 	"github.com/affiliate-backend/internal/platform/everflow/advertiser"
+	"github.com/affiliate-backend/internal/platform/provider"
 )
 
 // SimpleAdvertiserProviderMapper handles mapping between domain advertisers and Everflow advertiser models
@@ -41,10 +42,8 @@ func (m *SimpleAdvertiserProviderMapper) generateUniqueEmail(input string) strin
 	return fmt.Sprintf("%s-%d@everflow-test.com", cleanName, timestamp)
 }
 
-// MapAdvertiserToEverflowRequest maps a domain advertiser to an Everflow CreateAdvertiserRequest
-// This version generates the exact format from the working example
-func (m *SimpleAdvertiserProviderMapper) MapAdvertiserToEverflowRequest(adv *domain.Advertiser, mapping *domain.AdvertiserProviderMapping) (*advertiser.CreateAdvertiserRequest, error) {
-	
+// MapAdvertiserToEverflowRequestWithContext maps a domain advertiser to an Everflow CreateAdvertiserRequest with additional context
+func (m *SimpleAdvertiserProviderMapper) MapAdvertiserToEverflowRequestWithContext(adv *domain.Advertiser, mapping *domain.AdvertiserProviderMapping, ctx *provider.AdvertiserMappingContext) (*advertiser.CreateAdvertiserRequest, error) {
 	if adv == nil {
 		return nil, fmt.Errorf("advertiser cannot be nil")
 	}
@@ -70,21 +69,30 @@ func (m *SimpleAdvertiserProviderMapper) MapAdvertiserToEverflowRequest(adv *dom
 	req.SetPlatformUrl("")
 	req.SetPlatformUsername("")
 	req.SetSalesManagerId(1)
-	req.SetInternalNotes("Some notes not visible to the advertiser")
+	
+	// Set internal notes with advertiser ID and user ID from our system
+	internalNotes := fmt.Sprintf("Advertiser ID: %d", adv.AdvertiserID)
+	if ctx != nil && ctx.UserID != nil {
+		internalNotes += fmt.Sprintf(", User ID: %s", *ctx.UserID)
+	}
+	req.SetInternalNotes(internalNotes)
 	req.SetIsContactAddressEnabled(false)
 
-	// Set billing exactly like the working example
+	// Set billing with manual frequency as requested
 	billing := advertiser.NewBillingWithDefaults()
-	billing.SetBillingFrequency("other")
+	billing.SetBillingFrequency("manual")  // Changed from "other" to "manual"
 	billing.SetDefaultPaymentTerms(0)
-	billing.SetTaxId("123456789")
+	// if adv.BillingDetails is nil, we assume no tax ID
+	if adv.BillingDetails != nil && adv.BillingDetails.TaxID != nil && *adv.BillingDetails.TaxID != "" {
+		billing.SetTaxId(*adv.BillingDetails.TaxID)
+	}
 	
 	// Set empty details object
 	details := advertiser.NewBillingDetailsWithDefaults()
 	billing.SetDetails(*details)
 	req.SetBilling(*billing)
 
-	// Set contact address exactly like the working example
+	// TODO: add address
 	contactAddress := advertiser.NewContactAddress(
 		"4110 rue St-Laurent", // address_1
 		"Montreal",           // city
@@ -96,8 +104,17 @@ func (m *SimpleAdvertiserProviderMapper) MapAdvertiserToEverflowRequest(adv *dom
 	contactAddress.SetCountryId(36)
 	req.SetContactAddress(*contactAddress)
 
-	// Set labels exactly like the working example
-	labels := []string{"DTC Brand"}
+	// Set labels using organization ID and name
+	var labels []string
+	if ctx != nil && ctx.Organization != nil {
+		labels = []string{
+			fmt.Sprintf("Org-%d", ctx.Organization.OrganizationID),
+			ctx.Organization.Name,
+		}
+	} else {
+		// Fallback to organization ID only if no context is provided
+		labels = []string{fmt.Sprintf("Org-%d", adv.OrganizationID)}
+	}
 	req.SetLabels(labels)
 
 	// Set settings exactly like the working example
@@ -139,6 +156,13 @@ func (m *SimpleAdvertiserProviderMapper) MapAdvertiserToEverflowRequest(adv *dom
 	req.SetVerificationToken("c7HIWpFUGnyQfN5wwBollBBGtUkeOm")
 
 	return req, nil
+}
+
+// MapAdvertiserToEverflowRequest maps a domain advertiser to an Everflow CreateAdvertiserRequest
+// This version generates the exact format from the working example
+func (m *SimpleAdvertiserProviderMapper) MapAdvertiserToEverflowRequest(adv *domain.Advertiser, mapping *domain.AdvertiserProviderMapping) (*advertiser.CreateAdvertiserRequest, error) {
+	// Call the context version with nil context for backward compatibility
+	return m.MapAdvertiserToEverflowRequestWithContext(adv, mapping, nil)
 }
 
 // MapEverflowResponseToAdvertiser maps an Everflow advertiser response to a domain advertiser

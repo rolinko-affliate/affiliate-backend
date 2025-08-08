@@ -36,6 +36,11 @@ func (m *MockIntegrationServiceSimple) CreateAdvertiser(ctx context.Context, adv
 	return args.Get(0).(domain.Advertiser), args.Error(1)
 }
 
+func (m *MockIntegrationServiceSimple) CreateAdvertiserWithContext(ctx context.Context, adv domain.Advertiser, mappingCtx *provider.AdvertiserMappingContext) (domain.Advertiser, error) {
+	args := m.Called(ctx, adv, mappingCtx)
+	return args.Get(0).(domain.Advertiser), args.Error(1)
+}
+
 func (m *MockIntegrationServiceSimple) UpdateAdvertiser(ctx context.Context, adv domain.Advertiser) error {
 	args := m.Called(ctx, adv)
 	return args.Error(0)
@@ -59,6 +64,21 @@ func (m *MockIntegrationServiceSimple) UpdateCampaign(ctx context.Context, campa
 func (m *MockIntegrationServiceSimple) GetCampaign(ctx context.Context, id uuid.UUID) (domain.Campaign, error) {
 	args := m.Called(ctx, id)
 	return args.Get(0).(domain.Campaign), args.Error(1)
+}
+
+func (m *MockIntegrationServiceSimple) CreateTrackingLink(ctx context.Context, trackingLink *domain.TrackingLink, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) (*domain.TrackingLinkProviderMapping, error) {
+	args := m.Called(ctx, trackingLink, campaignMapping, affiliateMapping)
+	return args.Get(0).(*domain.TrackingLinkProviderMapping), args.Error(1)
+}
+
+func (m *MockIntegrationServiceSimple) GenerateTrackingLink(ctx context.Context, req *domain.TrackingLinkGenerationRequest, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) (*domain.TrackingLinkGenerationResponse, error) {
+	args := m.Called(ctx, req, campaignMapping, affiliateMapping)
+	return args.Get(0).(*domain.TrackingLinkGenerationResponse), args.Error(1)
+}
+
+func (m *MockIntegrationServiceSimple) GenerateTrackingLinkQR(ctx context.Context, req *domain.TrackingLinkGenerationRequest, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) ([]byte, error) {
+	args := m.Called(ctx, req, campaignMapping, affiliateMapping)
+	return args.Get(0).([]byte), args.Error(1)
 }
 
 func TestIntegrationServiceInterface(t *testing.T) {

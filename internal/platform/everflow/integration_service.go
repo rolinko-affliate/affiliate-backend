@@ -14,6 +14,7 @@ import (
 	"github.com/affiliate-backend/internal/platform/everflow/offer"
 	"github.com/affiliate-backend/internal/platform/everflow/tracking"
 	"github.com/affiliate-backend/internal/platform/logger"
+	"github.com/affiliate-backend/internal/platform/provider"
 	"github.com/google/uuid"
 )
 
@@ -41,6 +42,7 @@ type IntegrationService struct {
 // Mapper interfaces
 type AdvertiserMapper interface {
 	MapAdvertiserToEverflowRequest(adv *domain.Advertiser, mapping *domain.AdvertiserProviderMapping) (*advertiser.CreateAdvertiserRequest, error)
+	MapAdvertiserToEverflowRequestWithContext(adv *domain.Advertiser, mapping *domain.AdvertiserProviderMapping, ctx *provider.AdvertiserMappingContext) (*advertiser.CreateAdvertiserRequest, error)
 	MapEverflowResponseToAdvertiser(resp *advertiser.Advertiser, adv *domain.Advertiser)
 	MapEverflowResponseToProviderMapping(resp *advertiser.Advertiser, mapping *domain.AdvertiserProviderMapping) error
 }
@@ -133,9 +135,9 @@ func int64ToUUID(id int64) uuid.UUID {
 	return parsed
 }
 
-// CreateAdvertiser creates an advertiser in Everflow
-func (s *IntegrationService) CreateAdvertiser(ctx context.Context, adv domain.Advertiser) (domain.Advertiser, error) {
-	logger.Info("Starting advertiser creation in Everflow",
+// CreateAdvertiserWithContext creates an advertiser in Everflow with additional context
+func (s *IntegrationService) CreateAdvertiserWithContext(ctx context.Context, adv domain.Advertiser, mappingCtx *provider.AdvertiserMappingContext) (domain.Advertiser, error) {
+	logger.Info("Starting advertiser creation in Everflow with context",
 		"advertiser_id", adv.AdvertiserID,
 		"name", adv.Name,
 		"provider", "everflow")
@@ -148,8 +150,9 @@ func (s *IntegrationService) CreateAdvertiser(ctx context.Context, adv domain.Ad
 			"mapping_id", existingMapping.MappingID)
 		return adv, fmt.Errorf("advertiser already has successful Everflow provider mapping")
 	}
-	// Map domain advertiser to Everflow request (without existing mapping)
-	everflowReq, err := s.advertiserProviderMapper.MapAdvertiserToEverflowRequest(&adv, nil)
+	
+	// Map domain advertiser to Everflow request with context
+	everflowReq, err := s.advertiserProviderMapper.MapAdvertiserToEverflowRequestWithContext(&adv, nil, mappingCtx)
 	if err != nil {
 		logger.Error("Failed to map advertiser to Everflow request",
 			"advertiser_id", adv.AdvertiserID,
@@ -247,6 +250,12 @@ func (s *IntegrationService) CreateAdvertiser(ctx context.Context, adv domain.Ad
 	s.advertiserProviderMapper.MapEverflowResponseToAdvertiser(resp, &adv)
 
 	return adv, nil
+}
+
+// CreateAdvertiser creates an advertiser in Everflow (backward compatibility)
+func (s *IntegrationService) CreateAdvertiser(ctx context.Context, adv domain.Advertiser) (domain.Advertiser, error) {
+	// Call the context-aware version with nil context for backward compatibility
+	return s.CreateAdvertiserWithContext(ctx, adv, nil)
 }
 
 // UpdateAdvertiser updates an advertiser in Everflow

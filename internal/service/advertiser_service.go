@@ -60,8 +60,8 @@ func NewAdvertiserService(
 }
 
 func (s *advertiserService) CreateAdvertiser(ctx context.Context, advertiser *domain.Advertiser) (*domain.Advertiser, error) {
-	// Validate organization exists
-	_, err := s.orgRepo.GetOrganizationByID(ctx, advertiser.OrganizationID)
+	// Validate organization exists and get organization data
+	organization, err := s.orgRepo.GetOrganizationByID(ctx, advertiser.OrganizationID)
 	if err != nil {
 		return nil, fmt.Errorf("organization not found: %w", err)
 	}
@@ -77,9 +77,19 @@ func (s *advertiserService) CreateAdvertiser(ctx context.Context, advertiser *do
 		return nil, fmt.Errorf("failed to create advertiser: %w", err)
 	}
 
-	// Step 2: Call IntegrationService to create in provider
+	// Step 2: Prepare mapping context with organization and user information
+	mappingCtx := &provider.AdvertiserMappingContext{
+		Organization: organization,
+	}
+	
+	// Try to get user ID from context (set by auth middleware)
+	if userID, exists := ctx.Value("userID").(string); exists && userID != "" {
+		mappingCtx.UserID = &userID
+	}
+
+	// Step 3: Call IntegrationService to create in provider with context
 	// The integration service will handle creating the provider mapping
-	_, err = s.integrationService.CreateAdvertiser(ctx, *advertiser)
+	_, err = s.integrationService.CreateAdvertiserWithContext(ctx, *advertiser, mappingCtx)
 	if err != nil {
 		return nil, fmt.Errorf("failed to create advertiser in provider: %w", err)
 	}

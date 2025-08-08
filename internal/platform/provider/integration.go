@@ -13,10 +13,17 @@ import (
 	"github.com/stretchr/testify/mock"
 )
 
+// AdvertiserMappingContext holds additional context information for advertiser mapping
+type AdvertiserMappingContext struct {
+	Organization *domain.Organization
+	UserID       *string
+}
+
 // IntegrationService defines the provider-agnostic interface for advertiser, affiliate, campaign, and tracking link operations
 type IntegrationService interface {
 	// Advertisers
 	CreateAdvertiser(ctx context.Context, adv domain.Advertiser) (domain.Advertiser, error)
+	CreateAdvertiserWithContext(ctx context.Context, adv domain.Advertiser, mappingCtx *AdvertiserMappingContext) (domain.Advertiser, error)
 	UpdateAdvertiser(ctx context.Context, adv domain.Advertiser) error
 	GetAdvertiser(ctx context.Context, id uuid.UUID) (domain.Advertiser, error)
 
@@ -61,6 +68,12 @@ var _ IntegrationService = (*MockIntegrationService)(nil)
 // CreateAdvertiser mocks advertiser creation
 func (m *MockIntegrationService) CreateAdvertiser(ctx context.Context, adv domain.Advertiser) (domain.Advertiser, error) {
 	args := m.Called(ctx, adv)
+	return args.Get(0).(domain.Advertiser), args.Error(1)
+}
+
+// CreateAdvertiserWithContext mocks advertiser creation with context
+func (m *MockIntegrationService) CreateAdvertiserWithContext(ctx context.Context, adv domain.Advertiser, mappingCtx *AdvertiserMappingContext) (domain.Advertiser, error) {
+	args := m.Called(ctx, adv, mappingCtx)
 	return args.Get(0).(domain.Advertiser), args.Error(1)
 }
 
@@ -149,6 +162,15 @@ func NewMockIntegrationServiceWithDefaults() *MockIntegrationServiceWithDefaults
 
 // CreateAdvertiser returns the input advertiser with default provider-assigned values
 func (m *MockIntegrationServiceWithDefaults) CreateAdvertiser(ctx context.Context, adv domain.Advertiser) (domain.Advertiser, error) {
+	result := adv
+	result.AdvertiserID = 1
+	result.CreatedAt = time.Now()
+	result.UpdatedAt = time.Now()
+	return result, nil
+}
+
+// CreateAdvertiserWithContext returns the input advertiser with default provider-assigned values and context
+func (m *MockIntegrationServiceWithDefaults) CreateAdvertiserWithContext(ctx context.Context, adv domain.Advertiser, mappingCtx *AdvertiserMappingContext) (domain.Advertiser, error) {
 	result := adv
 	result.AdvertiserID = 1
 	result.CreatedAt = time.Now()
@@ -334,6 +356,27 @@ func (l *LoggingMockIntegrationService) CreateAdvertiser(ctx context.Context, ad
 	return response, nil
 }
 
+// CreateAdvertiserWithContext logs the request with context and returns a simulated advertiser
+func (l *LoggingMockIntegrationService) CreateAdvertiserWithContext(ctx context.Context, adv domain.Advertiser, mappingCtx *AdvertiserMappingContext) (domain.Advertiser, error) {
+	requestData := map[string]interface{}{
+		"advertiser": adv,
+		"context":    mappingCtx,
+	}
+	l.logRequest("CREATE_WITH_CONTEXT", "ADVERTISER", requestData)
+
+	// Simulate processing time
+	time.Sleep(100 * time.Millisecond)
+
+	// Create a simulated response
+	response := adv
+	response.AdvertiserID = 12345 // Simulate provider-assigned ID
+	response.CreatedAt = time.Now()
+	response.UpdatedAt = time.Now()
+
+	l.logResponse("CREATE_WITH_CONTEXT", "ADVERTISER", response)
+	return response, nil
+}
+
 // UpdateAdvertiser logs the request and simulates an update
 func (l *LoggingMockIntegrationService) UpdateAdvertiser(ctx context.Context, adv domain.Advertiser) error {
 	l.logRequest("UPDATE", "ADVERTISER", adv)
@@ -492,8 +535,16 @@ func (l *LoggingMockIntegrationService) CreateTrackingLink(ctx context.Context, 
 	time.Sleep(180 * time.Millisecond)
 
 	// Create a simulated tracking URL
+	sub1 := ""
+	if trackingLink.Sub1 != nil {
+		sub1 = *trackingLink.Sub1
+	}
+	sub2 := ""
+	if trackingLink.Sub2 != nil {
+		sub2 = *trackingLink.Sub2
+	}
 	generatedURL := fmt.Sprintf("http://mock-tracking-domain.test/TL%d/C%dA%d/?sub1=%s&sub2=%s", 
-		trackingLink.TrackingLinkID, trackingLink.CampaignID, trackingLink.AffiliateID, trackingLink.Sub1, trackingLink.Sub2)
+		trackingLink.TrackingLinkID, trackingLink.CampaignID, trackingLink.AffiliateID, sub1, sub2)
 
 	// Create provider data
 	providerData := &domain.EverflowTrackingLinkProviderData{

@@ -857,31 +857,63 @@ func (s *IntegrationService) mapEverflowResponseToAffiliate(resp interface{}, af
 
 // mapCampaignToEverflowRequest maps domain campaign to Everflow offer request
 func (s *IntegrationService) mapCampaignToEverflowRequest(camp *domain.Campaign, networkAdvertiserID int32) (*offer.CreateOfferRequest, error) {
-	// Create basic payout revenue structure
-	payoutRevenue := []offer.PayoutRevenue{
-		*offer.NewPayoutRevenue("cpa_cps", "rpa_rps", true, false),
-	}
+	// Determine payout and revenue types based on campaign configuration
+	var payoutType, revenueType string
+	var payoutRevenue []offer.PayoutRevenue
 
-	// Set payout amounts if available
-	if camp.FixedConversionAmount != nil {
-		payoutRevenue[0].SetPayoutAmount(*camp.FixedConversionAmount)
+	// Check if this is a click-based campaign
+	if camp.FixedClickAmount != nil && *camp.FixedClickAmount > 0 {
+		// Click-based campaign: RPC revenue model, CPC payout model
+		revenueType = "rpc"  // Revenue Per Click
+		payoutType = "cpc"   // Cost Per Click
+		
+		payoutRevenue = []offer.PayoutRevenue{
+			*offer.NewPayoutRevenue(payoutType, revenueType, true, false),
+		}
+		
+		// Set revenue to 0 (we don't earn revenue from clicks)
+		payoutRevenue[0].SetRevenueAmount(0.0)
+		
+		// Set payout amount from user configuration
+		payoutRevenue[0].SetPayoutAmount(*camp.FixedClickAmount)
+		
 	} else {
-		payoutRevenue[0].SetPayoutAmount(2.0) // Default value from example
+		// Conversion-based campaign: RPS revenue model (100%), payout depends on configuration
+		revenueType = "rps"  // Revenue Per Sale
+		
+		// Determine payout type based on what's configured
+		hasFixedAmount := camp.FixedConversionAmount != nil && *camp.FixedConversionAmount > 0
+		hasPercentageAmount := camp.PercentageConversionAmount != nil && *camp.PercentageConversionAmount > 0
+		
+		if hasFixedAmount && hasPercentageAmount {
+			payoutType = "cpa_cps"  // Cost Per Action + Cost Per Sale (mixed)
+		} else if hasPercentageAmount {
+			payoutType = "cps"      // Cost Per Sale (percentage only)
+		} else {
+			payoutType = "cpa"      // Cost Per Action (fixed amount, default)
+		}
+		
+		payoutRevenue = []offer.PayoutRevenue{
+			*offer.NewPayoutRevenue(payoutType, revenueType, true, false),
+		}
+		
+		// Set revenue to 100% (we earn 100% of the sale)
+		payoutRevenue[0].SetRevenuePercentage(100)
+		
+		// Set payout amounts based on configuration
+		if hasFixedAmount {
+			payoutRevenue[0].SetPayoutAmount(*camp.FixedConversionAmount)
+		}
+		
+		if hasPercentageAmount {
+			payoutRevenue[0].SetPayoutPercentage(int32(*camp.PercentageConversionAmount))
+		}
+		
+		// Set default payout amount if nothing is configured
+		if !hasFixedAmount && !hasPercentageAmount {
+			payoutRevenue[0].SetPayoutAmount(0.0) // Default to 0 if not configured
+		}
 	}
-
-	if camp.PercentageConversionAmount != nil {
-		payoutRevenue[0].SetPayoutPercentage(int32(*camp.PercentageConversionAmount))
-	} else {
-		payoutRevenue[0].SetPayoutPercentage(5) // Default value from example
-	}
-
-	// Set revenue amounts
-	if camp.FixedRevenue != nil {
-		payoutRevenue[0].SetRevenueAmount(*camp.FixedRevenue)
-	} else {
-		payoutRevenue[0].SetRevenueAmount(5.0) // Default value from example
-	}
-	payoutRevenue[0].SetRevenuePercentage(10) // Default value from example
 
 	// Determine destination URL
 	destinationURL := "https://example.com"

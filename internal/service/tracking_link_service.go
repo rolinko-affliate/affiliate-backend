@@ -24,6 +24,7 @@ type TrackingLinkService interface {
 	ListTrackingLinksByCampaign(ctx context.Context, campaignID int64, limit, offset int) ([]*domain.TrackingLink, error)
 	ListTrackingLinksByAffiliate(ctx context.Context, affiliateID int64, limit, offset int) ([]*domain.TrackingLink, error)
 	ListTrackingLinksByOrganization(ctx context.Context, orgID int64, limit, offset int) ([]*domain.TrackingLink, error)
+	ListTrackingLinksByCampaignAndAffiliate(ctx context.Context, campaignID, affiliateID int64, limit, offset int) ([]*domain.TrackingLink, error)
 
 	// Tracking link generation
 	GenerateTrackingLink(ctx context.Context, req *domain.TrackingLinkGenerationRequest) (*domain.TrackingLinkGenerationResponse, error)
@@ -201,6 +202,35 @@ func (s *trackingLinkService) ListTrackingLinksByOrganization(ctx context.Contex
 	trackingLinks, err := s.trackingLinkRepo.ListTrackingLinksByOrganization(ctx, orgID, limit, offset)
 	if err != nil {
 		return nil, fmt.Errorf("failed to list tracking links by organization: %w", err)
+	}
+
+	return trackingLinks, nil
+}
+
+// ListTrackingLinksByCampaignAndAffiliate lists tracking links by campaign and affiliate
+func (s *trackingLinkService) ListTrackingLinksByCampaignAndAffiliate(ctx context.Context, campaignID, affiliateID int64, limit, offset int) ([]*domain.TrackingLink, error) {
+	// Validate campaign exists
+	campaign, err := s.campaignRepo.GetCampaignByID(ctx, campaignID)
+	if err != nil {
+		return nil, fmt.Errorf("failed to get campaign: %w", err)
+	}
+
+	// Validate affiliate exists
+	affiliate, err := s.affiliateRepo.GetAffiliateByID(ctx, affiliateID)
+	if err != nil {
+		return nil, fmt.Errorf("failed to get affiliate: %w", err)
+	}
+
+	// Verify that there's an active association between the advertiser and affiliate organizations
+	// and that the campaign and affiliate are visible to each other
+	err = s.verifyAssociationAndVisibility(ctx, campaign.OrganizationID, affiliate.OrganizationID, campaignID, affiliateID)
+	if err != nil {
+		return nil, fmt.Errorf("association verification failed: %w", err)
+	}
+
+	trackingLinks, err := s.trackingLinkRepo.ListTrackingLinksByCampaignAndAffiliate(ctx, campaignID, affiliateID, limit, offset)
+	if err != nil {
+		return nil, fmt.Errorf("failed to list tracking links by campaign and affiliate: %w", err)
 	}
 
 	return trackingLinks, nil
@@ -458,35 +488,51 @@ func (s *trackingLinkService) UpsertTrackingLink(ctx context.Context, req *domai
 		}
 	}
 
-	// Generate or regenerate tracking link via provider integration
-	generationReq := &domain.TrackingLinkGenerationRequest{
-		CampaignID:              req.CampaignID,
-		AffiliateID:             req.AffiliateID,
-		Name:                    req.Name,
-		Description:             req.Description,
-		SourceID:                req.SourceID,
-		Sub1:                    req.Sub1,
-		Sub2:                    req.Sub2,
-		Sub3:                    req.Sub3,
-		Sub4:                    req.Sub4,
-		Sub5:                    req.Sub5,
-		IsEncryptParameters:     req.IsEncryptParameters,
-		IsRedirectLink:          req.IsRedirectLink,
-		NetworkTrackingDomainID: req.NetworkTrackingDomainID,
-		NetworkOfferURLID:       req.NetworkOfferURLID,
-		CreativeID:              req.CreativeID,
-		NetworkTrafficSourceID:  req.NetworkTrafficSourceID,
-	}
+	var generatedURL string
+	var providerData *string
 
-	generatedURL, providerData, err := s.generateTrackingLinkViaProvider(ctx, trackingLink, generationReq)
-	if err != nil {
-		return nil, fmt.Errorf("failed to generate tracking link via provider: %w", err)
-	}
+	// Generate or regenerate tracking link via provider integration only if needed
+	if isNew || (existingLink != nil && s.hasTrackingParametersChangedFromRequest(existingLink, req)) {
+		generationReq := &domain.TrackingLinkGenerationRequest{
+			CampaignID:              req.CampaignID,
+			AffiliateID:             req.AffiliateID,
+			Name:                    req.Name,
+			Description:             req.Description,
+			SourceID:                req.SourceID,
+			Sub1:                    req.Sub1,
+			Sub2:                    req.Sub2,
+			Sub3:                    req.Sub3,
+			Sub4:                    req.Sub4,
+			Sub5:                    req.Sub5,
+			IsEncryptParameters:     req.IsEncryptParameters,
+			IsRedirectLink:          req.IsRedirectLink,
+			NetworkTrackingDomainID: req.NetworkTrackingDomainID,
+			NetworkOfferURLID:       req.NetworkOfferURLID,
+			CreativeID:              req.CreativeID,
+			NetworkTrafficSourceID:  req.NetworkTrafficSourceID,
+		}
 
-	// Update tracking link with generated URL
-	trackingLink.TrackingURL = &generatedURL
-	if err := s.trackingLinkRepo.UpdateTrackingLink(ctx, trackingLink); err != nil {
-		return nil, fmt.Errorf("failed to update tracking link with generated URL: %w", err)
+		var err error
+		generatedURL, providerData, err = s.generateTrackingLinkViaProvider(ctx, trackingLink, generationReq)
+		if err != nil {
+			return nil, fmt.Errorf("failed to generate tracking link via provider: %w", err)
+		}
+
+		// Update tracking link with generated URL
+		trackingLink.TrackingURL = &generatedURL
+		if err := s.trackingLinkRepo.UpdateTrackingLink(ctx, trackingLink); err != nil {
+			return nil, fmt.Errorf("failed to update tracking link with generated URL: %w", err)
+		}
+	} else {
+		// Use existing tracking URL and provider data
+		if trackingLink.TrackingURL != nil {
+			generatedURL = *trackingLink.TrackingURL
+		}
+		
+		// Get existing provider data if available
+		if existingMapping, err := s.trackingLinkProviderRepo.GetTrackingLinkProviderMapping(ctx, trackingLink.TrackingLinkID, "everflow"); err == nil {
+			providerData = existingMapping.ProviderData
+		}
 	}
 
 	return &domain.TrackingLinkUpsertResponse{
@@ -537,24 +583,38 @@ func (s *trackingLinkService) generateTrackingLinkViaProvider(ctx context.Contex
 		return "", nil, fmt.Errorf("failed to generate tracking link via integration service: %w", err)
 	}
 
-	// Create provider mapping for the tracking link
-	providerMapping := &domain.TrackingLinkProviderMapping{
-		TrackingLinkID:         trackingLink.TrackingLinkID,
-		ProviderType:           "everflow",
-		ProviderTrackingLinkID: nil, // Everflow doesn't return a specific tracking link ID
-		ProviderData:           response.ProviderData,
-		SyncStatus:             toStringPtr("synced"),
-		LastSyncAt:             &time.Time{},
-		CreatedAt:              time.Now(),
-		UpdatedAt:              time.Now(),
-	}
-
+	// Check if provider mapping already exists
+	existingMapping, err := s.trackingLinkProviderRepo.GetTrackingLinkProviderMapping(ctx, trackingLink.TrackingLinkID, "everflow")
 	now := time.Now()
-	providerMapping.LastSyncAt = &now
+	
+	if err != nil {
+		// No existing mapping found, create a new one
+		providerMapping := &domain.TrackingLinkProviderMapping{
+			TrackingLinkID:         trackingLink.TrackingLinkID,
+			ProviderType:           "everflow",
+			ProviderTrackingLinkID: nil, // Everflow doesn't return a specific tracking link ID
+			ProviderData:           response.ProviderData,
+			SyncStatus:             toStringPtr("synced"),
+			LastSyncAt:             &now,
+			CreatedAt:              now,
+			UpdatedAt:              now,
+		}
 
-	// Save provider mapping
-	if err := s.trackingLinkProviderRepo.CreateTrackingLinkProviderMapping(ctx, providerMapping); err != nil {
-		return "", nil, fmt.Errorf("failed to create tracking link provider mapping: %w", err)
+		// Create provider mapping
+		if err := s.trackingLinkProviderRepo.CreateTrackingLinkProviderMapping(ctx, providerMapping); err != nil {
+			return "", nil, fmt.Errorf("failed to create tracking link provider mapping: %w", err)
+		}
+	} else {
+		// Update existing mapping
+		existingMapping.ProviderData = response.ProviderData
+		existingMapping.SyncStatus = toStringPtr("synced")
+		existingMapping.LastSyncAt = &now
+		existingMapping.UpdatedAt = now
+
+		// Update provider mapping
+		if err := s.trackingLinkProviderRepo.UpdateTrackingLinkProviderMapping(ctx, existingMapping); err != nil {
+			return "", nil, fmt.Errorf("failed to update tracking link provider mapping: %w", err)
+		}
 	}
 
 	return response.GeneratedURL, response.ProviderData, nil

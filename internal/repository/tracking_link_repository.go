@@ -19,6 +19,7 @@ type TrackingLinkRepository interface {
 	ListTrackingLinksByAffiliate(ctx context.Context, affiliateID int64, limit, offset int) ([]*domain.TrackingLink, error)
 	ListTrackingLinksByOrganization(ctx context.Context, organizationID int64, limit, offset int) ([]*domain.TrackingLink, error)
 	GetTrackingLinkByCampaignAndAffiliate(ctx context.Context, campaignID, affiliateID int64, sourceID, sub1, sub2, sub3, sub4, sub5 *string) (*domain.TrackingLink, error)
+	ListTrackingLinksByCampaignAndAffiliate(ctx context.Context, campaignID, affiliateID int64, limit, offset int) ([]*domain.TrackingLink, error)
 }
 
 // trackingLinkRepository implements TrackingLinkRepository
@@ -384,4 +385,59 @@ func (r *trackingLinkRepository) GetTrackingLinkByCampaignAndAffiliate(ctx conte
 	}
 
 	return trackingLink, nil
+}
+// ListTrackingLinksByCampaignAndAffiliate retrieves tracking links by campaign and affiliate
+func (r *trackingLinkRepository) ListTrackingLinksByCampaignAndAffiliate(ctx context.Context, campaignID, affiliateID int64, limit, offset int) ([]*domain.TrackingLink, error) {
+	query := `
+		SELECT tracking_link_id, organization_id, campaign_id, affiliate_id, name, description, 
+		       status, tracking_url, source_id, sub1, sub2, sub3, sub4, sub5, 
+		       is_encrypt_parameters, is_redirect_link, internal_notes, tags, 
+		       created_at, updated_at
+		FROM tracking_links 
+		WHERE campaign_id = $1 AND affiliate_id = $2
+		ORDER BY created_at DESC
+		LIMIT $3 OFFSET $4`
+
+	rows, err := r.db.Query(ctx, query, campaignID, affiliateID, limit, offset)
+	if err != nil {
+		return nil, fmt.Errorf("failed to query tracking links: %w", err)
+	}
+	defer rows.Close()
+
+	var trackingLinks []*domain.TrackingLink
+	for rows.Next() {
+		trackingLink := &domain.TrackingLink{}
+		err := rows.Scan(
+			&trackingLink.TrackingLinkID,
+			&trackingLink.OrganizationID,
+			&trackingLink.CampaignID,
+			&trackingLink.AffiliateID,
+			&trackingLink.Name,
+			&trackingLink.Description,
+			&trackingLink.Status,
+			&trackingLink.TrackingURL,
+			&trackingLink.SourceID,
+			&trackingLink.Sub1,
+			&trackingLink.Sub2,
+			&trackingLink.Sub3,
+			&trackingLink.Sub4,
+			&trackingLink.Sub5,
+			&trackingLink.IsEncryptParameters,
+			&trackingLink.IsRedirectLink,
+			&trackingLink.InternalNotes,
+			&trackingLink.Tags,
+			&trackingLink.CreatedAt,
+			&trackingLink.UpdatedAt,
+		)
+		if err != nil {
+			return nil, fmt.Errorf("failed to scan tracking link: %w", err)
+		}
+		trackingLinks = append(trackingLinks, trackingLink)
+	}
+
+	if err := rows.Err(); err != nil {
+		return nil, fmt.Errorf("error iterating tracking links: %w", err)
+	}
+
+	return trackingLinks, nil
 }

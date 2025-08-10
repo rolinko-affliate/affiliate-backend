@@ -196,6 +196,9 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 
 	// Campaign-specific tracking link routes
 	campaigns.GET("/:id/tracking-links", rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.TrackingLinkHandler.ListTrackingLinksByCampaign)
+	
+	// Campaign and affiliate specific tracking link routes
+	campaigns.GET("/:campaign_id/affiliates/:affiliate_id/tracking-links", rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.TrackingLinkHandler.GetTrackingLinksByCampaignAndAffiliate)
 
 	// Affiliate-specific tracking link routes
 	affiliates.GET("/:id/tracking-links", rbacMW("Admin", "AffiliateManager"), opts.TrackingLinkHandler.ListTrackingLinksByAffiliate)

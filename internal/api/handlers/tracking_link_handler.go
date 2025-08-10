@@ -600,6 +600,74 @@ func (h *TrackingLinkHandler) UpsertTrackingLink(c *gin.Context) {
 	c.JSON(statusCode, apiResponse)
 }
 
+// GetTrackingLinksByCampaignAndAffiliate retrieves tracking links by campaign and affiliate
+// @Summary Get tracking links by campaign and affiliate
+// @Description Retrieve tracking links for a specific campaign and affiliate combination
+// @Tags tracking-links
+// @Produce json
+// @Param organization_id path int true "Organization ID"
+// @Param campaign_id path int true "Campaign ID"
+// @Param affiliate_id path int true "Affiliate ID"
+// @Param page query int false "Page number (default: 1)"
+// @Param page_size query int false "Page size (default: 10, max: 100)"
+// @Success 200 {object} models.TrackingLinkListResponse
+// @Failure 400 {object} ErrorResponse
+// @Failure 401 {object} ErrorResponse
+// @Failure 403 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
+// @Router /organizations/{organization_id}/campaigns/{campaign_id}/affiliates/{affiliate_id}/tracking-links [get]
+func (h *TrackingLinkHandler) GetTrackingLinksByCampaignAndAffiliate(c *gin.Context) {
+	campaignID, err := strconv.ParseInt(c.Param("campaign_id"), 10, 64)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, ErrorResponse{
+			Error:   "Invalid campaign ID",
+			Details: "Campaign ID must be a valid integer",
+		})
+		return
+	}
+
+	affiliateID, err := strconv.ParseInt(c.Param("affiliate_id"), 10, 64)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, ErrorResponse{
+			Error:   "Invalid affiliate ID",
+			Details: "Affiliate ID must be a valid integer",
+		})
+		return
+	}
+
+	page, pageSize := getPaginationParams(c)
+	offset := (page - 1) * pageSize
+
+	trackingLinks, err := h.trackingLinkService.ListTrackingLinksByCampaignAndAffiliate(c.Request.Context(), campaignID, affiliateID, pageSize, offset)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, ErrorResponse{
+			Error:   "Failed to get tracking links",
+			Details: err.Error(),
+		})
+		return
+	}
+
+	// Convert to response models
+	var responses []*models.TrackingLinkResponse
+	for _, trackingLink := range trackingLinks {
+		responses = append(responses, models.FromTrackingLinkDomain(trackingLink))
+	}
+
+	// Calculate total pages (simplified - in production you'd get total count from service)
+	totalPages := (len(responses) + pageSize - 1) / pageSize
+
+	response := models.TrackingLinkListResponse{
+		TrackingLinks: responses,
+		Total:         len(responses),
+		Page:          page,
+		PageSize:      pageSize,
+		TotalPages:    totalPages,
+	}
+
+	c.JSON(http.StatusOK, response)
+}
+
 // Helper functions
 
 // getBaseURL extracts the base URL from the request

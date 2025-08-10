@@ -407,7 +407,6 @@ func (s *advertiserService) SyncAllAdvertisersToProvider(ctx context.Context, pr
 	}
 
 	result.CompletedAt = time.Now()
-	result.Duration = result.CompletedAt.Sub(result.StartedAt)
 	
 	return result, nil
 }

@@ -276,3 +276,44 @@ func FromCampaignDomainList(campaigns []*domain.Campaign, total, page, pageSize 
 		PageSize:  pageSize,
 	}
 }
+
+// GetCampaignProviderMappingResponse represents the response for getting a campaign provider mapping
+type GetCampaignProviderMappingResponse struct {
+	ProviderMapping *CampaignProviderMappingResponse `json:"provider_mapping"`
+}
+
+// CampaignProviderMappingResponse represents a campaign provider mapping in API responses
+type CampaignProviderMappingResponse struct {
+	MappingID       int64      `json:"mapping_id"`
+	CampaignID      int64      `json:"campaign_id"`
+	ProviderType    string     `json:"provider_type"`
+	ProviderOfferID *string    `json:"provider_offer_id,omitempty"`
+	ProviderData    *string    `json:"provider_data,omitempty"`
+	IsActiveOnProvider *bool   `json:"is_active_on_provider,omitempty"`
+	LastSyncedAt    *time.Time `json:"last_synced_at,omitempty"`
+	CreatedAt       time.Time  `json:"created_at"`
+	UpdatedAt       time.Time  `json:"updated_at"`
+}
+
+// FromCampaignProviderMappingDomain converts domain.CampaignProviderMapping to GetCampaignProviderMappingResponse
+func FromCampaignProviderMappingDomain(mapping *domain.CampaignProviderMapping) *GetCampaignProviderMappingResponse {
+	if mapping == nil {
+		return &GetCampaignProviderMappingResponse{
+			ProviderMapping: nil,
+		}
+	}
+
+	return &GetCampaignProviderMappingResponse{
+		ProviderMapping: &CampaignProviderMappingResponse{
+			MappingID:          mapping.MappingID,
+			CampaignID:         mapping.CampaignID,
+			ProviderType:       mapping.ProviderType,
+			ProviderOfferID:    mapping.ProviderOfferID,
+			ProviderData:       mapping.ProviderData,
+			IsActiveOnProvider: mapping.IsActiveOnProvider,
+			LastSyncedAt:       mapping.LastSyncedAt,
+			CreatedAt:          mapping.CreatedAt,
+			UpdatedAt:          mapping.UpdatedAt,
+		},
+	}
+}

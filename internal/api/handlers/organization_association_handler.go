@@ -425,7 +425,7 @@ func (h *OrganizationAssociationHandler) GetAssociation(c *gin.Context) {
 // @Param limit query int false "Limit" default(50)
 // @Param offset query int false "Offset" default(0)
 // @Param with_details query bool false "Include organization and user details" default(false)
-// @Success 200 {array} domain.OrganizationAssociation
+// @Success 200 {array} domain.OrganizationAssociationWithDetails
 // @Failure 400 {object} ErrorResponse
 // @Failure 401 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse

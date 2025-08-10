@@ -189,7 +189,6 @@ type BulkSyncResult struct {
 	Failures       []BulkSyncItemResult   `json:"failures,omitempty"`
 	StartedAt      time.Time              `json:"started_at"`
 	CompletedAt    time.Time              `json:"completed_at"`
-	Duration       time.Duration          `json:"duration"`
 }
 
 // BulkSyncItemResult represents the result of syncing a single item

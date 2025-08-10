@@ -346,7 +346,6 @@ func (h *CampaignHandler) GetProviderMapping(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{
-		"provider_mapping": mapping,
-	})
+	response := models.FromCampaignProviderMappingDomain(mapping)
+	c.JSON(http.StatusOK, response)
 }

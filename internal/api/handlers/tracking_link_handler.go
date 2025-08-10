@@ -605,8 +605,7 @@ func (h *TrackingLinkHandler) UpsertTrackingLink(c *gin.Context) {
 // @Description Retrieve tracking links for a specific campaign and affiliate combination
 // @Tags tracking-links
 // @Produce json
-// @Param organization_id path int true "Organization ID"
-// @Param campaign_id path int true "Campaign ID"
+// @Param id path int true "Campaign ID"
 // @Param affiliate_id path int true "Affiliate ID"
 // @Param page query int false "Page number (default: 1)"
 // @Param page_size query int false "Page size (default: 10, max: 100)"
@@ -616,9 +615,9 @@ func (h *TrackingLinkHandler) UpsertTrackingLink(c *gin.Context) {
 // @Failure 403 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
 // @Security BearerAuth
-// @Router /organizations/{organization_id}/campaigns/{campaign_id}/affiliates/{affiliate_id}/tracking-links [get]
+// @Router /campaigns/{id}/affiliates/{affiliate_id}/tracking-links [get]
 func (h *TrackingLinkHandler) GetTrackingLinksByCampaignAndAffiliate(c *gin.Context) {
-	campaignID, err := strconv.ParseInt(c.Param("campaign_id"), 10, 64)
+	campaignID, err := strconv.ParseInt(c.Param("id"), 10, 64)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, ErrorResponse{
 			Error:   "Invalid campaign ID",

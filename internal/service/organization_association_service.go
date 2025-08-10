@@ -309,8 +309,8 @@ func (s *organizationAssociationService) UpdateVisibility(ctx context.Context, a
 		return nil, fmt.Errorf("association not found: %w", err)
 	}
 
-	// Update visible affiliate IDs if provided
-	if len(req.VisibleAffiliateIDs) > 0 {
+	// Update visible affiliate IDs if provided (including empty list)
+	if req.VisibleAffiliateIDs != nil {
 		jsonBytes, err := json.Marshal(req.VisibleAffiliateIDs)
 		if err != nil {
 			return nil, fmt.Errorf("error marshaling visible affiliate IDs: %w", err)
@@ -319,8 +319,8 @@ func (s *organizationAssociationService) UpdateVisibility(ctx context.Context, a
 		association.VisibleAffiliateIDs = &jsonStr
 	}
 
-	// Update visible campaign IDs if provided
-	if len(req.VisibleCampaignIDs) > 0 {
+	// Update visible campaign IDs if provided (including empty list)
+	if req.VisibleCampaignIDs != nil {
 		jsonBytes, err := json.Marshal(req.VisibleCampaignIDs)
 		if err != nil {
 			return nil, fmt.Errorf("error marshaling visible campaign IDs: %w", err)
@@ -433,20 +433,39 @@ func (s *organizationAssociationService) GetVisibleAffiliates(ctx context.Contex
 		return nil, fmt.Errorf("association not found: %w", err)
 	}
 
-	if association.AllAffiliatesVisible {
-		// Return all affiliates for the affiliate organization
-		// This would require a query to get all affiliates for the organization
-		// For now, return empty slice to indicate "all visible"
-		return []int64{}, nil
+	// If all affiliates are visible OR if no specific affiliate IDs are set, return all affiliate IDs
+	if association.AllAffiliatesVisible || association.VisibleAffiliateIDs == nil {
+		// Get all affiliates for the affiliate organization
+		affiliates, err := s.affiliateRepo.GetAffiliatesByOrganization(ctx, association.AffiliateOrgID)
+		if err != nil {
+			return nil, fmt.Errorf("error getting affiliates for organization %d: %w", association.AffiliateOrgID, err)
+		}
+		
+		// Extract affiliate IDs
+		var affiliateIDs []int64
+		for _, affiliate := range affiliates {
+			affiliateIDs = append(affiliateIDs, affiliate.AffiliateID)
+		}
+		
+		return affiliateIDs, nil
 	}
 
-	if association.VisibleAffiliateIDs == nil {
-		return []int64{}, nil
-	}
-
+	// Parse the specific affiliate IDs from JSON
 	var affiliateIDs []int64
 	if err := json.Unmarshal([]byte(*association.VisibleAffiliateIDs), &affiliateIDs); err != nil {
 		return nil, fmt.Errorf("error unmarshaling visible affiliate IDs: %w", err)
+	}
+
+	// If the parsed list is empty, return all affiliate IDs
+	if len(affiliateIDs) == 0 {
+		affiliates, err := s.affiliateRepo.GetAffiliatesByOrganization(ctx, association.AffiliateOrgID)
+		if err != nil {
+			return nil, fmt.Errorf("error getting affiliates for organization %d: %w", association.AffiliateOrgID, err)
+		}
+		
+		for _, affiliate := range affiliates {
+			affiliateIDs = append(affiliateIDs, affiliate.AffiliateID)
+		}
 	}
 
 	return affiliateIDs, nil
@@ -459,20 +478,39 @@ func (s *organizationAssociationService) GetVisibleCampaigns(ctx context.Context
 		return nil, fmt.Errorf("association not found: %w", err)
 	}
 
-	if association.AllCampaignsVisible {
-		// Return all campaigns for the advertiser organization
-		// This would require a query to get all campaigns for the organization
-		// For now, return empty slice to indicate "all visible"
-		return []int64{}, nil
+	// If all campaigns are visible OR if no specific campaign IDs are set, return all campaign IDs
+	if association.AllCampaignsVisible || association.VisibleCampaignIDs == nil {
+		// Get all campaigns for the advertiser organization
+		campaigns, err := s.campaignRepo.ListCampaignsByOrganization(ctx, association.AdvertiserOrgID, 1000, 0) // Large limit to get all
+		if err != nil {
+			return nil, fmt.Errorf("error getting campaigns for organization %d: %w", association.AdvertiserOrgID, err)
+		}
+		
+		// Extract campaign IDs
+		var campaignIDs []int64
+		for _, campaign := range campaigns {
+			campaignIDs = append(campaignIDs, campaign.CampaignID)
+		}
+		
+		return campaignIDs, nil
 	}
 
-	if association.VisibleCampaignIDs == nil {
-		return []int64{}, nil
-	}
-
+	// Parse the specific campaign IDs from JSON
 	var campaignIDs []int64
 	if err := json.Unmarshal([]byte(*association.VisibleCampaignIDs), &campaignIDs); err != nil {
 		return nil, fmt.Errorf("error unmarshaling visible campaign IDs: %w", err)
+	}
+
+	// If the parsed list is empty, return all campaign IDs
+	if len(campaignIDs) == 0 {
+		campaigns, err := s.campaignRepo.ListCampaignsByOrganization(ctx, association.AdvertiserOrgID, 1000, 0) // Large limit to get all
+		if err != nil {
+			return nil, fmt.Errorf("error getting campaigns for organization %d: %w", association.AdvertiserOrgID, err)
+		}
+		
+		for _, campaign := range campaigns {
+			campaignIDs = append(campaignIDs, campaign.CampaignID)
+		}
 	}
 
 	return campaignIDs, nil

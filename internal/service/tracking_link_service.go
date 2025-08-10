@@ -126,9 +126,39 @@ func (s *trackingLinkService) UpdateTrackingLink(ctx context.Context, trackingLi
 		return fmt.Errorf("tracking link validation failed: %w", err)
 	}
 
+	// Get the existing tracking link to compare parameters
+	existingLink, err := s.trackingLinkRepo.GetTrackingLinkByID(ctx, trackingLink.TrackingLinkID)
+	if err != nil {
+		return fmt.Errorf("failed to get existing tracking link: %w", err)
+	}
+
+	// Check if tracking parameters have changed
+	parametersChanged := s.hasTrackingParametersChanged(existingLink, trackingLink)
+	
 	// Update tracking link in repository
 	if err := s.trackingLinkRepo.UpdateTrackingLink(ctx, trackingLink); err != nil {
 		return fmt.Errorf("failed to update tracking link: %w", err)
+	}
+
+	// If tracking parameters changed, regenerate the tracking link
+	if parametersChanged {
+		logger.Info("Tracking parameters changed, regenerating tracking link", 
+			"tracking_link_id", trackingLink.TrackingLinkID,
+			"campaign_id", trackingLink.CampaignID,
+			"affiliate_id", trackingLink.AffiliateID)
+		
+		response, err := s.RegenerateTrackingLink(ctx, trackingLink.TrackingLinkID)
+		if err != nil {
+			logger.Error("Failed to regenerate tracking link after parameter change", 
+				"tracking_link_id", trackingLink.TrackingLinkID,
+				"error", err)
+			// Don't fail the update operation, just log the error
+			// The tracking link update was successful, regeneration is a bonus
+		} else {
+			logger.Info("Successfully regenerated tracking link after parameter change", 
+				"tracking_link_id", trackingLink.TrackingLinkID,
+				"new_url", response.GeneratedURL)
+		}
 	}
 
 	return nil
@@ -566,6 +596,86 @@ func (s *trackingLinkService) synchronizeTrackingLinkWithProvider(ctx context.Co
 
 	logger.Info("Successfully synchronized tracking link with provider", "tracking_link_id", trackingLink.TrackingLinkID)
 	return nil
+}
+
+// hasTrackingParametersChanged checks if any tracking parameters have changed
+func (s *trackingLinkService) hasTrackingParametersChanged(existing, updated *domain.TrackingLink) bool {
+	// Compare source_id
+	if !stringPtrEqual(existing.SourceID, updated.SourceID) {
+		logger.Debug("SourceID changed", 
+			"existing", stringPtrValue(existing.SourceID), 
+			"updated", stringPtrValue(updated.SourceID))
+		return true
+	}
+
+	// Compare sub1
+	if !stringPtrEqual(existing.Sub1, updated.Sub1) {
+		logger.Debug("Sub1 changed", 
+			"existing", stringPtrValue(existing.Sub1), 
+			"updated", stringPtrValue(updated.Sub1))
+		return true
+	}
+
+	// Compare sub2
+	if !stringPtrEqual(existing.Sub2, updated.Sub2) {
+		logger.Debug("Sub2 changed", 
+			"existing", stringPtrValue(existing.Sub2), 
+			"updated", stringPtrValue(updated.Sub2))
+		return true
+	}
+
+	// Compare sub3
+	if !stringPtrEqual(existing.Sub3, updated.Sub3) {
+		logger.Debug("Sub3 changed", 
+			"existing", stringPtrValue(existing.Sub3), 
+			"updated", stringPtrValue(updated.Sub3))
+		return true
+	}
+
+	// Compare sub4
+	if !stringPtrEqual(existing.Sub4, updated.Sub4) {
+		logger.Debug("Sub4 changed", 
+			"existing", stringPtrValue(existing.Sub4), 
+			"updated", stringPtrValue(updated.Sub4))
+		return true
+	}
+
+	// Compare sub5
+	if !stringPtrEqual(existing.Sub5, updated.Sub5) {
+		logger.Debug("Sub5 changed", 
+			"existing", stringPtrValue(existing.Sub5), 
+			"updated", stringPtrValue(updated.Sub5))
+		return true
+	}
+
+	// Compare tags
+	if !stringPtrEqual(existing.Tags, updated.Tags) {
+		logger.Debug("Tags changed", 
+			"existing", stringPtrValue(existing.Tags), 
+			"updated", stringPtrValue(updated.Tags))
+		return true
+	}
+
+	return false
+}
+
+// stringPtrEqual compares two string pointers for equality
+func stringPtrEqual(a, b *string) bool {
+	if a == nil && b == nil {
+		return true
+	}
+	if a == nil || b == nil {
+		return false
+	}
+	return *a == *b
+}
+
+// stringPtrValue returns the value of a string pointer or empty string if nil
+func stringPtrValue(s *string) string {
+	if s == nil {
+		return ""
+	}
+	return *s
 }
 
 // Helper function to create string pointer

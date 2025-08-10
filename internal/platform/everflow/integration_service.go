@@ -1608,12 +1608,47 @@ func (s *IntegrationService) GenerateTrackingLink(ctx context.Context, req *doma
 	}
 	defer httpResp.Body.Close()
 	
-	logger.Info("Successfully generated tracking link", "campaign_id", req.CampaignID, "affiliate_id", req.AffiliateID)
+	// Log detailed response information for debugging
+	logger.Info("Successfully generated tracking link", "campaign_id", req.CampaignID, "affiliate_id", req.AffiliateID, "status_code", httpResp.StatusCode)
+	
+	// Log the complete response for debugging
+	if resp != nil {
+		respJSON, _ := json.MarshalIndent(resp, "", "  ")
+		logger.Debug("Everflow tracking link response", "campaign_id", req.CampaignID, "affiliate_id", req.AffiliateID, "response", string(respJSON))
+		
+		// Log specific fields with nil checks
+		trackingURL := "nil"
+		if resp.TrackingUrl != nil {
+			trackingURL = *resp.TrackingUrl
+		}
+		
+		logger.Debug("Response field details", 
+			"campaign_id", req.CampaignID, 
+			"affiliate_id", req.AffiliateID,
+			"tracking_url", trackingURL,
+			"tracking_url_is_nil", resp.TrackingUrl == nil,
+			"network_offer_id", resp.NetworkOfferId,
+			"network_affiliate_id", resp.NetworkAffiliateId,
+			"network_tracking_domain_id", resp.NetworkTrackingDomainId,
+			"network_offer_url_id", resp.NetworkOfferUrlId,
+			"creative_id", resp.CreativeId,
+			"network_traffic_source_id", resp.NetworkTrafficSourceId)
+			
+		// Log if tracking URL is missing - this might indicate an error
+		if resp.TrackingUrl == nil || *resp.TrackingUrl == "" {
+			logger.Warn("Everflow response missing tracking URL", "campaign_id", req.CampaignID, "affiliate_id", req.AffiliateID)
+		}
+	} else {
+		logger.Warn("Everflow response is nil", "campaign_id", req.CampaignID, "affiliate_id", req.AffiliateID)
+	}
 
 	// Extract the generated URL from the response
 	generatedURL := ""
 	if resp.TrackingUrl != nil {
 		generatedURL = *resp.TrackingUrl
+		logger.Debug("Extracted tracking URL", "campaign_id", req.CampaignID, "affiliate_id", req.AffiliateID, "generated_url", generatedURL)
+	} else {
+		logger.Warn("TrackingUrl is nil in response", "campaign_id", req.CampaignID, "affiliate_id", req.AffiliateID)
 	}
 
 	// Create provider data from response
@@ -1628,15 +1663,36 @@ func (s *IntegrationService) GenerateTrackingLink(ctx context.Context, req *doma
 		CanAffiliateRunAllOffers: boolPtr(true),
 	}
 
+	// Log provider data creation
+	logger.Debug("Created provider data", 
+		"campaign_id", req.CampaignID, 
+		"affiliate_id", req.AffiliateID,
+		"network_offer_id", providerData.NetworkOfferID,
+		"network_affiliate_id", providerData.NetworkAffiliateID,
+		"generated_url", generatedURL,
+		"generated_url_empty", generatedURL == "")
+
 	providerDataJSON, err := providerData.ToJSON()
 	if err != nil {
+		logger.Error("Failed to serialize provider data", "campaign_id", req.CampaignID, "affiliate_id", req.AffiliateID, "error", err)
 		return nil, fmt.Errorf("failed to serialize provider data: %w", err)
 	}
 
-	return &domain.TrackingLinkGenerationResponse{
+	logger.Debug("Serialized provider data", "campaign_id", req.CampaignID, "affiliate_id", req.AffiliateID, "json", providerDataJSON)
+
+	finalResponse := &domain.TrackingLinkGenerationResponse{
 		GeneratedURL: generatedURL,
 		ProviderData: &providerDataJSON,
-	}, nil
+	}
+
+	logger.Debug("Final tracking link response", 
+		"campaign_id", req.CampaignID, 
+		"affiliate_id", req.AffiliateID,
+		"generated_url", finalResponse.GeneratedURL,
+		"generated_url_empty", finalResponse.GeneratedURL == "",
+		"provider_data_nil", finalResponse.ProviderData == nil)
+
+	return finalResponse, nil
 }
 
 // CreateTrackingLink creates a tracking link synchronization with Everflow

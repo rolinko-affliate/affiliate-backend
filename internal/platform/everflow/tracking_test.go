@@ -74,10 +74,10 @@ func TestGenerateTrackingLink(t *testing.T) {
 	campaignProviderDataJSON, _ := campaignProviderData.ToJSON()
 
 	campaignMapping := &domain.CampaignProviderMapping{
-		CampaignID:         456,
-		ProviderType:       "everflow",
-		ProviderCampaignID: stringPtr("20"),
-		ProviderData:       &campaignProviderDataJSON,
+		CampaignID:      456,
+		ProviderType:    "everflow",
+		ProviderOfferID: stringPtr("20"),
+		ProviderData:    &campaignProviderDataJSON,
 	}
 
 	// Create integration service

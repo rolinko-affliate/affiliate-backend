@@ -14,7 +14,7 @@ import (
 
 // TrackingLinkResponse struct for TrackingLinkResponse
 type TrackingLinkResponse struct {
-	TrackingUrl            *string `json:"tracking_url,omitempty"`
+	TrackingUrl            *string `json:"url,omitempty"`
 	NetworkAffiliateId     *int32  `json:"network_affiliate_id,omitempty"`
 	NetworkOfferId         *int32  `json:"network_offer_id,omitempty"`
 	NetworkTrackingDomainId *int32 `json:"network_tracking_domain_id,omitempty"`

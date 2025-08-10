@@ -548,6 +548,58 @@ func (h *TrackingLinkHandler) GetTrackingLinkQR(c *gin.Context) {
 	c.String(http.StatusOK, base64QR)
 }
 
+// UpsertTrackingLink creates or updates a tracking link by campaign and affiliate
+// @Summary Upsert a tracking link by campaign and affiliate
+// @Description Create a new tracking link or update an existing one based on campaign_id and affiliate_id
+// @Tags tracking-links
+// @Accept json
+// @Produce json
+// @Param organization_id path int true "Organization ID"
+// @Param request body models.TrackingLinkUpsertRequest true "Tracking link upsert request"
+// @Success 200 {object} models.TrackingLinkUpsertResponse "Updated existing tracking link"
+// @Success 201 {object} models.TrackingLinkUpsertResponse "Created new tracking link"
+// @Failure 400 {object} ErrorResponse
+// @Failure 401 {object} ErrorResponse
+// @Failure 403 {object} ErrorResponse
+// @Failure 500 {object} ErrorResponse
+// @Security BearerAuth
+// @Router /organizations/{organization_id}/tracking-links/upsert [post]
+func (h *TrackingLinkHandler) UpsertTrackingLink(c *gin.Context) {
+	var req models.TrackingLinkUpsertRequest
+	if err := c.ShouldBindJSON(&req); err != nil {
+		c.JSON(http.StatusBadRequest, ErrorResponse{
+			Error:   "Invalid request body",
+			Details: err.Error(),
+		})
+		return
+	}
+
+	// Convert API request to domain request
+	domainReq := req.ToTrackingLinkUpsertDomain()
+
+	// Call service to upsert tracking link
+	response, err := h.trackingLinkService.UpsertTrackingLink(c.Request.Context(), domainReq)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, ErrorResponse{
+			Error:   "Failed to upsert tracking link",
+			Details: err.Error(),
+		})
+		return
+	}
+
+	// Convert domain response to API response
+	baseURL := getBaseURL(c)
+	apiResponse := models.FromTrackingLinkUpsertDomain(response, baseURL)
+
+	// Return appropriate status code based on whether it was created or updated
+	statusCode := http.StatusOK // Updated
+	if response.IsNew {
+		statusCode = http.StatusCreated // Created
+	}
+
+	c.JSON(statusCode, apiResponse)
+}
+
 // Helper functions
 
 // getBaseURL extracts the base URL from the request

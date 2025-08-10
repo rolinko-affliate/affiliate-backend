@@ -121,3 +121,41 @@ type TrackingLinkGenerationResponse struct {
 	GeneratedURL string        `json:"generated_url"`
 	ProviderData *string       `json:"provider_data,omitempty"`
 }
+
+// TrackingLinkUpsertRequest represents a request to upsert a tracking link by campaign and affiliate
+type TrackingLinkUpsertRequest struct {
+	CampaignID  int64   `json:"campaign_id"`
+	AffiliateID int64   `json:"affiliate_id"`
+	Name        string  `json:"name"`
+	Description *string `json:"description,omitempty"`
+
+	// Optional tracking parameters
+	SourceID *string `json:"source_id,omitempty"`
+	Sub1     *string `json:"sub1,omitempty"`
+	Sub2     *string `json:"sub2,omitempty"`
+	Sub3     *string `json:"sub3,omitempty"`
+	Sub4     *string `json:"sub4,omitempty"`
+	Sub5     *string `json:"sub5,omitempty"`
+
+	// Link configuration
+	IsEncryptParameters *bool `json:"is_encrypt_parameters,omitempty"`
+	IsRedirectLink      *bool `json:"is_redirect_link,omitempty"`
+
+	// Provider-specific options
+	NetworkTrackingDomainID *int32 `json:"network_tracking_domain_id,omitempty"`
+	NetworkOfferURLID       *int32 `json:"network_offer_url_id,omitempty"`
+	CreativeID              *int32 `json:"creative_id,omitempty"`
+	NetworkTrafficSourceID  *int32 `json:"network_traffic_source_id,omitempty"`
+
+	// Additional fields
+	InternalNotes *string `json:"internal_notes,omitempty"`
+	Tags          *string `json:"tags,omitempty"`
+}
+
+// TrackingLinkUpsertResponse represents the response from upserting a tracking link
+type TrackingLinkUpsertResponse struct {
+	TrackingLink *TrackingLink `json:"tracking_link"`
+	GeneratedURL string        `json:"generated_url"`
+	ProviderData *string       `json:"provider_data,omitempty"`
+	IsNew        bool          `json:"is_new"` // Indicates if this was a create (true) or update (false)
+}

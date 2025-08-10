@@ -187,6 +187,7 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 	organizations.GET("/:id/tracking-links", profileMW(), rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.TrackingLinkHandler.ListTrackingLinksByOrganization)
 	organizations.POST("/:id/tracking-links", profileMW(), rbacMW("Admin", "AdvertiserManager"), opts.TrackingLinkHandler.CreateTrackingLink)
 	organizations.POST("/:id/tracking-links/generate", profileMW(), rbacMW("Admin", "AdvertiserManager"), opts.TrackingLinkHandler.GenerateTrackingLink)
+	organizations.POST("/:id/tracking-links/upsert", profileMW(), rbacMW("Admin", "AdvertiserManager"), opts.TrackingLinkHandler.UpsertTrackingLink)
 	organizations.GET("/:id/tracking-links/:link_id", profileMW(), rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.TrackingLinkHandler.GetTrackingLink)
 	organizations.PUT("/:id/tracking-links/:link_id", profileMW(), rbacMW("Admin", "AdvertiserManager"), opts.TrackingLinkHandler.UpdateTrackingLink)
 	organizations.DELETE("/:id/tracking-links/:link_id", profileMW(), rbacMW("Admin", "AdvertiserManager"), opts.TrackingLinkHandler.DeleteTrackingLink)

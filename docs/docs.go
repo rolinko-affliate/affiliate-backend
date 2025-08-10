@@ -6457,6 +6457,82 @@ const docTemplate = `{
                 }
             }
         },
+        "/organizations/{organization_id}/tracking-links/upsert": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Create a new tracking link or update an existing one based on campaign_id and affiliate_id",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "tracking-links"
+                ],
+                "summary": "Upsert a tracking link by campaign and affiliate",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Organization ID",
+                        "name": "organization_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Tracking link upsert request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.TrackingLinkUpsertRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Updated existing tracking link",
+                        "schema": {
+                            "$ref": "#/definitions/models.TrackingLinkUpsertResponse"
+                        }
+                    },
+                    "201": {
+                        "description": "Created new tracking link",
+                        "schema": {
+                            "$ref": "#/definitions/models.TrackingLinkUpsertResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/organizations/{organization_id}/tracking-links/{tracking_link_id}": {
             "get": {
                 "security": [
@@ -11684,6 +11760,109 @@ const docTemplate = `{
                 "tags": {
                     "type": "string",
                     "example": "facebook,mobile,lookalike"
+                }
+            }
+        },
+        "models.TrackingLinkUpsertRequest": {
+            "type": "object",
+            "required": [
+                "affiliate_id",
+                "campaign_id",
+                "name"
+            ],
+            "properties": {
+                "affiliate_id": {
+                    "type": "integer",
+                    "example": 1
+                },
+                "campaign_id": {
+                    "type": "integer",
+                    "example": 1
+                },
+                "creative_id": {
+                    "type": "integer",
+                    "example": 1
+                },
+                "description": {
+                    "type": "string",
+                    "example": "Tracking link for Facebook traffic"
+                },
+                "internal_notes": {
+                    "type": "string",
+                    "example": "High-performing traffic source"
+                },
+                "is_encrypt_parameters": {
+                    "type": "boolean",
+                    "example": false
+                },
+                "is_redirect_link": {
+                    "type": "boolean",
+                    "example": true
+                },
+                "name": {
+                    "type": "string",
+                    "example": "Facebook Campaign Link"
+                },
+                "network_offer_url_id": {
+                    "type": "integer",
+                    "example": 1
+                },
+                "network_tracking_domain_id": {
+                    "type": "integer",
+                    "example": 1
+                },
+                "network_traffic_source_id": {
+                    "type": "integer",
+                    "example": 1
+                },
+                "source_id": {
+                    "type": "string",
+                    "example": "facebook"
+                },
+                "sub1": {
+                    "type": "string",
+                    "example": "campaign_123"
+                },
+                "sub2": {
+                    "type": "string",
+                    "example": "adset_456"
+                },
+                "sub3": {
+                    "type": "string",
+                    "example": "ad_789"
+                },
+                "sub4": {
+                    "type": "string",
+                    "example": "placement_mobile"
+                },
+                "sub5": {
+                    "type": "string",
+                    "example": "audience_lookalike"
+                },
+                "tags": {
+                    "type": "string",
+                    "example": "facebook,mobile,lookalike"
+                }
+            }
+        },
+        "models.TrackingLinkUpsertResponse": {
+            "type": "object",
+            "properties": {
+                "generated_url": {
+                    "type": "string",
+                    "example": "https://tracking.example.com/ABC123/DEF456/?sub1=campaign_123"
+                },
+                "is_new": {
+                    "description": "Indicates if this was a create (true) or update (false)",
+                    "type": "boolean",
+                    "example": true
+                },
+                "qr_code_url": {
+                    "type": "string",
+                    "example": "https://api.example.com/tracking-links/1/qr"
+                },
+                "tracking_link": {
+                    "$ref": "#/definitions/models.TrackingLinkResponse"
                 }
             }
         },

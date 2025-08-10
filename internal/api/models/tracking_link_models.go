@@ -97,6 +97,36 @@ type TrackingLinkGenerationResponse struct {
 	QRCodeURL    *string               `json:"qr_code_url,omitempty" example:"https://api.example.com/tracking-links/1/qr"`
 }
 
+// TrackingLinkUpsertRequest represents the request to upsert a tracking link by campaign and affiliate
+type TrackingLinkUpsertRequest struct {
+	Name                    string  `json:"name" binding:"required" example:"Facebook Campaign Link"`
+	Description             *string `json:"description,omitempty" example:"Tracking link for Facebook traffic"`
+	CampaignID              int64   `json:"campaign_id" binding:"required" example:"1"`
+	AffiliateID             int64   `json:"affiliate_id" binding:"required" example:"1"`
+	SourceID                *string `json:"source_id,omitempty" example:"facebook"`
+	Sub1                    *string `json:"sub1,omitempty" example:"campaign_123"`
+	Sub2                    *string `json:"sub2,omitempty" example:"adset_456"`
+	Sub3                    *string `json:"sub3,omitempty" example:"ad_789"`
+	Sub4                    *string `json:"sub4,omitempty" example:"placement_mobile"`
+	Sub5                    *string `json:"sub5,omitempty" example:"audience_lookalike"`
+	IsEncryptParameters     *bool   `json:"is_encrypt_parameters,omitempty" example:"false"`
+	IsRedirectLink          *bool   `json:"is_redirect_link,omitempty" example:"true"`
+	NetworkTrackingDomainID *int32  `json:"network_tracking_domain_id,omitempty" example:"1"`
+	NetworkOfferURLID       *int32  `json:"network_offer_url_id,omitempty" example:"1"`
+	CreativeID              *int32  `json:"creative_id,omitempty" example:"1"`
+	NetworkTrafficSourceID  *int32  `json:"network_traffic_source_id,omitempty" example:"1"`
+	InternalNotes           *string `json:"internal_notes,omitempty" example:"High-performing traffic source"`
+	Tags                    *string `json:"tags,omitempty" example:"facebook,mobile,lookalike"`
+}
+
+// TrackingLinkUpsertResponse represents the response for upserting a tracking link
+type TrackingLinkUpsertResponse struct {
+	TrackingLink *TrackingLinkResponse `json:"tracking_link"`
+	GeneratedURL string                `json:"generated_url" example:"https://tracking.example.com/ABC123/DEF456/?sub1=campaign_123"`
+	QRCodeURL    *string               `json:"qr_code_url,omitempty" example:"https://api.example.com/tracking-links/1/qr"`
+	IsNew        bool                  `json:"is_new" example:"true"` // Indicates if this was a create (true) or update (false)
+}
+
 // TrackingLinkListResponse represents the response for listing tracking links
 type TrackingLinkListResponse struct {
 	TrackingLinks []*TrackingLinkResponse `json:"tracking_links"`
@@ -240,6 +270,50 @@ func FromTrackingLinkDomain(trackingLink *domain.TrackingLink) *TrackingLinkResp
 func FromTrackingLinkGenerationDomain(response *domain.TrackingLinkGenerationResponse, baseURL string) *TrackingLinkGenerationResponse {
 	apiResponse := &TrackingLinkGenerationResponse{
 		GeneratedURL: response.GeneratedURL,
+	}
+
+	if response.TrackingLink != nil {
+		apiResponse.TrackingLink = FromTrackingLinkDomain(response.TrackingLink)
+		// Add QR code URL if tracking link ID is available
+		if response.TrackingLink.TrackingLinkID > 0 {
+			qrURL := fmt.Sprintf("%s/api/v1/organizations/%d/tracking-links/%d/qr",
+				baseURL, response.TrackingLink.OrganizationID, response.TrackingLink.TrackingLinkID)
+			apiResponse.QRCodeURL = &qrURL
+		}
+	}
+
+	return apiResponse
+}
+
+// ToTrackingLinkUpsertDomain converts API upsert request to domain model
+func (req *TrackingLinkUpsertRequest) ToTrackingLinkUpsertDomain() *domain.TrackingLinkUpsertRequest {
+	return &domain.TrackingLinkUpsertRequest{
+		Name:                    req.Name,
+		Description:             req.Description,
+		CampaignID:              req.CampaignID,
+		AffiliateID:             req.AffiliateID,
+		SourceID:                req.SourceID,
+		Sub1:                    req.Sub1,
+		Sub2:                    req.Sub2,
+		Sub3:                    req.Sub3,
+		Sub4:                    req.Sub4,
+		Sub5:                    req.Sub5,
+		IsEncryptParameters:     req.IsEncryptParameters,
+		IsRedirectLink:          req.IsRedirectLink,
+		NetworkTrackingDomainID: req.NetworkTrackingDomainID,
+		NetworkOfferURLID:       req.NetworkOfferURLID,
+		CreativeID:              req.CreativeID,
+		NetworkTrafficSourceID:  req.NetworkTrafficSourceID,
+		InternalNotes:           req.InternalNotes,
+		Tags:                    req.Tags,
+	}
+}
+
+// FromTrackingLinkUpsertDomain converts domain upsert response to API response
+func FromTrackingLinkUpsertDomain(response *domain.TrackingLinkUpsertResponse, baseURL string) *TrackingLinkUpsertResponse {
+	apiResponse := &TrackingLinkUpsertResponse{
+		GeneratedURL: response.GeneratedURL,
+		IsNew:        response.IsNew,
 	}
 
 	if response.TrackingLink != nil {

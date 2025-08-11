@@ -11,21 +11,21 @@ import (
 
 // RouterOptions contains dependencies for the router
 type RouterOptions struct {
-	ProfileHandler                            *handlers.ProfileHandler
-	ProfileService                            service.ProfileService
-	OrganizationHandler                       *handlers.OrganizationHandler
-	OrganizationAssociationHandler            *handlers.OrganizationAssociationHandler
-	AgencyDelegationHandler                   *handlers.AgencyDelegationHandler
-	AdvertiserAssociationInvitationHandler    *handlers.AdvertiserAssociationInvitationHandler
-	AdvertiserHandler                         *handlers.AdvertiserHandler
-	AffiliateHandler                          *handlers.AffiliateHandler
-	CampaignHandler                           *handlers.CampaignHandler
-	TrackingLinkHandler                       *handlers.TrackingLinkHandler
-	AnalyticsHandler                          *handlers.AnalyticsHandler
-	FavoritePublisherListHandler              *handlers.FavoritePublisherListHandler
-	PublisherMessagingHandler                 *handlers.PublisherMessagingHandler
-	BillingHandler                            *handlers.BillingHandler
-	WebhookHandler                            *handlers.WebhookHandler
+	ProfileHandler                         *handlers.ProfileHandler
+	ProfileService                         service.ProfileService
+	OrganizationHandler                    *handlers.OrganizationHandler
+	OrganizationAssociationHandler         *handlers.OrganizationAssociationHandler
+	AgencyDelegationHandler                *handlers.AgencyDelegationHandler
+	AdvertiserAssociationInvitationHandler *handlers.AdvertiserAssociationInvitationHandler
+	AdvertiserHandler                      *handlers.AdvertiserHandler
+	AffiliateHandler                       *handlers.AffiliateHandler
+	CampaignHandler                        *handlers.CampaignHandler
+	TrackingLinkHandler                    *handlers.TrackingLinkHandler
+	AnalyticsHandler                       *handlers.AnalyticsHandler
+	FavoritePublisherListHandler           *handlers.FavoritePublisherListHandler
+	PublisherMessagingHandler              *handlers.PublisherMessagingHandler
+	BillingHandler                         *handlers.BillingHandler
+	WebhookHandler                         *handlers.WebhookHandler
 }
 
 // SetupRouter sets up the API router
@@ -76,7 +76,7 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		// TODO: Remove open access to CreateProfile - should have proper access control in production
 		profiles.POST("", opts.ProfileHandler.CreateProfile) // Temporarily without access control
 		profiles.POST("/upsert", opts.ProfileHandler.UpsertProfile)
-		profiles.PUT("/:id", opts.ProfileHandler.UpdateProfile) // TODO: Add user-specific access control
+		profiles.PUT("/:id", opts.ProfileHandler.UpdateProfile)    // TODO: Add user-specific access control
 		profiles.DELETE("/:id", opts.ProfileHandler.DeleteProfile) // TODO: Add appropriate RBAC restrictions
 	}
 
@@ -86,7 +86,7 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		// Basic organization operations - accessible to all authenticated users (JWT required, no RBAC)
 		// POST doesn't need ProfileMiddleware since users might not have profiles yet
 		organizations.POST("", opts.OrganizationHandler.CreateOrganizationPublic) // Merged from public route
-		
+
 		// GET operations need ProfileMiddleware for access control checks
 		organizations.GET("", profileMW(), opts.OrganizationHandler.ListOrganizations)
 		organizations.GET("/:id", profileMW(), opts.OrganizationHandler.GetOrganization)
@@ -99,10 +99,10 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		organizations.GET("/:id/advertisers", profileMW(), rbacMW("Admin", "AdvertiserManager"), opts.AdvertiserHandler.ListAdvertisersByOrganization)
 		organizations.GET("/:id/affiliates", profileMW(), rbacMW("Admin", "AffiliateManager"), opts.AffiliateHandler.ListAffiliatesByOrganization)
 		organizations.GET("/:id/campaigns", profileMW(), rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.CampaignHandler.ListCampaignsByOrganization)
-		
+
 		// Organization associations - need ProfileMiddleware for RBAC
 		organizations.GET("/:id/associations", profileMW(), rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.OrganizationAssociationHandler.GetAssociationsForOrganization)
-		
+
 		// Visibility endpoints - get visible resources based on associations - need ProfileMiddleware for RBAC
 		organizations.GET("/:id/visible-affiliates", profileMW(), rbacMW("Admin", "AdvertiserManager"), opts.OrganizationAssociationHandler.GetVisibleAffiliatesForAdvertiser)
 		organizations.GET("/:id/visible-campaigns", profileMW(), rbacMW("Admin", "AffiliateManager"), opts.OrganizationAssociationHandler.GetVisibleCampaignsForAffiliate)
@@ -177,35 +177,18 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		campaigns.GET("/:id", opts.CampaignHandler.GetCampaign)
 		campaigns.PUT("/:id", opts.CampaignHandler.UpdateCampaign)
 		campaigns.DELETE("/:id", opts.CampaignHandler.DeleteCampaign)
-		
+
 		// Campaign provider mappings
 		campaigns.GET("/:id/provider-mappings/:providerType", opts.CampaignHandler.GetProviderMapping)
 	}
 
-	// --- Tracking Link Routes ---
-	// Organization-level tracking link routes - need ProfileMiddleware for RBAC
-	organizations.GET("/:id/tracking-links", profileMW(), rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.TrackingLinkHandler.ListTrackingLinksByOrganization)
-	organizations.POST("/:id/tracking-links", profileMW(), rbacMW("Admin", "AdvertiserManager"), opts.TrackingLinkHandler.CreateTrackingLink)
-	organizations.POST("/:id/tracking-links/generate", profileMW(), rbacMW("Admin", "AdvertiserManager"), opts.TrackingLinkHandler.GenerateTrackingLink)
-	organizations.POST("/:id/tracking-links/upsert", profileMW(), rbacMW("Admin", "AdvertiserManager"), opts.TrackingLinkHandler.UpsertTrackingLink)
-	organizations.GET("/:id/tracking-links/:link_id", profileMW(), rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.TrackingLinkHandler.GetTrackingLink)
-	organizations.PUT("/:id/tracking-links/:link_id", profileMW(), rbacMW("Admin", "AdvertiserManager"), opts.TrackingLinkHandler.UpdateTrackingLink)
-	organizations.DELETE("/:id/tracking-links/:link_id", profileMW(), rbacMW("Admin", "AdvertiserManager"), opts.TrackingLinkHandler.DeleteTrackingLink)
-	organizations.POST("/:id/tracking-links/:link_id/regenerate", profileMW(), rbacMW("Admin", "AdvertiserManager"), opts.TrackingLinkHandler.RegenerateTrackingLink)
+	// --- Legacy Tracking Link Routes (QR code only) ---
+	// Keep only the QR code endpoint for backward compatibility
 	organizations.GET("/:id/tracking-links/:link_id/qr", profileMW(), rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.TrackingLinkHandler.GetTrackingLinkQR)
-
-	// Campaign-specific tracking link routes
-	campaigns.GET("/:id/tracking-links", rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.TrackingLinkHandler.ListTrackingLinksByCampaign)
-	
-	// Campaign and affiliate specific tracking link routes
-	campaigns.GET("/:id/affiliates/:affiliate_id/tracking-links", rbacMW("Admin", "AdvertiserManager", "AffiliateManager"), opts.TrackingLinkHandler.GetTrackingLinksByCampaignAndAffiliate)
-
-	// Affiliate-specific tracking link routes
-	affiliates.GET("/:id/tracking-links", rbacMW("Admin", "AffiliateManager"), opts.TrackingLinkHandler.ListTrackingLinksByAffiliate)
 
 	// --- Analytics Routes ---
 	analytics := v1.Group("/analytics")
-	analytics.Use(profileMW()) // Load profile first to get user role
+	analytics.Use(profileMW())                                              // Load profile first to get user role
 	analytics.Use(rbacMW("AdvertiserManager", "AffiliateManager", "Admin")) // Allow all managers and admins
 	{
 		// Autocompletion endpoint
@@ -223,7 +206,7 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 
 	// --- Favorite Publisher Lists Routes ---
 	favoritePublisherLists := v1.Group("/favorite-publisher-lists")
-	favoritePublisherLists.Use(profileMW()) // Load profile first to get user role
+	favoritePublisherLists.Use(profileMW())                                              // Load profile first to get user role
 	favoritePublisherLists.Use(rbacMW("AdvertiserManager", "AffiliateManager", "Admin")) // Allow all managers and admins
 	{
 		// List management
@@ -246,7 +229,7 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 
 	// --- Publisher Messaging Routes ---
 	publisherMessaging := v1.Group("/publisher-messaging")
-	publisherMessaging.Use(profileMW()) // Load profile first to get user role
+	publisherMessaging.Use(profileMW())                                              // Load profile first to get user role
 	publisherMessaging.Use(rbacMW("AdvertiserManager", "AffiliateManager", "Admin")) // Allow all managers and admins
 	{
 		// Conversation management
@@ -287,17 +270,17 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		// Create invitations and requests
 		orgAssociations.POST("/invitations", opts.OrganizationAssociationHandler.CreateInvitation)
 		orgAssociations.POST("/requests", opts.OrganizationAssociationHandler.CreateRequest)
-		
+
 		// List and get associations
 		orgAssociations.GET("", opts.OrganizationAssociationHandler.ListAssociations)
 		orgAssociations.GET("/:id", opts.OrganizationAssociationHandler.GetAssociation)
-		
+
 		// Manage association status
 		orgAssociations.POST("/:id/approve", opts.OrganizationAssociationHandler.ApproveAssociation)
 		orgAssociations.POST("/:id/reject", opts.OrganizationAssociationHandler.RejectAssociation)
 		orgAssociations.POST("/:id/suspend", opts.OrganizationAssociationHandler.SuspendAssociation)
 		orgAssociations.POST("/:id/reactivate", opts.OrganizationAssociationHandler.ReactivateAssociation)
-		
+
 		// Update visibility settings
 		orgAssociations.PUT("/:id/visibility", opts.OrganizationAssociationHandler.UpdateVisibility)
 	}
@@ -312,10 +295,10 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		advInvitations.GET("/:id", rbacMW("AdvertiserManager", "AffiliateManager", "Admin"), opts.AdvertiserAssociationInvitationHandler.GetInvitation)
 		advInvitations.PUT("/:id", rbacMW("AdvertiserManager", "Admin"), opts.AdvertiserAssociationInvitationHandler.UpdateInvitation)
 		advInvitations.DELETE("/:id", rbacMW("AdvertiserManager", "Admin"), opts.AdvertiserAssociationInvitationHandler.DeleteInvitation)
-		
+
 		// Invitation usage - for affiliates to use invitations
 		advInvitations.POST("/use", rbacMW("AffiliateManager", "Admin"), opts.AdvertiserAssociationInvitationHandler.UseInvitation)
-		
+
 		// Invitation analytics and management
 		advInvitations.GET("/:id/usage-history", rbacMW("AdvertiserManager", "Admin"), opts.AdvertiserAssociationInvitationHandler.GetInvitationUsageHistory)
 		advInvitations.GET("/:id/link", rbacMW("AdvertiserManager", "Admin"), opts.AdvertiserAssociationInvitationHandler.GenerateInvitationLink)
@@ -329,25 +312,37 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		agencyDelegations.POST("", rbacMW("AdvertiserManager", "PlatformOwner", "Admin"), opts.AgencyDelegationHandler.CreateDelegation)
 		agencyDelegations.GET("", rbacMW("AdvertiserManager", "AgencyManager", "PlatformOwner", "Admin"), opts.AgencyDelegationHandler.ListDelegations)
 		agencyDelegations.GET("/:id", rbacMW("AdvertiserManager", "AgencyManager", "PlatformOwner", "Admin"), opts.AgencyDelegationHandler.GetDelegation)
-		
+
 		// Delegation status management
 		agencyDelegations.POST("/:id/accept", rbacMW("AgencyManager", "PlatformOwner", "Admin"), opts.AgencyDelegationHandler.AcceptDelegation)
 		agencyDelegations.POST("/:id/reject", rbacMW("AdvertiserManager", "AgencyManager", "PlatformOwner", "Admin"), opts.AgencyDelegationHandler.RejectDelegation)
 		agencyDelegations.POST("/:id/suspend", rbacMW("AdvertiserManager", "AgencyManager", "PlatformOwner", "Admin"), opts.AgencyDelegationHandler.SuspendDelegation)
 		agencyDelegations.POST("/:id/reactivate", rbacMW("AdvertiserManager", "AgencyManager", "PlatformOwner", "Admin"), opts.AgencyDelegationHandler.ReactivateDelegation)
 		agencyDelegations.POST("/:id/revoke", rbacMW("AdvertiserManager", "AgencyManager", "PlatformOwner", "Admin"), opts.AgencyDelegationHandler.RevokeDelegation)
-		
+
 		// Delegation configuration - Platform owners can manage all delegations
 		agencyDelegations.PUT("/:id/permissions", rbacMW("AdvertiserManager", "PlatformOwner", "Admin"), opts.AgencyDelegationHandler.UpdatePermissions)
 		agencyDelegations.PUT("/:id/expiration", rbacMW("AdvertiserManager", "PlatformOwner", "Admin"), opts.AgencyDelegationHandler.UpdateExpiration)
-		
+
 		// Permission checking and utility endpoints
 		agencyDelegations.POST("/check-permissions", rbacMW("AdvertiserManager", "AgencyManager", "PlatformOwner", "Admin"), opts.AgencyDelegationHandler.CheckPermissions)
 		agencyDelegations.GET("/permissions", opts.AgencyDelegationHandler.GetAvailablePermissions)
-		
+
 		// Organization-specific delegation endpoints
 		agencyDelegations.GET("/agency/:agency_org_id", rbacMW("AgencyManager", "PlatformOwner", "Admin"), opts.AgencyDelegationHandler.GetAgencyDelegations)
 		agencyDelegations.GET("/advertiser/:advertiser_org_id", rbacMW("AdvertiserManager", "PlatformOwner", "Admin"), opts.AgencyDelegationHandler.GetAdvertiserDelegations)
+	}
+
+	// --- Clean Tracking Link Routes ---
+	trackingLinks := v1.Group("/tracking-links")
+	trackingLinks.Use(profileMW()) // Load profile first to get user role
+	trackingLinks.Use(rbacMW("Admin", "AdvertiserManager", "AffiliateManager"))
+	{
+		trackingLinks.POST("", opts.TrackingLinkHandler.CreateTrackingLinkClean)
+		trackingLinks.GET("", opts.TrackingLinkHandler.ListTrackingLinksClean)
+		trackingLinks.GET("/:id", opts.TrackingLinkHandler.GetTrackingLinkClean)
+		trackingLinks.PUT("/:id", opts.TrackingLinkHandler.UpdateTrackingLinkClean)
+		trackingLinks.DELETE("/:id", opts.TrackingLinkHandler.DeleteTrackingLinkClean)
 	}
 
 	return r

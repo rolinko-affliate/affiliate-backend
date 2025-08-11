@@ -25,6 +25,7 @@ type TrackingLinkService interface {
 	ListTrackingLinksByAffiliate(ctx context.Context, affiliateID int64, limit, offset int) ([]*domain.TrackingLink, error)
 	ListTrackingLinksByOrganization(ctx context.Context, orgID int64, limit, offset int) ([]*domain.TrackingLink, error)
 	ListTrackingLinksByCampaignAndAffiliate(ctx context.Context, campaignID, affiliateID int64, limit, offset int) ([]*domain.TrackingLink, error)
+	ListTrackingLinksWithFilters(ctx context.Context, affiliateIDs, campaignIDs []int64, limit, offset int) ([]*domain.TrackingLink, int, error)
 
 	// Tracking link generation
 	GenerateTrackingLink(ctx context.Context, req *domain.TrackingLinkGenerationRequest) (*domain.TrackingLinkGenerationResponse, error)
@@ -986,4 +987,14 @@ func stringPtrValue(s *string) string {
 // Helper function to create string pointer
 func toStringPtr(s string) *string {
 	return &s
+}
+
+// ListTrackingLinksWithFilters lists tracking links with filtering by affiliate IDs and campaign IDs
+func (s *trackingLinkService) ListTrackingLinksWithFilters(ctx context.Context, affiliateIDs, campaignIDs []int64, limit, offset int) ([]*domain.TrackingLink, int, error) {
+	trackingLinks, total, err := s.trackingLinkRepo.ListTrackingLinksWithFilters(ctx, affiliateIDs, campaignIDs, limit, offset)
+	if err != nil {
+		return nil, 0, fmt.Errorf("failed to list tracking links with filters: %w", err)
+	}
+
+	return trackingLinks, total, nil
 }

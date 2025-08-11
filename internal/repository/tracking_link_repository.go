@@ -3,6 +3,7 @@ package repository
 import (
 	"context"
 	"fmt"
+	"strings"
 
 	"github.com/affiliate-backend/internal/domain"
 	"github.com/jackc/pgx/v5"
@@ -20,6 +21,7 @@ type TrackingLinkRepository interface {
 	ListTrackingLinksByOrganization(ctx context.Context, organizationID int64, limit, offset int) ([]*domain.TrackingLink, error)
 	GetTrackingLinkByCampaignAndAffiliate(ctx context.Context, campaignID, affiliateID int64, sourceID, sub1, sub2, sub3, sub4, sub5 *string) (*domain.TrackingLink, error)
 	ListTrackingLinksByCampaignAndAffiliate(ctx context.Context, campaignID, affiliateID int64, limit, offset int) ([]*domain.TrackingLink, error)
+	ListTrackingLinksWithFilters(ctx context.Context, affiliateIDs, campaignIDs []int64, limit, offset int) ([]*domain.TrackingLink, int, error)
 }
 
 // trackingLinkRepository implements TrackingLinkRepository
@@ -440,4 +442,105 @@ func (r *trackingLinkRepository) ListTrackingLinksByCampaignAndAffiliate(ctx con
 	}
 
 	return trackingLinks, nil
+}
+
+// ListTrackingLinksWithFilters lists tracking links with filtering by affiliate IDs and campaign IDs
+func (r *trackingLinkRepository) ListTrackingLinksWithFilters(ctx context.Context, affiliateIDs, campaignIDs []int64, limit, offset int) ([]*domain.TrackingLink, int, error) {
+	// Build the base query
+	baseQuery := `
+		SELECT tracking_link_id, organization_id, campaign_id, affiliate_id, name, description, status,
+		       tracking_url, source_id, sub1, sub2, sub3, sub4, sub5,
+		       is_encrypt_parameters, is_redirect_link, internal_notes, tags,
+		       created_at, updated_at
+		FROM public.tracking_links`
+	
+	countQuery := `SELECT COUNT(*) FROM public.tracking_links`
+	
+	var conditions []string
+	var args []interface{}
+	argIndex := 1
+
+	// Add affiliate ID filter if provided
+	if len(affiliateIDs) > 0 {
+		placeholders := make([]string, len(affiliateIDs))
+		for i, id := range affiliateIDs {
+			placeholders[i] = fmt.Sprintf("$%d", argIndex)
+			args = append(args, id)
+			argIndex++
+		}
+		conditions = append(conditions, fmt.Sprintf("affiliate_id IN (%s)", strings.Join(placeholders, ",")))
+	}
+
+	// Add campaign ID filter if provided
+	if len(campaignIDs) > 0 {
+		placeholders := make([]string, len(campaignIDs))
+		for i, id := range campaignIDs {
+			placeholders[i] = fmt.Sprintf("$%d", argIndex)
+			args = append(args, id)
+			argIndex++
+		}
+		conditions = append(conditions, fmt.Sprintf("campaign_id IN (%s)", strings.Join(placeholders, ",")))
+	}
+
+	// Build WHERE clause
+	whereClause := ""
+	if len(conditions) > 0 {
+		whereClause = " WHERE " + strings.Join(conditions, " AND ")
+	}
+
+	// Get total count
+	countQueryWithWhere := countQuery + whereClause
+	var total int
+	err := r.db.QueryRow(ctx, countQueryWithWhere, args...).Scan(&total)
+	if err != nil {
+		return nil, 0, fmt.Errorf("failed to count tracking links: %w", err)
+	}
+
+	// Build final query with pagination
+	finalQuery := baseQuery + whereClause + " ORDER BY created_at DESC LIMIT $" + fmt.Sprintf("%d", argIndex) + " OFFSET $" + fmt.Sprintf("%d", argIndex+1)
+	args = append(args, limit, offset)
+
+	// Execute query
+	rows, err := r.db.Query(ctx, finalQuery, args...)
+	if err != nil {
+		return nil, 0, fmt.Errorf("failed to query tracking links: %w", err)
+	}
+	defer rows.Close()
+
+	var trackingLinks []*domain.TrackingLink
+	for rows.Next() {
+		trackingLink := &domain.TrackingLink{}
+		err := rows.Scan(
+			&trackingLink.TrackingLinkID,
+			&trackingLink.OrganizationID,
+			&trackingLink.CampaignID,
+			&trackingLink.AffiliateID,
+			&trackingLink.Name,
+			&trackingLink.Description,
+			&trackingLink.Status,
+			&trackingLink.TrackingURL,
+			&trackingLink.SourceID,
+			&trackingLink.Sub1,
+			&trackingLink.Sub2,
+			&trackingLink.Sub3,
+			&trackingLink.Sub4,
+			&trackingLink.Sub5,
+			&trackingLink.IsEncryptParameters,
+			&trackingLink.IsRedirectLink,
+			&trackingLink.InternalNotes,
+			&trackingLink.Tags,
+			&trackingLink.CreatedAt,
+			&trackingLink.UpdatedAt,
+		)
+		if err != nil {
+			return nil, 0, fmt.Errorf("failed to scan tracking link: %w", err)
+		}
+		trackingLinks = append(trackingLinks, trackingLink)
+	}
+
+	if err := rows.Err(); err != nil {
+		return nil, 0, fmt.Errorf("error iterating tracking links: %w", err)
+	}
+
+	return trackingLinks, total, nil
 }

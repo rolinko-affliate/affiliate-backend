@@ -1,0 +1,457 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Impact"
+      ],
+      "value": [
+        "Impact"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.95
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.95
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.95
+        }
+      ]
+    },
+    "domain": "grossepointemusicacademy.com",
+    "keywords": {
+      "count": 58,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "industry"
+        },
+        {
+          "score": 0.99,
+          "value": "tech"
+        },
+        {
+          "score": 0.98,
+          "value": "epiphone"
+        },
+        {
+          "score": 0.97,
+          "value": "electric"
+        },
+        {
+          "score": 0.96,
+          "value": "eurorack"
+        },
+        {
+          "score": 0.95,
+          "value": "multimedia"
+        },
+        {
+          "score": 0.9,
+          "value": "music"
+        },
+        {
+          "score": 0.84,
+          "value": "amplifier"
+        },
+        {
+          "score": 0.83,
+          "value": "technologies"
+        },
+        {
+          "score": 0.8,
+          "value": "microphone"
+        },
+        {
+          "score": 0.79,
+          "value": "personalized"
+        },
+        {
+          "score": 0.79,
+          "value": "power"
+        },
+        {
+          "score": 0.74,
+          "value": "wireless"
+        },
+        {
+          "score": 0.73,
+          "value": "guitars"
+        },
+        {
+          "score": 0.72,
+          "value": "backgrounds"
+        },
+        {
+          "score": 0.72,
+          "value": "handheld"
+        },
+        {
+          "score": 0.71,
+          "value": "marketplace"
+        },
+        {
+          "score": 0.68,
+          "value": "guitar"
+        },
+        {
+          "score": 0.67,
+          "value": "recording"
+        },
+        {
+          "score": 0.66,
+          "value": "sound"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "industry"
+        },
+        {
+          "score": 0.99,
+          "value": "tech"
+        },
+        {
+          "score": 0.98,
+          "value": "epiphone"
+        },
+        {
+          "score": 0.97,
+          "value": "electric"
+        },
+        {
+          "score": 0.96,
+          "value": "eurorack"
+        },
+        {
+          "score": 0.95,
+          "value": "multimedia"
+        },
+        {
+          "score": 0.9,
+          "value": "music"
+        },
+        {
+          "score": 0.84,
+          "value": "amplifier"
+        },
+        {
+          "score": 0.83,
+          "value": "technologies"
+        },
+        {
+          "score": 0.8,
+          "value": "microphone"
+        },
+        {
+          "score": 0.79,
+          "value": "personalized"
+        },
+        {
+          "score": 0.79,
+          "value": "power"
+        },
+        {
+          "score": 0.74,
+          "value": "wireless"
+        },
+        {
+          "score": 0.73,
+          "value": "guitars"
+        },
+        {
+          "score": 0.72,
+          "value": "backgrounds"
+        },
+        {
+          "score": 0.72,
+          "value": "handheld"
+        },
+        {
+          "score": 0.71,
+          "value": "marketplace"
+        },
+        {
+          "score": 0.68,
+          "value": "guitar"
+        },
+        {
+          "score": 0.67,
+          "value": "recording"
+        },
+        {
+          "score": 0.66,
+          "value": "sound"
+        },
+        {
+          "score": 0.65,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.63,
+          "value": "phone"
+        },
+        {
+          "score": 0.62,
+          "value": "cable"
+        },
+        {
+          "score": 0.6,
+          "value": "digital"
+        },
+        {
+          "score": 0.6,
+          "value": "showroom"
+        },
+        {
+          "score": 0.57,
+          "value": "noise"
+        },
+        {
+          "score": 0.56,
+          "value": "improve"
+        },
+        {
+          "score": 0.54,
+          "value": "stars"
+        },
+        {
+          "score": 0.54,
+          "value": "piano"
+        },
+        {
+          "score": 0.53,
+          "value": "fender"
+        },
+        {
+          "score": 0.53,
+          "value": "latest"
+        },
+        {
+          "score": 0.52,
+          "value": "reverb"
+        },
+        {
+          "score": 0.52,
+          "value": "promotional"
+        },
+        {
+          "score": 0.5,
+          "value": "press"
+        },
+        {
+          "score": 0.5,
+          "value": "keyboard"
+        },
+        {
+          "score": 0.5,
+          "value": "popular"
+        },
+        {
+          "score": 0.49,
+          "value": "catalog"
+        },
+        {
+          "score": 0.49,
+          "value": "receiver"
+        },
+        {
+          "score": 0.49,
+          "value": "speaker"
+        },
+        {
+          "score": 0.47,
+          "value": "high"
+        },
+        {
+          "score": 0.47,
+          "value": "professionals"
+        },
+        {
+          "score": 0.46,
+          "value": "tone"
+        },
+        {
+          "score": 0.46,
+          "value": "channel"
+        },
+        {
+          "score": 0.46,
+          "value": "band"
+        },
+        {
+          "score": 0.46,
+          "value": "fingerboard"
+        },
+        {
+          "score": 0.45,
+          "value": "live"
+        },
+        {
+          "score": 0.45,
+          "value": "engineers"
+        },
+        {
+          "score": 0.45,
+          "value": "story"
+        },
+        {
+          "score": 0.45,
+          "value": "knowledgeable"
+        },
+        {
+          "score": 0.44,
+          "value": "workshops"
+        },
+        {
+          "score": 0.44,
+          "value": "studio"
+        },
+        {
+          "score": 0.44,
+          "value": "workshop"
+        },
+        {
+          "score": 0.44,
+          "value": "extensive"
+        },
+        {
+          "score": 0.44,
+          "value": "engineer"
+        },
+        {
+          "score": 0.42,
+          "value": "demo"
+        },
+        {
+          "score": 0.42,
+          "value": "desk"
+        },
+        {
+          "score": 0.42,
+          "value": "green"
+        },
+        {
+          "score": 0.42,
+          "value": "offer"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://grossepointemusicacademy.com/",
+        "https://www.grossepointemusicacademy.com/",
+        "http://grossepointemusicacademy.com/",
+        "http://www.grossepointemusicacademy.com/"
+      ]
+    },
+    "metaData": {
+      "description": "Private Music Lessons We teach beginning through advanced students to play and sing in many different styles of music. Rock, blues, jazz, country, and classical are just some of what we do at Grosse Pointe Music Academy. Private music lessons focus on building solid fundamentals as well as allow for creative expressions of music.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/grossepointemusicacademy.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://grossepointemusicacademy.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1,
+        "value": [
+          "sweetwater.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Music"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 1,
+      "value": [
+        "sweetwater.com"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "linkedin"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/gpmusicacademy",
+        "linkedin": "https://linkedin.com/company/grosse-pointe-music-academy",
+        "twitter": "https://twitter.com/gpmusicacademy",
+        "youtube": "https://youtube.com/user/gpmusicacademy"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Entertainment / Music",
+      "value": [
+        "Entertainment / Music",
+        "Business / Services",
+        "Business / Online Training"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Entertainment / Music",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Entertainment / Music",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Business / Services",
+          "rank": 1,
+          "score": 80
+        },
+        {
+          "name": "Business / Online Training",
+          "rank": 1,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

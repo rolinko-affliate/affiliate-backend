@@ -1,11 +1,11 @@
 package handlers
 
 import (
-	"log"
 	"net/http"
 	"strconv"
 
 	"github.com/affiliate-backend/internal/domain"
+	"github.com/affiliate-backend/internal/platform/logger"
 	"github.com/affiliate-backend/internal/service"
 	"github.com/gin-gonic/gin"
 )
@@ -380,26 +380,26 @@ func (h *OrganizationAssociationHandler) GetAssociation(c *gin.Context) {
 
 	// Check if details are requested
 	withDetails := c.Query("with_details") == "true"
-	log.Printf("DEBUG: with_details query param: %s, parsed as: %v", c.Query("with_details"), withDetails)
-	println("PRINTLN DEBUG: with_details query param:", c.Query("with_details"), "parsed as:", withDetails)
+	logger.Debug("Fetching organization association",
+		"association_id", associationID,
+		"with_details", withDetails)
 
 	if withDetails {
-		log.Printf("DEBUG: Fetching association with details for ID: %d", associationID)
-		println("PRINTLN DEBUG: Fetching association with details for ID:", associationID)
 		association, err := h.associationService.GetAssociationByIDWithDetails(c.Request.Context(), associationID)
 		if err != nil {
-			log.Printf("DEBUG: Error fetching association with details: %v", err)
+			logger.Warn("Association not found with details",
+				"association_id", associationID,
+				"error", err)
 			c.JSON(http.StatusNotFound, ErrorResponse{
 				Error:   "Association not found",
 				Details: err.Error(),
 			})
 			return
 		}
-		log.Printf("DEBUG: Successfully fetched association with details")
+		logger.Debug("Successfully fetched association with details",
+			"association_id", associationID)
 		c.JSON(http.StatusOK, association)
 	} else {
-		log.Printf("DEBUG: Fetching basic association for ID: %d", associationID)
-		println("PRINTLN DEBUG: Fetching basic association for ID:", associationID)
 		association, err := h.associationService.GetAssociationByID(c.Request.Context(), associationID)
 		if err != nil {
 			c.JSON(http.StatusNotFound, ErrorResponse{
@@ -425,7 +425,7 @@ func (h *OrganizationAssociationHandler) GetAssociation(c *gin.Context) {
 // @Param limit query int false "Limit" default(50)
 // @Param offset query int false "Offset" default(0)
 // @Param with_details query bool false "Include organization and user details" default(false)
-// @Success 200 {array} domain.OrganizationAssociation
+// @Success 200 {array} domain.OrganizationAssociationWithDetails
 // @Failure 400 {object} ErrorResponse
 // @Failure 401 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse

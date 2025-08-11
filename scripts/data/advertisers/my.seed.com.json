@@ -1,0 +1,511 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 2,
+      "sampleValue": [
+        "ShareASale",
+        "Skimlinks"
+      ],
+      "value": [
+        "ShareASale",
+        "Skimlinks"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 0,
+      "error": false,
+      "value": []
+    },
+    "domain": "my.seed.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/my.seed.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://my.seed.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 110
+      },
+      "partnersAdded": {
+        "count": 110,
+        "value": [
+          {
+            "domain": "ikkraa.com"
+          },
+          {
+            "domain": "bewellbykelly.com"
+          },
+          {
+            "domain": "creativelifestyles.tv"
+          },
+          {
+            "domain": "buzzfeed.com"
+          },
+          {
+            "domain": "usasoccershops.com"
+          },
+          {
+            "domain": "paolaxhuli.com"
+          },
+          {
+            "domain": "minimalbeauty.com"
+          },
+          {
+            "domain": "bestrevie.ws"
+          },
+          {
+            "domain": "youneedmorecash.com"
+          },
+          {
+            "domain": "the-unwinder.com"
+          },
+          {
+            "domain": "hypernoir.com"
+          },
+          {
+            "domain": "inspiringhoperanch.org"
+          },
+          {
+            "domain": "peculiarstuff.com"
+          },
+          {
+            "domain": "amazon.co.uk"
+          },
+          {
+            "domain": "adoubledose.com"
+          },
+          {
+            "domain": "womansworld.com"
+          },
+          {
+            "domain": "champagneliving.net"
+          },
+          {
+            "domain": "heatherlopezenterprises.com"
+          },
+          {
+            "domain": "50yearoldmom.com"
+          },
+          {
+            "domain": "flourish-living.com"
+          },
+          {
+            "domain": "lakaflow.com"
+          },
+          {
+            "domain": "dfcwsuqt.top"
+          },
+          {
+            "domain": "ftvine.com"
+          },
+          {
+            "domain": "mysubscriptionaddiction.com"
+          },
+          {
+            "domain": "affdeals.com"
+          },
+          {
+            "domain": "integrativenutrition.com"
+          },
+          {
+            "domain": "eatyournutrition.com"
+          },
+          {
+            "domain": "ecologicaltransition.world"
+          },
+          {
+            "domain": "wmagazine.com"
+          },
+          {
+            "domain": "healthute.com"
+          },
+          {
+            "domain": "deniseisrundmt.com"
+          },
+          {
+            "domain": "marieclaire.com"
+          },
+          {
+            "domain": "portraitsbyjeannie.com"
+          },
+          {
+            "domain": "espressoandcream.com"
+          },
+          {
+            "domain": "medium.com"
+          },
+          {
+            "domain": "wellnessbum.com"
+          },
+          {
+            "domain": "futurism.com"
+          },
+          {
+            "domain": "eylemabaci.com"
+          },
+          {
+            "domain": "flecksoflex.com"
+          },
+          {
+            "domain": "thehealthandwellnesscrier.com"
+          },
+          {
+            "domain": "oh-mygut.com"
+          },
+          {
+            "domain": "cadaconsult.com"
+          },
+          {
+            "domain": "fitnessclone.com"
+          },
+          {
+            "domain": "momknowsbest.net"
+          },
+          {
+            "domain": "musthavemom.com"
+          },
+          {
+            "domain": "ambriannasherifhealth.com"
+          },
+          {
+            "domain": "thecut.com"
+          },
+          {
+            "domain": "terilynadams.com"
+          },
+          {
+            "domain": "thehealthking.com"
+          },
+          {
+            "domain": "toolazyfortrafficschool.com"
+          },
+          {
+            "domain": "romyraves.com"
+          },
+          {
+            "domain": "feelmoregooder.com"
+          },
+          {
+            "domain": "spotify.com"
+          },
+          {
+            "domain": "firstforwomen.com"
+          },
+          {
+            "domain": "nourishedbynutrition.com"
+          },
+          {
+            "domain": "rawfitnessandnutrition.com"
+          },
+          {
+            "domain": "dawaaie.blogspot.com"
+          },
+          {
+            "domain": "rachlmansfield.com"
+          },
+          {
+            "domain": "samhakes.com"
+          },
+          {
+            "domain": "clickbizhub.com"
+          },
+          {
+            "domain": "balancedbybec.com"
+          },
+          {
+            "domain": "sofreshnsogreen.com"
+          },
+          {
+            "domain": "podparadise.com"
+          },
+          {
+            "domain": "arcss.org"
+          },
+          {
+            "domain": "simplholistic.org"
+          },
+          {
+            "domain": "foofman.com"
+          },
+          {
+            "domain": "newsbreak.com"
+          },
+          {
+            "domain": "tomakeafamily.com"
+          },
+          {
+            "domain": "dailypress.com"
+          },
+          {
+            "domain": "alexfergus.com"
+          },
+          {
+            "domain": "es.integrativenutrition.com"
+          },
+          {
+            "domain": "adidasblog.digitalsnazz.com"
+          },
+          {
+            "domain": "courant.com"
+          },
+          {
+            "domain": "chicagotribune.com"
+          },
+          {
+            "domain": "kalejunkie.com"
+          },
+          {
+            "domain": "companyregistrationsg.com"
+          },
+          {
+            "domain": "cursosparalelos.com"
+          },
+          {
+            "domain": "archive.fm"
+          },
+          {
+            "domain": "msha.ke"
+          },
+          {
+            "domain": "happyhealthymama.com"
+          },
+          {
+            "domain": "aaronicabcole.com"
+          },
+          {
+            "domain": "ourtravelpassport.com"
+          },
+          {
+            "domain": "tomakeamommy.com"
+          },
+          {
+            "domain": "mcall.dfmdev.com"
+          },
+          {
+            "domain": "tothemotherhood.com"
+          },
+          {
+            "domain": "total-foods.jp"
+          },
+          {
+            "domain": "lukestorey.com"
+          },
+          {
+            "domain": "healthfitnessrevolution.com"
+          },
+          {
+            "domain": "bonberi.com"
+          },
+          {
+            "domain": "bestluxury.com.cn"
+          },
+          {
+            "domain": "engineermommy.com"
+          },
+          {
+            "domain": "narcity.com"
+          },
+          {
+            "domain": "hoo.be"
+          },
+          {
+            "domain": "everydayeasyeats.com"
+          },
+          {
+            "domain": "fabianacalvinisti.com"
+          },
+          {
+            "domain": "norby.live"
+          },
+          {
+            "domain": "solatatech.com"
+          },
+          {
+            "domain": "whowhatwear.com"
+          },
+          {
+            "domain": "thequalityedit.com"
+          },
+          {
+            "domain": "cathybiase.com"
+          },
+          {
+            "domain": "klfy.com"
+          },
+          {
+            "domain": "blogbydonna.com"
+          },
+          {
+            "domain": "drlaurynlax.blogspot.com"
+          },
+          {
+            "domain": "fipise.com"
+          },
+          {
+            "domain": "usmagazine.com"
+          },
+          {
+            "domain": "mamavation.com"
+          },
+          {
+            "domain": "usarx.com"
+          },
+          {
+            "domain": "dazzlingdaniela.com"
+          },
+          {
+            "domain": "thebircherbar.com.au"
+          },
+          {
+            "domain": "thehive.health"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 6,
+            "promotype": "content",
+            "value": [
+              "aaronicabcole.com",
+              "cathybiase.com",
+              "engineermommy.com",
+              "hoo.be",
+              "podparadise.com",
+              "thehive.health"
+            ]
+          },
+          {
+            "count": 36,
+            "promotype": "blog",
+            "value": [
+              "adoubledose.com",
+              "amazon.co.uk",
+              "blogbydonna.com",
+              "buzzfeed.com",
+              "cadaconsult.com",
+              "deniseisrundmt.com",
+              "eatyournutrition.com",
+              "ecologicaltransition.world",
+              "feelmoregooder.com",
+              "fipise.com",
+              "fitnessclone.com",
+              "flecksoflex.com",
+              "flourish-living.com",
+              "futurism.com",
+              "hypernoir.com",
+              "klfy.com",
+              "marieclaire.com",
+              "medium.com",
+              "momknowsbest.net",
+              "msha.ke",
+              "mysubscriptionaddiction.com",
+              "narcity.com",
+              "oh-mygut.com",
+              "ourtravelpassport.com",
+              "rawfitnessandnutrition.com",
+              "samhakes.com",
+              "solatatech.com",
+              "terilynadams.com",
+              "thecut.com",
+              "thehealthking.com",
+              "the-unwinder.com",
+              "total-foods.jp",
+              "tothemotherhood.com",
+              "usarx.com",
+              "usasoccershops.com",
+              "whowhatwear.com"
+            ]
+          },
+          {
+            "count": 3,
+            "promotype": "incentive",
+            "value": [
+              "affdeals.com",
+              "usmagazine.com",
+              "youneedmorecash.com"
+            ]
+          },
+          {
+            "count": 13,
+            "promotype": "student",
+            "value": [
+              "bestrevie.ws",
+              "champagneliving.net",
+              "dailypress.com",
+              "firstforwomen.com",
+              "heatherlopezenterprises.com",
+              "integrativenutrition.com",
+              "musthavemom.com",
+              "newsbreak.com",
+              "nourishedbynutrition.com",
+              "spotify.com",
+              "thehealthandwellnesscrier.com",
+              "tomakeafamily.com",
+              "wmagazine.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 3,
+      "socialsAvailable": [
+        "twitter",
+        "linkedin",
+        "instagram"
+      ],
+      "value": {
+        "instagram": "https://instagram.com/seed",
+        "linkedin": "https://linkedin.com/company/seedhealth",
+        "twitter": "https://twitter.com/seedhealth"
+      }
+    },
+    "verticals": {
+      "count": 4,
+      "sampleValue": {
+        "name": "Business / Services",
+        "rank": 2,
+        "score": 50
+      },
+      "value": [
+        {
+          "name": "Business / Services",
+          "rank": 2,
+          "score": 50
+        },
+        {
+          "name": "Finance / Investments",
+          "rank": 2,
+          "score": 40
+        },
+        {
+          "name": "Home / Garden",
+          "rank": 2,
+          "score": 30
+        },
+        {
+          "name": "Online / Services",
+          "rank": 2,
+          "score": 30
+        }
+      ]
+    }
+  }
+}

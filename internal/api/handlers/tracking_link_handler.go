@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net/http"
 	"strconv"
+	"strings"
 
 	"github.com/affiliate-backend/internal/api/models"
 	"github.com/affiliate-backend/internal/service"
@@ -23,82 +24,66 @@ func NewTrackingLinkHandler(trackingLinkService service.TrackingLinkService) *Tr
 	}
 }
 
-// CreateTrackingLink creates a new tracking link
-// @Summary Create a new tracking link
-// @Description Create a new tracking link for a campaign and affiliate
+// GetTrackingLinkQR generates a QR code for a tracking link
+// @Summary Get QR code for tracking link
+// @Description Generate a QR code for the specified tracking link
 // @Tags tracking-links
-// @Accept json
-// @Produce json
+// @Produce text/plain
 // @Param organization_id path int true "Organization ID"
-// @Param request body models.TrackingLinkRequest true "Tracking link creation request"
-// @Success 201 {object} models.TrackingLinkResponse
+// @Param link_id path int true "Tracking Link ID"
+// @Success 200 {string} string "Base64 encoded QR code"
 // @Failure 400 {object} ErrorResponse
-// @Failure 401 {object} ErrorResponse
-// @Failure 403 {object} ErrorResponse
+// @Failure 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
 // @Security BearerAuth
-// @Router /organizations/{organization_id}/tracking-links [post]
-func (h *TrackingLinkHandler) CreateTrackingLink(c *gin.Context) {
-	organizationID, err := strconv.ParseInt(c.Param("id"), 10, 64)
+// @Router /organizations/{organization_id}/tracking-links/{link_id}/qr [get]
+func (h *TrackingLinkHandler) GetTrackingLinkQR(c *gin.Context) {
+	trackingLinkID, err := strconv.ParseInt(c.Param("link_id"), 10, 64)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, ErrorResponse{
-			Error:   "Invalid organization ID",
-			Details: "Organization ID must be a valid integer",
+			Error:   "Invalid tracking link ID",
+			Details: "Tracking link ID must be a valid integer",
 		})
 		return
 	}
 
-	var req models.TrackingLinkRequest
-	if err := c.ShouldBindJSON(&req); err != nil {
-		c.JSON(http.StatusBadRequest, ErrorResponse{
-			Error:   "Invalid request body",
+	// Get tracking link to verify it exists
+	trackingLink, err := h.trackingLinkService.GetTrackingLinkByID(c.Request.Context(), trackingLinkID)
+	if err != nil {
+		c.JSON(http.StatusNotFound, ErrorResponse{
+			Error:   "Tracking link not found",
 			Details: err.Error(),
 		})
 		return
 	}
 
-	// Convert to domain model
-	trackingLink := req.ToTrackingLinkDomain(organizationID)
+	// For now, return a simple mock QR code
+	// In a real implementation, you would generate a QR code from the tracking URL
+	qrData := []byte(trackingLink.Name)
 
-	// Create tracking link
-	if err := h.trackingLinkService.CreateTrackingLink(c.Request.Context(), trackingLink); err != nil {
-		c.JSON(http.StatusInternalServerError, ErrorResponse{
-			Error:   "Failed to create tracking link",
-			Details: err.Error(),
-		})
-		return
-	}
+	// Convert qrData from bytes slice to base64 encoded string
+	base64QR := base64.StdEncoding.EncodeToString(qrData)
 
-	// Convert to response model
-	response := models.FromTrackingLinkDomain(trackingLink)
-	c.JSON(http.StatusCreated, response)
+	// Return base64 encoded string directly
+	c.String(http.StatusOK, base64QR)
 }
 
-// GenerateTrackingLink generates a new tracking link with provider integration
-// @Summary Generate a new tracking link
-// @Description Generate a new tracking link with provider integration for a campaign and affiliate
+// CreateTrackingLinkClean creates a new tracking link with uniqueness guarantee
+// @Summary Create a new tracking link
+// @Description Create a new tracking link with uniqueness guarantee for campaign_id + affiliate_id combination
 // @Tags tracking-links
 // @Accept json
 // @Produce json
-// @Param organization_id path int true "Organization ID"
-// @Param request body models.TrackingLinkGenerationRequest true "Tracking link generation request"
+// @Param request body models.TrackingLinkGenerationRequest true "Tracking link creation request"
 // @Success 201 {object} models.TrackingLinkGenerationResponse
 // @Failure 400 {object} ErrorResponse
 // @Failure 401 {object} ErrorResponse
 // @Failure 403 {object} ErrorResponse
+// @Failure 409 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
 // @Security BearerAuth
-// @Router /organizations/{organization_id}/tracking-links/generate [post]
-func (h *TrackingLinkHandler) GenerateTrackingLink(c *gin.Context) {
-	_, err := strconv.ParseInt(c.Param("id"), 10, 64)
-	if err != nil {
-		c.JSON(http.StatusBadRequest, ErrorResponse{
-			Error:   "Invalid organization ID",
-			Details: "Organization ID must be a valid integer",
-		})
-		return
-	}
-
+// @Router /tracking-links [post]
+func (h *TrackingLinkHandler) CreateTrackingLinkClean(c *gin.Context) {
 	var req models.TrackingLinkGenerationRequest
 	if err := c.ShouldBindJSON(&req); err != nil {
 		c.JSON(http.StatusBadRequest, ErrorResponse{
@@ -108,42 +93,63 @@ func (h *TrackingLinkHandler) GenerateTrackingLink(c *gin.Context) {
 		return
 	}
 
-	// Convert to domain model
-	domainReq := req.ToTrackingLinkGenerationDomain()
+	// Convert to upsert request to ensure uniqueness of campaign_id + affiliate_id combination
+	upsertReq := &models.TrackingLinkUpsertRequest{
+		CampaignID:          req.CampaignID,
+		AffiliateID:         req.AffiliateID,
+		Name:                req.Name,
+		Description:         req.Description,
+		SourceID:            req.SourceID,
+		Sub1:                req.Sub1,
+		Sub2:                req.Sub2,
+		Sub3:                req.Sub3,
+		Sub4:                req.Sub4,
+		Sub5:                req.Sub5,
+		IsEncryptParameters: req.IsEncryptParameters,
+		IsRedirectLink:      req.IsRedirectLink,
+		InternalNotes:       req.InternalNotes,
+		Tags:                req.Tags,
+	}
 
-	// Generate tracking link
-	response, err := h.trackingLinkService.GenerateTrackingLink(c.Request.Context(), domainReq)
+	// Convert to domain model
+	domainUpsertReq := upsertReq.ToTrackingLinkUpsertDomain()
+
+	response, err := h.trackingLinkService.UpsertTrackingLink(c.Request.Context(), domainUpsertReq)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, ErrorResponse{
-			Error:   "Failed to generate tracking link",
+			Error:   "Failed to create tracking link",
 			Details: err.Error(),
 		})
 		return
 	}
 
-	// Convert to API response
-	baseURL := getBaseURL(c)
-	apiResponse := models.FromTrackingLinkGenerationDomain(response, baseURL)
-	c.JSON(http.StatusCreated, apiResponse)
+	// Convert to response model
+	baseURL := fmt.Sprintf("%s://%s", getScheme(c), c.Request.Host)
+	apiResponse := models.FromTrackingLinkUpsertDomain(response, baseURL)
+
+	// Return 201 for created, 200 for updated
+	statusCode := http.StatusCreated
+	if !response.IsNew {
+		statusCode = http.StatusOK
+	}
+
+	c.JSON(statusCode, apiResponse)
 }
 
-// GetTrackingLink retrieves a tracking link by ID
-// @Summary Get a tracking link
+// GetTrackingLinkClean retrieves a tracking link by ID
+// @Summary Get tracking link by ID
 // @Description Retrieve a tracking link by its ID
 // @Tags tracking-links
 // @Produce json
-// @Param organization_id path int true "Organization ID"
-// @Param tracking_link_id path int true "Tracking Link ID"
+// @Param id path int true "Tracking Link ID"
 // @Success 200 {object} models.TrackingLinkResponse
 // @Failure 400 {object} ErrorResponse
-// @Failure 401 {object} ErrorResponse
-// @Failure 403 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
 // @Security BearerAuth
-// @Router /organizations/{organization_id}/tracking-links/{tracking_link_id} [get]
-func (h *TrackingLinkHandler) GetTrackingLink(c *gin.Context) {
-	trackingLinkID, err := strconv.ParseInt(c.Param("link_id"), 10, 64)
+// @Router /tracking-links/{id} [get]
+func (h *TrackingLinkHandler) GetTrackingLinkClean(c *gin.Context) {
+	trackingLinkID, err := strconv.ParseInt(c.Param("id"), 10, 64)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, ErrorResponse{
 			Error:   "Invalid tracking link ID",
@@ -161,38 +167,27 @@ func (h *TrackingLinkHandler) GetTrackingLink(c *gin.Context) {
 		return
 	}
 
+	// Convert to response model
 	response := models.FromTrackingLinkDomain(trackingLink)
 	c.JSON(http.StatusOK, response)
 }
 
-// UpdateTrackingLink updates an existing tracking link
-// @Summary Update a tracking link
-// @Description Update an existing tracking link
+// UpdateTrackingLinkClean updates a tracking link and regenerates if key parameters change
+// @Summary Update tracking link
+// @Description Update a tracking link and regenerate if key parameters change
 // @Tags tracking-links
 // @Accept json
 // @Produce json
-// @Param organization_id path int true "Organization ID"
-// @Param tracking_link_id path int true "Tracking Link ID"
+// @Param id path int true "Tracking Link ID"
 // @Param request body models.TrackingLinkUpdateRequest true "Tracking link update request"
 // @Success 200 {object} models.TrackingLinkResponse
 // @Failure 400 {object} ErrorResponse
-// @Failure 401 {object} ErrorResponse
-// @Failure 403 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
 // @Security BearerAuth
-// @Router /organizations/{organization_id}/tracking-links/{tracking_link_id} [put]
-func (h *TrackingLinkHandler) UpdateTrackingLink(c *gin.Context) {
-	organizationID, err := strconv.ParseInt(c.Param("id"), 10, 64)
-	if err != nil {
-		c.JSON(http.StatusBadRequest, ErrorResponse{
-			Error:   "Invalid organization ID",
-			Details: "Organization ID must be a valid integer",
-		})
-		return
-	}
-
-	trackingLinkID, err := strconv.ParseInt(c.Param("link_id"), 10, 64)
+// @Router /tracking-links/{id} [put]
+func (h *TrackingLinkHandler) UpdateTrackingLinkClean(c *gin.Context) {
+	trackingLinkID, err := strconv.ParseInt(c.Param("id"), 10, 64)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, ErrorResponse{
 			Error:   "Invalid tracking link ID",
@@ -220,20 +215,12 @@ func (h *TrackingLinkHandler) UpdateTrackingLink(c *gin.Context) {
 		return
 	}
 
-	// Verify tracking link belongs to the organization
-	if existingTrackingLink.OrganizationID != organizationID {
-		c.JSON(http.StatusNotFound, ErrorResponse{
-			Error:   "Tracking link not found",
-			Details: "Tracking link does not belong to the specified organization",
-		})
-		return
-	}
-
-	// Update fields from request
+	// Update the existing tracking link with request data
 	req.UpdateTrackingLinkDomain(existingTrackingLink)
 
 	// Update tracking link
-	if err := h.trackingLinkService.UpdateTrackingLink(c.Request.Context(), existingTrackingLink); err != nil {
+	err = h.trackingLinkService.UpdateTrackingLink(c.Request.Context(), existingTrackingLink)
+	if err != nil {
 		c.JSON(http.StatusInternalServerError, ErrorResponse{
 			Error:   "Failed to update tracking link",
 			Details: err.Error(),
@@ -241,36 +228,24 @@ func (h *TrackingLinkHandler) UpdateTrackingLink(c *gin.Context) {
 		return
 	}
 
-	// Get updated tracking link
-	updatedTrackingLink, err := h.trackingLinkService.GetTrackingLinkByID(c.Request.Context(), trackingLinkID)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, ErrorResponse{
-			Error:   "Failed to retrieve updated tracking link",
-			Details: err.Error(),
-		})
-		return
-	}
-
-	response := models.FromTrackingLinkDomain(updatedTrackingLink)
+	// Convert to response model
+	response := models.FromTrackingLinkDomain(existingTrackingLink)
 	c.JSON(http.StatusOK, response)
 }
 
-// DeleteTrackingLink deletes a tracking link
-// @Summary Delete a tracking link
+// DeleteTrackingLinkClean deletes a tracking link
+// @Summary Delete tracking link
 // @Description Delete a tracking link by its ID
 // @Tags tracking-links
-// @Param organization_id path int true "Organization ID"
-// @Param tracking_link_id path int true "Tracking Link ID"
-// @Success 204
+// @Param id path int true "Tracking Link ID"
+// @Success 204 "No Content"
 // @Failure 400 {object} ErrorResponse
-// @Failure 401 {object} ErrorResponse
-// @Failure 403 {object} ErrorResponse
 // @Failure 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
 // @Security BearerAuth
-// @Router /organizations/{organization_id}/tracking-links/{tracking_link_id} [delete]
-func (h *TrackingLinkHandler) DeleteTrackingLink(c *gin.Context) {
-	trackingLinkID, err := strconv.ParseInt(c.Param("link_id"), 10, 64)
+// @Router /tracking-links/{id} [delete]
+func (h *TrackingLinkHandler) DeleteTrackingLinkClean(c *gin.Context) {
+	trackingLinkID, err := strconv.ParseInt(c.Param("id"), 10, 64)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, ErrorResponse{
 			Error:   "Invalid tracking link ID",
@@ -279,7 +254,8 @@ func (h *TrackingLinkHandler) DeleteTrackingLink(c *gin.Context) {
 		return
 	}
 
-	if err := h.trackingLinkService.DeleteTrackingLink(c.Request.Context(), trackingLinkID); err != nil {
+	err = h.trackingLinkService.DeleteTrackingLink(c.Request.Context(), trackingLinkID)
+	if err != nil {
 		c.JSON(http.StatusInternalServerError, ErrorResponse{
 			Error:   "Failed to delete tracking link",
 			Details: err.Error(),
@@ -290,35 +266,61 @@ func (h *TrackingLinkHandler) DeleteTrackingLink(c *gin.Context) {
 	c.Status(http.StatusNoContent)
 }
 
-// ListTrackingLinksByCampaign lists tracking links for a specific campaign
-// @Summary List tracking links by campaign
-// @Description Retrieve a list of tracking links for a specific campaign
+// ListTrackingLinksClean lists tracking links with filtering
+// @Summary List tracking links
+// @Description List tracking links with optional filtering by affiliate IDs and campaign IDs
 // @Tags tracking-links
 // @Produce json
-// @Param id path int true "Campaign ID"
-// @Param page query int false "Page number" default(1)
-// @Param page_size query int false "Page size" default(20)
+// @Param affiliate_ids query string false "Comma-separated list of affiliate IDs"
+// @Param campaign_ids query string false "Comma-separated list of campaign IDs"
+// @Param limit query int false "Number of items per page" default(20)
+// @Param offset query int false "Number of items to skip" default(0)
 // @Success 200 {object} models.TrackingLinkListResponse
 // @Failure 400 {object} ErrorResponse
-// @Failure 401 {object} ErrorResponse
-// @Failure 403 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
 // @Security BearerAuth
-// @Router /campaigns/{id}/tracking-links [get]
-func (h *TrackingLinkHandler) ListTrackingLinksByCampaign(c *gin.Context) {
-	campaignID, err := strconv.ParseInt(c.Param("id"), 10, 64)
-	if err != nil {
-		c.JSON(http.StatusBadRequest, ErrorResponse{
-			Error:   "Invalid campaign ID",
-			Details: "Campaign ID must be a valid integer",
-		})
-		return
+// @Router /tracking-links [get]
+func (h *TrackingLinkHandler) ListTrackingLinksClean(c *gin.Context) {
+	// Parse query parameters
+	limit, _ := strconv.Atoi(c.DefaultQuery("limit", "20"))
+	offset, _ := strconv.Atoi(c.DefaultQuery("offset", "0"))
+
+	// Parse affiliate IDs
+	var affiliateIDs []int64
+	if affiliateIDsStr := c.Query("affiliate_ids"); affiliateIDsStr != "" {
+		var err error
+		affiliateIDs, err = parseCommaSeparatedInt64s(affiliateIDsStr)
+		if err != nil {
+			c.JSON(http.StatusBadRequest, ErrorResponse{
+				Error:   "Invalid affiliate_ids parameter",
+				Details: err.Error(),
+			})
+			return
+		}
 	}
 
-	page, pageSize := getPaginationParams(c)
-	offset := (page - 1) * pageSize
+	// Parse campaign IDs
+	var campaignIDs []int64
+	if campaignIDsStr := c.Query("campaign_ids"); campaignIDsStr != "" {
+		var err error
+		campaignIDs, err = parseCommaSeparatedInt64s(campaignIDsStr)
+		if err != nil {
+			c.JSON(http.StatusBadRequest, ErrorResponse{
+				Error:   "Invalid campaign_ids parameter",
+				Details: err.Error(),
+			})
+			return
+		}
+	}
 
-	trackingLinks, err := h.trackingLinkService.ListTrackingLinksByCampaign(c.Request.Context(), campaignID, pageSize, offset)
+	// Get tracking links with filters
+	trackingLinks, total, err := h.trackingLinkService.ListTrackingLinksWithFilters(
+		c.Request.Context(),
+		affiliateIDs,
+		campaignIDs,
+		limit,
+		offset,
+	)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, ErrorResponse{
 			Error:   "Failed to list tracking links",
@@ -333,228 +335,54 @@ func (h *TrackingLinkHandler) ListTrackingLinksByCampaign(c *gin.Context) {
 		responses = append(responses, models.FromTrackingLinkDomain(trackingLink))
 	}
 
-	// Calculate total pages (simplified - in production you'd get total count from service)
-	totalPages := (len(responses) + pageSize - 1) / pageSize
+	// Calculate pagination info
+	page := (offset / limit) + 1
+	totalPages := (total + limit - 1) / limit // Ceiling division
 
-	response := models.TrackingLinkListResponse{
+	// Create list response
+	listResponse := &models.TrackingLinkListResponse{
 		TrackingLinks: responses,
-		Total:         len(responses),
+		Total:         total,
 		Page:          page,
-		PageSize:      pageSize,
+		PageSize:      limit,
 		TotalPages:    totalPages,
 	}
 
-	c.JSON(http.StatusOK, response)
+	c.JSON(http.StatusOK, listResponse)
 }
 
-// ListTrackingLinksByAffiliate lists tracking links for a specific affiliate
-// @Summary List tracking links by affiliate
-// @Description Retrieve a list of tracking links for a specific affiliate
-// @Tags tracking-links
-// @Produce json
-// @Param id path int true "Affiliate ID"
-// @Param page query int false "Page number" default(1)
-// @Param page_size query int false "Page size" default(20)
-// @Success 200 {object} models.TrackingLinkListResponse
-// @Failure 400 {object} ErrorResponse
-// @Failure 401 {object} ErrorResponse
-// @Failure 403 {object} ErrorResponse
-// @Failure 500 {object} ErrorResponse
-// @Security BearerAuth
-// @Router /affiliates/{id}/tracking-links [get]
-func (h *TrackingLinkHandler) ListTrackingLinksByAffiliate(c *gin.Context) {
-	affiliateID, err := strconv.ParseInt(c.Param("id"), 10, 64)
-	if err != nil {
-		c.JSON(http.StatusBadRequest, ErrorResponse{
-			Error:   "Invalid affiliate ID",
-			Details: "Affiliate ID must be a valid integer",
-		})
-		return
+// parseCommaSeparatedInt64s parses a comma-separated string of integers
+func parseCommaSeparatedInt64s(s string) ([]int64, error) {
+	if s == "" {
+		return nil, nil
 	}
 
-	page, pageSize := getPaginationParams(c)
-	offset := (page - 1) * pageSize
+	parts := strings.Split(s, ",")
+	result := make([]int64, len(parts))
 
-	trackingLinks, err := h.trackingLinkService.ListTrackingLinksByAffiliate(c.Request.Context(), affiliateID, pageSize, offset)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, ErrorResponse{
-			Error:   "Failed to list tracking links",
-			Details: err.Error(),
-		})
-		return
+	for i, part := range parts {
+		trimmed := strings.TrimSpace(part)
+		if trimmed == "" {
+			continue
+		}
+
+		val, err := strconv.ParseInt(trimmed, 10, 64)
+		if err != nil {
+			return nil, fmt.Errorf("invalid integer: %s", trimmed)
+		}
+		result[i] = val
 	}
 
-	// Convert to response models
-	var responses []*models.TrackingLinkResponse
-	for _, trackingLink := range trackingLinks {
-		responses = append(responses, models.FromTrackingLinkDomain(trackingLink))
-	}
-
-	// Calculate total pages (simplified - in production you'd get total count from service)
-	totalPages := (len(responses) + pageSize - 1) / pageSize
-
-	response := models.TrackingLinkListResponse{
-		TrackingLinks: responses,
-		Total:         len(responses),
-		Page:          page,
-		PageSize:      pageSize,
-		TotalPages:    totalPages,
-	}
-
-	c.JSON(http.StatusOK, response)
+	return result, nil
 }
 
-// ListTrackingLinksByOrganization lists tracking links for a specific organization
-// @Summary List tracking links by organization
-// @Description Retrieve a list of tracking links for a specific organization
-// @Tags tracking-links
-// @Produce json
-// @Param organization_id path int true "Organization ID"
-// @Param page query int false "Page number" default(1)
-// @Param page_size query int false "Page size" default(20)
-// @Success 200 {object} models.TrackingLinkListResponse
-// @Failure 400 {object} ErrorResponse
-// @Failure 401 {object} ErrorResponse
-// @Failure 403 {object} ErrorResponse
-// @Failure 500 {object} ErrorResponse
-// @Security BearerAuth
-// @Router /organizations/{organization_id}/tracking-links [get]
-func (h *TrackingLinkHandler) ListTrackingLinksByOrganization(c *gin.Context) {
-	organizationID, err := strconv.ParseInt(c.Param("id"), 10, 64)
-	if err != nil {
-		c.JSON(http.StatusBadRequest, ErrorResponse{
-			Error:   "Invalid organization ID",
-			Details: "Organization ID must be a valid integer",
-		})
-		return
-	}
-
-	page, pageSize := getPaginationParams(c)
-	offset := (page - 1) * pageSize
-
-	trackingLinks, err := h.trackingLinkService.ListTrackingLinksByOrganization(c.Request.Context(), organizationID, pageSize, offset)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, ErrorResponse{
-			Error:   "Failed to list tracking links",
-			Details: err.Error(),
-		})
-		return
-	}
-
-	// Convert to response models
-	var responses []*models.TrackingLinkResponse
-	for _, trackingLink := range trackingLinks {
-		responses = append(responses, models.FromTrackingLinkDomain(trackingLink))
-	}
-
-	// Calculate total pages (simplified - in production you'd get total count from service)
-	totalPages := (len(responses) + pageSize - 1) / pageSize
-
-	response := models.TrackingLinkListResponse{
-		TrackingLinks: responses,
-		Total:         len(responses),
-		Page:          page,
-		PageSize:      pageSize,
-		TotalPages:    totalPages,
-	}
-
-	c.JSON(http.StatusOK, response)
-}
-
-// RegenerateTrackingLink regenerates an existing tracking link
-// @Summary Regenerate a tracking link
-// @Description Regenerate an existing tracking link with provider integration
-// @Tags tracking-links
-// @Produce json
-// @Param organization_id path int true "Organization ID"
-// @Param tracking_link_id path int true "Tracking Link ID"
-// @Success 200 {object} models.TrackingLinkGenerationResponse
-// @Failure 400 {object} ErrorResponse
-// @Failure 401 {object} ErrorResponse
-// @Failure 403 {object} ErrorResponse
-// @Failure 404 {object} ErrorResponse
-// @Failure 500 {object} ErrorResponse
-// @Security BearerAuth
-// @Router /organizations/{organization_id}/tracking-links/{tracking_link_id}/regenerate [post]
-func (h *TrackingLinkHandler) RegenerateTrackingLink(c *gin.Context) {
-	trackingLinkID, err := strconv.ParseInt(c.Param("link_id"), 10, 64)
-	if err != nil {
-		c.JSON(http.StatusBadRequest, ErrorResponse{
-			Error:   "Invalid tracking link ID",
-			Details: "Tracking link ID must be a valid integer",
-		})
-		return
-	}
-
-	response, err := h.trackingLinkService.RegenerateTrackingLink(c.Request.Context(), trackingLinkID)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, ErrorResponse{
-			Error:   "Failed to regenerate tracking link",
-			Details: err.Error(),
-		})
-		return
-	}
-
-	// Convert to API response
-	baseURL := getBaseURL(c)
-	apiResponse := models.FromTrackingLinkGenerationDomain(response, baseURL)
-	c.JSON(http.StatusOK, apiResponse)
-}
-
-// GetTrackingLinkQR generates and returns a QR code for a tracking link
-// @Summary Get tracking link QR code
-// @Description Generate and return a QR code image for a tracking link
-// @Tags tracking-links
-// @Produce image/png
-// @Param organization_id path int true "Organization ID"
-// @Param tracking_link_id path int true "Tracking Link ID"
-// @Success 200 {string} binary "QR code image" encoded with base64
-// @Failure 400 {object} ErrorResponse
-// @Failure 401 {object} ErrorResponse
-// @Failure 403 {object} ErrorResponse
-// @Failure 404 {object} ErrorResponse
-// @Failure 500 {object} ErrorResponse
-// @Security BearerAuth
-// @Router /organizations/{organization_id}/tracking-links/{tracking_link_id}/qr [get]
-func (h *TrackingLinkHandler) GetTrackingLinkQR(c *gin.Context) {
-	trackingLinkID, err := strconv.ParseInt(c.Param("link_id"), 10, 64)
-	if err != nil {
-		c.JSON(http.StatusBadRequest, ErrorResponse{
-			Error:   "Invalid tracking link ID",
-			Details: "Tracking link ID must be a valid integer",
-		})
-		return
-	}
-
-	// Get tracking link to verify it exists
-	trackingLink, err := h.trackingLinkService.GetTrackingLinkByID(c.Request.Context(), trackingLinkID)
-	if err != nil {
-		c.JSON(http.StatusNotFound, ErrorResponse{
-			Error:   "Tracking link not found",
-			Details: err.Error(),
-		})
-		return
-	}
-
-	// For now, return a simple mock QR code
-	// In a real implementation, you would generate a QR code from the tracking URL
-	qrData := []byte(trackingLink.Name)
-
-	// Convert qrData from bytes slice to base64 encoded string
-	// Convert qrData from bytes slice to base64 encoded string
-	base64QR := base64.StdEncoding.EncodeToString(qrData)
-
-	// Return base64 encoded string directly
-	c.String(http.StatusOK, base64QR)
-}
-
-// Helper functions
-
-// getBaseURL extracts the base URL from the request
-func getBaseURL(c *gin.Context) string {
-	scheme := "http"
+// getScheme returns the scheme (http or https) for the request
+func getScheme(c *gin.Context) string {
 	if c.Request.TLS != nil {
-		scheme = "https"
+		return "https"
 	}
-	return fmt.Sprintf("%s://%s", scheme, c.Request.Host)
+	if scheme := c.GetHeader("X-Forwarded-Proto"); scheme != "" {
+		return scheme
+	}
+	return "http"
 }

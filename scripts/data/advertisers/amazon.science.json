@@ -1,0 +1,112 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Skimlinks"
+      ],
+      "value": [
+        "Skimlinks"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 5,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "academics-interest@amazon.com"
+        },
+        {
+          "department": null,
+          "value": "alexaprizesupport@amazon.com"
+        },
+        {
+          "department": null,
+          "value": "eccv-2022@amazon.com"
+        },
+        {
+          "department": null,
+          "value": "informs2022@amazon.com"
+        },
+        {
+          "department": null,
+          "value": "iros2022@amazon.com"
+        }
+      ]
+    },
+    "domain": "amazon.science",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "Amazon's approach to customer-obsessed science. Get the latest news about innovations in artificial intelligence and machine learning, including job opportunities, publications, conferences, events and more.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazon.science.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazon.science"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 3
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "focalinsideeffects.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "promotypeMix": {
+        "value": []
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/amazonscience",
+        "instagram": "https://instagram.com/amazonscience",
+        "twitter": "https://twitter.com/amazonscience",
+        "youtube": "https://youtube.com/c/amazonscience"
+      }
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Technology / Software",
+        "rank": 2,
+        "score": 70
+      },
+      "value": [
+        {
+          "name": "Business / Software",
+          "rank": 2,
+          "score": 60
+        },
+        {
+          "name": "Technology / Software",
+          "rank": 2,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

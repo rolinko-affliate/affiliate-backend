@@ -1,0 +1,611 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 2,
+      "sampleValue": [
+        "Daisycon",
+        "Private Network"
+      ],
+      "value": [
+        "Daisycon",
+        "Private Network"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "nl",
+        "score": 0.95
+      },
+      "sampleValue": [
+        {
+          "countryCode": "nl",
+          "score": 0.95
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "nl",
+          "score": 0.95
+        }
+      ]
+    },
+    "domain": "bestemultivitamines.nl",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "artikel"
+        },
+        {
+          "score": 0.9749739,
+          "value": "bol"
+        },
+        {
+          "score": 0.83107406,
+          "value": "bestelling"
+        },
+        {
+          "score": 0.7028154,
+          "value": "select"
+        },
+        {
+          "score": 0.56283355,
+          "value": "bekijk"
+        },
+        {
+          "score": 0.55891556,
+          "value": "zakelijk"
+        },
+        {
+          "score": 0.5,
+          "value": "vitamine"
+        },
+        {
+          "score": 0.48070908,
+          "value": "optie"
+        },
+        {
+          "score": 0.35766423,
+          "value": "tuin"
+        },
+        {
+          "score": 0.34619394,
+          "value": "beschikbaar"
+        },
+        {
+          "score": 0.31491596,
+          "value": "forte"
+        },
+        {
+          "score": 0.2961418,
+          "value": "lijst"
+        },
+        {
+          "score": 0.29092804,
+          "value": "cadeau"
+        },
+        {
+          "score": 0.27320126,
+          "value": "cadeaukaart"
+        },
+        {
+          "score": 0.25964546,
+          "value": "tijd"
+        },
+        {
+          "score": 0.24921794,
+          "value": "speelgoed"
+        },
+        {
+          "score": 0.24851024,
+          "value": "klantenservice"
+        },
+        {
+          "score": 0.24608968,
+          "value": "mooi"
+        },
+        {
+          "score": 0.24504693,
+          "value": "baby"
+        },
+        {
+          "score": 0.24191867,
+          "value": "korting"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "artikel"
+        },
+        {
+          "score": 0.9749739,
+          "value": "bol"
+        },
+        {
+          "score": 0.83107406,
+          "value": "bestelling"
+        },
+        {
+          "score": 0.7028154,
+          "value": "select"
+        },
+        {
+          "score": 0.56283355,
+          "value": "bekijk"
+        },
+        {
+          "score": 0.55891556,
+          "value": "zakelijk"
+        },
+        {
+          "score": 0.5,
+          "value": "vitamine"
+        },
+        {
+          "score": 0.48070908,
+          "value": "optie"
+        },
+        {
+          "score": 0.35766423,
+          "value": "tuin"
+        },
+        {
+          "score": 0.34619394,
+          "value": "beschikbaar"
+        },
+        {
+          "score": 0.31491596,
+          "value": "forte"
+        },
+        {
+          "score": 0.2961418,
+          "value": "lijst"
+        },
+        {
+          "score": 0.29092804,
+          "value": "cadeau"
+        },
+        {
+          "score": 0.27320126,
+          "value": "cadeaukaart"
+        },
+        {
+          "score": 0.25964546,
+          "value": "tijd"
+        },
+        {
+          "score": 0.24921794,
+          "value": "speelgoed"
+        },
+        {
+          "score": 0.24851024,
+          "value": "klantenservice"
+        },
+        {
+          "score": 0.24608968,
+          "value": "mooi"
+        },
+        {
+          "score": 0.24504693,
+          "value": "baby"
+        },
+        {
+          "score": 0.24191867,
+          "value": "korting"
+        },
+        {
+          "score": 0.24191867,
+          "value": "bezorging"
+        },
+        {
+          "score": 0.24087591,
+          "value": "voordeel"
+        },
+        {
+          "score": 0.24087591,
+          "value": "bezorgoptie"
+        },
+        {
+          "score": 0.23983316,
+          "value": "levertijd"
+        },
+        {
+          "score": 0.23983316,
+          "value": "geval"
+        },
+        {
+          "score": 0.23894376,
+          "value": "accessoire"
+        },
+        {
+          "score": 0.2367049,
+          "value": "muziek"
+        },
+        {
+          "score": 0.2367049,
+          "value": "omstandigheid"
+        },
+        {
+          "score": 0.2367049,
+          "value": "beschikbaar bestelling"
+        },
+        {
+          "score": 0.23320478,
+          "value": "nieuw"
+        },
+        {
+          "score": 0.23044838,
+          "value": "gezond"
+        },
+        {
+          "score": 0.22940563,
+          "value": "inlogg"
+        },
+        {
+          "score": 0.22732012,
+          "value": "school"
+        },
+        {
+          "score": 0.22627737,
+          "value": "film"
+        },
+        {
+          "score": 0.22210637,
+          "value": "inspiratie"
+        },
+        {
+          "score": 0.22210637,
+          "value": "thuiswinkel"
+        },
+        {
+          "score": 0.22002086,
+          "value": "factuur"
+        },
+        {
+          "score": 0.22002086,
+          "value": "voorwaarde"
+        },
+        {
+          "score": 0.21167883,
+          "value": "moment"
+        },
+        {
+          "score": 0.20855057,
+          "value": "cadeaupagina"
+        },
+        {
+          "score": 0.20542231,
+          "value": "actie"
+        },
+        {
+          "score": 0.20542231,
+          "value": "zakelijk cadeaukaart"
+        },
+        {
+          "score": 0.2036872,
+          "value": "goed"
+        },
+        {
+          "score": 0.20085567,
+          "value": "beauty"
+        },
+        {
+          "score": 0.19916579,
+          "value": "vergelijk"
+        },
+        {
+          "score": 0.19916579,
+          "value": "vergelijk artikel"
+        },
+        {
+          "score": 0.19916579,
+          "value": "aantal"
+        },
+        {
+          "score": 0.18665276,
+          "value": "maximum"
+        },
+        {
+          "score": 0.18161765,
+          "value": "omega"
+        },
+        {
+          "score": 0.17849706,
+          "value": "sport"
+        },
+        {
+          "score": 0.17518248,
+          "value": "boek"
+        },
+        {
+          "score": 0.16892597,
+          "value": "select korting"
+        },
+        {
+          "score": 0.15298411,
+          "value": "fit"
+        },
+        {
+          "score": 0.1459854,
+          "value": "jaar"
+        },
+        {
+          "score": 0.14359243,
+          "value": "vrouw"
+        },
+        {
+          "score": 0.1418144,
+          "value": "schoen"
+        },
+        {
+          "score": 0.14077164,
+          "value": "huis"
+        },
+        {
+          "score": 0.13764338,
+          "value": "snel"
+        },
+        {
+          "score": 0.13347237,
+          "value": "damesmod"
+        },
+        {
+          "score": 0.13242961,
+          "value": "dier"
+        },
+        {
+          "score": 0.13138686,
+          "value": "duurzaam"
+        },
+        {
+          "score": 0.13034411,
+          "value": "digitaal"
+        },
+        {
+          "score": 0.13034411,
+          "value": "tas"
+        },
+        {
+          "score": 0.1261731,
+          "value": "winkel"
+        },
+        {
+          "score": 0.12513034,
+          "value": "huishouden"
+        },
+        {
+          "score": 0.124894954,
+          "value": "weerstand"
+        },
+        {
+          "score": 0.12304484,
+          "value": "kleding"
+        },
+        {
+          "score": 0.12304484,
+          "value": "herenmode"
+        },
+        {
+          "score": 0.12304484,
+          "value": "algemeen"
+        },
+        {
+          "score": 0.120959334,
+          "value": "kantoor"
+        },
+        {
+          "score": 0.11991658,
+          "value": "games"
+        },
+        {
+          "score": 0.11991658,
+          "value": "motor"
+        },
+        {
+          "score": 0.11991658,
+          "value": "assortiment"
+        },
+        {
+          "score": 0.11991658,
+          "value": "nodig"
+        },
+        {
+          "score": 0.11890756,
+          "value": "voordeelpakket"
+        },
+        {
+          "score": 0.11887383,
+          "value": "bas"
+        },
+        {
+          "score": 0.11783107,
+          "value": "lid"
+        },
+        {
+          "score": 0.11678832,
+          "value": "cadeaubon"
+        },
+        {
+          "score": 0.11470281,
+          "value": "koster"
+        },
+        {
+          "score": 0.11261731,
+          "value": "ideaal"
+        },
+        {
+          "score": 0.11261731,
+          "value": "collectie"
+        },
+        {
+          "score": 0.11261731,
+          "value": "algemeen voorwaarde"
+        },
+        {
+          "score": 0.11053181,
+          "value": "gegeven"
+        },
+        {
+          "score": 0.11053181,
+          "value": "nieuw collectie"
+        },
+        {
+          "score": 0.11053181,
+          "value": "aanbieding"
+        },
+        {
+          "score": 0.11053181,
+          "value": "retourdeal"
+        },
+        {
+          "score": 0.11053181,
+          "value": "voordelig"
+        },
+        {
+          "score": 0.11053181,
+          "value": "exclusief"
+        },
+        {
+          "score": 0.10948905,
+          "value": "lekker"
+        },
+        {
+          "score": 0.10948905,
+          "value": "kindermod"
+        },
+        {
+          "score": 0.10948905,
+          "value": "nieuws"
+        },
+        {
+          "score": 0.10948905,
+          "value": "bedrijfsgegeven"
+        },
+        {
+          "score": 0.1084463,
+          "value": "cookiebeleid"
+        },
+        {
+          "score": 0.1084463,
+          "value": "damesmod herenmode"
+        },
+        {
+          "score": 0.1084463,
+          "value": "rituals"
+        },
+        {
+          "score": 0.107563026,
+          "value": "bekijk product"
+        },
+        {
+          "score": 0.10740355,
+          "value": "drogisterij"
+        },
+        {
+          "score": 0.10740355,
+          "value": "start"
+        },
+        {
+          "score": 0.10740355,
+          "value": "sal"
+        },
+        {
+          "score": 0.10740355,
+          "value": "garantie"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/bestemultivitamines.nl.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://bestemultivitamines.nl"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 3,
+        "value": [
+          "bol.com",
+          "flinndal.nl",
+          "nutribites.nl"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 0.85,
+            "vertical": "Food / Groceries"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 3,
+      "value": [
+        "bol.com",
+        "flinndal.nl",
+        "nutribites.nl"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 1,
+      "sampleValue": "Health / Healthcare",
+      "value": [
+        "Health / Healthcare"
+      ]
+    },
+    "verticalsV2": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Health / Healthcare",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Health / Healthcare",
+          "rank": 1,
+          "score": 90
+        }
+      ]
+    }
+  }
+}

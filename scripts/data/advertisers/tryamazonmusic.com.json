@@ -1,0 +1,126 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 2,
+      "sampleValue": [
+        "TradeTracker",
+        "TRX"
+      ],
+      "value": [
+        "TradeTracker",
+        "TRX"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 0,
+      "error": false,
+      "value": []
+    },
+    "domain": "tryamazonmusic.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/tryamazonmusic.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://tryamazonmusic.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 34
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "allroundblogs.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 6,
+        "value": [
+          {
+            "domain": "601legendhill.com"
+          },
+          {
+            "domain": "mascalzonicampani.com"
+          },
+          {
+            "domain": "oliviadavismusic.com"
+          },
+          {
+            "domain": "pwmaplefest.com"
+          },
+          {
+            "domain": "revengethefate.com"
+          },
+          {
+            "domain": "indigrow.org"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 4,
+            "promotype": "blog",
+            "value": [
+              "billboard.com",
+              "hip2save.com",
+              "meilleuresvente.com",
+              "rollingstone.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "forum",
+            "value": [
+              "linkbux.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "content",
+            "value": [
+              "robbreport.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Entertainment / Music",
+        "rank": 2,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Entertainment / Music",
+          "rank": 2,
+          "score": 95
+        },
+        {
+          "name": "Entertainment / Streaming",
+          "rank": 2,
+          "score": 90
+        }
+      ]
+    }
+  }
+}

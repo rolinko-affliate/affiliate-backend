@@ -1,0 +1,273 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 2,
+      "sampleValue": [
+        "PartnerStack",
+        "Viglink"
+      ],
+      "value": [
+        "PartnerStack",
+        "Viglink"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 4,
+      "error": false,
+      "value": [
+        {
+          "department": null,
+          "value": "support@taxjar.com"
+        },
+        {
+          "department": "support",
+          "value": "support@taxjar.com.last"
+        },
+        {
+          "department": "support",
+          "value": "support@taxjar.com.please"
+        },
+        {
+          "department": null,
+          "value": "taxadvisors@taxjar.com"
+        }
+      ]
+    },
+    "domain": "taxjar.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "TaxJar is a modern cloud platform that automates sales tax compliance for more than 20,000 businesses.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/taxjar.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://taxjar.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 142
+      },
+      "partnersAdded": {
+        "count": 12,
+        "value": [
+          {
+            "domain": "webseodirectory.com"
+          },
+          {
+            "domain": "webranksdirectory.com"
+          },
+          {
+            "domain": "proseoarticles.com"
+          },
+          {
+            "domain": "2h4dw.com"
+          },
+          {
+            "domain": "wayseolinks.com"
+          },
+          {
+            "domain": "backlinktime.com"
+          },
+          {
+            "domain": "hostseolinks.com"
+          },
+          {
+            "domain": "databoostdirectory.com"
+          },
+          {
+            "domain": "rankeddirectory.com"
+          },
+          {
+            "domain": "sureprofitscoach.com"
+          },
+          {
+            "domain": "wayseodirectory.com"
+          },
+          {
+            "domain": "topmarketingdirectory.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 7,
+        "value": [
+          {
+            "domain": "listodirectory.com"
+          },
+          {
+            "domain": "ysw.yswamp.com"
+          },
+          {
+            "domain": "clicktohigh.com"
+          },
+          {
+            "domain": "ndnook.com"
+          },
+          {
+            "domain": "yzhood.com"
+          },
+          {
+            "domain": "bestsitesdirectory.com"
+          },
+          {
+            "domain": "brock.mykajabi.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 48,
+            "promotype": "blog",
+            "value": [
+              "10reviewsplus.com",
+              "21stcen.com",
+              "500toprated.com",
+              "a-data-driven-guy.com",
+              "aireconsultants.com",
+              "amzresources.com",
+              "armandosuenos.com",
+              "backlinktime.com",
+              "bizhothouse.co.nz",
+              "brock.tv",
+              "claracfo.com",
+              "clicktoselldirectoy.com",
+              "commercecaffeine.com",
+              "dakis.com",
+              "deltasys.com",
+              "ecommerceaccountants.co.uk",
+              "gpl.coffee",
+              "hostseolinks.com",
+              "infinitefba.com",
+              "insiderapps.com",
+              "jazva.com",
+              "launchpro.us",
+              "michaelneely.net",
+              "millennialcpa.tax",
+              "mydakis.com",
+              "peertopeermarketing.co",
+              "prestonscorner.com",
+              "proseoarticles.com",
+              "raretopsitesdirectory.com",
+              "readcaffeine.com",
+              "salesandusetax.com",
+              "scamreport.com",
+              "sellerapp.com",
+              "sporkmarketing.com",
+              "stampcommunity.org",
+              "startupcheckr.com",
+              "stoneedge.com",
+              "tatianajames.com",
+              "techbusy.org",
+              "thewholesaleformula.com",
+              "toptohigh.com",
+              "wayseolinks.com",
+              "webranksdirectory.com",
+              "worldwidetopsite.com",
+              "worldwidetopsite.link",
+              "yourstorewizards.com",
+              "zakandzu.com",
+              "zomatt.com"
+            ]
+          },
+          {
+            "count": 19,
+            "promotype": "student",
+            "value": [
+              "absmho.com",
+              "aligow.com",
+              "amazonsellers.nl",
+              "classifieddirectoy.com",
+              "clicknowmarketing.com",
+              "cs-cart.com",
+              "dls.org.cn",
+              "droppricetoday.com",
+              "getclearthinking.com",
+              "glendaledesigns.com",
+              "helloprofit.com",
+              "launchgrowjoy.com",
+              "mommyincome.com",
+              "opencart.com",
+              "rankerdirectory.com",
+              "seethroughweb.com",
+              "sellerengine.com",
+              "wayseodirectory.com",
+              "wookeeper.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "incentive",
+            "value": [
+              "couponay.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "forum",
+            "value": [
+              "dotpim.com"
+            ]
+          },
+          {
+            "count": 3,
+            "promotype": "content",
+            "value": [
+              "go.hozyali.com",
+              "pluginthemebr.com",
+              "simongondeck.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "linkedin"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/taxjar",
+        "linkedin": "https://linkedin.com/company/taxjar",
+        "twitter": "https://twitter.com/taxjar",
+        "youtube": "https://youtube.com/user/taxjar/feed"
+      }
+    },
+    "verticals": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Finance / Accounts",
+        "rank": 2,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Business / Services",
+          "rank": 2,
+          "score": 60
+        },
+        {
+          "name": "Business / Software",
+          "rank": 2,
+          "score": 80
+        },
+        {
+          "name": "Finance / Accounts",
+          "rank": 2,
+          "score": 90
+        }
+      ]
+    }
+  }
+}

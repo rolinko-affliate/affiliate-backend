@@ -3,10 +3,10 @@ package service
 import (
 	"context"
 	"fmt"
-	"log"
 	"time"
 
 	"github.com/affiliate-backend/internal/domain"
+	"github.com/affiliate-backend/internal/platform/logger"
 	"github.com/affiliate-backend/internal/repository"
 	"github.com/shopspring/decimal"
 )
@@ -42,7 +42,7 @@ func NewUsageCalculationService(
 
 // CalculateDailyUsage calculates usage for all organizations for a specific date
 func (s *UsageCalculationService) CalculateDailyUsage(ctx context.Context, date time.Time) error {
-	log.Printf("Starting daily usage calculation for date: %s", date.Format("2006-01-02"))
+	logger.Info("Starting daily usage calculation", "date", date.Format("2006-01-02"))
 
 	// Get all active billing accounts
 	billingAccounts, err := s.billingAccountRepo.List(ctx, 1000, 0) // TODO: Implement pagination
@@ -57,23 +57,23 @@ func (s *UsageCalculationService) CalculateDailyUsage(ctx context.Context, date 
 
 		err := s.calculateUsageForOrganization(ctx, account.OrganizationID, date)
 		if err != nil {
-			log.Printf("Error calculating usage for organization %d: %v", account.OrganizationID, err)
+			logger.Error("Error calculating usage for organization", "organization_id", account.OrganizationID, "error", err)
 			// Continue with other organizations
 		}
 	}
 
-	log.Printf("Completed daily usage calculation for date: %s", date.Format("2006-01-02"))
+	logger.Info("Completed daily usage calculation", "date", date.Format("2006-01-02"))
 	return nil
 }
 
 // calculateUsageForOrganization calculates usage for a specific organization and date
 func (s *UsageCalculationService) calculateUsageForOrganization(ctx context.Context, organizationID int64, date time.Time) error {
-	log.Printf("Calculating usage for organization %d on %s", organizationID, date.Format("2006-01-02"))
+	logger.Info("Calculating usage for organization", "organization_id", organizationID, "date", date.Format("2006-01-02"))
 
 	// Check if usage record already exists
 	existingRecord, err := s.usageRecordRepo.GetByOrganizationAndDate(ctx, organizationID, date)
 	if err == nil && existingRecord.Status != domain.UsageRecordStatusPending {
-		log.Printf("Usage already calculated for organization %d on %s", organizationID, date.Format("2006-01-02"))
+		logger.Info("Usage already calculated for organization", "organization_id", organizationID, "date", date.Format("2006-01-02"))
 		return nil
 	}
 
@@ -130,11 +130,11 @@ func (s *UsageCalculationService) calculateUsageForOrganization(ctx context.Cont
 		return fmt.Errorf("failed to process billing: %w", err)
 	}
 
-	log.Printf("Successfully calculated usage for organization %d: spend=%s, payout=%s, revenue=%s",
-		organizationID,
-		usageRecord.AdvertiserSpend.String(),
-		usageRecord.AffiliatePayout.String(),
-		usageRecord.PlatformRevenue.String())
+	logger.Info("Successfully calculated usage for organization",
+		"organization_id", organizationID,
+		"advertiser_spend", usageRecord.AdvertiserSpend.String(),
+		"affiliate_payout", usageRecord.AffiliatePayout.String(),
+		"platform_revenue", usageRecord.PlatformRevenue.String())
 
 	return nil
 }
@@ -319,8 +319,9 @@ func (s *UsageCalculationService) ProcessAffiliatePayout(ctx context.Context, us
 	// 3. Integrate with payment providers (Stripe Connect, PayPal, etc.)
 	// 4. Update affiliate balances
 
-	log.Printf("Processing affiliate payout for usage record %d: %s",
-		usageRecord.UsageRecordID, usageRecord.AffiliatePayout.String())
+	logger.Info("Processing affiliate payout for usage record",
+		"usage_record_id", usageRecord.UsageRecordID,
+		"affiliate_payout", usageRecord.AffiliatePayout.String())
 
 	// Mark usage record as paid
 	usageRecord.Status = domain.UsageRecordStatusPaid

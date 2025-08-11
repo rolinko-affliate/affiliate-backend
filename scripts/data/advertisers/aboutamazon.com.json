@@ -1,0 +1,669 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 5,
+      "sampleValue": [
+        "Business Insider",
+        "Digidip",
+        "Skimlinks"
+      ],
+      "value": [
+        "Business Insider",
+        "Digidip",
+        "Skimlinks",
+        "TRX",
+        "Viglink"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 3,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "security@amazo.ca"
+        },
+        {
+          "department": "support",
+          "value": "sustainability-data-initiative@amazon.com"
+        },
+        {
+          "department": "communication",
+          "value": "us-rme-apprenticeship@amazon.com"
+        }
+      ]
+    },
+    "domain": "aboutamazon.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "amazon"
+        },
+        {
+          "score": 1,
+          "value": "salesforce"
+        },
+        {
+          "score": 0.52065,
+          "value": "release"
+        },
+        {
+          "score": 0.42459324,
+          "value": "seller"
+        },
+        {
+          "score": 0.41096443,
+          "value": "twitter"
+        },
+        {
+          "score": 0.36784104,
+          "value": "sign"
+        },
+        {
+          "score": 0.3551925,
+          "value": "video"
+        },
+        {
+          "score": 0.34863606,
+          "value": "success"
+        },
+        {
+          "score": 0.3207749,
+          "value": "event"
+        },
+        {
+          "score": 0.31124115,
+          "value": "community"
+        },
+        {
+          "score": 0.30031765,
+          "value": "story"
+        },
+        {
+          "score": 0.28227508,
+          "value": "solution"
+        },
+        {
+          "score": 0.2787637,
+          "value": "door"
+        },
+        {
+          "score": 0.27737996,
+          "value": "resource"
+        },
+        {
+          "score": 0.27493176,
+          "value": "meta"
+        },
+        {
+          "score": 0.27128533,
+          "value": "cision"
+        },
+        {
+          "score": 0.2569416,
+          "value": "device"
+        },
+        {
+          "score": 0.23368812,
+          "value": "accessory"
+        },
+        {
+          "score": 0.23143333,
+          "value": "press"
+        },
+        {
+          "score": 0.22574706,
+          "value": "safety"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "amazon"
+        },
+        {
+          "score": 1,
+          "value": "salesforce"
+        },
+        {
+          "score": 0.52065,
+          "value": "release"
+        },
+        {
+          "score": 0.42459324,
+          "value": "seller"
+        },
+        {
+          "score": 0.41096443,
+          "value": "twitter"
+        },
+        {
+          "score": 0.36784104,
+          "value": "sign"
+        },
+        {
+          "score": 0.3551925,
+          "value": "video"
+        },
+        {
+          "score": 0.34863606,
+          "value": "success"
+        },
+        {
+          "score": 0.3207749,
+          "value": "event"
+        },
+        {
+          "score": 0.31124115,
+          "value": "community"
+        },
+        {
+          "score": 0.30031765,
+          "value": "story"
+        },
+        {
+          "score": 0.28227508,
+          "value": "solution"
+        },
+        {
+          "score": 0.2787637,
+          "value": "door"
+        },
+        {
+          "score": 0.27737996,
+          "value": "resource"
+        },
+        {
+          "score": 0.27493176,
+          "value": "meta"
+        },
+        {
+          "score": 0.27128533,
+          "value": "cision"
+        },
+        {
+          "score": 0.2569416,
+          "value": "device"
+        },
+        {
+          "score": 0.23368812,
+          "value": "accessory"
+        },
+        {
+          "score": 0.23143333,
+          "value": "press"
+        },
+        {
+          "score": 0.22574706,
+          "value": "safety"
+        },
+        {
+          "score": 0.21981888,
+          "value": "garage"
+        },
+        {
+          "score": 0.21680936,
+          "value": "team"
+        },
+        {
+          "score": 0.20639023,
+          "value": "global"
+        },
+        {
+          "score": 0.20404287,
+          "value": "software"
+        },
+        {
+          "score": 0.20203416,
+          "value": "partner"
+        },
+        {
+          "score": 0.19419858,
+          "value": "training"
+        },
+        {
+          "score": 0.1923077,
+          "value": "distribution"
+        },
+        {
+          "score": 0.19066904,
+          "value": "employee"
+        },
+        {
+          "score": 0.18554229,
+          "value": "opener"
+        },
+        {
+          "score": 0.18515797,
+          "value": "control"
+        },
+        {
+          "score": 0.1845078,
+          "value": "prime"
+        },
+        {
+          "score": 0.18386853,
+          "value": "country"
+        },
+        {
+          "score": 0.18315537,
+          "value": "industry"
+        },
+        {
+          "score": 0.18219633,
+          "value": "digital"
+        },
+        {
+          "score": 0.17797156,
+          "value": "people"
+        },
+        {
+          "score": 0.17751479,
+          "value": "central"
+        },
+        {
+          "score": 0.17041053,
+          "value": "instagram"
+        },
+        {
+          "score": 0.1628228,
+          "value": "technology"
+        },
+        {
+          "score": 0.15384616,
+          "value": "inconvenience"
+        },
+        {
+          "score": 0.15384616,
+          "value": "contribution"
+        },
+        {
+          "score": 0.15384616,
+          "value": "overview"
+        },
+        {
+          "score": 0.15384616,
+          "value": "index page"
+        },
+        {
+          "score": 0.15176715,
+          "value": "bureau"
+        },
+        {
+          "score": 0.14760914,
+          "value": "submit"
+        },
+        {
+          "score": 0.14610833,
+          "value": "fee"
+        },
+        {
+          "score": 0.13955456,
+          "value": "relation"
+        },
+        {
+          "score": 0.13937216,
+          "value": "twitter com"
+        },
+        {
+          "score": 0.13880354,
+          "value": "communication"
+        },
+        {
+          "score": 0.13654985,
+          "value": "fba"
+        },
+        {
+          "score": 0.13576095,
+          "value": "cloud"
+        },
+        {
+          "score": 0.13282952,
+          "value": "learn"
+        },
+        {
+          "score": 0.12873283,
+          "value": "legal"
+        },
+        {
+          "score": 0.12480942,
+          "value": "kindle"
+        },
+        {
+          "score": 0.124678776,
+          "value": "privacy policy"
+        },
+        {
+          "score": 0.124610595,
+          "value": "web"
+        },
+        {
+          "score": 0.123099715,
+          "value": "issue"
+        },
+        {
+          "score": 0.12241747,
+          "value": "smart"
+        },
+        {
+          "score": 0.122212104,
+          "value": "restriction"
+        },
+        {
+          "score": 0.11664806,
+          "value": "book"
+        },
+        {
+          "score": 0.1155508,
+          "value": "culture"
+        },
+        {
+          "score": 0.115384616,
+          "value": "newswire"
+        },
+        {
+          "score": 0.11343543,
+          "value": "report"
+        },
+        {
+          "score": 0.112372674,
+          "value": "professional"
+        },
+        {
+          "score": 0.112266116,
+          "value": "working"
+        },
+        {
+          "score": 0.112266116,
+          "value": "currently"
+        },
+        {
+          "score": 0.11119354,
+          "value": "store"
+        },
+        {
+          "score": 0.11008867,
+          "value": "controller"
+        },
+        {
+          "score": 0.11004074,
+          "value": "url"
+        },
+        {
+          "score": 0.10970525,
+          "value": "web domain"
+        },
+        {
+          "score": 0.10970525,
+          "value": "policy url"
+        },
+        {
+          "score": 0.109465614,
+          "value": "url https"
+        },
+        {
+          "score": 0.10941828,
+          "value": "track"
+        },
+        {
+          "score": 0.109365635,
+          "value": "setting"
+        },
+        {
+          "score": 0.10802714,
+          "value": "liftmaster"
+        },
+        {
+          "score": 0.10734072,
+          "value": "equality"
+        },
+        {
+          "score": 0.10734072,
+          "value": "hub"
+        },
+        {
+          "score": 0.10570467,
+          "value": "investor"
+        },
+        {
+          "score": 0.105212115,
+          "value": "article"
+        },
+        {
+          "score": 0.104814224,
+          "value": "career"
+        },
+        {
+          "score": 0.09904367,
+          "value": "app"
+        },
+        {
+          "score": 0.09815843,
+          "value": "accesorio"
+        },
+        {
+          "score": 0.0973502,
+          "value": "impact"
+        },
+        {
+          "score": 0.09704403,
+          "value": "advantage"
+        },
+        {
+          "score": 0.09688989,
+          "value": "reel"
+        },
+        {
+          "score": 0.09537503,
+          "value": "google"
+        },
+        {
+          "score": 0.0942177,
+          "value": "stars"
+        },
+        {
+          "score": 0.09320291,
+          "value": "automotive"
+        },
+        {
+          "score": 0.09295339,
+          "value": "chain"
+        },
+        {
+          "score": 0.09243479,
+          "value": "developer"
+        },
+        {
+          "score": 0.09185632,
+          "value": "change"
+        },
+        {
+          "score": 0.091753535,
+          "value": "program"
+        },
+        {
+          "score": 0.09164909,
+          "value": "development"
+        },
+        {
+          "score": 0.0900277,
+          "value": "trailhead"
+        },
+        {
+          "score": 0.08767823,
+          "value": "financial"
+        },
+        {
+          "score": 0.08758104,
+          "value": "sustainability"
+        },
+        {
+          "score": 0.08663662,
+          "value": "card"
+        },
+        {
+          "score": 0.08655126,
+          "value": "wire"
+        },
+        {
+          "score": 0.08646892,
+          "value": "electronic"
+        },
+        {
+          "score": 0.08612509,
+          "value": "more privacy"
+        },
+        {
+          "score": 0.08612509,
+          "value": "learn more"
+        }
+      ]
+    },
+    "metaData": {
+      "description": "Amazon is guided by four principles: customer obsession rather than competitor focus, passion for invention, commitment to operational excellence, and long-term thinking. This is our story.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/aboutamazon.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://aboutamazon.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 84
+      },
+      "partnersAdded": {
+        "count": 2,
+        "value": [
+          {
+            "domain": "komputer-servise.com"
+          },
+          {
+            "domain": "alanknieter.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 5,
+        "value": [
+          {
+            "domain": "brandiconimage.com"
+          },
+          {
+            "domain": "macworld.com"
+          },
+          {
+            "domain": "tarbabys.com"
+          },
+          {
+            "domain": "recruitingnewsnetwork.com"
+          },
+          {
+            "domain": "dmitralex.ru"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 22,
+            "promotype": "blog",
+            "value": [
+              "actoneart.com",
+              "alanknieter.com",
+              "appndex.com",
+              "businessinsider.com",
+              "businessinsider.in",
+              "celebrityfacts.org",
+              "investmentwatchblog.com",
+              "love4shopping.com",
+              "macworld.se",
+              "mailinvest.blog",
+              "pcworld.com",
+              "rassegna.lbit-solution.it",
+              "road2france.com",
+              "safehomediy.com",
+              "simonshareef.com",
+              "socialmediaasia.com",
+              "techadvisor.com",
+              "techosmo.com",
+              "thenewsintel.com",
+              "thewealthiestinvestor.com",
+              "tiatira.com",
+              "worldcrypto.global"
+            ]
+          },
+          {
+            "count": 9,
+            "promotype": "student",
+            "value": [
+              "blog.repithwin.com",
+              "financeessence.com",
+              "gq.com",
+              "newsbreak.com",
+              "pcforalla.se",
+              "shopjustlovelythings.com",
+              "techtelegraph.co.uk",
+              "topglobe.news",
+              "yahoo.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "incentive",
+            "value": [
+              "m3.se"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 5,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "linkedin",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/amazon",
+        "instagram": "https://instagram.com/amazon",
+        "linkedin": "https://linkedin.com/company/amazon",
+        "twitter": "https://twitter.com/amazonnews",
+        "youtube": "https://youtube.com/amazonnews"
+      }
+    },
+    "verticals": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Business / Ecommerce",
+        "rank": 2,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 2,
+          "score": 90
+        },
+        {
+          "name": "Business / Software",
+          "rank": 2,
+          "score": 70
+        },
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 2,
+          "score": 80
+        }
+      ]
+    }
+  }
+}

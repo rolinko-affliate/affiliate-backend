@@ -1,0 +1,1764 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 7,
+      "sampleValue": [
+        "Awin",
+        "Impact",
+        "Private Network"
+      ],
+      "value": [
+        "Awin",
+        "Impact",
+        "Private Network",
+        "Rakuten",
+        "ShareASale",
+        "Skimlinks",
+        "Viglink"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.5
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.5
+        },
+        {
+          "countryCode": "in",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.5
+        },
+        {
+          "countryCode": "in",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "topglobe.news",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "seller"
+        },
+        {
+          "score": 0.95577055,
+          "value": "amazon"
+        },
+        {
+          "score": 0.6636297,
+          "value": "store"
+        },
+        {
+          "score": 0.53580713,
+          "value": "sign"
+        },
+        {
+          "score": 0.49547324,
+          "value": "device"
+        },
+        {
+          "score": 0.4506944,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.44026121,
+          "value": "video"
+        },
+        {
+          "score": 0.43719667,
+          "value": "target"
+        },
+        {
+          "score": 0.42221025,
+          "value": "program"
+        },
+        {
+          "score": 0.35299098,
+          "value": "fee"
+        },
+        {
+          "score": 0.33352068,
+          "value": "central"
+        },
+        {
+          "score": 0.33242863,
+          "value": "card"
+        },
+        {
+          "score": 0.26870814,
+          "value": "fba"
+        },
+        {
+          "score": 0.2543624,
+          "value": "prime"
+        },
+        {
+          "score": 0.24374944,
+          "value": "tech"
+        },
+        {
+          "score": 0.2363855,
+          "value": "restriction"
+        },
+        {
+          "score": 0.22562735,
+          "value": "technology"
+        },
+        {
+          "score": 0.21056557,
+          "value": "accessory"
+        },
+        {
+          "score": 0.20966439,
+          "value": "care"
+        },
+        {
+          "score": 0.20407897,
+          "value": "requirement"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "seller"
+        },
+        {
+          "score": 0.95577055,
+          "value": "amazon"
+        },
+        {
+          "score": 0.6636297,
+          "value": "store"
+        },
+        {
+          "score": 0.53580713,
+          "value": "sign"
+        },
+        {
+          "score": 0.49547324,
+          "value": "device"
+        },
+        {
+          "score": 0.4506944,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.44026121,
+          "value": "video"
+        },
+        {
+          "score": 0.43719667,
+          "value": "target"
+        },
+        {
+          "score": 0.42221025,
+          "value": "program"
+        },
+        {
+          "score": 0.35299098,
+          "value": "fee"
+        },
+        {
+          "score": 0.33352068,
+          "value": "central"
+        },
+        {
+          "score": 0.33242863,
+          "value": "card"
+        },
+        {
+          "score": 0.26870814,
+          "value": "fba"
+        },
+        {
+          "score": 0.2543624,
+          "value": "prime"
+        },
+        {
+          "score": 0.24374944,
+          "value": "tech"
+        },
+        {
+          "score": 0.2363855,
+          "value": "restriction"
+        },
+        {
+          "score": 0.22562735,
+          "value": "technology"
+        },
+        {
+          "score": 0.21056557,
+          "value": "accessory"
+        },
+        {
+          "score": 0.20966439,
+          "value": "care"
+        },
+        {
+          "score": 0.20407897,
+          "value": "requirement"
+        },
+        {
+          "score": 0.20022018,
+          "value": "feedback"
+        },
+        {
+          "score": 0.1997037,
+          "value": "category"
+        },
+        {
+          "score": 0.19753905,
+          "value": "digital"
+        },
+        {
+          "score": 0.19236314,
+          "value": "event"
+        },
+        {
+          "score": 0.19219725,
+          "value": "sports"
+        },
+        {
+          "score": 0.18856746,
+          "value": "kindle"
+        },
+        {
+          "score": 0.18619402,
+          "value": "loading"
+        },
+        {
+          "score": 0.18545786,
+          "value": "gaming"
+        },
+        {
+          "score": 0.18276323,
+          "value": "food"
+        },
+        {
+          "score": 0.18235175,
+          "value": "phone"
+        },
+        {
+          "score": 0.18153583,
+          "value": "kids"
+        },
+        {
+          "score": 0.17834103,
+          "value": "warranty"
+        },
+        {
+          "score": 0.1774177,
+          "value": "education"
+        },
+        {
+          "score": 0.17416489,
+          "value": "apple"
+        },
+        {
+          "score": 0.17328626,
+          "value": "app"
+        },
+        {
+          "score": 0.17283484,
+          "value": "software"
+        },
+        {
+          "score": 0.17223063,
+          "value": "career"
+        },
+        {
+          "score": 0.1702863,
+          "value": "fulfillment"
+        },
+        {
+          "score": 0.1694035,
+          "value": "outdoor"
+        },
+        {
+          "score": 0.16869055,
+          "value": "health"
+        },
+        {
+          "score": 0.1652581,
+          "value": "supplier"
+        },
+        {
+          "score": 0.16433963,
+          "value": "marketplace"
+        },
+        {
+          "score": 0.15672192,
+          "value": "story"
+        },
+        {
+          "score": 0.15536575,
+          "value": "credit"
+        },
+        {
+          "score": 0.1519176,
+          "value": "box"
+        },
+        {
+          "score": 0.15071717,
+          "value": "book"
+        },
+        {
+          "score": 0.15034354,
+          "value": "photography"
+        },
+        {
+          "score": 0.14880154,
+          "value": "prime video"
+        },
+        {
+          "score": 0.14771648,
+          "value": "request"
+        },
+        {
+          "score": 0.14696568,
+          "value": "wireless"
+        },
+        {
+          "score": 0.14393617,
+          "value": "community"
+        },
+        {
+          "score": 0.1414978,
+          "value": "commission"
+        },
+        {
+          "score": 0.13926998,
+          "value": "game"
+        },
+        {
+          "score": 0.13798912,
+          "value": "network"
+        },
+        {
+          "score": 0.13631827,
+          "value": "circle"
+        },
+        {
+          "score": 0.13617572,
+          "value": "global"
+        },
+        {
+          "score": 0.13498282,
+          "value": "walmart"
+        },
+        {
+          "score": 0.134698,
+          "value": "camera"
+        },
+        {
+          "score": 0.13125971,
+          "value": "investor"
+        },
+        {
+          "score": 0.1285765,
+          "value": "setting"
+        },
+        {
+          "score": 0.125405,
+          "value": "issue"
+        },
+        {
+          "score": 0.12521116,
+          "value": "electronic"
+        },
+        {
+          "score": 0.12387305,
+          "value": "agreement"
+        },
+        {
+          "score": 0.12343656,
+          "value": "electronics"
+        },
+        {
+          "score": 0.123311,
+          "value": "label"
+        },
+        {
+          "score": 0.11935375,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.11870181,
+          "value": "light"
+        },
+        {
+          "score": 0.11854646,
+          "value": "department"
+        },
+        {
+          "score": 0.11758159,
+          "value": "professional"
+        },
+        {
+          "score": 0.11661275,
+          "value": "toy"
+        },
+        {
+          "score": 0.11590997,
+          "value": "solution"
+        },
+        {
+          "score": 0.115890406,
+          "value": "team"
+        },
+        {
+          "score": 0.11424943,
+          "value": "language"
+        },
+        {
+          "score": 0.11420664,
+          "value": "automotive"
+        },
+        {
+          "score": 0.1141791,
+          "value": "carrier"
+        },
+        {
+          "score": 0.11188621,
+          "value": "costume"
+        },
+        {
+          "score": 0.1117781,
+          "value": "supply"
+        },
+        {
+          "score": 0.11155515,
+          "value": "internet"
+        },
+        {
+          "score": 0.111291245,
+          "value": "law"
+        },
+        {
+          "score": 0.10917755,
+          "value": "site"
+        },
+        {
+          "score": 0.10835296,
+          "value": "target circle"
+        },
+        {
+          "score": 0.10735533,
+          "value": "space"
+        },
+        {
+          "score": 0.10684208,
+          "value": "baby"
+        },
+        {
+          "score": 0.10676769,
+          "value": "link"
+        },
+        {
+          "score": 0.106310956,
+          "value": "government"
+        },
+        {
+          "score": 0.10487523,
+          "value": "packaging"
+        },
+        {
+          "score": 0.10438164,
+          "value": "art"
+        },
+        {
+          "score": 0.10428914,
+          "value": "applicable"
+        },
+        {
+          "score": 0.10225939,
+          "value": "provider"
+        },
+        {
+          "score": 0.09962979,
+          "value": "fashion"
+        },
+        {
+          "score": 0.098666534,
+          "value": "junction"
+        },
+        {
+          "score": 0.098666534,
+          "value": "commission junction"
+        },
+        {
+          "score": 0.09770045,
+          "value": "money"
+        },
+        {
+          "score": 0.097541355,
+          "value": "computers"
+        },
+        {
+          "score": 0.09741705,
+          "value": "guideline"
+        },
+        {
+          "score": 0.097184576,
+          "value": "human"
+        },
+        {
+          "score": 0.096658535,
+          "value": "travel"
+        },
+        {
+          "score": 0.09618565,
+          "value": "partner"
+        },
+        {
+          "score": 0.09588789,
+          "value": "portable"
+        },
+        {
+          "score": 0.094017826,
+          "value": "listing"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://topglobe.news/",
+        "https://www.topglobe.news/",
+        "http://topglobe.news/",
+        "http://www.topglobe.news/"
+      ]
+    },
+    "metaData": {
+      "description": "every news you want",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/topglobe.news.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://topglobe.news"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 414,
+        "value": [
+          "itch.io",
+          "amazonaws.com",
+          "etsy.com",
+          "1more.com",
+          "1password.com",
+          "pxf.io",
+          "nytimes.com",
+          "9barista.com",
+          "apple.com",
+          "amazon.com",
+          "abc.net.au",
+          "microsoft.com",
+          "wyze.com",
+          "att.com",
+          "facebook.com",
+          "ikea.com",
+          "irobot.com",
+          "meta.com",
+          "netflix.com",
+          "nordstrom.com",
+          "aboutamazon.com",
+          "starbucks.com",
+          "michaelkors.com",
+          "ray-ban.com",
+          "dell.com",
+          "woot.com",
+          "girlfriend.com",
+          "myunidays.com",
+          "lenovo.com",
+          "onepeloton.com",
+          "oneplus.com",
+          "ring.com",
+          "samsung.com",
+          "t-mobile.com",
+          "xbox.com",
+          "misfitsmarket.com",
+          "fitbit.com",
+          "spotify.com",
+          "theatlantic.com",
+          "nintendo.com",
+          "hbomax.com",
+          "adamsavage.com",
+          "adidas.com",
+          "everlane.com",
+          "adorama.com",
+          "advanceautoparts.com",
+          "roku.com",
+          "hulu.com",
+          "ae.com",
+          "walmart.com",
+          "amazon.co.uk",
+          "espn.com",
+          "steelseries.com",
+          "logitech.com",
+          "unagiscooters.com",
+          "americastestkitchen.com",
+          "philips.com",
+          "github.com",
+          "anovaculinary.com",
+          "anrdoezrs.net",
+          "sephora.com",
+          "hp.com",
+          "id.me",
+          "youtube.com",
+          "apolloscooters.co",
+          "mondly.com",
+          "nixplay.com",
+          "kohls.com",
+          "garmin.com",
+          "disneyplus.com",
+          "elgato.com",
+          "shopmoment.com",
+          "npr.org",
+          "wired.com",
+          "lego.com",
+          "podbean.com",
+          "arkel.ca",
+          "netgear.com",
+          "arlo.com",
+          "vive.com",
+          "sonos.com",
+          "bose.com",
+          "klipsch.com",
+          "asus.com",
+          "atlascoffeeclub.com",
+          "audible.com",
+          "samsclub.com",
+          "audible.co.uk",
+          "auraframes.co.uk",
+          "discoveryplus.com",
+          "avantlink.com",
+          "awaytravel.com",
+          "awin.com",
+          "backbone.com",
+          "baggu.com",
+          "bambody.com",
+          "barkbox.com",
+          "tagheuer.com",
+          "patagonia.com",
+          "bellroy.com",
+          "benchmademodern.com",
+          "curiositystream.com",
+          "playstation.com",
+          "bhphotovideo.com",
+          "bigbarker.com",
+          "urbanoutfitters.com",
+          "bioliteenergy.com",
+          "blackstoneproducts.com",
+          "homedepot.com",
+          "lowes.com",
+          "goodrx.com",
+          "dropbox.com",
+          "libro.fm",
+          "motorola.com",
+          "michaels.com",
+          "ouraring.com",
+          "nzxt.com",
+          "mountainhardwear.com",
+          "pandora.com",
+          "solostove.com",
+          "t3micro.com",
+          "thermoworks.com",
+          "williams-sonoma.com",
+          "withings.com",
+          "bloomberg.com",
+          "wsj.com",
+          "blueland.com",
+          "bokksu.com",
+          "brainson.org",
+          "branchfurniture.com",
+          "bravehoods.org",
+          "brevite.co",
+          "breville.com",
+          "britboxinternational.com",
+          "brooklinen.com",
+          "burley.com",
+          "burrow.com",
+          "buydig.com",
+          "linksys.com",
+          "evo.com",
+          "capitasnowboarding.com",
+          "cvs.com",
+          "dyson.com",
+          "carewell.com",
+          "target.com",
+          "casaleopet.com",
+          "casetify.com",
+          "casper.com",
+          "catit.us",
+          "macys.com",
+          "steampowered.com",
+          "insideweather.com",
+          "razer.com",
+          "cerberus-strength.com",
+          "chaparral-studio.com",
+          "headspace.com",
+          "chefknivestogo.com",
+          "greenchef.com",
+          "cheznousguide.com",
+          "cirruscycles.com",
+          "cj.dotomi.com",
+          "clevercycles.com",
+          "cleancult.com",
+          "clivecoffee.com",
+          "mintmobile.com",
+          "gopro.com",
+          "eufy.com",
+          "tp-link.com",
+          "qvc.com",
+          "verizon.com",
+          "visible.com",
+          "consent.google.com",
+          "dji.com",
+          "cookwithkenyon.com",
+          "homechef.com",
+          "copic.jp",
+          "cora.life",
+          "walgreens.com",
+          "crateandbarrel.com",
+          "crunchyroll.com",
+          "crutchfield.com",
+          "cuisinart.com",
+          "cupshe.com",
+          "dagnedover.com",
+          "daily-harvest.com",
+          "dame.com",
+          "decluttr.com",
+          "diamondback.com",
+          "dickssportinggoods.com",
+          "diffeyewear.com",
+          "sharkclean.com",
+          "doi.org",
+          "monoprice.com",
+          "drinktrade.com",
+          "drgsbrainworks.com",
+          "drop.com",
+          "lovecrave.com",
+          "earthrangers.com",
+          "hungryroot.com",
+          "ecoatm.com",
+          "ecorecoscooter.com",
+          "element26.co",
+          "elago.com",
+          "elephantinabox.com",
+          "newegg.com",
+          "epicgames.com",
+          "livelarq.com",
+          "pangaia.com",
+          "positivegrid.com",
+          "mophie.com",
+          "mobvoi.com",
+          "polaroid.com",
+          "yeti.com",
+          "zagg.com",
+          "zwift.com",
+          "everlywell.com",
+          "everyplate.com",
+          "expressmed.com",
+          "exxon.com",
+          "eyevac.com",
+          "farmboxdirect.com",
+          "featclothing.com",
+          "fi.google.com",
+          "firewalla.com",
+          "flexfits.com",
+          "flowflexrapidtest.com",
+          "fordays.com",
+          "rouxbe.com",
+          "fortnite.com",
+          "fossilgroup.com",
+          "fossil.com",
+          "freckbeauty.com",
+          "hermanmiller.com",
+          "gasbuddy.com",
+          "gadgetpickup.com",
+          "gamestop.com",
+          "getfreewrite.com",
+          "opentable.com",
+          "gitzo.com",
+          "gladrags.com",
+          "ulta.com",
+          "globalyadea.com",
+          "gneissspice.com",
+          "goat-simulator.com",
+          "gonimble.com",
+          "goodvibes.com",
+          "greatjonesgoods.com",
+          "volvocars.com",
+          "happiestbaby.com",
+          "litter-robot.com",
+          "imperfectfoods.com",
+          "paramountplus.com",
+          "weber.com",
+          "heyhorti.com",
+          "hmd.com",
+          "krispykreme.com",
+          "playosmo.com",
+          "wayfair.com",
+          "kelty.com",
+          "hugsleep.com",
+          "hyperx.com",
+          "idprt.com",
+          "ihealthlabs.com",
+          "imp.i274555.net",
+          "waze.com",
+          "imp.i305175.net",
+          "indiegogo.com",
+          "steelcase.com",
+          "inhhair.com",
+          "insta360.com",
+          "instacart.com",
+          "instantpot.com",
+          "scribd.com",
+          "kerfcase.com",
+          "kittypooclub.com",
+          "kirikomade.com",
+          "kiwico.com",
+          "knix.com",
+          "languagereactor.com",
+          "sparkfun.com",
+          "leatherman.com",
+          "lectricebikes.com",
+          "letsongo.com",
+          "libertybottles.com",
+          "littlepassports.com",
+          "tidal.com",
+          "lirica.io",
+          "logitechg.com",
+          "neatorobotics.com",
+          "loradicarlo.com",
+          "mafiabags.com",
+          "magicwandoriginal.com",
+          "masterdynamic.com",
+          "meetalleyoop.com",
+          "meluna-usa.com",
+          "cexchange.com",
+          "milanrecords.shop",
+          "microcenter.com",
+          "minimotorsusa.com",
+          "missjessies.com",
+          "montaguebikes.com",
+          "morebeer.com",
+          "mschf.com",
+          "my.avid.com",
+          "mwallpapers.com",
+          "mydogrocket.com",
+          "myrevair.com",
+          "naadam.co",
+          "naspora.com",
+          "nathansports.com",
+          "nectarsleep.com",
+          "shazam.com",
+          "nexgrill.com",
+          "nixit.com",
+          "nikonusa.com",
+          "nomadgoods.com",
+          "nordictrack.com",
+          "nutcasehelmets.com",
+          "omaze.com",
+          "oliveandjune.com",
+          "one.google.com",
+          "onemillionroses.com",
+          "originalpenguin.com",
+          "osprey.com",
+          "outdoorresearch.com",
+          "padandquill.com",
+          "tryfi.com",
+          "papersapp.com",
+          "papershootcamera.com",
+          "pcpartpicker.com",
+          "petcube.com",
+          "phaidon.com",
+          "riteaid.com",
+          "piepacker.com",
+          "play.google.com",
+          "play.date",
+          "raddishkids.com",
+          "presonus.com",
+          "thehalara.com",
+          "propella.bike",
+          "purplerocketpodcast.com",
+          "quadlockcase.com",
+          "rab.equipment",
+          "rainymood.com",
+          "radpowerbikes.com",
+          "roguefitness.com",
+          "rpmtraining.com",
+          "saalt.com",
+          "sagomini.com",
+          "affiliatefuture.com",
+          "seatosummitusa.com",
+          "seattlecoffeegear.com",
+          "seatosummit.com",
+          "secretlab.co.uk",
+          "sellcell.com",
+          "shareasale-analytics.com",
+          "shell.us",
+          "tempo.fit",
+          "shopandtravelusa.com",
+          "shophomework.com",
+          "shopproof.com",
+          "simplisafe.com",
+          "simplymedical.com",
+          "skagen.com",
+          "slowpoursupply.co",
+          "slingerbag.com",
+          "solgaard.co",
+          "stacksocial.com",
+          "starface.world",
+          "stasherbag.com",
+          "ternbicycles.com",
+          "storypirates.com",
+          "storyseedspodcast.com",
+          "sunbasket.com",
+          "supernatural.com",
+          "support.logi.com",
+          "uncommongoods.com",
+          "surepetcare.com",
+          "swappa.com",
+          "sweetwater.com",
+          "tearunners.com",
+          "teddyfresh.com",
+          "teknionstore.com",
+          "teenage.engineering",
+          "tentree.com",
+          "thecompanystore.com",
+          "thehappyplanner.com",
+          "therabody.com",
+          "thesill.com",
+          "thinx.com",
+          "threebluebirds.com",
+          "tinkercast.com",
+          "tingmobile.com",
+          "totalleecase.com",
+          "tptherapy.com",
+          "trademore.com",
+          "trucup.com",
+          "tv.apple.com",
+          "uk.leatherman.com",
+          "uk.rosettastone.com",
+          "urbanarmorgear.com",
+          "us.funfactory.com",
+          "us.kobobooks.com",
+          "us.modibodi.com",
+          "us.rains.com",
+          "us.yotoplay.com",
+          "vaccoffee.com",
+          "verishopgroup.com",
+          "vissles.com",
+          "waverlylabs.com",
+          "wellbots.com",
+          "whyy.org",
+          "wingbikes.com",
+          "wolventhreads.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 11,
+        "value": [
+          {
+            "domain": "dyson.com"
+          },
+          {
+            "domain": "us.kobobooks.com"
+          },
+          {
+            "domain": "us.modibodi.com"
+          },
+          {
+            "domain": "uk.leatherman.com"
+          },
+          {
+            "domain": "us.funfactory.com"
+          },
+          {
+            "domain": "outdoorresearch.com"
+          },
+          {
+            "domain": "tidal.com"
+          },
+          {
+            "domain": "uk.rosettastone.com"
+          },
+          {
+            "domain": "us.rains.com"
+          },
+          {
+            "domain": "us.yotoplay.com"
+          },
+          {
+            "domain": "my.avid.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 16,
+        "value": [
+          {
+            "domain": "satechi.net"
+          },
+          {
+            "domain": "peakdesign.com"
+          },
+          {
+            "domain": "modibodi.com"
+          },
+          {
+            "domain": "avid.com"
+          },
+          {
+            "domain": "weatherman.com"
+          },
+          {
+            "domain": "yotoplay.com"
+          },
+          {
+            "domain": "rosettastone.com"
+          },
+          {
+            "domain": "rains.com"
+          },
+          {
+            "domain": "store.google.com"
+          },
+          {
+            "domain": "lovebox.love"
+          },
+          {
+            "domain": "peacocktv.com"
+          },
+          {
+            "domain": "funfactory.com"
+          },
+          {
+            "domain": "ebags.com"
+          },
+          {
+            "domain": "umamimart.com"
+          },
+          {
+            "domain": "kobobooks.com"
+          },
+          {
+            "domain": "parallels.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 46.850018,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 17.3,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 17.199999,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 16.849998,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 16.8,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 15.149999,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 14.399998,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 13.349998,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 13.249998,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 12.4,
+            "vertical": "Sports / Cycling"
+          },
+          {
+            "count": 11.4,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 10.549999,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 10.249999,
+            "vertical": "Sports / Outdoor"
+          },
+          {
+            "count": 9.949999,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 9.549999,
+            "vertical": "Home / Pets"
+          },
+          {
+            "count": 9.45,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 9.399999,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 9.099999,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 8.700001,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 8.1,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 7.2999997,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 7.1000004,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 6.6499996,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 6.6499996,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 5.6,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 5.4999995,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 5.0499997,
+            "vertical": "Entertainment / Hobbies"
+          },
+          {
+            "count": 4.75,
+            "vertical": "Gifts / Kids"
+          },
+          {
+            "count": 4.75,
+            "vertical": "Home / Garden"
+          },
+          {
+            "count": 4.75,
+            "vertical": "Home / Security"
+          },
+          {
+            "count": 4.6,
+            "vertical": "Motoring / Motorcycles"
+          },
+          {
+            "count": 4.3999996,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 3.8500001,
+            "vertical": "Home / Beds & Bedding"
+          },
+          {
+            "count": 3.8,
+            "vertical": "Health / Adult"
+          },
+          {
+            "count": 3.75,
+            "vertical": "Fashion / Lingerie"
+          },
+          {
+            "count": 3.75,
+            "vertical": "Finance / Investments"
+          },
+          {
+            "count": 3.4499998,
+            "vertical": "Business / Office"
+          },
+          {
+            "count": 2.95,
+            "vertical": "Business / Energy"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Motoring / Cars"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Online / Security"
+          },
+          {
+            "count": 2.6,
+            "vertical": "Travel / Vacation"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Food / Confectionery"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Food / Take Out"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Health / Eyecare"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Finance / Trading"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Home / Art"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Home / DIY"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Travel / Accessories"
+          },
+          {
+            "count": 1.8,
+            "vertical": "Food / Alcohol"
+          },
+          {
+            "count": 1,
+            "vertical": "Gifts / Flowers"
+          },
+          {
+            "count": 1,
+            "vertical": "Home / Babycare"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Cyber Security"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Forex & Crypto"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Gifts / Experience Days"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Gifts / Personalised"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Technology / Editing Software"
+          },
+          {
+            "count": 0.7,
+            "vertical": "Business / Finance"
+          },
+          {
+            "count": 0.7,
+            "vertical": "Online / Web Design"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 414,
+      "value": [
+        "itch.io",
+        "amazonaws.com",
+        "etsy.com",
+        "1more.com",
+        "1password.com",
+        "pxf.io",
+        "nytimes.com",
+        "9barista.com",
+        "apple.com",
+        "amazon.com",
+        "abc.net.au",
+        "microsoft.com",
+        "wyze.com",
+        "att.com",
+        "facebook.com",
+        "ikea.com",
+        "irobot.com",
+        "meta.com",
+        "netflix.com",
+        "nordstrom.com",
+        "aboutamazon.com",
+        "starbucks.com",
+        "michaelkors.com",
+        "ray-ban.com",
+        "dell.com",
+        "woot.com",
+        "girlfriend.com",
+        "myunidays.com",
+        "lenovo.com",
+        "onepeloton.com",
+        "oneplus.com",
+        "ring.com",
+        "samsung.com",
+        "t-mobile.com",
+        "xbox.com",
+        "misfitsmarket.com",
+        "fitbit.com",
+        "spotify.com",
+        "theatlantic.com",
+        "nintendo.com",
+        "hbomax.com",
+        "adamsavage.com",
+        "adidas.com",
+        "everlane.com",
+        "adorama.com",
+        "advanceautoparts.com",
+        "roku.com",
+        "hulu.com",
+        "ae.com",
+        "walmart.com",
+        "amazon.co.uk",
+        "espn.com",
+        "steelseries.com",
+        "logitech.com",
+        "unagiscooters.com",
+        "americastestkitchen.com",
+        "philips.com",
+        "github.com",
+        "anovaculinary.com",
+        "anrdoezrs.net",
+        "sephora.com",
+        "hp.com",
+        "id.me",
+        "youtube.com",
+        "apolloscooters.co",
+        "mondly.com",
+        "nixplay.com",
+        "kohls.com",
+        "garmin.com",
+        "disneyplus.com",
+        "elgato.com",
+        "shopmoment.com",
+        "npr.org",
+        "wired.com",
+        "lego.com",
+        "podbean.com",
+        "arkel.ca",
+        "netgear.com",
+        "arlo.com",
+        "vive.com",
+        "sonos.com",
+        "bose.com",
+        "klipsch.com",
+        "asus.com",
+        "atlascoffeeclub.com",
+        "audible.com",
+        "samsclub.com",
+        "audible.co.uk",
+        "auraframes.co.uk",
+        "discoveryplus.com",
+        "avantlink.com",
+        "awaytravel.com",
+        "awin.com",
+        "backbone.com",
+        "baggu.com",
+        "bambody.com",
+        "barkbox.com",
+        "tagheuer.com",
+        "patagonia.com",
+        "bellroy.com",
+        "benchmademodern.com",
+        "curiositystream.com",
+        "playstation.com",
+        "bhphotovideo.com",
+        "bigbarker.com",
+        "urbanoutfitters.com",
+        "bioliteenergy.com",
+        "blackstoneproducts.com",
+        "homedepot.com",
+        "lowes.com",
+        "goodrx.com",
+        "dropbox.com",
+        "libro.fm",
+        "motorola.com",
+        "michaels.com",
+        "ouraring.com",
+        "nzxt.com",
+        "mountainhardwear.com",
+        "pandora.com",
+        "solostove.com",
+        "t3micro.com",
+        "thermoworks.com",
+        "williams-sonoma.com",
+        "withings.com",
+        "bloomberg.com",
+        "wsj.com",
+        "blueland.com",
+        "bokksu.com",
+        "brainson.org",
+        "branchfurniture.com",
+        "bravehoods.org",
+        "brevite.co",
+        "breville.com",
+        "britboxinternational.com",
+        "brooklinen.com",
+        "burley.com",
+        "burrow.com",
+        "buydig.com",
+        "linksys.com",
+        "evo.com",
+        "capitasnowboarding.com",
+        "cvs.com",
+        "dyson.com",
+        "carewell.com",
+        "target.com",
+        "casaleopet.com",
+        "casetify.com",
+        "casper.com",
+        "catit.us",
+        "macys.com",
+        "steampowered.com",
+        "insideweather.com",
+        "razer.com",
+        "cerberus-strength.com",
+        "chaparral-studio.com",
+        "headspace.com",
+        "chefknivestogo.com",
+        "greenchef.com",
+        "cheznousguide.com",
+        "cirruscycles.com",
+        "cj.dotomi.com",
+        "clevercycles.com",
+        "cleancult.com",
+        "clivecoffee.com",
+        "mintmobile.com",
+        "gopro.com",
+        "eufy.com",
+        "tp-link.com",
+        "qvc.com",
+        "verizon.com",
+        "visible.com",
+        "consent.google.com",
+        "dji.com",
+        "cookwithkenyon.com",
+        "homechef.com",
+        "copic.jp",
+        "cora.life",
+        "walgreens.com",
+        "crateandbarrel.com",
+        "crunchyroll.com",
+        "crutchfield.com",
+        "cuisinart.com",
+        "cupshe.com",
+        "dagnedover.com",
+        "daily-harvest.com",
+        "dame.com",
+        "decluttr.com",
+        "diamondback.com",
+        "dickssportinggoods.com",
+        "diffeyewear.com",
+        "sharkclean.com",
+        "doi.org",
+        "monoprice.com",
+        "drinktrade.com",
+        "drgsbrainworks.com",
+        "drop.com",
+        "lovecrave.com",
+        "earthrangers.com",
+        "hungryroot.com",
+        "ecoatm.com",
+        "ecorecoscooter.com",
+        "element26.co",
+        "elago.com",
+        "elephantinabox.com",
+        "newegg.com",
+        "epicgames.com",
+        "livelarq.com",
+        "pangaia.com",
+        "positivegrid.com",
+        "mophie.com",
+        "mobvoi.com",
+        "polaroid.com",
+        "yeti.com",
+        "zagg.com",
+        "zwift.com",
+        "everlywell.com",
+        "everyplate.com",
+        "expressmed.com",
+        "exxon.com",
+        "eyevac.com",
+        "farmboxdirect.com",
+        "featclothing.com",
+        "fi.google.com",
+        "firewalla.com",
+        "flexfits.com",
+        "flowflexrapidtest.com",
+        "fordays.com",
+        "rouxbe.com",
+        "fortnite.com",
+        "fossilgroup.com",
+        "fossil.com",
+        "freckbeauty.com",
+        "hermanmiller.com",
+        "gasbuddy.com",
+        "gadgetpickup.com",
+        "gamestop.com",
+        "getfreewrite.com",
+        "opentable.com",
+        "gitzo.com",
+        "gladrags.com",
+        "ulta.com",
+        "globalyadea.com",
+        "gneissspice.com",
+        "goat-simulator.com",
+        "gonimble.com",
+        "goodvibes.com",
+        "greatjonesgoods.com",
+        "volvocars.com",
+        "happiestbaby.com",
+        "litter-robot.com",
+        "imperfectfoods.com",
+        "paramountplus.com",
+        "weber.com",
+        "heyhorti.com",
+        "hmd.com",
+        "krispykreme.com",
+        "playosmo.com",
+        "wayfair.com",
+        "kelty.com",
+        "hugsleep.com",
+        "hyperx.com",
+        "idprt.com",
+        "ihealthlabs.com",
+        "imp.i274555.net",
+        "waze.com",
+        "imp.i305175.net",
+        "indiegogo.com",
+        "steelcase.com",
+        "inhhair.com",
+        "insta360.com",
+        "instacart.com",
+        "instantpot.com",
+        "scribd.com",
+        "kerfcase.com",
+        "kittypooclub.com",
+        "kirikomade.com",
+        "kiwico.com",
+        "knix.com",
+        "languagereactor.com",
+        "sparkfun.com",
+        "leatherman.com",
+        "lectricebikes.com",
+        "letsongo.com",
+        "libertybottles.com",
+        "littlepassports.com",
+        "tidal.com",
+        "lirica.io",
+        "logitechg.com",
+        "neatorobotics.com",
+        "loradicarlo.com",
+        "mafiabags.com",
+        "magicwandoriginal.com",
+        "masterdynamic.com",
+        "meetalleyoop.com",
+        "meluna-usa.com",
+        "cexchange.com",
+        "milanrecords.shop",
+        "microcenter.com",
+        "minimotorsusa.com",
+        "missjessies.com",
+        "montaguebikes.com",
+        "morebeer.com",
+        "mschf.com",
+        "my.avid.com",
+        "mwallpapers.com",
+        "mydogrocket.com",
+        "myrevair.com",
+        "naadam.co",
+        "naspora.com",
+        "nathansports.com",
+        "nectarsleep.com",
+        "shazam.com",
+        "nexgrill.com",
+        "nixit.com",
+        "nikonusa.com",
+        "nomadgoods.com",
+        "nordictrack.com",
+        "nutcasehelmets.com",
+        "omaze.com",
+        "oliveandjune.com",
+        "one.google.com",
+        "onemillionroses.com",
+        "originalpenguin.com",
+        "osprey.com",
+        "outdoorresearch.com",
+        "padandquill.com",
+        "tryfi.com",
+        "papersapp.com",
+        "papershootcamera.com",
+        "pcpartpicker.com",
+        "petcube.com",
+        "phaidon.com",
+        "riteaid.com",
+        "piepacker.com",
+        "play.google.com",
+        "play.date",
+        "raddishkids.com",
+        "presonus.com",
+        "thehalara.com",
+        "propella.bike",
+        "purplerocketpodcast.com",
+        "quadlockcase.com",
+        "rab.equipment",
+        "rainymood.com",
+        "radpowerbikes.com",
+        "roguefitness.com",
+        "rpmtraining.com",
+        "saalt.com",
+        "sagomini.com",
+        "affiliatefuture.com",
+        "seatosummitusa.com",
+        "seattlecoffeegear.com",
+        "seatosummit.com",
+        "secretlab.co.uk",
+        "sellcell.com",
+        "shareasale-analytics.com",
+        "shell.us",
+        "tempo.fit",
+        "shopandtravelusa.com",
+        "shophomework.com",
+        "shopproof.com",
+        "simplisafe.com",
+        "simplymedical.com",
+        "skagen.com",
+        "slowpoursupply.co",
+        "slingerbag.com",
+        "solgaard.co",
+        "stacksocial.com",
+        "starface.world",
+        "stasherbag.com",
+        "ternbicycles.com",
+        "storypirates.com",
+        "storyseedspodcast.com",
+        "sunbasket.com",
+        "supernatural.com",
+        "support.logi.com",
+        "uncommongoods.com",
+        "surepetcare.com",
+        "swappa.com",
+        "sweetwater.com",
+        "tearunners.com",
+        "teddyfresh.com",
+        "teknionstore.com",
+        "teenage.engineering",
+        "tentree.com",
+        "thecompanystore.com",
+        "thehappyplanner.com",
+        "therabody.com",
+        "thesill.com",
+        "thinx.com",
+        "threebluebirds.com",
+        "tinkercast.com",
+        "tingmobile.com",
+        "totalleecase.com",
+        "tptherapy.com",
+        "trademore.com",
+        "trucup.com",
+        "tv.apple.com",
+        "uk.leatherman.com",
+        "uk.rosettastone.com",
+        "urbanarmorgear.com",
+        "us.funfactory.com",
+        "us.kobobooks.com",
+        "us.modibodi.com",
+        "us.rains.com",
+        "us.yotoplay.com",
+        "vaccoffee.com",
+        "verishopgroup.com",
+        "vissles.com",
+        "waverlylabs.com",
+        "wellbots.com",
+        "whyy.org",
+        "wingbikes.com",
+        "wolventhreads.com"
+      ]
+    },
+    "promotype": {
+      "value": "student"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 1,
+      "sampleValue": "Online / Services",
+      "value": [
+        "Online / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Online / Services",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 95
+        }
+      ]
+    }
+  }
+}

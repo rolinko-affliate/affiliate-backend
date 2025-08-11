@@ -1,0 +1,637 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 2,
+      "sampleValue": [
+        "CJ Affiliate",
+        "Rakuten"
+      ],
+      "value": [
+        "CJ Affiliate",
+        "Rakuten"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.85
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.85
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.85
+        }
+      ]
+    },
+    "domain": "helengoltz.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "wishlist"
+        },
+        {
+          "score": 0.9451482,
+          "value": "series"
+        },
+        {
+          "score": 0.84034675,
+          "value": "fiction"
+        },
+        {
+          "score": 0.7017725,
+          "value": "quick add"
+        },
+        {
+          "score": 0.7017725,
+          "value": "kids"
+        },
+        {
+          "score": 0.70053405,
+          "value": "audiobook"
+        },
+        {
+          "score": 0.6695219,
+          "value": "add wishlist"
+        },
+        {
+          "score": 0.6175598,
+          "value": "categories"
+        },
+        {
+          "score": 0.6105937,
+          "value": "books"
+        },
+        {
+          "score": 0.6005315,
+          "value": "ebook"
+        },
+        {
+          "score": 0.6002735,
+          "value": "audiobooks"
+        },
+        {
+          "score": 0.5959906,
+          "value": "details"
+        },
+        {
+          "score": 0.5838128,
+          "value": "fantasy"
+        },
+        {
+          "score": 0.5824712,
+          "value": "market"
+        },
+        {
+          "score": 0.57545346,
+          "value": "comics"
+        },
+        {
+          "score": 0.5684357,
+          "value": "publish"
+        },
+        {
+          "score": 0.5682035,
+          "value": "book"
+        },
+        {
+          "score": 0.5011739,
+          "value": "see details"
+        },
+        {
+          "score": 0.49124074,
+          "value": "ebooks"
+        },
+        {
+          "score": 0.4772053,
+          "value": "nonfiction"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "wishlist"
+        },
+        {
+          "score": 0.9451482,
+          "value": "series"
+        },
+        {
+          "score": 0.84034675,
+          "value": "fiction"
+        },
+        {
+          "score": 0.7017725,
+          "value": "quick add"
+        },
+        {
+          "score": 0.7017725,
+          "value": "kids"
+        },
+        {
+          "score": 0.70053405,
+          "value": "audiobook"
+        },
+        {
+          "score": 0.6695219,
+          "value": "add wishlist"
+        },
+        {
+          "score": 0.6175598,
+          "value": "categories"
+        },
+        {
+          "score": 0.6105937,
+          "value": "books"
+        },
+        {
+          "score": 0.6005315,
+          "value": "ebook"
+        },
+        {
+          "score": 0.6002735,
+          "value": "audiobooks"
+        },
+        {
+          "score": 0.5959906,
+          "value": "details"
+        },
+        {
+          "score": 0.5838128,
+          "value": "fantasy"
+        },
+        {
+          "score": 0.5824712,
+          "value": "market"
+        },
+        {
+          "score": 0.57545346,
+          "value": "comics"
+        },
+        {
+          "score": 0.5684357,
+          "value": "publish"
+        },
+        {
+          "score": 0.5682035,
+          "value": "book"
+        },
+        {
+          "score": 0.5011739,
+          "value": "see details"
+        },
+        {
+          "score": 0.49124074,
+          "value": "ebooks"
+        },
+        {
+          "score": 0.4772053,
+          "value": "nonfiction"
+        },
+        {
+          "score": 0.47018757,
+          "value": "novels"
+        },
+        {
+          "score": 0.46316984,
+          "value": "trending"
+        },
+        {
+          "score": 0.4561521,
+          "value": "browse"
+        },
+        {
+          "score": 0.4561521,
+          "value": "finance"
+        },
+        {
+          "score": 0.4561521,
+          "value": "literature"
+        },
+        {
+          "score": 0.4491344,
+          "value": "latest"
+        },
+        {
+          "score": 0.44211668,
+          "value": "romance"
+        },
+        {
+          "score": 0.44211668,
+          "value": "kobo"
+        },
+        {
+          "score": 0.41404578,
+          "value": "feedback"
+        },
+        {
+          "score": 0.40702805,
+          "value": "stars"
+        },
+        {
+          "score": 0.40702805,
+          "value": "biography"
+        },
+        {
+          "score": 0.40702805,
+          "value": "reading"
+        },
+        {
+          "score": 0.3929926,
+          "value": "desktop"
+        },
+        {
+          "score": 0.38597488,
+          "value": "rating"
+        },
+        {
+          "score": 0.37193942,
+          "value": "graphic"
+        },
+        {
+          "score": 0.35088626,
+          "value": "christmas"
+        },
+        {
+          "score": 0.34386852,
+          "value": "story"
+        },
+        {
+          "score": 0.3368508,
+          "value": "monthly"
+        },
+        {
+          "score": 0.32983306,
+          "value": "android"
+        },
+        {
+          "score": 0.32281536,
+          "value": "science"
+        },
+        {
+          "score": 0.32281536,
+          "value": "treatment"
+        },
+        {
+          "score": 0.3087799,
+          "value": "apple"
+        },
+        {
+          "score": 0.3087799,
+          "value": "cancel"
+        },
+        {
+          "score": 0.30176216,
+          "value": "mystery"
+        },
+        {
+          "score": 0.30176216,
+          "value": "blackberry"
+        },
+        {
+          "score": 0.29474443,
+          "value": "rakuten"
+        },
+        {
+          "score": 0.28772673,
+          "value": "share"
+        },
+        {
+          "score": 0.28772673,
+          "value": "reviewing"
+        },
+        {
+          "score": 0.28772673,
+          "value": "life"
+        },
+        {
+          "score": 0.280709,
+          "value": "currently"
+        },
+        {
+          "score": 0.26667354,
+          "value": "savings"
+        },
+        {
+          "score": 0.25965583,
+          "value": "anytime"
+        },
+        {
+          "score": 0.2515545,
+          "value": "paperback"
+        },
+        {
+          "score": 0.24562037,
+          "value": "eligible"
+        },
+        {
+          "score": 0.24562037,
+          "value": "skip"
+        },
+        {
+          "score": 0.24562037,
+          "value": "reader"
+        },
+        {
+          "score": 0.24562037,
+          "value": "global"
+        },
+        {
+          "score": 0.24562037,
+          "value": "harlequin"
+        },
+        {
+          "score": 0.24510436,
+          "value": "original"
+        },
+        {
+          "score": 0.24381433,
+          "value": "current"
+        },
+        {
+          "score": 0.24252431,
+          "value": "available online"
+        },
+        {
+          "score": 0.24058928,
+          "value": "current price"
+        },
+        {
+          "score": 0.24058928,
+          "value": "price original"
+        },
+        {
+          "score": 0.24058928,
+          "value": "original price"
+        },
+        {
+          "score": 0.23860265,
+          "value": "forma"
+        },
+        {
+          "score": 0.23860265,
+          "value": "continue"
+        },
+        {
+          "score": 0.23860265,
+          "value": "consider"
+        },
+        {
+          "score": 0.23158492,
+          "value": "star"
+        },
+        {
+          "score": 0.23158492,
+          "value": "opportunities"
+        },
+        {
+          "score": 0.23158492,
+          "value": "program"
+        },
+        {
+          "score": 0.2245672,
+          "value": "credit"
+        },
+        {
+          "score": 0.21754947,
+          "value": "erecycling"
+        },
+        {
+          "score": 0.21754947,
+          "value": "suspense"
+        },
+        {
+          "score": 0.21754947,
+          "value": "readers"
+        },
+        {
+          "score": 0.21053174,
+          "value": "recommended"
+        },
+        {
+          "score": 0.21053174,
+          "value": "rate"
+        },
+        {
+          "score": 0.20124358,
+          "value": "hardcover"
+        },
+        {
+          "score": 0.18253826,
+          "value": "stephanie"
+        },
+        {
+          "score": 0.17995821,
+          "value": "garber"
+        },
+        {
+          "score": 0.1793132,
+          "value": "stephanie garber"
+        },
+        {
+          "score": 0.1735081,
+          "value": "caraval"
+        },
+        {
+          "score": 0.1573828,
+          "value": "barnes"
+        },
+        {
+          "score": 0.15351273,
+          "value": "b n"
+        },
+        {
+          "score": 0.14770763,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.14190252,
+          "value": "pre order"
+        },
+        {
+          "score": 0.13803245,
+          "value": "edition"
+        },
+        {
+          "score": 0.13093734,
+          "value": "high"
+        },
+        {
+          "score": 0.13093734,
+          "value": "order now"
+        },
+        {
+          "score": 0.1238422,
+          "value": "save"
+        },
+        {
+          "score": 0.12255218,
+          "value": "teen"
+        },
+        {
+          "score": 0.12190717,
+          "value": "low"
+        },
+        {
+          "score": 0.121262155,
+          "value": "newest"
+        },
+        {
+          "score": 0.121262155,
+          "value": "oldest"
+        },
+        {
+          "score": 0.121262155,
+          "value": "title z"
+        },
+        {
+          "score": 0.121262155,
+          "value": "grid"
+        },
+        {
+          "score": 0.11997213,
+          "value": "formats"
+        },
+        {
+          "score": 0.11674708,
+          "value": "editions"
+        },
+        {
+          "score": 0.11610207,
+          "value": "available immediately"
+        },
+        {
+          "score": 0.11610207,
+          "value": "immediately purchase"
+        },
+        {
+          "score": 0.112232,
+          "value": "teen fiction"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://helengoltz.com/",
+        "https://www.helengoltz.com/",
+        "http://helengoltz.com/",
+        "http://www.helengoltz.com/"
+      ]
+    },
+    "metaData": {
+      "description": "",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/helengoltz.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://helengoltz.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 4,
+        "value": [
+          "amazon.com",
+          "amazon.com.au",
+          "barnesandnoble.com",
+          "kobo.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 2,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Ecommerce"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 4,
+      "value": [
+        "amazon.com",
+        "amazon.com.au",
+        "barnesandnoble.com",
+        "kobo.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 5,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "instagram",
+        "pinterest"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/helengoltz.author",
+        "instagram": "https://instagram.com/helengoltz1",
+        "pinterest": "https://pinterest.com/pin/create/button/?url=https://helengoltz.com/from-high-heels-to-handcuffs/%20&media=https://helengoltz.com/wp-content/uploads/2020/01/from-high-heels-352-x-440-layout-5-150x150.jpg&description=from%20high%20heels%20to%20handcuffs",
+        "twitter": "https://twitter.com/https://twitter.com/helengwriter",
+        "youtube": "https://youtube.com/channel/uca44t-b_7msvmc3frpwrrrw"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Business / Services",
+      "value": [
+        "Business / Services",
+        "Entertainment / Hobbies"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Business / Services",
+        "rank": 1,
+        "score": 60
+      },
+      "value": [
+        {
+          "name": "Business / Services",
+          "rank": 1,
+          "score": 60
+        },
+        {
+          "name": "Entertainment / Hobbies",
+          "rank": 1,
+          "score": 50
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,599 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "A8"
+      ],
+      "value": [
+        "A8"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "jp",
+        "score": 0.8
+      },
+      "sampleValue": [
+        {
+          "countryCode": "jp",
+          "score": 0.8
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "jp",
+          "score": 0.8
+        }
+      ]
+    },
+    "domain": "aitemu-baken.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "armour"
+        },
+        {
+          "score": 0.46781117,
+          "value": "液晶テレビ"
+        },
+        {
+          "score": 0.416309,
+          "value": "rakuten"
+        },
+        {
+          "score": 0.32618025,
+          "value": "アンダーアーマー"
+        },
+        {
+          "score": 0.2746781,
+          "value": "テレビ"
+        },
+        {
+          "score": 0.21888413,
+          "value": "こちら"
+        },
+        {
+          "score": 0.17167382,
+          "value": "ネックレス"
+        },
+        {
+          "score": 0.12017167,
+          "value": "regza"
+        },
+        {
+          "score": 0.12017167,
+          "value": "fashion"
+        },
+        {
+          "score": 0.115879826,
+          "value": "airpod"
+        },
+        {
+          "score": 0.10300429,
+          "value": "ショップから探す"
+        },
+        {
+          "score": 0.098712444,
+          "value": "ブラック"
+        },
+        {
+          "score": 0.098712444,
+          "value": "earth"
+        },
+        {
+          "score": 0.098712444,
+          "value": "pro"
+        },
+        {
+          "score": 0.094420604,
+          "value": "ダブルチューナー"
+        },
+        {
+          "score": 0.094420604,
+          "value": "uaアンディナ"
+        },
+        {
+          "score": 0.094420604,
+          "value": "あす楽対応"
+        },
+        {
+          "score": 0.09012876,
+          "value": "楽天ペイメント"
+        },
+        {
+          "score": 0.0859129,
+          "value": "iphone"
+        },
+        {
+          "score": 0.08583691,
+          "value": "スポーツタイツ"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "armour"
+        },
+        {
+          "score": 0.46781117,
+          "value": "液晶テレビ"
+        },
+        {
+          "score": 0.416309,
+          "value": "rakuten"
+        },
+        {
+          "score": 0.32618025,
+          "value": "アンダーアーマー"
+        },
+        {
+          "score": 0.2746781,
+          "value": "テレビ"
+        },
+        {
+          "score": 0.21888413,
+          "value": "こちら"
+        },
+        {
+          "score": 0.17167382,
+          "value": "ネックレス"
+        },
+        {
+          "score": 0.12017167,
+          "value": "regza"
+        },
+        {
+          "score": 0.12017167,
+          "value": "fashion"
+        },
+        {
+          "score": 0.115879826,
+          "value": "airpod"
+        },
+        {
+          "score": 0.10300429,
+          "value": "ショップから探す"
+        },
+        {
+          "score": 0.098712444,
+          "value": "ブラック"
+        },
+        {
+          "score": 0.098712444,
+          "value": "earth"
+        },
+        {
+          "score": 0.098712444,
+          "value": "pro"
+        },
+        {
+          "score": 0.094420604,
+          "value": "ダブルチューナー"
+        },
+        {
+          "score": 0.094420604,
+          "value": "uaアンディナ"
+        },
+        {
+          "score": 0.094420604,
+          "value": "あす楽対応"
+        },
+        {
+          "score": 0.09012876,
+          "value": "楽天ペイメント"
+        },
+        {
+          "score": 0.0859129,
+          "value": "iphone"
+        },
+        {
+          "score": 0.08583691,
+          "value": "スポーツタイツ"
+        },
+        {
+          "score": 0.08583691,
+          "value": "rakuten fashion"
+        },
+        {
+          "score": 0.08154506,
+          "value": "定期便"
+        },
+        {
+          "score": 0.08154506,
+          "value": "shirt"
+        },
+        {
+          "score": 0.08154506,
+          "value": "液晶テレビ regza"
+        },
+        {
+          "score": 0.08154506,
+          "value": "golf"
+        },
+        {
+          "score": 0.07725322,
+          "value": "luxury"
+        },
+        {
+          "score": 0.07725322,
+          "value": "採用情報"
+        },
+        {
+          "score": 0.072961375,
+          "value": "apple"
+        },
+        {
+          "score": 0.072961375,
+          "value": "rakuten luxury"
+        },
+        {
+          "score": 0.072961375,
+          "value": "briefing"
+        },
+        {
+          "score": 0.06866953,
+          "value": "トリプル喜平"
+        },
+        {
+          "score": 0.06866953,
+          "value": "ポイントバック"
+        },
+        {
+          "score": 0.06866953,
+          "value": "外付けhdd録画機能"
+        },
+        {
+          "score": 0.06866953,
+          "value": "factor"
+        },
+        {
+          "score": 0.06866953,
+          "value": "uaテック"
+        },
+        {
+          "score": 0.06866953,
+          "value": "喜平ネックレス"
+        },
+        {
+          "score": 0.06866953,
+          "value": "アイリスオーヤマ"
+        },
+        {
+          "score": 0.06437768,
+          "value": "レディース"
+        },
+        {
+          "score": 0.06437768,
+          "value": "mall"
+        },
+        {
+          "score": 0.06437768,
+          "value": "セール価格"
+        },
+        {
+          "score": 0.06437768,
+          "value": "トリプル"
+        },
+        {
+          "score": 0.060085837,
+          "value": "プラチナ"
+        },
+        {
+          "score": 0.055793993,
+          "value": "hisense"
+        },
+        {
+          "score": 0.055793993,
+          "value": "android"
+        },
+        {
+          "score": 0.055793993,
+          "value": "レビュー記載"
+        },
+        {
+          "score": 0.051502146,
+          "value": "ブランド一覧"
+        },
+        {
+          "score": 0.051502146,
+          "value": "naviŗ"
+        },
+        {
+          "score": 0.051502146,
+          "value": "gold"
+        },
+        {
+          "score": 0.051502146,
+          "value": "lordson"
+        },
+        {
+          "score": 0.051502146,
+          "value": "江刺金札米ひとめぼれ"
+        },
+        {
+          "score": 0.051502146,
+          "value": "uaハッスル"
+        },
+        {
+          "score": 0.051502146,
+          "value": "tシャツ"
+        },
+        {
+          "score": 0.051502146,
+          "value": "fashionとは"
+        },
+        {
+          "score": 0.051502146,
+          "value": "rakuten fashionとは"
+        },
+        {
+          "score": 0.051502146,
+          "value": "液晶テレビ アイリスオーヤマ"
+        },
+        {
+          "score": 0.051502146,
+          "value": "bluetooth"
+        },
+        {
+          "score": 0.047210302,
+          "value": "led液晶テレビ"
+        },
+        {
+          "score": 0.047210302,
+          "value": "おしゃれ"
+        },
+        {
+          "score": 0.047210302,
+          "value": "アップル"
+        },
+        {
+          "score": 0.043040995,
+          "value": "music"
+        },
+        {
+          "score": 0.043000605,
+          "value": "store"
+        },
+        {
+          "score": 0.042918455,
+          "value": "uaチャージド"
+        },
+        {
+          "score": 0.042918455,
+          "value": "シルバー"
+        },
+        {
+          "score": 0.042918455,
+          "value": "岩手県奥州市産ひとめぼれ"
+        },
+        {
+          "score": 0.042918455,
+          "value": "お取り寄せ"
+        },
+        {
+          "score": 0.042918455,
+          "value": "送料無料"
+        },
+        {
+          "score": 0.042918455,
+          "value": "ノイズキャンセリング"
+        },
+        {
+          "score": 0.042918455,
+          "value": "tyvj"
+        },
+        {
+          "score": 0.042918455,
+          "value": "年末リニューアル"
+        },
+        {
+          "score": 0.042918455,
+          "value": "新潟県産"
+        },
+        {
+          "score": 0.042918455,
+          "value": "テレビ 液晶テレビ"
+        },
+        {
+          "score": 0.042918455,
+          "value": "maxzen"
+        },
+        {
+          "score": 0.042918455,
+          "value": "緊急支援品"
+        },
+        {
+          "score": 0.03862661,
+          "value": "液晶テレビ 新品"
+        },
+        {
+          "score": 0.03862661,
+          "value": "ingot"
+        },
+        {
+          "score": 0.03862661,
+          "value": "standard"
+        },
+        {
+          "score": 0.03862661,
+          "value": "gym"
+        },
+        {
+          "score": 0.03862661,
+          "value": "当せん番号案内"
+        },
+        {
+          "score": 0.03862661,
+          "value": "試合に勝った翌日は全ショップポイントアップ"
+        },
+        {
+          "score": 0.03862661,
+          "value": "楽天市場ベストショップに選ばれるのは"
+        },
+        {
+          "score": 0.03862661,
+          "value": "life"
+        },
+        {
+          "score": 0.03862661,
+          "value": "ゴールド"
+        },
+        {
+          "score": 0.03862661,
+          "value": "vessel"
+        },
+        {
+          "score": 0.03862661,
+          "value": "お気に入り"
+        },
+        {
+          "score": 0.03862661,
+          "value": "sharp"
+        },
+        {
+          "score": 0.03862661,
+          "value": "コンパクト"
+        },
+        {
+          "score": 0.03862661,
+          "value": "soundcore"
+        },
+        {
+          "score": 0.034334764,
+          "value": "南魚沼市"
+        },
+        {
+          "score": 0.034334764,
+          "value": "スポーツブラ"
+        },
+        {
+          "score": 0.034334764,
+          "value": "エキスパート"
+        },
+        {
+          "score": 0.034334764,
+          "value": "ブルートゥース"
+        },
+        {
+          "score": 0.034334764,
+          "value": "player"
+        },
+        {
+          "score": 0.034334764,
+          "value": "chrome"
+        },
+        {
+          "score": 0.034334764,
+          "value": "ダブルチューナー maxzen"
+        },
+        {
+          "score": 0.034334764,
+          "value": "クーポン割引"
+        },
+        {
+          "score": 0.034334764,
+          "value": "speedモデル"
+        },
+        {
+          "score": 0.034334764,
+          "value": "ジェネレーター"
+        },
+        {
+          "score": 0.034334764,
+          "value": "ロング丈"
+        },
+        {
+          "score": 0.034334764,
+          "value": "style"
+        },
+        {
+          "score": 0.034334764,
+          "value": "ウォールステッカー"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/aitemu-baken.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://aitemu-baken.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 2,
+        "value": [
+          "rakuten.co.jp",
+          "amazon.co.jp"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1.9,
+            "vertical": "Shopping / Department Stores"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 2,
+      "value": [
+        "rakuten.co.jp",
+        "amazon.co.jp"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 1,
+      "sampleValue": "Gambling / Sportsbook",
+      "value": [
+        "Gambling / Sportsbook"
+      ]
+    },
+    "verticalsV2": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Gambling / Sportsbook",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Gambling / Sportsbook",
+          "rank": 1,
+          "score": 90
+        }
+      ]
+    }
+  }
+}

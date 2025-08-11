@@ -1,0 +1,639 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 2,
+      "sampleValue": [
+        "CJ Affiliate",
+        "Rakuten"
+      ],
+      "value": [
+        "CJ Affiliate",
+        "Rakuten"
+      ]
+    },
+    "countryRankings": {
+      "count": 3,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.4
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.4
+        },
+        {
+          "countryCode": "in",
+          "score": 0.3
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.4
+        },
+        {
+          "countryCode": "in",
+          "score": 0.3
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "amazoninmarkiting.blogspot.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "dog"
+        },
+        {
+          "score": 0.94583267,
+          "value": "outdoor"
+        },
+        {
+          "score": 0.9130788,
+          "value": "quick view"
+        },
+        {
+          "score": 0.8594639,
+          "value": "wishlist"
+        },
+        {
+          "score": 0.77562606,
+          "value": "flea"
+        },
+        {
+          "score": 0.74289924,
+          "value": "skin"
+        },
+        {
+          "score": 0.69943136,
+          "value": "chair"
+        },
+        {
+          "score": 0.66607636,
+          "value": "kitchen"
+        },
+        {
+          "score": 0.6634198,
+          "value": "pet"
+        },
+        {
+          "score": 0.6330306,
+          "value": "tick"
+        },
+        {
+          "score": 0.6297579,
+          "value": "care"
+        },
+        {
+          "score": 0.6181966,
+          "value": "table"
+        },
+        {
+          "score": 0.6180697,
+          "value": "paste"
+        },
+        {
+          "score": 0.61666715,
+          "value": "wormer"
+        },
+        {
+          "score": 0.57804984,
+          "value": "cat"
+        },
+        {
+          "score": 0.52721363,
+          "value": "furniture"
+        },
+        {
+          "score": 0.50051266,
+          "value": "supply"
+        },
+        {
+          "score": 0.49504468,
+          "value": "baby"
+        },
+        {
+          "score": 0.4665912,
+          "value": "joint"
+        },
+        {
+          "score": 0.45864326,
+          "value": "anxiety"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "dog"
+        },
+        {
+          "score": 0.94583267,
+          "value": "outdoor"
+        },
+        {
+          "score": 0.9130788,
+          "value": "quick view"
+        },
+        {
+          "score": 0.8594639,
+          "value": "wishlist"
+        },
+        {
+          "score": 0.77562606,
+          "value": "flea"
+        },
+        {
+          "score": 0.74289924,
+          "value": "skin"
+        },
+        {
+          "score": 0.69943136,
+          "value": "chair"
+        },
+        {
+          "score": 0.66607636,
+          "value": "kitchen"
+        },
+        {
+          "score": 0.6634198,
+          "value": "pet"
+        },
+        {
+          "score": 0.6330306,
+          "value": "tick"
+        },
+        {
+          "score": 0.6297579,
+          "value": "care"
+        },
+        {
+          "score": 0.6181966,
+          "value": "table"
+        },
+        {
+          "score": 0.6180697,
+          "value": "paste"
+        },
+        {
+          "score": 0.61666715,
+          "value": "wormer"
+        },
+        {
+          "score": 0.57804984,
+          "value": "cat"
+        },
+        {
+          "score": 0.52721363,
+          "value": "furniture"
+        },
+        {
+          "score": 0.50051266,
+          "value": "supply"
+        },
+        {
+          "score": 0.49504468,
+          "value": "baby"
+        },
+        {
+          "score": 0.4665912,
+          "value": "joint"
+        },
+        {
+          "score": 0.45864326,
+          "value": "anxiety"
+        },
+        {
+          "score": 0.4565394,
+          "value": "fashion"
+        },
+        {
+          "score": 0.4565394,
+          "value": "dining"
+        },
+        {
+          "score": 0.4565394,
+          "value": "teacher"
+        },
+        {
+          "score": 0.43853962,
+          "value": "joint care"
+        },
+        {
+          "score": 0.41613075,
+          "value": "category"
+        },
+        {
+          "score": 0.40495533,
+          "value": "toy"
+        },
+        {
+          "score": 0.39723802,
+          "value": "patio"
+        },
+        {
+          "score": 0.3960407,
+          "value": "control"
+        },
+        {
+          "score": 0.39131948,
+          "value": "vitamin"
+        },
+        {
+          "score": 0.3895207,
+          "value": "kid"
+        },
+        {
+          "score": 0.38586515,
+          "value": "costway"
+        },
+        {
+          "score": 0.38477412,
+          "value": "supplement"
+        },
+        {
+          "score": 0.37589112,
+          "value": "treatment"
+        },
+        {
+          "score": 0.35610074,
+          "value": "clothing"
+        },
+        {
+          "score": 0.35218522,
+          "value": "bathroom"
+        },
+        {
+          "score": 0.33568385,
+          "value": "tablet"
+        },
+        {
+          "score": 0.33241117,
+          "value": "frontline"
+        },
+        {
+          "score": 0.33100858,
+          "value": "powder"
+        },
+        {
+          "score": 0.3150122,
+          "value": "shirts"
+        },
+        {
+          "score": 0.3135662,
+          "value": "style"
+        },
+        {
+          "score": 0.30903485,
+          "value": "horse"
+        },
+        {
+          "score": 0.30869213,
+          "value": "rack"
+        },
+        {
+          "score": 0.30856735,
+          "value": "coat"
+        },
+        {
+          "score": 0.30202198,
+          "value": "advantage"
+        },
+        {
+          "score": 0.2969131,
+          "value": "cabinet"
+        },
+        {
+          "score": 0.29687917,
+          "value": "eye"
+        },
+        {
+          "score": 0.2967506,
+          "value": "dresses"
+        },
+        {
+          "score": 0.29454154,
+          "value": "spot"
+        },
+        {
+          "score": 0.29267144,
+          "value": "wound"
+        },
+        {
+          "score": 0.2922039,
+          "value": "ear"
+        },
+        {
+          "score": 0.2917364,
+          "value": "combo"
+        },
+        {
+          "score": 0.2903338,
+          "value": "heartwormer"
+        },
+        {
+          "score": 0.28752866,
+          "value": "tooth"
+        },
+        {
+          "score": 0.28612608,
+          "value": "repair"
+        },
+        {
+          "score": 0.28305444,
+          "value": "luxury"
+        },
+        {
+          "score": 0.2591389,
+          "value": "bed"
+        },
+        {
+          "score": 0.25670186,
+          "value": "sport"
+        },
+        {
+          "score": 0.25386676,
+          "value": "bird"
+        },
+        {
+          "score": 0.2491915,
+          "value": "oral"
+        },
+        {
+          "score": 0.24778892,
+          "value": "revolution"
+        },
+        {
+          "score": 0.24573517,
+          "value": "program"
+        },
+        {
+          "score": 0.2437043,
+          "value": "appliance"
+        },
+        {
+          "score": 0.2421786,
+          "value": "mineral"
+        },
+        {
+          "score": 0.23740049,
+          "value": "lace"
+        },
+        {
+          "score": 0.23740049,
+          "value": "designer"
+        },
+        {
+          "score": 0.2322502,
+          "value": "floor"
+        },
+        {
+          "score": 0.2282697,
+          "value": "bathrobe"
+        },
+        {
+          "score": 0.22622259,
+          "value": "frame"
+        },
+        {
+          "score": 0.22475787,
+          "value": "italki"
+        },
+        {
+          "score": 0.22277823,
+          "value": "decor"
+        },
+        {
+          "score": 0.2191389,
+          "value": "quilts"
+        },
+        {
+          "score": 0.21773417,
+          "value": "german"
+        },
+        {
+          "score": 0.21393989,
+          "value": "bath"
+        },
+        {
+          "score": 0.21132188,
+          "value": "mediworm"
+        },
+        {
+          "score": 0.21132188,
+          "value": "triworm"
+        },
+        {
+          "score": 0.20851672,
+          "value": "homeopathic"
+        },
+        {
+          "score": 0.2066466,
+          "value": "dewormer"
+        },
+        {
+          "score": 0.2066466,
+          "value": "canadapetcare"
+        },
+        {
+          "score": 0.20524403,
+          "value": "drontal"
+        },
+        {
+          "score": 0.2036868,
+          "value": "language"
+        },
+        {
+          "score": 0.2029064,
+          "value": "multi"
+        },
+        {
+          "score": 0.20087734,
+          "value": "hoodies"
+        },
+        {
+          "score": 0.19963372,
+          "value": "relief"
+        },
+        {
+          "score": 0.19823113,
+          "value": "granule"
+        },
+        {
+          "score": 0.19589351,
+          "value": "nexgard"
+        },
+        {
+          "score": 0.19589351,
+          "value": "panacur"
+        },
+        {
+          "score": 0.19174655,
+          "value": "jewelry"
+        },
+        {
+          "score": 0.19168577,
+          "value": "lambert"
+        },
+        {
+          "score": 0.19049554,
+          "value": "machine"
+        },
+        {
+          "score": 0.18724614,
+          "value": "bench"
+        },
+        {
+          "score": 0.18718116,
+          "value": "towels"
+        },
+        {
+          "score": 0.18261576,
+          "value": "polyester"
+        },
+        {
+          "score": 0.17906256,
+          "value": "pigeon"
+        },
+        {
+          "score": 0.17805037,
+          "value": "comforters"
+        },
+        {
+          "score": 0.17805037,
+          "value": "suede"
+        },
+        {
+          "score": 0.17805037,
+          "value": "blankets"
+        },
+        {
+          "score": 0.17805037,
+          "value": "color"
+        },
+        {
+          "score": 0.17343622,
+          "value": "tree"
+        },
+        {
+          "score": 0.17221771,
+          "value": "foot"
+        },
+        {
+          "score": 0.17221771,
+          "value": "cooler"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazoninmarkiting.blogspot.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazoninmarkiting.blogspot.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 4,
+        "value": [
+          "beddinginn.com",
+          "canadapetcare.com",
+          "costway.com",
+          "italki.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1,
+            "vertical": "Home / Beds & Bedding"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Pets"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Furniture"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 4,
+      "value": [
+        "beddinginn.com",
+        "canadapetcare.com",
+        "costway.com",
+        "italki.com"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Business / Ecommerce",
+      "value": [
+        "Business / Ecommerce",
+        "Business / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Business / Ecommerce",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Business / Services",
+          "rank": 1,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

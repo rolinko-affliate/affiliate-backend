@@ -1,0 +1,722 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 5,
+      "sampleValue": [
+        "Impact",
+        "PartnerStack",
+        "Private Network"
+      ],
+      "value": [
+        "Impact",
+        "PartnerStack",
+        "Private Network",
+        "Refersion",
+        "ShareASale"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "gb",
+        "score": 0.95
+      },
+      "sampleValue": [
+        {
+          "countryCode": "gb",
+          "score": 0.95
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "gb",
+          "score": 0.95
+        }
+      ]
+    },
+    "domain": "amazon.co.uk",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "health"
+        },
+        {
+          "score": 0.6494415,
+          "value": "store"
+        },
+        {
+          "score": 0.49738988,
+          "value": "dog"
+        },
+        {
+          "score": 0.4968951,
+          "value": "food"
+        },
+        {
+          "score": 0.4581564,
+          "value": "team"
+        },
+        {
+          "score": 0.39631897,
+          "value": "info"
+        },
+        {
+          "score": 0.38718975,
+          "value": "super fashion"
+        },
+        {
+          "score": 0.38718975,
+          "value": "organic"
+        },
+        {
+          "score": 0.38718975,
+          "value": "expiry"
+        },
+        {
+          "score": 0.38480976,
+          "value": "community"
+        },
+        {
+          "score": 0.38067627,
+          "value": "seed"
+        },
+        {
+          "score": 0.3785051,
+          "value": "science"
+        },
+        {
+          "score": 0.3749466,
+          "value": "smoothie"
+        },
+        {
+          "score": 0.3641711,
+          "value": "category"
+        },
+        {
+          "score": 0.36377263,
+          "value": "immune"
+        },
+        {
+          "score": 0.35014763,
+          "value": "fashion"
+        },
+        {
+          "score": 0.34075928,
+          "value": "sleep"
+        },
+        {
+          "score": 0.3369191,
+          "value": "human"
+        },
+        {
+          "score": 0.33209553,
+          "value": "professional"
+        },
+        {
+          "score": 0.32056898,
+          "value": "healthy"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "health"
+        },
+        {
+          "score": 0.6494415,
+          "value": "store"
+        },
+        {
+          "score": 0.49738988,
+          "value": "dog"
+        },
+        {
+          "score": 0.4968951,
+          "value": "food"
+        },
+        {
+          "score": 0.4581564,
+          "value": "team"
+        },
+        {
+          "score": 0.39631897,
+          "value": "info"
+        },
+        {
+          "score": 0.38718975,
+          "value": "super fashion"
+        },
+        {
+          "score": 0.38718975,
+          "value": "organic"
+        },
+        {
+          "score": 0.38718975,
+          "value": "expiry"
+        },
+        {
+          "score": 0.38480976,
+          "value": "community"
+        },
+        {
+          "score": 0.38067627,
+          "value": "seed"
+        },
+        {
+          "score": 0.3785051,
+          "value": "science"
+        },
+        {
+          "score": 0.3749466,
+          "value": "smoothie"
+        },
+        {
+          "score": 0.3641711,
+          "value": "category"
+        },
+        {
+          "score": 0.36377263,
+          "value": "immune"
+        },
+        {
+          "score": 0.35014763,
+          "value": "fashion"
+        },
+        {
+          "score": 0.34075928,
+          "value": "sleep"
+        },
+        {
+          "score": 0.3369191,
+          "value": "human"
+        },
+        {
+          "score": 0.33209553,
+          "value": "professional"
+        },
+        {
+          "score": 0.32056898,
+          "value": "healthy"
+        },
+        {
+          "score": 0.31985238,
+          "value": "site"
+        },
+        {
+          "score": 0.31766084,
+          "value": "body"
+        },
+        {
+          "score": 0.3096519,
+          "value": "download"
+        },
+        {
+          "score": 0.30867976,
+          "value": "fine jewelry"
+        },
+        {
+          "score": 0.29806235,
+          "value": "program"
+        },
+        {
+          "score": 0.2879601,
+          "value": "communication"
+        },
+        {
+          "score": 0.28312293,
+          "value": "tusol"
+        },
+        {
+          "score": 0.28246388,
+          "value": "wild jewelry"
+        },
+        {
+          "score": 0.27241018,
+          "value": "blocker"
+        },
+        {
+          "score": 0.27050796,
+          "value": "stress"
+        },
+        {
+          "score": 0.2699383,
+          "value": "jewelry"
+        },
+        {
+          "score": 0.26952597,
+          "value": "loss"
+        },
+        {
+          "score": 0.269042,
+          "value": "box"
+        },
+        {
+          "score": 0.26343375,
+          "value": "probiotic"
+        },
+        {
+          "score": 0.26339293,
+          "value": "notice"
+        },
+        {
+          "score": 0.2621212,
+          "value": "law"
+        },
+        {
+          "score": 0.26158184,
+          "value": "story"
+        },
+        {
+          "score": 0.25785443,
+          "value": "card"
+        },
+        {
+          "score": 0.2515243,
+          "value": "terri"
+        },
+        {
+          "score": 0.2472707,
+          "value": "internal"
+        },
+        {
+          "score": 0.24570732,
+          "value": "pet"
+        },
+        {
+          "score": 0.24552037,
+          "value": "partner"
+        },
+        {
+          "score": 0.24307817,
+          "value": "action"
+        },
+        {
+          "score": 0.24233538,
+          "value": "fancy gem"
+        },
+        {
+          "score": 0.23618978,
+          "value": "nutramedix"
+        },
+        {
+          "score": 0.23415032,
+          "value": "refund"
+        },
+        {
+          "score": 0.23128404,
+          "value": "performance"
+        },
+        {
+          "score": 0.22802874,
+          "value": "superfood"
+        },
+        {
+          "score": 0.22462754,
+          "value": "functional"
+        },
+        {
+          "score": 0.22343755,
+          "value": "audio"
+        },
+        {
+          "score": 0.22019368,
+          "value": "partnership"
+        },
+        {
+          "score": 0.2192869,
+          "value": "synbiotic"
+        },
+        {
+          "score": 0.21615888,
+          "value": "activity"
+        },
+        {
+          "score": 0.21281347,
+          "value": "key"
+        },
+        {
+          "score": 0.21172073,
+          "value": "platform"
+        },
+        {
+          "score": 0.20967518,
+          "value": "immunity"
+        },
+        {
+          "score": 0.209664,
+          "value": "stream"
+        },
+        {
+          "score": 0.20736852,
+          "value": "dress"
+        },
+        {
+          "score": 0.20660321,
+          "value": "blend"
+        },
+        {
+          "score": 0.2055084,
+          "value": "raisedrightpet"
+        },
+        {
+          "score": 0.20354243,
+          "value": "studio"
+        },
+        {
+          "score": 0.20354243,
+          "value": "latte"
+        },
+        {
+          "score": 0.20297113,
+          "value": "adult"
+        },
+        {
+          "score": 0.20120774,
+          "value": "issue"
+        },
+        {
+          "score": 0.19895124,
+          "value": "deck"
+        },
+        {
+          "score": 0.19895124,
+          "value": "chroma"
+        },
+        {
+          "score": 0.19832109,
+          "value": "bracelet"
+        },
+        {
+          "score": 0.19788972,
+          "value": "people"
+        },
+        {
+          "score": 0.19750315,
+          "value": "responsible"
+        },
+        {
+          "score": 0.19612789,
+          "value": "ecosystem"
+        },
+        {
+          "score": 0.19482969,
+          "value": "cozy fleece"
+        },
+        {
+          "score": 0.19385031,
+          "value": "colorful gem"
+        },
+        {
+          "score": 0.19188358,
+          "value": "necklace"
+        },
+        {
+          "score": 0.19106185,
+          "value": "development"
+        },
+        {
+          "score": 0.19059035,
+          "value": "browser"
+        },
+        {
+          "score": 0.18976888,
+          "value": "multi"
+        },
+        {
+          "score": 0.18976888,
+          "value": "energy"
+        },
+        {
+          "score": 0.18860924,
+          "value": "glamour"
+        },
+        {
+          "score": 0.18823849,
+          "value": "organic superfood"
+        },
+        {
+          "score": 0.1867081,
+          "value": "keying"
+        },
+        {
+          "score": 0.18235551,
+          "value": "applicable"
+        },
+        {
+          "score": 0.17976245,
+          "value": "source"
+        },
+        {
+          "score": 0.17948234,
+          "value": "project"
+        },
+        {
+          "score": 0.17905612,
+          "value": "corsair"
+        },
+        {
+          "score": 0.17831771,
+          "value": "vogue"
+        },
+        {
+          "score": 0.17446494,
+          "value": "connection"
+        },
+        {
+          "score": 0.17323548,
+          "value": "instyle"
+        },
+        {
+          "score": 0.17140415,
+          "value": "protection"
+        },
+        {
+          "score": 0.17140415,
+          "value": "professional chroma"
+        },
+        {
+          "score": 0.17118281,
+          "value": "supplement"
+        },
+        {
+          "score": 0.1696407,
+          "value": "form"
+        },
+        {
+          "score": 0.16956145,
+          "value": "ritzy diamond"
+        },
+        {
+          "score": 0.16834337,
+          "value": "workflow"
+        },
+        {
+          "score": 0.16811702,
+          "value": "meal"
+        },
+        {
+          "score": 0.16717912,
+          "value": "impact"
+        },
+        {
+          "score": 0.16694246,
+          "value": "link"
+        },
+        {
+          "score": 0.16544801,
+          "value": "fancy"
+        },
+        {
+          "score": 0.16479826,
+          "value": "risk"
+        },
+        {
+          "score": 0.16433363,
+          "value": "colorful"
+        },
+        {
+          "score": 0.16375218,
+          "value": "synergy"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://amazon.co.uk/",
+        "https://www.amazon.co.uk/",
+        "http://amazon.co.uk/",
+        "http://www.amazon.co.uk/"
+      ]
+    },
+    "metaData": {
+      "description": "Sign up to Amazon Prime for unlimited free delivery. Low prices at Amazon on digital cameras, MP3, sports, books, music, DVDs, video games, home & garden and much more.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazon.co.uk.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazon.co.uk"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 19,
+        "value": [
+          "intuit.com",
+          "addjoi.com",
+          "elgato.com",
+          "beekeepersnaturals.com",
+          "bestself.co",
+          "branchbasics.com",
+          "firstvet.com",
+          "getrocketbook.com",
+          "justfoodfordogs.com",
+          "my.seed.com",
+          "nutramedix.com",
+          "octopus.energy",
+          "raisedrightpets.com",
+          "turbotenant.com",
+          "shareasale.com",
+          "supersmalls.com",
+          "therasage.com",
+          "tusolwellness.com",
+          "wishgardenherbs.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 6,
+        "value": [
+          {
+            "domain": "shareasale.com"
+          },
+          {
+            "domain": "beekeepersnaturals.com"
+          },
+          {
+            "domain": "my.seed.com"
+          },
+          {
+            "domain": "wishgardenherbs.com"
+          },
+          {
+            "domain": "addjoi.com"
+          },
+          {
+            "domain": "branchbasics.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "seed.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 3.6,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Home / Pets"
+          },
+          {
+            "count": 1.75,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 1.7,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 1.4,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 1,
+            "vertical": "Finance / Accounts"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Energy"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Office"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Utilities"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Property / Property"
+          },
+          {
+            "count": 0.6,
+            "vertical": "Business / Ecommerce"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 19,
+      "value": [
+        "intuit.com",
+        "addjoi.com",
+        "elgato.com",
+        "beekeepersnaturals.com",
+        "bestself.co",
+        "branchbasics.com",
+        "firstvet.com",
+        "getrocketbook.com",
+        "justfoodfordogs.com",
+        "my.seed.com",
+        "nutramedix.com",
+        "octopus.energy",
+        "raisedrightpets.com",
+        "turbotenant.com",
+        "shareasale.com",
+        "supersmalls.com",
+        "therasage.com",
+        "tusolwellness.com",
+        "wishgardenherbs.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Business / Ecommerce",
+      "value": [
+        "Business / Ecommerce",
+        "Shopping / Department Stores"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 1,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 1,
+          "score": 100
+        },
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 1,
+          "score": 100
+        }
+      ]
+    }
+  }
+}

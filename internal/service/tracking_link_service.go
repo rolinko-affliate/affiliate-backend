@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/affiliate-backend/internal/domain"
+	"github.com/affiliate-backend/internal/platform/logger"
 	"github.com/affiliate-backend/internal/platform/provider"
 	"github.com/affiliate-backend/internal/repository"
 )
@@ -23,10 +24,15 @@ type TrackingLinkService interface {
 	ListTrackingLinksByCampaign(ctx context.Context, campaignID int64, limit, offset int) ([]*domain.TrackingLink, error)
 	ListTrackingLinksByAffiliate(ctx context.Context, affiliateID int64, limit, offset int) ([]*domain.TrackingLink, error)
 	ListTrackingLinksByOrganization(ctx context.Context, orgID int64, limit, offset int) ([]*domain.TrackingLink, error)
+	ListTrackingLinksByCampaignAndAffiliate(ctx context.Context, campaignID, affiliateID int64, limit, offset int) ([]*domain.TrackingLink, error)
+	ListTrackingLinksWithFilters(ctx context.Context, affiliateIDs, campaignIDs []int64, limit, offset int) ([]*domain.TrackingLink, int, error)
 
 	// Tracking link generation
 	GenerateTrackingLink(ctx context.Context, req *domain.TrackingLinkGenerationRequest) (*domain.TrackingLinkGenerationResponse, error)
 	RegenerateTrackingLink(ctx context.Context, trackingLinkID int64) (*domain.TrackingLinkGenerationResponse, error)
+	
+	// Tracking link upsert
+	UpsertTrackingLink(ctx context.Context, req *domain.TrackingLinkUpsertRequest) (*domain.TrackingLinkUpsertResponse, error)
 
 	// Provider sync operations
 	SyncTrackingLinkToProvider(ctx context.Context, trackingLinkID int64) error
@@ -96,6 +102,15 @@ func (s *trackingLinkService) CreateTrackingLink(ctx context.Context, trackingLi
 		return fmt.Errorf("failed to create tracking link: %w", err)
 	}
 
+	// Synchronize with provider (Everflow) - run in background to avoid blocking
+	go func() {
+		if err := s.synchronizeTrackingLinkWithProvider(context.Background(), trackingLink); err != nil {
+			logger.Warn("Failed to synchronize tracking link with provider", 
+				"tracking_link_id", trackingLink.TrackingLinkID, 
+				"error", err)
+		}
+	}()
+
 	return nil
 }
 
@@ -116,9 +131,39 @@ func (s *trackingLinkService) UpdateTrackingLink(ctx context.Context, trackingLi
 		return fmt.Errorf("tracking link validation failed: %w", err)
 	}
 
+	// Get the existing tracking link to compare parameters
+	existingLink, err := s.trackingLinkRepo.GetTrackingLinkByID(ctx, trackingLink.TrackingLinkID)
+	if err != nil {
+		return fmt.Errorf("failed to get existing tracking link: %w", err)
+	}
+
+	// Check if tracking parameters have changed
+	parametersChanged := s.hasTrackingParametersChanged(existingLink, trackingLink)
+	
 	// Update tracking link in repository
 	if err := s.trackingLinkRepo.UpdateTrackingLink(ctx, trackingLink); err != nil {
 		return fmt.Errorf("failed to update tracking link: %w", err)
+	}
+
+	// If tracking parameters changed, regenerate the tracking link
+	if parametersChanged {
+		logger.Info("Tracking parameters changed, regenerating tracking link", 
+			"tracking_link_id", trackingLink.TrackingLinkID,
+			"campaign_id", trackingLink.CampaignID,
+			"affiliate_id", trackingLink.AffiliateID)
+		
+		response, err := s.RegenerateTrackingLink(ctx, trackingLink.TrackingLinkID)
+		if err != nil {
+			logger.Error("Failed to regenerate tracking link after parameter change", 
+				"tracking_link_id", trackingLink.TrackingLinkID,
+				"error", err)
+			// Don't fail the update operation, just log the error
+			// The tracking link update was successful, regeneration is a bonus
+		} else {
+			logger.Info("Successfully regenerated tracking link after parameter change", 
+				"tracking_link_id", trackingLink.TrackingLinkID,
+				"new_url", response.GeneratedURL)
+		}
 	}
 
 	return nil
@@ -163,6 +208,35 @@ func (s *trackingLinkService) ListTrackingLinksByOrganization(ctx context.Contex
 	return trackingLinks, nil
 }
 
+// ListTrackingLinksByCampaignAndAffiliate lists tracking links by campaign and affiliate
+func (s *trackingLinkService) ListTrackingLinksByCampaignAndAffiliate(ctx context.Context, campaignID, affiliateID int64, limit, offset int) ([]*domain.TrackingLink, error) {
+	// Validate campaign exists
+	campaign, err := s.campaignRepo.GetCampaignByID(ctx, campaignID)
+	if err != nil {
+		return nil, fmt.Errorf("failed to get campaign: %w", err)
+	}
+
+	// Validate affiliate exists
+	affiliate, err := s.affiliateRepo.GetAffiliateByID(ctx, affiliateID)
+	if err != nil {
+		return nil, fmt.Errorf("failed to get affiliate: %w", err)
+	}
+
+	// Verify that there's an active association between the advertiser and affiliate organizations
+	// and that the campaign and affiliate are visible to each other
+	err = s.verifyAssociationAndVisibility(ctx, campaign.OrganizationID, affiliate.OrganizationID, campaignID, affiliateID)
+	if err != nil {
+		return nil, fmt.Errorf("association verification failed: %w", err)
+	}
+
+	trackingLinks, err := s.trackingLinkRepo.ListTrackingLinksByCampaignAndAffiliate(ctx, campaignID, affiliateID, limit, offset)
+	if err != nil {
+		return nil, fmt.Errorf("failed to list tracking links by campaign and affiliate: %w", err)
+	}
+
+	return trackingLinks, nil
+}
+
 // GenerateTrackingLink generates a new tracking link with provider integration
 func (s *trackingLinkService) GenerateTrackingLink(ctx context.Context, req *domain.TrackingLinkGenerationRequest) (*domain.TrackingLinkGenerationResponse, error) {
 	// Validate the request
@@ -192,7 +266,7 @@ func (s *trackingLinkService) GenerateTrackingLink(ctx context.Context, req *dom
 	// Check if tracking link already exists with same parameters
 	existingLink, err := s.trackingLinkRepo.GetTrackingLinkByCampaignAndAffiliate(
 		ctx, req.CampaignID, req.AffiliateID, req.SourceID, req.Sub1, req.Sub2, req.Sub3, req.Sub4, req.Sub5)
-	if err == nil {
+	if err == nil && existingLink.TrackingURL != nil {
 		// Tracking link already exists, return it
 		return &domain.TrackingLinkGenerationResponse{
 			TrackingLink: existingLink,
@@ -290,6 +364,186 @@ func (s *trackingLinkService) RegenerateTrackingLink(ctx context.Context, tracki
 	}, nil
 }
 
+// UpsertTrackingLink creates or updates a tracking link based on campaign_id and affiliate_id
+func (s *trackingLinkService) UpsertTrackingLink(ctx context.Context, req *domain.TrackingLinkUpsertRequest) (*domain.TrackingLinkUpsertResponse, error) {
+	// Validate the request
+	if err := s.validateTrackingLinkUpsertRequest(req); err != nil {
+		return nil, fmt.Errorf("tracking link upsert request validation failed: %w", err)
+	}
+
+	// Get campaign and affiliate information
+	campaign, err := s.campaignRepo.GetCampaignByID(ctx, req.CampaignID)
+	if err != nil {
+		return nil, fmt.Errorf("failed to get campaign: %w", err)
+	}
+
+	// Validate affiliate exists
+	affiliate, err := s.affiliateRepo.GetAffiliateByID(ctx, req.AffiliateID)
+	if err != nil {
+		return nil, fmt.Errorf("failed to get affiliate: %w", err)
+	}
+
+	// Verify that there's an active association between the advertiser and affiliate organizations
+	// and that the campaign and affiliate are visible to each other
+	err = s.verifyAssociationAndVisibility(ctx, campaign.OrganizationID, affiliate.OrganizationID, req.CampaignID, req.AffiliateID)
+	if err != nil {
+		return nil, fmt.Errorf("association verification failed: %w", err)
+	}
+
+	// Check if tracking link already exists with same campaign and affiliate
+	existingLink, err := s.trackingLinkRepo.GetTrackingLinkByCampaignAndAffiliate(
+		ctx, req.CampaignID, req.AffiliateID, req.SourceID, req.Sub1, req.Sub2, req.Sub3, req.Sub4, req.Sub5)
+	
+	var trackingLink *domain.TrackingLink
+	var isNew bool
+	
+	if err != nil {
+		// No existing tracking link found, create a new one
+		isNew = true
+		
+		// Create new tracking link entity
+		trackingLink = &domain.TrackingLink{
+			OrganizationID:      campaign.OrganizationID,
+			CampaignID:          req.CampaignID,
+			AffiliateID:         req.AffiliateID,
+			Name:                req.Name,
+			Description:         req.Description,
+			Status:              "active",
+			SourceID:            req.SourceID,
+			Sub1:                req.Sub1,
+			Sub2:                req.Sub2,
+			Sub3:                req.Sub3,
+			Sub4:                req.Sub4,
+			Sub5:                req.Sub5,
+			IsEncryptParameters: req.IsEncryptParameters,
+			IsRedirectLink:      req.IsRedirectLink,
+			InternalNotes:       req.InternalNotes,
+			Tags:                req.Tags,
+		}
+
+		// Set timestamps
+		now := time.Now()
+		trackingLink.CreatedAt = now
+		trackingLink.UpdatedAt = now
+
+		// Create tracking link in database
+		if err := s.trackingLinkRepo.CreateTrackingLink(ctx, trackingLink); err != nil {
+			return nil, fmt.Errorf("failed to create tracking link: %w", err)
+		}
+	} else {
+		// Existing tracking link found, update it
+		isNew = false
+		trackingLink = existingLink
+		
+		// Check if tracking parameters have changed
+		parametersChanged := s.hasTrackingParametersChangedFromRequest(existingLink, req)
+		
+		// Update fields from request
+		trackingLink.Name = req.Name
+		trackingLink.Description = req.Description
+		if req.SourceID != nil {
+			trackingLink.SourceID = req.SourceID
+		}
+		if req.Sub1 != nil {
+			trackingLink.Sub1 = req.Sub1
+		}
+		if req.Sub2 != nil {
+			trackingLink.Sub2 = req.Sub2
+		}
+		if req.Sub3 != nil {
+			trackingLink.Sub3 = req.Sub3
+		}
+		if req.Sub4 != nil {
+			trackingLink.Sub4 = req.Sub4
+		}
+		if req.Sub5 != nil {
+			trackingLink.Sub5 = req.Sub5
+		}
+		if req.IsEncryptParameters != nil {
+			trackingLink.IsEncryptParameters = req.IsEncryptParameters
+		}
+		if req.IsRedirectLink != nil {
+			trackingLink.IsRedirectLink = req.IsRedirectLink
+		}
+		if req.InternalNotes != nil {
+			trackingLink.InternalNotes = req.InternalNotes
+		}
+		if req.Tags != nil {
+			trackingLink.Tags = req.Tags
+		}
+		
+		// Update timestamp
+		trackingLink.UpdatedAt = time.Now()
+		
+		// Update tracking link in database
+		if err := s.trackingLinkRepo.UpdateTrackingLink(ctx, trackingLink); err != nil {
+			return nil, fmt.Errorf("failed to update tracking link: %w", err)
+		}
+		
+		// If tracking parameters changed, we need to regenerate the tracking link
+		if parametersChanged {
+			logger.Info("Tracking parameters changed during upsert, regenerating tracking link", 
+				"tracking_link_id", trackingLink.TrackingLinkID,
+				"campaign_id", trackingLink.CampaignID,
+				"affiliate_id", trackingLink.AffiliateID)
+		}
+	}
+
+	var generatedURL string
+	var providerData *string
+
+	// Generate or regenerate tracking link via provider integration only if needed
+	if isNew || (existingLink != nil && s.hasTrackingParametersChangedFromRequest(existingLink, req)) {
+		generationReq := &domain.TrackingLinkGenerationRequest{
+			CampaignID:              req.CampaignID,
+			AffiliateID:             req.AffiliateID,
+			Name:                    req.Name,
+			Description:             req.Description,
+			SourceID:                req.SourceID,
+			Sub1:                    req.Sub1,
+			Sub2:                    req.Sub2,
+			Sub3:                    req.Sub3,
+			Sub4:                    req.Sub4,
+			Sub5:                    req.Sub5,
+			IsEncryptParameters:     req.IsEncryptParameters,
+			IsRedirectLink:          req.IsRedirectLink,
+			NetworkTrackingDomainID: req.NetworkTrackingDomainID,
+			NetworkOfferURLID:       req.NetworkOfferURLID,
+			CreativeID:              req.CreativeID,
+			NetworkTrafficSourceID:  req.NetworkTrafficSourceID,
+		}
+
+		var err error
+		generatedURL, providerData, err = s.generateTrackingLinkViaProvider(ctx, trackingLink, generationReq)
+		if err != nil {
+			return nil, fmt.Errorf("failed to generate tracking link via provider: %w", err)
+		}
+
+		// Update tracking link with generated URL
+		trackingLink.TrackingURL = &generatedURL
+		if err := s.trackingLinkRepo.UpdateTrackingLink(ctx, trackingLink); err != nil {
+			return nil, fmt.Errorf("failed to update tracking link with generated URL: %w", err)
+		}
+	} else {
+		// Use existing tracking URL and provider data
+		if trackingLink.TrackingURL != nil {
+			generatedURL = *trackingLink.TrackingURL
+		}
+		
+		// Get existing provider data if available
+		if existingMapping, err := s.trackingLinkProviderRepo.GetTrackingLinkProviderMapping(ctx, trackingLink.TrackingLinkID, "everflow"); err == nil {
+			providerData = existingMapping.ProviderData
+		}
+	}
+
+	return &domain.TrackingLinkUpsertResponse{
+		TrackingLink: trackingLink,
+		GeneratedURL: generatedURL,
+		ProviderData: providerData,
+		IsNew:        isNew,
+	}, nil
+}
+
 // generateTrackingLinkViaProvider generates tracking link via provider integration
 func (s *trackingLinkService) generateTrackingLinkViaProvider(ctx context.Context, trackingLink *domain.TrackingLink, req *domain.TrackingLinkGenerationRequest) (string, *string, error) {
 	// Get campaign provider mapping to get provider-specific campaign ID
@@ -330,24 +584,38 @@ func (s *trackingLinkService) generateTrackingLinkViaProvider(ctx context.Contex
 		return "", nil, fmt.Errorf("failed to generate tracking link via integration service: %w", err)
 	}
 
-	// Create provider mapping for the tracking link
-	providerMapping := &domain.TrackingLinkProviderMapping{
-		TrackingLinkID:         trackingLink.TrackingLinkID,
-		ProviderType:           "everflow",
-		ProviderTrackingLinkID: nil, // Everflow doesn't return a specific tracking link ID
-		ProviderData:           response.ProviderData,
-		SyncStatus:             toStringPtr("synced"),
-		LastSyncAt:             &time.Time{},
-		CreatedAt:              time.Now(),
-		UpdatedAt:              time.Now(),
-	}
-
+	// Check if provider mapping already exists
+	existingMapping, err := s.trackingLinkProviderRepo.GetTrackingLinkProviderMapping(ctx, trackingLink.TrackingLinkID, "everflow")
 	now := time.Now()
-	providerMapping.LastSyncAt = &now
+	
+	if err != nil {
+		// No existing mapping found, create a new one
+		providerMapping := &domain.TrackingLinkProviderMapping{
+			TrackingLinkID:         trackingLink.TrackingLinkID,
+			ProviderType:           "everflow",
+			ProviderTrackingLinkID: nil, // Everflow doesn't return a specific tracking link ID
+			ProviderData:           response.ProviderData,
+			SyncStatus:             toStringPtr("synced"),
+			LastSyncAt:             &now,
+			CreatedAt:              now,
+			UpdatedAt:              now,
+		}
 
-	// Save provider mapping
-	if err := s.trackingLinkProviderRepo.CreateTrackingLinkProviderMapping(ctx, providerMapping); err != nil {
-		return "", nil, fmt.Errorf("failed to create tracking link provider mapping: %w", err)
+		// Create provider mapping
+		if err := s.trackingLinkProviderRepo.CreateTrackingLinkProviderMapping(ctx, providerMapping); err != nil {
+			return "", nil, fmt.Errorf("failed to create tracking link provider mapping: %w", err)
+		}
+	} else {
+		// Update existing mapping
+		existingMapping.ProviderData = response.ProviderData
+		existingMapping.SyncStatus = toStringPtr("synced")
+		existingMapping.LastSyncAt = &now
+		existingMapping.UpdatedAt = now
+
+		// Update provider mapping
+		if err := s.trackingLinkProviderRepo.UpdateTrackingLinkProviderMapping(ctx, existingMapping); err != nil {
+			return "", nil, fmt.Errorf("failed to update tracking link provider mapping: %w", err)
+		}
 	}
 
 	return response.GeneratedURL, response.ProviderData, nil
@@ -524,7 +792,209 @@ func (s *trackingLinkService) verifyAssociationAndVisibility(ctx context.Context
 	return nil
 }
 
+// synchronizeTrackingLinkWithProvider synchronizes a tracking link with the provider (Everflow)
+func (s *trackingLinkService) synchronizeTrackingLinkWithProvider(ctx context.Context, trackingLink *domain.TrackingLink) error {
+	logger.Info("Starting tracking link synchronization", "tracking_link_id", trackingLink.TrackingLinkID)
+
+	// Get campaign provider mapping
+	campaignMapping, err := s.campaignProviderRepo.GetCampaignProviderMapping(ctx, trackingLink.CampaignID, "everflow")
+	if err != nil {
+		return fmt.Errorf("failed to get campaign provider mapping: %w", err)
+	}
+
+	// Get affiliate provider mapping
+	affiliateMapping, err := s.affiliateProviderRepo.GetAffiliateProviderMapping(ctx, trackingLink.AffiliateID, "everflow")
+	if err != nil {
+		return fmt.Errorf("failed to get affiliate provider mapping: %w", err)
+	}
+
+	// Create tracking link in provider
+	providerMapping, err := s.integrationService.CreateTrackingLink(ctx, trackingLink, campaignMapping, affiliateMapping)
+	if err != nil {
+		return fmt.Errorf("failed to create tracking link in provider: %w", err)
+	}
+
+	// Store provider mapping
+	if err := s.trackingLinkProviderRepo.CreateTrackingLinkProviderMapping(ctx, providerMapping); err != nil {
+		logger.Warn("Failed to store tracking link provider mapping", 
+			"tracking_link_id", trackingLink.TrackingLinkID, 
+			"error", err)
+		// Don't return error here as the tracking link was successfully created in the provider
+	}
+
+	logger.Info("Successfully synchronized tracking link with provider", "tracking_link_id", trackingLink.TrackingLinkID)
+	return nil
+}
+
+// hasTrackingParametersChanged checks if any tracking parameters have changed
+func (s *trackingLinkService) hasTrackingParametersChanged(existing, updated *domain.TrackingLink) bool {
+	// Compare source_id
+	if !stringPtrEqual(existing.SourceID, updated.SourceID) {
+		logger.Debug("SourceID changed", 
+			"existing", stringPtrValue(existing.SourceID), 
+			"updated", stringPtrValue(updated.SourceID))
+		return true
+	}
+
+	// Compare sub1
+	if !stringPtrEqual(existing.Sub1, updated.Sub1) {
+		logger.Debug("Sub1 changed", 
+			"existing", stringPtrValue(existing.Sub1), 
+			"updated", stringPtrValue(updated.Sub1))
+		return true
+	}
+
+	// Compare sub2
+	if !stringPtrEqual(existing.Sub2, updated.Sub2) {
+		logger.Debug("Sub2 changed", 
+			"existing", stringPtrValue(existing.Sub2), 
+			"updated", stringPtrValue(updated.Sub2))
+		return true
+	}
+
+	// Compare sub3
+	if !stringPtrEqual(existing.Sub3, updated.Sub3) {
+		logger.Debug("Sub3 changed", 
+			"existing", stringPtrValue(existing.Sub3), 
+			"updated", stringPtrValue(updated.Sub3))
+		return true
+	}
+
+	// Compare sub4
+	if !stringPtrEqual(existing.Sub4, updated.Sub4) {
+		logger.Debug("Sub4 changed", 
+			"existing", stringPtrValue(existing.Sub4), 
+			"updated", stringPtrValue(updated.Sub4))
+		return true
+	}
+
+	// Compare sub5
+	if !stringPtrEqual(existing.Sub5, updated.Sub5) {
+		logger.Debug("Sub5 changed", 
+			"existing", stringPtrValue(existing.Sub5), 
+			"updated", stringPtrValue(updated.Sub5))
+		return true
+	}
+
+	// Compare tags
+	if !stringPtrEqual(existing.Tags, updated.Tags) {
+		logger.Debug("Tags changed", 
+			"existing", stringPtrValue(existing.Tags), 
+			"updated", stringPtrValue(updated.Tags))
+		return true
+	}
+
+	return false
+}
+
+// validateTrackingLinkUpsertRequest validates tracking link upsert request
+func (s *trackingLinkService) validateTrackingLinkUpsertRequest(req *domain.TrackingLinkUpsertRequest) error {
+	if req.Name == "" {
+		return fmt.Errorf("tracking link name is required")
+	}
+
+	if req.CampaignID <= 0 {
+		return fmt.Errorf("valid campaign ID is required")
+	}
+
+	if req.AffiliateID <= 0 {
+		return fmt.Errorf("valid affiliate ID is required")
+	}
+
+	return nil
+}
+
+// hasTrackingParametersChangedFromRequest checks if any tracking parameters have changed from request
+func (s *trackingLinkService) hasTrackingParametersChangedFromRequest(existing *domain.TrackingLink, req *domain.TrackingLinkUpsertRequest) bool {
+	// Compare source_id
+	if !stringPtrEqual(existing.SourceID, req.SourceID) {
+		logger.Debug("SourceID changed from request", 
+			"existing", stringPtrValue(existing.SourceID), 
+			"request", stringPtrValue(req.SourceID))
+		return true
+	}
+
+	// Compare sub1
+	if !stringPtrEqual(existing.Sub1, req.Sub1) {
+		logger.Debug("Sub1 changed from request", 
+			"existing", stringPtrValue(existing.Sub1), 
+			"request", stringPtrValue(req.Sub1))
+		return true
+	}
+
+	// Compare sub2
+	if !stringPtrEqual(existing.Sub2, req.Sub2) {
+		logger.Debug("Sub2 changed from request", 
+			"existing", stringPtrValue(existing.Sub2), 
+			"request", stringPtrValue(req.Sub2))
+		return true
+	}
+
+	// Compare sub3
+	if !stringPtrEqual(existing.Sub3, req.Sub3) {
+		logger.Debug("Sub3 changed from request", 
+			"existing", stringPtrValue(existing.Sub3), 
+			"request", stringPtrValue(req.Sub3))
+		return true
+	}
+
+	// Compare sub4
+	if !stringPtrEqual(existing.Sub4, req.Sub4) {
+		logger.Debug("Sub4 changed from request", 
+			"existing", stringPtrValue(existing.Sub4), 
+			"request", stringPtrValue(req.Sub4))
+		return true
+	}
+
+	// Compare sub5
+	if !stringPtrEqual(existing.Sub5, req.Sub5) {
+		logger.Debug("Sub5 changed from request", 
+			"existing", stringPtrValue(existing.Sub5), 
+			"request", stringPtrValue(req.Sub5))
+		return true
+	}
+
+	// Compare tags
+	if !stringPtrEqual(existing.Tags, req.Tags) {
+		logger.Debug("Tags changed from request", 
+			"existing", stringPtrValue(existing.Tags), 
+			"request", stringPtrValue(req.Tags))
+		return true
+	}
+
+	return false
+}
+
+// stringPtrEqual compares two string pointers for equality
+func stringPtrEqual(a, b *string) bool {
+	if a == nil && b == nil {
+		return true
+	}
+	if a == nil || b == nil {
+		return false
+	}
+	return *a == *b
+}
+
+// stringPtrValue returns the value of a string pointer or empty string if nil
+func stringPtrValue(s *string) string {
+	if s == nil {
+		return ""
+	}
+	return *s
+}
+
 // Helper function to create string pointer
 func toStringPtr(s string) *string {
 	return &s
+}
+
+// ListTrackingLinksWithFilters lists tracking links with filtering by affiliate IDs and campaign IDs
+func (s *trackingLinkService) ListTrackingLinksWithFilters(ctx context.Context, affiliateIDs, campaignIDs []int64, limit, offset int) ([]*domain.TrackingLink, int, error) {
+	trackingLinks, total, err := s.trackingLinkRepo.ListTrackingLinksWithFilters(ctx, affiliateIDs, campaignIDs, limit, offset)
+	if err != nil {
+		return nil, 0, fmt.Errorf("failed to list tracking links with filters: %w", err)
+	}
+
+	return trackingLinks, total, nil
 }

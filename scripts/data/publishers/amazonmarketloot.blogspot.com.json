@@ -1,0 +1,633 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "CJ Affiliate"
+      ],
+      "value": [
+        "CJ Affiliate"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.3
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.3
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.3
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "amazonmarketloot.blogspot.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "oil"
+        },
+        {
+          "score": 0.89895964,
+          "value": "skin"
+        },
+        {
+          "score": 0.7651324,
+          "value": "face"
+        },
+        {
+          "score": 0.7,
+          "value": "laptop"
+        },
+        {
+          "score": 0.6601513,
+          "value": "ayurveda"
+        },
+        {
+          "score": 0.63729507,
+          "value": "body"
+        },
+        {
+          "score": 0.62862545,
+          "value": "iyura"
+        },
+        {
+          "score": 0.6243695,
+          "value": "care"
+        },
+        {
+          "score": 0.5857399,
+          "value": "apex"
+        },
+        {
+          "score": 0.57443947,
+          "value": "oplossing"
+        },
+        {
+          "score": 0.5625365,
+          "value": "cloud"
+        },
+        {
+          "score": 0.53846157,
+          "value": "recommendation"
+        },
+        {
+          "score": 0.52044845,
+          "value": "desktop"
+        },
+        {
+          "score": 0.49495587,
+          "value": "hair"
+        },
+        {
+          "score": 0.47982347,
+          "value": "ayurvedic"
+        },
+        {
+          "score": 0.47099623,
+          "value": "ajara"
+        },
+        {
+          "score": 0.39738336,
+          "value": "get free"
+        },
+        {
+          "score": 0.38421524,
+          "value": "workstation"
+        },
+        {
+          "score": 0.37563053,
+          "value": "product recommendation"
+        },
+        {
+          "score": 0.3735426,
+          "value": "technologie"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "oil"
+        },
+        {
+          "score": 0.89895964,
+          "value": "skin"
+        },
+        {
+          "score": 0.7651324,
+          "value": "face"
+        },
+        {
+          "score": 0.7,
+          "value": "laptop"
+        },
+        {
+          "score": 0.6601513,
+          "value": "ayurveda"
+        },
+        {
+          "score": 0.63729507,
+          "value": "body"
+        },
+        {
+          "score": 0.62862545,
+          "value": "iyura"
+        },
+        {
+          "score": 0.6243695,
+          "value": "care"
+        },
+        {
+          "score": 0.5857399,
+          "value": "apex"
+        },
+        {
+          "score": 0.57443947,
+          "value": "oplossing"
+        },
+        {
+          "score": 0.5625365,
+          "value": "cloud"
+        },
+        {
+          "score": 0.53846157,
+          "value": "recommendation"
+        },
+        {
+          "score": 0.52044845,
+          "value": "desktop"
+        },
+        {
+          "score": 0.49495587,
+          "value": "hair"
+        },
+        {
+          "score": 0.47982347,
+          "value": "ayurvedic"
+        },
+        {
+          "score": 0.47099623,
+          "value": "ajara"
+        },
+        {
+          "score": 0.39738336,
+          "value": "get free"
+        },
+        {
+          "score": 0.38421524,
+          "value": "workstation"
+        },
+        {
+          "score": 0.37563053,
+          "value": "product recommendation"
+        },
+        {
+          "score": 0.3735426,
+          "value": "technologie"
+        },
+        {
+          "score": 0.36726457,
+          "value": "monitor"
+        },
+        {
+          "score": 0.35293192,
+          "value": "face oil"
+        },
+        {
+          "score": 0.34529147,
+          "value": "accessoire"
+        },
+        {
+          "score": 0.3377995,
+          "value": "eye"
+        },
+        {
+          "score": 0.33054855,
+          "value": "oils"
+        },
+        {
+          "score": 0.32912987,
+          "value": "decide"
+        },
+        {
+          "score": 0.327713,
+          "value": "precision"
+        },
+        {
+          "score": 0.3253468,
+          "value": "decide get"
+        },
+        {
+          "score": 0.30832282,
+          "value": "night"
+        },
+        {
+          "score": 0.3057399,
+          "value": "alienwar"
+        },
+        {
+          "score": 0.30028373,
+          "value": "skincare"
+        },
+        {
+          "score": 0.2860971,
+          "value": "dry"
+        },
+        {
+          "score": 0.26119167,
+          "value": "ingredients"
+        },
+        {
+          "score": 0.24732031,
+          "value": "learn"
+        },
+        {
+          "score": 0.24547085,
+          "value": "vmwar"
+        },
+        {
+          "score": 0.23165919,
+          "value": "bekijk"
+        },
+        {
+          "score": 0.23053008,
+          "value": "solution"
+        },
+        {
+          "score": 0.22802992,
+          "value": "science"
+        },
+        {
+          "score": 0.22430643,
+          "value": "dry skin"
+        },
+        {
+          "score": 0.22052333,
+          "value": "beauty"
+        },
+        {
+          "score": 0.2103139,
+          "value": "partner"
+        },
+        {
+          "score": 0.20466368,
+          "value": "werknemer"
+        },
+        {
+          "score": 0.19813998,
+          "value": "ancient"
+        },
+        {
+          "score": 0.19783877,
+          "value": "software"
+        },
+        {
+          "score": 0.19167717,
+          "value": "day night"
+        },
+        {
+          "score": 0.1870852,
+          "value": "premier"
+        },
+        {
+          "score": 0.18269058,
+          "value": "impact"
+        },
+        {
+          "score": 0.18206277,
+          "value": "prijs"
+        },
+        {
+          "score": 0.17955157,
+          "value": "voor"
+        },
+        {
+          "score": 0.17654477,
+          "value": "minute"
+        },
+        {
+          "score": 0.17638713,
+          "value": "free minute"
+        },
+        {
+          "score": 0.17515695,
+          "value": "intelligentie"
+        },
+        {
+          "score": 0.17291929,
+          "value": "glow"
+        },
+        {
+          "score": 0.17276166,
+          "value": "modernica"
+        },
+        {
+          "score": 0.16950673,
+          "value": "storag"
+        },
+        {
+          "score": 0.1648802,
+          "value": "formulations"
+        },
+        {
+          "score": 0.1644843,
+          "value": "vmwar cloud"
+        },
+        {
+          "score": 0.16393442,
+          "value": "effective"
+        },
+        {
+          "score": 0.16346154,
+          "value": "experts"
+        },
+        {
+          "score": 0.16283102,
+          "value": "ayurvedic experts"
+        },
+        {
+          "score": 0.1626734,
+          "value": "recommendation ayurvedic"
+        },
+        {
+          "score": 0.1626734,
+          "value": "skincare recommendation"
+        },
+        {
+          "score": 0.1626734,
+          "value": "personalised skincare"
+        },
+        {
+          "score": 0.1626734,
+          "value": "recommendation decide"
+        },
+        {
+          "score": 0.1626734,
+          "value": "free personalised"
+        },
+        {
+          "score": 0.1626734,
+          "value": "minute personalised"
+        },
+        {
+          "score": 0.1626734,
+          "value": "personalised product"
+        },
+        {
+          "score": 0.16071749,
+          "value": "partnerprogramma"
+        },
+        {
+          "score": 0.16030896,
+          "value": "duo"
+        },
+        {
+          "score": 0.1599937,
+          "value": "pure"
+        },
+        {
+          "score": 0.15936318,
+          "value": "eyes"
+        },
+        {
+          "score": 0.15542245,
+          "value": "youth"
+        },
+        {
+          "score": 0.15290038,
+          "value": "elixir"
+        },
+        {
+          "score": 0.15274274,
+          "value": "balaayah"
+        },
+        {
+          "score": 0.15192825,
+          "value": "bestelling"
+        },
+        {
+          "score": 0.15179697,
+          "value": "manjish"
+        },
+        {
+          "score": 0.15004484,
+          "value": "bedrijf"
+        },
+        {
+          "score": 0.14941704,
+          "value": "windows"
+        },
+        {
+          "score": 0.14880201,
+          "value": "night face"
+        },
+        {
+          "score": 0.14643759,
+          "value": "gram"
+        },
+        {
+          "score": 0.14627995,
+          "value": "black gram"
+        },
+        {
+          "score": 0.14454603,
+          "value": "massage"
+        },
+        {
+          "score": 0.14344262,
+          "value": "face care"
+        },
+        {
+          "score": 0.14313902,
+          "value": "btw"
+        },
+        {
+          "score": 0.14139344,
+          "value": "body oil"
+        },
+        {
+          "score": 0.1412556,
+          "value": "verzending"
+        },
+        {
+          "score": 0.14076293,
+          "value": "add cart"
+        },
+        {
+          "score": 0.14,
+          "value": "inlogg"
+        },
+        {
+          "score": 0.1393722,
+          "value": "vergelijk"
+        },
+        {
+          "score": 0.13902901,
+          "value": "kesaradi"
+        },
+        {
+          "score": 0.13855612,
+          "value": "booster"
+        },
+        {
+          "score": 0.13839848,
+          "value": "buy now"
+        },
+        {
+          "score": 0.13824086,
+          "value": "balaayah black"
+        },
+        {
+          "score": 0.13824086,
+          "value": "body booster"
+        },
+        {
+          "score": 0.1381166,
+          "value": "gratis verzending"
+        },
+        {
+          "score": 0.1381166,
+          "value": "gratis"
+        },
+        {
+          "score": 0.13808323,
+          "value": "glow elixir"
+        },
+        {
+          "score": 0.13776797,
+          "value": "manjish glow"
+        },
+        {
+          "score": 0.13748878,
+          "value": "advantage"
+        },
+        {
+          "score": 0.13623318,
+          "value": "infrastructuur"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazonmarketloot.blogspot.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazonmarketloot.blogspot.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 3,
+        "value": [
+          "dell.com",
+          "theayurvedaexperience.com",
+          "edureka.co"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Health / Wellbeing"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 3,
+      "value": [
+        "dell.com",
+        "theayurvedaexperience.com",
+        "edureka.co"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Business / Ecommerce",
+      "value": [
+        "Business / Ecommerce",
+        "Shopping / Department Stores",
+        "Entertainment / Gaming"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Business / Ecommerce",
+        "rank": 1,
+        "score": 85
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 1,
+          "score": 85
+        },
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 1,
+          "score": 80
+        },
+        {
+          "name": "Entertainment / Gaming",
+          "rank": 1,
+          "score": 50
+        }
+      ]
+    }
+  }
+}

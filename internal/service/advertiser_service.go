@@ -8,6 +8,7 @@ import (
 
 	"github.com/affiliate-backend/internal/domain"
 	"github.com/affiliate-backend/internal/platform/crypto"
+	"github.com/affiliate-backend/internal/platform/logger"
 	"github.com/affiliate-backend/internal/platform/provider"
 	"github.com/affiliate-backend/internal/repository"
 	"github.com/google/uuid"
@@ -19,9 +20,11 @@ type AdvertiserService interface {
 	GetAdvertiserWithProviderData(ctx context.Context, id int64) (*domain.AdvertiserWithProviderData, error)
 	UpdateAdvertiser(ctx context.Context, advertiser *domain.Advertiser) error
 	ListAdvertisersByOrganization(ctx context.Context, orgID int64, page, pageSize int) ([]*domain.Advertiser, error)
+	ListAdvertisersWithoutProviderMapping(ctx context.Context, providerType string, page, pageSize int) ([]*domain.Advertiser, error)
 	DeleteAdvertiser(ctx context.Context, id int64) error
 
 	SyncAdvertiserToProvider(ctx context.Context, advertiserID int64) error
+	SyncAllAdvertisersToProvider(ctx context.Context, providerType string) (*domain.BulkSyncResult, error)
 	SyncAdvertiserFromProvider(ctx context.Context, advertiserID int64) error
 	CompareAdvertiserWithProvider(ctx context.Context, advertiserID int64) ([]domain.AdvertiserDiscrepancy, error)
 
@@ -57,8 +60,8 @@ func NewAdvertiserService(
 }
 
 func (s *advertiserService) CreateAdvertiser(ctx context.Context, advertiser *domain.Advertiser) (*domain.Advertiser, error) {
-	// Validate organization exists
-	_, err := s.orgRepo.GetOrganizationByID(ctx, advertiser.OrganizationID)
+	// Validate organization exists and get organization data
+	organization, err := s.orgRepo.GetOrganizationByID(ctx, advertiser.OrganizationID)
 	if err != nil {
 		return nil, fmt.Errorf("organization not found: %w", err)
 	}
@@ -74,44 +77,21 @@ func (s *advertiserService) CreateAdvertiser(ctx context.Context, advertiser *do
 		return nil, fmt.Errorf("failed to create advertiser: %w", err)
 	}
 
-	// Step 2: Create provider mapping with "pending" status
-	now := time.Now()
-	mapping := &domain.AdvertiserProviderMapping{
-		AdvertiserID:   advertiser.AdvertiserID,
-		ProviderType:   "everflow",
-		SyncStatus:     stringPtr("pending"),
-		LastSyncAt:     &now,
-		APICredentials: nil, // Set during configuration
-		ProviderConfig: nil, // Set by IntegrationService with full payload
+	// Step 2: Prepare mapping context with organization and user information
+	mappingCtx := &provider.AdvertiserMappingContext{
+		Organization: organization,
+	}
+	
+	// Try to get user ID from context (set by auth middleware)
+	if userID, exists := ctx.Value("userID").(string); exists && userID != "" {
+		mappingCtx.UserID = &userID
 	}
 
-	err = s.providerMappingRepo.CreateMapping(ctx, mapping)
+	// Step 3: Call IntegrationService to create in provider with context
+	// The integration service will handle creating the provider mapping
+	_, err = s.integrationService.CreateAdvertiserWithContext(ctx, *advertiser, mappingCtx)
 	if err != nil {
-		return nil, fmt.Errorf("failed to create provider mapping: %w", err)
-	}
-
-	// Step 3: Call IntegrationService to create in provider
-	providerAdvertiser, err := s.integrationService.CreateAdvertiser(ctx, *advertiser)
-	if err != nil {
-		// Update mapping status to "failed"
-		mapping.SyncStatus = stringPtr("failed")
-		mapping.SyncError = stringPtr(err.Error())
-		mapping.LastSyncAt = &now
-		s.providerMappingRepo.UpdateMapping(ctx, mapping)
 		return nil, fmt.Errorf("failed to create advertiser in provider: %w", err)
-	}
-
-	// Step 4: Update mapping with provider ID and "synced" status
-	// For now, we'll use the advertiser ID as the provider ID since the integration service
-	// doesn't return provider-specific IDs in the mock implementation
-	providerID := fmt.Sprintf("%d", providerAdvertiser.AdvertiserID)
-	mapping.ProviderAdvertiserID = &providerID
-	mapping.SyncStatus = stringPtr("synced")
-	mapping.SyncError = nil
-	mapping.LastSyncAt = &now
-	if err := s.providerMappingRepo.UpdateMapping(ctx, mapping); err != nil {
-		// Log error but don't fail since advertiser was created successfully
-		fmt.Printf("Warning: failed to update provider mapping status to active: %v\n", err)
 	}
 
 	return advertiser, nil
@@ -144,7 +124,7 @@ func (s *advertiserService) UpdateAdvertiser(ctx context.Context, advertiser *do
 	now := time.Now()
 	if err := s.integrationService.UpdateAdvertiser(ctx, *advertiser); err != nil {
 		// Log error but don't fail the operation since local update succeeded
-		fmt.Printf("Warning: failed to update advertiser in provider: %v\n", err)
+		logger.Warn("Failed to update advertiser in provider", "advertiser_id", advertiser.AdvertiserID, "error", err)
 
 		// Update mapping sync status to indicate sync failure
 		mapping.SyncStatus = stringPtr("failed")
@@ -173,6 +153,19 @@ func (s *advertiserService) ListAdvertisersByOrganization(ctx context.Context, o
 
 	offset := (page - 1) * pageSize
 	return s.advertiserRepo.ListAdvertisersByOrganization(ctx, orgID, pageSize, offset)
+}
+
+// ListAdvertisersWithoutProviderMapping retrieves advertisers that don't have a provider mapping
+func (s *advertiserService) ListAdvertisersWithoutProviderMapping(ctx context.Context, providerType string, page, pageSize int) ([]*domain.Advertiser, error) {
+	if page < 1 {
+		page = 1
+	}
+	if pageSize < 1 {
+		pageSize = 10
+	}
+
+	offset := (page - 1) * pageSize
+	return s.advertiserRepo.ListAdvertisersWithoutProviderMapping(ctx, providerType, pageSize, offset)
 }
 
 // DeleteAdvertiser deletes an advertiser
@@ -352,6 +345,72 @@ func (s *advertiserService) SyncAdvertiserFromProvider(ctx context.Context, adve
 	return s.providerMappingRepo.UpdateMapping(ctx, mapping)
 }
 
+// SyncAllAdvertisersToProvider syncs all advertisers without provider mappings to the specified provider
+func (s *advertiserService) SyncAllAdvertisersToProvider(ctx context.Context, providerType string) (*domain.BulkSyncResult, error) {
+	startTime := time.Now()
+	result := &domain.BulkSyncResult{
+		StartedAt: startTime,
+		Successes: make([]domain.BulkSyncItemResult, 0),
+		Failures:  make([]domain.BulkSyncItemResult, 0),
+	}
+
+	// Get all advertisers without provider mappings
+	// We'll process in batches to avoid memory issues
+	const batchSize = 100
+	page := 1
+	
+	for {
+		advertisers, err := s.advertiserRepo.ListAdvertisersWithoutProviderMapping(ctx, providerType, batchSize, (page-1)*batchSize)
+		if err != nil {
+			return nil, fmt.Errorf("failed to get advertisers without provider mapping: %w", err)
+		}
+
+		if len(advertisers) == 0 {
+			break // No more advertisers to process
+		}
+
+		// Process each advertiser in the batch
+		for _, advertiser := range advertisers {
+			result.TotalProcessed++
+			
+			err := s.createAdvertiserInProvider(ctx, advertiser)
+			if err != nil {
+				result.FailureCount++
+				result.Failures = append(result.Failures, domain.BulkSyncItemResult{
+					AdvertiserID:   advertiser.AdvertiserID,
+					AdvertiserName: advertiser.Name,
+					Error:          err.Error(),
+				})
+			} else {
+				result.SuccessCount++
+				// Get the provider advertiser ID from the mapping that was just created
+				mapping, mappingErr := s.providerMappingRepo.GetMappingByAdvertiserAndProvider(ctx, advertiser.AdvertiserID, providerType)
+				providerAdvertiserID := ""
+				if mappingErr == nil && mapping.ProviderAdvertiserID != nil {
+					providerAdvertiserID = *mapping.ProviderAdvertiserID
+				}
+				
+				result.Successes = append(result.Successes, domain.BulkSyncItemResult{
+					AdvertiserID:         advertiser.AdvertiserID,
+					AdvertiserName:       advertiser.Name,
+					ProviderAdvertiserID: providerAdvertiserID,
+				})
+			}
+		}
+
+		// If we got fewer than batchSize, we're done
+		if len(advertisers) < batchSize {
+			break
+		}
+		
+		page++
+	}
+
+	result.CompletedAt = time.Now()
+	
+	return result, nil
+}
+
 func (s *advertiserService) CompareAdvertiserWithProvider(ctx context.Context, advertiserID int64) ([]domain.AdvertiserDiscrepancy, error) {
 	// Get local advertiser
 	localAdvertiser, err := s.advertiserRepo.GetAdvertiserByID(ctx, advertiserID)
@@ -392,38 +451,55 @@ func (s *advertiserService) CompareAdvertiserWithProvider(ctx context.Context, a
 
 // createAdvertiserInProvider creates an advertiser in the provider when no mapping exists
 func (s *advertiserService) createAdvertiserInProvider(ctx context.Context, advertiser *domain.Advertiser) error {
-	// Create provider mapping with "pending" status
+	return s.syncAdvertiserToProvider(ctx, advertiser, "everflow")
+}
+
+// syncAdvertiserToProvider syncs an advertiser to a provider, handling both new and retry scenarios
+func (s *advertiserService) syncAdvertiserToProvider(ctx context.Context, advertiser *domain.Advertiser, providerType string) error {
+	// Check if mapping already exists
+	existingMapping, err := s.providerMappingRepo.GetMappingByAdvertiserAndProvider(ctx, advertiser.AdvertiserID, providerType)
+	
 	now := time.Now()
-	mapping := &domain.AdvertiserProviderMapping{
-		AdvertiserID:   advertiser.AdvertiserID,
-		ProviderType:   "everflow",
-		SyncStatus:     stringPtr("pending"),
-		LastSyncAt:     &now,
-		APICredentials: nil, // Set by IntegrationService
-		ProviderConfig: nil, // Set by IntegrationService with full payload
+	var mapping *domain.AdvertiserProviderMapping
+	
+	if err != nil || existingMapping == nil {
+		// Create new mapping with "pending" status
+		mapping = &domain.AdvertiserProviderMapping{
+			AdvertiserID:   advertiser.AdvertiserID,
+			ProviderType:   providerType,
+			SyncStatus:     stringPtr("pending"),
+			LastSyncAt:     &now,
+			APICredentials: nil, // Set by IntegrationService
+			ProviderConfig: nil, // Set by IntegrationService with full payload
+		}
+
+		if err := s.providerMappingRepo.CreateMapping(ctx, mapping); err != nil {
+			return fmt.Errorf("failed to create provider mapping: %w", err)
+		}
+	} else {
+		// Update existing mapping to "pending" status
+		mapping = existingMapping
+		mapping.SyncStatus = stringPtr("pending")
+		mapping.LastSyncAt = &now
+		mapping.SyncError = nil
+		
+		if err := s.providerMappingRepo.UpdateMapping(ctx, mapping); err != nil {
+			return fmt.Errorf("failed to update provider mapping: %w", err)
+		}
 	}
 
-	if err := s.providerMappingRepo.CreateMapping(ctx, mapping); err != nil {
-		return fmt.Errorf("failed to create provider mapping: %w", err)
-	}
-
-	// Create in provider
-	providerAdvertiser, err := s.integrationService.CreateAdvertiser(ctx, *advertiser)
+	// Create/update in provider - the integration service will handle the mapping update
+	_, err = s.integrationService.CreateAdvertiser(ctx, *advertiser)
 	if err != nil {
+		// Update mapping with failure status
 		mapping.SyncStatus = stringPtr("failed")
 		mapping.SyncError = stringPtr(err.Error())
 		mapping.LastSyncAt = &now
 		s.providerMappingRepo.UpdateMapping(ctx, mapping)
-		return fmt.Errorf("failed to create advertiser in provider: %w", err)
+		return fmt.Errorf("failed to sync advertiser to provider: %w", err)
 	}
 
-	// Update mapping with provider ID and "synced" status
-	providerID := fmt.Sprintf("%d", providerAdvertiser.AdvertiserID)
-	mapping.ProviderAdvertiserID = &providerID
-	mapping.SyncStatus = stringPtr("synced")
-	mapping.SyncError = nil
-	mapping.LastSyncAt = &now
-	return s.providerMappingRepo.UpdateMapping(ctx, mapping)
+	return nil
 }
 
 // mergeProviderDataIntoAdvertiser merges provider data into local advertiser

@@ -1,0 +1,625 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 2,
+      "sampleValue": [
+        "Impact",
+        "Private Network"
+      ],
+      "value": [
+        "Impact",
+        "Private Network"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "fr",
+        "score": 0.8
+      },
+      "sampleValue": [
+        {
+          "countryCode": "fr",
+          "score": 0.8
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "fr",
+          "score": 0.8
+        }
+      ]
+    },
+    "domain": "soffrirlemonde.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "civitatis"
+        },
+        {
+          "score": 0.79333866,
+          "value": "cancellation"
+        },
+        {
+          "score": 0.79173356,
+          "value": "free cancellation"
+        },
+        {
+          "score": 0.614366,
+          "value": "travellers"
+        },
+        {
+          "score": 0.42295346,
+          "value": "log"
+        },
+        {
+          "score": 0.3920546,
+          "value": "tours"
+        },
+        {
+          "score": 0.3735955,
+          "value": "united states"
+        },
+        {
+          "score": 0.3735955,
+          "value": "states"
+        },
+        {
+          "score": 0.37239164,
+          "value": "italy"
+        },
+        {
+          "score": 0.34149277,
+          "value": "google"
+        },
+        {
+          "score": 0.33667737,
+          "value": "apple"
+        },
+        {
+          "score": 0.32423756,
+          "value": "tour"
+        },
+        {
+          "score": 0.29855537,
+          "value": "united kingdom"
+        },
+        {
+          "score": 0.29855537,
+          "value": "kingdom"
+        },
+        {
+          "score": 0.27126807,
+          "value": "portugal"
+        },
+        {
+          "score": 0.25882825,
+          "value": "peso"
+        },
+        {
+          "score": 0.2576244,
+          "value": "spain"
+        },
+        {
+          "score": 0.23595506,
+          "value": "destinations"
+        },
+        {
+          "score": 0.23073836,
+          "value": "privacy policy"
+        },
+        {
+          "score": 0.2170947,
+          "value": "civitatis com"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "civitatis"
+        },
+        {
+          "score": 0.79333866,
+          "value": "cancellation"
+        },
+        {
+          "score": 0.79173356,
+          "value": "free cancellation"
+        },
+        {
+          "score": 0.614366,
+          "value": "travellers"
+        },
+        {
+          "score": 0.42295346,
+          "value": "log"
+        },
+        {
+          "score": 0.3920546,
+          "value": "tours"
+        },
+        {
+          "score": 0.3735955,
+          "value": "united states"
+        },
+        {
+          "score": 0.3735955,
+          "value": "states"
+        },
+        {
+          "score": 0.37239164,
+          "value": "italy"
+        },
+        {
+          "score": 0.34149277,
+          "value": "google"
+        },
+        {
+          "score": 0.33667737,
+          "value": "apple"
+        },
+        {
+          "score": 0.32423756,
+          "value": "tour"
+        },
+        {
+          "score": 0.29855537,
+          "value": "united kingdom"
+        },
+        {
+          "score": 0.29855537,
+          "value": "kingdom"
+        },
+        {
+          "score": 0.27126807,
+          "value": "portugal"
+        },
+        {
+          "score": 0.25882825,
+          "value": "peso"
+        },
+        {
+          "score": 0.2576244,
+          "value": "spain"
+        },
+        {
+          "score": 0.23595506,
+          "value": "destinations"
+        },
+        {
+          "score": 0.23073836,
+          "value": "privacy policy"
+        },
+        {
+          "score": 0.2170947,
+          "value": "civitatis com"
+        },
+        {
+          "score": 0.21669342,
+          "value": "personal information"
+        },
+        {
+          "score": 0.21348314,
+          "value": "español"
+        },
+        {
+          "score": 0.20987159,
+          "value": "offer"
+        },
+        {
+          "score": 0.20746389,
+          "value": "carry"
+        },
+        {
+          "score": 0.20666131,
+          "value": "forgotten"
+        },
+        {
+          "score": 0.20585875,
+          "value": "advertising"
+        },
+        {
+          "score": 0.19662921,
+          "value": "trip"
+        },
+        {
+          "score": 0.18900481,
+          "value": "london"
+        },
+        {
+          "score": 0.18619582,
+          "value": "booking"
+        },
+        {
+          "score": 0.18218298,
+          "value": "del"
+        },
+        {
+          "score": 0.17977528,
+          "value": "conditions"
+        },
+        {
+          "score": 0.1769663,
+          "value": "activities"
+        },
+        {
+          "score": 0.176565,
+          "value": "day trip"
+        },
+        {
+          "score": 0.17616372,
+          "value": "bookings"
+        },
+        {
+          "score": 0.17536116,
+          "value": "florence"
+        },
+        {
+          "score": 0.17375602,
+          "value": "general"
+        },
+        {
+          "score": 0.16934189,
+          "value": "general conditions"
+        },
+        {
+          "score": 0.16613162,
+          "value": "request"
+        },
+        {
+          "score": 0.16171749,
+          "value": "guided"
+        },
+        {
+          "score": 0.16131622,
+          "value": "us email"
+        },
+        {
+          "score": 0.1565008,
+          "value": "york"
+        },
+        {
+          "score": 0.15489566,
+          "value": "madrid"
+        },
+        {
+          "score": 0.14767255,
+          "value": "travel"
+        },
+        {
+          "score": 0.14767255,
+          "value": "las"
+        },
+        {
+          "score": 0.14686999,
+          "value": "edinburgh"
+        },
+        {
+          "score": 0.1464687,
+          "value": "porto"
+        },
+        {
+          "score": 0.14446227,
+          "value": "sustainability"
+        },
+        {
+          "score": 0.14205457,
+          "value": "playa"
+        },
+        {
+          "score": 0.14205457,
+          "value": "marrakech"
+        },
+        {
+          "score": 0.14205457,
+          "value": "paris"
+        },
+        {
+          "score": 0.14004816,
+          "value": "book"
+        },
+        {
+          "score": 0.13924558,
+          "value": "carmen"
+        },
+        {
+          "score": 0.1388443,
+          "value": "dublin"
+        },
+        {
+          "score": 0.13804173,
+          "value": "rome"
+        },
+        {
+          "score": 0.13804173,
+          "value": "vegas"
+        },
+        {
+          "score": 0.13764045,
+          "value": "cairo"
+        },
+        {
+          "score": 0.13683788,
+          "value": "lisbon"
+        },
+        {
+          "score": 0.13523275,
+          "value": "barcelona"
+        },
+        {
+          "score": 0.13322632,
+          "value": "las vegas"
+        },
+        {
+          "score": 0.13202247,
+          "value": "egypt"
+        },
+        {
+          "score": 0.13162118,
+          "value": "del carmen"
+        },
+        {
+          "score": 0.13162118,
+          "value": "playa del"
+        },
+        {
+          "score": 0.13121991,
+          "value": "ireland"
+        },
+        {
+          "score": 0.13081862,
+          "value": "magazine"
+        },
+        {
+          "score": 0.13081862,
+          "value": "civitatis magazine"
+        },
+        {
+          "score": 0.13041733,
+          "value": "mexico"
+        },
+        {
+          "score": 0.13001606,
+          "value": "france"
+        },
+        {
+          "score": 0.13001606,
+          "value": "português"
+        },
+        {
+          "score": 0.12961477,
+          "value": "legal"
+        },
+        {
+          "score": 0.12961477,
+          "value": "twitter"
+        },
+        {
+          "score": 0.12961477,
+          "value": "republic"
+        },
+        {
+          "score": 0.12800963,
+          "value": "amsterdam"
+        },
+        {
+          "score": 0.12680578,
+          "value": "athens"
+        },
+        {
+          "score": 0.1264045,
+          "value": "guided tours"
+        },
+        {
+          "score": 0.1260032,
+          "value": "brussels"
+        },
+        {
+          "score": 0.12560193,
+          "value": "netherlands"
+        },
+        {
+          "score": 0.124799356,
+          "value": "greece"
+        },
+        {
+          "score": 0.124799356,
+          "value": "belgium"
+        },
+        {
+          "score": 0.124398075,
+          "value": "morocco"
+        },
+        {
+          "score": 0.12279294,
+          "value": "prague"
+        },
+        {
+          "score": 0.122391656,
+          "value": "czech republic"
+        },
+        {
+          "score": 0.122391656,
+          "value": "czech"
+        },
+        {
+          "score": 0.12038523,
+          "value": "note"
+        },
+        {
+          "score": 0.12038523,
+          "value": "venice"
+        },
+        {
+          "score": 0.11958267,
+          "value": "legal note"
+        },
+        {
+          "score": 0.1187801,
+          "value": "dollar"
+        },
+        {
+          "score": 0.1187801,
+          "value": "free tours"
+        },
+        {
+          "score": 0.1187801,
+          "value": "minutes"
+        },
+        {
+          "score": 0.11757624,
+          "value": "basket"
+        },
+        {
+          "score": 0.11717496,
+          "value": "summary bookings"
+        },
+        {
+          "score": 0.11717496,
+          "value": "states dollar"
+        },
+        {
+          "score": 0.11717496,
+          "value": "shopping basket"
+        },
+        {
+          "score": 0.11717496,
+          "value": "find booking"
+        },
+        {
+          "score": 0.11717496,
+          "value": "summary"
+        },
+        {
+          "score": 0.11717496,
+          "value": "press"
+        },
+        {
+          "score": 0.11717496,
+          "value": "booking reference"
+        },
+        {
+          "score": 0.11717496,
+          "value": "reference"
+        },
+        {
+          "score": 0.11677367,
+          "value": "gratuita"
+        },
+        {
+          "score": 0.11677367,
+          "value": "app"
+        },
+        {
+          "score": 0.11597111,
+          "value": "android"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://soffrirlemonde.com/",
+        "https://www.soffrirlemonde.com/",
+        "http://soffrirlemonde.com/",
+        "http://www.soffrirlemonde.com/"
+      ]
+    },
+    "metaData": {
+      "description": "Domi et Titi – 2 retraités en Asie et Océanie Bienvenue sur notre blog voyage…",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/soffrirlemonde.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://soffrirlemonde.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 2,
+        "value": [
+          "civitatis.com",
+          "skyscanner.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1,
+            "vertical": "Travel / Attractions"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Travel / Flights"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 2,
+      "value": [
+        "civitatis.com",
+        "skyscanner.com"
+      ]
+    },
+    "promotype": {
+      "value": "student"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 3,
+      "socialsAvailable": [
+        "youtube",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/soffrirlemonde.domiettiti",
+        "instagram": "https://instagram.com/soffrirlemonde/?hl=fr-ca",
+        "youtube": "https://youtube.com/channel/uczhuwyl6l2xsrlo_e2z-_4w"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Online / Services",
+      "value": [
+        "Online / Services",
+        "Entertainment / Hobbies"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Online / Services",
+        "rank": 1,
+        "score": 70
+      },
+      "value": [
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 70
+        },
+        {
+          "name": "Entertainment / Hobbies",
+          "rank": 1,
+          "score": 60
+        }
+      ]
+    }
+  }
+}

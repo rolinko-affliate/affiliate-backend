@@ -1,0 +1,372 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 2,
+      "sampleValue": [
+        "Private Network",
+        "Skimlinks"
+      ],
+      "value": [
+        "Private Network",
+        "Skimlinks"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 2,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "hello@octopus.energy"
+        },
+        {
+          "department": "communication",
+          "value": "smart@octopus.energy"
+        }
+      ]
+    },
+    "domain": "octopus.energy",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "100% renewable electricity from the only energy supplier Which? has recommended 5 years in a row",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/octopus.energy.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://octopus.energy"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 593
+      },
+      "partnersAdded": {
+        "count": 31,
+        "value": [
+          {
+            "domain": "hn.svelte.dev"
+          },
+          {
+            "domain": "vantage-energy.ca"
+          },
+          {
+            "domain": "retirementpasta.co.uk"
+          },
+          {
+            "domain": "electricianforum.co.uk"
+          },
+          {
+            "domain": "forums.scotsnewsletter.com"
+          },
+          {
+            "domain": "tiredscore.com"
+          },
+          {
+            "domain": "kazoutdoors.org"
+          },
+          {
+            "domain": "babyimg.co.uk"
+          },
+          {
+            "domain": "rapid-meta.com"
+          },
+          {
+            "domain": "04uk.com"
+          },
+          {
+            "domain": "horizonimaging.co.uk"
+          },
+          {
+            "domain": "octopuscashback.energy"
+          },
+          {
+            "domain": "adamprocter.co.uk"
+          },
+          {
+            "domain": "jonsdocs.org.uk"
+          },
+          {
+            "domain": "lazybonesintheuk.com"
+          },
+          {
+            "domain": "cleanbritain.org.uk"
+          },
+          {
+            "domain": "bexley-is-bonkers.co.uk"
+          },
+          {
+            "domain": "saveenergyinsulation.co.uk"
+          },
+          {
+            "domain": "techedgeuk.co.uk"
+          },
+          {
+            "domain": "deadrock.net"
+          },
+          {
+            "domain": "intelligentheat.co.uk"
+          },
+          {
+            "domain": "thehelpfulhiker.com"
+          },
+          {
+            "domain": "mypaycalculator.co.uk"
+          },
+          {
+            "domain": "windowcleaningforums.co.uk"
+          },
+          {
+            "domain": "antenna.rocks"
+          },
+          {
+            "domain": "titaneco.co.uk"
+          },
+          {
+            "domain": "matthawkins.com"
+          },
+          {
+            "domain": "panaceainc.co.kr"
+          },
+          {
+            "domain": "energy-referral-code.co.uk"
+          },
+          {
+            "domain": "esinem.com"
+          },
+          {
+            "domain": "horizonimaging.flywheelstaging.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 16,
+        "value": [
+          {
+            "domain": "luyangmao.uk"
+          },
+          {
+            "domain": "octomiser.com"
+          },
+          {
+            "domain": "svelte.dev"
+          },
+          {
+            "domain": "opc-computers.co.uk"
+          },
+          {
+            "domain": "referrallink.uk"
+          },
+          {
+            "domain": "tracker.lbry.nu"
+          },
+          {
+            "domain": "cyclechat.net"
+          },
+          {
+            "domain": "thebest.co.uk"
+          },
+          {
+            "domain": "garrystonehouse.co.uk"
+          },
+          {
+            "domain": "moto.co.de"
+          },
+          {
+            "domain": "smallheathalliance.com"
+          },
+          {
+            "domain": "join-octopus-energy.co.uk"
+          },
+          {
+            "domain": "octopus50.uk"
+          },
+          {
+            "domain": "octopusenergy.promo"
+          },
+          {
+            "domain": "absolutegamerz.com"
+          },
+          {
+            "domain": "npifund.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 68,
+            "promotype": "blog",
+            "value": [
+              "10ws.co",
+              "1-minute-reads.com",
+              "accidentalsmallholder.net",
+              "allyoucanbooks.com",
+              "alunr.com",
+              "amazon.co.uk",
+              "bio.site",
+              "blackpoolevents.co.uk",
+              "blog.shaunmcdonald.me.uk",
+              "brapodcast.se",
+              "broadcasts.com",
+              "brokegirlinthecity.com",
+              "byoni.com",
+              "captivate.fm",
+              "dearloser.com",
+              "ecothriftyliving.com",
+              "envirolineblog.com",
+              "e-tronforum.com",
+              "extremesavers.co.uk",
+              "freebies.co.uk",
+              "freebirthdatelottery.com",
+              "garethclegg.com",
+              "getpodcast.com",
+              "goodpods.com",
+              "innervisions-id.com",
+              "lettingaproperty.com",
+              "lifestyle.co.uk",
+              "lists.infradead.org",
+              "locostbuilders.co.uk",
+              "lyliarose.com",
+              "macheforum.com",
+              "medium.com",
+              "monzo.com",
+              "nodered.org",
+              "nomipalony.com",
+              "oneguyfrombarlick.co.uk",
+              "pickmypostcode.com",
+              "player.fm",
+              "podchaser.com",
+              "poddtoppen.se",
+              "polestar-forum.com",
+              "property118.com",
+              "publish0x.com",
+              "raspberrypi.com",
+              "r-craft.org",
+              "refermehappy.com",
+              "renewableheatinghub.co.uk",
+              "savvydad.co.uk",
+              "saynoto0870.com",
+              "slickmedia.io",
+              "solarcrowd.co.uk",
+              "spawnpoiint.com",
+              "speakev.com",
+              "stockcheckers.co.uk",
+              "tangramarket.com",
+              "teslamotorsclub.com",
+              "the5krunner.com",
+              "thehelpfulhiker.com",
+              "thelatebay.com",
+              "theparentsocial.com",
+              "thereferralguy.co.uk",
+              "threepeakschallenge.uk",
+              "urban75.net",
+              "vybrainium.com",
+              "waivio.com",
+              "wealthvideos.club",
+              "website-review.php8developer.com",
+              "wemadethislife.com"
+            ]
+          },
+          {
+            "count": 25,
+            "promotype": "student",
+            "value": [
+              "a4m.eu",
+              "audioboom.com",
+              "avforums.com",
+              "community.freetrade.io",
+              "discountvouchercodes.co.uk",
+              "doogal.co.uk",
+              "esinem.com",
+              "evsoup.com",
+              "forum.magicmirror.builders",
+              "home-assistant.io",
+              "ibeatdebt.com",
+              "ivoox.com",
+              "linktr.ee",
+              "nothingtodo.co.uk",
+              "peugeotforums.com",
+              "pistonheads.com",
+              "portablesolarpower.co.uk",
+              "publicwhip.org.uk",
+              "r-bloggers.com",
+              "realestateinvestmenttrust.vip",
+              "shkspr.mobi",
+              "tombale.me",
+              "tomfamilyworld.com",
+              "tootsiemusical.com",
+              "windowcleaningforums.co.uk"
+            ]
+          },
+          {
+            "count": 6,
+            "promotype": "content",
+            "value": [
+              "businessmayor.com",
+              "fansnetwork.co.uk",
+              "forums.scotsnewsletter.com",
+              "headforpoints.com",
+              "moneysavingexpert.com",
+              "richardherring.com"
+            ]
+          },
+          {
+            "count": 2,
+            "promotype": "incentive",
+            "value": [
+              "greatdealsmadeeasy.com",
+              "ondeals.co.uk"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "forum",
+            "value": [
+              "hywel.me"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 3,
+      "socialsAvailable": [
+        "twitter",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/octopusenergy",
+        "instagram": "https://instagram.com/octopusenergy",
+        "twitter": "https://twitter.com/octopusenergy"
+      }
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Home / Utilities",
+        "rank": 2,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Business / Energy",
+          "rank": 2,
+          "score": 95
+        },
+        {
+          "name": "Home / Utilities",
+          "rank": 2,
+          "score": 95
+        }
+      ]
+    }
+  }
+}

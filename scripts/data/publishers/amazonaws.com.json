@@ -1,0 +1,1080 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 17,
+      "sampleValue": [
+        "Accesstrade",
+        "Admitad",
+        "Affiliate Future"
+      ],
+      "value": [
+        "Accesstrade",
+        "Admitad",
+        "Affiliate Future",
+        "Amazon CA",
+        "Awin",
+        "CJ Affiliate",
+        "ClickBank",
+        "Etoro",
+        "Flexoffers",
+        "Impact",
+        "Private Network",
+        "Rakuten",
+        "Rewardstyle",
+        "ShareASale",
+        "Skimlinks",
+        "Tradedoubler",
+        "Viglink"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.4
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.4
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.4
+        }
+      ]
+    },
+    "domain": "amazonaws.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "flight"
+        },
+        {
+          "score": 0.9315861,
+          "value": "hotels"
+        },
+        {
+          "score": 0.9192891,
+          "value": "course"
+        },
+        {
+          "score": 0.73196054,
+          "value": "skills"
+        },
+        {
+          "score": 0.72339046,
+          "value": "degrees"
+        },
+        {
+          "score": 0.68248546,
+          "value": "clothing"
+        },
+        {
+          "score": 0.67625505,
+          "value": "travel"
+        },
+        {
+          "score": 0.6692433,
+          "value": "courses"
+        },
+        {
+          "score": 0.6158524,
+          "value": "furniture"
+        },
+        {
+          "score": 0.6137966,
+          "value": "career"
+        },
+        {
+          "score": 0.60293704,
+          "value": "fashion"
+        },
+        {
+          "score": 0.5651362,
+          "value": "star"
+        },
+        {
+          "score": 0.54770434,
+          "value": "complete"
+        },
+        {
+          "score": 0.52967584,
+          "value": "style"
+        },
+        {
+          "score": 0.5212501,
+          "value": "activewear"
+        },
+        {
+          "score": 0.50952864,
+          "value": "filled star"
+        },
+        {
+          "score": 0.50952864,
+          "value": "filled"
+        },
+        {
+          "score": 0.49605796,
+          "value": "certificate"
+        },
+        {
+          "score": 0.4788989,
+          "value": "товар"
+        },
+        {
+          "score": 0.4756457,
+          "value": "science"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "flight"
+        },
+        {
+          "score": 0.9315861,
+          "value": "hotels"
+        },
+        {
+          "score": 0.9192891,
+          "value": "course"
+        },
+        {
+          "score": 0.73196054,
+          "value": "skills"
+        },
+        {
+          "score": 0.72339046,
+          "value": "degrees"
+        },
+        {
+          "score": 0.68248546,
+          "value": "clothing"
+        },
+        {
+          "score": 0.67625505,
+          "value": "travel"
+        },
+        {
+          "score": 0.6692433,
+          "value": "courses"
+        },
+        {
+          "score": 0.6158524,
+          "value": "furniture"
+        },
+        {
+          "score": 0.6137966,
+          "value": "career"
+        },
+        {
+          "score": 0.60293704,
+          "value": "fashion"
+        },
+        {
+          "score": 0.5651362,
+          "value": "star"
+        },
+        {
+          "score": 0.54770434,
+          "value": "complete"
+        },
+        {
+          "score": 0.52967584,
+          "value": "style"
+        },
+        {
+          "score": 0.5212501,
+          "value": "activewear"
+        },
+        {
+          "score": 0.50952864,
+          "value": "filled star"
+        },
+        {
+          "score": 0.50952864,
+          "value": "filled"
+        },
+        {
+          "score": 0.49605796,
+          "value": "certificate"
+        },
+        {
+          "score": 0.4788989,
+          "value": "товар"
+        },
+        {
+          "score": 0.4756457,
+          "value": "science"
+        },
+        {
+          "score": 0.47229344,
+          "value": "доставка"
+        },
+        {
+          "score": 0.46664646,
+          "value": "cloud"
+        },
+        {
+          "score": 0.46313137,
+          "value": "dresses"
+        },
+        {
+          "score": 0.45404765,
+          "value": "sneakers"
+        },
+        {
+          "score": 0.450798,
+          "value": "dress"
+        },
+        {
+          "score": 0.4456428,
+          "value": "hours complete"
+        },
+        {
+          "score": 0.44018912,
+          "value": "ibm"
+        },
+        {
+          "score": 0.43294862,
+          "value": "property"
+        },
+        {
+          "score": 0.41908273,
+          "value": "certificates"
+        },
+        {
+          "score": 0.41569027,
+          "value": "program"
+        },
+        {
+          "score": 0.4138758,
+          "value": "error"
+        },
+        {
+          "score": 0.40870577,
+          "value": "degree"
+        },
+        {
+          "score": 0.40434498,
+          "value": "shirts"
+        },
+        {
+          "score": 0.40316498,
+          "value": "financial"
+        },
+        {
+          "score": 0.39725494,
+          "value": "blankets"
+        },
+        {
+          "score": 0.39258373,
+          "value": "shoes"
+        },
+        {
+          "score": 0.38628343,
+          "value": "university"
+        },
+        {
+          "score": 0.38501406,
+          "value": "заказ"
+        },
+        {
+          "score": 0.3849225,
+          "value": "popular"
+        },
+        {
+          "score": 0.3784061,
+          "value": "jewelry"
+        },
+        {
+          "score": 0.37637362,
+          "value": "luxury"
+        },
+        {
+          "score": 0.3722037,
+          "value": "mile"
+        },
+        {
+          "score": 0.3633385,
+          "value": "professional"
+        },
+        {
+          "score": 0.36305866,
+          "value": "coursera"
+        },
+        {
+          "score": 0.36141235,
+          "value": "digital"
+        },
+        {
+          "score": 0.3613223,
+          "value": "eyewear"
+        },
+        {
+          "score": 0.35191363,
+          "value": "boots"
+        },
+        {
+          "score": 0.34254518,
+          "value": "магазин"
+        },
+        {
+          "score": 0.34135976,
+          "value": "underwear"
+        },
+        {
+          "score": 0.3411231,
+          "value": "offer"
+        },
+        {
+          "score": 0.33928126,
+          "value": "decor"
+        },
+        {
+          "score": 0.3351389,
+          "value": "handbags"
+        },
+        {
+          "score": 0.3349417,
+          "value": "аксессуар"
+        },
+        {
+          "score": 0.3342138,
+          "value": "bedroom"
+        },
+        {
+          "score": 0.3327093,
+          "value": "permission"
+        },
+        {
+          "score": 0.3327093,
+          "value": "reference"
+        },
+        {
+          "score": 0.33016613,
+          "value": "google"
+        },
+        {
+          "score": 0.32139722,
+          "value": "sweaters"
+        },
+        {
+          "score": 0.31614617,
+          "value": "health"
+        },
+        {
+          "score": 0.31414816,
+          "value": "bags"
+        },
+        {
+          "score": 0.3103069,
+          "value": "vegan"
+        },
+        {
+          "score": 0.30830517,
+          "value": "store"
+        },
+        {
+          "score": 0.30228928,
+          "value": "корзина"
+        },
+        {
+          "score": 0.30143464,
+          "value": "jeans"
+        },
+        {
+          "score": 0.30076924,
+          "value": "sunglasses"
+        },
+        {
+          "score": 0.29798204,
+          "value": "video"
+        },
+        {
+          "score": 0.2969119,
+          "value": "скидка"
+        },
+        {
+          "score": 0.2967767,
+          "value": "jackets"
+        },
+        {
+          "score": 0.29344964,
+          "value": "stylists"
+        },
+        {
+          "score": 0.29077202,
+          "value": "designer"
+        },
+        {
+          "score": 0.2898797,
+          "value": "bedding"
+        },
+        {
+          "score": 0.28848898,
+          "value": "stock"
+        },
+        {
+          "score": 0.28552204,
+          "value": "акция"
+        },
+        {
+          "score": 0.2841338,
+          "value": "partner"
+        },
+        {
+          "score": 0.28014126,
+          "value": "backpacks"
+        },
+        {
+          "score": 0.276633,
+          "value": "duvet"
+        },
+        {
+          "score": 0.2748179,
+          "value": "pants"
+        },
+        {
+          "score": 0.27282164,
+          "value": "mattresses"
+        },
+        {
+          "score": 0.2723921,
+          "value": "outdoor"
+        },
+        {
+          "score": 0.27112535,
+          "value": "data science"
+        },
+        {
+          "score": 0.26803896,
+          "value": "luggage"
+        },
+        {
+          "score": 0.2673156,
+          "value": "руб"
+        },
+        {
+          "score": 0.26616746,
+          "value": "capital"
+        },
+        {
+          "score": 0.26616746,
+          "value": "portugal"
+        },
+        {
+          "score": 0.26616746,
+          "value": "refunds"
+        },
+        {
+          "score": 0.2650265,
+          "value": "credit"
+        },
+        {
+          "score": 0.26444206,
+          "value": "learning"
+        },
+        {
+          "score": 0.26396188,
+          "value": "hair"
+        },
+        {
+          "score": 0.26113766,
+          "value": "leather"
+        },
+        {
+          "score": 0.26057494,
+          "value": "vacation"
+        },
+        {
+          "score": 0.26016945,
+          "value": "mattress"
+        },
+        {
+          "score": 0.25965172,
+          "value": "personal capital"
+        },
+        {
+          "score": 0.25949118,
+          "value": "reading"
+        },
+        {
+          "score": 0.2547194,
+          "value": "internet"
+        },
+        {
+          "score": 0.2528591,
+          "value": "nike"
+        },
+        {
+          "score": 0.25247875,
+          "value": "color"
+        },
+        {
+          "score": 0.25195718,
+          "value": "обувь"
+        },
+        {
+          "score": 0.25152826,
+          "value": "styling"
+        },
+        {
+          "score": 0.25079495,
+          "value": "category"
+        },
+        {
+          "score": 0.24730714,
+          "value": "code"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazonaws.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazonaws.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 120,
+        "value": [
+          "etsy.com",
+          "4glaza.ru",
+          "6pm.com",
+          "apple.com",
+          "coursera.org",
+          "nordstrom.com",
+          "ad.admitad.com",
+          "adidas.ru",
+          "flexoffers.com",
+          "yandex.ru",
+          "ahalife.com",
+          "alenka.ru",
+          "amazon.ca",
+          "sandals.com",
+          "animalden.com",
+          "angstrem-mebel.ru",
+          "disneyplus.com",
+          "edx.org",
+          "backgroundsearcher.com",
+          "backinactionprogram.com",
+          "beaches.com",
+          "beautyhome.me",
+          "bellemaison.jp",
+          "bershka.com",
+          "bestwatch.ru",
+          "betterment.com",
+          "blenderseyewear.com",
+          "dominospizza.ru",
+          "trekbikes.com",
+          "westelm.com",
+          "book24.ru",
+          "browsershark.com",
+          "talkspace.com",
+          "carcam.ru",
+          "hotels.com",
+          "target.com",
+          "cheapflights.com",
+          "iherb.com",
+          "ribblecycles.co.uk",
+          "citilink.ru",
+          "clever-media.ru",
+          "clearme.com",
+          "digitalocean.com",
+          "codashop.com",
+          "contiki.com",
+          "craftbeerclub.com",
+          "crateandbarrel.com",
+          "onward.co.jp",
+          "dailysale.com",
+          "dcrussia.ru",
+          "earthmamaangelbaby.com",
+          "efindoutthetruth.com",
+          "erborian.ru",
+          "etoro.com",
+          "fandeco.ru",
+          "food52.com",
+          "foambox.ru",
+          "frogogo.ru",
+          "gadventures.com",
+          "gb.ru",
+          "geico.com",
+          "gipfel.ru",
+          "greenblasterproducts.com",
+          "grove.co",
+          "gulliver-wear.com",
+          "hatch.co",
+          "hawaiianairlines.com",
+          "overstock.com",
+          "vrbo.com",
+          "holodilnik.ru",
+          "incanto.eu",
+          "kanzler-style.ru",
+          "krups.ru",
+          "kotofoto.ru",
+          "laredoute.es",
+          "lefties.com",
+          "loccitane.ru",
+          "lostbookofremedies.com",
+          "maed.ru",
+          "market.autoprofi.com",
+          "netprint.ru",
+          "mouth.com",
+          "multivarka.pro",
+          "myprotein.ru",
+          "mytoys.ru",
+          "niyama.ru",
+          "nyxcosmetic.ru",
+          "obi.ru",
+          "oldos-shop.ru",
+          "original-marines.ru",
+          "peoplefinders.com",
+          "pepperjamnetwork.com",
+          "petstreetmall.com",
+          "pinkolive.com",
+          "polis812.ru",
+          "poplin.co",
+          "quiksilver.ru",
+          "rieker-shop.ru",
+          "rowenta.ru",
+          "ru.gerryweber.com",
+          "ru.vivo.com",
+          "roxy-russia.ru",
+          "saje.com",
+          "santehnika-tut.ru",
+          "seikatsuzacca.com",
+          "tefal.ru",
+          "vichyconsult.ru",
+          "svyaznoy.ru",
+          "techport.ru",
+          "thefurnish.ru",
+          "tutoronline.ru",
+          "valyoufurniture.com",
+          "vans.ru",
+          "vassatrend.ru",
+          "vprok.ru",
+          "whirlpoolgroup.ru",
+          "williams-oliver.ru",
+          "ylang23.com",
+          "yslbeauty.com.ru",
+          "zoloto585.ru"
+        ]
+      },
+      "partnersAdded": {
+        "count": 8,
+        "value": [
+          {
+            "domain": "ru.gerryweber.com"
+          },
+          {
+            "domain": "clearme.com"
+          },
+          {
+            "domain": "ad.admitad.com"
+          },
+          {
+            "domain": "backgroundsearcher.com"
+          },
+          {
+            "domain": "efindoutthetruth.com"
+          },
+          {
+            "domain": "peoplefinders.com"
+          },
+          {
+            "domain": "ru.vivo.com"
+          },
+          {
+            "domain": "flexoffers.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 3,
+        "value": [
+          {
+            "domain": "admitad.com"
+          },
+          {
+            "domain": "gerryweber.com"
+          },
+          {
+            "domain": "vivo.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 10.249999,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 7.5499997,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 7.1500006,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 6.5499997,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 5.75,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 5.7,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 5.6,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 3.8500001,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 3.6000001,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 2.95,
+            "vertical": "Travel / Flights"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 2.75,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 2.7,
+            "vertical": "Travel / Vacation"
+          },
+          {
+            "count": 2.65,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 2.6,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 2.5,
+            "vertical": "Home / DIY"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Health / Eyecare"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Motoring / Cars"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Home / Pets"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Sports / Cycling"
+          },
+          {
+            "count": 1.8,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 1,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 1,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Jewellery"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Kids"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Lingerie"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Insurance"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Investments"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Trading"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Food / Alcohol"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Food / Confectionery"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Food / Take Out"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Gifts / Kids"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Babycare"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Online / Web Hosting"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Entertainment / Hobbies"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Gifts / Personalised"
+          },
+          {
+            "count": 0.75,
+            "vertical": "Online / Security"
+          },
+          {
+            "count": 0.6,
+            "vertical": "Health / Fragrances"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 120,
+      "value": [
+        "etsy.com",
+        "4glaza.ru",
+        "6pm.com",
+        "apple.com",
+        "coursera.org",
+        "nordstrom.com",
+        "ad.admitad.com",
+        "adidas.ru",
+        "flexoffers.com",
+        "yandex.ru",
+        "ahalife.com",
+        "alenka.ru",
+        "amazon.ca",
+        "sandals.com",
+        "animalden.com",
+        "angstrem-mebel.ru",
+        "disneyplus.com",
+        "edx.org",
+        "backgroundsearcher.com",
+        "backinactionprogram.com",
+        "beaches.com",
+        "beautyhome.me",
+        "bellemaison.jp",
+        "bershka.com",
+        "bestwatch.ru",
+        "betterment.com",
+        "blenderseyewear.com",
+        "dominospizza.ru",
+        "trekbikes.com",
+        "westelm.com",
+        "book24.ru",
+        "browsershark.com",
+        "talkspace.com",
+        "carcam.ru",
+        "hotels.com",
+        "target.com",
+        "cheapflights.com",
+        "iherb.com",
+        "ribblecycles.co.uk",
+        "citilink.ru",
+        "clever-media.ru",
+        "clearme.com",
+        "digitalocean.com",
+        "codashop.com",
+        "contiki.com",
+        "craftbeerclub.com",
+        "crateandbarrel.com",
+        "onward.co.jp",
+        "dailysale.com",
+        "dcrussia.ru",
+        "earthmamaangelbaby.com",
+        "efindoutthetruth.com",
+        "erborian.ru",
+        "etoro.com",
+        "fandeco.ru",
+        "food52.com",
+        "foambox.ru",
+        "frogogo.ru",
+        "gadventures.com",
+        "gb.ru",
+        "geico.com",
+        "gipfel.ru",
+        "greenblasterproducts.com",
+        "grove.co",
+        "gulliver-wear.com",
+        "hatch.co",
+        "hawaiianairlines.com",
+        "overstock.com",
+        "vrbo.com",
+        "holodilnik.ru",
+        "incanto.eu",
+        "kanzler-style.ru",
+        "krups.ru",
+        "kotofoto.ru",
+        "laredoute.es",
+        "lefties.com",
+        "loccitane.ru",
+        "lostbookofremedies.com",
+        "maed.ru",
+        "market.autoprofi.com",
+        "netprint.ru",
+        "mouth.com",
+        "multivarka.pro",
+        "myprotein.ru",
+        "mytoys.ru",
+        "niyama.ru",
+        "nyxcosmetic.ru",
+        "obi.ru",
+        "oldos-shop.ru",
+        "original-marines.ru",
+        "peoplefinders.com",
+        "pepperjamnetwork.com",
+        "petstreetmall.com",
+        "pinkolive.com",
+        "polis812.ru",
+        "poplin.co",
+        "quiksilver.ru",
+        "rieker-shop.ru",
+        "rowenta.ru",
+        "ru.gerryweber.com",
+        "ru.vivo.com",
+        "roxy-russia.ru",
+        "saje.com",
+        "santehnika-tut.ru",
+        "seikatsuzacca.com",
+        "tefal.ru",
+        "vichyconsult.ru",
+        "svyaznoy.ru",
+        "techport.ru",
+        "thefurnish.ru",
+        "tutoronline.ru",
+        "valyoufurniture.com",
+        "vans.ru",
+        "vassatrend.ru",
+        "vprok.ru",
+        "whirlpoolgroup.ru",
+        "williams-oliver.ru",
+        "ylang23.com",
+        "yslbeauty.com.ru",
+        "zoloto585.ru"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Technology / Software",
+      "value": [
+        "Technology / Software",
+        "Business / Software",
+        "Online / Web Hosting"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Technology / Software",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Technology / Software",
+          "rank": 1,
+          "score": 95
+        },
+        {
+          "name": "Business / Software",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Online / Web Hosting",
+          "rank": 1,
+          "score": 80
+        }
+      ]
+    }
+  }
+}

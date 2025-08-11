@@ -1,0 +1,664 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 6,
+      "sampleValue": [
+        "CJ Affiliate",
+        "Impact",
+        "LinkConnector"
+      ],
+      "value": [
+        "CJ Affiliate",
+        "Impact",
+        "LinkConnector",
+        "Plus500",
+        "Skimlinks",
+        "Viglink"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.6
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "investmentwatchblog.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "market"
+        },
+        {
+          "score": 0.8538354,
+          "value": "device"
+        },
+        {
+          "score": 0.8465313,
+          "value": "financial"
+        },
+        {
+          "score": 0.8399883,
+          "value": "monthly mortgage"
+        },
+        {
+          "score": 0.83939815,
+          "value": "jumbo loan"
+        },
+        {
+          "score": 0.80012596,
+          "value": "real estate"
+        },
+        {
+          "score": 0.7907737,
+          "value": "estate"
+        },
+        {
+          "score": 0.7879797,
+          "value": "mortgage"
+        },
+        {
+          "score": 0.77397054,
+          "value": "private mortgage"
+        },
+        {
+          "score": 0.7662875,
+          "value": "internet"
+        },
+        {
+          "score": 0.75691277,
+          "value": "property"
+        },
+        {
+          "score": 0.6687701,
+          "value": "road"
+        },
+        {
+          "score": 0.66030616,
+          "value": "investor"
+        },
+        {
+          "score": 0.63044757,
+          "value": "phone"
+        },
+        {
+          "score": 0.61482394,
+          "value": "insurance"
+        },
+        {
+          "score": 0.60481566,
+          "value": "debt"
+        },
+        {
+          "score": 0.60239893,
+          "value": "sign"
+        },
+        {
+          "score": 0.60162437,
+          "value": "accessory"
+        },
+        {
+          "score": 0.5749156,
+          "value": "tech"
+        },
+        {
+          "score": 0.5627304,
+          "value": "share"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "market"
+        },
+        {
+          "score": 0.8538354,
+          "value": "device"
+        },
+        {
+          "score": 0.8465313,
+          "value": "financial"
+        },
+        {
+          "score": 0.8399883,
+          "value": "monthly mortgage"
+        },
+        {
+          "score": 0.83939815,
+          "value": "jumbo loan"
+        },
+        {
+          "score": 0.80012596,
+          "value": "real estate"
+        },
+        {
+          "score": 0.7907737,
+          "value": "estate"
+        },
+        {
+          "score": 0.7879797,
+          "value": "mortgage"
+        },
+        {
+          "score": 0.77397054,
+          "value": "private mortgage"
+        },
+        {
+          "score": 0.7662875,
+          "value": "internet"
+        },
+        {
+          "score": 0.75691277,
+          "value": "property"
+        },
+        {
+          "score": 0.6687701,
+          "value": "road"
+        },
+        {
+          "score": 0.66030616,
+          "value": "investor"
+        },
+        {
+          "score": 0.63044757,
+          "value": "phone"
+        },
+        {
+          "score": 0.61482394,
+          "value": "insurance"
+        },
+        {
+          "score": 0.60481566,
+          "value": "debt"
+        },
+        {
+          "score": 0.60239893,
+          "value": "sign"
+        },
+        {
+          "score": 0.60162437,
+          "value": "accessory"
+        },
+        {
+          "score": 0.5749156,
+          "value": "tech"
+        },
+        {
+          "score": 0.5627304,
+          "value": "share"
+        },
+        {
+          "score": 0.5480598,
+          "value": "city"
+        },
+        {
+          "score": 0.53302574,
+          "value": "commerce"
+        },
+        {
+          "score": 0.53253984,
+          "value": "housing"
+        },
+        {
+          "score": 0.53245753,
+          "value": "buyer"
+        },
+        {
+          "score": 0.52493495,
+          "value": "adjustable rate"
+        },
+        {
+          "score": 0.51025796,
+          "value": "loan"
+        },
+        {
+          "score": 0.504787,
+          "value": "money"
+        },
+        {
+          "score": 0.5008593,
+          "value": "short sale"
+        },
+        {
+          "score": 0.49169117,
+          "value": "video"
+        },
+        {
+          "score": 0.47514042,
+          "value": "listing"
+        },
+        {
+          "score": 0.4737731,
+          "value": "brokerage"
+        },
+        {
+          "score": 0.4716606,
+          "value": "corporate profile"
+        },
+        {
+          "score": 0.47071856,
+          "value": "income"
+        },
+        {
+          "score": 0.46859875,
+          "value": "homeowner"
+        },
+        {
+          "score": 0.46206453,
+          "value": "average price"
+        },
+        {
+          "score": 0.43787414,
+          "value": "employee"
+        },
+        {
+          "score": 0.43252376,
+          "value": "cheap home"
+        },
+        {
+          "score": 0.4285482,
+          "value": "report"
+        },
+        {
+          "score": 0.42846093,
+          "value": "privacy policy"
+        },
+        {
+          "score": 0.42389414,
+          "value": "condo"
+        },
+        {
+          "score": 0.41999415,
+          "value": "cliftonstrength"
+        },
+        {
+          "score": 0.41999415,
+          "value": "amazon"
+        },
+        {
+          "score": 0.41999415,
+          "value": "legal"
+        },
+        {
+          "score": 0.41999415,
+          "value": "handel"
+        },
+        {
+          "score": 0.41999415,
+          "value": "silver"
+        },
+        {
+          "score": 0.41999415,
+          "value": "girls"
+        },
+        {
+          "score": 0.41999415,
+          "value": "contribution"
+        },
+        {
+          "score": 0.41999415,
+          "value": "meus"
+        },
+        {
+          "score": 0.41999415,
+          "value": "mileage"
+        },
+        {
+          "score": 0.41159427,
+          "value": "tumblr"
+        },
+        {
+          "score": 0.41159427,
+          "value": "cars"
+        },
+        {
+          "score": 0.4087756,
+          "value": "compra"
+        },
+        {
+          "score": 0.40530074,
+          "value": "lender"
+        },
+        {
+          "score": 0.4003617,
+          "value": "como"
+        },
+        {
+          "score": 0.3978393,
+          "value": "store"
+        },
+        {
+          "score": 0.39743692,
+          "value": "lawyer"
+        },
+        {
+          "score": 0.3938744,
+          "value": "buying"
+        },
+        {
+          "score": 0.38422707,
+          "value": "team"
+        },
+        {
+          "score": 0.37929216,
+          "value": "apartment"
+        },
+        {
+          "score": 0.37231535,
+          "value": "cultura"
+        },
+        {
+          "score": 0.36877185,
+          "value": "resource"
+        },
+        {
+          "score": 0.36674982,
+          "value": "credit"
+        },
+        {
+          "score": 0.36539492,
+          "value": "carfax"
+        },
+        {
+          "score": 0.3646026,
+          "value": "ebook"
+        },
+        {
+          "score": 0.36312768,
+          "value": "single income"
+        },
+        {
+          "score": 0.35699502,
+          "value": "friends"
+        },
+        {
+          "score": 0.3542415,
+          "value": "local redfin"
+        },
+        {
+          "score": 0.34847593,
+          "value": "produto"
+        },
+        {
+          "score": 0.3469517,
+          "value": "bankruptcy"
+        },
+        {
+          "score": 0.3443476,
+          "value": "country"
+        },
+        {
+          "score": 0.34356785,
+          "value": "por"
+        },
+        {
+          "score": 0.34170336,
+          "value": "vintage listing"
+        },
+        {
+          "score": 0.3406086,
+          "value": "saving"
+        },
+        {
+          "score": 0.33939412,
+          "value": "appraisal"
+        },
+        {
+          "score": 0.33938003,
+          "value": "solution"
+        },
+        {
+          "score": 0.33896,
+          "value": "gbp"
+        },
+        {
+          "score": 0.3365803,
+          "value": "main navigation"
+        },
+        {
+          "score": 0.33599532,
+          "value": "girl"
+        },
+        {
+          "score": 0.33599532,
+          "value": "save"
+        },
+        {
+          "score": 0.33179536,
+          "value": "dealership"
+        },
+        {
+          "score": 0.33041385,
+          "value": "gold"
+        },
+        {
+          "score": 0.32109016,
+          "value": "star"
+        },
+        {
+          "score": 0.32008335,
+          "value": "house"
+        },
+        {
+          "score": 0.31919554,
+          "value": "dates"
+        },
+        {
+          "score": 0.31919554,
+          "value": "vehicles"
+        },
+        {
+          "score": 0.31919554,
+          "value": "carvana"
+        },
+        {
+          "score": 0.31897238,
+          "value": "share review"
+        },
+        {
+          "score": 0.31837773,
+          "value": "real"
+        },
+        {
+          "score": 0.31499562,
+          "value": "christmas"
+        },
+        {
+          "score": 0.31201714,
+          "value": "mover"
+        },
+        {
+          "score": 0.3099122,
+          "value": "livro"
+        },
+        {
+          "score": 0.30719486,
+          "value": "survey"
+        },
+        {
+          "score": 0.30715072,
+          "value": "affordability"
+        },
+        {
+          "score": 0.30536044,
+          "value": "eur"
+        },
+        {
+          "score": 0.29887176,
+          "value": "household"
+        },
+        {
+          "score": 0.29819584,
+          "value": "nissan"
+        },
+        {
+          "score": 0.2963052,
+          "value": "twitter"
+        },
+        {
+          "score": 0.29575035,
+          "value": "accident"
+        },
+        {
+          "score": 0.29386848,
+          "value": "median list"
+        },
+        {
+          "score": 0.29315004,
+          "value": "adjustable"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/investmentwatchblog.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://investmentwatchblog.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 10,
+        "value": [
+          "aboutamazon.com",
+          "hulu.com",
+          "walmart.com",
+          "verizonwireless.com",
+          "verizon.com",
+          "nolo.com",
+          "fundrise.com",
+          "livrariacultura.com.br",
+          "plus500.com",
+          "sdbullion.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1.9,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Finance / Investments"
+          },
+          {
+            "count": 1,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Trading"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Business / Services"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 10,
+      "value": [
+        "aboutamazon.com",
+        "hulu.com",
+        "walmart.com",
+        "verizonwireless.com",
+        "verizon.com",
+        "nolo.com",
+        "fundrise.com",
+        "livrariacultura.com.br",
+        "plus500.com",
+        "sdbullion.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Finance / Investments",
+      "value": [
+        "Finance / Investments",
+        "Finance / Trading"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Finance / Investments",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Finance / Investments",
+          "rank": 1,
+          "score": 95
+        },
+        {
+          "name": "Finance / Trading",
+          "rank": 1,
+          "score": 85
+        }
+      ]
+    }
+  }
+}

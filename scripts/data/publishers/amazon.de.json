@@ -1,0 +1,229 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 5,
+      "sampleValue": [
+        "Awin",
+        "ClickBank",
+        "Impact"
+      ],
+      "value": [
+        "Awin",
+        "ClickBank",
+        "Impact",
+        "PartnerStack",
+        "Refersion"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "de",
+        "score": 0.9
+      },
+      "sampleValue": [
+        {
+          "countryCode": "de",
+          "score": 0.9
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "de",
+          "score": 0.9
+        }
+      ]
+    },
+    "domain": "amazon.de",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://amazon.de/",
+        "https://www.amazon.de/",
+        "http://amazon.de/",
+        "http://www.amazon.de/"
+      ]
+    },
+    "metaData": {
+      "description": "Entdecken, shoppen und einkaufen bei Amazon.de: Günstige Preise für Elektronik & Foto, Filme, Musik, Bücher, Games, Spielzeug, Sportartikel, Drogerie & mehr bei Amazon.de",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazon.de.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazon.de"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 8,
+        "value": [
+          "arccosgolf.com",
+          "birdiefire.com",
+          "cb.sleepbreakthrough.com",
+          "circle.squarespace.com",
+          "miro.com",
+          "inkedgaming.com",
+          "speechelo-offer.com",
+          "transformhq.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1,
+            "vertical": "Health / Weight Loss"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Online / Web Design"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Technology / Software"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 8,
+      "value": [
+        "arccosgolf.com",
+        "birdiefire.com",
+        "cb.sleepbreakthrough.com",
+        "circle.squarespace.com",
+        "miro.com",
+        "inkedgaming.com",
+        "speechelo-offer.com",
+        "transformhq.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 11,
+      "sampleValue": "Shopping / Department Stores",
+      "value": [
+        "Shopping / Department Stores",
+        "Business / Ecommerce",
+        "Technology / Electronics",
+        "Home / Homeware",
+        "Entertainment / Books",
+        "Fashion / Clothing",
+        "Entertainment / Movies",
+        "Entertainment / Music",
+        "Business / Software",
+        "Entertainment / Streaming",
+        "Food / Groceries"
+      ]
+    },
+    "verticalsV2": {
+      "count": 11,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 1,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 1,
+          "score": 100
+        },
+        {
+          "name": "Business / Ecommerce",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Technology / Electronics",
+          "rank": 1,
+          "score": 80
+        },
+        {
+          "name": "Home / Homeware",
+          "rank": 1,
+          "score": 70
+        },
+        {
+          "name": "Entertainment / Books",
+          "rank": 1,
+          "score": 70
+        },
+        {
+          "name": "Fashion / Clothing",
+          "rank": 1,
+          "score": 70
+        },
+        {
+          "name": "Entertainment / Movies",
+          "rank": 1,
+          "score": 60
+        },
+        {
+          "name": "Entertainment / Music",
+          "rank": 1,
+          "score": 60
+        },
+        {
+          "name": "Business / Software",
+          "rank": 1,
+          "score": 50
+        },
+        {
+          "name": "Entertainment / Streaming",
+          "rank": 1,
+          "score": 50
+        },
+        {
+          "name": "Food / Groceries",
+          "rank": 1,
+          "score": 50
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 3,
+      "sampleValue": [
+        "CJ Affiliate",
+        "Skimlinks",
+        "Viglink"
+      ],
+      "value": [
+        "CJ Affiliate",
+        "Skimlinks",
+        "Viglink"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 3,
+      "error": false,
+      "value": [
+        {
+          "department": null,
+          "value": "affiliate@stemulation.com"
+        },
+        {
+          "department": "support",
+          "value": "customerservice@stemulation.com"
+        },
+        {
+          "department": null,
+          "value": "glow@stemulation.com"
+        }
+      ]
+    },
+    "domain": "stemulation.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "Our customers trust Stemulation’s science-based skincare line with a botanical mix of active organic ingredients backed by stem cell science to achieve a radiant glow. Science and nature are at there best here as they renew your skin's texture and tone. Rejuvenate your skin today!",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/stemulation.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://stemulation.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 4
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 1,
+            "promotype": "incentive",
+            "value": [
+              "couponit.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "blog",
+            "value": [
+              "isavetoday.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 3,
+      "socialsAvailable": [
+        "facebook",
+        "instagram",
+        "pinterest"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/stemulation",
+        "instagram": "https://instagram.com/stemulation",
+        "pinterest": "https://pinterest.com/stemulation"
+      }
+    },
+    "verticals": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Health / Beauty",
+        "rank": 2,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Health / Beauty",
+          "rank": 2,
+          "score": 95
+        }
+      ]
+    }
+  }
+}

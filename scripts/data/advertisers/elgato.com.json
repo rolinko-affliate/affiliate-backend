@@ -1,0 +1,338 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 5,
+      "sampleValue": [
+        "Digidip",
+        "Impact",
+        "Skimlinks"
+      ],
+      "value": [
+        "Digidip",
+        "Impact",
+        "Skimlinks",
+        "Viglink",
+        "Yieldkit"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 2,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "data.controller@corsair.com"
+        },
+        {
+          "department": "communication",
+          "value": "oss.elgato@corsair.com"
+        }
+      ]
+    },
+    "domain": "elgato.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "Empowering Content Creators.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/elgato.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://elgato.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 266
+      },
+      "partnersAdded": {
+        "count": 34,
+        "value": [
+          {
+            "domain": "all-in-one-tech.com"
+          },
+          {
+            "domain": "newscomp.ru"
+          },
+          {
+            "domain": "mundo.marketing"
+          },
+          {
+            "domain": "channel-finder.com"
+          },
+          {
+            "domain": "automatiking.com"
+          },
+          {
+            "domain": "wafedon.com"
+          },
+          {
+            "domain": "valeof.com"
+          },
+          {
+            "domain": "savepath.com"
+          },
+          {
+            "domain": "djazapps.com"
+          },
+          {
+            "domain": "oldsh.itjust.works"
+          },
+          {
+            "domain": "wozzil.com"
+          },
+          {
+            "domain": "tankdl.com"
+          },
+          {
+            "domain": "teddydl.com"
+          },
+          {
+            "domain": "techdailyfeed.com"
+          },
+          {
+            "domain": "punjabtimes.com.au"
+          },
+          {
+            "domain": "komputer-servise.com"
+          },
+          {
+            "domain": "stevenon.uberflip-stg1.com"
+          },
+          {
+            "domain": "hardwarepremium.com"
+          },
+          {
+            "domain": "madriddaily.net"
+          },
+          {
+            "domain": "updatesore.com"
+          },
+          {
+            "domain": "flowdigest.com"
+          },
+          {
+            "domain": "gamesstudio.org"
+          },
+          {
+            "domain": "abruzzonews.org"
+          },
+          {
+            "domain": "promohunters.info"
+          },
+          {
+            "domain": "propertydevelopmentconsultants.com.au"
+          },
+          {
+            "domain": "streamlinedsolopreneur.com"
+          },
+          {
+            "domain": "bbcnewswire.com"
+          },
+          {
+            "domain": "ponder.cat"
+          },
+          {
+            "domain": "eliteitbs.com"
+          },
+          {
+            "domain": "back.streamlined.fm"
+          },
+          {
+            "domain": "noosnetwork.com"
+          },
+          {
+            "domain": "pokogame.site"
+          },
+          {
+            "domain": "surveypartner.prodegeapis.com"
+          },
+          {
+            "domain": "block385.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 10,
+        "value": [
+          {
+            "domain": "hoofing-it.com"
+          },
+          {
+            "domain": "rassegna.lbit-solution.it"
+          },
+          {
+            "domain": "geeksandstuff.com"
+          },
+          {
+            "domain": "battleroyalefanatic.com"
+          },
+          {
+            "domain": "game-x.news"
+          },
+          {
+            "domain": "toptechstocks.com"
+          },
+          {
+            "domain": "bastaeastport.com"
+          },
+          {
+            "domain": "ai-news-network.com"
+          },
+          {
+            "domain": "worldnl.com"
+          },
+          {
+            "domain": "navcoinholdings.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 46,
+            "promotype": "blog",
+            "value": [
+              "2the.space",
+              "amazon.co.uk",
+              "androidcentral.com",
+              "avnetwork.com",
+              "blacknewsdaily.com",
+              "bolchhanepal.com",
+              "club386.com",
+              "dailyfrance.org",
+              "deutschepresse.org",
+              "dlsserve.com",
+              "elotrolado.net",
+              "epgn.ch",
+              "futures.rs",
+              "gamesstudio.org",
+              "geni.us",
+              "guidantech.com",
+              "imore.com",
+              "isfeed.com",
+              "johngold.net",
+              "laptopmag.com",
+              "mactale.com",
+              "macworld.com",
+              "macworld.se",
+              "madriddaily.net",
+              "midatlanticconsulting.com",
+              "newstrump.com",
+              "nextgengamer.co.uk",
+              "pcworld.com",
+              "piko.live",
+              "pod.prodegemr.com",
+              "polygon.com",
+              "profesionalreview.com",
+              "rss.boorghani.com",
+              "softoolstore.de",
+              "stealthoptional.com",
+              "t3.com",
+              "techadvisor.com",
+              "techradar.com",
+              "throne.com",
+              "tomsguide.com",
+              "tomshardware.com",
+              "voucheralarm.com",
+              "wazupnaija.com",
+              "wishlistr.com",
+              "zax73.com",
+              "zdnet.com"
+            ]
+          },
+          {
+            "count": 14,
+            "promotype": "student",
+            "value": [
+              "associattedpress.com",
+              "bbcnewswire.com",
+              "cyberworldtechnologies.co.in",
+              "dexerto.com",
+              "one-tech.es",
+              "pcforalla.se",
+              "peoria-cartitleloans.com",
+              "tankdl.com",
+              "techcratic.com",
+              "techtelegraph.co.uk",
+              "thegeekfreaks.de",
+              "topglobe.news",
+              "tuttotech.net",
+              "tvtechnology.com"
+            ]
+          },
+          {
+            "count": 5,
+            "promotype": "content",
+            "value": [
+              "automatiking.com",
+              "hardwarepremium.com",
+              "maxrebates.com",
+              "mingooland.com",
+              "selinasims.com"
+            ]
+          },
+          {
+            "count": 4,
+            "promotype": "incentive",
+            "value": [
+              "couponbirds.com",
+              "m3.se",
+              "netzender.com",
+              "robeytechdeals.co"
+            ]
+          },
+          {
+            "count": 2,
+            "promotype": "forum",
+            "value": [
+              "linkbux.com",
+              "punjabtimes.com.au"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/elgato",
+        "instagram": "https://instagram.com/elgato",
+        "twitter": "https://twitter.com/elgato",
+        "youtube": "https://youtube.com/c/elgato"
+      }
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Technology / Electronics",
+        "rank": 2,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Entertainment / Gaming",
+          "rank": 2,
+          "score": 85
+        },
+        {
+          "name": "Technology / Electronics",
+          "rank": 2,
+          "score": 95
+        }
+      ]
+    }
+  }
+}

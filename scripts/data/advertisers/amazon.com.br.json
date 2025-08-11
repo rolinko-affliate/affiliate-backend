@@ -1,0 +1,604 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 8,
+      "sampleValue": [
+        "Business Insider",
+        "Digidip",
+        "Linkbux"
+      ],
+      "value": [
+        "Business Insider",
+        "Digidip",
+        "Linkbux",
+        "Rakuten",
+        "Rewardstyle",
+        "Skimlinks",
+        "Viglink",
+        "Yieldkit"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 2,
+      "error": false,
+      "value": [
+        {
+          "department": null,
+          "value": "ajuda-amazon@amazon.com.br"
+        },
+        {
+          "department": null,
+          "value": "dpo-amazon-brasil@amazon.com"
+        }
+      ]
+    },
+    "domain": "amazon.com.br",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "tarp"
+        },
+        {
+          "score": 1,
+          "value": "fiverr"
+        },
+        {
+          "score": 1,
+          "value": "technology"
+        },
+        {
+          "score": 1,
+          "value": "honest"
+        },
+        {
+          "score": 0.96764874,
+          "value": "baby"
+        },
+        {
+          "score": 0.94685155,
+          "value": "diaper"
+        },
+        {
+          "score": 0.9158721,
+          "value": "seller"
+        },
+        {
+          "score": 0.9127672,
+          "value": "body"
+        },
+        {
+          "score": 0.8542159,
+          "value": "sample"
+        },
+        {
+          "score": 0.77,
+          "value": "internet"
+        },
+        {
+          "score": 0.768398,
+          "value": "kit"
+        },
+        {
+          "score": 0.7635934,
+          "value": "challenge"
+        },
+        {
+          "score": 0.75334907,
+          "value": "hammock"
+        },
+        {
+          "score": 0.748621,
+          "value": "shelter"
+        },
+        {
+          "score": 0.74729747,
+          "value": "color"
+        },
+        {
+          "score": 0.74523395,
+          "value": "skin"
+        },
+        {
+          "score": 0.66,
+          "value": "developers"
+        },
+        {
+          "score": 0.65239054,
+          "value": "platform"
+        },
+        {
+          "score": 0.64,
+          "value": "voip"
+        },
+        {
+          "score": 0.6001546,
+          "value": "print"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "tarp"
+        },
+        {
+          "score": 1,
+          "value": "fiverr"
+        },
+        {
+          "score": 1,
+          "value": "technology"
+        },
+        {
+          "score": 1,
+          "value": "honest"
+        },
+        {
+          "score": 0.96764874,
+          "value": "baby"
+        },
+        {
+          "score": 0.94685155,
+          "value": "diaper"
+        },
+        {
+          "score": 0.9158721,
+          "value": "seller"
+        },
+        {
+          "score": 0.9127672,
+          "value": "body"
+        },
+        {
+          "score": 0.8542159,
+          "value": "sample"
+        },
+        {
+          "score": 0.77,
+          "value": "internet"
+        },
+        {
+          "score": 0.768398,
+          "value": "kit"
+        },
+        {
+          "score": 0.7635934,
+          "value": "challenge"
+        },
+        {
+          "score": 0.75334907,
+          "value": "hammock"
+        },
+        {
+          "score": 0.748621,
+          "value": "shelter"
+        },
+        {
+          "score": 0.74729747,
+          "value": "color"
+        },
+        {
+          "score": 0.74523395,
+          "value": "skin"
+        },
+        {
+          "score": 0.66,
+          "value": "developers"
+        },
+        {
+          "score": 0.65239054,
+          "value": "platform"
+        },
+        {
+          "score": 0.64,
+          "value": "voip"
+        },
+        {
+          "score": 0.6001546,
+          "value": "print"
+        },
+        {
+          "score": 0.6,
+          "value": "smartphone"
+        },
+        {
+          "score": 0.6,
+          "value": "skype"
+        },
+        {
+          "score": 0.58708894,
+          "value": "code"
+        },
+        {
+          "score": 0.56,
+          "value": "windows"
+        },
+        {
+          "score": 0.56,
+          "value": "manufacturers"
+        },
+        {
+          "score": 0.55196154,
+          "value": "tool"
+        },
+        {
+          "score": 0.55,
+          "value": "article"
+        },
+        {
+          "score": 0.5478666,
+          "value": "connect"
+        },
+        {
+          "score": 0.5436164,
+          "value": "routine"
+        },
+        {
+          "score": 0.54,
+          "value": "device"
+        },
+        {
+          "score": 0.54,
+          "value": "enabled"
+        },
+        {
+          "score": 0.5208826,
+          "value": "quilt"
+        },
+        {
+          "score": 0.52,
+          "value": "passports"
+        },
+        {
+          "score": 0.51,
+          "value": "android"
+        },
+        {
+          "score": 0.5005768,
+          "value": "global"
+        },
+        {
+          "score": 0.5,
+          "value": "connectivity"
+        },
+        {
+          "score": 0.48,
+          "value": "submit"
+        },
+        {
+          "score": 0.48,
+          "value": "pixel"
+        },
+        {
+          "score": 0.4783294,
+          "value": "fabric"
+        },
+        {
+          "score": 0.47,
+          "value": "informational"
+        },
+        {
+          "score": 0.47,
+          "value": "international"
+        },
+        {
+          "score": 0.46,
+          "value": "devices"
+        },
+        {
+          "score": 0.44813538,
+          "value": "link"
+        },
+        {
+          "score": 0.44,
+          "value": "ipad"
+        },
+        {
+          "score": 0.43,
+          "value": "messaging"
+        },
+        {
+          "score": 0.40265742,
+          "value": "beauty"
+        },
+        {
+          "score": 0.39779708,
+          "value": "team"
+        },
+        {
+          "score": 0.3672183,
+          "value": "pac"
+        },
+        {
+          "score": 0.35,
+          "value": "consumers"
+        },
+        {
+          "score": 0.3420016,
+          "value": "custom"
+        },
+        {
+          "score": 0.34121355,
+          "value": "breathable"
+        },
+        {
+          "score": 0.33737725,
+          "value": "safe"
+        },
+        {
+          "score": 0.33414957,
+          "value": "card"
+        },
+        {
+          "score": 0.33096927,
+          "value": "column"
+        },
+        {
+          "score": 0.33,
+          "value": "cellular"
+        },
+        {
+          "score": 0.33,
+          "value": "connected"
+        },
+        {
+          "score": 0.32,
+          "value": "phone"
+        },
+        {
+          "score": 0.32,
+          "value": "regional"
+        },
+        {
+          "score": 0.32,
+          "value": "touch"
+        },
+        {
+          "score": 0.32,
+          "value": "release"
+        },
+        {
+          "score": 0.3188908,
+          "value": "shower"
+        },
+        {
+          "score": 0.30845615,
+          "value": "shirt"
+        },
+        {
+          "score": 0.3,
+          "value": "coverage"
+        },
+        {
+          "score": 0.3,
+          "value": "download"
+        },
+        {
+          "score": 0.3,
+          "value": "friends"
+        },
+        {
+          "score": 0.3,
+          "value": "provide"
+        },
+        {
+          "score": 0.3,
+          "value": "hotspot"
+        },
+        {
+          "score": 0.29710215,
+          "value": "share"
+        },
+        {
+          "score": 0.29,
+          "value": "convenient"
+        },
+        {
+          "score": 0.29,
+          "value": "models"
+        },
+        {
+          "score": 0.28596187,
+          "value": "training"
+        },
+        {
+          "score": 0.28134027,
+          "value": "bath"
+        },
+        {
+          "score": 0.27344367,
+          "value": "waterproof"
+        },
+        {
+          "score": 0.27,
+          "value": "unlocked"
+        },
+        {
+          "score": 0.27,
+          "value": "money"
+        },
+        {
+          "score": 0.2679275,
+          "value": "remnant"
+        },
+        {
+          "score": 0.26477543,
+          "value": "ecopak"
+        },
+        {
+          "score": 0.26395184,
+          "value": "sign"
+        },
+        {
+          "score": 0.26198748,
+          "value": "logo"
+        },
+        {
+          "score": 0.26,
+          "value": "roaming"
+        },
+        {
+          "score": 0.25897723,
+          "value": "maker"
+        },
+        {
+          "score": 0.25768322,
+          "value": "reinforcement"
+        },
+        {
+          "score": 0.25689518,
+          "value": "resistant"
+        },
+        {
+          "score": 0.25689518,
+          "value": "narrow"
+        },
+        {
+          "score": 0.25531915,
+          "value": "wide"
+        },
+        {
+          "score": 0.25453112,
+          "value": "elastic"
+        },
+        {
+          "score": 0.25137904,
+          "value": "thread"
+        },
+        {
+          "score": 0.25137904,
+          "value": "downproof"
+        },
+        {
+          "score": 0.25137904,
+          "value": "sailcloth"
+        },
+        {
+          "score": 0.25,
+          "value": "work"
+        },
+        {
+          "score": 0.25,
+          "value": "latest"
+        },
+        {
+          "score": 0.24980299,
+          "value": "velcro"
+        },
+        {
+          "score": 0.24980299,
+          "value": "resistant downproof"
+        },
+        {
+          "score": 0.24901497,
+          "value": "ribbon"
+        },
+        {
+          "score": 0.24901497,
+          "value": "bug"
+        },
+        {
+          "score": 0.24822696,
+          "value": "wind"
+        },
+        {
+          "score": 0.24822696,
+          "value": "narrow custom"
+        },
+        {
+          "score": 0.24822696,
+          "value": "breathable wind"
+        },
+        {
+          "score": 0.24822696,
+          "value": "hat"
+        },
+        {
+          "score": 0.24822696,
+          "value": "sticker"
+        }
+      ]
+    },
+    "metaData": {
+      "description": "Encontre o que precisa na Amazon. Ofertas em Livros, Kindle, Echo com Alexa, Fire TV, Eletrônicos, Bebidas, Casa, Beleza e mais. Frete GRÁTIS com Amazon Prime.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazon.com.br.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazon.com.br"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 37
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "ebooks.com.br"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 11,
+            "promotype": "blog",
+            "value": [
+              "ashleenicholsblog.com",
+              "ashleenichols.com",
+              "blondeambitionblog.com",
+              "bristolpost.co.uk",
+              "businessinsider.com",
+              "depoisdosquinze.com",
+              "easss.com",
+              "gametimes.com.br",
+              "machomoda.com.br",
+              "maquiagemparanoite.com",
+              "tambulimedia.com"
+            ]
+          },
+          {
+            "count": 4,
+            "promotype": "student",
+            "value": [
+              "brigittecalegari.com.br",
+              "helenhou.com",
+              "iheartheels.com",
+              "onlinephilosophyclub.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "verticals": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 2,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 2,
+          "score": 95
+        }
+      ]
+    }
+  }
+}

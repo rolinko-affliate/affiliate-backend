@@ -1,0 +1,102 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Skimlinks"
+      ],
+      "value": [
+        "Skimlinks"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 0,
+      "error": false,
+      "value": []
+    },
+    "domain": "status.aws.amazon.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/status.aws.amazon.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://status.aws.amazon.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 12
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "focalinsideeffects.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 7,
+            "promotype": "blog",
+            "value": [
+              "1398.topnews.com",
+              "androidcentral.com",
+              "dlsserve.com",
+              "ghanaiantimes.com.gh",
+              "imore.com",
+              "techradar.com",
+              "tomsguide.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "student",
+            "value": [
+              "techtelegraph.co.uk"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Business / Software",
+        "rank": 2,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Business / Software",
+          "rank": 2,
+          "score": 90
+        },
+        {
+          "name": "Online / Services",
+          "rank": 2,
+          "score": 80
+        }
+      ]
+    }
+  }
+}

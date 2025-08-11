@@ -1,0 +1,1014 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 11,
+      "sampleValue": [
+        "Awin",
+        "Business Insider",
+        "CJ Affiliate"
+      ],
+      "value": [
+        "Awin",
+        "Business Insider",
+        "CJ Affiliate",
+        "ClickBank",
+        "Impact",
+        "Optimise",
+        "Private Network",
+        "Rakuten",
+        "ShareASale",
+        "Skimlinks",
+        "TRX"
+      ]
+    },
+    "countryRankings": {
+      "count": 5,
+      "highestValue": {
+        "countryCode": "sg",
+        "score": 0.2
+      },
+      "sampleValue": [
+        {
+          "countryCode": "sg",
+          "score": 0.2
+        },
+        {
+          "countryCode": "id",
+          "score": 0.1
+        },
+        {
+          "countryCode": "my",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "sg",
+          "score": 0.2
+        },
+        {
+          "countryCode": "id",
+          "score": 0.1
+        },
+        {
+          "countryCode": "my",
+          "score": 0.1
+        },
+        {
+          "countryCode": "ph",
+          "score": 0.1
+        },
+        {
+          "countryCode": "th",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "socialmediaasia.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "video"
+        },
+        {
+          "score": 0.98713803,
+          "value": "store"
+        },
+        {
+          "score": 0.95808387,
+          "value": "card"
+        },
+        {
+          "score": 0.8846219,
+          "value": "technology"
+        },
+        {
+          "score": 0.829756,
+          "value": "ticket"
+        },
+        {
+          "score": 0.8008147,
+          "value": "movie"
+        },
+        {
+          "score": 0.7823266,
+          "value": "sport"
+        },
+        {
+          "score": 0.78224427,
+          "value": "team"
+        },
+        {
+          "score": 0.75467545,
+          "value": "community"
+        },
+        {
+          "score": 0.7509716,
+          "value": "travel"
+        },
+        {
+          "score": 0.7076358,
+          "value": "sign"
+        },
+        {
+          "score": 0.7074929,
+          "value": "device"
+        },
+        {
+          "score": 0.6959646,
+          "value": "meta"
+        },
+        {
+          "score": 0.68935096,
+          "value": "airport"
+        },
+        {
+          "score": 0.6782262,
+          "value": "story"
+        },
+        {
+          "score": 0.6588073,
+          "value": "app"
+        },
+        {
+          "score": 0.65403634,
+          "value": "game"
+        },
+        {
+          "score": 0.6394872,
+          "value": "bus"
+        },
+        {
+          "score": 0.6287797,
+          "value": "food"
+        },
+        {
+          "score": 0.6033532,
+          "value": "activity"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "video"
+        },
+        {
+          "score": 0.98713803,
+          "value": "store"
+        },
+        {
+          "score": 0.95808387,
+          "value": "card"
+        },
+        {
+          "score": 0.8846219,
+          "value": "technology"
+        },
+        {
+          "score": 0.829756,
+          "value": "ticket"
+        },
+        {
+          "score": 0.8008147,
+          "value": "movie"
+        },
+        {
+          "score": 0.7823266,
+          "value": "sport"
+        },
+        {
+          "score": 0.78224427,
+          "value": "team"
+        },
+        {
+          "score": 0.75467545,
+          "value": "community"
+        },
+        {
+          "score": 0.7509716,
+          "value": "travel"
+        },
+        {
+          "score": 0.7076358,
+          "value": "sign"
+        },
+        {
+          "score": 0.7074929,
+          "value": "device"
+        },
+        {
+          "score": 0.6959646,
+          "value": "meta"
+        },
+        {
+          "score": 0.68935096,
+          "value": "airport"
+        },
+        {
+          "score": 0.6782262,
+          "value": "story"
+        },
+        {
+          "score": 0.6588073,
+          "value": "app"
+        },
+        {
+          "score": 0.65403634,
+          "value": "game"
+        },
+        {
+          "score": 0.6394872,
+          "value": "bus"
+        },
+        {
+          "score": 0.6287797,
+          "value": "food"
+        },
+        {
+          "score": 0.6033532,
+          "value": "activity"
+        },
+        {
+          "score": 0.586573,
+          "value": "friends"
+        },
+        {
+          "score": 0.5700904,
+          "value": "water"
+        },
+        {
+          "score": 0.56981975,
+          "value": "star"
+        },
+        {
+          "score": 0.55800205,
+          "value": "twitter"
+        },
+        {
+          "score": 0.5545084,
+          "value": "tour"
+        },
+        {
+          "score": 0.5541139,
+          "value": "event"
+        },
+        {
+          "score": 0.55047005,
+          "value": "rental"
+        },
+        {
+          "score": 0.54919785,
+          "value": "season"
+        },
+        {
+          "score": 0.5188036,
+          "value": "people"
+        },
+        {
+          "score": 0.5035989,
+          "value": "girls"
+        },
+        {
+          "score": 0.49792308,
+          "value": "press"
+        },
+        {
+          "score": 0.48974997,
+          "value": "legal"
+        },
+        {
+          "score": 0.48731455,
+          "value": "live"
+        },
+        {
+          "score": 0.48575488,
+          "value": "tumblr"
+        },
+        {
+          "score": 0.4787056,
+          "value": "original"
+        },
+        {
+          "score": 0.47138774,
+          "value": "digital"
+        },
+        {
+          "score": 0.4659633,
+          "value": "christmas"
+        },
+        {
+          "score": 0.46367288,
+          "value": "play"
+        },
+        {
+          "score": 0.46141294,
+          "value": "apple"
+        },
+        {
+          "score": 0.4568692,
+          "value": "life"
+        },
+        {
+          "score": 0.45288464,
+          "value": "streaming"
+        },
+        {
+          "score": 0.45251313,
+          "value": "popular"
+        },
+        {
+          "score": 0.4387168,
+          "value": "instagram"
+        },
+        {
+          "score": 0.43661654,
+          "value": "family"
+        },
+        {
+          "score": 0.43267858,
+          "value": "laptop"
+        },
+        {
+          "score": 0.42620823,
+          "value": "private"
+        },
+        {
+          "score": 0.4238952,
+          "value": "health"
+        },
+        {
+          "score": 0.40748605,
+          "value": "partner"
+        },
+        {
+          "score": 0.40622577,
+          "value": "girl"
+        },
+        {
+          "score": 0.4051656,
+          "value": "hotel"
+        },
+        {
+          "score": 0.40400755,
+          "value": "transfer"
+        },
+        {
+          "score": 0.40041912,
+          "value": "tech"
+        },
+        {
+          "score": 0.39878356,
+          "value": "investor"
+        },
+        {
+          "score": 0.39728346,
+          "value": "share"
+        },
+        {
+          "score": 0.3965346,
+          "value": "printer"
+        },
+        {
+          "score": 0.39314798,
+          "value": "platform"
+        },
+        {
+          "score": 0.38740346,
+          "value": "program"
+        },
+        {
+          "score": 0.38475555,
+          "value": "notice"
+        },
+        {
+          "score": 0.38094604,
+          "value": "bag"
+        },
+        {
+          "score": 0.37670785,
+          "value": "dates"
+        },
+        {
+          "score": 0.36678225,
+          "value": "bags"
+        },
+        {
+          "score": 0.36505696,
+          "value": "mask"
+        },
+        {
+          "score": 0.36171773,
+          "value": "color"
+        },
+        {
+          "score": 0.35304913,
+          "value": "film"
+        },
+        {
+          "score": 0.34910128,
+          "value": "advertising"
+        },
+        {
+          "score": 0.34660062,
+          "value": "entertainment"
+        },
+        {
+          "score": 0.34359044,
+          "value": "real"
+        },
+        {
+          "score": 0.34344813,
+          "value": "financial"
+        },
+        {
+          "score": 0.34283906,
+          "value": "report"
+        },
+        {
+          "score": 0.33876187,
+          "value": "global"
+        },
+        {
+          "score": 0.33847898,
+          "value": "learn"
+        },
+        {
+          "score": 0.33757877,
+          "value": "love"
+        },
+        {
+          "score": 0.33683237,
+          "value": "accessory"
+        },
+        {
+          "score": 0.33268157,
+          "value": "attraction"
+        },
+        {
+          "score": 0.33161813,
+          "value": "car"
+        },
+        {
+          "score": 0.32938093,
+          "value": "culture"
+        },
+        {
+          "score": 0.32927784,
+          "value": "private airport"
+        },
+        {
+          "score": 0.32609472,
+          "value": "hulu"
+        },
+        {
+          "score": 0.32218435,
+          "value": "butterfly"
+        },
+        {
+          "score": 0.3152834,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.3137473,
+          "value": "start"
+        },
+        {
+          "score": 0.3110604,
+          "value": "browser"
+        },
+        {
+          "score": 0.31059542,
+          "value": "klook"
+        },
+        {
+          "score": 0.30838457,
+          "value": "ready"
+        },
+        {
+          "score": 0.30431914,
+          "value": "epson"
+        },
+        {
+          "score": 0.29923198,
+          "value": "save"
+        },
+        {
+          "score": 0.29810408,
+          "value": "watch"
+        },
+        {
+          "score": 0.2976302,
+          "value": "industry"
+        },
+        {
+          "score": 0.29740095,
+          "value": "assets"
+        },
+        {
+          "score": 0.29740095,
+          "value": "urban"
+        },
+        {
+          "score": 0.29740095,
+          "value": "contribution"
+        },
+        {
+          "score": 0.29561737,
+          "value": "article"
+        },
+        {
+          "score": 0.2945108,
+          "value": "smart"
+        },
+        {
+          "score": 0.28800392,
+          "value": "subscribe"
+        },
+        {
+          "score": 0.28748757,
+          "value": "young"
+        },
+        {
+          "score": 0.28568858,
+          "value": "market"
+        },
+        {
+          "score": 0.284844,
+          "value": "exclusives"
+        },
+        {
+          "score": 0.28474113,
+          "value": "software"
+        },
+        {
+          "score": 0.28434032,
+          "value": "law"
+        },
+        {
+          "score": 0.28400382,
+          "value": "city"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://socialmediaasia.com/",
+        "https://www.socialmediaasia.com/",
+        "http://socialmediaasia.com/",
+        "http://www.socialmediaasia.com/"
+      ]
+    },
+    "metaData": {
+      "description": "Social media, memes, news monitoring, and latest data and news from Asia's top social media businesses and websites.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/socialmediaasia.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://socialmediaasia.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 90,
+        "value": [
+          "1800petmeds.com",
+          "etsy.com",
+          "apple.com",
+          "microsoft.com",
+          "linkedin.com",
+          "netflix.com",
+          "aboutamazon.com",
+          "ee.co.uk",
+          "sky.com",
+          "oneplus.com",
+          "samsung.com",
+          "tiktok.com",
+          "hulu.com",
+          "klook.com",
+          "alexandrialivingmagazine.com",
+          "anantara.com",
+          "annecate.com",
+          "anrdoezrs.net",
+          "greenmangaming.com",
+          "disneyplus.com",
+          "artifactuprising.com",
+          "sonos.com",
+          "marksandspencer.com",
+          "nature.com",
+          "parachutehome.com",
+          "awaytravel.com",
+          "baggu.com",
+          "barnesandnoble.com",
+          "patagonia.com",
+          "harrods.com",
+          "dazn.com",
+          "fool.com",
+          "urbanoutfitters.com",
+          "bioenergycode.com",
+          "purevpn.com",
+          "busuu.com",
+          "lacolombe.com",
+          "reddit.com",
+          "loc.gov",
+          "smithsonianmag.com",
+          "oreilly.com",
+          "bonafidemasks.com",
+          "bonbonnyc.com",
+          "brightland.co",
+          "britannica.com",
+          "buckmason.com",
+          "lululemon.com",
+          "cdkeys.com",
+          "theinformation.com",
+          "clearme.com",
+          "linksynergy.com",
+          "clickwealthsystem.com",
+          "verizon.com",
+          "formula1.com",
+          "dhs.gov",
+          "dickssportinggoods.com",
+          "zavvi.com",
+          "eharmony.com.au",
+          "evolvetogether.com",
+          "rhs.org.uk",
+          "quince.com",
+          "huckberry.com",
+          "heyrooted.com",
+          "hissecretobsession.com",
+          "hubbl.com.au",
+          "hudabeauty.com",
+          "worldmarket.com",
+          "jrpass.com",
+          "leatherology.com",
+          "moma.org",
+          "onetravel.com",
+          "play.google.com",
+          "prodirectsport.com",
+          "propersyrup.com",
+          "sephora.sg",
+          "temu.com",
+          "shopdisney.co.uk",
+          "smokonow.com",
+          "thetrainline.com",
+          "snopes.com",
+          "sonnyangelusa.com",
+          "sugoimart.com",
+          "uncommongoods.com",
+          "telegra.ph",
+          "tv.apple.com",
+          "us.community.samsung.com",
+          "us.moccamaster.com",
+          "wellbefore.com",
+          "youtu.be",
+          "zalora.sg"
+        ]
+      },
+      "partnersAdded": {
+        "count": 2,
+        "value": [
+          {
+            "domain": "us.community.samsung.com"
+          },
+          {
+            "domain": "us.moccamaster.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 5,
+        "value": [
+          {
+            "domain": "paramountplus.com"
+          },
+          {
+            "domain": "betfair.com"
+          },
+          {
+            "domain": "moccamaster.com"
+          },
+          {
+            "domain": "fite.tv"
+          },
+          {
+            "domain": "tripadvisor.co.uk"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 7.6,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 5.55,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 4.95,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 4.8500004,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 4.75,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 4.65,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 3.75,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 2.75,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 2.7,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 2.55,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 2,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 2,
+            "vertical": "Travel / Rail & Coach"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Food / Confectionery"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Gifts / Personalised"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 1.8,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 1.8,
+            "vertical": "Online / Dating"
+          },
+          {
+            "count": 1.75,
+            "vertical": "Entertainment / Hobbies"
+          },
+          {
+            "count": 1.75,
+            "vertical": "Home / Garden"
+          },
+          {
+            "count": 1.65,
+            "vertical": "Finance / Investments"
+          },
+          {
+            "count": 1.65,
+            "vertical": "Online / Security"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Jobs & Careers"
+          },
+          {
+            "count": 1,
+            "vertical": "Gifts / Kids"
+          },
+          {
+            "count": 1,
+            "vertical": "Online / VPN"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Art"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Pets"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Sports / Outdoor"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Travel / Accessories"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Travel / Vacation"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Entertainment / Movies"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Travel / Attractions"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 90,
+      "value": [
+        "1800petmeds.com",
+        "etsy.com",
+        "apple.com",
+        "microsoft.com",
+        "linkedin.com",
+        "netflix.com",
+        "aboutamazon.com",
+        "ee.co.uk",
+        "sky.com",
+        "oneplus.com",
+        "samsung.com",
+        "tiktok.com",
+        "hulu.com",
+        "klook.com",
+        "alexandrialivingmagazine.com",
+        "anantara.com",
+        "annecate.com",
+        "anrdoezrs.net",
+        "greenmangaming.com",
+        "disneyplus.com",
+        "artifactuprising.com",
+        "sonos.com",
+        "marksandspencer.com",
+        "nature.com",
+        "parachutehome.com",
+        "awaytravel.com",
+        "baggu.com",
+        "barnesandnoble.com",
+        "patagonia.com",
+        "harrods.com",
+        "dazn.com",
+        "fool.com",
+        "urbanoutfitters.com",
+        "bioenergycode.com",
+        "purevpn.com",
+        "busuu.com",
+        "lacolombe.com",
+        "reddit.com",
+        "loc.gov",
+        "smithsonianmag.com",
+        "oreilly.com",
+        "bonafidemasks.com",
+        "bonbonnyc.com",
+        "brightland.co",
+        "britannica.com",
+        "buckmason.com",
+        "lululemon.com",
+        "cdkeys.com",
+        "theinformation.com",
+        "clearme.com",
+        "linksynergy.com",
+        "clickwealthsystem.com",
+        "verizon.com",
+        "formula1.com",
+        "dhs.gov",
+        "dickssportinggoods.com",
+        "zavvi.com",
+        "eharmony.com.au",
+        "evolvetogether.com",
+        "rhs.org.uk",
+        "quince.com",
+        "huckberry.com",
+        "heyrooted.com",
+        "hissecretobsession.com",
+        "hubbl.com.au",
+        "hudabeauty.com",
+        "worldmarket.com",
+        "jrpass.com",
+        "leatherology.com",
+        "moma.org",
+        "onetravel.com",
+        "play.google.com",
+        "prodirectsport.com",
+        "propersyrup.com",
+        "sephora.sg",
+        "temu.com",
+        "shopdisney.co.uk",
+        "smokonow.com",
+        "thetrainline.com",
+        "snopes.com",
+        "sonnyangelusa.com",
+        "sugoimart.com",
+        "uncommongoods.com",
+        "telegra.ph",
+        "tv.apple.com",
+        "us.community.samsung.com",
+        "us.moccamaster.com",
+        "wellbefore.com",
+        "youtu.be",
+        "zalora.sg"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Business / Services",
+      "value": [
+        "Business / Services",
+        "Online / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Business / Services",
+        "rank": 1,
+        "score": 80
+      },
+      "value": [
+        {
+          "name": "Business / Services",
+          "rank": 1,
+          "score": 80
+        },
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,607 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 3,
+      "sampleValue": [
+        "Digidip",
+        "Skimlinks",
+        "Viglink"
+      ],
+      "value": [
+        "Digidip",
+        "Skimlinks",
+        "Viglink"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 3,
+      "error": false,
+      "value": [
+        {
+          "department": null,
+          "value": "abojournalpapier@lemonde.fr"
+        },
+        {
+          "department": null,
+          "value": "clientnumerique@lemonde.fr"
+        },
+        {
+          "department": "marketing",
+          "value": "droitsdauteur@lemonde.fr"
+        }
+      ]
+    },
+    "domain": "lemonde.fr",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "panier"
+        },
+        {
+          "score": 0.6092606,
+          "value": "magasin"
+        },
+        {
+          "score": 0.54368204,
+          "value": "fnac"
+        },
+        {
+          "score": 0.39654392,
+          "value": "stock"
+        },
+        {
+          "score": 0.3162259,
+          "value": "smartphone"
+        },
+        {
+          "score": 0.3091256,
+          "value": "accessoire"
+        },
+        {
+          "score": 0.29860994,
+          "value": "produit"
+        },
+        {
+          "score": 0.29637244,
+          "value": "livraison"
+        },
+        {
+          "score": 0.28571856,
+          "value": "hifi"
+        },
+        {
+          "score": 0.27646273,
+          "value": "cuisine"
+        },
+        {
+          "score": 0.2735054,
+          "value": "samsung"
+        },
+        {
+          "score": 0.27235398,
+          "value": "gratuit"
+        },
+        {
+          "score": 0.24734621,
+          "value": "comparateur"
+        },
+        {
+          "score": 0.23991337,
+          "value": "mois"
+        },
+        {
+          "score": 0.23979948,
+          "value": "photo"
+        },
+        {
+          "score": 0.2386539,
+          "value": "prix"
+        },
+        {
+          "score": 0.2318856,
+          "value": "sport"
+        },
+        {
+          "score": 0.22859947,
+          "value": "maison"
+        },
+        {
+          "score": 0.22113857,
+          "value": "video"
+        },
+        {
+          "score": 0.2198279,
+          "value": "clothing"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "panier"
+        },
+        {
+          "score": 0.6092606,
+          "value": "magasin"
+        },
+        {
+          "score": 0.54368204,
+          "value": "fnac"
+        },
+        {
+          "score": 0.39654392,
+          "value": "stock"
+        },
+        {
+          "score": 0.3162259,
+          "value": "smartphone"
+        },
+        {
+          "score": 0.3091256,
+          "value": "accessoire"
+        },
+        {
+          "score": 0.29860994,
+          "value": "produit"
+        },
+        {
+          "score": 0.29637244,
+          "value": "livraison"
+        },
+        {
+          "score": 0.28571856,
+          "value": "hifi"
+        },
+        {
+          "score": 0.27646273,
+          "value": "cuisine"
+        },
+        {
+          "score": 0.2735054,
+          "value": "samsung"
+        },
+        {
+          "score": 0.27235398,
+          "value": "gratuit"
+        },
+        {
+          "score": 0.24734621,
+          "value": "comparateur"
+        },
+        {
+          "score": 0.23991337,
+          "value": "mois"
+        },
+        {
+          "score": 0.23979948,
+          "value": "photo"
+        },
+        {
+          "score": 0.2386539,
+          "value": "prix"
+        },
+        {
+          "score": 0.2318856,
+          "value": "sport"
+        },
+        {
+          "score": 0.22859947,
+          "value": "maison"
+        },
+        {
+          "score": 0.22113857,
+          "value": "video"
+        },
+        {
+          "score": 0.2198279,
+          "value": "clothing"
+        },
+        {
+          "score": 0.2198279,
+          "value": "watches"
+        },
+        {
+          "score": 0.2198279,
+          "value": "kitchen"
+        },
+        {
+          "score": 0.2198279,
+          "value": "musical"
+        },
+        {
+          "score": 0.2198279,
+          "value": "games"
+        },
+        {
+          "score": 0.21596326,
+          "value": "lectrique"
+        },
+        {
+          "score": 0.21570829,
+          "value": "wifi"
+        },
+        {
+          "score": 0.21190056,
+          "value": "livre"
+        },
+        {
+          "score": 0.20923166,
+          "value": "carte"
+        },
+        {
+          "score": 0.20885345,
+          "value": "suite"
+        },
+        {
+          "score": 0.19970436,
+          "value": "bluetooth"
+        },
+        {
+          "score": 0.1935854,
+          "value": "appareil"
+        },
+        {
+          "score": 0.18711665,
+          "value": "gaming"
+        },
+        {
+          "score": 0.18553956,
+          "value": "compte"
+        },
+        {
+          "score": 0.1822954,
+          "value": "apple"
+        },
+        {
+          "score": 0.18105848,
+          "value": "portable"
+        },
+        {
+          "score": 0.17859718,
+          "value": "navigateur"
+        },
+        {
+          "score": 0.1758088,
+          "value": "huawei"
+        },
+        {
+          "score": 0.17432179,
+          "value": "objets"
+        },
+        {
+          "score": 0.17244825,
+          "value": "vente"
+        },
+        {
+          "score": 0.17040737,
+          "value": "produits"
+        },
+        {
+          "score": 0.16812506,
+          "value": "achats"
+        },
+        {
+          "score": 0.16699989,
+          "value": "gnral"
+        },
+        {
+          "score": 0.16315114,
+          "value": "retrait"
+        },
+        {
+          "score": 0.16102901,
+          "value": "audio"
+        },
+        {
+          "score": 0.1599812,
+          "value": "outdoor"
+        },
+        {
+          "score": 0.14938594,
+          "value": "informatique"
+        },
+        {
+          "score": 0.14851692,
+          "value": "internet"
+        },
+        {
+          "score": 0.14851338,
+          "value": "avis"
+        },
+        {
+          "score": 0.14793786,
+          "value": "ebook"
+        },
+        {
+          "score": 0.147834,
+          "value": "offerte"
+        },
+        {
+          "score": 0.14747001,
+          "value": "jeu"
+        },
+        {
+          "score": 0.14705768,
+          "value": "food"
+        },
+        {
+          "score": 0.14672427,
+          "value": "toys"
+        },
+        {
+          "score": 0.14655194,
+          "value": "beauty"
+        },
+        {
+          "score": 0.14655194,
+          "value": "pet"
+        },
+        {
+          "score": 0.14655194,
+          "value": "shoes"
+        },
+        {
+          "score": 0.14655194,
+          "value": "travel"
+        },
+        {
+          "score": 0.14655194,
+          "value": "books"
+        },
+        {
+          "score": 0.14655194,
+          "value": "supplies"
+        },
+        {
+          "score": 0.14655194,
+          "value": "grocery"
+        },
+        {
+          "score": 0.14655194,
+          "value": "computers"
+        },
+        {
+          "score": 0.14655194,
+          "value": "fragrances"
+        },
+        {
+          "score": 0.14655194,
+          "value": "electricals"
+        },
+        {
+          "score": 0.14655194,
+          "value": "office"
+        },
+        {
+          "score": 0.14655194,
+          "value": "electronics"
+        },
+        {
+          "score": 0.14655194,
+          "value": "stationery"
+        },
+        {
+          "score": 0.14655194,
+          "value": "cards"
+        },
+        {
+          "score": 0.14427866,
+          "value": "aspirateur"
+        },
+        {
+          "score": 0.14380552,
+          "value": "caractristiques"
+        },
+        {
+          "score": 0.1430032,
+          "value": "gratuit panier"
+        },
+        {
+          "score": 0.1427397,
+          "value": "tlphone"
+        },
+        {
+          "score": 0.14148608,
+          "value": "garanties"
+        },
+        {
+          "score": 0.14038742,
+          "value": "ordinateur"
+        },
+        {
+          "score": 0.1368472,
+          "value": "fonction"
+        },
+        {
+          "score": 0.1368472,
+          "value": "connects"
+        },
+        {
+          "score": 0.1313622,
+          "value": "vido"
+        },
+        {
+          "score": 0.12988886,
+          "value": "forts"
+        },
+        {
+          "score": 0.12960699,
+          "value": "cadeau"
+        },
+        {
+          "score": 0.12844247,
+          "value": "vendeur"
+        },
+        {
+          "score": 0.12756942,
+          "value": "adresses"
+        },
+        {
+          "score": 0.12756942,
+          "value": "barbecue"
+        },
+        {
+          "score": 0.12753838,
+          "value": "garantie"
+        },
+        {
+          "score": 0.12623502,
+          "value": "machine"
+        },
+        {
+          "score": 0.12524997,
+          "value": "disponibilit"
+        },
+        {
+          "score": 0.123673104,
+          "value": "ajouter"
+        },
+        {
+          "score": 0.12293053,
+          "value": "connect"
+        },
+        {
+          "score": 0.12102154,
+          "value": "console"
+        },
+        {
+          "score": 0.12100506,
+          "value": "tablette"
+        },
+        {
+          "score": 0.12027632,
+          "value": "format"
+        },
+        {
+          "score": 0.12002257,
+          "value": "montre"
+        },
+        {
+          "score": 0.11935037,
+          "value": "informations"
+        },
+        {
+          "score": 0.11836472,
+          "value": "favori"
+        },
+        {
+          "score": 0.11829164,
+          "value": "iphone"
+        },
+        {
+          "score": 0.11829164,
+          "value": "commandes"
+        },
+        {
+          "score": 0.1169744,
+          "value": "pro"
+        },
+        {
+          "score": 0.11365275,
+          "value": "points"
+        },
+        {
+          "score": 0.11133331,
+          "value": "coloris"
+        },
+        {
+          "score": 0.10901386,
+          "value": "dconnecter"
+        },
+        {
+          "score": 0.10901386,
+          "value": "installer"
+        },
+        {
+          "score": 0.10669442,
+          "value": "vapeur"
+        }
+      ]
+    },
+    "metaData": {
+      "description": "International, Economie, Environnement … La référence, partout, tout le temps.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/lemonde.fr.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://lemonde.fr"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 10
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 2,
+        "value": [
+          {
+            "domain": "pcworld.com"
+          },
+          {
+            "domain": "serialdealer.fr"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 3,
+            "promotype": "blog",
+            "value": [
+              "anti-crise.fr",
+              "techadvisor.com",
+              "theoldreader.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "student",
+            "value": [
+              "mydesires.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 5,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "linkedin",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/lemonde.fr",
+        "instagram": "https://instagram.com/lemondefr",
+        "linkedin": "https://linkedin.com/company/le-monde",
+        "twitter": "https://twitter.com/lemondefr",
+        "youtube": "https://youtube.com/user/lemonde"
+      }
+    },
+    "verticals": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Online / Services",
+        "rank": 2,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Online / Services",
+          "rank": 2,
+          "score": 90
+        }
+      ]
+    }
+  }
+}

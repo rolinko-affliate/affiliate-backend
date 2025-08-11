@@ -1,0 +1,913 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 8,
+      "sampleValue": [
+        "APD Performance",
+        "Awin",
+        "Impact"
+      ],
+      "value": [
+        "APD Performance",
+        "Awin",
+        "Impact",
+        "Pepperjam",
+        "Private Network",
+        "Rakuten",
+        "Refersion",
+        "Skimlinks"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "au",
+        "score": 0.9
+      },
+      "sampleValue": [
+        {
+          "countryCode": "au",
+          "score": 0.9
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "au",
+          "score": 0.9
+        }
+      ]
+    },
+    "domain": "bosshunting.com.au",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "everlane"
+        },
+        {
+          "score": 0.38732904,
+          "value": "store"
+        },
+        {
+          "score": 0.25989458,
+          "value": "card"
+        },
+        {
+          "score": 0.24125,
+          "value": "shirt"
+        },
+        {
+          "score": 0.23458935,
+          "value": "style"
+        },
+        {
+          "score": 0.23157717,
+          "value": "skin"
+        },
+        {
+          "score": 0.20848186,
+          "value": "story"
+        },
+        {
+          "score": 0.19909516,
+          "value": "people"
+        },
+        {
+          "score": 0.19335707,
+          "value": "warranty"
+        },
+        {
+          "score": 0.19261889,
+          "value": "camera"
+        },
+        {
+          "score": 0.18507153,
+          "value": "digital"
+        },
+        {
+          "score": 0.181875,
+          "value": "tailoring"
+        },
+        {
+          "score": 0.18125,
+          "value": "menswear"
+        },
+        {
+          "score": 0.1625005,
+          "value": "agency"
+        },
+        {
+          "score": 0.16015902,
+          "value": "australia"
+        },
+        {
+          "score": 0.15471022,
+          "value": "performance"
+        },
+        {
+          "score": 0.15462688,
+          "value": "body"
+        },
+        {
+          "score": 0.15405612,
+          "value": "jacket"
+        },
+        {
+          "score": 0.15268004,
+          "value": "playstation"
+        },
+        {
+          "score": 0.14552423,
+          "value": "shirts"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "everlane"
+        },
+        {
+          "score": 0.38732904,
+          "value": "store"
+        },
+        {
+          "score": 0.25989458,
+          "value": "card"
+        },
+        {
+          "score": 0.24125,
+          "value": "shirt"
+        },
+        {
+          "score": 0.23458935,
+          "value": "style"
+        },
+        {
+          "score": 0.23157717,
+          "value": "skin"
+        },
+        {
+          "score": 0.20848186,
+          "value": "story"
+        },
+        {
+          "score": 0.19909516,
+          "value": "people"
+        },
+        {
+          "score": 0.19335707,
+          "value": "warranty"
+        },
+        {
+          "score": 0.19261889,
+          "value": "camera"
+        },
+        {
+          "score": 0.18507153,
+          "value": "digital"
+        },
+        {
+          "score": 0.181875,
+          "value": "tailoring"
+        },
+        {
+          "score": 0.18125,
+          "value": "menswear"
+        },
+        {
+          "score": 0.1625005,
+          "value": "agency"
+        },
+        {
+          "score": 0.16015902,
+          "value": "australia"
+        },
+        {
+          "score": 0.15471022,
+          "value": "performance"
+        },
+        {
+          "score": 0.15462688,
+          "value": "body"
+        },
+        {
+          "score": 0.15405612,
+          "value": "jacket"
+        },
+        {
+          "score": 0.15268004,
+          "value": "playstation"
+        },
+        {
+          "score": 0.14552423,
+          "value": "shirts"
+        },
+        {
+          "score": 0.1448323,
+          "value": "accessory"
+        },
+        {
+          "score": 0.13992724,
+          "value": "site"
+        },
+        {
+          "score": 0.13900863,
+          "value": "hour"
+        },
+        {
+          "score": 0.13375,
+          "value": "jackets"
+        },
+        {
+          "score": 0.1332096,
+          "value": "speaker"
+        },
+        {
+          "score": 0.125,
+          "value": "trading"
+        },
+        {
+          "score": 0.122973815,
+          "value": "audio"
+        },
+        {
+          "score": 0.121875,
+          "value": "pants"
+        },
+        {
+          "score": 0.119864844,
+          "value": "creative"
+        },
+        {
+          "score": 0.1196673,
+          "value": "care"
+        },
+        {
+          "score": 0.11868174,
+          "value": "music"
+        },
+        {
+          "score": 0.11859694,
+          "value": "polos"
+        },
+        {
+          "score": 0.11603534,
+          "value": "sign"
+        },
+        {
+          "score": 0.11554847,
+          "value": "casual"
+        },
+        {
+          "score": 0.115391664,
+          "value": "browser"
+        },
+        {
+          "score": 0.115041375,
+          "value": "colour"
+        },
+        {
+          "score": 0.11102026,
+          "value": "jeans"
+        },
+        {
+          "score": 0.11093194,
+          "value": "produit"
+        },
+        {
+          "score": 0.1098643,
+          "value": "active"
+        },
+        {
+          "score": 0.10875,
+          "value": "formal"
+        },
+        {
+          "score": 0.10717183,
+          "value": "promotion"
+        },
+        {
+          "score": 0.10692771,
+          "value": "growthop"
+        },
+        {
+          "score": 0.106875,
+          "value": "cufflinks"
+        },
+        {
+          "score": 0.106791094,
+          "value": "press"
+        },
+        {
+          "score": 0.10575191,
+          "value": "industry"
+        },
+        {
+          "score": 0.104290605,
+          "value": "sport"
+        },
+        {
+          "score": 0.1042895,
+          "value": "enquiry"
+        },
+        {
+          "score": 0.103443876,
+          "value": "trouser"
+        },
+        {
+          "score": 0.103125,
+          "value": "chinos"
+        },
+        {
+          "score": 0.102413364,
+          "value": "compte"
+        },
+        {
+          "score": 0.102099955,
+          "value": "culture"
+        },
+        {
+          "score": 0.10172194,
+          "value": "technology"
+        },
+        {
+          "score": 0.10168195,
+          "value": "event"
+        },
+        {
+          "score": 0.10094029,
+          "value": "styling"
+        },
+        {
+          "score": 0.100755066,
+          "value": "community"
+        },
+        {
+          "score": 0.100625,
+          "value": "shoes"
+        },
+        {
+          "score": 0.1,
+          "value": "styles"
+        },
+        {
+          "score": 0.09875,
+          "value": "attire"
+        },
+        {
+          "score": 0.09853643,
+          "value": "partner"
+        },
+        {
+          "score": 0.09720752,
+          "value": "gaming"
+        },
+        {
+          "score": 0.09659595,
+          "value": "travel"
+        },
+        {
+          "score": 0.09624378,
+          "value": "client"
+        },
+        {
+          "score": 0.095,
+          "value": "trousers"
+        },
+        {
+          "score": 0.094863355,
+          "value": "current"
+        },
+        {
+          "score": 0.092891805,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.09251537,
+          "value": "professional"
+        },
+        {
+          "score": 0.0925,
+          "value": "knitwear"
+        },
+        {
+          "score": 0.0925,
+          "value": "suits"
+        },
+        {
+          "score": 0.09216426,
+          "value": "belts"
+        },
+        {
+          "score": 0.09138258,
+          "value": "share"
+        },
+        {
+          "score": 0.09099182,
+          "value": "legal"
+        },
+        {
+          "score": 0.09088853,
+          "value": "cfd"
+        },
+        {
+          "score": 0.09023191,
+          "value": "australian"
+        },
+        {
+          "score": 0.08931547,
+          "value": "team"
+        },
+        {
+          "score": 0.087849215,
+          "value": "hair"
+        },
+        {
+          "score": 0.08757417,
+          "value": "monitor"
+        },
+        {
+          "score": 0.087521955,
+          "value": "video"
+        },
+        {
+          "score": 0.08693233,
+          "value": "luxury"
+        },
+        {
+          "score": 0.08655303,
+          "value": "policies"
+        },
+        {
+          "score": 0.085024744,
+          "value": "produits"
+        },
+        {
+          "score": 0.08439931,
+          "value": "magazine"
+        },
+        {
+          "score": 0.084375,
+          "value": "boots"
+        },
+        {
+          "score": 0.08400878,
+          "value": "country"
+        },
+        {
+          "score": 0.08376996,
+          "value": "book"
+        },
+        {
+          "score": 0.08375,
+          "value": "coats"
+        },
+        {
+          "score": 0.08375,
+          "value": "shorts"
+        },
+        {
+          "score": 0.08250344,
+          "value": "capability"
+        },
+        {
+          "score": 0.08227848,
+          "value": "livraison"
+        },
+        {
+          "score": 0.0813253,
+          "value": "investor"
+        },
+        {
+          "score": 0.08078345,
+          "value": "strategy"
+        },
+        {
+          "score": 0.08044084,
+          "value": "javascript"
+        },
+        {
+          "score": 0.079306915,
+          "value": "cmc"
+        },
+        {
+          "score": 0.07895892,
+          "value": "edition"
+        },
+        {
+          "score": 0.078461245,
+          "value": "functionality"
+        },
+        {
+          "score": 0.07818849,
+          "value": "screen"
+        },
+        {
+          "score": 0.07810106,
+          "value": "safe"
+        },
+        {
+          "score": 0.077903576,
+          "value": "label"
+        },
+        {
+          "score": 0.07789489,
+          "value": "color"
+        },
+        {
+          "score": 0.07782342,
+          "value": "alpha"
+        },
+        {
+          "score": 0.07765437,
+          "value": "functional"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://bosshunting.com.au/",
+        "https://www.bosshunting.com.au/",
+        "http://bosshunting.com.au/",
+        "http://www.bosshunting.com.au/"
+      ]
+    },
+    "metaData": {
+      "description": "Boss Hunting presents the latest news & reviews in cars, gear, travel, watches, alcohol, health, finance and more.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/bosshunting.com.au.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://bosshunting.com.au"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 36,
+        "value": [
+          "doordash.com",
+          "ubereats.com",
+          "samsung.com",
+          "everlane.com",
+          "aesop.com",
+          "amazon.com.au",
+          "rmwilliams.com.au",
+          "breville.com",
+          "mrporter.com",
+          "deciem.com",
+          "thebodyshop.com",
+          "cmcmarkets.com",
+          "cosmedix.com",
+          "cremedelamer.com.au",
+          "danmurphys.com.au",
+          "luxuryescapes.com",
+          "dunhill.com",
+          "growthops.com.au",
+          "grownalchemist.com",
+          "hunterlab.com.au",
+          "jbl.com.au",
+          "kiehls.com.au",
+          "lg.com",
+          "luminskin.com",
+          "magazinesdirect.com",
+          "marshallheadphones.com",
+          "mecca.com.au",
+          "mjbale.com",
+          "mumbrella.com.au",
+          "omaze.com",
+          "rimowa.com",
+          "roddandgunn.com",
+          "taschen.com",
+          "sony.com.au",
+          "supplyandadvise.com",
+          "whiskyloot.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 2,
+        "value": [
+          {
+            "domain": "reebok.com.au"
+          },
+          {
+            "domain": "nakedwines.com.au"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 8.549999,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 4.85,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 4.75,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 3.6,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Food / Take Out"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Food / Alcohol"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 1,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 1,
+            "vertical": "Travel / Vacation"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Trading"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Travel / Accessories"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Gifts / Experience Days"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Electricals"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 36,
+      "value": [
+        "doordash.com",
+        "ubereats.com",
+        "samsung.com",
+        "everlane.com",
+        "aesop.com",
+        "amazon.com.au",
+        "rmwilliams.com.au",
+        "breville.com",
+        "mrporter.com",
+        "deciem.com",
+        "thebodyshop.com",
+        "cmcmarkets.com",
+        "cosmedix.com",
+        "cremedelamer.com.au",
+        "danmurphys.com.au",
+        "luxuryescapes.com",
+        "dunhill.com",
+        "growthops.com.au",
+        "grownalchemist.com",
+        "hunterlab.com.au",
+        "jbl.com.au",
+        "kiehls.com.au",
+        "lg.com",
+        "luminskin.com",
+        "magazinesdirect.com",
+        "marshallheadphones.com",
+        "mecca.com.au",
+        "mjbale.com",
+        "mumbrella.com.au",
+        "omaze.com",
+        "rimowa.com",
+        "roddandgunn.com",
+        "taschen.com",
+        "sony.com.au",
+        "supplyandadvise.com",
+        "whiskyloot.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 151,
+      "value": [
+        "thedailybanter.com",
+        "backpacker.com",
+        "cnwenti.com",
+        "levelskip.com",
+        "spartannation.com",
+        "lfctransferroom.com",
+        "roundtable.io",
+        "snewsnet.com",
+        "edm.com",
+        "yellowstonepark.com",
+        "powerandmotoryacht.com",
+        "dealbreaker.com",
+        "squidoo.com",
+        "pairedlife.com",
+        "verilymag.com",
+        "wehavekids.com",
+        "psmag.com",
+        "militarytrader.com",
+        "healthproadvice.com",
+        "letterpile.com",
+        "flextimesports.com",
+        "toughnickel.com",
+        "todaysmama.com",
+        "defensemaven.io",
+        "thestylingedit.com",
+        "howtheyplay.com",
+        "opposingviews.com",
+        "hubpageshelp.com",
+        "biography.com",
+        "beautyeditor.ca",
+        "jellyday.com",
+        "nthonyoyogoa.org",
+        "dengarden.com",
+        "mycoloradoparks.com",
+        "cupcakesandcashmere.com",
+        "fogit.net",
+        "bringmethenews.com",
+        "mygrandcanyonpark.com",
+        "magneticmag.com",
+        "guitarplayer.com",
+        "wrestlingnewsworld.com",
+        "theindependent.io",
+        "climbing.com",
+        "djbooth.net",
+        "bellatory.com",
+        "taskandpurpose.com",
+        "scriptmag.com",
+        "globalcovidsummit.org",
+        "yachtsinternational.com",
+        "alabamasports.org",
+        "grasschopperslawncare.com",
+        "paradepets.com",
+        "bassmagazine.com",
+        "organicauthority.com",
+        "equalstyle.com",
+        "delishably.com",
+        "myolympicpark.com",
+        "hobbylark.com",
+        "multichannel.com",
+        "blazepress.com",
+        "discover.hubpages.com",
+        "si.com",
+        "cheesecompanydeli.com",
+        "soapboxie.com",
+        "iceary.org",
+        "shop.lifehealthpath.com",
+        "enfuegonow.com",
+        "legangdianzikeji.com",
+        "mysmokymountainpark.com",
+        "crossfit073.com",
+        "lifestyle.si.com",
+        "cumarea.com",
+        "meninblazers.com",
+        "antiquetrader.com",
+        "thefoldmag.com",
+        "caloriebee.com",
+        "xike8888.com",
+        "reelrundown.com",
+        "traditionalbuilding.com",
+        "prettymuchamazing.com",
+        "passagemaker.com",
+        "maven.io",
+        "spinditty.com",
+        "teeshirtcatalogue.com",
+        "saymedia.com",
+        "jamiegeller.com",
+        "exemplore.com",
+        "saymedia.zendesk.com",
+        "skyaboveus.com",
+        "amazingwellnessmag.com",
+        "tradeonlytoday.com",
+        "artsandcraftshomes.com",
+        "moneymaven.io",
+        "oldcarsweekly.com",
+        "athlonsports.com",
+        "goldminemag.com",
+        "tatring.com",
+        "unocanvas.com",
+        "buyamericanproducts.net",
+        "imabeautygeek.com",
+        "gnhf.org",
+        "theskincareedit.shop",
+        "exploringourglobe.com",
+        "roundtablecrypto.io",
+        "momtrends.com",
+        "fitedm.com",
+        "inkedmag.com",
+        "remedygrove.com",
+        "mishtalk.com",
+        "theweedblog.com",
+        "muscleandperformance.com",
+        "thecrimewire.com",
+        "airows.com",
+        "stablemanagement.com",
+        "fashionista.com",
+        "cmaea.org",
+        "wxshengchang.com",
+        "thestreet.com",
+        "rachaelraymag.com",
+        "soundingsonline.com",
+        "sikids.com",
+        "acquiremag.com",
+        "broadcastingcable.com",
+        "f4wonline.com",
+        "myutahparks.com",
+        "maxim.com",
+        "glamamom.com",
+        "minuute.com",
+        "saydaily.com",
+        "bestcarr.com",
+        "justinpatrickofficial.com",
+        "sportscollectorsdigest.com",
+        "boss.nativesstaging.com.au",
+        "hollywoodprogressive.com",
+        "sailmagazine.com",
+        "freshnessmag.com",
+        "skimag.com",
+        "cleaneatingmag.com",
+        "earthmaven.io",
+        "daytimeconfidential.com",
+        "theskincareedit.com",
+        "clementinedaily.com",
+        "woodshopnews.com",
+        "swimsuit.si.com",
+        "cbxmed.org",
+        "des511.com",
+        "warriormaven.com",
+        "wanderwisdom.com",
+        "hortmag.com",
+        "ostomyconnection.com",
+        "myyosemitepark.com"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/bosshunting",
+        "instagram": "https://instagram.com/bhofficial",
+        "twitter": "https://twitter.com/bosshunting",
+        "youtube": "https://youtube.com/channel/ucehrxfdfme7etwykk3p7s-g"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Entertainment / Hobbies",
+      "value": [
+        "Entertainment / Hobbies",
+        "Business / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Entertainment / Hobbies",
+        "rank": 1,
+        "score": 80
+      },
+      "value": [
+        {
+          "name": "Entertainment / Hobbies",
+          "rank": 1,
+          "score": 80
+        },
+        {
+          "name": "Business / Services",
+          "rank": 1,
+          "score": 60
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1081 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 3,
+      "sampleValue": [
+        "Impact",
+        "Refersion",
+        "Skimlinks"
+      ],
+      "value": [
+        "Impact",
+        "Refersion",
+        "Skimlinks"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.95
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.95
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.95
+        }
+      ]
+    },
+    "domain": "newyorkupstate.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "ticket"
+        },
+        {
+          "score": 0.52143896,
+          "value": "team"
+        },
+        {
+          "score": 0.4617,
+          "value": "game"
+        },
+        {
+          "score": 0.42694768,
+          "value": "apple"
+        },
+        {
+          "score": 0.41825783,
+          "value": "fanatic"
+        },
+        {
+          "score": 0.41450953,
+          "value": "event"
+        },
+        {
+          "score": 0.38927314,
+          "value": "golf"
+        },
+        {
+          "score": 0.35869506,
+          "value": "woman"
+        },
+        {
+          "score": 0.33970392,
+          "value": "shirt"
+        },
+        {
+          "score": 0.3361543,
+          "value": "store"
+        },
+        {
+          "score": 0.31574643,
+          "value": "football"
+        },
+        {
+          "score": 0.31173977,
+          "value": "card"
+        },
+        {
+          "score": 0.30248657,
+          "value": "device"
+        },
+        {
+          "score": 0.28553662,
+          "value": "tiger"
+        },
+        {
+          "score": 0.27729288,
+          "value": "stadium"
+        },
+        {
+          "score": 0.27586073,
+          "value": "blue"
+        },
+        {
+          "score": 0.2715523,
+          "value": "app"
+        },
+        {
+          "score": 0.2672616,
+          "value": "tour"
+        },
+        {
+          "score": 0.2569583,
+          "value": "basketball"
+        },
+        {
+          "score": 0.25425744,
+          "value": "sports"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "ticket"
+        },
+        {
+          "score": 0.52143896,
+          "value": "team"
+        },
+        {
+          "score": 0.4617,
+          "value": "game"
+        },
+        {
+          "score": 0.42694768,
+          "value": "apple"
+        },
+        {
+          "score": 0.41825783,
+          "value": "fanatic"
+        },
+        {
+          "score": 0.41450953,
+          "value": "event"
+        },
+        {
+          "score": 0.38927314,
+          "value": "golf"
+        },
+        {
+          "score": 0.35869506,
+          "value": "woman"
+        },
+        {
+          "score": 0.33970392,
+          "value": "shirt"
+        },
+        {
+          "score": 0.3361543,
+          "value": "store"
+        },
+        {
+          "score": 0.31574643,
+          "value": "football"
+        },
+        {
+          "score": 0.31173977,
+          "value": "card"
+        },
+        {
+          "score": 0.30248657,
+          "value": "device"
+        },
+        {
+          "score": 0.28553662,
+          "value": "tiger"
+        },
+        {
+          "score": 0.27729288,
+          "value": "stadium"
+        },
+        {
+          "score": 0.27586073,
+          "value": "blue"
+        },
+        {
+          "score": 0.2715523,
+          "value": "app"
+        },
+        {
+          "score": 0.2672616,
+          "value": "tour"
+        },
+        {
+          "score": 0.2569583,
+          "value": "basketball"
+        },
+        {
+          "score": 0.25425744,
+          "value": "sports"
+        },
+        {
+          "score": 0.2521451,
+          "value": "championship"
+        },
+        {
+          "score": 0.24736823,
+          "value": "season"
+        },
+        {
+          "score": 0.23103899,
+          "value": "playoff"
+        },
+        {
+          "score": 0.22685209,
+          "value": "gaming"
+        },
+        {
+          "score": 0.22294442,
+          "value": "prices"
+        },
+        {
+          "score": 0.21787636,
+          "value": "hat"
+        },
+        {
+          "score": 0.217457,
+          "value": "accessibility"
+        },
+        {
+          "score": 0.21479473,
+          "value": "tennis"
+        },
+        {
+          "score": 0.20988673,
+          "value": "star"
+        },
+        {
+          "score": 0.20854978,
+          "value": "city"
+        },
+        {
+          "score": 0.19882739,
+          "value": "athletics"
+        },
+        {
+          "score": 0.19756548,
+          "value": "live"
+        },
+        {
+          "score": 0.19672853,
+          "value": "tpc"
+        },
+        {
+          "score": 0.18893674,
+          "value": "concerts"
+        },
+        {
+          "score": 0.18462442,
+          "value": "concert"
+        },
+        {
+          "score": 0.182591,
+          "value": "mlb"
+        },
+        {
+          "score": 0.18197095,
+          "value": "player"
+        },
+        {
+          "score": 0.18117455,
+          "value": "jacket"
+        },
+        {
+          "score": 0.17869897,
+          "value": "play"
+        },
+        {
+          "score": 0.17701234,
+          "value": "college"
+        },
+        {
+          "score": 0.17458369,
+          "value": "fan"
+        },
+        {
+          "score": 0.17445047,
+          "value": "broadway"
+        },
+        {
+          "score": 0.16640347,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.16033933,
+          "value": "sign"
+        },
+        {
+          "score": 0.15906191,
+          "value": "tournament"
+        },
+        {
+          "score": 0.15659255,
+          "value": "guide"
+        },
+        {
+          "score": 0.15636143,
+          "value": "courtside"
+        },
+        {
+          "score": 0.15636143,
+          "value": "purchases"
+        },
+        {
+          "score": 0.1470021,
+          "value": "vegas"
+        },
+        {
+          "score": 0.14528656,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.1429794,
+          "value": "site"
+        },
+        {
+          "score": 0.14184946,
+          "value": "authentic"
+        },
+        {
+          "score": 0.14125158,
+          "value": "school"
+        },
+        {
+          "score": 0.14077984,
+          "value": "video"
+        },
+        {
+          "score": 0.1382114,
+          "value": "credit"
+        },
+        {
+          "score": 0.13783309,
+          "value": "network"
+        },
+        {
+          "score": 0.13692883,
+          "value": "official"
+        },
+        {
+          "score": 0.13690713,
+          "value": "broncos"
+        },
+        {
+          "score": 0.135732,
+          "value": "press"
+        },
+        {
+          "score": 0.13505474,
+          "value": "seatgeek"
+        },
+        {
+          "score": 0.13381426,
+          "value": "anaheim"
+        },
+        {
+          "score": 0.13369428,
+          "value": "cox"
+        },
+        {
+          "score": 0.13355874,
+          "value": "transferable"
+        },
+        {
+          "score": 0.13355874,
+          "value": "seats"
+        },
+        {
+          "score": 0.13273425,
+          "value": "club"
+        },
+        {
+          "score": 0.1309604,
+          "value": "mets"
+        },
+        {
+          "score": 0.130234,
+          "value": "iphone"
+        },
+        {
+          "score": 0.1301549,
+          "value": "real"
+        },
+        {
+          "score": 0.12901674,
+          "value": "theater"
+        },
+        {
+          "score": 0.12724952,
+          "value": "celtics"
+        },
+        {
+          "score": 0.12724952,
+          "value": "cubs"
+        },
+        {
+          "score": 0.1264339,
+          "value": "golden"
+        },
+        {
+          "score": 0.12529756,
+          "value": "warrior"
+        },
+        {
+          "score": 0.1251167,
+          "value": "cards"
+        },
+        {
+          "score": 0.12506536,
+          "value": "baseball"
+        },
+        {
+          "score": 0.124310456,
+          "value": "senior"
+        },
+        {
+          "score": 0.12421671,
+          "value": "girl"
+        },
+        {
+          "score": 0.12299977,
+          "value": "cleveland"
+        },
+        {
+          "score": 0.12286629,
+          "value": "phone"
+        },
+        {
+          "score": 0.12236499,
+          "value": "sport"
+        },
+        {
+          "score": 0.12225742,
+          "value": "bulls"
+        },
+        {
+          "score": 0.122012384,
+          "value": "program"
+        },
+        {
+          "score": 0.121033356,
+          "value": "internet"
+        },
+        {
+          "score": 0.11929643,
+          "value": "lakers"
+        },
+        {
+          "score": 0.11905647,
+          "value": "software"
+        },
+        {
+          "score": 0.117848076,
+          "value": "milwaukee"
+        },
+        {
+          "score": 0.11770834,
+          "value": "columbus"
+        },
+        {
+          "score": 0.11719275,
+          "value": "international"
+        },
+        {
+          "score": 0.11684537,
+          "value": "braves"
+        },
+        {
+          "score": 0.11661135,
+          "value": "marketplace"
+        },
+        {
+          "score": 0.11639296,
+          "value": "story"
+        },
+        {
+          "score": 0.11563728,
+          "value": "girls"
+        },
+        {
+          "score": 0.11536233,
+          "value": "seattle"
+        },
+        {
+          "score": 0.11357517,
+          "value": "flyer"
+        },
+        {
+          "score": 0.1123289,
+          "value": "bengals"
+        },
+        {
+          "score": 0.11221482,
+          "value": "accessory"
+        },
+        {
+          "score": 0.11128335,
+          "value": "tumblr"
+        },
+        {
+          "score": 0.11107766,
+          "value": "diamondbacks"
+        },
+        {
+          "score": 0.11097482,
+          "value": "carolina"
+        },
+        {
+          "score": 0.11071724,
+          "value": "wide"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://newyorkupstate.com/",
+        "https://www.newyorkupstate.com/",
+        "http://newyorkupstate.com/",
+        "http://www.newyorkupstate.com/"
+      ]
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/newyorkupstate.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://newyorkupstate.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 125,
+        "value": [
+          "1800flowers.com",
+          "etsy.com",
+          "eventbrite.com",
+          "23andme.com",
+          "apple.com",
+          "att.com",
+          "dish.com",
+          "philo.com",
+          "lenovo.com",
+          "nba.com",
+          "samsung.com",
+          "hbomax.com",
+          "usatoday.com",
+          "adorama.com",
+          "ticketweb.com",
+          "hulu.com",
+          "walmart.com",
+          "espn.com",
+          "airbnb.com",
+          "frontgate.com",
+          "hilton.com",
+          "soundcloud.com",
+          "disneyplus.com",
+          "surlatable.com",
+          "fandango.com",
+          "mlb.com",
+          "samsclub.com",
+          "crypto.com",
+          "discoveryplus.com",
+          "max.com",
+          "livenation.com",
+          "axs.com",
+          "backcountry.com",
+          "newspapers.com",
+          "barnesandnoble.com",
+          "beekman1802.com",
+          "bestwestern.com",
+          "dazn.com",
+          "sling.com",
+          "homedepot.com",
+          "caesars.com",
+          "creditkarma.com",
+          "ebay.com",
+          "saatva.com",
+          "solostove.com",
+          "ticketmaster.com",
+          "vegas.com",
+          "nfl.com",
+          "booking.com",
+          "bouqs.com",
+          "breakingt.com",
+          "hotels.com",
+          "cash.app",
+          "casetify.com",
+          "casper.com",
+          "macys.com",
+          "cbs.com",
+          "sportsline.com",
+          "directv.com",
+          "razer.com",
+          "stubhub.com",
+          "cnbc.com",
+          "cocoonbysealy.com",
+          "verizon.com",
+          "sixt.com",
+          "ticketnetwork.com",
+          "cox.com",
+          "crocs.com",
+          "desmoinesregister.com",
+          "dickssportinggoods.com",
+          "dreamcloudsleep.com",
+          "indystar.com",
+          "expedia.com",
+          "fanatics.com",
+          "foco.com",
+          "tempurpedic.com",
+          "fromourplace.com",
+          "gcioutdoor.com",
+          "gofan.co",
+          "harryanddavid.com",
+          "helixsleep.com",
+          "huckberry.com",
+          "paramountplus.com",
+          "vimeo.com",
+          "vrbo.com",
+          "zazzle.com",
+          "highfallshempny.com",
+          "hoka.com",
+          "wayfair.com",
+          "sleepnumber.com",
+          "scribd.com",
+          "jossandmain.com",
+          "leatherman.com",
+          "lendingtree.com",
+          "lids.com",
+          "mlbshop.com",
+          "mackenzie-childs.com",
+          "mattressfirm.com",
+          "tripadvisor.com",
+          "megaseats.com",
+          "midwaydrivein.com",
+          "music.amazon.com",
+          "music.apple.com",
+          "nectarsleep.com",
+          "neweracap.com",
+          "nfhsnetwork.com",
+          "ooni.com",
+          "peacocktv.com",
+          "podsauce.com",
+          "purple.com",
+          "ruggable.com",
+          "savearound.com",
+          "seatgeek.com",
+          "sealy.com",
+          "ticketcity.com",
+          "serta.com",
+          "shopterrain.com",
+          "sienasleep.com",
+          "steinersports.com",
+          "uncommongoods.com",
+          "tenkararodco.com",
+          "ticketmaster.ca",
+          "tv.apple.com",
+          "vividseats.com",
+          "woodscanada.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 8,
+        "value": [
+          {
+            "domain": "1800flowers.com"
+          },
+          {
+            "domain": "music.amazon.com"
+          },
+          {
+            "domain": "dazn.com"
+          },
+          {
+            "domain": "newspapers.com"
+          },
+          {
+            "domain": "mlbshop.com"
+          },
+          {
+            "domain": "discoveryplus.com"
+          },
+          {
+            "domain": "harryanddavid.com"
+          },
+          {
+            "domain": "creditkarma.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 6,
+        "value": [
+          {
+            "domain": "ancestry.com"
+          },
+          {
+            "domain": "spirithalloween.com"
+          },
+          {
+            "domain": "halloweencostumes.com"
+          },
+          {
+            "domain": "universe.com"
+          },
+          {
+            "domain": "styleseat.com"
+          },
+          {
+            "domain": "squareup.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 15.349999,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 12.599998,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 12.299999,
+            "vertical": "Home / Beds & Bedding"
+          },
+          {
+            "count": 7.7999997,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 6.3999996,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 5.7,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 4.45,
+            "vertical": "Sports / Outdoor"
+          },
+          {
+            "count": 3.8500001,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 3.8000002,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 3.8,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 3.8,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 3.6499999,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 3.6,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Travel / Vacation"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Gifts / Personalised"
+          },
+          {
+            "count": 2,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Gifts / Flowers"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Entertainment / Movies"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Finance"
+          },
+          {
+            "count": 1,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 1,
+            "vertical": "Finance / Forex & Crypto"
+          },
+          {
+            "count": 1,
+            "vertical": "Finance / Loans"
+          },
+          {
+            "count": 1,
+            "vertical": "Finance / Mortgages & Loans"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Accounts"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Banking"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / CBD"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Travel / Car Hire"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Travel / Flights"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Gambling / Casino"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / DIY"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Garden"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Online / Freebies"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 125,
+      "value": [
+        "1800flowers.com",
+        "etsy.com",
+        "eventbrite.com",
+        "23andme.com",
+        "apple.com",
+        "att.com",
+        "dish.com",
+        "philo.com",
+        "lenovo.com",
+        "nba.com",
+        "samsung.com",
+        "hbomax.com",
+        "usatoday.com",
+        "adorama.com",
+        "ticketweb.com",
+        "hulu.com",
+        "walmart.com",
+        "espn.com",
+        "airbnb.com",
+        "frontgate.com",
+        "hilton.com",
+        "soundcloud.com",
+        "disneyplus.com",
+        "surlatable.com",
+        "fandango.com",
+        "mlb.com",
+        "samsclub.com",
+        "crypto.com",
+        "discoveryplus.com",
+        "max.com",
+        "livenation.com",
+        "axs.com",
+        "backcountry.com",
+        "newspapers.com",
+        "barnesandnoble.com",
+        "beekman1802.com",
+        "bestwestern.com",
+        "dazn.com",
+        "sling.com",
+        "homedepot.com",
+        "caesars.com",
+        "creditkarma.com",
+        "ebay.com",
+        "saatva.com",
+        "solostove.com",
+        "ticketmaster.com",
+        "vegas.com",
+        "nfl.com",
+        "booking.com",
+        "bouqs.com",
+        "breakingt.com",
+        "hotels.com",
+        "cash.app",
+        "casetify.com",
+        "casper.com",
+        "macys.com",
+        "cbs.com",
+        "sportsline.com",
+        "directv.com",
+        "razer.com",
+        "stubhub.com",
+        "cnbc.com",
+        "cocoonbysealy.com",
+        "verizon.com",
+        "sixt.com",
+        "ticketnetwork.com",
+        "cox.com",
+        "crocs.com",
+        "desmoinesregister.com",
+        "dickssportinggoods.com",
+        "dreamcloudsleep.com",
+        "indystar.com",
+        "expedia.com",
+        "fanatics.com",
+        "foco.com",
+        "tempurpedic.com",
+        "fromourplace.com",
+        "gcioutdoor.com",
+        "gofan.co",
+        "harryanddavid.com",
+        "helixsleep.com",
+        "huckberry.com",
+        "paramountplus.com",
+        "vimeo.com",
+        "vrbo.com",
+        "zazzle.com",
+        "highfallshempny.com",
+        "hoka.com",
+        "wayfair.com",
+        "sleepnumber.com",
+        "scribd.com",
+        "jossandmain.com",
+        "leatherman.com",
+        "lendingtree.com",
+        "lids.com",
+        "mlbshop.com",
+        "mackenzie-childs.com",
+        "mattressfirm.com",
+        "tripadvisor.com",
+        "megaseats.com",
+        "midwaydrivein.com",
+        "music.amazon.com",
+        "music.apple.com",
+        "nectarsleep.com",
+        "neweracap.com",
+        "nfhsnetwork.com",
+        "ooni.com",
+        "peacocktv.com",
+        "podsauce.com",
+        "purple.com",
+        "ruggable.com",
+        "savearound.com",
+        "seatgeek.com",
+        "sealy.com",
+        "ticketcity.com",
+        "serta.com",
+        "shopterrain.com",
+        "sienasleep.com",
+        "steinersports.com",
+        "uncommongoods.com",
+        "tenkararodco.com",
+        "ticketmaster.ca",
+        "tv.apple.com",
+        "vividseats.com",
+        "woodscanada.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 5,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "instagram",
+        "pinterest"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/newyorkupstate",
+        "instagram": "https://instagram.com/newyorkupstate",
+        "pinterest": "https://pinterest.com/newyorkupstate",
+        "twitter": "https://twitter.com/newyorkupstate",
+        "youtube": "https://youtube.com/channel/ucm3af9xtbgdk_tiqy1myvbw"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Online / Services",
+      "value": [
+        "Online / Services",
+        "Travel / Attractions"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Online / Services",
+        "rank": 1,
+        "score": 70
+      },
+      "value": [
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 70
+        },
+        {
+          "name": "Travel / Attractions",
+          "rank": 1,
+          "score": 50
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,252 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 6,
+      "sampleValue": [
+        "Business Insider",
+        "CueLinks",
+        "Digidip"
+      ],
+      "value": [
+        "Business Insider",
+        "CueLinks",
+        "Digidip",
+        "PartnerStack",
+        "Skimlinks",
+        "Viglink"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 8,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "aws-amplify-customer@amazon.com"
+        },
+        {
+          "department": "legal",
+          "value": "aws-brasil-privacy@amazon.com"
+        },
+        {
+          "department": "legal",
+          "value": "aws-eu-privacy@amazon.com"
+        },
+        {
+          "department": "legal",
+          "value": "aws-korea-privacy@amazon.com"
+        },
+        {
+          "department": "support",
+          "value": "awsdataexchange-datadesk@amazon.com"
+        },
+        {
+          "department": null,
+          "value": "iot1click@amazon.com"
+        },
+        {
+          "department": "communication",
+          "value": "no-reply-aws@amazon.com"
+        },
+        {
+          "department": null,
+          "value": "rampupguides@amazon.com"
+        }
+      ]
+    },
+    "domain": "aws.amazon.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/aws.amazon.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://aws.amazon.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 186
+      },
+      "partnersAdded": {
+        "count": 8,
+        "value": [
+          {
+            "domain": "spin1.site"
+          },
+          {
+            "domain": "forum.nhuy.info"
+          },
+          {
+            "domain": "shababalrafedain.com"
+          },
+          {
+            "domain": "newspicksai.com"
+          },
+          {
+            "domain": "pamelasskincareclinic.com"
+          },
+          {
+            "domain": "dianaascher.com"
+          },
+          {
+            "domain": "contentcafe.org"
+          },
+          {
+            "domain": "beverlyhillsexaminer.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 2,
+        "value": [
+          {
+            "domain": "techgamingreport.com"
+          },
+          {
+            "domain": "itworld.co.kr"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 4,
+            "promotype": "content",
+            "value": [
+              "1372.topnews.com",
+              "apptractor.ru",
+              "dianaascher.com",
+              "hitech-world.net"
+            ]
+          },
+          {
+            "count": 42,
+            "promotype": "blog",
+            "value": [
+              "500toprated.com",
+              "androidcentral.com",
+              "avnetwork.com",
+              "balkantravellers.com",
+              "bps.pt",
+              "btimesonline.com",
+              "derektmckinney.com",
+              "dlsserve.com",
+              "forum.nhuy.info",
+              "freecoursesguru.com",
+              "furora.tv",
+              "geekradiodaily.com",
+              "ilpost.it",
+              "imbnews.com",
+              "imore.com",
+              "internetshuffle.com",
+              "koninkrijksrelaties.nu",
+              "laptopmag.com",
+              "mailinvest.blog",
+              "mdpair.com",
+              "minutomais.com",
+              "motocms.com",
+              "neueschweizerzeitung.ch",
+              "newsblur.com",
+              "presplay.cloud",
+              "rassegna.lbit-solution.it",
+              "rss.boorghani.com",
+              "shababalrafedain.com",
+              "space.com",
+              "svenews.com",
+              "techadvisor.com",
+              "techosmo.com",
+              "techradar.com",
+              "thecryptowolf.net",
+              "theoldreader.com",
+              "tomsguide.com",
+              "tomshardware.com",
+              "ultimatepocket.com",
+              "washingtonweeklytimes.com",
+              "wochenschau.at",
+              "worldnl.com",
+              "zixi.com"
+            ]
+          },
+          {
+            "count": 15,
+            "promotype": "student",
+            "value": [
+              "altcoin.info",
+              "blog.repithwin.com",
+              "computerworld.pl",
+              "creativebloq.com",
+              "eletiofe.com",
+              "hackernoon.com",
+              "kod.ru",
+              "nexttv.com",
+              "retailcrowd.co.uk",
+              "techcratic.com",
+              "techregister.co.uk",
+              "techtelegraph.co.uk",
+              "turnozero.com",
+              "tvtechnology.com",
+              "yahoo.com"
+            ]
+          },
+          {
+            "count": 4,
+            "promotype": "incentive",
+            "value": [
+              "bilisimprofesyonelleri.com",
+              "blog-nouvelles-technologies.fr",
+              "desicoupons.in",
+              "prizebudgetforboys.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 3,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/amazonwebservices",
+        "twitter": "https://twitter.com/awscloud",
+        "youtube": "https://youtube.com/user/amazonwebservices/cloud"
+      }
+    },
+    "verticals": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Technology / Software",
+        "rank": 2,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Business / Software",
+          "rank": 2,
+          "score": 90
+        },
+        {
+          "name": "Online / Web Hosting",
+          "rank": 2,
+          "score": 85
+        },
+        {
+          "name": "Technology / Software",
+          "rank": 2,
+          "score": 95
+        }
+      ]
+    }
+  }
+}

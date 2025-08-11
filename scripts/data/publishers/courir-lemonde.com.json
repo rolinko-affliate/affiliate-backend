@@ -1,0 +1,121 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Private Network"
+      ],
+      "value": [
+        "Private Network"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "fr",
+        "score": 0.7
+      },
+      "sampleValue": [
+        {
+          "countryCode": "fr",
+          "score": 0.7
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "fr",
+          "score": 0.7
+        }
+      ]
+    },
+    "domain": "courir-lemonde.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/courir-lemonde.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://courir-lemonde.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1,
+        "value": [
+          "chapkadirect.fr"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 0.95,
+            "vertical": "Finance / Insurance"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 1,
+      "value": [
+        "chapkadirect.fr"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Travel / Vacation",
+      "value": [
+        "Travel / Vacation",
+        "Travel / Accommodation"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Travel / Vacation",
+        "rank": 1,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Travel / Vacation",
+          "rank": 1,
+          "score": 100
+        },
+        {
+          "name": "Travel / Accommodation",
+          "rank": 1,
+          "score": 80
+        }
+      ]
+    }
+  }
+}

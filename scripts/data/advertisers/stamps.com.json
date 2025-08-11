@@ -1,0 +1,334 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 4,
+      "sampleValue": [
+        "CJ Affiliate",
+        "Digidip",
+        "Skimlinks"
+      ],
+      "value": [
+        "CJ Affiliate",
+        "Digidip",
+        "Skimlinks",
+        "Viglink"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 6,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "affiliate@stamps.com"
+        },
+        {
+          "department": null,
+          "value": "invrel@stamps.com"
+        },
+        {
+          "department": "hr",
+          "value": "psgiftcode@stamps.com"
+        },
+        {
+          "department": "support",
+          "value": "shippingsupport@stamps.com"
+        },
+        {
+          "department": "marketing",
+          "value": "solutions@stamps.com"
+        },
+        {
+          "department": "it",
+          "value": "warehouse@stamps.com"
+        }
+      ]
+    },
+    "domain": "stamps.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/stamps.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://stamps.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 225
+      },
+      "partnersAdded": {
+        "count": 9,
+        "value": [
+          {
+            "domain": "wellkeptwallet.com"
+          },
+          {
+            "domain": "whatispunctuation.com"
+          },
+          {
+            "domain": "fr.ecommerceceo.com"
+          },
+          {
+            "domain": "expos4products.com"
+          },
+          {
+            "domain": "coilygarden.blogspot.com"
+          },
+          {
+            "domain": "es.ecommerceceo.com"
+          },
+          {
+            "domain": "itascaweb.com"
+          },
+          {
+            "domain": "hallikainen.org"
+          },
+          {
+            "domain": "protophoto.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 7,
+        "value": [
+          {
+            "domain": "ussba.net"
+          },
+          {
+            "domain": "macworld.com"
+          },
+          {
+            "domain": "entrepreneur.com"
+          },
+          {
+            "domain": "pressrelease.com"
+          },
+          {
+            "domain": "worldofdownload.com"
+          },
+          {
+            "domain": "politicsavvy.blogspot.com"
+          },
+          {
+            "domain": "the30dayebaychallenge.blogspot.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 83,
+            "promotype": "blog",
+            "value": [
+              "2xthework.blogspot.com",
+              "500toprated.com",
+              "9malls.com",
+              "affluentrides.com",
+              "agentfreebies.com",
+              "alldayshopping.com",
+              "bellaonline.com",
+              "best88.net",
+              "bloglovin.com",
+              "blog.r2computing.com",
+              "bloombargain.com",
+              "brilliantweddingpages.com",
+              "brock.tv",
+              "budgetdesigner.blogspot.com",
+              "business-internet-and-media.com",
+              "bwedd.com",
+              "cdcg.biz",
+              "cloudprwire.us",
+              "constantcontact.com",
+              "cumbrowski.com",
+              "dejanet.com",
+              "delawareontheweb.com",
+              "distancelearningcookbook.com",
+              "doitmarketing.com",
+              "dollarseed.com",
+              "easss.com",
+              "everythingetsy.com",
+              "excitingads.com",
+              "flitetest.com",
+              "friesarts.com",
+              "geometry.net",
+              "getbeststuff.com",
+              "gopromocodes.com",
+              "hchoo.com",
+              "irivers.com",
+              "itascaweb.com",
+              "mamaofla.blogspot.com",
+              "marketingmypetbusiness.com",
+              "menuwin.net",
+              "michaelfloydsmusic.blogspot.com",
+              "midwaylanding.com",
+              "militaryreferrals.com",
+              "mimsin.com",
+              "momdaughterstyle.blogspot.com",
+              "momsview.com",
+              "mynac.com",
+              "nevisblog.com",
+              "ninke.us",
+              "nonstopgospel.com",
+              "numinix.com",
+              "ocf.berkeley.edu",
+              "onlinestamp.net",
+              "penniesatatime.com",
+              "personalized-wedding-websites.com",
+              "personal-wedding-websites.com",
+              "picturefactories.com",
+              "planetgoldilocks.com",
+              "priceofastamp.com",
+              "protophoto.com",
+              "qualtyplus.biz",
+              "quantumleappodcast.com",
+              "realliferealstories.com",
+              "scottsigler.com",
+              "serversystems.net",
+              "shehjar.com",
+              "shehjar.net",
+              "singleguymoney.com",
+              "sites2save.com",
+              "space.com",
+              "stampingismybusiness.com",
+              "sxlist.com",
+              "taxmama.com",
+              "thedigitalmerchant.com",
+              "thehappyhousewife.com",
+              "tomzaccaro.thegroovygroomer.net",
+              "topgunproducers.com",
+              "treasurepickers.blogspot.com",
+              "twinkietown.com",
+              "uncle-nics-general-store.com",
+              "wall-lake.com",
+              "whatispunctuation.com",
+              "wspir.com",
+              "zoofis.com"
+            ]
+          },
+          {
+            "count": 31,
+            "promotype": "student",
+            "value": [
+              "4kcc.com",
+              "accountingaide.com",
+              "aerosoft.net",
+              "amazingandhelpful.com",
+              "approvedevents.net",
+              "babynose.org",
+              "best-artist.com",
+              "clojudah.com",
+              "creditimes.com",
+              "dehtyme.com",
+              "e-shopeasy.com",
+              "expos4products.com",
+              "galacticfootballleague.com",
+              "lacetoleather.com",
+              "launchgrowjoy.com",
+              "massmind.org",
+              "morningscoop.org",
+              "myregistry.com",
+              "personalchecksusa.com",
+              "piclist.com",
+              "promocodes.com",
+              "pylonpicks.blogspot.com",
+              "roadtosuccess.us",
+              "spotify.com",
+              "squantzy.com",
+              "thepostcardcollector.us",
+              "usemetoshop.com",
+              "ussba.com",
+              "webstrider.com",
+              "wedding-websites.net",
+              "windypix.com"
+            ]
+          },
+          {
+            "count": 7,
+            "promotype": "content",
+            "value": [
+              "ajosemporium.com",
+              "gonicofish.com",
+              "maxoffice.org.uk",
+              "mineyourownbizniz.com",
+              "musictomend.com",
+              "nodramama.blogspot.com",
+              "webcentive.com"
+            ]
+          },
+          {
+            "count": 14,
+            "promotype": "incentive",
+            "value": [
+              "americanconsultant.00cash.com",
+              "angerpod.com",
+              "awesomecoupons.org",
+              "bestcoupononline.com",
+              "couples-wedding-websites.com",
+              "couponcodego.com",
+              "couponit.com",
+              "couponsmoon.com",
+              "dealslist.com",
+              "dealworker.com",
+              "naucon.net",
+              "onlinedealsguide.com",
+              "yellowpagescoupons.net",
+              "zinebook.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "forum",
+            "value": [
+              "computermagicsolutions.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "linkedin"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/stamps.com",
+        "linkedin": "https://linkedin.com/company/stamps.com",
+        "twitter": "https://twitter.com/stampscom",
+        "youtube": "https://youtube.com/user/stampscomvideo"
+      }
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Business / Services",
+        "rank": 2,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 2,
+          "score": 80
+        },
+        {
+          "name": "Business / Services",
+          "rank": 2,
+          "score": 95
+        }
+      ]
+    }
+  }
+}

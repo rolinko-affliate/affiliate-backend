@@ -1,0 +1,88 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Linkbux"
+      ],
+      "value": [
+        "Linkbux"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 0,
+      "error": false,
+      "value": []
+    },
+    "domain": "artemusicum.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/artemusicum.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://artemusicum.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 2
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "korting-en-acties.nl"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 1,
+            "promotype": "blog",
+            "value": [
+              "korting-en-acties.nl"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Entertainment / Music",
+        "rank": 2,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Entertainment / Music",
+          "rank": 2,
+          "score": 90
+        },
+        {
+          "name": "Home / Art",
+          "rank": 2,
+          "score": 60
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,616 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Refersion"
+      ],
+      "value": [
+        "Refersion"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.6
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "other",
+          "score": 0.21
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "other",
+          "score": 0.21
+        }
+      ]
+    },
+    "domain": "pomegranatemuse.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "panel"
+        },
+        {
+          "score": 0.5017439,
+          "value": "acrylic"
+        },
+        {
+          "score": 0.468859,
+          "value": "oil"
+        },
+        {
+          "score": 0.28998506,
+          "value": "linen"
+        },
+        {
+          "score": 0.2884903,
+          "value": "artist"
+        },
+        {
+          "score": 0.28051817,
+          "value": "brush"
+        },
+        {
+          "score": 0.25859493,
+          "value": "team"
+        },
+        {
+          "score": 0.25510713,
+          "value": "pro"
+        },
+        {
+          "score": 0.25012457,
+          "value": "pro team"
+        },
+        {
+          "score": 0.20029895,
+          "value": "pencil"
+        },
+        {
+          "score": 0.18933731,
+          "value": "art"
+        },
+        {
+          "score": 0.18933731,
+          "value": "hardboard"
+        },
+        {
+          "score": 0.18634778,
+          "value": "trekell"
+        },
+        {
+          "score": 0.17538615,
+          "value": "aluminum"
+        },
+        {
+          "score": 0.17090185,
+          "value": "composite"
+        },
+        {
+          "score": 0.17040358,
+          "value": "ground"
+        },
+        {
+          "score": 0.16043846,
+          "value": "knife"
+        },
+        {
+          "score": 0.14798206,
+          "value": "box"
+        },
+        {
+          "score": 0.1340309,
+          "value": "eraser"
+        },
+        {
+          "score": 0.1270553,
+          "value": "supply"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "panel"
+        },
+        {
+          "score": 0.5017439,
+          "value": "acrylic"
+        },
+        {
+          "score": 0.468859,
+          "value": "oil"
+        },
+        {
+          "score": 0.28998506,
+          "value": "linen"
+        },
+        {
+          "score": 0.2884903,
+          "value": "artist"
+        },
+        {
+          "score": 0.28051817,
+          "value": "brush"
+        },
+        {
+          "score": 0.25859493,
+          "value": "team"
+        },
+        {
+          "score": 0.25510713,
+          "value": "pro"
+        },
+        {
+          "score": 0.25012457,
+          "value": "pro team"
+        },
+        {
+          "score": 0.20029895,
+          "value": "pencil"
+        },
+        {
+          "score": 0.18933731,
+          "value": "art"
+        },
+        {
+          "score": 0.18933731,
+          "value": "hardboard"
+        },
+        {
+          "score": 0.18634778,
+          "value": "trekell"
+        },
+        {
+          "score": 0.17538615,
+          "value": "aluminum"
+        },
+        {
+          "score": 0.17090185,
+          "value": "composite"
+        },
+        {
+          "score": 0.17040358,
+          "value": "ground"
+        },
+        {
+          "score": 0.16043846,
+          "value": "knife"
+        },
+        {
+          "score": 0.14798206,
+          "value": "box"
+        },
+        {
+          "score": 0.1340309,
+          "value": "eraser"
+        },
+        {
+          "score": 0.1270553,
+          "value": "supply"
+        },
+        {
+          "score": 0.12556054,
+          "value": "quadruple"
+        },
+        {
+          "score": 0.12556054,
+          "value": "lead"
+        },
+        {
+          "score": 0.12207275,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.120577976,
+          "value": "exclusive affiliate"
+        },
+        {
+          "score": 0.120577976,
+          "value": "composite panel"
+        },
+        {
+          "score": 0.120577976,
+          "value": "wishlist"
+        },
+        {
+          "score": 0.120577976,
+          "value": "wishlist product"
+        },
+        {
+          "score": 0.120577976,
+          "value": "quiz"
+        },
+        {
+          "score": 0.120577976,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.11609367,
+          "value": "gesso"
+        },
+        {
+          "score": 0.11160937,
+          "value": "rating"
+        },
+        {
+          "score": 0.10463378,
+          "value": "imperfect"
+        },
+        {
+          "score": 0.10064773,
+          "value": "color"
+        },
+        {
+          "score": 0.08271051,
+          "value": "paint"
+        },
+        {
+          "score": 0.066268064,
+          "value": "yellow"
+        },
+        {
+          "score": 0.06576981,
+          "value": "shaper"
+        },
+        {
+          "score": 0.06527155,
+          "value": "short"
+        },
+        {
+          "score": 0.06477329,
+          "value": "donation"
+        },
+        {
+          "score": 0.06278027,
+          "value": "golden"
+        },
+        {
+          "score": 0.061783757,
+          "value": "reward"
+        },
+        {
+          "score": 0.0612855,
+          "value": "close brush"
+        },
+        {
+          "score": 0.060288988,
+          "value": "close account"
+        },
+        {
+          "score": 0.059790734,
+          "value": "blue"
+        },
+        {
+          "score": 0.059790734,
+          "value": "shopify"
+        },
+        {
+          "score": 0.056801196,
+          "value": "helpful"
+        },
+        {
+          "score": 0.055804685,
+          "value": "low rating"
+        },
+        {
+          "score": 0.055804685,
+          "value": "low"
+        },
+        {
+          "score": 0.054309916,
+          "value": "acm"
+        },
+        {
+          "score": 0.05231689,
+          "value": "handle"
+        },
+        {
+          "score": 0.050323866,
+          "value": "composite material"
+        },
+        {
+          "score": 0.048330843,
+          "value": "short handle"
+        },
+        {
+          "score": 0.045839563,
+          "value": "charcoal"
+        },
+        {
+          "score": 0.045341305,
+          "value": "set"
+        },
+        {
+          "score": 0.042351767,
+          "value": "sheet"
+        },
+        {
+          "score": 0.042351767,
+          "value": "professional"
+        },
+        {
+          "score": 0.040857002,
+          "value": "white"
+        },
+        {
+          "score": 0.040857002,
+          "value": "gold"
+        },
+        {
+          "score": 0.040358745,
+          "value": "green"
+        },
+        {
+          "score": 0.039860487,
+          "value": "imperfect panel"
+        },
+        {
+          "score": 0.039362233,
+          "value": "titanium"
+        },
+        {
+          "score": 0.036372695,
+          "value": "gouache"
+        },
+        {
+          "score": 0.033881415,
+          "value": "primary"
+        },
+        {
+          "score": 0.033383157,
+          "value": "tube"
+        },
+        {
+          "score": 0.03188839,
+          "value": "liquitex"
+        },
+        {
+          "score": 0.031390134,
+          "value": "light"
+        },
+        {
+          "score": 0.030393623,
+          "value": "painting"
+        },
+        {
+          "score": 0.029895367,
+          "value": "assorted color"
+        },
+        {
+          "score": 0.029895367,
+          "value": "assorted"
+        },
+        {
+          "score": 0.029895367,
+          "value": "gac"
+        },
+        {
+          "score": 0.028400598,
+          "value": "friend"
+        },
+        {
+          "score": 0.027902342,
+          "value": "appreciated"
+        },
+        {
+          "score": 0.027902342,
+          "value": "input"
+        },
+        {
+          "score": 0.027902342,
+          "value": "appreciated friend"
+        },
+        {
+          "score": 0.027902342,
+          "value": "body"
+        },
+        {
+          "score": 0.026407573,
+          "value": "regular"
+        },
+        {
+          "score": 0.026407573,
+          "value": "palette"
+        },
+        {
+          "score": 0.025909318,
+          "value": "surface"
+        },
+        {
+          "score": 0.025411062,
+          "value": "shape"
+        },
+        {
+          "score": 0.025411062,
+          "value": "floater"
+        },
+        {
+          "score": 0.025411062,
+          "value": "photo"
+        },
+        {
+          "score": 0.025411062,
+          "value": "heart"
+        },
+        {
+          "score": 0.024912804,
+          "value": "jet"
+        },
+        {
+          "score": 0.024912804,
+          "value": "lemon"
+        },
+        {
+          "score": 0.024912804,
+          "value": "regular price"
+        },
+        {
+          "score": 0.024912804,
+          "value": "wood"
+        },
+        {
+          "score": 0.024414549,
+          "value": "kit"
+        },
+        {
+          "score": 0.024414549,
+          "value": "yellow light"
+        },
+        {
+          "score": 0.023418037,
+          "value": "raw"
+        },
+        {
+          "score": 0.022919782,
+          "value": "violet"
+        },
+        {
+          "score": 0.022421524,
+          "value": "raw acm"
+        },
+        {
+          "score": 0.022421524,
+          "value": "prototype"
+        },
+        {
+          "score": 0.021923268,
+          "value": "stroke"
+        },
+        {
+          "score": 0.021923268,
+          "value": "heavy"
+        },
+        {
+          "score": 0.021425012,
+          "value": "heavy body"
+        },
+        {
+          "score": 0.020428501,
+          "value": "scarlet"
+        },
+        {
+          "score": 0.019930243,
+          "value": "sky"
+        },
+        {
+          "score": 0.019930243,
+          "value": "golden gac"
+        },
+        {
+          "score": 0.018933732,
+          "value": "edge"
+        },
+        {
+          "score": 0.018435476,
+          "value": "script"
+        },
+        {
+          "score": 0.017438963,
+          "value": "fine"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": "Eclectic, surreal art and design from the mind of the muse.\nPM creates out of her home studio in the Heritage District of Gilbert, Arizona. ",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/pomegranatemuse.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://pomegranatemuse.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1,
+        "value": [
+          "trekell.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "trekell.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 0.9,
+            "vertical": "Home / Art"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 1,
+      "value": [
+        "trekell.com"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Home / Art",
+      "value": [
+        "Home / Art",
+        "Entertainment / Hobbies"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Home / Art",
+        "rank": 1,
+        "score": 80
+      },
+      "value": [
+        {
+          "name": "Home / Art",
+          "rank": 1,
+          "score": 80
+        },
+        {
+          "name": "Entertainment / Hobbies",
+          "rank": 1,
+          "score": 60
+        }
+      ]
+    }
+  }
+}

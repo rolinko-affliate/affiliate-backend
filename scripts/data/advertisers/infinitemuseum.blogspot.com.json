@@ -1,0 +1,94 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Skimlinks"
+      ],
+      "value": [
+        "Skimlinks"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 1,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "team@google.the"
+        }
+      ]
+    },
+    "domain": "infinitemuseum.blogspot.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/infinitemuseum.blogspot.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://infinitemuseum.blogspot.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 1,
+            "promotype": "blog",
+            "value": [
+              "pcworld.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 1,
+      "socialsAvailable": [
+        "twitter"
+      ],
+      "value": {
+        "twitter": "https://twitter.com/philshapiro"
+      }
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Home / Art",
+        "rank": 2,
+        "score": 70
+      },
+      "value": [
+        {
+          "name": "Entertainment / Hobbies",
+          "rank": 2,
+          "score": 60
+        },
+        {
+          "name": "Home / Art",
+          "rank": 2,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

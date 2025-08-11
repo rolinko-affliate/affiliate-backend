@@ -778,59 +778,53 @@ const docTemplate = `{
                 }
             }
         },
-        "/advertisers/{advertiser_id}/campaigns": {
-            "get": {
+        "/advertisers/sync-all-to-everflow": {
+            "post": {
                 "security": [
                     {
                         "BearerAuth": []
                     }
                 ],
-                "description": "Retrieve campaigns for a specific advertiser with pagination",
+                "description": "Creates Everflow advertisers for all local advertisers that don't have provider mappings",
                 "produces": [
                     "application/json"
                 ],
                 "tags": [
-                    "campaigns"
+                    "advertisers"
                 ],
-                "summary": "List campaigns by advertiser",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "Advertiser ID",
-                        "name": "advertiser_id",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "type": "integer",
-                        "description": "Page number (default: 1)",
-                        "name": "page",
-                        "in": "query"
-                    },
-                    {
-                        "type": "integer",
-                        "description": "Page size (default: 20, max: 100)",
-                        "name": "page_size",
-                        "in": "query"
-                    }
-                ],
+                "summary": "Sync all advertisers to Everflow",
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "Sync results",
                         "schema": {
-                            "$ref": "#/definitions/models.CampaignListResponse"
+                            "$ref": "#/definitions/domain.BulkSyncResult"
                         }
                     },
-                    "400": {
-                        "description": "Bad Request",
+                    "401": {
+                        "description": "Unauthorized",
                         "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
                         }
                     },
                     "500": {
-                        "description": "Internal Server Error",
+                        "description": "Internal server error",
                         "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
                         }
                     }
                 }
@@ -1052,6 +1046,64 @@ const docTemplate = `{
                             "additionalProperties": {
                                 "type": "string"
                             }
+                        }
+                    }
+                }
+            }
+        },
+        "/advertisers/{id}/campaigns": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Retrieve campaigns for a specific advertiser with pagination",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "campaigns"
+                ],
+                "summary": "List campaigns by advertiser",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Advertiser ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Page number (default: 1)",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Page size (default: 20, max: 100)",
+                        "name": "page_size",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CampaignListResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
                         }
                     }
                 }
@@ -1923,78 +1975,6 @@ const docTemplate = `{
                             "additionalProperties": {
                                 "type": "string"
                             }
-                        }
-                    }
-                }
-            }
-        },
-        "/affiliates/{id}/tracking-links": {
-            "get": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Retrieve a list of tracking links for a specific affiliate",
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "tracking-links"
-                ],
-                "summary": "List tracking links by affiliate",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "Affiliate ID",
-                        "name": "id",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "type": "integer",
-                        "default": 1,
-                        "description": "Page number",
-                        "name": "page",
-                        "in": "query"
-                    },
-                    {
-                        "type": "integer",
-                        "default": 20,
-                        "description": "Page size",
-                        "name": "page_size",
-                        "in": "query"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/models.TrackingLinkListResponse"
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "403": {
-                        "description": "Forbidden",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
                         }
                     }
                 }
@@ -3927,21 +3907,24 @@ const docTemplate = `{
                 }
             }
         },
-        "/campaigns/{id}/tracking-links": {
+        "/campaigns/{id}/provider-mappings/{providerType}": {
             "get": {
                 "security": [
                     {
                         "BearerAuth": []
                     }
                 ],
-                "description": "Retrieve a list of tracking links for a specific campaign",
+                "description": "Retrieves a campaign provider mapping by campaign ID and provider type",
+                "consumes": [
+                    "application/json"
+                ],
                 "produces": [
                     "application/json"
                 ],
                 "tags": [
-                    "tracking-links"
+                    "campaigns"
                 ],
-                "summary": "List tracking links by campaign",
+                "summary": "Get campaign provider mapping",
                 "parameters": [
                     {
                         "type": "integer",
@@ -3951,25 +3934,18 @@ const docTemplate = `{
                         "required": true
                     },
                     {
-                        "type": "integer",
-                        "default": 1,
-                        "description": "Page number",
-                        "name": "page",
-                        "in": "query"
-                    },
-                    {
-                        "type": "integer",
-                        "default": 20,
-                        "description": "Page size",
-                        "name": "page_size",
-                        "in": "query"
+                        "type": "string",
+                        "description": "Provider type",
+                        "name": "providerType",
+                        "in": "path",
+                        "required": true
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/models.TrackingLinkListResponse"
+                            "$ref": "#/definitions/models.GetCampaignProviderMappingResponse"
                         }
                     },
                     "400": {
@@ -3978,14 +3954,8 @@ const docTemplate = `{
                             "$ref": "#/definitions/handlers.ErrorResponse"
                         }
                     },
-                    "401": {
-                        "description": "Unauthorized",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "403": {
-                        "description": "Forbidden",
+                    "404": {
+                        "description": "Not Found",
                         "schema": {
                             "$ref": "#/definitions/handlers.ErrorResponse"
                         }
@@ -4795,7 +4765,7 @@ const docTemplate = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/domain.OrganizationAssociation"
+                                "$ref": "#/definitions/domain.OrganizationAssociationWithDetails"
                             }
                         }
                     },
@@ -6133,231 +6103,21 @@ const docTemplate = `{
                 }
             }
         },
-        "/organizations/{organization_id}/tracking-links": {
+        "/organizations/{organization_id}/tracking-links/{link_id}/qr": {
             "get": {
                 "security": [
                     {
                         "BearerAuth": []
                     }
                 ],
-                "description": "Retrieve a list of tracking links for a specific organization",
+                "description": "Generate a QR code for the specified tracking link",
                 "produces": [
-                    "application/json"
+                    "text/plain"
                 ],
                 "tags": [
                     "tracking-links"
                 ],
-                "summary": "List tracking links by organization",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "Organization ID",
-                        "name": "organization_id",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "type": "integer",
-                        "default": 1,
-                        "description": "Page number",
-                        "name": "page",
-                        "in": "query"
-                    },
-                    {
-                        "type": "integer",
-                        "default": 20,
-                        "description": "Page size",
-                        "name": "page_size",
-                        "in": "query"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/models.TrackingLinkListResponse"
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "403": {
-                        "description": "Forbidden",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    }
-                }
-            },
-            "post": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Create a new tracking link for a campaign and affiliate",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "tracking-links"
-                ],
-                "summary": "Create a new tracking link",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "Organization ID",
-                        "name": "organization_id",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "description": "Tracking link creation request",
-                        "name": "request",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/models.TrackingLinkRequest"
-                        }
-                    }
-                ],
-                "responses": {
-                    "201": {
-                        "description": "Created",
-                        "schema": {
-                            "$ref": "#/definitions/models.TrackingLinkResponse"
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "403": {
-                        "description": "Forbidden",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    }
-                }
-            }
-        },
-        "/organizations/{organization_id}/tracking-links/generate": {
-            "post": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Generate a new tracking link with provider integration for a campaign and affiliate",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "tracking-links"
-                ],
-                "summary": "Generate a new tracking link",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "Organization ID",
-                        "name": "organization_id",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "description": "Tracking link generation request",
-                        "name": "request",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/models.TrackingLinkGenerationRequest"
-                        }
-                    }
-                ],
-                "responses": {
-                    "201": {
-                        "description": "Created",
-                        "schema": {
-                            "$ref": "#/definitions/models.TrackingLinkGenerationResponse"
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "403": {
-                        "description": "Forbidden",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    }
-                }
-            }
-        },
-        "/organizations/{organization_id}/tracking-links/{tracking_link_id}": {
-            "get": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Retrieve a tracking link by its ID",
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "tracking-links"
-                ],
-                "summary": "Get a tracking link",
+                "summary": "Get QR code for tracking link",
                 "parameters": [
                     {
                         "type": "integer",
@@ -6369,318 +6129,20 @@ const docTemplate = `{
                     {
                         "type": "integer",
                         "description": "Tracking Link ID",
-                        "name": "tracking_link_id",
+                        "name": "link_id",
                         "in": "path",
                         "required": true
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/models.TrackingLinkResponse"
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "403": {
-                        "description": "Forbidden",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "404": {
-                        "description": "Not Found",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    }
-                }
-            },
-            "put": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Update an existing tracking link",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "tracking-links"
-                ],
-                "summary": "Update a tracking link",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "Organization ID",
-                        "name": "organization_id",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "type": "integer",
-                        "description": "Tracking Link ID",
-                        "name": "tracking_link_id",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "description": "Tracking link update request",
-                        "name": "request",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/models.TrackingLinkUpdateRequest"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/models.TrackingLinkResponse"
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "403": {
-                        "description": "Forbidden",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "404": {
-                        "description": "Not Found",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    }
-                }
-            },
-            "delete": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Delete a tracking link by its ID",
-                "tags": [
-                    "tracking-links"
-                ],
-                "summary": "Delete a tracking link",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "Organization ID",
-                        "name": "organization_id",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "type": "integer",
-                        "description": "Tracking Link ID",
-                        "name": "tracking_link_id",
-                        "in": "path",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "204": {
-                        "description": "No Content"
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "403": {
-                        "description": "Forbidden",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "404": {
-                        "description": "Not Found",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    }
-                }
-            }
-        },
-        "/organizations/{organization_id}/tracking-links/{tracking_link_id}/qr": {
-            "get": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Generate and return a QR code image for a tracking link",
-                "produces": [
-                    "image/png"
-                ],
-                "tags": [
-                    "tracking-links"
-                ],
-                "summary": "Get tracking link QR code",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "Organization ID",
-                        "name": "organization_id",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "type": "integer",
-                        "description": "Tracking Link ID",
-                        "name": "tracking_link_id",
-                        "in": "path",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "QR code image\" encoded with base64",
+                        "description": "Base64 encoded QR code",
                         "schema": {
                             "type": "string"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "403": {
-                        "description": "Forbidden",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "404": {
-                        "description": "Not Found",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    }
-                }
-            }
-        },
-        "/organizations/{organization_id}/tracking-links/{tracking_link_id}/regenerate": {
-            "post": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Regenerate an existing tracking link with provider integration",
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "tracking-links"
-                ],
-                "summary": "Regenerate a tracking link",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "Organization ID",
-                        "name": "organization_id",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "type": "integer",
-                        "description": "Tracking Link ID",
-                        "name": "tracking_link_id",
-                        "in": "path",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/models.TrackingLinkGenerationResponse"
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "schema": {
-                            "$ref": "#/definitions/handlers.ErrorResponse"
-                        }
-                    },
-                    "403": {
-                        "description": "Forbidden",
                         "schema": {
                             "$ref": "#/definitions/handlers.ErrorResponse"
                         }
@@ -6707,7 +6169,7 @@ const docTemplate = `{
                         "BearerAuth": []
                     }
                 ],
-                "description": "Creates a new user profile",
+                "description": "Creates a new user profile (TODO: Temporarily without access control)",
                 "consumes": [
                     "application/json"
                 ],
@@ -7477,6 +6939,296 @@ const docTemplate = `{
                     },
                     "500": {
                         "description": "Internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/tracking-links": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "List tracking links with optional filtering by affiliate IDs and campaign IDs",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "tracking-links"
+                ],
+                "summary": "List tracking links",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Comma-separated list of affiliate IDs",
+                        "name": "affiliate_ids",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Comma-separated list of campaign IDs",
+                        "name": "campaign_ids",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "default": 20,
+                        "description": "Number of items per page",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "default": 0,
+                        "description": "Number of items to skip",
+                        "name": "offset",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.TrackingLinkListResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Create a new tracking link with uniqueness guarantee for campaign_id + affiliate_id combination",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "tracking-links"
+                ],
+                "summary": "Create a new tracking link",
+                "parameters": [
+                    {
+                        "description": "Tracking link creation request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.TrackingLinkGenerationRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/models.TrackingLinkGenerationResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/tracking-links/{id}": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Retrieve a tracking link by its ID",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "tracking-links"
+                ],
+                "summary": "Get tracking link by ID",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Tracking Link ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.TrackingLinkResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Update a tracking link and regenerate if key parameters change",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "tracking-links"
+                ],
+                "summary": "Update tracking link",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Tracking Link ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Tracking link update request",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.TrackingLinkUpdateRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.TrackingLinkResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Delete a tracking link by its ID",
+                "tags": [
+                    "tracking-links"
+                ],
+                "summary": "Delete tracking link",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Tracking Link ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
                         "schema": {
                             "$ref": "#/definitions/handlers.ErrorResponse"
                         }
@@ -8566,6 +8318,55 @@ const docTemplate = `{
                 }
             }
         },
+        "domain.BulkSyncItemResult": {
+            "type": "object",
+            "properties": {
+                "advertiser_id": {
+                    "type": "integer"
+                },
+                "advertiser_name": {
+                    "type": "string"
+                },
+                "error": {
+                    "type": "string"
+                },
+                "provider_advertiser_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.BulkSyncResult": {
+            "type": "object",
+            "properties": {
+                "completed_at": {
+                    "type": "string"
+                },
+                "failure_count": {
+                    "type": "integer"
+                },
+                "failures": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.BulkSyncItemResult"
+                    }
+                },
+                "started_at": {
+                    "type": "string"
+                },
+                "success_count": {
+                    "type": "integer"
+                },
+                "successes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.BulkSyncItemResult"
+                    }
+                },
+                "total_processed": {
+                    "type": "integer"
+                }
+            }
+        },
         "domain.Campaign": {
             "type": "object",
             "properties": {
@@ -9377,6 +9178,74 @@ const docTemplate = `{
                 "message": {
                     "description": "Optional message with request/invitation",
                     "type": "string"
+                },
+                "requested_by_user_id": {
+                    "description": "Request/invitation metadata",
+                    "type": "string"
+                },
+                "status": {
+                    "$ref": "#/definitions/domain.AssociationStatus"
+                },
+                "updated_at": {
+                    "type": "string"
+                },
+                "visible_affiliate_ids": {
+                    "description": "Visibility settings - JSON arrays of IDs",
+                    "type": "string"
+                },
+                "visible_campaign_ids": {
+                    "description": "JSONB array of campaign IDs visible to affiliate",
+                    "type": "string"
+                }
+            }
+        },
+        "domain.OrganizationAssociationWithDetails": {
+            "type": "object",
+            "properties": {
+                "advertiser_org_id": {
+                    "type": "integer"
+                },
+                "advertiser_organization": {
+                    "$ref": "#/definitions/domain.Organization"
+                },
+                "affiliate_org_id": {
+                    "type": "integer"
+                },
+                "affiliate_organization": {
+                    "$ref": "#/definitions/domain.Organization"
+                },
+                "all_affiliates_visible": {
+                    "description": "Default visibility flags (when true, all affiliates/campaigns are visible)",
+                    "type": "boolean"
+                },
+                "all_campaigns_visible": {
+                    "type": "boolean"
+                },
+                "approved_at": {
+                    "type": "string"
+                },
+                "approved_by_user": {
+                    "$ref": "#/definitions/domain.Profile"
+                },
+                "approved_by_user_id": {
+                    "description": "UUID of user who approved",
+                    "type": "string"
+                },
+                "association_id": {
+                    "type": "integer"
+                },
+                "association_type": {
+                    "$ref": "#/definitions/domain.AssociationType"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "message": {
+                    "description": "Optional message with request/invitation",
+                    "type": "string"
+                },
+                "requested_by_user": {
+                    "$ref": "#/definitions/domain.Profile"
                 },
                 "requested_by_user_id": {
                     "description": "Request/invitation metadata",
@@ -10482,6 +10351,10 @@ const docTemplate = `{
                 "first_name": {
                     "type": "string"
                 },
+                "id": {
+                    "description": "TODO: Remove this field when access control is restored",
+                    "type": "string"
+                },
                 "last_name": {
                     "type": "string"
                 },
@@ -10748,6 +10621,38 @@ const docTemplate = `{
                 },
                 "total": {
                     "type": "integer"
+                }
+            }
+        },
+        "models.CampaignProviderMappingResponse": {
+            "type": "object",
+            "properties": {
+                "campaign_id": {
+                    "type": "integer"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "is_active_on_provider": {
+                    "type": "boolean"
+                },
+                "last_synced_at": {
+                    "type": "string"
+                },
+                "mapping_id": {
+                    "type": "integer"
+                },
+                "provider_data": {
+                    "type": "string"
+                },
+                "provider_offer_id": {
+                    "type": "string"
+                },
+                "provider_type": {
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
                 }
             }
         },
@@ -11074,6 +10979,14 @@ const docTemplate = `{
                 }
             }
         },
+        "models.GetCampaignProviderMappingResponse": {
+            "type": "object",
+            "properties": {
+                "provider_mapping": {
+                    "$ref": "#/definitions/models.CampaignProviderMappingResponse"
+                }
+            }
+        },
         "models.TrackingLinkGenerationRequest": {
             "type": "object",
             "required": [
@@ -11196,77 +11109,6 @@ const docTemplate = `{
                     "items": {
                         "$ref": "#/definitions/models.TrackingLinkResponse"
                     }
-                }
-            }
-        },
-        "models.TrackingLinkRequest": {
-            "type": "object",
-            "required": [
-                "affiliate_id",
-                "campaign_id",
-                "name",
-                "status"
-            ],
-            "properties": {
-                "affiliate_id": {
-                    "type": "integer",
-                    "example": 1
-                },
-                "campaign_id": {
-                    "type": "integer",
-                    "example": 1
-                },
-                "description": {
-                    "type": "string",
-                    "example": "Tracking link for Facebook traffic"
-                },
-                "internal_notes": {
-                    "type": "string",
-                    "example": "High-performing traffic source"
-                },
-                "is_encrypt_parameters": {
-                    "type": "boolean",
-                    "example": false
-                },
-                "is_redirect_link": {
-                    "type": "boolean",
-                    "example": true
-                },
-                "name": {
-                    "type": "string",
-                    "example": "Facebook Campaign Link"
-                },
-                "source_id": {
-                    "type": "string",
-                    "example": "facebook"
-                },
-                "status": {
-                    "type": "string",
-                    "example": "active"
-                },
-                "sub1": {
-                    "type": "string",
-                    "example": "campaign_123"
-                },
-                "sub2": {
-                    "type": "string",
-                    "example": "adset_456"
-                },
-                "sub3": {
-                    "type": "string",
-                    "example": "ad_789"
-                },
-                "sub4": {
-                    "type": "string",
-                    "example": "placement_mobile"
-                },
-                "sub5": {
-                    "type": "string",
-                    "example": "audience_lookalike"
-                },
-                "tags": {
-                    "type": "string",
-                    "example": "facebook,mobile,lookalike"
                 }
             }
         },

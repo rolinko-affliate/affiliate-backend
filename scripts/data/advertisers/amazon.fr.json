@@ -1,0 +1,364 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 11,
+      "sampleValue": [
+        "ClickMagick",
+        "Digidip",
+        "Effiliation"
+      ],
+      "value": [
+        "ClickMagick",
+        "Digidip",
+        "Effiliation",
+        "Linkbux",
+        "Rewardstyle",
+        "Shopnomix",
+        "Skimlinks",
+        "SourceKnowledge",
+        "Tradedoubler",
+        "Viglink",
+        "Yieldkit"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 3,
+      "error": false,
+      "value": [
+        {
+          "department": "legal",
+          "value": "eu-privacy@amazon.fr"
+        },
+        {
+          "department": null,
+          "value": "luxurystores@amazon.fr"
+        },
+        {
+          "department": null,
+          "value": "privacyshield@amazon.com"
+        }
+      ]
+    },
+    "domain": "amazon.fr",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "Achat et vente en ligne parmi des millions de produits en stock. Livraison gratuite à partir de 25€. Vos articles à petits prix : culture, high-tech, mode, jouets, sport, maison et bien plus !",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazon.fr.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazon.fr"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 287
+      },
+      "partnersAdded": {
+        "count": 17,
+        "value": [
+          {
+            "domain": "traiter9avis.blogspot.com"
+          },
+          {
+            "domain": "elizabeth-noble.com"
+          },
+          {
+            "domain": "groselectromenagercorners.blogspot.com"
+          },
+          {
+            "domain": "barbedudaron.fr"
+          },
+          {
+            "domain": "paulenarecensioni122.blogspot.com"
+          },
+          {
+            "domain": "stephtaylor.co"
+          },
+          {
+            "domain": "prlog.ru"
+          },
+          {
+            "domain": "buzzfeed.com"
+          },
+          {
+            "domain": "kallisteha.com"
+          },
+          {
+            "domain": "doitinparis.com"
+          },
+          {
+            "domain": "wisdomintowealth.com"
+          },
+          {
+            "domain": "lovelivetravel.fr"
+          },
+          {
+            "domain": "lucylennox.com"
+          },
+          {
+            "domain": "wilkiemartin.com"
+          },
+          {
+            "domain": "beaute-therapie.com"
+          },
+          {
+            "domain": "surletagere.com"
+          },
+          {
+            "domain": "mounawithlove.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 7,
+        "value": [
+          {
+            "domain": "ladyfan.uk"
+          },
+          {
+            "domain": "birdsend.net"
+          },
+          {
+            "domain": "outwitinrealtime.com"
+          },
+          {
+            "domain": "srfcty.co"
+          },
+          {
+            "domain": "francesgarrood.com"
+          },
+          {
+            "domain": "books-laid-bare-boys.com"
+          },
+          {
+            "domain": "lesemeurdetrouble.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 6,
+            "promotype": "incentive",
+            "value": [
+              "43rumors.com",
+              "ledressingideal.fr",
+              "m3.se",
+              "serialdealer.fr",
+              "shopdeals.site",
+              "smugdeals.com"
+            ]
+          },
+          {
+            "count": 78,
+            "promotype": "blog",
+            "value": [
+              "achatcool.com",
+              "ajstewartbooks.com",
+              "an-nissa.net",
+              "barbedudaron.fr",
+              "beaute-therapie.com",
+              "bibliotica.com",
+              "blog.sweetspotsisterhood.com",
+              "bonplansfrench.com",
+              "brain-damage.co.uk",
+              "buzzfeed.com",
+              "cestquoicebruit.com",
+              "chonandchon.com",
+              "christianbookaholic.com",
+              "click.convertkit-mail.com",
+              "comboinfinito.com.br",
+              "crwd.fr",
+              "deepdesirespress.com",
+              "dixmois.fr",
+              "doitinparis.com",
+              "easss.com",
+              "express.co.uk",
+              "frandroid.com",
+              "fujirumors.com",
+              "gamelegends.it",
+              "geni.us",
+              "georiot.co",
+              "getpodcast.com",
+              "glynnstewart.com",
+              "gq.com.tw",
+              "greenweddingshoes.com",
+              "headphonesnao.com",
+              "hustleandgroove.com",
+              "jakonrath.blogspot.com",
+              "jillianneal.com",
+              "laroxstyle.com",
+              "lesbonsplansdenaima.fr",
+              "lesnumeriques.com",
+              "liberactrice.fr",
+              "livesino.net",
+              "livingaftermidnite.com",
+              "lodoesmakeup.com",
+              "lucylennox.com",
+              "margauxlifestyle.fr",
+              "markarayner.com",
+              "missfinebeauty.fr",
+              "mocassinserretete.com",
+              "mumtobeparty.com",
+              "mysweetcactus.com",
+              "nomadjacob.com",
+              "passionforshoes.blogspot.com",
+              "paulinefashionblog.com",
+              "peonylim.com",
+              "prlog.ru",
+              "readingaddictionvbt.com",
+              "redcheeksreads.com",
+              "repaire.net",
+              "roseandmusc.com",
+              "sendfox.com",
+              "severineaubry-illustration.com",
+              "sonyalpharumors.com",
+              "soworkingirls.com",
+              "staceystachetti.com",
+              "starcrossedbookblog.com",
+              "stephtaylor.co",
+              "swaguyparis.fr",
+              "tambulimedia.com",
+              "techadvisor.com",
+              "techfishnews.com",
+              "texasbooknook.com",
+              "theoldreader.com",
+              "tomkenemore.com",
+              "travelzad.com",
+              "valentinepr.net",
+              "vogue.fr",
+              "wishlistr.com",
+              "world68.com",
+              "yourchoiceway.com",
+              "zszhair.com"
+            ]
+          },
+          {
+            "count": 33,
+            "promotype": "student",
+            "value": [
+              "api.kuponhub.net",
+              "balibulle.com",
+              "bernieshoot.fr",
+              "blushavocado.com",
+              "bookenticer.com",
+              "branchez-vous.com",
+              "canoetripping.net",
+              "carnetsnature.com",
+              "cinderellova.com",
+              "cindygredziak.fr",
+              "dangerouspress.com",
+              "elofancy.fr",
+              "goodreads.com",
+              "greenshill.com",
+              "indieerotica.com",
+              "janisensucre.com",
+              "jerisbookattic.com",
+              "limfic.com",
+              "mailerlite.com",
+              "mirrorlessrumors.com",
+              "newsnet.fr",
+              "news-of-madonna.com",
+              "onlinephilosophyclub.com",
+              "pepper.pl",
+              "produitexamen1.blogspot.com",
+              "project-aria.ca",
+              "shor.by",
+              "sofrench.pro",
+              "soisbelleetparle.fr",
+              "sultrysirensbookblog.com",
+              "techtelegraph.co.uk",
+              "tendanceclemence.fr",
+              "viewbook.at"
+            ]
+          },
+          {
+            "count": 9,
+            "promotype": "content",
+            "value": [
+              "brittanysbookblog.com",
+              "christiegordon.com",
+              "mounawithlove.com",
+              "mymidlifefashion.com",
+              "nerdychic.net",
+              "neverhollowed.com",
+              "passionnementalafolie.com",
+              "thereviewloft.com",
+              "ttcbooksandmore.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "forum",
+            "value": [
+              "infotrust.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "verticals": {
+      "count": 8,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 2,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 2,
+          "score": 100
+        },
+        {
+          "name": "Entertainment / Books",
+          "rank": 2,
+          "score": 70
+        },
+        {
+          "name": "Entertainment / Movies",
+          "rank": 2,
+          "score": 70
+        },
+        {
+          "name": "Entertainment / Music",
+          "rank": 2,
+          "score": 70
+        },
+        {
+          "name": "Fashion / Clothing",
+          "rank": 2,
+          "score": 70
+        },
+        {
+          "name": "Home / Homeware",
+          "rank": 2,
+          "score": 70
+        },
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 2,
+          "score": 100
+        },
+        {
+          "name": "Technology / Electronics",
+          "rank": 2,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

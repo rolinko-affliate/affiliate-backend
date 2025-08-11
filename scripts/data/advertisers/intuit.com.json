@@ -1,0 +1,1555 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 13,
+      "sampleValue": [
+        "Awin",
+        "Business Insider",
+        "CJ Affiliate"
+      ],
+      "value": [
+        "Awin",
+        "Business Insider",
+        "CJ Affiliate",
+        "Digidip",
+        "Flexoffers",
+        "Linkbux",
+        "PartnerStack",
+        "Skimlinks",
+        "SourceKnowledge",
+        "Takeads",
+        "TRX",
+        "Viglink",
+        "Yieldkit"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 10,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "accessibility-feedback@intuit.com"
+        },
+        {
+          "department": "support",
+          "value": "customers@intuit.com"
+        },
+        {
+          "department": null,
+          "value": "education@intuit.com"
+        },
+        {
+          "department": null,
+          "value": "keri_danielski@intuit.com"
+        },
+        {
+          "department": null,
+          "value": "officeofthepresidentvoiceofthecustomer_@intuit.com"
+        },
+        {
+          "department": "support",
+          "value": "sourcing_support@intuit.com"
+        },
+        {
+          "department": null,
+          "value": "spginquiries@intuit.com"
+        },
+        {
+          "department": null,
+          "value": "talentacquisition@intuit.com"
+        },
+        {
+          "department": "legal",
+          "value": "tax_talent@intuit.com"
+        },
+        {
+          "department": null,
+          "value": "transfer_license@intuit.com"
+        }
+      ]
+    },
+    "domain": "intuit.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "See how Intuit products can work for you by joining the over 100 million people already using TurboTax, QuickBooks, Mint, Credit Karma, and Mailchimp to power their prosperity.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/intuit.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://intuit.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1980
+      },
+      "partnersAdded": {
+        "count": 130,
+        "value": [
+          {
+            "domain": "soyouwanttofindanewcareer.com"
+          },
+          {
+            "domain": "taylormadebks.com"
+          },
+          {
+            "domain": "moonbbs.com"
+          },
+          {
+            "domain": "serviciosarellano.com"
+          },
+          {
+            "domain": "jobsandcareerswatch.com"
+          },
+          {
+            "domain": "libertenumerique.com"
+          },
+          {
+            "domain": "jobseekermiddleeast.com"
+          },
+          {
+            "domain": "es.digitaltrends.com"
+          },
+          {
+            "domain": "a2zseoarticles.com"
+          },
+          {
+            "domain": "ledgersmart.ca"
+          },
+          {
+            "domain": "99ranks.com"
+          },
+          {
+            "domain": "blaquenet.com"
+          },
+          {
+            "domain": "ycintegrity.com"
+          },
+          {
+            "domain": "brock.mykajabi.com"
+          },
+          {
+            "domain": "jp.dealapac.com"
+          },
+          {
+            "domain": "venturbug.com"
+          },
+          {
+            "domain": "rlglawpllc.com"
+          },
+          {
+            "domain": "semrushdirectory.com"
+          },
+          {
+            "domain": "alandavid.us"
+          },
+          {
+            "domain": "mbidz.com"
+          },
+          {
+            "domain": "newmexicotechmonitor.com"
+          },
+          {
+            "domain": "freechurchaccounting.com"
+          },
+          {
+            "domain": "channel-finder.com"
+          },
+          {
+            "domain": "info-galore.com"
+          },
+          {
+            "domain": "stemnewstoday.com"
+          },
+          {
+            "domain": "couponbind.com"
+          },
+          {
+            "domain": "sciencetimesobserver.com"
+          },
+          {
+            "domain": "wamshow.biz"
+          },
+          {
+            "domain": "im4udma.com"
+          },
+          {
+            "domain": "kr.dealapac.com"
+          },
+          {
+            "domain": "visser.com.au"
+          },
+          {
+            "domain": "vermontlifetimes.com"
+          },
+          {
+            "domain": "lifestylewirenorthcarolina.com"
+          },
+          {
+            "domain": "marlinduran.com"
+          },
+          {
+            "domain": "internationaltechtimes.com"
+          },
+          {
+            "domain": "dealsnote.com"
+          },
+          {
+            "domain": "htnb-services.com"
+          },
+          {
+            "domain": "globalcareerfinder.com"
+          },
+          {
+            "domain": "clearghostwriters.com"
+          },
+          {
+            "domain": "globalseoarticles.com"
+          },
+          {
+            "domain": "superbhubdirectory.com"
+          },
+          {
+            "domain": "freelancingjournal.com"
+          },
+          {
+            "domain": "africasocietyculturenewswire.com"
+          },
+          {
+            "domain": "kauf-online.info"
+          },
+          {
+            "domain": "americanbusinesstimes.com"
+          },
+          {
+            "domain": "culturezonecolorado.com"
+          },
+          {
+            "domain": "chesapeakeit.com"
+          },
+          {
+            "domain": "highauthoritydirectory.com"
+          },
+          {
+            "domain": "rankeddirectory.com"
+          },
+          {
+            "domain": "save-money.org"
+          },
+          {
+            "domain": "affiversemedia.com"
+          },
+          {
+            "domain": "sachper.com"
+          },
+          {
+            "domain": "techjournalcolorado.com"
+          },
+          {
+            "domain": "primedirectoryzone.com"
+          },
+          {
+            "domain": "cm-reno.com"
+          },
+          {
+            "domain": "jagsgraphics.com"
+          },
+          {
+            "domain": "financialhandyman.blogspot.com"
+          },
+          {
+            "domain": "angellinx.com"
+          },
+          {
+            "domain": "culturezoneeurope.com"
+          },
+          {
+            "domain": "tekpon.com"
+          },
+          {
+            "domain": "acampbellbookkeeping.com"
+          },
+          {
+            "domain": "eqvista.com"
+          },
+          {
+            "domain": "arizonaculturezone.com"
+          },
+          {
+            "domain": "thelastamazoncourse.com"
+          },
+          {
+            "domain": "evolookout.com"
+          },
+          {
+            "domain": "resa.clubexpress.com"
+          },
+          {
+            "domain": "vi.dealapac.com"
+          },
+          {
+            "domain": "tw.dealapac.com"
+          },
+          {
+            "domain": "thefinancebrain.com"
+          },
+          {
+            "domain": "gfxdesigner.net"
+          },
+          {
+            "domain": "broadcastron.com"
+          },
+          {
+            "domain": "euroasiatimes.com"
+          },
+          {
+            "domain": "hostseolinks.com"
+          },
+          {
+            "domain": "europeanjobsonline.com"
+          },
+          {
+            "domain": "makereadyarmz.com"
+          },
+          {
+            "domain": "topoda.com"
+          },
+          {
+            "domain": "charitycharge.com"
+          },
+          {
+            "domain": "directorycloudhub.com"
+          },
+          {
+            "domain": "couponmany.com"
+          },
+          {
+            "domain": "technologynewsjournal.com"
+          },
+          {
+            "domain": "smatdeals.com"
+          },
+          {
+            "domain": "st.acgn.site"
+          },
+          {
+            "domain": "asiapacificculturenews.com"
+          },
+          {
+            "domain": "techdailyutah.com"
+          },
+          {
+            "domain": "yzqzjy.com"
+          },
+          {
+            "domain": "usdirectorylist.com"
+          },
+          {
+            "domain": "toriemathis.com"
+          },
+          {
+            "domain": "macc.ai"
+          },
+          {
+            "domain": "brock.tv"
+          },
+          {
+            "domain": "thissongissosick.com"
+          },
+          {
+            "domain": "globaltechreporter.com"
+          },
+          {
+            "domain": "businessproinsider.com"
+          },
+          {
+            "domain": "vermonttechscene.com"
+          },
+          {
+            "domain": "delawarenewsledger.com"
+          },
+          {
+            "domain": "ailistingdirectory.com"
+          },
+          {
+            "domain": "akiracorporation.com"
+          },
+          {
+            "domain": "channelonestyle.com"
+          },
+          {
+            "domain": "theglobaljobsbank.com"
+          },
+          {
+            "domain": "wayseodirectory.com"
+          },
+          {
+            "domain": "artssocietyandme.com"
+          },
+          {
+            "domain": "buradabiliyorum.com"
+          },
+          {
+            "domain": "quadma.com"
+          },
+          {
+            "domain": "galitziana.com"
+          },
+          {
+            "domain": "culturewatchupdate.com"
+          },
+          {
+            "domain": "ar.thaka.io"
+          },
+          {
+            "domain": "generalcent.com"
+          },
+          {
+            "domain": "workathomemums.com.au"
+          },
+          {
+            "domain": "worldofculturetimes.com"
+          },
+          {
+            "domain": "blueshadow.ca"
+          },
+          {
+            "domain": "ourfreakingbudget.com"
+          },
+          {
+            "domain": "globalseodirectory.com"
+          },
+          {
+            "domain": "mybargainbuddy.com"
+          },
+          {
+            "domain": "conorrichardson.com"
+          },
+          {
+            "domain": "mybbwo.com"
+          },
+          {
+            "domain": "startuptrove.com"
+          },
+          {
+            "domain": "makemoremoneybuildwealth.com"
+          },
+          {
+            "domain": "mrmoneyfinance.com"
+          },
+          {
+            "domain": "aaronliang.com"
+          },
+          {
+            "domain": "iamshellc.com"
+          },
+          {
+            "domain": "webranksdirectory.com"
+          },
+          {
+            "domain": "wayseolinks.com"
+          },
+          {
+            "domain": "proseoarticles.com"
+          },
+          {
+            "domain": "williamsacctax.com"
+          },
+          {
+            "domain": "scitechnewstoday.com"
+          },
+          {
+            "domain": "europeansmallbusinessnetwork.com"
+          },
+          {
+            "domain": "maineculturebeat.com"
+          },
+          {
+            "domain": "uscareerfinder.com"
+          },
+          {
+            "domain": "afbusinessconsulting.com"
+          },
+          {
+            "domain": "cprmanagementgroup.com"
+          },
+          {
+            "domain": "tutorialscan.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 36,
+        "value": [
+          {
+            "domain": "paypertouch.com"
+          },
+          {
+            "domain": "jvbbookkeepingservices.com"
+          },
+          {
+            "domain": "envisionbookkeeping.net"
+          },
+          {
+            "domain": "enetworkingcafe.blogspot.com"
+          },
+          {
+            "domain": "ecommercefastlane.com"
+          },
+          {
+            "domain": "winnowandspruceorganizing.blogspot.com"
+          },
+          {
+            "domain": "ledgers4u.ca"
+          },
+          {
+            "domain": "rankwebdirectory.com"
+          },
+          {
+            "domain": "cybernewsguide.com"
+          },
+          {
+            "domain": "vuza.org"
+          },
+          {
+            "domain": "tricorewellness.com"
+          },
+          {
+            "domain": "wheretofile.org"
+          },
+          {
+            "domain": "handledbyheather.com"
+          },
+          {
+            "domain": "worldofdownload.com"
+          },
+          {
+            "domain": "blackberriesll.blogspot.com"
+          },
+          {
+            "domain": "theworkathomewoman.click"
+          },
+          {
+            "domain": "izidigi.fr"
+          },
+          {
+            "domain": "hip2save.com"
+          },
+          {
+            "domain": "koreantech.org"
+          },
+          {
+            "domain": "educatemeforlifellcinfo.blogspot.com"
+          },
+          {
+            "domain": "bnsrz.com"
+          },
+          {
+            "domain": "1040taxcredit.com"
+          },
+          {
+            "domain": "businessdms.com"
+          },
+          {
+            "domain": "savingsontips.com"
+          },
+          {
+            "domain": "ussba.net"
+          },
+          {
+            "domain": "businessfast.co.uk"
+          },
+          {
+            "domain": "centurytaxbookkeeping.com"
+          },
+          {
+            "domain": "largerteens.com"
+          },
+          {
+            "domain": "wrjkbr.com"
+          },
+          {
+            "domain": "outsourcebookkeepingindia.com"
+          },
+          {
+            "domain": "flexoffers.info"
+          },
+          {
+            "domain": "poptin.com"
+          },
+          {
+            "domain": "newcastleworld.com"
+          },
+          {
+            "domain": "allbusinesdirectory.com"
+          },
+          {
+            "domain": "etechblog.cz"
+          },
+          {
+            "domain": "fatstacksblog.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 543,
+            "promotype": "blog",
+            "value": [
+              "020604211107fjabssd.com",
+              "1000files.info",
+              "1011trucking.com",
+              "10reviewsplus.com",
+              "1stformations.co.uk",
+              "1topproduct.com",
+              "21stcen.com",
+              "500toprated.com",
+              "99businessideas.com",
+              "9malls.com",
+              "abigaildyerdesign.com",
+              "abrirarchivos.info",
+              "accordingtobbooks.com",
+              "acespencer.com",
+              "a-data-driven-guy.com",
+              "adminvista.com",
+              "advicefromatwentysomething.com",
+              "afconsultingteam.com",
+              "aifsy.com",
+              "aillynotes.com",
+              "aisdrewards.com",
+              "al.com",
+              "aljazeeranewstoday.com",
+              "allthatsaas.com",
+              "amazon.co.uk",
+              "amjenkinson.com",
+              "anchorvans.co.uk",
+              "androidcentral.com",
+              "anmedhealthemployeediscounts.com",
+              "aol.com",
+              "apadanafreedomfoundation.org",
+              "appleinsider.com",
+              "appsforwork.co",
+              "appsruntheworld.com",
+              "ar.thaka.io",
+              "ashandpri.com",
+              "asterogroup.com",
+              "atasteofkoko.com",
+              "atriumhealthextras.com",
+              "autoshopowner.com",
+              "babolearning.com",
+              "backlinktime.com",
+              "bam.eco",
+              "banks.com",
+              "barcodestalk.com",
+              "baseops.net",
+              "basicaccountinghelp.com",
+              "beamingbaker.com",
+              "becu.org",
+              "bedellpropertymanagement.com",
+              "believeinabudget.com",
+              "belleniba.com",
+              "bestaccountingsoftware.com",
+              "bestand.info",
+              "bestsitesdirectory.com",
+              "bhojpur-consulting.com",
+              "bizreport.com",
+              "blackalliance.org",
+              "blackpoolgazette.co.uk",
+              "blog.jlbn.net",
+              "blueshadow.ca",
+              "bneur.com",
+              "bnpl.shop",
+              "bottcher.io",
+              "bottomgun.com",
+              "bristolworld.com",
+              "broadcastron.com",
+              "brock.tv",
+              "brooksconkle.com",
+              "bryghtpath.com",
+              "burnleyexpress.net",
+              "businessaccountingbasics.co.uk",
+              "businessadvantageplus.com",
+              "businessinsider.com",
+              "businessinsider.in",
+              "business-live.co.uk",
+              "businesspipeline.com",
+              "businessremark.com",
+              "busybeefilms.com",
+              "busybudgeter.com",
+              "buzzfeed.com",
+              "byjamiemichelle.com",
+              "canadian-accountant.com",
+              "carbonbuilders.com",
+              "carrotsncake.com",
+              "cartrover.com",
+              "cbdnews24.com",
+              "centsablemomma.com",
+              "chamberofcommerce.org",
+              "chasechewning.com",
+              "choosefi.com",
+              "chromegeek.com",
+              "cioservices.net",
+              "ciroapp.com",
+              "ciwebgroup.com",
+              "claracfo.com",
+              "cleveland.com",
+              "clevelandseniors.com",
+              "cleverly.co",
+              "clicktoselldirectoy.com",
+              "cmbookkeep.com",
+              "cnbc.com",
+              "coinledger.io",
+              "colinkeeley.com",
+              "comeaprire.com",
+              "comitatoperilno.it",
+              "commentfranx.info",
+              "commentouvrir.com",
+              "commercecaffeine.com",
+              "commonsensewithmoney.com",
+              "communityinfluencer.com",
+              "comparisun.com",
+              "completebusinessgroup.com",
+              "conorrichardson.com",
+              "constantcontact.com",
+              "courtneyinghram.com",
+              "crashmarketstocks.com",
+              "crazyegg.com",
+              "createahustle.com",
+              "creativethinkingforbusinesscenter.com",
+              "creditmashup.com",
+              "crisstone.com",
+              "crossprobiz.com",
+              "cryptoshitcompra.com",
+              "cubinvestments.com",
+              "cumbrowski.com",
+              "current.com",
+              "danceteacherfinder.com",
+              "daniellegervino.com",
+              "datei.wiki",
+              "davidmichaels.ca",
+              "debbimahilum.com",
+              "debtfreelandscaper.com",
+              "dedeudas.com",
+              "dejanet.com",
+              "derbyworld.co.uk",
+              "descuento.guru",
+              "detailedguideonhowto.com",
+              "dhowardassociates.com",
+              "digideo.co",
+              "digitalaudience.site",
+              "digitaleditor.com",
+              "digitalgroundmedia.com",
+              "discovervibe.blog",
+              "dlsserve.com",
+              "dmbtecnologia.com.br",
+              "dojiggy.com",
+              "dotax.com",
+              "doublingdollars.com",
+              "earnlitrallyin.hostgator.co.in",
+              "ecommercemoversandshakers.com",
+              "ecommerce-platforms.com",
+              "edgepage.com",
+              "educatormarketplace.com",
+              "ehamner.com",
+              "elizabethmarasco.com",
+              "elizabethmccravy.com",
+              "employeeandmemberdiscounts.com",
+              "empowerxinc.com",
+              "en.paperblog.com",
+              "entreprenista.com",
+              "eqvista.com",
+              "ericnisall.com",
+              "es.digitaltrends.com",
+              "etechpt.com",
+              "etoppc.com",
+              "europeansafelist.com",
+              "expertogeek.com",
+              "faili.info",
+              "feedbackwrench.com",
+              "fes.wiki",
+              "fileext.info",
+              "filehorse.com",
+              "filememo.info",
+              "files.wiki",
+              "financequickfix.com",
+              "financer.com",
+              "financesdemystified.com",
+              "financialvideos.club",
+              "findgifts.org",
+              "findstack.com",
+              "fipise.com",
+              "firstcityloans.com",
+              "firsthustlethenbrunch.com",
+              "fitbookspro.com",
+              "flawlesswebsitedesign.com",
+              "flexoffers.com",
+              "focused-biz.com",
+              "foosfinancialservices.com",
+              "forbes.com",
+              "forrager.com",
+              "fort-benning-graduation.com",
+              "fortbenninggraduation.com",
+              "fortbenninggraduations.com",
+              "fortleonardwoodgraduation.info",
+              "fortleonardwoodgraduation.net",
+              "foxtaxservice.com",
+              "francoischarron.com",
+              "freeincometaxreturn.org",
+              "freetrials.com",
+              "fumcstoughton.org",
+              "gemmabonhamcarter.com",
+              "geni.us",
+              "genywealth.com",
+              "getpodcast.com",
+              "girlfriendsguidetosailing.com",
+              "globalsynergysalesgroup.com",
+              "gobblercountry.com",
+              "goodpods.com",
+              "gopromocodes.com",
+              "gotsport.com",
+              "greenpearlphotography.com",
+              "guitarminator.com",
+              "handytaxguy.com",
+              "hannahforsberg.com",
+              "headwestguide.com",
+              "healthytofitness.com",
+              "hectorgarcia.com",
+              "helmtickets.com",
+              "help.nicejob.com",
+              "heyepiphora.com",
+              "hidayatrizvi.com",
+              "hogyankeszitsek.hu",
+              "homestitcherydecor.com",
+              "honestlywtf.com",
+              "horizonfc.com",
+              "hostagencyreviews.com",
+              "hostmerchantservices.com",
+              "hostseolinks.com",
+              "how2open.com",
+              "howmuchisit.org",
+              "howtostartaclothingcompany.com",
+              "huffduffer.com",
+              "humix.com",
+              "hussletips.com",
+              "hustleeconomic.com",
+              "ideas2bucks.com",
+              "ilovefreesoftware.com",
+              "incauthority.com",
+              "infernodigitalmedia.com",
+              "insiderapps.com",
+              "invoca.net",
+              "iracontributionlimits.com",
+              "irivers.com",
+              "irstaxoffice.org",
+              "it-serviceshungary.hu",
+              "jacksonville.com",
+              "janellscraps.blogspot.com",
+              "jenmccallum.com",
+              "jingletree.com",
+              "jirnal.com",
+              "joinsecret.com",
+              "jolancer.jo",
+              "jordanglickman.com",
+              "jp-logan.com",
+              "jrambus.com",
+              "kaffec.com",
+              "katekordsmeier.com",
+              "katieblackmon.com",
+              "kauf-online.info",
+              "keithkalfas.com",
+              "kickstartup.us",
+              "kingdomfirstmom.com",
+              "koco.com",
+              "kpsbookkeeping.com",
+              "kylemurphy.com",
+              "lacklandafbgraduation.com",
+              "landlordgurus.com",
+              "landscapewriter.com",
+              "laptopmag.com",
+              "launchpro.us",
+              "lauraaura.com",
+              "laurenkilgore.com",
+              "lcaimperial.com",
+              "ledgeradvantage.com",
+              "lep.co.uk",
+              "letsceo.com",
+              "lgda.com",
+              "lghtaxandaccounting.com",
+              "lifebylee.com",
+              "lifecare24hr.blogspot.com",
+              "likecoolstuff.com",
+              "linkedin.com",
+              "link.mail.bloombergbusiness.com",
+              "listenmoneymatters.com",
+              "listodirectory.com",
+              "littletownbookkeeping.com",
+              "loan-modification-tips.com",
+              "lobby7labs.com",
+              "localbenefits.us",
+              "loriballen.com",
+              "louiseraynercpa.ca",
+              "lozo.com",
+              "m33.wiki",
+              "mabuhaytelecard.com",
+              "macconcierge.com",
+              "macobserver.com",
+              "macupdate.com",
+              "macworld.com",
+              "mailinvest.blog",
+              "makemanagegrowmoney.com",
+              "makingsenseofcents.com",
+              "manualusa.com",
+              "marieclaire.com",
+              "marketing-queen.com",
+              "marlinduran.com",
+              "mavenwit.com",
+              "mbidz.com",
+              "medium.com",
+              "methodshop.com",
+              "mgnservices.com",
+              "militaryspot.com",
+              "millennialcpa.tax",
+              "millennialmoney.com",
+              "miltonkeynes.co.uk",
+              "minimalism.co",
+              "mlive.com",
+              "mmhabits.com",
+              "moditech.ca",
+              "mommathrift.blogspot.com",
+              "momsview.com",
+              "momswhosave.com",
+              "momtrepreneurplanner.com",
+              "momvesting.com",
+              "money.com",
+              "moneydoneright.com",
+              "moneystreetnews.com",
+              "moneytalksnews.com",
+              "moreandmorelists.com",
+              "moyens.net",
+              "mro2000.com",
+              "msha.ke",
+              "mspoweruser.com",
+              "mundurek.com",
+              "mycompanyworks.com",
+              "mylondon.news",
+              "mymilitarymommy.com",
+              "mymillennialguide.com",
+              "myratecompass.ca",
+              "mywifequitherjob.com",
+              "naamwynn.com",
+              "narcity.com",
+              "nasniconsultants.com",
+              "nebash.com",
+              "nerdwallet.com",
+              "newfans.io",
+              "newoutlookconsulting.com",
+              "newoutlookcs.com",
+              "newoutlook.us",
+              "newquickbooks.com",
+              "newsavemoney.com",
+              "nextwhatbusiness.com",
+              "nndb007.com",
+              "northantstelegraph.co.uk",
+              "notyourdadscpa.com",
+              "novanthealthemployeediscounts.com",
+              "nytimesnewstoday.com",
+              "obiztools.com",
+              "offers.com",
+              "oignite.com",
+              "onaplatterofgold.com",
+              "onemooresolutions.com",
+              "ontariobusinesscentral.ca",
+              "oppna.info",
+              "parimadtarkvarad.ee",
+              "passionforsavings.com",
+              "pcworld.com",
+              "peaksfabrications.com",
+              "penniesatatime.com",
+              "phocal.motivit.com",
+              "phocalproductions.com",
+              "photographybyemma.ca",
+              "pinchingyourpennies.com",
+              "pklea.com",
+              "plan2prosperacademy.com",
+              "player.fm",
+              "pleaseorderit.com",
+              "pliki.wiki",
+              "podcastinsights.com",
+              "podcast.servicebasedbusinesssociety.com",
+              "pod.prodegemr.com",
+              "poorerthanyou.com",
+              "powr.io",
+              "predictiveanalyticstoday.com",
+              "printful.com",
+              "prlog.ru",
+              "productivityland.com",
+              "professorlandlord.com",
+              "proseoarticles.com",
+              "prowess.org.uk",
+              "pr.report",
+              "ptmoney.com",
+              "purelywrite.com",
+              "purshology.com",
+              "qisoftware.com",
+              "quiannamarie.com",
+              "quotewerks.com",
+              "reportwire.org",
+              "republicmonews.com",
+              "resa.clubexpress.com",
+              "resonaterecordings.com",
+              "retailcodes.com",
+              "r.srvtrck.com",
+              "rss2.com",
+              "ryrob.com",
+              "s1dd.com",
+              "saavisolutions.com",
+              "salonspaconnection.com",
+              "samikathryn.com",
+              "sandeephegde.com",
+              "sapiensdigital.com",
+              "savingadvice.com",
+              "savingarena.com",
+              "savingfreak.com",
+              "savingmojo.com",
+              "savvynewcanadians.com",
+              "sbmk.us",
+              "schoolclubrewards.com",
+              "seagulltechnologies.com",
+              "seedtime.com",
+              "sensiblybalancedaccounting.com",
+              "shaniesalmon.com",
+              "shershegoes.com",
+              "sheylaadventure.travel",
+              "shighil.com",
+              "silverleafoffice.com",
+              "simpleobd.com",
+              "singleguymoney.com",
+              "slickmedia.io",
+              "smartfinancialgoals.com",
+              "smartmileco.com",
+              "smartmoneymamas.com",
+              "smartstartconsulting.ca",
+              "smbguide.com",
+              "software.fish",
+              "softwarewhore.com",
+              "somisapp.com",
+              "soubory.info",
+              "southernsavers.com",
+              "spartanburgregionalemployeediscounts.com",
+              "spidershopping.com",
+              "spotlightdata.co",
+              "springsteadsolutions.com",
+              "sqassistance.ca",
+              "startupcheckr.com",
+              "startuptalky.com",
+              "startuptrove.com",
+              "storytellingco.com",
+              "streamlinemypractice.com",
+              "studentmoneyadviser.com",
+              "supermall.com",
+              "sweettntmagazine.com",
+              "tabizonline.com",
+              "taxformfinder.org",
+              "tax-queen.com",
+              "teachingmillionaires.com",
+              "techadvisor.com",
+              "technology-news.space",
+              "technoven.com",
+              "techosmo.com",
+              "techradar.com",
+              "techtimes.com",
+              "techtonicblog.com",
+              "techzonedaily.com",
+              "teddiejoesnodgrass.com",
+              "thebudgetdiet.com",
+              "thebutterhalf.com",
+              "theclose.com",
+              "thedigitalmerchant.com",
+              "thedistinguishedguest.com",
+              "thefinancegenie.com",
+              "thefinancialdiet.com",
+              "thekimsutton.com",
+              "themillennialmoneywoman.com",
+              "themillennialtaxpert.com",
+              "themoneyninja.com",
+              "themoneyofficeappstore.com",
+              "thequick10.com",
+              "thequickbooksqueen.com",
+              "thesmutlancer.com",
+              "theweek.com",
+              "thewrittenworldagency.com",
+              "thissongissosick.com",
+              "thriftersfieldguide.com",
+              "ticketjourneys.com",
+              "todaysfindsblog.blogspot.com",
+              "tomsguide.com",
+              "topgunproducers.com",
+              "toptechsite.com",
+              "toptips.fr",
+              "toptohigh.com",
+              "toriemathis.com",
+              "traderscooter.com",
+              "truckinfo.net",
+              "trybookmate.co",
+              "turfshowtimes.com",
+              "tutorialscan.com",
+              "ubestpick.com",
+              "unlimitedtravelpackages.blogspot.com",
+              "untilgone.com",
+              "upflip.com",
+              "usasmartshopper.net",
+              "usatoday.com",
+              "utemployeediscounts.com",
+              "venturbug.com",
+              "verum.world",
+              "victoriarayburnphotography.com",
+              "vivreauxstates.com",
+              "vouchercodesuae.com",
+              "w3cinc.com",
+              "wakefieldexpress.co.uk",
+              "wantnot.net",
+              "washingtonweeklytimes.com",
+              "wayseolinks.com",
+              "wealthvideos.club",
+              "webbizmarket.com",
+              "webgranth.com",
+              "webranksdirectory.com",
+              "websitebuilder.org",
+              "websitetipsandtutorials.com",
+              "wfhadviser.com",
+              "widescreengamer.com",
+              "wildandfoundphoto.com",
+              "wild.link",
+              "wirefan.com",
+              "wittysparks.com",
+              "womansday.com",
+              "wonderpinays.com",
+              "workathome.in.net",
+              "workcosec.com",
+              "worldcrypto.global",
+              "worldnl.com",
+              "worldwidetopsite.com",
+              "writetosixfigures.com",
+              "xerebro.com",
+              "yieldtalk.com",
+              "yourcompanyformations.co.uk",
+              "yourdigitalmarketingassistant.com",
+              "your-rv-lifestyle.com",
+              "zdnet.com",
+              "zenpilot.com",
+              "zikoba.com",
+              "zomatt.com"
+            ]
+          },
+          {
+            "count": 51,
+            "promotype": "incentive",
+            "value": [
+              "1800d2c.com",
+              "awesomecoupons.org",
+              "brandingleaks.com",
+              "couponbind.com",
+              "couponcause.com",
+              "couponcodego.com",
+              "couponcodes.store",
+              "couponforless.com",
+              "coupongini.com",
+              "couponit.com",
+              "couponkin.com",
+              "couponmany.com",
+              "couponsale.us",
+              "couponsrage.com",
+              "coupontyn.com",
+              "couponvampire.com",
+              "couponx.com",
+              "coupplant.com",
+              "dailybranddeals.com",
+              "dealapac.com",
+              "dealitem.com",
+              "dealmoon.ca",
+              "dealsfront.com",
+              "domainhostcoupon.com",
+              "dpcoupon.com",
+              "freebies2deals.com",
+              "gcsrewards.org",
+              "getcouponscode.com",
+              "givingforward.org",
+              "glasgowworld.com",
+              "globalcashsite.com",
+              "ideallydigital.com",
+              "jpnewss.com",
+              "millo.co",
+              "moneysmartlife.com",
+              "mydealsclub.com",
+              "myfavdeals.org",
+              "mypoints.com",
+              "myvegasmommy.com",
+              "packtpub.com",
+              "saverealcash.com",
+              "shopdeals.site",
+              "softocoupon.com",
+              "someofthebestdeals.com",
+              "tax-brackets.org",
+              "teamworkdream.com",
+              "thecentsiblelife.com",
+              "webcoupongroup.com",
+              "workfromhomereviews.net",
+              "wow-coupons.com",
+              "wow-coupons.co.uk"
+            ]
+          },
+          {
+            "count": 206,
+            "promotype": "student",
+            "value": [
+              "24img.com",
+              "99ranks.com",
+              "absmho.com",
+              "affiversemedia.com",
+              "aligow.com",
+              "allanshere.com",
+              "almostpractical.com",
+              "amazingandhelpful.com",
+              "anterasoftware.com",
+              "articlemarket.blogspot.com",
+              "askavie.com",
+              "bankcheckingsavings.com",
+              "bargainbriana.com",
+              "bbshouston.com",
+              "beremarkablegroup.co",
+              "bgr.com",
+              "bikebusinessuniversity.com",
+              "bilalarticles.com",
+              "billhogantransport.com",
+              "biz2bizsolutions.net",
+              "bizzrus.com",
+              "blackfriday.com",
+              "blog.repithwin.com",
+              "bnbbusinesssolutions.com",
+              "brobible.com",
+              "brock.mykajabi.com",
+              "brokerdash.com",
+              "capterra.com",
+              "castos.com",
+              "cbsnews.com",
+              "ccsworkperks.com",
+              "centsai.com",
+              "cesuitedigital.com",
+              "chineselikela.com",
+              "classifieddirectoy.com",
+              "clevelandwomen.com",
+              "clinicianbusinessinstitute.com",
+              "cmsemployeediscounts.com",
+              "comparisonmath.com",
+              "conservativenewsdaily.net",
+              "contractorplus.app",
+              "creditimes.com",
+              "cyberstitchesdesign.com",
+              "dailyboard.org",
+              "dailysteals.com",
+              "daventryexpress.co.uk",
+              "day-by-day.biz",
+              "dcspotlight.com",
+              "debscomputing.com",
+              "designingyourlifetoday.com",
+              "digitalsupermarket.com",
+              "droppricetoday.com",
+              "elitemetricssolutionsllc.com",
+              "eonline.com",
+              "everythingmedschool.com",
+              "ezperdiem.com",
+              "fannetasticfood.com",
+              "fbafaq.com",
+              "fileinfo.com",
+              "fileproinfo.com",
+              "financialsprout.com",
+              "finansdirekt24.se",
+              "finlitcoaches.org",
+              "fioney.com",
+              "fmsadvisory.com",
+              "forestparkgolfcourse.com",
+              "forevershoppers.com",
+              "fortleonardwoodgraduation.com",
+              "foxitconcepts.com",
+              "freechurchaccounting.com",
+              "freedom.sssnet.com",
+              "freelancermap.com",
+              "gfaloe.tech",
+              "globalseoarticles.com",
+              "groupon.com",
+              "handmade-haven.com",
+              "hawthornlaw.net",
+              "hemeltoday.co.uk",
+              "huangjiujia.com",
+              "huffingtonpost.co.uk",
+              "hyrecar.com",
+              "ichoiceone.com",
+              "intellectualcdc.com",
+              "investormint.com",
+              "investorminute.com",
+              "invoicesoftwarefinder.com",
+              "itweb.co.za",
+              "ivoox.com",
+              "janellecopeland.com",
+              "jhoanashaynne.com",
+              "kenhensley.blogspot.com",
+              "krasalifex.info",
+              "lackland-afb-graduation.com",
+              "ladbible.com",
+              "lewlewbiz.com",
+              "lindsaykirsch.com",
+              "llcuniversity.com",
+              "luhhu.com",
+              "macautomationtips.com",
+              "madronify.com",
+              "management.org",
+              "marketersmedia.com",
+              "massagesloth.com",
+              "masslive.com",
+              "meaningfulmidlife.com",
+              "megareviewer.info",
+              "megnyitasa.com",
+              "metabee.de",
+              "mgtow.tv",
+              "milspousechamber.org",
+              "mindyourbusinesstoday.com",
+              "momentswithmandi.com",
+              "moneyfitmoms.com",
+              "moneyqanda.com",
+              "movingforwardsmallbusiness.com",
+              "mropro.webnode.page",
+              "muamat.com",
+              "mundotecnologia.net",
+              "musthaves.la",
+              "mybetterbenefits.org",
+              "mychicagomommy.com",
+              "mycloudbookkeeping.org",
+              "mycorporation.com",
+              "mylivebookkeeper.com",
+              "mymemphismommy.com",
+              "mymilwaukeemommy.com",
+              "nationdigitalweb.com",
+              "newportsocial.com",
+              "niksstuff.com",
+              "paperbell.com",
+              "paperlessbooks.ca",
+              "parameninos.com",
+              "pennycallingpenny.com",
+              "personalfinanceandinvesting.com",
+              "personalprofitability.com",
+              "pgcpsperks.com",
+              "pickyourplum.com",
+              "popsci.com",
+              "popsugar.co.uk",
+              "portcityauction.com",
+              "post.nghiatu.com",
+              "prettysweet.com",
+              "prioritizedliving.com",
+              "promocodes.com",
+              "qr.link",
+              "quickbooks530203845490.atworkweb.com",
+              "rankerdirectory.com",
+              "rcpadg.com",
+              "realestateinvestmenttrust.vip",
+              "roadmapmoney.com",
+              "rosalindgardner.me",
+              "savingshour.com",
+              "savingslifestyle.com",
+              "seogdk.com",
+              "smartonmoney.com",
+              "solodinero.com",
+              "solutionscout.com",
+              "spotify.com",
+              "springboardlegal.com",
+              "spy.com",
+              "stagingstudio.com",
+              "startupsanonymous.com",
+              "storybridges.net",
+              "streetinsider.com",
+              "summalai.com",
+              "synapticweb.co",
+              "takensocial.com",
+              "taxomate.com",
+              "teachable.com",
+              "teachmepersonalfinance.com",
+              "techandsciencepost.com",
+              "techaxy.com",
+              "tech-boy.net",
+              "techcratic.com",
+              "techguruit.com",
+              "techkee.com",
+              "techstreetlabs.com",
+              "techtelegraph.co.uk",
+              "techwhoop.com",
+              "thebalancemoney.com",
+              "thefranchiseking.com",
+              "thesagemillennial.com",
+              "thewriterentrepreneur.com",
+              "thisismoney.co.uk",
+              "throughfresheyes.com",
+              "tiedosto.info",
+              "tmhcolleaguediscounts.com",
+              "toadmin.ru",
+              "tuscontadoresusa.com",
+              "usemetoshop.com",
+              "ussba.com",
+              "virtualassistanthowto.com",
+              "visatriplecrown.com",
+              "wayseodirectory.com",
+              "wealthpursuits.com",
+              "welpmagazine.com",
+              "werockyourweb.com",
+              "westtexascu.com",
+              "wholesalesuiteplugin.com",
+              "williamsacctax.com",
+              "windowsmode.com",
+              "wisdomfuel.com",
+              "yahoo.com",
+              "yardia.co",
+              "yook.com",
+              "zhonghengguoxin.com"
+            ]
+          },
+          {
+            "count": 57,
+            "promotype": "content",
+            "value": [
+              "accountinghowto.com",
+              "apiv2.nextgenshopping.com",
+              "bloggingeclipse.com",
+              "bugaboobookkeeping.com",
+              "businessolution.org",
+              "bytespotlight.com",
+              "charitycharge.com",
+              "cioviews.com",
+              "cordeledispatch.com",
+              "cumsedeschide.com",
+              "domainsandapps.com",
+              "emeraldsparks.com",
+              "empirebytes.com",
+              "extenstions99.com",
+              "flexbegin.com",
+              "forumdaily.com",
+              "freelancingjournal.com",
+              "funding4you.com",
+              "gocurrycracker.com",
+              "harlanschocolates.com",
+              "have-clothes-will-travel.com",
+              "highbrid.com",
+              "imadanat.tripod.com",
+              "incomeinflow.com",
+              "info-galore.com",
+              "inversionconsentido.com",
+              "itsdmariesmith.com",
+              "kageeconsulting.com",
+              "knowtechie.com",
+              "lexmedemployeediscounts.com",
+              "maxoffice.org.uk",
+              "maxrebates.com",
+              "moneywiseteacher.com",
+              "moonbbs.com",
+              "myeducationdiscount.com",
+              "nase.org",
+              "newswire.com",
+              "patheos.com",
+              "pickedbox.com",
+              "pleiadesconsultinggroup.com",
+              "promotionalcode.ca",
+              "quickbooks269175600.atworkweb.com",
+              "realworldpersonalfinance.com",
+              "recordingstudiorockstars.com",
+              "retirementinvestments.com",
+              "sayerfoods.com",
+              "simongondeck.com",
+              "smallbusinesssarah.com",
+              "tarocchiamore.net",
+              "taylornicolephotography.com",
+              "theartisteo.com",
+              "trendy-daddy.fr",
+              "vkassociatesinc.com",
+              "webcentive.com",
+              "whimsysoul.com",
+              "windows.dailydownloaded.com",
+              "writersspire.com"
+            ]
+          },
+          {
+            "count": 13,
+            "promotype": "forum",
+            "value": [
+              "benwhite.com",
+              "conorrichardson360.com",
+              "dotpim.com",
+              "eyoungwon.com",
+              "getjaybe.com",
+              "income.ca",
+              "investopedia.com",
+              "lakelinetax.com",
+              "mcleodhealthmerchantdiscounts.com",
+              "mybizcheckup.com",
+              "pagefly.io",
+              "theartofsimple.net",
+              "yourmarketingassistants.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 5,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "linkedin",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/intuit",
+        "instagram": "https://instagram.com/intuit",
+        "linkedin": "https://linkedin.com/company/intuit",
+        "twitter": "https://twitter.com/intuit",
+        "youtube": "https://youtube.com/user/intuit"
+      }
+    },
+    "verticals": {
+      "count": 4,
+      "sampleValue": {
+        "name": "Finance / Accounts",
+        "rank": 2,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Business / Software",
+          "rank": 2,
+          "score": 90
+        },
+        {
+          "name": "Finance / Accounts",
+          "rank": 2,
+          "score": 100
+        },
+        {
+          "name": "Finance / Mortgages & Loans",
+          "rank": 2,
+          "score": 60
+        },
+        {
+          "name": "Technology / Software",
+          "rank": 2,
+          "score": 90
+        }
+      ]
+    }
+  }
+}

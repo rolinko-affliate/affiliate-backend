@@ -1,0 +1,909 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 3,
+      "sampleValue": [
+        "Impact",
+        "Rakuten",
+        "Skimlinks"
+      ],
+      "value": [
+        "Impact",
+        "Rakuten",
+        "Skimlinks"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.5
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.5
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.5
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "amazonadviser.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "comedy"
+        },
+        {
+          "score": 0.9296782,
+          "value": "celebrity"
+        },
+        {
+          "score": 0.9203814,
+          "value": "film"
+        },
+        {
+          "score": 0.91990465,
+          "value": "movies"
+        },
+        {
+          "score": 0.75303936,
+          "value": "drama"
+        },
+        {
+          "score": 0.7420739,
+          "value": "season"
+        },
+        {
+          "score": 0.72706527,
+          "value": "video"
+        },
+        {
+          "score": 0.666031,
+          "value": "game"
+        },
+        {
+          "score": 0.65315855,
+          "value": "sports"
+        },
+        {
+          "score": 0.6507747,
+          "value": "scenes"
+        },
+        {
+          "score": 0.64147794,
+          "value": "primetime"
+        },
+        {
+          "score": 0.59499407,
+          "value": "broadcast"
+        },
+        {
+          "score": 0.5671037,
+          "value": "advertise"
+        },
+        {
+          "score": 0.5263409,
+          "value": "episodes"
+        },
+        {
+          "score": 0.5243243,
+          "value": "music"
+        },
+        {
+          "score": 0.5206198,
+          "value": "visual"
+        },
+        {
+          "score": 0.5206198,
+          "value": "schedule"
+        },
+        {
+          "score": 0.5151371,
+          "value": "family"
+        },
+        {
+          "score": 0.511323,
+          "value": "urban"
+        },
+        {
+          "score": 0.5025199,
+          "value": "watch"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "comedy"
+        },
+        {
+          "score": 0.9296782,
+          "value": "celebrity"
+        },
+        {
+          "score": 0.9203814,
+          "value": "film"
+        },
+        {
+          "score": 0.91990465,
+          "value": "movies"
+        },
+        {
+          "score": 0.75303936,
+          "value": "drama"
+        },
+        {
+          "score": 0.7420739,
+          "value": "season"
+        },
+        {
+          "score": 0.72706527,
+          "value": "video"
+        },
+        {
+          "score": 0.666031,
+          "value": "game"
+        },
+        {
+          "score": 0.65315855,
+          "value": "sports"
+        },
+        {
+          "score": 0.6507747,
+          "value": "scenes"
+        },
+        {
+          "score": 0.64147794,
+          "value": "primetime"
+        },
+        {
+          "score": 0.59499407,
+          "value": "broadcast"
+        },
+        {
+          "score": 0.5671037,
+          "value": "advertise"
+        },
+        {
+          "score": 0.5263409,
+          "value": "episodes"
+        },
+        {
+          "score": 0.5243243,
+          "value": "music"
+        },
+        {
+          "score": 0.5206198,
+          "value": "visual"
+        },
+        {
+          "score": 0.5206198,
+          "value": "schedule"
+        },
+        {
+          "score": 0.5151371,
+          "value": "family"
+        },
+        {
+          "score": 0.511323,
+          "value": "urban"
+        },
+        {
+          "score": 0.5025199,
+          "value": "watch"
+        },
+        {
+          "score": 0.5020262,
+          "value": "photos"
+        },
+        {
+          "score": 0.4929678,
+          "value": "episode"
+        },
+        {
+          "score": 0.49272943,
+          "value": "musical"
+        },
+        {
+          "score": 0.49272943,
+          "value": "performance"
+        },
+        {
+          "score": 0.48343265,
+          "value": "gallery"
+        },
+        {
+          "score": 0.47580454,
+          "value": "stream"
+        },
+        {
+          "score": 0.47532776,
+          "value": "story"
+        },
+        {
+          "score": 0.47413588,
+          "value": "previews"
+        },
+        {
+          "score": 0.44624552,
+          "value": "specials"
+        },
+        {
+          "score": 0.43694875,
+          "value": "casting"
+        },
+        {
+          "score": 0.42765197,
+          "value": "host"
+        },
+        {
+          "score": 0.42765197,
+          "value": "arrangement"
+        },
+        {
+          "score": 0.4183552,
+          "value": "cast"
+        },
+        {
+          "score": 0.41787842,
+          "value": "enjoy"
+        },
+        {
+          "score": 0.4112038,
+          "value": "amazon"
+        },
+        {
+          "score": 0.39976162,
+          "value": "feeds"
+        },
+        {
+          "score": 0.39976162,
+          "value": "grammy"
+        },
+        {
+          "score": 0.39976162,
+          "value": "contemporary"
+        },
+        {
+          "score": 0.39165673,
+          "value": "star"
+        },
+        {
+          "score": 0.39046484,
+          "value": "producer"
+        },
+        {
+          "score": 0.37187126,
+          "value": "artist"
+        },
+        {
+          "score": 0.35873362,
+          "value": "feedback"
+        },
+        {
+          "score": 0.3532777,
+          "value": "discovery"
+        },
+        {
+          "score": 0.3532777,
+          "value": "magazine"
+        },
+        {
+          "score": 0.34398094,
+          "value": "share"
+        },
+        {
+          "score": 0.34398094,
+          "value": "annual"
+        },
+        {
+          "score": 0.34398094,
+          "value": "clips"
+        },
+        {
+          "score": 0.33611444,
+          "value": "life"
+        },
+        {
+          "score": 0.33468413,
+          "value": "corporation"
+        },
+        {
+          "score": 0.31609058,
+          "value": "ratings"
+        },
+        {
+          "score": 0.31609058,
+          "value": "awards"
+        },
+        {
+          "score": 0.31609058,
+          "value": "dance"
+        },
+        {
+          "score": 0.31609058,
+          "value": "traditional"
+        },
+        {
+          "score": 0.3067938,
+          "value": "soundtrack"
+        },
+        {
+          "score": 0.3022646,
+          "value": "live"
+        },
+        {
+          "score": 0.29749703,
+          "value": "daytime"
+        },
+        {
+          "score": 0.27890345,
+          "value": "classics"
+        },
+        {
+          "score": 0.26960668,
+          "value": "series"
+        },
+        {
+          "score": 0.26960668,
+          "value": "nominees"
+        },
+        {
+          "score": 0.26221693,
+          "value": "girls"
+        },
+        {
+          "score": 0.2603099,
+          "value": "notify"
+        },
+        {
+          "score": 0.2603099,
+          "value": "ensemble"
+        },
+        {
+          "score": 0.25697258,
+          "value": "tumblr"
+        },
+        {
+          "score": 0.2510131,
+          "value": "promo"
+        },
+        {
+          "score": 0.2510131,
+          "value": "composition"
+        },
+        {
+          "score": 0.24171633,
+          "value": "record"
+        },
+        {
+          "score": 0.24171633,
+          "value": "zone"
+        },
+        {
+          "score": 0.24171633,
+          "value": "alternative"
+        },
+        {
+          "score": 0.23241955,
+          "value": "twilight"
+        },
+        {
+          "score": 0.23241955,
+          "value": "criminal"
+        },
+        {
+          "score": 0.23241955,
+          "value": "player"
+        },
+        {
+          "score": 0.23118533,
+          "value": "seller"
+        },
+        {
+          "score": 0.22312276,
+          "value": "jazz"
+        },
+        {
+          "score": 0.22288439,
+          "value": "friends"
+        },
+        {
+          "score": 0.21382599,
+          "value": "award"
+        },
+        {
+          "score": 0.21382599,
+          "value": "captioning"
+        },
+        {
+          "score": 0.21382599,
+          "value": "classic"
+        },
+        {
+          "score": 0.21382599,
+          "value": "closed"
+        },
+        {
+          "score": 0.20977354,
+          "value": "girl"
+        },
+        {
+          "score": 0.19928487,
+          "value": "dates"
+        },
+        {
+          "score": 0.1966627,
+          "value": "christmas"
+        },
+        {
+          "score": 0.19070321,
+          "value": "characters"
+        },
+        {
+          "score": 0.19070321,
+          "value": "make sure"
+        },
+        {
+          "score": 0.19070321,
+          "value": "characters see"
+        },
+        {
+          "score": 0.17306317,
+          "value": "streaming"
+        },
+        {
+          "score": 0.170441,
+          "value": "butterfly"
+        },
+        {
+          "score": 0.16686532,
+          "value": "expiry"
+        },
+        {
+          "score": 0.15995233,
+          "value": "hulu"
+        },
+        {
+          "score": 0.15733016,
+          "value": "assets"
+        },
+        {
+          "score": 0.15208581,
+          "value": "young"
+        },
+        {
+          "score": 0.15208581,
+          "value": "love"
+        },
+        {
+          "score": 0.13780956,
+          "value": "popular"
+        },
+        {
+          "score": 0.1363528,
+          "value": "exclusives"
+        },
+        {
+          "score": 0.13606985,
+          "value": "real"
+        },
+        {
+          "score": 0.13584548,
+          "value": "sign"
+        },
+        {
+          "score": 0.13110846,
+          "value": "entertainment"
+        },
+        {
+          "score": 0.12848629,
+          "value": "play"
+        },
+        {
+          "score": 0.12043218,
+          "value": "device"
+        },
+        {
+          "score": 0.11275328,
+          "value": "subscribers"
+        },
+        {
+          "score": 0.11156138,
+          "value": "extras"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": "Amazon Adviser - Amazon Deals, News and Streaming Updates",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazonadviser.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazonadviser.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 7,
+        "value": [
+          "amazon.com",
+          "hulu.com",
+          "amzn.to",
+          "cbs.com",
+          "redbubble.com",
+          "lovepop.com",
+          "tv.apple.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 2.85,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 2,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Art"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Gifts / Personalised"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 7,
+      "value": [
+        "amazon.com",
+        "hulu.com",
+        "amzn.to",
+        "cbs.com",
+        "redbubble.com",
+        "lovepop.com",
+        "tv.apple.com"
+      ]
+    },
+    "promotype": {
+      "value": "content"
+    },
+    "relatedPublishers": {
+      "count": 258,
+      "value": [
+        "gonepuckwild.com",
+        "razorbackers.com",
+        "trumanstales.com",
+        "onechicagocenter.com",
+        "huskercorner.com",
+        "thejetpress.com",
+        "hookemheadlines.com",
+        "climbingtalshill.com",
+        "hardwoodhoudini.com",
+        "factoryofsadness.co",
+        "dogoday.com",
+        "thelandryhat.com",
+        "milehighsticking.com",
+        "claireandjamie.com",
+        "cardiaccane.com",
+        "dorksideoftheforce.com",
+        "blogoflegends.com",
+        "dailyddt.com",
+        "kardashiandish.com",
+        "garnetandcocky.com",
+        "predominantlyorange.com",
+        "thejnotes.com",
+        "balldurham.com",
+        "fansidedmma.com",
+        "therealchamps.com",
+        "hotspurhq.com",
+        "fightinggobbler.com",
+        "90min.de",
+        "phinphanatic.com",
+        "zd031.com",
+        "airalamo.com",
+        "sabrenoise.com",
+        "eyesonisles.com",
+        "survivingtribal.com",
+        "spartanavenue.com",
+        "nugglove.com",
+        "rinkroyalty.com",
+        "detroitjockcity.com",
+        "chopchat.com",
+        "culturess.com",
+        "foxesofleicester.com",
+        "saturdayblitz.com",
+        "broadstreetbuzz.com",
+        "birdswatcher.com",
+        "stillcurtain.com",
+        "dawgpounddaily.com",
+        "kingsofkauffman.com",
+        "yanksgoyard.com",
+        "goldengatesports.com",
+        "thebiglead.com",
+        "progolfnow.com",
+        "keepingitheel.com",
+        "redshirtsalwaysdie.com",
+        "withthefirstpick.com",
+        "vegashockeyknight.com",
+        "roxpile.com",
+        "kckingdom.com",
+        "southboundanddown.com",
+        "wizofawes.com",
+        "mancitysquare.com",
+        "insidetheiggles.com",
+        "jaysjournal.com",
+        "mysellr.com",
+        "editorinleaf.com",
+        "writingillini.com",
+        "allfortennessee.com",
+        "puckettspond.com",
+        "thevikingage.com",
+        "ripcityproject.com",
+        "greenstreethammers.com",
+        "playingfor90.com",
+        "section215.com",
+        "causewaycrowd.com",
+        "rushthekop.com",
+        "precincttv.com",
+        "undeadwalking.com",
+        "pelicandebrief.com",
+        "jmaii.com",
+        "gojoebruin.com",
+        "apptrigger.com",
+        "calltothepen.com",
+        "southsideshowdown.com",
+        "alm58.com",
+        "deathvalleyvoice.com",
+        "90min.beauty",
+        "thehuskyhaul.com",
+        "1428elm.com",
+        "dairylandexpress.com",
+        "thecanuckway.com",
+        "reddevilarmada.com",
+        "unionandblue.com",
+        "swarmandsting.com",
+        "slapthesign.com",
+        "lastnighton.com",
+        "autzenzoo.com",
+        "blogredmachine.com",
+        "gigemgazette.com",
+        "rhymejunkie.com",
+        "risingapple.com",
+        "kingjamesgospel.com",
+        "12thmanrising.com",
+        "housethathankbuilt.com",
+        "dawindycity.com",
+        "bustingbrackets.com",
+        "blackhawkup.com",
+        "lombardiave.com",
+        "bealestreetbears.com",
+        "bayernstrikes.com",
+        "theprideoflondon.com",
+        "stormininnorman.com",
+        "bloggingdirty.com",
+        "maroonandwhitenation.com",
+        "starsandsticks.com",
+        "mlsmultiplex.com",
+        "puckprose.com",
+        "pippenainteasy.com",
+        "marlinmaniac.com",
+        "ajem2.com",
+        "stripehype.com",
+        "penslabyrinth.com",
+        "sodomojo.com",
+        "scarletandgame.com",
+        "gbmwolverine.com",
+        "whodatdish.com",
+        "hiddenremote.com",
+        "boltbeat.com",
+        "acceptthisrose.com",
+        "lasportshub.com",
+        "bigredlouie.com",
+        "foodsided.com",
+        "sportdfw.com",
+        "raisingzona.com",
+        "wreckemred.com",
+        "bosoxinjection.com",
+        "beyondtheflag.com",
+        "bvbbuzz.com",
+        "thecelticbhoys.com",
+        "terrapinstationmd.com",
+        "mentalfloss.com",
+        "oldnorthbanter.com",
+        "gmenhq.com",
+        "devilsindetail.com",
+        "nolanwritin.com",
+        "titansized.com",
+        "newcastletoons.com",
+        "ramblinfan.com",
+        "12up.com",
+        "blackandteal.com",
+        "cubbiescrib.com",
+        "torotimes.com",
+        "pucksandpitchforks.com",
+        "districtondeck.com",
+        "netflixlife.com",
+        "dawnofthedawg.com",
+        "poppicante.com",
+        "octopusthrower.com",
+        "bluelinestation.com",
+        "beargoggleson.com",
+        "olehottytoddy.com",
+        "horseshoeheroes.com",
+        "highposthoops.com",
+        "caneswarning.com",
+        "rumbunter.com",
+        "pucksofafeather.com",
+        "pipe.90min.com",
+        "thesixersense.com",
+        "guiltyeats.com",
+        "thepewterplank.com",
+        "showsnob.com",
+        "dunkingwithwolves.com",
+        "ninernoise.com",
+        "allstokedup.com",
+        "catcrave.com",
+        "lawlessrepublic.com",
+        "floor8.com",
+        "badgerofhonor.com",
+        "paininthearsenal.com",
+        "bamahammer.com",
+        "chowderandchampions.com",
+        "orlandomagicdaily.com",
+        "sidelionreport.com",
+        "spacecityscoop.com",
+        "dbltap.com",
+        "fansided.com",
+        "tinkerdoodle.net",
+        "victorybellrings.com",
+        "saintsmarching.com",
+        "nflspinzone.com",
+        "flameforthought.com",
+        "gamesided.com",
+        "buffalowdown.com",
+        "jetswhiteout.com",
+        "whitecleatbeat.com",
+        "nflmocks.com",
+        "ebonybird.com",
+        "friarsonbase.com",
+        "jugofsnyder.com",
+        "flywareagle.com",
+        "oldjuve.com",
+        "thesmokingcuban.com",
+        "bleedinblue.com",
+        "interheron.com",
+        "bamsmackpow.com",
+        "releasetheknappen.com",
+        "pokespost.com",
+        "insidetheloudhouse.com",
+        "allucanheat.com",
+        "oilonwhyte.com",
+        "musketfire.com",
+        "thunderousintentions.com",
+        "claretvillans.com",
+        "riggosrag.com",
+        "predlines.com",
+        "venomstrikes.com",
+        "russianrescue.org",
+        "hailwv.com",
+        "8points9seconds.com",
+        "hoosierstateofmind.com",
+        "arrowheadaddict.com",
+        "winteriscoming.net",
+        "bluemanhoop.com",
+        "wildcatbluenation.com",
+        "clipperholics.com",
+        "90min.in",
+        "bladesofteal.com",
+        "halohangout.com",
+        "justblogbaby.com",
+        "everythingbarca.com",
+        "zonazealots.com",
+        "dearoldgold.com",
+        "throughthephog.com",
+        "senshot.com",
+        "thatballsouttahere.com",
+        "soaringdownsouth.com",
+        "awaybackgone.com",
+        "aroyalpain.com",
+        "hailfloridahail.com",
+        "hoopshabit.com",
+        "aroundthefoghorn.com",
+        "glorycolorado.com",
+        "90min.com",
+        "motorcitybengals.com",
+        "lakeshowlife.com",
+        "princerupertstower.com",
+        "champagneandshade.com",
+        "bricksareawesome.com",
+        "nothinbutnets.com",
+        "redbirdrants.com",
+        "boltsbythebay.com",
+        "dodgersway.com",
+        "dailyknicks.com",
+        "blackoutdallas.com",
+        "raptorsrapture.com",
+        "pistonpowered.com",
+        "fansided2030.com",
+        "yellowjackedup.com",
+        "rubbingtherock.com",
+        "behindthebuckpass.com"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/amazonadviser",
+        "instagram": "https://instagram.com/fansided",
+        "twitter": "https://twitter.com/amazonadviser",
+        "youtube": "https://youtube.com/fansided"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Business / Ecommerce",
+      "value": [
+        "Business / Ecommerce",
+        "Business / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Business / Ecommerce",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 1,
+          "score": 95
+        },
+        {
+          "name": "Business / Services",
+          "rank": 1,
+          "score": 90
+        }
+      ]
+    }
+  }
+}

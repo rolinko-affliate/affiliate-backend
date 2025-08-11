@@ -1,0 +1,123 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "ShareASale"
+      ],
+      "value": [
+        "ShareASale"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "tr",
+        "score": 0.7
+      },
+      "sampleValue": [
+        {
+          "countryCode": "tr",
+          "score": 0.7
+        },
+        {
+          "countryCode": "de",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "tr",
+          "score": 0.7
+        },
+        {
+          "countryCode": "de",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "huseyintemur.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/huseyintemur.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://huseyintemur.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1,
+        "value": [
+          "drinkviacarota.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1,
+            "vertical": "Food / Alcohol"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 1,
+      "value": [
+        "drinkviacarota.com"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 1,
+      "sampleValue": "Online / Services",
+      "value": [
+        "Online / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Online / Services",
+        "rank": 1,
+        "score": 50
+      },
+      "value": [
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 50
+        }
+      ]
+    }
+  }
+}

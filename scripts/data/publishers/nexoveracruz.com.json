@@ -1,0 +1,625 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 3,
+      "sampleValue": [
+        "Impact",
+        "TradeTracker",
+        "TradingView"
+      ],
+      "value": [
+        "Impact",
+        "TradeTracker",
+        "TradingView"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "mx",
+        "score": 0.9
+      },
+      "sampleValue": [
+        {
+          "countryCode": "mx",
+          "score": 0.9
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "mx",
+          "score": 0.9
+        }
+      ]
+    },
+    "domain": "nexoveracruz.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "chart"
+        },
+        {
+          "score": 0.64705884,
+          "value": "stuk"
+        },
+        {
+          "score": 0.55151516,
+          "value": "market"
+        },
+        {
+          "score": 0.4997285,
+          "value": "vrouw"
+        },
+        {
+          "score": 0.47384617,
+          "value": "set"
+        },
+        {
+          "score": 0.45151514,
+          "value": "stock"
+        },
+        {
+          "score": 0.4161086,
+          "value": "accessoire"
+        },
+        {
+          "score": 0.3939394,
+          "value": "earning"
+        },
+        {
+          "score": 0.38425338,
+          "value": "speelgoed"
+        },
+        {
+          "score": 0.37728506,
+          "value": "decoratie"
+        },
+        {
+          "score": 0.36666667,
+          "value": "trader"
+        },
+        {
+          "score": 0.36060607,
+          "value": "level"
+        },
+        {
+          "score": 0.35737556,
+          "value": "kleur"
+        },
+        {
+          "score": 0.34758285,
+          "value": "model"
+        },
+        {
+          "score": 0.32929292,
+          "value": "idea"
+        },
+        {
+          "score": 0.32452488,
+          "value": "kleding"
+        },
+        {
+          "score": 0.320543,
+          "value": "man"
+        },
+        {
+          "score": 0.3131313,
+          "value": "indicator"
+        },
+        {
+          "score": 0.30660632,
+          "value": "dame"
+        },
+        {
+          "score": 0.30561087,
+          "value": "elektrisch"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "chart"
+        },
+        {
+          "score": 0.64705884,
+          "value": "stuk"
+        },
+        {
+          "score": 0.55151516,
+          "value": "market"
+        },
+        {
+          "score": 0.4997285,
+          "value": "vrouw"
+        },
+        {
+          "score": 0.47384617,
+          "value": "set"
+        },
+        {
+          "score": 0.45151514,
+          "value": "stock"
+        },
+        {
+          "score": 0.4161086,
+          "value": "accessoire"
+        },
+        {
+          "score": 0.3939394,
+          "value": "earning"
+        },
+        {
+          "score": 0.38425338,
+          "value": "speelgoed"
+        },
+        {
+          "score": 0.37728506,
+          "value": "decoratie"
+        },
+        {
+          "score": 0.36666667,
+          "value": "trader"
+        },
+        {
+          "score": 0.36060607,
+          "value": "level"
+        },
+        {
+          "score": 0.35737556,
+          "value": "kleur"
+        },
+        {
+          "score": 0.34758285,
+          "value": "model"
+        },
+        {
+          "score": 0.32929292,
+          "value": "idea"
+        },
+        {
+          "score": 0.32452488,
+          "value": "kleding"
+        },
+        {
+          "score": 0.320543,
+          "value": "man"
+        },
+        {
+          "score": 0.3131313,
+          "value": "indicator"
+        },
+        {
+          "score": 0.30660632,
+          "value": "dame"
+        },
+        {
+          "score": 0.30561087,
+          "value": "elektrisch"
+        },
+        {
+          "score": 0.2949495,
+          "value": "msft"
+        },
+        {
+          "score": 0.28470588,
+          "value": "groot"
+        },
+        {
+          "score": 0.27773756,
+          "value": "kind"
+        },
+        {
+          "score": 0.2677828,
+          "value": "zwart"
+        },
+        {
+          "score": 0.26464647,
+          "value": "calendar"
+        },
+        {
+          "score": 0.26363635,
+          "value": "solution"
+        },
+        {
+          "score": 0.2608145,
+          "value": "sieraad"
+        },
+        {
+          "score": 0.259819,
+          "value": "aliexpress"
+        },
+        {
+          "score": 0.24488688,
+          "value": "kit"
+        },
+        {
+          "score": 0.24190046,
+          "value": "houder"
+        },
+        {
+          "score": 0.24190046,
+          "value": "licht"
+        },
+        {
+          "score": 0.2359276,
+          "value": "nieuw"
+        },
+        {
+          "score": 0.23535353,
+          "value": "channel"
+        },
+        {
+          "score": 0.23493212,
+          "value": "sticker"
+        },
+        {
+          "score": 0.23030303,
+          "value": "analysis"
+        },
+        {
+          "score": 0.22995475,
+          "value": "heer"
+        },
+        {
+          "score": 0.22525252,
+          "value": "total"
+        },
+        {
+          "score": 0.22099547,
+          "value": "ketting"
+        },
+        {
+          "score": 0.22,
+          "value": "meisje"
+        },
+        {
+          "score": 0.21800905,
+          "value": "wit"
+        },
+        {
+          "score": 0.20506787,
+          "value": "glas"
+        },
+        {
+          "score": 0.20474274,
+          "value": "tag"
+        },
+        {
+          "score": 0.20404041,
+          "value": "target"
+        },
+        {
+          "score": 0.20349853,
+          "value": "trading"
+        },
+        {
+          "score": 0.20208144,
+          "value": "hoog"
+        },
+        {
+          "score": 0.20150216,
+          "value": "future"
+        },
+        {
+          "score": 0.19909503,
+          "value": "stks"
+        },
+        {
+          "score": 0.19909503,
+          "value": "ring"
+        },
+        {
+          "score": 0.19809955,
+          "value": "telefoon"
+        },
+        {
+          "score": 0.1949495,
+          "value": "broker"
+        },
+        {
+          "score": 0.1929293,
+          "value": "bullish"
+        },
+        {
+          "score": 0.1919192,
+          "value": "zone"
+        },
+        {
+          "score": 0.18217194,
+          "value": "klein"
+        },
+        {
+          "score": 0.17878787,
+          "value": "short"
+        },
+        {
+          "score": 0.17819005,
+          "value": "keuken"
+        },
+        {
+          "score": 0.17819005,
+          "value": "zacht"
+        },
+        {
+          "score": 0.17719457,
+          "value": "gratis"
+        },
+        {
+          "score": 0.1764706,
+          "value": "wrong"
+        },
+        {
+          "score": 0.1764706,
+          "value": "sorry something"
+        },
+        {
+          "score": 0.1764706,
+          "value": "something went"
+        },
+        {
+          "score": 0.1764706,
+          "value": "went wrong"
+        },
+        {
+          "score": 0.1764706,
+          "value": "wrong contact"
+        },
+        {
+          "score": 0.1764706,
+          "value": "contact us"
+        },
+        {
+          "score": 0.17321266,
+          "value": "tas"
+        },
+        {
+          "score": 0.17022625,
+          "value": "draadloos"
+        },
+        {
+          "score": 0.16969697,
+          "value": "resistance"
+        },
+        {
+          "score": 0.16823529,
+          "value": "mini"
+        },
+        {
+          "score": 0.16823529,
+          "value": "waterdicht"
+        },
+        {
+          "score": 0.16767676,
+          "value": "timeframe"
+        },
+        {
+          "score": 0.16666667,
+          "value": "trend"
+        },
+        {
+          "score": 0.16624434,
+          "value": "metalen"
+        },
+        {
+          "score": 0.1642534,
+          "value": "plastic"
+        },
+        {
+          "score": 0.16325791,
+          "value": "gel"
+        },
+        {
+          "score": 0.16161616,
+          "value": "previous"
+        },
+        {
+          "score": 0.16126697,
+          "value": "doos"
+        },
+        {
+          "score": 0.16126697,
+          "value": "kabel"
+        },
+        {
+          "score": 0.15959597,
+          "value": "economic"
+        },
+        {
+          "score": 0.15555556,
+          "value": "friend"
+        },
+        {
+          "score": 0.15555556,
+          "value": "charting"
+        },
+        {
+          "score": 0.15529412,
+          "value": "goud"
+        },
+        {
+          "score": 0.15429865,
+          "value": "batterij"
+        },
+        {
+          "score": 0.15344,
+          "value": "people"
+        },
+        {
+          "score": 0.15240607,
+          "value": "community"
+        },
+        {
+          "score": 0.15031675,
+          "value": "mode"
+        },
+        {
+          "score": 0.14848486,
+          "value": "pine"
+        },
+        {
+          "score": 0.14848486,
+          "value": "wave"
+        },
+        {
+          "score": 0.14633484,
+          "value": "usb"
+        },
+        {
+          "score": 0.14533937,
+          "value": "aluminium"
+        },
+        {
+          "score": 0.1443439,
+          "value": "oorbel"
+        },
+        {
+          "score": 0.14343435,
+          "value": "setup"
+        },
+        {
+          "score": 0.14334841,
+          "value": "stof"
+        },
+        {
+          "score": 0.14141414,
+          "value": "follower"
+        },
+        {
+          "score": 0.13939394,
+          "value": "moderator"
+        },
+        {
+          "score": 0.13737373,
+          "value": "house"
+        },
+        {
+          "score": 0.13638009,
+          "value": "cover"
+        },
+        {
+          "score": 0.136005,
+          "value": "coin"
+        },
+        {
+          "score": 0.13535354,
+          "value": "wizard"
+        },
+        {
+          "score": 0.13339366,
+          "value": "draagbaar"
+        },
+        {
+          "score": 0.13333334,
+          "value": "advertising"
+        },
+        {
+          "score": 0.13239819,
+          "value": "inch"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/nexoveracruz.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://nexoveracruz.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 4,
+        "value": [
+          "aliexpress.com",
+          "coinbase.com",
+          "music.amazon.com",
+          "tradingview.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Forex & Crypto"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Trading"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Shopping / Department Stores"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 4,
+      "value": [
+        "aliexpress.com",
+        "coinbase.com",
+        "music.amazon.com",
+        "tradingview.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Online / Services",
+      "value": [
+        "Online / Services",
+        "Travel / Attractions"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Online / Services",
+        "rank": 1,
+        "score": 60
+      },
+      "value": [
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 60
+        },
+        {
+          "name": "Travel / Attractions",
+          "rank": 1,
+          "score": 30
+        }
+      ]
+    }
+  }
+}

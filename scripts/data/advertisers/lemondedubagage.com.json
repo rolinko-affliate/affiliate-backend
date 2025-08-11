@@ -1,0 +1,85 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 2,
+      "sampleValue": [
+        "Digidip",
+        "Skimlinks"
+      ],
+      "value": [
+        "Digidip",
+        "Skimlinks"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 0,
+      "error": false,
+      "value": []
+    },
+    "domain": "lemondedubagage.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/lemondedubagage.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://lemondedubagage.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 3
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "promotypeMix": {
+        "value": []
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 2,
+      "socialsAvailable": [
+        "twitter",
+        "facebook"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/lemondedubagageofficiel",
+        "twitter": "https://twitter.com/lemondedubagage"
+      }
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Travel / Accessories",
+        "rank": 2,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Fashion / Accessories",
+          "rank": 2,
+          "score": 70
+        },
+        {
+          "name": "Travel / Accessories",
+          "rank": 2,
+          "score": 95
+        }
+      ]
+    }
+  }
+}

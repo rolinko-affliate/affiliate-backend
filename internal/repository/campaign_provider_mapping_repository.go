@@ -13,6 +13,14 @@ import (
 
 // CampaignProviderMappingRepository defines the interface for campaign provider mapping operations
 type CampaignProviderMappingRepository interface {
+	CreateMapping(ctx context.Context, mapping *domain.CampaignProviderMapping) error
+	GetMappingByID(ctx context.Context, id int64) (*domain.CampaignProviderMapping, error)
+	GetMappingsByCampaignID(ctx context.Context, campaignID int64) ([]*domain.CampaignProviderMapping, error)
+	GetMappingByCampaignAndProvider(ctx context.Context, campaignID int64, providerType string) (*domain.CampaignProviderMapping, error)
+	UpdateMapping(ctx context.Context, mapping *domain.CampaignProviderMapping) error
+	DeleteMapping(ctx context.Context, id int64) error
+	
+	// Legacy methods for backward compatibility
 	CreateCampaignProviderMapping(ctx context.Context, mapping *domain.CampaignProviderMapping) error
 	GetCampaignProviderMapping(ctx context.Context, campaignID int64, providerType string) (*domain.CampaignProviderMapping, error)
 	GetCampaignProviderMappingByID(ctx context.Context, mappingID int64) (*domain.CampaignProviderMapping, error)
@@ -26,6 +34,11 @@ type pgxCampaignProviderMappingRepository struct {
 	db *pgxpool.Pool
 }
 
+// NewCampaignProviderMappingRepository creates a new campaign provider mapping repository
+func NewCampaignProviderMappingRepository(db *pgxpool.Pool) CampaignProviderMappingRepository {
+	return &pgxCampaignProviderMappingRepository{db: db}
+}
+
 // NewPgxCampaignProviderMappingRepository creates a new campaign provider mapping repository
 func NewPgxCampaignProviderMappingRepository(db *pgxpool.Pool) CampaignProviderMappingRepository {
 	return &pgxCampaignProviderMappingRepository{db: db}
@@ -34,37 +47,33 @@ func NewPgxCampaignProviderMappingRepository(db *pgxpool.Pool) CampaignProviderM
 // CreateCampaignProviderMapping creates a new campaign provider mapping
 func (r *pgxCampaignProviderMappingRepository) CreateCampaignProviderMapping(ctx context.Context, mapping *domain.CampaignProviderMapping) error {
 	query := `INSERT INTO public.campaign_provider_mappings 
-              (campaign_id, provider_type, provider_campaign_id, provider_data, sync_status, last_sync_at, sync_error, created_at, updated_at)
-              VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+              (campaign_id, provider_type, provider_offer_id, provider_config, is_active_on_provider, last_synced_at, created_at, updated_at)
+              VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
               RETURNING mapping_id, created_at, updated_at`
 
-	var providerCampaignID sql.NullString
+	var providerOfferID sql.NullString
 	var providerData sql.NullString
-	var syncStatus sql.NullString
-	var lastSyncAt sql.NullTime
-	var syncError sql.NullString
+	var isActiveOnProvider sql.NullBool
+	var lastSyncedAt sql.NullTime
 
-	if mapping.ProviderCampaignID != nil {
-		providerCampaignID = sql.NullString{String: *mapping.ProviderCampaignID, Valid: true}
+	if mapping.ProviderOfferID != nil {
+		providerOfferID = sql.NullString{String: *mapping.ProviderOfferID, Valid: true}
 	}
 	if mapping.ProviderData != nil {
 		providerData = sql.NullString{String: *mapping.ProviderData, Valid: true}
 	}
-	if mapping.SyncStatus != nil {
-		syncStatus = sql.NullString{String: *mapping.SyncStatus, Valid: true}
+	if mapping.IsActiveOnProvider != nil {
+		isActiveOnProvider = sql.NullBool{Bool: *mapping.IsActiveOnProvider, Valid: true}
 	}
-	if mapping.LastSyncAt != nil {
-		lastSyncAt = sql.NullTime{Time: *mapping.LastSyncAt, Valid: true}
-	}
-	if mapping.SyncError != nil {
-		syncError = sql.NullString{String: *mapping.SyncError, Valid: true}
+	if mapping.LastSyncedAt != nil {
+		lastSyncedAt = sql.NullTime{Time: *mapping.LastSyncedAt, Valid: true}
 	}
 
 	now := time.Now()
 
 	err := r.db.QueryRow(ctx, query,
-		mapping.CampaignID, mapping.ProviderType, providerCampaignID, providerData,
-		syncStatus, lastSyncAt, syncError, now, now,
+		mapping.CampaignID, mapping.ProviderType, providerOfferID, providerData,
+		isActiveOnProvider, lastSyncedAt, now, now,
 	).Scan(&mapping.MappingID, &mapping.CreatedAt, &mapping.UpdatedAt)
 
 	if err != nil {
@@ -76,21 +85,20 @@ func (r *pgxCampaignProviderMappingRepository) CreateCampaignProviderMapping(ctx
 
 // GetCampaignProviderMapping retrieves a campaign provider mapping by campaign ID and provider type
 func (r *pgxCampaignProviderMappingRepository) GetCampaignProviderMapping(ctx context.Context, campaignID int64, providerType string) (*domain.CampaignProviderMapping, error) {
-	query := `SELECT mapping_id, campaign_id, provider_type, provider_campaign_id, provider_data, 
-              sync_status, last_sync_at, sync_error, created_at, updated_at
+	query := `SELECT mapping_id, campaign_id, provider_type, provider_offer_id, provider_config, 
+              is_active_on_provider, last_synced_at, created_at, updated_at
               FROM public.campaign_provider_mappings 
               WHERE campaign_id = $1 AND provider_type = $2`
 
 	mapping := &domain.CampaignProviderMapping{}
-	var providerCampaignID sql.NullString
+	var providerOfferID sql.NullString
 	var providerData sql.NullString
-	var syncStatus sql.NullString
-	var lastSyncAt sql.NullTime
-	var syncError sql.NullString
+	var isActiveOnProvider sql.NullBool
+	var lastSyncedAt sql.NullTime
 
 	err := r.db.QueryRow(ctx, query, campaignID, providerType).Scan(
 		&mapping.MappingID, &mapping.CampaignID, &mapping.ProviderType,
-		&providerCampaignID, &providerData, &syncStatus, &lastSyncAt, &syncError,
+		&providerOfferID, &providerData, &isActiveOnProvider, &lastSyncedAt,
 		&mapping.CreatedAt, &mapping.UpdatedAt,
 	)
 
@@ -102,20 +110,17 @@ func (r *pgxCampaignProviderMappingRepository) GetCampaignProviderMapping(ctx co
 	}
 
 	// Handle nullable fields
-	if providerCampaignID.Valid {
-		mapping.ProviderCampaignID = &providerCampaignID.String
+	if providerOfferID.Valid {
+		mapping.ProviderOfferID = &providerOfferID.String
 	}
 	if providerData.Valid {
 		mapping.ProviderData = &providerData.String
 	}
-	if syncStatus.Valid {
-		mapping.SyncStatus = &syncStatus.String
+	if isActiveOnProvider.Valid {
+		mapping.IsActiveOnProvider = &isActiveOnProvider.Bool
 	}
-	if lastSyncAt.Valid {
-		mapping.LastSyncAt = &lastSyncAt.Time
-	}
-	if syncError.Valid {
-		mapping.SyncError = &syncError.String
+	if lastSyncedAt.Valid {
+		mapping.LastSyncedAt = &lastSyncedAt.Time
 	}
 
 	return mapping, nil
@@ -123,21 +128,20 @@ func (r *pgxCampaignProviderMappingRepository) GetCampaignProviderMapping(ctx co
 
 // GetCampaignProviderMappingByID retrieves a campaign provider mapping by its ID
 func (r *pgxCampaignProviderMappingRepository) GetCampaignProviderMappingByID(ctx context.Context, mappingID int64) (*domain.CampaignProviderMapping, error) {
-	query := `SELECT mapping_id, campaign_id, provider_type, provider_campaign_id, provider_data, 
-              sync_status, last_sync_at, sync_error, created_at, updated_at
+	query := `SELECT mapping_id, campaign_id, provider_type, provider_offer_id, provider_config, 
+              is_active_on_provider, last_synced_at, created_at, updated_at
               FROM public.campaign_provider_mappings 
               WHERE mapping_id = $1`
 
 	mapping := &domain.CampaignProviderMapping{}
-	var providerCampaignID sql.NullString
+	var providerOfferID sql.NullString
 	var providerData sql.NullString
-	var syncStatus sql.NullString
-	var lastSyncAt sql.NullTime
-	var syncError sql.NullString
+	var isActiveOnProvider sql.NullBool
+	var lastSyncedAt sql.NullTime
 
 	err := r.db.QueryRow(ctx, query, mappingID).Scan(
 		&mapping.MappingID, &mapping.CampaignID, &mapping.ProviderType,
-		&providerCampaignID, &providerData, &syncStatus, &lastSyncAt, &syncError,
+		&providerOfferID, &providerData, &isActiveOnProvider, &lastSyncedAt,
 		&mapping.CreatedAt, &mapping.UpdatedAt,
 	)
 
@@ -149,20 +153,17 @@ func (r *pgxCampaignProviderMappingRepository) GetCampaignProviderMappingByID(ct
 	}
 
 	// Handle nullable fields
-	if providerCampaignID.Valid {
-		mapping.ProviderCampaignID = &providerCampaignID.String
+	if providerOfferID.Valid {
+		mapping.ProviderOfferID = &providerOfferID.String
 	}
 	if providerData.Valid {
 		mapping.ProviderData = &providerData.String
 	}
-	if syncStatus.Valid {
-		mapping.SyncStatus = &syncStatus.String
+	if isActiveOnProvider.Valid {
+		mapping.IsActiveOnProvider = &isActiveOnProvider.Bool
 	}
-	if lastSyncAt.Valid {
-		mapping.LastSyncAt = &lastSyncAt.Time
-	}
-	if syncError.Valid {
-		mapping.SyncError = &syncError.String
+	if lastSyncedAt.Valid {
+		mapping.LastSyncedAt = &lastSyncedAt.Time
 	}
 
 	return mapping, nil
@@ -171,37 +172,33 @@ func (r *pgxCampaignProviderMappingRepository) GetCampaignProviderMappingByID(ct
 // UpdateCampaignProviderMapping updates an existing campaign provider mapping
 func (r *pgxCampaignProviderMappingRepository) UpdateCampaignProviderMapping(ctx context.Context, mapping *domain.CampaignProviderMapping) error {
 	query := `UPDATE public.campaign_provider_mappings SET 
-              campaign_id = $2, provider_type = $3, provider_campaign_id = $4, provider_data = $5,
-              sync_status = $6, last_sync_at = $7, sync_error = $8, updated_at = $9
+              campaign_id = $2, provider_type = $3, provider_offer_id = $4, provider_config = $5,
+              is_active_on_provider = $6, last_synced_at = $7, updated_at = $8
               WHERE mapping_id = $1`
 
-	var providerCampaignID sql.NullString
+	var providerOfferID sql.NullString
 	var providerData sql.NullString
-	var syncStatus sql.NullString
-	var lastSyncAt sql.NullTime
-	var syncError sql.NullString
+	var isActiveOnProvider sql.NullBool
+	var lastSyncedAt sql.NullTime
 
-	if mapping.ProviderCampaignID != nil {
-		providerCampaignID = sql.NullString{String: *mapping.ProviderCampaignID, Valid: true}
+	if mapping.ProviderOfferID != nil {
+		providerOfferID = sql.NullString{String: *mapping.ProviderOfferID, Valid: true}
 	}
 	if mapping.ProviderData != nil {
 		providerData = sql.NullString{String: *mapping.ProviderData, Valid: true}
 	}
-	if mapping.SyncStatus != nil {
-		syncStatus = sql.NullString{String: *mapping.SyncStatus, Valid: true}
+	if mapping.IsActiveOnProvider != nil {
+		isActiveOnProvider = sql.NullBool{Bool: *mapping.IsActiveOnProvider, Valid: true}
 	}
-	if mapping.LastSyncAt != nil {
-		lastSyncAt = sql.NullTime{Time: *mapping.LastSyncAt, Valid: true}
-	}
-	if mapping.SyncError != nil {
-		syncError = sql.NullString{String: *mapping.SyncError, Valid: true}
+	if mapping.LastSyncedAt != nil {
+		lastSyncedAt = sql.NullTime{Time: *mapping.LastSyncedAt, Valid: true}
 	}
 
 	now := time.Now()
 
 	result, err := r.db.Exec(ctx, query,
-		mapping.MappingID, mapping.CampaignID, mapping.ProviderType, providerCampaignID, providerData,
-		syncStatus, lastSyncAt, syncError, now,
+		mapping.MappingID, mapping.CampaignID, mapping.ProviderType, providerOfferID, providerData,
+		isActiveOnProvider, lastSyncedAt, now,
 	)
 
 	if err != nil {
@@ -219,8 +216,8 @@ func (r *pgxCampaignProviderMappingRepository) UpdateCampaignProviderMapping(ctx
 
 // ListCampaignProviderMappingsByCampaign retrieves all provider mappings for a specific campaign
 func (r *pgxCampaignProviderMappingRepository) ListCampaignProviderMappingsByCampaign(ctx context.Context, campaignID int64) ([]*domain.CampaignProviderMapping, error) {
-	query := `SELECT mapping_id, campaign_id, provider_type, provider_campaign_id, provider_data, 
-              sync_status, last_sync_at, sync_error, created_at, updated_at
+	query := `SELECT mapping_id, campaign_id, provider_type, provider_offer_id, provider_config, 
+              is_active_on_provider, last_synced_at, created_at, updated_at
               FROM public.campaign_provider_mappings 
               WHERE campaign_id = $1 ORDER BY created_at DESC`
 
@@ -233,15 +230,14 @@ func (r *pgxCampaignProviderMappingRepository) ListCampaignProviderMappingsByCam
 	mappings := make([]*domain.CampaignProviderMapping, 0)
 	for rows.Next() {
 		mapping := &domain.CampaignProviderMapping{}
-		var providerCampaignID sql.NullString
+		var providerOfferID sql.NullString
 		var providerData sql.NullString
-		var syncStatus sql.NullString
-		var lastSyncAt sql.NullTime
-		var syncError sql.NullString
+		var isActiveOnProvider sql.NullBool
+		var lastSyncedAt sql.NullTime
 
 		err := rows.Scan(
 			&mapping.MappingID, &mapping.CampaignID, &mapping.ProviderType,
-			&providerCampaignID, &providerData, &syncStatus, &lastSyncAt, &syncError,
+			&providerOfferID, &providerData, &isActiveOnProvider, &lastSyncedAt,
 			&mapping.CreatedAt, &mapping.UpdatedAt,
 		)
 		if err != nil {
@@ -249,20 +245,17 @@ func (r *pgxCampaignProviderMappingRepository) ListCampaignProviderMappingsByCam
 		}
 
 		// Handle nullable fields
-		if providerCampaignID.Valid {
-			mapping.ProviderCampaignID = &providerCampaignID.String
+		if providerOfferID.Valid {
+			mapping.ProviderOfferID = &providerOfferID.String
 		}
 		if providerData.Valid {
 			mapping.ProviderData = &providerData.String
 		}
-		if syncStatus.Valid {
-			mapping.SyncStatus = &syncStatus.String
+		if isActiveOnProvider.Valid {
+			mapping.IsActiveOnProvider = &isActiveOnProvider.Bool
 		}
-		if lastSyncAt.Valid {
-			mapping.LastSyncAt = &lastSyncAt.Time
-		}
-		if syncError.Valid {
-			mapping.SyncError = &syncError.String
+		if lastSyncedAt.Valid {
+			mapping.LastSyncedAt = &lastSyncedAt.Time
 		}
 
 		mappings = append(mappings, mapping)
@@ -290,4 +283,30 @@ func (r *pgxCampaignProviderMappingRepository) DeleteCampaignProviderMapping(ctx
 	}
 
 	return nil
+}
+
+// New interface methods for sync script compatibility
+
+func (r *pgxCampaignProviderMappingRepository) CreateMapping(ctx context.Context, mapping *domain.CampaignProviderMapping) error {
+	return r.CreateCampaignProviderMapping(ctx, mapping)
+}
+
+func (r *pgxCampaignProviderMappingRepository) GetMappingByID(ctx context.Context, id int64) (*domain.CampaignProviderMapping, error) {
+	return r.GetCampaignProviderMappingByID(ctx, id)
+}
+
+func (r *pgxCampaignProviderMappingRepository) GetMappingsByCampaignID(ctx context.Context, campaignID int64) ([]*domain.CampaignProviderMapping, error) {
+	return r.ListCampaignProviderMappingsByCampaign(ctx, campaignID)
+}
+
+func (r *pgxCampaignProviderMappingRepository) GetMappingByCampaignAndProvider(ctx context.Context, campaignID int64, providerType string) (*domain.CampaignProviderMapping, error) {
+	return r.GetCampaignProviderMapping(ctx, campaignID, providerType)
+}
+
+func (r *pgxCampaignProviderMappingRepository) UpdateMapping(ctx context.Context, mapping *domain.CampaignProviderMapping) error {
+	return r.UpdateCampaignProviderMapping(ctx, mapping)
+}
+
+func (r *pgxCampaignProviderMappingRepository) DeleteMapping(ctx context.Context, id int64) error {
+	return r.DeleteCampaignProviderMapping(ctx, id)
 }

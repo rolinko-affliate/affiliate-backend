@@ -1,0 +1,617 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Tradedoubler"
+      ],
+      "value": [
+        "Tradedoubler"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "it",
+        "score": 0.7
+      },
+      "sampleValue": [
+        {
+          "countryCode": "it",
+          "score": 0.7
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "it",
+          "score": 0.7
+        }
+      ]
+    },
+    "domain": "settemuse.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "ragazzi"
+        },
+        {
+          "score": 0.6200658,
+          "value": "libri"
+        },
+        {
+          "score": 0.5871711,
+          "value": "rock"
+        },
+        {
+          "score": 0.5756579,
+          "value": "promozioni"
+        },
+        {
+          "score": 0.56578946,
+          "value": "faq"
+        },
+        {
+          "score": 0.55921054,
+          "value": "cartoleria"
+        },
+        {
+          "score": 0.4259996,
+          "value": "servizi"
+        },
+        {
+          "score": 0.40296054,
+          "value": "art"
+        },
+        {
+          "score": 0.3930921,
+          "value": "pop"
+        },
+        {
+          "score": 0.37828946,
+          "value": "red"
+        },
+        {
+          "score": 0.37173164,
+          "value": "informativa"
+        },
+        {
+          "score": 0.37171054,
+          "value": "tale"
+        },
+        {
+          "score": 0.37171054,
+          "value": "magic"
+        },
+        {
+          "score": 0.37171054,
+          "value": "hot"
+        },
+        {
+          "score": 0.36019737,
+          "value": "prezzo"
+        },
+        {
+          "score": 0.34868422,
+          "value": "foto"
+        },
+        {
+          "score": 0.2944079,
+          "value": "science"
+        },
+        {
+          "score": 0.28618422,
+          "value": "telefonia"
+        },
+        {
+          "score": 0.27138373,
+          "value": "sono"
+        },
+        {
+          "score": 0.24671052,
+          "value": "smartphone"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "ragazzi"
+        },
+        {
+          "score": 0.6200658,
+          "value": "libri"
+        },
+        {
+          "score": 0.5871711,
+          "value": "rock"
+        },
+        {
+          "score": 0.5756579,
+          "value": "promozioni"
+        },
+        {
+          "score": 0.56578946,
+          "value": "faq"
+        },
+        {
+          "score": 0.55921054,
+          "value": "cartoleria"
+        },
+        {
+          "score": 0.4259996,
+          "value": "servizi"
+        },
+        {
+          "score": 0.40296054,
+          "value": "art"
+        },
+        {
+          "score": 0.3930921,
+          "value": "pop"
+        },
+        {
+          "score": 0.37828946,
+          "value": "red"
+        },
+        {
+          "score": 0.37173164,
+          "value": "informativa"
+        },
+        {
+          "score": 0.37171054,
+          "value": "tale"
+        },
+        {
+          "score": 0.37171054,
+          "value": "magic"
+        },
+        {
+          "score": 0.37171054,
+          "value": "hot"
+        },
+        {
+          "score": 0.36019737,
+          "value": "prezzo"
+        },
+        {
+          "score": 0.34868422,
+          "value": "foto"
+        },
+        {
+          "score": 0.2944079,
+          "value": "science"
+        },
+        {
+          "score": 0.28618422,
+          "value": "telefonia"
+        },
+        {
+          "score": 0.27138373,
+          "value": "sono"
+        },
+        {
+          "score": 0.24671052,
+          "value": "smartphone"
+        },
+        {
+          "score": 0.24342105,
+          "value": "fiction"
+        },
+        {
+          "score": 0.23848684,
+          "value": "fitness"
+        },
+        {
+          "score": 0.23192817,
+          "value": "sport"
+        },
+        {
+          "score": 0.23190789,
+          "value": "fantasy"
+        },
+        {
+          "score": 0.23190789,
+          "value": "scanner"
+        },
+        {
+          "score": 0.23190789,
+          "value": "cinema"
+        },
+        {
+          "score": 0.23026316,
+          "value": "societ"
+        },
+        {
+          "score": 0.22861843,
+          "value": "fotocamere"
+        },
+        {
+          "score": 0.22697368,
+          "value": "comunicazione"
+        },
+        {
+          "score": 0.22532895,
+          "value": "fantascienza"
+        },
+        {
+          "score": 0.21875,
+          "value": "smart"
+        },
+        {
+          "score": 0.2138158,
+          "value": "action"
+        },
+        {
+          "score": 0.21217105,
+          "value": "ediz"
+        },
+        {
+          "score": 0.21217105,
+          "value": "blocco"
+        },
+        {
+          "score": 0.21217105,
+          "value": "fisso"
+        },
+        {
+          "score": 0.21217105,
+          "value": "videocamere"
+        },
+        {
+          "score": 0.21217105,
+          "value": "informazioni"
+        },
+        {
+          "score": 0.21052632,
+          "value": "hard"
+        },
+        {
+          "score": 0.20723684,
+          "value": "vinyl"
+        },
+        {
+          "score": 0.20723684,
+          "value": "cam"
+        },
+        {
+          "score": 0.20559211,
+          "value": "societ e"
+        },
+        {
+          "score": 0.20394737,
+          "value": "inglese"
+        },
+        {
+          "score": 0.20230263,
+          "value": "hip"
+        },
+        {
+          "score": 0.20230263,
+          "value": "rap"
+        },
+        {
+          "score": 0.20065789,
+          "value": "classici"
+        },
+        {
+          "score": 0.19901316,
+          "value": "comic_strip"
+        },
+        {
+          "score": 0.19736843,
+          "value": "narrativa"
+        },
+        {
+          "score": 0.19736843,
+          "value": "graphic"
+        },
+        {
+          "score": 0.19736843,
+          "value": "novel"
+        },
+        {
+          "score": 0.19736843,
+          "value": "graphic novel"
+        },
+        {
+          "score": 0.19736843,
+          "value": "stampanti"
+        },
+        {
+          "score": 0.19736843,
+          "value": "droni"
+        },
+        {
+          "score": 0.19572368,
+          "value": "ebook"
+        },
+        {
+          "score": 0.19572368,
+          "value": "ultimo"
+        },
+        {
+          "score": 0.19572368,
+          "value": "serial"
+        },
+        {
+          "score": 0.19572368,
+          "value": "vivere"
+        },
+        {
+          "score": 0.19572368,
+          "value": "modo"
+        },
+        {
+          "score": 0.19572368,
+          "value": "stampanti scanner"
+        },
+        {
+          "score": 0.19572368,
+          "value": "smartwatch"
+        },
+        {
+          "score": 0.19407895,
+          "value": "horror"
+        },
+        {
+          "score": 0.1924342,
+          "value": "letteratura"
+        },
+        {
+          "score": 0.1924342,
+          "value": "zar"
+        },
+        {
+          "score": 0.1924342,
+          "value": "ultimo zar"
+        },
+        {
+          "score": 0.1924342,
+          "value": "san"
+        },
+        {
+          "score": 0.1924342,
+          "value": "king"
+        },
+        {
+          "score": 0.1924342,
+          "value": "matrix"
+        },
+        {
+          "score": 0.1924342,
+          "value": "red vinyl"
+        },
+        {
+          "score": 0.1924342,
+          "value": "notebook"
+        },
+        {
+          "score": 0.1924342,
+          "value": "solo"
+        },
+        {
+          "score": 0.19078948,
+          "value": "language"
+        },
+        {
+          "score": 0.19078948,
+          "value": "letture"
+        },
+        {
+          "score": 0.19078948,
+          "value": "mese"
+        },
+        {
+          "score": 0.19078948,
+          "value": "hard rock"
+        },
+        {
+          "score": 0.19078948,
+          "value": "foglie"
+        },
+        {
+          "score": 0.19078948,
+          "value": "taccuino"
+        },
+        {
+          "score": 0.19078948,
+          "value": "smartphone smartwatch"
+        },
+        {
+          "score": 0.19078948,
+          "value": "tracker"
+        },
+        {
+          "score": 0.19078948,
+          "value": "videocamere action"
+        },
+        {
+          "score": 0.18914473,
+          "value": "elena"
+        },
+        {
+          "score": 0.18914473,
+          "value": "greci"
+        },
+        {
+          "score": 0.18914473,
+          "value": "thriller"
+        },
+        {
+          "score": 0.18914473,
+          "value": "metal"
+        },
+        {
+          "score": 0.18914473,
+          "value": "unico"
+        },
+        {
+          "score": 0.18750805,
+          "value": "benvenuto"
+        },
+        {
+          "score": 0.1875,
+          "value": "altro"
+        },
+        {
+          "score": 0.1875,
+          "value": "tie"
+        },
+        {
+          "score": 0.1875,
+          "value": "ediz tie"
+        },
+        {
+          "score": 0.1875,
+          "value": "poesia"
+        },
+        {
+          "score": 0.1875,
+          "value": "foreign"
+        },
+        {
+          "score": 0.1875,
+          "value": "foreign language"
+        },
+        {
+          "score": 0.1875,
+          "value": "midnight"
+        },
+        {
+          "score": 0.1875,
+          "value": "serial ragazzi"
+        },
+        {
+          "score": 0.1875,
+          "value": "chili"
+        },
+        {
+          "score": 0.1875,
+          "value": "agende"
+        },
+        {
+          "score": 0.1875,
+          "value": "cuffie"
+        },
+        {
+          "score": 0.1875,
+          "value": "activity"
+        },
+        {
+          "score": 0.1875,
+          "value": "ospite"
+        },
+        {
+          "score": 0.18585527,
+          "value": "wishlistcounter"
+        },
+        {
+          "score": 0.18585527,
+          "value": "evidenziatori"
+        },
+        {
+          "score": 0.18585527,
+          "value": "promozioni outlet"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/settemuse.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://settemuse.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 4,
+        "value": [
+          "tradedoubler.com",
+          "groupon.it",
+          "ibs.it",
+          "internetbookshop.it"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1.9,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Online / Freebies"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 4,
+      "value": [
+        "tradedoubler.com",
+        "groupon.it",
+        "ibs.it",
+        "internetbookshop.it"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Home / Art",
+      "value": [
+        "Home / Art",
+        "Entertainment / Books"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Home / Art",
+        "rank": 1,
+        "score": 70
+      },
+      "value": [
+        {
+          "name": "Home / Art",
+          "rank": 1,
+          "score": 70
+        },
+        {
+          "name": "Entertainment / Books",
+          "rank": 1,
+          "score": 60
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1017 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 2,
+      "sampleValue": [
+        "Business Insider",
+        "Flexoffers"
+      ],
+      "value": [
+        "Business Insider",
+        "Flexoffers"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.7
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.7
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.7
+        }
+      ]
+    },
+    "domain": "financeessence.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "seller"
+        },
+        {
+          "score": 0.97064793,
+          "value": "amazon"
+        },
+        {
+          "score": 0.5045988,
+          "value": "sign"
+        },
+        {
+          "score": 0.43788108,
+          "value": "device"
+        },
+        {
+          "score": 0.36166963,
+          "value": "central"
+        },
+        {
+          "score": 0.35693163,
+          "value": "video"
+        },
+        {
+          "score": 0.34973568,
+          "value": "store"
+        },
+        {
+          "score": 0.325511,
+          "value": "fee"
+        },
+        {
+          "score": 0.2860347,
+          "value": "card"
+        },
+        {
+          "score": 0.2782074,
+          "value": "fba"
+        },
+        {
+          "score": 0.27151892,
+          "value": "prime"
+        },
+        {
+          "score": 0.25085837,
+          "value": "restriction"
+        },
+        {
+          "score": 0.216602,
+          "value": "program"
+        },
+        {
+          "score": 0.20448244,
+          "value": "kindle"
+        },
+        {
+          "score": 0.20156665,
+          "value": "category"
+        },
+        {
+          "score": 0.19352096,
+          "value": "body"
+        },
+        {
+          "score": 0.18640403,
+          "value": "clothing"
+        },
+        {
+          "score": 0.18082023,
+          "value": "requirement"
+        },
+        {
+          "score": 0.17409465,
+          "value": "fulfillment"
+        },
+        {
+          "score": 0.17403316,
+          "value": "fashion"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "seller"
+        },
+        {
+          "score": 0.97064793,
+          "value": "amazon"
+        },
+        {
+          "score": 0.5045988,
+          "value": "sign"
+        },
+        {
+          "score": 0.43788108,
+          "value": "device"
+        },
+        {
+          "score": 0.36166963,
+          "value": "central"
+        },
+        {
+          "score": 0.35693163,
+          "value": "video"
+        },
+        {
+          "score": 0.34973568,
+          "value": "store"
+        },
+        {
+          "score": 0.325511,
+          "value": "fee"
+        },
+        {
+          "score": 0.2860347,
+          "value": "card"
+        },
+        {
+          "score": 0.2782074,
+          "value": "fba"
+        },
+        {
+          "score": 0.27151892,
+          "value": "prime"
+        },
+        {
+          "score": 0.25085837,
+          "value": "restriction"
+        },
+        {
+          "score": 0.216602,
+          "value": "program"
+        },
+        {
+          "score": 0.20448244,
+          "value": "kindle"
+        },
+        {
+          "score": 0.20156665,
+          "value": "category"
+        },
+        {
+          "score": 0.19352096,
+          "value": "body"
+        },
+        {
+          "score": 0.18640403,
+          "value": "clothing"
+        },
+        {
+          "score": 0.18082023,
+          "value": "requirement"
+        },
+        {
+          "score": 0.17409465,
+          "value": "fulfillment"
+        },
+        {
+          "score": 0.17403316,
+          "value": "fashion"
+        },
+        {
+          "score": 0.171885,
+          "value": "solution"
+        },
+        {
+          "score": 0.1660558,
+          "value": "phone"
+        },
+        {
+          "score": 0.1613603,
+          "value": "prime video"
+        },
+        {
+          "score": 0.16040844,
+          "value": "skin"
+        },
+        {
+          "score": 0.15900648,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.15460823,
+          "value": "pant"
+        },
+        {
+          "score": 0.15117688,
+          "value": "book"
+        },
+        {
+          "score": 0.14720851,
+          "value": "accessory"
+        },
+        {
+          "score": 0.14671169,
+          "value": "box"
+        },
+        {
+          "score": 0.1420766,
+          "value": "food"
+        },
+        {
+          "score": 0.14035974,
+          "value": "digital"
+        },
+        {
+          "score": 0.14024635,
+          "value": "shirt"
+        },
+        {
+          "score": 0.13980298,
+          "value": "underwear"
+        },
+        {
+          "score": 0.13908294,
+          "value": "dress"
+        },
+        {
+          "score": 0.13403507,
+          "value": "warranty"
+        },
+        {
+          "score": 0.13382058,
+          "value": "care"
+        },
+        {
+          "score": 0.12380229,
+          "value": "automotive"
+        },
+        {
+          "score": 0.12310248,
+          "value": "feedback"
+        },
+        {
+          "score": 0.12237973,
+          "value": "health"
+        },
+        {
+          "score": 0.11746133,
+          "value": "software"
+        },
+        {
+          "score": 0.115684874,
+          "value": "petite"
+        },
+        {
+          "score": 0.11530356,
+          "value": "carrier"
+        },
+        {
+          "score": 0.11512412,
+          "value": "art"
+        },
+        {
+          "score": 0.11284453,
+          "value": "packaging"
+        },
+        {
+          "score": 0.11270404,
+          "value": "helpful"
+        },
+        {
+          "score": 0.11252222,
+          "value": "setting"
+        },
+        {
+          "score": 0.110927105,
+          "value": "bag"
+        },
+        {
+          "score": 0.106037684,
+          "value": "app"
+        },
+        {
+          "score": 0.10399886,
+          "value": "event"
+        },
+        {
+          "score": 0.103950806,
+          "value": "global"
+        },
+        {
+          "score": 0.103806324,
+          "value": "original"
+        },
+        {
+          "score": 0.10332808,
+          "value": "star"
+        },
+        {
+          "score": 0.10212767,
+          "value": "electronic"
+        },
+        {
+          "score": 0.10063935,
+          "value": "hero"
+        },
+        {
+          "score": 0.09973592,
+          "value": "drawer"
+        },
+        {
+          "score": 0.09848166,
+          "value": "vpn"
+        },
+        {
+          "score": 0.09837985,
+          "value": "sport"
+        },
+        {
+          "score": 0.09823033,
+          "value": "listing"
+        },
+        {
+          "score": 0.09771981,
+          "value": "soft"
+        },
+        {
+          "score": 0.096076466,
+          "value": "guideline"
+        },
+        {
+          "score": 0.09584926,
+          "value": "department"
+        },
+        {
+          "score": 0.095819935,
+          "value": "cell"
+        },
+        {
+          "score": 0.09466105,
+          "value": "unit"
+        },
+        {
+          "score": 0.093791716,
+          "value": "people"
+        },
+        {
+          "score": 0.09301244,
+          "value": "issue"
+        },
+        {
+          "score": 0.092549324,
+          "value": "label"
+        },
+        {
+          "score": 0.09219707,
+          "value": "spanx"
+        },
+        {
+          "score": 0.09178075,
+          "value": "supplier"
+        },
+        {
+          "score": 0.09079401,
+          "value": "walmart"
+        },
+        {
+          "score": 0.09047077,
+          "value": "shirts"
+        },
+        {
+          "score": 0.09041741,
+          "value": "pesticide"
+        },
+        {
+          "score": 0.0897636,
+          "value": "money"
+        },
+        {
+          "score": 0.089444846,
+          "value": "animal"
+        },
+        {
+          "score": 0.08723938,
+          "value": "team"
+        },
+        {
+          "score": 0.08706726,
+          "value": "language"
+        },
+        {
+          "score": 0.08577042,
+          "value": "style"
+        },
+        {
+          "score": 0.085255645,
+          "value": "comfortable"
+        },
+        {
+          "score": 0.08449252,
+          "value": "perfect"
+        },
+        {
+          "score": 0.08422712,
+          "value": "woman"
+        },
+        {
+          "score": 0.08241529,
+          "value": "stock"
+        },
+        {
+          "score": 0.08163589,
+          "value": "jackets"
+        },
+        {
+          "score": 0.08022715,
+          "value": "reader"
+        },
+        {
+          "score": 0.07928911,
+          "value": "example"
+        },
+        {
+          "score": 0.076526605,
+          "value": "career"
+        },
+        {
+          "score": 0.07650172,
+          "value": "cozy"
+        },
+        {
+          "score": 0.07645977,
+          "value": "technology"
+        },
+        {
+          "score": 0.07636516,
+          "value": "manufacturer"
+        },
+        {
+          "score": 0.07621459,
+          "value": "tech"
+        },
+        {
+          "score": 0.076193325,
+          "value": "rate"
+        },
+        {
+          "score": 0.07567498,
+          "value": "travel"
+        },
+        {
+          "score": 0.074748605,
+          "value": "leather"
+        },
+        {
+          "score": 0.07393458,
+          "value": "cotton"
+        },
+        {
+          "score": 0.07367612,
+          "value": "forum"
+        },
+        {
+          "score": 0.07345276,
+          "value": "enterprise"
+        },
+        {
+          "score": 0.07341463,
+          "value": "step"
+        },
+        {
+          "score": 0.07339156,
+          "value": "pants"
+        },
+        {
+          "score": 0.073038325,
+          "value": "standard"
+        },
+        {
+          "score": 0.07303134,
+          "value": "close drawer"
+        },
+        {
+          "score": 0.06981944,
+          "value": "sleeve"
+        },
+        {
+          "score": 0.06976263,
+          "value": "color"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://financeessence.com/",
+        "https://www.financeessence.com/",
+        "http://financeessence.com/",
+        "http://www.financeessence.com/"
+      ]
+    },
+    "metaData": {
+      "description": "Investing, Saving & Becoming Rich",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/financeessence.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://financeessence.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 117,
+        "value": [
+          "drmartens.com",
+          "apple.com",
+          "amazon.com",
+          "abercrombie.com",
+          "wyze.com",
+          "att.com",
+          "linkedin.com",
+          "nike.com",
+          "nordstrom.com",
+          "aboutamazon.com",
+          "philo.com",
+          "dell.com",
+          "surfshark.com",
+          "hbomax.com",
+          "adidas.com",
+          "everlane.com",
+          "hulu.com",
+          "nationalgeographic.com",
+          "walmart.com",
+          "espn.com",
+          "insider.com",
+          "allbirds.com",
+          "aloyoga.com",
+          "gettyimages.com",
+          "kohls.com",
+          "appliancesconnection.com",
+          "disneyplus.com",
+          "sonos.com",
+          "bose.com",
+          "goop.com",
+          "gap.com",
+          "nature.com",
+          "fandango.com",
+          "atomtickets.com",
+          "discoveryplus.com",
+          "awaytravel.com",
+          "travelpro.com",
+          "newspapers.com",
+          "barnesandnoble.com",
+          "bestbuy.7tiv.net",
+          "dazn.com",
+          "sling.com",
+          "bhphotovideo.com",
+          "homedepot.com",
+          "lowes.com",
+          "bonobos.com",
+          "potterybarn.com",
+          "rvshare.com",
+          "saatva.com",
+          "taylorstitch.com",
+          "vudu.com",
+          "nfl.com",
+          "wsj.com",
+          "blueair.com",
+          "bombas.com",
+          "bookshop.org",
+          "udemy.com",
+          "lululemon.com",
+          "target.com",
+          "casper.com",
+          "macys.com",
+          "theinformation.com",
+          "chewy.com",
+          "colehaan.com",
+          "verizon.com",
+          "southwest.com",
+          "mintmobile.com",
+          "visible.com",
+          "cyberghostvpn.com",
+          "samsonite.com",
+          "disneyplus.bn5x.net",
+          "dreamcloudsleep.com",
+          "madewell.com",
+          "sierra.com",
+          "thenorthface.com",
+          "expressvpn.com",
+          "jcrew.com",
+          "reebok.com",
+          "fite.tv",
+          "flexispot.com",
+          "tempurpedic.com",
+          "hermanmiller.com",
+          "ulta.com",
+          "glossier.com",
+          "skimresources.com",
+          "quince.com",
+          "paramountplus.com",
+          "vimeo.com",
+          "hertz.com",
+          "madeincookware.com",
+          "homesick.com",
+          "tartecosmetics.com",
+          "wayfair.com",
+          "stadiumgoods.com",
+          "sleepnumber.com",
+          "scribd.com",
+          "jdoqocy.com",
+          "leesa.com",
+          "tidal.com",
+          "toofaced.com",
+          "mgemi.com",
+          "sothebys.com",
+          "monos.com",
+          "nectarsleep.com",
+          "nordstromrack.com",
+          "peacocktv.com",
+          "spanx.com",
+          "secretlab.co",
+          "timberland.com",
+          "shopdisney.com",
+          "skims.com",
+          "thetiebar.com",
+          "toddsnyder.com",
+          "tommyjohn.com",
+          "tv.apple.com",
+          "us.delsey.com",
+          "ziprecruiter.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "us.delsey.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "delsey.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 13.45,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 9.549999,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 7.7000003,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 6.6499996,
+            "vertical": "Home / Beds & Bedding"
+          },
+          {
+            "count": 5.85,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 5.8,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 4.8500004,
+            "vertical": "Travel / Accessories"
+          },
+          {
+            "count": 4.8,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 4.8,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 3.9,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 3.8,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 3.8,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 2.95,
+            "vertical": "Online / VPN"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Fashion / Lingerie"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Business / Jobs & Careers"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Home / DIY"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 1,
+            "vertical": "Home / Security"
+          },
+          {
+            "count": 1,
+            "vertical": "Travel / Car Hire"
+          },
+          {
+            "count": 1,
+            "vertical": "Travel / Flights"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Investments"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Trading"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Art"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Pets"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Entertainment / Hobbies"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Entertainment / Movies"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Travel / Vacation"
+          },
+          {
+            "count": 0.8,
+            "vertical": "Sports / Outdoor"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 117,
+      "value": [
+        "drmartens.com",
+        "apple.com",
+        "amazon.com",
+        "abercrombie.com",
+        "wyze.com",
+        "att.com",
+        "linkedin.com",
+        "nike.com",
+        "nordstrom.com",
+        "aboutamazon.com",
+        "philo.com",
+        "dell.com",
+        "surfshark.com",
+        "hbomax.com",
+        "adidas.com",
+        "everlane.com",
+        "hulu.com",
+        "nationalgeographic.com",
+        "walmart.com",
+        "espn.com",
+        "insider.com",
+        "allbirds.com",
+        "aloyoga.com",
+        "gettyimages.com",
+        "kohls.com",
+        "appliancesconnection.com",
+        "disneyplus.com",
+        "sonos.com",
+        "bose.com",
+        "goop.com",
+        "gap.com",
+        "nature.com",
+        "fandango.com",
+        "atomtickets.com",
+        "discoveryplus.com",
+        "awaytravel.com",
+        "travelpro.com",
+        "newspapers.com",
+        "barnesandnoble.com",
+        "bestbuy.7tiv.net",
+        "dazn.com",
+        "sling.com",
+        "bhphotovideo.com",
+        "homedepot.com",
+        "lowes.com",
+        "bonobos.com",
+        "potterybarn.com",
+        "rvshare.com",
+        "saatva.com",
+        "taylorstitch.com",
+        "vudu.com",
+        "nfl.com",
+        "wsj.com",
+        "blueair.com",
+        "bombas.com",
+        "bookshop.org",
+        "udemy.com",
+        "lululemon.com",
+        "target.com",
+        "casper.com",
+        "macys.com",
+        "theinformation.com",
+        "chewy.com",
+        "colehaan.com",
+        "verizon.com",
+        "southwest.com",
+        "mintmobile.com",
+        "visible.com",
+        "cyberghostvpn.com",
+        "samsonite.com",
+        "disneyplus.bn5x.net",
+        "dreamcloudsleep.com",
+        "madewell.com",
+        "sierra.com",
+        "thenorthface.com",
+        "expressvpn.com",
+        "jcrew.com",
+        "reebok.com",
+        "fite.tv",
+        "flexispot.com",
+        "tempurpedic.com",
+        "hermanmiller.com",
+        "ulta.com",
+        "glossier.com",
+        "skimresources.com",
+        "quince.com",
+        "paramountplus.com",
+        "vimeo.com",
+        "hertz.com",
+        "madeincookware.com",
+        "homesick.com",
+        "tartecosmetics.com",
+        "wayfair.com",
+        "stadiumgoods.com",
+        "sleepnumber.com",
+        "scribd.com",
+        "jdoqocy.com",
+        "leesa.com",
+        "tidal.com",
+        "toofaced.com",
+        "mgemi.com",
+        "sothebys.com",
+        "monos.com",
+        "nectarsleep.com",
+        "nordstromrack.com",
+        "peacocktv.com",
+        "spanx.com",
+        "secretlab.co",
+        "timberland.com",
+        "shopdisney.com",
+        "skims.com",
+        "thetiebar.com",
+        "toddsnyder.com",
+        "tommyjohn.com",
+        "tv.apple.com",
+        "us.delsey.com",
+        "ziprecruiter.com"
+      ]
+    },
+    "promotype": {
+      "value": "student"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Finance / Investments",
+      "value": [
+        "Finance / Investments",
+        "Finance / Banking",
+        "Finance / Accounts"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Finance / Investments",
+        "rank": 1,
+        "score": 80
+      },
+      "value": [
+        {
+          "name": "Finance / Investments",
+          "rank": 1,
+          "score": 80
+        },
+        {
+          "name": "Finance / Banking",
+          "rank": 1,
+          "score": 70
+        },
+        {
+          "name": "Finance / Accounts",
+          "rank": 1,
+          "score": 60
+        }
+      ]
+    }
+  }
+}

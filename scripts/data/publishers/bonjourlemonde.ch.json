@@ -1,0 +1,619 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Webgains"
+      ],
+      "value": [
+        "Webgains"
+      ]
+    },
+    "countryRankings": {
+      "count": 3,
+      "highestValue": {
+        "countryCode": "ch",
+        "score": 0.6
+      },
+      "sampleValue": [
+        {
+          "countryCode": "ch",
+          "score": 0.6
+        },
+        {
+          "countryCode": "de",
+          "score": 0.1
+        },
+        {
+          "countryCode": "fr",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "ch",
+          "score": 0.6
+        },
+        {
+          "countryCode": "de",
+          "score": 0.1
+        },
+        {
+          "countryCode": "fr",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "bonjourlemonde.ch",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "billet"
+        },
+        {
+          "score": 0.4872333,
+          "value": "restant"
+        },
+        {
+          "score": 0.26897517,
+          "value": "heure"
+        },
+        {
+          "score": 0.19972019,
+          "value": "site"
+        },
+        {
+          "score": 0.19587268,
+          "value": "concert"
+        },
+        {
+          "score": 0.19412382,
+          "value": "évènement"
+        },
+        {
+          "score": 0.18957677,
+          "value": "sport"
+        },
+        {
+          "score": 0.18223155,
+          "value": "théâtre"
+        },
+        {
+          "score": 0.15320042,
+          "value": "commande"
+        },
+        {
+          "score": 0.15250087,
+          "value": "compte"
+        },
+        {
+          "score": 0.14865337,
+          "value": "code"
+        },
+        {
+          "score": 0.14515565,
+          "value": "match"
+        },
+        {
+          "score": 0.13081497,
+          "value": "superbillet"
+        },
+        {
+          "score": 0.12696747,
+          "value": "soleil"
+        },
+        {
+          "score": 0.122070655,
+          "value": "cirque"
+        },
+        {
+          "score": 0.119622245,
+          "value": "chicago"
+        },
+        {
+          "score": 0.11402588,
+          "value": "centre"
+        },
+        {
+          "score": 0.112976566,
+          "value": "domicile"
+        },
+        {
+          "score": 0.11087793,
+          "value": "nba"
+        },
+        {
+          "score": 0.110528156,
+          "value": "smartphone"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "billet"
+        },
+        {
+          "score": 0.4872333,
+          "value": "restant"
+        },
+        {
+          "score": 0.26897517,
+          "value": "heure"
+        },
+        {
+          "score": 0.19972019,
+          "value": "site"
+        },
+        {
+          "score": 0.19587268,
+          "value": "concert"
+        },
+        {
+          "score": 0.19412382,
+          "value": "évènement"
+        },
+        {
+          "score": 0.18957677,
+          "value": "sport"
+        },
+        {
+          "score": 0.18223155,
+          "value": "théâtre"
+        },
+        {
+          "score": 0.15320042,
+          "value": "commande"
+        },
+        {
+          "score": 0.15250087,
+          "value": "compte"
+        },
+        {
+          "score": 0.14865337,
+          "value": "code"
+        },
+        {
+          "score": 0.14515565,
+          "value": "match"
+        },
+        {
+          "score": 0.13081497,
+          "value": "superbillet"
+        },
+        {
+          "score": 0.12696747,
+          "value": "soleil"
+        },
+        {
+          "score": 0.122070655,
+          "value": "cirque"
+        },
+        {
+          "score": 0.119622245,
+          "value": "chicago"
+        },
+        {
+          "score": 0.11402588,
+          "value": "centre"
+        },
+        {
+          "score": 0.112976566,
+          "value": "domicile"
+        },
+        {
+          "score": 0.11087793,
+          "value": "nba"
+        },
+        {
+          "score": 0.110528156,
+          "value": "smartphone"
+        },
+        {
+          "score": 0.1035327,
+          "value": "utilisateur"
+        },
+        {
+          "score": 0.100734524,
+          "value": "accueil"
+        },
+        {
+          "score": 0.09968521,
+          "value": "nécessaire"
+        },
+        {
+          "score": 0.09793634,
+          "value": "mail"
+        },
+        {
+          "score": 0.09233998,
+          "value": "équipe"
+        },
+        {
+          "score": 0.090940885,
+          "value": "samedi"
+        },
+        {
+          "score": 0.0856943,
+          "value": "transfert"
+        },
+        {
+          "score": 0.084295206,
+          "value": "ticket"
+        },
+        {
+          "score": 0.08289612,
+          "value": "miami"
+        },
+        {
+          "score": 0.081846796,
+          "value": "dimanche"
+        },
+        {
+          "score": 0.08079748,
+          "value": "mardi"
+        },
+        {
+          "score": 0.0779993,
+          "value": "football"
+        },
+        {
+          "score": 0.07729976,
+          "value": "basketball"
+        },
+        {
+          "score": 0.07660021,
+          "value": "vendredi"
+        },
+        {
+          "score": 0.074501574,
+          "value": "salle"
+        },
+        {
+          "score": 0.07380203,
+          "value": "stadium"
+        },
+        {
+          "score": 0.07310248,
+          "value": "ville"
+        },
+        {
+          "score": 0.07170339,
+          "value": "stade"
+        },
+        {
+          "score": 0.070304304,
+          "value": "conference"
+        },
+        {
+          "score": 0.067855895,
+          "value": "restant cirque"
+        },
+        {
+          "score": 0.06610703,
+          "value": "jeudi"
+        },
+        {
+          "score": 0.062259533,
+          "value": "toronto"
+        },
+        {
+          "score": 0.059811123,
+          "value": "barclay"
+        },
+        {
+          "score": 0.058761805,
+          "value": "mercredi"
+        },
+        {
+          "score": 0.05806226,
+          "value": "lundi"
+        },
+        {
+          "score": 0.057362713,
+          "value": "livraison"
+        },
+        {
+          "score": 0.05666317,
+          "value": "event"
+        },
+        {
+          "score": 0.055264078,
+          "value": "madison"
+        },
+        {
+          "score": 0.053515214,
+          "value": "droit"
+        },
+        {
+          "score": 0.050717033,
+          "value": "meilleur"
+        },
+        {
+          "score": 0.050017487,
+          "value": "prix"
+        },
+        {
+          "score": 0.050017487,
+          "value": "finalisation"
+        },
+        {
+          "score": 0.04896817,
+          "value": "invitation"
+        },
+        {
+          "score": 0.047918852,
+          "value": "vente"
+        },
+        {
+          "score": 0.04616999,
+          "value": "angele"
+        },
+        {
+          "score": 0.045820218,
+          "value": "caesar"
+        },
+        {
+          "score": 0.045820218,
+          "value": "fournisseur"
+        },
+        {
+          "score": 0.045470443,
+          "value": "pink"
+        },
+        {
+          "score": 0.045470443,
+          "value": "palac"
+        },
+        {
+          "score": 0.045470443,
+          "value": "entrée"
+        },
+        {
+          "score": 0.0447709,
+          "value": "taylor"
+        },
+        {
+          "score": 0.044421125,
+          "value": "grand"
+        },
+        {
+          "score": 0.044421125,
+          "value": "confidentialité"
+        },
+        {
+          "score": 0.044071354,
+          "value": "stone"
+        },
+        {
+          "score": 0.043371808,
+          "value": "jour"
+        },
+        {
+          "score": 0.04232249,
+          "value": "scotiabank"
+        },
+        {
+          "score": 0.04232249,
+          "value": "baseball"
+        },
+        {
+          "score": 0.04232249,
+          "value": "stevie"
+        },
+        {
+          "score": 0.041622944,
+          "value": "américain"
+        },
+        {
+          "score": 0.041273173,
+          "value": "nfl"
+        },
+        {
+          "score": 0.040923398,
+          "value": "confirmation"
+        },
+        {
+          "score": 0.040573627,
+          "value": "terme"
+        },
+        {
+          "score": 0.039174538,
+          "value": "tour"
+        },
+        {
+          "score": 0.038474992,
+          "value": "montréal"
+        },
+        {
+          "score": 0.038125217,
+          "value": "restant nba"
+        },
+        {
+          "score": 0.037775446,
+          "value": "lion"
+        },
+        {
+          "score": 0.037425674,
+          "value": "marque"
+        },
+        {
+          "score": 0.037425674,
+          "value": "bell"
+        },
+        {
+          "score": 0.0370759,
+          "value": "opéra"
+        },
+        {
+          "score": 0.0370759,
+          "value": "wnba"
+        },
+        {
+          "score": 0.03672613,
+          "value": "nick"
+        },
+        {
+          "score": 0.036376357,
+          "value": "supérieur"
+        },
+        {
+          "score": 0.036026582,
+          "value": "info"
+        },
+        {
+          "score": 0.036026582,
+          "value": "vidéotron"
+        },
+        {
+          "score": 0.036026582,
+          "value": "politique"
+        },
+        {
+          "score": 0.03567681,
+          "value": "nhl"
+        },
+        {
+          "score": 0.034977265,
+          "value": "moment"
+        },
+        {
+          "score": 0.033927947,
+          "value": "glace"
+        },
+        {
+          "score": 0.033927947,
+          "value": "roi"
+        },
+        {
+          "score": 0.033927947,
+          "value": "marché"
+        },
+        {
+          "score": 0.033578172,
+          "value": "adresse"
+        },
+        {
+          "score": 0.0332284,
+          "value": "nominal"
+        },
+        {
+          "score": 0.032528855,
+          "value": "revente"
+        },
+        {
+          "score": 0.032179084,
+          "value": "eastern"
+        },
+        {
+          "score": 0.032179084,
+          "value": "face"
+        },
+        {
+          "score": 0.031829312,
+          "value": "fantôme"
+        },
+        {
+          "score": 0.031479537,
+          "value": "américain baseball"
+        },
+        {
+          "score": 0.031129766,
+          "value": "policie"
+        },
+        {
+          "score": 0.031129766,
+          "value": "bell centre"
+        },
+        {
+          "score": 0.031129766,
+          "value": "ticketnetwork"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/bonjourlemonde.ch.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://bonjourlemonde.ch"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1,
+        "value": [
+          "superbillets.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Tickets"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 1,
+      "value": [
+        "superbillets.com"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 2,
+      "socialsAvailable": [
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/bonjourlemonde.ch",
+        "instagram": "https://instagram.com/bonjourlemonde.ch"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 1,
+      "sampleValue": "Travel / Vacation",
+      "value": [
+        "Travel / Vacation"
+      ]
+    },
+    "verticalsV2": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Travel / Vacation",
+        "rank": 1,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Travel / Vacation",
+          "rank": 1,
+          "score": 100
+        }
+      ]
+    }
+  }
+}

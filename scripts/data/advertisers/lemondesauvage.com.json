@@ -1,0 +1,123 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Awin"
+      ],
+      "value": [
+        "Awin"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 4,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "astrid.ekra@sparklingpresse.com"
+        },
+        {
+          "department": "support",
+          "value": "info@lemondesauvage.com"
+        },
+        {
+          "department": "support",
+          "value": "julie.boisson@sparklingpresse.com"
+        },
+        {
+          "department": "support",
+          "value": "serviceclient.lms@gmail.com"
+        }
+      ]
+    },
+    "domain": "lemondesauvage.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "Le Monde Sauvage Description",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/lemondesauvage.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://lemondesauvage.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 6
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "kauf-online.info"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 1,
+            "promotype": "incentive",
+            "value": [
+              "cashbackgeneration.com"
+            ]
+          },
+          {
+            "count": 2,
+            "promotype": "blog",
+            "value": [
+              "ha-solidaire.com",
+              "kauf-online.info"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 1,
+      "socialsAvailable": [
+        "instagram"
+      ],
+      "value": {
+        "instagram": "https://instagram.com/lemondesauvage"
+      }
+    },
+    "verticals": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Sports / Outdoor",
+        "rank": 2,
+        "score": 70
+      },
+      "value": [
+        {
+          "name": "Entertainment / Hobbies",
+          "rank": 2,
+          "score": 60
+        },
+        {
+          "name": "Home / Pets",
+          "rank": 2,
+          "score": 50
+        },
+        {
+          "name": "Sports / Outdoor",
+          "rank": 2,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

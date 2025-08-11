@@ -1,0 +1,630 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 3,
+      "sampleValue": [
+        "Impact",
+        "Partnerize",
+        "Tradedoubler"
+      ],
+      "value": [
+        "Impact",
+        "Partnerize",
+        "Tradedoubler"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "ec",
+        "score": 0.85
+      },
+      "sampleValue": [
+        {
+          "countryCode": "ec",
+          "score": 0.85
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "ec",
+          "score": 0.85
+        }
+      ]
+    },
+    "domain": "teleamazonas.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "max"
+        },
+        {
+          "score": 1,
+          "value": "disney"
+        },
+        {
+          "score": 0.5816327,
+          "value": "health"
+        },
+        {
+          "score": 0.5,
+          "value": "people"
+        },
+        {
+          "score": 0.5,
+          "value": "language"
+        },
+        {
+          "score": 0.5,
+          "value": "success"
+        },
+        {
+          "score": 0.5,
+          "value": "significance"
+        },
+        {
+          "score": 0.5,
+          "value": "phone"
+        },
+        {
+          "score": 0.5,
+          "value": "life"
+        },
+        {
+          "score": 0.5,
+          "value": "seller"
+        },
+        {
+          "score": 0.4719388,
+          "value": "ebay"
+        },
+        {
+          "score": 0.38535357,
+          "value": "agreement"
+        },
+        {
+          "score": 0.35916823,
+          "value": "hulu"
+        },
+        {
+          "score": 0.34246364,
+          "value": "watch"
+        },
+        {
+          "score": 0.3239796,
+          "value": "buyer"
+        },
+        {
+          "score": 0.31887755,
+          "value": "transaction"
+        },
+        {
+          "score": 0.25519848,
+          "value": "bundle"
+        },
+        {
+          "score": 0.25519848,
+          "value": "disney bundle"
+        },
+        {
+          "score": 0.2362949,
+          "value": "espn"
+        },
+        {
+          "score": 0.2117347,
+          "value": "accessory"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "max"
+        },
+        {
+          "score": 1,
+          "value": "disney"
+        },
+        {
+          "score": 0.5816327,
+          "value": "health"
+        },
+        {
+          "score": 0.5,
+          "value": "people"
+        },
+        {
+          "score": 0.5,
+          "value": "language"
+        },
+        {
+          "score": 0.5,
+          "value": "success"
+        },
+        {
+          "score": 0.5,
+          "value": "significance"
+        },
+        {
+          "score": 0.5,
+          "value": "phone"
+        },
+        {
+          "score": 0.5,
+          "value": "life"
+        },
+        {
+          "score": 0.5,
+          "value": "seller"
+        },
+        {
+          "score": 0.4719388,
+          "value": "ebay"
+        },
+        {
+          "score": 0.38535357,
+          "value": "agreement"
+        },
+        {
+          "score": 0.35916823,
+          "value": "hulu"
+        },
+        {
+          "score": 0.34246364,
+          "value": "watch"
+        },
+        {
+          "score": 0.3239796,
+          "value": "buyer"
+        },
+        {
+          "score": 0.31887755,
+          "value": "transaction"
+        },
+        {
+          "score": 0.25519848,
+          "value": "bundle"
+        },
+        {
+          "score": 0.25519848,
+          "value": "disney bundle"
+        },
+        {
+          "score": 0.2362949,
+          "value": "espn"
+        },
+        {
+          "score": 0.2117347,
+          "value": "accessory"
+        },
+        {
+          "score": 0.2015306,
+          "value": "power"
+        },
+        {
+          "score": 0.2015306,
+          "value": "shoe"
+        },
+        {
+          "score": 0.19642857,
+          "value": "category"
+        },
+        {
+          "score": 0.19470699,
+          "value": "offer"
+        },
+        {
+          "score": 0.19132653,
+          "value": "retro"
+        },
+        {
+          "score": 0.19132653,
+          "value": "dispute"
+        },
+        {
+          "score": 0.18112245,
+          "value": "ecoflow"
+        },
+        {
+          "score": 0.17602041,
+          "value": "mocha"
+        },
+        {
+          "score": 0.17202269,
+          "value": "apply"
+        },
+        {
+          "score": 0.17202269,
+          "value": "terms apply"
+        },
+        {
+          "score": 0.16581632,
+          "value": "law"
+        },
+        {
+          "score": 0.16581632,
+          "value": "payout"
+        },
+        {
+          "score": 0.1632653,
+          "value": "entity"
+        },
+        {
+          "score": 0.16071428,
+          "value": "helpful"
+        },
+        {
+          "score": 0.16071428,
+          "value": "financial"
+        },
+        {
+          "score": 0.16071428,
+          "value": "categoría"
+        },
+        {
+          "score": 0.15816326,
+          "value": "card"
+        },
+        {
+          "score": 0.15816326,
+          "value": "applicable"
+        },
+        {
+          "score": 0.15561225,
+          "value": "notice"
+        },
+        {
+          "score": 0.15311909,
+          "value": "sign"
+        },
+        {
+          "score": 0.15311909,
+          "value": "subscriber"
+        },
+        {
+          "score": 0.14555766,
+          "value": "subscriber agreement"
+        },
+        {
+          "score": 0.14540817,
+          "value": "claim"
+        },
+        {
+          "score": 0.14540817,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.14540817,
+          "value": "fund"
+        },
+        {
+          "score": 0.1436673,
+          "value": "ads"
+        },
+        {
+          "score": 0.14030612,
+          "value": "jewelry"
+        },
+        {
+          "score": 0.1377551,
+          "value": "guarantee"
+        },
+        {
+          "score": 0.12755102,
+          "value": "financial account"
+        },
+        {
+          "score": 0.12665406,
+          "value": "valid"
+        },
+        {
+          "score": 0.125,
+          "value": "pro"
+        },
+        {
+          "score": 0.124763705,
+          "value": "get disney"
+        },
+        {
+          "score": 0.12287334,
+          "value": "log"
+        },
+        {
+          "score": 0.12244898,
+          "value": "industrial"
+        },
+        {
+          "score": 0.12244898,
+          "value": "speaker"
+        },
+        {
+          "score": 0.12244898,
+          "value": "equipo"
+        },
+        {
+          "score": 0.11989796,
+          "value": "settlement"
+        },
+        {
+          "score": 0.11989796,
+          "value": "collectible"
+        },
+        {
+          "score": 0.11909263,
+          "value": "monthly"
+        },
+        {
+          "score": 0.11734694,
+          "value": "fee"
+        },
+        {
+          "score": 0.11734694,
+          "value": "generator"
+        },
+        {
+          "score": 0.11734694,
+          "value": "money"
+        },
+        {
+          "score": 0.115311906,
+          "value": "learn"
+        },
+        {
+          "score": 0.114795916,
+          "value": "oferta"
+        },
+        {
+          "score": 0.11342155,
+          "value": "subscribers"
+        },
+        {
+          "score": 0.1122449,
+          "value": "woman"
+        },
+        {
+          "score": 0.10969388,
+          "value": "garden"
+        },
+        {
+          "score": 0.10969388,
+          "value": "event"
+        },
+        {
+          "score": 0.10969388,
+          "value": "authenticity"
+        },
+        {
+          "score": 0.10964083,
+          "value": "required"
+        },
+        {
+          "score": 0.10964083,
+          "value": "devices"
+        },
+        {
+          "score": 0.10964083,
+          "value": "supported"
+        },
+        {
+          "score": 0.10964083,
+          "value": "offer valid"
+        },
+        {
+          "score": 0.107750475,
+          "value": "select"
+        },
+        {
+          "score": 0.10714286,
+          "value": "station"
+        },
+        {
+          "score": 0.10714286,
+          "value": "arbitration"
+        },
+        {
+          "score": 0.105860114,
+          "value": "privacy policy"
+        },
+        {
+          "score": 0.10459184,
+          "value": "rolex"
+        },
+        {
+          "score": 0.10459184,
+          "value": "sport"
+        },
+        {
+          "score": 0.10204082,
+          "value": "pant"
+        },
+        {
+          "score": 0.10204082,
+          "value": "provider"
+        },
+        {
+          "score": 0.09829868,
+          "value": "originals"
+        },
+        {
+          "score": 0.096938774,
+          "value": "community"
+        },
+        {
+          "score": 0.094387755,
+          "value": "audio"
+        },
+        {
+          "score": 0.094387755,
+          "value": "legal"
+        },
+        {
+          "score": 0.094387755,
+          "value": "dickie"
+        },
+        {
+          "score": 0.0926276,
+          "value": "marvel"
+        },
+        {
+          "score": 0.0926276,
+          "value": "access content"
+        },
+        {
+          "score": 0.0926276,
+          "value": "content service"
+        },
+        {
+          "score": 0.091836736,
+          "value": "accesorio"
+        },
+        {
+          "score": 0.091836736,
+          "value": "wireless"
+        },
+        {
+          "score": 0.091836736,
+          "value": "vehicle"
+        },
+        {
+          "score": 0.09073724,
+          "value": "stream"
+        },
+        {
+          "score": 0.09073724,
+          "value": "disney espn"
+        },
+        {
+          "score": 0.08928572,
+          "value": "rating"
+        },
+        {
+          "score": 0.08928572,
+          "value": "receivable"
+        },
+        {
+          "score": 0.08928572,
+          "value": "puma"
+        },
+        {
+          "score": 0.0867347,
+          "value": "attribute"
+        },
+        {
+          "score": 0.0867347,
+          "value": "delta"
+        },
+        {
+          "score": 0.0867347,
+          "value": "submariner"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": "La información más completa del Ecuador al servicio de la comunidad. Noticias, política, judicial, economía, tendencias, deportes",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/teleamazonas.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://teleamazonas.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 3,
+        "value": [
+          "disneyplus.com",
+          "max.com",
+          "ebay.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1.8499999,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Ecommerce"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 3,
+      "value": [
+        "disneyplus.com",
+        "max.com",
+        "ebay.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 6,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "linkedin",
+        "instagram",
+        "pinterest"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/teleamazonasecuador",
+        "instagram": "https://instagram.com/teleamazonas",
+        "linkedin": "https://linkedin.com/company/teleamazonas",
+        "pinterest": "https://pinterest.com/teleamazonas",
+        "twitter": "https://twitter.com/teleamazonasec",
+        "youtube": "https://youtube.com/user/teleamazonasecuador"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Entertainment / Streaming",
+      "value": [
+        "Entertainment / Streaming",
+        "Online / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Entertainment / Streaming",
+        "rank": 1,
+        "score": 80
+      },
+      "value": [
+        {
+          "name": "Entertainment / Streaming",
+          "rank": 1,
+          "score": 80
+        },
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,623 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Awin"
+      ],
+      "value": [
+        "Awin"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "fr",
+        "score": 0.7
+      },
+      "sampleValue": [
+        {
+          "countryCode": "fr",
+          "score": 0.7
+        },
+        {
+          "countryCode": "be",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "fr",
+          "score": 0.7
+        },
+        {
+          "countryCode": "be",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "lemondedenoe.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "bébé"
+        },
+        {
+          "score": 0.8104396,
+          "value": "mois"
+        },
+        {
+          "score": 0.6513102,
+          "value": "semaine"
+        },
+        {
+          "score": 0.4852071,
+          "value": "mois mois"
+        },
+        {
+          "score": 0.47442943,
+          "value": "grossesse"
+        },
+        {
+          "score": 0.43956044,
+          "value": "semaines"
+        },
+        {
+          "score": 0.43892646,
+          "value": "favori"
+        },
+        {
+          "score": 0.38736263,
+          "value": "semaines semaines"
+        },
+        {
+          "score": 0.3846154,
+          "value": "favoris"
+        },
+        {
+          "score": 0.32058325,
+          "value": "prénoms"
+        },
+        {
+          "score": 0.22590871,
+          "value": "rose"
+        },
+        {
+          "score": 0.18596788,
+          "value": "enceinte"
+        },
+        {
+          "score": 0.18237531,
+          "value": "enceint"
+        },
+        {
+          "score": 0.1792054,
+          "value": "coffret"
+        },
+        {
+          "score": 0.17666948,
+          "value": "prénom"
+        },
+        {
+          "score": 0.17223161,
+          "value": "accouchement"
+        },
+        {
+          "score": 0.1658918,
+          "value": "enfant"
+        },
+        {
+          "score": 0.15405749,
+          "value": "savoir"
+        },
+        {
+          "score": 0.15300085,
+          "value": "bon"
+        },
+        {
+          "score": 0.14983094,
+          "value": "outil"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "bébé"
+        },
+        {
+          "score": 0.8104396,
+          "value": "mois"
+        },
+        {
+          "score": 0.6513102,
+          "value": "semaine"
+        },
+        {
+          "score": 0.4852071,
+          "value": "mois mois"
+        },
+        {
+          "score": 0.47442943,
+          "value": "grossesse"
+        },
+        {
+          "score": 0.43956044,
+          "value": "semaines"
+        },
+        {
+          "score": 0.43892646,
+          "value": "favori"
+        },
+        {
+          "score": 0.38736263,
+          "value": "semaines semaines"
+        },
+        {
+          "score": 0.3846154,
+          "value": "favoris"
+        },
+        {
+          "score": 0.32058325,
+          "value": "prénoms"
+        },
+        {
+          "score": 0.22590871,
+          "value": "rose"
+        },
+        {
+          "score": 0.18596788,
+          "value": "enceinte"
+        },
+        {
+          "score": 0.18237531,
+          "value": "enceint"
+        },
+        {
+          "score": 0.1792054,
+          "value": "coffret"
+        },
+        {
+          "score": 0.17666948,
+          "value": "prénom"
+        },
+        {
+          "score": 0.17223161,
+          "value": "accouchement"
+        },
+        {
+          "score": 0.1658918,
+          "value": "enfant"
+        },
+        {
+          "score": 0.15405749,
+          "value": "savoir"
+        },
+        {
+          "score": 0.15300085,
+          "value": "bon"
+        },
+        {
+          "score": 0.14983094,
+          "value": "outil"
+        },
+        {
+          "score": 0.14898562,
+          "value": "boîte"
+        },
+        {
+          "score": 0.147929,
+          "value": "boîte rose"
+        },
+        {
+          "score": 0.1401099,
+          "value": "développement"
+        },
+        {
+          "score": 0.13609467,
+          "value": "bon plan"
+        },
+        {
+          "score": 0.13207945,
+          "value": "naissance"
+        },
+        {
+          "score": 0.12721893,
+          "value": "outils"
+        },
+        {
+          "score": 0.11961116,
+          "value": "bons"
+        },
+        {
+          "score": 0.11792054,
+          "value": "coffrets"
+        },
+        {
+          "score": 0.11686391,
+          "value": "bons plans"
+        },
+        {
+          "score": 0.11432798,
+          "value": "test"
+        },
+        {
+          "score": 0.113905326,
+          "value": "soin"
+        },
+        {
+          "score": 0.10989011,
+          "value": "alimentation"
+        },
+        {
+          "score": 0.10693153,
+          "value": "pouce"
+        },
+        {
+          "score": 0.10502958,
+          "value": "santé"
+        },
+        {
+          "score": 0.104606934,
+          "value": "vie"
+        },
+        {
+          "score": 0.10270499,
+          "value": "bien"
+        },
+        {
+          "score": 0.1012257,
+          "value": "savoir plus"
+        },
+        {
+          "score": 0.09911243,
+          "value": "avis"
+        },
+        {
+          "score": 0.096365176,
+          "value": "retour"
+        },
+        {
+          "score": 0.096365176,
+          "value": "désir"
+        },
+        {
+          "score": 0.095308535,
+          "value": "coup"
+        },
+        {
+          "score": 0.094885886,
+          "value": "engagé"
+        },
+        {
+          "score": 0.09446323,
+          "value": "coup pouce"
+        },
+        {
+          "score": 0.0942519,
+          "value": "outils coup"
+        },
+        {
+          "score": 0.093829244,
+          "value": "coffrets bons"
+        },
+        {
+          "score": 0.09361792,
+          "value": "maman"
+        },
+        {
+          "score": 0.08706678,
+          "value": "désir enfant"
+        },
+        {
+          "score": 0.0864328,
+          "value": "tomber"
+        },
+        {
+          "score": 0.08601014,
+          "value": "tomber enceinte"
+        },
+        {
+          "score": 0.08601014,
+          "value": "durable"
+        },
+        {
+          "score": 0.08495351,
+          "value": "espace"
+        },
+        {
+          "score": 0.08347422,
+          "value": "maternité"
+        },
+        {
+          "score": 0.08051564,
+          "value": "courbe"
+        },
+        {
+          "score": 0.08051564,
+          "value": "parent"
+        },
+        {
+          "score": 0.07650042,
+          "value": "prénoms prénoms"
+        },
+        {
+          "score": 0.07438715,
+          "value": "plans coffrets"
+        },
+        {
+          "score": 0.07438715,
+          "value": "développement durable"
+        },
+        {
+          "score": 0.07100592,
+          "value": "côté"
+        },
+        {
+          "score": 0.07058326,
+          "value": "glossair"
+        },
+        {
+          "score": 0.06889264,
+          "value": "suivi"
+        },
+        {
+          "score": 0.06508876,
+          "value": "allaitement"
+        },
+        {
+          "score": 0.06487743,
+          "value": "femme"
+        },
+        {
+          "score": 0.063820794,
+          "value": "sommeil"
+        },
+        {
+          "score": 0.06318682,
+          "value": "chez"
+        },
+        {
+          "score": 0.06297549,
+          "value": "moment"
+        },
+        {
+          "score": 0.06213018,
+          "value": "nombre"
+        },
+        {
+          "score": 0.060862213,
+          "value": "glossaire"
+        },
+        {
+          "score": 0.06065089,
+          "value": "fille"
+        },
+        {
+          "score": 0.05980558,
+          "value": "côtés"
+        },
+        {
+          "score": 0.05980558,
+          "value": "bébé bébé"
+        },
+        {
+          "score": 0.059382923,
+          "value": "garçon"
+        },
+        {
+          "score": 0.0591716,
+          "value": "programme"
+        },
+        {
+          "score": 0.057903636,
+          "value": "boite"
+        },
+        {
+          "score": 0.057692308,
+          "value": "boite rose"
+        },
+        {
+          "score": 0.05748098,
+          "value": "produit"
+        },
+        {
+          "score": 0.057058327,
+          "value": "engagé côtés"
+        },
+        {
+          "score": 0.056213018,
+          "value": "pouce glossaire"
+        },
+        {
+          "score": 0.05536771,
+          "value": "choisir"
+        },
+        {
+          "score": 0.055156384,
+          "value": "marque"
+        },
+        {
+          "score": 0.054733727,
+          "value": "données"
+        },
+        {
+          "score": 0.053254437,
+          "value": "produits"
+        },
+        {
+          "score": 0.051775146,
+          "value": "post"
+        },
+        {
+          "score": 0.051141165,
+          "value": "grandit"
+        },
+        {
+          "score": 0.05029586,
+          "value": "préparer"
+        },
+        {
+          "score": 0.05008453,
+          "value": "bébé grandit"
+        },
+        {
+          "score": 0.049661875,
+          "value": "eveil"
+        },
+        {
+          "score": 0.049027894,
+          "value": "expert"
+        },
+        {
+          "score": 0.04881657,
+          "value": "protéger"
+        },
+        {
+          "score": 0.048182588,
+          "value": "baby"
+        },
+        {
+          "score": 0.04797126,
+          "value": "protéger bébé"
+        },
+        {
+          "score": 0.047548607,
+          "value": "hygiène"
+        },
+        {
+          "score": 0.04712595,
+          "value": "gratuitement"
+        },
+        {
+          "score": 0.046703298,
+          "value": "experts"
+        },
+        {
+          "score": 0.04649197,
+          "value": "sommeil bébé"
+        },
+        {
+          "score": 0.04628064,
+          "value": "alimentation bébé"
+        },
+        {
+          "score": 0.045224007,
+          "value": "matière"
+        },
+        {
+          "score": 0.044378698,
+          "value": "acteur"
+        },
+        {
+          "score": 0.04416737,
+          "value": "objectif"
+        },
+        {
+          "score": 0.043956045,
+          "value": "démarche"
+        },
+        {
+          "score": 0.043744717,
+          "value": "difficulté"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://lemondedenoe.com/",
+        "https://www.lemondedenoe.com/",
+        "http://lemondedenoe.com/",
+        "http://www.lemondedenoe.com/"
+      ]
+    },
+    "metaData": {
+      "description": "Le Monde de Noé souhaite explorer le thème de la parentalité positive. Chacun associe le fait de devenir parent à des joies et des défis.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/lemondedenoe.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://lemondedenoe.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1,
+        "value": [
+          "laboiterose.fr"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 0.85,
+            "vertical": "Home / Babycare"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 1,
+      "value": [
+        "laboiterose.fr"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Online / Services",
+      "value": [
+        "Online / Services",
+        "Home / Babycare",
+        "Fashion / Kids"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Online / Services",
+        "rank": 1,
+        "score": 80
+      },
+      "value": [
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 80
+        },
+        {
+          "name": "Home / Babycare",
+          "rank": 1,
+          "score": 70
+        },
+        {
+          "name": "Fashion / Kids",
+          "rank": 1,
+          "score": 50
+        }
+      ]
+    }
+  }
+}

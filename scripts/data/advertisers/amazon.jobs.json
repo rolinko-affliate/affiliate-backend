@@ -1,0 +1,93 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 2,
+      "sampleValue": [
+        "Skimlinks",
+        "Viglink"
+      ],
+      "value": [
+        "Skimlinks",
+        "Viglink"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 0,
+      "error": false,
+      "value": []
+    },
+    "domain": "amazon.jobs",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "We're a company of pioneers. It's our job to make bold bets, and we get our energy from inventing on behalf of customers. Success is measured against the possible, not the probable. For today’s pioneers, that’s exactly why there’s no place on Earth they’d rather build than Amazon.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazon.jobs.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazon.jobs"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 4
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 2,
+            "promotype": "blog",
+            "value": [
+              "sweettntmagazine.com",
+              "xiouwang.cn"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "twitter",
+        "facebook",
+        "linkedin",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/insideamazon/?amazon.jobs=footer",
+        "instagram": "https://instagram.com/insideamazon/?amazon.jobs=footer",
+        "linkedin": "https://linkedin.com/company/amazon?amazon.jobs=footer",
+        "twitter": "https://twitter.com/amazonnews?amazon.jobs=footer"
+      }
+    },
+    "verticals": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Business / Jobs & Careers",
+        "rank": 2,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Business / Jobs & Careers",
+          "rank": 2,
+          "score": 100
+        }
+      ]
+    }
+  }
+}

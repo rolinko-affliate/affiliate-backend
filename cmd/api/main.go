@@ -23,7 +23,6 @@ package main
 import (
 	"context"
 	"fmt"
-	"log"
 	"net/http"
 	"os"
 	"os/exec"
@@ -40,6 +39,7 @@ import (
 	"github.com/affiliate-backend/internal/config"
 	"github.com/affiliate-backend/internal/platform/crypto"
 	"github.com/affiliate-backend/internal/platform/everflow"
+	"github.com/affiliate-backend/internal/platform/logger"
 	"github.com/affiliate-backend/internal/platform/provider"
 	"github.com/affiliate-backend/internal/platform/stripe"
 	"github.com/affiliate-backend/internal/repository"
@@ -80,7 +80,7 @@ func checkDatabaseMigrations(cfg *config.Config, autoMigrate bool) error {
 		return fmt.Errorf("DATABASE_URL is not set")
 	}
 
-	log.Println("Checking database connection and migration status...")
+	logger.Info("Checking database connection and migration status...")
 
 	// Initialize the database connection
 	db, err := repository.InitDBConnection(cfg.DatabaseURL)
@@ -98,9 +98,9 @@ func checkDatabaseMigrations(cfg *config.Config, autoMigrate bool) error {
 	}
 
 	if !exists {
-		log.Println("Migration table does not exist. Database has not been initialized with migrations.")
+		logger.Warn("Migration table does not exist. Database has not been initialized with migrations.")
 		if autoMigrate {
-			log.Println("Auto-migrate flag is set. Attempting to run migrations...")
+			logger.Info("Auto-migrate flag is set. Attempting to run migrations...")
 
 			// Execute the migrate command
 			cmd := exec.Command("go", "run", "./cmd/migrate/main.go", "up")
@@ -111,7 +111,7 @@ func checkDatabaseMigrations(cfg *config.Config, autoMigrate bool) error {
 				return fmt.Errorf("failed to run migrations: %v", err)
 			}
 
-			log.Println("Migrations applied successfully")
+			logger.Info("Migrations applied successfully")
 		} else {
 			return fmt.Errorf("database migrations are required. Run 'make migrate-up' or start with --auto-migrate flag")
 		}
@@ -131,17 +131,17 @@ func checkDatabaseMigrations(cfg *config.Config, autoMigrate bool) error {
 			return fmt.Errorf("database schema is in a dirty state (version: %d). Manual intervention required", version)
 		}
 
-		log.Printf("Database schema version: %d\n", version)
+		logger.Info("Database schema version", "version", version)
 
 		// Check if there are newer migration files available
 		latestVersion, err := getLatestMigrationVersion()
 		if err != nil {
-			log.Printf("Warning: Could not determine latest migration version: %v", err)
-			log.Println("Database schema appears to be up to date (unable to verify)")
+			logger.Warn("Could not determine latest migration version", "error", err)
+			logger.Info("Database schema appears to be up to date (unable to verify)")
 		} else if version < latestVersion {
-			log.Printf("Database schema is outdated. Current: %d, Latest available: %d", version, latestVersion)
+			logger.Warn("Database schema is outdated", "current", version, "latest", latestVersion)
 			if autoMigrate {
-				log.Println("Auto-migrate flag is set. Attempting to run migrations...")
+				logger.Info("Auto-migrate flag is set. Attempting to run migrations...")
 
 				// Execute the migrate command
 				cmd := exec.Command("go", "run", "./cmd/migrate/main.go", "up")
@@ -152,20 +152,20 @@ func checkDatabaseMigrations(cfg *config.Config, autoMigrate bool) error {
 					return fmt.Errorf("failed to run migrations: %v", err)
 				}
 
-				log.Println("Migrations applied successfully")
+				logger.Info("Migrations applied successfully")
 			} else {
 				return fmt.Errorf("database migrations are required. Current version: %d, Latest: %d. Run 'make migrate-up' or start with --auto-migrate flag", version, latestVersion)
 			}
 		} else {
-			log.Println("Database schema is up to date")
+			logger.Info("Database schema is up to date")
 		}
 	}
 
 	if autoMigrate {
-		log.Println("Note: For full migration functionality, install the required packages:")
-		log.Println("  go get github.com/golang-migrate/migrate/v4")
-		log.Println("  go get github.com/golang-migrate/migrate/v4/database/postgres")
-		log.Println("  go get github.com/golang-migrate/migrate/v4/source/file")
+		logger.Debug("Note: For full migration functionality, install the required packages:")
+		logger.Debug("  go get github.com/golang-migrate/migrate/v4")
+		logger.Debug("  go get github.com/golang-migrate/migrate/v4/database/postgres")
+		logger.Debug("  go get github.com/golang-migrate/migrate/v4/source/file")
 	}
 
 	return nil
@@ -189,6 +189,8 @@ func main() {
 			fmt.Println("  DATABASE_URL      PostgreSQL connection string")
 			fmt.Println("  PORT              Server port (default: 8080)")
 			fmt.Println("  MOCK_MODE         Enable mock mode (true/false, default: false)")
+			fmt.Println("  LOG_LEVEL         Logging level (DEBUG, INFO, WARN, ERROR, default: INFO)")
+			fmt.Println("  LOG_FORMAT        Log format (text, json, default: text)")
 			fmt.Println("                    Note: Mock mode only replaces the integration service, database is still required")
 			fmt.Println("")
 			return
@@ -198,6 +200,15 @@ func main() {
 	// Load Configuration
 	config.LoadConfig()
 	appConf := config.AppConfig
+
+	// Initialize Logger
+	loggerConfig := logger.Config{
+		Level:     logger.LogLevel(appConf.LogLevel),
+		Format:    appConf.LogFormat,
+		Output:    appConf.LogOutput,
+		AddSource: appConf.LogAddSource,
+	}
+	logger.InitDefault(loggerConfig)
 
 	// Check command line flags
 	autoMigrate := false
@@ -214,12 +225,12 @@ func main() {
 	// Override config with command line flag if provided
 	if mockMode {
 		appConf.MockMode = true
-		log.Println("🔧 Mock mode enabled via command line flag")
+		logger.Info("Mock mode enabled via command line flag")
 	}
 
 	// Check database migration status
 	if err := checkDatabaseMigrations(&appConf, autoMigrate); err != nil {
-		log.Fatalf("Database migration check failed: %v", err)
+		logger.Fatal("Database migration check failed", "error", err)
 	}
 
 	// Initialize Database and Repositories
@@ -265,11 +276,11 @@ func main() {
 	// Use test keys if not provided
 	if stripeConfig.SecretKey == "" {
 		stripeConfig.SecretKey = "sk_test_..." // Default test key
-		log.Println("⚠️  Using default Stripe test secret key")
+		logger.Warn("Using default Stripe test secret key")
 	}
 	if stripeConfig.WebhookSecret == "" {
 		stripeConfig.WebhookSecret = "whsec_..." // Default test webhook secret
-		log.Println("⚠️  Using default Stripe webhook secret")
+		logger.Warn("Using default Stripe webhook secret")
 	}
 	if stripeConfig.Environment == "" {
 		stripeConfig.Environment = "test"
@@ -280,14 +291,14 @@ func main() {
 	// Initialize integration service based on configuration
 	var integrationService provider.IntegrationService
 	if appConf.IsMockMode() {
-		log.Println("🔧 Starting in MOCK MODE - using LoggingMockIntegrationService")
+		logger.Info("Starting in MOCK MODE - using LoggingMockIntegrationService")
 		integrationService = provider.NewLoggingMockIntegrationService()
 	} else {
-		log.Println("🔧 Starting in PRODUCTION MODE - using real Everflow integration")
+		logger.Info("Starting in PRODUCTION MODE - using real Everflow integration")
 		// Initialize integration service with Everflow configuration
 		everflowConfig := everflow.Config{
-			BaseURL: "https://api.eflow.team",
-			APIKey:  "your-api-key-here", // TODO: Load from environment
+			BaseURL: "https://api.eflow.team/v1",
+			APIKey:  appConf.EverflowAPIKey,
 		}
 		integrationService = everflow.NewIntegrationServiceWithClients(
 			everflowConfig,
@@ -308,7 +319,7 @@ func main() {
 	agencyDelegationService := service.NewAgencyDelegationService(agencyDelegationRepo, organizationRepo, profileRepo)
 	advertiserService := service.NewAdvertiserService(advertiserRepo, advertiserProviderMappingRepo, organizationRepo, cryptoService, integrationService)
 	affiliateService := service.NewAffiliateService(affiliateRepo, affiliateProviderMappingRepo, organizationRepo, integrationService)
-	campaignService := service.NewCampaignService(campaignRepo)
+	campaignService := service.NewCampaignService(campaignRepo, campaignProviderMappingRepo, integrationService)
 	trackingLinkService := service.NewTrackingLinkService(trackingLinkRepo, trackingLinkProviderMappingRepo, campaignRepo, affiliateRepo, campaignProviderMappingRepo, affiliateProviderMappingRepo, integrationService, organizationAssociationService)
 	analyticsService := service.NewAnalyticsService(analyticsRepo)
 	favoritePublisherListService := service.NewFavoritePublisherListService(favoritePublisherListRepo, analyticsRepo)
@@ -339,21 +350,21 @@ func main() {
 
 	// Setup Router
 	router := api.SetupRouter(api.RouterOptions{
-		ProfileHandler:                            profileHandler,
-		ProfileService:                            profileService,
-		OrganizationHandler:                       organizationHandler,
-		OrganizationAssociationHandler:            organizationAssociationHandler,
-		AdvertiserAssociationInvitationHandler:    advertiserAssociationInvitationHandler,
-		AgencyDelegationHandler:                   agencyDelegationHandler,
-		AdvertiserHandler:                         advertiserHandler,
-		AffiliateHandler:                          affiliateHandler,
-		CampaignHandler:                           campaignHandler,
-		TrackingLinkHandler:                       trackingLinkHandler,
-		AnalyticsHandler:                          analyticsHandler,
-		FavoritePublisherListHandler:              favoritePublisherListHandler,
-		PublisherMessagingHandler:                 publisherMessagingHandler,
-		BillingHandler:                            billingHandler,
-		WebhookHandler:                            webhookHandler,
+		ProfileHandler:                         profileHandler,
+		ProfileService:                         profileService,
+		OrganizationHandler:                    organizationHandler,
+		OrganizationAssociationHandler:         organizationAssociationHandler,
+		AdvertiserAssociationInvitationHandler: advertiserAssociationInvitationHandler,
+		AgencyDelegationHandler:                agencyDelegationHandler,
+		AdvertiserHandler:                      advertiserHandler,
+		AffiliateHandler:                       affiliateHandler,
+		CampaignHandler:                        campaignHandler,
+		TrackingLinkHandler:                    trackingLinkHandler,
+		AnalyticsHandler:                       analyticsHandler,
+		FavoritePublisherListHandler:           favoritePublisherListHandler,
+		PublisherMessagingHandler:              publisherMessagingHandler,
+		BillingHandler:                         billingHandler,
+		WebhookHandler:                         webhookHandler,
 	})
 
 	// Start Server
@@ -368,9 +379,9 @@ func main() {
 
 	// Start the server in a goroutine
 	go func() {
-		log.Printf("Server starting on port %s\n", appConf.Port)
+		logger.Info("Server starting", "port", appConf.Port)
 		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
-			log.Fatalf("ListenAndServe(): %s\n", err)
+			logger.Fatal("Server failed to start", "error", err)
 		}
 	}()
 
@@ -378,13 +389,13 @@ func main() {
 	quit := make(chan os.Signal, 1)
 	signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
 	<-quit
-	log.Println("Shutting down server...")
+	logger.Info("Shutting down server...")
 
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 	if err := srv.Shutdown(ctx); err != nil {
-		log.Fatal("Server forced to shutdown:", err)
+		logger.Fatal("Server forced to shutdown", "error", err)
 	}
 
-	log.Println("Server exiting")
+	logger.Info("Server exiting")
 }

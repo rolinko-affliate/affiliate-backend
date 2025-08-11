@@ -1,0 +1,747 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 6,
+      "sampleValue": [
+        "Affilae",
+        "Awin",
+        "Effiliation"
+      ],
+      "value": [
+        "Affilae",
+        "Awin",
+        "Effiliation",
+        "Private Network",
+        "Rakuten",
+        "Tradedoubler"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "fr",
+        "score": 0.75
+      },
+      "sampleValue": [
+        {
+          "countryCode": "fr",
+          "score": 0.75
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "fr",
+          "score": 0.75
+        }
+      ]
+    },
+    "domain": "lemondedejenn.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "star"
+        },
+        {
+          "score": 0.7114758,
+          "value": "beaut"
+        },
+        {
+          "score": 0.7043631,
+          "value": "dodorant"
+        },
+        {
+          "score": 0.61448276,
+          "value": "hydratant"
+        },
+        {
+          "score": 0.6132952,
+          "value": "beauty"
+        },
+        {
+          "score": 0.556418,
+          "value": "skincare"
+        },
+        {
+          "score": 0.5498033,
+          "value": "cosmetics"
+        },
+        {
+          "score": 0.54215145,
+          "value": "mascara"
+        },
+        {
+          "score": 0.49878126,
+          "value": "skin"
+        },
+        {
+          "score": 0.45864874,
+          "value": "clinique"
+        },
+        {
+          "score": 0.45532122,
+          "value": "ingrdients"
+        },
+        {
+          "score": 0.44075477,
+          "value": "makeup"
+        },
+        {
+          "score": 0.42109188,
+          "value": "produit"
+        },
+        {
+          "score": 0.3860546,
+          "value": "protection"
+        },
+        {
+          "score": 0.37264448,
+          "value": "benefit"
+        },
+        {
+          "score": 0.3721634,
+          "value": "ball"
+        },
+        {
+          "score": 0.36926252,
+          "value": "sourcils"
+        },
+        {
+          "score": 0.36030996,
+          "value": "avis"
+        },
+        {
+          "score": 0.3581433,
+          "value": "panier"
+        },
+        {
+          "score": 0.3543177,
+          "value": "naturel"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "star"
+        },
+        {
+          "score": 0.7114758,
+          "value": "beaut"
+        },
+        {
+          "score": 0.7043631,
+          "value": "dodorant"
+        },
+        {
+          "score": 0.61448276,
+          "value": "hydratant"
+        },
+        {
+          "score": 0.6132952,
+          "value": "beauty"
+        },
+        {
+          "score": 0.556418,
+          "value": "skincare"
+        },
+        {
+          "score": 0.5498033,
+          "value": "cosmetics"
+        },
+        {
+          "score": 0.54215145,
+          "value": "mascara"
+        },
+        {
+          "score": 0.49878126,
+          "value": "skin"
+        },
+        {
+          "score": 0.45864874,
+          "value": "clinique"
+        },
+        {
+          "score": 0.45532122,
+          "value": "ingrdients"
+        },
+        {
+          "score": 0.44075477,
+          "value": "makeup"
+        },
+        {
+          "score": 0.42109188,
+          "value": "produit"
+        },
+        {
+          "score": 0.3860546,
+          "value": "protection"
+        },
+        {
+          "score": 0.37264448,
+          "value": "benefit"
+        },
+        {
+          "score": 0.3721634,
+          "value": "ball"
+        },
+        {
+          "score": 0.36926252,
+          "value": "sourcils"
+        },
+        {
+          "score": 0.36030996,
+          "value": "avis"
+        },
+        {
+          "score": 0.3581433,
+          "value": "panier"
+        },
+        {
+          "score": 0.3543177,
+          "value": "naturel"
+        },
+        {
+          "score": 0.34240472,
+          "value": "nouveauts"
+        },
+        {
+          "score": 0.34031504,
+          "value": "maquillage"
+        },
+        {
+          "score": 0.33599094,
+          "value": "hydratante"
+        },
+        {
+          "score": 0.32698166,
+          "value": "visage"
+        },
+        {
+          "score": 0.3256773,
+          "value": "shampoing"
+        },
+        {
+          "score": 0.32377306,
+          "value": "sephora"
+        },
+        {
+          "score": 0.3189972,
+          "value": "roller"
+        },
+        {
+          "score": 0.31653604,
+          "value": "ongles"
+        },
+        {
+          "score": 0.31236485,
+          "value": "poudre"
+        },
+        {
+          "score": 0.3115552,
+          "value": "eyeliner"
+        },
+        {
+          "score": 0.30012104,
+          "value": "magasins"
+        },
+        {
+          "score": 0.2936417,
+          "value": "nourrissant"
+        },
+        {
+          "score": 0.29322845,
+          "value": "contouring"
+        },
+        {
+          "score": 0.2891966,
+          "value": "livraison"
+        },
+        {
+          "score": 0.28231347,
+          "value": "revitalift"
+        },
+        {
+          "score": 0.2810106,
+          "value": "cologne"
+        },
+        {
+          "score": 0.2756708,
+          "value": "fatigue"
+        },
+        {
+          "score": 0.27519765,
+          "value": "conseils"
+        },
+        {
+          "score": 0.27154857,
+          "value": "cadeau"
+        },
+        {
+          "score": 0.26879275,
+          "value": "palette"
+        },
+        {
+          "score": 0.2677835,
+          "value": "achats"
+        },
+        {
+          "score": 0.26587823,
+          "value": "yoga"
+        },
+        {
+          "score": 0.265831,
+          "value": "foam"
+        },
+        {
+          "score": 0.26570678,
+          "value": "essie"
+        },
+        {
+          "score": 0.25926828,
+          "value": "huile"
+        },
+        {
+          "score": 0.2513678,
+          "value": "serviette"
+        },
+        {
+          "score": 0.2491001,
+          "value": "momentanment"
+        },
+        {
+          "score": 0.24731483,
+          "value": "enfant"
+        },
+        {
+          "score": 0.24435703,
+          "value": "fenty"
+        },
+        {
+          "score": 0.24435703,
+          "value": "boucleur"
+        },
+        {
+          "score": 0.2365969,
+          "value": "parfum"
+        },
+        {
+          "score": 0.226387,
+          "value": "teint"
+        },
+        {
+          "score": 0.22603026,
+          "value": "toilette"
+        },
+        {
+          "score": 0.22542672,
+          "value": "votre"
+        },
+        {
+          "score": 0.22105339,
+          "value": "nettoyant"
+        },
+        {
+          "score": 0.21992134,
+          "value": "milk"
+        },
+        {
+          "score": 0.21381241,
+          "value": "tarte"
+        },
+        {
+          "score": 0.21267577,
+          "value": "massage"
+        },
+        {
+          "score": 0.2126648,
+          "value": "pilates"
+        },
+        {
+          "score": 0.20770349,
+          "value": "chanel"
+        },
+        {
+          "score": 0.20770349,
+          "value": "coco"
+        },
+        {
+          "score": 0.20163603,
+          "value": "peeling"
+        },
+        {
+          "score": 0.19928008,
+          "value": "occasionne"
+        },
+        {
+          "score": 0.19913176,
+          "value": "cadeaux"
+        },
+        {
+          "score": 0.19687127,
+          "value": "achat"
+        },
+        {
+          "score": 0.19679531,
+          "value": "body"
+        },
+        {
+          "score": 0.19639334,
+          "value": "clarins"
+        },
+        {
+          "score": 0.19362968,
+          "value": "kits"
+        },
+        {
+          "score": 0.18612781,
+          "value": "expert"
+        },
+        {
+          "score": 0.18326777,
+          "value": "nina"
+        },
+        {
+          "score": 0.18326777,
+          "value": "nettoyante"
+        },
+        {
+          "score": 0.18267341,
+          "value": "satisfait"
+        },
+        {
+          "score": 0.17935207,
+          "value": "totebag"
+        },
+        {
+          "score": 0.17935207,
+          "value": "gnrales"
+        },
+        {
+          "score": 0.17935207,
+          "value": "offertes"
+        },
+        {
+          "score": 0.17875308,
+          "value": "super"
+        },
+        {
+          "score": 0.17859505,
+          "value": "accessoire"
+        },
+        {
+          "score": 0.17794752,
+          "value": "urban"
+        },
+        {
+          "score": 0.17715885,
+          "value": "christophe"
+        },
+        {
+          "score": 0.1731574,
+          "value": "offre"
+        },
+        {
+          "score": 0.17104992,
+          "value": "beverly"
+        },
+        {
+          "score": 0.17005311,
+          "value": "soin"
+        },
+        {
+          "score": 0.16938807,
+          "value": "offerte"
+        },
+        {
+          "score": 0.16606674,
+          "value": "excuser"
+        },
+        {
+          "score": 0.16589135,
+          "value": "soins"
+        },
+        {
+          "score": 0.16552578,
+          "value": "soleil"
+        },
+        {
+          "score": 0.164941,
+          "value": "nail"
+        },
+        {
+          "score": 0.164941,
+          "value": "paupires"
+        },
+        {
+          "score": 0.1627454,
+          "value": "offerts"
+        },
+        {
+          "score": 0.16014282,
+          "value": "crayon"
+        },
+        {
+          "score": 0.1599975,
+          "value": "voyage"
+        },
+        {
+          "score": 0.15992765,
+          "value": "gamme"
+        },
+        {
+          "score": 0.1594986,
+          "value": "cushion"
+        },
+        {
+          "score": 0.1594986,
+          "value": "exercise"
+        },
+        {
+          "score": 0.1594986,
+          "value": "massager"
+        },
+        {
+          "score": 0.15942407,
+          "value": "avance"
+        },
+        {
+          "score": 0.15883207,
+          "value": "sisley"
+        },
+        {
+          "score": 0.15883207,
+          "value": "dior"
+        },
+        {
+          "score": 0.15883207,
+          "value": "lingette"
+        },
+        {
+          "score": 0.15883207,
+          "value": "corenne"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": "Beauté High-Tech\nLes appareils CurrentBodyExplorez le mariage passionnant entre la technologie et la beauté avec des critiques, des guides d'utilisation et de",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/lemondedejenn.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://lemondedejenn.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 31,
+        "value": [
+          "angarde.fr",
+          "lego.com",
+          "blissim.fr",
+          "chefclub.tv",
+          "maisonsdumonde.com",
+          "clarins.fr",
+          "clemenceetvivien.com",
+          "cultura.com",
+          "currentbody.fr",
+          "loreal-paris.fr",
+          "elementor.com",
+          "ohmycream.com",
+          "franklinpetfood.com",
+          "galop-store.fr",
+          "grainedepastel.com",
+          "kazidomi.com",
+          "laboratoire-inolab.com",
+          "mylittlebox.fr",
+          "lb.affilae.com",
+          "lesminimondes.fr",
+          "lespetitesbilles.com",
+          "lesraffineurs.com",
+          "ludilabel.fr",
+          "nocibe.fr",
+          "moments-precieux.com",
+          "moncornerb.com",
+          "pranarom.fr",
+          "santarome.fr",
+          "sephora.fr",
+          "storececotec.fr",
+          "thecoolrepublic.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "lb.affilae.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "affilae.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 9.5,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 2.6999998,
+            "vertical": "Gifts / Kids"
+          },
+          {
+            "count": 2.5,
+            "vertical": "Gifts / Personalised"
+          },
+          {
+            "count": 1.75,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 1.7,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 1.5999999,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 1,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 1,
+            "vertical": "Home / Pets"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Website Builder"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Fragrances"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 0.8,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 0.7,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 0.7,
+            "vertical": "Entertainment / Movies"
+          },
+          {
+            "count": 0.7,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 0.6,
+            "vertical": "Shopping / Department Stores"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 31,
+      "value": [
+        "angarde.fr",
+        "lego.com",
+        "blissim.fr",
+        "chefclub.tv",
+        "maisonsdumonde.com",
+        "clarins.fr",
+        "clemenceetvivien.com",
+        "cultura.com",
+        "currentbody.fr",
+        "loreal-paris.fr",
+        "elementor.com",
+        "ohmycream.com",
+        "franklinpetfood.com",
+        "galop-store.fr",
+        "grainedepastel.com",
+        "kazidomi.com",
+        "laboratoire-inolab.com",
+        "mylittlebox.fr",
+        "lb.affilae.com",
+        "lesminimondes.fr",
+        "lespetitesbilles.com",
+        "lesraffineurs.com",
+        "ludilabel.fr",
+        "nocibe.fr",
+        "moments-precieux.com",
+        "moncornerb.com",
+        "pranarom.fr",
+        "santarome.fr",
+        "sephora.fr",
+        "storececotec.fr",
+        "thecoolrepublic.com"
+      ]
+    },
+    "promotype": {
+      "value": "student"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 2,
+      "socialsAvailable": [
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/lemondedejenn",
+        "instagram": "https://instagram.com/lemondedejenn2.0"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 1,
+      "sampleValue": "Entertainment / Hobbies",
+      "value": [
+        "Entertainment / Hobbies"
+      ]
+    },
+    "verticalsV2": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Entertainment / Hobbies",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Entertainment / Hobbies",
+          "rank": 1,
+          "score": 90
+        }
+      ]
+    }
+  }
+}

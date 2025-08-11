@@ -1,0 +1,475 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 19,
+      "sampleValue": [
+        "Awin",
+        "Business Insider",
+        "CJ Affiliate"
+      ],
+      "value": [
+        "Awin",
+        "Business Insider",
+        "CJ Affiliate",
+        "ClickMagick",
+        "Communication Ads",
+        "CueLinks",
+        "Digidip",
+        "Impact",
+        "Kwanko",
+        "Linkbux",
+        "Rewardstyle",
+        "Shopnomix",
+        "ShopStyle",
+        "Skimlinks",
+        "SourceKnowledge",
+        "Takeads",
+        "Tradedoubler",
+        "Viglink",
+        "Yieldkit"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 1,
+      "error": false,
+      "value": [
+        {
+          "department": "communication",
+          "value": "amazon.ec-commitments@alcis-advisers.com"
+        }
+      ]
+    },
+    "domain": "amazon.de",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "Entdecken, shoppen und einkaufen bei Amazon.de: Günstige Preise für Elektronik & Foto, Filme, Musik, Bücher, Games, Spielzeug, Sportartikel, Drogerie & mehr bei Amazon.de",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazon.de.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazon.de"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 537
+      },
+      "partnersAdded": {
+        "count": 23,
+        "value": [
+          {
+            "domain": "tankdl.com"
+          },
+          {
+            "domain": "de.couponupto.com"
+          },
+          {
+            "domain": "id.coupons-promo-code.com"
+          },
+          {
+            "domain": "hr.coupons-promo-code.com"
+          },
+          {
+            "domain": "de.richarddawkins.net"
+          },
+          {
+            "domain": "journelles.de"
+          },
+          {
+            "domain": "streambutter.com"
+          },
+          {
+            "domain": "ru.coupons-promo-code.com"
+          },
+          {
+            "domain": "prlog.ru"
+          },
+          {
+            "domain": "lt.coupons-promo-code.com"
+          },
+          {
+            "domain": "ro.coupons-promo-code.com"
+          },
+          {
+            "domain": "komputer-servise.com"
+          },
+          {
+            "domain": "tierkraft-shop.com"
+          },
+          {
+            "domain": "sl.coupons-promo-code.com"
+          },
+          {
+            "domain": "lv.coupons-promo-code.com"
+          },
+          {
+            "domain": "hu.coupons-promo-code.com"
+          },
+          {
+            "domain": "de.style.yahoo.com"
+          },
+          {
+            "domain": "edenfinley.com"
+          },
+          {
+            "domain": "th.coupons-promo-code.com"
+          },
+          {
+            "domain": "fr.coupons-promo-code.com"
+          },
+          {
+            "domain": "mesenvies.fr"
+          },
+          {
+            "domain": "outwitinrealtime.com"
+          },
+          {
+            "domain": "vi.coupons-promo-code.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 32,
+        "value": [
+          {
+            "domain": "wvsmam.com"
+          },
+          {
+            "domain": "bookedallnightblog.com"
+          },
+          {
+            "domain": "gqmagazine.fr"
+          },
+          {
+            "domain": "helenahunting.com"
+          },
+          {
+            "domain": "homeelectricmikrowelle.blogspot.com"
+          },
+          {
+            "domain": "mapsandstats.com"
+          },
+          {
+            "domain": "notebookcheck-cn.com"
+          },
+          {
+            "domain": "richarddawkins.net"
+          },
+          {
+            "domain": "wtf.deals"
+          },
+          {
+            "domain": "mobilephonesreview.in"
+          },
+          {
+            "domain": "heikejarick.com"
+          },
+          {
+            "domain": "animationsunlimited.com"
+          },
+          {
+            "domain": "ayumi.cc"
+          },
+          {
+            "domain": "zaraevans.com"
+          },
+          {
+            "domain": "brittanysbookblog.com"
+          },
+          {
+            "domain": "silenceisread.com"
+          },
+          {
+            "domain": "sultrysirensbookblog.com"
+          },
+          {
+            "domain": "yahoo.com"
+          },
+          {
+            "domain": "target.georiot.com"
+          },
+          {
+            "domain": "avantgarderesorts.com"
+          },
+          {
+            "domain": "surletagere.com"
+          },
+          {
+            "domain": "indiesage.com"
+          },
+          {
+            "domain": "mesonelduende.com"
+          },
+          {
+            "domain": "juneharwood.com"
+          },
+          {
+            "domain": "hotelsanson.com"
+          },
+          {
+            "domain": "insoluti.net"
+          },
+          {
+            "domain": "platformuniversity.com"
+          },
+          {
+            "domain": "leslecturesdemylene.com"
+          },
+          {
+            "domain": "couponupto.com"
+          },
+          {
+            "domain": "cherryredsreads.com"
+          },
+          {
+            "domain": "bookenticer.com"
+          },
+          {
+            "domain": "whatmakesagreatmanager.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 20,
+            "promotype": "incentive",
+            "value": [
+              "43rumors.com",
+              "coupons-promo-code.com",
+              "fr.coupons-promo-code.com",
+              "hardwaredealz.com",
+              "hu.coupons-promo-code.com",
+              "id.coupons-promo-code.com",
+              "linkmydeals.com",
+              "lt.coupons-promo-code.com",
+              "lv.coupons-promo-code.com",
+              "m3.se",
+              "mydealz.de",
+              "newdaycoupon.com",
+              "ro.coupons-promo-code.com",
+              "ru.coupons-promo-code.com",
+              "serialdealer.fr",
+              "shopdeals.site",
+              "smugdeals.com",
+              "th.coupons-promo-code.com",
+              "tiffyribbon.com",
+              "vi.coupons-promo-code.com"
+            ]
+          },
+          {
+            "count": 71,
+            "promotype": "blog",
+            "value": [
+              "4gamers.be",
+              "ad-magazin.de",
+              "anti-crise.fr",
+              "auctionbidmart.com",
+              "beige.de",
+              "belachaos.com",
+              "betebt.com",
+              "bezauberndenana.de",
+              "bold-bliss.de",
+              "businessinsider.com",
+              "changeable-style.com",
+              "china-gadgets.de",
+              "click.ml.mailersend.com",
+              "dalmarosec.com",
+              "davefoy.link",
+              "deepdesirespress.com",
+              "derektmckinney.com",
+              "easss.com",
+              "fashionstylebyjohanna.com",
+              "fujirumors.com",
+              "geni.us",
+              "georiot.co",
+              "greenweddingshoes.com",
+              "guidantech.com",
+              "headphonesnao.com",
+              "hochseiltraum.com",
+              "immerfresh.de",
+              "jakonrath.blogspot.com",
+              "jillianneal.com",
+              "journelles.de",
+              "kosmetikosdnr.lt",
+              "livesino.net",
+              "macwelt.de",
+              "macworld.com",
+              "macworld.se",
+              "mesenvies.fr",
+              "mirror.co.uk",
+              "modefluesterin.club",
+              "my-philocaly.com",
+              "pay-tv-portal.de",
+              "pcworld.com",
+              "peonylim.com",
+              "phuckitfashion.com",
+              "preispirat.ch",
+              "prlog.ru",
+              "queenletiziastyle.com",
+              "queeromanceink.com",
+              "randigarrettdesign.com",
+              "readingdj.com",
+              "redcheeksreads.com",
+              "rss2.com",
+              "shoppisticated.com",
+              "softoolstore.de",
+              "sonyalpharumors.com",
+              "spidershopping.com",
+              "stadt-bremerhaven.de",
+              "stormwes.com",
+              "stylebyan.com",
+              "sunnyinga.de",
+              "tambulimedia.com",
+              "techadvisor.com",
+              "techswitchcf.com",
+              "theoldreader.com",
+              "tomkenemore.com",
+              "tres-click.com",
+              "truthuncoveredtv.com",
+              "veganmom.de",
+              "welt.de",
+              "wishlistr.com",
+              "withdaniela.com",
+              "zszhair.com"
+            ]
+          },
+          {
+            "count": 33,
+            "promotype": "student",
+            "value": [
+              "americansforabetteramerica.com",
+              "android-hilfe.de",
+              "carinateresa.com",
+              "corinnaherrmann.com",
+              "dangerouspress.com",
+              "davefoy.com",
+              "de.richarddawkins.net",
+              "deutschsovet.ru",
+              "fashion-kitchen.com",
+              "glamour.es",
+              "hotgutscheine.com",
+              "indieerotica.com",
+              "jasminkessler.com",
+              "jerisbookattic.com",
+              "limfic.com",
+              "mailerlite.com",
+              "metabee.de",
+              "minimarkt.com",
+              "mirrorlessrumors.com",
+              "mydesires.com",
+              "nextplayer.it",
+              "onlinephilosophyclub.com",
+              "pcforalla.se",
+              "peoria-cartitleloans.com",
+              "pink-e-pank.de",
+              "releads.ca",
+              "shor.by",
+              "stilgenuss.com",
+              "tankdl.com",
+              "techcratic.com",
+              "techtelegraph.co.uk",
+              "v2.fi",
+              "viewbook.at"
+            ]
+          },
+          {
+            "count": 5,
+            "promotype": "content",
+            "value": [
+              "inkl.com",
+              "lisforlois.com",
+              "maronihealth.com",
+              "my-haeuschen.de",
+              "neverhollowed.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "forum",
+            "value": [
+              "linkbux.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "verticals": {
+      "count": 11,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 2,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 2,
+          "score": 90
+        },
+        {
+          "name": "Business / Software",
+          "rank": 2,
+          "score": 50
+        },
+        {
+          "name": "Entertainment / Books",
+          "rank": 2,
+          "score": 70
+        },
+        {
+          "name": "Entertainment / Movies",
+          "rank": 2,
+          "score": 60
+        },
+        {
+          "name": "Entertainment / Music",
+          "rank": 2,
+          "score": 60
+        },
+        {
+          "name": "Entertainment / Streaming",
+          "rank": 2,
+          "score": 50
+        },
+        {
+          "name": "Fashion / Clothing",
+          "rank": 2,
+          "score": 70
+        },
+        {
+          "name": "Food / Groceries",
+          "rank": 2,
+          "score": 50
+        },
+        {
+          "name": "Home / Homeware",
+          "rank": 2,
+          "score": 70
+        },
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 2,
+          "score": 100
+        },
+        {
+          "name": "Technology / Electronics",
+          "rank": 2,
+          "score": 80
+        }
+      ]
+    }
+  }
+}

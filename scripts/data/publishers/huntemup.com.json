@@ -1,0 +1,616 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "CJ Affiliate"
+      ],
+      "value": [
+        "CJ Affiliate"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.9
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.9
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.9
+        }
+      ]
+    },
+    "domain": "huntemup.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "iphone"
+        },
+        {
+          "score": 0.47619048,
+          "value": "device"
+        },
+        {
+          "score": 0.44492364,
+          "value": "pro"
+        },
+        {
+          "score": 0.33369273,
+          "value": "elevation"
+        },
+        {
+          "score": 0.28787062,
+          "value": "pro max"
+        },
+        {
+          "score": 0.28787062,
+          "value": "max"
+        },
+        {
+          "score": 0.24977538,
+          "value": "inch"
+        },
+        {
+          "score": 0.23557952,
+          "value": "galaxy"
+        },
+        {
+          "score": 0.2262354,
+          "value": "ultra"
+        },
+        {
+          "score": 0.19263253,
+          "value": "mini"
+        },
+        {
+          "score": 0.14339623,
+          "value": "refine"
+        },
+        {
+          "score": 0.1412399,
+          "value": "feature"
+        },
+        {
+          "score": 0.13387242,
+          "value": "screen"
+        },
+        {
+          "score": 0.13171609,
+          "value": "color"
+        },
+        {
+          "score": 0.12866127,
+          "value": "accessory"
+        },
+        {
+          "score": 0.10743801,
+          "value": "lures"
+        },
+        {
+          "score": 0.10278527,
+          "value": "cool"
+        },
+        {
+          "score": 0.09816415,
+          "value": "warranty"
+        },
+        {
+          "score": 0.09631626,
+          "value": "quickbuy"
+        },
+        {
+          "score": 0.08984726,
+          "value": "gaming"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "iphone"
+        },
+        {
+          "score": 0.47619048,
+          "value": "device"
+        },
+        {
+          "score": 0.44492364,
+          "value": "pro"
+        },
+        {
+          "score": 0.33369273,
+          "value": "elevation"
+        },
+        {
+          "score": 0.28787062,
+          "value": "pro max"
+        },
+        {
+          "score": 0.28787062,
+          "value": "max"
+        },
+        {
+          "score": 0.24977538,
+          "value": "inch"
+        },
+        {
+          "score": 0.23557952,
+          "value": "galaxy"
+        },
+        {
+          "score": 0.2262354,
+          "value": "ultra"
+        },
+        {
+          "score": 0.19263253,
+          "value": "mini"
+        },
+        {
+          "score": 0.14339623,
+          "value": "refine"
+        },
+        {
+          "score": 0.1412399,
+          "value": "feature"
+        },
+        {
+          "score": 0.13387242,
+          "value": "screen"
+        },
+        {
+          "score": 0.13171609,
+          "value": "color"
+        },
+        {
+          "score": 0.12866127,
+          "value": "accessory"
+        },
+        {
+          "score": 0.10743801,
+          "value": "lures"
+        },
+        {
+          "score": 0.10278527,
+          "value": "cool"
+        },
+        {
+          "score": 0.09816415,
+          "value": "warranty"
+        },
+        {
+          "score": 0.09631626,
+          "value": "quickbuy"
+        },
+        {
+          "score": 0.08984726,
+          "value": "gaming"
+        },
+        {
+          "score": 0.089173555,
+          "value": "fishing"
+        },
+        {
+          "score": 0.085630976,
+          "value": "sign"
+        },
+        {
+          "score": 0.08553459,
+          "value": "ultra galaxy"
+        },
+        {
+          "score": 0.08380165,
+          "value": "spinnerbaits"
+        },
+        {
+          "score": 0.081652895,
+          "value": "bags"
+        },
+        {
+          "score": 0.075206615,
+          "value": "lure"
+        },
+        {
+          "score": 0.075206615,
+          "value": "baits"
+        },
+        {
+          "score": 0.075206615,
+          "value": "clothing"
+        },
+        {
+          "score": 0.07493261,
+          "value": "wireless"
+        },
+        {
+          "score": 0.07466582,
+          "value": "blue"
+        },
+        {
+          "score": 0.06864331,
+          "value": "airpod"
+        },
+        {
+          "score": 0.06661157,
+          "value": "shirts"
+        },
+        {
+          "score": 0.06648697,
+          "value": "charger"
+        },
+        {
+          "score": 0.06586458,
+          "value": "power"
+        },
+        {
+          "score": 0.06446281,
+          "value": "walleye"
+        },
+        {
+          "score": 0.06307278,
+          "value": "venture"
+        },
+        {
+          "score": 0.06123967,
+          "value": "spinnerbait"
+        },
+        {
+          "score": 0.058016527,
+          "value": "sweatshirts"
+        },
+        {
+          "score": 0.058016527,
+          "value": "trout"
+        },
+        {
+          "score": 0.054793388,
+          "value": "knives"
+        },
+        {
+          "score": 0.054267745,
+          "value": "popsocket"
+        },
+        {
+          "score": 0.053719006,
+          "value": "hoodies"
+        },
+        {
+          "score": 0.051392633,
+          "value": "lightning"
+        },
+        {
+          "score": 0.049955077,
+          "value": "glass"
+        },
+        {
+          "score": 0.049595688,
+          "value": "usb"
+        },
+        {
+          "score": 0.04942149,
+          "value": "sleeve"
+        },
+        {
+          "score": 0.04942149,
+          "value": "quickskirts"
+        },
+        {
+          "score": 0.048347108,
+          "value": "gloves"
+        },
+        {
+          "score": 0.048347108,
+          "value": "game"
+        },
+        {
+          "score": 0.04761905,
+          "value": "soft"
+        },
+        {
+          "score": 0.046198346,
+          "value": "pliers"
+        },
+        {
+          "score": 0.046181493,
+          "value": "ipad"
+        },
+        {
+          "score": 0.044049587,
+          "value": "monofilament"
+        },
+        {
+          "score": 0.044049587,
+          "value": "exclusives"
+        },
+        {
+          "score": 0.044049587,
+          "value": "catcher"
+        },
+        {
+          "score": 0.043126684,
+          "value": "car"
+        },
+        {
+          "score": 0.042975206,
+          "value": "winter"
+        },
+        {
+          "score": 0.042975206,
+          "value": "performance"
+        },
+        {
+          "score": 0.042975206,
+          "value": "knife"
+        },
+        {
+          "score": 0.042975206,
+          "value": "bait"
+        },
+        {
+          "score": 0.04222821,
+          "value": "minimum"
+        },
+        {
+          "score": 0.042048518,
+          "value": "minimum price"
+        },
+        {
+          "score": 0.041900825,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.041689128,
+          "value": "phone"
+        },
+        {
+          "score": 0.041509435,
+          "value": "protection"
+        },
+        {
+          "score": 0.041329738,
+          "value": "cool accessory"
+        },
+        {
+          "score": 0.041150045,
+          "value": "intellectual"
+        },
+        {
+          "score": 0.041150045,
+          "value": "accessibility"
+        },
+        {
+          "score": 0.041150045,
+          "value": "modern"
+        },
+        {
+          "score": 0.041150045,
+          "value": "statement"
+        },
+        {
+          "score": 0.04097035,
+          "value": "retail"
+        },
+        {
+          "score": 0.04097035,
+          "value": "tracking"
+        },
+        {
+          "score": 0.04097035,
+          "value": "retail tracking"
+        },
+        {
+          "score": 0.04097035,
+          "value": "band"
+        },
+        {
+          "score": 0.04097035,
+          "value": "property"
+        },
+        {
+          "score": 0.04097035,
+          "value": "intellectual property"
+        },
+        {
+          "score": 0.04097035,
+          "value": "source"
+        },
+        {
+          "score": 0.04097035,
+          "value": "bank"
+        },
+        {
+          "score": 0.04097035,
+          "value": "cell"
+        },
+        {
+          "score": 0.04097035,
+          "value": "npd"
+        },
+        {
+          "score": 0.04097035,
+          "value": "mobile gaming"
+        },
+        {
+          "score": 0.04097035,
+          "value": "unit"
+        },
+        {
+          "score": 0.04097035,
+          "value": "cool venture"
+        },
+        {
+          "score": 0.039532796,
+          "value": "light"
+        },
+        {
+          "score": 0.039532796,
+          "value": "blue light"
+        },
+        {
+          "score": 0.038814016,
+          "value": "protector"
+        },
+        {
+          "score": 0.038677685,
+          "value": "fish"
+        },
+        {
+          "score": 0.037603308,
+          "value": "jigging"
+        },
+        {
+          "score": 0.037603308,
+          "value": "hooks"
+        },
+        {
+          "score": 0.036528926,
+          "value": "finders"
+        },
+        {
+          "score": 0.036528926,
+          "value": "tool"
+        },
+        {
+          "score": 0.036298294,
+          "value": "arrival"
+        },
+        {
+          "score": 0.036298294,
+          "value": "apple"
+        },
+        {
+          "score": 0.035454545,
+          "value": "replacement"
+        },
+        {
+          "score": 0.034380164,
+          "value": "augers"
+        },
+        {
+          "score": 0.034380164,
+          "value": "guards"
+        },
+        {
+          "score": 0.033305787,
+          "value": "blades"
+        },
+        {
+          "score": 0.033305787,
+          "value": "strikemaster"
+        },
+        {
+          "score": 0.033305787,
+          "value": "saltwater"
+        },
+        {
+          "score": 0.033305787,
+          "value": "jigs"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": "Discover top sporting dog supplies at HuntEmUp - The World Wide Sporting Dog Super Store. Shop quality gear, accessories, and training tools today!",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/huntemup.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://huntemup.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 2,
+        "value": [
+          "otterbox.com",
+          "rapala.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Sports / Equipment"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 2,
+      "value": [
+        "otterbox.com",
+        "rapala.com"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 2,
+      "socialsAvailable": [
+        "twitter",
+        "facebook"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/huntemup.dog.supply",
+        "twitter": "https://twitter.com/huntemup_com"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Sports / Hunting",
+      "value": [
+        "Sports / Hunting",
+        "Sports / Equipment"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Sports / Hunting",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Sports / Hunting",
+          "rank": 1,
+          "score": 95
+        },
+        {
+          "name": "Sports / Equipment",
+          "rank": 1,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

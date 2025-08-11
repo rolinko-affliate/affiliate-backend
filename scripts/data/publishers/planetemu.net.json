@@ -1,0 +1,625 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Tradedoubler"
+      ],
+      "value": [
+        "Tradedoubler"
+      ]
+    },
+    "countryRankings": {
+      "count": 3,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.3
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.3
+        },
+        {
+          "countryCode": "fr",
+          "score": 0.2
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.3
+        },
+        {
+          "countryCode": "fr",
+          "score": 0.2
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "planetemu.net",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "produit"
+        },
+        {
+          "score": 0.7714286,
+          "value": "sony"
+        },
+        {
+          "score": 0.65120596,
+          "value": "photo"
+        },
+        {
+          "score": 0.37847868,
+          "value": "appareil"
+        },
+        {
+          "score": 0.33469388,
+          "value": "audio"
+        },
+        {
+          "score": 0.32987013,
+          "value": "produire"
+        },
+        {
+          "score": 0.3250464,
+          "value": "assistance"
+        },
+        {
+          "score": 0.32207793,
+          "value": "objectif"
+        },
+        {
+          "score": 0.27012986,
+          "value": "mise"
+        },
+        {
+          "score": 0.26864564,
+          "value": "afficher"
+        },
+        {
+          "score": 0.25899816,
+          "value": "offre"
+        },
+        {
+          "score": 0.25306123,
+          "value": "appareil photo"
+        },
+        {
+          "score": 0.24638219,
+          "value": "site"
+        },
+        {
+          "score": 0.24452691,
+          "value": "version"
+        },
+        {
+          "score": 0.23784786,
+          "value": "professionnel"
+        },
+        {
+          "score": 0.22597402,
+          "value": "navigateur"
+        },
+        {
+          "score": 0.21187384,
+          "value": "dernier"
+        },
+        {
+          "score": 0.20779221,
+          "value": "fonctionnalité"
+        },
+        {
+          "score": 0.2051948,
+          "value": "écran"
+        },
+        {
+          "score": 0.19814472,
+          "value": "spécification"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "produit"
+        },
+        {
+          "score": 0.7714286,
+          "value": "sony"
+        },
+        {
+          "score": 0.65120596,
+          "value": "photo"
+        },
+        {
+          "score": 0.37847868,
+          "value": "appareil"
+        },
+        {
+          "score": 0.33469388,
+          "value": "audio"
+        },
+        {
+          "score": 0.32987013,
+          "value": "produire"
+        },
+        {
+          "score": 0.3250464,
+          "value": "assistance"
+        },
+        {
+          "score": 0.32207793,
+          "value": "objectif"
+        },
+        {
+          "score": 0.27012986,
+          "value": "mise"
+        },
+        {
+          "score": 0.26864564,
+          "value": "afficher"
+        },
+        {
+          "score": 0.25899816,
+          "value": "offre"
+        },
+        {
+          "score": 0.25306123,
+          "value": "appareil photo"
+        },
+        {
+          "score": 0.24638219,
+          "value": "site"
+        },
+        {
+          "score": 0.24452691,
+          "value": "version"
+        },
+        {
+          "score": 0.23784786,
+          "value": "professionnel"
+        },
+        {
+          "score": 0.22597402,
+          "value": "navigateur"
+        },
+        {
+          "score": 0.21187384,
+          "value": "dernier"
+        },
+        {
+          "score": 0.20779221,
+          "value": "fonctionnalité"
+        },
+        {
+          "score": 0.2051948,
+          "value": "écran"
+        },
+        {
+          "score": 0.19814472,
+          "value": "spécification"
+        },
+        {
+          "score": 0.19480519,
+          "value": "dernier version"
+        },
+        {
+          "score": 0.1922078,
+          "value": "caméscope"
+        },
+        {
+          "score": 0.18886827,
+          "value": "téléviseur"
+        },
+        {
+          "score": 0.18144712,
+          "value": "logiciel"
+        },
+        {
+          "score": 0.17996289,
+          "value": "jour"
+        },
+        {
+          "score": 0.17922078,
+          "value": "point"
+        },
+        {
+          "score": 0.17365491,
+          "value": "communauté"
+        },
+        {
+          "score": 0.17217068,
+          "value": "utilisation"
+        },
+        {
+          "score": 0.15510204,
+          "value": "promotion"
+        },
+        {
+          "score": 0.15139146,
+          "value": "système"
+        },
+        {
+          "score": 0.14953618,
+          "value": "compatible"
+        },
+        {
+          "score": 0.1432282,
+          "value": "lecteur"
+        },
+        {
+          "score": 0.14137292,
+          "value": "accessoire"
+        },
+        {
+          "score": 0.13914657,
+          "value": "instagram"
+        },
+        {
+          "score": 0.13840446,
+          "value": "solution"
+        },
+        {
+          "score": 0.13729128,
+          "value": "câble"
+        },
+        {
+          "score": 0.1361781,
+          "value": "actuel"
+        },
+        {
+          "score": 0.13432282,
+          "value": "alimentation"
+        },
+        {
+          "score": 0.13395177,
+          "value": "enregistrement"
+        },
+        {
+          "score": 0.12949908,
+          "value": "millimètre"
+        },
+        {
+          "score": 0.12541744,
+          "value": "marque"
+        },
+        {
+          "score": 0.114285715,
+          "value": "smartphone"
+        },
+        {
+          "score": 0.1135436,
+          "value": "présentation"
+        },
+        {
+          "score": 0.11243042,
+          "value": "galeri"
+        },
+        {
+          "score": 0.11243042,
+          "value": "galeri photo"
+        },
+        {
+          "score": 0.11243042,
+          "value": "grand"
+        },
+        {
+          "score": 0.11243042,
+          "value": "activité"
+        },
+        {
+          "score": 0.111317255,
+          "value": "capteur"
+        },
+        {
+          "score": 0.11057514,
+          "value": "xperia"
+        },
+        {
+          "score": 0.10946196,
+          "value": "contenu"
+        },
+        {
+          "score": 0.10797773,
+          "value": "vidéo"
+        },
+        {
+          "score": 0.106864564,
+          "value": "portable"
+        },
+        {
+          "score": 0.1064935,
+          "value": "chat"
+        },
+        {
+          "score": 0.10612245,
+          "value": "expérience"
+        },
+        {
+          "score": 0.10500928,
+          "value": "caméra"
+        },
+        {
+          "score": 0.10500928,
+          "value": "fil"
+        },
+        {
+          "score": 0.104267165,
+          "value": "forum"
+        },
+        {
+          "score": 0.10352505,
+          "value": "stockage"
+        },
+        {
+          "score": 0.10352505,
+          "value": "avis"
+        },
+        {
+          "score": 0.10315399,
+          "value": "source"
+        },
+        {
+          "score": 0.102782935,
+          "value": "externe"
+        },
+        {
+          "score": 0.096846014,
+          "value": "www sony"
+        },
+        {
+          "score": 0.09499072,
+          "value": "centre"
+        },
+        {
+          "score": 0.09461967,
+          "value": "emploi"
+        },
+        {
+          "score": 0.093877554,
+          "value": "société"
+        },
+        {
+          "score": 0.09350649,
+          "value": "conforme"
+        },
+        {
+          "score": 0.09350649,
+          "value": "actualité"
+        },
+        {
+          "score": 0.09350649,
+          "value": "valeur"
+        },
+        {
+          "score": 0.09313544,
+          "value": "politique"
+        },
+        {
+          "score": 0.09276438,
+          "value": "politique confidentialite"
+        },
+        {
+          "score": 0.09276438,
+          "value": "fonds"
+        },
+        {
+          "score": 0.09276438,
+          "value": "confidentialite"
+        },
+        {
+          "score": 0.09276438,
+          "value": "facebook page"
+        },
+        {
+          "score": 0.09276438,
+          "value": "produire chat"
+        },
+        {
+          "score": 0.09276438,
+          "value": "offre d"
+        },
+        {
+          "score": 0.09276438,
+          "value": "technologi"
+        },
+        {
+          "score": 0.09276438,
+          "value": "mission"
+        },
+        {
+          "score": 0.09276438,
+          "value": "presse"
+        },
+        {
+          "score": 0.09053803,
+          "value": "réponse"
+        },
+        {
+          "score": 0.09016698,
+          "value": "enceinte"
+        },
+        {
+          "score": 0.0890538,
+          "value": "conseil"
+        },
+        {
+          "score": 0.0864564,
+          "value": "gramme"
+        },
+        {
+          "score": 0.08571429,
+          "value": "disponible"
+        },
+        {
+          "score": 0.08534323,
+          "value": "compte"
+        },
+        {
+          "score": 0.08423006,
+          "value": "qualité"
+        },
+        {
+          "score": 0.0812616,
+          "value": "technologie"
+        },
+        {
+          "score": 0.07977737,
+          "value": "téléviseur home"
+        },
+        {
+          "score": 0.07903525,
+          "value": "automatique"
+        },
+        {
+          "score": 0.07717996,
+          "value": "récompense"
+        },
+        {
+          "score": 0.07309833,
+          "value": "format"
+        },
+        {
+          "score": 0.07124304,
+          "value": "connexion"
+        },
+        {
+          "score": 0.070500925,
+          "value": "commentaire"
+        },
+        {
+          "score": 0.06975881,
+          "value": "fonction"
+        },
+        {
+          "score": 0.06975881,
+          "value": "gestion"
+        },
+        {
+          "score": 0.06864564,
+          "value": "rapide"
+        },
+        {
+          "score": 0.06864564,
+          "value": "systèm"
+        },
+        {
+          "score": 0.06827458,
+          "value": "téléviseur système"
+        },
+        {
+          "score": 0.06827458,
+          "value": "bateau"
+        },
+        {
+          "score": 0.067903526,
+          "value": "exigence"
+        },
+        {
+          "score": 0.067903526,
+          "value": "systèm audio"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://planetemu.net/",
+        "https://www.planetemu.net/",
+        "http://planetemu.net/",
+        "http://www.planetemu.net/"
+      ]
+    },
+    "metaData": {
+      "description": "Retrogaming, émulateurs et téléchargement de ROMs. Les jeux vidéo ont aussi leur histoire !",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/planetemu.net.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://planetemu.net"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1,
+        "value": [
+          "sony.fr"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 0.95,
+            "vertical": "Technology / Electronics"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 1,
+      "value": [
+        "sony.fr"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Entertainment / Gaming",
+      "value": [
+        "Entertainment / Gaming",
+        "Technology / Software"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Entertainment / Gaming",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Entertainment / Gaming",
+          "rank": 1,
+          "score": 95
+        },
+        {
+          "name": "Technology / Software",
+          "rank": 1,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

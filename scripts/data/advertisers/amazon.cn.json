@@ -1,0 +1,193 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 6,
+      "sampleValue": [
+        "ChineseAN",
+        "Duomai",
+        "Skimlinks"
+      ],
+      "value": [
+        "ChineseAN",
+        "Duomai",
+        "Skimlinks",
+        "SourceKnowledge",
+        "Viglink",
+        "Yiqifa"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 2,
+      "error": false,
+      "value": [
+        {
+          "department": null,
+          "value": "-spoofing@amazon.com"
+        },
+        {
+          "department": null,
+          "value": "privacyshield@amazon.com"
+        }
+      ]
+    },
+    "domain": "amazon.cn",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazon.cn.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazon.cn"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 155
+      },
+      "partnersAdded": {
+        "count": 6,
+        "value": [
+          {
+            "domain": "12345.info"
+          },
+          {
+            "domain": "ss.7999.com"
+          },
+          {
+            "domain": "pcdgw.net"
+          },
+          {
+            "domain": "vok888.com"
+          },
+          {
+            "domain": "i.mv178.com"
+          },
+          {
+            "domain": "tv.7999.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 37,
+            "promotype": "blog",
+            "value": [
+              "110bbs.com",
+              "27788.cn",
+              "4737.cn",
+              "52358.com",
+              "532600.com",
+              "5usucai.com",
+              "7999.com",
+              "9988d.com",
+              "ab1234.com",
+              "athaitao.com",
+              "ddpad.com",
+              "dia123.com",
+              "duba.cc",
+              "easss.com",
+              "elotrolado.net",
+              "eqifa.com",
+              "han123.com",
+              "hao123.it",
+              "haogan156.com",
+              "hao.xckey.com",
+              "hi129.com",
+              "jiaodianit.com",
+              "lixinxian.com",
+              "meilizg.net",
+              "onenav.cn",
+              "ouyuanju.com",
+              "qunhoo.com",
+              "s.wpwzg.cn",
+              "tk1234.net",
+              "tomshardware.com",
+              "tv.7999.com",
+              "wgdou.cn",
+              "wj1234.com",
+              "wuhanguolu.com",
+              "zbzdm.com",
+              "zhangjunbk.com",
+              "zhaozhishi.com"
+            ]
+          },
+          {
+            "count": 4,
+            "promotype": "content",
+            "value": [
+              "12345.info",
+              "2222.net.cn",
+              "24611.com",
+              "4dh.cn"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "incentive",
+            "value": [
+              "185718.com"
+            ]
+          },
+          {
+            "count": 14,
+            "promotype": "student",
+            "value": [
+              "5138.net",
+              "7move.com",
+              "aiwangzhi.com",
+              "bh-114.com",
+              "dh.cnjzb.com",
+              "download4.mv178.cn",
+              "hzci.com",
+              "mallyou.com",
+              "pcdgw.net",
+              "tk000.com",
+              "waitao.cn",
+              "wangbalianmeng.jvhe.cn",
+              "wanx123.com",
+              "xredu.org"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 2,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 2,
+          "score": 90
+        },
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 2,
+          "score": 100
+        }
+      ]
+    }
+  }
+}

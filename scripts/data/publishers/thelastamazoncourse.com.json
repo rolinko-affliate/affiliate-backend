@@ -1,0 +1,694 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 5,
+      "sampleValue": [
+        "CJ Affiliate",
+        "Impact",
+        "PartnerStack"
+      ],
+      "value": [
+        "CJ Affiliate",
+        "Impact",
+        "PartnerStack",
+        "ShareASale",
+        "Wix"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.6
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "thelastamazoncourse.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "video"
+        },
+        {
+          "score": 0.9045028,
+          "value": "amazon"
+        },
+        {
+          "score": 0.8869801,
+          "value": "seller"
+        },
+        {
+          "score": 0.32442263,
+          "value": "store"
+        },
+        {
+          "score": 0.3032506,
+          "value": "tax"
+        },
+        {
+          "score": 0.28872314,
+          "value": "professional"
+        },
+        {
+          "score": 0.27970472,
+          "value": "tool"
+        },
+        {
+          "score": 0.26536635,
+          "value": "individual"
+        },
+        {
+          "score": 0.2572614,
+          "value": "people"
+        },
+        {
+          "score": 0.2391581,
+          "value": "tutorial"
+        },
+        {
+          "score": 0.22431661,
+          "value": "partner"
+        },
+        {
+          "score": 0.20997578,
+          "value": "trial"
+        },
+        {
+          "score": 0.20216708,
+          "value": "lead"
+        },
+        {
+          "score": 0.20216708,
+          "value": "stamp"
+        },
+        {
+          "score": 0.20216708,
+          "value": "wix"
+        },
+        {
+          "score": 0.20216708,
+          "value": "namecheap"
+        },
+        {
+          "score": 0.19877177,
+          "value": "app"
+        },
+        {
+          "score": 0.19140078,
+          "value": "postage"
+        },
+        {
+          "score": 0.1897948,
+          "value": "screen"
+        },
+        {
+          "score": 0.18679315,
+          "value": "bot"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "video"
+        },
+        {
+          "score": 0.9045028,
+          "value": "amazon"
+        },
+        {
+          "score": 0.8869801,
+          "value": "seller"
+        },
+        {
+          "score": 0.32442263,
+          "value": "store"
+        },
+        {
+          "score": 0.3032506,
+          "value": "tax"
+        },
+        {
+          "score": 0.28872314,
+          "value": "professional"
+        },
+        {
+          "score": 0.27970472,
+          "value": "tool"
+        },
+        {
+          "score": 0.26536635,
+          "value": "individual"
+        },
+        {
+          "score": 0.2572614,
+          "value": "people"
+        },
+        {
+          "score": 0.2391581,
+          "value": "tutorial"
+        },
+        {
+          "score": 0.22431661,
+          "value": "partner"
+        },
+        {
+          "score": 0.20997578,
+          "value": "trial"
+        },
+        {
+          "score": 0.20216708,
+          "value": "lead"
+        },
+        {
+          "score": 0.20216708,
+          "value": "stamp"
+        },
+        {
+          "score": 0.20216708,
+          "value": "wix"
+        },
+        {
+          "score": 0.20216708,
+          "value": "namecheap"
+        },
+        {
+          "score": 0.19877177,
+          "value": "app"
+        },
+        {
+          "score": 0.19140078,
+          "value": "postage"
+        },
+        {
+          "score": 0.1897948,
+          "value": "screen"
+        },
+        {
+          "score": 0.18679315,
+          "value": "bot"
+        },
+        {
+          "score": 0.18460798,
+          "value": "software"
+        },
+        {
+          "score": 0.18294966,
+          "value": "messenger"
+        },
+        {
+          "score": 0.17986497,
+          "value": "asset"
+        },
+        {
+          "score": 0.17854889,
+          "value": "solution"
+        },
+        {
+          "score": 0.1775647,
+          "value": "arbitrage"
+        },
+        {
+          "score": 0.17641093,
+          "value": "retail"
+        },
+        {
+          "score": 0.17458668,
+          "value": "strategy"
+        },
+        {
+          "score": 0.16834444,
+          "value": "conversation"
+        },
+        {
+          "score": 0.16603293,
+          "value": "chat"
+        },
+        {
+          "score": 0.16283536,
+          "value": "maker"
+        },
+        {
+          "score": 0.1597409,
+          "value": "social medium"
+        },
+        {
+          "score": 0.15768343,
+          "value": "step"
+        },
+        {
+          "score": 0.15450792,
+          "value": "manychat"
+        },
+        {
+          "score": 0.15266392,
+          "value": "practice"
+        },
+        {
+          "score": 0.1507583,
+          "value": "transfer"
+        },
+        {
+          "score": 0.1477104,
+          "value": "audience"
+        },
+        {
+          "score": 0.14179793,
+          "value": "fba"
+        },
+        {
+          "score": 0.14029802,
+          "value": "professional seller"
+        },
+        {
+          "score": 0.13853899,
+          "value": "press"
+        },
+        {
+          "score": 0.13138938,
+          "value": "automation"
+        },
+        {
+          "score": 0.13037086,
+          "value": "box"
+        },
+        {
+          "score": 0.12947062,
+          "value": "integration"
+        },
+        {
+          "score": 0.12835228,
+          "value": "message"
+        },
+        {
+          "score": 0.12659912,
+          "value": "pricing"
+        },
+        {
+          "score": 0.12519513,
+          "value": "platform"
+        },
+        {
+          "score": 0.12253108,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.12157354,
+          "value": "communication"
+        },
+        {
+          "score": 0.120967224,
+          "value": "community"
+        },
+        {
+          "score": 0.12091475,
+          "value": "listing"
+        },
+        {
+          "score": 0.11913781,
+          "value": "tld"
+        },
+        {
+          "score": 0.11697669,
+          "value": "label"
+        },
+        {
+          "score": 0.11338927,
+          "value": "sign"
+        },
+        {
+          "score": 0.11260763,
+          "value": "unit"
+        },
+        {
+          "score": 0.11213167,
+          "value": "article"
+        },
+        {
+          "score": 0.11175489,
+          "value": "private"
+        },
+        {
+          "score": 0.10744301,
+          "value": "category"
+        },
+        {
+          "score": 0.10572922,
+          "value": "money"
+        },
+        {
+          "score": 0.10506108,
+          "value": "dollar"
+        },
+        {
+          "score": 0.101705216,
+          "value": "report"
+        },
+        {
+          "score": 0.10091846,
+          "value": "vimeo"
+        },
+        {
+          "score": 0.09929231,
+          "value": "request"
+        },
+        {
+          "score": 0.0988778,
+          "value": "retail arbitrage"
+        },
+        {
+          "score": 0.09730948,
+          "value": "migrate"
+        },
+        {
+          "score": 0.096938714,
+          "value": "channel"
+        },
+        {
+          "score": 0.09669747,
+          "value": "dns"
+        },
+        {
+          "score": 0.095001146,
+          "value": "visual"
+        },
+        {
+          "score": 0.0946736,
+          "value": "fee"
+        },
+        {
+          "score": 0.09408777,
+          "value": "recorder"
+        },
+        {
+          "score": 0.09301223,
+          "value": "generation"
+        },
+        {
+          "score": 0.089042105,
+          "value": "idea"
+        },
+        {
+          "score": 0.08891875,
+          "value": "training"
+        },
+        {
+          "score": 0.087856226,
+          "value": "feature"
+        },
+        {
+          "score": 0.08780164,
+          "value": "individual seller"
+        },
+        {
+          "score": 0.08747107,
+          "value": "team"
+        },
+        {
+          "score": 0.08681741,
+          "value": "feedback"
+        },
+        {
+          "score": 0.086450666,
+          "value": "story"
+        },
+        {
+          "score": 0.08410959,
+          "value": "scout"
+        },
+        {
+          "score": 0.08384527,
+          "value": "internet"
+        },
+        {
+          "score": 0.08308719,
+          "value": "guide"
+        },
+        {
+          "score": 0.08179639,
+          "value": "study"
+        },
+        {
+          "score": 0.08051285,
+          "value": "center"
+        },
+        {
+          "score": 0.080323406,
+          "value": "program"
+        },
+        {
+          "score": 0.07825148,
+          "value": "rate"
+        },
+        {
+          "score": 0.07793979,
+          "value": "advertising"
+        },
+        {
+          "score": 0.077638306,
+          "value": "release"
+        },
+        {
+          "score": 0.075124584,
+          "value": "button"
+        },
+        {
+          "score": 0.073214896,
+          "value": "post"
+        },
+        {
+          "score": 0.06938351,
+          "value": "digital"
+        },
+        {
+          "score": 0.06864412,
+          "value": "education"
+        },
+        {
+          "score": 0.068247594,
+          "value": "offer"
+        },
+        {
+          "score": 0.06723168,
+          "value": "logo"
+        },
+        {
+          "score": 0.06647033,
+          "value": "resource"
+        },
+        {
+          "score": 0.06610786,
+          "value": "instagram"
+        },
+        {
+          "score": 0.06588142,
+          "value": "enterprise"
+        },
+        {
+          "score": 0.06550014,
+          "value": "agency"
+        },
+        {
+          "score": 0.06473785,
+          "value": "site"
+        },
+        {
+          "score": 0.06401796,
+          "value": "employee"
+        },
+        {
+          "score": 0.06399964,
+          "value": "supply"
+        },
+        {
+          "score": 0.06360088,
+          "value": "office"
+        },
+        {
+          "score": 0.06320343,
+          "value": "extension"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": "Brock Johnson built a $6 million brand in 6 months selling physical products on Amazon. After making millions before he made a piece of content, he created The Last Amazon Course: 340+ videos, 12+ Industry Experts, the best tools and templates, all for $1/month. ",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/thelastamazoncourse.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://thelastamazoncourse.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 15,
+        "value": [
+          "99designs.fr",
+          "intuit.com",
+          "namecheap.com",
+          "techsmith.com",
+          "unbounce.com",
+          "vimeo.com",
+          "incfile.com",
+          "inventorylab.com",
+          "junglescout.com",
+          "manychat.com",
+          "stamps.com",
+          "revealbot.com",
+          "smilesoftware.com",
+          "taxjar.com",
+          "wix.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "intuit.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 3.75,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 2,
+            "vertical": "Business / Website Builder"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Finance / Accounts"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Online / Web Design"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Online / Web Hosting"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Editing Software"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 15,
+      "value": [
+        "99designs.fr",
+        "intuit.com",
+        "namecheap.com",
+        "techsmith.com",
+        "unbounce.com",
+        "vimeo.com",
+        "incfile.com",
+        "inventorylab.com",
+        "junglescout.com",
+        "manychat.com",
+        "stamps.com",
+        "revealbot.com",
+        "smilesoftware.com",
+        "taxjar.com",
+        "wix.com"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 3,
+      "value": [
+        "go.brockrjohnson.com",
+        "brock.mykajabi.com",
+        "brock.tv"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 3,
+      "socialsAvailable": [
+        "youtube",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/officialbrockjohnson",
+        "instagram": "https://instagram.com/officialbrockjohnson",
+        "youtube": "https://youtube.com/channel/ucluet8w1f-b0gullh_krm0w"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Business / Online Training",
+      "value": [
+        "Business / Online Training",
+        "Business / Ecommerce"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Business / Online Training",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Business / Online Training",
+          "rank": 1,
+          "score": 95
+        },
+        {
+          "name": "Business / Ecommerce",
+          "rank": 1,
+          "score": 80
+        }
+      ]
+    }
+  }
+}

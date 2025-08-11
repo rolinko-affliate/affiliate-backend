@@ -1,0 +1,655 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 2,
+      "sampleValue": [
+        "CJ Affiliate",
+        "Viglink"
+      ],
+      "value": [
+        "CJ Affiliate",
+        "Viglink"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "za",
+        "score": 0.6
+      },
+      "sampleValue": [
+        {
+          "countryCode": "za",
+          "score": 0.6
+        },
+        {
+          "countryCode": "ng",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "za",
+          "score": 0.6
+        },
+        {
+          "countryCode": "ng",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "tambulimedia.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "quick add"
+        },
+        {
+          "score": 0.9568015,
+          "value": "series"
+        },
+        {
+          "score": 0.9549632,
+          "value": "wishlist"
+        },
+        {
+          "score": 0.9540441,
+          "value": "add wishlist"
+        },
+        {
+          "score": 0.85235846,
+          "value": "details"
+        },
+        {
+          "score": 0.7141544,
+          "value": "see details"
+        },
+        {
+          "score": 0.3584559,
+          "value": "paperback"
+        },
+        {
+          "score": 0.3492647,
+          "value": "original"
+        },
+        {
+          "score": 0.34742647,
+          "value": "current"
+        },
+        {
+          "score": 0.34588525,
+          "value": "books"
+        },
+        {
+          "score": 0.34558824,
+          "value": "available online"
+        },
+        {
+          "score": 0.3428309,
+          "value": "current price"
+        },
+        {
+          "score": 0.3428309,
+          "value": "price original"
+        },
+        {
+          "score": 0.3428309,
+          "value": "original price"
+        },
+        {
+          "score": 0.2867647,
+          "value": "hardcover"
+        },
+        {
+          "score": 0.28376824,
+          "value": "ebook"
+        },
+        {
+          "score": 0.26746324,
+          "value": "fiction"
+        },
+        {
+          "score": 0.2601103,
+          "value": "stephanie"
+        },
+        {
+          "score": 0.2564338,
+          "value": "garber"
+        },
+        {
+          "score": 0.2555147,
+          "value": "stephanie garber"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "quick add"
+        },
+        {
+          "score": 0.9568015,
+          "value": "series"
+        },
+        {
+          "score": 0.9549632,
+          "value": "wishlist"
+        },
+        {
+          "score": 0.9540441,
+          "value": "add wishlist"
+        },
+        {
+          "score": 0.85235846,
+          "value": "details"
+        },
+        {
+          "score": 0.7141544,
+          "value": "see details"
+        },
+        {
+          "score": 0.3584559,
+          "value": "paperback"
+        },
+        {
+          "score": 0.3492647,
+          "value": "original"
+        },
+        {
+          "score": 0.34742647,
+          "value": "current"
+        },
+        {
+          "score": 0.34588525,
+          "value": "books"
+        },
+        {
+          "score": 0.34558824,
+          "value": "available online"
+        },
+        {
+          "score": 0.3428309,
+          "value": "current price"
+        },
+        {
+          "score": 0.3428309,
+          "value": "price original"
+        },
+        {
+          "score": 0.3428309,
+          "value": "original price"
+        },
+        {
+          "score": 0.2867647,
+          "value": "hardcover"
+        },
+        {
+          "score": 0.28376824,
+          "value": "ebook"
+        },
+        {
+          "score": 0.26746324,
+          "value": "fiction"
+        },
+        {
+          "score": 0.2601103,
+          "value": "stephanie"
+        },
+        {
+          "score": 0.2564338,
+          "value": "garber"
+        },
+        {
+          "score": 0.2555147,
+          "value": "stephanie garber"
+        },
+        {
+          "score": 0.24724264,
+          "value": "caraval"
+        },
+        {
+          "score": 0.23204091,
+          "value": "book"
+        },
+        {
+          "score": 0.22426471,
+          "value": "barnes"
+        },
+        {
+          "score": 0.21875,
+          "value": "b n"
+        },
+        {
+          "score": 0.21047795,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.20220588,
+          "value": "pre order"
+        },
+        {
+          "score": 0.1985225,
+          "value": "edition"
+        },
+        {
+          "score": 0.18658088,
+          "value": "high"
+        },
+        {
+          "score": 0.18658088,
+          "value": "order now"
+        },
+        {
+          "score": 0.18122637,
+          "value": "save"
+        },
+        {
+          "score": 0.17463236,
+          "value": "teen"
+        },
+        {
+          "score": 0.17371324,
+          "value": "low"
+        },
+        {
+          "score": 0.17279412,
+          "value": "newest"
+        },
+        {
+          "score": 0.17279412,
+          "value": "oldest"
+        },
+        {
+          "score": 0.17279412,
+          "value": "title z"
+        },
+        {
+          "score": 0.17279412,
+          "value": "grid"
+        },
+        {
+          "score": 0.17095588,
+          "value": "formats"
+        },
+        {
+          "score": 0.16636029,
+          "value": "editions"
+        },
+        {
+          "score": 0.16544117,
+          "value": "available immediately"
+        },
+        {
+          "score": 0.16544117,
+          "value": "immediately purchase"
+        },
+        {
+          "score": 0.15992647,
+          "value": "teen fiction"
+        },
+        {
+          "score": 0.15750162,
+          "value": "amazon"
+        },
+        {
+          "score": 0.15716912,
+          "value": "kingdom"
+        },
+        {
+          "score": 0.15716912,
+          "value": "view available"
+        },
+        {
+          "score": 0.15716912,
+          "value": "available formats"
+        },
+        {
+          "score": 0.15716912,
+          "value": "formats editions"
+        },
+        {
+          "score": 0.15079847,
+          "value": "author"
+        },
+        {
+          "score": 0.14705883,
+          "value": "editorial"
+        },
+        {
+          "score": 0.14613971,
+          "value": "editorial reviews"
+        },
+        {
+          "score": 0.13143383,
+          "value": "scarlett"
+        },
+        {
+          "score": 0.13051471,
+          "value": "product details"
+        },
+        {
+          "score": 0.12775736,
+          "value": "learn"
+        },
+        {
+          "score": 0.120404415,
+          "value": "explore"
+        },
+        {
+          "score": 0.11856618,
+          "value": "wicked"
+        },
+        {
+          "score": 0.11672794,
+          "value": "enable"
+        },
+        {
+          "score": 0.11580882,
+          "value": "upgrade"
+        },
+        {
+          "score": 0.11580882,
+          "value": "upgrade now"
+        },
+        {
+          "score": 0.11580882,
+          "value": "javascript"
+        },
+        {
+          "score": 0.11580882,
+          "value": "enable javascript"
+        },
+        {
+          "score": 0.11580882,
+          "value": "browser"
+        },
+        {
+          "score": 0.11580882,
+          "value": "kerri"
+        },
+        {
+          "score": 0.1148897,
+          "value": "learn enable"
+        },
+        {
+          "score": 0.1148897,
+          "value": "javascript browser"
+        },
+        {
+          "score": 0.1148897,
+          "value": "n exclusive"
+        },
+        {
+          "score": 0.113051474,
+          "value": "maniscalco"
+        },
+        {
+          "score": 0.113051474,
+          "value": "tella"
+        },
+        {
+          "score": 0.112132356,
+          "value": "kerri maniscalco"
+        },
+        {
+          "score": 0.11029412,
+          "value": "signed"
+        },
+        {
+          "score": 0.109375,
+          "value": "kingdom wicked"
+        },
+        {
+          "score": 0.104779415,
+          "value": "murder"
+        },
+        {
+          "score": 0.10018382,
+          "value": "noble"
+        },
+        {
+          "score": 0.10018382,
+          "value": "barnes noble"
+        },
+        {
+          "score": 0.09375,
+          "value": "exclusive edition"
+        },
+        {
+          "score": 0.09191176,
+          "value": "fantasy"
+        },
+        {
+          "score": 0.09191176,
+          "value": "jack"
+        },
+        {
+          "score": 0.09090715,
+          "value": "audiobook"
+        },
+        {
+          "score": 0.08953337,
+          "value": "sellers"
+        },
+        {
+          "score": 0.08840571,
+          "value": "best sellers"
+        },
+        {
+          "score": 0.0882353,
+          "value": "bn exclusive"
+        },
+        {
+          "score": 0.08731618,
+          "value": "subjects"
+        },
+        {
+          "score": 0.08639706,
+          "value": "newest oldest"
+        },
+        {
+          "score": 0.08639706,
+          "value": "oldest newest"
+        },
+        {
+          "score": 0.08639706,
+          "value": "price low"
+        },
+        {
+          "score": 0.08639706,
+          "value": "low high"
+        },
+        {
+          "score": 0.08639706,
+          "value": "price high"
+        },
+        {
+          "score": 0.08639706,
+          "value": "high low"
+        },
+        {
+          "score": 0.08639706,
+          "value": "grid view"
+        },
+        {
+          "score": 0.08639706,
+          "value": "list view"
+        },
+        {
+          "score": 0.08455882,
+          "value": "price save"
+        },
+        {
+          "score": 0.08455882,
+          "value": "stalking"
+        },
+        {
+          "score": 0.082720585,
+          "value": "caraval series"
+        },
+        {
+          "score": 0.081801474,
+          "value": "stalking jack"
+        },
+        {
+          "score": 0.081801474,
+          "value": "novel"
+        },
+        {
+          "score": 0.07996324,
+          "value": "signed book"
+        },
+        {
+          "score": 0.07904412,
+          "value": "club"
+        },
+        {
+          "score": 0.078125,
+          "value": "ripper"
+        },
+        {
+          "score": 0.07720588,
+          "value": "jack ripper"
+        },
+        {
+          "score": 0.07720588,
+          "value": "booktok"
+        },
+        {
+          "score": 0.07628676,
+          "value": "favorites"
+        },
+        {
+          "score": 0.075367644,
+          "value": "audiobooks"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://tambulimedia.com/",
+        "https://www.tambulimedia.com/",
+        "http://tambulimedia.com/",
+        "http://www.tambulimedia.com/"
+      ]
+    },
+    "metaData": {
+      "description": "Amazing health and martial arts content: articles, books, videos. Buy now!",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/tambulimedia.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://tambulimedia.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 12,
+        "value": [
+          "amazon.co.uk",
+          "amazon.in",
+          "amazon.co.jp",
+          "amazon.de",
+          "amazon.es",
+          "amazon.fr",
+          "amazon.it",
+          "amazon.com.au",
+          "amazon.com.br",
+          "amazon.com.mx",
+          "amazon.ca",
+          "barnesandnoble.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 10.75,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 4,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Books"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 12,
+      "value": [
+        "amazon.co.uk",
+        "amazon.in",
+        "amazon.co.jp",
+        "amazon.de",
+        "amazon.es",
+        "amazon.fr",
+        "amazon.it",
+        "amazon.com.au",
+        "amazon.com.br",
+        "amazon.com.mx",
+        "amazon.ca",
+        "barnesandnoble.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 2,
+      "socialsAvailable": [
+        "twitter",
+        "facebook"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/tambulimedia",
+        "twitter": "https://twitter.com/tambulimedia"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Business / Services",
+      "value": [
+        "Business / Services",
+        "Online / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Business / Services",
+        "rank": 1,
+        "score": 85
+      },
+      "value": [
+        {
+          "name": "Business / Services",
+          "rank": 1,
+          "score": 85
+        },
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 75
+        }
+      ]
+    }
+  }
+}

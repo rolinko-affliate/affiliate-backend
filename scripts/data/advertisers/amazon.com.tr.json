@@ -1,0 +1,124 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 2,
+      "sampleValue": [
+        "Digidip",
+        "Digitouch"
+      ],
+      "value": [
+        "Digidip",
+        "Digitouch"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 2,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "ad-feedback@amazon.com.tr"
+        },
+        {
+          "department": "legal",
+          "value": "tr-privacy@amazon.com.tr"
+        }
+      ]
+    },
+    "domain": "amazon.com.tr",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": " Elektronik, bilgisayar, akıllı telefon, kitap, oyuncak, yapı market, ev, mutfak, oyun konsolları ürünlerini ve daha fazlasını uygun fiyatlara Amazon.com.tr internet sitesinden satın alın. ",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazon.com.tr.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazon.com.tr"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 34
+      },
+      "partnersAdded": {
+        "count": 3,
+        "value": [
+          {
+            "domain": "my.indirimyap.com"
+          },
+          {
+            "domain": "hobimedya.com"
+          },
+          {
+            "domain": "soranolursa.xyz"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "indirimyap.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 6,
+            "promotype": "blog",
+            "value": [
+              "cepkolik.com",
+              "eniyi.blog",
+              "girisimler.net",
+              "kargo-takibi.com",
+              "promodescuentos.com",
+              "tayfuncatechnology.com"
+            ]
+          },
+          {
+            "count": 3,
+            "promotype": "student",
+            "value": [
+              "outdoorforum.com.tr",
+              "teknoloji.org",
+              "teknolsun.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 2,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 2,
+          "score": 90
+        },
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 2,
+          "score": 100
+        }
+      ]
+    }
+  }
+}

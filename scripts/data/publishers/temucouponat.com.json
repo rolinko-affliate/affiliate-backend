@@ -1,0 +1,611 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "DCMnetwork"
+      ],
+      "value": [
+        "DCMnetwork"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "cl",
+        "score": 0.6
+      },
+      "sampleValue": [
+        {
+          "countryCode": "cl",
+          "score": 0.6
+        },
+        {
+          "countryCode": "us",
+          "score": 0.2
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "cl",
+          "score": 0.6
+        },
+        {
+          "countryCode": "us",
+          "score": 0.2
+        }
+      ]
+    },
+    "domain": "temucouponat.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "app"
+        },
+        {
+          "score": 0.97959185,
+          "value": "technology"
+        },
+        {
+          "score": 0.9727891,
+          "value": "store"
+        },
+        {
+          "score": 0.877551,
+          "value": "law"
+        },
+        {
+          "score": 0.85714287,
+          "value": "refund"
+        },
+        {
+          "score": 0.8095238,
+          "value": "applicable"
+        },
+        {
+          "score": 0.7210884,
+          "value": "alert"
+        },
+        {
+          "score": 0.71428573,
+          "value": "advertising"
+        },
+        {
+          "score": 0.61904764,
+          "value": "property"
+        },
+        {
+          "score": 0.6122449,
+          "value": "legal"
+        },
+        {
+          "score": 0.5578231,
+          "value": "temu"
+        },
+        {
+          "score": 0.53741497,
+          "value": "intellectual"
+        },
+        {
+          "score": 0.53741497,
+          "value": "intellectual property"
+        },
+        {
+          "score": 0.5102041,
+          "value": "setting"
+        },
+        {
+          "score": 0.50340134,
+          "value": "choice"
+        },
+        {
+          "score": 0.48979592,
+          "value": "notice"
+        },
+        {
+          "score": 0.43537414,
+          "value": "report"
+        },
+        {
+          "score": 0.43537414,
+          "value": "provider"
+        },
+        {
+          "score": 0.4217687,
+          "value": "submission"
+        },
+        {
+          "score": 0.414966,
+          "value": "responsible"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "app"
+        },
+        {
+          "score": 0.97959185,
+          "value": "technology"
+        },
+        {
+          "score": 0.9727891,
+          "value": "store"
+        },
+        {
+          "score": 0.877551,
+          "value": "law"
+        },
+        {
+          "score": 0.85714287,
+          "value": "refund"
+        },
+        {
+          "score": 0.8095238,
+          "value": "applicable"
+        },
+        {
+          "score": 0.7210884,
+          "value": "alert"
+        },
+        {
+          "score": 0.71428573,
+          "value": "advertising"
+        },
+        {
+          "score": 0.61904764,
+          "value": "property"
+        },
+        {
+          "score": 0.6122449,
+          "value": "legal"
+        },
+        {
+          "score": 0.5578231,
+          "value": "temu"
+        },
+        {
+          "score": 0.53741497,
+          "value": "intellectual"
+        },
+        {
+          "score": 0.53741497,
+          "value": "intellectual property"
+        },
+        {
+          "score": 0.5102041,
+          "value": "setting"
+        },
+        {
+          "score": 0.50340134,
+          "value": "choice"
+        },
+        {
+          "score": 0.48979592,
+          "value": "notice"
+        },
+        {
+          "score": 0.43537414,
+          "value": "report"
+        },
+        {
+          "score": 0.43537414,
+          "value": "provider"
+        },
+        {
+          "score": 0.4217687,
+          "value": "submission"
+        },
+        {
+          "score": 0.414966,
+          "value": "responsible"
+        },
+        {
+          "score": 0.40136054,
+          "value": "partner"
+        },
+        {
+          "score": 0.39455783,
+          "value": "infringement"
+        },
+        {
+          "score": 0.3809524,
+          "value": "request"
+        },
+        {
+          "score": 0.36734694,
+          "value": "device"
+        },
+        {
+          "score": 0.36734694,
+          "value": "safety"
+        },
+        {
+          "score": 0.3605442,
+          "value": "apple"
+        },
+        {
+          "score": 0.3605442,
+          "value": "applicable law"
+        },
+        {
+          "score": 0.3537415,
+          "value": "protection"
+        },
+        {
+          "score": 0.3469388,
+          "value": "play"
+        },
+        {
+          "score": 0.34013605,
+          "value": "personal datum"
+        },
+        {
+          "score": 0.34013605,
+          "value": "activity"
+        },
+        {
+          "score": 0.3265306,
+          "value": "center"
+        },
+        {
+          "score": 0.31292516,
+          "value": "sns"
+        },
+        {
+          "score": 0.31292516,
+          "value": "info"
+        },
+        {
+          "score": 0.2993197,
+          "value": "download"
+        },
+        {
+          "score": 0.2993197,
+          "value": "claim"
+        },
+        {
+          "score": 0.292517,
+          "value": "secure"
+        },
+        {
+          "score": 0.2857143,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.26530612,
+          "value": "obligation"
+        },
+        {
+          "score": 0.26530612,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.2585034,
+          "value": "rule"
+        },
+        {
+          "score": 0.2585034,
+          "value": "subject"
+        },
+        {
+          "score": 0.25170067,
+          "value": "offer"
+        },
+        {
+          "score": 0.24489796,
+          "value": "liability"
+        },
+        {
+          "score": 0.24489796,
+          "value": "customise"
+        },
+        {
+          "score": 0.24489796,
+          "value": "message"
+        },
+        {
+          "score": 0.24489796,
+          "value": "browser"
+        },
+        {
+          "score": 0.24489796,
+          "value": "communication"
+        },
+        {
+          "score": 0.23809524,
+          "value": "decision"
+        },
+        {
+          "score": 0.23129252,
+          "value": "package"
+        },
+        {
+          "score": 0.23129252,
+          "value": "contract"
+        },
+        {
+          "score": 0.2244898,
+          "value": "country"
+        },
+        {
+          "score": 0.2244898,
+          "value": "fee"
+        },
+        {
+          "score": 0.21768707,
+          "value": "authority"
+        },
+        {
+          "score": 0.21768707,
+          "value": "compliance"
+        },
+        {
+          "score": 0.21768707,
+          "value": "owner"
+        },
+        {
+          "score": 0.21088435,
+          "value": "guideline"
+        },
+        {
+          "score": 0.20408164,
+          "value": "sourced"
+        },
+        {
+          "score": 0.20408164,
+          "value": "coupon"
+        },
+        {
+          "score": 0.20408164,
+          "value": "sourced application"
+        },
+        {
+          "score": 0.19727892,
+          "value": "liable"
+        },
+        {
+          "score": 0.19727892,
+          "value": "respect"
+        },
+        {
+          "score": 0.19727892,
+          "value": "link"
+        },
+        {
+          "score": 0.1904762,
+          "value": "person"
+        },
+        {
+          "score": 0.1904762,
+          "value": "agreement"
+        },
+        {
+          "score": 0.1904762,
+          "value": "whaleco"
+        },
+        {
+          "score": 0.1904762,
+          "value": "event"
+        },
+        {
+          "score": 0.18367347,
+          "value": "preference"
+        },
+        {
+          "score": 0.18367347,
+          "value": "requirement"
+        },
+        {
+          "score": 0.18367347,
+          "value": "damage"
+        },
+        {
+          "score": 0.18367347,
+          "value": "restriction"
+        },
+        {
+          "score": 0.18367347,
+          "value": "promotion"
+        },
+        {
+          "score": 0.17687075,
+          "value": "standard"
+        },
+        {
+          "score": 0.17687075,
+          "value": "connect"
+        },
+        {
+          "score": 0.17687075,
+          "value": "stock"
+        },
+        {
+          "score": 0.17687075,
+          "value": "label"
+        },
+        {
+          "score": 0.17687075,
+          "value": "behalf"
+        },
+        {
+          "score": 0.17006803,
+          "value": "drop"
+        },
+        {
+          "score": 0.17006803,
+          "value": "secure checkout"
+        },
+        {
+          "score": 0.17006803,
+          "value": "track"
+        },
+        {
+          "score": 0.17006803,
+          "value": "whaleco technology"
+        },
+        {
+          "score": 0.17006803,
+          "value": "プライバシーポリシー"
+        },
+        {
+          "score": 0.17006803,
+          "value": "exclusive offer"
+        },
+        {
+          "score": 0.17006803,
+          "value": "interaction"
+        },
+        {
+          "score": 0.1632653,
+          "value": "dispute"
+        },
+        {
+          "score": 0.1632653,
+          "value": "violation"
+        },
+        {
+          "score": 0.1632653,
+          "value": "agent"
+        },
+        {
+          "score": 0.15646258,
+          "value": "influencer"
+        },
+        {
+          "score": 0.15646258,
+          "value": "credit"
+        },
+        {
+          "score": 0.15646258,
+          "value": "action"
+        },
+        {
+          "score": 0.15646258,
+          "value": "imprint"
+        },
+        {
+          "score": 0.15646258,
+          "value": "toy"
+        },
+        {
+          "score": 0.15646258,
+          "value": "team"
+        },
+        {
+          "score": 0.15646258,
+          "value": "connection"
+        },
+        {
+          "score": 0.15646258,
+          "value": "license"
+        },
+        {
+          "score": 0.14965986,
+          "value": "transaction"
+        },
+        {
+          "score": 0.14285715,
+          "value": "sitemap"
+        },
+        {
+          "score": 0.14285715,
+          "value": "child"
+        },
+        {
+          "score": 0.14285715,
+          "value": "suspicious activity"
+        },
+        {
+          "score": 0.14285715,
+          "value": "faq"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/temucouponat.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://temucouponat.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1,
+        "value": [
+          "temu.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 0.95,
+            "vertical": "Business / Ecommerce"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 1,
+      "value": [
+        "temu.com"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Business / Ecommerce",
+      "value": [
+        "Business / Ecommerce",
+        "Online / Freebies"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Business / Ecommerce",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Online / Freebies",
+          "rank": 1,
+          "score": 80
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1020 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 8,
+      "sampleValue": [
+        "Business Insider",
+        "CJ Affiliate",
+        "Impact"
+      ],
+      "value": [
+        "Business Insider",
+        "CJ Affiliate",
+        "Impact",
+        "Linkby",
+        "Private Network",
+        "ShareASale",
+        "Skimlinks",
+        "Viglink"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.6
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        }
+      ]
+    },
+    "domain": "thenewsintel.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "amazon"
+        },
+        {
+          "score": 0.9022111,
+          "value": "seller"
+        },
+        {
+          "score": 0.6743406,
+          "value": "care"
+        },
+        {
+          "score": 0.49684528,
+          "value": "device"
+        },
+        {
+          "score": 0.43476292,
+          "value": "card"
+        },
+        {
+          "score": 0.41433012,
+          "value": "sign"
+        },
+        {
+          "score": 0.3941183,
+          "value": "bag"
+        },
+        {
+          "score": 0.37784687,
+          "value": "store"
+        },
+        {
+          "score": 0.35384616,
+          "value": "central"
+        },
+        {
+          "score": 0.34889084,
+          "value": "video"
+        },
+        {
+          "score": 0.34,
+          "value": "oral"
+        },
+        {
+          "score": 0.33469832,
+          "value": "oral care"
+        },
+        {
+          "score": 0.3260108,
+          "value": "fee"
+        },
+        {
+          "score": 0.32,
+          "value": "diaper"
+        },
+        {
+          "score": 0.2981823,
+          "value": "portable"
+        },
+        {
+          "score": 0.29703838,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.28332037,
+          "value": "fba"
+        },
+        {
+          "score": 0.28088984,
+          "value": "app"
+        },
+        {
+          "score": 0.2776222,
+          "value": "update"
+        },
+        {
+          "score": 0.27182993,
+          "value": "station"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "amazon"
+        },
+        {
+          "score": 0.9022111,
+          "value": "seller"
+        },
+        {
+          "score": 0.6743406,
+          "value": "care"
+        },
+        {
+          "score": 0.49684528,
+          "value": "device"
+        },
+        {
+          "score": 0.43476292,
+          "value": "card"
+        },
+        {
+          "score": 0.41433012,
+          "value": "sign"
+        },
+        {
+          "score": 0.3941183,
+          "value": "bag"
+        },
+        {
+          "score": 0.37784687,
+          "value": "store"
+        },
+        {
+          "score": 0.35384616,
+          "value": "central"
+        },
+        {
+          "score": 0.34889084,
+          "value": "video"
+        },
+        {
+          "score": 0.34,
+          "value": "oral"
+        },
+        {
+          "score": 0.33469832,
+          "value": "oral care"
+        },
+        {
+          "score": 0.3260108,
+          "value": "fee"
+        },
+        {
+          "score": 0.32,
+          "value": "diaper"
+        },
+        {
+          "score": 0.2981823,
+          "value": "portable"
+        },
+        {
+          "score": 0.29703838,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.28332037,
+          "value": "fba"
+        },
+        {
+          "score": 0.28088984,
+          "value": "app"
+        },
+        {
+          "score": 0.2776222,
+          "value": "update"
+        },
+        {
+          "score": 0.27182993,
+          "value": "station"
+        },
+        {
+          "score": 0.26777714,
+          "value": "terrain"
+        },
+        {
+          "score": 0.26666668,
+          "value": "wagon"
+        },
+        {
+          "score": 0.26666668,
+          "value": "pod"
+        },
+        {
+          "score": 0.26566446,
+          "value": "prime"
+        },
+        {
+          "score": 0.25966212,
+          "value": "family"
+        },
+        {
+          "score": 0.25739592,
+          "value": "warranty"
+        },
+        {
+          "score": 0.25076538,
+          "value": "apple"
+        },
+        {
+          "score": 0.24688324,
+          "value": "program"
+        },
+        {
+          "score": 0.24592337,
+          "value": "restriction"
+        },
+        {
+          "score": 0.23946169,
+          "value": "software"
+        },
+        {
+          "score": 0.23437507,
+          "value": "tour"
+        },
+        {
+          "score": 0.23015143,
+          "value": "technology"
+        },
+        {
+          "score": 0.22656794,
+          "value": "accessory"
+        },
+        {
+          "score": 0.22557938,
+          "value": "gdpr"
+        },
+        {
+          "score": 0.22,
+          "value": "happy update"
+        },
+        {
+          "score": 0.21333334,
+          "value": "seater"
+        },
+        {
+          "score": 0.21333334,
+          "value": "stroller"
+        },
+        {
+          "score": 0.21058139,
+          "value": "phone"
+        },
+        {
+          "score": 0.20216753,
+          "value": "sports"
+        },
+        {
+          "score": 0.20005918,
+          "value": "kindle"
+        },
+        {
+          "score": 0.19733535,
+          "value": "category"
+        },
+        {
+          "score": 0.18166745,
+          "value": "baby"
+        },
+        {
+          "score": 0.1705684,
+          "value": "global"
+        },
+        {
+          "score": 0.17029203,
+          "value": "ready"
+        },
+        {
+          "score": 0.16932757,
+          "value": "slide"
+        },
+        {
+          "score": 0.16645773,
+          "value": "requirement"
+        },
+        {
+          "score": 0.16637546,
+          "value": "guide"
+        },
+        {
+          "score": 0.16298354,
+          "value": "feedback"
+        },
+        {
+          "score": 0.16282429,
+          "value": "kids"
+        },
+        {
+          "score": 0.16,
+          "value": "portable playard"
+        },
+        {
+          "score": 0.16,
+          "value": "cot"
+        },
+        {
+          "score": 0.16,
+          "value": "playard"
+        },
+        {
+          "score": 0.1587138,
+          "value": "box"
+        },
+        {
+          "score": 0.15853849,
+          "value": "sitio"
+        },
+        {
+          "score": 0.15802543,
+          "value": "fulfillment"
+        },
+        {
+          "score": 0.15786982,
+          "value": "prime video"
+        },
+        {
+          "score": 0.15598221,
+          "value": "health"
+        },
+        {
+          "score": 0.15596776,
+          "value": "game"
+        },
+        {
+          "score": 0.15398839,
+          "value": "digital"
+        },
+        {
+          "score": 0.15007584,
+          "value": "book"
+        },
+        {
+          "score": 0.15,
+          "value": "reverb"
+        },
+        {
+          "score": 0.14963599,
+          "value": "sport"
+        },
+        {
+          "score": 0.14760226,
+          "value": "por"
+        },
+        {
+          "score": 0.14614639,
+          "value": "solution"
+        },
+        {
+          "score": 0.14471982,
+          "value": "fast"
+        },
+        {
+          "score": 0.14235406,
+          "value": "setting"
+        },
+        {
+          "score": 0.13932428,
+          "value": "food"
+        },
+        {
+          "score": 0.13902953,
+          "value": "car"
+        },
+        {
+          "score": 0.13307291,
+          "value": "electronic"
+        },
+        {
+          "score": 0.12874673,
+          "value": "credit"
+        },
+        {
+          "score": 0.12778455,
+          "value": "education"
+        },
+        {
+          "score": 0.12719141,
+          "value": "internet"
+        },
+        {
+          "score": 0.12574162,
+          "value": "bundle"
+        },
+        {
+          "score": 0.12355737,
+          "value": "toy"
+        },
+        {
+          "score": 0.12112426,
+          "value": "automotive"
+        },
+        {
+          "score": 0.11966382,
+          "value": "perfect"
+        },
+        {
+          "score": 0.11703038,
+          "value": "agreement"
+        },
+        {
+          "score": 0.11675393,
+          "value": "art"
+        },
+        {
+          "score": 0.11559308,
+          "value": "packaging"
+        },
+        {
+          "score": 0.115130015,
+          "value": "carrier"
+        },
+        {
+          "score": 0.11479071,
+          "value": "fashion"
+        },
+        {
+          "score": 0.11315305,
+          "value": "parent"
+        },
+        {
+          "score": 0.11265663,
+          "value": "refund"
+        },
+        {
+          "score": 0.11160367,
+          "value": "listing"
+        },
+        {
+          "score": 0.1110135,
+          "value": "activity"
+        },
+        {
+          "score": 0.110799305,
+          "value": "suite"
+        },
+        {
+          "score": 0.10908602,
+          "value": "adapter"
+        },
+        {
+          "score": 0.1087437,
+          "value": "seat"
+        },
+        {
+          "score": 0.10773963,
+          "value": "infant"
+        },
+        {
+          "score": 0.107186444,
+          "value": "usted"
+        },
+        {
+          "score": 0.10666667,
+          "value": "portable pod"
+        },
+        {
+          "score": 0.10666667,
+          "value": "merritt"
+        },
+        {
+          "score": 0.10666667,
+          "value": "anthem"
+        },
+        {
+          "score": 0.10531652,
+          "value": "travel"
+        },
+        {
+          "score": 0.102668166,
+          "value": "guideline"
+        },
+        {
+          "score": 0.09975678,
+          "value": "información"
+        },
+        {
+          "score": 0.095069736,
+          "value": "department"
+        },
+        {
+          "score": 0.09443193,
+          "value": "team"
+        },
+        {
+          "score": 0.093794376,
+          "value": "unit"
+        },
+        {
+          "score": 0.093047924,
+          "value": "hour"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://thenewsintel.com/",
+        "https://www.thenewsintel.com/",
+        "http://thenewsintel.com/",
+        "http://www.thenewsintel.com/"
+      ]
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/thenewsintel.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://thenewsintel.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 118,
+        "value": [
+          "amazonaws.com",
+          "apple.com",
+          "aapibusiness.co",
+          "amazon.com",
+          "att.com",
+          "ikea.com",
+          "netflix.com",
+          "nike.com",
+          "nordstrom.com",
+          "aboutamazon.com",
+          "t-mobile.com",
+          "xbox.com",
+          "nintendo.com",
+          "acer.com",
+          "mozilla.org",
+          "adidas.com",
+          "adorama.com",
+          "walmart.com",
+          "amazon.co.uk",
+          "tiqets.com",
+          "klook.com",
+          "logitech.com",
+          "redcross.org",
+          "youtube.com",
+          "shopmoment.com",
+          "garmin.com",
+          "samsclub.com",
+          "redirectingat.com",
+          "auraframes.co.uk",
+          "avantlink.com",
+          "avantlink.ca",
+          "awaytravel.com",
+          "backbone.com",
+          "bartesian.com",
+          "tagheuer.com",
+          "bathandbodyworks.com",
+          "playstation.com",
+          "bhphotovideo.com",
+          "bitwarden.com",
+          "blackmagicdesign.com",
+          "dropbox.com",
+          "goldbelly.com",
+          "bluntumbrellas.com",
+          "branchfurniture.com",
+          "evo.com",
+          "target.com",
+          "casper.com",
+          "steampowered.com",
+          "razer.com",
+          "peakdesign.com",
+          "cheznousguide.com",
+          "choosemuse.com",
+          "chromewebstore.google.com",
+          "cj.dotomi.com",
+          "cleverhood.com",
+          "gopro.com",
+          "verizon.com",
+          "consent.google.com",
+          "coros.com",
+          "walgreens.com",
+          "cuehealth.com",
+          "samsonite.com",
+          "eaglecreek.com",
+          "hungryroot.com",
+          "mobyfox.com",
+          "newegg.com",
+          "eposaudio.com",
+          "thenorthface.com",
+          "mous.co",
+          "victrola.com",
+          "expedia.com",
+          "fanatics.com",
+          "farmboxdirect.com",
+          "hermanmiller.com",
+          "fundrise.com",
+          "furbo.com",
+          "getyourguide.com",
+          "gladlyfamily.com",
+          "llbean.com",
+          "skimresources.com",
+          "gonimble.com",
+          "gravityblankets.com",
+          "happyhead.com",
+          "imperfectfoods.com",
+          "infinityx1.com",
+          "instacart.com",
+          "intentionalist.com",
+          "reverb.com",
+          "july.com",
+          "keepassxc.org",
+          "keychron.com",
+          "korin.com",
+          "lelo.com",
+          "lg.com",
+          "morph.audio",
+          "naspora.com",
+          "nathansports.com",
+          "nols.edu",
+          "osprey.com",
+          "personalcapital.com",
+          "play.google.com",
+          "propelbikes.com",
+          "realtymogul.com",
+          "safetywing.com",
+          "safehavenhealth.co",
+          "shareasale-analytics.com",
+          "somnox.com",
+          "smileactives.com",
+          "solgaard.co",
+          "spideroak.com",
+          "sunbasket.com",
+          "tentree.com",
+          "thehappyplanner.com",
+          "therabody.com",
+          "tourparavel.com",
+          "two-rock.com",
+          "ynmhome.com",
+          "yogibo.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "personalcapital.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 11.999999,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 7.249999,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 5.8999996,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 5.7999997,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 5.5499997,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 4.85,
+            "vertical": "Travel / Accessories"
+          },
+          {
+            "count": 4.75,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 3.9,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 3.9,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 3.9,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 3.85,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 3.8,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 3.6999998,
+            "vertical": "Finance / Investments"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Sports / Outdoor"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Travel / Vacation"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Online / Security"
+          },
+          {
+            "count": 2.75,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 2.6999998,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 2.6499999,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 2.45,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Home / Beds & Bedding"
+          },
+          {
+            "count": 1.85,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Travel / Attractions"
+          },
+          {
+            "count": 1,
+            "vertical": "Home / Pets"
+          },
+          {
+            "count": 1,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Insurance"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Food / Take Out"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Adult"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Sports / Cycling"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Travel / Flights"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Business / Cyber Security"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Business / Office"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Property / Property"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Sports / Fitness"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 118,
+      "value": [
+        "amazonaws.com",
+        "apple.com",
+        "aapibusiness.co",
+        "amazon.com",
+        "att.com",
+        "ikea.com",
+        "netflix.com",
+        "nike.com",
+        "nordstrom.com",
+        "aboutamazon.com",
+        "t-mobile.com",
+        "xbox.com",
+        "nintendo.com",
+        "acer.com",
+        "mozilla.org",
+        "adidas.com",
+        "adorama.com",
+        "walmart.com",
+        "amazon.co.uk",
+        "tiqets.com",
+        "klook.com",
+        "logitech.com",
+        "redcross.org",
+        "youtube.com",
+        "shopmoment.com",
+        "garmin.com",
+        "samsclub.com",
+        "redirectingat.com",
+        "auraframes.co.uk",
+        "avantlink.com",
+        "avantlink.ca",
+        "awaytravel.com",
+        "backbone.com",
+        "bartesian.com",
+        "tagheuer.com",
+        "bathandbodyworks.com",
+        "playstation.com",
+        "bhphotovideo.com",
+        "bitwarden.com",
+        "blackmagicdesign.com",
+        "dropbox.com",
+        "goldbelly.com",
+        "bluntumbrellas.com",
+        "branchfurniture.com",
+        "evo.com",
+        "target.com",
+        "casper.com",
+        "steampowered.com",
+        "razer.com",
+        "peakdesign.com",
+        "cheznousguide.com",
+        "choosemuse.com",
+        "chromewebstore.google.com",
+        "cj.dotomi.com",
+        "cleverhood.com",
+        "gopro.com",
+        "verizon.com",
+        "consent.google.com",
+        "coros.com",
+        "walgreens.com",
+        "cuehealth.com",
+        "samsonite.com",
+        "eaglecreek.com",
+        "hungryroot.com",
+        "mobyfox.com",
+        "newegg.com",
+        "eposaudio.com",
+        "thenorthface.com",
+        "mous.co",
+        "victrola.com",
+        "expedia.com",
+        "fanatics.com",
+        "farmboxdirect.com",
+        "hermanmiller.com",
+        "fundrise.com",
+        "furbo.com",
+        "getyourguide.com",
+        "gladlyfamily.com",
+        "llbean.com",
+        "skimresources.com",
+        "gonimble.com",
+        "gravityblankets.com",
+        "happyhead.com",
+        "imperfectfoods.com",
+        "infinityx1.com",
+        "instacart.com",
+        "intentionalist.com",
+        "reverb.com",
+        "july.com",
+        "keepassxc.org",
+        "keychron.com",
+        "korin.com",
+        "lelo.com",
+        "lg.com",
+        "morph.audio",
+        "naspora.com",
+        "nathansports.com",
+        "nols.edu",
+        "osprey.com",
+        "personalcapital.com",
+        "play.google.com",
+        "propelbikes.com",
+        "realtymogul.com",
+        "safetywing.com",
+        "safehavenhealth.co",
+        "shareasale-analytics.com",
+        "somnox.com",
+        "smileactives.com",
+        "solgaard.co",
+        "spideroak.com",
+        "sunbasket.com",
+        "tentree.com",
+        "thehappyplanner.com",
+        "therabody.com",
+        "tourparavel.com",
+        "two-rock.com",
+        "ynmhome.com",
+        "yogibo.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Online / Services",
+      "value": [
+        "Online / Services",
+        "Business / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Online / Services",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Business / Services",
+          "rank": 1,
+          "score": 60
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,290 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 10,
+      "sampleValue": [
+        "Business Insider",
+        "CJ Affiliate",
+        "Digidip"
+      ],
+      "value": [
+        "Business Insider",
+        "CJ Affiliate",
+        "Digidip",
+        "Flexoffers",
+        "Linkbux",
+        "Partnerize",
+        "ShareASale",
+        "Skimlinks",
+        "Viglink",
+        "Yieldkit"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 9,
+      "error": false,
+      "value": [
+        {
+          "department": "sales",
+          "value": "cm@justfoodfordogs.com"
+        },
+        {
+          "department": "sales",
+          "value": "dm@justfoodfordogs.com"
+        },
+        {
+          "department": "sales",
+          "value": "lincolnpark@justfoodfordogs.com"
+        },
+        {
+          "department": "sales",
+          "value": "orders@justfoodfordogs.com"
+        },
+        {
+          "department": "legal",
+          "value": "privacy@justfoodfordogs.com"
+        },
+        {
+          "department": "sales",
+          "value": "southlake@justfoodfordogs.com"
+        },
+        {
+          "department": "support",
+          "value": "theadoptionproject@justfoodfordogs.com"
+        },
+        {
+          "department": "sales",
+          "value": "uppereastside@justfoodfordogs.com"
+        },
+        {
+          "department": "sales",
+          "value": "wh@justfoodfordogs.com"
+        }
+      ]
+    },
+    "domain": "justfoodfordogs.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "Real veggies. Real meat. Real love. Fresh, vet-developed food for dogs delivered right to your door. Fast, free shipping available. Shop now!",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/justfoodfordogs.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://justfoodfordogs.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 196
+      },
+      "partnersAdded": {
+        "count": 10,
+        "value": [
+          {
+            "domain": "mr09.com"
+          },
+          {
+            "domain": "poochandise.com"
+          },
+          {
+            "domain": "4me.news"
+          },
+          {
+            "domain": "chocolatescandies.com"
+          },
+          {
+            "domain": "myfirstshiba.com"
+          },
+          {
+            "domain": "bokepina.net"
+          },
+          {
+            "domain": "vouchercodex.com"
+          },
+          {
+            "domain": "podchaser.com"
+          },
+          {
+            "domain": "beyondlink.live"
+          },
+          {
+            "domain": "probetreviews.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 7,
+        "value": [
+          {
+            "domain": "coddelhi.com"
+          },
+          {
+            "domain": "tarique.net"
+          },
+          {
+            "domain": "dogsandinfo.com"
+          },
+          {
+            "domain": "doggiesandkittys.co.uk"
+          },
+          {
+            "domain": "allnews.ltd"
+          },
+          {
+            "domain": "hip2save.com"
+          },
+          {
+            "domain": "racked.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 51,
+            "promotype": "blog",
+            "value": [
+              "10reviewsplus.com",
+              "agentsofmask.com",
+              "amazon.co.uk",
+              "animalsaroundtheglobe.com",
+              "aol.com",
+              "bakingshop.com",
+              "blogbydonna.com",
+              "businessinsider.com",
+              "chocolatescandies.com",
+              "dogaware.com",
+              "dogsplanet.com",
+              "dogster.com",
+              "doodledoods.com",
+              "forbes.com",
+              "fragranthub.com",
+              "iheartdogs.com",
+              "jesscaticles-helpdesk.teachery.co",
+              "johngold.net",
+              "justpawsomepets.com",
+              "k9ofmine.com",
+              "kruakhunyahashland.com",
+              "lauraperuchi.nyc",
+              "mommysbusy.com",
+              "newsweek.com",
+              "pac.pet",
+              "pdcstly.com",
+              "peteducate.com",
+              "petfrenzy.ca",
+              "petguide.com",
+              "pinkonthecheek.com",
+              "podchaser.com",
+              "poochandise.com",
+              "puppysimply.com",
+              "reportwire.org",
+              "rover.com",
+              "savingarena.com",
+              "scruffythedog.com",
+              "shabbychicboho.com",
+              "shopmy.us",
+              "socialpetworker.com",
+              "subscriboxer.com",
+              "supermall.com",
+              "thedigitalsparks.com",
+              "thedodo.com",
+              "thegoodfinds.co",
+              "thisdogslife.co",
+              "time.com",
+              "us-reviews.com",
+              "welovelights.com",
+              "wgal.com",
+              "wxii12.com"
+            ]
+          },
+          {
+            "count": 8,
+            "promotype": "student",
+            "value": [
+              "affiliate-toolkit.com",
+              "allthingsdogs.com",
+              "bestrevie.ws",
+              "catster.com",
+              "prevention.com",
+              "ruffeodrive.com",
+              "techkee.com",
+              "yahoo.com"
+            ]
+          },
+          {
+            "count": 4,
+            "promotype": "incentive",
+            "value": [
+              "coupongini.com",
+              "couponsagent.com",
+              "usmagazine.com",
+              "uttercoupons.com"
+            ]
+          },
+          {
+            "count": 3,
+            "promotype": "content",
+            "value": [
+              "keepingdog.com",
+              "mealfinds.com",
+              "townandcountrymag.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "forum",
+            "value": [
+              "probetreviews.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 6,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "linkedin",
+        "instagram",
+        "pinterest"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/justfoodfordogs",
+        "instagram": "https://instagram.com/justfoodfordogs",
+        "linkedin": "https://linkedin.com/company/justfoodfordogs/mycompany",
+        "pinterest": "https://pinterest.com/justfoodfordogs",
+        "twitter": "https://twitter.com/justfoodfordogs",
+        "youtube": "https://youtube.com/user/justfoodfordogs"
+      }
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Home / Pets",
+        "rank": 2,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Food / Groceries",
+          "rank": 2,
+          "score": 70
+        },
+        {
+          "name": "Home / Pets",
+          "rank": 2,
+          "score": 95
+        }
+      ]
+    }
+  }
+}

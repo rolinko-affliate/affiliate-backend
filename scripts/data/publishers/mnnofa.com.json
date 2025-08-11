@@ -1,0 +1,1097 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 14,
+      "sampleValue": [
+        "Avantlink",
+        "Awin",
+        "CJ Affiliate"
+      ],
+      "value": [
+        "Avantlink",
+        "Awin",
+        "CJ Affiliate",
+        "Impact",
+        "Partnerize",
+        "PartnerStack",
+        "Pepperjam",
+        "Private Network",
+        "Rakuten",
+        "Refersion",
+        "Rewardstyle",
+        "ShareASale",
+        "Skimlinks",
+        "TUNE"
+      ]
+    },
+    "countryRankings": {
+      "count": 3,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.5
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.5
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        },
+        {
+          "countryCode": "it",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.5
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        },
+        {
+          "countryCode": "it",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "mnnofa.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "tour"
+        },
+        {
+          "score": 0.8554076,
+          "value": "ticket"
+        },
+        {
+          "score": 0.31765127,
+          "value": "activity"
+        },
+        {
+          "score": 0.31376487,
+          "value": "hour"
+        },
+        {
+          "score": 0.30679476,
+          "value": "city"
+        },
+        {
+          "score": 0.24943124,
+          "value": "person"
+        },
+        {
+          "score": 0.21405023,
+          "value": "duration"
+        },
+        {
+          "score": 0.20828645,
+          "value": "guide"
+        },
+        {
+          "score": 0.20646554,
+          "value": "sign"
+        },
+        {
+          "score": 0.20252708,
+          "value": "friendly"
+        },
+        {
+          "score": 0.181932,
+          "value": "trip"
+        },
+        {
+          "score": 0.16738436,
+          "value": "tiger"
+        },
+        {
+          "score": 0.16549104,
+          "value": "body"
+        },
+        {
+          "score": 0.16435754,
+          "value": "edinburgh"
+        },
+        {
+          "score": 0.16433859,
+          "value": "color"
+        },
+        {
+          "score": 0.16394046,
+          "value": "event"
+        },
+        {
+          "score": 0.16116767,
+          "value": "skin"
+        },
+        {
+          "score": 0.16108023,
+          "value": "bath"
+        },
+        {
+          "score": 0.15940484,
+          "value": "mlb"
+        },
+        {
+          "score": 0.15716837,
+          "value": "mini"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "tour"
+        },
+        {
+          "score": 0.8554076,
+          "value": "ticket"
+        },
+        {
+          "score": 0.31765127,
+          "value": "activity"
+        },
+        {
+          "score": 0.31376487,
+          "value": "hour"
+        },
+        {
+          "score": 0.30679476,
+          "value": "city"
+        },
+        {
+          "score": 0.24943124,
+          "value": "person"
+        },
+        {
+          "score": 0.21405023,
+          "value": "duration"
+        },
+        {
+          "score": 0.20828645,
+          "value": "guide"
+        },
+        {
+          "score": 0.20646554,
+          "value": "sign"
+        },
+        {
+          "score": 0.20252708,
+          "value": "friendly"
+        },
+        {
+          "score": 0.181932,
+          "value": "trip"
+        },
+        {
+          "score": 0.16738436,
+          "value": "tiger"
+        },
+        {
+          "score": 0.16549104,
+          "value": "body"
+        },
+        {
+          "score": 0.16435754,
+          "value": "edinburgh"
+        },
+        {
+          "score": 0.16433859,
+          "value": "color"
+        },
+        {
+          "score": 0.16394046,
+          "value": "event"
+        },
+        {
+          "score": 0.16116767,
+          "value": "skin"
+        },
+        {
+          "score": 0.16108023,
+          "value": "bath"
+        },
+        {
+          "score": 0.15940484,
+          "value": "mlb"
+        },
+        {
+          "score": 0.15716837,
+          "value": "mini"
+        },
+        {
+          "score": 0.14963703,
+          "value": "beauty"
+        },
+        {
+          "score": 0.14858216,
+          "value": "reykjavik"
+        },
+        {
+          "score": 0.14237201,
+          "value": "blue"
+        },
+        {
+          "score": 0.14149398,
+          "value": "explore"
+        },
+        {
+          "score": 0.1369523,
+          "value": "hop"
+        },
+        {
+          "score": 0.13080023,
+          "value": "cruise"
+        },
+        {
+          "score": 0.12426961,
+          "value": "museum"
+        },
+        {
+          "score": 0.124106996,
+          "value": "famous"
+        },
+        {
+          "score": 0.120117635,
+          "value": "card"
+        },
+        {
+          "score": 0.11913725,
+          "value": "family"
+        },
+        {
+          "score": 0.11685602,
+          "value": "star"
+        },
+        {
+          "score": 0.11477455,
+          "value": "dollar"
+        },
+        {
+          "score": 0.11346702,
+          "value": "makeup"
+        },
+        {
+          "score": 0.112612195,
+          "value": "fan"
+        },
+        {
+          "score": 0.112158015,
+          "value": "travel"
+        },
+        {
+          "score": 0.11150731,
+          "value": "luxury"
+        },
+        {
+          "score": 0.11087193,
+          "value": "minute"
+        },
+        {
+          "score": 0.11008581,
+          "value": "history"
+        },
+        {
+          "score": 0.10694888,
+          "value": "sightseeing"
+        },
+        {
+          "score": 0.106759034,
+          "value": "peso"
+        },
+        {
+          "score": 0.10218058,
+          "value": "eyeshadow"
+        },
+        {
+          "score": 0.10061733,
+          "value": "dimethicone"
+        },
+        {
+          "score": 0.09979041,
+          "value": "river"
+        },
+        {
+          "score": 0.09928008,
+          "value": "playoff"
+        },
+        {
+          "score": 0.098388046,
+          "value": "prices"
+        },
+        {
+          "score": 0.096294284,
+          "value": "golden"
+        },
+        {
+          "score": 0.09492385,
+          "value": "store"
+        },
+        {
+          "score": 0.09464201,
+          "value": "boat"
+        },
+        {
+          "score": 0.094039254,
+          "value": "attraction"
+        },
+        {
+          "score": 0.093308926,
+          "value": "water"
+        },
+        {
+          "score": 0.09291329,
+          "value": "private"
+        },
+        {
+          "score": 0.09272575,
+          "value": "unique"
+        },
+        {
+          "score": 0.09210239,
+          "value": "texture"
+        },
+        {
+          "score": 0.09105066,
+          "value": "music"
+        },
+        {
+          "score": 0.090978295,
+          "value": "listing"
+        },
+        {
+          "score": 0.0909002,
+          "value": "bus"
+        },
+        {
+          "score": 0.088709235,
+          "value": "south"
+        },
+        {
+          "score": 0.08684702,
+          "value": "ingredients"
+        },
+        {
+          "score": 0.08666979,
+          "value": "colour"
+        },
+        {
+          "score": 0.08386234,
+          "value": "art"
+        },
+        {
+          "score": 0.08309006,
+          "value": "comfy"
+        },
+        {
+          "score": 0.0823851,
+          "value": "wearing"
+        },
+        {
+          "score": 0.0821705,
+          "value": "soft"
+        },
+        {
+          "score": 0.08212989,
+          "value": "hair"
+        },
+        {
+          "score": 0.07996756,
+          "value": "vip"
+        },
+        {
+          "score": 0.07968472,
+          "value": "tennis"
+        },
+        {
+          "score": 0.078831166,
+          "value": "buildable"
+        },
+        {
+          "score": 0.078510076,
+          "value": "friendly activity"
+        },
+        {
+          "score": 0.07760468,
+          "value": "popular"
+        },
+        {
+          "score": 0.077559695,
+          "value": "colourpop"
+        },
+        {
+          "score": 0.07751072,
+          "value": "game"
+        },
+        {
+          "score": 0.07523409,
+          "value": "notified"
+        },
+        {
+          "score": 0.07519165,
+          "value": "titanium"
+        },
+        {
+          "score": 0.07501675,
+          "value": "swipe"
+        },
+        {
+          "score": 0.072640166,
+          "value": "whale"
+        },
+        {
+          "score": 0.07261127,
+          "value": "apple"
+        },
+        {
+          "score": 0.07247382,
+          "value": "nitride"
+        },
+        {
+          "score": 0.07239862,
+          "value": "baby"
+        },
+        {
+          "score": 0.0711941,
+          "value": "package"
+        },
+        {
+          "score": 0.07101287,
+          "value": "valid"
+        },
+        {
+          "score": 0.07058196,
+          "value": "tower"
+        },
+        {
+          "score": 0.069212876,
+          "value": "clothing"
+        },
+        {
+          "score": 0.0686594,
+          "value": "longwearing"
+        },
+        {
+          "score": 0.06738793,
+          "value": "synthetic"
+        },
+        {
+          "score": 0.06713712,
+          "value": "beatle"
+        },
+        {
+          "score": 0.06701,
+          "value": "apply"
+        },
+        {
+          "score": 0.06611646,
+          "value": "yellow"
+        },
+        {
+          "score": 0.066010684,
+          "value": "lightweight"
+        },
+        {
+          "score": 0.06580112,
+          "value": "fragrance"
+        },
+        {
+          "score": 0.065635756,
+          "value": "house"
+        },
+        {
+          "score": 0.065247536,
+          "value": "training"
+        },
+        {
+          "score": 0.06506547,
+          "value": "oxide"
+        },
+        {
+          "score": 0.06499248,
+          "value": "dioxide"
+        },
+        {
+          "score": 0.06494959,
+          "value": "aggie"
+        },
+        {
+          "score": 0.06398711,
+          "value": "sodium"
+        },
+        {
+          "score": 0.063573524,
+          "value": "build"
+        },
+        {
+          "score": 0.063573524,
+          "value": "includes"
+        },
+        {
+          "score": 0.06323978,
+          "value": "tool"
+        },
+        {
+          "score": 0.06315714,
+          "value": "global"
+        },
+        {
+          "score": 0.06312909,
+          "value": "spring"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://mnnofa.com/",
+        "https://www.mnnofa.com/",
+        "http://mnnofa.com/",
+        "http://www.mnnofa.com/"
+      ]
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/mnnofa.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://mnnofa.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 138,
+        "value": [
+          "100percentpure.com",
+          "etsy.com",
+          "prf.hn",
+          "frontgatetickets.com",
+          "apple.com",
+          "amazon.com",
+          "nordstrom.com",
+          "jackery.com",
+          "usatoday.com",
+          "amazon.co.uk",
+          "klook.com",
+          "algenist.com",
+          "partnercentric.com",
+          "alltrails.com",
+          "am.ticketmaster.com",
+          "sephora.com",
+          "grammarly.com",
+          "twitch.tv",
+          "aqualertapp.com",
+          "nature.com",
+          "atlascoffeeclub.com",
+          "ticketmaster.co.uk",
+          "max.com",
+          "livenation.com",
+          "axs.com",
+          "bareminerals.com",
+          "dior.com",
+          "beautybay.com",
+          "beautylish.com",
+          "bedbathandbeyond.com",
+          "benefitcosmetics.com",
+          "bergdorfgoodman.com",
+          "neimanmarcus.com",
+          "bitebeauty.com",
+          "roughtrade.com",
+          "rei.com",
+          "ticketmaster.com",
+          "ticketmaster.de",
+          "bloomingdales.com",
+          "bluefinsupboards.com",
+          "bobbibrowncosmetics.com",
+          "boldloft.com",
+          "chanel.com",
+          "booking.com",
+          "selfridges.com",
+          "busbud.com",
+          "buxomcosmetics.com",
+          "dermalogica.com",
+          "carolsdaughter.com",
+          "cb2.com",
+          "cbs.com",
+          "charlottetilbury.com",
+          "peakdesign.com",
+          "thebodyshop.com",
+          "stubhub.com",
+          "clinique.com",
+          "urbandecay.com",
+          "colourpop.com",
+          "gopro.com",
+          "shiseido.com",
+          "couponseeker.com",
+          "drjart.com",
+          "elementor.com",
+          "elfcosmetics.com",
+          "endurasport.com",
+          "malinandgoetz.com",
+          "morphe.com",
+          "expedia.com",
+          "lovebookonline.com",
+          "uniqlo.com",
+          "fentybeauty.com",
+          "firstaidbeauty.com",
+          "flexjobs.com",
+          "getyourguide.com",
+          "giorgioarmanibeauty-usa.com",
+          "prana.com",
+          "ulta.com",
+          "spacenk.com",
+          "tartecosmetics.com",
+          "i-to-i.com",
+          "illamasqua.com",
+          "reverb.com",
+          "italki.com",
+          "katvondbeauty.com",
+          "kiehls.com",
+          "lauramercier.com",
+          "ldrmagazine.com",
+          "tailwindapp.com",
+          "preply.com",
+          "maccosmetics.com",
+          "toofaced.com",
+          "viator.com",
+          "makeupgeek.com",
+          "marcjacobsbeauty.com",
+          "tripadvisor.com",
+          "milanicosmetics.com",
+          "mixbook.com",
+          "moltonbrown.co.uk",
+          "music.apple.com",
+          "music.amazon.com",
+          "mytefl.com",
+          "nestnewyork.com",
+          "nyxcosmetics.com",
+          "olehenriksen.com",
+          "optinmonster.com",
+          "origins.com",
+          "ouidad.com",
+          "pacificabeauty.com",
+          "westernrise.com",
+          "patmcgrath.com",
+          "pepperjamnetwork.com",
+          "peterthomasroth.com",
+          "physiciansformula.com",
+          "play.google.com",
+          "publicrec.com",
+          "republicofdurablegoods.com",
+          "safetywing.com",
+          "shareasale-analytics.com",
+          "shareasale.com",
+          "ticketmaster.com.mx",
+          "skinstore.com",
+          "skylightframe.com",
+          "smashbox.com",
+          "sokoglam.com",
+          "stilacosmetics.com",
+          "uncommongoods.com",
+          "tatcha.com",
+          "teflpros.com",
+          "theteflacademy.com",
+          "throughourlives.com",
+          "tix.com",
+          "topodesigns.com",
+          "trustedhousesitters.com",
+          "us.laneige.com",
+          "vessi.com",
+          "viagogo.com",
+          "vipnation.com",
+          "wetnwildbeauty.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 2,
+        "value": [
+          {
+            "domain": "am.ticketmaster.com"
+          },
+          {
+            "domain": "us.laneige.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 4,
+        "value": [
+          {
+            "domain": "ticketmaster.ca"
+          },
+          {
+            "domain": "worldnomads.com"
+          },
+          {
+            "domain": "partnerize.com"
+          },
+          {
+            "domain": "laneige.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 50.350018,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 10.75,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 8.75,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 5.65,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 4.8,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 4.75,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 3.85,
+            "vertical": "Sports / Outdoor"
+          },
+          {
+            "count": 3.85,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 3.6,
+            "vertical": "Gifts / Personalised"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Travel / Attractions"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 2.75,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 2.6499999,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Travel / Vacation"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Health / Fragrances"
+          },
+          {
+            "count": 1.5,
+            "vertical": "Entertainment / Hobbies"
+          },
+          {
+            "count": 1.3,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Jobs & Careers"
+          },
+          {
+            "count": 1,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 1,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 1,
+            "vertical": "Travel / Accessories"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Website Builder"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Insurance"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Beds & Bedding"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Online / Freebies"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Travel / Flights"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Travel / Rail & Coach"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 0.8,
+            "vertical": "Health / Wellbeing"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 138,
+      "value": [
+        "100percentpure.com",
+        "etsy.com",
+        "prf.hn",
+        "frontgatetickets.com",
+        "apple.com",
+        "amazon.com",
+        "nordstrom.com",
+        "jackery.com",
+        "usatoday.com",
+        "amazon.co.uk",
+        "klook.com",
+        "algenist.com",
+        "partnercentric.com",
+        "alltrails.com",
+        "am.ticketmaster.com",
+        "sephora.com",
+        "grammarly.com",
+        "twitch.tv",
+        "aqualertapp.com",
+        "nature.com",
+        "atlascoffeeclub.com",
+        "ticketmaster.co.uk",
+        "max.com",
+        "livenation.com",
+        "axs.com",
+        "bareminerals.com",
+        "dior.com",
+        "beautybay.com",
+        "beautylish.com",
+        "bedbathandbeyond.com",
+        "benefitcosmetics.com",
+        "bergdorfgoodman.com",
+        "neimanmarcus.com",
+        "bitebeauty.com",
+        "roughtrade.com",
+        "rei.com",
+        "ticketmaster.com",
+        "ticketmaster.de",
+        "bloomingdales.com",
+        "bluefinsupboards.com",
+        "bobbibrowncosmetics.com",
+        "boldloft.com",
+        "chanel.com",
+        "booking.com",
+        "selfridges.com",
+        "busbud.com",
+        "buxomcosmetics.com",
+        "dermalogica.com",
+        "carolsdaughter.com",
+        "cb2.com",
+        "cbs.com",
+        "charlottetilbury.com",
+        "peakdesign.com",
+        "thebodyshop.com",
+        "stubhub.com",
+        "clinique.com",
+        "urbandecay.com",
+        "colourpop.com",
+        "gopro.com",
+        "shiseido.com",
+        "couponseeker.com",
+        "drjart.com",
+        "elementor.com",
+        "elfcosmetics.com",
+        "endurasport.com",
+        "malinandgoetz.com",
+        "morphe.com",
+        "expedia.com",
+        "lovebookonline.com",
+        "uniqlo.com",
+        "fentybeauty.com",
+        "firstaidbeauty.com",
+        "flexjobs.com",
+        "getyourguide.com",
+        "giorgioarmanibeauty-usa.com",
+        "prana.com",
+        "ulta.com",
+        "spacenk.com",
+        "tartecosmetics.com",
+        "i-to-i.com",
+        "illamasqua.com",
+        "reverb.com",
+        "italki.com",
+        "katvondbeauty.com",
+        "kiehls.com",
+        "lauramercier.com",
+        "ldrmagazine.com",
+        "tailwindapp.com",
+        "preply.com",
+        "maccosmetics.com",
+        "toofaced.com",
+        "viator.com",
+        "makeupgeek.com",
+        "marcjacobsbeauty.com",
+        "tripadvisor.com",
+        "milanicosmetics.com",
+        "mixbook.com",
+        "moltonbrown.co.uk",
+        "music.apple.com",
+        "music.amazon.com",
+        "mytefl.com",
+        "nestnewyork.com",
+        "nyxcosmetics.com",
+        "olehenriksen.com",
+        "optinmonster.com",
+        "origins.com",
+        "ouidad.com",
+        "pacificabeauty.com",
+        "westernrise.com",
+        "patmcgrath.com",
+        "pepperjamnetwork.com",
+        "peterthomasroth.com",
+        "physiciansformula.com",
+        "play.google.com",
+        "publicrec.com",
+        "republicofdurablegoods.com",
+        "safetywing.com",
+        "shareasale-analytics.com",
+        "shareasale.com",
+        "ticketmaster.com.mx",
+        "skinstore.com",
+        "skylightframe.com",
+        "smashbox.com",
+        "sokoglam.com",
+        "stilacosmetics.com",
+        "uncommongoods.com",
+        "tatcha.com",
+        "teflpros.com",
+        "theteflacademy.com",
+        "throughourlives.com",
+        "tix.com",
+        "topodesigns.com",
+        "trustedhousesitters.com",
+        "us.laneige.com",
+        "vessi.com",
+        "viagogo.com",
+        "vipnation.com",
+        "wetnwildbeauty.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 4,
+      "value": [
+        "neutralnewswire.com",
+        "allnewsmatters.com",
+        "unbiasnews.com",
+        "prnewswires.co"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Food / Groceries",
+      "value": [
+        "Food / Groceries",
+        "Business / Services",
+        "Health / Wellbeing"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Food / Groceries",
+        "rank": 1,
+        "score": 70
+      },
+      "value": [
+        {
+          "name": "Food / Groceries",
+          "rank": 1,
+          "score": 70
+        },
+        {
+          "name": "Business / Services",
+          "rank": 1,
+          "score": 60
+        },
+        {
+          "name": "Health / Wellbeing",
+          "rank": 1,
+          "score": 40
+        }
+      ]
+    }
+  }
+}

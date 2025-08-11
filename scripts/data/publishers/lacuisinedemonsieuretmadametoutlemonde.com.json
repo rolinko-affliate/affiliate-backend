@@ -1,0 +1,608 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Awin"
+      ],
+      "value": [
+        "Awin"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "fr",
+        "score": 0.8
+      },
+      "sampleValue": [
+        {
+          "countryCode": "fr",
+          "score": 0.8
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "fr",
+          "score": 0.8
+        }
+      ]
+    },
+    "domain": "lacuisinedemonsieuretmadametoutlemonde.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "magasin"
+        },
+        {
+          "score": 0.9992867,
+          "value": "comparateur"
+        },
+        {
+          "score": 0.6333809,
+          "value": "gratuit"
+        },
+        {
+          "score": 0.58559203,
+          "value": "panier"
+        },
+        {
+          "score": 0.49964336,
+          "value": "ajouter"
+        },
+        {
+          "score": 0.48252496,
+          "value": "mois"
+        },
+        {
+          "score": 0.41833097,
+          "value": "stock"
+        },
+        {
+          "score": 0.38088444,
+          "value": "gratuit magasin"
+        },
+        {
+          "score": 0.3452211,
+          "value": "produit"
+        },
+        {
+          "score": 0.32097003,
+          "value": "deezer"
+        },
+        {
+          "score": 0.22253923,
+          "value": "cuisine"
+        },
+        {
+          "score": 0.21611983,
+          "value": "gratuit panier"
+        },
+        {
+          "score": 0.18901569,
+          "value": "achat"
+        },
+        {
+          "score": 0.18651927,
+          "value": "personnel"
+        },
+        {
+          "score": 0.17760342,
+          "value": "donnée"
+        },
+        {
+          "score": 0.17653352,
+          "value": "bon"
+        },
+        {
+          "score": 0.17189729,
+          "value": "découvrez"
+        },
+        {
+          "score": 0.17082739,
+          "value": "offre"
+        },
+        {
+          "score": 0.16191156,
+          "value": "retrait"
+        },
+        {
+          "score": 0.15977176,
+          "value": "protection"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "magasin"
+        },
+        {
+          "score": 0.9992867,
+          "value": "comparateur"
+        },
+        {
+          "score": 0.6333809,
+          "value": "gratuit"
+        },
+        {
+          "score": 0.58559203,
+          "value": "panier"
+        },
+        {
+          "score": 0.49964336,
+          "value": "ajouter"
+        },
+        {
+          "score": 0.48252496,
+          "value": "mois"
+        },
+        {
+          "score": 0.41833097,
+          "value": "stock"
+        },
+        {
+          "score": 0.38088444,
+          "value": "gratuit magasin"
+        },
+        {
+          "score": 0.3452211,
+          "value": "produit"
+        },
+        {
+          "score": 0.32097003,
+          "value": "deezer"
+        },
+        {
+          "score": 0.22253923,
+          "value": "cuisine"
+        },
+        {
+          "score": 0.21611983,
+          "value": "gratuit panier"
+        },
+        {
+          "score": 0.18901569,
+          "value": "achat"
+        },
+        {
+          "score": 0.18651927,
+          "value": "personnel"
+        },
+        {
+          "score": 0.17760342,
+          "value": "donnée"
+        },
+        {
+          "score": 0.17653352,
+          "value": "bon"
+        },
+        {
+          "score": 0.17189729,
+          "value": "découvrez"
+        },
+        {
+          "score": 0.17082739,
+          "value": "offre"
+        },
+        {
+          "score": 0.16191156,
+          "value": "retrait"
+        },
+        {
+          "score": 0.15977176,
+          "value": "protection"
+        },
+        {
+          "score": 0.15442225,
+          "value": "carte"
+        },
+        {
+          "score": 0.14194009,
+          "value": "prix"
+        },
+        {
+          "score": 0.12232525,
+          "value": "accessoire"
+        },
+        {
+          "score": 0.11982881,
+          "value": "pro"
+        },
+        {
+          "score": 0.11804565,
+          "value": "choix"
+        },
+        {
+          "score": 0.10984308,
+          "value": "famille"
+        },
+        {
+          "score": 0.10912982,
+          "value": "jour"
+        },
+        {
+          "score": 0.10699002,
+          "value": "aspirateur"
+        },
+        {
+          "score": 0.10699002,
+          "value": "période"
+        },
+        {
+          "score": 0.104136944,
+          "value": "inscription"
+        },
+        {
+          "score": 0.097717546,
+          "value": "conseil"
+        },
+        {
+          "score": 0.09094151,
+          "value": "gaming"
+        },
+        {
+          "score": 0.08666191,
+          "value": "vidéo"
+        },
+        {
+          "score": 0.08452211,
+          "value": "avis"
+        },
+        {
+          "score": 0.08273894,
+          "value": "samsung"
+        },
+        {
+          "score": 0.08024251,
+          "value": "sav"
+        },
+        {
+          "score": 0.07560628,
+          "value": "heure"
+        },
+        {
+          "score": 0.07275321,
+          "value": "communauté"
+        },
+        {
+          "score": 0.07239658,
+          "value": "noir"
+        },
+        {
+          "score": 0.07168331,
+          "value": "téléphone"
+        },
+        {
+          "score": 0.07097004,
+          "value": "marketplac"
+        },
+        {
+          "score": 0.069186874,
+          "value": "code"
+        },
+        {
+          "score": 0.068830244,
+          "value": "offrir"
+        },
+        {
+          "score": 0.06847361,
+          "value": "officiel"
+        },
+        {
+          "score": 0.06633381,
+          "value": "oui"
+        },
+        {
+          "score": 0.06526391,
+          "value": "livraison"
+        },
+        {
+          "score": 0.064907275,
+          "value": "occasion"
+        },
+        {
+          "score": 0.064907275,
+          "value": "devenez"
+        },
+        {
+          "score": 0.064907275,
+          "value": "numéro"
+        },
+        {
+          "score": 0.06419401,
+          "value": "soin"
+        },
+        {
+          "score": 0.06419401,
+          "value": "maison"
+        },
+        {
+          "score": 0.062767476,
+          "value": "compatible"
+        },
+        {
+          "score": 0.062410843,
+          "value": "cinéma"
+        },
+        {
+          "score": 0.06098431,
+          "value": "smartphone"
+        },
+        {
+          "score": 0.06027104,
+          "value": "standard"
+        },
+        {
+          "score": 0.05920114,
+          "value": "mobilier"
+        },
+        {
+          "score": 0.058487874,
+          "value": "appareil"
+        },
+        {
+          "score": 0.058487874,
+          "value": "audio"
+        },
+        {
+          "score": 0.05813124,
+          "value": "entretien"
+        },
+        {
+          "score": 0.05813124,
+          "value": "éligible"
+        },
+        {
+          "score": 0.057417974,
+          "value": "ligne"
+        },
+        {
+          "score": 0.05706134,
+          "value": "musique"
+        },
+        {
+          "score": 0.056348074,
+          "value": "window"
+        },
+        {
+          "score": 0.055634808,
+          "value": "bénéficiez"
+        },
+        {
+          "score": 0.055634808,
+          "value": "impossible"
+        },
+        {
+          "score": 0.055278175,
+          "value": "petit"
+        },
+        {
+          "score": 0.05492154,
+          "value": "fin"
+        },
+        {
+          "score": 0.05492154,
+          "value": "photo"
+        },
+        {
+          "score": 0.05492154,
+          "value": "accès"
+        },
+        {
+          "score": 0.05492154,
+          "value": "grâce"
+        },
+        {
+          "score": 0.054208275,
+          "value": "paramètre"
+        },
+        {
+          "score": 0.054208275,
+          "value": "abonnement"
+        },
+        {
+          "score": 0.05385164,
+          "value": "utilisable"
+        },
+        {
+          "score": 0.05385164,
+          "value": "high"
+        },
+        {
+          "score": 0.05385164,
+          "value": "caisse"
+        },
+        {
+          "score": 0.05349501,
+          "value": "initial mois"
+        },
+        {
+          "score": 0.05349501,
+          "value": "mensuel"
+        },
+        {
+          "score": 0.05349501,
+          "value": "initial"
+        },
+        {
+          "score": 0.05349501,
+          "value": "deezer mois"
+        },
+        {
+          "score": 0.05349501,
+          "value": "utilisable mois"
+        },
+        {
+          "score": 0.05349501,
+          "value": "activation"
+        },
+        {
+          "score": 0.05349501,
+          "value": "standard résiliation"
+        },
+        {
+          "score": 0.05349501,
+          "value": "résiliation"
+        },
+        {
+          "score": 0.05349501,
+          "value": "compte"
+        },
+        {
+          "score": 0.05349501,
+          "value": "mensuel prix"
+        },
+        {
+          "score": 0.05349501,
+          "value": "premium famille"
+        },
+        {
+          "score": 0.05349501,
+          "value": "issu période"
+        },
+        {
+          "score": 0.05349501,
+          "value": "issu"
+        },
+        {
+          "score": 0.05349501,
+          "value": "deezer famille"
+        },
+        {
+          "score": 0.05349501,
+          "value": "deezer com"
+        },
+        {
+          "score": 0.05349501,
+          "value": "éligible accès"
+        },
+        {
+          "score": 0.053138375,
+          "value": "sport"
+        },
+        {
+          "score": 0.052781742,
+          "value": "offerte"
+        },
+        {
+          "score": 0.051355205,
+          "value": "casque"
+        },
+        {
+          "score": 0.05064194,
+          "value": "afficher"
+        },
+        {
+          "score": 0.05064194,
+          "value": "impossible position"
+        },
+        {
+          "score": 0.05064194,
+          "value": "postal d"
+        },
+        {
+          "score": 0.050285306,
+          "value": "disponibilité"
+        },
+        {
+          "score": 0.049215406,
+          "value": "informatique"
+        },
+        {
+          "score": 0.048858773,
+          "value": "beauté"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/lacuisinedemonsieuretmadametoutlemonde.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://lacuisinedemonsieuretmadametoutlemonde.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1,
+        "value": [
+          "darty.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 0.95,
+            "vertical": "Shopping / Department Stores"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 1,
+      "value": [
+        "darty.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 1,
+      "socialsAvailable": [
+        "facebook"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/lacuisinedemonsieuretmadametoutlemonde"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Food / Groceries",
+      "value": [
+        "Food / Groceries",
+        "Entertainment / Hobbies"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Food / Groceries",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Food / Groceries",
+          "rank": 1,
+          "score": 95
+        },
+        {
+          "name": "Entertainment / Hobbies",
+          "rank": 1,
+          "score": 85
+        }
+      ]
+    }
+  }
+}

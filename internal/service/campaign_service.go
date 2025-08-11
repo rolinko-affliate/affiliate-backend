@@ -5,6 +5,8 @@ import (
 	"fmt"
 
 	"github.com/affiliate-backend/internal/domain"
+	"github.com/affiliate-backend/internal/platform/logger"
+	"github.com/affiliate-backend/internal/platform/provider"
 	"github.com/affiliate-backend/internal/repository"
 )
 
@@ -16,32 +18,57 @@ type CampaignService interface {
 	ListCampaignsByAdvertiser(ctx context.Context, advertiserID int64, limit, offset int) ([]*domain.Campaign, error)
 	ListCampaignsByOrganization(ctx context.Context, orgID int64, limit, offset int) ([]*domain.Campaign, error)
 	DeleteCampaign(ctx context.Context, id int64) error
+	GetProviderMapping(ctx context.Context, campaignID int64, providerType string) (*domain.CampaignProviderMapping, error)
 }
 
 // campaignService implements CampaignService
 type campaignService struct {
-	campaignRepo repository.CampaignRepository
+	campaignRepo               repository.CampaignRepository
+	campaignProviderMappingRepo repository.CampaignProviderMappingRepository
+	integrationService         provider.IntegrationService
 }
 
 // NewCampaignService creates a new campaign service
-func NewCampaignService(campaignRepo repository.CampaignRepository) CampaignService {
+func NewCampaignService(campaignRepo repository.CampaignRepository, campaignProviderMappingRepo repository.CampaignProviderMappingRepository, integrationService provider.IntegrationService) CampaignService {
 	return &campaignService{
-		campaignRepo: campaignRepo,
+		campaignRepo:               campaignRepo,
+		campaignProviderMappingRepo: campaignProviderMappingRepo,
+		integrationService:         integrationService,
 	}
 }
 
 // CreateCampaign creates a new campaign
 func (s *campaignService) CreateCampaign(ctx context.Context, campaign *domain.Campaign) error {
+	logger.Info("Starting campaign creation", "campaign_id", campaign.CampaignID, "advertiser_id", campaign.AdvertiserID, "name", campaign.Name)
+	
 	// Validate campaign data
+	logger.Debug("Validating campaign data", "campaign_id", campaign.CampaignID)
 	if err := s.validateCampaign(campaign); err != nil {
+		logger.Error("Campaign validation failed", "campaign_id", campaign.CampaignID, "error", err)
 		return fmt.Errorf("campaign validation failed: %w", err)
 	}
+	logger.Debug("Campaign validation passed", "campaign_id", campaign.CampaignID)
 
-	// Create campaign in repository
+	// Step 1: Create campaign in local repository
+	logger.Debug("Creating campaign in local repository", "campaign_id", campaign.CampaignID)
 	if err := s.campaignRepo.CreateCampaign(ctx, campaign); err != nil {
+		logger.Error("Failed to create campaign in repository", "campaign_id", campaign.CampaignID, "error", err)
 		return fmt.Errorf("failed to create campaign: %w", err)
 	}
+	logger.Info("Successfully created campaign in repository", "campaign_id", campaign.CampaignID)
 
+	// Step 2: Call IntegrationService to create campaign in provider (Everflow)
+	// The integration service handles provider mapping creation internally
+	logger.Debug("Calling integration service to create campaign in provider", "campaign_id", campaign.CampaignID)
+	_, err := s.integrationService.CreateCampaign(ctx, *campaign)
+	if err != nil {
+		// Log error but don't fail the operation since local creation succeeded
+		logger.Warn("Failed to create campaign in provider", "campaign_id", campaign.CampaignID, "error", err)
+		return nil
+	}
+	logger.Info("Successfully created campaign in provider", "campaign_id", campaign.CampaignID)
+
+	logger.Info("Campaign creation completed successfully", "campaign_id", campaign.CampaignID)
 	return nil
 }
 
@@ -57,16 +84,35 @@ func (s *campaignService) GetCampaignByID(ctx context.Context, id int64) (*domai
 
 // UpdateCampaign updates an existing campaign
 func (s *campaignService) UpdateCampaign(ctx context.Context, campaign *domain.Campaign) error {
+	logger.Info("Starting campaign update", "campaign_id", campaign.CampaignID, "name", campaign.Name)
+	
 	// Validate campaign data
+	logger.Debug("Validating campaign data", "campaign_id", campaign.CampaignID)
 	if err := s.validateCampaign(campaign); err != nil {
+		logger.Error("Campaign validation failed", "campaign_id", campaign.CampaignID, "error", err)
 		return fmt.Errorf("campaign validation failed: %w", err)
 	}
+	logger.Debug("Campaign validation passed", "campaign_id", campaign.CampaignID)
 
-	// Update campaign in repository
+	// Step 1: Update campaign in local repository
+	logger.Debug("Updating campaign in local repository", "campaign_id", campaign.CampaignID)
 	if err := s.campaignRepo.UpdateCampaign(ctx, campaign); err != nil {
+		logger.Error("Failed to update campaign in repository", "campaign_id", campaign.CampaignID, "error", err)
 		return fmt.Errorf("failed to update campaign: %w", err)
 	}
+	logger.Info("Successfully updated campaign in repository", "campaign_id", campaign.CampaignID)
 
+	// Step 2: Call IntegrationService to update campaign in provider (Everflow)
+	logger.Debug("Calling integration service to update campaign in provider", "campaign_id", campaign.CampaignID)
+	err := s.integrationService.UpdateCampaign(ctx, *campaign)
+	if err != nil {
+		// Log error but don't fail the operation since local update succeeded
+		logger.Warn("Failed to update campaign in provider", "campaign_id", campaign.CampaignID, "error", err)
+		return nil
+	}
+	logger.Info("Successfully updated campaign in provider", "campaign_id", campaign.CampaignID)
+
+	logger.Info("Campaign update completed successfully", "campaign_id", campaign.CampaignID)
 	return nil
 }
 
@@ -132,4 +178,9 @@ func (s *campaignService) validateCampaign(campaign *domain.Campaign) error {
 	}
 
 	return nil
+}
+
+// GetProviderMapping retrieves a campaign provider mapping
+func (s *campaignService) GetProviderMapping(ctx context.Context, campaignID int64, providerType string) (*domain.CampaignProviderMapping, error) {
+	return s.campaignProviderMappingRepo.GetCampaignProviderMapping(ctx, campaignID, providerType)
 }

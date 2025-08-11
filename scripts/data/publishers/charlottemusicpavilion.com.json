@@ -1,0 +1,621 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "CJ Affiliate"
+      ],
+      "value": [
+        "CJ Affiliate"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.95
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.95
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.95
+        }
+      ]
+    },
+    "domain": "charlottemusicpavilion.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "ticket"
+        },
+        {
+          "score": 0.1875,
+          "value": "fort"
+        },
+        {
+          "score": 0.15178572,
+          "value": "lauderdale"
+        },
+        {
+          "score": 0.15178572,
+          "value": "art"
+        },
+        {
+          "score": 0.15178572,
+          "value": "center"
+        },
+        {
+          "score": 0.15178572,
+          "value": "lauderhill"
+        },
+        {
+          "score": 0.13392857,
+          "value": "omaha"
+        },
+        {
+          "score": 0.116071425,
+          "value": "playhouse"
+        },
+        {
+          "score": 0.116071425,
+          "value": "community"
+        },
+        {
+          "score": 0.071428575,
+          "value": "sport"
+        },
+        {
+          "score": 0.071428575,
+          "value": "concert"
+        },
+        {
+          "score": 0.071428575,
+          "value": "event"
+        },
+        {
+          "score": 0.05357143,
+          "value": "money"
+        },
+        {
+          "score": 0.05357143,
+          "value": "guarantee"
+        },
+        {
+          "score": 0.05357143,
+          "value": "theater"
+        },
+        {
+          "score": 0.05357143,
+          "value": "tour"
+        },
+        {
+          "score": 0.035714287,
+          "value": "entry"
+        },
+        {
+          "score": 0.035714287,
+          "value": "sign"
+        },
+        {
+          "score": 0.035714287,
+          "value": "saint"
+        },
+        {
+          "score": 0.035714287,
+          "value": "mlb"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "ticket"
+        },
+        {
+          "score": 0.1875,
+          "value": "fort"
+        },
+        {
+          "score": 0.15178572,
+          "value": "lauderdale"
+        },
+        {
+          "score": 0.15178572,
+          "value": "art"
+        },
+        {
+          "score": 0.15178572,
+          "value": "center"
+        },
+        {
+          "score": 0.15178572,
+          "value": "lauderhill"
+        },
+        {
+          "score": 0.13392857,
+          "value": "omaha"
+        },
+        {
+          "score": 0.116071425,
+          "value": "playhouse"
+        },
+        {
+          "score": 0.116071425,
+          "value": "community"
+        },
+        {
+          "score": 0.071428575,
+          "value": "sport"
+        },
+        {
+          "score": 0.071428575,
+          "value": "concert"
+        },
+        {
+          "score": 0.071428575,
+          "value": "event"
+        },
+        {
+          "score": 0.05357143,
+          "value": "money"
+        },
+        {
+          "score": 0.05357143,
+          "value": "guarantee"
+        },
+        {
+          "score": 0.05357143,
+          "value": "theater"
+        },
+        {
+          "score": 0.05357143,
+          "value": "tour"
+        },
+        {
+          "score": 0.035714287,
+          "value": "entry"
+        },
+        {
+          "score": 0.035714287,
+          "value": "sign"
+        },
+        {
+          "score": 0.035714287,
+          "value": "saint"
+        },
+        {
+          "score": 0.035714287,
+          "value": "mlb"
+        },
+        {
+          "score": 0.035714287,
+          "value": "valid entry"
+        },
+        {
+          "score": 0.035714287,
+          "value": "valid"
+        },
+        {
+          "score": 0.035714287,
+          "value": "jam"
+        },
+        {
+          "score": 0.035714287,
+          "value": "liquidator"
+        },
+        {
+          "score": 0.035714287,
+          "value": "monster"
+        },
+        {
+          "score": 0.035714287,
+          "value": "comedy"
+        },
+        {
+          "score": 0.026785715,
+          "value": "music"
+        },
+        {
+          "score": 0.026785715,
+          "value": "prices"
+        },
+        {
+          "score": 0.026785715,
+          "value": "live"
+        },
+        {
+          "score": 0.017857144,
+          "value": "king"
+        },
+        {
+          "score": 0.017857144,
+          "value": "sebastian maniscalco"
+        },
+        {
+          "score": 0.017857144,
+          "value": "wayne"
+        },
+        {
+          "score": 0.017857144,
+          "value": "green packer"
+        },
+        {
+          "score": 0.017857144,
+          "value": "jacksonville"
+        },
+        {
+          "score": 0.017857144,
+          "value": "mlb nhl"
+        },
+        {
+          "score": 0.017857144,
+          "value": "fair"
+        },
+        {
+          "score": 0.017857144,
+          "value": "albuquerque"
+        },
+        {
+          "score": 0.017857144,
+          "value": "indianapolis"
+        },
+        {
+          "score": 0.017857144,
+          "value": "promo"
+        },
+        {
+          "score": 0.017857144,
+          "value": "chula"
+        },
+        {
+          "score": 0.017857144,
+          "value": "tucson"
+        },
+        {
+          "score": 0.017857144,
+          "value": "green"
+        },
+        {
+          "score": 0.017857144,
+          "value": "cirque"
+        },
+        {
+          "score": 0.017857144,
+          "value": "code"
+        },
+        {
+          "score": 0.017857144,
+          "value": "festival"
+        },
+        {
+          "score": 0.017857144,
+          "value": "sports"
+        },
+        {
+          "score": 0.017857144,
+          "value": "festivals"
+        },
+        {
+          "score": 0.017857144,
+          "value": "miserable"
+        },
+        {
+          "score": 0.017857144,
+          "value": "fair lady"
+        },
+        {
+          "score": 0.017857144,
+          "value": "disney"
+        },
+        {
+          "score": 0.017857144,
+          "value": "modesto"
+        },
+        {
+          "score": 0.017857144,
+          "value": "bakersfield"
+        },
+        {
+          "score": 0.017857144,
+          "value": "tournament"
+        },
+        {
+          "score": 0.017857144,
+          "value": "mi fort"
+        },
+        {
+          "score": 0.017857144,
+          "value": "montreal qc"
+        },
+        {
+          "score": 0.017857144,
+          "value": "llc"
+        },
+        {
+          "score": 0.017857144,
+          "value": "paw"
+        },
+        {
+          "score": 0.017857144,
+          "value": "beach"
+        },
+        {
+          "score": 0.017857144,
+          "value": "nhl"
+        },
+        {
+          "score": 0.017857144,
+          "value": "riverside"
+        },
+        {
+          "score": 0.017857144,
+          "value": "sell"
+        },
+        {
+          "score": 0.017857144,
+          "value": "wwe"
+        },
+        {
+          "score": 0.017857144,
+          "value": "sitemap"
+        },
+        {
+          "score": 0.017857144,
+          "value": "family"
+        },
+        {
+          "score": 0.017857144,
+          "value": "wind"
+        },
+        {
+          "score": 0.017857144,
+          "value": "sum"
+        },
+        {
+          "score": 0.017857144,
+          "value": "weeknd celine"
+        },
+        {
+          "score": 0.017857144,
+          "value": "city"
+        },
+        {
+          "score": 0.017857144,
+          "value": "bargatze monster"
+        },
+        {
+          "score": 0.017857144,
+          "value": "chesapeake"
+        },
+        {
+          "score": 0.017857144,
+          "value": "rock"
+        },
+        {
+          "score": 0.017857144,
+          "value": "sebastian"
+        },
+        {
+          "score": 0.017857144,
+          "value": "wichita"
+        },
+        {
+          "score": 0.017857144,
+          "value": "wicked"
+        },
+        {
+          "score": 0.017857144,
+          "value": "patrol"
+        },
+        {
+          "score": 0.017857144,
+          "value": "ice"
+        },
+        {
+          "score": 0.017857144,
+          "value": "hartford"
+        },
+        {
+          "score": 0.017857144,
+          "value": "philadelphia"
+        },
+        {
+          "score": 0.017857144,
+          "value": "pop"
+        },
+        {
+          "score": 0.017857144,
+          "value": "louis"
+        },
+        {
+          "score": 0.017857144,
+          "value": "bargatze"
+        },
+        {
+          "score": 0.017857144,
+          "value": "soleil"
+        },
+        {
+          "score": 0.017857144,
+          "value": "comb"
+        },
+        {
+          "score": 0.017857144,
+          "value": "waitress"
+        },
+        {
+          "score": 0.017857144,
+          "value": "patriot"
+        },
+        {
+          "score": 0.017857144,
+          "value": "trademark"
+        },
+        {
+          "score": 0.017857144,
+          "value": "minute"
+        },
+        {
+          "score": 0.017857144,
+          "value": "musical"
+        },
+        {
+          "score": 0.017857144,
+          "value": "program"
+        },
+        {
+          "score": 0.017857144,
+          "value": "cardinal"
+        },
+        {
+          "score": 0.017857144,
+          "value": "wicked musical"
+        },
+        {
+          "score": 0.017857144,
+          "value": "child"
+        },
+        {
+          "score": 0.017857144,
+          "value": "opera"
+        },
+        {
+          "score": 0.017857144,
+          "value": "malone"
+        },
+        {
+          "score": 0.017857144,
+          "value": "spring"
+        },
+        {
+          "score": 0.017857144,
+          "value": "steeler"
+        },
+        {
+          "score": 0.017857144,
+          "value": "celine"
+        },
+        {
+          "score": 0.017857144,
+          "value": "hop"
+        },
+        {
+          "score": 0.017857144,
+          "value": "nashville"
+        },
+        {
+          "score": 0.017857144,
+          "value": "registered trademark"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://charlottemusicpavilion.com/",
+        "https://www.charlottemusicpavilion.com/",
+        "http://charlottemusicpavilion.com/",
+        "http://www.charlottemusicpavilion.com/"
+      ]
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/charlottemusicpavilion.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://charlottemusicpavilion.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1,
+        "value": [
+          "ticketliquidator.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1,
+            "vertical": "Entertainment / Tickets"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 1,
+      "value": [
+        "ticketliquidator.com"
+      ]
+    },
+    "promotype": {
+      "value": "student"
+    },
+    "relatedPublishers": {
+      "count": 5,
+      "value": [
+        "averyfisherhall.org",
+        "thehollywoodcasinoamphitheatre.com",
+        "whiteriveramphitheater.org",
+        "ak-chinpavilion.com",
+        "thelakewoodamphitheater.com"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Entertainment / Music",
+      "value": [
+        "Entertainment / Music",
+        "Entertainment / Tickets",
+        "Entertainment / Streaming"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Entertainment / Music",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Entertainment / Music",
+          "rank": 1,
+          "score": 95
+        },
+        {
+          "name": "Entertainment / Tickets",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Entertainment / Streaming",
+          "rank": 1,
+          "score": 30
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,801 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 9,
+      "sampleValue": [
+        "Amazon CA",
+        "Awin",
+        "CJ Affiliate"
+      ],
+      "value": [
+        "Amazon CA",
+        "Awin",
+        "CJ Affiliate",
+        "Impact",
+        "Rakuten",
+        "Rewardstyle",
+        "Skimlinks",
+        "TRX",
+        "Viglink"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.6
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "tabletworks.net",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "skin"
+        },
+        {
+          "score": 0.9603317,
+          "value": "hair"
+        },
+        {
+          "score": 0.9054976,
+          "value": "beauty"
+        },
+        {
+          "score": 0.79901993,
+          "value": "wellness"
+        },
+        {
+          "score": 0.7466502,
+          "value": "body"
+        },
+        {
+          "score": 0.7163871,
+          "value": "makeup"
+        },
+        {
+          "score": 0.6723007,
+          "value": "haircare"
+        },
+        {
+          "score": 0.56837803,
+          "value": "care"
+        },
+        {
+          "score": 0.5628243,
+          "value": "color"
+        },
+        {
+          "score": 0.53629786,
+          "value": "skincare"
+        },
+        {
+          "score": 0.5198127,
+          "value": "fragrance"
+        },
+        {
+          "score": 0.5196254,
+          "value": "bath"
+        },
+        {
+          "score": 0.48523563,
+          "value": "skinfatuation"
+        },
+        {
+          "score": 0.48285702,
+          "value": "aromatherapy"
+        },
+        {
+          "score": 0.4757212,
+          "value": "amazon"
+        },
+        {
+          "score": 0.4718427,
+          "value": "exfoliators"
+        },
+        {
+          "score": 0.4614588,
+          "value": "sign"
+        },
+        {
+          "score": 0.4503632,
+          "value": "travel"
+        },
+        {
+          "score": 0.43251184,
+          "value": "treatment"
+        },
+        {
+          "score": 0.42458117,
+          "value": "stylists"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "skin"
+        },
+        {
+          "score": 0.9603317,
+          "value": "hair"
+        },
+        {
+          "score": 0.9054976,
+          "value": "beauty"
+        },
+        {
+          "score": 0.79901993,
+          "value": "wellness"
+        },
+        {
+          "score": 0.7466502,
+          "value": "body"
+        },
+        {
+          "score": 0.7163871,
+          "value": "makeup"
+        },
+        {
+          "score": 0.6723007,
+          "value": "haircare"
+        },
+        {
+          "score": 0.56837803,
+          "value": "care"
+        },
+        {
+          "score": 0.5628243,
+          "value": "color"
+        },
+        {
+          "score": 0.53629786,
+          "value": "skincare"
+        },
+        {
+          "score": 0.5198127,
+          "value": "fragrance"
+        },
+        {
+          "score": 0.5196254,
+          "value": "bath"
+        },
+        {
+          "score": 0.48523563,
+          "value": "skinfatuation"
+        },
+        {
+          "score": 0.48285702,
+          "value": "aromatherapy"
+        },
+        {
+          "score": 0.4757212,
+          "value": "amazon"
+        },
+        {
+          "score": 0.4718427,
+          "value": "exfoliators"
+        },
+        {
+          "score": 0.4614588,
+          "value": "sign"
+        },
+        {
+          "score": 0.4503632,
+          "value": "travel"
+        },
+        {
+          "score": 0.43251184,
+          "value": "treatment"
+        },
+        {
+          "score": 0.42458117,
+          "value": "stylists"
+        },
+        {
+          "score": 0.41476354,
+          "value": "card"
+        },
+        {
+          "score": 0.40674162,
+          "value": "sunscreen"
+        },
+        {
+          "score": 0.39745426,
+          "value": "mini"
+        },
+        {
+          "score": 0.38837373,
+          "value": "perfume"
+        },
+        {
+          "score": 0.3875956,
+          "value": "star"
+        },
+        {
+          "score": 0.38057697,
+          "value": "suncare"
+        },
+        {
+          "score": 0.37910473,
+          "value": "professional"
+        },
+        {
+          "score": 0.3726842,
+          "value": "tech"
+        },
+        {
+          "score": 0.36749464,
+          "value": "ulta"
+        },
+        {
+          "score": 0.3567909,
+          "value": "pedicure"
+        },
+        {
+          "score": 0.35583907,
+          "value": "treatments"
+        },
+        {
+          "score": 0.3446133,
+          "value": "eyeshadow"
+        },
+        {
+          "score": 0.34042376,
+          "value": "brush"
+        },
+        {
+          "score": 0.33954546,
+          "value": "serums"
+        },
+        {
+          "score": 0.33704418,
+          "value": "lotion"
+        },
+        {
+          "score": 0.33515188,
+          "value": "supplements"
+        },
+        {
+          "score": 0.33265537,
+          "value": "shampoo"
+        },
+        {
+          "score": 0.32824764,
+          "value": "cleaner"
+        },
+        {
+          "score": 0.32824764,
+          "value": "heat"
+        },
+        {
+          "score": 0.32507616,
+          "value": "scrubs"
+        },
+        {
+          "score": 0.32111183,
+          "value": "texture"
+        },
+        {
+          "score": 0.3186138,
+          "value": "seller"
+        },
+        {
+          "score": 0.313976,
+          "value": "hairspray"
+        },
+        {
+          "score": 0.3114384,
+          "value": "conditioner"
+        },
+        {
+          "score": 0.30858296,
+          "value": "face"
+        },
+        {
+          "score": 0.30684018,
+          "value": "allure"
+        },
+        {
+          "score": 0.30684018,
+          "value": "highlighter"
+        },
+        {
+          "score": 0.30168688,
+          "value": "night"
+        },
+        {
+          "score": 0.29058632,
+          "value": "facial"
+        },
+        {
+          "score": 0.28639153,
+          "value": "cleansing"
+        },
+        {
+          "score": 0.28543273,
+          "value": "palettes"
+        },
+        {
+          "score": 0.28141,
+          "value": "acne"
+        },
+        {
+          "score": 0.27623188,
+          "value": "tanning"
+        },
+        {
+          "score": 0.27116108,
+          "value": "mascara"
+        },
+        {
+          "score": 0.26522952,
+          "value": "warranty"
+        },
+        {
+          "score": 0.26045737,
+          "value": "accessibility"
+        },
+        {
+          "score": 0.26042455,
+          "value": "eyeliner"
+        },
+        {
+          "score": 0.25688946,
+          "value": "sanitizers"
+        },
+        {
+          "score": 0.25346068,
+          "value": "brow"
+        },
+        {
+          "score": 0.24231707,
+          "value": "shine"
+        },
+        {
+          "score": 0.24190769,
+          "value": "coupon"
+        },
+        {
+          "score": 0.2383887,
+          "value": "eyes"
+        },
+        {
+          "score": 0.23620552,
+          "value": "touch"
+        },
+        {
+          "score": 0.23548199,
+          "value": "coupons"
+        },
+        {
+          "score": 0.23548199,
+          "value": "mother"
+        },
+        {
+          "score": 0.23548199,
+          "value": "essentials"
+        },
+        {
+          "score": 0.23548199,
+          "value": "manicure"
+        },
+        {
+          "score": 0.23119612,
+          "value": "save"
+        },
+        {
+          "score": 0.22841826,
+          "value": "polish"
+        },
+        {
+          "score": 0.22834618,
+          "value": "concealer"
+        },
+        {
+          "score": 0.22834618,
+          "value": "heroes"
+        },
+        {
+          "score": 0.22702207,
+          "value": "foundation"
+        },
+        {
+          "score": 0.22517836,
+          "value": "shower"
+        },
+        {
+          "score": 0.22304235,
+          "value": "blemish"
+        },
+        {
+          "score": 0.22121036,
+          "value": "deodorant"
+        },
+        {
+          "score": 0.22121036,
+          "value": "cologne"
+        },
+        {
+          "score": 0.21948405,
+          "value": "moisturizer"
+        },
+        {
+          "score": 0.21407454,
+          "value": "location"
+        },
+        {
+          "score": 0.21407454,
+          "value": "curls"
+        },
+        {
+          "score": 0.21407454,
+          "value": "headbands"
+        },
+        {
+          "score": 0.21407454,
+          "value": "women"
+        },
+        {
+          "score": 0.2124092,
+          "value": "audible"
+        },
+        {
+          "score": 0.21206671,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.21080302,
+          "value": "store"
+        },
+        {
+          "score": 0.20693873,
+          "value": "curl"
+        },
+        {
+          "score": 0.20693873,
+          "value": "international"
+        },
+        {
+          "score": 0.20693873,
+          "value": "mirrors"
+        },
+        {
+          "score": 0.20693873,
+          "value": "aftershave"
+        },
+        {
+          "score": 0.20693873,
+          "value": "gloss"
+        },
+        {
+          "score": 0.20376725,
+          "value": "micro"
+        },
+        {
+          "score": 0.1998029,
+          "value": "moisturizers"
+        },
+        {
+          "score": 0.19974163,
+          "value": "program"
+        },
+        {
+          "score": 0.19821717,
+          "value": "boots"
+        },
+        {
+          "score": 0.19266708,
+          "value": "sitemap"
+        },
+        {
+          "score": 0.19266708,
+          "value": "quicklinks"
+        },
+        {
+          "score": 0.19266708,
+          "value": "smoothing"
+        },
+        {
+          "score": 0.19266708,
+          "value": "sprays"
+        },
+        {
+          "score": 0.19266708,
+          "value": "cuticle"
+        },
+        {
+          "score": 0.18909918,
+          "value": "connect"
+        },
+        {
+          "score": 0.18576458,
+          "value": "trial"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://tabletworks.net/",
+        "https://www.tabletworks.net/",
+        "http://tabletworks.net/",
+        "http://www.tabletworks.net/"
+      ]
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/tabletworks.net.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://tabletworks.net"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 57,
+        "value": [
+          "amazon.com",
+          "harpersbazaar.com",
+          "nordstrom.com",
+          "xbox.com",
+          "walmart.com",
+          "alteyaorganics.com",
+          "amazon.ca",
+          "amazon.com.au",
+          "revolve.com",
+          "jcpenney.com",
+          "sephora.com",
+          "kohls.com",
+          "sephora.co.uk",
+          "goop.com",
+          "beautypie.com",
+          "neimanmarcus.com",
+          "honest.com",
+          "t3micro.com",
+          "bloomingdales.com",
+          "bluemercury.com",
+          "bondiboost.com",
+          "chanel.com",
+          "boots.com",
+          "net-a-porter.com",
+          "macys.com",
+          "cledepeaubeaute.com",
+          "linksynergy.com",
+          "cocoandeve.com",
+          "cultbeauty.co.uk",
+          "cultbeauty.com",
+          "currentbody.de",
+          "daehair.com",
+          "dermstore.com",
+          "earthhero.com",
+          "fentybeauty.com",
+          "foreo.com",
+          "overclockers.co.uk",
+          "getmaude.com",
+          "ulta.com",
+          "glossier.com",
+          "lookfantastic.com",
+          "hauslabs.com",
+          "supergoop.com",
+          "spacenk.com",
+          "neutrogena.com",
+          "itcosmetics.com",
+          "laroche-posay.us",
+          "meetbtwn.com",
+          "milkmakeup.com",
+          "mutualofomaha.com",
+          "paulaschoice.com",
+          "publicgoods.com",
+          "saksfifthavenue.com",
+          "skinrocks.com",
+          "theouai.com",
+          "ulta.ztk5.net",
+          "victoriabeckhambeauty.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 30.800005,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 11.549999,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 3.9,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 1,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Insurance"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Babycare"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Health / Adult"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 0.7,
+            "vertical": "Online / Dating"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 57,
+      "value": [
+        "amazon.com",
+        "harpersbazaar.com",
+        "nordstrom.com",
+        "xbox.com",
+        "walmart.com",
+        "alteyaorganics.com",
+        "amazon.ca",
+        "amazon.com.au",
+        "revolve.com",
+        "jcpenney.com",
+        "sephora.com",
+        "kohls.com",
+        "sephora.co.uk",
+        "goop.com",
+        "beautypie.com",
+        "neimanmarcus.com",
+        "honest.com",
+        "t3micro.com",
+        "bloomingdales.com",
+        "bluemercury.com",
+        "bondiboost.com",
+        "chanel.com",
+        "boots.com",
+        "net-a-porter.com",
+        "macys.com",
+        "cledepeaubeaute.com",
+        "linksynergy.com",
+        "cocoandeve.com",
+        "cultbeauty.co.uk",
+        "cultbeauty.com",
+        "currentbody.de",
+        "daehair.com",
+        "dermstore.com",
+        "earthhero.com",
+        "fentybeauty.com",
+        "foreo.com",
+        "overclockers.co.uk",
+        "getmaude.com",
+        "ulta.com",
+        "glossier.com",
+        "lookfantastic.com",
+        "hauslabs.com",
+        "supergoop.com",
+        "spacenk.com",
+        "neutrogena.com",
+        "itcosmetics.com",
+        "laroche-posay.us",
+        "meetbtwn.com",
+        "milkmakeup.com",
+        "mutualofomaha.com",
+        "paulaschoice.com",
+        "publicgoods.com",
+        "saksfifthavenue.com",
+        "skinrocks.com",
+        "theouai.com",
+        "ulta.ztk5.net",
+        "victoriabeckhambeauty.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 3,
+      "value": [
+        "thebiorhythmx.com",
+        "heartfeltstitches.com",
+        "lightouch.org"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Business / Services",
+      "value": [
+        "Business / Services",
+        "Technology / Electronics",
+        "Technology / Mobile & Broadband"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Technology / Mobile & Broadband",
+        "rank": 1,
+        "score": 0
+      },
+      "value": [
+        {
+          "name": "Business / Services",
+          "rank": 1,
+          "score": 0
+        },
+        {
+          "name": "Technology / Electronics",
+          "rank": 1,
+          "score": 0
+        },
+        {
+          "name": "Technology / Mobile & Broadband",
+          "rank": 1,
+          "score": 0
+        }
+      ]
+    }
+  }
+}

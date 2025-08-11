@@ -1,0 +1,133 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 2,
+      "sampleValue": [
+        "Refersion",
+        "Viglink"
+      ],
+      "value": [
+        "Refersion",
+        "Viglink"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 2,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "info@nutramedix.com"
+        },
+        {
+          "department": "support",
+          "value": "info@professional.nutramedix.com"
+        }
+      ]
+    },
+    "domain": "nutramedix.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/nutramedix.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://nutramedix.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 41
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "amazon.it"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 9,
+            "promotype": "blog",
+            "value": [
+              "10reviewsplus.com",
+              "1topproduct.com",
+              "500toprated.com",
+              "amazon.co.uk",
+              "drnorthrup.com",
+              "feelmoregooder.com",
+              "jillcarnahan.com",
+              "ubestpick.com",
+              "vallablog.com"
+            ]
+          },
+          {
+            "count": 2,
+            "promotype": "incentive",
+            "value": [
+              "couponsnake.com",
+              "couponsohot.com"
+            ]
+          },
+          {
+            "count": 3,
+            "promotype": "student",
+            "value": [
+              "droppricetoday.com",
+              "spotify.com",
+              "substack.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 3,
+      "socialsAvailable": [
+        "youtube",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/nutramedix",
+        "instagram": "https://instagram.com/nutra.medix",
+        "youtube": "https://youtube.com/channel/ucqjjm2a5wwuhp7qcd1e8qng/featured?view_as=subscriber"
+      }
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Health / Healthcare",
+        "rank": 2,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Health / Healthcare",
+          "rank": 2,
+          "score": 95
+        },
+        {
+          "name": "Health / Wellbeing",
+          "rank": 2,
+          "score": 80
+        }
+      ]
+    }
+  }
+}

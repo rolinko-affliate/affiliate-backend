@@ -1,0 +1,123 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Impact"
+      ],
+      "value": [
+        "Impact"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "fr",
+        "score": 0.6
+      },
+      "sampleValue": [
+        {
+          "countryCode": "fr",
+          "score": 0.6
+        },
+        {
+          "countryCode": "be",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "fr",
+          "score": 0.6
+        },
+        {
+          "countryCode": "be",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "lemondedesicyl.blogspot.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/lemondedesicyl.blogspot.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://lemondedesicyl.blogspot.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1,
+        "value": [
+          "sjv.io"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 0.5,
+            "vertical": "Business / Software"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 1,
+      "value": [
+        "sjv.io"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 1,
+      "sampleValue": "Entertainment / Hobbies",
+      "value": [
+        "Entertainment / Hobbies"
+      ]
+    },
+    "verticalsV2": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Entertainment / Hobbies",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Entertainment / Hobbies",
+          "rank": 1,
+          "score": 90
+        }
+      ]
+    }
+  }
+}

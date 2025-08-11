@@ -1,0 +1,1056 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 4,
+      "sampleValue": [
+        "CommissionFactory",
+        "Linkby",
+        "Rakuten"
+      ],
+      "value": [
+        "CommissionFactory",
+        "Linkby",
+        "Rakuten",
+        "Skimlinks"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.6
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "menshealthforum.net",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "contribution"
+        },
+        {
+          "score": 0.3696886,
+          "value": "comment"
+        },
+        {
+          "score": 0.3677711,
+          "value": "region"
+        },
+        {
+          "score": 0.3377601,
+          "value": "team"
+        },
+        {
+          "score": 0.33114558,
+          "value": "curso"
+        },
+        {
+          "score": 0.29662874,
+          "value": "viewer"
+        },
+        {
+          "score": 0.29594272,
+          "value": "strategy"
+        },
+        {
+          "score": 0.27714798,
+          "value": "vacatures"
+        },
+        {
+          "score": 0.2686085,
+          "value": "nature"
+        },
+        {
+          "score": 0.25835323,
+          "value": "brussels"
+        },
+        {
+          "score": 0.25357994,
+          "value": "bloqueado"
+        },
+        {
+          "score": 0.24629427,
+          "value": "sign"
+        },
+        {
+          "score": 0.23687351,
+          "value": "visualización"
+        },
+        {
+          "score": 0.23339565,
+          "value": "hour"
+        },
+        {
+          "score": 0.22482282,
+          "value": "career"
+        },
+        {
+          "score": 0.22315036,
+          "value": "course"
+        },
+        {
+          "score": 0.22219643,
+          "value": "professional"
+        },
+        {
+          "score": 0.22052227,
+          "value": "manager"
+        },
+        {
+          "score": 0.21876751,
+          "value": "post"
+        },
+        {
+          "score": 0.20584725,
+          "value": "você"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "contribution"
+        },
+        {
+          "score": 0.3696886,
+          "value": "comment"
+        },
+        {
+          "score": 0.3677711,
+          "value": "region"
+        },
+        {
+          "score": 0.3377601,
+          "value": "team"
+        },
+        {
+          "score": 0.33114558,
+          "value": "curso"
+        },
+        {
+          "score": 0.29662874,
+          "value": "viewer"
+        },
+        {
+          "score": 0.29594272,
+          "value": "strategy"
+        },
+        {
+          "score": 0.27714798,
+          "value": "vacatures"
+        },
+        {
+          "score": 0.2686085,
+          "value": "nature"
+        },
+        {
+          "score": 0.25835323,
+          "value": "brussels"
+        },
+        {
+          "score": 0.25357994,
+          "value": "bloqueado"
+        },
+        {
+          "score": 0.24629427,
+          "value": "sign"
+        },
+        {
+          "score": 0.23687351,
+          "value": "visualización"
+        },
+        {
+          "score": 0.23339565,
+          "value": "hour"
+        },
+        {
+          "score": 0.22482282,
+          "value": "career"
+        },
+        {
+          "score": 0.22315036,
+          "value": "course"
+        },
+        {
+          "score": 0.22219643,
+          "value": "professional"
+        },
+        {
+          "score": 0.22052227,
+          "value": "manager"
+        },
+        {
+          "score": 0.21876751,
+          "value": "post"
+        },
+        {
+          "score": 0.20584725,
+          "value": "você"
+        },
+        {
+          "score": 0.20584725,
+          "value": "applicant"
+        },
+        {
+          "score": 0.20435561,
+          "value": "viewers"
+        },
+        {
+          "score": 0.20435561,
+          "value": "course viewers"
+        },
+        {
+          "score": 0.20261933,
+          "value": "project"
+        },
+        {
+          "score": 0.19902077,
+          "value": "belgium"
+        },
+        {
+          "score": 0.19406088,
+          "value": "report"
+        },
+        {
+          "score": 0.19324128,
+          "value": "skill"
+        },
+        {
+          "score": 0.19122912,
+          "value": "mitglied"
+        },
+        {
+          "score": 0.18736745,
+          "value": "training"
+        },
+        {
+          "score": 0.1868281,
+          "value": "finance"
+        },
+        {
+          "score": 0.1841998,
+          "value": "digital"
+        },
+        {
+          "score": 0.18019094,
+          "value": "biodiversity"
+        },
+        {
+          "score": 0.17412569,
+          "value": "development"
+        },
+        {
+          "score": 0.171624,
+          "value": "share"
+        },
+        {
+          "score": 0.16945107,
+          "value": "dato"
+        },
+        {
+          "score": 0.16945107,
+          "value": "released"
+        },
+        {
+          "score": 0.16736276,
+          "value": "viewers released"
+        },
+        {
+          "score": 0.16271104,
+          "value": "climate"
+        },
+        {
+          "score": 0.15811455,
+          "value": "effective"
+        },
+        {
+          "score": 0.15721957,
+          "value": "lnkd"
+        },
+        {
+          "score": 0.15671003,
+          "value": "solution"
+        },
+        {
+          "score": 0.15567346,
+          "value": "advertising"
+        },
+        {
+          "score": 0.15274464,
+          "value": "lanzamiento"
+        },
+        {
+          "score": 0.15217344,
+          "value": "article"
+        },
+        {
+          "score": 0.14752074,
+          "value": "agreement"
+        },
+        {
+          "score": 0.14677805,
+          "value": "learning"
+        },
+        {
+          "score": 0.1443348,
+          "value": "assistant"
+        },
+        {
+          "score": 0.14081146,
+          "value": "region belgium"
+        },
+        {
+          "score": 0.13760422,
+          "value": "ago"
+        },
+        {
+          "score": 0.13663484,
+          "value": "social medium"
+        },
+        {
+          "score": 0.13484487,
+          "value": "actief"
+        },
+        {
+          "score": 0.13096659,
+          "value": "follower"
+        },
+        {
+          "score": 0.13087709,
+          "value": "twitter"
+        },
+        {
+          "score": 0.13014722,
+          "value": "software"
+        },
+        {
+          "score": 0.13002108,
+          "value": "engineering"
+        },
+        {
+          "score": 0.12738663,
+          "value": "linkedin facebook"
+        },
+        {
+          "score": 0.12559666,
+          "value": "cooki"
+        },
+        {
+          "score": 0.12498669,
+          "value": "impact"
+        },
+        {
+          "score": 0.124562174,
+          "value": "sustainable"
+        },
+        {
+          "score": 0.12291169,
+          "value": "brussels region"
+        },
+        {
+          "score": 0.12108393,
+          "value": "technology"
+        },
+        {
+          "score": 0.12052506,
+          "value": "gestión"
+        },
+        {
+          "score": 0.11974268,
+          "value": "community"
+        },
+        {
+          "score": 0.119047776,
+          "value": "green"
+        },
+        {
+          "score": 0.11805461,
+          "value": "feedback"
+        },
+        {
+          "score": 0.11522064,
+          "value": "innovation"
+        },
+        {
+          "score": 0.11371394,
+          "value": "food"
+        },
+        {
+          "score": 0.112938754,
+          "value": "política"
+        },
+        {
+          "score": 0.1123992,
+          "value": "financial"
+        },
+        {
+          "score": 0.10966922,
+          "value": "video"
+        },
+        {
+          "score": 0.109349266,
+          "value": "key"
+        },
+        {
+          "score": 0.10918854,
+          "value": "brussels brussels"
+        },
+        {
+          "score": 0.10889021,
+          "value": "entry"
+        },
+        {
+          "score": 0.1087488,
+          "value": "science"
+        },
+        {
+          "score": 0.108293556,
+          "value": "desarrollo"
+        },
+        {
+          "score": 0.10811812,
+          "value": "communication"
+        },
+        {
+          "score": 0.107422456,
+          "value": "sesión"
+        },
+        {
+          "score": 0.10650358,
+          "value": "herramienta"
+        },
+        {
+          "score": 0.10590692,
+          "value": "tema"
+        },
+        {
+          "score": 0.104415275,
+          "value": "tecnología"
+        },
+        {
+          "score": 0.10322196,
+          "value": "cliente"
+        },
+        {
+          "score": 0.10322196,
+          "value": "essential training"
+        },
+        {
+          "score": 0.103042625,
+          "value": "industry"
+        },
+        {
+          "score": 0.10173031,
+          "value": "texto"
+        },
+        {
+          "score": 0.10142099,
+          "value": "plant"
+        },
+        {
+          "score": 0.1003734,
+          "value": "sustainability"
+        },
+        {
+          "score": 0.100238666,
+          "value": "nutzervereinbarung"
+        },
+        {
+          "score": 0.09978727,
+          "value": "education"
+        },
+        {
+          "score": 0.09900738,
+          "value": "setting"
+        },
+        {
+          "score": 0.096658714,
+          "value": "profesional"
+        },
+        {
+          "score": 0.09546539,
+          "value": "einlogg"
+        },
+        {
+          "score": 0.09546539,
+          "value": "dismiss"
+        },
+        {
+          "score": 0.094868734,
+          "value": "topic"
+        },
+        {
+          "score": 0.09427208,
+          "value": "esencial"
+        },
+        {
+          "score": 0.093465276,
+          "value": "success"
+        },
+        {
+          "score": 0.09337709,
+          "value": "contenido"
+        },
+        {
+          "score": 0.09337709,
+          "value": "vídeo"
+        },
+        {
+          "score": 0.09280237,
+          "value": "insight"
+        },
+        {
+          "score": 0.092780426,
+          "value": "entrar"
+        },
+        {
+          "score": 0.092780426,
+          "value": "insightful"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/menshealthforum.net.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://menshealthforum.net"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 147,
+        "value": [
+          "2xu.com",
+          "apple.com",
+          "hm.com",
+          "linkedin.com",
+          "nike.com",
+          "samsung.com",
+          "myfitnesspal.com",
+          "adairs.com.au",
+          "adidas.com.au",
+          "adorebeauty.com.au",
+          "aesop.com",
+          "aloyoga.com",
+          "amazon.com.au",
+          "amr.com.au",
+          "anacondastores.com",
+          "appelles.com",
+          "arcteryx.com.au",
+          "asics.com",
+          "bose.com",
+          "nature.com",
+          "au.gymshark.com",
+          "au.burberry.com",
+          "au.myprotein.com",
+          "beatsbydre.com",
+          "dior.com",
+          "bedintentions.com",
+          "belkin.com",
+          "gq.com",
+          "myer.com.au",
+          "bigw.com.au",
+          "biologyskin.com",
+          "booktopia.com.au",
+          "insidetracker.com",
+          "koala.com",
+          "nasm.org",
+          "ouraring.com",
+          "bondiactive.com",
+          "booking.com",
+          "bose.com.au",
+          "briogeohair.com",
+          "brooksrunning.com.au",
+          "canterburynz.com.au",
+          "lululemon.com.au",
+          "champion.com.au",
+          "chemistdirect.com.au",
+          "chemistwarehouse.com.au",
+          "cityperfume.com.au",
+          "on-running.com",
+          "mayoclinic.org",
+          "cronometer.com",
+          "currentbody.com.au",
+          "czechandspeake.com",
+          "davidjones.com",
+          "davidjones.com.au",
+          "dicksmith.com.au",
+          "springer.com",
+          "echt.com.au",
+          "ecosa.com.au",
+          "elitesupps.com.au",
+          "emma-sleep.com.au",
+          "tupperware.com.au",
+          "ergoflex.com.au",
+          "jbl.com",
+          "eva.com.au",
+          "uniqlo.com",
+          "firstchoiceliquor.com.au",
+          "freshbeautyco.com.au",
+          "getfrenchie.com",
+          "gillette.com.au",
+          "schwinnfitness.com",
+          "goodvibes.com",
+          "gymandfitness.com.au",
+          "healthylife.com.au",
+          "hellyhansen.com.au",
+          "kogan.com",
+          "spacenk.com",
+          "hoka.com",
+          "hotoctopuss.com",
+          "jlab.com",
+          "jabra.com.au",
+          "jbl.com.au",
+          "jisulife.com",
+          "whoop.com",
+          "johnsonfitness.com.au",
+          "lww.com",
+          "kathmandu.com.au",
+          "keto.com.au",
+          "kiehls.com.au",
+          "ksubi.com.au",
+          "lekkerbikes.com.au",
+          "lelo.com",
+          "leoncycle.com.au",
+          "lg.com",
+          "lifespanfitness.com",
+          "lovehoney.com.au",
+          "lskd.co",
+          "saba.com.au",
+          "mecca.com",
+          "mobileciti.com.au",
+          "musashi.com",
+          "newbalance.com.au",
+          "nordictrackfitness.com.au",
+          "onepeloton.com.au",
+          "organicloven.com",
+          "theiconic.com.au",
+          "ozsale.com.au",
+          "ozhairandbeauty.com",
+          "pharmacy4less.com.au",
+          "prada.com",
+          "rebelsport.com.au",
+          "reebok.com.au",
+          "remingtonproducts.com",
+          "revolveclothing.com.au",
+          "saint.cc",
+          "salomon.com.au",
+          "saucony.com.au",
+          "scotchporter.com",
+          "shavershop.com.au",
+          "sleepingduck.com",
+          "sony.com.au",
+          "stayz.com.au",
+          "straand.com.au",
+          "stuffthatmatters.com",
+          "supplementmart.com.au",
+          "suunto.com",
+          "t2tea.com",
+          "technogym.com",
+          "tenga-australia.com.au",
+          "theathletesfoot.com.au",
+          "theaussieman.com",
+          "thegoodguys.com.au",
+          "theordinary.com",
+          "thenorthface.com.au",
+          "therabody.com",
+          "thewodlife.com.au",
+          "umbro.com.au",
+          "underarmour.com.au",
+          "venroy.com.au",
+          "vervefitness.com.au",
+          "vitaman.com.au",
+          "vitruvianform.com",
+          "vulcanfitness.com.au",
+          "waterdrop.com.au",
+          "wildsecrets.com.au",
+          "wildearth.com.au",
+          "wiltshire.com.au",
+          "xterrafitness.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 3,
+        "value": [
+          {
+            "domain": "au.myprotein.com"
+          },
+          {
+            "domain": "au.burberry.com"
+          },
+          {
+            "domain": "au.gymshark.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 3,
+        "value": [
+          {
+            "domain": "burberry.com"
+          },
+          {
+            "domain": "myprotein.com"
+          },
+          {
+            "domain": "gymshark.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 17.349998,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 16.349998,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 16.199999,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 13.399999,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 11.199999,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 7.2000003,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 6.6,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 5.6,
+            "vertical": "Health / Adult"
+          },
+          {
+            "count": 5.2999997,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 4.85,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 4.75,
+            "vertical": "Home / Beds & Bedding"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 2.5500002,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Health / Weight Loss"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Sports / Cycling"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Sports / Outdoor"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 1.8,
+            "vertical": "Home / Pets"
+          },
+          {
+            "count": 1.2,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Jobs & Careers"
+          },
+          {
+            "count": 1,
+            "vertical": "Food / Alcohol"
+          },
+          {
+            "count": 1,
+            "vertical": "Health / Fragrances"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Drinks"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Entertainment / Hobbies"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Travel / Vacation"
+          },
+          {
+            "count": 0.8,
+            "vertical": "Technology / Software"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 147,
+      "value": [
+        "2xu.com",
+        "apple.com",
+        "hm.com",
+        "linkedin.com",
+        "nike.com",
+        "samsung.com",
+        "myfitnesspal.com",
+        "adairs.com.au",
+        "adidas.com.au",
+        "adorebeauty.com.au",
+        "aesop.com",
+        "aloyoga.com",
+        "amazon.com.au",
+        "amr.com.au",
+        "anacondastores.com",
+        "appelles.com",
+        "arcteryx.com.au",
+        "asics.com",
+        "bose.com",
+        "nature.com",
+        "au.gymshark.com",
+        "au.burberry.com",
+        "au.myprotein.com",
+        "beatsbydre.com",
+        "dior.com",
+        "bedintentions.com",
+        "belkin.com",
+        "gq.com",
+        "myer.com.au",
+        "bigw.com.au",
+        "biologyskin.com",
+        "booktopia.com.au",
+        "insidetracker.com",
+        "koala.com",
+        "nasm.org",
+        "ouraring.com",
+        "bondiactive.com",
+        "booking.com",
+        "bose.com.au",
+        "briogeohair.com",
+        "brooksrunning.com.au",
+        "canterburynz.com.au",
+        "lululemon.com.au",
+        "champion.com.au",
+        "chemistdirect.com.au",
+        "chemistwarehouse.com.au",
+        "cityperfume.com.au",
+        "on-running.com",
+        "mayoclinic.org",
+        "cronometer.com",
+        "currentbody.com.au",
+        "czechandspeake.com",
+        "davidjones.com",
+        "davidjones.com.au",
+        "dicksmith.com.au",
+        "springer.com",
+        "echt.com.au",
+        "ecosa.com.au",
+        "elitesupps.com.au",
+        "emma-sleep.com.au",
+        "tupperware.com.au",
+        "ergoflex.com.au",
+        "jbl.com",
+        "eva.com.au",
+        "uniqlo.com",
+        "firstchoiceliquor.com.au",
+        "freshbeautyco.com.au",
+        "getfrenchie.com",
+        "gillette.com.au",
+        "schwinnfitness.com",
+        "goodvibes.com",
+        "gymandfitness.com.au",
+        "healthylife.com.au",
+        "hellyhansen.com.au",
+        "kogan.com",
+        "spacenk.com",
+        "hoka.com",
+        "hotoctopuss.com",
+        "jlab.com",
+        "jabra.com.au",
+        "jbl.com.au",
+        "jisulife.com",
+        "whoop.com",
+        "johnsonfitness.com.au",
+        "lww.com",
+        "kathmandu.com.au",
+        "keto.com.au",
+        "kiehls.com.au",
+        "ksubi.com.au",
+        "lekkerbikes.com.au",
+        "lelo.com",
+        "leoncycle.com.au",
+        "lg.com",
+        "lifespanfitness.com",
+        "lovehoney.com.au",
+        "lskd.co",
+        "saba.com.au",
+        "mecca.com",
+        "mobileciti.com.au",
+        "musashi.com",
+        "newbalance.com.au",
+        "nordictrackfitness.com.au",
+        "onepeloton.com.au",
+        "organicloven.com",
+        "theiconic.com.au",
+        "ozsale.com.au",
+        "ozhairandbeauty.com",
+        "pharmacy4less.com.au",
+        "prada.com",
+        "rebelsport.com.au",
+        "reebok.com.au",
+        "remingtonproducts.com",
+        "revolveclothing.com.au",
+        "saint.cc",
+        "salomon.com.au",
+        "saucony.com.au",
+        "scotchporter.com",
+        "shavershop.com.au",
+        "sleepingduck.com",
+        "sony.com.au",
+        "stayz.com.au",
+        "straand.com.au",
+        "stuffthatmatters.com",
+        "supplementmart.com.au",
+        "suunto.com",
+        "t2tea.com",
+        "technogym.com",
+        "tenga-australia.com.au",
+        "theathletesfoot.com.au",
+        "theaussieman.com",
+        "thegoodguys.com.au",
+        "theordinary.com",
+        "thenorthface.com.au",
+        "therabody.com",
+        "thewodlife.com.au",
+        "umbro.com.au",
+        "underarmour.com.au",
+        "venroy.com.au",
+        "vervefitness.com.au",
+        "vitaman.com.au",
+        "vitruvianform.com",
+        "vulcanfitness.com.au",
+        "waterdrop.com.au",
+        "wildsecrets.com.au",
+        "wildearth.com.au",
+        "wiltshire.com.au",
+        "xterrafitness.com"
+      ]
+    },
+    "promotype": {
+      "value": "student"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Health / Healthcare",
+      "value": [
+        "Health / Healthcare",
+        "Online / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Health / Healthcare",
+        "rank": 1,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Health / Healthcare",
+          "rank": 1,
+          "score": 100
+        },
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 60
+        }
+      ]
+    }
+  }
+}

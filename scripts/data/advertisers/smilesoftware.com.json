@@ -1,0 +1,236 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 5,
+      "sampleValue": [
+        "Business Insider",
+        "Digidip",
+        "Impact"
+      ],
+      "value": [
+        "Business Insider",
+        "Digidip",
+        "Impact",
+        "ShareASale",
+        "Skimlinks"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 6,
+      "error": false,
+      "value": [
+        {
+          "department": null,
+          "value": "angel@smilesoftware.com"
+        },
+        {
+          "department": null,
+          "value": "greg@smilesoftware.com"
+        },
+        {
+          "department": null,
+          "value": "partners@smilesoftware.com"
+        },
+        {
+          "department": null,
+          "value": "philip@smilesoftware.com"
+        },
+        {
+          "department": "communication",
+          "value": "pr@smilesoftware.com"
+        },
+        {
+          "department": null,
+          "value": "stacy@smilesoftware.com"
+        }
+      ]
+    },
+    "domain": "smilesoftware.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "Smile Software develops exceptional productivity tools like TextExpander, our text expansion tool to save you time and keep your communications consistent.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/smilesoftware.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://smilesoftware.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 96
+      },
+      "partnersAdded": {
+        "count": 3,
+        "value": [
+          {
+            "domain": "minorco.com"
+          },
+          {
+            "domain": "learnhowtopodcast.blogspot.com"
+          },
+          {
+            "domain": "rogersreads.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 7,
+        "value": [
+          {
+            "domain": "growthmarketer.co"
+          },
+          {
+            "domain": "newsquo.com"
+          },
+          {
+            "domain": "pcsupporttoday.com"
+          },
+          {
+            "domain": "asianefficiency.com"
+          },
+          {
+            "domain": "growwithwill.com"
+          },
+          {
+            "domain": "podscan.fm"
+          },
+          {
+            "domain": "whitstableseacadets.org"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 12,
+            "promotype": "student",
+            "value": [
+              "actions.getdrafts.com",
+              "almostpractical.com",
+              "contentsnare.com",
+              "creativebloq.com",
+              "davidblue.wtf",
+              "devon-technologies.net",
+              "ednace.com",
+              "espirian.co.uk",
+              "katelynknox.com",
+              "macautomationtips.com",
+              "malcolmpatten.com",
+              "tilde.town"
+            ]
+          },
+          {
+            "count": 38,
+            "promotype": "blog",
+            "value": [
+              "aktura.tech",
+              "alessiacappello.com",
+              "apppresser.com",
+              "brock.tv",
+              "burrissconsulting.com",
+              "businessinsider.com",
+              "buzzpro.com",
+              "cindyhelp.me",
+              "coachingforleaders.com",
+              "csnare.com",
+              "dannyozment.com",
+              "devontechnologies.com",
+              "digitalmedievalist.com",
+              "directory.getdrafts.com",
+              "documentsnap.com",
+              "emilcar.fm",
+              "entreresource.com",
+              "getlasso.co",
+              "homeworkingclub.com",
+              "ideabook.com",
+              "imore.com",
+              "joebuhlig.com",
+              "leerspreken.nl",
+              "macapplibs.com",
+              "macworld.com",
+              "macworld.se",
+              "mymorningroutine.com",
+              "obiztools.com",
+              "pixelperfect.co.il",
+              "player.fm",
+              "recomendo.com",
+              "schoolofpodcasting.com",
+              "soulpreneursuccesscode.com",
+              "statnote.com",
+              "strategischlui.nl",
+              "supportthisshow.com",
+              "theapprofessor.blogspot.com",
+              "zenpilot.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "incentive",
+            "value": [
+              "couponorcoupon.com"
+            ]
+          },
+          {
+            "count": 3,
+            "promotype": "content",
+            "value": [
+              "geekpratique.com",
+              "philsimon.com",
+              "thesweetbits.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "forum",
+            "value": [
+              "kyuda.io"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "linkedin"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/smilesoftware",
+        "linkedin": "https://linkedin.com/company/smileapps",
+        "twitter": "https://twitter.com/smilesoftware",
+        "youtube": "https://youtube.com/channel/ucqaz0awj7oqz7ppungkca5w"
+      }
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Technology / Software",
+        "rank": 2,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Business / Software",
+          "rank": 2,
+          "score": 90
+        },
+        {
+          "name": "Technology / Software",
+          "rank": 2,
+          "score": 95
+        }
+      ]
+    }
+  }
+}

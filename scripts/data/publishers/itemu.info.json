@@ -1,0 +1,605 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "A8"
+      ],
+      "value": [
+        "A8"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.5
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.5
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.5
+        }
+      ]
+    },
+    "domain": "itemu.info",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "amazon"
+        },
+        {
+          "score": 0.6535729,
+          "value": "armour"
+        },
+        {
+          "score": 0.3057487,
+          "value": "液晶テレビ"
+        },
+        {
+          "score": 0.2720883,
+          "value": "rakuten"
+        },
+        {
+          "score": 0.21318257,
+          "value": "アンダーアーマー"
+        },
+        {
+          "score": 0.20999771,
+          "value": "coupon"
+        },
+        {
+          "score": 0.17952217,
+          "value": "テレビ"
+        },
+        {
+          "score": 0.15456685,
+          "value": "save"
+        },
+        {
+          "score": 0.15279022,
+          "value": "prime"
+        },
+        {
+          "score": 0.15046819,
+          "value": "こちら"
+        },
+        {
+          "score": 0.14070913,
+          "value": "belgium"
+        },
+        {
+          "score": 0.14070913,
+          "value": "coupons"
+        },
+        {
+          "score": 0.13786653,
+          "value": "cards"
+        },
+        {
+          "score": 0.13466859,
+          "value": "books"
+        },
+        {
+          "score": 0.12898336,
+          "value": "conditions"
+        },
+        {
+          "score": 0.12741272,
+          "value": "ランキング"
+        },
+        {
+          "score": 0.11974489,
+          "value": "stars"
+        },
+        {
+          "score": 0.11654724,
+          "value": "ネックレス"
+        },
+        {
+          "score": 0.112003416,
+          "value": "在庫あり"
+        },
+        {
+          "score": 0.10937867,
+          "value": "カートに入れる"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "amazon"
+        },
+        {
+          "score": 0.6535729,
+          "value": "armour"
+        },
+        {
+          "score": 0.3057487,
+          "value": "液晶テレビ"
+        },
+        {
+          "score": 0.2720883,
+          "value": "rakuten"
+        },
+        {
+          "score": 0.21318257,
+          "value": "アンダーアーマー"
+        },
+        {
+          "score": 0.20999771,
+          "value": "coupon"
+        },
+        {
+          "score": 0.17952217,
+          "value": "テレビ"
+        },
+        {
+          "score": 0.15456685,
+          "value": "save"
+        },
+        {
+          "score": 0.15279022,
+          "value": "prime"
+        },
+        {
+          "score": 0.15046819,
+          "value": "こちら"
+        },
+        {
+          "score": 0.14070913,
+          "value": "belgium"
+        },
+        {
+          "score": 0.14070913,
+          "value": "coupons"
+        },
+        {
+          "score": 0.13786653,
+          "value": "cards"
+        },
+        {
+          "score": 0.13466859,
+          "value": "books"
+        },
+        {
+          "score": 0.12898336,
+          "value": "conditions"
+        },
+        {
+          "score": 0.12741272,
+          "value": "ランキング"
+        },
+        {
+          "score": 0.11974489,
+          "value": "stars"
+        },
+        {
+          "score": 0.11654724,
+          "value": "ネックレス"
+        },
+        {
+          "score": 0.112003416,
+          "value": "在庫あり"
+        },
+        {
+          "score": 0.10937867,
+          "value": "カートに入れる"
+        },
+        {
+          "score": 0.1076638,
+          "value": "sell"
+        },
+        {
+          "score": 0.10730848,
+          "value": "ships"
+        },
+        {
+          "score": 0.10730848,
+          "value": "ships belgium"
+        },
+        {
+          "score": 0.106597826,
+          "value": "gift cards"
+        },
+        {
+          "score": 0.106176235,
+          "value": "お気に入り"
+        },
+        {
+          "score": 0.10304456,
+          "value": "care"
+        },
+        {
+          "score": 0.10055728,
+          "value": "co jp"
+        },
+        {
+          "score": 0.09554187,
+          "value": "iphone"
+        },
+        {
+          "score": 0.092384785,
+          "value": "amazon brand"
+        },
+        {
+          "score": 0.091653705,
+          "value": "music"
+        },
+        {
+          "score": 0.091650896,
+          "value": "カートに入れる 在庫あり"
+        },
+        {
+          "score": 0.08883152,
+          "value": "clip"
+        },
+        {
+          "score": 0.08669957,
+          "value": "clip coupon"
+        },
+        {
+          "score": 0.086540006,
+          "value": "pant"
+        },
+        {
+          "score": 0.08634424,
+          "value": "baby"
+        },
+        {
+          "score": 0.08173222,
+          "value": "スタイリング"
+        },
+        {
+          "score": 0.080930926,
+          "value": "active"
+        },
+        {
+          "score": 0.080930926,
+          "value": "active お気に入り"
+        },
+        {
+          "score": 0.080930926,
+          "value": "stage"
+        },
+        {
+          "score": 0.080659024,
+          "value": "clipped"
+        },
+        {
+          "score": 0.079948366,
+          "value": "credit"
+        },
+        {
+          "score": 0.07888239,
+          "value": "computers"
+        },
+        {
+          "score": 0.07854095,
+          "value": "regza"
+        },
+        {
+          "score": 0.07854095,
+          "value": "fashion"
+        },
+        {
+          "score": 0.077461086,
+          "value": "basics"
+        },
+        {
+          "score": 0.077461086,
+          "value": "amazon basics"
+        },
+        {
+          "score": 0.07639511,
+          "value": "devices"
+        },
+        {
+          "score": 0.07639511,
+          "value": "seller"
+        },
+        {
+          "score": 0.07573591,
+          "value": "airpod"
+        },
+        {
+          "score": 0.07568446,
+          "value": "kitchen"
+        },
+        {
+          "score": 0.07497381,
+          "value": "choose"
+        },
+        {
+          "score": 0.07461848,
+          "value": "valid"
+        },
+        {
+          "score": 0.074263155,
+          "value": "health"
+        },
+        {
+          "score": 0.07390782,
+          "value": "save checkout"
+        },
+        {
+          "score": 0.07390782,
+          "value": "coupon clipped"
+        },
+        {
+          "score": 0.0735525,
+          "value": "japanese"
+        },
+        {
+          "score": 0.07177587,
+          "value": "amazon co"
+        },
+        {
+          "score": 0.07177587,
+          "value": "sellers"
+        },
+        {
+          "score": 0.07106522,
+          "value": "point"
+        },
+        {
+          "score": 0.07068947,
+          "value": "store"
+        },
+        {
+          "score": 0.070354566,
+          "value": "personal care"
+        },
+        {
+          "score": 0.069643915,
+          "value": "kindle"
+        },
+        {
+          "score": 0.06950709,
+          "value": "ブラック"
+        },
+        {
+          "score": 0.06786728,
+          "value": "amazonglobal"
+        },
+        {
+          "score": 0.06751195,
+          "value": "notice"
+        },
+        {
+          "score": 0.067320816,
+          "value": "ショップから探す"
+        },
+        {
+          "score": 0.06715663,
+          "value": "card"
+        },
+        {
+          "score": 0.06466935,
+          "value": "video"
+        },
+        {
+          "score": 0.06451578,
+          "value": "earth"
+        },
+        {
+          "score": 0.06451578,
+          "value": "pro"
+        },
+        {
+          "score": 0.06182674,
+          "value": "audible"
+        },
+        {
+          "score": 0.06182674,
+          "value": "japanese books"
+        },
+        {
+          "score": 0.061710745,
+          "value": "ダブルチューナー"
+        },
+        {
+          "score": 0.061710745,
+          "value": "uaアンディナ"
+        },
+        {
+          "score": 0.061710745,
+          "value": "あす楽対応"
+        },
+        {
+          "score": 0.06111609,
+          "value": "terms conditions"
+        },
+        {
+          "score": 0.06076076,
+          "value": "health personal"
+        },
+        {
+          "score": 0.05898413,
+          "value": "games"
+        },
+        {
+          "score": 0.05890571,
+          "value": "楽天ペイメント"
+        },
+        {
+          "score": 0.058628805,
+          "value": "valid sep"
+        },
+        {
+          "score": 0.05827348,
+          "value": "conditions use"
+        },
+        {
+          "score": 0.0581682,
+          "value": "レディース"
+        },
+        {
+          "score": 0.057562824,
+          "value": "customer service"
+        },
+        {
+          "score": 0.056100678,
+          "value": "スポーツタイツ"
+        },
+        {
+          "score": 0.056100678,
+          "value": "rakuten fashion"
+        },
+        {
+          "score": 0.05546385,
+          "value": "スピード便"
+        },
+        {
+          "score": 0.05543087,
+          "value": "select"
+        },
+        {
+          "score": 0.05543087,
+          "value": "personal information"
+        },
+        {
+          "score": 0.055075545,
+          "value": "policies"
+        },
+        {
+          "score": 0.054775394,
+          "value": "最短翌日発送"
+        },
+        {
+          "score": 0.05409694,
+          "value": "shirt"
+        },
+        {
+          "score": 0.053298913,
+          "value": "supplies"
+        },
+        {
+          "score": 0.053295642,
+          "value": "定期便"
+        },
+        {
+          "score": 0.053295642,
+          "value": "液晶テレビ regza"
+        },
+        {
+          "score": 0.053295642,
+          "value": "golf"
+        },
+        {
+          "score": 0.05210762,
+          "value": "スピード便 カートに入れる"
+        },
+        {
+          "score": 0.05210762,
+          "value": "最短翌日発送 スピード便"
+        },
+        {
+          "score": 0.05049061,
+          "value": "luxury"
+        },
+        {
+          "score": 0.05049061,
+          "value": "採用情報"
+        },
+        {
+          "score": 0.050472535,
+          "value": "在庫あり 最短翌日発送"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/itemu.info.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://itemu.info"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 2,
+        "value": [
+          "rakuten.co.jp",
+          "amazon.co.jp"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1.9,
+            "vertical": "Shopping / Department Stores"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 2,
+      "value": [
+        "rakuten.co.jp",
+        "amazon.co.jp"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Entertainment / Gaming",
+      "value": [
+        "Entertainment / Gaming",
+        "Technology / Software"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Entertainment / Gaming",
+        "rank": 1,
+        "score": 50
+      },
+      "value": [
+        {
+          "name": "Entertainment / Gaming",
+          "rank": 1,
+          "score": 50
+        },
+        {
+          "name": "Technology / Software",
+          "rank": 1,
+          "score": 30
+        }
+      ]
+    }
+  }
+}

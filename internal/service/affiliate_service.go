@@ -6,6 +6,7 @@ import (
 	"fmt"
 
 	"github.com/affiliate-backend/internal/domain"
+	"github.com/affiliate-backend/internal/platform/logger"
 	"github.com/affiliate-backend/internal/platform/provider"
 	"github.com/affiliate-backend/internal/repository"
 	"github.com/google/uuid"
@@ -80,7 +81,7 @@ func (s *affiliateService) CreateAffiliate(ctx context.Context, affiliate *domai
 	_, err = s.integrationService.CreateAffiliate(ctx, *affiliate)
 	if err != nil {
 		// Log error but don't fail the operation since local creation succeeded
-		fmt.Printf("Warning: failed to create affiliate in provider: %v\n", err)
+		logger.Warn("Failed to create affiliate in provider", "affiliate_id", affiliate.AffiliateID, "error", err)
 		return affiliate, nil
 	}
 
@@ -113,7 +114,7 @@ func (s *affiliateService) UpdateAffiliate(ctx context.Context, affiliate *domai
 	// Step 3: Update in provider if mapping exists
 	if err := s.integrationService.UpdateAffiliate(ctx, *affiliate); err != nil {
 		// Log error but don't fail the operation since local update succeeded
-		fmt.Printf("Warning: failed to update affiliate in provider: %v\n", err)
+		logger.Warn("Failed to update affiliate in provider", "affiliate_id", affiliate.AffiliateID, "error", err)
 	}
 
 	return nil

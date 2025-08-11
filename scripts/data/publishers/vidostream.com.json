@@ -1,0 +1,722 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 6,
+      "sampleValue": [
+        "Business Insider",
+        "CJ Affiliate",
+        "Impact"
+      ],
+      "value": [
+        "Business Insider",
+        "CJ Affiliate",
+        "Impact",
+        "Skimlinks",
+        "TRX",
+        "Viglink"
+      ]
+    },
+    "countryRankings": {
+      "count": 3,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.4
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.4
+        },
+        {
+          "countryCode": "ca",
+          "score": 0.1
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.4
+        },
+        {
+          "countryCode": "ca",
+          "score": 0.1
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "vidostream.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "amazon"
+        },
+        {
+          "score": 0.8636285,
+          "value": "card"
+        },
+        {
+          "score": 0.8144787,
+          "value": "star"
+        },
+        {
+          "score": 0.6385689,
+          "value": "seller"
+        },
+        {
+          "score": 0.4257126,
+          "value": "audible"
+        },
+        {
+          "score": 0.3756861,
+          "value": "apple"
+        },
+        {
+          "score": 0.35930085,
+          "value": "video"
+        },
+        {
+          "score": 0.32573932,
+          "value": "sign"
+        },
+        {
+          "score": 0.31781504,
+          "value": "creative"
+        },
+        {
+          "score": 0.2984135,
+          "value": "trial"
+        },
+        {
+          "score": 0.29454768,
+          "value": "app"
+        },
+        {
+          "score": 0.274572,
+          "value": "audible trial"
+        },
+        {
+          "score": 0.26850498,
+          "value": "store"
+        },
+        {
+          "score": 0.258104,
+          "value": "art"
+        },
+        {
+          "score": 0.2411825,
+          "value": "global"
+        },
+        {
+          "score": 0.23836127,
+          "value": "solution"
+        },
+        {
+          "score": 0.23579606,
+          "value": "health"
+        },
+        {
+          "score": 0.23048936,
+          "value": "fulfilment"
+        },
+        {
+          "score": 0.2215244,
+          "value": "device"
+        },
+        {
+          "score": 0.22041333,
+          "value": "alexa"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "amazon"
+        },
+        {
+          "score": 0.8636285,
+          "value": "card"
+        },
+        {
+          "score": 0.8144787,
+          "value": "star"
+        },
+        {
+          "score": 0.6385689,
+          "value": "seller"
+        },
+        {
+          "score": 0.4257126,
+          "value": "audible"
+        },
+        {
+          "score": 0.3756861,
+          "value": "apple"
+        },
+        {
+          "score": 0.35930085,
+          "value": "video"
+        },
+        {
+          "score": 0.32573932,
+          "value": "sign"
+        },
+        {
+          "score": 0.31781504,
+          "value": "creative"
+        },
+        {
+          "score": 0.2984135,
+          "value": "trial"
+        },
+        {
+          "score": 0.29454768,
+          "value": "app"
+        },
+        {
+          "score": 0.274572,
+          "value": "audible trial"
+        },
+        {
+          "score": 0.26850498,
+          "value": "store"
+        },
+        {
+          "score": 0.258104,
+          "value": "art"
+        },
+        {
+          "score": 0.2411825,
+          "value": "global"
+        },
+        {
+          "score": 0.23836127,
+          "value": "solution"
+        },
+        {
+          "score": 0.23579606,
+          "value": "health"
+        },
+        {
+          "score": 0.23048936,
+          "value": "fulfilment"
+        },
+        {
+          "score": 0.2215244,
+          "value": "device"
+        },
+        {
+          "score": 0.22041333,
+          "value": "alexa"
+        },
+        {
+          "score": 0.2141158,
+          "value": "accessory"
+        },
+        {
+          "score": 0.2141158,
+          "value": "central"
+        },
+        {
+          "score": 0.21033728,
+          "value": "restriction"
+        },
+        {
+          "score": 0.20543084,
+          "value": "sport"
+        },
+        {
+          "score": 0.20529927,
+          "value": "release"
+        },
+        {
+          "score": 0.195017,
+          "value": "people"
+        },
+        {
+          "score": 0.19068901,
+          "value": "getty"
+        },
+        {
+          "score": 0.18195333,
+          "value": "care"
+        },
+        {
+          "score": 0.17770037,
+          "value": "stock"
+        },
+        {
+          "score": 0.17518154,
+          "value": "department"
+        },
+        {
+          "score": 0.17423013,
+          "value": "book"
+        },
+        {
+          "score": 0.16685289,
+          "value": "enterprise"
+        },
+        {
+          "score": 0.16499512,
+          "value": "toy"
+        },
+        {
+          "score": 0.1612166,
+          "value": "egift"
+        },
+        {
+          "score": 0.16071095,
+          "value": "team"
+        },
+        {
+          "score": 0.1599587,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.15907533,
+          "value": "personal care"
+        },
+        {
+          "score": 0.15869759,
+          "value": "fitness"
+        },
+        {
+          "score": 0.15432565,
+          "value": "fantasy"
+        },
+        {
+          "score": 0.15385205,
+          "value": "story"
+        },
+        {
+          "score": 0.15365957,
+          "value": "australia"
+        },
+        {
+          "score": 0.15227604,
+          "value": "skill"
+        },
+        {
+          "score": 0.1482563,
+          "value": "category"
+        },
+        {
+          "score": 0.14518487,
+          "value": "event"
+        },
+        {
+          "score": 0.14342138,
+          "value": "smart"
+        },
+        {
+          "score": 0.14261542,
+          "value": "movie"
+        },
+        {
+          "score": 0.13971478,
+          "value": "country"
+        },
+        {
+          "score": 0.13817853,
+          "value": "history"
+        },
+        {
+          "score": 0.13288733,
+          "value": "season"
+        },
+        {
+          "score": 0.13271463,
+          "value": "woman"
+        },
+        {
+          "score": 0.12740223,
+          "value": "game"
+        },
+        {
+          "score": 0.12635863,
+          "value": "player"
+        },
+        {
+          "score": 0.12580198,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.12217195,
+          "value": "helpful"
+        },
+        {
+          "score": 0.12055053,
+          "value": "editorial"
+        },
+        {
+          "score": 0.11967819,
+          "value": "press"
+        },
+        {
+          "score": 0.119180635,
+          "value": "ticket"
+        },
+        {
+          "score": 0.119180635,
+          "value": "telegraph"
+        },
+        {
+          "score": 0.119180635,
+          "value": "film"
+        },
+        {
+          "score": 0.11802095,
+          "value": "play"
+        },
+        {
+          "score": 0.11580098,
+          "value": "music"
+        },
+        {
+          "score": 0.1156499,
+          "value": "rate"
+        },
+        {
+          "score": 0.115382805,
+          "value": "baby"
+        },
+        {
+          "score": 0.11461493,
+          "value": "australian"
+        },
+        {
+          "score": 0.11209592,
+          "value": "fee"
+        },
+        {
+          "score": 0.111843616,
+          "value": "program"
+        },
+        {
+          "score": 0.10905958,
+          "value": "plant"
+        },
+        {
+          "score": 0.10595055,
+          "value": "idea"
+        },
+        {
+          "score": 0.104959756,
+          "value": "travel"
+        },
+        {
+          "score": 0.103378475,
+          "value": "camera"
+        },
+        {
+          "score": 0.10076038,
+          "value": "clothing"
+        },
+        {
+          "score": 0.0979062,
+          "value": "digital"
+        },
+        {
+          "score": 0.097433224,
+          "value": "power"
+        },
+        {
+          "score": 0.09685864,
+          "value": "strategy"
+        },
+        {
+          "score": 0.095722355,
+          "value": "office"
+        },
+        {
+          "score": 0.095344506,
+          "value": "insight"
+        },
+        {
+          "score": 0.09446286,
+          "value": "pantry"
+        },
+        {
+          "score": 0.0929108,
+          "value": "main content"
+        },
+        {
+          "score": 0.09007708,
+          "value": "musical"
+        },
+        {
+          "score": 0.08987367,
+          "value": "football"
+        },
+        {
+          "score": 0.08942483,
+          "value": "global store"
+        },
+        {
+          "score": 0.08906735,
+          "value": "style"
+        },
+        {
+          "score": 0.08898401,
+          "value": "safe"
+        },
+        {
+          "score": 0.088300414,
+          "value": "playstation"
+        },
+        {
+          "score": 0.086924165,
+          "value": "fine"
+        },
+        {
+          "score": 0.085646324,
+          "value": "beer"
+        },
+        {
+          "score": 0.08555976,
+          "value": "software"
+        },
+        {
+          "score": 0.0855344,
+          "value": "prices"
+        },
+        {
+          "score": 0.08544737,
+          "value": "accessibility"
+        },
+        {
+          "score": 0.08488882,
+          "value": "guide"
+        },
+        {
+          "score": 0.084564686,
+          "value": "manager"
+        },
+        {
+          "score": 0.08438682,
+          "value": "coupon"
+        },
+        {
+          "score": 0.08376902,
+          "value": "child"
+        },
+        {
+          "score": 0.08312731,
+          "value": "spirit"
+        },
+        {
+          "score": 0.08312731,
+          "value": "wine"
+        },
+        {
+          "score": 0.08188469,
+          "value": "tour"
+        },
+        {
+          "score": 0.0806083,
+          "value": "corporate press"
+        },
+        {
+          "score": 0.0806083,
+          "value": "animal"
+        },
+        {
+          "score": 0.0802849,
+          "value": "photo"
+        },
+        {
+          "score": 0.07995775,
+          "value": "generation"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://vidostream.com/",
+        "https://www.vidostream.com/",
+        "http://vidostream.com/",
+        "http://www.vidostream.com/"
+      ]
+    },
+    "metaData": {
+      "description": "Sharing success, connect passions",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/vidostream.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://vidostream.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 14,
+        "value": [
+          "state.gov",
+          "twitter.com",
+          "apple.com",
+          "instagram.com",
+          "amazon.com.au",
+          "youtube.com",
+          "gettyimages.com",
+          "gq.com",
+          "cbs.com",
+          "chicagoreviewpress.com",
+          "katespade.com",
+          "skims.wsktbf.net",
+          "thegoodguys.com.au",
+          "vividseats.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "siriusxm.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 2.85,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 1,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 1,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Lingerie"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Electricals"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 14,
+      "value": [
+        "state.gov",
+        "twitter.com",
+        "apple.com",
+        "instagram.com",
+        "amazon.com.au",
+        "youtube.com",
+        "gettyimages.com",
+        "gq.com",
+        "cbs.com",
+        "chicagoreviewpress.com",
+        "katespade.com",
+        "skims.wsktbf.net",
+        "thegoodguys.com.au",
+        "vividseats.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 3,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/nukeviet",
+        "twitter": "https://twitter.com/nukeviet",
+        "youtube": "https://youtube.com/user/nukeviet"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Entertainment / Streaming",
+      "value": [
+        "Entertainment / Streaming",
+        "Online / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Entertainment / Streaming",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Entertainment / Streaming",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

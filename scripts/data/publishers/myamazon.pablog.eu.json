@@ -1,0 +1,147 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Rakuten"
+      ],
+      "value": [
+        "Rakuten"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.4
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.4
+        },
+        {
+          "countryCode": "de",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.4
+        },
+        {
+          "countryCode": "de",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "myamazon.pablog.eu",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://myamazon.pablog.eu/",
+        "https://www.myamazon.pablog.eu/",
+        "http://myamazon.pablog.eu/",
+        "http://www.myamazon.pablog.eu/"
+      ]
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/myamazon.pablog.eu.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://myamazon.pablog.eu"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 3,
+        "value": [
+          "informit.com",
+          "link.mercent.com",
+          "msafflnk.net"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 0.9,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 0.8,
+            "vertical": "Online / Services"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 3,
+      "value": [
+        "informit.com",
+        "link.mercent.com",
+        "msafflnk.net"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Shopping / Department Stores",
+      "value": [
+        "Shopping / Department Stores",
+        "Business / Ecommerce"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Business / Ecommerce",
+          "rank": 1,
+          "score": 80
+        }
+      ]
+    }
+  }
+}

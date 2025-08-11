@@ -1,0 +1,646 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 3,
+      "sampleValue": [
+        "Impact",
+        "Rakuten",
+        "Skimlinks"
+      ],
+      "value": [
+        "Impact",
+        "Rakuten",
+        "Skimlinks"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "au",
+        "score": 0.98
+      },
+      "sampleValue": [
+        {
+          "countryCode": "au",
+          "score": 0.98
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "au",
+          "score": 0.98
+        }
+      ]
+    },
+    "domain": "choice.com.au",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "underwear"
+        },
+        {
+          "score": 0.8723161,
+          "value": "maternity"
+        },
+        {
+          "score": 0.7776538,
+          "value": "leggings"
+        },
+        {
+          "score": 0.7278089,
+          "value": "swimwear"
+        },
+        {
+          "score": 0.72728676,
+          "value": "activewear"
+        },
+        {
+          "score": 0.60998243,
+          "value": "styles"
+        },
+        {
+          "score": 0.5920555,
+          "value": "bikini"
+        },
+        {
+          "score": 0.58652157,
+          "value": "bonds"
+        },
+        {
+          "score": 0.570881,
+          "value": "pregnancy"
+        },
+        {
+          "score": 0.48485783,
+          "value": "style"
+        },
+        {
+          "score": 0.46139696,
+          "value": "modibodimummymoment"
+        },
+        {
+          "score": 0.4457564,
+          "value": "childbirth"
+        },
+        {
+          "score": 0.4372953,
+          "value": "clothing"
+        },
+        {
+          "score": 0.43432856,
+          "value": "socks"
+        },
+        {
+          "score": 0.43011582,
+          "value": "curvy"
+        },
+        {
+          "score": 0.42777014,
+          "value": "women"
+        },
+        {
+          "score": 0.42229554,
+          "value": "menstrual"
+        },
+        {
+          "score": 0.41447523,
+          "value": "sizing"
+        },
+        {
+          "score": 0.41447523,
+          "value": "birth"
+        },
+        {
+          "score": 0.39883468,
+          "value": "tampons"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "underwear"
+        },
+        {
+          "score": 0.8723161,
+          "value": "maternity"
+        },
+        {
+          "score": 0.7776538,
+          "value": "leggings"
+        },
+        {
+          "score": 0.7278089,
+          "value": "swimwear"
+        },
+        {
+          "score": 0.72728676,
+          "value": "activewear"
+        },
+        {
+          "score": 0.60998243,
+          "value": "styles"
+        },
+        {
+          "score": 0.5920555,
+          "value": "bikini"
+        },
+        {
+          "score": 0.58652157,
+          "value": "bonds"
+        },
+        {
+          "score": 0.570881,
+          "value": "pregnancy"
+        },
+        {
+          "score": 0.48485783,
+          "value": "style"
+        },
+        {
+          "score": 0.46139696,
+          "value": "modibodimummymoment"
+        },
+        {
+          "score": 0.4457564,
+          "value": "childbirth"
+        },
+        {
+          "score": 0.4372953,
+          "value": "clothing"
+        },
+        {
+          "score": 0.43432856,
+          "value": "socks"
+        },
+        {
+          "score": 0.43011582,
+          "value": "curvy"
+        },
+        {
+          "score": 0.42777014,
+          "value": "women"
+        },
+        {
+          "score": 0.42229554,
+          "value": "menstrual"
+        },
+        {
+          "score": 0.41447523,
+          "value": "sizing"
+        },
+        {
+          "score": 0.41447523,
+          "value": "birth"
+        },
+        {
+          "score": 0.39883468,
+          "value": "tampons"
+        },
+        {
+          "score": 0.36755353,
+          "value": "underpants"
+        },
+        {
+          "score": 0.36755353,
+          "value": "mums"
+        },
+        {
+          "score": 0.36755353,
+          "value": "womens"
+        },
+        {
+          "score": 0.34409267,
+          "value": "boobs"
+        },
+        {
+          "score": 0.34409267,
+          "value": "category"
+        },
+        {
+          "score": 0.33627236,
+          "value": "hygiene"
+        },
+        {
+          "score": 0.32845208,
+          "value": "sustainable"
+        },
+        {
+          "score": 0.3206318,
+          "value": "environment"
+        },
+        {
+          "score": 0.3185274,
+          "value": "sport"
+        },
+        {
+          "score": 0.29717094,
+          "value": "hipster"
+        },
+        {
+          "score": 0.29717094,
+          "value": "friendly"
+        },
+        {
+          "score": 0.28153035,
+          "value": "waist"
+        },
+        {
+          "score": 0.28153035,
+          "value": "sensual"
+        },
+        {
+          "score": 0.28153035,
+          "value": "inspiring"
+        },
+        {
+          "score": 0.28153035,
+          "value": "pelvic"
+        },
+        {
+          "score": 0.27371007,
+          "value": "mother"
+        },
+        {
+          "score": 0.27371007,
+          "value": "teen"
+        },
+        {
+          "score": 0.27371007,
+          "value": "packs"
+        },
+        {
+          "score": 0.25088605,
+          "value": "tees"
+        },
+        {
+          "score": 0.2502492,
+          "value": "press"
+        },
+        {
+          "score": 0.2502492,
+          "value": "blue"
+        },
+        {
+          "score": 0.24242891,
+          "value": "overnight"
+        },
+        {
+          "score": 0.23460864,
+          "value": "stock"
+        },
+        {
+          "score": 0.23460864,
+          "value": "reusable"
+        },
+        {
+          "score": 0.23460864,
+          "value": "classic"
+        },
+        {
+          "score": 0.23460864,
+          "value": "beige"
+        },
+        {
+          "score": 0.22678834,
+          "value": "giveaway"
+        },
+        {
+          "score": 0.22678834,
+          "value": "incontinence"
+        },
+        {
+          "score": 0.22678834,
+          "value": "disposable"
+        },
+        {
+          "score": 0.22210883,
+          "value": "baby"
+        },
+        {
+          "score": 0.21896805,
+          "value": "seamfree"
+        },
+        {
+          "score": 0.21896805,
+          "value": "pair"
+        },
+        {
+          "score": 0.21896805,
+          "value": "logo"
+        },
+        {
+          "score": 0.21896805,
+          "value": "plastic"
+        },
+        {
+          "score": 0.21577981,
+          "value": "trackies"
+        },
+        {
+          "score": 0.21508758,
+          "value": "hoodies"
+        },
+        {
+          "score": 0.21429645,
+          "value": "shorts"
+        },
+        {
+          "score": 0.21419756,
+          "value": "tops"
+        },
+        {
+          "score": 0.21360421,
+          "value": "pullovers"
+        },
+        {
+          "score": 0.21350533,
+          "value": "singlets"
+        },
+        {
+          "score": 0.21320865,
+          "value": "sleepwear"
+        },
+        {
+          "score": 0.21114777,
+          "value": "active"
+        },
+        {
+          "score": 0.21114777,
+          "value": "contour"
+        },
+        {
+          "score": 0.21114777,
+          "value": "impact"
+        },
+        {
+          "score": 0.21114777,
+          "value": "wicking"
+        },
+        {
+          "score": 0.20332748,
+          "value": "health"
+        },
+        {
+          "score": 0.20332748,
+          "value": "recycling"
+        },
+        {
+          "score": 0.20332748,
+          "value": "modibodi"
+        },
+        {
+          "score": 0.20332748,
+          "value": "vegan"
+        },
+        {
+          "score": 0.1876869,
+          "value": "range"
+        },
+        {
+          "score": 0.17986661,
+          "value": "card"
+        },
+        {
+          "score": 0.17986661,
+          "value": "moisture"
+        },
+        {
+          "score": 0.17760795,
+          "value": "pants"
+        },
+        {
+          "score": 0.17661904,
+          "value": "jackets"
+        },
+        {
+          "score": 0.17622347,
+          "value": "hoodies jackets"
+        },
+        {
+          "score": 0.17602569,
+          "value": "trackies pants"
+        },
+        {
+          "score": 0.17204633,
+          "value": "submit"
+        },
+        {
+          "score": 0.16422604,
+          "value": "regular"
+        },
+        {
+          "score": 0.16422604,
+          "value": "hour"
+        },
+        {
+          "score": 0.16422604,
+          "value": "working"
+        },
+        {
+          "score": 0.16422604,
+          "value": "christmas"
+        },
+        {
+          "score": 0.16422604,
+          "value": "leave"
+        },
+        {
+          "score": 0.16049984,
+          "value": "basics"
+        },
+        {
+          "score": 0.14813848,
+          "value": "girls"
+        },
+        {
+          "score": 0.14754513,
+          "value": "cover"
+        },
+        {
+          "score": 0.14655623,
+          "value": "kids"
+        },
+        {
+          "score": 0.14616066,
+          "value": "boys"
+        },
+        {
+          "score": 0.14398506,
+          "value": "tights"
+        },
+        {
+          "score": 0.14398506,
+          "value": "socks accessories"
+        },
+        {
+          "score": 0.14131501,
+          "value": "bodysuits"
+        },
+        {
+          "score": 0.13201927,
+          "value": "comfy"
+        },
+        {
+          "score": 0.13093147,
+          "value": "undies"
+        },
+        {
+          "score": 0.1251958,
+          "value": "sign"
+        },
+        {
+          "score": 0.10838436,
+          "value": "school"
+        },
+        {
+          "score": 0.1079888,
+          "value": "dresses"
+        },
+        {
+          "score": 0.10749435,
+          "value": "organics"
+        },
+        {
+          "score": 0.10719767,
+          "value": "skirts"
+        },
+        {
+          "score": 0.10709878,
+          "value": "tanks"
+        },
+        {
+          "score": 0.106802106,
+          "value": "sheets"
+        },
+        {
+          "score": 0.106307656,
+          "value": "dresses skirts"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": "Read independent and unbiased reviews, product tests, articles, information and buying guides from the experts at CHOICE. Includes appliances, electronics, technology, food and drink, babies and kids, health and body, outdoor and home improvement.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/choice.com.au.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://choice.com.au"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 7,
+        "value": [
+          "amazon.com.au",
+          "betta.com.au",
+          "binglee.com.au",
+          "bonds.com.au",
+          "modibodi.com",
+          "dyson.com.au",
+          "thegoodguys.com.au"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 3.6999998,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 1,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Lingerie"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 7,
+      "value": [
+        "amazon.com.au",
+        "betta.com.au",
+        "binglee.com.au",
+        "bonds.com.au",
+        "modibodi.com",
+        "dyson.com.au",
+        "thegoodguys.com.au"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 1,
+      "value": [
+        "img.choice.com.au"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "linkedin"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/choiceaustralia",
+        "linkedin": "https://linkedin.com/company/choice",
+        "twitter": "https://twitter.com/choiceaustralia",
+        "youtube": "https://youtube.com/user/choiceaustralia"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 1,
+      "sampleValue": "Online / Services",
+      "value": [
+        "Online / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Online / Services",
+        "rank": 1,
+        "score": 85
+      },
+      "value": [
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 85
+        }
+      ]
+    }
+  }
+}

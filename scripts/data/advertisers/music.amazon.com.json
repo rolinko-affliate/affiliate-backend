@@ -1,0 +1,689 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 9,
+      "sampleValue": [
+        "Business Insider",
+        "Digidip",
+        "Flexoffers"
+      ],
+      "value": [
+        "Business Insider",
+        "Digidip",
+        "Flexoffers",
+        "Impact",
+        "Kwanko",
+        "Skimlinks",
+        "Takeads",
+        "TRX",
+        "Viglink"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 0,
+      "error": false,
+      "value": []
+    },
+    "domain": "music.amazon.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "shirt"
+        },
+        {
+          "score": 1,
+          "value": "pearson"
+        },
+        {
+          "score": 0.9021898,
+          "value": "seller"
+        },
+        {
+          "score": 0.8938053,
+          "value": "video"
+        },
+        {
+          "score": 0.8394161,
+          "value": "cat"
+        },
+        {
+          "score": 0.710177,
+          "value": "notice"
+        },
+        {
+          "score": 0.6671533,
+          "value": "bustedtee"
+        },
+        {
+          "score": 0.6526549,
+          "value": "training"
+        },
+        {
+          "score": 0.57522124,
+          "value": "ebook"
+        },
+        {
+          "score": 0.5686131,
+          "value": "book"
+        },
+        {
+          "score": 0.5685841,
+          "value": "edition"
+        },
+        {
+          "score": 0.5442478,
+          "value": "share"
+        },
+        {
+          "score": 0.5376106,
+          "value": "software"
+        },
+        {
+          "score": 0.5221239,
+          "value": "programming"
+        },
+        {
+          "score": 0.51386863,
+          "value": "hat"
+        },
+        {
+          "score": 0.5022124,
+          "value": "statement"
+        },
+        {
+          "score": 0.4887701,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.48451328,
+          "value": "promotion"
+        },
+        {
+          "score": 0.47566372,
+          "value": "contest"
+        },
+        {
+          "score": 0.46460176,
+          "value": "table"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "shirt"
+        },
+        {
+          "score": 1,
+          "value": "pearson"
+        },
+        {
+          "score": 0.9021898,
+          "value": "seller"
+        },
+        {
+          "score": 0.8938053,
+          "value": "video"
+        },
+        {
+          "score": 0.8394161,
+          "value": "cat"
+        },
+        {
+          "score": 0.710177,
+          "value": "notice"
+        },
+        {
+          "score": 0.6671533,
+          "value": "bustedtee"
+        },
+        {
+          "score": 0.6526549,
+          "value": "training"
+        },
+        {
+          "score": 0.57522124,
+          "value": "ebook"
+        },
+        {
+          "score": 0.5686131,
+          "value": "book"
+        },
+        {
+          "score": 0.5685841,
+          "value": "edition"
+        },
+        {
+          "score": 0.5442478,
+          "value": "share"
+        },
+        {
+          "score": 0.5376106,
+          "value": "software"
+        },
+        {
+          "score": 0.5221239,
+          "value": "programming"
+        },
+        {
+          "score": 0.51386863,
+          "value": "hat"
+        },
+        {
+          "score": 0.5022124,
+          "value": "statement"
+        },
+        {
+          "score": 0.4887701,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.48451328,
+          "value": "promotion"
+        },
+        {
+          "score": 0.47566372,
+          "value": "contest"
+        },
+        {
+          "score": 0.46460176,
+          "value": "table"
+        },
+        {
+          "score": 0.45547447,
+          "value": "guy"
+        },
+        {
+          "score": 0.45132744,
+          "value": "informit"
+        },
+        {
+          "score": 0.4297752,
+          "value": "store"
+        },
+        {
+          "score": 0.42477876,
+          "value": "practice"
+        },
+        {
+          "score": 0.4189781,
+          "value": "lady"
+        },
+        {
+          "score": 0.40729928,
+          "value": "winter"
+        },
+        {
+          "score": 0.3941606,
+          "value": "leather"
+        },
+        {
+          "score": 0.39270073,
+          "value": "gaming"
+        },
+        {
+          "score": 0.38716814,
+          "value": "inquiry"
+        },
+        {
+          "score": 0.38495576,
+          "value": "site"
+        },
+        {
+          "score": 0.38053098,
+          "value": "survey"
+        },
+        {
+          "score": 0.34292036,
+          "value": "topic"
+        },
+        {
+          "score": 0.34292036,
+          "value": "office"
+        },
+        {
+          "score": 0.3240876,
+          "value": "fall"
+        },
+        {
+          "score": 0.31858408,
+          "value": "river"
+        },
+        {
+          "score": 0.31858408,
+          "value": "street"
+        },
+        {
+          "score": 0.31532848,
+          "value": "sticker"
+        },
+        {
+          "score": 0.3109489,
+          "value": "kid"
+        },
+        {
+          "score": 0.3109489,
+          "value": "hoodie"
+        },
+        {
+          "score": 0.30530974,
+          "value": "pivot"
+        },
+        {
+          "score": 0.30072993,
+          "value": "tank"
+        },
+        {
+          "score": 0.29646018,
+          "value": "source"
+        },
+        {
+          "score": 0.29424778,
+          "value": "communication"
+        },
+        {
+          "score": 0.29424778,
+          "value": "browser"
+        },
+        {
+          "score": 0.289823,
+          "value": "author"
+        },
+        {
+          "score": 0.28539824,
+          "value": "personal pearson"
+        },
+        {
+          "score": 0.28539824,
+          "value": "online store"
+        },
+        {
+          "score": 0.28539824,
+          "value": "log"
+        },
+        {
+          "score": 0.28539824,
+          "value": "provider"
+        },
+        {
+          "score": 0.28539824,
+          "value": "unauthorized"
+        },
+        {
+          "score": 0.28539824,
+          "value": "unauthorized access"
+        },
+        {
+          "score": 0.28539824,
+          "value": "trend"
+        },
+        {
+          "score": 0.28539824,
+          "value": "supplemental"
+        },
+        {
+          "score": 0.28539824,
+          "value": "supplemental privacy"
+        },
+        {
+          "score": 0.28539824,
+          "value": "resident"
+        },
+        {
+          "score": 0.28539824,
+          "value": "revision"
+        },
+        {
+          "score": 0.2699115,
+          "value": "map"
+        },
+        {
+          "score": 0.25884956,
+          "value": "team"
+        },
+        {
+          "score": 0.24778761,
+          "value": "operating"
+        },
+        {
+          "score": 0.24778761,
+          "value": "popular"
+        },
+        {
+          "score": 0.24557522,
+          "value": "press"
+        },
+        {
+          "score": 0.24336283,
+          "value": "sam"
+        },
+        {
+          "score": 0.24336283,
+          "value": "networking"
+        },
+        {
+          "score": 0.24115044,
+          "value": "course"
+        },
+        {
+          "score": 0.24115044,
+          "value": "popular topic"
+        },
+        {
+          "score": 0.23451327,
+          "value": "relation"
+        },
+        {
+          "score": 0.23451327,
+          "value": "legal"
+        },
+        {
+          "score": 0.23451327,
+          "value": "legal notice"
+        },
+        {
+          "score": 0.23451327,
+          "value": "personal map"
+        },
+        {
+          "score": 0.23451327,
+          "value": "update"
+        },
+        {
+          "score": 0.22787611,
+          "value": "form"
+        },
+        {
+          "score": 0.22787611,
+          "value": "control"
+        },
+        {
+          "score": 0.21681416,
+          "value": "technology"
+        },
+        {
+          "score": 0.21017699,
+          "value": "resource"
+        },
+        {
+          "score": 0.2079646,
+          "value": "phone"
+        },
+        {
+          "score": 0.2079646,
+          "value": "analytical"
+        },
+        {
+          "score": 0.20575221,
+          "value": "link"
+        },
+        {
+          "score": 0.20353982,
+          "value": "effective"
+        },
+        {
+          "score": 0.19911504,
+          "value": "technical"
+        },
+        {
+          "score": 0.1970803,
+          "value": "movie"
+        },
+        {
+          "score": 0.19690265,
+          "value": "computing"
+        },
+        {
+          "score": 0.19469027,
+          "value": "instruction"
+        },
+        {
+          "score": 0.19247788,
+          "value": "activity"
+        },
+        {
+          "score": 0.19026549,
+          "value": "livelesson"
+        },
+        {
+          "score": 0.19026549,
+          "value": "mailing"
+        },
+        {
+          "score": 0.19026549,
+          "value": "participation"
+        },
+        {
+          "score": 0.19026549,
+          "value": "announcement"
+        },
+        {
+          "score": 0.19026549,
+          "value": "fraudulent"
+        },
+        {
+          "score": 0.19026549,
+          "value": "fraudulent activity"
+        },
+        {
+          "score": 0.19026549,
+          "value": "incident"
+        },
+        {
+          "score": 0.19026549,
+          "value": "analytical service"
+        },
+        {
+          "score": 0.19026549,
+          "value": "basis"
+        },
+        {
+          "score": 0.19026549,
+          "value": "measure"
+        },
+        {
+          "score": 0.19026549,
+          "value": "disclosure"
+        },
+        {
+          "score": 0.19026549,
+          "value": "child"
+        },
+        {
+          "score": 0.19026549,
+          "value": "aware"
+        },
+        {
+          "score": 0.19026549,
+          "value": "posting"
+        },
+        {
+          "score": 0.19026549,
+          "value": "effective revision"
+        },
+        {
+          "score": 0.18584071,
+          "value": "promotional"
+        },
+        {
+          "score": 0.18141593,
+          "value": "macro"
+        }
+      ]
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/music.amazon.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://music.amazon.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 136
+      },
+      "partnersAdded": {
+        "count": 8,
+        "value": [
+          {
+            "domain": "newyorkupstate.com"
+          },
+          {
+            "domain": "enjxmb.com"
+          },
+          {
+            "domain": "syracuse.com"
+          },
+          {
+            "domain": "cuponerapp.com"
+          },
+          {
+            "domain": "ad.admitad.com"
+          },
+          {
+            "domain": "countrynow.com"
+          },
+          {
+            "domain": "depto51.cl"
+          },
+          {
+            "domain": "uk.collected.reviews"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 5,
+        "value": [
+          {
+            "domain": "admitad.com"
+          },
+          {
+            "domain": "wilsonsmedia.com"
+          },
+          {
+            "domain": "thewealthiestinvestor.com"
+          },
+          {
+            "domain": "autopilotr.com"
+          },
+          {
+            "domain": "collected.reviews"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 37,
+            "promotype": "blog",
+            "value": [
+              "10reviewsplus.com",
+              "1topproduct.com",
+              "androidcentral.com",
+              "arcupones.net",
+              "attractionsmagazine.com",
+              "billboard.com",
+              "blakecoinmining.com",
+              "canalte.ch",
+              "cinemablend.com",
+              "dailygeekreport.com",
+              "dailypopnews.com",
+              "dlsserve.com",
+              "handla.it",
+              "hollywoodnewshub.com",
+              "kenkofishing-tackle.com",
+              "laptopmag.com",
+              "latercera.com",
+              "loudersound.com",
+              "macworld.com",
+              "mexcupones.net",
+              "mnnofa.com",
+              "newyorkupstate.com",
+              "nexoveracruz.com",
+              "notebook.co.id",
+              "officialfamemagazine.com",
+              "pitchfork.com",
+              "santananews.com",
+              "stojizazminku.cz",
+              "t3.com",
+              "techosmo.com",
+              "tmd.qa",
+              "tomsguide.com",
+              "topbuzzmagazine.com",
+              "trvcountdown.com",
+              "walesonline.co.uk",
+              "washingtonweeklytimes.com",
+              "web01.teenvogueinsider.com"
+            ]
+          },
+          {
+            "count": 13,
+            "promotype": "student",
+            "value": [
+              "blog.repithwin.com",
+              "cbsnews.com",
+              "deladiscount.com",
+              "fmdos.cl",
+              "fondoitalia.it",
+              "game24.pro",
+              "guitarworld.com",
+              "implurnt.com",
+              "metabee.de",
+              "pcforalla.se",
+              "techtelegraph.co.uk",
+              "teenvogue.com",
+              "thepawn02.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "forum",
+            "value": [
+              "cuponerapp.com"
+            ]
+          },
+          {
+            "count": 3,
+            "promotype": "incentive",
+            "value": [
+              "jpnewss.com",
+              "kiwicoupons.net",
+              "m3.se"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Entertainment / Music",
+        "rank": 2,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Entertainment / Music",
+          "rank": 2,
+          "score": 95
+        },
+        {
+          "name": "Entertainment / Streaming",
+          "rank": 2,
+          "score": 90
+        }
+      ]
+    }
+  }
+}

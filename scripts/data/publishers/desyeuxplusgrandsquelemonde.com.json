@@ -1,0 +1,631 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Tradedoubler"
+      ],
+      "value": [
+        "Tradedoubler"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "fr",
+        "score": 0.6
+      },
+      "sampleValue": [
+        {
+          "countryCode": "fr",
+          "score": 0.6
+        },
+        {
+          "countryCode": "be",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "fr",
+          "score": 0.6
+        },
+        {
+          "countryCode": "be",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "desyeuxplusgrandsquelemonde.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "femme"
+        },
+        {
+          "score": 1,
+          "value": "hostel"
+        },
+        {
+          "score": 0.9860433,
+          "value": "chaussure"
+        },
+        {
+          "score": 0.7529658,
+          "value": "homme"
+        },
+        {
+          "score": 0.62526166,
+          "value": "polaire"
+        },
+        {
+          "score": 0.5849522,
+          "value": "trip"
+        },
+        {
+          "score": 0.5422191,
+          "value": "veste"
+        },
+        {
+          "score": 0.49931973,
+          "value": "road"
+        },
+        {
+          "score": 0.48080948,
+          "value": "vêtement"
+        },
+        {
+          "score": 0.47801813,
+          "value": "enfant"
+        },
+        {
+          "score": 0.4619679,
+          "value": "homm"
+        },
+        {
+          "score": 0.40816328,
+          "value": "hostelworld"
+        },
+        {
+          "score": 0.4,
+          "value": "voyage"
+        },
+        {
+          "score": 0.3991626,
+          "value": "doudoune"
+        },
+        {
+          "score": 0.37613398,
+          "value": "sac"
+        },
+        {
+          "score": 0.37194696,
+          "value": "patagonia"
+        },
+        {
+          "score": 0.3659864,
+          "value": "travel"
+        },
+        {
+          "score": 0.33741498,
+          "value": "extraordinary"
+        },
+        {
+          "score": 0.33741498,
+          "value": "map"
+        },
+        {
+          "score": 0.33454236,
+          "value": "city"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "femme"
+        },
+        {
+          "score": 1,
+          "value": "hostel"
+        },
+        {
+          "score": 0.9860433,
+          "value": "chaussure"
+        },
+        {
+          "score": 0.7529658,
+          "value": "homme"
+        },
+        {
+          "score": 0.62526166,
+          "value": "polaire"
+        },
+        {
+          "score": 0.5849522,
+          "value": "trip"
+        },
+        {
+          "score": 0.5422191,
+          "value": "veste"
+        },
+        {
+          "score": 0.49931973,
+          "value": "road"
+        },
+        {
+          "score": 0.48080948,
+          "value": "vêtement"
+        },
+        {
+          "score": 0.47801813,
+          "value": "enfant"
+        },
+        {
+          "score": 0.4619679,
+          "value": "homm"
+        },
+        {
+          "score": 0.40816328,
+          "value": "hostelworld"
+        },
+        {
+          "score": 0.4,
+          "value": "voyage"
+        },
+        {
+          "score": 0.3991626,
+          "value": "doudoune"
+        },
+        {
+          "score": 0.37613398,
+          "value": "sac"
+        },
+        {
+          "score": 0.37194696,
+          "value": "patagonia"
+        },
+        {
+          "score": 0.3659864,
+          "value": "travel"
+        },
+        {
+          "score": 0.33741498,
+          "value": "extraordinary"
+        },
+        {
+          "score": 0.33741498,
+          "value": "map"
+        },
+        {
+          "score": 0.33454236,
+          "value": "city"
+        },
+        {
+          "score": 0.33049086,
+          "value": "randonné"
+        },
+        {
+          "score": 0.32519192,
+          "value": "jacket"
+        },
+        {
+          "score": 0.32517007,
+          "value": "hoscar"
+        },
+        {
+          "score": 0.307483,
+          "value": "finalist"
+        },
+        {
+          "score": 0.307483,
+          "value": "breakfast"
+        },
+        {
+          "score": 0.30204082,
+          "value": "scottish"
+        },
+        {
+          "score": 0.2857143,
+          "value": "book"
+        },
+        {
+          "score": 0.27986002,
+          "value": "voyag"
+        },
+        {
+          "score": 0.27762413,
+          "value": "trail"
+        },
+        {
+          "score": 0.26530612,
+          "value": "property"
+        },
+        {
+          "score": 0.25540823,
+          "value": "marque"
+        },
+        {
+          "score": 0.24761905,
+          "value": "bed"
+        },
+        {
+          "score": 0.23796232,
+          "value": "casque"
+        },
+        {
+          "score": 0.23069271,
+          "value": "country"
+        },
+        {
+          "score": 0.22857143,
+          "value": "rating"
+        },
+        {
+          "score": 0.21981856,
+          "value": "mammut"
+        },
+        {
+          "score": 0.21702722,
+          "value": "imperméable"
+        },
+        {
+          "score": 0.21632653,
+          "value": "booking"
+        },
+        {
+          "score": 0.21222295,
+          "value": "legal"
+        },
+        {
+          "score": 0.20952381,
+          "value": "cancellation"
+        },
+        {
+          "score": 0.20408164,
+          "value": "scottish road"
+        },
+        {
+          "score": 0.2,
+          "value": "publisher"
+        },
+        {
+          "score": 0.2,
+          "value": "musea"
+        },
+        {
+          "score": 0.19863945,
+          "value": "budget"
+        },
+        {
+          "score": 0.19748779,
+          "value": "helly"
+        },
+        {
+          "score": 0.19727892,
+          "value": "app"
+        },
+        {
+          "score": 0.19727892,
+          "value": "male"
+        },
+        {
+          "score": 0.19539428,
+          "value": "parka"
+        },
+        {
+          "score": 0.18775035,
+          "value": "magazine"
+        },
+        {
+          "score": 0.18004186,
+          "value": "matériel"
+        },
+        {
+          "score": 0.17027216,
+          "value": "activité"
+        },
+        {
+          "score": 0.16870749,
+          "value": "session"
+        },
+        {
+          "score": 0.16551724,
+          "value": "vaticaanse"
+        },
+        {
+          "score": 0.16379929,
+          "value": "awin"
+        },
+        {
+          "score": 0.16129032,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.16120028,
+          "value": "piolet"
+        },
+        {
+          "score": 0.16050245,
+          "value": "ortovo"
+        },
+        {
+          "score": 0.16050245,
+          "value": "frontal"
+        },
+        {
+          "score": 0.15918367,
+          "value": "town"
+        },
+        {
+          "score": 0.15631542,
+          "value": "solde"
+        },
+        {
+          "score": 0.15631542,
+          "value": "solde magazine"
+        },
+        {
+          "score": 0.15491974,
+          "value": "lampe"
+        },
+        {
+          "score": 0.1537415,
+          "value": "female"
+        },
+        {
+          "score": 0.15238096,
+          "value": "route"
+        },
+        {
+          "score": 0.15102041,
+          "value": "backpacker"
+        },
+        {
+          "score": 0.15073273,
+          "value": "chien"
+        },
+        {
+          "score": 0.14863922,
+          "value": "lowa"
+        },
+        {
+          "score": 0.14827587,
+          "value": "vaticaanse musea"
+        },
+        {
+          "score": 0.14654571,
+          "value": "polaire femme"
+        },
+        {
+          "score": 0.14584787,
+          "value": "millet"
+        },
+        {
+          "score": 0.13877551,
+          "value": "hour"
+        },
+        {
+          "score": 0.13817167,
+          "value": "saucony"
+        },
+        {
+          "score": 0.13469388,
+          "value": "tourist"
+        },
+        {
+          "score": 0.13398464,
+          "value": "couchage"
+        },
+        {
+          "score": 0.13258897,
+          "value": "columbia"
+        },
+        {
+          "score": 0.12979762,
+          "value": "botte"
+        },
+        {
+          "score": 0.12840195,
+          "value": "asso"
+        },
+        {
+          "score": 0.12789115,
+          "value": "car"
+        },
+        {
+          "score": 0.12700628,
+          "value": "rab"
+        },
+        {
+          "score": 0.12653062,
+          "value": "extraordinary hostel"
+        },
+        {
+          "score": 0.1256106,
+          "value": "imperméable homme"
+        },
+        {
+          "score": 0.12531854,
+          "value": "centre"
+        },
+        {
+          "score": 0.12491277,
+          "value": "odlo"
+        },
+        {
+          "score": 0.12241379,
+          "value": "vanaf"
+        },
+        {
+          "score": 0.12108844,
+          "value": "budapest"
+        },
+        {
+          "score": 0.120009385,
+          "value": "nederland"
+        },
+        {
+          "score": 0.119727895,
+          "value": "community"
+        },
+        {
+          "score": 0.11933008,
+          "value": "randonnée"
+        },
+        {
+          "score": 0.118965514,
+          "value": "vanaf us"
+        },
+        {
+          "score": 0.117934406,
+          "value": "wolfskin"
+        },
+        {
+          "score": 0.11734012,
+          "value": "jour"
+        },
+        {
+          "score": 0.1170068,
+          "value": "coastal"
+        },
+        {
+          "score": 0.116854325,
+          "value": "museum"
+        },
+        {
+          "score": 0.115053765,
+          "value": "advertiser"
+        },
+        {
+          "score": 0.11444522,
+          "value": "vaude"
+        },
+        {
+          "score": 0.112544805,
+          "value": "influencer"
+        },
+        {
+          "score": 0.1122881,
+          "value": "personnel"
+        },
+        {
+          "score": 0.11156463,
+          "value": "popular"
+        },
+        {
+          "score": 0.110085905,
+          "value": "donnée"
+        },
+        {
+          "score": 0.10816469,
+          "value": "accueil"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": "Sur mon Blog Voyage Nature & Randonnée, Culture & Outdoor, trouvez de l'inspiration pour vos Voyages et vos Rando en France & dans le Monde !",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/desyeuxplusgrandsquelemonde.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://desyeuxplusgrandsquelemonde.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1,
+        "value": [
+          "skyscanner.fr"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 2,
+        "value": [
+          {
+            "domain": "hostelworld.com"
+          },
+          {
+            "domain": "tiqets.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1,
+            "vertical": "Travel / Flights"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 1,
+      "value": [
+        "skyscanner.fr"
+      ]
+    },
+    "promotype": {
+      "value": "student"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 5,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "linkedin",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/yeuxgrands",
+        "instagram": "https://instagram.com/re_c.o.n.n.e.c.t.e",
+        "linkedin": "https://linkedin.com/in/benoît-richer-ba51a35",
+        "twitter": "https://twitter.com/yeuxgrands",
+        "youtube": "https://youtube.com/channel/ucuiwhqcwxmk3694la1dczew"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Entertainment / Hobbies",
+      "value": [
+        "Entertainment / Hobbies",
+        "Home / Art"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Entertainment / Hobbies",
+        "rank": 1,
+        "score": 70
+      },
+      "value": [
+        {
+          "name": "Entertainment / Hobbies",
+          "rank": 1,
+          "score": 70
+        },
+        {
+          "name": "Home / Art",
+          "rank": 1,
+          "score": 60
+        }
+      ]
+    }
+  }
+}

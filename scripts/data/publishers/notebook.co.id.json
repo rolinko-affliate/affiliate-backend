@@ -1,0 +1,928 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 13,
+      "sampleValue": [
+        "Avantlink",
+        "Awin",
+        "CJ Affiliate"
+      ],
+      "value": [
+        "Avantlink",
+        "Awin",
+        "CJ Affiliate",
+        "Impact",
+        "Optimise",
+        "Partnerize",
+        "Rakuten",
+        "Refersion",
+        "ShareASale",
+        "Skimlinks",
+        "Tradedoubler",
+        "Viglink",
+        "Webgains"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "id",
+        "score": 0.9
+      },
+      "sampleValue": [
+        {
+          "countryCode": "id",
+          "score": 0.9
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "id",
+          "score": 0.9
+        }
+      ]
+    },
+    "domain": "notebook.co.id",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "sky"
+        },
+        {
+          "score": 0.6736722,
+          "value": "phone"
+        },
+        {
+          "score": 0.6159408,
+          "value": "iphone"
+        },
+        {
+          "score": 0.2410864,
+          "value": "superfast"
+        },
+        {
+          "score": 0.24077335,
+          "value": "broadband"
+        },
+        {
+          "score": 0.23932274,
+          "value": "sim"
+        },
+        {
+          "score": 0.23033738,
+          "value": "phones"
+        },
+        {
+          "score": 0.20646034,
+          "value": "speed"
+        },
+        {
+          "score": 0.20354037,
+          "value": "apple"
+        },
+        {
+          "score": 0.18285462,
+          "value": "network"
+        },
+        {
+          "score": 0.17720817,
+          "value": "monthly"
+        },
+        {
+          "score": 0.16201608,
+          "value": "contract"
+        },
+        {
+          "score": 0.14191614,
+          "value": "upgrade"
+        },
+        {
+          "score": 0.14005463,
+          "value": "pro"
+        },
+        {
+          "score": 0.1282733,
+          "value": "glass"
+        },
+        {
+          "score": 0.12513721,
+          "value": "contracts"
+        },
+        {
+          "score": 0.123821855,
+          "value": "smartphone"
+        },
+        {
+          "score": 0.11502559,
+          "value": "download"
+        },
+        {
+          "score": 0.10704426,
+          "value": "cheap"
+        },
+        {
+          "score": 0.10206862,
+          "value": "app"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "sky"
+        },
+        {
+          "score": 0.6736722,
+          "value": "phone"
+        },
+        {
+          "score": 0.6159408,
+          "value": "iphone"
+        },
+        {
+          "score": 0.2410864,
+          "value": "superfast"
+        },
+        {
+          "score": 0.24077335,
+          "value": "broadband"
+        },
+        {
+          "score": 0.23932274,
+          "value": "sim"
+        },
+        {
+          "score": 0.23033738,
+          "value": "phones"
+        },
+        {
+          "score": 0.20646034,
+          "value": "speed"
+        },
+        {
+          "score": 0.20354037,
+          "value": "apple"
+        },
+        {
+          "score": 0.18285462,
+          "value": "network"
+        },
+        {
+          "score": 0.17720817,
+          "value": "monthly"
+        },
+        {
+          "score": 0.16201608,
+          "value": "contract"
+        },
+        {
+          "score": 0.14191614,
+          "value": "upgrade"
+        },
+        {
+          "score": 0.14005463,
+          "value": "pro"
+        },
+        {
+          "score": 0.1282733,
+          "value": "glass"
+        },
+        {
+          "score": 0.12513721,
+          "value": "contracts"
+        },
+        {
+          "score": 0.123821855,
+          "value": "smartphone"
+        },
+        {
+          "score": 0.11502559,
+          "value": "download"
+        },
+        {
+          "score": 0.10704426,
+          "value": "cheap"
+        },
+        {
+          "score": 0.10206862,
+          "value": "app"
+        },
+        {
+          "score": 0.09522946,
+          "value": "tariff"
+        },
+        {
+          "score": 0.09360921,
+          "value": "mobile phone"
+        },
+        {
+          "score": 0.09022531,
+          "value": "accessory"
+        },
+        {
+          "score": 0.08742395,
+          "value": "device"
+        },
+        {
+          "score": 0.082480006,
+          "value": "bit"
+        },
+        {
+          "score": 0.08122581,
+          "value": "handset"
+        },
+        {
+          "score": 0.08021589,
+          "value": "channel"
+        },
+        {
+          "score": 0.073425114,
+          "value": "complaint"
+        },
+        {
+          "score": 0.073375955,
+          "value": "average"
+        },
+        {
+          "score": 0.07113911,
+          "value": "provider"
+        },
+        {
+          "score": 0.070736624,
+          "value": "pay"
+        },
+        {
+          "score": 0.07020762,
+          "value": "netflix"
+        },
+        {
+          "score": 0.06712815,
+          "value": "ultrafast"
+        },
+        {
+          "score": 0.06579871,
+          "value": "camera"
+        },
+        {
+          "score": 0.06530547,
+          "value": "laptop"
+        },
+        {
+          "score": 0.06484396,
+          "value": "legal"
+        },
+        {
+          "score": 0.06273713,
+          "value": "tech"
+        },
+        {
+          "score": 0.06078184,
+          "value": "unlimited"
+        },
+        {
+          "score": 0.060385916,
+          "value": "tariffs"
+        },
+        {
+          "score": 0.060360055,
+          "value": "calls"
+        },
+        {
+          "score": 0.060118686,
+          "value": "texts"
+        },
+        {
+          "score": 0.059998,
+          "value": "cheapest"
+        },
+        {
+          "score": 0.059998,
+          "value": "sim-only"
+        },
+        {
+          "score": 0.059998,
+          "value": "sim-free"
+        },
+        {
+          "score": 0.059005313,
+          "value": "gaming"
+        },
+        {
+          "score": 0.058910135,
+          "value": "tablet"
+        },
+        {
+          "score": 0.05882614,
+          "value": "charge"
+        },
+        {
+          "score": 0.057974312,
+          "value": "lite"
+        },
+        {
+          "score": 0.056014664,
+          "value": "monthly cost"
+        },
+        {
+          "score": 0.055621944,
+          "value": "minute"
+        },
+        {
+          "score": 0.055309832,
+          "value": "mini"
+        },
+        {
+          "score": 0.054778535,
+          "value": "current"
+        },
+        {
+          "score": 0.053275704,
+          "value": "card"
+        },
+        {
+          "score": 0.052922696,
+          "value": "ultra"
+        },
+        {
+          "score": 0.051950164,
+          "value": "legal bit"
+        },
+        {
+          "score": 0.051589314,
+          "value": "sport"
+        },
+        {
+          "score": 0.05026214,
+          "value": "award"
+        },
+        {
+          "score": 0.048791457,
+          "value": "sound"
+        },
+        {
+          "score": 0.04817799,
+          "value": "info"
+        },
+        {
+          "score": 0.04663015,
+          "value": "code"
+        },
+        {
+          "score": 0.04608092,
+          "value": "max"
+        },
+        {
+          "score": 0.04505438,
+          "value": "gratis"
+        },
+        {
+          "score": 0.044453345,
+          "value": "samsung"
+        },
+        {
+          "score": 0.044337846,
+          "value": "picture"
+        },
+        {
+          "score": 0.044201706,
+          "value": "software"
+        },
+        {
+          "score": 0.043084577,
+          "value": "wireless"
+        },
+        {
+          "score": 0.043060344,
+          "value": "package"
+        },
+        {
+          "score": 0.041610178,
+          "value": "text"
+        },
+        {
+          "score": 0.041471303,
+          "value": "map"
+        },
+        {
+          "score": 0.04043815,
+          "value": "range"
+        },
+        {
+          "score": 0.039785948,
+          "value": "oplossing"
+        },
+        {
+          "score": 0.03924158,
+          "value": "video"
+        },
+        {
+          "score": 0.03827734,
+          "value": "assistant"
+        },
+        {
+          "score": 0.038182434,
+          "value": "alert"
+        },
+        {
+          "score": 0.038140997,
+          "value": "current deal"
+        },
+        {
+          "score": 0.036803927,
+          "value": "screen"
+        },
+        {
+          "score": 0.036719296,
+          "value": "smart"
+        },
+        {
+          "score": 0.036662035,
+          "value": "average download"
+        },
+        {
+          "score": 0.035400603,
+          "value": "box"
+        },
+        {
+          "score": 0.03539629,
+          "value": "cloud"
+        },
+        {
+          "score": 0.03460944,
+          "value": "insurance"
+        },
+        {
+          "score": 0.033564076,
+          "value": "superfast broadband"
+        },
+        {
+          "score": 0.033353392,
+          "value": "dual"
+        },
+        {
+          "score": 0.032569602,
+          "value": "mobile phones "
+        },
+        {
+          "score": 0.032569602,
+          "value": "mobile phone accessories "
+        },
+        {
+          "score": 0.03255652,
+          "value": "pro max"
+        },
+        {
+          "score": 0.032038435,
+          "value": "freeview"
+        },
+        {
+          "score": 0.031601064,
+          "value": "desktop"
+        },
+        {
+          "score": 0.03143382,
+          "value": "cashback"
+        },
+        {
+          "score": 0.031285066,
+          "value": "microsoft"
+        },
+        {
+          "score": 0.031053279,
+          "value": "apex"
+        },
+        {
+          "score": 0.030900473,
+          "value": "latest"
+        },
+        {
+          "score": 0.030444115,
+          "value": "cards"
+        },
+        {
+          "score": 0.030386917,
+          "value": "recycle"
+        },
+        {
+          "score": 0.030361056,
+          "value": "shops"
+        },
+        {
+          "score": 0.030252507,
+          "value": "carrier"
+        },
+        {
+          "score": 0.029999,
+          "value": "smartphone tariffs "
+        },
+        {
+          "score": 0.029999,
+          "value": "sim only plans "
+        },
+        {
+          "score": 0.029999,
+          "value": "recycle your phone "
+        },
+        {
+          "score": 0.029999,
+          "value": "sim-free phones "
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": "Informasi, review dan benchmark tentang produk dan aplikasi notebook, laptop, netbook, ultrabook, schromebook, tablet dan PC.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/notebook.co.id.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://notebook.co.id"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 94,
+        "value": [
+          "adobe.com",
+          "apple.com",
+          "autodesk.com",
+          "amazon.com",
+          "microsoft.com",
+          "att.com",
+          "netflix.com",
+          "ft.com",
+          "nvidia.com",
+          "dell.com",
+          "sky.com",
+          "three.co.uk",
+          "woot.com",
+          "lenovo.com",
+          "samsung.com",
+          "t-mobile.com",
+          "ubisoft.com",
+          "o2.co.uk",
+          "acer.com",
+          "mozilla.org",
+          "opera.com",
+          "huawei.com",
+          "hulu.com",
+          "geekbuying.com",
+          "affordablemobiles.co.uk",
+          "steelseries.com",
+          "logitech.com",
+          "virginmedia.com",
+          "zoom.us",
+          "antonline.com",
+          "hp.com",
+          "ao.com",
+          "grammarly.com",
+          "pixlr.com",
+          "asus.com",
+          "backmarket.com",
+          "patagonia.com",
+          "hsn.com",
+          "belkin.com",
+          "f-secure.com",
+          "bitdefender.co.uk",
+          "bitdefender.com",
+          "homedepot.com",
+          "coinbase.com",
+          "ebay.com",
+          "humblebundle.com",
+          "rei.com",
+          "very.co.uk",
+          "bluedesigns.com",
+          "box.co.uk",
+          "currys.co.uk",
+          "buymobiles.net",
+          "nothing.tech",
+          "carphonewarehouse.com",
+          "cash.app",
+          "cclonline.com",
+          "theinformation.com",
+          "peakdesign.com",
+          "verizon.com",
+          "mintmobile.com",
+          "costco.com",
+          "turtlebeach.com",
+          "corsair.com",
+          "definitivetechnology.com",
+          "staples.com",
+          "monoprice.com",
+          "polkaudio.com",
+          "newegg.com",
+          "skullcandy.com",
+          "johnlewis.com",
+          "fonehouse.co.uk",
+          "paramountplus.com",
+          "hihonor.com",
+          "idmobile.co.uk",
+          "laptopsdirect.co.uk",
+          "leicacamerausa.com",
+          "lg.com",
+          "mobilephonesdirect.co.uk",
+          "mobiles.co.uk",
+          "monsterstore.com",
+          "music.amazon.com",
+          "nordace.com",
+          "pcrichard.com",
+          "privacy.com",
+          "prowritingaid.com",
+          "satechi.net",
+          "scan.co.uk",
+          "secretlab.co",
+          "shopto.net",
+          "solosglasses.com",
+          "stacksocial.com",
+          "us.norton.com",
+          "voxi.co.uk",
+          "waterstones.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 3,
+        "value": [
+          {
+            "domain": "herschel.com"
+          },
+          {
+            "domain": "nordstromrack.com"
+          },
+          {
+            "domain": "cloud.google.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 19.25,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 17.149998,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 13.399999,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 7.2999997,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 6.5499997,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 5.65,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 3.9,
+            "vertical": "Business / Cyber Security"
+          },
+          {
+            "count": 2.95,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 2,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 2,
+            "vertical": "Travel / Accessories"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Online / Security"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Sports / Outdoor"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Office"
+          },
+          {
+            "count": 1,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Banking"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Forex & Crypto"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Eyecare"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Editing Software"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Business / Finance"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Finance / Cards"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Finance / Investments"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / DIY"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Online / Web Design"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 94,
+      "value": [
+        "adobe.com",
+        "apple.com",
+        "autodesk.com",
+        "amazon.com",
+        "microsoft.com",
+        "att.com",
+        "netflix.com",
+        "ft.com",
+        "nvidia.com",
+        "dell.com",
+        "sky.com",
+        "three.co.uk",
+        "woot.com",
+        "lenovo.com",
+        "samsung.com",
+        "t-mobile.com",
+        "ubisoft.com",
+        "o2.co.uk",
+        "acer.com",
+        "mozilla.org",
+        "opera.com",
+        "huawei.com",
+        "hulu.com",
+        "geekbuying.com",
+        "affordablemobiles.co.uk",
+        "steelseries.com",
+        "logitech.com",
+        "virginmedia.com",
+        "zoom.us",
+        "antonline.com",
+        "hp.com",
+        "ao.com",
+        "grammarly.com",
+        "pixlr.com",
+        "asus.com",
+        "backmarket.com",
+        "patagonia.com",
+        "hsn.com",
+        "belkin.com",
+        "f-secure.com",
+        "bitdefender.co.uk",
+        "bitdefender.com",
+        "homedepot.com",
+        "coinbase.com",
+        "ebay.com",
+        "humblebundle.com",
+        "rei.com",
+        "very.co.uk",
+        "bluedesigns.com",
+        "box.co.uk",
+        "currys.co.uk",
+        "buymobiles.net",
+        "nothing.tech",
+        "carphonewarehouse.com",
+        "cash.app",
+        "cclonline.com",
+        "theinformation.com",
+        "peakdesign.com",
+        "verizon.com",
+        "mintmobile.com",
+        "costco.com",
+        "turtlebeach.com",
+        "corsair.com",
+        "definitivetechnology.com",
+        "staples.com",
+        "monoprice.com",
+        "polkaudio.com",
+        "newegg.com",
+        "skullcandy.com",
+        "johnlewis.com",
+        "fonehouse.co.uk",
+        "paramountplus.com",
+        "hihonor.com",
+        "idmobile.co.uk",
+        "laptopsdirect.co.uk",
+        "leicacamerausa.com",
+        "lg.com",
+        "mobilephonesdirect.co.uk",
+        "mobiles.co.uk",
+        "monsterstore.com",
+        "music.amazon.com",
+        "nordace.com",
+        "pcrichard.com",
+        "privacy.com",
+        "prowritingaid.com",
+        "satechi.net",
+        "scan.co.uk",
+        "secretlab.co",
+        "shopto.net",
+        "solosglasses.com",
+        "stacksocial.com",
+        "us.norton.com",
+        "voxi.co.uk",
+        "waterstones.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Technology / Computers",
+      "value": [
+        "Technology / Computers",
+        "Technology / Electronics",
+        "Business / Ecommerce"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Technology / Computers",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Technology / Computers",
+          "rank": 1,
+          "score": 95
+        },
+        {
+          "name": "Technology / Electronics",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Business / Ecommerce",
+          "rank": 1,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 8,
+      "sampleValue": [
+        "CueLinks",
+        "Digidip",
+        "Gemius"
+      ],
+      "value": [
+        "CueLinks",
+        "Digidip",
+        "Gemius",
+        "Linkbux",
+        "Shopnomix",
+        "Skimlinks",
+        "Takeads",
+        "Viglink"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 4,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "ad-feedback@amazon.pl"
+        },
+        {
+          "department": "legal",
+          "value": "eu-privacy@amazon.pl"
+        },
+        {
+          "department": null,
+          "value": "odr-eu@amazon.com"
+        },
+        {
+          "department": null,
+          "value": "privacyshield@amazon.com"
+        }
+      ]
+    },
+    "domain": "amazon.pl",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "Zakupy internetowe elektroniki, komputerów, odzieży, butów, zabawek, książek, płyt DVD, artykułów sportowych, produktów z kategorii urody i innych.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazon.pl.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazon.pl"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 14
+      },
+      "partnersAdded": {
+        "count": 3,
+        "value": [
+          {
+            "domain": "kupterazzaplacpozniej.net"
+          },
+          {
+            "domain": "getbook.at"
+          },
+          {
+            "domain": "shopsdatabase.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 4,
+            "promotype": "blog",
+            "value": [
+              "boxshoper.com",
+              "geni.us",
+              "glamour.pl",
+              "wishlistr.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "student",
+            "value": [
+              "pepper.pl"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 2,
+      "socialsAvailable": [
+        "twitter",
+        "youtube"
+      ],
+      "value": {
+        "twitter": "https://twitter.com/amazonnewspl",
+        "youtube": "https://youtube.com/channel/ucn-aanchpmfufqlc3iusdsq/featured"
+      }
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 2,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 2,
+          "score": 90
+        },
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 2,
+          "score": 100
+        }
+      ]
+    }
+  }
+}

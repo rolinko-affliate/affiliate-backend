@@ -1,0 +1,605 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Affiliate Future"
+      ],
+      "value": [
+        "Affiliate Future"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.5
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.5
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.5
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "promotemun.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "property"
+        },
+        {
+          "score": 0.50886565,
+          "value": "break"
+        },
+        {
+          "score": 0.39906004,
+          "value": "standard"
+        },
+        {
+          "score": 0.39329204,
+          "value": "cottage"
+        },
+        {
+          "score": 0.38389233,
+          "value": "location"
+        },
+        {
+          "score": 0.33262125,
+          "value": "beautiful"
+        },
+        {
+          "score": 0.28775904,
+          "value": "expectation"
+        },
+        {
+          "score": 0.27259132,
+          "value": "excellent"
+        },
+        {
+          "score": 0.26532793,
+          "value": "presentation"
+        },
+        {
+          "score": 0.26490065,
+          "value": "basic"
+        },
+        {
+          "score": 0.24524674,
+          "value": "friendly"
+        },
+        {
+          "score": 0.2405469,
+          "value": "dog"
+        },
+        {
+          "score": 0.22089297,
+          "value": "holiday"
+        },
+        {
+          "score": 0.21726127,
+          "value": "guest"
+        },
+        {
+          "score": 0.19269387,
+          "value": "family"
+        },
+        {
+          "score": 0.18564409,
+          "value": "short"
+        },
+        {
+          "score": 0.18008973,
+          "value": "beach"
+        },
+        {
+          "score": 0.17069003,
+          "value": "luxury"
+        },
+        {
+          "score": 0.15445417,
+          "value": "romantic"
+        },
+        {
+          "score": 0.15359966,
+          "value": "popular"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "property"
+        },
+        {
+          "score": 0.50886565,
+          "value": "break"
+        },
+        {
+          "score": 0.39906004,
+          "value": "standard"
+        },
+        {
+          "score": 0.39329204,
+          "value": "cottage"
+        },
+        {
+          "score": 0.38389233,
+          "value": "location"
+        },
+        {
+          "score": 0.33262125,
+          "value": "beautiful"
+        },
+        {
+          "score": 0.28775904,
+          "value": "expectation"
+        },
+        {
+          "score": 0.27259132,
+          "value": "excellent"
+        },
+        {
+          "score": 0.26532793,
+          "value": "presentation"
+        },
+        {
+          "score": 0.26490065,
+          "value": "basic"
+        },
+        {
+          "score": 0.24524674,
+          "value": "friendly"
+        },
+        {
+          "score": 0.2405469,
+          "value": "dog"
+        },
+        {
+          "score": 0.22089297,
+          "value": "holiday"
+        },
+        {
+          "score": 0.21726127,
+          "value": "guest"
+        },
+        {
+          "score": 0.19269387,
+          "value": "family"
+        },
+        {
+          "score": 0.18564409,
+          "value": "short"
+        },
+        {
+          "score": 0.18008973,
+          "value": "beach"
+        },
+        {
+          "score": 0.17069003,
+          "value": "luxury"
+        },
+        {
+          "score": 0.15445417,
+          "value": "romantic"
+        },
+        {
+          "score": 0.15359966,
+          "value": "popular"
+        },
+        {
+          "score": 0.15189062,
+          "value": "south"
+        },
+        {
+          "score": 0.14270455,
+          "value": "friendly break"
+        },
+        {
+          "score": 0.13864559,
+          "value": "map"
+        },
+        {
+          "score": 0.13821833,
+          "value": "contemporary"
+        },
+        {
+          "score": 0.13458663,
+          "value": "attractive"
+        },
+        {
+          "score": 0.13373211,
+          "value": "welcoming"
+        },
+        {
+          "score": 0.13351847,
+          "value": "furnishing"
+        },
+        {
+          "score": 0.13330485,
+          "value": "simple"
+        },
+        {
+          "score": 0.13287759,
+          "value": "beautiful location"
+        },
+        {
+          "score": 0.13266397,
+          "value": "exceptional"
+        },
+        {
+          "score": 0.13266397,
+          "value": "smart"
+        },
+        {
+          "score": 0.13245033,
+          "value": "minimum standard"
+        },
+        {
+          "score": 0.13245033,
+          "value": "caring"
+        },
+        {
+          "score": 0.13245033,
+          "value": "minimum"
+        },
+        {
+          "score": 0.13245033,
+          "value": "approach"
+        },
+        {
+          "score": 0.13245033,
+          "value": "contemporary approach"
+        },
+        {
+          "score": 0.13245033,
+          "value": "exceptional property"
+        },
+        {
+          "score": 0.13245033,
+          "value": "basic necessity"
+        },
+        {
+          "score": 0.13245033,
+          "value": "necessity"
+        },
+        {
+          "score": 0.13245033,
+          "value": "functional"
+        },
+        {
+          "score": 0.13245033,
+          "value": "excellent quality"
+        },
+        {
+          "score": 0.13245033,
+          "value": "attactive welcoming"
+        },
+        {
+          "score": 0.13245033,
+          "value": "fitting"
+        },
+        {
+          "score": 0.13245033,
+          "value": "attactive"
+        },
+        {
+          "score": 0.124332406,
+          "value": "forest"
+        },
+        {
+          "score": 0.124118775,
+          "value": "romantic break"
+        },
+        {
+          "score": 0.121768855,
+          "value": "short break"
+        },
+        {
+          "score": 0.111514635,
+          "value": "dartmoor"
+        },
+        {
+          "score": 0.10446486,
+          "value": "pool"
+        },
+        {
+          "score": 0.10147405,
+          "value": "booking"
+        },
+        {
+          "score": 0.100405894,
+          "value": "village"
+        },
+        {
+          "score": 0.09378338,
+          "value": "bigbury"
+        },
+        {
+          "score": 0.09271523,
+          "value": "thurlestone"
+        },
+        {
+          "score": 0.089938045,
+          "value": "easter"
+        },
+        {
+          "score": 0.08075198,
+          "value": "cornwall"
+        },
+        {
+          "score": 0.08053835,
+          "value": "devon"
+        },
+        {
+          "score": 0.07882931,
+          "value": "country"
+        },
+        {
+          "score": 0.07647938,
+          "value": "dorset"
+        },
+        {
+          "score": 0.072206795,
+          "value": "virtual"
+        },
+        {
+          "score": 0.072206795,
+          "value": "tour"
+        },
+        {
+          "score": 0.072206795,
+          "value": "virtual tour"
+        },
+        {
+          "score": 0.07092502,
+          "value": "balance"
+        },
+        {
+          "score": 0.07071139,
+          "value": "somerset"
+        },
+        {
+          "score": 0.07071139,
+          "value": "hope"
+        },
+        {
+          "score": 0.07049776,
+          "value": "wishlist"
+        },
+        {
+          "score": 0.05404828,
+          "value": "owner"
+        },
+        {
+          "score": 0.05404828,
+          "value": "thc"
+        },
+        {
+          "score": 0.052339245,
+          "value": "toad"
+        },
+        {
+          "score": 0.051057465,
+          "value": "ancient"
+        },
+        {
+          "score": 0.051057465,
+          "value": "path"
+        },
+        {
+          "score": 0.05084384,
+          "value": "sandy"
+        },
+        {
+          "score": 0.050202947,
+          "value": "hall"
+        },
+        {
+          "score": 0.049134802,
+          "value": "exmoor"
+        },
+        {
+          "score": 0.047639392,
+          "value": "landscape"
+        },
+        {
+          "score": 0.047425766,
+          "value": "rugged"
+        },
+        {
+          "score": 0.047212135,
+          "value": "porthallow"
+        },
+        {
+          "score": 0.047212135,
+          "value": "popular property"
+        },
+        {
+          "score": 0.047212135,
+          "value": "nearby"
+        },
+        {
+          "score": 0.046998505,
+          "value": "selection"
+        },
+        {
+          "score": 0.046571247,
+          "value": "milford"
+        },
+        {
+          "score": 0.0455031,
+          "value": "emery"
+        },
+        {
+          "score": 0.0455031,
+          "value": "moor"
+        },
+        {
+          "score": 0.044007692,
+          "value": "powerstock"
+        },
+        {
+          "score": 0.043794062,
+          "value": "stoke"
+        },
+        {
+          "score": 0.043794062,
+          "value": "ferrer"
+        },
+        {
+          "score": 0.042725913,
+          "value": "garden"
+        },
+        {
+          "score": 0.042298656,
+          "value": "parking"
+        },
+        {
+          "score": 0.041871395,
+          "value": "sea"
+        },
+        {
+          "score": 0.039948728,
+          "value": "mile"
+        },
+        {
+          "score": 0.03930784,
+          "value": "pub"
+        },
+        {
+          "score": 0.03909421,
+          "value": "toadhallcottage"
+        },
+        {
+          "score": 0.038666952,
+          "value": "walk"
+        },
+        {
+          "score": 0.036317028,
+          "value": "minute"
+        },
+        {
+          "score": 0.036103398,
+          "value": "cosy"
+        },
+        {
+          "score": 0.03503525,
+          "value": "town"
+        },
+        {
+          "score": 0.03418073,
+          "value": "bedroom"
+        },
+        {
+          "score": 0.0339671,
+          "value": "countryside"
+        },
+        {
+          "score": 0.03311258,
+          "value": "coast"
+        },
+        {
+          "score": 0.031830806,
+          "value": "couple"
+        },
+        {
+          "score": 0.030549029,
+          "value": "pretty"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/promotemun.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://promotemun.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1,
+        "value": [
+          "toadhallcottages.co.uk"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1,
+            "vertical": "Travel / Accommodation"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 1,
+      "value": [
+        "toadhallcottages.co.uk"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": {}
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 1,
+      "sampleValue": "Business / Services",
+      "value": [
+        "Business / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Business / Services",
+        "rank": 1,
+        "score": 80
+      },
+      "value": [
+        {
+          "name": "Business / Services",
+          "rank": 1,
+          "score": 80
+        }
+      ]
+    }
+  }
+}

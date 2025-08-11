@@ -1,0 +1,691 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 7,
+      "sampleValue": [
+        "Amazon CA",
+        "Awin",
+        "CJ Affiliate"
+      ],
+      "value": [
+        "Amazon CA",
+        "Awin",
+        "CJ Affiliate",
+        "Flexoffers",
+        "PartnerStack",
+        "Rakuten",
+        "ShareASale"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "ca",
+        "score": 0.95
+      },
+      "sampleValue": [
+        {
+          "countryCode": "ca",
+          "score": 0.95
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "ca",
+          "score": 0.95
+        }
+      ]
+    },
+    "domain": "absolutemusiccanada.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "amazon"
+        },
+        {
+          "score": 0.6290584,
+          "value": "relationship"
+        },
+        {
+          "score": 0.6225462,
+          "value": "music"
+        },
+        {
+          "score": 0.5968449,
+          "value": "eharmony"
+        },
+        {
+          "score": 0.56552625,
+          "value": "single"
+        },
+        {
+          "score": 0.4462873,
+          "value": "sound"
+        },
+        {
+          "score": 0.43183327,
+          "value": "instrument"
+        },
+        {
+          "score": 0.40628543,
+          "value": "store"
+        },
+        {
+          "score": 0.39084616,
+          "value": "drum"
+        },
+        {
+          "score": 0.39038146,
+          "value": "stars"
+        },
+        {
+          "score": 0.38950467,
+          "value": "pedal"
+        },
+        {
+          "score": 0.3737941,
+          "value": "advice"
+        },
+        {
+          "score": 0.36915463,
+          "value": "guitar"
+        },
+        {
+          "score": 0.36703786,
+          "value": "reverb"
+        },
+        {
+          "score": 0.35273802,
+          "value": "promo"
+        },
+        {
+          "score": 0.3355703,
+          "value": "story"
+        },
+        {
+          "score": 0.3287031,
+          "value": "video"
+        },
+        {
+          "score": 0.31346992,
+          "value": "audio"
+        },
+        {
+          "score": 0.29399946,
+          "value": "credit"
+        },
+        {
+          "score": 0.2908165,
+          "value": "success"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "amazon"
+        },
+        {
+          "score": 0.6290584,
+          "value": "relationship"
+        },
+        {
+          "score": 0.6225462,
+          "value": "music"
+        },
+        {
+          "score": 0.5968449,
+          "value": "eharmony"
+        },
+        {
+          "score": 0.56552625,
+          "value": "single"
+        },
+        {
+          "score": 0.4462873,
+          "value": "sound"
+        },
+        {
+          "score": 0.43183327,
+          "value": "instrument"
+        },
+        {
+          "score": 0.40628543,
+          "value": "store"
+        },
+        {
+          "score": 0.39084616,
+          "value": "drum"
+        },
+        {
+          "score": 0.39038146,
+          "value": "stars"
+        },
+        {
+          "score": 0.38950467,
+          "value": "pedal"
+        },
+        {
+          "score": 0.3737941,
+          "value": "advice"
+        },
+        {
+          "score": 0.36915463,
+          "value": "guitar"
+        },
+        {
+          "score": 0.36703786,
+          "value": "reverb"
+        },
+        {
+          "score": 0.35273802,
+          "value": "promo"
+        },
+        {
+          "score": 0.3355703,
+          "value": "story"
+        },
+        {
+          "score": 0.3287031,
+          "value": "video"
+        },
+        {
+          "score": 0.31346992,
+          "value": "audio"
+        },
+        {
+          "score": 0.29399946,
+          "value": "credit"
+        },
+        {
+          "score": 0.2908165,
+          "value": "success"
+        },
+        {
+          "score": 0.2857884,
+          "value": "accessory"
+        },
+        {
+          "score": 0.28438926,
+          "value": "card"
+        },
+        {
+          "score": 0.2817181,
+          "value": "match"
+        },
+        {
+          "score": 0.26456594,
+          "value": "string"
+        },
+        {
+          "score": 0.2634204,
+          "value": "people"
+        },
+        {
+          "score": 0.2616248,
+          "value": "tracking"
+        },
+        {
+          "score": 0.25860298,
+          "value": "muslim"
+        },
+        {
+          "score": 0.25649235,
+          "value": "love"
+        },
+        {
+          "score": 0.25481865,
+          "value": "cable"
+        },
+        {
+          "score": 0.24633929,
+          "value": "loan"
+        },
+        {
+          "score": 0.24631578,
+          "value": "offer"
+        },
+        {
+          "score": 0.2406983,
+          "value": "guide"
+        },
+        {
+          "score": 0.230942,
+          "value": "plugin"
+        },
+        {
+          "score": 0.23086356,
+          "value": "technology"
+        },
+        {
+          "score": 0.22646104,
+          "value": "glarry"
+        },
+        {
+          "score": 0.22072037,
+          "value": "microphone"
+        },
+        {
+          "score": 0.2145367,
+          "value": "keyboard"
+        },
+        {
+          "score": 0.2099329,
+          "value": "sample"
+        },
+        {
+          "score": 0.2090758,
+          "value": "bass"
+        },
+        {
+          "score": 0.20689072,
+          "value": "app"
+        },
+        {
+          "score": 0.2055261,
+          "value": "games"
+        },
+        {
+          "score": 0.1978484,
+          "value": "canada"
+        },
+        {
+          "score": 0.19692868,
+          "value": "money"
+        },
+        {
+          "score": 0.194184,
+          "value": "seller"
+        },
+        {
+          "score": 0.19341896,
+          "value": "helpful"
+        },
+        {
+          "score": 0.19312367,
+          "value": "reviewed"
+        },
+        {
+          "score": 0.19194248,
+          "value": "book"
+        },
+        {
+          "score": 0.19051722,
+          "value": "studio"
+        },
+        {
+          "score": 0.18662715,
+          "value": "books"
+        },
+        {
+          "score": 0.18562765,
+          "value": "color"
+        },
+        {
+          "score": 0.18396948,
+          "value": "switch"
+        },
+        {
+          "score": 0.18290906,
+          "value": "sign"
+        },
+        {
+          "score": 0.17717767,
+          "value": "prime"
+        },
+        {
+          "score": 0.17686309,
+          "value": "legal"
+        },
+        {
+          "score": 0.17623127,
+          "value": "synth"
+        },
+        {
+          "score": 0.17570119,
+          "value": "nintendo"
+        },
+        {
+          "score": 0.17510943,
+          "value": "monthly"
+        },
+        {
+          "score": 0.17384702,
+          "value": "promotional"
+        },
+        {
+          "score": 0.16973107,
+          "value": "details"
+        },
+        {
+          "score": 0.16774209,
+          "value": "international"
+        },
+        {
+          "score": 0.16538487,
+          "value": "multi"
+        },
+        {
+          "score": 0.16536583,
+          "value": "report"
+        },
+        {
+          "score": 0.16285723,
+          "value": "compatibility"
+        },
+        {
+          "score": 0.16200437,
+          "value": "percussion"
+        },
+        {
+          "score": 0.1620041,
+          "value": "splice"
+        },
+        {
+          "score": 0.16093639,
+          "value": "verified"
+        },
+        {
+          "score": 0.16093639,
+          "value": "verified purchase"
+        },
+        {
+          "score": 0.16019048,
+          "value": "balance"
+        },
+        {
+          "score": 0.15828446,
+          "value": "saving"
+        },
+        {
+          "score": 0.15572487,
+          "value": "baby"
+        },
+        {
+          "score": 0.15414457,
+          "value": "helpful report"
+        },
+        {
+          "score": 0.15393993,
+          "value": "article"
+        },
+        {
+          "score": 0.15115799,
+          "value": "qualifying"
+        },
+        {
+          "score": 0.15074918,
+          "value": "monthly payment"
+        },
+        {
+          "score": 0.14902757,
+          "value": "electric"
+        },
+        {
+          "score": 0.14788084,
+          "value": "partner"
+        },
+        {
+          "score": 0.1476438,
+          "value": "device"
+        },
+        {
+          "score": 0.146635,
+          "value": "minimum"
+        },
+        {
+          "score": 0.14572215,
+          "value": "digital"
+        },
+        {
+          "score": 0.14406602,
+          "value": "parent"
+        },
+        {
+          "score": 0.14395672,
+          "value": "financial"
+        },
+        {
+          "score": 0.14334,
+          "value": "vocal"
+        },
+        {
+          "score": 0.14310205,
+          "value": "sell"
+        },
+        {
+          "score": 0.14194857,
+          "value": "professional"
+        },
+        {
+          "score": 0.13780227,
+          "value": "indian"
+        },
+        {
+          "score": 0.137497,
+          "value": "select"
+        },
+        {
+          "score": 0.1344916,
+          "value": "devices"
+        },
+        {
+          "score": 0.13435973,
+          "value": "reviewed canada"
+        },
+        {
+          "score": 0.13332817,
+          "value": "manchester"
+        },
+        {
+          "score": 0.13165769,
+          "value": "star"
+        },
+        {
+          "score": 0.13159128,
+          "value": "secure"
+        },
+        {
+          "score": 0.13097627,
+          "value": "track"
+        },
+        {
+          "score": 0.13062313,
+          "value": "sports"
+        },
+        {
+          "score": 0.13022558,
+          "value": "sold"
+        },
+        {
+          "score": 0.12924355,
+          "value": "internet"
+        },
+        {
+          "score": 0.1275097,
+          "value": "heart"
+        },
+        {
+          "score": 0.12725261,
+          "value": "distortion"
+        },
+        {
+          "score": 0.12706444,
+          "value": "single parent"
+        },
+        {
+          "score": 0.12702923,
+          "value": "websites"
+        },
+        {
+          "score": 0.12650523,
+          "value": "start"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 2,
+      "value": [
+        "http://absolutemusiccanada.com/",
+        "http://www.absolutemusiccanada.com/"
+      ]
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/absolutemusiccanada.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://absolutemusiccanada.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 19,
+        "value": [
+          "amazon.ca",
+          "supermoney.com",
+          "lego.com",
+          "dior.com",
+          "gthic.com",
+          "splice.com",
+          "eharmony.co.uk",
+          "filmora.wondershare.com",
+          "gear4music.com",
+          "glarrymusic.com",
+          "nordvpn.net",
+          "reverb.com",
+          "mackie.com",
+          "rocketlawyer.com",
+          "saksfifthavenue.com",
+          "samash.com",
+          "silvergoldbull.com",
+          "vegascreativesoftware.com",
+          "walmart.ca"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 3.8500001,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Technology / Editing Software"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Finance / Investments"
+          },
+          {
+            "count": 1.55,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 1,
+            "vertical": "Online / Dating"
+          },
+          {
+            "count": 1,
+            "vertical": "Online / VPN"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Hobbies"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Gifts / Kids"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Technology / Electronics"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 19,
+      "value": [
+        "amazon.ca",
+        "supermoney.com",
+        "lego.com",
+        "dior.com",
+        "gthic.com",
+        "splice.com",
+        "eharmony.co.uk",
+        "filmora.wondershare.com",
+        "gear4music.com",
+        "glarrymusic.com",
+        "nordvpn.net",
+        "reverb.com",
+        "mackie.com",
+        "rocketlawyer.com",
+        "saksfifthavenue.com",
+        "samash.com",
+        "silvergoldbull.com",
+        "vegascreativesoftware.com",
+        "walmart.ca"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Entertainment / Music",
+      "value": [
+        "Entertainment / Music",
+        "Technology / Electronics"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Entertainment / Music",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Entertainment / Music",
+          "rank": 1,
+          "score": 95
+        },
+        {
+          "name": "Technology / Electronics",
+          "rank": 1,
+          "score": 60
+        }
+      ]
+    }
+  }
+}

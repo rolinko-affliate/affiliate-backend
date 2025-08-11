@@ -51,18 +51,17 @@ type Campaign struct {
 
 // CampaignProviderMapping represents a mapping between a campaign and a provider following clean architecture
 type CampaignProviderMapping struct {
-	MappingID          int64   `json:"mapping_id" db:"mapping_id"`
-	CampaignID         int64   `json:"campaign_id" db:"campaign_id"`
-	ProviderType       string  `json:"provider_type" db:"provider_type"`                         // 'everflow' for MVP
-	ProviderCampaignID *string `json:"provider_campaign_id,omitempty" db:"provider_campaign_id"` // Provider's Campaign ID
+	MappingID       int64   `json:"mapping_id" db:"mapping_id"`
+	CampaignID      int64   `json:"campaign_id" db:"campaign_id"`
+	ProviderType    string  `json:"provider_type" db:"provider_type"`                   // 'everflow' for MVP
+	ProviderOfferID *string `json:"provider_offer_id,omitempty" db:"provider_offer_id"` // Provider's Offer ID (Everflow calls campaigns "offers")
 
 	// Provider-specific data stored as JSONB
-	ProviderData *string `json:"provider_data,omitempty" db:"provider_data"`
+	ProviderData *string `json:"provider_data,omitempty" db:"provider_config"`
 
 	// Synchronization metadata
-	SyncStatus *string    `json:"sync_status,omitempty" db:"sync_status"`
-	LastSyncAt *time.Time `json:"last_sync_at,omitempty" db:"last_sync_at"`
-	SyncError  *string    `json:"sync_error,omitempty" db:"sync_error"`
+	IsActiveOnProvider *bool      `json:"is_active_on_provider,omitempty" db:"is_active_on_provider"`
+	LastSyncedAt       *time.Time `json:"last_synced_at,omitempty" db:"last_synced_at"`
 
 	CreatedAt time.Time `json:"created_at" db:"created_at"`
 	UpdatedAt time.Time `json:"updated_at" db:"updated_at"`

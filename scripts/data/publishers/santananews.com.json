@@ -1,0 +1,808 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 6,
+      "sampleValue": [
+        "CJ Affiliate",
+        "CueLinks",
+        "Flexoffers"
+      ],
+      "value": [
+        "CJ Affiliate",
+        "CueLinks",
+        "Flexoffers",
+        "Impact",
+        "Partnerize",
+        "ShareASale"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.95
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.95
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.95
+        }
+      ]
+    },
+    "domain": "santananews.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "audiobooks"
+        },
+        {
+          "score": 0.8422334,
+          "value": "family"
+        },
+        {
+          "score": 0.8303681,
+          "value": "request"
+        },
+        {
+          "score": 0.8199271,
+          "value": "performance"
+        },
+        {
+          "score": 0.8145008,
+          "value": "feedback"
+        },
+        {
+          "score": 0.80153507,
+          "value": "helpful"
+        },
+        {
+          "score": 0.78866565,
+          "value": "ray"
+        },
+        {
+          "score": 0.78862035,
+          "value": "error"
+        },
+        {
+          "score": 0.78861964,
+          "value": "complete"
+        },
+        {
+          "score": 0.7886134,
+          "value": "helpful feedback"
+        },
+        {
+          "score": 0.7886134,
+          "value": "playwright complete"
+        },
+        {
+          "score": 0.7886134,
+          "value": "autonomous"
+        },
+        {
+          "score": 0.7886134,
+          "value": "complete request"
+        },
+        {
+          "score": 0.7886134,
+          "value": "utc"
+        },
+        {
+          "score": 0.7886134,
+          "value": "owner"
+        },
+        {
+          "score": 0.7886134,
+          "value": "request time"
+        },
+        {
+          "score": 0.7886134,
+          "value": "cloudflare"
+        },
+        {
+          "score": 0.7886134,
+          "value": "error playwright"
+        },
+        {
+          "score": 0.7886134,
+          "value": "playwright"
+        },
+        {
+          "score": 0.7886134,
+          "value": "autonomous ip"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "audiobooks"
+        },
+        {
+          "score": 0.8422334,
+          "value": "family"
+        },
+        {
+          "score": 0.8303681,
+          "value": "request"
+        },
+        {
+          "score": 0.8199271,
+          "value": "performance"
+        },
+        {
+          "score": 0.8145008,
+          "value": "feedback"
+        },
+        {
+          "score": 0.80153507,
+          "value": "helpful"
+        },
+        {
+          "score": 0.78866565,
+          "value": "ray"
+        },
+        {
+          "score": 0.78862035,
+          "value": "error"
+        },
+        {
+          "score": 0.78861964,
+          "value": "complete"
+        },
+        {
+          "score": 0.7886134,
+          "value": "helpful feedback"
+        },
+        {
+          "score": 0.7886134,
+          "value": "playwright complete"
+        },
+        {
+          "score": 0.7886134,
+          "value": "autonomous"
+        },
+        {
+          "score": 0.7886134,
+          "value": "complete request"
+        },
+        {
+          "score": 0.7886134,
+          "value": "utc"
+        },
+        {
+          "score": 0.7886134,
+          "value": "owner"
+        },
+        {
+          "score": 0.7886134,
+          "value": "request time"
+        },
+        {
+          "score": 0.7886134,
+          "value": "cloudflare"
+        },
+        {
+          "score": 0.7886134,
+          "value": "error playwright"
+        },
+        {
+          "score": 0.7886134,
+          "value": "playwright"
+        },
+        {
+          "score": 0.7886134,
+          "value": "autonomous ip"
+        },
+        {
+          "score": 0.77985716,
+          "value": "libraries"
+        },
+        {
+          "score": 0.67993075,
+          "value": "movie"
+        },
+        {
+          "score": 0.6749055,
+          "value": "community"
+        },
+        {
+          "score": 0.6300966,
+          "value": "movies"
+        },
+        {
+          "score": 0.61988646,
+          "value": "recreation"
+        },
+        {
+          "score": 0.61850226,
+          "value": "ticket"
+        },
+        {
+          "score": 0.61019874,
+          "value": "sports"
+        },
+        {
+          "score": 0.6092037,
+          "value": "comedy"
+        },
+        {
+          "score": 0.5503507,
+          "value": "fiction"
+        },
+        {
+          "score": 0.5201456,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.5099066,
+          "value": "education"
+        },
+        {
+          "score": 0.47991207,
+          "value": "finance"
+        },
+        {
+          "score": 0.4680247,
+          "value": "music"
+        },
+        {
+          "score": 0.46021476,
+          "value": "prices"
+        },
+        {
+          "score": 0.45991576,
+          "value": "personalities"
+        },
+        {
+          "score": 0.44006744,
+          "value": "comics"
+        },
+        {
+          "score": 0.4399194,
+          "value": "drama"
+        },
+        {
+          "score": 0.43860322,
+          "value": "program"
+        },
+        {
+          "score": 0.35993406,
+          "value": "genres"
+        },
+        {
+          "score": 0.35993406,
+          "value": "actor"
+        },
+        {
+          "score": 0.35016882,
+          "value": "books"
+        },
+        {
+          "score": 0.3421117,
+          "value": "book"
+        },
+        {
+          "score": 0.3405807,
+          "value": "latest"
+        },
+        {
+          "score": 0.3401674,
+          "value": "romance"
+        },
+        {
+          "score": 0.33997828,
+          "value": "releases"
+        },
+        {
+          "score": 0.33027315,
+          "value": "fantasy"
+        },
+        {
+          "score": 0.3300951,
+          "value": "browse"
+        },
+        {
+          "score": 0.32995218,
+          "value": "coupon"
+        },
+        {
+          "score": 0.32993957,
+          "value": "coupons"
+        },
+        {
+          "score": 0.32993957,
+          "value": "cash"
+        },
+        {
+          "score": 0.32537022,
+          "value": "story"
+        },
+        {
+          "score": 0.3252718,
+          "value": "musical"
+        },
+        {
+          "score": 0.32003126,
+          "value": "author"
+        },
+        {
+          "score": 0.3167142,
+          "value": "international"
+        },
+        {
+          "score": 0.3100049,
+          "value": "graphic"
+        },
+        {
+          "score": 0.30631083,
+          "value": "event"
+        },
+        {
+          "score": 0.30629632,
+          "value": "guarantee"
+        },
+        {
+          "score": 0.30258825,
+          "value": "opera"
+        },
+        {
+          "score": 0.30008808,
+          "value": "favorites"
+        },
+        {
+          "score": 0.29994506,
+          "value": "film"
+        },
+        {
+          "score": 0.29766136,
+          "value": "covid"
+        },
+        {
+          "score": 0.28213793,
+          "value": "store"
+        },
+        {
+          "score": 0.26996276,
+          "value": "religion"
+        },
+        {
+          "score": 0.26995054,
+          "value": "reserved"
+        },
+        {
+          "score": 0.26995054,
+          "value": "textbooks"
+        },
+        {
+          "score": 0.26995054,
+          "value": "adventure"
+        },
+        {
+          "score": 0.2501564,
+          "value": "thriller"
+        },
+        {
+          "score": 0.24995421,
+          "value": "searching"
+        },
+        {
+          "score": 0.24995421,
+          "value": "crime"
+        },
+        {
+          "score": 0.23999994,
+          "value": "recommendations"
+        },
+        {
+          "score": 0.23996249,
+          "value": "picture"
+        },
+        {
+          "score": 0.23995604,
+          "value": "eligible"
+        },
+        {
+          "score": 0.23995604,
+          "value": "costs"
+        },
+        {
+          "score": 0.22997762,
+          "value": "alternative"
+        },
+        {
+          "score": 0.22950354,
+          "value": "history"
+        },
+        {
+          "score": 0.2228296,
+          "value": "guide"
+        },
+        {
+          "score": 0.22229303,
+          "value": "record"
+        },
+        {
+          "score": 0.220024,
+          "value": "action"
+        },
+        {
+          "score": 0.22000247,
+          "value": "good"
+        },
+        {
+          "score": 0.2199597,
+          "value": "stories"
+        },
+        {
+          "score": 0.21773706,
+          "value": "player"
+        },
+        {
+          "score": 0.2166228,
+          "value": "wrong"
+        },
+        {
+          "score": 0.2166228,
+          "value": "sorry something"
+        },
+        {
+          "score": 0.2166228,
+          "value": "something went"
+        },
+        {
+          "score": 0.2166228,
+          "value": "went wrong"
+        },
+        {
+          "score": 0.2166228,
+          "value": "wrong contact"
+        },
+        {
+          "score": 0.2166228,
+          "value": "contact us"
+        },
+        {
+          "score": 0.21048896,
+          "value": "save"
+        },
+        {
+          "score": 0.21013227,
+          "value": "biography"
+        },
+        {
+          "score": 0.20998232,
+          "value": "mystery"
+        },
+        {
+          "score": 0.20996217,
+          "value": "advanced"
+        },
+        {
+          "score": 0.20996153,
+          "value": "watson"
+        },
+        {
+          "score": 0.20011641,
+          "value": "wishlist"
+        },
+        {
+          "score": 0.19996338,
+          "value": "alibris"
+        },
+        {
+          "score": 0.19641426,
+          "value": "art"
+        },
+        {
+          "score": 0.1904771,
+          "value": "power"
+        },
+        {
+          "score": 0.17268473,
+          "value": "supplier"
+        },
+        {
+          "score": 0.16540404,
+          "value": "seller"
+        },
+        {
+          "score": 0.16294353,
+          "value": "walmart"
+        },
+        {
+          "score": 0.1557893,
+          "value": "industry"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/santananews.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://santananews.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 48,
+        "value": [
+          "eventbrite.com",
+          "2game.com",
+          "a.co",
+          "restaurant.com",
+          "ubereats.com",
+          "shopify.com",
+          "nordvpn.com",
+          "hbomax.com",
+          "evyy.net",
+          "walmart.com",
+          "alibris.com",
+          "amazon.ca",
+          "angara.com",
+          "bestbuy.com",
+          "vinylmeplease.com",
+          "asurion.com",
+          "ticketmaster.co.uk",
+          "bear-family.de",
+          "levi.com",
+          "billo.app",
+          "purevpn.com",
+          "ebay.com",
+          "ticketmaster.com",
+          "booksamillion.com",
+          "calvinklein.us",
+          "target.com",
+          "cbdmall.com",
+          "stubhub.com",
+          "shipt.com",
+          "ticketnetwork.com",
+          "ediblearrangements.com",
+          "emp.co.uk",
+          "victrola.com",
+          "eventticketscenter.com",
+          "hive.co.uk",
+          "kyari.co",
+          "loans.creditlinks.in",
+          "music.amazon.com",
+          "nailshop.ro",
+          "neweracap.com",
+          "omahasteaks.com",
+          "ticketmaster.com.au",
+          "shareasale.com",
+          "sodigear.com",
+          "thriftbooks.com",
+          "ticketweb.uk",
+          "twineliving.com",
+          "viagogo.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "linksredirect.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 8.85,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 3.85,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 3.7,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 3,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 2,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 2,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 2,
+            "vertical": "Online / VPN"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Website Builder"
+          },
+          {
+            "count": 1,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 1,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 1,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 1,
+            "vertical": "Food / Take Out"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Jewellery"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Loans"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Gifts / Flowers"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / CBD"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Utilities"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Finance / Insurance"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Gifts / Experience Days"
+          },
+          {
+            "count": 0.8,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 0.7,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 0.6,
+            "vertical": "Home / Homeware"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 48,
+      "value": [
+        "eventbrite.com",
+        "2game.com",
+        "a.co",
+        "restaurant.com",
+        "ubereats.com",
+        "shopify.com",
+        "nordvpn.com",
+        "hbomax.com",
+        "evyy.net",
+        "walmart.com",
+        "alibris.com",
+        "amazon.ca",
+        "angara.com",
+        "bestbuy.com",
+        "vinylmeplease.com",
+        "asurion.com",
+        "ticketmaster.co.uk",
+        "bear-family.de",
+        "levi.com",
+        "billo.app",
+        "purevpn.com",
+        "ebay.com",
+        "ticketmaster.com",
+        "booksamillion.com",
+        "calvinklein.us",
+        "target.com",
+        "cbdmall.com",
+        "stubhub.com",
+        "shipt.com",
+        "ticketnetwork.com",
+        "ediblearrangements.com",
+        "emp.co.uk",
+        "victrola.com",
+        "eventticketscenter.com",
+        "hive.co.uk",
+        "kyari.co",
+        "loans.creditlinks.in",
+        "music.amazon.com",
+        "nailshop.ro",
+        "neweracap.com",
+        "omahasteaks.com",
+        "ticketmaster.com.au",
+        "shareasale.com",
+        "sodigear.com",
+        "thriftbooks.com",
+        "ticketweb.uk",
+        "twineliving.com",
+        "viagogo.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Online / Services",
+      "value": [
+        "Online / Services",
+        "Entertainment / Hobbies"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Online / Services",
+        "rank": 1,
+        "score": 80
+      },
+      "value": [
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 80
+        },
+        {
+          "name": "Entertainment / Hobbies",
+          "rank": 1,
+          "score": 40
+        }
+      ]
+    }
+  }
+}

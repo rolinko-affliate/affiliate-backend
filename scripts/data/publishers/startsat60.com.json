@@ -1,0 +1,929 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 7,
+      "sampleValue": [
+        "APD Performance",
+        "Awin",
+        "CommissionFactory"
+      ],
+      "value": [
+        "APD Performance",
+        "Awin",
+        "CommissionFactory",
+        "Impact",
+        "Linkby",
+        "Partnerize",
+        "Rakuten"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "au",
+        "score": 0.63
+      },
+      "sampleValue": [
+        {
+          "countryCode": "au",
+          "score": 0.63
+        },
+        {
+          "countryCode": "nz",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "au",
+          "score": 0.63
+        },
+        {
+          "countryCode": "nz",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "startsat60.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "fiction"
+        },
+        {
+          "score": 0.9402766,
+          "value": "book"
+        },
+        {
+          "score": 0.7184274,
+          "value": "australian"
+        },
+        {
+          "score": 0.593368,
+          "value": "popular"
+        },
+        {
+          "score": 0.5385879,
+          "value": "story"
+        },
+        {
+          "score": 0.47571048,
+          "value": "school"
+        },
+        {
+          "score": 0.46135423,
+          "value": "classic"
+        },
+        {
+          "score": 0.45771915,
+          "value": "clothing"
+        },
+        {
+          "score": 0.44397917,
+          "value": "lifestyle"
+        },
+        {
+          "score": 0.43557462,
+          "value": "card"
+        },
+        {
+          "score": 0.42857143,
+          "value": "ticket"
+        },
+        {
+          "score": 0.426279,
+          "value": "style"
+        },
+        {
+          "score": 0.4252861,
+          "value": "author"
+        },
+        {
+          "score": 0.39648798,
+          "value": "fashion"
+        },
+        {
+          "score": 0.3815134,
+          "value": "health"
+        },
+        {
+          "score": 0.3805042,
+          "value": "swimwear"
+        },
+        {
+          "score": 0.37628594,
+          "value": "store"
+        },
+        {
+          "score": 0.371134,
+          "value": "destinations"
+        },
+        {
+          "score": 0.36412427,
+          "value": "kid"
+        },
+        {
+          "score": 0.3635294,
+          "value": "styles"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "fiction"
+        },
+        {
+          "score": 0.9402766,
+          "value": "book"
+        },
+        {
+          "score": 0.7184274,
+          "value": "australian"
+        },
+        {
+          "score": 0.593368,
+          "value": "popular"
+        },
+        {
+          "score": 0.5385879,
+          "value": "story"
+        },
+        {
+          "score": 0.47571048,
+          "value": "school"
+        },
+        {
+          "score": 0.46135423,
+          "value": "classic"
+        },
+        {
+          "score": 0.45771915,
+          "value": "clothing"
+        },
+        {
+          "score": 0.44397917,
+          "value": "lifestyle"
+        },
+        {
+          "score": 0.43557462,
+          "value": "card"
+        },
+        {
+          "score": 0.42857143,
+          "value": "ticket"
+        },
+        {
+          "score": 0.426279,
+          "value": "style"
+        },
+        {
+          "score": 0.4252861,
+          "value": "author"
+        },
+        {
+          "score": 0.39648798,
+          "value": "fashion"
+        },
+        {
+          "score": 0.3815134,
+          "value": "health"
+        },
+        {
+          "score": 0.3805042,
+          "value": "swimwear"
+        },
+        {
+          "score": 0.37628594,
+          "value": "store"
+        },
+        {
+          "score": 0.371134,
+          "value": "destinations"
+        },
+        {
+          "score": 0.36412427,
+          "value": "kid"
+        },
+        {
+          "score": 0.3635294,
+          "value": "styles"
+        },
+        {
+          "score": 0.35142896,
+          "value": "australia"
+        },
+        {
+          "score": 0.34020618,
+          "value": "mortgage"
+        },
+        {
+          "score": 0.3396391,
+          "value": "bundle"
+        },
+        {
+          "score": 0.3376704,
+          "value": "game"
+        },
+        {
+          "score": 0.3362164,
+          "value": "woman"
+        },
+        {
+          "score": 0.33238178,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.33063877,
+          "value": "offer"
+        },
+        {
+          "score": 0.32368606,
+          "value": "food"
+        },
+        {
+          "score": 0.32253313,
+          "value": "getaway"
+        },
+        {
+          "score": 0.3208484,
+          "value": "holiday"
+        },
+        {
+          "score": 0.31536555,
+          "value": "child"
+        },
+        {
+          "score": 0.31247965,
+          "value": "debit"
+        },
+        {
+          "score": 0.3088958,
+          "value": "community"
+        },
+        {
+          "score": 0.30256662,
+          "value": "money"
+        },
+        {
+          "score": 0.29898974,
+          "value": "dress"
+        },
+        {
+          "score": 0.28469852,
+          "value": "art"
+        },
+        {
+          "score": 0.28360325,
+          "value": "idea"
+        },
+        {
+          "score": 0.2827688,
+          "value": "departure"
+        },
+        {
+          "score": 0.2783505,
+          "value": "brisbane"
+        },
+        {
+          "score": 0.27389976,
+          "value": "escape"
+        },
+        {
+          "score": 0.2726778,
+          "value": "submit"
+        },
+        {
+          "score": 0.269103,
+          "value": "patch"
+        },
+        {
+          "score": 0.26816708,
+          "value": "bamboo"
+        },
+        {
+          "score": 0.26578072,
+          "value": "timer"
+        },
+        {
+          "score": 0.2644593,
+          "value": "apparel"
+        },
+        {
+          "score": 0.2628756,
+          "value": "body"
+        },
+        {
+          "score": 0.26199627,
+          "value": "furniture"
+        },
+        {
+          "score": 0.25184095,
+          "value": "budget"
+        },
+        {
+          "score": 0.2410161,
+          "value": "primary"
+        },
+        {
+          "score": 0.23948173,
+          "value": "maternity"
+        },
+        {
+          "score": 0.23857033,
+          "value": "coats"
+        },
+        {
+          "score": 0.2356395,
+          "value": "underwear"
+        },
+        {
+          "score": 0.23482032,
+          "value": "true story"
+        },
+        {
+          "score": 0.23416789,
+          "value": "lotteries"
+        },
+        {
+          "score": 0.22974963,
+          "value": "donate"
+        },
+        {
+          "score": 0.2267658,
+          "value": "booktopia"
+        },
+        {
+          "score": 0.22621849,
+          "value": "curvy"
+        },
+        {
+          "score": 0.22533137,
+          "value": "fundraising"
+        },
+        {
+          "score": 0.22333388,
+          "value": "travel"
+        },
+        {
+          "score": 0.2229327,
+          "value": "guide"
+        },
+        {
+          "score": 0.2221215,
+          "value": "rating"
+        },
+        {
+          "score": 0.21933086,
+          "value": "bestseller"
+        },
+        {
+          "score": 0.21882352,
+          "value": "activewear"
+        },
+        {
+          "score": 0.21743071,
+          "value": "range"
+        },
+        {
+          "score": 0.21649484,
+          "value": "mail"
+        },
+        {
+          "score": 0.21578383,
+          "value": "care"
+        },
+        {
+          "score": 0.21344538,
+          "value": "sizing"
+        },
+        {
+          "score": 0.21207659,
+          "value": "brochure"
+        },
+        {
+          "score": 0.21003717,
+          "value": "adult"
+        },
+        {
+          "score": 0.20765832,
+          "value": "cash"
+        },
+        {
+          "score": 0.20365725,
+          "value": "night"
+        },
+        {
+          "score": 0.20324005,
+          "value": "explore"
+        },
+        {
+          "score": 0.19744089,
+          "value": "visit"
+        },
+        {
+          "score": 0.19630252,
+          "value": "outfits"
+        },
+        {
+          "score": 0.1961307,
+          "value": "package"
+        },
+        {
+          "score": 0.19564521,
+          "value": "wardrobe"
+        },
+        {
+          "score": 0.19439901,
+          "value": "baby"
+        },
+        {
+          "score": 0.19240826,
+          "value": "skin"
+        },
+        {
+          "score": 0.19233379,
+          "value": "life"
+        },
+        {
+          "score": 0.19226238,
+          "value": "release"
+        },
+        {
+          "score": 0.1912605,
+          "value": "dresses"
+        },
+        {
+          "score": 0.19092438,
+          "value": "wear"
+        },
+        {
+          "score": 0.19028702,
+          "value": "colour"
+        },
+        {
+          "score": 0.18998528,
+          "value": "seniors"
+        },
+        {
+          "score": 0.18998528,
+          "value": "escaping"
+        },
+        {
+          "score": 0.18870078,
+          "value": "wine"
+        },
+        {
+          "score": 0.18858452,
+          "value": "cartridges"
+        },
+        {
+          "score": 0.18785034,
+          "value": "club"
+        },
+        {
+          "score": 0.18563789,
+          "value": "bedding"
+        },
+        {
+          "score": 0.18370728,
+          "value": "fee"
+        },
+        {
+          "score": 0.18317543,
+          "value": "independent"
+        },
+        {
+          "score": 0.18238948,
+          "value": "link"
+        },
+        {
+          "score": 0.1823582,
+          "value": "sleep"
+        },
+        {
+          "score": 0.18114875,
+          "value": "saved"
+        },
+        {
+          "score": 0.18114875,
+          "value": "bonus"
+        },
+        {
+          "score": 0.18114875,
+          "value": "programs"
+        },
+        {
+          "score": 0.18029077,
+          "value": "lingerie"
+        },
+        {
+          "score": 0.17974463,
+          "value": "pumps"
+        },
+        {
+          "score": 0.179402,
+          "value": "bite"
+        },
+        {
+          "score": 0.17892589,
+          "value": "jewellery"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://startsat60.com/",
+        "https://www.startsat60.com/",
+        "http://startsat60.com/",
+        "http://www.startsat60.com/"
+      ]
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/startsat60.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://startsat60.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 82,
+        "value": [
+          "prf.hn",
+          "mylio.com",
+          "adairs.com.au",
+          "adorebeauty.com.au",
+          "simple-life-app.com",
+          "amazon.com.au",
+          "au.rejuvaus.com",
+          "au.koala.com",
+          "autographfashion.com.au",
+          "barklytreats.com.au",
+          "bedbathntable.com.au",
+          "bellandbone.com.au",
+          "bendonlingerie.co.nz",
+          "bhumi.com.au",
+          "birdsnest.com.au",
+          "blackpepper.com.au",
+          "booktopia.com.au",
+          "bobbibrown.com.au",
+          "boody.com.au",
+          "britbox.com",
+          "remedydrinks.com",
+          "modibodi.com",
+          "compareclub.com.au",
+          "confidenceclub.com.au",
+          "crossroads.com.au",
+          "davidjones.com.au",
+          "deaflottery.com.au",
+          "drinkarepa.com.au",
+          "emma-sleep.com.au",
+          "epitomiofficial.com",
+          "ergoflex.com.au",
+          "epharmacy.com.au",
+          "jshealthvitamins.com",
+          "eva.com.au",
+          "ezibuy.com",
+          "fuzzhous.com.au",
+          "go.trafficrouter.io",
+          "groclinics.com.au",
+          "growmymoney.com.au",
+          "growthops.com.au",
+          "hans.com.au",
+          "happystaffyco.com",
+          "itsnormal.com",
+          "jurlique.com.au",
+          "littleripples.com",
+          "macoda.com.au",
+          "marleyspoon.com.au",
+          "michu.com.au",
+          "misterjoneshealth.com",
+          "mukmat.com",
+          "naturalpatch.com.au",
+          "natpat.com",
+          "officeworks.com.au",
+          "oo.com.au",
+          "paire.com.au",
+          "petpost.com.au",
+          "petstock.com.au",
+          "priceline.com.au",
+          "primo.com.au",
+          "queengarnet.com",
+          "redballoon.com.au",
+          "turo.com",
+          "remarkablefurniture.com.au",
+          "resmed.com.au",
+          "rosesonly.com.au",
+          "skincarestore.com.au",
+          "sportscraft.com.au",
+          "superhero.com.au",
+          "sussan.com.au",
+          "sydneysockproject.com",
+          "t.cfjump.com",
+          "thecollagen.co",
+          "tripodcoffee.com.au",
+          "trutonebeauty.com.au",
+          "vhc-sleep.com.au",
+          "vitable.com.au",
+          "welleco.com",
+          "welleco.com.au",
+          "wipersdirect.com.au",
+          "wipertech.com.au",
+          "youfoodz.com",
+          "zeroco.com.au"
+        ]
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "au.koala.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "koala.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 7.5999994,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 7.299999,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 6.6499996,
+            "vertical": "Home / Pets"
+          },
+          {
+            "count": 5.7999997,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 5.2500005,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 5.25,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 3.85,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 3.8000002,
+            "vertical": "Home / Beds & Bedding"
+          },
+          {
+            "count": 3.7,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 2.4,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Fashion / Lingerie"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Finance / Investments"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Health / Drinks"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Motoring / Cars"
+          },
+          {
+            "count": 1.8,
+            "vertical": "Travel / Car Hire"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Office"
+          },
+          {
+            "count": 1,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 1,
+            "vertical": "Gambling / Lottery"
+          },
+          {
+            "count": 1,
+            "vertical": "Gifts / Flowers"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Gifts / Experience Days"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Fashion / Jewellery"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Food / Take Out"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Travel / Flights"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 82,
+      "value": [
+        "prf.hn",
+        "mylio.com",
+        "adairs.com.au",
+        "adorebeauty.com.au",
+        "simple-life-app.com",
+        "amazon.com.au",
+        "au.rejuvaus.com",
+        "au.koala.com",
+        "autographfashion.com.au",
+        "barklytreats.com.au",
+        "bedbathntable.com.au",
+        "bellandbone.com.au",
+        "bendonlingerie.co.nz",
+        "bhumi.com.au",
+        "birdsnest.com.au",
+        "blackpepper.com.au",
+        "booktopia.com.au",
+        "bobbibrown.com.au",
+        "boody.com.au",
+        "britbox.com",
+        "remedydrinks.com",
+        "modibodi.com",
+        "compareclub.com.au",
+        "confidenceclub.com.au",
+        "crossroads.com.au",
+        "davidjones.com.au",
+        "deaflottery.com.au",
+        "drinkarepa.com.au",
+        "emma-sleep.com.au",
+        "epitomiofficial.com",
+        "ergoflex.com.au",
+        "epharmacy.com.au",
+        "jshealthvitamins.com",
+        "eva.com.au",
+        "ezibuy.com",
+        "fuzzhous.com.au",
+        "go.trafficrouter.io",
+        "groclinics.com.au",
+        "growmymoney.com.au",
+        "growthops.com.au",
+        "hans.com.au",
+        "happystaffyco.com",
+        "itsnormal.com",
+        "jurlique.com.au",
+        "littleripples.com",
+        "macoda.com.au",
+        "marleyspoon.com.au",
+        "michu.com.au",
+        "misterjoneshealth.com",
+        "mukmat.com",
+        "naturalpatch.com.au",
+        "natpat.com",
+        "officeworks.com.au",
+        "oo.com.au",
+        "paire.com.au",
+        "petpost.com.au",
+        "petstock.com.au",
+        "priceline.com.au",
+        "primo.com.au",
+        "queengarnet.com",
+        "redballoon.com.au",
+        "turo.com",
+        "remarkablefurniture.com.au",
+        "resmed.com.au",
+        "rosesonly.com.au",
+        "skincarestore.com.au",
+        "sportscraft.com.au",
+        "superhero.com.au",
+        "sussan.com.au",
+        "sydneysockproject.com",
+        "t.cfjump.com",
+        "thecollagen.co",
+        "tripodcoffee.com.au",
+        "trutonebeauty.com.au",
+        "vhc-sleep.com.au",
+        "vitable.com.au",
+        "welleco.com",
+        "welleco.com.au",
+        "wipersdirect.com.au",
+        "wipertech.com.au",
+        "youfoodz.com",
+        "zeroco.com.au"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 1,
+      "value": [
+        "travel.startsat60.com"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 3,
+      "socialsAvailable": [
+        "twitter",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/startsat60au",
+        "instagram": "https://instagram.com/startsat60",
+        "twitter": "https://twitter.com/startsat60"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 4,
+      "sampleValue": "Health / Wellbeing",
+      "value": [
+        "Health / Wellbeing",
+        "Finance / Investments",
+        "Travel / Vacation",
+        "Entertainment / Hobbies"
+      ]
+    },
+    "verticalsV2": {
+      "count": 4,
+      "sampleValue": {
+        "name": "Health / Wellbeing",
+        "rank": 1,
+        "score": 80
+      },
+      "value": [
+        {
+          "name": "Health / Wellbeing",
+          "rank": 1,
+          "score": 80
+        },
+        {
+          "name": "Finance / Investments",
+          "rank": 1,
+          "score": 60
+        },
+        {
+          "name": "Travel / Vacation",
+          "rank": 1,
+          "score": 60
+        },
+        {
+          "name": "Entertainment / Hobbies",
+          "rank": 1,
+          "score": 50
+        }
+      ]
+    }
+  }
+}

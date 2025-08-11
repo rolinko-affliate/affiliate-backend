@@ -1,0 +1,671 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 9,
+      "sampleValue": [
+        "ClickMagick",
+        "Digidip",
+        "Impact"
+      ],
+      "value": [
+        "ClickMagick",
+        "Digidip",
+        "Impact",
+        "LinkConnector",
+        "Refersion",
+        "ShareASale",
+        "Skimlinks",
+        "SourceKnowledge",
+        "Viglink"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 2,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "customercare@beekeepersnaturals.com"
+        },
+        {
+          "department": null,
+          "value": "us@www.beekeepersnaturals.com"
+        }
+      ]
+    },
+    "domain": "beekeepersnaturals.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "amazon"
+        },
+        {
+          "score": 0.4082767,
+          "value": "stars"
+        },
+        {
+          "score": 0.21494749,
+          "value": "games"
+        },
+        {
+          "score": 0.20691785,
+          "value": "canada"
+        },
+        {
+          "score": 0.20228536,
+          "value": "helpful"
+        },
+        {
+          "score": 0.20197652,
+          "value": "reviewed"
+        },
+        {
+          "score": 0.2007412,
+          "value": "book"
+        },
+        {
+          "score": 0.1951822,
+          "value": "books"
+        },
+        {
+          "score": 0.19240272,
+          "value": "switch"
+        },
+        {
+          "score": 0.19240272,
+          "value": "video"
+        },
+        {
+          "score": 0.18529956,
+          "value": "prime"
+        },
+        {
+          "score": 0.1837554,
+          "value": "nintendo"
+        },
+        {
+          "score": 0.17634343,
+          "value": "details"
+        },
+        {
+          "score": 0.17294626,
+          "value": "report"
+        },
+        {
+          "score": 0.16831377,
+          "value": "verified"
+        },
+        {
+          "score": 0.16831377,
+          "value": "verified purchase"
+        },
+        {
+          "score": 0.16121063,
+          "value": "helpful report"
+        },
+        {
+          "score": 0.143916,
+          "value": "baby"
+        },
+        {
+          "score": 0.14051884,
+          "value": "reviewed canada"
+        },
+        {
+          "score": 0.13650401,
+          "value": "sell"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "amazon"
+        },
+        {
+          "score": 0.4082767,
+          "value": "stars"
+        },
+        {
+          "score": 0.21494749,
+          "value": "games"
+        },
+        {
+          "score": 0.20691785,
+          "value": "canada"
+        },
+        {
+          "score": 0.20228536,
+          "value": "helpful"
+        },
+        {
+          "score": 0.20197652,
+          "value": "reviewed"
+        },
+        {
+          "score": 0.2007412,
+          "value": "book"
+        },
+        {
+          "score": 0.1951822,
+          "value": "books"
+        },
+        {
+          "score": 0.19240272,
+          "value": "switch"
+        },
+        {
+          "score": 0.19240272,
+          "value": "video"
+        },
+        {
+          "score": 0.18529956,
+          "value": "prime"
+        },
+        {
+          "score": 0.1837554,
+          "value": "nintendo"
+        },
+        {
+          "score": 0.17634343,
+          "value": "details"
+        },
+        {
+          "score": 0.17294626,
+          "value": "report"
+        },
+        {
+          "score": 0.16831377,
+          "value": "verified"
+        },
+        {
+          "score": 0.16831377,
+          "value": "verified purchase"
+        },
+        {
+          "score": 0.16121063,
+          "value": "helpful report"
+        },
+        {
+          "score": 0.143916,
+          "value": "baby"
+        },
+        {
+          "score": 0.14051884,
+          "value": "reviewed canada"
+        },
+        {
+          "score": 0.13650401,
+          "value": "sell"
+        },
+        {
+          "score": 0.13619518,
+          "value": "sold"
+        },
+        {
+          "score": 0.13588636,
+          "value": "star"
+        },
+        {
+          "score": 0.12970969,
+          "value": "nintendo switch"
+        },
+        {
+          "score": 0.11735639,
+          "value": "amazon ca"
+        },
+        {
+          "score": 0.11488573,
+          "value": "save"
+        },
+        {
+          "score": 0.10623842,
+          "value": "sellers"
+        },
+        {
+          "score": 0.10592958,
+          "value": "kindle"
+        },
+        {
+          "score": 0.10500309,
+          "value": "devices"
+        },
+        {
+          "score": 0.10438542,
+          "value": "edition"
+        },
+        {
+          "score": 0.1022236,
+          "value": "stock"
+        },
+        {
+          "score": 0.09697344,
+          "value": "great"
+        },
+        {
+          "score": 0.09573811,
+          "value": "health"
+        },
+        {
+          "score": 0.09141445,
+          "value": "care"
+        },
+        {
+          "score": 0.09017912,
+          "value": "orders"
+        },
+        {
+          "score": 0.08987029,
+          "value": "select"
+        },
+        {
+          "score": 0.08987029,
+          "value": "smart"
+        },
+        {
+          "score": 0.088943794,
+          "value": "people"
+        },
+        {
+          "score": 0.08678196,
+          "value": "ray"
+        },
+        {
+          "score": 0.08647313,
+          "value": "cards"
+        },
+        {
+          "score": 0.086164296,
+          "value": "blu"
+        },
+        {
+          "score": 0.08585547,
+          "value": "blu ray"
+        },
+        {
+          "score": 0.0852378,
+          "value": "subscribe"
+        },
+        {
+          "score": 0.08462013,
+          "value": "sign"
+        },
+        {
+          "score": 0.08431131,
+          "value": "video games"
+        },
+        {
+          "score": 0.08431131,
+          "value": "subscribe save"
+        },
+        {
+          "score": 0.08400247,
+          "value": "gift cards"
+        },
+        {
+          "score": 0.08369364,
+          "value": "start"
+        },
+        {
+          "score": 0.082149476,
+          "value": "found helpful"
+        },
+        {
+          "score": 0.08184064,
+          "value": "blink"
+        },
+        {
+          "score": 0.08153181,
+          "value": "music"
+        },
+        {
+          "score": 0.081222974,
+          "value": "beauty"
+        },
+        {
+          "score": 0.081222974,
+          "value": "free delivery"
+        },
+        {
+          "score": 0.081222974,
+          "value": "ratings"
+        },
+        {
+          "score": 0.08091415,
+          "value": "store"
+        },
+        {
+          "score": 0.07751699,
+          "value": "images"
+        },
+        {
+          "score": 0.076590486,
+          "value": "seller"
+        },
+        {
+          "score": 0.07628165,
+          "value": "movies"
+        },
+        {
+          "score": 0.07535516,
+          "value": "best sellers"
+        },
+        {
+          "score": 0.07504632,
+          "value": "read helpful"
+        },
+        {
+          "score": 0.0728845,
+          "value": "recommendations"
+        },
+        {
+          "score": 0.071649164,
+          "value": "personal care"
+        },
+        {
+          "score": 0.07134033,
+          "value": "audible"
+        },
+        {
+          "score": 0.07134033,
+          "value": "free shipping"
+        },
+        {
+          "score": 0.0710315,
+          "value": "good"
+        },
+        {
+          "score": 0.06979617,
+          "value": "pet"
+        },
+        {
+          "score": 0.06917851,
+          "value": "star star"
+        },
+        {
+          "score": 0.06917851,
+          "value": "sell amazon"
+        },
+        {
+          "score": 0.06856084,
+          "value": "problem"
+        },
+        {
+          "score": 0.067634344,
+          "value": "ships"
+        },
+        {
+          "score": 0.06732551,
+          "value": "movies tv"
+        },
+        {
+          "score": 0.06732551,
+          "value": "releases"
+        },
+        {
+          "score": 0.067016676,
+          "value": "lists"
+        },
+        {
+          "score": 0.06516368,
+          "value": "registry"
+        },
+        {
+          "score": 0.064854845,
+          "value": "handmade"
+        },
+        {
+          "score": 0.064237185,
+          "value": "love"
+        },
+        {
+          "score": 0.059604693,
+          "value": "get monday"
+        },
+        {
+          "score": 0.059604693,
+          "value": "monday apr"
+        },
+        {
+          "score": 0.059604693,
+          "value": "drive"
+        },
+        {
+          "score": 0.059604693,
+          "value": "hello"
+        },
+        {
+          "score": 0.059604693,
+          "value": "people found"
+        },
+        {
+          "score": 0.059295863,
+          "value": "supplies"
+        },
+        {
+          "score": 0.058369365,
+          "value": "top reviews"
+        },
+        {
+          "score": 0.05806053,
+          "value": "warehouse"
+        },
+        {
+          "score": 0.05806053,
+          "value": "improvement"
+        },
+        {
+          "score": 0.0577517,
+          "value": "warehouse deals"
+        },
+        {
+          "score": 0.057442866,
+          "value": "sports"
+        },
+        {
+          "score": 0.057134032,
+          "value": "cloud"
+        },
+        {
+          "score": 0.056825202,
+          "value": "electronics"
+        },
+        {
+          "score": 0.056825202,
+          "value": "fashion"
+        },
+        {
+          "score": 0.056516368,
+          "value": "customer service"
+        },
+        {
+          "score": 0.055898704,
+          "value": "card"
+        },
+        {
+          "score": 0.05528104,
+          "value": "bought"
+        },
+        {
+          "score": 0.054972205,
+          "value": "home improvement"
+        },
+        {
+          "score": 0.054972205,
+          "value": "wish list"
+        },
+        {
+          "score": 0.054972205,
+          "value": "top deal"
+        },
+        {
+          "score": 0.05466337,
+          "value": "toys"
+        },
+        {
+          "score": 0.05466337,
+          "value": "grocery"
+        },
+        {
+          "score": 0.05466337,
+          "value": "pet supplies"
+        },
+        {
+          "score": 0.05435454,
+          "value": "alexa"
+        },
+        {
+          "score": 0.05435454,
+          "value": "automotive"
+        }
+      ]
+    },
+    "metaData": {
+      "description": "Fill your medicine cabinet with clean & natural remedies (that actually work). Immune support to energy support. Experience hive-powered health. Shop Now",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/beekeepersnaturals.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://beekeepersnaturals.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 83
+      },
+      "partnersAdded": {
+        "count": 4,
+        "value": [
+          {
+            "domain": "amazon.co.uk"
+          },
+          {
+            "domain": "thyroidrockstar.tv"
+          },
+          {
+            "domain": "showbiznowmagazine.com"
+          },
+          {
+            "domain": "jenbaucom.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 28,
+            "promotype": "blog",
+            "value": [
+              "amazon.co.uk",
+              "annmariegianni.com",
+              "cosmopolitan.com",
+              "elanaspantry.com",
+              "getnicheplus.com",
+              "gopromocodes.com",
+              "hypothyroidchef.com",
+              "lcoffers.com",
+              "leighannlindsey.com",
+              "libsyn.com",
+              "mamaforhealth.com",
+              "mandymeehan.com",
+              "meghantelpner.com",
+              "msha.ke",
+              "nativesoulbeauty.com",
+              "paleohacks.com",
+              "shopmy.us",
+              "showbiznowmagazine.com",
+              "skinterrupt.com",
+              "smarttfix.com",
+              "stayingalive.com",
+              "stravageek.com",
+              "sx-z.com",
+              "thecut.com",
+              "thedigitalsparks.com",
+              "thefascination.com",
+              "turnkeypages.com",
+              "whowhatwear.com"
+            ]
+          },
+          {
+            "count": 4,
+            "promotype": "content",
+            "value": [
+              "bestproducts.com",
+              "neverpayful.com",
+              "thehive.health",
+              "townandcountrymag.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "incentive",
+            "value": [
+              "dealsfront.com"
+            ]
+          },
+          {
+            "count": 9,
+            "promotype": "student",
+            "value": [
+              "eonline.com",
+              "getsetcodes.com",
+              "jenbaucom.com",
+              "kitchenstewardship.com",
+              "prevention.com",
+              "promoswithin.com",
+              "spy.com",
+              "thenutritionalspectrum.com",
+              "tree3.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 3,
+      "socialsAvailable": [
+        "twitter",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/beekeepersnaturals",
+        "instagram": "https://instagram.com/beekeepers_naturals",
+        "twitter": "https://twitter.com/beekeepers_nat"
+      }
+    },
+    "verticals": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Health / Healthcare",
+        "rank": 2,
+        "score": 80
+      },
+      "value": [
+        {
+          "name": "Food / Groceries",
+          "rank": 2,
+          "score": 50
+        },
+        {
+          "name": "Health / Healthcare",
+          "rank": 2,
+          "score": 80
+        },
+        {
+          "name": "Health / Wellbeing",
+          "rank": 2,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

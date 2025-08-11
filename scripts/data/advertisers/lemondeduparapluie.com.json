@@ -1,0 +1,128 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 3,
+      "sampleValue": [
+        "Awin",
+        "Digidip",
+        "Viglink"
+      ],
+      "value": [
+        "Awin",
+        "Digidip",
+        "Viglink"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 0,
+      "error": false,
+      "value": []
+    },
+    "domain": "lemondeduparapluie.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/lemondeduparapluie.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://lemondeduparapluie.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 28
+      },
+      "partnersAdded": {
+        "count": 2,
+        "value": [
+          {
+            "domain": "kauf-online.info"
+          },
+          {
+            "domain": "allroundblogs.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 3,
+            "promotype": "incentive",
+            "value": [
+              "api.cashbackavenue.com",
+              "cashbackgeneration.com",
+              "savingwithcoupon.com"
+            ]
+          },
+          {
+            "count": 10,
+            "promotype": "blog",
+            "value": [
+              "bon2reduction.fr",
+              "coquettes-paillettes.com",
+              "ecodepromo.com",
+              "ha-solidaire.com",
+              "johngold.net",
+              "kauf-online.info",
+              "masha.ai",
+              "pod.prodegemr.com",
+              "rainbow-blog.com",
+              "reductiondiscount.fr"
+            ]
+          },
+          {
+            "count": 2,
+            "promotype": "student",
+            "value": [
+              "eurokdj.com",
+              "toplien.fr"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 2,
+      "socialsAvailable": [
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/lemondeduparapluie",
+        "instagram": "https://instagram.com/lemondeduparapluie"
+      }
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Fashion / Accessories",
+        "rank": 2,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Fashion / Accessories",
+          "rank": 2,
+          "score": 95
+        },
+        {
+          "name": "Home / Homeware",
+          "rank": 2,
+          "score": 60
+        }
+      ]
+    }
+  }
+}

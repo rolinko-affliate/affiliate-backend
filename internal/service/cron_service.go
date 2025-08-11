@@ -2,8 +2,9 @@ package service
 
 import (
 	"context"
-	"log"
 	"time"
+
+	"github.com/affiliate-backend/internal/platform/logger"
 )
 
 // CronService handles scheduled tasks
@@ -22,19 +23,19 @@ func NewCronService(usageCalculationService *UsageCalculationService) *CronServi
 
 // Start starts the cron service
 func (s *CronService) Start() {
-	log.Println("Starting cron service...")
+	logger.Info("Starting cron service")
 
 	// Start daily usage calculation job
 	go s.runDailyUsageCalculation()
 
-	log.Println("Cron service started")
+	logger.Info("Cron service started")
 }
 
 // Stop stops the cron service
 func (s *CronService) Stop() {
-	log.Println("Stopping cron service...")
+	logger.Info("Stopping cron service")
 	close(s.stopChan)
-	log.Println("Cron service stopped")
+	logger.Info("Cron service stopped")
 }
 
 // runDailyUsageCalculation runs the daily usage calculation job
@@ -54,23 +55,23 @@ func (s *CronService) runDailyUsageCalculation() {
 			yesterday := time.Now().AddDate(0, 0, -1)
 			yesterdayDate := time.Date(yesterday.Year(), yesterday.Month(), yesterday.Day(), 0, 0, 0, 0, yesterday.Location())
 
-			log.Printf("Running daily usage calculation for %s", yesterdayDate.Format("2006-01-02"))
+			logger.Info("Running daily usage calculation", "date", yesterdayDate.Format("2006-01-02"))
 
 			ctx, cancel := context.WithTimeout(context.Background(), 30*time.Minute)
 			err := s.usageCalculationService.CalculateDailyUsage(ctx, yesterdayDate)
 			cancel()
 
 			if err != nil {
-				log.Printf("Error in daily usage calculation: %v", err)
+				logger.Error("Error in daily usage calculation", "error", err)
 			} else {
-				log.Printf("Daily usage calculation completed successfully for %s", yesterdayDate.Format("2006-01-02"))
+				logger.Info("Daily usage calculation completed successfully", "date", yesterdayDate.Format("2006-01-02"))
 			}
 
 			// Reset timer for next day (24 hours from now)
 			timer.Reset(24 * time.Hour)
 
 		case <-s.stopChan:
-			log.Println("Daily usage calculation job stopped")
+			logger.Info("Daily usage calculation job stopped")
 			return
 		}
 	}
@@ -78,14 +79,14 @@ func (s *CronService) runDailyUsageCalculation() {
 
 // RunManualUsageCalculation runs usage calculation for a specific date manually
 func (s *CronService) RunManualUsageCalculation(ctx context.Context, date time.Time) error {
-	log.Printf("Running manual usage calculation for %s", date.Format("2006-01-02"))
+	logger.Info("Running manual usage calculation", "date", date.Format("2006-01-02"))
 
 	err := s.usageCalculationService.CalculateDailyUsage(ctx, date)
 	if err != nil {
-		log.Printf("Error in manual usage calculation: %v", err)
+		logger.Error("Error in manual usage calculation", "error", err)
 		return err
 	}
 
-	log.Printf("Manual usage calculation completed successfully for %s", date.Format("2006-01-02"))
+	logger.Info("Manual usage calculation completed successfully", "date", date.Format("2006-01-02"))
 	return nil
 }

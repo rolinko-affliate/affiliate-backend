@@ -1,0 +1,1678 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 24,
+      "sampleValue": [
+        "Amazon CA",
+        "APD Performance",
+        "Avantlink"
+      ],
+      "value": [
+        "Amazon CA",
+        "APD Performance",
+        "Avantlink",
+        "Awin",
+        "CJ Affiliate",
+        "ClickBank",
+        "FinanceAds",
+        "Fiverr",
+        "Flexoffers",
+        "Impact",
+        "Partnerize",
+        "PartnerStack",
+        "Private Network",
+        "Rakuten",
+        "Refersion",
+        "RevOffers",
+        "Rewardstyle",
+        "ShareASale",
+        "Skimlinks",
+        "Target Circle",
+        "TradeTracker",
+        "TradingView",
+        "TUNE",
+        "Viglink"
+      ]
+    },
+    "countryRankings": {
+      "count": 3,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.55
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.55
+        },
+        {
+          "countryCode": "ca",
+          "score": 0.15
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.55
+        },
+        {
+          "countryCode": "ca",
+          "score": 0.15
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "player.fm",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "amazon"
+        },
+        {
+          "score": 0.91557676,
+          "value": "store"
+        },
+        {
+          "score": 0.9054554,
+          "value": "seller"
+        },
+        {
+          "score": 0.56714594,
+          "value": "sign"
+        },
+        {
+          "score": 0.5296338,
+          "value": "video"
+        },
+        {
+          "score": 0.44163674,
+          "value": "health"
+        },
+        {
+          "score": 0.42998603,
+          "value": "device"
+        },
+        {
+          "score": 0.3977601,
+          "value": "card"
+        },
+        {
+          "score": 0.37066597,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.3580962,
+          "value": "makeup"
+        },
+        {
+          "score": 0.3550595,
+          "value": "team"
+        },
+        {
+          "score": 0.3527635,
+          "value": "skin"
+        },
+        {
+          "score": 0.34593877,
+          "value": "body"
+        },
+        {
+          "score": 0.3438967,
+          "value": "central"
+        },
+        {
+          "score": 0.33860052,
+          "value": "tool"
+        },
+        {
+          "score": 0.33277944,
+          "value": "category"
+        },
+        {
+          "score": 0.33130065,
+          "value": "program"
+        },
+        {
+          "score": 0.329571,
+          "value": "beauty"
+        },
+        {
+          "score": 0.32503873,
+          "value": "partner"
+        },
+        {
+          "score": 0.31984672,
+          "value": "story"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "amazon"
+        },
+        {
+          "score": 0.91557676,
+          "value": "store"
+        },
+        {
+          "score": 0.9054554,
+          "value": "seller"
+        },
+        {
+          "score": 0.56714594,
+          "value": "sign"
+        },
+        {
+          "score": 0.5296338,
+          "value": "video"
+        },
+        {
+          "score": 0.44163674,
+          "value": "health"
+        },
+        {
+          "score": 0.42998603,
+          "value": "device"
+        },
+        {
+          "score": 0.3977601,
+          "value": "card"
+        },
+        {
+          "score": 0.37066597,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.3580962,
+          "value": "makeup"
+        },
+        {
+          "score": 0.3550595,
+          "value": "team"
+        },
+        {
+          "score": 0.3527635,
+          "value": "skin"
+        },
+        {
+          "score": 0.34593877,
+          "value": "body"
+        },
+        {
+          "score": 0.3438967,
+          "value": "central"
+        },
+        {
+          "score": 0.33860052,
+          "value": "tool"
+        },
+        {
+          "score": 0.33277944,
+          "value": "category"
+        },
+        {
+          "score": 0.33130065,
+          "value": "program"
+        },
+        {
+          "score": 0.329571,
+          "value": "beauty"
+        },
+        {
+          "score": 0.32503873,
+          "value": "partner"
+        },
+        {
+          "score": 0.31984672,
+          "value": "story"
+        },
+        {
+          "score": 0.31114754,
+          "value": "book"
+        },
+        {
+          "score": 0.31073374,
+          "value": "fee"
+        },
+        {
+          "score": 0.30566153,
+          "value": "care"
+        },
+        {
+          "score": 0.2842215,
+          "value": "app"
+        },
+        {
+          "score": 0.27163988,
+          "value": "prime"
+        },
+        {
+          "score": 0.26971114,
+          "value": "hair"
+        },
+        {
+          "score": 0.2608163,
+          "value": "fba"
+        },
+        {
+          "score": 0.25311917,
+          "value": "platform"
+        },
+        {
+          "score": 0.25236937,
+          "value": "organic"
+        },
+        {
+          "score": 0.24085067,
+          "value": "restriction"
+        },
+        {
+          "score": 0.23587231,
+          "value": "wordpress"
+        },
+        {
+          "score": 0.23050933,
+          "value": "event"
+        },
+        {
+          "score": 0.23035799,
+          "value": "fashion"
+        },
+        {
+          "score": 0.23009938,
+          "value": "phone"
+        },
+        {
+          "score": 0.2099585,
+          "value": "solution"
+        },
+        {
+          "score": 0.20776248,
+          "value": "feature"
+        },
+        {
+          "score": 0.20112953,
+          "value": "skincare"
+        },
+        {
+          "score": 0.20075233,
+          "value": "kindle"
+        },
+        {
+          "score": 0.20061187,
+          "value": "accessory"
+        },
+        {
+          "score": 0.19930461,
+          "value": "professional"
+        },
+        {
+          "score": 0.18792802,
+          "value": "shirt"
+        },
+        {
+          "score": 0.18687703,
+          "value": "desktop"
+        },
+        {
+          "score": 0.18516879,
+          "value": "helpful"
+        },
+        {
+          "score": 0.17856438,
+          "value": "ticket"
+        },
+        {
+          "score": 0.17805302,
+          "value": "boutique"
+        },
+        {
+          "score": 0.17748602,
+          "value": "travel"
+        },
+        {
+          "score": 0.17555232,
+          "value": "link"
+        },
+        {
+          "score": 0.17417446,
+          "value": "box"
+        },
+        {
+          "score": 0.17345345,
+          "value": "people"
+        },
+        {
+          "score": 0.1723351,
+          "value": "friend"
+        },
+        {
+          "score": 0.17216554,
+          "value": "warranty"
+        },
+        {
+          "score": 0.16813044,
+          "value": "digital"
+        },
+        {
+          "score": 0.16785344,
+          "value": "supplements"
+        },
+        {
+          "score": 0.16681668,
+          "value": "art"
+        },
+        {
+          "score": 0.16378808,
+          "value": "engine"
+        },
+        {
+          "score": 0.16242008,
+          "value": "treatment"
+        },
+        {
+          "score": 0.1605352,
+          "value": "setting"
+        },
+        {
+          "score": 0.16046862,
+          "value": "colour"
+        },
+        {
+          "score": 0.16037638,
+          "value": "food"
+        },
+        {
+          "score": 0.1599249,
+          "value": "shopify"
+        },
+        {
+          "score": 0.15914121,
+          "value": "software"
+        },
+        {
+          "score": 0.15844306,
+          "value": "color"
+        },
+        {
+          "score": 0.15424478,
+          "value": "requirement"
+        },
+        {
+          "score": 0.15417759,
+          "value": "style"
+        },
+        {
+          "score": 0.15314089,
+          "value": "cosmetic"
+        },
+        {
+          "score": 0.15264533,
+          "value": "wishlist"
+        },
+        {
+          "score": 0.15180545,
+          "value": "clothing"
+        },
+        {
+          "score": 0.15075755,
+          "value": "prime video"
+        },
+        {
+          "score": 0.15042256,
+          "value": "fulfillment"
+        },
+        {
+          "score": 0.1502292,
+          "value": "message"
+        },
+        {
+          "score": 0.15015681,
+          "value": "haircare"
+        },
+        {
+          "score": 0.14759313,
+          "value": "red"
+        },
+        {
+          "score": 0.14673896,
+          "value": "site"
+        },
+        {
+          "score": 0.14437641,
+          "value": "money"
+        },
+        {
+          "score": 0.14254121,
+          "value": "community"
+        },
+        {
+          "score": 0.1417455,
+          "value": "client"
+        },
+        {
+          "score": 0.14120409,
+          "value": "benefit"
+        },
+        {
+          "score": 0.14118607,
+          "value": "night"
+        },
+        {
+          "score": 0.1410882,
+          "value": "agency"
+        },
+        {
+          "score": 0.13865666,
+          "value": "medical"
+        },
+        {
+          "score": 0.1378678,
+          "value": "wishlist email"
+        },
+        {
+          "score": 0.1378678,
+          "value": "red shopping"
+        },
+        {
+          "score": 0.13782077,
+          "value": "bag"
+        },
+        {
+          "score": 0.13720505,
+          "value": "step"
+        },
+        {
+          "score": 0.1367007,
+          "value": "hyaluronic"
+        },
+        {
+          "score": 0.13579181,
+          "value": "cosmetics"
+        },
+        {
+          "score": 0.13419119,
+          "value": "bath"
+        },
+        {
+          "score": 0.13242967,
+          "value": "skinstitut"
+        },
+        {
+          "score": 0.1295472,
+          "value": "layer"
+        },
+        {
+          "score": 0.12938556,
+          "value": "live"
+        },
+        {
+          "score": 0.12905689,
+          "value": "credit"
+        },
+        {
+          "score": 0.12842104,
+          "value": "press"
+        },
+        {
+          "score": 0.1269235,
+          "value": "vitamin"
+        },
+        {
+          "score": 0.1265008,
+          "value": "serums"
+        },
+        {
+          "score": 0.1258427,
+          "value": "face"
+        },
+        {
+          "score": 0.12569231,
+          "value": "exfoliators"
+        },
+        {
+          "score": 0.12526856,
+          "value": "life"
+        },
+        {
+          "score": 0.12440169,
+          "value": "article"
+        },
+        {
+          "score": 0.123898454,
+          "value": "cleansing"
+        },
+        {
+          "score": 0.12375833,
+          "value": "pricing"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 3,
+      "value": [
+        "https://player.fm/",
+        "http://player.fm/",
+        "http://www.player.fm/"
+      ]
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/player.fm.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://player.fm"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 290,
+        "value": [
+          "myshopify.com",
+          "apple.com",
+          "amazon.com",
+          "cratejoy.com",
+          "microsoft.com",
+          "instagram.com",
+          "intuit.com",
+          "linkedin.com",
+          "nordstrom.com",
+          "shopify.com",
+          "nba.com",
+          "adlibris.com",
+          "adorebeauty.com.au",
+          "flexoffers.com",
+          "aeyde.com",
+          "walmart.com",
+          "fiverr.com",
+          "aidabicaj.com",
+          "amazon.ca",
+          "amazon.com.au",
+          "aminoco.com",
+          "amex-business.de",
+          "wpengine.com",
+          "teachable.com",
+          "sephora.com",
+          "anthropologie.com",
+          "apextraderfunding.com",
+          "apolloneuro.com",
+          "calendar.com",
+          "grammarly.com",
+          "app.rubicon.business",
+          "teylor.com",
+          "setapp.com",
+          "revolut.com",
+          "athleticbrewing.com",
+          "gap.com",
+          "au.iherb.com",
+          "au.loccitane.com",
+          "augustinusbader.com",
+          "parachutehome.com",
+          "avantlink.com",
+          "exporo.de",
+          "bandier.com",
+          "barebonesliving.com",
+          "dkb.de",
+          "bearaby.com",
+          "beautybay.com",
+          "benzinga.com",
+          "myer.com.au",
+          "betterhelp.com",
+          "bigw.com.au",
+          "birkenstock.com.au",
+          "bioptimizers.com",
+          "homedepot.com",
+          "booktopia.com.au",
+          "discord.com",
+          "ebay.com",
+          "libro.fm",
+          "reddit.com",
+          "shopbop.com",
+          "solostove.com",
+          "ticketmaster.com",
+          "westelm.com",
+          "withings.com",
+          "blublox.com",
+          "bluehost.com",
+          "bluemercury.com",
+          "bodyspec.com",
+          "bol.com",
+          "braceability.com",
+          "shure.com",
+          "butcherbox.com",
+          "buybuybaby.com",
+          "bvibe.com",
+          "bys.com.au",
+          "saatchiart.com",
+          "canva.com",
+          "target.com",
+          "macys.com",
+          "cbd.co",
+          "ceremonial-cacao.com",
+          "cerebralfit.com",
+          "charlottetilbury.com",
+          "cheekyglo.com",
+          "hostgator.com",
+          "chemistwarehouse.com.au",
+          "chegg.com",
+          "chemicalfreebody.com",
+          "thebodyshop.com",
+          "cigarsinternational.com",
+          "circleback.com",
+          "stubhub.com",
+          "cleverfoxplanner.com",
+          "clinique.com.au",
+          "tradedoubler.com",
+          "companisto.com",
+          "shopltk.com",
+          "financeads.net",
+          "contendersclothing.com",
+          "couponseeker.com",
+          "covenanteyes.com",
+          "creativebug.com",
+          "cultbeauty.com",
+          "curednutrition.com",
+          "dashingdiva.com.au",
+          "de.scalable.capital",
+          "drannacabeca.com",
+          "drinkmaw.com",
+          "drjoedispenza.com",
+          "drinklmnt.com",
+          "dryfarmwines.com",
+          "dyper.com",
+          "eagle.cool",
+          "eightcap.com",
+          "elementor.com",
+          "madewell.com",
+          "enlightenedequipment.com",
+          "eqbank.ca",
+          "equipfoods.com",
+          "skyscanner.com",
+          "estateguru.co",
+          "wearefeel.com",
+          "everlastgenerators.com",
+          "everlywell.com",
+          "fansidea.com",
+          "fanatics.com",
+          "feminineenchantment.com",
+          "finnishdesignshop.com",
+          "flexstronger.com",
+          "fondbonebroth.com",
+          "framebridge.com",
+          "toms.com",
+          "gaia.com",
+          "unbounce.com",
+          "gettaxhub.com",
+          "getyourguide.com",
+          "giorgioarmanibeauty.com.au",
+          "skimresources.com",
+          "goldenkey.gift",
+          "goodmolecules.com",
+          "gorgias.com",
+          "gossamergear.com",
+          "google.com",
+          "heartmath.com",
+          "hellobubble.com",
+          "lovehoney.com",
+          "higherdose.com",
+          "homage.com",
+          "homefieldapparel.com",
+          "hugo.coffee",
+          "monday.com",
+          "idmobile.co.uk",
+          "immofunding.com",
+          "incfile.com",
+          "informit.com",
+          "inkedgaming.com",
+          "instacart.com",
+          "woolworths.com.au",
+          "reverb.com",
+          "invideo.io",
+          "itcosmetics.com",
+          "itrustcapital.com",
+          "iwoca.de",
+          "jasemedical.com",
+          "jaquishbiomedical.com",
+          "jbtools.com",
+          "jensonusa.com",
+          "prioritypass.com",
+          "jurlique.com.au",
+          "kiwico.com",
+          "knitcrate.com",
+          "kmart.com.au",
+          "knitpicks.com",
+          "ladderlife.com",
+          "leadpages.com",
+          "tailwindapp.com",
+          "lelo.com",
+          "lovehoney.co.uk",
+          "lskd.co",
+          "semrush.com",
+          "maccosmetics.com",
+          "viator.com",
+          "marieveronique.com",
+          "maryruthorganics.com",
+          "matchesfashion.com",
+          "mecca.com",
+          "midjourney.com",
+          "mightynest.com",
+          "mimiohealth.com",
+          "mindfulness.com",
+          "mountainroseherbs.com",
+          "mtnops.com",
+          "mudwtr.com",
+          "mybluprint.com",
+          "mypatriotsupply.com",
+          "nakedsundays.com",
+          "naturium.com.au",
+          "neurohacker.com",
+          "nexo.com",
+          "nllshop.com",
+          "nuleafnaturals.com",
+          "offtherecord.com",
+          "octopus.energy",
+          "omio.com",
+          "oneskin.co",
+          "online-therapy.com",
+          "onnit.com",
+          "organicallybecca.com",
+          "oseamalibu.com",
+          "ourfamilywizard.com",
+          "ozhairandbeauty.com",
+          "partiqlar.com",
+          "paulaschoice.com.au",
+          "pintoranch.com",
+          "piquelife.com",
+          "piquetea.com",
+          "pnumaoutdoors.com",
+          "policygenius.com",
+          "postscript.io",
+          "toasttab.com",
+          "practicebetter.io",
+          "previnex.com",
+          "priceline.com.au",
+          "primallypure.com",
+          "privy.com",
+          "therealreal.com",
+          "pwccmarketplace.com",
+          "qksrv.net",
+          "quayaustralia.com",
+          "quillbot.com",
+          "rayvishop.com",
+          "redcircle.com",
+          "renogy.com",
+          "restream.io",
+          "rexingusa.com",
+          "ripstopbytheroll.com",
+          "sagemoon.com",
+          "saksfifthavenue.com",
+          "smilesoftware.com",
+          "seed.com",
+          "sephora.com.au",
+          "shareasale-analytics.com",
+          "shevibe.com",
+          "shopterrain.com",
+          "shoppingkim.com",
+          "sidelineswap.com",
+          "unitelvoice.com",
+          "simplelawnsolutions.com",
+          "skinstitut.com",
+          "skyroam.com",
+          "socialbee.io",
+          "socialcbd.com",
+          "soundtrackyourbrand.com",
+          "sportiva.com",
+          "standardluggage.com",
+          "thestrength.co",
+          "sweetwater.com",
+          "tailorbrands.com",
+          "teepublic.com",
+          "thebeardstruggle.com",
+          "thecoldplunge.com",
+          "theordinary.com",
+          "therasage.com",
+          "thepowermba.com",
+          "thisisneeded.com",
+          "tidalhair.com.au",
+          "topp-kreativ.de",
+          "tortugabackpacks.com",
+          "tradingview.com",
+          "traderepublic.com",
+          "triplewhale.com",
+          "troscriptions.com",
+          "truthfinder.com",
+          "tryinteract.com",
+          "tusolwellness.com",
+          "webflow.com",
+          "upgradedformulas.com",
+          "us.threespiritdrinks.com",
+          "usepastel.com",
+          "vagusnervesupport.com",
+          "vedgenutrition.com",
+          "victoriabeckhambeauty.com",
+          "vivolife.co.uk",
+          "vividseats.com",
+          "waterandwellness.com",
+          "wine.com",
+          "withprimeskin.com",
+          "wishgardenherbs.com",
+          "workspace.google.com",
+          "zinsland.info"
+        ]
+      },
+      "partnersAdded": {
+        "count": 21,
+        "value": [
+          {
+            "domain": "thebodyshop.com"
+          },
+          {
+            "domain": "de.scalable.capital"
+          },
+          {
+            "domain": "teylor.com"
+          },
+          {
+            "domain": "tradingview.com"
+          },
+          {
+            "domain": "previnex.com"
+          },
+          {
+            "domain": "creativebug.com"
+          },
+          {
+            "domain": "redcircle.com"
+          },
+          {
+            "domain": "myer.com.au"
+          },
+          {
+            "domain": "amex-business.de"
+          },
+          {
+            "domain": "restream.io"
+          },
+          {
+            "domain": "us.threespiritdrinks.com"
+          },
+          {
+            "domain": "vivolife.co.uk"
+          },
+          {
+            "domain": "postscript.io"
+          },
+          {
+            "domain": "drannacabeca.com"
+          },
+          {
+            "domain": "bluehost.com"
+          },
+          {
+            "domain": "skimresources.com"
+          },
+          {
+            "domain": "au.loccitane.com"
+          },
+          {
+            "domain": "everlastgenerators.com"
+          },
+          {
+            "domain": "au.iherb.com"
+          },
+          {
+            "domain": "iwoca.de"
+          },
+          {
+            "domain": "ticketmaster.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 38,
+        "value": [
+          {
+            "domain": "bluettipower.com"
+          },
+          {
+            "domain": "supapass.com"
+          },
+          {
+            "domain": "foyles.co.uk"
+          },
+          {
+            "domain": "getsensate.com"
+          },
+          {
+            "domain": "speechelo-offer.com"
+          },
+          {
+            "domain": "waveblock.com"
+          },
+          {
+            "domain": "oribi.io"
+          },
+          {
+            "domain": "koacoffee.com"
+          },
+          {
+            "domain": "indigo.ca"
+          },
+          {
+            "domain": "reacapital.de"
+          },
+          {
+            "domain": "scalable.capital"
+          },
+          {
+            "domain": "iherb.com"
+          },
+          {
+            "domain": "telestream.net"
+          },
+          {
+            "domain": "nordvpn.com"
+          },
+          {
+            "domain": "foursigmatic.com"
+          },
+          {
+            "domain": "caya.com"
+          },
+          {
+            "domain": "williams-sonoma.com"
+          },
+          {
+            "domain": "artkiveapp.com"
+          },
+          {
+            "domain": "loccitane.com"
+          },
+          {
+            "domain": "rosettastone.com"
+          },
+          {
+            "domain": "videopoker.com"
+          },
+          {
+            "domain": "trezor.io"
+          },
+          {
+            "domain": "cerascreen.de"
+          },
+          {
+            "domain": "sideshow.com"
+          },
+          {
+            "domain": "audible.com"
+          },
+          {
+            "domain": "siphoxhealth.com"
+          },
+          {
+            "domain": "alitura.com"
+          },
+          {
+            "domain": "asana.com"
+          },
+          {
+            "domain": "earthrunners.com"
+          },
+          {
+            "domain": "davinandadley.com"
+          },
+          {
+            "domain": "fullwellfertility.com"
+          },
+          {
+            "domain": "weightwatchers.com"
+          },
+          {
+            "domain": "organifishop.com"
+          },
+          {
+            "domain": "threespiritdrinks.com"
+          },
+          {
+            "domain": "bonbuz.com"
+          },
+          {
+            "domain": "steadyhq.com"
+          },
+          {
+            "domain": "myregistry.com"
+          },
+          {
+            "domain": "landbot.io"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 30.550007,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 23.5,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 16.599998,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 15.249999,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 14.299999,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 12.349998,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 10.250001,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 10.15,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 6.5499997,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 6.5499997,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 6.5,
+            "vertical": "Finance / Investments"
+          },
+          {
+            "count": 5.4500003,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 5.1,
+            "vertical": "Sports / Outdoor"
+          },
+          {
+            "count": 5,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 4.95,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 4.75,
+            "vertical": "Finance / Trading"
+          },
+          {
+            "count": 4.75,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 4.7,
+            "vertical": "Food / Alcohol"
+          },
+          {
+            "count": 3.9,
+            "vertical": "Business / Website Builder"
+          },
+          {
+            "count": 3.8,
+            "vertical": "Health / Adult"
+          },
+          {
+            "count": 3.8,
+            "vertical": "Health / Drinks"
+          },
+          {
+            "count": 3.75,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 3.75,
+            "vertical": "Health / CBD"
+          },
+          {
+            "count": 3.7,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 3.6499999,
+            "vertical": "Entertainment / Hobbies"
+          },
+          {
+            "count": 3.3,
+            "vertical": "Online / Web Hosting"
+          },
+          {
+            "count": 3,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 3,
+            "vertical": "Finance / Banking"
+          },
+          {
+            "count": 3,
+            "vertical": "Finance / Forex & Crypto"
+          },
+          {
+            "count": 2.95,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Home / DIY"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Travel / Accessories"
+          },
+          {
+            "count": 2.75,
+            "vertical": "Travel / Flights"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Finance / Accounts"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Home / Babycare"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Travel / Attractions"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Business / Office"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Finance / Insurance"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Home / Garden"
+          },
+          {
+            "count": 1.8,
+            "vertical": "Home / Art"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Jobs & Careers"
+          },
+          {
+            "count": 1,
+            "vertical": "Gifts / Personalised"
+          },
+          {
+            "count": 1,
+            "vertical": "Health / Eyecare"
+          },
+          {
+            "count": 1,
+            "vertical": "Technology / Editing Software"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Energy"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Cards"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Forex & Crypto Prop"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Loans"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Gifts / Kids"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Solar"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Utilities"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Online / Freebies"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Online / Security"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Sports / Cycling"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Business / CRM"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Beds & Bedding"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Travel / Car Hire"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Travel / Rail & Coach"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 290,
+      "value": [
+        "myshopify.com",
+        "apple.com",
+        "amazon.com",
+        "cratejoy.com",
+        "microsoft.com",
+        "instagram.com",
+        "intuit.com",
+        "linkedin.com",
+        "nordstrom.com",
+        "shopify.com",
+        "nba.com",
+        "adlibris.com",
+        "adorebeauty.com.au",
+        "flexoffers.com",
+        "aeyde.com",
+        "walmart.com",
+        "fiverr.com",
+        "aidabicaj.com",
+        "amazon.ca",
+        "amazon.com.au",
+        "aminoco.com",
+        "amex-business.de",
+        "wpengine.com",
+        "teachable.com",
+        "sephora.com",
+        "anthropologie.com",
+        "apextraderfunding.com",
+        "apolloneuro.com",
+        "calendar.com",
+        "grammarly.com",
+        "app.rubicon.business",
+        "teylor.com",
+        "setapp.com",
+        "revolut.com",
+        "athleticbrewing.com",
+        "gap.com",
+        "au.iherb.com",
+        "au.loccitane.com",
+        "augustinusbader.com",
+        "parachutehome.com",
+        "avantlink.com",
+        "exporo.de",
+        "bandier.com",
+        "barebonesliving.com",
+        "dkb.de",
+        "bearaby.com",
+        "beautybay.com",
+        "benzinga.com",
+        "myer.com.au",
+        "betterhelp.com",
+        "bigw.com.au",
+        "birkenstock.com.au",
+        "bioptimizers.com",
+        "homedepot.com",
+        "booktopia.com.au",
+        "discord.com",
+        "ebay.com",
+        "libro.fm",
+        "reddit.com",
+        "shopbop.com",
+        "solostove.com",
+        "ticketmaster.com",
+        "westelm.com",
+        "withings.com",
+        "blublox.com",
+        "bluehost.com",
+        "bluemercury.com",
+        "bodyspec.com",
+        "bol.com",
+        "braceability.com",
+        "shure.com",
+        "butcherbox.com",
+        "buybuybaby.com",
+        "bvibe.com",
+        "bys.com.au",
+        "saatchiart.com",
+        "canva.com",
+        "target.com",
+        "macys.com",
+        "cbd.co",
+        "ceremonial-cacao.com",
+        "cerebralfit.com",
+        "charlottetilbury.com",
+        "cheekyglo.com",
+        "hostgator.com",
+        "chemistwarehouse.com.au",
+        "chegg.com",
+        "chemicalfreebody.com",
+        "thebodyshop.com",
+        "cigarsinternational.com",
+        "circleback.com",
+        "stubhub.com",
+        "cleverfoxplanner.com",
+        "clinique.com.au",
+        "tradedoubler.com",
+        "companisto.com",
+        "shopltk.com",
+        "financeads.net",
+        "contendersclothing.com",
+        "couponseeker.com",
+        "covenanteyes.com",
+        "creativebug.com",
+        "cultbeauty.com",
+        "curednutrition.com",
+        "dashingdiva.com.au",
+        "de.scalable.capital",
+        "drannacabeca.com",
+        "drinkmaw.com",
+        "drjoedispenza.com",
+        "drinklmnt.com",
+        "dryfarmwines.com",
+        "dyper.com",
+        "eagle.cool",
+        "eightcap.com",
+        "elementor.com",
+        "madewell.com",
+        "enlightenedequipment.com",
+        "eqbank.ca",
+        "equipfoods.com",
+        "skyscanner.com",
+        "estateguru.co",
+        "wearefeel.com",
+        "everlastgenerators.com",
+        "everlywell.com",
+        "fansidea.com",
+        "fanatics.com",
+        "feminineenchantment.com",
+        "finnishdesignshop.com",
+        "flexstronger.com",
+        "fondbonebroth.com",
+        "framebridge.com",
+        "toms.com",
+        "gaia.com",
+        "unbounce.com",
+        "gettaxhub.com",
+        "getyourguide.com",
+        "giorgioarmanibeauty.com.au",
+        "skimresources.com",
+        "goldenkey.gift",
+        "goodmolecules.com",
+        "gorgias.com",
+        "gossamergear.com",
+        "google.com",
+        "heartmath.com",
+        "hellobubble.com",
+        "lovehoney.com",
+        "higherdose.com",
+        "homage.com",
+        "homefieldapparel.com",
+        "hugo.coffee",
+        "monday.com",
+        "idmobile.co.uk",
+        "immofunding.com",
+        "incfile.com",
+        "informit.com",
+        "inkedgaming.com",
+        "instacart.com",
+        "woolworths.com.au",
+        "reverb.com",
+        "invideo.io",
+        "itcosmetics.com",
+        "itrustcapital.com",
+        "iwoca.de",
+        "jasemedical.com",
+        "jaquishbiomedical.com",
+        "jbtools.com",
+        "jensonusa.com",
+        "prioritypass.com",
+        "jurlique.com.au",
+        "kiwico.com",
+        "knitcrate.com",
+        "kmart.com.au",
+        "knitpicks.com",
+        "ladderlife.com",
+        "leadpages.com",
+        "tailwindapp.com",
+        "lelo.com",
+        "lovehoney.co.uk",
+        "lskd.co",
+        "semrush.com",
+        "maccosmetics.com",
+        "viator.com",
+        "marieveronique.com",
+        "maryruthorganics.com",
+        "matchesfashion.com",
+        "mecca.com",
+        "midjourney.com",
+        "mightynest.com",
+        "mimiohealth.com",
+        "mindfulness.com",
+        "mountainroseherbs.com",
+        "mtnops.com",
+        "mudwtr.com",
+        "mybluprint.com",
+        "mypatriotsupply.com",
+        "nakedsundays.com",
+        "naturium.com.au",
+        "neurohacker.com",
+        "nexo.com",
+        "nllshop.com",
+        "nuleafnaturals.com",
+        "offtherecord.com",
+        "octopus.energy",
+        "omio.com",
+        "oneskin.co",
+        "online-therapy.com",
+        "onnit.com",
+        "organicallybecca.com",
+        "oseamalibu.com",
+        "ourfamilywizard.com",
+        "ozhairandbeauty.com",
+        "partiqlar.com",
+        "paulaschoice.com.au",
+        "pintoranch.com",
+        "piquelife.com",
+        "piquetea.com",
+        "pnumaoutdoors.com",
+        "policygenius.com",
+        "postscript.io",
+        "toasttab.com",
+        "practicebetter.io",
+        "previnex.com",
+        "priceline.com.au",
+        "primallypure.com",
+        "privy.com",
+        "therealreal.com",
+        "pwccmarketplace.com",
+        "qksrv.net",
+        "quayaustralia.com",
+        "quillbot.com",
+        "rayvishop.com",
+        "redcircle.com",
+        "renogy.com",
+        "restream.io",
+        "rexingusa.com",
+        "ripstopbytheroll.com",
+        "sagemoon.com",
+        "saksfifthavenue.com",
+        "smilesoftware.com",
+        "seed.com",
+        "sephora.com.au",
+        "shareasale-analytics.com",
+        "shevibe.com",
+        "shopterrain.com",
+        "shoppingkim.com",
+        "sidelineswap.com",
+        "unitelvoice.com",
+        "simplelawnsolutions.com",
+        "skinstitut.com",
+        "skyroam.com",
+        "socialbee.io",
+        "socialcbd.com",
+        "soundtrackyourbrand.com",
+        "sportiva.com",
+        "standardluggage.com",
+        "thestrength.co",
+        "sweetwater.com",
+        "tailorbrands.com",
+        "teepublic.com",
+        "thebeardstruggle.com",
+        "thecoldplunge.com",
+        "theordinary.com",
+        "therasage.com",
+        "thepowermba.com",
+        "thisisneeded.com",
+        "tidalhair.com.au",
+        "topp-kreativ.de",
+        "tortugabackpacks.com",
+        "tradingview.com",
+        "traderepublic.com",
+        "triplewhale.com",
+        "troscriptions.com",
+        "truthfinder.com",
+        "tryinteract.com",
+        "tusolwellness.com",
+        "webflow.com",
+        "upgradedformulas.com",
+        "us.threespiritdrinks.com",
+        "usepastel.com",
+        "vagusnervesupport.com",
+        "vedgenutrition.com",
+        "victoriabeckhambeauty.com",
+        "vivolife.co.uk",
+        "vividseats.com",
+        "waterandwellness.com",
+        "wine.com",
+        "withprimeskin.com",
+        "wishgardenherbs.com",
+        "workspace.google.com",
+        "zinsland.info"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Entertainment / Music",
+      "value": [
+        "Entertainment / Music",
+        "Entertainment / Streaming"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Entertainment / Streaming",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Entertainment / Music",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Entertainment / Streaming",
+          "rank": 1,
+          "score": 90
+        }
+      ]
+    }
+  }
+}

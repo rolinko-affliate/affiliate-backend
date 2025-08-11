@@ -1,0 +1,1249 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 18,
+      "sampleValue": [
+        "Avantlink",
+        "Awin",
+        "Business Insider"
+      ],
+      "value": [
+        "Avantlink",
+        "Awin",
+        "Business Insider",
+        "CJ Affiliate",
+        "CommissionFactory",
+        "Flexoffers",
+        "Impact",
+        "Linkby",
+        "Optimise",
+        "Partnerize",
+        "Pepperjam",
+        "Rakuten",
+        "Skimlinks",
+        "Tradedoubler",
+        "TUNE",
+        "Viglink",
+        "Webgains",
+        "Wix"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.85
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.85
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.85
+        }
+      ]
+    },
+    "domain": "nybreaking.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "card"
+        },
+        {
+          "score": 0.85931927,
+          "value": "store"
+        },
+        {
+          "score": 0.8156729,
+          "value": "laptop"
+        },
+        {
+          "score": 0.7564316,
+          "value": "device"
+        },
+        {
+          "score": 0.66168433,
+          "value": "smart"
+        },
+        {
+          "score": 0.59563774,
+          "value": "phone"
+        },
+        {
+          "score": 0.5900526,
+          "value": "investor"
+        },
+        {
+          "score": 0.5859065,
+          "value": "software"
+        },
+        {
+          "score": 0.58315146,
+          "value": "microsoft"
+        },
+        {
+          "score": 0.5730962,
+          "value": "legal"
+        },
+        {
+          "score": 0.53467345,
+          "value": "accessory"
+        },
+        {
+          "score": 0.51986134,
+          "value": "video"
+        },
+        {
+          "score": 0.49797714,
+          "value": "movie"
+        },
+        {
+          "score": 0.48027325,
+          "value": "game"
+        },
+        {
+          "score": 0.46665165,
+          "value": "community"
+        },
+        {
+          "score": 0.45656332,
+          "value": "fashion"
+        },
+        {
+          "score": 0.4534914,
+          "value": "gaming"
+        },
+        {
+          "score": 0.4499202,
+          "value": "cloud"
+        },
+        {
+          "score": 0.4301483,
+          "value": "credit"
+        },
+        {
+          "score": 0.4280753,
+          "value": "clothing"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "card"
+        },
+        {
+          "score": 0.85931927,
+          "value": "store"
+        },
+        {
+          "score": 0.8156729,
+          "value": "laptop"
+        },
+        {
+          "score": 0.7564316,
+          "value": "device"
+        },
+        {
+          "score": 0.66168433,
+          "value": "smart"
+        },
+        {
+          "score": 0.59563774,
+          "value": "phone"
+        },
+        {
+          "score": 0.5900526,
+          "value": "investor"
+        },
+        {
+          "score": 0.5859065,
+          "value": "software"
+        },
+        {
+          "score": 0.58315146,
+          "value": "microsoft"
+        },
+        {
+          "score": 0.5730962,
+          "value": "legal"
+        },
+        {
+          "score": 0.53467345,
+          "value": "accessory"
+        },
+        {
+          "score": 0.51986134,
+          "value": "video"
+        },
+        {
+          "score": 0.49797714,
+          "value": "movie"
+        },
+        {
+          "score": 0.48027325,
+          "value": "game"
+        },
+        {
+          "score": 0.46665165,
+          "value": "community"
+        },
+        {
+          "score": 0.45656332,
+          "value": "fashion"
+        },
+        {
+          "score": 0.4534914,
+          "value": "gaming"
+        },
+        {
+          "score": 0.4499202,
+          "value": "cloud"
+        },
+        {
+          "score": 0.4301483,
+          "value": "credit"
+        },
+        {
+          "score": 0.4280753,
+          "value": "clothing"
+        },
+        {
+          "score": 0.41946402,
+          "value": "dress"
+        },
+        {
+          "score": 0.41725615,
+          "value": "apple"
+        },
+        {
+          "score": 0.41706732,
+          "value": "furniture"
+        },
+        {
+          "score": 0.41407114,
+          "value": "hair"
+        },
+        {
+          "score": 0.40339312,
+          "value": "sign"
+        },
+        {
+          "score": 0.39724174,
+          "value": "investment"
+        },
+        {
+          "score": 0.39667228,
+          "value": "pro"
+        },
+        {
+          "score": 0.38880587,
+          "value": "girls"
+        },
+        {
+          "score": 0.36699548,
+          "value": "desktop"
+        },
+        {
+          "score": 0.3521255,
+          "value": "shirts"
+        },
+        {
+          "score": 0.35047546,
+          "value": "notice"
+        },
+        {
+          "score": 0.346486,
+          "value": "tool"
+        },
+        {
+          "score": 0.3450677,
+          "value": "app"
+        },
+        {
+          "score": 0.33925697,
+          "value": "streaming"
+        },
+        {
+          "score": 0.33859876,
+          "value": "shoes"
+        },
+        {
+          "score": 0.3384604,
+          "value": "platform"
+        },
+        {
+          "score": 0.3378484,
+          "value": "speed"
+        },
+        {
+          "score": 0.33095938,
+          "value": "kid"
+        },
+        {
+          "score": 0.33010378,
+          "value": "tech"
+        },
+        {
+          "score": 0.32847163,
+          "value": "jackets"
+        },
+        {
+          "score": 0.3260256,
+          "value": "story"
+        },
+        {
+          "score": 0.3257777,
+          "value": "luxury"
+        },
+        {
+          "score": 0.32350284,
+          "value": "contract"
+        },
+        {
+          "score": 0.32197848,
+          "value": "fee"
+        },
+        {
+          "score": 0.3211531,
+          "value": "star"
+        },
+        {
+          "score": 0.31894964,
+          "value": "ready"
+        },
+        {
+          "score": 0.31883273,
+          "value": "life"
+        },
+        {
+          "score": 0.31388178,
+          "value": "team"
+        },
+        {
+          "score": 0.3138783,
+          "value": "technology"
+        },
+        {
+          "score": 0.3091637,
+          "value": "window"
+        },
+        {
+          "score": 0.30874678,
+          "value": "monthly"
+        },
+        {
+          "score": 0.30757448,
+          "value": "share"
+        },
+        {
+          "score": 0.30481932,
+          "value": "iphone"
+        },
+        {
+          "score": 0.3018354,
+          "value": "wishlist"
+        },
+        {
+          "score": 0.3005591,
+          "value": "accessoire"
+        },
+        {
+          "score": 0.3003238,
+          "value": "unlimited"
+        },
+        {
+          "score": 0.3002361,
+          "value": "skin"
+        },
+        {
+          "score": 0.29769623,
+          "value": "solution"
+        },
+        {
+          "score": 0.296991,
+          "value": "financial"
+        },
+        {
+          "score": 0.29692036,
+          "value": "insurance"
+        },
+        {
+          "score": 0.29666132,
+          "value": "oplossing"
+        },
+        {
+          "score": 0.29632547,
+          "value": "bags"
+        },
+        {
+          "score": 0.29488617,
+          "value": "style"
+        },
+        {
+          "score": 0.2938944,
+          "value": "swimwear"
+        },
+        {
+          "score": 0.2871799,
+          "value": "monitor"
+        },
+        {
+          "score": 0.28679895,
+          "value": "underwear"
+        },
+        {
+          "score": 0.28455222,
+          "value": "popular"
+        },
+        {
+          "score": 0.28345266,
+          "value": "friends"
+        },
+        {
+          "score": 0.28306264,
+          "value": "beauty"
+        },
+        {
+          "score": 0.28217238,
+          "value": "bundle"
+        },
+        {
+          "score": 0.28050286,
+          "value": "developer"
+        },
+        {
+          "score": 0.2793461,
+          "value": "tumblr"
+        },
+        {
+          "score": 0.27729014,
+          "value": "apex"
+        },
+        {
+          "score": 0.27599844,
+          "value": "digital"
+        },
+        {
+          "score": 0.27301723,
+          "value": "market"
+        },
+        {
+          "score": 0.27174526,
+          "value": "boots"
+        },
+        {
+          "score": 0.2715185,
+          "value": "travel"
+        },
+        {
+          "score": 0.26759136,
+          "value": "watches"
+        },
+        {
+          "score": 0.2611913,
+          "value": "shirt"
+        },
+        {
+          "score": 0.25993162,
+          "value": "sunglasses"
+        },
+        {
+          "score": 0.25909963,
+          "value": "legal notice"
+        },
+        {
+          "score": 0.25672132,
+          "value": "girl"
+        },
+        {
+          "score": 0.25447926,
+          "value": "dresses"
+        },
+        {
+          "score": 0.25440443,
+          "value": "favorite"
+        },
+        {
+          "score": 0.25197765,
+          "value": "fund"
+        },
+        {
+          "score": 0.2500093,
+          "value": "exclusives"
+        },
+        {
+          "score": 0.24919009,
+          "value": "play"
+        },
+        {
+          "score": 0.24875225,
+          "value": "ready email"
+        },
+        {
+          "score": 0.24875225,
+          "value": "unlimited movie"
+        },
+        {
+          "score": 0.24171595,
+          "value": "network"
+        },
+        {
+          "score": 0.2407276,
+          "value": "baby"
+        },
+        {
+          "score": 0.24050897,
+          "value": "stock"
+        },
+        {
+          "score": 0.23927362,
+          "value": "visual"
+        },
+        {
+          "score": 0.23672612,
+          "value": "jeans"
+        },
+        {
+          "score": 0.23378982,
+          "value": "player"
+        },
+        {
+          "score": 0.23359779,
+          "value": "investors"
+        },
+        {
+          "score": 0.23246284,
+          "value": "assets"
+        },
+        {
+          "score": 0.23014922,
+          "value": "mattress"
+        },
+        {
+          "score": 0.23014185,
+          "value": "jewellery"
+        },
+        {
+          "score": 0.22961201,
+          "value": "investments"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://nybreaking.com/",
+        "https://www.nybreaking.com/",
+        "http://nybreaking.com/",
+        "http://www.nybreaking.com/"
+      ]
+    },
+    "metaData": {
+      "description": "Find breaking US news, local New York news coverage, sports, entertainment news, celebrity gossip, autos, videos and photos at nybreaking.com.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/nybreaking.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://nybreaking.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 171,
+        "value": [
+          "sjv.io",
+          "aliexpress.com",
+          "etsy.com",
+          "1password.com",
+          "adobe.com",
+          "apple.com",
+          "trendmicro.com",
+          "microsoft.com",
+          "att.com",
+          "meta.com",
+          "nike.com",
+          "netflix.com",
+          "nordstrom.com",
+          "nvidia.com",
+          "hubspot.com",
+          "dell.com",
+          "sky.com",
+          "ee.co.uk",
+          "woot.com",
+          "lenovo.com",
+          "oneplus.com",
+          "samsung.com",
+          "ubisoft.com",
+          "xbox.com",
+          "evernote.com",
+          "o2.co.uk",
+          "hbomax.com",
+          "adidas.co.uk",
+          "adorebeauty.com.au",
+          "hulu.com",
+          "roku.com",
+          "geekbuying.com",
+          "steelseries.com",
+          "ajbell.co.uk",
+          "allmodern.com",
+          "zoom.us",
+          "amazon.com.au",
+          "americangolf.co.uk",
+          "ao.com",
+          "hp.com",
+          "fanatical.com",
+          "youtube.com",
+          "garmin.com",
+          "lego.com",
+          "argos.co.uk",
+          "asus.com",
+          "nature.com",
+          "samsclub.com",
+          "max.com",
+          "parallels.com",
+          "backmarket.co.uk",
+          "backmarket.com",
+          "barnesandnoble.com",
+          "patagonia.com",
+          "berries.com",
+          "bestinvest.co.uk",
+          "dazn.com",
+          "sling.com",
+          "playstation.com",
+          "bitdefender.com",
+          "vodafone.co.uk",
+          "homedepot.com",
+          "lowes.com",
+          "debenhams.com",
+          "humblebundle.com",
+          "lastpass.com",
+          "malwarebytes.com",
+          "logmein.com",
+          "saatva.com",
+          "shopbop.com",
+          "very.co.uk",
+          "westerndigital.com",
+          "reuters.com",
+          "boots.com",
+          "currys.co.uk",
+          "udemy.com",
+          "nothing.tech",
+          "cannabotech.com",
+          "lululemon.com",
+          "carphonewarehouse.com",
+          "casetify.com",
+          "casper.com",
+          "steampowered.com",
+          "movavi.com",
+          "chacos.com",
+          "charles-stanley.co.uk",
+          "sharkclean.co.uk",
+          "cloud.google.com",
+          "cocoonbysealy.com",
+          "cocoandeve.com",
+          "mintmobile.com",
+          "gopro.com",
+          "verizon.com",
+          "visible.com",
+          "confused.com",
+          "dji.com",
+          "corsair.com",
+          "cotswoldoutdoor.com",
+          "cottonon.com",
+          "crocs.com.au",
+          "dispatch.com",
+          "diy.com",
+          "springer.com",
+          "dreamcloudsleep.com",
+          "dyson.co.uk",
+          "ebuyer.com",
+          "emma-mattress.co.uk",
+          "emmalewisham.com.au",
+          "newegg.com",
+          "epicgames.com",
+          "theinkeylist.com",
+          "johnlewis.com",
+          "eyewearindex.com",
+          "fidelity.co.uk",
+          "flightcentre.com.au",
+          "foliosociety.com",
+          "freetrade.io",
+          "tempurpedic.com",
+          "gocompare.com",
+          "joinhoney.com",
+          "getchip.uk",
+          "ghdhair.com",
+          "happyhead.com",
+          "overstock.com",
+          "paramountplus.com",
+          "qobuz.com",
+          "simbasleep.com",
+          "hl.co.uk",
+          "hmd.com",
+          "wayfair.com",
+          "ii.co.uk",
+          "instacart.com",
+          "roseskinco.com",
+          "jaggad.com",
+          "jessops.com",
+          "thetimes.co.uk",
+          "lg.com",
+          "lifelock.com",
+          "philips.co.uk",
+          "marshallheadphones.com",
+          "mattressfirm.com",
+          "mcafee.com",
+          "otterbox.com",
+          "moneysupermarket.com",
+          "mysweetsmile.com",
+          "ninjakitchen.co.uk",
+          "theiconic.com.au",
+          "ozgameshop.com",
+          "percko.com",
+          "petalandpup.com.au",
+          "play.google.com",
+          "premiumbeat.com",
+          "priceline.com.au",
+          "purple.com",
+          "raisin.co.uk",
+          "scan.co.uk",
+          "sephora.com.au",
+          "shopdisney.co.uk",
+          "shopping.google.com",
+          "shudder.com",
+          "sleeprepublic.com.au",
+          "smilie.com.au",
+          "thebeautychef.com",
+          "theknicker.com",
+          "thelumicharge.com",
+          "topresume.com",
+          "lengow.com",
+          "uk.sandandsky.com",
+          "ultraviolette.com.au",
+          "uswitch.com",
+          "wix.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 2,
+        "value": [
+          {
+            "domain": "uk.sandandsky.com"
+          },
+          {
+            "domain": "roseskinco.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 22,
+        "value": [
+          {
+            "domain": "fool.com"
+          },
+          {
+            "domain": "greenmangaming.com"
+          },
+          {
+            "domain": "littleripples.com"
+          },
+          {
+            "domain": "withings.com"
+          },
+          {
+            "domain": "motto.com.au"
+          },
+          {
+            "domain": "facegym.com"
+          },
+          {
+            "domain": "dodl.co.uk"
+          },
+          {
+            "domain": "jlab.com"
+          },
+          {
+            "domain": "robertsradio.com"
+          },
+          {
+            "domain": "google.com"
+          },
+          {
+            "domain": "augustinusbader.com"
+          },
+          {
+            "domain": "nintendo.com"
+          },
+          {
+            "domain": "gog.com"
+          },
+          {
+            "domain": "chi.com"
+          },
+          {
+            "domain": "xfinity.com"
+          },
+          {
+            "domain": "thecollagen.co"
+          },
+          {
+            "domain": "sandandsky.com"
+          },
+          {
+            "domain": "boostinfinite.com"
+          },
+          {
+            "domain": "ninjakitchen.com"
+          },
+          {
+            "domain": "nanoleaf.me"
+          },
+          {
+            "domain": "shopify.com"
+          },
+          {
+            "domain": "sleepnumber.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 19.4,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 12.65,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 12.449999,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 9.7,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 9.599999,
+            "vertical": "Home / Beds & Bedding"
+          },
+          {
+            "count": 9.599999,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 9.55,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 9.55,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 5.75,
+            "vertical": "Business / Cyber Security"
+          },
+          {
+            "count": 5.7,
+            "vertical": "Finance / Investments"
+          },
+          {
+            "count": 5.6499996,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 5.2499995,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 4.9,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 3.8500001,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 3.8,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 2.95,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Finance / Insurance"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Online / Security"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 2.75,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 2.75,
+            "vertical": "Home / DIY"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Sports / Outdoor"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Travel / Flights"
+          },
+          {
+            "count": 1.75,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 1.65,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Jobs & Careers"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Website Builder"
+          },
+          {
+            "count": 1,
+            "vertical": "Finance / Banking"
+          },
+          {
+            "count": 1,
+            "vertical": "Online / Freebies"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / CRM"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Finance"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Loans"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Mortgages & Loans"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Trading"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Utilities"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Motoring / Motorcycles"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Entertainment / Hobbies"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Fashion / Lingerie"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Gifts / Kids"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Travel / Car Hire"
+          },
+          {
+            "count": 0.8,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 0.7,
+            "vertical": "Finance / Cards"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 171,
+      "value": [
+        "sjv.io",
+        "aliexpress.com",
+        "etsy.com",
+        "1password.com",
+        "adobe.com",
+        "apple.com",
+        "trendmicro.com",
+        "microsoft.com",
+        "att.com",
+        "meta.com",
+        "nike.com",
+        "netflix.com",
+        "nordstrom.com",
+        "nvidia.com",
+        "hubspot.com",
+        "dell.com",
+        "sky.com",
+        "ee.co.uk",
+        "woot.com",
+        "lenovo.com",
+        "oneplus.com",
+        "samsung.com",
+        "ubisoft.com",
+        "xbox.com",
+        "evernote.com",
+        "o2.co.uk",
+        "hbomax.com",
+        "adidas.co.uk",
+        "adorebeauty.com.au",
+        "hulu.com",
+        "roku.com",
+        "geekbuying.com",
+        "steelseries.com",
+        "ajbell.co.uk",
+        "allmodern.com",
+        "zoom.us",
+        "amazon.com.au",
+        "americangolf.co.uk",
+        "ao.com",
+        "hp.com",
+        "fanatical.com",
+        "youtube.com",
+        "garmin.com",
+        "lego.com",
+        "argos.co.uk",
+        "asus.com",
+        "nature.com",
+        "samsclub.com",
+        "max.com",
+        "parallels.com",
+        "backmarket.co.uk",
+        "backmarket.com",
+        "barnesandnoble.com",
+        "patagonia.com",
+        "berries.com",
+        "bestinvest.co.uk",
+        "dazn.com",
+        "sling.com",
+        "playstation.com",
+        "bitdefender.com",
+        "vodafone.co.uk",
+        "homedepot.com",
+        "lowes.com",
+        "debenhams.com",
+        "humblebundle.com",
+        "lastpass.com",
+        "malwarebytes.com",
+        "logmein.com",
+        "saatva.com",
+        "shopbop.com",
+        "very.co.uk",
+        "westerndigital.com",
+        "reuters.com",
+        "boots.com",
+        "currys.co.uk",
+        "udemy.com",
+        "nothing.tech",
+        "cannabotech.com",
+        "lululemon.com",
+        "carphonewarehouse.com",
+        "casetify.com",
+        "casper.com",
+        "steampowered.com",
+        "movavi.com",
+        "chacos.com",
+        "charles-stanley.co.uk",
+        "sharkclean.co.uk",
+        "cloud.google.com",
+        "cocoonbysealy.com",
+        "cocoandeve.com",
+        "mintmobile.com",
+        "gopro.com",
+        "verizon.com",
+        "visible.com",
+        "confused.com",
+        "dji.com",
+        "corsair.com",
+        "cotswoldoutdoor.com",
+        "cottonon.com",
+        "crocs.com.au",
+        "dispatch.com",
+        "diy.com",
+        "springer.com",
+        "dreamcloudsleep.com",
+        "dyson.co.uk",
+        "ebuyer.com",
+        "emma-mattress.co.uk",
+        "emmalewisham.com.au",
+        "newegg.com",
+        "epicgames.com",
+        "theinkeylist.com",
+        "johnlewis.com",
+        "eyewearindex.com",
+        "fidelity.co.uk",
+        "flightcentre.com.au",
+        "foliosociety.com",
+        "freetrade.io",
+        "tempurpedic.com",
+        "gocompare.com",
+        "joinhoney.com",
+        "getchip.uk",
+        "ghdhair.com",
+        "happyhead.com",
+        "overstock.com",
+        "paramountplus.com",
+        "qobuz.com",
+        "simbasleep.com",
+        "hl.co.uk",
+        "hmd.com",
+        "wayfair.com",
+        "ii.co.uk",
+        "instacart.com",
+        "roseskinco.com",
+        "jaggad.com",
+        "jessops.com",
+        "thetimes.co.uk",
+        "lg.com",
+        "lifelock.com",
+        "philips.co.uk",
+        "marshallheadphones.com",
+        "mattressfirm.com",
+        "mcafee.com",
+        "otterbox.com",
+        "moneysupermarket.com",
+        "mysweetsmile.com",
+        "ninjakitchen.co.uk",
+        "theiconic.com.au",
+        "ozgameshop.com",
+        "percko.com",
+        "petalandpup.com.au",
+        "play.google.com",
+        "premiumbeat.com",
+        "priceline.com.au",
+        "purple.com",
+        "raisin.co.uk",
+        "scan.co.uk",
+        "sephora.com.au",
+        "shopdisney.co.uk",
+        "shopping.google.com",
+        "shudder.com",
+        "sleeprepublic.com.au",
+        "smilie.com.au",
+        "thebeautychef.com",
+        "theknicker.com",
+        "thelumicharge.com",
+        "topresume.com",
+        "lengow.com",
+        "uk.sandandsky.com",
+        "ultraviolette.com.au",
+        "uswitch.com",
+        "wix.com"
+      ]
+    },
+    "promotype": {
+      "value": "student"
+    },
+    "relatedPublishers": {
+      "count": 6,
+      "value": [
+        "eumail24.com",
+        "proxima24.com",
+        "cerespost.com",
+        "whatsnew2day.com",
+        "sports2daynews.com",
+        "9breakingnews.com"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/betterstu",
+        "instagram": "https://instagram.com/betterstudio",
+        "twitter": "https://twitter.com/betterstu",
+        "youtube": "https://youtube.com/channel/ucrnkhrtrk33c9hzyij4b5ng"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 1,
+      "sampleValue": "Online / Services",
+      "value": [
+        "Online / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Online / Services",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 95
+        }
+      ]
+    }
+  }
+}

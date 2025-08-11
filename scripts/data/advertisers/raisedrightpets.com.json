@@ -1,0 +1,669 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 5,
+      "sampleValue": [
+        "Digidip",
+        "Impact",
+        "Linkbux"
+      ],
+      "value": [
+        "Digidip",
+        "Impact",
+        "Linkbux",
+        "Skimlinks",
+        "Takeads"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 1,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "info@raisedrightpets.com"
+        }
+      ]
+    },
+    "domain": "raisedrightpets.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "food"
+        },
+        {
+          "score": 0.6769231,
+          "value": "info"
+        },
+        {
+          "score": 0.5538462,
+          "value": "store"
+        },
+        {
+          "score": 0.54615384,
+          "value": "box"
+        },
+        {
+          "score": 0.5307692,
+          "value": "raisedrightpet"
+        },
+        {
+          "score": 0.5,
+          "value": "pet"
+        },
+        {
+          "score": 0.36923078,
+          "value": "human"
+        },
+        {
+          "score": 0.33076924,
+          "value": "grade"
+        },
+        {
+          "score": 0.33076924,
+          "value": "human grade"
+        },
+        {
+          "score": 0.2923077,
+          "value": "raised"
+        },
+        {
+          "score": 0.2923077,
+          "value": "terms use"
+        },
+        {
+          "score": 0.2846154,
+          "value": "dog"
+        },
+        {
+          "score": 0.2846154,
+          "value": "raised right"
+        },
+        {
+          "score": 0.2846154,
+          "value": "raisedrightpets"
+        },
+        {
+          "score": 0.2846154,
+          "value": "raisedrightpets com"
+        },
+        {
+          "score": 0.2769231,
+          "value": "recipes"
+        },
+        {
+          "score": 0.2769231,
+          "value": "collect"
+        },
+        {
+          "score": 0.26923078,
+          "value": "loss"
+        },
+        {
+          "score": 0.26923078,
+          "value": "personal information"
+        },
+        {
+          "score": 0.25384617,
+          "value": "faq"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "food"
+        },
+        {
+          "score": 0.6769231,
+          "value": "info"
+        },
+        {
+          "score": 0.5538462,
+          "value": "store"
+        },
+        {
+          "score": 0.54615384,
+          "value": "box"
+        },
+        {
+          "score": 0.5307692,
+          "value": "raisedrightpet"
+        },
+        {
+          "score": 0.5,
+          "value": "pet"
+        },
+        {
+          "score": 0.36923078,
+          "value": "human"
+        },
+        {
+          "score": 0.33076924,
+          "value": "grade"
+        },
+        {
+          "score": 0.33076924,
+          "value": "human grade"
+        },
+        {
+          "score": 0.2923077,
+          "value": "raised"
+        },
+        {
+          "score": 0.2923077,
+          "value": "terms use"
+        },
+        {
+          "score": 0.2846154,
+          "value": "dog"
+        },
+        {
+          "score": 0.2846154,
+          "value": "raised right"
+        },
+        {
+          "score": 0.2846154,
+          "value": "raisedrightpets"
+        },
+        {
+          "score": 0.2846154,
+          "value": "raisedrightpets com"
+        },
+        {
+          "score": 0.2769231,
+          "value": "recipes"
+        },
+        {
+          "score": 0.2769231,
+          "value": "collect"
+        },
+        {
+          "score": 0.26923078,
+          "value": "loss"
+        },
+        {
+          "score": 0.26923078,
+          "value": "personal information"
+        },
+        {
+          "score": 0.25384617,
+          "value": "faq"
+        },
+        {
+          "score": 0.24615385,
+          "value": "law"
+        },
+        {
+          "score": 0.23846154,
+          "value": "notice"
+        },
+        {
+          "score": 0.23076923,
+          "value": "responsible"
+        },
+        {
+          "score": 0.22307692,
+          "value": "info raisedrightpets"
+        },
+        {
+          "score": 0.22307692,
+          "value": "select"
+        },
+        {
+          "score": 0.22307692,
+          "value": "privacy policy"
+        },
+        {
+          "score": 0.21538462,
+          "value": "provide"
+        },
+        {
+          "score": 0.20769231,
+          "value": "action"
+        },
+        {
+          "score": 0.1923077,
+          "value": "claim"
+        },
+        {
+          "score": 0.18461539,
+          "value": "cat"
+        },
+        {
+          "score": 0.18461539,
+          "value": "contribution"
+        },
+        {
+          "score": 0.17692308,
+          "value": "recipe"
+        },
+        {
+          "score": 0.16923077,
+          "value": "pet food"
+        },
+        {
+          "score": 0.16153847,
+          "value": "meal"
+        },
+        {
+          "score": 0.16153847,
+          "value": "legal"
+        },
+        {
+          "score": 0.16153847,
+          "value": "liable"
+        },
+        {
+          "score": 0.16153847,
+          "value": "person"
+        },
+        {
+          "score": 0.15384616,
+          "value": "safety"
+        },
+        {
+          "score": 0.15384616,
+          "value": "provision"
+        },
+        {
+          "score": 0.15384616,
+          "value": "changes"
+        },
+        {
+          "score": 0.15384616,
+          "value": "use website"
+        },
+        {
+          "score": 0.15384616,
+          "value": "information collect"
+        },
+        {
+          "score": 0.14615385,
+          "value": "ingredient"
+        },
+        {
+          "score": 0.14615385,
+          "value": "locator"
+        },
+        {
+          "score": 0.14615385,
+          "value": "damage"
+        },
+        {
+          "score": 0.13846155,
+          "value": "custom"
+        },
+        {
+          "score": 0.13846155,
+          "value": "custom meal"
+        },
+        {
+          "score": 0.13846155,
+          "value": "meal plan"
+        },
+        {
+          "score": 0.13846155,
+          "value": "treats"
+        },
+        {
+          "score": 0.13846155,
+          "value": "store locator"
+        },
+        {
+          "score": 0.13846155,
+          "value": "press"
+        },
+        {
+          "score": 0.13846155,
+          "value": "dmca"
+        },
+        {
+          "score": 0.13846155,
+          "value": "accuracy"
+        },
+        {
+          "score": 0.13846155,
+          "value": "foregoing"
+        },
+        {
+          "score": 0.13846155,
+          "value": "risk"
+        },
+        {
+          "score": 0.13076924,
+          "value": "terms sale"
+        },
+        {
+          "score": 0.13076924,
+          "value": "link"
+        },
+        {
+          "score": 0.13076924,
+          "value": "court"
+        },
+        {
+          "score": 0.13076924,
+          "value": "liability"
+        },
+        {
+          "score": 0.13076924,
+          "value": "disclose"
+        },
+        {
+          "score": 0.12307692,
+          "value": "complete"
+        },
+        {
+          "score": 0.12307692,
+          "value": "select dog"
+        },
+        {
+          "score": 0.12307692,
+          "value": "provider"
+        },
+        {
+          "score": 0.115384616,
+          "value": "previous"
+        },
+        {
+          "score": 0.115384616,
+          "value": "lab"
+        },
+        {
+          "score": 0.115384616,
+          "value": "adult"
+        },
+        {
+          "score": 0.115384616,
+          "value": "jurisdiction"
+        },
+        {
+          "score": 0.115384616,
+          "value": "breach"
+        },
+        {
+          "score": 0.115384616,
+          "value": "responsibility"
+        },
+        {
+          "score": 0.115384616,
+          "value": "waiver"
+        },
+        {
+          "score": 0.10769231,
+          "value": "questions"
+        },
+        {
+          "score": 0.10769231,
+          "value": "dispute"
+        },
+        {
+          "score": 0.10769231,
+          "value": "feature"
+        },
+        {
+          "score": 0.1,
+          "value": "batch"
+        },
+        {
+          "score": 0.1,
+          "value": "grade pet"
+        },
+        {
+          "score": 0.1,
+          "value": "activity"
+        },
+        {
+          "score": 0.1,
+          "value": "warranty"
+        },
+        {
+          "score": 0.1,
+          "value": "use information"
+        },
+        {
+          "score": 0.092307694,
+          "value": "rye"
+        },
+        {
+          "score": 0.092307694,
+          "value": "pets"
+        },
+        {
+          "score": 0.092307694,
+          "value": "discretion"
+        },
+        {
+          "score": 0.092307694,
+          "value": "licensor"
+        },
+        {
+          "score": 0.092307694,
+          "value": "trademark"
+        },
+        {
+          "score": 0.092307694,
+          "value": "form"
+        },
+        {
+          "score": 0.092307694,
+          "value": "advertisement"
+        },
+        {
+          "score": 0.092307694,
+          "value": "tracking"
+        },
+        {
+          "score": 0.092307694,
+          "value": "previous food"
+        },
+        {
+          "score": 0.092307694,
+          "value": "provided"
+        },
+        {
+          "score": 0.092307694,
+          "value": "technologies"
+        },
+        {
+          "score": 0.08461539,
+          "value": "carb"
+        },
+        {
+          "score": 0.08461539,
+          "value": "standard"
+        },
+        {
+          "score": 0.08461539,
+          "value": "diet"
+        },
+        {
+          "score": 0.08461539,
+          "value": "test"
+        },
+        {
+          "score": 0.08461539,
+          "value": "respect"
+        },
+        {
+          "score": 0.08461539,
+          "value": "parties"
+        },
+        {
+          "score": 0.08461539,
+          "value": "providers"
+        },
+        {
+          "score": 0.07692308,
+          "value": "source"
+        },
+        {
+          "score": 0.07692308,
+          "value": "balanced"
+        },
+        {
+          "score": 0.07692308,
+          "value": "york"
+        },
+        {
+          "score": 0.07692308,
+          "value": "p o"
+        }
+      ]
+    },
+    "metaData": {
+      "description": "We’re a family owned human-grade pet food company that works with veterinarian, Dr. Karen Becker to make “home cooked style” whole food recipes for dogs and cats. We were recently named to The List of Trusted Pet Foods by Susan Thixton from TruthAboutPetFood.com because of the emphasis we place on safety and transparency. Every single batch of our dog food and cat food is lab safety tested. We use limited Ingredients, with no preservatives, or fillers like grain, potato, rice, corn, wheat, or soy. For transparency, we have a map tracing all our ingredients to their source, along with a video showing how our food gets made in our human-grade facility for you to view on our website. Serve as a complete meal or as a topper.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/raisedrightpets.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://raisedrightpets.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 112
+      },
+      "partnersAdded": {
+        "count": 8,
+        "value": [
+          {
+            "domain": "usnews.com"
+          },
+          {
+            "domain": "scottsdaleluxuryhomes.co"
+          },
+          {
+            "domain": "aiad2022.org"
+          },
+          {
+            "domain": "dominikanische-republik.biz"
+          },
+          {
+            "domain": "heatherblitz.info"
+          },
+          {
+            "domain": "savings24x7.com"
+          },
+          {
+            "domain": "simsworld.info"
+          },
+          {
+            "domain": "christheghostbuster.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 6,
+        "value": [
+          {
+            "domain": "calmandhealthy.com"
+          },
+          {
+            "domain": "tarique.net"
+          },
+          {
+            "domain": "estime-de-soi.org"
+          },
+          {
+            "domain": "hellosubscription.com"
+          },
+          {
+            "domain": "doggiesandkittys.co.uk"
+          },
+          {
+            "domain": "petfriendlyrentals.org"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 21,
+            "promotype": "blog",
+            "value": [
+              "amazon.co.uk",
+              "djangobrand.com",
+              "dogster.com",
+              "drjudymorgan.com",
+              "forbes.com",
+              "iheartcats.com",
+              "iheartdogs.com",
+              "jesscaticles-helpdesk.teachery.co",
+              "justpawsomepets.com",
+              "mckinneynewssource.com",
+              "mysubscriptionaddiction.com",
+              "puppysimply.com",
+              "raisedrightpets.com",
+              "reportwire.org",
+              "rover.com",
+              "saveonbest.com",
+              "shoneright.com",
+              "time.com",
+              "topbetsapostas.info",
+              "usserviceanimals.org",
+              "weloveanimals.me"
+            ]
+          },
+          {
+            "count": 2,
+            "promotype": "incentive",
+            "value": [
+              "couponit.com",
+              "couponscroll.com"
+            ]
+          },
+          {
+            "count": 2,
+            "promotype": "content",
+            "value": [
+              "mealfinds.com",
+              "worldpetinfo.com"
+            ]
+          },
+          {
+            "count": 2,
+            "promotype": "student",
+            "value": [
+              "petnpat.com",
+              "wagwalking.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 3,
+      "socialsAvailable": [
+        "youtube",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/raisedrightpets",
+        "instagram": "https://instagram.com/raisedrightpets",
+        "youtube": "https://youtube.com/embed/osv8bacfon8"
+      }
+    },
+    "verticals": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Home / Pets",
+        "rank": 2,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Home / Pets",
+          "rank": 2,
+          "score": 100
+        }
+      ]
+    }
+  }
+}

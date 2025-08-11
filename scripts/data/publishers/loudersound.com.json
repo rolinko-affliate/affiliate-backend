@@ -1,0 +1,1601 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 13,
+      "sampleValue": [
+        "Affiliate Future",
+        "Avantlink",
+        "Awin"
+      ],
+      "value": [
+        "Affiliate Future",
+        "Avantlink",
+        "Awin",
+        "CJ Affiliate",
+        "Impact",
+        "Partnerize",
+        "Pepperjam",
+        "Rakuten",
+        "ShareASale",
+        "Skimlinks",
+        "Tradedoubler",
+        "TUNE",
+        "Webgains"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "gb",
+        "score": 0.4
+      },
+      "sampleValue": [
+        {
+          "countryCode": "gb",
+          "score": 0.4
+        },
+        {
+          "countryCode": "us",
+          "score": 0.4
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "gb",
+          "score": 0.4
+        },
+        {
+          "countryCode": "us",
+          "score": 0.4
+        }
+      ]
+    },
+    "domain": "loudersound.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "issue"
+        },
+        {
+          "score": 0.9784608,
+          "value": "magazine"
+        },
+        {
+          "score": 0.8099367,
+          "value": "country"
+        },
+        {
+          "score": 0.36293834,
+          "value": "gaming"
+        },
+        {
+          "score": 0.2981248,
+          "value": "woman"
+        },
+        {
+          "score": 0.29766282,
+          "value": "idea"
+        },
+        {
+          "score": 0.29762715,
+          "value": "basket"
+        },
+        {
+          "score": 0.28727895,
+          "value": "single"
+        },
+        {
+          "score": 0.28716868,
+          "value": "single issue"
+        },
+        {
+          "score": 0.2731264,
+          "value": "fashion"
+        },
+        {
+          "score": 0.27102828,
+          "value": "hobby"
+        },
+        {
+          "score": 0.2696156,
+          "value": "equestrian"
+        },
+        {
+          "score": 0.26893613,
+          "value": "celebrity"
+        },
+        {
+          "score": 0.26632267,
+          "value": "leisure"
+        },
+        {
+          "score": 0.26610497,
+          "value": "equestrian fashion"
+        },
+        {
+          "score": 0.2636012,
+          "value": "edition"
+        },
+        {
+          "score": 0.21422882,
+          "value": "photography"
+        },
+        {
+          "score": 0.1804936,
+          "value": "future"
+        },
+        {
+          "score": 0.16499913,
+          "value": "binder"
+        },
+        {
+          "score": 0.16323544,
+          "value": "tech"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "issue"
+        },
+        {
+          "score": 0.9784608,
+          "value": "magazine"
+        },
+        {
+          "score": 0.8099367,
+          "value": "country"
+        },
+        {
+          "score": 0.36293834,
+          "value": "gaming"
+        },
+        {
+          "score": 0.2981248,
+          "value": "woman"
+        },
+        {
+          "score": 0.29766282,
+          "value": "idea"
+        },
+        {
+          "score": 0.29762715,
+          "value": "basket"
+        },
+        {
+          "score": 0.28727895,
+          "value": "single"
+        },
+        {
+          "score": 0.28716868,
+          "value": "single issue"
+        },
+        {
+          "score": 0.2731264,
+          "value": "fashion"
+        },
+        {
+          "score": 0.27102828,
+          "value": "hobby"
+        },
+        {
+          "score": 0.2696156,
+          "value": "equestrian"
+        },
+        {
+          "score": 0.26893613,
+          "value": "celebrity"
+        },
+        {
+          "score": 0.26632267,
+          "value": "leisure"
+        },
+        {
+          "score": 0.26610497,
+          "value": "equestrian fashion"
+        },
+        {
+          "score": 0.2636012,
+          "value": "edition"
+        },
+        {
+          "score": 0.21422882,
+          "value": "photography"
+        },
+        {
+          "score": 0.1804936,
+          "value": "future"
+        },
+        {
+          "score": 0.16499913,
+          "value": "binder"
+        },
+        {
+          "score": 0.16323544,
+          "value": "tech"
+        },
+        {
+          "score": 0.16275468,
+          "value": "digital"
+        },
+        {
+          "score": 0.16081093,
+          "value": "postage"
+        },
+        {
+          "score": 0.13231853,
+          "value": "offer"
+        },
+        {
+          "score": 0.12883747,
+          "value": "team"
+        },
+        {
+          "score": 0.120795004,
+          "value": "guarantee"
+        },
+        {
+          "score": 0.115157716,
+          "value": "cover"
+        },
+        {
+          "score": 0.113751575,
+          "value": "style"
+        },
+        {
+          "score": 0.10672409,
+          "value": "difference"
+        },
+        {
+          "score": 0.10533171,
+          "value": "cheap"
+        },
+        {
+          "score": 0.10044457,
+          "value": "beautiful"
+        },
+        {
+          "score": 0.10005403,
+          "value": "music"
+        },
+        {
+          "score": 0.09829735,
+          "value": "covermount"
+        },
+        {
+          "score": 0.09549119,
+          "value": "dedicated"
+        },
+        {
+          "score": 0.09269032,
+          "value": "inclusive"
+        },
+        {
+          "score": 0.09268036,
+          "value": "dedicated service"
+        },
+        {
+          "score": 0.09268036,
+          "value": "digital magazine"
+        },
+        {
+          "score": 0.092029884,
+          "value": "change"
+        },
+        {
+          "score": 0.09198174,
+          "value": "field"
+        },
+        {
+          "score": 0.09127611,
+          "value": "beautiful home"
+        },
+        {
+          "score": 0.09009838,
+          "value": "sport"
+        },
+        {
+          "score": 0.08916974,
+          "value": "covermount gift"
+        },
+        {
+          "score": 0.08706337,
+          "value": "magazinesdirect"
+        },
+        {
+          "score": 0.08443691,
+          "value": "print"
+        },
+        {
+          "score": 0.08359188,
+          "value": "publishing"
+        },
+        {
+          "score": 0.08355275,
+          "value": "future publishing"
+        },
+        {
+          "score": 0.08229991,
+          "value": "download"
+        },
+        {
+          "score": 0.0822211,
+          "value": "step"
+        },
+        {
+          "score": 0.08170772,
+          "value": "student"
+        },
+        {
+          "score": 0.08144666,
+          "value": "promise"
+        },
+        {
+          "score": 0.08144638,
+          "value": "cheap subscription"
+        },
+        {
+          "score": 0.08144638,
+          "value": "z photography"
+        },
+        {
+          "score": 0.08144638,
+          "value": "inclusive magazine"
+        },
+        {
+          "score": 0.08121565,
+          "value": "card"
+        },
+        {
+          "score": 0.07863788,
+          "value": "mymagazine"
+        },
+        {
+          "score": 0.077233635,
+          "value": "illustrative purpose"
+        },
+        {
+          "score": 0.077233635,
+          "value": "illustrative"
+        },
+        {
+          "score": 0.075178385,
+          "value": "update"
+        },
+        {
+          "score": 0.07513581,
+          "value": "ultimate"
+        },
+        {
+          "score": 0.072562546,
+          "value": "direct"
+        },
+        {
+          "score": 0.07162818,
+          "value": "annual"
+        },
+        {
+          "score": 0.06690894,
+          "value": "life"
+        },
+        {
+          "score": 0.06609149,
+          "value": "format"
+        },
+        {
+          "score": 0.06357985,
+          "value": "guide"
+        },
+        {
+          "score": 0.059106298,
+          "value": "location"
+        },
+        {
+          "score": 0.058281437,
+          "value": "trouble"
+        },
+        {
+          "score": 0.05768223,
+          "value": "people"
+        },
+        {
+          "score": 0.057117376,
+          "value": "international"
+        },
+        {
+          "score": 0.056920197,
+          "value": "region"
+        },
+        {
+          "score": 0.056227032,
+          "value": "phone"
+        },
+        {
+          "score": 0.056184456,
+          "value": "pricing"
+        },
+        {
+          "score": 0.05581475,
+          "value": "tablet"
+        },
+        {
+          "score": 0.055533603,
+          "value": "mailing"
+        },
+        {
+          "score": 0.05548829,
+          "value": "independent"
+        },
+        {
+          "score": 0.055486683,
+          "value": "specific"
+        },
+        {
+          "score": 0.055476278,
+          "value": "requirement"
+        },
+        {
+          "score": 0.05546779,
+          "value": "international delivery"
+        },
+        {
+          "score": 0.05546779,
+          "value": "independent customer"
+        },
+        {
+          "score": 0.05546779,
+          "value": "specific delivery"
+        },
+        {
+          "score": 0.051977232,
+          "value": "rolling"
+        },
+        {
+          "score": 0.042832516,
+          "value": "instant"
+        },
+        {
+          "score": 0.038616817,
+          "value": "direct magazine"
+        },
+        {
+          "score": 0.03721468,
+          "value": "preferred"
+        },
+        {
+          "score": 0.03341693,
+          "value": "book"
+        },
+        {
+          "score": 0.03301606,
+          "value": "debit"
+        },
+        {
+          "score": 0.032397315,
+          "value": "subject"
+        },
+        {
+          "score": 0.03159583,
+          "value": "rule"
+        },
+        {
+          "score": 0.031371262,
+          "value": "story"
+        },
+        {
+          "score": 0.031056441,
+          "value": "bundle"
+        },
+        {
+          "score": 0.030913562,
+          "value": "complete"
+        },
+        {
+          "score": 0.030893452,
+          "value": "digital bundle"
+        },
+        {
+          "score": 0.029976306,
+          "value": "monthly"
+        },
+        {
+          "score": 0.029768052,
+          "value": "range"
+        },
+        {
+          "score": 0.029532911,
+          "value": "renewal"
+        },
+        {
+          "score": 0.029489346,
+          "value": "summary"
+        },
+        {
+          "score": 0.029489206,
+          "value": "surprise"
+        },
+        {
+          "score": 0.028915357,
+          "value": "charge"
+        },
+        {
+          "score": 0.028883828,
+          "value": "mind"
+        },
+        {
+          "score": 0.02879028,
+          "value": "continuous"
+        },
+        {
+          "score": 0.028434686,
+          "value": "beginner"
+        },
+        {
+          "score": 0.02808952,
+          "value": "paint"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/loudersound.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://loudersound.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 334,
+        "value": [
+          "etsy.com",
+          "eventbrite.com",
+          "frontgatetickets.com",
+          "3hobbitsblog.wordpress.com",
+          "seetickets.com",
+          "drmartens.com",
+          "7digital.com",
+          "royalmint.com",
+          "apple.com",
+          "aarp.org",
+          "netflix.com",
+          "nike.com",
+          "sainsburys.co.uk",
+          "dell.com",
+          "musiciansfriend.com",
+          "sky.com",
+          "three.co.uk",
+          "kickscrew.com",
+          "box.com",
+          "nowtv.com",
+          "samsung.com",
+          "ocado.com",
+          "o2.co.uk",
+          "morrisons.com",
+          "adidas.co.uk",
+          "ticketweb.com",
+          "hulu.com",
+          "amazon.co.uk",
+          "serif.com",
+          "alamy.com",
+          "ajc.com",
+          "smugmug.com",
+          "andertons.co.uk",
+          "antarestech.com",
+          "ao.com",
+          "shein.co.uk",
+          "appgticketabuse.wordpress.com",
+          "primevideo.com",
+          "appliancesdirect.co.uk",
+          "garmin.com",
+          "superdrug.com",
+          "lego.com",
+          "argos.co.uk",
+          "mgmresorts.com",
+          "artistworks.com",
+          "kennedy-center.org",
+          "sonos.com",
+          "bose.com",
+          "nature.com",
+          "atgtickets.com",
+          "fandango.com",
+          "mlb.com",
+          "ticketmaster.co.uk",
+          "audible.com",
+          "audiovisualonline.co.uk",
+          "max.com",
+          "livenation.com",
+          "awin.com",
+          "axs.com",
+          "backstage.com",
+          "backcountry.com",
+          "veeps.com",
+          "tesco.com",
+          "bang-olufsen.com",
+          "fnacspectacles.com",
+          "base.com",
+          "barnesandnoble.com",
+          "patagonia.com",
+          "beerhawk.co.uk",
+          "beelivery.com",
+          "levi.com",
+          "sling.com",
+          "whsmith.co.uk",
+          "urbanoutfitters.com",
+          "biletix.com",
+          "billabong.com",
+          "vodafone.co.uk",
+          "blacks.co.uk",
+          "game.co.uk",
+          "deezer.com",
+          "columbia.com",
+          "debenhams.com",
+          "ebay.com",
+          "gooutdoors.co.uk",
+          "jdsports.co.uk",
+          "lovereading.co.uk",
+          "rei.com",
+          "roughtrade.com",
+          "schuh.co.uk",
+          "siriusxm.com",
+          "size.co.uk",
+          "ticketmaster.de",
+          "ticketweb.co.uk",
+          "ticketmaster.com",
+          "thewhiskyexchange.com",
+          "very.co.uk",
+          "blue-tomato.com",
+          "lwtheatres.co.uk",
+          "selfridges.com",
+          "bookshop.org",
+          "boots.com",
+          "boredanddangerousblog.wordpress.com",
+          "bowiesongs.wordpress.com",
+          "bose.co.uk",
+          "brewdog.com",
+          "bt.com",
+          "currys.co.uk",
+          "udemy.com",
+          "cambridgeaudio.com",
+          "capote.wordpress.com",
+          "marvel.com",
+          "hmv.com",
+          "carphonewarehouse.com",
+          "cbs.com",
+          "cbswomc2.files.wordpress.com",
+          "cdkeys.com",
+          "cclonline.com",
+          "directv.com",
+          "ysl.com",
+          "funko.com",
+          "headspace.com",
+          "citiprivatepass.com",
+          "citizensofhumanity.com",
+          "stubhub.com",
+          "cnbc.com",
+          "classicrockreview.wordpress.com",
+          "linksynergy.com",
+          "cliftoncameras.co.uk",
+          "paypal.com",
+          "columbiasportswear.co.uk",
+          "sony.co.uk",
+          "fender.com",
+          "converse.com",
+          "wwe.com",
+          "cotswoldoutdoor.com",
+          "crocs.com",
+          "kinguin.net",
+          "culturethoughts.wordpress.com",
+          "vans.com",
+          "wiggle.co.uk",
+          "sennheiser.com",
+          "damonalbarnunofficial.wordpress.com",
+          "g2a.com",
+          "decathlon.co.uk",
+          "dickssportinggoods.com",
+          "directmobiles.co.uk",
+          "distrokid.com",
+          "displate.com",
+          "diy.com",
+          "oxfam.org.uk",
+          "downatthecrossroads.wordpress.com",
+          "downloadfestival.co.uk",
+          "drinkwelluk.com",
+          "drizly.com",
+          "drumeo.com",
+          "redbubble.com",
+          "zavvi.com",
+          "ebilet.pl",
+          "electricshop.com",
+          "emp.co.uk",
+          "emp.de",
+          "english-heritage.org.uk",
+          "entertainmentearth.com",
+          "topps.com",
+          "loopearplugs.com",
+          "positivegrid.com",
+          "stance.com",
+          "victrola.com",
+          "eventim.co.uk",
+          "eventim.pl",
+          "ticketliquidator.com",
+          "exofficio.com",
+          "johnlewis.com",
+          "fanoegerm.wordpress.com",
+          "farfetch.com",
+          "firebox.com",
+          "fite.tv",
+          "flavourly.com",
+          "fonehouse.co.uk",
+          "overclockers.co.uk",
+          "fye.com",
+          "vistaprint.co.uk",
+          "worldoftanks.eu",
+          "gb.readly.com",
+          "guitarcenter.com",
+          "gear4music.com",
+          "starz.com",
+          "gettyimages.co.uk",
+          "sennheiser-hearing.com",
+          "gog.com",
+          "greatmagazines.co.uk",
+          "grind.co.uk",
+          "halfords.com",
+          "hamleys.com",
+          "happysocks.com",
+          "harpercollins.co.uk",
+          "itv.com",
+          "paramountplus.com",
+          "qobuz.com",
+          "simbasleep.com",
+          "vimeo.com",
+          "ticketmaster.it",
+          "ticketmaster.nl",
+          "heroculte.wordpress.com",
+          "hhv.de",
+          "honestbrew.co.uk",
+          "hottopic.com",
+          "hughes.co.uk",
+          "hypebeast.com",
+          "idmobile.co.uk",
+          "reverb.com",
+          "stubhub.ie",
+          "itunes.com",
+          "iwantoneofthose.com",
+          "jeffpilson.wordpress.com",
+          "jgtwo.wordpress.com",
+          "jessops.com",
+          "tastecard.co.uk",
+          "johnvarvatos.com",
+          "thetimes.co.uk",
+          "spitfireaudio.com",
+          "laptopsdirect.co.uk",
+          "livenation.co.uk",
+          "lovehoney.co.uk",
+          "moshtix.com.au",
+          "myfavouritemagazines.co.uk",
+          "richersounds.com",
+          "notonthehighstreet.com",
+          "machinemusic.wordpress.com",
+          "magazinesdirect.com",
+          "manofmuchmetal.wordpress.com",
+          "marshall.com",
+          "marmot.com",
+          "marshallheadphones.com",
+          "masterofmalt.com",
+          "masterdynamic.com",
+          "mayobat.wordpress.com",
+          "tripadvisor.com",
+          "merchoid.com",
+          "menkind.co.uk",
+          "metalmisfit.wordpress.com",
+          "millets.co.uk",
+          "misogynisticalbumcovers.wordpress.com",
+          "mobiles.co.uk",
+          "mobilephonesdirect.co.uk",
+          "mountainwarehouse.com",
+          "mpb.com",
+          "murlough23.wordpress.com",
+          "music.apple.com",
+          "music.amazon.com",
+          "myticket.de",
+          "nakedwines.com",
+          "nealmorse.com",
+          "netflix.shop",
+          "nixon.com",
+          "novatech.co.uk",
+          "nugs.net",
+          "oaklandcoffee.com",
+          "oeticket.com",
+          "office.co.uk",
+          "onbuy.com",
+          "outofstephc.wordpress.com",
+          "parkcameras.com",
+          "ticketmaster.fr",
+          "perfectdraft.com",
+          "petertyson.co.uk",
+          "petsmart.com",
+          "pmtonline.co.uk",
+          "pocketmags.com",
+          "ppv.com",
+          "ticketek.com.au",
+          "starplus.com",
+          "prodigygame.com",
+          "progmag.wordpress.com",
+          "thestar.com",
+          "revolutionbeauty.com",
+          "robertdyas.co.uk",
+          "rockabilia.com",
+          "samash.com",
+          "thedungeons.com",
+          "scan.co.uk",
+          "seatgeek.com",
+          "viagogo.co.uk",
+          "sevenoakssoundandvision.co.uk",
+          "taschen.com",
+          "urbanista.com",
+          "ticketmaster.com.mx",
+          "vans.co.uk",
+          "shopdisney.co.uk",
+          "shudder.com",
+          "slurp.co.uk",
+          "sofarsounds.com",
+          "solstafirofficial.wordpress.com",
+          "soundboks.com",
+          "sproutsocial.com",
+          "store.google.com",
+          "stubhub.co.uk",
+          "sweetwater.com",
+          "sxmfeed.files.wordpress.com",
+          "thatjoepayne.wordpress.com",
+          "thebottleclub.com",
+          "thedrinkshop.com",
+          "thehouseofmarley.com",
+          "therange.co.uk",
+          "thevinyldistrict.com",
+          "ticketmaster.be",
+          "ticketmaster.ca",
+          "ticketmaster.co.nz",
+          "ticketmaster.dk",
+          "ticketmaster.es",
+          "ticketmaster.fi",
+          "ticketmaster.ie",
+          "ticketmaster.no",
+          "ticketmaster.pl",
+          "ticketweb.uk",
+          "tommygirard.wordpress.com",
+          "yougov.co.uk",
+          "tomymostalas.wordpress.com",
+          "townsendmusic.store",
+          "lengow.com",
+          "trinkelbonker.wordpress.com",
+          "tripadvisor.co.uk",
+          "uk.jbl.com",
+          "uk.rs-online.com",
+          "uk.positivegrid.com",
+          "uk.nixon.com",
+          "vinatis.co.uk",
+          "vividseats.com",
+          "waitrosecellar.com",
+          "waterstones.com",
+          "wegottickets.com",
+          "wexphotovideo.com",
+          "ziphealth.co",
+          "zzounds.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 10,
+        "value": [
+          {
+            "domain": "uk.jbl.com"
+          },
+          {
+            "domain": "shein.co.uk"
+          },
+          {
+            "domain": "gb.readly.com"
+          },
+          {
+            "domain": "marmot.com"
+          },
+          {
+            "domain": "idmobile.co.uk"
+          },
+          {
+            "domain": "uk.nixon.com"
+          },
+          {
+            "domain": "emp.de"
+          },
+          {
+            "domain": "uk.rs-online.com"
+          },
+          {
+            "domain": "uk.positivegrid.com"
+          },
+          {
+            "domain": "ticketmaster.com.mx"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 7,
+        "value": [
+          {
+            "domain": "rs-online.com"
+          },
+          {
+            "domain": "jbl.com"
+          },
+          {
+            "domain": "readly.com"
+          },
+          {
+            "domain": "ryman.co.uk"
+          },
+          {
+            "domain": "amazon.it"
+          },
+          {
+            "domain": "tripadvisor.co.nz"
+          },
+          {
+            "domain": "amazon.co.jp"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 45.15001,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 43.350006,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 25.75,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 19.25,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 13.699999,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 12.549999,
+            "vertical": "Food / Alcohol"
+          },
+          {
+            "count": 12.35,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 12.349998,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 9.049999,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 9.049999,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 8.8,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 8.75,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 8.699999,
+            "vertical": "Sports / Outdoor"
+          },
+          {
+            "count": 6.6,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 6.5,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 6.35,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 6.0499997,
+            "vertical": "Entertainment / Movies"
+          },
+          {
+            "count": 5.9,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 5.3499994,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 5.05,
+            "vertical": "Entertainment / Hobbies"
+          },
+          {
+            "count": 3.6,
+            "vertical": "Gifts / Personalised"
+          },
+          {
+            "count": 2.95,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 2.75,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Home / Art"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Travel / Vacation"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Food / Take Out"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Gifts / Kids"
+          },
+          {
+            "count": 1.8,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 1.8,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 1.8,
+            "vertical": "Travel / Attractions"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / CRM"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Finance"
+          },
+          {
+            "count": 1,
+            "vertical": "Health / Drinks"
+          },
+          {
+            "count": 1,
+            "vertical": "Home / Beds & Bedding"
+          },
+          {
+            "count": 1,
+            "vertical": "Home / Pets"
+          },
+          {
+            "count": 1,
+            "vertical": "Online / Surveys"
+          },
+          {
+            "count": 1,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Banking"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Adult"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Motoring / Cars"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Finance / Currency"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / DIY"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Sports / Cycling"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 334,
+      "value": [
+        "etsy.com",
+        "eventbrite.com",
+        "frontgatetickets.com",
+        "3hobbitsblog.wordpress.com",
+        "seetickets.com",
+        "drmartens.com",
+        "7digital.com",
+        "royalmint.com",
+        "apple.com",
+        "aarp.org",
+        "netflix.com",
+        "nike.com",
+        "sainsburys.co.uk",
+        "dell.com",
+        "musiciansfriend.com",
+        "sky.com",
+        "three.co.uk",
+        "kickscrew.com",
+        "box.com",
+        "nowtv.com",
+        "samsung.com",
+        "ocado.com",
+        "o2.co.uk",
+        "morrisons.com",
+        "adidas.co.uk",
+        "ticketweb.com",
+        "hulu.com",
+        "amazon.co.uk",
+        "serif.com",
+        "alamy.com",
+        "ajc.com",
+        "smugmug.com",
+        "andertons.co.uk",
+        "antarestech.com",
+        "ao.com",
+        "shein.co.uk",
+        "appgticketabuse.wordpress.com",
+        "primevideo.com",
+        "appliancesdirect.co.uk",
+        "garmin.com",
+        "superdrug.com",
+        "lego.com",
+        "argos.co.uk",
+        "mgmresorts.com",
+        "artistworks.com",
+        "kennedy-center.org",
+        "sonos.com",
+        "bose.com",
+        "nature.com",
+        "atgtickets.com",
+        "fandango.com",
+        "mlb.com",
+        "ticketmaster.co.uk",
+        "audible.com",
+        "audiovisualonline.co.uk",
+        "max.com",
+        "livenation.com",
+        "awin.com",
+        "axs.com",
+        "backstage.com",
+        "backcountry.com",
+        "veeps.com",
+        "tesco.com",
+        "bang-olufsen.com",
+        "fnacspectacles.com",
+        "base.com",
+        "barnesandnoble.com",
+        "patagonia.com",
+        "beerhawk.co.uk",
+        "beelivery.com",
+        "levi.com",
+        "sling.com",
+        "whsmith.co.uk",
+        "urbanoutfitters.com",
+        "biletix.com",
+        "billabong.com",
+        "vodafone.co.uk",
+        "blacks.co.uk",
+        "game.co.uk",
+        "deezer.com",
+        "columbia.com",
+        "debenhams.com",
+        "ebay.com",
+        "gooutdoors.co.uk",
+        "jdsports.co.uk",
+        "lovereading.co.uk",
+        "rei.com",
+        "roughtrade.com",
+        "schuh.co.uk",
+        "siriusxm.com",
+        "size.co.uk",
+        "ticketmaster.de",
+        "ticketweb.co.uk",
+        "ticketmaster.com",
+        "thewhiskyexchange.com",
+        "very.co.uk",
+        "blue-tomato.com",
+        "lwtheatres.co.uk",
+        "selfridges.com",
+        "bookshop.org",
+        "boots.com",
+        "boredanddangerousblog.wordpress.com",
+        "bowiesongs.wordpress.com",
+        "bose.co.uk",
+        "brewdog.com",
+        "bt.com",
+        "currys.co.uk",
+        "udemy.com",
+        "cambridgeaudio.com",
+        "capote.wordpress.com",
+        "marvel.com",
+        "hmv.com",
+        "carphonewarehouse.com",
+        "cbs.com",
+        "cbswomc2.files.wordpress.com",
+        "cdkeys.com",
+        "cclonline.com",
+        "directv.com",
+        "ysl.com",
+        "funko.com",
+        "headspace.com",
+        "citiprivatepass.com",
+        "citizensofhumanity.com",
+        "stubhub.com",
+        "cnbc.com",
+        "classicrockreview.wordpress.com",
+        "linksynergy.com",
+        "cliftoncameras.co.uk",
+        "paypal.com",
+        "columbiasportswear.co.uk",
+        "sony.co.uk",
+        "fender.com",
+        "converse.com",
+        "wwe.com",
+        "cotswoldoutdoor.com",
+        "crocs.com",
+        "kinguin.net",
+        "culturethoughts.wordpress.com",
+        "vans.com",
+        "wiggle.co.uk",
+        "sennheiser.com",
+        "damonalbarnunofficial.wordpress.com",
+        "g2a.com",
+        "decathlon.co.uk",
+        "dickssportinggoods.com",
+        "directmobiles.co.uk",
+        "distrokid.com",
+        "displate.com",
+        "diy.com",
+        "oxfam.org.uk",
+        "downatthecrossroads.wordpress.com",
+        "downloadfestival.co.uk",
+        "drinkwelluk.com",
+        "drizly.com",
+        "drumeo.com",
+        "redbubble.com",
+        "zavvi.com",
+        "ebilet.pl",
+        "electricshop.com",
+        "emp.co.uk",
+        "emp.de",
+        "english-heritage.org.uk",
+        "entertainmentearth.com",
+        "topps.com",
+        "loopearplugs.com",
+        "positivegrid.com",
+        "stance.com",
+        "victrola.com",
+        "eventim.co.uk",
+        "eventim.pl",
+        "ticketliquidator.com",
+        "exofficio.com",
+        "johnlewis.com",
+        "fanoegerm.wordpress.com",
+        "farfetch.com",
+        "firebox.com",
+        "fite.tv",
+        "flavourly.com",
+        "fonehouse.co.uk",
+        "overclockers.co.uk",
+        "fye.com",
+        "vistaprint.co.uk",
+        "worldoftanks.eu",
+        "gb.readly.com",
+        "guitarcenter.com",
+        "gear4music.com",
+        "starz.com",
+        "gettyimages.co.uk",
+        "sennheiser-hearing.com",
+        "gog.com",
+        "greatmagazines.co.uk",
+        "grind.co.uk",
+        "halfords.com",
+        "hamleys.com",
+        "happysocks.com",
+        "harpercollins.co.uk",
+        "itv.com",
+        "paramountplus.com",
+        "qobuz.com",
+        "simbasleep.com",
+        "vimeo.com",
+        "ticketmaster.it",
+        "ticketmaster.nl",
+        "heroculte.wordpress.com",
+        "hhv.de",
+        "honestbrew.co.uk",
+        "hottopic.com",
+        "hughes.co.uk",
+        "hypebeast.com",
+        "idmobile.co.uk",
+        "reverb.com",
+        "stubhub.ie",
+        "itunes.com",
+        "iwantoneofthose.com",
+        "jeffpilson.wordpress.com",
+        "jgtwo.wordpress.com",
+        "jessops.com",
+        "tastecard.co.uk",
+        "johnvarvatos.com",
+        "thetimes.co.uk",
+        "spitfireaudio.com",
+        "laptopsdirect.co.uk",
+        "livenation.co.uk",
+        "lovehoney.co.uk",
+        "moshtix.com.au",
+        "myfavouritemagazines.co.uk",
+        "richersounds.com",
+        "notonthehighstreet.com",
+        "machinemusic.wordpress.com",
+        "magazinesdirect.com",
+        "manofmuchmetal.wordpress.com",
+        "marshall.com",
+        "marmot.com",
+        "marshallheadphones.com",
+        "masterofmalt.com",
+        "masterdynamic.com",
+        "mayobat.wordpress.com",
+        "tripadvisor.com",
+        "merchoid.com",
+        "menkind.co.uk",
+        "metalmisfit.wordpress.com",
+        "millets.co.uk",
+        "misogynisticalbumcovers.wordpress.com",
+        "mobiles.co.uk",
+        "mobilephonesdirect.co.uk",
+        "mountainwarehouse.com",
+        "mpb.com",
+        "murlough23.wordpress.com",
+        "music.apple.com",
+        "music.amazon.com",
+        "myticket.de",
+        "nakedwines.com",
+        "nealmorse.com",
+        "netflix.shop",
+        "nixon.com",
+        "novatech.co.uk",
+        "nugs.net",
+        "oaklandcoffee.com",
+        "oeticket.com",
+        "office.co.uk",
+        "onbuy.com",
+        "outofstephc.wordpress.com",
+        "parkcameras.com",
+        "ticketmaster.fr",
+        "perfectdraft.com",
+        "petertyson.co.uk",
+        "petsmart.com",
+        "pmtonline.co.uk",
+        "pocketmags.com",
+        "ppv.com",
+        "ticketek.com.au",
+        "starplus.com",
+        "prodigygame.com",
+        "progmag.wordpress.com",
+        "thestar.com",
+        "revolutionbeauty.com",
+        "robertdyas.co.uk",
+        "rockabilia.com",
+        "samash.com",
+        "thedungeons.com",
+        "scan.co.uk",
+        "seatgeek.com",
+        "viagogo.co.uk",
+        "sevenoakssoundandvision.co.uk",
+        "taschen.com",
+        "urbanista.com",
+        "ticketmaster.com.mx",
+        "vans.co.uk",
+        "shopdisney.co.uk",
+        "shudder.com",
+        "slurp.co.uk",
+        "sofarsounds.com",
+        "solstafirofficial.wordpress.com",
+        "soundboks.com",
+        "sproutsocial.com",
+        "store.google.com",
+        "stubhub.co.uk",
+        "sweetwater.com",
+        "sxmfeed.files.wordpress.com",
+        "thatjoepayne.wordpress.com",
+        "thebottleclub.com",
+        "thedrinkshop.com",
+        "thehouseofmarley.com",
+        "therange.co.uk",
+        "thevinyldistrict.com",
+        "ticketmaster.be",
+        "ticketmaster.ca",
+        "ticketmaster.co.nz",
+        "ticketmaster.dk",
+        "ticketmaster.es",
+        "ticketmaster.fi",
+        "ticketmaster.ie",
+        "ticketmaster.no",
+        "ticketmaster.pl",
+        "ticketweb.uk",
+        "tommygirard.wordpress.com",
+        "yougov.co.uk",
+        "tomymostalas.wordpress.com",
+        "townsendmusic.store",
+        "lengow.com",
+        "trinkelbonker.wordpress.com",
+        "tripadvisor.co.uk",
+        "uk.jbl.com",
+        "uk.rs-online.com",
+        "uk.positivegrid.com",
+        "uk.nixon.com",
+        "vinatis.co.uk",
+        "vividseats.com",
+        "waitrosecellar.com",
+        "waterstones.com",
+        "wegottickets.com",
+        "wexphotovideo.com",
+        "ziphealth.co",
+        "zzounds.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 53,
+      "value": [
+        "guitarplayer.com",
+        "livingetc.com",
+        "marieclaire.com",
+        "tomsguide.com",
+        "fitandwell.com",
+        "tvtechnology.com",
+        "laptopmag.com",
+        "itpro.com",
+        "whattowatch.com",
+        "digitalcameraworld.com",
+        "drippingwithtaste.org",
+        "wallpaper.com",
+        "nexttv.com",
+        "goodto.com",
+        "livescience.com",
+        "gardeningetc.com",
+        "myimperfectlife.com",
+        "fourfourtwo.com",
+        "gamesradar.com",
+        "whowhatwear.com",
+        "golfmonthly.com",
+        "androidcentral.com",
+        "womanandhome.com",
+        "creativebloq.com",
+        "toptenreviews.com",
+        "idealhome.co.uk",
+        "techradar.com",
+        "realhomes.com",
+        "avnetwork.com",
+        "imore.com",
+        "homesandgardens.com",
+        "kiplinger.com",
+        "pimpedoutcases.net",
+        "windowscentral.com",
+        "hindlight.com",
+        "guitarworld.com",
+        "whathifi.com",
+        "marieclaire.co.uk",
+        "theweek.com",
+        "musicradar.com",
+        "moneyweek.com",
+        "space.com",
+        "advnture.com",
+        "tomshardware.com",
+        "itproportal.com",
+        "petsradar.com",
+        "cinemablend.com",
+        "homebuilding.co.uk",
+        "felicespostres.com",
+        "cyclingnews.com",
+        "cyclingweekly.com",
+        "techlearning.com",
+        "newsarama.com"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 5,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "linkedin",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/louderposts",
+        "instagram": "https://instagram.com/louderposts",
+        "linkedin": "https://linkedin.com/in/scott-rowley-a534197",
+        "twitter": "https://twitter.com/louderposts",
+        "youtube": "https://youtube.com/loudervideos"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 1,
+      "sampleValue": "Entertainment / Music",
+      "value": [
+        "Entertainment / Music"
+      ]
+    },
+    "verticalsV2": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Entertainment / Music",
+        "rank": 1,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Entertainment / Music",
+          "rank": 1,
+          "score": 100
+        }
+      ]
+    }
+  }
+}

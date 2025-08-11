@@ -1,0 +1,143 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 2,
+      "sampleValue": [
+        "Affilae",
+        "Affiliate Future"
+      ],
+      "value": [
+        "Affilae",
+        "Affiliate Future"
+      ]
+    },
+    "countryRankings": {
+      "count": 3,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.2
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.2
+        },
+        {
+          "countryCode": "br",
+          "score": 0.1
+        },
+        {
+          "countryCode": "in",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.2
+        },
+        {
+          "countryCode": "br",
+          "score": 0.1
+        },
+        {
+          "countryCode": "in",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "amazoncccc.blogspot.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazoncccc.blogspot.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazoncccc.blogspot.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 3,
+        "value": [
+          "doriantrippbrennen.weebly.com",
+          "sawyerjacobygianni.weebly.com",
+          "sunpoday.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1.4000001,
+            "vertical": "Online / Services"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 3,
+      "value": [
+        "doriantrippbrennen.weebly.com",
+        "sawyerjacobygianni.weebly.com",
+        "sunpoday.com"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Business / Ecommerce",
+      "value": [
+        "Business / Ecommerce",
+        "Shopping / Department Stores"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Business / Ecommerce",
+        "rank": 1,
+        "score": 70
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 1,
+          "score": 70
+        },
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 1,
+          "score": 60
+        }
+      ]
+    }
+  }
+}

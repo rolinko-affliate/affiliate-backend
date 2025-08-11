@@ -1,0 +1,821 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 6,
+      "sampleValue": [
+        "CommissionFactory",
+        "Impact",
+        "Linkby"
+      ],
+      "value": [
+        "CommissionFactory",
+        "Impact",
+        "Linkby",
+        "Partnerize",
+        "Rakuten",
+        "Skimlinks"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "au",
+        "score": 0.8
+      },
+      "sampleValue": [
+        {
+          "countryCode": "au",
+          "score": 0.8
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "au",
+          "score": 0.8
+        }
+      ]
+    },
+    "domain": "beautyspace.com.au",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "skin"
+        },
+        {
+          "score": 0.7961836,
+          "value": "hair"
+        },
+        {
+          "score": 0.71507424,
+          "value": "beauty"
+        },
+        {
+          "score": 0.6768094,
+          "value": "makeup"
+        },
+        {
+          "score": 0.5880739,
+          "value": "skincare"
+        },
+        {
+          "score": 0.5662008,
+          "value": "haircare"
+        },
+        {
+          "score": 0.54175985,
+          "value": "colour"
+        },
+        {
+          "score": 0.5107585,
+          "value": "skinstitut"
+        },
+        {
+          "score": 0.47311985,
+          "value": "body"
+        },
+        {
+          "score": 0.4601049,
+          "value": "hyaluronic"
+        },
+        {
+          "score": 0.4383071,
+          "value": "exfoliators"
+        },
+        {
+          "score": 0.43002185,
+          "value": "helpful"
+        },
+        {
+          "score": 0.42378765,
+          "value": "professional"
+        },
+        {
+          "score": 0.42095482,
+          "value": "dermalogica"
+        },
+        {
+          "score": 0.41246602,
+          "value": "exfoliator"
+        },
+        {
+          "score": 0.40830654,
+          "value": "treatment"
+        },
+        {
+          "score": 0.40450072,
+          "value": "clinique"
+        },
+        {
+          "score": 0.3945355,
+          "value": "care"
+        },
+        {
+          "score": 0.38877517,
+          "value": "sunscreen"
+        },
+        {
+          "score": 0.38785863,
+          "value": "cosmetics"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "skin"
+        },
+        {
+          "score": 0.7961836,
+          "value": "hair"
+        },
+        {
+          "score": 0.71507424,
+          "value": "beauty"
+        },
+        {
+          "score": 0.6768094,
+          "value": "makeup"
+        },
+        {
+          "score": 0.5880739,
+          "value": "skincare"
+        },
+        {
+          "score": 0.5662008,
+          "value": "haircare"
+        },
+        {
+          "score": 0.54175985,
+          "value": "colour"
+        },
+        {
+          "score": 0.5107585,
+          "value": "skinstitut"
+        },
+        {
+          "score": 0.47311985,
+          "value": "body"
+        },
+        {
+          "score": 0.4601049,
+          "value": "hyaluronic"
+        },
+        {
+          "score": 0.4383071,
+          "value": "exfoliators"
+        },
+        {
+          "score": 0.43002185,
+          "value": "helpful"
+        },
+        {
+          "score": 0.42378765,
+          "value": "professional"
+        },
+        {
+          "score": 0.42095482,
+          "value": "dermalogica"
+        },
+        {
+          "score": 0.41246602,
+          "value": "exfoliator"
+        },
+        {
+          "score": 0.40830654,
+          "value": "treatment"
+        },
+        {
+          "score": 0.40450072,
+          "value": "clinique"
+        },
+        {
+          "score": 0.3945355,
+          "value": "care"
+        },
+        {
+          "score": 0.38877517,
+          "value": "sunscreen"
+        },
+        {
+          "score": 0.38785863,
+          "value": "cosmetics"
+        },
+        {
+          "score": 0.38600624,
+          "value": "ageing"
+        },
+        {
+          "score": 0.37069142,
+          "value": "category"
+        },
+        {
+          "score": 0.37044024,
+          "value": "exfoliating"
+        },
+        {
+          "score": 0.36469144,
+          "value": "fragrance"
+        },
+        {
+          "score": 0.35823363,
+          "value": "travel"
+        },
+        {
+          "score": 0.34563148,
+          "value": "supplements"
+        },
+        {
+          "score": 0.33851707,
+          "value": "benefit"
+        },
+        {
+          "score": 0.3344271,
+          "value": "conditioner"
+        },
+        {
+          "score": 0.33344495,
+          "value": "cleanser"
+        },
+        {
+          "score": 0.33120665,
+          "value": "organic"
+        },
+        {
+          "score": 0.32971752,
+          "value": "swimwear"
+        },
+        {
+          "score": 0.32205763,
+          "value": "categories"
+        },
+        {
+          "score": 0.31984225,
+          "value": "cleansing"
+        },
+        {
+          "score": 0.31891328,
+          "value": "treatments"
+        },
+        {
+          "score": 0.31854218,
+          "value": "night"
+        },
+        {
+          "score": 0.3173146,
+          "value": "brush"
+        },
+        {
+          "score": 0.31719986,
+          "value": "pigmentation"
+        },
+        {
+          "score": 0.31714588,
+          "value": "serums"
+        },
+        {
+          "score": 0.30732495,
+          "value": "heat"
+        },
+        {
+          "score": 0.30612147,
+          "value": "cleansers"
+        },
+        {
+          "score": 0.30337796,
+          "value": "clothing"
+        },
+        {
+          "score": 0.30176735,
+          "value": "shampoo"
+        },
+        {
+          "score": 0.2993134,
+          "value": "women"
+        },
+        {
+          "score": 0.2963522,
+          "value": "revlon"
+        },
+        {
+          "score": 0.281944,
+          "value": "brow"
+        },
+        {
+          "score": 0.27988818,
+          "value": "ethical"
+        },
+        {
+          "score": 0.27752233,
+          "value": "dresses"
+        },
+        {
+          "score": 0.27418292,
+          "value": "australia"
+        },
+        {
+          "score": 0.27253434,
+          "value": "bath"
+        },
+        {
+          "score": 0.2713977,
+          "value": "designer"
+        },
+        {
+          "score": 0.26454672,
+          "value": "palettes"
+        },
+        {
+          "score": 0.26125768,
+          "value": "real"
+        },
+        {
+          "score": 0.26118538,
+          "value": "acne"
+        },
+        {
+          "score": 0.2609883,
+          "value": "mascara"
+        },
+        {
+          "score": 0.25971335,
+          "value": "express"
+        },
+        {
+          "score": 0.25836286,
+          "value": "face"
+        },
+        {
+          "score": 0.25670487,
+          "value": "brows"
+        },
+        {
+          "score": 0.25556636,
+          "value": "london"
+        },
+        {
+          "score": 0.24203284,
+          "value": "tanning"
+        },
+        {
+          "score": 0.23863094,
+          "value": "store"
+        },
+        {
+          "score": 0.23691139,
+          "value": "eyeliner"
+        },
+        {
+          "score": 0.2360248,
+          "value": "organics"
+        },
+        {
+          "score": 0.23023193,
+          "value": "fine"
+        },
+        {
+          "score": 0.23012197,
+          "value": "samples"
+        },
+        {
+          "score": 0.23012197,
+          "value": "room"
+        },
+        {
+          "score": 0.2299723,
+          "value": "jackets"
+        },
+        {
+          "score": 0.22990102,
+          "value": "mother"
+        },
+        {
+          "score": 0.22947858,
+          "value": "dress"
+        },
+        {
+          "score": 0.22891216,
+          "value": "alpha"
+        },
+        {
+          "score": 0.22408962,
+          "value": "oil"
+        },
+        {
+          "score": 0.2236112,
+          "value": "lingerie"
+        },
+        {
+          "score": 0.2233867,
+          "value": "oreal"
+        },
+        {
+          "score": 0.2199068,
+          "value": "underwear"
+        },
+        {
+          "score": 0.21963887,
+          "value": "concealer"
+        },
+        {
+          "score": 0.21559347,
+          "value": "coverage"
+        },
+        {
+          "score": 0.21512435,
+          "value": "brown"
+        },
+        {
+          "score": 0.2148588,
+          "value": "foundation"
+        },
+        {
+          "score": 0.21436891,
+          "value": "shirts"
+        },
+        {
+          "score": 0.20916829,
+          "value": "liquid"
+        },
+        {
+          "score": 0.20447136,
+          "value": "lashes"
+        },
+        {
+          "score": 0.20342116,
+          "value": "wash"
+        },
+        {
+          "score": 0.20041469,
+          "value": "balm"
+        },
+        {
+          "score": 0.2003329,
+          "value": "normal"
+        },
+        {
+          "score": 0.20029967,
+          "value": "sunglasses"
+        },
+        {
+          "score": 0.20022483,
+          "value": "sneakers"
+        },
+        {
+          "score": 0.19985576,
+          "value": "bags"
+        },
+        {
+          "score": 0.19902135,
+          "value": "shoes"
+        },
+        {
+          "score": 0.1970696,
+          "value": "wishlist"
+        },
+        {
+          "score": 0.19644558,
+          "value": "waterproof"
+        },
+        {
+          "score": 0.19573465,
+          "value": "sleepwear"
+        },
+        {
+          "score": 0.19431877,
+          "value": "shirt"
+        },
+        {
+          "score": 0.19083285,
+          "value": "elizabeth"
+        },
+        {
+          "score": 0.18956064,
+          "value": "pants"
+        },
+        {
+          "score": 0.18791057,
+          "value": "popular"
+        },
+        {
+          "score": 0.18631782,
+          "value": "creams"
+        },
+        {
+          "score": 0.18522012,
+          "value": "retailer"
+        },
+        {
+          "score": 0.18443434,
+          "value": "activewear"
+        },
+        {
+          "score": 0.18247902,
+          "value": "vitamin"
+        },
+        {
+          "score": 0.18111502,
+          "value": "cosmetic"
+        },
+        {
+          "score": 0.17433576,
+          "value": "jeans"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 3,
+      "value": [
+        "https://beautyspace.com.au/",
+        "https://www.beautyspace.com.au/",
+        "http://beautyspace.com.au/"
+      ]
+    },
+    "metaData": {
+      "description": "Find information about skin care, tanning products and many more",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/beautyspace.com.au.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://beautyspace.com.au"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 69,
+        "value": [
+          "abeauty.co",
+          "adorebeauty.com.au",
+          "aesop.com",
+          "alpha-h.com",
+          "amazon.com.au",
+          "anastasiabeverlyhills.au",
+          "asos.com",
+          "au.elemis.com",
+          "au.iherb.com",
+          "augustinusbader.com",
+          "awin.com",
+          "beautyamora.com.au",
+          "myer.com.au",
+          "beysis.com",
+          "koraorganics.com",
+          "bodyblendz.com",
+          "bondiboost.com.au",
+          "net-a-porter.com",
+          "djerfavenue.com",
+          "gotoskincare.com",
+          "charlottetilbury.com",
+          "chemistwarehouse.com.au",
+          "cultbeauty.co.uk",
+          "cultbeauty.com",
+          "davidjones.com",
+          "dicksmith.com.au",
+          "dopeskin.co",
+          "drnaomi.com",
+          "dyson.com.au",
+          "endotaspa.com.au",
+          "newegg.com",
+          "ereperez.com",
+          "esmi.com.au",
+          "etoilecollective.com.au",
+          "frankbody.com",
+          "jshealthvitamins.com",
+          "hismileteeth.com",
+          "sandandsky.com",
+          "eyeofhoruscosmetics.com",
+          "ghdhair.com",
+          "glossier.com",
+          "grownalchemist.com",
+          "hairhouse.com.au",
+          "healthylife.com.au",
+          "jomalone.com.au",
+          "jurlique.com.au",
+          "lookfantastic.com.au",
+          "mcobeauty.com",
+          "mermadehair.com.au",
+          "mxskincare.com",
+          "nakedsundays.com",
+          "theiconic.com.au",
+          "ozhairandbeauty.com",
+          "paulaschoice.com.au",
+          "priceline.com.au",
+          "rationale.com",
+          "revolveclothing.com.au",
+          "ry.com.au",
+          "sephora.com.au",
+          "tbhskincare.com",
+          "thecollagen.co",
+          "thegoodguys.com.au",
+          "thejojobacompany.com.au",
+          "theordinary.com",
+          "tribeskincare.com.au",
+          "vanessamegan.com",
+          "vitable.com.au",
+          "yesstyle.com",
+          "yslbeauty.com.au"
+        ]
+      },
+      "partnersAdded": {
+        "count": 2,
+        "value": [
+          {
+            "domain": "au.iherb.com"
+          },
+          {
+            "domain": "au.elemis.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 2,
+        "value": [
+          {
+            "domain": "iherb.com"
+          },
+          {
+            "domain": "elemis.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 38.950012,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 8.05,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 5.5499997,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 1.55,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 1,
+            "vertical": "Health / Fragrances"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Travel / Car Hire"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Travel / Flights"
+          },
+          {
+            "count": 0.8,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 0.6,
+            "vertical": "Travel / Vacation"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 69,
+      "value": [
+        "abeauty.co",
+        "adorebeauty.com.au",
+        "aesop.com",
+        "alpha-h.com",
+        "amazon.com.au",
+        "anastasiabeverlyhills.au",
+        "asos.com",
+        "au.elemis.com",
+        "au.iherb.com",
+        "augustinusbader.com",
+        "awin.com",
+        "beautyamora.com.au",
+        "myer.com.au",
+        "beysis.com",
+        "koraorganics.com",
+        "bodyblendz.com",
+        "bondiboost.com.au",
+        "net-a-porter.com",
+        "djerfavenue.com",
+        "gotoskincare.com",
+        "charlottetilbury.com",
+        "chemistwarehouse.com.au",
+        "cultbeauty.co.uk",
+        "cultbeauty.com",
+        "davidjones.com",
+        "dicksmith.com.au",
+        "dopeskin.co",
+        "drnaomi.com",
+        "dyson.com.au",
+        "endotaspa.com.au",
+        "newegg.com",
+        "ereperez.com",
+        "esmi.com.au",
+        "etoilecollective.com.au",
+        "frankbody.com",
+        "jshealthvitamins.com",
+        "hismileteeth.com",
+        "sandandsky.com",
+        "eyeofhoruscosmetics.com",
+        "ghdhair.com",
+        "glossier.com",
+        "grownalchemist.com",
+        "hairhouse.com.au",
+        "healthylife.com.au",
+        "jomalone.com.au",
+        "jurlique.com.au",
+        "lookfantastic.com.au",
+        "mcobeauty.com",
+        "mermadehair.com.au",
+        "mxskincare.com",
+        "nakedsundays.com",
+        "theiconic.com.au",
+        "ozhairandbeauty.com",
+        "paulaschoice.com.au",
+        "priceline.com.au",
+        "rationale.com",
+        "revolveclothing.com.au",
+        "ry.com.au",
+        "sephora.com.au",
+        "tbhskincare.com",
+        "thecollagen.co",
+        "thegoodguys.com.au",
+        "thejojobacompany.com.au",
+        "theordinary.com",
+        "tribeskincare.com.au",
+        "vanessamegan.com",
+        "vitable.com.au",
+        "yesstyle.com",
+        "yslbeauty.com.au"
+      ]
+    },
+    "promotype": {
+      "value": "incentive"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Health / Beauty",
+      "value": [
+        "Health / Beauty",
+        "Health / Wellbeing"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Health / Beauty",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Health / Beauty",
+          "rank": 1,
+          "score": 95
+        },
+        {
+          "name": "Health / Wellbeing",
+          "rank": 1,
+          "score": 60
+        }
+      ]
+    }
+  }
+}

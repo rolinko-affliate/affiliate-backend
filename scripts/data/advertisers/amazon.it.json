@@ -1,0 +1,154 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 9,
+      "sampleValue": [
+        "CueLinks",
+        "Digidip",
+        "Partnerize"
+      ],
+      "value": [
+        "CueLinks",
+        "Digidip",
+        "Partnerize",
+        "Rewardstyle",
+        "Shopnomix",
+        "Skimlinks",
+        "Takeads",
+        "Tradedoubler",
+        "Viglink"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 0,
+      "error": false,
+      "value": []
+    },
+    "domain": "amazon.it",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "Ampia scelta, piccoli prezzi. Scopri nei nostri negozi online fotocamere digitali, lettori MP3, libri, musica, DVD, videogiochi, elettrodomestici e tanto altro.  Spedizione gratuita per ordini superiori ai 29 euro.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazon.it.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazon.it"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 86
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "loudersound.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 25,
+            "promotype": "blog",
+            "value": [
+              "allgamersin.com",
+              "belachaos.com",
+              "c.mtpc.se",
+              "dalmarosec.com",
+              "easss.com",
+              "extraterrestres.info",
+              "feedlinux.com",
+              "fujirumors.com",
+              "geni.us",
+              "goodmenproject.com",
+              "greenweddingshoes.com",
+              "kosmetikosdnr.lt",
+              "macworld.com",
+              "mebmagazine.it",
+              "mesenvies.fr",
+              "nerdata.com",
+              "piratesdesprix.ch",
+              "preispirat.ch",
+              "roccarainola.net",
+              "rotf.lol",
+              "tambulimedia.com",
+              "theoldreader.com",
+              "theothervibes.it",
+              "vanityfair.it",
+              "wishlistr.com"
+            ]
+          },
+          {
+            "count": 9,
+            "promotype": "student",
+            "value": [
+              "dressingandtoppings.com",
+              "ebike-mag.com",
+              "gq.com",
+              "hallofseries.com",
+              "italytoday.net",
+              "mydesires.com",
+              "onlinephilosophyclub.com",
+              "theguardian.com",
+              "wmagazine.com"
+            ]
+          },
+          {
+            "count": 2,
+            "promotype": "content",
+            "value": [
+              "hwupgrade.it",
+              "maronihealth.com"
+            ]
+          },
+          {
+            "count": 2,
+            "promotype": "incentive",
+            "value": [
+              "sport.es",
+              "vogue.it"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 2,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 2,
+          "score": 100
+        },
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 2,
+          "score": 100
+        }
+      ]
+    }
+  }
+}

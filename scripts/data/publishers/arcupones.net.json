@@ -1,0 +1,699 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 5,
+      "sampleValue": [
+        "Awin",
+        "CJ Affiliate",
+        "Flexoffers"
+      ],
+      "value": [
+        "Awin",
+        "CJ Affiliate",
+        "Flexoffers",
+        "Linkbux",
+        "Rakuten"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.6
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "arcupones.net",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "flight"
+        },
+        {
+          "score": 0.69009215,
+          "value": "trip"
+        },
+        {
+          "score": 0.5564516,
+          "value": "travel"
+        },
+        {
+          "score": 0.5,
+          "value": "wrong"
+        },
+        {
+          "score": 0.5,
+          "value": "sorry something"
+        },
+        {
+          "score": 0.5,
+          "value": "something went"
+        },
+        {
+          "score": 0.5,
+          "value": "went wrong"
+        },
+        {
+          "score": 0.5,
+          "value": "wrong contact"
+        },
+        {
+          "score": 0.5,
+          "value": "contact us"
+        },
+        {
+          "score": 0.5,
+          "value": "eset"
+        },
+        {
+          "score": 0.49078342,
+          "value": "mask"
+        },
+        {
+          "score": 0.40898618,
+          "value": "passenger"
+        },
+        {
+          "score": 0.3859447,
+          "value": "corporate customer"
+        },
+        {
+          "score": 0.29032257,
+          "value": "airport"
+        },
+        {
+          "score": 0.29000893,
+          "value": "protection"
+        },
+        {
+          "score": 0.2546083,
+          "value": "book"
+        },
+        {
+          "score": 0.23502304,
+          "value": "lounge"
+        },
+        {
+          "score": 0.23022775,
+          "value": "internet"
+        },
+        {
+          "score": 0.2062212,
+          "value": "lufthansa"
+        },
+        {
+          "score": 0.19009216,
+          "value": "regulation"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "flight"
+        },
+        {
+          "score": 0.69009215,
+          "value": "trip"
+        },
+        {
+          "score": 0.5564516,
+          "value": "travel"
+        },
+        {
+          "score": 0.5,
+          "value": "wrong"
+        },
+        {
+          "score": 0.5,
+          "value": "sorry something"
+        },
+        {
+          "score": 0.5,
+          "value": "something went"
+        },
+        {
+          "score": 0.5,
+          "value": "went wrong"
+        },
+        {
+          "score": 0.5,
+          "value": "wrong contact"
+        },
+        {
+          "score": 0.5,
+          "value": "contact us"
+        },
+        {
+          "score": 0.5,
+          "value": "eset"
+        },
+        {
+          "score": 0.49078342,
+          "value": "mask"
+        },
+        {
+          "score": 0.40898618,
+          "value": "passenger"
+        },
+        {
+          "score": 0.3859447,
+          "value": "corporate customer"
+        },
+        {
+          "score": 0.29032257,
+          "value": "airport"
+        },
+        {
+          "score": 0.29000893,
+          "value": "protection"
+        },
+        {
+          "score": 0.2546083,
+          "value": "book"
+        },
+        {
+          "score": 0.23502304,
+          "value": "lounge"
+        },
+        {
+          "score": 0.23022775,
+          "value": "internet"
+        },
+        {
+          "score": 0.2062212,
+          "value": "lufthansa"
+        },
+        {
+          "score": 0.19009216,
+          "value": "regulation"
+        },
+        {
+          "score": 0.16129032,
+          "value": "glance"
+        },
+        {
+          "score": 0.16129032,
+          "value": "board"
+        },
+        {
+          "score": 0.15437788,
+          "value": "main content"
+        },
+        {
+          "score": 0.15437788,
+          "value": "people"
+        },
+        {
+          "score": 0.15322581,
+          "value": "child"
+        },
+        {
+          "score": 0.15092166,
+          "value": "traveller"
+        },
+        {
+          "score": 0.1486175,
+          "value": "destination"
+        },
+        {
+          "score": 0.14572425,
+          "value": "smart"
+        },
+        {
+          "score": 0.13479263,
+          "value": "entry"
+        },
+        {
+          "score": 0.13479263,
+          "value": "covid"
+        },
+        {
+          "score": 0.13364056,
+          "value": "requirement"
+        },
+        {
+          "score": 0.12557603,
+          "value": "medical"
+        },
+        {
+          "score": 0.12303665,
+          "value": "android"
+        },
+        {
+          "score": 0.11780105,
+          "value": "protección"
+        },
+        {
+          "score": 0.11191099,
+          "value": "solution"
+        },
+        {
+          "score": 0.11100321,
+          "value": "partner"
+        },
+        {
+          "score": 0.10483871,
+          "value": "vaccinated"
+        },
+        {
+          "score": 0.10483871,
+          "value": "health"
+        },
+        {
+          "score": 0.10383944,
+          "value": "download"
+        },
+        {
+          "score": 0.10138249,
+          "value": "food"
+        },
+        {
+          "score": 0.10138249,
+          "value": "vip"
+        },
+        {
+          "score": 0.09907834,
+          "value": "booking"
+        },
+        {
+          "score": 0.09677419,
+          "value": "munich"
+        },
+        {
+          "score": 0.08682373,
+          "value": "smart security"
+        },
+        {
+          "score": 0.08640553,
+          "value": "entertainment"
+        },
+        {
+          "score": 0.08640553,
+          "value": "agent"
+        },
+        {
+          "score": 0.08616929,
+          "value": "advanced"
+        },
+        {
+          "score": 0.08410138,
+          "value": "additional service"
+        },
+        {
+          "score": 0.08410138,
+          "value": "programme"
+        },
+        {
+          "score": 0.081797235,
+          "value": "vaccine"
+        },
+        {
+          "score": 0.08071553,
+          "value": "license"
+        },
+        {
+          "score": 0.08064516,
+          "value": "flexible"
+        },
+        {
+          "score": 0.08064516,
+          "value": "flexible booking"
+        },
+        {
+          "score": 0.08027923,
+          "value": "device"
+        },
+        {
+          "score": 0.07949309,
+          "value": "mile"
+        },
+        {
+          "score": 0.078341015,
+          "value": "journey"
+        },
+        {
+          "score": 0.078341015,
+          "value": "vaccination"
+        },
+        {
+          "score": 0.078341015,
+          "value": "pcr"
+        },
+        {
+          "score": 0.078341015,
+          "value": "exempt"
+        },
+        {
+          "score": 0.07718894,
+          "value": "worldwide flight"
+        },
+        {
+          "score": 0.07718894,
+          "value": "extended"
+        },
+        {
+          "score": 0.07718894,
+          "value": "extended flight"
+        },
+        {
+          "score": 0.07718894,
+          "value": "cancellation"
+        },
+        {
+          "score": 0.07718894,
+          "value": "special travel"
+        },
+        {
+          "score": 0.07718894,
+          "value": "inspiration"
+        },
+        {
+          "score": 0.07718894,
+          "value": "preparation"
+        },
+        {
+          "score": 0.07718894,
+          "value": "feedback"
+        },
+        {
+          "score": 0.07718894,
+          "value": "aviation"
+        },
+        {
+          "score": 0.07718894,
+          "value": "bonus"
+        },
+        {
+          "score": 0.07718894,
+          "value": "corporate bonus"
+        },
+        {
+          "score": 0.07603686,
+          "value": "measure"
+        },
+        {
+          "score": 0.074884795,
+          "value": "exemption"
+        },
+        {
+          "score": 0.074884795,
+          "value": "country"
+        },
+        {
+          "score": 0.07373272,
+          "value": "infection"
+        },
+        {
+          "score": 0.07373272,
+          "value": "valve"
+        },
+        {
+          "score": 0.07329843,
+          "value": "trial"
+        },
+        {
+          "score": 0.0702765,
+          "value": "person"
+        },
+        {
+          "score": 0.0702765,
+          "value": "aircraft"
+        },
+        {
+          "score": 0.06609948,
+          "value": "защита"
+        },
+        {
+          "score": 0.06451613,
+          "value": "obligation"
+        },
+        {
+          "score": 0.06260908,
+          "value": "beskyttelse"
+        },
+        {
+          "score": 0.062211983,
+          "value": "terminal"
+        },
+        {
+          "score": 0.061518326,
+          "value": "empresa"
+        },
+        {
+          "score": 0.059907835,
+          "value": "baggage"
+        },
+        {
+          "score": 0.059907835,
+          "value": "antigen"
+        },
+        {
+          "score": 0.05875576,
+          "value": "risk"
+        },
+        {
+          "score": 0.056937173,
+          "value": "enterprise"
+        },
+        {
+          "score": 0.054973822,
+          "value": "advanced protection"
+        },
+        {
+          "score": 0.054755673,
+          "value": "entreprise"
+        },
+        {
+          "score": 0.05299539,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.05299539,
+          "value": "medical mask"
+        },
+        {
+          "score": 0.052792322,
+          "value": "бизнес"
+        },
+        {
+          "score": 0.05235602,
+          "value": "virksomhed"
+        },
+        {
+          "score": 0.05184332,
+          "value": "transfer"
+        },
+        {
+          "score": 0.050691243,
+          "value": "economy"
+        },
+        {
+          "score": 0.05017452,
+          "value": "parental"
+        },
+        {
+          "score": 0.04973822,
+          "value": "partnership"
+        },
+        {
+          "score": 0.04953917,
+          "value": "virus"
+        },
+        {
+          "score": 0.04953917,
+          "value": "hygiene"
+        },
+        {
+          "score": 0.048387095,
+          "value": "safety"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": "Portal del cupones de descuento en Argentina. Códigos y cupones de descuento para las tiendas más visitadas en Internet. Actualización diaria, cupones exclusivos.Ayuda para comprar más barato gracias a los cupones de descuento que Ud. solicite cuando realice el pedido. El descuento se aplica al precio original y Ud. pagará menos.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/arcupones.net.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://arcupones.net"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 8,
+        "value": [
+          "lufthansa.com",
+          "nike.com",
+          "au.edreams.com",
+          "carrefour.com.ar",
+          "kayak.co.uk",
+          "electrolux.com.ar",
+          "music.amazon.com",
+          "whirlpool.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "au.edreams.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "edreams.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 2.75,
+            "vertical": "Travel / Flights"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 1,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 1,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Music"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 8,
+      "value": [
+        "lufthansa.com",
+        "nike.com",
+        "au.edreams.com",
+        "carrefour.com.ar",
+        "kayak.co.uk",
+        "electrolux.com.ar",
+        "music.amazon.com",
+        "whirlpool.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 36,
+      "value": [
+        "malicoupons.net",
+        "hncupones.net",
+        "uycupones.net",
+        "escupones.net",
+        "clcupones.net",
+        "fin24.net.ua",
+        "htcoupons.net",
+        "eccupones.net",
+        "couponsreduction.info",
+        "fin24.ro",
+        "fin24.lv",
+        "vecupones.net",
+        "cdcoupons.net",
+        "fin24bg.com",
+        "bfcoupons.net",
+        "fin24.it",
+        "monacocoupons.net",
+        "cicoupons.net",
+        "fin-24.co.uk",
+        "nicupones.net",
+        "salvacupones.net",
+        "cupoanereducere.net",
+        "costacupones.net",
+        "cubancupones.net",
+        "gtcupones.net",
+        "prcupones.net",
+        "docupones.net",
+        "fin24.com.de",
+        "percupones.net",
+        "colcupones.net",
+        "bjcoupons.net",
+        "pacupones.net",
+        "rabattkupong.info",
+        "fin24.com.hr",
+        "mexcupones.net",
+        "fin-24.ch"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 2,
+      "socialsAvailable": [
+        "twitter",
+        "facebook"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/cuponescodigo",
+        "twitter": "https://twitter.com/validcouponsnet"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Online / Freebies",
+      "value": [
+        "Online / Freebies",
+        "Shopping / Department Stores"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Online / Freebies",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Online / Freebies",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 1,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

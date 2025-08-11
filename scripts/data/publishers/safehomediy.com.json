@@ -1,0 +1,1357 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 8,
+      "sampleValue": [
+        "Awin",
+        "CJ Affiliate",
+        "Impact"
+      ],
+      "value": [
+        "Awin",
+        "CJ Affiliate",
+        "Impact",
+        "Linkby",
+        "Private Network",
+        "Rakuten",
+        "Refersion",
+        "Skimlinks"
+      ]
+    },
+    "countryRankings": {
+      "count": 3,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.64
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.64
+        },
+        {
+          "countryCode": "ca",
+          "score": 0.1
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.64
+        },
+        {
+          "countryCode": "ca",
+          "score": 0.1
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "safehomediy.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "seller"
+        },
+        {
+          "score": 0.9792383,
+          "value": "amazon"
+        },
+        {
+          "score": 0.6632741,
+          "value": "sign"
+        },
+        {
+          "score": 0.6027286,
+          "value": "store"
+        },
+        {
+          "score": 0.44057995,
+          "value": "skin"
+        },
+        {
+          "score": 0.4389299,
+          "value": "device"
+        },
+        {
+          "score": 0.39040428,
+          "value": "food"
+        },
+        {
+          "score": 0.37775743,
+          "value": "care"
+        },
+        {
+          "score": 0.37074682,
+          "value": "health"
+        },
+        {
+          "score": 0.36999094,
+          "value": "hair"
+        },
+        {
+          "score": 0.35938117,
+          "value": "fee"
+        },
+        {
+          "score": 0.35789752,
+          "value": "body"
+        },
+        {
+          "score": 0.3552205,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.35162336,
+          "value": "beauty"
+        },
+        {
+          "score": 0.34846827,
+          "value": "category"
+        },
+        {
+          "score": 0.34115633,
+          "value": "card"
+        },
+        {
+          "score": 0.33462402,
+          "value": "central"
+        },
+        {
+          "score": 0.3022935,
+          "value": "video"
+        },
+        {
+          "score": 0.29650784,
+          "value": "sports"
+        },
+        {
+          "score": 0.29106504,
+          "value": "color"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "seller"
+        },
+        {
+          "score": 0.9792383,
+          "value": "amazon"
+        },
+        {
+          "score": 0.6632741,
+          "value": "sign"
+        },
+        {
+          "score": 0.6027286,
+          "value": "store"
+        },
+        {
+          "score": 0.44057995,
+          "value": "skin"
+        },
+        {
+          "score": 0.4389299,
+          "value": "device"
+        },
+        {
+          "score": 0.39040428,
+          "value": "food"
+        },
+        {
+          "score": 0.37775743,
+          "value": "care"
+        },
+        {
+          "score": 0.37074682,
+          "value": "health"
+        },
+        {
+          "score": 0.36999094,
+          "value": "hair"
+        },
+        {
+          "score": 0.35938117,
+          "value": "fee"
+        },
+        {
+          "score": 0.35789752,
+          "value": "body"
+        },
+        {
+          "score": 0.3552205,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.35162336,
+          "value": "beauty"
+        },
+        {
+          "score": 0.34846827,
+          "value": "category"
+        },
+        {
+          "score": 0.34115633,
+          "value": "card"
+        },
+        {
+          "score": 0.33462402,
+          "value": "central"
+        },
+        {
+          "score": 0.3022935,
+          "value": "video"
+        },
+        {
+          "score": 0.29650784,
+          "value": "sports"
+        },
+        {
+          "score": 0.29106504,
+          "value": "color"
+        },
+        {
+          "score": 0.27581096,
+          "value": "makeup"
+        },
+        {
+          "score": 0.27203736,
+          "value": "fba"
+        },
+        {
+          "score": 0.26475525,
+          "value": "mattress"
+        },
+        {
+          "score": 0.26183972,
+          "value": "kids"
+        },
+        {
+          "score": 0.26003057,
+          "value": "program"
+        },
+        {
+          "score": 0.25930452,
+          "value": "technology"
+        },
+        {
+          "score": 0.25516772,
+          "value": "fashion"
+        },
+        {
+          "score": 0.25406346,
+          "value": "wellness"
+        },
+        {
+          "score": 0.25026733,
+          "value": "style"
+        },
+        {
+          "score": 0.25016412,
+          "value": "prime"
+        },
+        {
+          "score": 0.23805435,
+          "value": "clothing"
+        },
+        {
+          "score": 0.2325582,
+          "value": "restriction"
+        },
+        {
+          "score": 0.22485948,
+          "value": "accessory"
+        },
+        {
+          "score": 0.21941927,
+          "value": "travel"
+        },
+        {
+          "score": 0.20766635,
+          "value": "protein"
+        },
+        {
+          "score": 0.20146976,
+          "value": "sport"
+        },
+        {
+          "score": 0.19587833,
+          "value": "sleep"
+        },
+        {
+          "score": 0.18827166,
+          "value": "kindle"
+        },
+        {
+          "score": 0.18762365,
+          "value": "warranty"
+        },
+        {
+          "score": 0.17821601,
+          "value": "requirement"
+        },
+        {
+          "score": 0.17769295,
+          "value": "dress"
+        },
+        {
+          "score": 0.17647432,
+          "value": "luxury"
+        },
+        {
+          "score": 0.17643496,
+          "value": "healthy"
+        },
+        {
+          "score": 0.17271668,
+          "value": "dresses"
+        },
+        {
+          "score": 0.17153743,
+          "value": "bath"
+        },
+        {
+          "score": 0.17007817,
+          "value": "community"
+        },
+        {
+          "score": 0.16849004,
+          "value": "feedback"
+        },
+        {
+          "score": 0.16824682,
+          "value": "book"
+        },
+        {
+          "score": 0.16817926,
+          "value": "shorts"
+        },
+        {
+          "score": 0.16592161,
+          "value": "box"
+        },
+        {
+          "score": 0.16464671,
+          "value": "jackets"
+        },
+        {
+          "score": 0.16250157,
+          "value": "shoes"
+        },
+        {
+          "score": 0.1581355,
+          "value": "fulfillment"
+        },
+        {
+          "score": 0.15668698,
+          "value": "skincare"
+        },
+        {
+          "score": 0.15617685,
+          "value": "event"
+        },
+        {
+          "score": 0.154269,
+          "value": "phone"
+        },
+        {
+          "score": 0.15276165,
+          "value": "bags"
+        },
+        {
+          "score": 0.14973606,
+          "value": "comfort"
+        },
+        {
+          "score": 0.14951503,
+          "value": "education"
+        },
+        {
+          "score": 0.1493874,
+          "value": "fragrance"
+        },
+        {
+          "score": 0.14909223,
+          "value": "app"
+        },
+        {
+          "score": 0.14885099,
+          "value": "prime video"
+        },
+        {
+          "score": 0.14703739,
+          "value": "shirts"
+        },
+        {
+          "score": 0.14614478,
+          "value": "fitness"
+        },
+        {
+          "score": 0.14578119,
+          "value": "pants"
+        },
+        {
+          "score": 0.14509176,
+          "value": "nike"
+        },
+        {
+          "score": 0.14495192,
+          "value": "mini"
+        },
+        {
+          "score": 0.14475965,
+          "value": "women"
+        },
+        {
+          "score": 0.14151692,
+          "value": "mattresses"
+        },
+        {
+          "score": 0.1380221,
+          "value": "activewear"
+        },
+        {
+          "score": 0.1361804,
+          "value": "target"
+        },
+        {
+          "score": 0.13562188,
+          "value": "setting"
+        },
+        {
+          "score": 0.13468513,
+          "value": "furniture"
+        },
+        {
+          "score": 0.13144796,
+          "value": "underwear"
+        },
+        {
+          "score": 0.13129616,
+          "value": "shareasale"
+        },
+        {
+          "score": 0.1304146,
+          "value": "bag"
+        },
+        {
+          "score": 0.12976184,
+          "value": "allure"
+        },
+        {
+          "score": 0.12937544,
+          "value": "recipes"
+        },
+        {
+          "score": 0.124918304,
+          "value": "supplements"
+        },
+        {
+          "score": 0.12411292,
+          "value": "stylists"
+        },
+        {
+          "score": 0.12384772,
+          "value": "yoga"
+        },
+        {
+          "score": 0.12305402,
+          "value": "oil"
+        },
+        {
+          "score": 0.12294249,
+          "value": "tool"
+        },
+        {
+          "score": 0.12054492,
+          "value": "training"
+        },
+        {
+          "score": 0.120449945,
+          "value": "sneakers"
+        },
+        {
+          "score": 0.12011837,
+          "value": "toy"
+        },
+        {
+          "score": 0.11997286,
+          "value": "global"
+        },
+        {
+          "score": 0.11927821,
+          "value": "packaging"
+        },
+        {
+          "score": 0.11848085,
+          "value": "woman"
+        },
+        {
+          "score": 0.11829926,
+          "value": "organic"
+        },
+        {
+          "score": 0.117572,
+          "value": "star"
+        },
+        {
+          "score": 0.11709001,
+          "value": "legal"
+        },
+        {
+          "score": 0.11582413,
+          "value": "people"
+        },
+        {
+          "score": 0.11534148,
+          "value": "sunglasses"
+        },
+        {
+          "score": 0.11509238,
+          "value": "boots"
+        },
+        {
+          "score": 0.115033425,
+          "value": "bed"
+        },
+        {
+          "score": 0.1139876,
+          "value": "automotive"
+        },
+        {
+          "score": 0.11320624,
+          "value": "backpacks"
+        },
+        {
+          "score": 0.11203657,
+          "value": "sweatshirts"
+        },
+        {
+          "score": 0.11198428,
+          "value": "skirts"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": "Health - Relationships - Lifestyle Related matters. It's All About your Safety First - It's All About You",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/safehomediy.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://safehomediy.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 220,
+        "value": [
+          "amazonaws.com",
+          "universalstandard.com",
+          "pxf.io",
+          "a-yummy-life.com",
+          "apple.com",
+          "amazon.com",
+          "netflix.com",
+          "nike.com",
+          "nordstrom.com",
+          "aboutamazon.com",
+          "shopify.com",
+          "girlfriend.com",
+          "onepeloton.com",
+          "myfitnesspal.com",
+          "cancerresearchuk.org",
+          "tiktok.com",
+          "adidas.com",
+          "everlane.com",
+          "babeland.com",
+          "hulu.com",
+          "simple-life-app.com",
+          "amazon.co.uk",
+          "walmart.com",
+          "aldi.co.uk",
+          "allbirds.com",
+          "alomoves.com",
+          "sephora.com",
+          "anthropologie.com",
+          "narrativ.com",
+          "youtube.com",
+          "lego.com",
+          "argos.co.uk",
+          "asanarebel.com",
+          "nature.com",
+          "usgs.gov",
+          "yogaworks.com",
+          "atlascoffeeclub.com",
+          "ticketmaster.co.uk",
+          "parachutehome.com",
+          "hollandandbarrett.com",
+          "zappos.com",
+          "avantlink.com",
+          "avocadogreenmattress.com",
+          "awarasleep.com",
+          "patagonia.com",
+          "beautinibyblo.com",
+          "beautyrest.com",
+          "beiabeauty.com",
+          "beerhawk.co.uk",
+          "bergdorfgoodman.com",
+          "levi.com",
+          "bibs2bags.com",
+          "bigbottombehavior.com",
+          "paddypower.com",
+          "birch.fziv.net",
+          "birchliving.com",
+          "blueapron.com",
+          "bluebottlecoffee.com",
+          "debenhams.com",
+          "goldbelly.com",
+          "lacolombe.com",
+          "saatva.com",
+          "shopvida.com",
+          "theclymb.com",
+          "westelm.com",
+          "boots.com",
+          "bowflex.com",
+          "brondell.com",
+          "brooklinen.com",
+          "campsaver.com",
+          "cvs.com",
+          "lululemon.com",
+          "target.com",
+          "casper.com",
+          "castlery.com",
+          "macys.com",
+          "chacos.com",
+          "cheesemongerbox.com",
+          "cj.dotomi.com",
+          "murrayscheese.com",
+          "linksynergy.com",
+          "jasperhillfarm.com",
+          "keurig.com",
+          "homechef.com",
+          "cookunity.com",
+          "corebalancefitness.co.uk",
+          "dame.com",
+          "dermadoctor.com",
+          "dermaflash.com",
+          "dermstore.com",
+          "dickssportinggoods.com",
+          "ninjakitchen.com",
+          "diy.com",
+          "springer.com",
+          "dreamcloudsleep.com",
+          "dreams.co.uk",
+          "driftaway.coffee",
+          "drinktrade.com",
+          "drkimdavid.com",
+          "driveshare.com",
+          "drstreicher.com",
+          "madewell.com",
+          "sweatybetty.com",
+          "ember.com",
+          "equinoxplus.com",
+          "lomi.com",
+          "everbody.com",
+          "eyebuydirect.com",
+          "jcrew.com",
+          "farfetch.com",
+          "food52.com",
+          "tempurpedic.com",
+          "fromourplace.com",
+          "future.co",
+          "fwfg.com",
+          "gazellesports.com",
+          "geartogooutfitters.com",
+          "geartrade.com",
+          "gearx.com",
+          "hyperice.com",
+          "glo.com",
+          "penguinrandomhouse.com",
+          "ulta.com",
+          "glow2go.com",
+          "goodvibes.com",
+          "lookfantastic.com",
+          "harryanddavid.com",
+          "helix-sleep.tkjf.net",
+          "helix.com",
+          "hellotushy.com",
+          "lovehoney.com",
+          "paramountplus.com",
+          "tuftandneedle.com",
+          "sportsdirect.com",
+          "hillspet.com",
+          "hivebrands.com",
+          "spotandtango.com",
+          "tartecosmetics.com",
+          "hydrow.com",
+          "idrissderm.com",
+          "itsaugust.co",
+          "jimmyjane.com",
+          "weightwatchers.com",
+          "justcbdstore.com",
+          "kpearaskincareforlife.com",
+          "lastminutegear.com",
+          "leesa.com",
+          "lelo.com",
+          "lunya.co",
+          "myprotein.com",
+          "marvinsden.com",
+          "melacomfort.co.uk",
+          "musclefood.com",
+          "smolproducts.com",
+          "mypatriotsupply.com",
+          "nectar.com",
+          "nectarsleep.com",
+          "nike.sng.link",
+          "noordwyck.com",
+          "nordstromcard.com",
+          "nordictrack.com",
+          "noom.com",
+          "self.com",
+          "obefitness.com",
+          "on.com",
+          "outdoorsgeek.com",
+          "outdoorvoices.com",
+          "pandalondon.com",
+          "parkdeanresorts.co.uk",
+          "percko.com",
+          "pharmacy2u.co.uk",
+          "potozkinellis.com",
+          "proform.com",
+          "projectrepat.com",
+          "purple.com",
+          "read.macmillan.com",
+          "rhodeskin.com",
+          "richer-poorer.com",
+          "scentcrafters.com",
+          "vitamix.com",
+          "serta.com",
+          "shareasale-analytics.com",
+          "shefit.com",
+          "tempo.fit",
+          "shopobefitness.com",
+          "skims.com",
+          "skinstore.com",
+          "skinceuticals.com",
+          "slip.com",
+          "smittenkittenonline.com",
+          "sodastream.com",
+          "soletreadmills.com",
+          "sunbasket.com",
+          "summerfridays.com",
+          "territoryfoods.com",
+          "uncommongoods.com",
+          "taviactive.com",
+          "thelingerieaddict.com",
+          "thelaundress.com",
+          "theraspecs.com",
+          "therabody.com",
+          "theslimmingclinic.com",
+          "theunderbelly.com",
+          "thinx.com",
+          "tinggly.com",
+          "traintrackr.io",
+          "yogainternational.com",
+          "tshirtquilts.com",
+          "uk.reverse.health",
+          "us.funfactory.com",
+          "we-vibe.com",
+          "vetdiet.com",
+          "vida-studio.com",
+          "vitacost.com",
+          "warbyparker.com",
+          "warpweftworld.com",
+          "wavetoolstherapy.com",
+          "winkwinkboutique.com",
+          "yogaforeveryone.tv",
+          "yogawakeup.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 3,
+        "value": [
+          {
+            "domain": "us.funfactory.com"
+          },
+          {
+            "domain": "uk.reverse.health"
+          },
+          {
+            "domain": "paddypower.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 27,
+        "value": [
+          {
+            "domain": "pvolve.com"
+          },
+          {
+            "domain": "tatcha.com"
+          },
+          {
+            "domain": "manduka.com"
+          },
+          {
+            "domain": "readysetmarathon.com"
+          },
+          {
+            "domain": "wayfair.com"
+          },
+          {
+            "domain": "nathansports.com"
+          },
+          {
+            "domain": "beautycounter.com"
+          },
+          {
+            "domain": "funfactory.com"
+          },
+          {
+            "domain": "drfranks.co.uk"
+          },
+          {
+            "domain": "hellofresh.com"
+          },
+          {
+            "domain": "skechers.com"
+          },
+          {
+            "domain": "summersalt.com"
+          },
+          {
+            "domain": "anyplace.com"
+          },
+          {
+            "domain": "myspringenergy.com"
+          },
+          {
+            "domain": "darntough.com"
+          },
+          {
+            "domain": "surlatable.com"
+          },
+          {
+            "domain": "purplecarrot.com"
+          },
+          {
+            "domain": "smartwool.com"
+          },
+          {
+            "domain": "routinecream.ca"
+          },
+          {
+            "domain": "carawayhome.com"
+          },
+          {
+            "domain": "dermydocbox.com"
+          },
+          {
+            "domain": "kubrakayskincare.com"
+          },
+          {
+            "domain": "suryawellness.com"
+          },
+          {
+            "domain": "reverse.health"
+          },
+          {
+            "domain": "winstonsbeds.com"
+          },
+          {
+            "domain": "greatlifegreatsex.com"
+          },
+          {
+            "domain": "pangaia.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 18.75,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 16.5,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 15.299998,
+            "vertical": "Home / Beds & Bedding"
+          },
+          {
+            "count": 14.149998,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 10.5,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 9.9,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 9.4,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 9.349999,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 8.45,
+            "vertical": "Health / Adult"
+          },
+          {
+            "count": 7.9,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 6.5,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 6.3,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 5.5499997,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 5.25,
+            "vertical": "Sports / Outdoor"
+          },
+          {
+            "count": 5.2,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 4.9,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 4.75,
+            "vertical": "Health / Weight Loss"
+          },
+          {
+            "count": 4.6,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 4.3999996,
+            "vertical": "Fashion / Lingerie"
+          },
+          {
+            "count": 3.8,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 3.6999998,
+            "vertical": "Food / Take Out"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Health / Eyecare"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Home / Pets"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 2.5,
+            "vertical": "Entertainment / Hobbies"
+          },
+          {
+            "count": 2.0500002,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 1.8,
+            "vertical": "Gifts / Personalised"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Website Builder"
+          },
+          {
+            "count": 1,
+            "vertical": "Finance / Cards"
+          },
+          {
+            "count": 1,
+            "vertical": "Gambling / Sportsbook"
+          },
+          {
+            "count": 1,
+            "vertical": "Gifts / Experience Days"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Food / Alcohol"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / CBD"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Gifts / Kids"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Health / Fragrances"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / DIY"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Travel / Car Hire"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Travel / Rail & Coach"
+          },
+          {
+            "count": 0.85,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 0.5,
+            "vertical": "Travel / Attractions"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 220,
+      "value": [
+        "amazonaws.com",
+        "universalstandard.com",
+        "pxf.io",
+        "a-yummy-life.com",
+        "apple.com",
+        "amazon.com",
+        "netflix.com",
+        "nike.com",
+        "nordstrom.com",
+        "aboutamazon.com",
+        "shopify.com",
+        "girlfriend.com",
+        "onepeloton.com",
+        "myfitnesspal.com",
+        "cancerresearchuk.org",
+        "tiktok.com",
+        "adidas.com",
+        "everlane.com",
+        "babeland.com",
+        "hulu.com",
+        "simple-life-app.com",
+        "amazon.co.uk",
+        "walmart.com",
+        "aldi.co.uk",
+        "allbirds.com",
+        "alomoves.com",
+        "sephora.com",
+        "anthropologie.com",
+        "narrativ.com",
+        "youtube.com",
+        "lego.com",
+        "argos.co.uk",
+        "asanarebel.com",
+        "nature.com",
+        "usgs.gov",
+        "yogaworks.com",
+        "atlascoffeeclub.com",
+        "ticketmaster.co.uk",
+        "parachutehome.com",
+        "hollandandbarrett.com",
+        "zappos.com",
+        "avantlink.com",
+        "avocadogreenmattress.com",
+        "awarasleep.com",
+        "patagonia.com",
+        "beautinibyblo.com",
+        "beautyrest.com",
+        "beiabeauty.com",
+        "beerhawk.co.uk",
+        "bergdorfgoodman.com",
+        "levi.com",
+        "bibs2bags.com",
+        "bigbottombehavior.com",
+        "paddypower.com",
+        "birch.fziv.net",
+        "birchliving.com",
+        "blueapron.com",
+        "bluebottlecoffee.com",
+        "debenhams.com",
+        "goldbelly.com",
+        "lacolombe.com",
+        "saatva.com",
+        "shopvida.com",
+        "theclymb.com",
+        "westelm.com",
+        "boots.com",
+        "bowflex.com",
+        "brondell.com",
+        "brooklinen.com",
+        "campsaver.com",
+        "cvs.com",
+        "lululemon.com",
+        "target.com",
+        "casper.com",
+        "castlery.com",
+        "macys.com",
+        "chacos.com",
+        "cheesemongerbox.com",
+        "cj.dotomi.com",
+        "murrayscheese.com",
+        "linksynergy.com",
+        "jasperhillfarm.com",
+        "keurig.com",
+        "homechef.com",
+        "cookunity.com",
+        "corebalancefitness.co.uk",
+        "dame.com",
+        "dermadoctor.com",
+        "dermaflash.com",
+        "dermstore.com",
+        "dickssportinggoods.com",
+        "ninjakitchen.com",
+        "diy.com",
+        "springer.com",
+        "dreamcloudsleep.com",
+        "dreams.co.uk",
+        "driftaway.coffee",
+        "drinktrade.com",
+        "drkimdavid.com",
+        "driveshare.com",
+        "drstreicher.com",
+        "madewell.com",
+        "sweatybetty.com",
+        "ember.com",
+        "equinoxplus.com",
+        "lomi.com",
+        "everbody.com",
+        "eyebuydirect.com",
+        "jcrew.com",
+        "farfetch.com",
+        "food52.com",
+        "tempurpedic.com",
+        "fromourplace.com",
+        "future.co",
+        "fwfg.com",
+        "gazellesports.com",
+        "geartogooutfitters.com",
+        "geartrade.com",
+        "gearx.com",
+        "hyperice.com",
+        "glo.com",
+        "penguinrandomhouse.com",
+        "ulta.com",
+        "glow2go.com",
+        "goodvibes.com",
+        "lookfantastic.com",
+        "harryanddavid.com",
+        "helix-sleep.tkjf.net",
+        "helix.com",
+        "hellotushy.com",
+        "lovehoney.com",
+        "paramountplus.com",
+        "tuftandneedle.com",
+        "sportsdirect.com",
+        "hillspet.com",
+        "hivebrands.com",
+        "spotandtango.com",
+        "tartecosmetics.com",
+        "hydrow.com",
+        "idrissderm.com",
+        "itsaugust.co",
+        "jimmyjane.com",
+        "weightwatchers.com",
+        "justcbdstore.com",
+        "kpearaskincareforlife.com",
+        "lastminutegear.com",
+        "leesa.com",
+        "lelo.com",
+        "lunya.co",
+        "myprotein.com",
+        "marvinsden.com",
+        "melacomfort.co.uk",
+        "musclefood.com",
+        "smolproducts.com",
+        "mypatriotsupply.com",
+        "nectar.com",
+        "nectarsleep.com",
+        "nike.sng.link",
+        "noordwyck.com",
+        "nordstromcard.com",
+        "nordictrack.com",
+        "noom.com",
+        "self.com",
+        "obefitness.com",
+        "on.com",
+        "outdoorsgeek.com",
+        "outdoorvoices.com",
+        "pandalondon.com",
+        "parkdeanresorts.co.uk",
+        "percko.com",
+        "pharmacy2u.co.uk",
+        "potozkinellis.com",
+        "proform.com",
+        "projectrepat.com",
+        "purple.com",
+        "read.macmillan.com",
+        "rhodeskin.com",
+        "richer-poorer.com",
+        "scentcrafters.com",
+        "vitamix.com",
+        "serta.com",
+        "shareasale-analytics.com",
+        "shefit.com",
+        "tempo.fit",
+        "shopobefitness.com",
+        "skims.com",
+        "skinstore.com",
+        "skinceuticals.com",
+        "slip.com",
+        "smittenkittenonline.com",
+        "sodastream.com",
+        "soletreadmills.com",
+        "sunbasket.com",
+        "summerfridays.com",
+        "territoryfoods.com",
+        "uncommongoods.com",
+        "taviactive.com",
+        "thelingerieaddict.com",
+        "thelaundress.com",
+        "theraspecs.com",
+        "therabody.com",
+        "theslimmingclinic.com",
+        "theunderbelly.com",
+        "thinx.com",
+        "tinggly.com",
+        "traintrackr.io",
+        "yogainternational.com",
+        "tshirtquilts.com",
+        "uk.reverse.health",
+        "us.funfactory.com",
+        "we-vibe.com",
+        "vetdiet.com",
+        "vida-studio.com",
+        "vitacost.com",
+        "warbyparker.com",
+        "warpweftworld.com",
+        "wavetoolstherapy.com",
+        "winkwinkboutique.com",
+        "yogaforeveryone.tv",
+        "yogawakeup.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 5,
+      "value": [
+        "celebjam.com",
+        "citigist.com",
+        "newsfinale.com",
+        "internewscast.com",
+        "devplus.com.ng"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Home / DIY",
+      "value": [
+        "Home / DIY",
+        "Home / Security"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Home / DIY",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Home / DIY",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Home / Security",
+          "rank": 1,
+          "score": 80
+        }
+      ]
+    }
+  }
+}

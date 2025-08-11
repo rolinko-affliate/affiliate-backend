@@ -1,0 +1,122 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 4,
+      "sampleValue": [
+        "Digidip",
+        "Linkbux",
+        "Skimlinks"
+      ],
+      "value": [
+        "Digidip",
+        "Linkbux",
+        "Skimlinks",
+        "Viglink"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 5,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "ad-feedback@amazon.nl"
+        },
+        {
+          "department": "legal",
+          "value": "eu-privacy@amazon.nl"
+        },
+        {
+          "department": "support",
+          "value": "jugendschutz@amazon.de"
+        },
+        {
+          "department": null,
+          "value": "privacyshield@amazon.com"
+        },
+        {
+          "department": null,
+          "value": "stop-spoofing@amazon.com"
+        }
+      ]
+    },
+    "domain": "amazon.nl",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "Online winkel voor elektronica, computers, kleding, schoenen, speelgoed, boeken, sport, beauty, persoonlijke verzorging en meer.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazon.nl.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazon.nl"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 10
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "nl.pepper.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "pepper.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 4,
+            "promotype": "blog",
+            "value": [
+              "gizchina.com",
+              "karenandtheworld.com",
+              "wishbob.com",
+              "wishlistr.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 2,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 2,
+          "score": 90
+        },
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 2,
+          "score": 100
+        }
+      ]
+    }
+  }
+}

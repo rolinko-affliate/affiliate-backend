@@ -1,0 +1,98 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 2,
+      "sampleValue": [
+        "Daisycon",
+        "Skimlinks"
+      ],
+      "value": [
+        "Daisycon",
+        "Skimlinks"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 0,
+      "error": false,
+      "value": []
+    },
+    "domain": "gratisduurstemunt.nl",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/gratisduurstemunt.nl.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://gratisduurstemunt.nl"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 10
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 3,
+            "promotype": "blog",
+            "value": [
+              "actuelegoudprijs.nl",
+              "gratisproduct.nl",
+              "savingarena.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "incentive",
+            "value": [
+              "dealspothub.com"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "student",
+            "value": [
+              "mariabode.nl"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "verticals": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Online / Freebies",
+        "rank": 2,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Online / Freebies",
+          "rank": 2,
+          "score": 90
+        }
+      ]
+    }
+  }
+}

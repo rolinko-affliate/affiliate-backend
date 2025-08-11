@@ -1,0 +1,651 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 5,
+      "sampleValue": [
+        "Admitad",
+        "Business Insider",
+        "Impact"
+      ],
+      "value": [
+        "Admitad",
+        "Business Insider",
+        "Impact",
+        "Rakuten",
+        "Skimlinks"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "cl",
+        "score": 0.9
+      },
+      "sampleValue": [
+        {
+          "countryCode": "cl",
+          "score": 0.9
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "cl",
+          "score": 0.9
+        }
+      ]
+    },
+    "domain": "latercera.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "thailand"
+        },
+        {
+          "score": 0.91,
+          "value": "singapore"
+        },
+        {
+          "score": 0.83,
+          "value": "region"
+        },
+        {
+          "score": 0.79,
+          "value": "portugal"
+        },
+        {
+          "score": 0.69,
+          "value": "luxembourg"
+        },
+        {
+          "score": 0.65,
+          "value": "lithuania"
+        },
+        {
+          "score": 0.65,
+          "value": "emirates"
+        },
+        {
+          "score": 0.62,
+          "value": "indonesia"
+        },
+        {
+          "score": 0.58,
+          "value": "australia"
+        },
+        {
+          "score": 0.58,
+          "value": "romania"
+        },
+        {
+          "score": 0.57,
+          "value": "malaysia"
+        },
+        {
+          "score": 0.56,
+          "value": "philippines"
+        },
+        {
+          "score": 0.55,
+          "value": "cyprus"
+        },
+        {
+          "score": 0.55,
+          "value": "asia"
+        },
+        {
+          "score": 0.54,
+          "value": "ireland"
+        },
+        {
+          "score": 0.53,
+          "value": "peru"
+        },
+        {
+          "score": 0.53,
+          "value": "qatar"
+        },
+        {
+          "score": 0.53,
+          "value": "estonia"
+        },
+        {
+          "score": 0.52,
+          "value": "europe"
+        },
+        {
+          "score": 0.51,
+          "value": "france"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "thailand"
+        },
+        {
+          "score": 0.91,
+          "value": "singapore"
+        },
+        {
+          "score": 0.83,
+          "value": "region"
+        },
+        {
+          "score": 0.79,
+          "value": "portugal"
+        },
+        {
+          "score": 0.69,
+          "value": "luxembourg"
+        },
+        {
+          "score": 0.65,
+          "value": "lithuania"
+        },
+        {
+          "score": 0.65,
+          "value": "emirates"
+        },
+        {
+          "score": 0.62,
+          "value": "indonesia"
+        },
+        {
+          "score": 0.58,
+          "value": "australia"
+        },
+        {
+          "score": 0.58,
+          "value": "romania"
+        },
+        {
+          "score": 0.57,
+          "value": "malaysia"
+        },
+        {
+          "score": 0.56,
+          "value": "philippines"
+        },
+        {
+          "score": 0.55,
+          "value": "cyprus"
+        },
+        {
+          "score": 0.55,
+          "value": "asia"
+        },
+        {
+          "score": 0.54,
+          "value": "ireland"
+        },
+        {
+          "score": 0.53,
+          "value": "peru"
+        },
+        {
+          "score": 0.53,
+          "value": "qatar"
+        },
+        {
+          "score": 0.53,
+          "value": "estonia"
+        },
+        {
+          "score": 0.52,
+          "value": "europe"
+        },
+        {
+          "score": 0.51,
+          "value": "france"
+        },
+        {
+          "score": 0.5,
+          "value": "bulgaria"
+        },
+        {
+          "score": 0.5,
+          "value": "hungary"
+        },
+        {
+          "score": 0.5,
+          "value": "course"
+        },
+        {
+          "score": 0.48,
+          "value": "morocco"
+        },
+        {
+          "score": 0.46,
+          "value": "latvia"
+        },
+        {
+          "score": 0.45,
+          "value": "kuwait"
+        },
+        {
+          "score": 0.45,
+          "value": "fashion"
+        },
+        {
+          "score": 0.44,
+          "value": "taiwan"
+        },
+        {
+          "score": 0.44,
+          "value": "africa"
+        },
+        {
+          "score": 0.43,
+          "value": "herzegovina"
+        },
+        {
+          "score": 0.43,
+          "value": "denmark"
+        },
+        {
+          "score": 0.43,
+          "value": "croatia"
+        },
+        {
+          "score": 0.42,
+          "value": "mexico"
+        },
+        {
+          "score": 0.42,
+          "value": "norway"
+        },
+        {
+          "score": 0.42,
+          "value": "uruguay"
+        },
+        {
+          "score": 0.41,
+          "value": "belarus"
+        },
+        {
+          "score": 0.41,
+          "value": "greece"
+        },
+        {
+          "score": 0.41,
+          "value": "turkey"
+        },
+        {
+          "score": 0.41,
+          "value": "slovenia"
+        },
+        {
+          "score": 0.41,
+          "value": "spain"
+        },
+        {
+          "score": 0.39,
+          "value": "colombia"
+        },
+        {
+          "score": 0.38,
+          "value": "netherlands"
+        },
+        {
+          "score": 0.38,
+          "value": "slovakia"
+        },
+        {
+          "score": 0.37,
+          "value": "bahrain"
+        },
+        {
+          "score": 0.37,
+          "value": "kazakhstan"
+        },
+        {
+          "score": 0.36,
+          "value": "svizzera"
+        },
+        {
+          "score": 0.36,
+          "value": "vietnam"
+        },
+        {
+          "score": 0.35,
+          "value": "sterreich"
+        },
+        {
+          "score": 0.35,
+          "value": "zealand"
+        },
+        {
+          "score": 0.34,
+          "value": "america"
+        },
+        {
+          "score": 0.34,
+          "value": "suomi"
+        },
+        {
+          "score": 0.34,
+          "value": "korea"
+        },
+        {
+          "score": 0.33,
+          "value": "romnia"
+        },
+        {
+          "score": 0.33,
+          "value": "india"
+        },
+        {
+          "score": 0.33,
+          "value": "macao"
+        },
+        {
+          "score": 0.33,
+          "value": "iceland"
+        },
+        {
+          "score": 0.32910696,
+          "value": "program"
+        },
+        {
+          "score": 0.32,
+          "value": "japan"
+        },
+        {
+          "score": 0.32,
+          "value": "middle"
+        },
+        {
+          "score": 0.31,
+          "value": "mainland"
+        },
+        {
+          "score": 0.31,
+          "value": "finland"
+        },
+        {
+          "score": 0.31,
+          "value": "suisse"
+        },
+        {
+          "score": 0.3,
+          "value": "kingdom"
+        },
+        {
+          "score": 0.3,
+          "value": "choose"
+        },
+        {
+          "score": 0.3,
+          "value": "czech"
+        },
+        {
+          "score": 0.3,
+          "value": "oceania"
+        },
+        {
+          "score": 0.29,
+          "value": "russia"
+        },
+        {
+          "score": 0.29,
+          "value": "schweiz"
+        },
+        {
+          "score": 0.29,
+          "value": "mxico"
+        },
+        {
+          "score": 0.29,
+          "value": "norge"
+        },
+        {
+          "score": 0.28,
+          "value": "south"
+        },
+        {
+          "score": 0.28,
+          "value": "canada"
+        },
+        {
+          "score": 0.28,
+          "value": "rico"
+        },
+        {
+          "score": 0.27373925,
+          "value": "science"
+        },
+        {
+          "score": 0.27,
+          "value": "sweden"
+        },
+        {
+          "score": 0.2666718,
+          "value": "project"
+        },
+        {
+          "score": 0.26,
+          "value": "hercegovina"
+        },
+        {
+          "score": 0.26,
+          "value": "puerto"
+        },
+        {
+          "score": 0.25523704,
+          "value": "edx"
+        },
+        {
+          "score": 0.25302368,
+          "value": "professional"
+        },
+        {
+          "score": 0.25,
+          "value": "wrong"
+        },
+        {
+          "score": 0.25,
+          "value": "sorry something"
+        },
+        {
+          "score": 0.25,
+          "value": "something went"
+        },
+        {
+          "score": 0.25,
+          "value": "went wrong"
+        },
+        {
+          "score": 0.25,
+          "value": "wrong contact"
+        },
+        {
+          "score": 0.25,
+          "value": "contact us"
+        },
+        {
+          "score": 0.25,
+          "value": "italia"
+        },
+        {
+          "score": 0.25,
+          "value": "italy"
+        },
+        {
+          "score": 0.25,
+          "value": "belgique"
+        },
+        {
+          "score": 0.25,
+          "value": "water"
+        },
+        {
+          "score": 0.25,
+          "value": "pypi"
+        },
+        {
+          "score": 0.25,
+          "value": "springer"
+        },
+        {
+          "score": 0.24,
+          "value": "north"
+        },
+        {
+          "score": 0.23,
+          "value": "east"
+        },
+        {
+          "score": 0.22,
+          "value": "danmark"
+        },
+        {
+          "score": 0.21,
+          "value": "states"
+        },
+        {
+          "score": 0.21,
+          "value": "bosnia"
+        },
+        {
+          "score": 0.21,
+          "value": "sland"
+        },
+        {
+          "score": 0.21,
+          "value": "austria"
+        },
+        {
+          "score": 0.2,
+          "value": "nederland"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/latercera.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://latercera.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 5,
+        "value": [
+          "hm.com",
+          "edx.org",
+          "springer.com",
+          "linio.cl",
+          "music.amazon.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "linio.cl"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Entertainment / Books"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 5,
+      "value": [
+        "hm.com",
+        "edx.org",
+        "springer.com",
+        "linio.cl",
+        "music.amazon.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 2,
+      "value": [
+        "mouse.latercera.com",
+        "quepasa.cl"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/laterceracom",
+        "instagram": "https://instagram.com/laterceracom",
+        "twitter": "https://twitter.com/latercera",
+        "youtube": "https://youtube.com/latercera//laterceracom"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Online / Services",
+      "value": [
+        "Online / Services",
+        "Business / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Online / Services",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Business / Services",
+          "rank": 1,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

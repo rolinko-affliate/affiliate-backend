@@ -1,0 +1,396 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 4,
+      "sampleValue": [
+        "Business Insider",
+        "Skimlinks",
+        "TRX"
+      ],
+      "value": [
+        "Business Insider",
+        "Skimlinks",
+        "TRX",
+        "Viglink"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 0,
+      "error": false,
+      "value": []
+    },
+    "domain": "us.amazon.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/us.amazon.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://us.amazon.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 87
+      },
+      "partnersAdded": {
+        "count": 87,
+        "value": [
+          {
+            "domain": "watchfigure.com"
+          },
+          {
+            "domain": "shapelywellnessway.com"
+          },
+          {
+            "domain": "tomsguide.com"
+          },
+          {
+            "domain": "flourishwellnessgroup.com"
+          },
+          {
+            "domain": "road2france.com"
+          },
+          {
+            "domain": "homesandgardens.com"
+          },
+          {
+            "domain": "guitarworld.com"
+          },
+          {
+            "domain": "vibrantwellnessvoyage.com"
+          },
+          {
+            "domain": "allnews.ltd"
+          },
+          {
+            "domain": "wellnesswisewhispers.com"
+          },
+          {
+            "domain": "activevitalbites.com"
+          },
+          {
+            "domain": "seculartimes.com"
+          },
+          {
+            "domain": "balancedfuelquest.com"
+          },
+          {
+            "domain": "beautzay.com"
+          },
+          {
+            "domain": "jollicaswonderfulworld.com"
+          },
+          {
+            "domain": "techradar.com"
+          },
+          {
+            "domain": "t3.com"
+          },
+          {
+            "domain": "wellnesswaverider.com"
+          },
+          {
+            "domain": "realhomes.com"
+          },
+          {
+            "domain": "epicurious.com"
+          },
+          {
+            "domain": "mindysfamilydentistry.com"
+          },
+          {
+            "domain": "houseofmagazine.com"
+          },
+          {
+            "domain": "motoramatoyota.com"
+          },
+          {
+            "domain": "lifestyledefacto.com"
+          },
+          {
+            "domain": "gatehouseuk.com"
+          },
+          {
+            "domain": "activemindnutrition.com"
+          },
+          {
+            "domain": "greenhabitstoday.com"
+          },
+          {
+            "domain": "yachtingworld.com"
+          },
+          {
+            "domain": "zenvibewellness.com"
+          },
+          {
+            "domain": "trimgoldwellness.com"
+          },
+          {
+            "domain": "galaxytourandtravels.com"
+          },
+          {
+            "domain": "radianthealthrenaissance.com"
+          },
+          {
+            "domain": "aquarianquest.org"
+          },
+          {
+            "domain": "theflowspace.com"
+          },
+          {
+            "domain": "creativebloq.com"
+          },
+          {
+            "domain": "activeauralife.com"
+          },
+          {
+            "domain": "7658.info"
+          },
+          {
+            "domain": "cbsnews.com"
+          },
+          {
+            "domain": "spoak.com"
+          },
+          {
+            "domain": "glamour.com"
+          },
+          {
+            "domain": "nutrahealthpath.com"
+          },
+          {
+            "domain": "besthairstyletips.com"
+          },
+          {
+            "domain": "holisticvitalspace.com"
+          },
+          {
+            "domain": "healthylifepulse.com"
+          },
+          {
+            "domain": "thinthrivetips.com"
+          },
+          {
+            "domain": "purelivingguide.com"
+          },
+          {
+            "domain": "bestluxury.com.cn"
+          },
+          {
+            "domain": "cinemablend.com"
+          },
+          {
+            "domain": "androidcentral.com"
+          },
+          {
+            "domain": "creativecaribe.com"
+          },
+          {
+            "domain": "davidwatkinsdesigns.com"
+          },
+          {
+            "domain": "axelle.uno"
+          },
+          {
+            "domain": "gottalovebrat.com"
+          },
+          {
+            "domain": "nutrivitalife.com"
+          },
+          {
+            "domain": "daftcode.net"
+          },
+          {
+            "domain": "allure.com"
+          },
+          {
+            "domain": "whowhatwear.com"
+          },
+          {
+            "domain": "architecturaldigest.com"
+          },
+          {
+            "domain": "healthfuljourneyjoy.com"
+          },
+          {
+            "domain": "restorewellnesstoday.com"
+          },
+          {
+            "domain": "warnews.live"
+          },
+          {
+            "domain": "greennutraliving.com"
+          },
+          {
+            "domain": "komputer-servise.com"
+          },
+          {
+            "domain": "techq.site"
+          },
+          {
+            "domain": "radiantlifeguide.com"
+          },
+          {
+            "domain": "topofferdeal.com"
+          },
+          {
+            "domain": "smartnutrihabits.com"
+          },
+          {
+            "domain": "aldermanlaurino.com"
+          },
+          {
+            "domain": "wtf.deals"
+          },
+          {
+            "domain": "thenewscompany.org"
+          },
+          {
+            "domain": "healthpulsetoday.com"
+          },
+          {
+            "domain": "simplyorganizedspaces.me"
+          },
+          {
+            "domain": "healthnirvananetwork.com"
+          },
+          {
+            "domain": "webtimes.uk"
+          },
+          {
+            "domain": "uk.news.yahoo.com"
+          },
+          {
+            "domain": "insightfulusstudies.com"
+          },
+          {
+            "domain": "dietlossfree.com"
+          },
+          {
+            "domain": "slimsmartplate.com"
+          },
+          {
+            "domain": "bonappetit.com"
+          },
+          {
+            "domain": "futureplc.engineering"
+          },
+          {
+            "domain": "leaneatinghub.com"
+          },
+          {
+            "domain": "self.com"
+          },
+          {
+            "domain": "editeditdone.com"
+          },
+          {
+            "domain": "petsradar.com"
+          },
+          {
+            "domain": "livingetc.com"
+          },
+          {
+            "domain": "vogue.com"
+          },
+          {
+            "domain": "mindbodybalancehub.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 11,
+            "promotype": "blog",
+            "value": [
+              "allure.com",
+              "androidcentral.com",
+              "cinemablend.com",
+              "healthfuljourneyjoy.com",
+              "realhomes.com",
+              "road2france.com",
+              "t3.com",
+              "techradar.com",
+              "tomsguide.com",
+              "webtimes.uk",
+              "whowhatwear.com"
+            ]
+          },
+          {
+            "count": 5,
+            "promotype": "student",
+            "value": [
+              "cbsnews.com",
+              "creativebloq.com",
+              "guitarworld.com",
+              "livingetc.com",
+              "seculartimes.com"
+            ]
+          },
+          {
+            "count": 2,
+            "promotype": "content",
+            "value": [
+              "vogue.com",
+              "yachtingworld.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "verticals": {
+      "count": 5,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 2,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 2,
+          "score": 95
+        },
+        {
+          "name": "Entertainment / Books",
+          "rank": 2,
+          "score": 70
+        },
+        {
+          "name": "Entertainment / Streaming",
+          "rank": 2,
+          "score": 70
+        },
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 2,
+          "score": 95
+        },
+        {
+          "name": "Technology / Electronics",
+          "rank": 2,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

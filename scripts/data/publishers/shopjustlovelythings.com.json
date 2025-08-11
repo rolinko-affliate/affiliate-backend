@@ -1,0 +1,2499 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 24,
+      "sampleValue": [
+        "Amazon CA",
+        "APD Performance",
+        "Avantlink"
+      ],
+      "value": [
+        "Amazon CA",
+        "APD Performance",
+        "Avantlink",
+        "Awin",
+        "CJ Affiliate",
+        "CommissionFactory",
+        "Flexoffers",
+        "Heymondo",
+        "Impact",
+        "Involve Asia",
+        "Linkby",
+        "Optimise",
+        "Partnerize",
+        "Pepperjam",
+        "Private Network",
+        "Rakuten",
+        "Refersion",
+        "Rewardstyle",
+        "ShareASale",
+        "Skimlinks",
+        "Tradedoubler",
+        "TRX",
+        "TUNE",
+        "Viglink"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.8
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.8
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.8
+        }
+      ]
+    },
+    "domain": "shopjustlovelythings.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "store"
+        },
+        {
+          "score": 0.6963073,
+          "value": "clothing"
+        },
+        {
+          "score": 0.66663456,
+          "value": "card"
+        },
+        {
+          "score": 0.6659458,
+          "value": "sign"
+        },
+        {
+          "score": 0.6604542,
+          "value": "jewelry"
+        },
+        {
+          "score": 0.5671895,
+          "value": "color"
+        },
+        {
+          "score": 0.56281227,
+          "value": "dress"
+        },
+        {
+          "score": 0.54621476,
+          "value": "style"
+        },
+        {
+          "score": 0.4680755,
+          "value": "bags"
+        },
+        {
+          "score": 0.4607029,
+          "value": "seller"
+        },
+        {
+          "score": 0.45276934,
+          "value": "shirts"
+        },
+        {
+          "score": 0.4421703,
+          "value": "dresses"
+        },
+        {
+          "score": 0.42648423,
+          "value": "shirt"
+        },
+        {
+          "score": 0.41399226,
+          "value": "body"
+        },
+        {
+          "score": 0.41284913,
+          "value": "accessory"
+        },
+        {
+          "score": 0.40320557,
+          "value": "jackets"
+        },
+        {
+          "score": 0.40134013,
+          "value": "travel"
+        },
+        {
+          "score": 0.3887016,
+          "value": "skin"
+        },
+        {
+          "score": 0.3833804,
+          "value": "hair"
+        },
+        {
+          "score": 0.3792552,
+          "value": "pants"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "store"
+        },
+        {
+          "score": 0.6963073,
+          "value": "clothing"
+        },
+        {
+          "score": 0.66663456,
+          "value": "card"
+        },
+        {
+          "score": 0.6659458,
+          "value": "sign"
+        },
+        {
+          "score": 0.6604542,
+          "value": "jewelry"
+        },
+        {
+          "score": 0.5671895,
+          "value": "color"
+        },
+        {
+          "score": 0.56281227,
+          "value": "dress"
+        },
+        {
+          "score": 0.54621476,
+          "value": "style"
+        },
+        {
+          "score": 0.4680755,
+          "value": "bags"
+        },
+        {
+          "score": 0.4607029,
+          "value": "seller"
+        },
+        {
+          "score": 0.45276934,
+          "value": "shirts"
+        },
+        {
+          "score": 0.4421703,
+          "value": "dresses"
+        },
+        {
+          "score": 0.42648423,
+          "value": "shirt"
+        },
+        {
+          "score": 0.41399226,
+          "value": "body"
+        },
+        {
+          "score": 0.41284913,
+          "value": "accessory"
+        },
+        {
+          "score": 0.40320557,
+          "value": "jackets"
+        },
+        {
+          "score": 0.40134013,
+          "value": "travel"
+        },
+        {
+          "score": 0.3887016,
+          "value": "skin"
+        },
+        {
+          "score": 0.3833804,
+          "value": "hair"
+        },
+        {
+          "score": 0.3792552,
+          "value": "pants"
+        },
+        {
+          "score": 0.37744397,
+          "value": "shoes"
+        },
+        {
+          "score": 0.37696964,
+          "value": "underwear"
+        },
+        {
+          "score": 0.36622247,
+          "value": "women"
+        },
+        {
+          "score": 0.36008367,
+          "value": "category"
+        },
+        {
+          "score": 0.35267317,
+          "value": "beauty"
+        },
+        {
+          "score": 0.34898335,
+          "value": "bag"
+        },
+        {
+          "score": 0.34413984,
+          "value": "woman"
+        },
+        {
+          "score": 0.32464218,
+          "value": "fashion"
+        },
+        {
+          "score": 0.32312864,
+          "value": "furniture"
+        },
+        {
+          "score": 0.3150889,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.31346157,
+          "value": "styling"
+        },
+        {
+          "score": 0.2999585,
+          "value": "sunglasses"
+        },
+        {
+          "score": 0.29281828,
+          "value": "explore"
+        },
+        {
+          "score": 0.29156265,
+          "value": "mini"
+        },
+        {
+          "score": 0.287391,
+          "value": "sneakers"
+        },
+        {
+          "score": 0.2829618,
+          "value": "makeup"
+        },
+        {
+          "score": 0.281408,
+          "value": "fragrance"
+        },
+        {
+          "score": 0.28123078,
+          "value": "designer"
+        },
+        {
+          "score": 0.27649075,
+          "value": "swimwear"
+        },
+        {
+          "score": 0.27570367,
+          "value": "shoe"
+        },
+        {
+          "score": 0.2756547,
+          "value": "tech"
+        },
+        {
+          "score": 0.2698175,
+          "value": "community"
+        },
+        {
+          "score": 0.26566637,
+          "value": "skirts"
+        },
+        {
+          "score": 0.26532558,
+          "value": "shorts"
+        },
+        {
+          "score": 0.26198465,
+          "value": "food"
+        },
+        {
+          "score": 0.25938365,
+          "value": "bath"
+        },
+        {
+          "score": 0.25924212,
+          "value": "custom"
+        },
+        {
+          "score": 0.2592355,
+          "value": "wedding"
+        },
+        {
+          "score": 0.25412872,
+          "value": "tool"
+        },
+        {
+          "score": 0.25359362,
+          "value": "casual"
+        },
+        {
+          "score": 0.25157815,
+          "value": "story"
+        },
+        {
+          "score": 0.24901906,
+          "value": "kit"
+        },
+        {
+          "score": 0.2458782,
+          "value": "light"
+        },
+        {
+          "score": 0.24547778,
+          "value": "ship"
+        },
+        {
+          "score": 0.24228948,
+          "value": "sweaters"
+        },
+        {
+          "score": 0.24096793,
+          "value": "office"
+        },
+        {
+          "score": 0.23969178,
+          "value": "activewear"
+        },
+        {
+          "score": 0.23946364,
+          "value": "event"
+        },
+        {
+          "score": 0.23684609,
+          "value": "outdoor"
+        },
+        {
+          "score": 0.23547037,
+          "value": "luxury"
+        },
+        {
+          "score": 0.2349462,
+          "value": "styles"
+        },
+        {
+          "score": 0.23234548,
+          "value": "stock"
+        },
+        {
+          "score": 0.23036376,
+          "value": "program"
+        },
+        {
+          "score": 0.22684847,
+          "value": "bracelets"
+        },
+        {
+          "score": 0.22416785,
+          "value": "credit"
+        },
+        {
+          "score": 0.22414419,
+          "value": "jacket"
+        },
+        {
+          "score": 0.22255832,
+          "value": "care"
+        },
+        {
+          "score": 0.22046597,
+          "value": "warranty"
+        },
+        {
+          "score": 0.21930759,
+          "value": "amazon"
+        },
+        {
+          "score": 0.21880594,
+          "value": "perfect"
+        },
+        {
+          "score": 0.21663539,
+          "value": "supply"
+        },
+        {
+          "score": 0.2159337,
+          "value": "necklaces"
+        },
+        {
+          "score": 0.21332906,
+          "value": "backpacks"
+        },
+        {
+          "score": 0.20969474,
+          "value": "pajamas"
+        },
+        {
+          "score": 0.20841798,
+          "value": "video"
+        },
+        {
+          "score": 0.20739275,
+          "value": "leather"
+        },
+        {
+          "score": 0.20702441,
+          "value": "device"
+        },
+        {
+          "score": 0.20682546,
+          "value": "vintage"
+        },
+        {
+          "score": 0.20302594,
+          "value": "earrings"
+        },
+        {
+          "score": 0.2017618,
+          "value": "sweatshirts"
+        },
+        {
+          "score": 0.20119093,
+          "value": "closet"
+        },
+        {
+          "score": 0.20077448,
+          "value": "nike"
+        },
+        {
+          "score": 0.2007135,
+          "value": "white"
+        },
+        {
+          "score": 0.19988623,
+          "value": "sneaker"
+        },
+        {
+          "score": 0.19919375,
+          "value": "boots"
+        },
+        {
+          "score": 0.19707821,
+          "value": "occasion"
+        },
+        {
+          "score": 0.19690031,
+          "value": "life"
+        },
+        {
+          "score": 0.19515106,
+          "value": "investor"
+        },
+        {
+          "score": 0.19500515,
+          "value": "location"
+        },
+        {
+          "score": 0.19394834,
+          "value": "jewelers"
+        },
+        {
+          "score": 0.19356671,
+          "value": "luggage"
+        },
+        {
+          "score": 0.19301096,
+          "value": "eur"
+        },
+        {
+          "score": 0.18977731,
+          "value": "suits"
+        },
+        {
+          "score": 0.18954168,
+          "value": "coats"
+        },
+        {
+          "score": 0.18774831,
+          "value": "kitchen"
+        },
+        {
+          "score": 0.18734775,
+          "value": "sweater"
+        },
+        {
+          "score": 0.18721189,
+          "value": "baby"
+        },
+        {
+          "score": 0.18699779,
+          "value": "socks"
+        },
+        {
+          "score": 0.18653916,
+          "value": "sleeve"
+        },
+        {
+          "score": 0.18638551,
+          "value": "site"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://shopjustlovelythings.com/",
+        "https://www.shopjustlovelythings.com/",
+        "http://shopjustlovelythings.com/",
+        "http://www.shopjustlovelythings.com/"
+      ]
+    },
+    "metaData": {
+      "description": "Discover Accessory Organizers at a great price. Our Clothing Closet Storage category offers a great selection of Accessory Organizers and more.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/shopjustlovelythings.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://shopjustlovelythings.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 717,
+        "value": [
+          "sjv.io",
+          "123ink.ca",
+          "aliexpress.com",
+          "1800flowers.ca",
+          "1800flowers.com",
+          "etsy.com",
+          "twitter.com",
+          "adobe.com",
+          "23andme.com",
+          "prf.hn",
+          "acdsee.com",
+          "sportsmansguide.com",
+          "si.edu",
+          "9to5mac.com",
+          "apple.com",
+          "amazon.com",
+          "abercrombie.com",
+          "wyze.com",
+          "microsoft.com",
+          "basspro.com",
+          "instagram.com",
+          "facebook.com",
+          "hm.com",
+          "nike.com",
+          "nordstrom.com",
+          "aboutamazon.com",
+          "underarmour.com",
+          "academy.com",
+          "cnn.com",
+          "abt.com",
+          "dell.com",
+          "ray-ban.com",
+          "bbc.com",
+          "jackery.com",
+          "lenovo.com",
+          "nordvpn.com",
+          "sony.com",
+          "samsung.com",
+          "t-mobile.com",
+          "spotify.com",
+          "shutterfly.com",
+          "theatlantic.com",
+          "acer.com",
+          "adidas.com",
+          "everlane.com",
+          "adorama.com",
+          "softonic.com",
+          "nationalgeographic.com",
+          "ae.com",
+          "rosettastone.com",
+          "walmart.com",
+          "insider.com",
+          "klook.com",
+          "fiverr.com",
+          "frontgate.com",
+          "akk.com",
+          "aldoshoes.com",
+          "logitech.com",
+          "entertainment.com",
+          "alisonrossiter.com",
+          "partnercentric.com",
+          "alexmill.com",
+          "lazada.sg",
+          "allbirds.com",
+          "allenedmonds.com",
+          "allthatsinteresting.com",
+          "altitude-sports.com",
+          "amateurphotographer.co.uk",
+          "amazon.ca",
+          "geox.com",
+          "amiteshel.com",
+          "amzn.to",
+          "ancestry.ca",
+          "andar.com",
+          "andygotts.com",
+          "ancestry.com",
+          "jcpenney.com",
+          "annieskitclubs.com",
+          "anntaylor.com",
+          "anseladams.com",
+          "answersingenesis.org",
+          "sephora.com",
+          "anthropologie.com",
+          "hp.com",
+          "aperture.org",
+          "suitsupply.com",
+          "bestbuy.com",
+          "youtube.com",
+          "bookofthemonth.com",
+          "gettyimages.com",
+          "kohls.com",
+          "shopmoment.com",
+          "garmin.com",
+          "npr.org",
+          "lego.com",
+          "arcteryx.com",
+          "ardene.com",
+          "aristidephoto.com",
+          "arnoldnewman.com",
+          "armani-beauty.ca",
+          "baltimoresun.com",
+          "artifactuprising.com",
+          "artic.edu",
+          "latimes.com",
+          "artnet.com",
+          "artwolfe.com",
+          "ashleyhomestore.ca",
+          "ashleyfurniture.com",
+          "sonos.com",
+          "asos.com",
+          "bose.com",
+          "surlatable.com",
+          "minted.com",
+          "gap.com",
+          "athleticpropulsionlabs.com",
+          "atncorp.com",
+          "gapcanada.ca",
+          "fandango.com",
+          "au.puma.com",
+          "samsclub.com",
+          "australiandistillers.org.au",
+          "parachutehome.com",
+          "zappos.com",
+          "aveda.com",
+          "avedonfoundation.org",
+          "awin.com",
+          "awaytravel.com",
+          "backcountry.com",
+          "baggu.com",
+          "baggallini.com",
+          "baskeumundi.com.au",
+          "bassandflindersdistillery.com",
+          "bearaby.com",
+          "patagonia.com",
+          "bedbathandbeyond.ca",
+          "bedbathandbeyond.com",
+          "cardcash.com",
+          "bedthreads.com",
+          "beermonthclub.com",
+          "bellroy.com",
+          "belkin.com",
+          "bench.ca",
+          "benhowland.com.au",
+          "levi.com",
+          "bhphotovideo.com",
+          "urbanoutfitters.com",
+          "biotherm.ca",
+          "biovea.com",
+          "birdies.com",
+          "birchbox.com",
+          "biome.com.au",
+          "bladehq.com",
+          "blind-magazine.com",
+          "homedepot.com",
+          "randco.com",
+          "bodum.com",
+          "lowes.com",
+          "blnts.com",
+          "columbia.com",
+          "coinbase.com",
+          "depositphotos.com",
+          "ebay.com",
+          "freepeople.com",
+          "goruck.com",
+          "groupon.com",
+          "houzz.com",
+          "michaels.com",
+          "merrell.com",
+          "myheritage.com",
+          "saatva.com",
+          "potterybarn.com",
+          "rei.com",
+          "shopbop.com",
+          "solostove.com",
+          "toryburch.com",
+          "westelm.com",
+          "loc.gov",
+          "wikimedia.org",
+          "smithsonianmag.com",
+          "williams-sonoma.com",
+          "timesofisrael.com",
+          "bloomingdales.com",
+          "bodenusa.com",
+          "bogsfootwear.ca",
+          "bonds.com.au",
+          "etihad.com",
+          "bookoutlet.ca",
+          "theguardian.com",
+          "boundarysupply.com",
+          "bose.ca",
+          "bouqs.com",
+          "irobot.ca",
+          "swarovski.com",
+          "bricstore.com",
+          "coupons.com",
+          "brightland.co",
+          "vice.com",
+          "brooklinen.com",
+          "brother.ca",
+          "brooklynbedding.com",
+          "brookstone.com",
+          "brooksbrothers.com",
+          "buffalojeans.ca",
+          "bungaloweumundi.com",
+          "burga.com",
+          "officedepot.com",
+          "verizonwireless.com",
+          "butcherbox.com",
+          "ca.dollarshaveclub.com",
+          "ca.hotels.com",
+          "ca.aukey.com",
+          "ca.patpat.com",
+          "lanebryant.com",
+          "ca.jbl.com",
+          "ca.kayak.com",
+          "cabelas.com",
+          "ca.loccitane.com",
+          "ca.mavi.com",
+          "calumetphoto.de",
+          "calpaktravel.com",
+          "calderalab.com",
+          "calvinklein.com",
+          "cameralabs.com",
+          "oppo.com",
+          "roots.com",
+          "candyclub.com",
+          "canon.com",
+          "cvs.com",
+          "carawayhome.com",
+          "lululemon.com",
+          "carhartt.com",
+          "cartermuseum.org",
+          "target.com",
+          "casper.com",
+          "cb2.com",
+          "catbirdnyc.com",
+          "macys.com",
+          "catfootwear.com",
+          "colleenrothschild.com",
+          "evitamins.com",
+          "cewe.co.uk",
+          "indigo.ca",
+          "charlestyrwhitt.com",
+          "cheapoair.ca",
+          "peakdesign.com",
+          "chefsplate.com",
+          "chiefsson.com.au",
+          "chewy.com",
+          "childrensplace.com",
+          "chrismccaw.com",
+          "thebodyshop.com",
+          "chromeindustries.com",
+          "citypass.com",
+          "cjr.org",
+          "clarins.ca",
+          "clearly.ca",
+          "linksynergy.com",
+          "cc-dt.com",
+          "closetsamples.com",
+          "clubmonaco.ca",
+          "coastappliances.ca",
+          "coachoutlet.com",
+          "columbiasportswear.ca",
+          "colourpop.com",
+          "keurig.com",
+          "verizon.com",
+          "visible.com",
+          "dpreview.com",
+          "foreignpolicy.com",
+          "fondationcarmignac.com",
+          "contact-sheet.net",
+          "costco.com",
+          "containerstore.com",
+          "cosstores.com",
+          "cotopaxi.com",
+          "cozyearth.com",
+          "crayola.com",
+          "crateandbarrel.com",
+          "crocs.com",
+          "crocs.ca",
+          "crowdcow.com",
+          "cricut.com",
+          "cuyana.com",
+          "sennheiser.com",
+          "daily-harvest.com",
+          "daguerreiansociety.org",
+          "danwintersphoto.com",
+          "davidstea.com",
+          "dcshoes.com",
+          "deadline.com",
+          "linenchest.com",
+          "demellierlondon.com",
+          "staples.com",
+          "homethreads.com",
+          "dickssportinggoods.com",
+          "ninjakitchen.com",
+          "diptyqueparis.com",
+          "skylum.com",
+          "dreamcloudsleep.com",
+          "drizly.com",
+          "dronedj.com",
+          "drsquatch.com",
+          "duckcamp.com",
+          "dungarees.com",
+          "dxo.com",
+          "dylanscandybar.com",
+          "dw.com",
+          "dwr.com",
+          "dysoncanada.ca",
+          "smallable.com",
+          "thebay.com",
+          "ecco.com",
+          "ecobee.com",
+          "eddiebauer.com",
+          "eddiebauer.ca",
+          "edward-weston.com",
+          "edwardburtynsky.com",
+          "frankandoak.com",
+          "egglestonartfoundation.org",
+          "eisa.eu",
+          "emandfriends.com",
+          "madewell.com",
+          "emilymcdowell.com",
+          "vichy.ca",
+          "wikipedia.org",
+          "longchamp.com",
+          "metmuseum.org",
+          "sierra.com",
+          "newegg.com",
+          "flattered.com",
+          "katespade.com",
+          "lifestraw.com",
+          "thenorthface.com",
+          "stanley1913.com",
+          "victrola.com",
+          "eumundicoffeeco.com.au",
+          "eumundimarkets.com.au",
+          "yeti.com",
+          "worx.com",
+          "evernew.ca",
+          "expedia.ca",
+          "express.com",
+          "eyeslipsface.com",
+          "lacoste.com",
+          "loft.com",
+          "jcrew.com",
+          "fairweatherclothing.com",
+          "famousfootwear.ca",
+          "fanatics.com",
+          "purplecarrot.com",
+          "featureshoot.com",
+          "fentybeauty.com",
+          "filson.com",
+          "finbarr-oreilly.com",
+          "flamehill.com.au",
+          "flighthub.com",
+          "fluidstance.com",
+          "focuscamera.com",
+          "loccitane.com",
+          "food52.com",
+          "foreo.com",
+          "fosseysgin.com.au",
+          "fossil.com",
+          "foto-erhardt.de",
+          "victoriassecret.com",
+          "frame-store.com",
+          "freshcleantees.com",
+          "fromourplace.com",
+          "hermanmiller.com",
+          "fultonandroark.com",
+          "fye.com",
+          "garycphotography.com",
+          "raise.com",
+          "voanews.com",
+          "getyourguide.com",
+          "ghbass.com",
+          "gibsonlook.com",
+          "giftcards.com",
+          "lovevery.com",
+          "girlswhoclick.org",
+          "gld.com",
+          "llbean.com",
+          "timex.com",
+          "ulta.com",
+          "glossier.com",
+          "globoshoes.com",
+          "travelandleisure.com",
+          "godiva.ca",
+          "godiva.com",
+          "goodamerican.com",
+          "google.com",
+          "gordonparksfoundation.org",
+          "quince.com",
+          "graymalin.com",
+          "greatdigitalgoods.com",
+          "greatjonesgoods.com",
+          "greenkidcrafts.com",
+          "growthops.com.au",
+          "grove.co",
+          "grovemade.com",
+          "hadeshulahouse.com",
+          "haerfest.com",
+          "halloweencostumes.ca",
+          "hannaandersson.com",
+          "harryrosen.com",
+          "hatjecantz.de",
+          "hatley.com",
+          "hayneedle.com",
+          "helixsleep.com",
+          "hellofresh.ca",
+          "lootcrate.com",
+          "huckberry.com",
+          "misen.com",
+          "lorextechnology.com",
+          "overstock.com",
+          "thumbtack.com",
+          "vrbo.com",
+          "zazzle.com",
+          "herschel.ca",
+          "heymondo.com",
+          "highlights.com",
+          "history.com",
+          "holaeumundi.com.au",
+          "homeandcooksales.com",
+          "homehardware.ca",
+          "homesick.com",
+          "orvis.com",
+          "hrblock.ca",
+          "httpspercent3apercent2fpercent2fsurprise.katespade.comp.c2fsurprise-sale-view-all",
+          "wayfair.com",
+          "pillowtalk.com.au",
+          "tartecosmetics.com",
+          "theverge.com",
+          "hushpuppies.com",
+          "hunterboots.com",
+          "icp.org",
+          "worldmarket.com",
+          "imaging-resource.com",
+          "lumens.com",
+          "indiegogo.com",
+          "imperialhoteleumundi.com.au",
+          "insighteditions.com",
+          "soludos.com",
+          "jackerwin.com",
+          "jamiesonvitamins.com",
+          "jackshainman.com",
+          "keds.com",
+          "jasoneskenazi.com",
+          "jewlr.ca",
+          "jingus.com",
+          "joann.com",
+          "joetabacca.com",
+          "jomashop.com",
+          "journeys.ca",
+          "jossandmain.com",
+          "judy.co",
+          "karsh.org",
+          "keh.com",
+          "kenleephotography.com",
+          "kerastase.ca",
+          "kennethcole.com",
+          "kianahayeri.com",
+          "keurig.ca",
+          "kiehls.ca",
+          "kiehls.com",
+          "kitchenaid.com",
+          "kiwico.com",
+          "kodiakboots.com",
+          "kobobooks.com",
+          "kosterina.com",
+          "kutfromthekloth.com",
+          "lancome.ca",
+          "largesense.com",
+          "laroche-posay.ca",
+          "lasenza.ca",
+          "masterclass.com",
+          "leatherology.com",
+          "lensculture.com",
+          "lensrentals.com",
+          "lepuzz.com",
+          "levainbakery.com",
+          "levityhome.com",
+          "life.com",
+          "lifeproof.com",
+          "lindahenkel.com",
+          "lindtusa.com",
+          "littlebluehouse.com",
+          "littleburgundyshoes.com",
+          "littlepassports.com",
+          "livingsocial.com",
+          "lookfantastic.fi",
+          "loopsbeauty.com",
+          "lowes.ca",
+          "lumecube.com",
+          "lumenera.com",
+          "lunya.co",
+          "maccosmetics.ca",
+          "sears.com",
+          "serenaandlily.com",
+          "sipsby.com",
+          "techradar.com",
+          "zara.com",
+          "mackbooks.co.uk",
+          "magiclinen.com",
+          "magnumphotos.com",
+          "maisonette.com",
+          "makeuseof.com",
+          "manlymanco.com",
+          "mapplethorpe.org",
+          "marcobreuer.com",
+          "marketbistro.com.au",
+          "markandgraham.com",
+          "mary-cairncross.sunshinecoast.qld.gov.au",
+          "martinschoeller.com",
+          "on1.com",
+          "motherhood.com",
+          "mdesignhomedecor.com",
+          "otterbox.com",
+          "mega.nz",
+          "mejuri.com",
+          "melissaanddoug.com",
+          "merimeri.com",
+          "meundies.com",
+          "meyercanada.ca",
+          "michaelkors.ca",
+          "milkbarstore.com",
+          "missionworkshop.com",
+          "missionfarmscbd.com",
+          "mitchepstein.net",
+          "moma.org",
+          "moft.us",
+          "montikids.com",
+          "monos.com",
+          "montessoriservices.com",
+          "monicaandandy.com",
+          "moonfab.com",
+          "mountainhardwear.ca",
+          "mountainwarehouse.com",
+          "muradskincare.ca",
+          "munchkin.com",
+          "muskegonartmuseum.org",
+          "museportraits.co.uk",
+          "mybillie.com",
+          "mymodernmet.com",
+          "myspotifyplaque.com",
+          "myvega.ca",
+          "nanpa.org",
+          "naturamarket.ca",
+          "nectarsleep.com",
+          "nestnewyork.com",
+          "newbalance.ca",
+          "news.mongabay.com",
+          "theshoppingchannel.com",
+          "nixon.com",
+          "nj.com",
+          "nipofcourage.com",
+          "nomadgoods.com",
+          "nordstromrack.com",
+          "nps.gov",
+          "novotelsunshinecoast.com.au",
+          "oakley.com",
+          "offthegridnews.com",
+          "olikalife.com",
+          "ooni.com",
+          "orangutans-sos.org",
+          "orkinphoto.com",
+          "origins.com",
+          "papier.com",
+          "parkcameras.com",
+          "patagonia.ca",
+          "patronmagazine.com",
+          "penningtons.com",
+          "peoplesjewellers.com",
+          "perfectlens.ca",
+          "petesouza.com",
+          "petercavanagh.us",
+          "phonesoap.com",
+          "photofocus.com",
+          "philips.ca",
+          "photoville.nyc",
+          "photographylife.com",
+          "pieceworkpuzzles.com",
+          "play.google.com",
+          "popinaeumundi.com.au",
+          "poketo.com",
+          "potterybarnkids.com",
+          "spanx.com",
+          "prfo.com",
+          "primecables.ca",
+          "prohockeylife.com",
+          "publicgoods.com",
+          "pullmanalbertpark.com.au",
+          "rstyle.me",
+          "qehomelinens.com",
+          "quiksilver.com",
+          "readingeggs.com",
+          "redhookeditions.com",
+          "reddress.com",
+          "reebok.ca",
+          "reitmans.com",
+          "renodepot.com",
+          "revo.com",
+          "revuezzle.com",
+          "ridgewallet.com",
+          "ripleyaquariums.com",
+          "ripleys.com",
+          "rocksbox.com",
+          "rockport.ca",
+          "rona.ca",
+          "rothys.com",
+          "roxy.com",
+          "ruggable.com",
+          "safetywing.com",
+          "rw-co.com",
+          "saddlebackleather.com",
+          "sail.ca",
+          "saksfifthavenue.com",
+          "saltwaterecotours.com.au",
+          "sarahflint.com",
+          "saxxunderwear.ca",
+          "scentbird.com",
+          "vitamix.com",
+          "sephora.sg",
+          "sg.iherb.com",
+          "shareasale-analytics.com",
+          "shareasale.com",
+          "zwilling.com",
+          "templeandwebster.com.au",
+          "shopbala.com",
+          "shopbentley.com",
+          "shopdisney.com",
+          "shopperplus.ca",
+          "shopterrain.com",
+          "shuuemura.ca",
+          "weightwatchers.ca",
+          "simplehuman.com",
+          "simmsfishing.com",
+          "skagen.com",
+          "slothconservation.org",
+          "snopes.com",
+          "snowehome.com",
+          "sofitelbrisbane.com.au",
+          "solo-ny.com",
+          "soniceditions.com",
+          "sorelfootwear.ca",
+          "spicersretreats.com",
+          "sportsboxco.com",
+          "sportinglife.ca",
+          "squattypotty.com",
+          "starward.com.au",
+          "stephenshore.net",
+          "staycourant.com",
+          "steidl.de",
+          "stoneycloverlane.com",
+          "storypod.com",
+          "sunglasshut.com",
+          "taskrabbit.com",
+          "uncommongoods.com",
+          "suzieszterhas.com",
+          "suzyshier.com",
+          "surveyjunkie.com",
+          "t.cfjump.com",
+          "taliadinapoli.com",
+          "thecalilehotel.com",
+          "thebarbellbox.com",
+          "thedopehiphopshop.com",
+          "thegldshop.com",
+          "thecrazycap.com",
+          "thelasthunt.com",
+          "thelongapron.com.au",
+          "theorlandomall.com",
+          "therabody.com",
+          "thetiebar.com",
+          "thesource.ca",
+          "thesill.com",
+          "thinktankscholar.com",
+          "tiptoptailors.ca",
+          "tnuck.com",
+          "toddsnyder.com",
+          "tomssurprisesale.ca",
+          "tridentflyfishing.com",
+          "tylermitchell.co",
+          "ugg.com",
+          "urbanarmorgear.com",
+          "urldefense.com",
+          "urban-planet.com",
+          "urbandecay.ca",
+          "us.babymori.com",
+          "us.asos.com",
+          "us.eufy.com",
+          "us.loopearplugs.com",
+          "us.polaroid.com",
+          "us.saint-james.com",
+          "usualwines.com",
+          "vahdamteas.com",
+          "villeroy-boch.ca",
+          "vistaprint.ca",
+          "vsslgear.com",
+          "vuoriclothing.com",
+          "wandrd.com",
+          "wasserstein-home.com",
+          "wazofurniture.com",
+          "wayfair.ca",
+          "westbourne.com",
+          "well.ca",
+          "west49.com",
+          "wexphotovideo.com",
+          "wildnet.org",
+          "wolverine.com",
+          "wptasty.com",
+          "wsisports.com",
+          "wsws.org",
+          "zipcar.com",
+          "yesstyle.com",
+          "yvesrocher.ca",
+          "zalora.sg",
+          "zoner.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 18,
+        "value": [
+          {
+            "domain": "us.polaroid.com"
+          },
+          {
+            "domain": "ca.aukey.com"
+          },
+          {
+            "domain": "ca.kayak.com"
+          },
+          {
+            "domain": "us.saint-james.com"
+          },
+          {
+            "domain": "us.eufy.com"
+          },
+          {
+            "domain": "ca.hotels.com"
+          },
+          {
+            "domain": "ca.loccitane.com"
+          },
+          {
+            "domain": "sg.iherb.com"
+          },
+          {
+            "domain": "ancestry.ca"
+          },
+          {
+            "domain": "ca.jbl.com"
+          },
+          {
+            "domain": "ca.mavi.com"
+          },
+          {
+            "domain": "us.asos.com"
+          },
+          {
+            "domain": "ca.dollarshaveclub.com"
+          },
+          {
+            "domain": "us.loopearplugs.com"
+          },
+          {
+            "domain": "au.puma.com"
+          },
+          {
+            "domain": "ca.patpat.com"
+          },
+          {
+            "domain": "hermanmiller.com"
+          },
+          {
+            "domain": "us.babymori.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 29,
+        "value": [
+          {
+            "domain": "totalwine.com"
+          },
+          {
+            "domain": "brumate.com"
+          },
+          {
+            "domain": "clearstem.com"
+          },
+          {
+            "domain": "polaroid.com"
+          },
+          {
+            "domain": "loopearplugs.com"
+          },
+          {
+            "domain": "babymori.com"
+          },
+          {
+            "domain": "saint-james.com"
+          },
+          {
+            "domain": "bigblanket.com"
+          },
+          {
+            "domain": "jbl.com"
+          },
+          {
+            "domain": "paintyourlife.com"
+          },
+          {
+            "domain": "urbanstems.com"
+          },
+          {
+            "domain": "mavi.com"
+          },
+          {
+            "domain": "kizik.com"
+          },
+          {
+            "domain": "kayak.com"
+          },
+          {
+            "domain": "kurufootwear.com"
+          },
+          {
+            "domain": "personalizationmall.com"
+          },
+          {
+            "domain": "aukey.com"
+          },
+          {
+            "domain": "dollarshaveclub.com"
+          },
+          {
+            "domain": "lensdirect.com"
+          },
+          {
+            "domain": "swoveralls.com"
+          },
+          {
+            "domain": "compartes.com"
+          },
+          {
+            "domain": "patpat.com"
+          },
+          {
+            "domain": "puma.com"
+          },
+          {
+            "domain": "ftd.com"
+          },
+          {
+            "domain": "eufy.com"
+          },
+          {
+            "domain": "olly.com"
+          },
+          {
+            "domain": "hotels.com"
+          },
+          {
+            "domain": "iherb.com"
+          },
+          {
+            "domain": "materialkitchen.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 70.400024,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 42.15001,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 37.050007,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 36.500008,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 32.700005,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 28.650005,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 26.750002,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 25.550001,
+            "vertical": "Home / Art"
+          },
+          {
+            "count": 24.600004,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 23.699999,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 22.1,
+            "vertical": "Entertainment / Hobbies"
+          },
+          {
+            "count": 20.85,
+            "vertical": "Sports / Outdoor"
+          },
+          {
+            "count": 15.899998,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 15.049997,
+            "vertical": "Home / Beds & Bedding"
+          },
+          {
+            "count": 13.899999,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 12.699999,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 10.549999,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 10.299999,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 10.299999,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 10.249999,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 9.3,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 9.299999,
+            "vertical": "Gifts / Personalised"
+          },
+          {
+            "count": 9.25,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 8.749999,
+            "vertical": "Food / Alcohol"
+          },
+          {
+            "count": 8.450001,
+            "vertical": "Travel / Attractions"
+          },
+          {
+            "count": 8.3,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 7.6999993,
+            "vertical": "Fashion / Jewellery"
+          },
+          {
+            "count": 7.35,
+            "vertical": "Home / DIY"
+          },
+          {
+            "count": 6.7000003,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 6.45,
+            "vertical": "Food / Confectionery"
+          },
+          {
+            "count": 6.35,
+            "vertical": "Fashion / Kids"
+          },
+          {
+            "count": 5.75,
+            "vertical": "Fashion / Lingerie"
+          },
+          {
+            "count": 5.6,
+            "vertical": "Gifts / Kids"
+          },
+          {
+            "count": 5.5,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 4.85,
+            "vertical": "Travel / Accessories"
+          },
+          {
+            "count": 4.75,
+            "vertical": "Home / Babycare"
+          },
+          {
+            "count": 4.75,
+            "vertical": "Home / Security"
+          },
+          {
+            "count": 4.55,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 3.9,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 3.8,
+            "vertical": "Travel / Flights"
+          },
+          {
+            "count": 3.75,
+            "vertical": "Health / Fragrances"
+          },
+          {
+            "count": 3.65,
+            "vertical": "Travel / Vacation"
+          },
+          {
+            "count": 2.95,
+            "vertical": "Health / Eyecare"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Business / Office"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Gifts / Flowers"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Sports / Hunting"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Entertainment / Movies"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Technology / Editing Software"
+          },
+          {
+            "count": 2.6999998,
+            "vertical": "Food / Take Out"
+          },
+          {
+            "count": 2.55,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 2.4499998,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 2,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Finance / Cards"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Online / Freebies"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Finance / Insurance"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Home / Garden"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Home / Pets"
+          },
+          {
+            "count": 1.8,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 1.35,
+            "vertical": "Finance / Investments"
+          },
+          {
+            "count": 1,
+            "vertical": "Online / Security"
+          },
+          {
+            "count": 1,
+            "vertical": "Online / VPN"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Accounts"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Forex & Crypto"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / CBD"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Weight Loss"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Online / Surveys"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Travel / Car Hire"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Motoring / Cars"
+          },
+          {
+            "count": 0.8,
+            "vertical": "Shopping / Wedding"
+          },
+          {
+            "count": 0.7,
+            "vertical": "Business / Energy"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 717,
+      "value": [
+        "sjv.io",
+        "123ink.ca",
+        "aliexpress.com",
+        "1800flowers.ca",
+        "1800flowers.com",
+        "etsy.com",
+        "twitter.com",
+        "adobe.com",
+        "23andme.com",
+        "prf.hn",
+        "acdsee.com",
+        "sportsmansguide.com",
+        "si.edu",
+        "9to5mac.com",
+        "apple.com",
+        "amazon.com",
+        "abercrombie.com",
+        "wyze.com",
+        "microsoft.com",
+        "basspro.com",
+        "instagram.com",
+        "facebook.com",
+        "hm.com",
+        "nike.com",
+        "nordstrom.com",
+        "aboutamazon.com",
+        "underarmour.com",
+        "academy.com",
+        "cnn.com",
+        "abt.com",
+        "dell.com",
+        "ray-ban.com",
+        "bbc.com",
+        "jackery.com",
+        "lenovo.com",
+        "nordvpn.com",
+        "sony.com",
+        "samsung.com",
+        "t-mobile.com",
+        "spotify.com",
+        "shutterfly.com",
+        "theatlantic.com",
+        "acer.com",
+        "adidas.com",
+        "everlane.com",
+        "adorama.com",
+        "softonic.com",
+        "nationalgeographic.com",
+        "ae.com",
+        "rosettastone.com",
+        "walmart.com",
+        "insider.com",
+        "klook.com",
+        "fiverr.com",
+        "frontgate.com",
+        "akk.com",
+        "aldoshoes.com",
+        "logitech.com",
+        "entertainment.com",
+        "alisonrossiter.com",
+        "partnercentric.com",
+        "alexmill.com",
+        "lazada.sg",
+        "allbirds.com",
+        "allenedmonds.com",
+        "allthatsinteresting.com",
+        "altitude-sports.com",
+        "amateurphotographer.co.uk",
+        "amazon.ca",
+        "geox.com",
+        "amiteshel.com",
+        "amzn.to",
+        "ancestry.ca",
+        "andar.com",
+        "andygotts.com",
+        "ancestry.com",
+        "jcpenney.com",
+        "annieskitclubs.com",
+        "anntaylor.com",
+        "anseladams.com",
+        "answersingenesis.org",
+        "sephora.com",
+        "anthropologie.com",
+        "hp.com",
+        "aperture.org",
+        "suitsupply.com",
+        "bestbuy.com",
+        "youtube.com",
+        "bookofthemonth.com",
+        "gettyimages.com",
+        "kohls.com",
+        "shopmoment.com",
+        "garmin.com",
+        "npr.org",
+        "lego.com",
+        "arcteryx.com",
+        "ardene.com",
+        "aristidephoto.com",
+        "arnoldnewman.com",
+        "armani-beauty.ca",
+        "baltimoresun.com",
+        "artifactuprising.com",
+        "artic.edu",
+        "latimes.com",
+        "artnet.com",
+        "artwolfe.com",
+        "ashleyhomestore.ca",
+        "ashleyfurniture.com",
+        "sonos.com",
+        "asos.com",
+        "bose.com",
+        "surlatable.com",
+        "minted.com",
+        "gap.com",
+        "athleticpropulsionlabs.com",
+        "atncorp.com",
+        "gapcanada.ca",
+        "fandango.com",
+        "au.puma.com",
+        "samsclub.com",
+        "australiandistillers.org.au",
+        "parachutehome.com",
+        "zappos.com",
+        "aveda.com",
+        "avedonfoundation.org",
+        "awin.com",
+        "awaytravel.com",
+        "backcountry.com",
+        "baggu.com",
+        "baggallini.com",
+        "baskeumundi.com.au",
+        "bassandflindersdistillery.com",
+        "bearaby.com",
+        "patagonia.com",
+        "bedbathandbeyond.ca",
+        "bedbathandbeyond.com",
+        "cardcash.com",
+        "bedthreads.com",
+        "beermonthclub.com",
+        "bellroy.com",
+        "belkin.com",
+        "bench.ca",
+        "benhowland.com.au",
+        "levi.com",
+        "bhphotovideo.com",
+        "urbanoutfitters.com",
+        "biotherm.ca",
+        "biovea.com",
+        "birdies.com",
+        "birchbox.com",
+        "biome.com.au",
+        "bladehq.com",
+        "blind-magazine.com",
+        "homedepot.com",
+        "randco.com",
+        "bodum.com",
+        "lowes.com",
+        "blnts.com",
+        "columbia.com",
+        "coinbase.com",
+        "depositphotos.com",
+        "ebay.com",
+        "freepeople.com",
+        "goruck.com",
+        "groupon.com",
+        "houzz.com",
+        "michaels.com",
+        "merrell.com",
+        "myheritage.com",
+        "saatva.com",
+        "potterybarn.com",
+        "rei.com",
+        "shopbop.com",
+        "solostove.com",
+        "toryburch.com",
+        "westelm.com",
+        "loc.gov",
+        "wikimedia.org",
+        "smithsonianmag.com",
+        "williams-sonoma.com",
+        "timesofisrael.com",
+        "bloomingdales.com",
+        "bodenusa.com",
+        "bogsfootwear.ca",
+        "bonds.com.au",
+        "etihad.com",
+        "bookoutlet.ca",
+        "theguardian.com",
+        "boundarysupply.com",
+        "bose.ca",
+        "bouqs.com",
+        "irobot.ca",
+        "swarovski.com",
+        "bricstore.com",
+        "coupons.com",
+        "brightland.co",
+        "vice.com",
+        "brooklinen.com",
+        "brother.ca",
+        "brooklynbedding.com",
+        "brookstone.com",
+        "brooksbrothers.com",
+        "buffalojeans.ca",
+        "bungaloweumundi.com",
+        "burga.com",
+        "officedepot.com",
+        "verizonwireless.com",
+        "butcherbox.com",
+        "ca.dollarshaveclub.com",
+        "ca.hotels.com",
+        "ca.aukey.com",
+        "ca.patpat.com",
+        "lanebryant.com",
+        "ca.jbl.com",
+        "ca.kayak.com",
+        "cabelas.com",
+        "ca.loccitane.com",
+        "ca.mavi.com",
+        "calumetphoto.de",
+        "calpaktravel.com",
+        "calderalab.com",
+        "calvinklein.com",
+        "cameralabs.com",
+        "oppo.com",
+        "roots.com",
+        "candyclub.com",
+        "canon.com",
+        "cvs.com",
+        "carawayhome.com",
+        "lululemon.com",
+        "carhartt.com",
+        "cartermuseum.org",
+        "target.com",
+        "casper.com",
+        "cb2.com",
+        "catbirdnyc.com",
+        "macys.com",
+        "catfootwear.com",
+        "colleenrothschild.com",
+        "evitamins.com",
+        "cewe.co.uk",
+        "indigo.ca",
+        "charlestyrwhitt.com",
+        "cheapoair.ca",
+        "peakdesign.com",
+        "chefsplate.com",
+        "chiefsson.com.au",
+        "chewy.com",
+        "childrensplace.com",
+        "chrismccaw.com",
+        "thebodyshop.com",
+        "chromeindustries.com",
+        "citypass.com",
+        "cjr.org",
+        "clarins.ca",
+        "clearly.ca",
+        "linksynergy.com",
+        "cc-dt.com",
+        "closetsamples.com",
+        "clubmonaco.ca",
+        "coastappliances.ca",
+        "coachoutlet.com",
+        "columbiasportswear.ca",
+        "colourpop.com",
+        "keurig.com",
+        "verizon.com",
+        "visible.com",
+        "dpreview.com",
+        "foreignpolicy.com",
+        "fondationcarmignac.com",
+        "contact-sheet.net",
+        "costco.com",
+        "containerstore.com",
+        "cosstores.com",
+        "cotopaxi.com",
+        "cozyearth.com",
+        "crayola.com",
+        "crateandbarrel.com",
+        "crocs.com",
+        "crocs.ca",
+        "crowdcow.com",
+        "cricut.com",
+        "cuyana.com",
+        "sennheiser.com",
+        "daily-harvest.com",
+        "daguerreiansociety.org",
+        "danwintersphoto.com",
+        "davidstea.com",
+        "dcshoes.com",
+        "deadline.com",
+        "linenchest.com",
+        "demellierlondon.com",
+        "staples.com",
+        "homethreads.com",
+        "dickssportinggoods.com",
+        "ninjakitchen.com",
+        "diptyqueparis.com",
+        "skylum.com",
+        "dreamcloudsleep.com",
+        "drizly.com",
+        "dronedj.com",
+        "drsquatch.com",
+        "duckcamp.com",
+        "dungarees.com",
+        "dxo.com",
+        "dylanscandybar.com",
+        "dw.com",
+        "dwr.com",
+        "dysoncanada.ca",
+        "smallable.com",
+        "thebay.com",
+        "ecco.com",
+        "ecobee.com",
+        "eddiebauer.com",
+        "eddiebauer.ca",
+        "edward-weston.com",
+        "edwardburtynsky.com",
+        "frankandoak.com",
+        "egglestonartfoundation.org",
+        "eisa.eu",
+        "emandfriends.com",
+        "madewell.com",
+        "emilymcdowell.com",
+        "vichy.ca",
+        "wikipedia.org",
+        "longchamp.com",
+        "metmuseum.org",
+        "sierra.com",
+        "newegg.com",
+        "flattered.com",
+        "katespade.com",
+        "lifestraw.com",
+        "thenorthface.com",
+        "stanley1913.com",
+        "victrola.com",
+        "eumundicoffeeco.com.au",
+        "eumundimarkets.com.au",
+        "yeti.com",
+        "worx.com",
+        "evernew.ca",
+        "expedia.ca",
+        "express.com",
+        "eyeslipsface.com",
+        "lacoste.com",
+        "loft.com",
+        "jcrew.com",
+        "fairweatherclothing.com",
+        "famousfootwear.ca",
+        "fanatics.com",
+        "purplecarrot.com",
+        "featureshoot.com",
+        "fentybeauty.com",
+        "filson.com",
+        "finbarr-oreilly.com",
+        "flamehill.com.au",
+        "flighthub.com",
+        "fluidstance.com",
+        "focuscamera.com",
+        "loccitane.com",
+        "food52.com",
+        "foreo.com",
+        "fosseysgin.com.au",
+        "fossil.com",
+        "foto-erhardt.de",
+        "victoriassecret.com",
+        "frame-store.com",
+        "freshcleantees.com",
+        "fromourplace.com",
+        "hermanmiller.com",
+        "fultonandroark.com",
+        "fye.com",
+        "garycphotography.com",
+        "raise.com",
+        "voanews.com",
+        "getyourguide.com",
+        "ghbass.com",
+        "gibsonlook.com",
+        "giftcards.com",
+        "lovevery.com",
+        "girlswhoclick.org",
+        "gld.com",
+        "llbean.com",
+        "timex.com",
+        "ulta.com",
+        "glossier.com",
+        "globoshoes.com",
+        "travelandleisure.com",
+        "godiva.ca",
+        "godiva.com",
+        "goodamerican.com",
+        "google.com",
+        "gordonparksfoundation.org",
+        "quince.com",
+        "graymalin.com",
+        "greatdigitalgoods.com",
+        "greatjonesgoods.com",
+        "greenkidcrafts.com",
+        "growthops.com.au",
+        "grove.co",
+        "grovemade.com",
+        "hadeshulahouse.com",
+        "haerfest.com",
+        "halloweencostumes.ca",
+        "hannaandersson.com",
+        "harryrosen.com",
+        "hatjecantz.de",
+        "hatley.com",
+        "hayneedle.com",
+        "helixsleep.com",
+        "hellofresh.ca",
+        "lootcrate.com",
+        "huckberry.com",
+        "misen.com",
+        "lorextechnology.com",
+        "overstock.com",
+        "thumbtack.com",
+        "vrbo.com",
+        "zazzle.com",
+        "herschel.ca",
+        "heymondo.com",
+        "highlights.com",
+        "history.com",
+        "holaeumundi.com.au",
+        "homeandcooksales.com",
+        "homehardware.ca",
+        "homesick.com",
+        "orvis.com",
+        "hrblock.ca",
+        "httpspercent3apercent2fpercent2fsurprise.katespade.comp.c2fsurprise-sale-view-all",
+        "wayfair.com",
+        "pillowtalk.com.au",
+        "tartecosmetics.com",
+        "theverge.com",
+        "hushpuppies.com",
+        "hunterboots.com",
+        "icp.org",
+        "worldmarket.com",
+        "imaging-resource.com",
+        "lumens.com",
+        "indiegogo.com",
+        "imperialhoteleumundi.com.au",
+        "insighteditions.com",
+        "soludos.com",
+        "jackerwin.com",
+        "jamiesonvitamins.com",
+        "jackshainman.com",
+        "keds.com",
+        "jasoneskenazi.com",
+        "jewlr.ca",
+        "jingus.com",
+        "joann.com",
+        "joetabacca.com",
+        "jomashop.com",
+        "journeys.ca",
+        "jossandmain.com",
+        "judy.co",
+        "karsh.org",
+        "keh.com",
+        "kenleephotography.com",
+        "kerastase.ca",
+        "kennethcole.com",
+        "kianahayeri.com",
+        "keurig.ca",
+        "kiehls.ca",
+        "kiehls.com",
+        "kitchenaid.com",
+        "kiwico.com",
+        "kodiakboots.com",
+        "kobobooks.com",
+        "kosterina.com",
+        "kutfromthekloth.com",
+        "lancome.ca",
+        "largesense.com",
+        "laroche-posay.ca",
+        "lasenza.ca",
+        "masterclass.com",
+        "leatherology.com",
+        "lensculture.com",
+        "lensrentals.com",
+        "lepuzz.com",
+        "levainbakery.com",
+        "levityhome.com",
+        "life.com",
+        "lifeproof.com",
+        "lindahenkel.com",
+        "lindtusa.com",
+        "littlebluehouse.com",
+        "littleburgundyshoes.com",
+        "littlepassports.com",
+        "livingsocial.com",
+        "lookfantastic.fi",
+        "loopsbeauty.com",
+        "lowes.ca",
+        "lumecube.com",
+        "lumenera.com",
+        "lunya.co",
+        "maccosmetics.ca",
+        "sears.com",
+        "serenaandlily.com",
+        "sipsby.com",
+        "techradar.com",
+        "zara.com",
+        "mackbooks.co.uk",
+        "magiclinen.com",
+        "magnumphotos.com",
+        "maisonette.com",
+        "makeuseof.com",
+        "manlymanco.com",
+        "mapplethorpe.org",
+        "marcobreuer.com",
+        "marketbistro.com.au",
+        "markandgraham.com",
+        "mary-cairncross.sunshinecoast.qld.gov.au",
+        "martinschoeller.com",
+        "on1.com",
+        "motherhood.com",
+        "mdesignhomedecor.com",
+        "otterbox.com",
+        "mega.nz",
+        "mejuri.com",
+        "melissaanddoug.com",
+        "merimeri.com",
+        "meundies.com",
+        "meyercanada.ca",
+        "michaelkors.ca",
+        "milkbarstore.com",
+        "missionworkshop.com",
+        "missionfarmscbd.com",
+        "mitchepstein.net",
+        "moma.org",
+        "moft.us",
+        "montikids.com",
+        "monos.com",
+        "montessoriservices.com",
+        "monicaandandy.com",
+        "moonfab.com",
+        "mountainhardwear.ca",
+        "mountainwarehouse.com",
+        "muradskincare.ca",
+        "munchkin.com",
+        "muskegonartmuseum.org",
+        "museportraits.co.uk",
+        "mybillie.com",
+        "mymodernmet.com",
+        "myspotifyplaque.com",
+        "myvega.ca",
+        "nanpa.org",
+        "naturamarket.ca",
+        "nectarsleep.com",
+        "nestnewyork.com",
+        "newbalance.ca",
+        "news.mongabay.com",
+        "theshoppingchannel.com",
+        "nixon.com",
+        "nj.com",
+        "nipofcourage.com",
+        "nomadgoods.com",
+        "nordstromrack.com",
+        "nps.gov",
+        "novotelsunshinecoast.com.au",
+        "oakley.com",
+        "offthegridnews.com",
+        "olikalife.com",
+        "ooni.com",
+        "orangutans-sos.org",
+        "orkinphoto.com",
+        "origins.com",
+        "papier.com",
+        "parkcameras.com",
+        "patagonia.ca",
+        "patronmagazine.com",
+        "penningtons.com",
+        "peoplesjewellers.com",
+        "perfectlens.ca",
+        "petesouza.com",
+        "petercavanagh.us",
+        "phonesoap.com",
+        "photofocus.com",
+        "philips.ca",
+        "photoville.nyc",
+        "photographylife.com",
+        "pieceworkpuzzles.com",
+        "play.google.com",
+        "popinaeumundi.com.au",
+        "poketo.com",
+        "potterybarnkids.com",
+        "spanx.com",
+        "prfo.com",
+        "primecables.ca",
+        "prohockeylife.com",
+        "publicgoods.com",
+        "pullmanalbertpark.com.au",
+        "rstyle.me",
+        "qehomelinens.com",
+        "quiksilver.com",
+        "readingeggs.com",
+        "redhookeditions.com",
+        "reddress.com",
+        "reebok.ca",
+        "reitmans.com",
+        "renodepot.com",
+        "revo.com",
+        "revuezzle.com",
+        "ridgewallet.com",
+        "ripleyaquariums.com",
+        "ripleys.com",
+        "rocksbox.com",
+        "rockport.ca",
+        "rona.ca",
+        "rothys.com",
+        "roxy.com",
+        "ruggable.com",
+        "safetywing.com",
+        "rw-co.com",
+        "saddlebackleather.com",
+        "sail.ca",
+        "saksfifthavenue.com",
+        "saltwaterecotours.com.au",
+        "sarahflint.com",
+        "saxxunderwear.ca",
+        "scentbird.com",
+        "vitamix.com",
+        "sephora.sg",
+        "sg.iherb.com",
+        "shareasale-analytics.com",
+        "shareasale.com",
+        "zwilling.com",
+        "templeandwebster.com.au",
+        "shopbala.com",
+        "shopbentley.com",
+        "shopdisney.com",
+        "shopperplus.ca",
+        "shopterrain.com",
+        "shuuemura.ca",
+        "weightwatchers.ca",
+        "simplehuman.com",
+        "simmsfishing.com",
+        "skagen.com",
+        "slothconservation.org",
+        "snopes.com",
+        "snowehome.com",
+        "sofitelbrisbane.com.au",
+        "solo-ny.com",
+        "soniceditions.com",
+        "sorelfootwear.ca",
+        "spicersretreats.com",
+        "sportsboxco.com",
+        "sportinglife.ca",
+        "squattypotty.com",
+        "starward.com.au",
+        "stephenshore.net",
+        "staycourant.com",
+        "steidl.de",
+        "stoneycloverlane.com",
+        "storypod.com",
+        "sunglasshut.com",
+        "taskrabbit.com",
+        "uncommongoods.com",
+        "suzieszterhas.com",
+        "suzyshier.com",
+        "surveyjunkie.com",
+        "t.cfjump.com",
+        "taliadinapoli.com",
+        "thecalilehotel.com",
+        "thebarbellbox.com",
+        "thedopehiphopshop.com",
+        "thegldshop.com",
+        "thecrazycap.com",
+        "thelasthunt.com",
+        "thelongapron.com.au",
+        "theorlandomall.com",
+        "therabody.com",
+        "thetiebar.com",
+        "thesource.ca",
+        "thesill.com",
+        "thinktankscholar.com",
+        "tiptoptailors.ca",
+        "tnuck.com",
+        "toddsnyder.com",
+        "tomssurprisesale.ca",
+        "tridentflyfishing.com",
+        "tylermitchell.co",
+        "ugg.com",
+        "urbanarmorgear.com",
+        "urldefense.com",
+        "urban-planet.com",
+        "urbandecay.ca",
+        "us.babymori.com",
+        "us.asos.com",
+        "us.eufy.com",
+        "us.loopearplugs.com",
+        "us.polaroid.com",
+        "us.saint-james.com",
+        "usualwines.com",
+        "vahdamteas.com",
+        "villeroy-boch.ca",
+        "vistaprint.ca",
+        "vsslgear.com",
+        "vuoriclothing.com",
+        "wandrd.com",
+        "wasserstein-home.com",
+        "wazofurniture.com",
+        "wayfair.ca",
+        "westbourne.com",
+        "well.ca",
+        "west49.com",
+        "wexphotovideo.com",
+        "wildnet.org",
+        "wolverine.com",
+        "wptasty.com",
+        "wsisports.com",
+        "wsws.org",
+        "zipcar.com",
+        "yesstyle.com",
+        "yvesrocher.ca",
+        "zalora.sg",
+        "zoner.com"
+      ]
+    },
+    "promotype": {
+      "value": "student"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Shopping / Department Stores",
+      "value": [
+        "Shopping / Department Stores",
+        "Home / Homeware",
+        "Fashion / Accessories"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 1,
+        "score": 80
+      },
+      "value": [
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 1,
+          "score": 80
+        },
+        {
+          "name": "Home / Homeware",
+          "rank": 1,
+          "score": 70
+        },
+        {
+          "name": "Fashion / Accessories",
+          "rank": 1,
+          "score": 60
+        }
+      ]
+    }
+  }
+}

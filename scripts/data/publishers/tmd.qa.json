@@ -1,0 +1,531 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 2,
+      "sampleValue": [
+        "Impact",
+        "Pampa Network"
+      ],
+      "value": [
+        "Impact",
+        "Pampa Network"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "qa",
+        "score": 0.9
+      },
+      "sampleValue": [
+        {
+          "countryCode": "qa",
+          "score": 0.9
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "qa",
+          "score": 0.9
+        }
+      ]
+    },
+    "domain": "tmd.qa",
+    "keywords": {
+      "count": 78,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "roadfest"
+        },
+        {
+          "score": 0.88,
+          "value": "stubhub"
+        },
+        {
+          "score": 0.83,
+          "value": "ofertas"
+        },
+        {
+          "score": 0.82,
+          "value": "categorias"
+        },
+        {
+          "score": 0.75,
+          "value": "ingressos"
+        },
+        {
+          "score": 0.73,
+          "value": "eventos"
+        },
+        {
+          "score": 0.72,
+          "value": "telefone"
+        },
+        {
+          "score": 0.71,
+          "value": "vegas"
+        },
+        {
+          "score": 0.62,
+          "value": "festival"
+        },
+        {
+          "score": 0.61,
+          "value": "buscar"
+        },
+        {
+          "score": 0.61,
+          "value": "empresa"
+        },
+        {
+          "score": 0.59,
+          "value": "ingresso"
+        },
+        {
+          "score": 0.59,
+          "value": "europa"
+        },
+        {
+          "score": 0.56,
+          "value": "buscando"
+        },
+        {
+          "score": 0.55,
+          "value": "londres"
+        },
+        {
+          "score": 0.54,
+          "value": "festa"
+        },
+        {
+          "score": 0.53,
+          "value": "compartilha"
+        },
+        {
+          "score": 0.53,
+          "value": "inform"
+        },
+        {
+          "score": 0.52,
+          "value": "cancelamento"
+        },
+        {
+          "score": 0.52,
+          "value": "eventbis"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "roadfest"
+        },
+        {
+          "score": 0.88,
+          "value": "stubhub"
+        },
+        {
+          "score": 0.83,
+          "value": "ofertas"
+        },
+        {
+          "score": 0.82,
+          "value": "categorias"
+        },
+        {
+          "score": 0.75,
+          "value": "ingressos"
+        },
+        {
+          "score": 0.73,
+          "value": "eventos"
+        },
+        {
+          "score": 0.72,
+          "value": "telefone"
+        },
+        {
+          "score": 0.71,
+          "value": "vegas"
+        },
+        {
+          "score": 0.62,
+          "value": "festival"
+        },
+        {
+          "score": 0.61,
+          "value": "buscar"
+        },
+        {
+          "score": 0.61,
+          "value": "empresa"
+        },
+        {
+          "score": 0.59,
+          "value": "ingresso"
+        },
+        {
+          "score": 0.59,
+          "value": "europa"
+        },
+        {
+          "score": 0.56,
+          "value": "buscando"
+        },
+        {
+          "score": 0.55,
+          "value": "londres"
+        },
+        {
+          "score": 0.54,
+          "value": "festa"
+        },
+        {
+          "score": 0.53,
+          "value": "compartilha"
+        },
+        {
+          "score": 0.53,
+          "value": "inform"
+        },
+        {
+          "score": 0.52,
+          "value": "cancelamento"
+        },
+        {
+          "score": 0.52,
+          "value": "eventbis"
+        },
+        {
+          "score": 0.51,
+          "value": "oportunidades"
+        },
+        {
+          "score": 0.5,
+          "value": "comprar"
+        },
+        {
+          "score": 0.49,
+          "value": "esportes"
+        },
+        {
+          "score": 0.49,
+          "value": "real"
+        },
+        {
+          "score": 0.48,
+          "value": "frequentes"
+        },
+        {
+          "score": 0.48,
+          "value": "pagar"
+        },
+        {
+          "score": 0.47,
+          "value": "london"
+        },
+        {
+          "score": 0.47,
+          "value": "pagamentos"
+        },
+        {
+          "score": 0.47,
+          "value": "mail"
+        },
+        {
+          "score": 0.46,
+          "value": "work"
+        },
+        {
+          "score": 0.46,
+          "value": "pagamento"
+        },
+        {
+          "score": 0.45,
+          "value": "informaes"
+        },
+        {
+          "score": 0.45,
+          "value": "festivais"
+        },
+        {
+          "score": 0.44,
+          "value": "direito"
+        },
+        {
+          "score": 0.44,
+          "value": "preferncias"
+        },
+        {
+          "score": 0.44,
+          "value": "disney"
+        },
+        {
+          "score": 0.42,
+          "value": "fantasma"
+        },
+        {
+          "score": 0.42,
+          "value": "favor"
+        },
+        {
+          "score": 0.42,
+          "value": "villa"
+        },
+        {
+          "score": 0.4,
+          "value": "quando"
+        },
+        {
+          "score": 0.39,
+          "value": "anncios"
+        },
+        {
+          "score": 0.39,
+          "value": "senha"
+        },
+        {
+          "score": 0.39,
+          "value": "notificao"
+        },
+        {
+          "score": 0.38,
+          "value": "somos"
+        },
+        {
+          "score": 0.36,
+          "value": "segurana"
+        },
+        {
+          "score": 0.35,
+          "value": "campos"
+        },
+        {
+          "score": 0.35,
+          "value": "termos"
+        },
+        {
+          "score": 0.35,
+          "value": "cadastre"
+        },
+        {
+          "score": 0.34,
+          "value": "combinam"
+        },
+        {
+          "score": 0.34,
+          "value": "quanto"
+        },
+        {
+          "score": 0.34,
+          "value": "prefere"
+        },
+        {
+          "score": 0.33,
+          "value": "vendidos"
+        },
+        {
+          "score": 0.33,
+          "value": "preencheu"
+        },
+        {
+          "score": 0.33,
+          "value": "office"
+        },
+        {
+          "score": 0.32,
+          "value": "encontrar"
+        },
+        {
+          "score": 0.32,
+          "value": "madrid"
+        },
+        {
+          "score": 0.3,
+          "value": "entrar"
+        },
+        {
+          "score": 0.3,
+          "value": "brasil"
+        },
+        {
+          "score": 0.29,
+          "value": "sair"
+        },
+        {
+          "score": 0.29,
+          "value": "detalhes"
+        },
+        {
+          "score": 0.28,
+          "value": "city"
+        },
+        {
+          "score": 0.27,
+          "value": "deseja"
+        },
+        {
+          "score": 0.26,
+          "value": "confiana"
+        },
+        {
+          "score": 0.26,
+          "value": "rockfest"
+        },
+        {
+          "score": 0.26,
+          "value": "center"
+        },
+        {
+          "score": 0.25,
+          "value": "tecnologia"
+        },
+        {
+          "score": 0.25,
+          "value": "filtrar"
+        },
+        {
+          "score": 0.24,
+          "value": "scorpions"
+        },
+        {
+          "score": 0.23,
+          "value": "supercopa"
+        },
+        {
+          "score": 0.23,
+          "value": "combinem"
+        },
+        {
+          "score": 0.22,
+          "value": "pera"
+        },
+        {
+          "score": 0.22,
+          "value": "fechar"
+        },
+        {
+          "score": 0.13636364,
+          "value": "wrong"
+        },
+        {
+          "score": 0.13636364,
+          "value": "sorry something"
+        },
+        {
+          "score": 0.13636364,
+          "value": "something went"
+        },
+        {
+          "score": 0.13636364,
+          "value": "went wrong"
+        },
+        {
+          "score": 0.13636364,
+          "value": "wrong contact"
+        },
+        {
+          "score": 0.13636364,
+          "value": "contact us"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/tmd.qa.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://tmd.qa"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 2,
+        "value": [
+          "music.amazon.com",
+          "stubhub.com.br"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Music"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 2,
+      "value": [
+        "music.amazon.com",
+        "stubhub.com.br"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 2,
+      "value": [
+        "tmdqateste.com",
+        "tenhomaisdiscosqueamigos.com"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/tenhomaisdiscosqueamigos",
+        "instagram": "https://instagram.com/tmdqa",
+        "twitter": "https://twitter.com/tmdqa",
+        "youtube": "https://youtube.com/user/mdiscosqamigos"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 1,
+      "sampleValue": "Online / Services",
+      "value": [
+        "Online / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Online / Services",
+        "rank": 1,
+        "score": 50
+      },
+      "value": [
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 50
+        }
+      ]
+    }
+  }
+}

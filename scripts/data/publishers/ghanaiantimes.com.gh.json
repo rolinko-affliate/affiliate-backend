@@ -1,0 +1,652 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 5,
+      "sampleValue": [
+        "Awin",
+        "Private Network",
+        "Rakuten"
+      ],
+      "value": [
+        "Awin",
+        "Private Network",
+        "Rakuten",
+        "Skimlinks",
+        "TUNE"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "gh",
+        "score": 0.85
+      },
+      "sampleValue": [
+        {
+          "countryCode": "gh",
+          "score": 0.85
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "gh",
+          "score": 0.85
+        }
+      ]
+    },
+    "domain": "ghanaiantimes.com.gh",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "microsoft"
+        },
+        {
+          "score": 0.8596918,
+          "value": "vpn"
+        },
+        {
+          "score": 0.8596918,
+          "value": "nature"
+        },
+        {
+          "score": 0.74220437,
+          "value": "device"
+        },
+        {
+          "score": 0.6843842,
+          "value": "app"
+        },
+        {
+          "score": 0.66555905,
+          "value": "store"
+        },
+        {
+          "score": 0.612025,
+          "value": "office"
+        },
+        {
+          "score": 0.5513863,
+          "value": "window"
+        },
+        {
+          "score": 0.5269991,
+          "value": "pro"
+        },
+        {
+          "score": 0.4724514,
+          "value": "sign"
+        },
+        {
+          "score": 0.4298459,
+          "value": "amazon"
+        },
+        {
+          "score": 0.4298459,
+          "value": "apple"
+        },
+        {
+          "score": 0.4298459,
+          "value": "cable"
+        },
+        {
+          "score": 0.37897655,
+          "value": "seller"
+        },
+        {
+          "score": 0.35511446,
+          "value": "studio"
+        },
+        {
+          "score": 0.35303465,
+          "value": "center"
+        },
+        {
+          "score": 0.35066375,
+          "value": "oneplus"
+        },
+        {
+          "score": 0.3117683,
+          "value": "team"
+        },
+        {
+          "score": 0.3089616,
+          "value": "visual"
+        },
+        {
+          "score": 0.29698405,
+          "value": "developer"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "microsoft"
+        },
+        {
+          "score": 0.8596918,
+          "value": "vpn"
+        },
+        {
+          "score": 0.8596918,
+          "value": "nature"
+        },
+        {
+          "score": 0.74220437,
+          "value": "device"
+        },
+        {
+          "score": 0.6843842,
+          "value": "app"
+        },
+        {
+          "score": 0.66555905,
+          "value": "store"
+        },
+        {
+          "score": 0.612025,
+          "value": "office"
+        },
+        {
+          "score": 0.5513863,
+          "value": "window"
+        },
+        {
+          "score": 0.5269991,
+          "value": "pro"
+        },
+        {
+          "score": 0.4724514,
+          "value": "sign"
+        },
+        {
+          "score": 0.4298459,
+          "value": "amazon"
+        },
+        {
+          "score": 0.4298459,
+          "value": "apple"
+        },
+        {
+          "score": 0.4298459,
+          "value": "cable"
+        },
+        {
+          "score": 0.37897655,
+          "value": "seller"
+        },
+        {
+          "score": 0.35511446,
+          "value": "studio"
+        },
+        {
+          "score": 0.35303465,
+          "value": "center"
+        },
+        {
+          "score": 0.35066375,
+          "value": "oneplus"
+        },
+        {
+          "score": 0.3117683,
+          "value": "team"
+        },
+        {
+          "score": 0.3089616,
+          "value": "visual"
+        },
+        {
+          "score": 0.29698405,
+          "value": "developer"
+        },
+        {
+          "score": 0.28400466,
+          "value": "program"
+        },
+        {
+          "score": 0.2833047,
+          "value": "article"
+        },
+        {
+          "score": 0.27732557,
+          "value": "surface"
+        },
+        {
+          "score": 0.27720696,
+          "value": "student"
+        },
+        {
+          "score": 0.24629633,
+          "value": "phone"
+        },
+        {
+          "score": 0.24542455,
+          "value": "community"
+        },
+        {
+          "score": 0.24037436,
+          "value": "wearable"
+        },
+        {
+          "score": 0.23502366,
+          "value": "visual studio"
+        },
+        {
+          "score": 0.22554626,
+          "value": "power"
+        },
+        {
+          "score": 0.21247117,
+          "value": "internet"
+        },
+        {
+          "score": 0.20884272,
+          "value": "journal"
+        },
+        {
+          "score": 0.20361122,
+          "value": "final payment"
+        },
+        {
+          "score": 0.19429421,
+          "value": "feature"
+        },
+        {
+          "score": 0.18727586,
+          "value": "map"
+        },
+        {
+          "score": 0.18429565,
+          "value": "solution"
+        },
+        {
+          "score": 0.17815982,
+          "value": "deposit"
+        },
+        {
+          "score": 0.17557172,
+          "value": "school"
+        },
+        {
+          "score": 0.17533188,
+          "value": "bud"
+        },
+        {
+          "score": 0.1735609,
+          "value": "video"
+        },
+        {
+          "score": 0.17250395,
+          "value": "total"
+        },
+        {
+          "score": 0.16532534,
+          "value": "central"
+        },
+        {
+          "score": 0.15923236,
+          "value": "tool"
+        },
+        {
+          "score": 0.15702857,
+          "value": "open"
+        },
+        {
+          "score": 0.15553635,
+          "value": "oneplus bud"
+        },
+        {
+          "score": 0.15270841,
+          "value": "tradeinchoosen"
+        },
+        {
+          "score": 0.15210022,
+          "value": "laptop"
+        },
+        {
+          "score": 0.14967296,
+          "value": "xbo"
+        },
+        {
+          "score": 0.14909516,
+          "value": "setting"
+        },
+        {
+          "score": 0.14879726,
+          "value": "opportunity"
+        },
+        {
+          "score": 0.14596206,
+          "value": "technique"
+        },
+        {
+          "score": 0.14422461,
+          "value": "repair"
+        },
+        {
+          "score": 0.14422461,
+          "value": "club"
+        },
+        {
+          "score": 0.137697,
+          "value": "career"
+        },
+        {
+          "score": 0.13607548,
+          "value": "fee"
+        },
+        {
+          "score": 0.13573088,
+          "value": "platform"
+        },
+        {
+          "score": 0.13402034,
+          "value": "card"
+        },
+        {
+          "score": 0.13190638,
+          "value": "download"
+        },
+        {
+          "score": 0.13153714,
+          "value": "guide"
+        },
+        {
+          "score": 0.13008495,
+          "value": "phase"
+        },
+        {
+          "score": 0.12829804,
+          "value": "cell"
+        },
+        {
+          "score": 0.12782766,
+          "value": "azure"
+        },
+        {
+          "score": 0.12720846,
+          "value": "digital"
+        },
+        {
+          "score": 0.12717335,
+          "value": "fba"
+        },
+        {
+          "score": 0.12442908,
+          "value": "campus"
+        },
+        {
+          "score": 0.12400287,
+          "value": "money"
+        },
+        {
+          "score": 0.12399401,
+          "value": "prime"
+        },
+        {
+          "score": 0.121875435,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.12160114,
+          "value": "waste"
+        },
+        {
+          "score": 0.12160114,
+          "value": "wrong shopping"
+        },
+        {
+          "score": 0.12160114,
+          "value": "wrong"
+        },
+        {
+          "score": 0.12160114,
+          "value": "oop"
+        },
+        {
+          "score": 0.12160114,
+          "value": "total cart"
+        },
+        {
+          "score": 0.12160114,
+          "value": "attachment"
+        },
+        {
+          "score": 0.12160114,
+          "value": "congratulation"
+        },
+        {
+          "score": 0.11818282,
+          "value": "enterprise"
+        },
+        {
+          "score": 0.11751183,
+          "value": "entreprise"
+        },
+        {
+          "score": 0.11745916,
+          "value": "technology"
+        },
+        {
+          "score": 0.116832145,
+          "value": "carrier"
+        },
+        {
+          "score": 0.115977295,
+          "value": "funcionalidade"
+        },
+        {
+          "score": 0.11499567,
+          "value": "policies"
+        },
+        {
+          "score": 0.11382014,
+          "value": "restriction"
+        },
+        {
+          "score": 0.11288081,
+          "value": "journals"
+        },
+        {
+          "score": 0.11088695,
+          "value": "health"
+        },
+        {
+          "score": 0.10894712,
+          "value": "connection"
+        },
+        {
+          "score": 0.10680058,
+          "value": "open access"
+        },
+        {
+          "score": 0.10417359,
+          "value": "dynamic"
+        },
+        {
+          "score": 0.10300081,
+          "value": "template"
+        },
+        {
+          "score": 0.1021126,
+          "value": "life"
+        },
+        {
+          "score": 0.102049746,
+          "value": "offre"
+        },
+        {
+          "score": 0.102049746,
+          "value": "accessoire"
+        },
+        {
+          "score": 0.09991858,
+          "value": "friend"
+        },
+        {
+          "score": 0.09981434,
+          "value": "balance"
+        },
+        {
+          "score": 0.09710188,
+          "value": "centre"
+        },
+        {
+          "score": 0.09619556,
+          "value": "advertising"
+        },
+        {
+          "score": 0.096045755,
+          "value": "iphone"
+        },
+        {
+          "score": 0.09553875,
+          "value": "software"
+        },
+        {
+          "score": 0.09527921,
+          "value": "surfshark"
+        },
+        {
+          "score": 0.093472406,
+          "value": "kindle"
+        },
+        {
+          "score": 0.09331833,
+          "value": "editorial"
+        },
+        {
+          "score": 0.09091705,
+          "value": "dveloppeur"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 3,
+      "value": [
+        "https://ghanaiantimes.com.gh/",
+        "https://www.ghanaiantimes.com.gh/",
+        "http://www.ghanaiantimes.com.gh/"
+      ]
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/ghanaiantimes.com.gh.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://ghanaiantimes.com.gh"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 6,
+        "value": [
+          "microsoft.com",
+          "surfshark.com",
+          "avatrade.com",
+          "office.com",
+          "shopto.net",
+          "status.aws.amazon.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "apple.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 2.85,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 1,
+            "vertical": "Finance / Trading"
+          },
+          {
+            "count": 1,
+            "vertical": "Online / VPN"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Software"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 6,
+      "value": [
+        "microsoft.com",
+        "surfshark.com",
+        "avatrade.com",
+        "office.com",
+        "shopto.net",
+        "status.aws.amazon.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 1,
+      "socialsAvailable": [
+        "twitter"
+      ],
+      "value": {
+        "twitter": "https://twitter.com/ghanaian_times"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Online / Services",
+      "value": [
+        "Online / Services",
+        "Business / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Online / Services",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 95
+        },
+        {
+          "name": "Business / Services",
+          "rank": 1,
+          "score": 85
+        }
+      ]
+    }
+  }
+}

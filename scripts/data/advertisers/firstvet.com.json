@@ -1,0 +1,123 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 5,
+      "sampleValue": [
+        "Digidip",
+        "Flexoffers",
+        "Impact"
+      ],
+      "value": [
+        "Digidip",
+        "Flexoffers",
+        "Impact",
+        "PartnerAds",
+        "Skimlinks"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 0,
+      "error": false,
+      "value": []
+    },
+    "domain": "firstvet.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "FirstVet is a digital veterinary clinic offering video meetings with experienced vets directly in your smartphone, tablet or computer. Our experienced vets are available 24/7 to offer help and advice regarding your pet. Get a quick diagnosis or, if needed, we can refer you to the right specialist…",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/firstvet.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://firstvet.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 25
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 11,
+            "promotype": "blog",
+            "value": [
+              "amazon.co.uk",
+              "bitg.se",
+              "chocolatescandies.com",
+              "codesfit.com",
+              "dogster.com",
+              "givling.com",
+              "k9ofmine.com",
+              "puregreen.guru",
+              "refermate.com",
+              "saveonbest.com",
+              "stravageek.com"
+            ]
+          },
+          {
+            "count": 3,
+            "promotype": "student",
+            "value": [
+              "pcforalla.se",
+              "saledays.io",
+              "xn--bst-i-test-q5a.guide"
+            ]
+          },
+          {
+            "count": 1,
+            "promotype": "incentive",
+            "value": [
+              "trycoupon.net"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 2,
+      "socialsAvailable": [
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/firstvetunitedstates",
+        "instagram": "https://instagram.com/firstvet_us"
+      }
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Home / Pets",
+        "rank": 2,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Health / Healthcare",
+          "rank": 2,
+          "score": 85
+        },
+        {
+          "name": "Home / Pets",
+          "rank": 2,
+          "score": 95
+        }
+      ]
+    }
+  }
+}

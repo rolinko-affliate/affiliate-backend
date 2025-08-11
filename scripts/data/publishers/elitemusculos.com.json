@@ -1,0 +1,722 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 6,
+      "sampleValue": [
+        "Awin",
+        "CJ Affiliate",
+        "Impact"
+      ],
+      "value": [
+        "Awin",
+        "CJ Affiliate",
+        "Impact",
+        "Rakuten",
+        "Skimlinks",
+        "Viglink"
+      ]
+    },
+    "countryRankings": {
+      "count": 3,
+      "highestValue": {
+        "countryCode": "es",
+        "score": 0.4
+      },
+      "sampleValue": [
+        {
+          "countryCode": "es",
+          "score": 0.4
+        },
+        {
+          "countryCode": "mx",
+          "score": 0.15
+        },
+        {
+          "countryCode": "co",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "es",
+          "score": 0.4
+        },
+        {
+          "countryCode": "mx",
+          "score": 0.15
+        },
+        {
+          "countryCode": "co",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "elitemusculos.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "gaming"
+        },
+        {
+          "score": 0.56190693,
+          "value": "store"
+        },
+        {
+          "score": 0.4868661,
+          "value": "card"
+        },
+        {
+          "score": 0.4376954,
+          "value": "car"
+        },
+        {
+          "score": 0.42991003,
+          "value": "appliance"
+        },
+        {
+          "score": 0.4247057,
+          "value": "accessory"
+        },
+        {
+          "score": 0.42391995,
+          "value": "game"
+        },
+        {
+          "score": 0.41654995,
+          "value": "phone"
+        },
+        {
+          "score": 0.3911582,
+          "value": "community"
+        },
+        {
+          "score": 0.38926274,
+          "value": "health"
+        },
+        {
+          "score": 0.37715012,
+          "value": "tablet"
+        },
+        {
+          "score": 0.3670137,
+          "value": "elite"
+        },
+        {
+          "score": 0.36315194,
+          "value": "technology"
+        },
+        {
+          "score": 0.34981468,
+          "value": "bestbuy"
+        },
+        {
+          "score": 0.28750166,
+          "value": "camcorder"
+        },
+        {
+          "score": 0.2823243,
+          "value": "sign"
+        },
+        {
+          "score": 0.27763873,
+          "value": "playstation"
+        },
+        {
+          "score": 0.27486643,
+          "value": "microsoft"
+        },
+        {
+          "score": 0.27153447,
+          "value": "repair"
+        },
+        {
+          "score": 0.26243156,
+          "value": "music"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "gaming"
+        },
+        {
+          "score": 0.56190693,
+          "value": "store"
+        },
+        {
+          "score": 0.4868661,
+          "value": "card"
+        },
+        {
+          "score": 0.4376954,
+          "value": "car"
+        },
+        {
+          "score": 0.42991003,
+          "value": "appliance"
+        },
+        {
+          "score": 0.4247057,
+          "value": "accessory"
+        },
+        {
+          "score": 0.42391995,
+          "value": "game"
+        },
+        {
+          "score": 0.41654995,
+          "value": "phone"
+        },
+        {
+          "score": 0.3911582,
+          "value": "community"
+        },
+        {
+          "score": 0.38926274,
+          "value": "health"
+        },
+        {
+          "score": 0.37715012,
+          "value": "tablet"
+        },
+        {
+          "score": 0.3670137,
+          "value": "elite"
+        },
+        {
+          "score": 0.36315194,
+          "value": "technology"
+        },
+        {
+          "score": 0.34981468,
+          "value": "bestbuy"
+        },
+        {
+          "score": 0.28750166,
+          "value": "camcorder"
+        },
+        {
+          "score": 0.2823243,
+          "value": "sign"
+        },
+        {
+          "score": 0.27763873,
+          "value": "playstation"
+        },
+        {
+          "score": 0.27486643,
+          "value": "microsoft"
+        },
+        {
+          "score": 0.27153447,
+          "value": "repair"
+        },
+        {
+          "score": 0.26243156,
+          "value": "music"
+        },
+        {
+          "score": 0.2574415,
+          "value": "portable"
+        },
+        {
+          "score": 0.24853253,
+          "value": "movie"
+        },
+        {
+          "score": 0.22994812,
+          "value": "certificate"
+        },
+        {
+          "score": 0.22720659,
+          "value": "wearable"
+        },
+        {
+          "score": 0.22651583,
+          "value": "device"
+        },
+        {
+          "score": 0.2250556,
+          "value": "state"
+        },
+        {
+          "score": 0.2250556,
+          "value": "mexico"
+        },
+        {
+          "score": 0.21848722,
+          "value": "cell"
+        },
+        {
+          "score": 0.21771683,
+          "value": "marine"
+        },
+        {
+          "score": 0.21738507,
+          "value": "fitness"
+        },
+        {
+          "score": 0.21527058,
+          "value": "installation"
+        },
+        {
+          "score": 0.21379618,
+          "value": "credit"
+        },
+        {
+          "score": 0.20621336,
+          "value": "forum"
+        },
+        {
+          "score": 0.20548555,
+          "value": "moderator"
+        },
+        {
+          "score": 0.20242955,
+          "value": "care"
+        },
+        {
+          "score": 0.19857079,
+          "value": "knowledge"
+        },
+        {
+          "score": 0.18925501,
+          "value": "platinum"
+        },
+        {
+          "score": 0.18217662,
+          "value": "special price"
+        },
+        {
+          "score": 0.18051407,
+          "value": "trademark"
+        },
+        {
+          "score": 0.17723142,
+          "value": "video"
+        },
+        {
+          "score": 0.17562498,
+          "value": "solution"
+        },
+        {
+          "score": 0.17368421,
+          "value": "fnatic"
+        },
+        {
+          "score": 0.17123796,
+          "value": "fnatic gaming"
+        },
+        {
+          "score": 0.1684905,
+          "value": "window"
+        },
+        {
+          "score": 0.1621686,
+          "value": "logo"
+        },
+        {
+          "score": 0.15780774,
+          "value": "base"
+        },
+        {
+          "score": 0.15411416,
+          "value": "tag"
+        },
+        {
+          "score": 0.15411416,
+          "value": "affiliated"
+        },
+        {
+          "score": 0.15411416,
+          "value": "affiliated company"
+        },
+        {
+          "score": 0.14922164,
+          "value": "theater"
+        },
+        {
+          "score": 0.14777909,
+          "value": "article"
+        },
+        {
+          "score": 0.1467553,
+          "value": "select"
+        },
+        {
+          "score": 0.13808301,
+          "value": "console"
+        },
+        {
+          "score": 0.13765949,
+          "value": "country"
+        },
+        {
+          "score": 0.13750239,
+          "value": "pickup"
+        },
+        {
+          "score": 0.13319598,
+          "value": "controller"
+        },
+        {
+          "score": 0.13113806,
+          "value": "category"
+        },
+        {
+          "score": 0.13064264,
+          "value": "international"
+        },
+        {
+          "score": 0.12664784,
+          "value": "android"
+        },
+        {
+          "score": 0.11769084,
+          "value": "match"
+        },
+        {
+          "score": 0.11678695,
+          "value": "expert"
+        },
+        {
+          "score": 0.11419785,
+          "value": "tech"
+        },
+        {
+          "score": 0.11383397,
+          "value": "mouse"
+        },
+        {
+          "score": 0.1125278,
+          "value": "country best"
+        },
+        {
+          "score": 0.1125278,
+          "value": "international select"
+        },
+        {
+          "score": 0.1125278,
+          "value": "mexico pays"
+        },
+        {
+          "score": 0.1125278,
+          "value": "choose"
+        },
+        {
+          "score": 0.1125278,
+          "value": "canada"
+        },
+        {
+          "score": 0.1125278,
+          "value": "pays"
+        },
+        {
+          "score": 0.1125278,
+          "value": "paí"
+        },
+        {
+          "score": 0.1125278,
+          "value": "méxico"
+        },
+        {
+          "score": 0.1125278,
+          "value": "unido"
+        },
+        {
+          "score": 0.1125278,
+          "value": "mexico paí"
+        },
+        {
+          "score": 0.1125278,
+          "value": "comprando"
+        },
+        {
+          "score": 0.1125278,
+          "value": "méxico comprando"
+        },
+        {
+          "score": 0.1125278,
+          "value": "estado"
+        },
+        {
+          "score": 0.10763529,
+          "value": "mobile camcorder"
+        },
+        {
+          "score": 0.10763529,
+          "value": "init"
+        },
+        {
+          "score": 0.10518903,
+          "value": "portable io"
+        },
+        {
+          "score": 0.10496856,
+          "value": "season"
+        },
+        {
+          "score": 0.10438575,
+          "value": "center"
+        },
+        {
+          "score": 0.104349576,
+          "value": "wireless"
+        },
+        {
+          "score": 0.103144765,
+          "value": "virtual"
+        },
+        {
+          "score": 0.10267848,
+          "value": "resource"
+        },
+        {
+          "score": 0.1013344,
+          "value": "app"
+        },
+        {
+          "score": 0.10073515,
+          "value": "friend"
+        },
+        {
+          "score": 0.10029652,
+          "value": "totaltech"
+        },
+        {
+          "score": 0.099466585,
+          "value": "site"
+        },
+        {
+          "score": 0.09807981,
+          "value": "feedback"
+        },
+        {
+          "score": 0.09556592,
+          "value": "studio"
+        },
+        {
+          "score": 0.09331601,
+          "value": "headset"
+        },
+        {
+          "score": 0.08943871,
+          "value": "blue"
+        },
+        {
+          "score": 0.08938608,
+          "value": "screen"
+        },
+        {
+          "score": 0.088491164,
+          "value": "smart"
+        },
+        {
+          "score": 0.08846057,
+          "value": "pro"
+        },
+        {
+          "score": 0.08746696,
+          "value": "protection"
+        },
+        {
+          "score": 0.087328464,
+          "value": "visual"
+        },
+        {
+          "score": 0.08715568,
+          "value": "ultimate"
+        },
+        {
+          "score": 0.08464578,
+          "value": "reward"
+        },
+        {
+          "score": 0.08410147,
+          "value": "senior"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/elitemusculos.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://elitemusculos.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 27,
+        "value": [
+          "ubi.com",
+          "microsoft.com",
+          "nordvpn.com",
+          "xbox.com",
+          "steelseries.com",
+          "ao.com",
+          "bestbuy.com",
+          "fanatical.com",
+          "ivacy.com",
+          "game.co.uk",
+          "blizzard.com",
+          "ebay.com",
+          "box.co.uk",
+          "privateinternetaccess.com",
+          "currys.co.uk",
+          "cdkeys.com",
+          "topcashback.co.uk",
+          "cyberghostvpn.com",
+          "g2a.com",
+          "newegg.com",
+          "gamestop.com",
+          "sportsdirect.com",
+          "logitechg.com",
+          "magazinesdirect.com",
+          "powera.com",
+          "scan.co.uk",
+          "wzstats.gg"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 11.499999,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 3.95,
+            "vertical": "Online / VPN"
+          },
+          {
+            "count": 3.75,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 2,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Online / Freebies"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Sports / Equipment"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 27,
+      "value": [
+        "ubi.com",
+        "microsoft.com",
+        "nordvpn.com",
+        "xbox.com",
+        "steelseries.com",
+        "ao.com",
+        "bestbuy.com",
+        "fanatical.com",
+        "ivacy.com",
+        "game.co.uk",
+        "blizzard.com",
+        "ebay.com",
+        "box.co.uk",
+        "privateinternetaccess.com",
+        "currys.co.uk",
+        "cdkeys.com",
+        "topcashback.co.uk",
+        "cyberghostvpn.com",
+        "g2a.com",
+        "newegg.com",
+        "gamestop.com",
+        "sportsdirect.com",
+        "logitechg.com",
+        "magazinesdirect.com",
+        "powera.com",
+        "scan.co.uk",
+        "wzstats.gg"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Sports / Fitness",
+      "value": [
+        "Sports / Fitness",
+        "Health / Wellbeing"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Sports / Fitness",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Sports / Fitness",
+          "rank": 1,
+          "score": 95
+        },
+        {
+          "name": "Health / Wellbeing",
+          "rank": 1,
+          "score": 80
+        }
+      ]
+    }
+  }
+}

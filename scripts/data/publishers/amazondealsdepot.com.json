@@ -1,0 +1,619 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 3,
+      "sampleValue": [
+        "ClickBank",
+        "Impact",
+        "Private Network"
+      ],
+      "value": [
+        "ClickBank",
+        "Impact",
+        "Private Network"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.65
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.65
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.65
+        }
+      ]
+    },
+    "domain": "amazondealsdepot.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "seller"
+        },
+        {
+          "score": 0.9438776,
+          "value": "ebay"
+        },
+        {
+          "score": 0.6479592,
+          "value": "buyer"
+        },
+        {
+          "score": 0.6377551,
+          "value": "transaction"
+        },
+        {
+          "score": 0.47959185,
+          "value": "agreement"
+        },
+        {
+          "score": 0.4234694,
+          "value": "accessory"
+        },
+        {
+          "score": 0.4030612,
+          "value": "power"
+        },
+        {
+          "score": 0.4030612,
+          "value": "shoe"
+        },
+        {
+          "score": 0.39591292,
+          "value": "category"
+        },
+        {
+          "score": 0.38265306,
+          "value": "retro"
+        },
+        {
+          "score": 0.38265306,
+          "value": "dispute"
+        },
+        {
+          "score": 0.36734694,
+          "value": "watch"
+        },
+        {
+          "score": 0.3622449,
+          "value": "ecoflow"
+        },
+        {
+          "score": 0.35204083,
+          "value": "mocha"
+        },
+        {
+          "score": 0.33163264,
+          "value": "law"
+        },
+        {
+          "score": 0.33163264,
+          "value": "payout"
+        },
+        {
+          "score": 0.3265306,
+          "value": "entity"
+        },
+        {
+          "score": 0.32142857,
+          "value": "helpful"
+        },
+        {
+          "score": 0.32142857,
+          "value": "financial"
+        },
+        {
+          "score": 0.32142857,
+          "value": "categoría"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "seller"
+        },
+        {
+          "score": 0.9438776,
+          "value": "ebay"
+        },
+        {
+          "score": 0.6479592,
+          "value": "buyer"
+        },
+        {
+          "score": 0.6377551,
+          "value": "transaction"
+        },
+        {
+          "score": 0.47959185,
+          "value": "agreement"
+        },
+        {
+          "score": 0.4234694,
+          "value": "accessory"
+        },
+        {
+          "score": 0.4030612,
+          "value": "power"
+        },
+        {
+          "score": 0.4030612,
+          "value": "shoe"
+        },
+        {
+          "score": 0.39591292,
+          "value": "category"
+        },
+        {
+          "score": 0.38265306,
+          "value": "retro"
+        },
+        {
+          "score": 0.38265306,
+          "value": "dispute"
+        },
+        {
+          "score": 0.36734694,
+          "value": "watch"
+        },
+        {
+          "score": 0.3622449,
+          "value": "ecoflow"
+        },
+        {
+          "score": 0.35204083,
+          "value": "mocha"
+        },
+        {
+          "score": 0.33163264,
+          "value": "law"
+        },
+        {
+          "score": 0.33163264,
+          "value": "payout"
+        },
+        {
+          "score": 0.3265306,
+          "value": "entity"
+        },
+        {
+          "score": 0.32142857,
+          "value": "helpful"
+        },
+        {
+          "score": 0.32142857,
+          "value": "financial"
+        },
+        {
+          "score": 0.32142857,
+          "value": "categoría"
+        },
+        {
+          "score": 0.31632653,
+          "value": "card"
+        },
+        {
+          "score": 0.31632653,
+          "value": "applicable"
+        },
+        {
+          "score": 0.3112245,
+          "value": "notice"
+        },
+        {
+          "score": 0.29081634,
+          "value": "claim"
+        },
+        {
+          "score": 0.29081634,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.29081634,
+          "value": "fund"
+        },
+        {
+          "score": 0.28061223,
+          "value": "jewelry"
+        },
+        {
+          "score": 0.2755102,
+          "value": "guarantee"
+        },
+        {
+          "score": 0.25510204,
+          "value": "financial account"
+        },
+        {
+          "score": 0.25203717,
+          "value": "pro"
+        },
+        {
+          "score": 0.24489796,
+          "value": "industrial"
+        },
+        {
+          "score": 0.24489796,
+          "value": "speaker"
+        },
+        {
+          "score": 0.24489796,
+          "value": "equipo"
+        },
+        {
+          "score": 0.23979592,
+          "value": "settlement"
+        },
+        {
+          "score": 0.23979592,
+          "value": "collectible"
+        },
+        {
+          "score": 0.23469388,
+          "value": "fee"
+        },
+        {
+          "score": 0.23469388,
+          "value": "generator"
+        },
+        {
+          "score": 0.23469388,
+          "value": "money"
+        },
+        {
+          "score": 0.22959183,
+          "value": "oferta"
+        },
+        {
+          "score": 0.2244898,
+          "value": "woman"
+        },
+        {
+          "score": 0.22316502,
+          "value": "event"
+        },
+        {
+          "score": 0.21938775,
+          "value": "garden"
+        },
+        {
+          "score": 0.21938775,
+          "value": "authenticity"
+        },
+        {
+          "score": 0.21428572,
+          "value": "station"
+        },
+        {
+          "score": 0.21428572,
+          "value": "arbitration"
+        },
+        {
+          "score": 0.20918368,
+          "value": "rolex"
+        },
+        {
+          "score": 0.20918368,
+          "value": "sport"
+        },
+        {
+          "score": 0.20465761,
+          "value": "community"
+        },
+        {
+          "score": 0.20408164,
+          "value": "pant"
+        },
+        {
+          "score": 0.20408164,
+          "value": "provider"
+        },
+        {
+          "score": 0.18877551,
+          "value": "audio"
+        },
+        {
+          "score": 0.18877551,
+          "value": "legal"
+        },
+        {
+          "score": 0.18877551,
+          "value": "dickie"
+        },
+        {
+          "score": 0.18367347,
+          "value": "accesorio"
+        },
+        {
+          "score": 0.18367347,
+          "value": "wireless"
+        },
+        {
+          "score": 0.18367347,
+          "value": "vehicle"
+        },
+        {
+          "score": 0.18051463,
+          "value": "live"
+        },
+        {
+          "score": 0.17857143,
+          "value": "rating"
+        },
+        {
+          "score": 0.17857143,
+          "value": "receivable"
+        },
+        {
+          "score": 0.17857143,
+          "value": "puma"
+        },
+        {
+          "score": 0.1734694,
+          "value": "attribute"
+        },
+        {
+          "score": 0.1734694,
+          "value": "delta"
+        },
+        {
+          "score": 0.1734694,
+          "value": "submariner"
+        },
+        {
+          "score": 0.1734694,
+          "value": "center"
+        },
+        {
+          "score": 0.16836734,
+          "value": "white"
+        },
+        {
+          "score": 0.16836734,
+          "value": "choice"
+        },
+        {
+          "score": 0.16836734,
+          "value": "pdt"
+        },
+        {
+          "score": 0.16836734,
+          "value": "risk"
+        },
+        {
+          "score": 0.16836734,
+          "value": "portable"
+        },
+        {
+          "score": 0.16836734,
+          "value": "electronic"
+        },
+        {
+          "score": 0.16836734,
+          "value": "popular"
+        },
+        {
+          "score": 0.16836734,
+          "value": "solar"
+        },
+        {
+          "score": 0.1632653,
+          "value": "court"
+        },
+        {
+          "score": 0.1632653,
+          "value": "obligation"
+        },
+        {
+          "score": 0.1632653,
+          "value": "health"
+        },
+        {
+          "score": 0.15816326,
+          "value": "supply"
+        },
+        {
+          "score": 0.15816326,
+          "value": "country"
+        },
+        {
+          "score": 0.15306123,
+          "value": "camera"
+        },
+        {
+          "score": 0.15306123,
+          "value": "update"
+        },
+        {
+          "score": 0.15306123,
+          "value": "game"
+        },
+        {
+          "score": 0.15306123,
+          "value": "outdoor"
+        },
+        {
+          "score": 0.15306123,
+          "value": "genuine"
+        },
+        {
+          "score": 0.15306123,
+          "value": "musical"
+        },
+        {
+          "score": 0.15306123,
+          "value": "provision"
+        },
+        {
+          "score": 0.14795919,
+          "value": "toy"
+        },
+        {
+          "score": 0.14795919,
+          "value": "proceed"
+        },
+        {
+          "score": 0.14795919,
+          "value": "tablet"
+        },
+        {
+          "score": 0.14795919,
+          "value": "battery"
+        },
+        {
+          "score": 0.14795919,
+          "value": "debit"
+        },
+        {
+          "score": 0.14705883,
+          "value": "video"
+        },
+        {
+          "score": 0.14285715,
+          "value": "fit"
+        },
+        {
+          "score": 0.14285715,
+          "value": "protection"
+        },
+        {
+          "score": 0.14285715,
+          "value": "sneaker"
+        },
+        {
+          "score": 0.1377551,
+          "value": "reserve"
+        },
+        {
+          "score": 0.1377551,
+          "value": "genuine dickie"
+        },
+        {
+          "score": 0.1377551,
+          "value": "hogar"
+        },
+        {
+          "score": 0.1377551,
+          "value": "trophy"
+        },
+        {
+          "score": 0.1377551,
+          "value": "previous"
+        },
+        {
+          "score": 0.1377551,
+          "value": "ecuk"
+        },
+        {
+          "score": 0.1377551,
+          "value": "advertising"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazondealsdepot.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazondealsdepot.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 3,
+        "value": [
+          "ebay.com",
+          "clicktrixredirects.com",
+          "elementor.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Website Builder"
+          },
+          {
+            "count": 0.8,
+            "vertical": "Online / Services"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 3,
+      "value": [
+        "ebay.com",
+        "clicktrixredirects.com",
+        "elementor.com"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Shopping / Department Stores",
+      "value": [
+        "Shopping / Department Stores",
+        "Business / Ecommerce"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Business / Ecommerce",
+          "rank": 1,
+          "score": 85
+        }
+      ]
+    }
+  }
+}

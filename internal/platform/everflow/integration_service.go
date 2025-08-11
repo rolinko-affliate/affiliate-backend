@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"io"
 	"strconv"
 	"time"
 
@@ -11,6 +12,9 @@ import (
 	"github.com/affiliate-backend/internal/platform/everflow/advertiser"
 	"github.com/affiliate-backend/internal/platform/everflow/affiliate"
 	"github.com/affiliate-backend/internal/platform/everflow/offer"
+	"github.com/affiliate-backend/internal/platform/everflow/tracking"
+	"github.com/affiliate-backend/internal/platform/logger"
+	"github.com/affiliate-backend/internal/platform/provider"
 	"github.com/google/uuid"
 )
 
@@ -19,6 +23,7 @@ type IntegrationService struct {
 	advertiserClient *advertiser.APIClient
 	affiliateClient  *affiliate.APIClient
 	offerClient      *offer.APIClient
+	trackingClient   *tracking.APIClient
 
 	// Repository interfaces for provider mappings
 	advertiserRepo AdvertiserRepository
@@ -30,7 +35,16 @@ type IntegrationService struct {
 	campaignProviderMappingRepo   CampaignProviderMappingRepository
 
 	// Provider mappers
-	affiliateProviderMapper *AffiliateProviderMapper
+	affiliateProviderMapper  *AffiliateProviderMapper
+	advertiserProviderMapper AdvertiserMapper
+}
+
+// Mapper interfaces
+type AdvertiserMapper interface {
+	MapAdvertiserToEverflowRequest(adv *domain.Advertiser, mapping *domain.AdvertiserProviderMapping) (*advertiser.CreateAdvertiserRequest, error)
+	MapAdvertiserToEverflowRequestWithContext(adv *domain.Advertiser, mapping *domain.AdvertiserProviderMapping, ctx *provider.AdvertiserMappingContext) (*advertiser.CreateAdvertiserRequest, error)
+	MapEverflowResponseToAdvertiser(resp *advertiser.Advertiser, adv *domain.Advertiser)
+	MapEverflowResponseToProviderMapping(resp *advertiser.Advertiser, mapping *domain.AdvertiserProviderMapping) error
 }
 
 // Repository interfaces
@@ -69,6 +83,7 @@ func NewIntegrationService(
 	advertiserClient *advertiser.APIClient,
 	affiliateClient *affiliate.APIClient,
 	offerClient *offer.APIClient,
+	trackingClient *tracking.APIClient,
 	advertiserRepo AdvertiserRepository,
 	affiliateRepo AffiliateRepository,
 	campaignRepo CampaignRepository,
@@ -80,6 +95,7 @@ func NewIntegrationService(
 		advertiserClient:              advertiserClient,
 		affiliateClient:               affiliateClient,
 		offerClient:                   offerClient,
+		trackingClient:                trackingClient,
 		advertiserRepo:                advertiserRepo,
 		affiliateRepo:                 affiliateRepo,
 		campaignRepo:                  campaignRepo,
@@ -87,6 +103,7 @@ func NewIntegrationService(
 		affiliateProviderMappingRepo:  affiliateProviderMappingRepo,
 		campaignProviderMappingRepo:   campaignProviderMappingRepo,
 		affiliateProviderMapper:       NewAffiliateProviderMapper(),
+		advertiserProviderMapper:      NewSimpleAdvertiserProviderMapper(),
 	}
 }
 
@@ -118,65 +135,372 @@ func int64ToUUID(id int64) uuid.UUID {
 	return parsed
 }
 
-// CreateAdvertiser creates an advertiser in Everflow
-func (s *IntegrationService) CreateAdvertiser(ctx context.Context, adv domain.Advertiser) (domain.Advertiser, error) {
-	// Mock implementation - simulate successful creation
-	// In a real implementation, this would make an API call to Everflow
+// CreateAdvertiserWithContext creates an advertiser in Everflow with additional context
+func (s *IntegrationService) CreateAdvertiserWithContext(ctx context.Context, adv domain.Advertiser, mappingCtx *provider.AdvertiserMappingContext) (domain.Advertiser, error) {
+	logger.Info("Starting advertiser creation in Everflow with context",
+		"advertiser_id", adv.AdvertiserID,
+		"name", adv.Name,
+		"provider", "everflow")
+	
+	// Check if provider mapping already exists and is successful
+	existingMapping, err := s.advertiserProviderMappingRepo.GetMappingByAdvertiserAndProvider(ctx, adv.AdvertiserID, "everflow")
+	if err == nil && existingMapping != nil && existingMapping.SyncStatus != nil && *existingMapping.SyncStatus == "synced" {
+		logger.Warn("Advertiser already has successful Everflow provider mapping",
+			"advertiser_id", adv.AdvertiserID,
+			"mapping_id", existingMapping.MappingID)
+		return adv, fmt.Errorf("advertiser already has successful Everflow provider mapping")
+	}
+	
+	// Map domain advertiser to Everflow request with context
+	everflowReq, err := s.advertiserProviderMapper.MapAdvertiserToEverflowRequestWithContext(&adv, nil, mappingCtx)
+	if err != nil {
+		logger.Error("Failed to map advertiser to Everflow request",
+			"advertiser_id", adv.AdvertiserID,
+			"error", err)
+		return adv, fmt.Errorf("failed to map advertiser to Everflow request: %w", err)
+	}
 
-	// Return the advertiser with the same ID (simulating successful creation)
+	// Serialize the outbound request for payload storage
+	requestPayload, err := json.Marshal(everflowReq)
+	if err != nil {
+		logger.Error("Failed to serialize request payload",
+			"advertiser_id", adv.AdvertiserID,
+			"error", err)
+		return adv, fmt.Errorf("failed to serialize request payload: %w", err)
+	}
+
+	// Create advertiser in Everflow
+	resp, httpResp, err := s.advertiserClient.DefaultAPI.CreateAdvertiser(ctx).CreateAdvertiserRequest(*everflowReq).Execute()
+	if err != nil {
+		// Try to read the response body for more detailed error information
+		var errorBody string
+		if httpResp != nil && httpResp.Body != nil {
+			bodyBytes, readErr := io.ReadAll(httpResp.Body)
+			if readErr == nil {
+				errorBody = string(bodyBytes)
+			}
+		}
+		logger.ErrorSanitized("Failed to create advertiser in Everflow",
+			"advertiser_id", adv.AdvertiserID,
+			"error", err,
+			"response_body", errorBody)
+		return adv, fmt.Errorf("failed to create advertiser in Everflow: %w (response: %s)", err, errorBody)
+	}
+	defer httpResp.Body.Close()
+	logger.Info("Successfully created advertiser in Everflow",
+		"advertiser_id", adv.AdvertiserID)
+
+	// Create or update provider mapping
+	now := time.Now()
+	syncStatus := "synced"
+
+	var mapping *domain.AdvertiserProviderMapping
+	if existingMapping != nil {
+		// Update existing failed mapping
+		mapping = existingMapping
+		mapping.SyncStatus = &syncStatus
+		mapping.LastSyncAt = &now
+		mapping.UpdatedAt = now
+		mapping.SyncError = nil
+	} else {
+		// Create new mapping
+		mapping = &domain.AdvertiserProviderMapping{
+			AdvertiserID: adv.AdvertiserID,
+			ProviderType: "everflow",
+			SyncStatus:   &syncStatus,
+			LastSyncAt:   &now,
+			CreatedAt:    now,
+			UpdatedAt:    now,
+		}
+	}
+
+	// Update mapping with Everflow response data
+	if err := s.advertiserProviderMapper.MapEverflowResponseToProviderMapping(resp, mapping); err != nil {
+		return adv, fmt.Errorf("failed to map Everflow response to provider mapping: %w", err)
+	}
+
+	// Store request/response payload in provider config
+	payload := map[string]interface{}{
+		"request":             json.RawMessage(requestPayload),
+		"response":            resp,
+		"last_operation":      "create",
+		"last_operation_time": now,
+	}
+
+	payloadJSON, err := json.Marshal(payload)
+	if err != nil {
+		return adv, fmt.Errorf("failed to marshal payload: %w", err)
+	}
+
+	payloadStr := string(payloadJSON)
+	mapping.ProviderConfig = &payloadStr
+
+	// Create or update the provider mapping
+	if existingMapping != nil {
+		if err := s.advertiserProviderMappingRepo.UpdateMapping(ctx, mapping); err != nil {
+			return adv, fmt.Errorf("failed to update advertiser provider mapping: %w", err)
+		}
+	} else {
+		if err := s.advertiserProviderMappingRepo.CreateMapping(ctx, mapping); err != nil {
+			return adv, fmt.Errorf("failed to create advertiser provider mapping: %w", err)
+		}
+	}
+
+	// Update core advertiser with non-provider-specific data from Everflow
+	s.advertiserProviderMapper.MapEverflowResponseToAdvertiser(resp, &adv)
+
 	return adv, nil
+}
+
+// CreateAdvertiser creates an advertiser in Everflow (backward compatibility)
+func (s *IntegrationService) CreateAdvertiser(ctx context.Context, adv domain.Advertiser) (domain.Advertiser, error) {
+	// Call the context-aware version with nil context for backward compatibility
+	return s.CreateAdvertiserWithContext(ctx, adv, nil)
 }
 
 // UpdateAdvertiser updates an advertiser in Everflow
 func (s *IntegrationService) UpdateAdvertiser(ctx context.Context, adv domain.Advertiser) error {
-	// TODO: Implement advertiser update when advertiser functionality is needed
-	return fmt.Errorf("advertiser update not implemented")
+	// Get provider mapping
+	mapping, err := s.advertiserProviderMappingRepo.GetMappingByAdvertiserAndProvider(ctx, adv.AdvertiserID, "everflow")
+	if err != nil {
+		return fmt.Errorf("failed to get advertiser provider mapping: %w", err)
+	}
+
+	if mapping.ProviderAdvertiserID == nil {
+		return fmt.Errorf("advertiser not found in Everflow")
+	}
+
+	providerID, err := strconv.ParseInt(*mapping.ProviderAdvertiserID, 10, 32)
+	if err != nil {
+		return fmt.Errorf("invalid provider advertiser ID: %w", err)
+	}
+
+	// Map domain advertiser to Everflow update request using existing mapping
+	everflowReq, err := s.advertiserProviderMapper.MapAdvertiserToEverflowRequest(&adv, mapping)
+	if err != nil {
+		return fmt.Errorf("failed to map advertiser to Everflow update request: %w", err)
+	}
+
+	// Convert to update request (different constructor requirements)
+	updateReq := advertiser.NewUpdateAdvertiserRequest(
+		everflowReq.GetName(),
+		everflowReq.GetAccountStatus(),
+		everflowReq.GetNetworkEmployeeId(),
+		everflowReq.GetDefaultCurrencyId(),
+		everflowReq.GetReportingTimezoneId(),
+		everflowReq.GetAttributionMethod(),
+		everflowReq.GetEmailAttributionMethod(),
+		everflowReq.GetAttributionPriority(),
+	)
+
+	if everflowReq.HasInternalNotes() {
+		updateReq.SetInternalNotes(everflowReq.GetInternalNotes())
+	}
+	if everflowReq.HasAddressId() {
+		updateReq.SetAddressId(everflowReq.GetAddressId())
+	}
+	if everflowReq.HasIsContactAddressEnabled() {
+		updateReq.SetIsContactAddressEnabled(everflowReq.GetIsContactAddressEnabled())
+	}
+	if everflowReq.HasSalesManagerId() {
+		updateReq.SetSalesManagerId(everflowReq.GetSalesManagerId())
+	}
+	if everflowReq.HasPlatformName() {
+		updateReq.SetPlatformName(everflowReq.GetPlatformName())
+	}
+	if everflowReq.HasPlatformUrl() {
+		updateReq.SetPlatformUrl(everflowReq.GetPlatformUrl())
+	}
+	if everflowReq.HasPlatformUsername() {
+		updateReq.SetPlatformUsername(everflowReq.GetPlatformUsername())
+	}
+	if everflowReq.HasAccountingContactEmail() {
+		updateReq.SetAccountingContactEmail(everflowReq.GetAccountingContactEmail())
+	}
+	if everflowReq.HasVerificationToken() {
+		updateReq.SetVerificationToken(everflowReq.GetVerificationToken())
+	}
+	if everflowReq.HasOfferIdMacro() {
+		updateReq.SetOfferIdMacro(everflowReq.GetOfferIdMacro())
+	}
+	if everflowReq.HasAffiliateIdMacro() {
+		updateReq.SetAffiliateIdMacro(everflowReq.GetAffiliateIdMacro())
+	}
+	if everflowReq.HasLabels() {
+		updateReq.SetLabels(everflowReq.GetLabels())
+	}
+	if everflowReq.HasUsers() {
+		updateReq.SetUsers(everflowReq.GetUsers())
+	}
+	if everflowReq.HasContactAddress() {
+		updateReq.SetContactAddress(everflowReq.GetContactAddress())
+	}
+	if everflowReq.HasBilling() {
+		updateReq.SetBilling(everflowReq.GetBilling())
+	}
+	if everflowReq.HasSettings() {
+		updateReq.SetSettings(everflowReq.GetSettings())
+	}
+
+	// Update advertiser in Everflow
+	resp, httpResp, err := s.advertiserClient.DefaultAPI.UpdateAdvertiser(ctx, int32(providerID)).UpdateAdvertiserRequest(*updateReq).Execute()
+	if err != nil {
+		return fmt.Errorf("failed to update advertiser in Everflow: %w", err)
+	}
+	defer httpResp.Body.Close()
+
+	// Update provider mapping with response data
+	if err := s.advertiserProviderMapper.MapEverflowResponseToProviderMapping(resp, mapping); err != nil {
+		return fmt.Errorf("failed to update provider mapping with response: %w", err)
+	}
+
+	// Update sync metadata
+	now := time.Now()
+	syncStatus := "synced"
+	mapping.SyncStatus = &syncStatus
+	mapping.LastSyncAt = &now
+	mapping.UpdatedAt = now
+
+	// Update provider config with request/response payload
+	requestPayload, _ := json.Marshal(updateReq)
+	payload := map[string]interface{}{
+		"request":             json.RawMessage(requestPayload),
+		"response":            resp,
+		"last_operation":      "update",
+		"last_operation_time": now,
+	}
+
+	payloadJSON, _ := json.Marshal(payload)
+	payloadStr := string(payloadJSON)
+	mapping.ProviderConfig = &payloadStr
+
+	return s.advertiserProviderMappingRepo.UpdateMapping(ctx, mapping)
 }
 
 // GetAdvertiser retrieves an advertiser from Everflow
 func (s *IntegrationService) GetAdvertiser(ctx context.Context, id uuid.UUID) (domain.Advertiser, error) {
-	// TODO: Implement advertiser retrieval when advertiser functionality is needed
-	return domain.Advertiser{}, fmt.Errorf("advertiser retrieval not implemented")
+	// Convert UUID to int64
+	advertiserID, err := uuidToInt64(id)
+	if err != nil {
+		return domain.Advertiser{}, fmt.Errorf("failed to convert UUID to int64: %w", err)
+	}
+
+	// Get local advertiser
+	adv, err := s.advertiserRepo.GetAdvertiserByID(ctx, advertiserID)
+	if err != nil {
+		return domain.Advertiser{}, fmt.Errorf("failed to get local advertiser: %w", err)
+	}
+
+	// Get provider mapping
+	mapping, err := s.advertiserProviderMappingRepo.GetMappingByAdvertiserAndProvider(ctx, advertiserID, "everflow")
+	if err != nil {
+		return *adv, fmt.Errorf("failed to get advertiser provider mapping: %w", err)
+	}
+
+	if mapping.ProviderAdvertiserID == nil {
+		return *adv, fmt.Errorf("advertiser not found in Everflow")
+	}
+
+	providerID, err := strconv.ParseInt(*mapping.ProviderAdvertiserID, 10, 32)
+	if err != nil {
+		return *adv, fmt.Errorf("invalid provider advertiser ID: %w", err)
+	}
+
+	// Get advertiser from Everflow
+	resp, httpResp, err := s.advertiserClient.DefaultAPI.GetAdvertiserById(ctx, int32(providerID)).Execute()
+	if err != nil {
+		return *adv, fmt.Errorf("failed to get advertiser from Everflow: %w", err)
+	}
+	defer httpResp.Body.Close()
+
+	// Map Everflow response to domain model
+	s.advertiserProviderMapper.MapEverflowResponseToAdvertiser(resp, adv)
+	return *adv, nil
 }
 
 // CreateAffiliate creates an affiliate in Everflow
 func (s *IntegrationService) CreateAffiliate(ctx context.Context, aff domain.Affiliate) (domain.Affiliate, error) {
-	// Check if provider mapping already exists
+	logger.Info("Starting affiliate creation in Everflow",
+		"affiliate_id", aff.AffiliateID,
+		"name", aff.Name,
+		"provider", "everflow")
+	
+	// Check if provider mapping already exists and is successful
 	existingMapping, err := s.affiliateProviderMappingRepo.GetAffiliateProviderMapping(ctx, aff.AffiliateID, "everflow")
-	if err == nil && existingMapping != nil {
-		return aff, fmt.Errorf("affiliate already has Everflow provider mapping")
+	if err == nil && existingMapping != nil && existingMapping.SyncStatus != nil && *existingMapping.SyncStatus == "synced" {
+		logger.Warn("Affiliate already has successful Everflow mapping",
+			"affiliate_id", aff.AffiliateID,
+			"mapping_id", existingMapping.MappingID)
+		return aff, fmt.Errorf("affiliate already has successful Everflow provider mapping")
 	}
-
+	
 	// Map domain affiliate to Everflow request (without existing mapping)
 	everflowReq, err := s.affiliateProviderMapper.MapAffiliateToEverflowRequest(&aff, nil)
 	if err != nil {
+		logger.Error("Failed to map affiliate to Everflow request",
+			"affiliate_id", aff.AffiliateID,
+			"error", err)
 		return aff, fmt.Errorf("failed to map affiliate to Everflow request: %w", err)
 	}
 
 	// Serialize the outbound request for payload storage
 	requestPayload, err := json.Marshal(everflowReq)
 	if err != nil {
+		logger.Error("Failed to serialize request payload",
+			"affiliate_id", aff.AffiliateID,
+			"error", err)
 		return aff, fmt.Errorf("failed to serialize request payload: %w", err)
 	}
 
 	// Create affiliate in Everflow
 	resp, httpResp, err := s.affiliateClient.AffiliatesAPI.CreateAffiliate(ctx).CreateAffiliateRequest(*everflowReq).Execute()
 	if err != nil {
-		return aff, fmt.Errorf("failed to create affiliate in Everflow: %w", err)
+		// Try to read the response body for more detailed error information
+		var errorBody string
+		var statusCode int
+		if httpResp != nil {
+			statusCode = httpResp.StatusCode
+			if httpResp.Body != nil {
+				bodyBytes, readErr := io.ReadAll(httpResp.Body)
+				if readErr == nil {
+					errorBody = string(bodyBytes)
+				}
+			}
+		}
+		logger.ErrorSanitized("API call failed",
+			"affiliate_id", aff.AffiliateID,
+			"status_code", statusCode,
+			"error", err,
+			"response_body", errorBody)
+		return aff, fmt.Errorf("failed to create affiliate in Everflow: %w (response: %s)", err, errorBody)
 	}
 	defer httpResp.Body.Close()
+	
+	logger.Info("Successfully created affiliate in Everflow",
+		"affiliate_id", aff.AffiliateID)
 
-	// Create provider mapping
+	// Create or update provider mapping
 	now := time.Now()
 	syncStatus := "synced"
 
-	mapping := &domain.AffiliateProviderMapping{
-		AffiliateID:  aff.AffiliateID,
-		ProviderType: "everflow",
-		SyncStatus:   &syncStatus,
-		LastSyncAt:   &now,
-		CreatedAt:    now,
-		UpdatedAt:    now,
+	var mapping *domain.AffiliateProviderMapping
+	if existingMapping != nil {
+		// Update existing failed mapping
+		mapping = existingMapping
+		mapping.SyncStatus = &syncStatus
+		mapping.LastSyncAt = &now
+		mapping.UpdatedAt = now
+		mapping.SyncError = nil
+	} else {
+		// Create new mapping
+		mapping = &domain.AffiliateProviderMapping{
+			AffiliateID:  aff.AffiliateID,
+			ProviderType: "everflow",
+			SyncStatus:   &syncStatus,
+			LastSyncAt:   &now,
+			CreatedAt:    now,
+			UpdatedAt:    now,
+		}
 	}
 
 	// Update mapping with Everflow response data
@@ -200,9 +524,15 @@ func (s *IntegrationService) CreateAffiliate(ctx context.Context, aff domain.Aff
 	payloadStr := string(payloadJSON)
 	mapping.ProviderConfig = &payloadStr
 
-	// Create the provider mapping
-	if err := s.affiliateProviderMappingRepo.CreateAffiliateProviderMapping(ctx, mapping); err != nil {
-		return aff, fmt.Errorf("failed to create affiliate provider mapping: %w", err)
+	// Create or update the provider mapping
+	if existingMapping != nil {
+		if err := s.affiliateProviderMappingRepo.UpdateAffiliateProviderMapping(ctx, mapping); err != nil {
+			return aff, fmt.Errorf("failed to update affiliate provider mapping: %w", err)
+		}
+	} else {
+		if err := s.affiliateProviderMappingRepo.CreateAffiliateProviderMapping(ctx, mapping); err != nil {
+			return aff, fmt.Errorf("failed to create affiliate provider mapping: %w", err)
+		}
 	}
 
 	// Update core affiliate with non-provider-specific data from Everflow
@@ -349,14 +679,257 @@ func (s *IntegrationService) GetAffiliate(ctx context.Context, id uuid.UUID) (do
 
 // CreateCampaign creates a campaign (offer) in Everflow
 func (s *IntegrationService) CreateCampaign(ctx context.Context, camp domain.Campaign) (domain.Campaign, error) {
-	// TODO: Implement campaign creation when campaign functionality is needed
-	return camp, fmt.Errorf("campaign creation not implemented")
+	logger.Info("Starting campaign creation in Everflow", "campaign_id", camp.CampaignID, "advertiser_id", camp.AdvertiserID, "name", camp.Name, "provider", "everflow")
+	
+	// Check if provider mapping already exists and is successful
+	logger.Debug("Checking for existing provider mapping", "campaign_id", camp.CampaignID)
+	existingMapping, err := s.campaignProviderMappingRepo.GetCampaignProviderMapping(ctx, camp.CampaignID, "everflow")
+	if err == nil && existingMapping != nil && existingMapping.IsActiveOnProvider != nil && *existingMapping.IsActiveOnProvider {
+		logger.Warn("Campaign already has successful Everflow provider mapping", "campaign_id", camp.CampaignID)
+		return camp, fmt.Errorf("campaign already has successful Everflow provider mapping")
+	}
+	if err != nil {
+		logger.Debug("No existing mapping found (expected)", "campaign_id", camp.CampaignID, "error", err)
+	} else if existingMapping != nil {
+		logger.Debug("Found existing mapping but not active, will update it", "campaign_id", camp.CampaignID)
+	}
+
+	// Get advertiser provider mapping to get network_advertiser_id
+	logger.Debug("Getting advertiser provider mapping", "campaign_id", camp.CampaignID, "advertiser_id", camp.AdvertiserID)
+	advertiserMapping, err := s.advertiserProviderMappingRepo.GetMappingByAdvertiserAndProvider(ctx, camp.AdvertiserID, "everflow")
+	if err != nil {
+		logger.Error("Failed to get advertiser provider mapping", "campaign_id", camp.CampaignID, "advertiser_id", camp.AdvertiserID, "error", err)
+		return camp, fmt.Errorf("failed to get advertiser provider mapping: %w", err)
+	}
+	if advertiserMapping.ProviderAdvertiserID == nil {
+		logger.Error("Advertiser provider mapping exists but ProviderAdvertiserID is nil", "campaign_id", camp.CampaignID)
+		return camp, fmt.Errorf("advertiser not found in Everflow")
+	}
+
+	networkAdvertiserID, err := strconv.ParseInt(*advertiserMapping.ProviderAdvertiserID, 10, 32)
+	if err != nil {
+		logger.Error("Invalid provider advertiser ID format", "campaign_id", camp.CampaignID, "error", err)
+		return camp, fmt.Errorf("invalid provider advertiser ID: %w", err)
+	}
+
+	// Map domain campaign to Everflow offer request
+	everflowReq, err := s.mapCampaignToEverflowRequest(&camp, int32(networkAdvertiserID))
+	if err != nil {
+		logger.Error("Failed to map campaign to Everflow request", "campaign_id", camp.CampaignID, "error", err)
+		return camp, fmt.Errorf("failed to map campaign to Everflow request: %w", err)
+	}
+
+	// Serialize the outbound request for payload storage
+	requestPayload, err := json.Marshal(everflowReq)
+	if err != nil {
+		logger.Error("Failed to serialize request payload", "campaign_id", camp.CampaignID, "error", err)
+		return camp, fmt.Errorf("failed to serialize request payload: %w", err)
+	}
+	// Create offer in Everflow
+	resp, httpResp, err := s.offerClient.OffersAPI.CreateOffer(ctx).CreateOfferRequest(*everflowReq).Execute()
+	if err != nil {
+		// Try to read the response body for more detailed error information
+		var errorBody string
+		var statusCode int
+		if httpResp != nil {
+			statusCode = httpResp.StatusCode
+			if httpResp.Body != nil {
+				bodyBytes, readErr := io.ReadAll(httpResp.Body)
+				if readErr == nil {
+					errorBody = string(bodyBytes)
+				}
+			}
+		}
+		logger.ErrorSanitized("API call failed", "campaign_id", camp.CampaignID, "status_code", statusCode, "error", err, "response_body", errorBody)
+		return camp, fmt.Errorf("failed to create offer in Everflow: %w (response: %s)", err, errorBody)
+	}
+	defer httpResp.Body.Close()
+	logger.Info("Successfully created offer in Everflow", "campaign_id", camp.CampaignID)
+
+	// Create or update provider mapping
+	now := time.Now()
+
+	var mapping *domain.CampaignProviderMapping
+	if existingMapping != nil {
+		// Update existing failed mapping
+		mapping = existingMapping
+		isActive := true
+		mapping.IsActiveOnProvider = &isActive
+		mapping.LastSyncedAt = &now
+		mapping.UpdatedAt = now
+	} else {
+		// Create new mapping
+		isActive := true
+		mapping = &domain.CampaignProviderMapping{
+			CampaignID:         camp.CampaignID,
+			ProviderType:       "everflow",
+			IsActiveOnProvider: &isActive,
+			LastSyncedAt:       &now,
+			CreatedAt:          now,
+			UpdatedAt:          now,
+		}
+	}
+
+	// Update mapping with Everflow response data
+	if err := s.mapEverflowResponseToCampaignMapping(resp, mapping); err != nil {
+		logger.Error("Failed to map Everflow response to provider mapping", "campaign_id", camp.CampaignID, "error", err)
+		return camp, fmt.Errorf("failed to map Everflow response to provider mapping: %w", err)
+	}
+
+	// Store request/response payload in provider config
+	payload := map[string]interface{}{
+		"request":             json.RawMessage(requestPayload),
+		"response":            resp,
+		"last_operation":      "create",
+		"last_operation_time": now,
+	}
+
+	payloadJSON, err := json.Marshal(payload)
+	if err != nil {
+		logger.Error("Failed to marshal payload", "campaign_id", camp.CampaignID, "error", err)
+		return camp, fmt.Errorf("failed to marshal payload: %w", err)
+	}
+
+	payloadStr := string(payloadJSON)
+	mapping.ProviderData = &payloadStr
+
+	// Create or update the provider mapping
+	if existingMapping != nil {
+		if err := s.campaignProviderMappingRepo.UpdateCampaignProviderMapping(ctx, mapping); err != nil {
+			logger.Error("Failed to update campaign provider mapping", "campaign_id", camp.CampaignID, "error", err)
+			return camp, fmt.Errorf("failed to update campaign provider mapping: %w", err)
+		}
+		logger.Info("Successfully updated provider mapping", "campaign_id", camp.CampaignID)
+	} else {
+		if err := s.campaignProviderMappingRepo.CreateCampaignProviderMapping(ctx, mapping); err != nil {
+			logger.Error("Failed to create campaign provider mapping", "campaign_id", camp.CampaignID, "error", err)
+			return camp, fmt.Errorf("failed to create campaign provider mapping: %w", err)
+		}
+		logger.Info("Successfully created provider mapping", "campaign_id", camp.CampaignID)
+	}
+
+	// Update core campaign with non-provider-specific data from Everflow
+	s.mapEverflowResponseToCampaign(resp, &camp)
+	logger.Info("Successfully completed campaign creation", "campaign_id", camp.CampaignID)
+
+	return camp, nil
 }
 
 // UpdateCampaign updates a campaign (offer) in Everflow
 func (s *IntegrationService) UpdateCampaign(ctx context.Context, camp domain.Campaign) error {
-	// TODO: Implement campaign update when campaign functionality is needed
-	return fmt.Errorf("campaign update not implemented")
+	logger.Info("Starting campaign update in Everflow", "campaign_id", camp.CampaignID, "name", camp.Name)
+
+	// Step 1: Get existing campaign provider mapping
+	campaignMapping, err := s.campaignProviderMappingRepo.GetCampaignProviderMapping(ctx, camp.CampaignID, "everflow")
+	if err != nil {
+		logger.Error("Failed to get campaign provider mapping", "campaign_id", camp.CampaignID, "error", err)
+		return fmt.Errorf("failed to get campaign provider mapping: %w", err)
+	}
+
+	// Parse the provider data to get network_offer_id
+	var networkOfferID int32
+	if campaignMapping.ProviderData == nil {
+		logger.Error("Campaign provider data is nil", "campaign_id", camp.CampaignID)
+		return fmt.Errorf("campaign provider data is nil")
+	}
+
+	logger.Debug("Parsing campaign provider data", "campaign_id", camp.CampaignID)
+	logger.Debug("Campaign provider data", "campaign_id", camp.CampaignID, "provider_data", *campaignMapping.ProviderData)
+
+	// Try to parse as complex payload structure first (request/response format)
+	var payload map[string]interface{}
+	if err := json.Unmarshal([]byte(*campaignMapping.ProviderData), &payload); err == nil {
+		if response, ok := payload["response"].(map[string]interface{}); ok {
+			if networkOfferIDFloat, ok := response["network_offer_id"].(float64); ok {
+				networkOfferID = int32(networkOfferIDFloat)
+				logger.Debug("Found network_offer_id from response payload", "campaign_id", camp.CampaignID, "network_offer_id", networkOfferID)
+			} else {
+				logger.Warn("network_offer_id not found in response payload", "campaign_id", camp.CampaignID)
+			}
+		} else {
+			logger.Warn("response object not found in payload", "campaign_id", camp.CampaignID)
+		}
+	} else {
+		// Fallback: try to parse as simple EverflowCampaignProviderData structure
+		logger.Debug("Trying fallback parsing as EverflowCampaignProviderData", "campaign_id", camp.CampaignID)
+		var campaignProviderData domain.EverflowCampaignProviderData
+		if err := campaignProviderData.FromJSON(*campaignMapping.ProviderData); err == nil {
+			if campaignProviderData.NetworkCampaignID != nil {
+				networkOfferID = *campaignProviderData.NetworkCampaignID
+				logger.Debug("Found network_offer_id from fallback", "campaign_id", camp.CampaignID, "network_offer_id", networkOfferID)
+			} else {
+				logger.Warn("NetworkCampaignID is nil in campaign provider data", "campaign_id", camp.CampaignID)
+			}
+		} else {
+			logger.Warn("Failed to parse campaign provider data with both methods", "campaign_id", camp.CampaignID, "error", err)
+		}
+	}
+
+	if networkOfferID == 0 {
+		logger.Error("Invalid or missing network_offer_id in campaign provider data", "campaign_id", camp.CampaignID)
+		return fmt.Errorf("invalid or missing network_offer_id in campaign provider data")
+	}
+
+	// Step 2: Get advertiser provider mapping to get network_advertiser_id
+	advertiserMapping, err := s.advertiserProviderMappingRepo.GetMappingByAdvertiserAndProvider(ctx, camp.AdvertiserID, "everflow")
+	if err != nil {
+		logger.Error("Failed to get advertiser provider mapping", "advertiser_id", camp.AdvertiserID, "error", err)
+		return fmt.Errorf("failed to get advertiser provider mapping: %w", err)
+	}
+
+	// Parse advertiser provider data
+	var advertiserProviderData map[string]interface{}
+	if advertiserMapping.ProviderData == nil {
+		logger.Error("Advertiser provider data is nil", "advertiser_id", camp.AdvertiserID)
+		return fmt.Errorf("advertiser provider data is nil")
+	}
+	if err := json.Unmarshal([]byte(*advertiserMapping.ProviderData), &advertiserProviderData); err != nil {
+		logger.Error("Failed to parse advertiser provider data", "advertiser_id", camp.AdvertiserID, "error", err)
+		return fmt.Errorf("failed to parse advertiser provider data: %w", err)
+	}
+
+	networkAdvertiserID, ok := advertiserProviderData["network_advertiser_id"].(float64)
+	if !ok {
+		logger.Error("Invalid network_advertiser_id in advertiser provider data", "advertiser_id", camp.AdvertiserID)
+		return fmt.Errorf("invalid network_advertiser_id in advertiser provider data")
+	}
+
+	// Step 3: Map campaign to Everflow update request
+	logger.Debug("Mapping campaign to Everflow update request", "campaign_id", camp.CampaignID)
+	updateRequest, err := s.mapCampaignToEverflowUpdateRequest(&camp, int32(networkAdvertiserID))
+	if err != nil {
+		logger.Error("Failed to map campaign to Everflow update request", "campaign_id", camp.CampaignID, "error", err)
+		return fmt.Errorf("failed to map campaign to Everflow update request: %w", err)
+	}
+
+	// Step 4: Update offer in Everflow
+	logger.Debug("Updating offer in Everflow", "campaign_id", camp.CampaignID, "network_offer_id", networkOfferID)
+	
+	// Log the request payload for debugging
+	if requestJSON, err := json.MarshalIndent(updateRequest, "", "  "); err == nil {
+		logger.Info("Everflow UpdateOffer request payload", "campaign_id", camp.CampaignID, "network_offer_id", networkOfferID, "request", string(requestJSON))
+	} else {
+		logger.Warn("Failed to marshal request for logging", "campaign_id", camp.CampaignID, "error", err)
+	}
+	
+	response, httpResp, err := s.offerClient.OffersAPI.UpdateOffer(ctx, networkOfferID).UpdateOfferRequest(*updateRequest).Execute()
+	if err != nil {
+		logger.Error("Failed to update offer in Everflow", "campaign_id", camp.CampaignID, "network_offer_id", networkOfferID, "error", err)
+		if httpResp != nil {
+			logger.Error("HTTP response details", "status_code", httpResp.StatusCode, "status", httpResp.Status)
+			
+			// Try to read and log the response body for more details
+			if httpResp.Body != nil {
+				if bodyBytes, readErr := io.ReadAll(httpResp.Body); readErr == nil {
+					logger.Error("HTTP response body", "campaign_id", camp.CampaignID, "body", string(bodyBytes))
+				}
+			}
+		}
+		return fmt.Errorf("failed to update offer in Everflow: %w", err)
+	}
+
+	logger.Info("Successfully updated campaign in Everflow", "campaign_id", camp.CampaignID, "network_offer_id", response.GetNetworkOfferId())
+	return nil
 }
 
 // GetCampaign retrieves a campaign from Everflow
@@ -394,151 +967,767 @@ func (s *IntegrationService) mapEverflowResponseToAffiliate(resp interface{}, af
 }
 
 // mapCampaignToEverflowRequest maps domain campaign to Everflow offer request
-func (s *IntegrationService) mapCampaignToEverflowRequest(camp *domain.Campaign, networkAdvertiserID int32) (interface{}, error) {
-	// TODO: Implement campaign mapping when campaign functionality is needed
-	return nil, fmt.Errorf("campaign mapping not implemented")
+func (s *IntegrationService) mapCampaignToEverflowRequest(camp *domain.Campaign, networkAdvertiserID int32) (*offer.CreateOfferRequest, error) {
+	// Determine payout and revenue types based on campaign configuration
+	var payoutType, revenueType string
+	var payoutRevenue []offer.PayoutRevenue
+
+	// Check if this is a click-based campaign
+	if camp.FixedClickAmount != nil && *camp.FixedClickAmount > 0 {
+		// Click-based campaign: RPC revenue model, CPC payout model
+		revenueType = "rpc"  // Revenue Per Click
+		payoutType = "cpc"   // Cost Per Click
+		
+		payoutRevenue = []offer.PayoutRevenue{
+			*offer.NewPayoutRevenue(payoutType, revenueType, true, false),
+		}
+		
+		// Set revenue to 0 (we don't earn revenue from clicks)
+		payoutRevenue[0].SetRevenueAmount(0.0)
+		
+		// Set payout amount from user configuration
+		payoutRevenue[0].SetPayoutAmount(*camp.FixedClickAmount)
+		
+	} else {
+		// Conversion-based campaign: RPS revenue model (100%), payout depends on configuration
+		revenueType = "rps"  // Revenue Per Sale
+		
+		// Determine payout type based on what's configured
+		hasFixedAmount := camp.FixedConversionAmount != nil && *camp.FixedConversionAmount > 0
+		hasPercentageAmount := camp.PercentageConversionAmount != nil && *camp.PercentageConversionAmount > 0
+		
+		if hasFixedAmount && hasPercentageAmount {
+			payoutType = "cpa_cps"  // Cost Per Action + Cost Per Sale (mixed)
+		} else if hasPercentageAmount {
+			payoutType = "cps"      // Cost Per Sale (percentage only)
+		} else {
+			payoutType = "cpa"      // Cost Per Action (fixed amount, default)
+		}
+		
+		payoutRevenue = []offer.PayoutRevenue{
+			*offer.NewPayoutRevenue(payoutType, revenueType, true, false),
+		}
+		
+		// Set revenue to 100% (we earn 100% of the sale)
+		payoutRevenue[0].SetRevenuePercentage(100)
+		
+		// Set payout amounts based on configuration
+		if hasFixedAmount {
+			payoutRevenue[0].SetPayoutAmount(*camp.FixedConversionAmount)
+		}
+		
+		if hasPercentageAmount {
+			payoutRevenue[0].SetPayoutPercentage(int32(*camp.PercentageConversionAmount))
+		}
+		
+		// Set default payout amount if nothing is configured
+		if !hasFixedAmount && !hasPercentageAmount {
+			payoutRevenue[0].SetPayoutAmount(0.0) // Default to 0 if not configured
+		}
+	}
+
+	// Determine destination URL
+	destinationURL := "https://example.com"
+	if camp.DestinationURL != nil && *camp.DestinationURL != "" {
+		destinationURL = *camp.DestinationURL
+	}
+
+	// Determine offer status based on campaign status
+	offerStatus := "active"
+	if camp.Status == "paused" {
+		offerStatus = "paused"
+	} else if camp.Status == "draft" {
+		offerStatus = "inactive"
+	}
+
+	// Create the offer request
+	req := offer.NewCreateOfferRequest(
+		networkAdvertiserID,
+		camp.Name,
+		destinationURL,
+		offerStatus,
+		payoutRevenue,
+	)
+
+	// Set optional fields
+	if camp.ThumbnailURL != nil {
+		req.SetThumbnailUrl(*camp.ThumbnailURL)
+	}
+
+	if camp.PreviewURL != nil {
+		req.SetPreviewUrl(*camp.PreviewURL)
+	}
+
+	if camp.InternalNotes != nil {
+		req.SetInternalNotes(*camp.InternalNotes)
+	}
+
+	if camp.CurrencyID != nil {
+		req.SetCurrencyId(*camp.CurrencyID)
+	}
+
+	if camp.ConversionMethod != nil {
+		req.SetConversionMethod(*camp.ConversionMethod)
+	}
+
+	if camp.SessionDefinition != nil {
+		req.SetSessionDefinition(*camp.SessionDefinition)
+	}
+
+	if camp.SessionDuration != nil {
+		req.SetSessionDuration(*camp.SessionDuration)
+	}
+
+	if camp.Visibility != nil {
+		req.SetVisibility(*camp.Visibility)
+	}
+
+	if camp.TermsAndConditions != nil {
+		req.SetTermsAndConditions(*camp.TermsAndConditions)
+		req.SetIsUsingExplicitTermsAndConditions(true)
+	}
+
+	// Set end date if available
+	if camp.EndDate != nil {
+		dateLiveUntil := camp.EndDate.Format("2006-01-02")
+		req.SetDateLiveUntil(dateLiveUntil)
+	}
+
+	// Set description as HTML description
+	if camp.Description != nil {
+		req.SetHtmlDescription(*camp.Description)
+	}
+
+	// Set caps if enabled
+	if camp.IsCapsEnabled != nil && *camp.IsCapsEnabled {
+		req.SetIsCapsEnabled(true)
+		if camp.DailyConversionCap != nil {
+			req.SetDailyConversionCap(int32(*camp.DailyConversionCap))
+		}
+		if camp.WeeklyConversionCap != nil {
+			req.SetWeeklyConversionCap(int32(*camp.WeeklyConversionCap))
+		}
+		if camp.MonthlyConversionCap != nil {
+			req.SetMonthlyConversionCap(int32(*camp.MonthlyConversionCap))
+		}
+		if camp.GlobalConversionCap != nil {
+			req.SetGlobalConversionCap(int32(*camp.GlobalConversionCap))
+		}
+		if camp.DailyClickCap != nil {
+			req.SetDailyClickCap(int32(*camp.DailyClickCap))
+		}
+		if camp.WeeklyClickCap != nil {
+			req.SetWeeklyClickCap(int32(*camp.WeeklyClickCap))
+		}
+		if camp.MonthlyClickCap != nil {
+			req.SetMonthlyClickCap(int32(*camp.MonthlyClickCap))
+		}
+		if camp.GlobalClickCap != nil {
+			req.SetGlobalClickCap(int32(*camp.GlobalClickCap))
+		}
+	}
+
+	// Set constant values as mentioned by user
+	networkTrackingDomainID := int32(12977)
+	req.SetNetworkTrackingDomainId(networkTrackingDomainID)
+	req.SetIsUseSecureLink(true)
+
+	// Set default category ID
+	req.SetNetworkCategoryId(1)
+
+	// Create empty ruleset with default timezone
+	ruleset := offer.NewRuleset()
+	ruleset.SetDayPartingTimezoneId(58) // Default timezone from example
+	req.SetRuleset(*ruleset)
+
+	// Set attribution methods
+	req.SetEmailAttributionMethod("first_affiliate_attribution")
+	req.SetAttributionMethod("last_touch")
+
+	// Set additional required fields to match update method
+	req.SetRedirectMode("standard")                    // Fixed: should be "standard"
+	req.SetIsDuplicateFilterEnabled(false)            // TODO: hardcoded as false for now
+
+	return req, nil
 }
 
 // mapEverflowResponseToCampaign maps Everflow offer response to domain campaign
-func (s *IntegrationService) mapEverflowResponseToCampaign(resp interface{}, camp *domain.Campaign) domain.Campaign {
-	// TODO: Implement response mapping when campaign functionality is needed
+func (s *IntegrationService) mapEverflowResponseToCampaign(resp *offer.OfferResponse, camp *domain.Campaign) domain.Campaign {
+	// Update campaign with response data if available
+	if resp != nil {
+		// Update basic fields that might have been modified by Everflow
+		if resp.HasName() {
+			camp.Name = resp.GetName()
+		}
+		
+		if resp.HasDestinationUrl() {
+			destinationURL := resp.GetDestinationUrl()
+			camp.DestinationURL = &destinationURL
+		}
+		
+		if resp.HasThumbnailUrl() {
+			thumbnailURL := resp.GetThumbnailUrl()
+			camp.ThumbnailURL = &thumbnailURL
+		}
+		
+		if resp.HasPreviewUrl() {
+			previewURL := resp.GetPreviewUrl()
+			camp.PreviewURL = &previewURL
+		}
+		
+		if resp.HasInternalNotes() {
+			internalNotes := resp.GetInternalNotes()
+			camp.InternalNotes = &internalNotes
+		}
+		
+		if resp.HasCurrencyId() {
+			currencyID := resp.GetCurrencyId()
+			camp.CurrencyID = &currencyID
+		}
+		
+		if resp.HasConversionMethod() {
+			conversionMethod := resp.GetConversionMethod()
+			camp.ConversionMethod = &conversionMethod
+		}
+		
+		if resp.HasSessionDefinition() {
+			sessionDefinition := resp.GetSessionDefinition()
+			camp.SessionDefinition = &sessionDefinition
+		}
+		
+		if resp.HasSessionDuration() {
+			sessionDuration := resp.GetSessionDuration()
+			camp.SessionDuration = &sessionDuration
+		}
+		
+		if resp.HasVisibility() {
+			visibility := resp.GetVisibility()
+			camp.Visibility = &visibility
+		}
+		
+		if resp.HasTermsAndConditions() {
+			termsAndConditions := resp.GetTermsAndConditions()
+			camp.TermsAndConditions = &termsAndConditions
+		}
+		
+		// Map offer status back to campaign status
+		if resp.HasOfferStatus() {
+			offerStatus := resp.GetOfferStatus()
+			switch offerStatus {
+			case "active":
+				camp.Status = "active"
+			case "paused":
+				camp.Status = "paused"
+			case "inactive":
+				camp.Status = "draft"
+			default:
+				camp.Status = "draft"
+			}
+		}
+	}
+	
 	return *camp
 }
 
+// mapEverflowResponseToCampaignMapping maps Everflow offer response to campaign provider mapping
+func (s *IntegrationService) mapEverflowResponseToCampaignMapping(resp *offer.OfferResponse, mapping *domain.CampaignProviderMapping) error {
+	if resp == nil {
+		return fmt.Errorf("invalid response data")
+	}
+
+	// Set provider offer ID (Everflow calls campaigns "offers")
+	if resp.HasNetworkOfferId() {
+		providerOfferID := strconv.FormatInt(int64(resp.GetNetworkOfferId()), 10)
+		mapping.ProviderOfferID = &providerOfferID
+	}
+
+	// Create provider data structure
+	providerData := &domain.EverflowCampaignProviderData{}
+	
+	if resp.HasNetworkOfferId() {
+		networkCampaignID := resp.GetNetworkOfferId()
+		providerData.NetworkCampaignID = &networkCampaignID
+	}
+	
+	if resp.HasNetworkAdvertiserId() {
+		networkAdvertiserID := resp.GetNetworkAdvertiserId()
+		providerData.NetworkAdvertiserID = &networkAdvertiserID
+	}
+	
+	if resp.HasCapsTimezoneId() {
+		capsTimezoneID := resp.GetCapsTimezoneId()
+		providerData.CapsTimezoneID = &capsTimezoneID
+	}
+	
+	if resp.HasProjectId() {
+		projectID := resp.GetProjectId()
+		providerData.ProjectID = &projectID
+	}
+	
+	if resp.HasHtmlDescription() {
+		htmlDescription := resp.GetHtmlDescription()
+		providerData.HTMLDescription = &htmlDescription
+	}
+	
+	if resp.HasIsUsingExplicitTermsAndConditions() {
+		isUsingExplicitTermsAndConditions := resp.GetIsUsingExplicitTermsAndConditions()
+		providerData.IsUsingExplicitTermsAndConditions = &isUsingExplicitTermsAndConditions
+	}
+	
+	if resp.HasIsForceTermsAndConditions() {
+		isForceTermsAndConditions := resp.GetIsForceTermsAndConditions()
+		providerData.IsForceTermsAndConditions = &isForceTermsAndConditions
+	}
+	
+	if resp.HasIsViewThroughEnabled() {
+		isViewThroughEnabled := resp.GetIsViewThroughEnabled()
+		providerData.IsViewThroughEnabled = &isViewThroughEnabled
+	}
+	
+	if resp.HasServerSideUrl() {
+		serverSideURL := resp.GetServerSideUrl()
+		providerData.ServerSideURL = &serverSideURL
+	}
+	
+	if resp.HasViewThroughDestinationUrl() {
+		viewThroughDestinationURL := resp.GetViewThroughDestinationUrl()
+		providerData.ViewThroughDestinationURL = &viewThroughDestinationURL
+	}
+	
+	if resp.HasIsDescriptionPlainText() {
+		isDescriptionPlainText := resp.GetIsDescriptionPlainText()
+		providerData.IsDescriptionPlainText = &isDescriptionPlainText
+	}
+	
+	if resp.HasIsUseDirectLinking() {
+		isUseDirectLinking := resp.GetIsUseDirectLinking()
+		providerData.IsUseDirectLinking = &isUseDirectLinking
+	}
+	
+	if resp.HasAppIdentifier() {
+		appIdentifier := resp.GetAppIdentifier()
+		providerData.AppIdentifier = &appIdentifier
+	}
+	
+	if resp.HasTimeCreated() {
+		timeCreated := int(resp.GetTimeCreated())
+		providerData.TimeCreated = &timeCreated
+	}
+	
+	if resp.HasTimeSaved() {
+		timeSaved := int(resp.GetTimeSaved())
+		providerData.TimeSaved = &timeSaved
+	}
+
+	// Convert provider data to JSON and store in mapping
+	providerDataJSON, err := providerData.ToJSON()
+	if err != nil {
+		return fmt.Errorf("failed to serialize provider data: %w", err)
+	}
+	mapping.ProviderData = &providerDataJSON
+
+	return nil
+}
+
 // mapCampaignToEverflowUpdateRequest maps domain campaign to Everflow offer update request
-func (s *IntegrationService) mapCampaignToEverflowUpdateRequest(camp *domain.Campaign) (interface{}, error) {
-	// TODO: Implement campaign update mapping when campaign functionality is needed
-	return nil, fmt.Errorf("campaign update mapping not implemented")
+func (s *IntegrationService) mapCampaignToEverflowUpdateRequest(camp *domain.Campaign, networkAdvertiserID int32) (*offer.UpdateOfferRequest, error) {
+	// Determine payout and revenue types based on campaign configuration
+	var payoutType, revenueType string
+	var payoutRevenue []offer.PayoutRevenue
+
+	// Check if this is a click-based campaign
+	if camp.FixedClickAmount != nil && *camp.FixedClickAmount > 0 {
+		// Click-based campaign: RPC revenue model, CPC payout model
+		revenueType = "rpc"  // Revenue Per Click
+		payoutType = "cpc"   // Cost Per Click
+		
+		payoutRevenueItem := offer.NewPayoutRevenue(payoutType, revenueType, true, false)
+		payoutAmount := float64(*camp.FixedClickAmount)
+		payoutRevenueItem.SetPayoutAmount(payoutAmount)
+		revenueAmount := float64(0)
+		payoutRevenueItem.SetRevenueAmount(revenueAmount)
+		
+		payoutRevenue = []offer.PayoutRevenue{*payoutRevenueItem}
+	} else {
+		// Conversion-based campaign: RPS revenue model (100%)
+		revenueType = "rps"  // Revenue Per Sale (100%)
+		
+		// Determine payout type based on available amounts
+		hasFixed := camp.FixedConversionAmount != nil && *camp.FixedConversionAmount > 0
+		hasPercentage := camp.PercentageConversionAmount != nil && *camp.PercentageConversionAmount > 0
+		
+		if hasFixed && hasPercentage {
+			// Mixed model: both fixed and percentage
+			payoutType = "cpa_cps"
+			payoutRevenueItem := offer.NewPayoutRevenue(payoutType, revenueType, true, false)
+			payoutAmount := float64(*camp.FixedConversionAmount)
+			payoutRevenueItem.SetPayoutAmount(payoutAmount)
+			payoutPercentage := int32(*camp.PercentageConversionAmount)
+			payoutRevenueItem.SetPayoutPercentage(payoutPercentage)
+			revenuePercentage := int32(100)
+			payoutRevenueItem.SetRevenuePercentage(revenuePercentage)
+			
+			payoutRevenue = []offer.PayoutRevenue{*payoutRevenueItem}
+		} else if hasPercentage {
+			// Percentage-only model
+			payoutType = "cps"  // Cost Per Sale (percentage)
+			payoutRevenueItem := offer.NewPayoutRevenue(payoutType, revenueType, true, false)
+			payoutPercentage := int32(*camp.PercentageConversionAmount)
+			payoutRevenueItem.SetPayoutPercentage(payoutPercentage)
+			revenuePercentage := int32(100)
+			payoutRevenueItem.SetRevenuePercentage(revenuePercentage)
+			
+			payoutRevenue = []offer.PayoutRevenue{*payoutRevenueItem}
+		} else {
+			// Fixed-only or default model
+			payoutType = "cpa"  // Cost Per Action (fixed amount)
+			payoutRevenueItem := offer.NewPayoutRevenue(payoutType, revenueType, true, false)
+			fixedAmount := float64(0)
+			if hasFixed {
+				fixedAmount = float64(*camp.FixedConversionAmount)
+			}
+			payoutRevenueItem.SetPayoutAmount(fixedAmount)
+			revenuePercentage := int32(100)
+			payoutRevenueItem.SetRevenuePercentage(revenuePercentage)
+			
+			payoutRevenue = []offer.PayoutRevenue{*payoutRevenueItem}
+		}
+	}
+
+	// Map campaign status to Everflow offer status
+	offerStatus := "active"
+	switch camp.Status {
+	case "draft":
+		offerStatus = "paused"
+	case "active":
+		offerStatus = "active"
+	case "paused":
+		offerStatus = "paused"
+	case "archived":
+		offerStatus = "paused"
+	}
+
+	// Create the update request with all required fields
+	destinationURL := ""
+	if camp.DestinationURL != nil {
+		destinationURL = *camp.DestinationURL
+	}
+	
+	updateRequest := offer.NewUpdateOfferRequest(
+		networkAdvertiserID,
+		camp.Name,
+		destinationURL,
+		offerStatus,
+		payoutRevenue,
+	)
+
+	// Set optional fields
+	if camp.Description != nil && *camp.Description != "" {
+		updateRequest.SetHtmlDescription(*camp.Description)
+	}
+
+	if camp.InternalNotes != nil && *camp.InternalNotes != "" {
+		updateRequest.SetInternalNotes(*camp.InternalNotes)
+	}
+
+	// Set default values for required fields that don't have domain equivalents
+	updateRequest.SetCurrencyId("USD")
+	updateRequest.SetVisibility("public")
+	updateRequest.SetConversionMethod("server_postback")
+	updateRequest.SetRedirectMode("standard")  // Fixed: should be "standard"
+	updateRequest.SetSessionDefinition("ip_user_agent")
+	updateRequest.SetSessionDuration(24)
+
+	// Set hardcoded required fields
+	updateRequest.SetNetworkTrackingDomainId(12977)  // Added: hardcoded as 12977
+	updateRequest.SetNetworkCategoryId(1)            // Added: hardcoded as 1
+
+	// Set reasonable defaults for boolean fields
+	updateRequest.SetIsViewThroughEnabled(false)
+	updateRequest.SetIsUsingExplicitTermsAndConditions(false)
+	updateRequest.SetIsForceTermsAndConditions(false)
+	updateRequest.SetIsCapsEnabled(false)
+	updateRequest.SetIsUsingSuppressionList(false)
+	updateRequest.SetIsDuplicateFilterEnabled(false)  // TODO: hardcoded as false for now
+	updateRequest.SetIsUseSecureLink(true)
+	updateRequest.SetIsAllowDeepLink(true)
+	updateRequest.SetIsSessionTrackingEnabled(true)
+	updateRequest.SetSessionTrackingLifespanHour(720) // 30 days
+	updateRequest.SetIsViewThroughSessionTrackingEnabled(false)
+	updateRequest.SetIsBlockAlreadyConverted(false)
+	updateRequest.SetIsWhitelistCheckEnabled(false)
+	updateRequest.SetIsUseScrubRate(false)
+	updateRequest.SetIsDescriptionPlainText(false)
+
+	return updateRequest, nil
 }
 
 // GenerateTrackingLink generates a tracking link via Everflow API
 func (s *IntegrationService) GenerateTrackingLink(ctx context.Context, req *domain.TrackingLinkGenerationRequest, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) (*domain.TrackingLinkGenerationResponse, error) {
+	logger.Info("Starting tracking link generation", "campaign_id", req.CampaignID, "affiliate_id", req.AffiliateID, "provider", "everflow")
+	
 	// Extract provider-specific IDs from mappings
 	var networkOfferID, networkAffiliateID int32
 
 	// Parse campaign provider data to get network_offer_id
-	if campaignMapping != nil && campaignMapping.ProviderData != nil {
-		var campaignProviderData domain.EverflowCampaignProviderData
-		if err := campaignProviderData.FromJSON(*campaignMapping.ProviderData); err == nil {
-			if campaignProviderData.NetworkCampaignID != nil {
-				networkOfferID = *campaignProviderData.NetworkCampaignID
+	if campaignMapping != nil {
+		logger.Debug("Campaign mapping found", "campaign_id", req.CampaignID, "mapping_id", campaignMapping.MappingID, "provider_type", campaignMapping.ProviderType)
+		if campaignMapping.ProviderData != nil {
+			logger.Debug("Parsing campaign provider data", "campaign_id", req.CampaignID)
+			logger.Debug("Campaign provider data", "campaign_id", req.CampaignID, "provider_data", *campaignMapping.ProviderData)
+			
+			// Try to parse as complex payload structure first (request/response format)
+			var payload map[string]interface{}
+			if err := json.Unmarshal([]byte(*campaignMapping.ProviderData), &payload); err == nil {
+				if response, ok := payload["response"].(map[string]interface{}); ok {
+					if networkOfferIDFloat, ok := response["network_offer_id"].(float64); ok {
+						networkOfferID = int32(networkOfferIDFloat)
+						logger.Debug("Found network_offer_id from response payload", "campaign_id", req.CampaignID, "network_offer_id", networkOfferID)
+					} else {
+						logger.Warn("network_offer_id not found in response payload", "campaign_id", req.CampaignID)
+					}
+				} else {
+					logger.Warn("response object not found in payload", "campaign_id", req.CampaignID)
+				}
+			} else {
+				// Fallback: try to parse as simple EverflowCampaignProviderData structure
+				logger.Debug("Trying fallback parsing as EverflowCampaignProviderData", "campaign_id", req.CampaignID)
+				var campaignProviderData domain.EverflowCampaignProviderData
+				if err := campaignProviderData.FromJSON(*campaignMapping.ProviderData); err == nil {
+					if campaignProviderData.NetworkCampaignID != nil {
+						networkOfferID = *campaignProviderData.NetworkCampaignID
+						logger.Debug("Found network_offer_id from fallback", "campaign_id", req.CampaignID, "network_offer_id", networkOfferID)
+					} else {
+						logger.Warn("NetworkCampaignID is nil in campaign provider data", "campaign_id", req.CampaignID)
+					}
+				} else {
+					logger.Warn("Failed to parse campaign provider data with both methods", "campaign_id", req.CampaignID, "error", err)
+				}
 			}
+		} else {
+			logger.Warn("Campaign mapping exists but ProviderData is nil", "campaign_id", req.CampaignID)
 		}
+	} else {
+		logger.Warn("No campaign mapping available", "campaign_id", req.CampaignID)
 	}
 
 	// Parse affiliate provider data to get network_affiliate_id
-	if affiliateMapping != nil && affiliateMapping.ProviderData != nil {
-		var affiliateProviderData domain.EverflowProviderData
-		if err := json.Unmarshal([]byte(*affiliateMapping.ProviderData), &affiliateProviderData); err == nil {
-			if affiliateProviderData.NetworkAffiliateID != nil {
-				networkAffiliateID = *affiliateProviderData.NetworkAffiliateID
+	if affiliateMapping != nil {
+		logger.Debug("Affiliate mapping found", "affiliate_id", req.AffiliateID, "mapping_id", affiliateMapping.MappingID, "provider_type", affiliateMapping.ProviderType)
+		if affiliateMapping.ProviderData != nil {
+			logger.Debug("Parsing affiliate provider data", "affiliate_id", req.AffiliateID)
+			logger.Debug("Affiliate provider data", "affiliate_id", req.AffiliateID, "provider_data", *affiliateMapping.ProviderData)
+			var affiliateProviderData domain.EverflowProviderData
+			if err := json.Unmarshal([]byte(*affiliateMapping.ProviderData), &affiliateProviderData); err == nil {
+				if affiliateProviderData.NetworkAffiliateID != nil {
+					networkAffiliateID = *affiliateProviderData.NetworkAffiliateID
+					logger.Debug("Found network_affiliate_id", "affiliate_id", req.AffiliateID, "network_affiliate_id", networkAffiliateID)
+				} else {
+					logger.Warn("NetworkAffiliateID is nil in affiliate provider data", "affiliate_id", req.AffiliateID)
+				}
+			} else {
+				logger.Warn("Failed to parse affiliate provider data", "affiliate_id", req.AffiliateID, "error", err)
 			}
+		} else {
+			logger.Warn("Affiliate mapping exists but ProviderData is nil", "affiliate_id", req.AffiliateID)
 		}
+	} else {
+		logger.Warn("No affiliate mapping available", "affiliate_id", req.AffiliateID)
 	}
 
 	// If we don't have the required IDs, return an error
 	if networkOfferID == 0 || networkAffiliateID == 0 {
+		logger.Error("Missing required provider IDs", "campaign_id", req.CampaignID, "affiliate_id", req.AffiliateID, "network_offer_id", networkOfferID, "network_affiliate_id", networkAffiliateID)
 		return nil, fmt.Errorf("missing required provider IDs: networkOfferID=%d, networkAffiliateID=%d", networkOfferID, networkAffiliateID)
 	}
 
 	// Create Everflow tracking link request
-	everflowReq := map[string]interface{}{
-		"network_offer_id":     networkOfferID,
-		"network_affiliate_id": networkAffiliateID,
-	}
+	logger.Debug("Creating Everflow request", "campaign_id", req.CampaignID, "affiliate_id", req.AffiliateID, "network_affiliate_id", networkAffiliateID, "network_offer_id", networkOfferID)
+	everflowReq := tracking.NewCreateTrackingLinkRequest(networkAffiliateID, networkOfferID)
 
 	// Add optional parameters
 	if req.NetworkTrackingDomainID != nil {
-		everflowReq["network_tracking_domain_id"] = *req.NetworkTrackingDomainID
+		everflowReq.SetNetworkTrackingDomainId(*req.NetworkTrackingDomainID)
 	}
 	if req.NetworkOfferURLID != nil {
-		everflowReq["network_offer_url_id"] = *req.NetworkOfferURLID
+		everflowReq.SetNetworkOfferUrlId(*req.NetworkOfferURLID)
 	}
 	if req.CreativeID != nil {
-		everflowReq["creative_id"] = *req.CreativeID
+		everflowReq.SetCreativeId(*req.CreativeID)
 	}
 	if req.NetworkTrafficSourceID != nil {
-		everflowReq["network_traffic_source_id"] = *req.NetworkTrafficSourceID
+		everflowReq.SetNetworkTrafficSourceId(*req.NetworkTrafficSourceID)
 	}
 	if req.SourceID != nil {
-		everflowReq["source_id"] = *req.SourceID
+		everflowReq.SetSourceId(*req.SourceID)
 	}
 	if req.Sub1 != nil {
-		everflowReq["sub1"] = *req.Sub1
+		everflowReq.SetSub1(*req.Sub1)
 	}
 	if req.Sub2 != nil {
-		everflowReq["sub2"] = *req.Sub2
+		everflowReq.SetSub2(*req.Sub2)
 	}
 	if req.Sub3 != nil {
-		everflowReq["sub3"] = *req.Sub3
+		everflowReq.SetSub3(*req.Sub3)
 	}
 	if req.Sub4 != nil {
-		everflowReq["sub4"] = *req.Sub4
+		everflowReq.SetSub4(*req.Sub4)
 	}
 	if req.Sub5 != nil {
-		everflowReq["sub5"] = *req.Sub5
+		everflowReq.SetSub5(*req.Sub5)
 	}
 	if req.IsEncryptParameters != nil {
-		everflowReq["is_encrypt_parameters"] = *req.IsEncryptParameters
+		everflowReq.SetIsEncryptParameters(*req.IsEncryptParameters)
 	}
 	if req.IsRedirectLink != nil {
-		everflowReq["is_redirect_link"] = *req.IsRedirectLink
+		everflowReq.SetIsRedirectLink(*req.IsRedirectLink)
 	}
 
-	// For now, simulate the Everflow API call since we don't have the tracking API client generated
-	// In a real implementation, this would make an HTTP POST to /v1/networks/tracking/offers/clicks
+	// Log the final request for debugging (sanitized)
+	reqJSON, _ := json.MarshalIndent(everflowReq, "", "  ")
+	logger.DebugSanitized("Sending request to Everflow", "campaign_id", req.CampaignID, "affiliate_id", req.AffiliateID, "request", string(reqJSON))
 
-	// Simulate the response
-	baseURL := "http://tracking-domain.everflow.test"
-	trackingPath := fmt.Sprintf("/%s/%s/", generateTrackingCode(), generateTrackingCode())
+	// Make the actual API call to Everflow
+	logger.Debug("Making API call to Everflow", "campaign_id", req.CampaignID, "affiliate_id", req.AffiliateID)
+	resp, httpResp, err := s.trackingClient.TrackingAPI.CreateTrackingLink(ctx).CreateTrackingLinkRequest(*everflowReq).Execute()
+	if err != nil {
+		// Try to read the response body for more detailed error information
+		var errorBody string
+		var statusCode int
+		if httpResp != nil {
+			statusCode = httpResp.StatusCode
+			if httpResp.Body != nil {
+				bodyBytes, readErr := io.ReadAll(httpResp.Body)
+				if readErr == nil {
+					errorBody = string(bodyBytes)
+				}
+			}
+		}
+		logger.ErrorSanitized("API call failed", "campaign_id", req.CampaignID, "affiliate_id", req.AffiliateID, "status_code", statusCode, "error", err, "response_body", errorBody)
+		return nil, fmt.Errorf("failed to create tracking link in Everflow: %w (response: %s)", err, errorBody)
+	}
+	defer httpResp.Body.Close()
+	
+	// Log detailed response information for debugging
+	logger.Info("Successfully generated tracking link", "campaign_id", req.CampaignID, "affiliate_id", req.AffiliateID, "status_code", httpResp.StatusCode)
+	
+	// Log the complete response for debugging
+	if resp != nil {
+		respJSON, _ := json.MarshalIndent(resp, "", "  ")
+		logger.Debug("Everflow tracking link response", "campaign_id", req.CampaignID, "affiliate_id", req.AffiliateID, "response", string(respJSON))
+		
+		// Log specific fields with nil checks
+		trackingURL := "nil"
+		if resp.TrackingUrl != nil {
+			trackingURL = *resp.TrackingUrl
+		}
+		
+		logger.Debug("Response field details", 
+			"campaign_id", req.CampaignID, 
+			"affiliate_id", req.AffiliateID,
+			"tracking_url", trackingURL,
+			"tracking_url_is_nil", resp.TrackingUrl == nil,
+			"network_offer_id", resp.NetworkOfferId,
+			"network_affiliate_id", resp.NetworkAffiliateId,
+			"network_tracking_domain_id", resp.NetworkTrackingDomainId,
+			"network_offer_url_id", resp.NetworkOfferUrlId,
+			"creative_id", resp.CreativeId,
+			"network_traffic_source_id", resp.NetworkTrafficSourceId)
+			
+		// Log if tracking URL is missing - this might indicate an error
+		if resp.TrackingUrl == nil || *resp.TrackingUrl == "" {
+			logger.Warn("Everflow response missing tracking URL", "campaign_id", req.CampaignID, "affiliate_id", req.AffiliateID)
+		}
+	} else {
+		logger.Warn("Everflow response is nil", "campaign_id", req.CampaignID, "affiliate_id", req.AffiliateID)
+	}
 
-	// Build query parameters
-	params := []string{}
-	if req.SourceID != nil {
-		params = append(params, fmt.Sprintf("source_id=%s", *req.SourceID))
-	}
-	if req.Sub1 != nil {
-		params = append(params, fmt.Sprintf("sub1=%s", *req.Sub1))
-	}
-	if req.Sub2 != nil {
-		params = append(params, fmt.Sprintf("sub2=%s", *req.Sub2))
-	}
-	if req.Sub3 != nil {
-		params = append(params, fmt.Sprintf("sub3=%s", *req.Sub3))
-	}
-	if req.Sub4 != nil {
-		params = append(params, fmt.Sprintf("sub4=%s", *req.Sub4))
-	}
-	if req.Sub5 != nil {
-		params = append(params, fmt.Sprintf("sub5=%s", *req.Sub5))
+	// Extract the generated URL from the response
+	generatedURL := ""
+	if resp.TrackingUrl != nil {
+		generatedURL = *resp.TrackingUrl
+		logger.Debug("Extracted tracking URL", "campaign_id", req.CampaignID, "affiliate_id", req.AffiliateID, "generated_url", generatedURL)
+	} else {
+		logger.Warn("TrackingUrl is nil in response", "campaign_id", req.CampaignID, "affiliate_id", req.AffiliateID)
 	}
 
-	generatedURL := baseURL + trackingPath
-	if len(params) > 0 {
-		generatedURL += "?" + joinParams(params)
-	}
-
-	// Create provider data
+	// Create provider data from response
 	providerData := &domain.EverflowTrackingLinkProviderData{
-		NetworkOfferID:           &networkOfferID,
-		NetworkAffiliateID:       &networkAffiliateID,
-		NetworkTrackingDomainID:  req.NetworkTrackingDomainID,
-		NetworkOfferURLID:        req.NetworkOfferURLID,
-		CreativeID:               req.CreativeID,
-		NetworkTrafficSourceID:   req.NetworkTrafficSourceID,
+		NetworkOfferID:           resp.NetworkOfferId,
+		NetworkAffiliateID:       resp.NetworkAffiliateId,
+		NetworkTrackingDomainID:  resp.NetworkTrackingDomainId,
+		NetworkOfferURLID:        resp.NetworkOfferUrlId,
+		CreativeID:               resp.CreativeId,
+		NetworkTrafficSourceID:   resp.NetworkTrafficSourceId,
 		GeneratedURL:             &generatedURL,
 		CanAffiliateRunAllOffers: boolPtr(true),
 	}
 
+	// Log provider data creation
+	logger.Debug("Created provider data", 
+		"campaign_id", req.CampaignID, 
+		"affiliate_id", req.AffiliateID,
+		"network_offer_id", providerData.NetworkOfferID,
+		"network_affiliate_id", providerData.NetworkAffiliateID,
+		"generated_url", generatedURL,
+		"generated_url_empty", generatedURL == "")
+
 	providerDataJSON, err := providerData.ToJSON()
 	if err != nil {
+		logger.Error("Failed to serialize provider data", "campaign_id", req.CampaignID, "affiliate_id", req.AffiliateID, "error", err)
 		return nil, fmt.Errorf("failed to serialize provider data: %w", err)
 	}
 
-	return &domain.TrackingLinkGenerationResponse{
+	logger.Debug("Serialized provider data", "campaign_id", req.CampaignID, "affiliate_id", req.AffiliateID, "json", providerDataJSON)
+
+	finalResponse := &domain.TrackingLinkGenerationResponse{
 		GeneratedURL: generatedURL,
 		ProviderData: &providerDataJSON,
-	}, nil
+	}
+
+	logger.Debug("Final tracking link response", 
+		"campaign_id", req.CampaignID, 
+		"affiliate_id", req.AffiliateID,
+		"generated_url", finalResponse.GeneratedURL,
+		"generated_url_empty", finalResponse.GeneratedURL == "",
+		"provider_data_nil", finalResponse.ProviderData == nil)
+
+	return finalResponse, nil
+}
+
+// CreateTrackingLink creates a tracking link synchronization with Everflow
+func (s *IntegrationService) CreateTrackingLink(ctx context.Context, trackingLink *domain.TrackingLink, campaignMapping *domain.CampaignProviderMapping, affiliateMapping *domain.AffiliateProviderMapping) (*domain.TrackingLinkProviderMapping, error) {
+	logger.Info("Starting tracking link sync", "tracking_link_id", trackingLink.TrackingLinkID, "provider", "everflow")
+
+	// Create a tracking link generation request to get the Everflow tracking URL
+	req := &domain.TrackingLinkGenerationRequest{
+		CampaignID:  trackingLink.CampaignID,
+		AffiliateID: trackingLink.AffiliateID,
+		SourceID:    trackingLink.SourceID,
+		Sub1:        trackingLink.Sub1,
+		Sub2:        trackingLink.Sub2,
+	}
+
+	// Generate the tracking link via Everflow API
+	response, err := s.GenerateTrackingLink(ctx, req, campaignMapping, affiliateMapping)
+	if err != nil {
+		return nil, fmt.Errorf("failed to generate tracking link via Everflow: %w", err)
+	}
+
+	// Create provider mapping
+	syncStatus := "synced"
+	now := time.Now()
+	mapping := &domain.TrackingLinkProviderMapping{
+		TrackingLinkID:         trackingLink.TrackingLinkID,
+		ProviderType:           "everflow",
+		ProviderTrackingLinkID: nil, // Everflow doesn't assign persistent IDs to tracking links
+		ProviderData:           response.ProviderData,
+		SyncStatus:             &syncStatus,
+		LastSyncAt:             &now,
+	}
+
+	logger.Info("Successfully created tracking link sync", "tracking_link_id", trackingLink.TrackingLinkID)
+	return mapping, nil
 }
 
 // GenerateTrackingLinkQR generates a QR code for a tracking link via Everflow API
@@ -550,24 +1739,5 @@ func (s *IntegrationService) GenerateTrackingLinkQR(ctx context.Context, req *do
 	return []byte("everflow-qr-code-png-data"), nil
 }
 
-// Helper functions
-func generateTrackingCode() string {
-	// Generate a random tracking code (simplified)
-	codes := []string{"ABC123", "DEF456", "GHI789", "JKL012", "MNO345"}
-	return codes[time.Now().Nanosecond()%len(codes)]
-}
 
-func joinParams(params []string) string {
-	result := ""
-	for i, param := range params {
-		if i > 0 {
-			result += "&"
-		}
-		result += param
-	}
-	return result
-}
 
-func boolPtr(b bool) *bool {
-	return &b
-}

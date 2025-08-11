@@ -1,0 +1,635 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 2,
+      "sampleValue": [
+        "CJ Affiliate",
+        "Rakuten"
+      ],
+      "value": [
+        "CJ Affiliate",
+        "Rakuten"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.5
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.5
+        },
+        {
+          "countryCode": "in",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.5
+        },
+        {
+          "countryCode": "in",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "ledlcdhdtv-agusamazon.blogspot.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "cheap"
+        },
+        {
+          "score": 0.99022114,
+          "value": "rental"
+        },
+        {
+          "score": 0.7664047,
+          "value": "airline"
+        },
+        {
+          "score": 0.7664047,
+          "value": "hotel"
+        },
+        {
+          "score": 0.6813859,
+          "value": "professional"
+        },
+        {
+          "score": 0.6569183,
+          "value": "car"
+        },
+        {
+          "score": 0.6021751,
+          "value": "language"
+        },
+        {
+          "score": 0.6021751,
+          "value": "ecampus"
+        },
+        {
+          "score": 0.6021751,
+          "value": "flights"
+        },
+        {
+          "score": 0.6021751,
+          "value": "cheap airline"
+        },
+        {
+          "score": 0.6021751,
+          "value": "ticket"
+        },
+        {
+          "score": 0.6021751,
+          "value": "cheapoair"
+        },
+        {
+          "score": 0.5679949,
+          "value": "javascript"
+        },
+        {
+          "score": 0.5474319,
+          "value": "flight"
+        },
+        {
+          "score": 0.39907786,
+          "value": "international"
+        },
+        {
+          "score": 0.38320234,
+          "value": "packages"
+        },
+        {
+          "score": 0.38320234,
+          "value": "travel"
+        },
+        {
+          "score": 0.34926155,
+          "value": "programs"
+        },
+        {
+          "score": 0.31629473,
+          "value": "book"
+        },
+        {
+          "score": 0.31465912,
+          "value": "textbook"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "cheap"
+        },
+        {
+          "score": 0.99022114,
+          "value": "rental"
+        },
+        {
+          "score": 0.7664047,
+          "value": "airline"
+        },
+        {
+          "score": 0.7664047,
+          "value": "hotel"
+        },
+        {
+          "score": 0.6813859,
+          "value": "professional"
+        },
+        {
+          "score": 0.6569183,
+          "value": "car"
+        },
+        {
+          "score": 0.6021751,
+          "value": "language"
+        },
+        {
+          "score": 0.6021751,
+          "value": "ecampus"
+        },
+        {
+          "score": 0.6021751,
+          "value": "flights"
+        },
+        {
+          "score": 0.6021751,
+          "value": "cheap airline"
+        },
+        {
+          "score": 0.6021751,
+          "value": "ticket"
+        },
+        {
+          "score": 0.6021751,
+          "value": "cheapoair"
+        },
+        {
+          "score": 0.5679949,
+          "value": "javascript"
+        },
+        {
+          "score": 0.5474319,
+          "value": "flight"
+        },
+        {
+          "score": 0.39907786,
+          "value": "international"
+        },
+        {
+          "score": 0.38320234,
+          "value": "packages"
+        },
+        {
+          "score": 0.38320234,
+          "value": "travel"
+        },
+        {
+          "score": 0.34926155,
+          "value": "programs"
+        },
+        {
+          "score": 0.31629473,
+          "value": "book"
+        },
+        {
+          "score": 0.31465912,
+          "value": "textbook"
+        },
+        {
+          "score": 0.31313106,
+          "value": "testing"
+        },
+        {
+          "score": 0.3071093,
+          "value": "register"
+        },
+        {
+          "score": 0.29561323,
+          "value": "city"
+        },
+        {
+          "score": 0.2950658,
+          "value": "skills"
+        },
+        {
+          "score": 0.2794736,
+          "value": "browser"
+        },
+        {
+          "score": 0.2778158,
+          "value": "transparent"
+        },
+        {
+          "score": 0.27316144,
+          "value": "instruction"
+        },
+        {
+          "score": 0.27104917,
+          "value": "college"
+        },
+        {
+          "score": 0.2709788,
+          "value": "medical"
+        },
+        {
+          "score": 0.2709788,
+          "value": "building"
+        },
+        {
+          "score": 0.2709788,
+          "value": "apcn"
+        },
+        {
+          "score": 0.26130873,
+          "value": "live"
+        },
+        {
+          "score": 0.2589353,
+          "value": "work"
+        },
+        {
+          "score": 0.2589353,
+          "value": "psat"
+        },
+        {
+          "score": 0.25346097,
+          "value": "round"
+        },
+        {
+          "score": 0.25291353,
+          "value": "tested"
+        },
+        {
+          "score": 0.24087004,
+          "value": "start"
+        },
+        {
+          "score": 0.23484829,
+          "value": "strategies"
+        },
+        {
+          "score": 0.22280478,
+          "value": "popular"
+        },
+        {
+          "score": 0.22231044,
+          "value": "training"
+        },
+        {
+          "score": 0.21897277,
+          "value": "discounts"
+        },
+        {
+          "score": 0.21855228,
+          "value": "individual"
+        },
+        {
+          "score": 0.21280205,
+          "value": "center"
+        },
+        {
+          "score": 0.20473954,
+          "value": "tips"
+        },
+        {
+          "score": 0.20473954,
+          "value": "qbank"
+        },
+        {
+          "score": 0.20473954,
+          "value": "experts"
+        },
+        {
+          "score": 0.20473954,
+          "value": "mcat"
+        },
+        {
+          "score": 0.19901265,
+          "value": "instructor"
+        },
+        {
+          "score": 0.19871779,
+          "value": "usmle"
+        },
+        {
+          "score": 0.19871779,
+          "value": "tests"
+        },
+        {
+          "score": 0.19871779,
+          "value": "area"
+        },
+        {
+          "score": 0.19871779,
+          "value": "share"
+        },
+        {
+          "score": 0.19871779,
+          "value": "person"
+        },
+        {
+          "score": 0.19871779,
+          "value": "prep"
+        },
+        {
+          "score": 0.19744867,
+          "value": "library"
+        },
+        {
+          "score": 0.19269603,
+          "value": "tutoring"
+        },
+        {
+          "score": 0.19269603,
+          "value": "intensive"
+        },
+        {
+          "score": 0.18667428,
+          "value": "applying"
+        },
+        {
+          "score": 0.1836986,
+          "value": "university"
+        },
+        {
+          "score": 0.18065253,
+          "value": "paced"
+        },
+        {
+          "score": 0.18065253,
+          "value": "centers"
+        },
+        {
+          "score": 0.17463078,
+          "value": "classes"
+        },
+        {
+          "score": 0.17463078,
+          "value": "preparing"
+        },
+        {
+          "score": 0.17463078,
+          "value": "recommended"
+        },
+        {
+          "score": 0.16860902,
+          "value": "west"
+        },
+        {
+          "score": 0.16860902,
+          "value": "drive"
+        },
+        {
+          "score": 0.16860902,
+          "value": "road"
+        },
+        {
+          "score": 0.16860902,
+          "value": "ready"
+        },
+        {
+          "score": 0.16422957,
+          "value": "vacations"
+        },
+        {
+          "score": 0.16422957,
+          "value": "airfare"
+        },
+        {
+          "score": 0.16386402,
+          "value": "bookstore"
+        },
+        {
+          "score": 0.16258729,
+          "value": "lsat"
+        },
+        {
+          "score": 0.16258729,
+          "value": "schedules"
+        },
+        {
+          "score": 0.15656553,
+          "value": "care"
+        },
+        {
+          "score": 0.15656553,
+          "value": "high"
+        },
+        {
+          "score": 0.15656553,
+          "value": "offered"
+        },
+        {
+          "score": 0.15656553,
+          "value": "test"
+        },
+        {
+          "score": 0.15148333,
+          "value": "proficiency"
+        },
+        {
+          "score": 0.14396697,
+          "value": "transparent language"
+        },
+        {
+          "score": 0.14151043,
+          "value": "device"
+        },
+        {
+          "score": 0.13370499,
+          "value": "career"
+        },
+        {
+          "score": 0.12264668,
+          "value": "bulk"
+        },
+        {
+          "score": 0.12063608,
+          "value": "coupon"
+        },
+        {
+          "score": 0.12063608,
+          "value": "eward"
+        },
+        {
+          "score": 0.11762018,
+          "value": "map"
+        },
+        {
+          "score": 0.11762018,
+          "value": "online bookstore"
+        },
+        {
+          "score": 0.11661488,
+          "value": "certificate"
+        },
+        {
+          "score": 0.11560958,
+          "value": "category"
+        },
+        {
+          "score": 0.11460428,
+          "value": "asset"
+        },
+        {
+          "score": 0.11460428,
+          "value": "contest"
+        },
+        {
+          "score": 0.11359898,
+          "value": "bulk career"
+        },
+        {
+          "score": 0.10967961,
+          "value": "student"
+        },
+        {
+          "score": 0.109486386,
+          "value": "minute"
+        },
+        {
+          "score": 0.109486386,
+          "value": "low"
+        },
+        {
+          "score": 0.09751417,
+          "value": "epic"
+        },
+        {
+          "score": 0.09337617,
+          "value": "cohort"
+        },
+        {
+          "score": 0.08846646,
+          "value": "marketplace"
+        },
+        {
+          "score": 0.08846646,
+          "value": "seller"
+        },
+        {
+          "score": 0.08645586,
+          "value": "omnibus"
+        },
+        {
+          "score": 0.08545056,
+          "value": "card"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/ledlcdhdtv-agusamazon.blogspot.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://ledlcdhdtv-agusamazon.blogspot.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 6,
+        "value": [
+          "cheapoair.com",
+          "ecampus.com",
+          "kaptest.com",
+          "onetravel.com",
+          "statravel.co.uk",
+          "transparent.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1.95,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Travel / Vacation"
+          },
+          {
+            "count": 1,
+            "vertical": "Travel / Flights"
+          },
+          {
+            "count": 0.7,
+            "vertical": "Business / Services"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 6,
+      "value": [
+        "cheapoair.com",
+        "ecampus.com",
+        "kaptest.com",
+        "onetravel.com",
+        "statravel.co.uk",
+        "transparent.com"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Technology / Electronics",
+      "value": [
+        "Technology / Electronics",
+        "Business / Ecommerce"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Technology / Electronics",
+        "rank": 1,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Technology / Electronics",
+          "rank": 1,
+          "score": 100
+        },
+        {
+          "name": "Business / Ecommerce",
+          "rank": 1,
+          "score": 90
+        }
+      ]
+    }
+  }
+}

@@ -16,6 +16,7 @@ type AdvertiserRepository interface {
 	GetAdvertiserByID(ctx context.Context, id int64) (*domain.Advertiser, error)
 	UpdateAdvertiser(ctx context.Context, advertiser *domain.Advertiser) error
 	ListAdvertisersByOrganization(ctx context.Context, orgID int64, limit, offset int) ([]*domain.Advertiser, error)
+	ListAdvertisersWithoutProviderMapping(ctx context.Context, providerType string, limit, offset int) ([]*domain.Advertiser, error)
 	DeleteAdvertiser(ctx context.Context, id int64) error
 	
 	// Extra info methods
@@ -195,6 +196,75 @@ func (r *pgxAdvertiserRepository) ListAdvertisersByOrganization(ctx context.Cont
 	defer rows.Close()
 
 	advertisers := make([]*domain.Advertiser, 0)
+	for rows.Next() {
+		var advertiser domain.Advertiser
+		var contactEmail, billingDetails sql.NullString
+		var internalNotes, defaultCurrencyID, platformName, platformURL, platformUsername sql.NullString
+		var accountingContactEmail, offerIDMacro, affiliateIDMacro sql.NullString
+		var attributionMethod, emailAttributionMethod, attributionPriority sql.NullString
+		var reportingTimezoneID sql.NullInt32
+
+		if err := rows.Scan(
+			&advertiser.AdvertiserID,
+			&advertiser.OrganizationID,
+			&advertiser.Name,
+			&contactEmail,
+			&billingDetails,
+			&advertiser.Status,
+			&internalNotes,
+			&defaultCurrencyID,
+			&platformName,
+			&platformURL,
+			&platformUsername,
+			&accountingContactEmail,
+			&offerIDMacro,
+			&affiliateIDMacro,
+			&attributionMethod,
+			&emailAttributionMethod,
+			&attributionPriority,
+			&reportingTimezoneID,
+			&advertiser.CreatedAt,
+			&advertiser.UpdatedAt,
+		); err != nil {
+			return nil, fmt.Errorf("error scanning advertiser row: %w", err)
+		}
+
+		err = scanNullableFields(&advertiser, contactEmail, billingDetails, internalNotes, defaultCurrencyID,
+			platformName, platformURL, platformUsername, accountingContactEmail, offerIDMacro, affiliateIDMacro,
+			attributionMethod, emailAttributionMethod, attributionPriority, reportingTimezoneID)
+		if err != nil {
+			return nil, err
+		}
+
+		advertisers = append(advertisers, &advertiser)
+	}
+
+	if err := rows.Err(); err != nil {
+		return nil, fmt.Errorf("error iterating advertiser rows: %w", err)
+	}
+
+	return advertisers, nil
+}
+
+func (r *pgxAdvertiserRepository) ListAdvertisersWithoutProviderMapping(ctx context.Context, providerType string, limit, offset int) ([]*domain.Advertiser, error) {
+	query := `SELECT a.advertiser_id, a.organization_id, a.name, a.contact_email, a.billing_details, a.status,
+		a.internal_notes, a.default_currency_id, a.platform_name, a.platform_url, a.platform_username,
+		a.accounting_contact_email, a.offer_id_macro, a.affiliate_id_macro, a.attribution_method,
+		a.email_attribution_method, a.attribution_priority, a.reporting_timezone_id,
+		a.created_at, a.updated_at
+	FROM public.advertisers a
+	LEFT JOIN public.advertiser_provider_mappings apm ON a.advertiser_id = apm.advertiser_id AND apm.provider_type = $1
+	WHERE apm.advertiser_id IS NULL OR apm.sync_status = 'failed'
+	ORDER BY a.advertiser_id
+	LIMIT $2 OFFSET $3`
+
+	rows, err := r.db.Query(ctx, query, providerType, limit, offset)
+	if err != nil {
+		return nil, fmt.Errorf("error listing advertisers without provider mapping: %w", err)
+	}
+	defer rows.Close()
+
+	var advertisers []*domain.Advertiser
 	for rows.Next() {
 		var advertiser domain.Advertiser
 		var contactEmail, billingDetails sql.NullString

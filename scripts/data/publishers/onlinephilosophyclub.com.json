@@ -1,0 +1,679 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 2,
+      "sampleValue": [
+        "CJ Affiliate",
+        "Viglink"
+      ],
+      "value": [
+        "CJ Affiliate",
+        "Viglink"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.5
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.5
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.5
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "onlinephilosophyclub.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "entertainment"
+        },
+        {
+          "score": 0.95,
+          "value": "kids"
+        },
+        {
+          "score": 0.87,
+          "value": "funko"
+        },
+        {
+          "score": 0.86,
+          "value": "gaming"
+        },
+        {
+          "score": 0.85,
+          "value": "disney"
+        },
+        {
+          "score": 0.81,
+          "value": "bestsellers"
+        },
+        {
+          "score": 0.78,
+          "value": "bestselling"
+        },
+        {
+          "score": 0.76,
+          "value": "games"
+        },
+        {
+          "score": 0.74,
+          "value": "coloring"
+        },
+        {
+          "score": 0.74,
+          "value": "crafts"
+        },
+        {
+          "score": 0.7303946,
+          "value": "audiobooks"
+        },
+        {
+          "score": 0.72,
+          "value": "toys"
+        },
+        {
+          "score": 0.71,
+          "value": "puzzles"
+        },
+        {
+          "score": 0.71,
+          "value": "movie"
+        },
+        {
+          "score": 0.69296676,
+          "value": "fiction"
+        },
+        {
+          "score": 0.6908752,
+          "value": "category"
+        },
+        {
+          "score": 0.6818767,
+          "value": "paperback"
+        },
+        {
+          "score": 0.68,
+          "value": "children"
+        },
+        {
+          "score": 0.68,
+          "value": "game"
+        },
+        {
+          "score": 0.66,
+          "value": "collectible"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "entertainment"
+        },
+        {
+          "score": 0.95,
+          "value": "kids"
+        },
+        {
+          "score": 0.87,
+          "value": "funko"
+        },
+        {
+          "score": 0.86,
+          "value": "gaming"
+        },
+        {
+          "score": 0.85,
+          "value": "disney"
+        },
+        {
+          "score": 0.81,
+          "value": "bestsellers"
+        },
+        {
+          "score": 0.78,
+          "value": "bestselling"
+        },
+        {
+          "score": 0.76,
+          "value": "games"
+        },
+        {
+          "score": 0.74,
+          "value": "coloring"
+        },
+        {
+          "score": 0.74,
+          "value": "crafts"
+        },
+        {
+          "score": 0.7303946,
+          "value": "audiobooks"
+        },
+        {
+          "score": 0.72,
+          "value": "toys"
+        },
+        {
+          "score": 0.71,
+          "value": "puzzles"
+        },
+        {
+          "score": 0.71,
+          "value": "movie"
+        },
+        {
+          "score": 0.69296676,
+          "value": "fiction"
+        },
+        {
+          "score": 0.6908752,
+          "value": "category"
+        },
+        {
+          "score": 0.6818767,
+          "value": "paperback"
+        },
+        {
+          "score": 0.68,
+          "value": "children"
+        },
+        {
+          "score": 0.68,
+          "value": "game"
+        },
+        {
+          "score": 0.66,
+          "value": "collectible"
+        },
+        {
+          "score": 0.65,
+          "value": "movies"
+        },
+        {
+          "score": 0.64,
+          "value": "friends"
+        },
+        {
+          "score": 0.63,
+          "value": "ebooks"
+        },
+        {
+          "score": 0.63,
+          "value": "collectibles"
+        },
+        {
+          "score": 0.62,
+          "value": "browse"
+        },
+        {
+          "score": 0.61499983,
+          "value": "wishlist"
+        },
+        {
+          "score": 0.61,
+          "value": "prices"
+        },
+        {
+          "score": 0.6,
+          "value": "celebrating"
+        },
+        {
+          "score": 0.6,
+          "value": "entertaining"
+        },
+        {
+          "score": 0.59,
+          "value": "comics"
+        },
+        {
+          "score": 0.59,
+          "value": "inspiration"
+        },
+        {
+          "score": 0.58,
+          "value": "autographed"
+        },
+        {
+          "score": 0.5709143,
+          "value": "teen"
+        },
+        {
+          "score": 0.5703994,
+          "value": "favorites"
+        },
+        {
+          "score": 0.57,
+          "value": "teens"
+        },
+        {
+          "score": 0.57,
+          "value": "family"
+        },
+        {
+          "score": 0.57,
+          "value": "arts"
+        },
+        {
+          "score": 0.561102,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.55136496,
+          "value": "fantasy"
+        },
+        {
+          "score": 0.55,
+          "value": "supplies"
+        },
+        {
+          "score": 0.5315014,
+          "value": "hardcover"
+        },
+        {
+          "score": 0.52,
+          "value": "reads"
+        },
+        {
+          "score": 0.52,
+          "value": "lego"
+        },
+        {
+          "score": 0.51,
+          "value": "baby"
+        },
+        {
+          "score": 0.51,
+          "value": "kawaii"
+        },
+        {
+          "score": 0.5064703,
+          "value": "book"
+        },
+        {
+          "score": 0.5,
+          "value": "bible"
+        },
+        {
+          "score": 0.5,
+          "value": "cute"
+        },
+        {
+          "score": 0.49,
+          "value": "exclusives"
+        },
+        {
+          "score": 0.48,
+          "value": "bargain"
+        },
+        {
+          "score": 0.47,
+          "value": "novels"
+        },
+        {
+          "score": 0.47,
+          "value": "school"
+        },
+        {
+          "score": 0.4617805,
+          "value": "books"
+        },
+        {
+          "score": 0.46,
+          "value": "fortnite"
+        },
+        {
+          "score": 0.44,
+          "value": "magic"
+        },
+        {
+          "score": 0.44,
+          "value": "pokemon"
+        },
+        {
+          "score": 0.4319382,
+          "value": "popular"
+        },
+        {
+          "score": 0.43,
+          "value": "cards"
+        },
+        {
+          "score": 0.43,
+          "value": "funky"
+        },
+        {
+          "score": 0.43,
+          "value": "humor"
+        },
+        {
+          "score": 0.43,
+          "value": "romance"
+        },
+        {
+          "score": 0.4208597,
+          "value": "store"
+        },
+        {
+          "score": 0.42,
+          "value": "culture"
+        },
+        {
+          "score": 0.42,
+          "value": "print"
+        },
+        {
+          "score": 0.41,
+          "value": "incredibles"
+        },
+        {
+          "score": 0.41,
+          "value": "availability"
+        },
+        {
+          "score": 0.41,
+          "value": "authors"
+        },
+        {
+          "score": 0.41,
+          "value": "cooking"
+        },
+        {
+          "score": 0.4,
+          "value": "awards"
+        },
+        {
+          "score": 0.39,
+          "value": "thrones"
+        },
+        {
+          "score": 0.39,
+          "value": "picks"
+        },
+        {
+          "score": 0.38,
+          "value": "boys"
+        },
+        {
+          "score": 0.38,
+          "value": "marvel"
+        },
+        {
+          "score": 0.3703657,
+          "value": "biography"
+        },
+        {
+          "score": 0.37,
+          "value": "tumblers"
+        },
+        {
+          "score": 0.37,
+          "value": "today"
+        },
+        {
+          "score": 0.3602246,
+          "value": "health"
+        },
+        {
+          "score": 0.36,
+          "value": "selection"
+        },
+        {
+          "score": 0.36,
+          "value": "collections"
+        },
+        {
+          "score": 0.009158342,
+          "value": "site"
+        },
+        {
+          "score": 0.007329843,
+          "value": "upgraded"
+        },
+        {
+          "score": 0.007329843,
+          "value": "site upgraded"
+        },
+        {
+          "score": 0.005697567,
+          "value": "audiobook"
+        },
+        {
+          "score": 0.0054529663,
+          "value": "credit"
+        },
+        {
+          "score": 0.0052803587,
+          "value": "seller"
+        },
+        {
+          "score": 0.005235602,
+          "value": "quick add"
+        },
+        {
+          "score": 0.005235602,
+          "value": "amazon"
+        },
+        {
+          "score": 0.005009432,
+          "value": "series"
+        },
+        {
+          "score": 0.0049949954,
+          "value": "add wishlist"
+        },
+        {
+          "score": 0.004446412,
+          "value": "details"
+        },
+        {
+          "score": 0.0037390282,
+          "value": "see details"
+        },
+        {
+          "score": 0.0028884122,
+          "value": "club"
+        },
+        {
+          "score": 0.0027911568,
+          "value": "sign"
+        },
+        {
+          "score": 0.0025233286,
+          "value": "duration"
+        },
+        {
+          "score": 0.0023815478,
+          "value": "device"
+        },
+        {
+          "score": 0.0020687052,
+          "value": "original"
+        },
+        {
+          "score": 0.002013693,
+          "value": "central"
+        },
+        {
+          "score": 0.0019645384,
+          "value": "booktok"
+        },
+        {
+          "score": 0.0018742926,
+          "value": "language"
+        },
+        {
+          "score": 0.0018189867,
+          "value": "current"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://onlinephilosophyclub.com/",
+        "https://www.onlinephilosophyclub.com/",
+        "http://onlinephilosophyclub.com/",
+        "http://www.onlinephilosophyclub.com/"
+      ]
+    },
+    "metaData": {
+      "description": "Philosophy for Philosophers",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/onlinephilosophyclub.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://onlinephilosophyclub.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 16,
+        "value": [
+          "amazon.com",
+          "amazon.co.uk",
+          "amazon.in",
+          "amazon.co.jp",
+          "amazon.ca",
+          "amazon.de",
+          "amazon.es",
+          "amazon.fr",
+          "amazon.it",
+          "amazon.com.au",
+          "amazon.com.br",
+          "amazon.com.mx",
+          "audiobooks.com",
+          "barnesandnoble.com",
+          "booksamillion.com",
+          "monicks.net"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 11.749999,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 4,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 2.95,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 0.2,
+            "vertical": "Online / Services"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 16,
+      "value": [
+        "amazon.com",
+        "amazon.co.uk",
+        "amazon.in",
+        "amazon.co.jp",
+        "amazon.ca",
+        "amazon.de",
+        "amazon.es",
+        "amazon.fr",
+        "amazon.it",
+        "amazon.com.au",
+        "amazon.com.br",
+        "amazon.com.mx",
+        "audiobooks.com",
+        "barnesandnoble.com",
+        "booksamillion.com",
+        "monicks.net"
+      ]
+    },
+    "promotype": {
+      "value": "student"
+    },
+    "relatedPublishers": {
+      "count": 5,
+      "value": [
+        "onlinebookclub.us",
+        "onlinebookclub.org",
+        "forums.onlinebookclub.org",
+        "scotthughes.biz",
+        "forums.onlinephilosophyclub.com"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 5,
+      "socialsAvailable": [
+        "twitter",
+        "facebook",
+        "linkedin",
+        "instagram",
+        "pinterest"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/scottmichaelhughes",
+        "instagram": "https://instagram.com/scott_hughes",
+        "linkedin": "https://linkedin.com/in/scottmhughes",
+        "pinterest": "https://pinterest.com/thescotthughes",
+        "twitter": "https://twitter.com/scottmhughes"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Entertainment / Hobbies",
+      "value": [
+        "Entertainment / Hobbies",
+        "Online / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Entertainment / Hobbies",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Entertainment / Hobbies",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 60
+        }
+      ]
+    }
+  }
+}

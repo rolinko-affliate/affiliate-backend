@@ -1,0 +1,926 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 9,
+      "sampleValue": [
+        "Admitad",
+        "Awin",
+        "Impact"
+      ],
+      "value": [
+        "Admitad",
+        "Awin",
+        "Impact",
+        "Rakuten",
+        "ShareASale",
+        "Tradedoubler",
+        "TUNE",
+        "Viglink",
+        "Wix"
+      ]
+    },
+    "countryRankings": {
+      "count": 3,
+      "highestValue": {
+        "countryCode": "ch",
+        "score": 0.6
+      },
+      "sampleValue": [
+        {
+          "countryCode": "ch",
+          "score": 0.6
+        },
+        {
+          "countryCode": "de",
+          "score": 0.15
+        },
+        {
+          "countryCode": "fr",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "ch",
+          "score": 0.6
+        },
+        {
+          "countryCode": "de",
+          "score": 0.15
+        },
+        {
+          "countryCode": "fr",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "canalte.ch",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "stuk"
+        },
+        {
+          "score": 0.7724632,
+          "value": "vrouw"
+        },
+        {
+          "score": 0.73244816,
+          "value": "set"
+        },
+        {
+          "score": 0.67001384,
+          "value": "accessoire"
+        },
+        {
+          "score": 0.59407234,
+          "value": "speelgoed"
+        },
+        {
+          "score": 0.5830769,
+          "value": "decoratie"
+        },
+        {
+          "score": 0.55230767,
+          "value": "kleur"
+        },
+        {
+          "score": 0.51692307,
+          "value": "model"
+        },
+        {
+          "score": 0.50153846,
+          "value": "kleding"
+        },
+        {
+          "score": 0.4953846,
+          "value": "man"
+        },
+        {
+          "score": 0.4741218,
+          "value": "dame"
+        },
+        {
+          "score": 0.47230768,
+          "value": "elektrisch"
+        },
+        {
+          "score": 0.450088,
+          "value": "samsung"
+        },
+        {
+          "score": 0.44,
+          "value": "groot"
+        },
+        {
+          "score": 0.42950544,
+          "value": "kind"
+        },
+        {
+          "score": 0.42466184,
+          "value": "produto"
+        },
+        {
+          "score": 0.41813076,
+          "value": "nieuw"
+        },
+        {
+          "score": 0.41384616,
+          "value": "zwart"
+        },
+        {
+          "score": 0.40322536,
+          "value": "sieraad"
+        },
+        {
+          "score": 0.40153846,
+          "value": "aliexpress"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "stuk"
+        },
+        {
+          "score": 0.7724632,
+          "value": "vrouw"
+        },
+        {
+          "score": 0.73244816,
+          "value": "set"
+        },
+        {
+          "score": 0.67001384,
+          "value": "accessoire"
+        },
+        {
+          "score": 0.59407234,
+          "value": "speelgoed"
+        },
+        {
+          "score": 0.5830769,
+          "value": "decoratie"
+        },
+        {
+          "score": 0.55230767,
+          "value": "kleur"
+        },
+        {
+          "score": 0.51692307,
+          "value": "model"
+        },
+        {
+          "score": 0.50153846,
+          "value": "kleding"
+        },
+        {
+          "score": 0.4953846,
+          "value": "man"
+        },
+        {
+          "score": 0.4741218,
+          "value": "dame"
+        },
+        {
+          "score": 0.47230768,
+          "value": "elektrisch"
+        },
+        {
+          "score": 0.450088,
+          "value": "samsung"
+        },
+        {
+          "score": 0.44,
+          "value": "groot"
+        },
+        {
+          "score": 0.42950544,
+          "value": "kind"
+        },
+        {
+          "score": 0.42466184,
+          "value": "produto"
+        },
+        {
+          "score": 0.41813076,
+          "value": "nieuw"
+        },
+        {
+          "score": 0.41384616,
+          "value": "zwart"
+        },
+        {
+          "score": 0.40322536,
+          "value": "sieraad"
+        },
+        {
+          "score": 0.40153846,
+          "value": "aliexpress"
+        },
+        {
+          "score": 0.40132204,
+          "value": "mini"
+        },
+        {
+          "score": 0.3971683,
+          "value": "fast"
+        },
+        {
+          "score": 0.39694658,
+          "value": "fast shop"
+        },
+        {
+          "score": 0.39355573,
+          "value": "kit"
+        },
+        {
+          "score": 0.3739989,
+          "value": "licht"
+        },
+        {
+          "score": 0.37384614,
+          "value": "houder"
+        },
+        {
+          "score": 0.36307693,
+          "value": "sticker"
+        },
+        {
+          "score": 0.35538462,
+          "value": "heer"
+        },
+        {
+          "score": 0.34153846,
+          "value": "ketting"
+        },
+        {
+          "score": 0.3401314,
+          "value": "pix"
+        },
+        {
+          "score": 0.34,
+          "value": "meisje"
+        },
+        {
+          "score": 0.33692306,
+          "value": "wit"
+        },
+        {
+          "score": 0.33501214,
+          "value": "tecnologia"
+        },
+        {
+          "score": 0.3261138,
+          "value": "poltica"
+        },
+        {
+          "score": 0.31991133,
+          "value": "hoog"
+        },
+        {
+          "score": 0.31692308,
+          "value": "glas"
+        },
+        {
+          "score": 0.30769232,
+          "value": "stks"
+        },
+        {
+          "score": 0.30769232,
+          "value": "ring"
+        },
+        {
+          "score": 0.30637297,
+          "value": "telefoon"
+        },
+        {
+          "score": 0.28153846,
+          "value": "klein"
+        },
+        {
+          "score": 0.275526,
+          "value": "keuken"
+        },
+        {
+          "score": 0.2753846,
+          "value": "zacht"
+        },
+        {
+          "score": 0.2738677,
+          "value": "gratis"
+        },
+        {
+          "score": 0.27307633,
+          "value": "smartphones"
+        },
+        {
+          "score": 0.2676923,
+          "value": "tas"
+        },
+        {
+          "score": 0.2670129,
+          "value": "usb"
+        },
+        {
+          "score": 0.26307693,
+          "value": "draadloos"
+        },
+        {
+          "score": 0.26,
+          "value": "waterdicht"
+        },
+        {
+          "score": 0.25692308,
+          "value": "metalen"
+        },
+        {
+          "score": 0.25601533,
+          "value": "por"
+        },
+        {
+          "score": 0.25384617,
+          "value": "plastic"
+        },
+        {
+          "score": 0.25230768,
+          "value": "gel"
+        },
+        {
+          "score": 0.24940723,
+          "value": "kabel"
+        },
+        {
+          "score": 0.24923077,
+          "value": "doos"
+        },
+        {
+          "score": 0.24,
+          "value": "goud"
+        },
+        {
+          "score": 0.23887163,
+          "value": "band"
+        },
+        {
+          "score": 0.23846154,
+          "value": "batterij"
+        },
+        {
+          "score": 0.23845851,
+          "value": "compra"
+        },
+        {
+          "score": 0.23320818,
+          "value": "mode"
+        },
+        {
+          "score": 0.22461538,
+          "value": "aluminium"
+        },
+        {
+          "score": 0.22307692,
+          "value": "oorbel"
+        },
+        {
+          "score": 0.22153845,
+          "value": "stof"
+        },
+        {
+          "score": 0.21098128,
+          "value": "cover"
+        },
+        {
+          "score": 0.20615384,
+          "value": "draagbaar"
+        },
+        {
+          "score": 0.20461538,
+          "value": "inch"
+        },
+        {
+          "score": 0.20153846,
+          "value": "lamp"
+        },
+        {
+          "score": 0.2,
+          "value": "wimper"
+        },
+        {
+          "score": 0.19570269,
+          "value": "mobiel"
+        },
+        {
+          "score": 0.1956532,
+          "value": "horloge"
+        },
+        {
+          "score": 0.19538462,
+          "value": "partij"
+        },
+        {
+          "score": 0.19384615,
+          "value": "machine"
+        },
+        {
+          "score": 0.19087316,
+          "value": "empresa"
+        },
+        {
+          "score": 0.19076923,
+          "value": "onderdeel"
+        },
+        {
+          "score": 0.19076923,
+          "value": "snel"
+        },
+        {
+          "score": 0.19076923,
+          "value": "draad"
+        },
+        {
+          "score": 0.18973967,
+          "value": "sport"
+        },
+        {
+          "score": 0.18957417,
+          "value": "power"
+        },
+        {
+          "score": 0.18923077,
+          "value": "natuurlijk"
+        },
+        {
+          "score": 0.18773335,
+          "value": "meus"
+        },
+        {
+          "score": 0.18771093,
+          "value": "privacidade"
+        },
+        {
+          "score": 0.18461539,
+          "value": "kaart"
+        },
+        {
+          "score": 0.183501,
+          "value": "pop"
+        },
+        {
+          "score": 0.18,
+          "value": "armband"
+        },
+        {
+          "score": 0.17846154,
+          "value": "houten"
+        },
+        {
+          "score": 0.17846154,
+          "value": "silicon"
+        },
+        {
+          "score": 0.17538461,
+          "value": "tafel"
+        },
+        {
+          "score": 0.17473282,
+          "value": "bicicleta"
+        },
+        {
+          "score": 0.17335878,
+          "value": "acer"
+        },
+        {
+          "score": 0.17076923,
+          "value": "verzending"
+        },
+        {
+          "score": 0.16923077,
+          "value": "deur"
+        },
+        {
+          "score": 0.1676923,
+          "value": "bal"
+        },
+        {
+          "score": 0.1676923,
+          "value": "kat"
+        },
+        {
+          "score": 0.1676923,
+          "value": "kant"
+        },
+        {
+          "score": 0.16615385,
+          "value": "plaat"
+        },
+        {
+          "score": 0.16307692,
+          "value": "universeel"
+        },
+        {
+          "score": 0.16307692,
+          "value": "lang"
+        },
+        {
+          "score": 0.16307692,
+          "value": "stijl"
+        },
+        {
+          "score": 0.16228677,
+          "value": "nossa"
+        },
+        {
+          "score": 0.16153847,
+          "value": "fiets"
+        },
+        {
+          "score": 0.16153847,
+          "value": "rond"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": "Leia no Canaltech notícias sobre tecnologia, ciência, entretenimento, quadrinhos, carros, review de celulares, além de dicas e tutoriais.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/canalte.ch.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://canalte.ch"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 76,
+        "value": [
+          "aliexpress.com",
+          "adobe.com",
+          "ubi.com",
+          "99app.com",
+          "microsoft.com",
+          "samsung.com",
+          "surfshark.com",
+          "acer.com",
+          "adidas.com.br",
+          "airalo.com",
+          "alura.com.br",
+          "angeloni.com.br",
+          "hp.com",
+          "awin.com",
+          "bawclothing.com.br",
+          "beautybox.com.br",
+          "belezanaweb.com.br",
+          "boticario.com.br",
+          "br.loccitaneaubresil.com",
+          "br.vaio.com",
+          "brastemp.com.br",
+          "cobasi.com.br",
+          "udemy.com",
+          "cafago.com",
+          "carrefour.com.br",
+          "casasbahia.com.br",
+          "cea.com.br",
+          "centauro.com.br",
+          "miniinthebox.com",
+          "clubesamsung.samsung.com.br",
+          "compracerta.com.br",
+          "consul.com.br",
+          "dafiti.com.br",
+          "tomtop.com",
+          "drogaraia.com.br",
+          "drogasil.com.br",
+          "electrolux.com.br",
+          "eletrumhomolog.myvtex.com",
+          "fastshop.com.br",
+          "epocacosmeticos.com.br",
+          "estrela10.com.br",
+          "evino.com.br",
+          "extra.com.br",
+          "giulianaflores.com.br",
+          "girafa.com.br",
+          "iplace.com.br",
+          "kabum.com.br",
+          "meupositivo.com.br",
+          "pontofrio.com.br",
+          "sephora.com.br",
+          "marabraz.com.br",
+          "marisa.com.br",
+          "mercadolivre.com.br",
+          "mobly.com.br",
+          "motorola.com.br",
+          "multilaser.com.br",
+          "music.amazon.com",
+          "natura.com.br",
+          "nike.com.br",
+          "nuuvem.com",
+          "onofreagora.com.br",
+          "starplus.com",
+          "pt.aliexpress.com",
+          "quemdisseberenice.com.br",
+          "ricardoeletro.com.br",
+          "saraiva.com.br",
+          "shopclub.com.br",
+          "shopfacil.com.br",
+          "sony.com.br",
+          "telhanorte.com.br",
+          "veloe.com.br",
+          "vinhofacil.com.br",
+          "webcontinental.com.br",
+          "webfones.com.br",
+          "wix.com",
+          "zeedog.com.br"
+        ]
+      },
+      "partnersAdded": {
+        "count": 2,
+        "value": [
+          {
+            "domain": "br.vaio.com"
+          },
+          {
+            "domain": "pt.aliexpress.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "vaio.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 10.45,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 10.199999,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 7.6,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 4.7,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 3.95,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 3.65,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 2,
+            "vertical": "Food / Alcohol"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Home / Pets"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Website Builder"
+          },
+          {
+            "count": 1,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 1,
+            "vertical": "Gifts / Flowers"
+          },
+          {
+            "count": 1,
+            "vertical": "Online / VPN"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Fragrances"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / DIY"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Esim"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Motoring / Cars"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 76,
+      "value": [
+        "aliexpress.com",
+        "adobe.com",
+        "ubi.com",
+        "99app.com",
+        "microsoft.com",
+        "samsung.com",
+        "surfshark.com",
+        "acer.com",
+        "adidas.com.br",
+        "airalo.com",
+        "alura.com.br",
+        "angeloni.com.br",
+        "hp.com",
+        "awin.com",
+        "bawclothing.com.br",
+        "beautybox.com.br",
+        "belezanaweb.com.br",
+        "boticario.com.br",
+        "br.loccitaneaubresil.com",
+        "br.vaio.com",
+        "brastemp.com.br",
+        "cobasi.com.br",
+        "udemy.com",
+        "cafago.com",
+        "carrefour.com.br",
+        "casasbahia.com.br",
+        "cea.com.br",
+        "centauro.com.br",
+        "miniinthebox.com",
+        "clubesamsung.samsung.com.br",
+        "compracerta.com.br",
+        "consul.com.br",
+        "dafiti.com.br",
+        "tomtop.com",
+        "drogaraia.com.br",
+        "drogasil.com.br",
+        "electrolux.com.br",
+        "eletrumhomolog.myvtex.com",
+        "fastshop.com.br",
+        "epocacosmeticos.com.br",
+        "estrela10.com.br",
+        "evino.com.br",
+        "extra.com.br",
+        "giulianaflores.com.br",
+        "girafa.com.br",
+        "iplace.com.br",
+        "kabum.com.br",
+        "meupositivo.com.br",
+        "pontofrio.com.br",
+        "sephora.com.br",
+        "marabraz.com.br",
+        "marisa.com.br",
+        "mercadolivre.com.br",
+        "mobly.com.br",
+        "motorola.com.br",
+        "multilaser.com.br",
+        "music.amazon.com",
+        "natura.com.br",
+        "nike.com.br",
+        "nuuvem.com",
+        "onofreagora.com.br",
+        "starplus.com",
+        "pt.aliexpress.com",
+        "quemdisseberenice.com.br",
+        "ricardoeletro.com.br",
+        "saraiva.com.br",
+        "shopclub.com.br",
+        "shopfacil.com.br",
+        "sony.com.br",
+        "telhanorte.com.br",
+        "veloe.com.br",
+        "vinhofacil.com.br",
+        "webcontinental.com.br",
+        "webfones.com.br",
+        "wix.com",
+        "zeedog.com.br"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 6,
+      "value": [
+        "arquivo.canaltech.com.br",
+        "canaltech.com.br",
+        "descontomate.com.br",
+        "u-gettw.com",
+        "dmate.cc",
+        "ofertas.canaltech.com.br"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 5,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "linkedin",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/canaltech",
+        "instagram": "https://instagram.com/canaltech",
+        "linkedin": "https://linkedin.com/company/canaltech-brasil",
+        "twitter": "https://twitter.com/canaltech",
+        "youtube": "https://youtube.com/canaltech"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Technology / Software",
+      "value": [
+        "Technology / Software",
+        "Technology / Electronics"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Technology / Software",
+        "rank": 1,
+        "score": 70
+      },
+      "value": [
+        {
+          "name": "Technology / Software",
+          "rank": 1,
+          "score": 70
+        },
+        {
+          "name": "Technology / Electronics",
+          "rank": 1,
+          "score": 60
+        }
+      ]
+    }
+  }
+}

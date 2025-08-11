@@ -100,7 +100,6 @@ type CreateOrganizationRequest struct {
 // @Param        request  body      CreateOrganizationRequest  true  "Organization details"
 // @Success      201      {object}  domain.Organization        "Created organization"
 // @Failure      400      {object}  map[string]string          "Invalid request"
-// @Failure      403      {object}  map[string]string          "Forbidden - Only admins can create organizations"
 // @Failure      500      {object}  map[string]string          "Internal server error"
 // @Security     BearerAuth
 // @Router       /organizations [post]

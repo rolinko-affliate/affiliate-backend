@@ -1,0 +1,1167 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 6,
+      "sampleValue": [
+        "Linkbux",
+        "PartnerStack",
+        "Skimlinks"
+      ],
+      "value": [
+        "Linkbux",
+        "PartnerStack",
+        "Skimlinks",
+        "Takeads",
+        "Viglink",
+        "Yieldkit"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 10,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "api-team@unbounce.com"
+        },
+        {
+          "department": "management",
+          "value": "corporate.cole@unbounce.com"
+        },
+        {
+          "department": "legal",
+          "value": "events@unbounce.com"
+        },
+        {
+          "department": null,
+          "value": "jqdoe@unbounce.com"
+        },
+        {
+          "department": "support",
+          "value": "partners@unbounce.com"
+        },
+        {
+          "department": "communication",
+          "value": "partnerships@unbounce.com"
+        },
+        {
+          "department": "legal",
+          "value": "pr@unbounce.com"
+        },
+        {
+          "department": "sales",
+          "value": "sales@unbounce.com"
+        },
+        {
+          "department": "support",
+          "value": "support@unbounce.com"
+        },
+        {
+          "department": "legal",
+          "value": "unsubscribe@unbounce.com"
+        }
+      ]
+    },
+    "domain": "unbounce.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "tune"
+        },
+        {
+          "score": 0.5550725,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.3478261,
+          "value": "offer"
+        },
+        {
+          "score": 0.29637682,
+          "value": "networks"
+        },
+        {
+          "score": 0.29565218,
+          "value": "update"
+        },
+        {
+          "score": 0.28768116,
+          "value": "advertisers"
+        },
+        {
+          "score": 0.24202898,
+          "value": "advertisers networks"
+        },
+        {
+          "score": 0.23985507,
+          "value": "platform"
+        },
+        {
+          "score": 0.23913044,
+          "value": "request"
+        },
+        {
+          "score": 0.22246377,
+          "value": "api"
+        },
+        {
+          "score": 0.20362319,
+          "value": "site"
+        },
+        {
+          "score": 0.18768115,
+          "value": "partners"
+        },
+        {
+          "score": 0.1789855,
+          "value": "demo"
+        },
+        {
+          "score": 0.17681159,
+          "value": "request demo"
+        },
+        {
+          "score": 0.16956522,
+          "value": "network"
+        },
+        {
+          "score": 0.16811594,
+          "value": "partner"
+        },
+        {
+          "score": 0.16086957,
+          "value": "advertiser"
+        },
+        {
+          "score": 0.1594203,
+          "value": "learn"
+        },
+        {
+          "score": 0.15,
+          "value": "contact us"
+        },
+        {
+          "score": 0.14710145,
+          "value": "ids"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "tune"
+        },
+        {
+          "score": 0.5550725,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.3478261,
+          "value": "offer"
+        },
+        {
+          "score": 0.29637682,
+          "value": "networks"
+        },
+        {
+          "score": 0.29565218,
+          "value": "update"
+        },
+        {
+          "score": 0.28768116,
+          "value": "advertisers"
+        },
+        {
+          "score": 0.24202898,
+          "value": "advertisers networks"
+        },
+        {
+          "score": 0.23985507,
+          "value": "platform"
+        },
+        {
+          "score": 0.23913044,
+          "value": "request"
+        },
+        {
+          "score": 0.22246377,
+          "value": "api"
+        },
+        {
+          "score": 0.20362319,
+          "value": "site"
+        },
+        {
+          "score": 0.18768115,
+          "value": "partners"
+        },
+        {
+          "score": 0.1789855,
+          "value": "demo"
+        },
+        {
+          "score": 0.17681159,
+          "value": "request demo"
+        },
+        {
+          "score": 0.16956522,
+          "value": "network"
+        },
+        {
+          "score": 0.16811594,
+          "value": "partner"
+        },
+        {
+          "score": 0.16086957,
+          "value": "advertiser"
+        },
+        {
+          "score": 0.1594203,
+          "value": "learn"
+        },
+        {
+          "score": 0.15,
+          "value": "contact us"
+        },
+        {
+          "score": 0.14710145,
+          "value": "ids"
+        },
+        {
+          "score": 0.13043478,
+          "value": "islands"
+        },
+        {
+          "score": 0.12898551,
+          "value": "tracking"
+        },
+        {
+          "score": 0.12826087,
+          "value": "tune inc"
+        },
+        {
+          "score": 0.1173913,
+          "value": "direct"
+        },
+        {
+          "score": 0.11666667,
+          "value": "policies"
+        },
+        {
+          "score": 0.11594203,
+          "value": "tune platform"
+        },
+        {
+          "score": 0.11304348,
+          "value": "republic"
+        },
+        {
+          "score": 0.10942029,
+          "value": "financial"
+        },
+        {
+          "score": 0.10942029,
+          "value": "networks learn"
+        },
+        {
+          "score": 0.10942029,
+          "value": "support tune"
+        },
+        {
+          "score": 0.10724638,
+          "value": "financial services"
+        },
+        {
+          "score": 0.105797105,
+          "value": "contact support"
+        },
+        {
+          "score": 0.10507246,
+          "value": "training"
+        },
+        {
+          "score": 0.104347825,
+          "value": "program"
+        },
+        {
+          "score": 0.104347825,
+          "value": "subscription services"
+        },
+        {
+          "score": 0.104347825,
+          "value": "privacy policies"
+        },
+        {
+          "score": 0.10144927,
+          "value": "pricing"
+        },
+        {
+          "score": 0.10072464,
+          "value": "services tune"
+        },
+        {
+          "score": 0.10072464,
+          "value": "developer"
+        },
+        {
+          "score": 0.09855072,
+          "value": "terms use"
+        },
+        {
+          "score": 0.09855072,
+          "value": "direct consumer"
+        },
+        {
+          "score": 0.097826086,
+          "value": "partners customers"
+        },
+        {
+          "score": 0.096376814,
+          "value": "help site"
+        },
+        {
+          "score": 0.096376814,
+          "value": "services subscription"
+        },
+        {
+          "score": 0.096376814,
+          "value": "site developer"
+        },
+        {
+          "score": 0.09565217,
+          "value": "developer site"
+        },
+        {
+          "score": 0.09565217,
+          "value": "pricing advertisers"
+        },
+        {
+          "score": 0.09565217,
+          "value": "consumer financial"
+        },
+        {
+          "score": 0.09565217,
+          "value": "blog privacy"
+        },
+        {
+          "score": 0.09565217,
+          "value": "support help"
+        },
+        {
+          "score": 0.09565217,
+          "value": "inc request"
+        },
+        {
+          "score": 0.09565217,
+          "value": "site training"
+        },
+        {
+          "score": 0.09565217,
+          "value": "training contact"
+        },
+        {
+          "score": 0.09565217,
+          "value": "services pricing"
+        },
+        {
+          "score": 0.09565217,
+          "value": "learn resources"
+        },
+        {
+          "score": 0.09057971,
+          "value": "partner marketing"
+        },
+        {
+          "score": 0.089855075,
+          "value": "websites"
+        },
+        {
+          "score": 0.088405795,
+          "value": "ids find"
+        },
+        {
+          "score": 0.08695652,
+          "value": "set"
+        },
+        {
+          "score": 0.08623189,
+          "value": "remove"
+        },
+        {
+          "score": 0.085507244,
+          "value": "key"
+        },
+        {
+          "score": 0.08115942,
+          "value": "practices"
+        },
+        {
+          "score": 0.080434784,
+          "value": "performance"
+        },
+        {
+          "score": 0.078985505,
+          "value": "privacy policy"
+        },
+        {
+          "score": 0.07826087,
+          "value": "find ids"
+        },
+        {
+          "score": 0.07753623,
+          "value": "report"
+        },
+        {
+          "score": 0.073913045,
+          "value": "find find"
+        },
+        {
+          "score": 0.073913045,
+          "value": "api key"
+        },
+        {
+          "score": 0.073913045,
+          "value": "tune tune"
+        },
+        {
+          "score": 0.073913045,
+          "value": "find id"
+        },
+        {
+          "score": 0.073913045,
+          "value": "conversion"
+        },
+        {
+          "score": 0.07318841,
+          "value": "field"
+        },
+        {
+          "score": 0.07318841,
+          "value": "payment method"
+        },
+        {
+          "score": 0.072463766,
+          "value": "id find"
+        },
+        {
+          "score": 0.072463766,
+          "value": "business type"
+        },
+        {
+          "score": 0.07173913,
+          "value": "platform tune"
+        },
+        {
+          "score": 0.07028986,
+          "value": "privacy practices"
+        },
+        {
+          "score": 0.06884058,
+          "value": "professional"
+        },
+        {
+          "score": 0.06884058,
+          "value": "invoice"
+        },
+        {
+          "score": 0.06811594,
+          "value": "professional services"
+        },
+        {
+          "score": 0.06666667,
+          "value": "payout"
+        },
+        {
+          "score": 0.06521739,
+          "value": "target"
+        },
+        {
+          "score": 0.06521739,
+          "value": "resources blog"
+        },
+        {
+          "score": 0.06521739,
+          "value": "leadership"
+        },
+        {
+          "score": 0.06521739,
+          "value": "policies terms"
+        },
+        {
+          "score": 0.06521739,
+          "value": "revenue"
+        },
+        {
+          "score": 0.06521739,
+          "value": "tune partners"
+        },
+        {
+          "score": 0.064492755,
+          "value": "verticals"
+        },
+        {
+          "score": 0.064492755,
+          "value": "tune leadership"
+        },
+        {
+          "score": 0.064492755,
+          "value": "practices support"
+        },
+        {
+          "score": 0.06376812,
+          "value": "leadership careers"
+        },
+        {
+          "score": 0.06376812,
+          "value": "customers professional"
+        },
+        {
+          "score": 0.06376812,
+          "value": "marketing platform"
+        },
+        {
+          "score": 0.06376812,
+          "value": "verticals direct"
+        },
+        {
+          "score": 0.06376812,
+          "value": "us blog"
+        },
+        {
+          "score": 0.06376812,
+          "value": "type advertisers"
+        },
+        {
+          "score": 0.06376812,
+          "value": "top verticals"
+        },
+        {
+          "score": 0.06376812,
+          "value": "solutions business"
+        },
+        {
+          "score": 0.06376812,
+          "value": "careers contact"
+        },
+        {
+          "score": 0.06376812,
+          "value": "networks top"
+        }
+      ]
+    },
+    "metaData": {
+      "description": "Grow your relevance, leads, and sales with Unbounce. Use Unbounce to easily create and optimize landing pages for your small business and boost conversions with AI insights.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/unbounce.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://unbounce.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 686
+      },
+      "partnersAdded": {
+        "count": 51,
+        "value": [
+          {
+            "domain": "brittanysirtonskitherapist.com"
+          },
+          {
+            "domain": "solodirectoryzone.com"
+          },
+          {
+            "domain": "webdirectoryzone.com"
+          },
+          {
+            "domain": "rankmeetsitesdirectory.com"
+          },
+          {
+            "domain": "superbhubdirectory.com"
+          },
+          {
+            "domain": "primesolodirectory.com"
+          },
+          {
+            "domain": "hackernoon.com"
+          },
+          {
+            "domain": "toolify.ai"
+          },
+          {
+            "domain": "searchstackdirectory.com"
+          },
+          {
+            "domain": "aihuntlist.com"
+          },
+          {
+            "domain": "tekpon.com"
+          },
+          {
+            "domain": "unbounce.partnerlinks.io"
+          },
+          {
+            "domain": "berocket.com"
+          },
+          {
+            "domain": "themasterdirectory.com"
+          },
+          {
+            "domain": "entrepreneurtoauthor.com"
+          },
+          {
+            "domain": "0-gpt.com"
+          },
+          {
+            "domain": "prodirectoryguide.com"
+          },
+          {
+            "domain": "digitalmarketingtrends.in"
+          },
+          {
+            "domain": "globalseoarticles.com"
+          },
+          {
+            "domain": "seotechdirectory.com"
+          },
+          {
+            "domain": "seoprodirectory.com"
+          },
+          {
+            "domain": "aitooloffers.com"
+          },
+          {
+            "domain": "socialzonedirectory.com"
+          },
+          {
+            "domain": "affmaven.com"
+          },
+          {
+            "domain": "whatconverts.com"
+          },
+          {
+            "domain": "youareaceo.com"
+          },
+          {
+            "domain": "smartwaydirectory.com"
+          },
+          {
+            "domain": "hadi.gpt2o.com"
+          },
+          {
+            "domain": "viralzonedirectory.com"
+          },
+          {
+            "domain": "globalseodirectory.com"
+          },
+          {
+            "domain": "templatewind.com"
+          },
+          {
+            "domain": "samchat.net"
+          },
+          {
+            "domain": "hostseolinks.com"
+          },
+          {
+            "domain": "linkdirectoryzone.com"
+          },
+          {
+            "domain": "unbounce.com.br"
+          },
+          {
+            "domain": "webseodirectory.com"
+          },
+          {
+            "domain": "webranksdirectory.com"
+          },
+          {
+            "domain": "proseoarticles.com"
+          },
+          {
+            "domain": "russellmarketing.co"
+          },
+          {
+            "domain": "gpt-appstore.com"
+          },
+          {
+            "domain": "usdirectorylist.com"
+          },
+          {
+            "domain": "canadagooseonline.org"
+          },
+          {
+            "domain": "busimanmarketing.com"
+          },
+          {
+            "domain": "99ranks.com"
+          },
+          {
+            "domain": "semrushdirectory.com"
+          },
+          {
+            "domain": "wayseodirectory.com"
+          },
+          {
+            "domain": "fr.fslocal.com"
+          },
+          {
+            "domain": "ciroapp.com"
+          },
+          {
+            "domain": "ar.thaka.io"
+          },
+          {
+            "domain": "rankhubdirectory.com"
+          },
+          {
+            "domain": "afftrend.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 24,
+        "value": [
+          {
+            "domain": "ivanmana.com"
+          },
+          {
+            "domain": "marketing91.com"
+          },
+          {
+            "domain": "khaoticdigital.com"
+          },
+          {
+            "domain": "fritz.ai"
+          },
+          {
+            "domain": "freewptheme.net"
+          },
+          {
+            "domain": "startupplugs.com"
+          },
+          {
+            "domain": "out-smarts.com"
+          },
+          {
+            "domain": "nicklafferty.com"
+          },
+          {
+            "domain": "digitalempirex.com"
+          },
+          {
+            "domain": "couponzguruusa.com"
+          },
+          {
+            "domain": "yzhood.com"
+          },
+          {
+            "domain": "digitalsupermarket.com"
+          },
+          {
+            "domain": "grafikservis.com"
+          },
+          {
+            "domain": "poptin.co.il"
+          },
+          {
+            "domain": "findstack.com"
+          },
+          {
+            "domain": "lablandsolutions.com"
+          },
+          {
+            "domain": "cryptoshitcompra.com"
+          },
+          {
+            "domain": "poptin.com"
+          },
+          {
+            "domain": "soshal.ca"
+          },
+          {
+            "domain": "lucaluo.com"
+          },
+          {
+            "domain": "startground.com"
+          },
+          {
+            "domain": "blogginggenie.com"
+          },
+          {
+            "domain": "klikkmania.hu"
+          },
+          {
+            "domain": "ailistmaster.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 84,
+            "promotype": "student",
+            "value": [
+              "18to10k.com",
+              "41upk.bemobpath.com",
+              "99ranks.com",
+              "absmho.com",
+              "affiversemedia.com",
+              "aligow.com",
+              "bemerkenswert-seo.de",
+              "bforbloggers.com",
+              "bilalarticles.com",
+              "blogginglift.com",
+              "chamaileon.io",
+              "classifieddirectoy.com",
+              "consultants500.com",
+              "creativebloq.com",
+              "dailyreviews.net",
+              "deltl.de",
+              "discovermybusiness.co",
+              "earnworthy.com",
+              "elitecontentmarketer.com",
+              "entrepreneurshq.com",
+              "entrepreneurtoauthor.com",
+              "farhadmoradi.com",
+              "fastmarkit.com",
+              "fbbtrk.com",
+              "findmyaitool.com",
+              "funneltools24.de",
+              "geekybuzz.com",
+              "globalseoarticles.com",
+              "gorillawebtactics.com",
+              "growthchannel.io",
+              "growthmarketingpro.com",
+              "hackernoon.com",
+              "humanresources.report",
+              "informatique-mania.com",
+              "ivoriginal.com",
+              "joinative.com",
+              "klintmarketing.com",
+              "landingpage.fyi",
+              "livechat.com",
+              "lovefightwrite.com",
+              "marketingmasala.com",
+              "megareviewer.info",
+              "merriganmedia.com",
+              "metabee.de",
+              "mronn.com",
+              "newsblog.pl",
+              "nicheplrnewsletter.com",
+              "noagencycube.com",
+              "novote4energy.org",
+              "omr.com",
+              "onlinezebra.com",
+              "onlyvaluebuy.com",
+              "phreesite.com",
+              "pipedrive.com",
+              "pitchblack.io",
+              "pradeepsingh.com",
+              "rankerdirectory.com",
+              "redcircle.com",
+              "rosssimmonds.com",
+              "sales-hacking.com",
+              "salesmarket.com",
+              "searchenginejournal.com",
+              "sevahcreative.com",
+              "social-lady.com",
+              "softia.fi",
+              "solopreneurinstitute.com",
+              "sponge.io",
+              "spotify.com",
+              "squires.media",
+              "ssdigitalblog.in",
+              "surges.co",
+              "syndication.cloud",
+              "themehits.com",
+              "thenicheguru.com",
+              "toadmin.ru",
+              "tooltester.com",
+              "twotreesppc.com",
+              "useproof.com",
+              "wayseodirectory.com",
+              "webbiquity.com",
+              "webmetools.com",
+              "wfeed.in",
+              "worktonotwork.com",
+              "zadroweb.com"
+            ]
+          },
+          {
+            "count": 172,
+            "promotype": "blog",
+            "value": [
+              "4vmarketing.com",
+              "a2zhosting.world",
+              "aaronward.com",
+              "adminvista.com",
+              "adsjumbo.com",
+              "aifsy.com",
+              "alexbirkett.com",
+              "americanstartups.com",
+              "amitsarda.xyz",
+              "andrewhubbard.co",
+              "appbank.net",
+              "appsious.com",
+              "ar.thaka.io",
+              "articlecity.com",
+              "athomeaffiliates.com",
+              "automationace.com",
+              "aventuredentrepreneur.com",
+              "backlinktime.com",
+              "barcodestalk.com",
+              "berocket.com",
+              "bestschemes.com",
+              "bestsitesdirectory.com",
+              "blogbrandz.com",
+              "blogdumoderateur.com",
+              "bloggingwithfunnels.com",
+              "bporiver.com",
+              "brock.tv",
+              "builtfirst.com",
+              "ciroapp.com",
+              "cleverly.co",
+              "commercecaffeine.com",
+              "commerceguides.com",
+              "communikate-online.de",
+              "dancingdata.co",
+              "digitalmarketingsupermarket.com",
+              "digitalmarketingtrends.in",
+              "digitoolsadvice.com",
+              "doindigital.com",
+              "ecomm.design",
+              "ecommercemarketing.co.nz",
+              "entrepreneurnut.com",
+              "etoppc.com",
+              "eu-startups.com",
+              "fetchprofits.com",
+              "flexxable.com",
+              "fslocal.com",
+              "funnelsecrets.us",
+              "greatsoftware.io",
+              "greenfish.com.au",
+              "growther.io",
+              "growthmodels.co",
+              "hostseolinks.com",
+              "howwebdesign.com",
+              "htmlgoodies.com",
+              "idaptweb.com",
+              "jens.marketing",
+              "kathrynaragon.com",
+              "knowyourmobile.com",
+              "koreantech.org",
+              "kyleads.com",
+              "kylemurphy.com",
+              "landingfolio.com",
+              "linkedin.com",
+              "lionelz.com",
+              "listodirectory.com",
+              "lobby7labs.com",
+              "localseoresources.com",
+              "loriballen.com",
+              "mailinvest.blog",
+              "makethatseachange.com",
+              "marketingdiscounts.io",
+              "marketinglogiq.com",
+              "marketingnewswired.com",
+              "marketingscaleurs.com",
+              "marketingsoftwaremanager.com",
+              "markinblog.com",
+              "mavenwit.com",
+              "medium.com",
+              "megablogging.org",
+              "metricswatch.com",
+              "miloszkrasinski.com",
+              "motivation.africa",
+              "multipleniche.com",
+              "myappvisor.com",
+              "nasniconsultants.com",
+              "natalieluneva.com",
+              "news.oneseocompany.com",
+              "nik.co",
+              "nulledtemplates.com",
+              "nutshell.com",
+              "obiztools.com",
+              "oikka.it",
+              "onaplatterofgold.com",
+              "oneclickadvisor.com",
+              "oneegg.com.au",
+              "organiqmedia.com",
+              "orientamentobusinessdigitali.com",
+              "parimadtarkvarad.ee",
+              "peertopeermarketing.co",
+              "pemavor.com",
+              "perksona.com",
+              "pine.srl",
+              "pixels.guru",
+              "pklea.com",
+              "player.fm",
+              "podchaser.com",
+              "proseoarticles.com",
+              "prowebthemes.com",
+              "pttrns.com",
+              "qkpage1.co",
+              "raindrop.io",
+              "raretopsitesdirectory.com",
+              "rassegna.lbit-solution.it",
+              "revenueinstitute.com",
+              "ryrob.com",
+              "saas-navi.com",
+              "saaspump.com",
+              "salesdorado.com",
+              "samsiam.me",
+              "saveatcart.com",
+              "scaledinference.com",
+              "scceu.org",
+              "scottmax.com",
+              "seedprod.com",
+              "seo-daily.com",
+              "singlegrain.com",
+              "slickmedia.io",
+              "smart-minded.com",
+              "smartondata.com",
+              "smei.ce21.com",
+              "smei.org",
+              "softools.de",
+              "solobusinesstribe.de",
+              "spiner.com.br",
+              "splitbase.com",
+              "sprout24.com",
+              "startupcheckr.com",
+              "storegrowers.com",
+              "storytellingco.com",
+              "study24x7.com",
+              "stylemywp.com",
+              "surjeetthakur.com",
+              "taksudigital.com",
+              "techfinitive.com",
+              "techradar.com",
+              "tenpicks.com",
+              "thebdschool.com",
+              "thedigitalmerchant.com",
+              "themeforest.net",
+              "thenextscoop.com",
+              "thepennyhoarder.com",
+              "tipstrick.ro",
+              "tools.rolandfarkas.com",
+              "toools.design",
+              "topitsoftware.com",
+              "toptips.fr",
+              "trustpulse.com",
+              "twinstrata.com",
+              "tylerbhorvath.com",
+              "unbounce.ch",
+              "valisinternational.com",
+              "victorytale.com",
+              "webmarketingtools.com",
+              "webranksdirectory.com",
+              "websitetooltester.com",
+              "whatconverts.com",
+              "winadmin.it",
+              "wittysparks.com",
+              "wordstream.com",
+              "worldwidetopsite.com",
+              "wpmaintain.co.uk",
+              "zomatt.com"
+            ]
+          },
+          {
+            "count": 19,
+            "promotype": "content",
+            "value": [
+              "allmyratings.com",
+              "apptuts.net",
+              "bloggingbeats.com",
+              "burhaanpattel.com",
+              "codeornocode.com",
+              "digital-emporium.net",
+              "fantomagency.io",
+              "gohire.io",
+              "lelinta.com",
+              "mofluid.com",
+              "nocode.mba",
+              "onlinemarketing-mastermind.de",
+              "profunnelbuilder.com",
+              "startuphandbook.io",
+              "theblueoceansgroup.com",
+              "thegrowthhustlers.com",
+              "themeisle.com",
+              "unbounce.eu",
+              "ybierling.com"
+            ]
+          },
+          {
+            "count": 5,
+            "promotype": "forum",
+            "value": [
+              "altitudemarketing.com",
+              "dotpim.com",
+              "linkbux.com",
+              "rankwebdirectory.com",
+              "theventurer.co"
+            ]
+          },
+          {
+            "count": 7,
+            "promotype": "incentive",
+            "value": [
+              "brandcouponmall.com",
+              "couponay.com",
+              "domainhostcoupon.com",
+              "internetmarketingdeals.com",
+              "landing-pages.at",
+              "netzender.com",
+              "toushenne.de"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 4,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "linkedin",
+        "instagram"
+      ],
+      "value": {
+        "instagram": "https://instagram.com/unbounce",
+        "linkedin": "https://linkedin.com/company/unbounce",
+        "twitter": "https://twitter.com/unbounce",
+        "youtube": "https://youtube.com/user/unbouncevideos"
+      }
+    },
+    "verticals": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Business / Website Builder",
+        "rank": 2,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Business / Software",
+          "rank": 2,
+          "score": 90
+        },
+        {
+          "name": "Business / Website Builder",
+          "rank": 2,
+          "score": 100
+        },
+        {
+          "name": "Online / Web Design",
+          "rank": 2,
+          "score": 80
+        }
+      ]
+    }
+  }
+}

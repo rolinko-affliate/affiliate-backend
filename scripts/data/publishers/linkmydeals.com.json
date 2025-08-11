@@ -1,0 +1,1538 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 19,
+      "sampleValue": [
+        "Admitad",
+        "Affinity",
+        "Awin"
+      ],
+      "value": [
+        "Admitad",
+        "Affinity",
+        "Awin",
+        "CJ Affiliate",
+        "CueLinks",
+        "Digidip",
+        "Flexoffers",
+        "Impact",
+        "Linkbux",
+        "Partnerize",
+        "Pepperjam",
+        "Rakuten",
+        "RevOffers",
+        "ShareASale",
+        "Shopnomix",
+        "Skimlinks",
+        "SourceKnowledge",
+        "Viglink",
+        "Yieldkit"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.6
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "linkmydeals.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "seller"
+        },
+        {
+          "score": 0.84434104,
+          "value": "amazon"
+        },
+        {
+          "score": 0.73023945,
+          "value": "nouveautés"
+        },
+        {
+          "score": 0.65643954,
+          "value": "store"
+        },
+        {
+          "score": 0.63811064,
+          "value": "panier"
+        },
+        {
+          "score": 0.608601,
+          "value": "shirts"
+        },
+        {
+          "score": 0.5285415,
+          "value": "accessory"
+        },
+        {
+          "score": 0.51586527,
+          "value": "device"
+        },
+        {
+          "score": 0.5099758,
+          "value": "sign"
+        },
+        {
+          "score": 0.49725565,
+          "value": "card"
+        },
+        {
+          "score": 0.49565867,
+          "value": "robes"
+        },
+        {
+          "score": 0.47753835,
+          "value": "dress"
+        },
+        {
+          "score": 0.42123365,
+          "value": "ajouter"
+        },
+        {
+          "score": 0.4156474,
+          "value": "ajouter panier"
+        },
+        {
+          "score": 0.41352367,
+          "value": "voir"
+        },
+        {
+          "score": 0.40313596,
+          "value": "ventes"
+        },
+        {
+          "score": 0.3803368,
+          "value": "fashion"
+        },
+        {
+          "score": 0.364873,
+          "value": "style"
+        },
+        {
+          "score": 0.35004866,
+          "value": "sweat"
+        },
+        {
+          "score": 0.348926,
+          "value": "fee"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "seller"
+        },
+        {
+          "score": 0.84434104,
+          "value": "amazon"
+        },
+        {
+          "score": 0.73023945,
+          "value": "nouveautés"
+        },
+        {
+          "score": 0.65643954,
+          "value": "store"
+        },
+        {
+          "score": 0.63811064,
+          "value": "panier"
+        },
+        {
+          "score": 0.608601,
+          "value": "shirts"
+        },
+        {
+          "score": 0.5285415,
+          "value": "accessory"
+        },
+        {
+          "score": 0.51586527,
+          "value": "device"
+        },
+        {
+          "score": 0.5099758,
+          "value": "sign"
+        },
+        {
+          "score": 0.49725565,
+          "value": "card"
+        },
+        {
+          "score": 0.49565867,
+          "value": "robes"
+        },
+        {
+          "score": 0.47753835,
+          "value": "dress"
+        },
+        {
+          "score": 0.42123365,
+          "value": "ajouter"
+        },
+        {
+          "score": 0.4156474,
+          "value": "ajouter panier"
+        },
+        {
+          "score": 0.41352367,
+          "value": "voir"
+        },
+        {
+          "score": 0.40313596,
+          "value": "ventes"
+        },
+        {
+          "score": 0.3803368,
+          "value": "fashion"
+        },
+        {
+          "score": 0.364873,
+          "value": "style"
+        },
+        {
+          "score": 0.35004866,
+          "value": "sweat"
+        },
+        {
+          "score": 0.348926,
+          "value": "fee"
+        },
+        {
+          "score": 0.34321034,
+          "value": "acheter"
+        },
+        {
+          "score": 0.33660907,
+          "value": "category"
+        },
+        {
+          "score": 0.33628517,
+          "value": "ensembles"
+        },
+        {
+          "score": 0.33231476,
+          "value": "meilleures ventes"
+        },
+        {
+          "score": 0.33231476,
+          "value": "meilleures"
+        },
+        {
+          "score": 0.32440522,
+          "value": "central"
+        },
+        {
+          "score": 0.32328352,
+          "value": "clothing"
+        },
+        {
+          "score": 0.3195263,
+          "value": "vestes"
+        },
+        {
+          "score": 0.31469437,
+          "value": "original"
+        },
+        {
+          "score": 0.30823076,
+          "value": "outdoor"
+        },
+        {
+          "score": 0.30170563,
+          "value": "sweat shirts"
+        },
+        {
+          "score": 0.29412735,
+          "value": "gold"
+        },
+        {
+          "score": 0.28991956,
+          "value": "furniture"
+        },
+        {
+          "score": 0.28979886,
+          "value": "video"
+        },
+        {
+          "score": 0.28405893,
+          "value": "care"
+        },
+        {
+          "score": 0.28331524,
+          "value": "woman"
+        },
+        {
+          "score": 0.28268665,
+          "value": "blue"
+        },
+        {
+          "score": 0.2732435,
+          "value": "phone"
+        },
+        {
+          "score": 0.2703983,
+          "value": "quick view"
+        },
+        {
+          "score": 0.2688562,
+          "value": "code"
+        },
+        {
+          "score": 0.26403418,
+          "value": "chain"
+        },
+        {
+          "score": 0.2635899,
+          "value": "shoe"
+        },
+        {
+          "score": 0.257012,
+          "value": "motif"
+        },
+        {
+          "score": 0.25623512,
+          "value": "app"
+        },
+        {
+          "score": 0.25116065,
+          "value": "sport"
+        },
+        {
+          "score": 0.25083575,
+          "value": "link"
+        },
+        {
+          "score": 0.24561192,
+          "value": "bas"
+        },
+        {
+          "score": 0.2423256,
+          "value": "ashtadhatu"
+        },
+        {
+          "score": 0.24218722,
+          "value": "vente"
+        },
+        {
+          "score": 0.24104047,
+          "value": "fba"
+        },
+        {
+          "score": 0.2402161,
+          "value": "prime"
+        },
+        {
+          "score": 0.23907857,
+          "value": "certificate"
+        },
+        {
+          "score": 0.23820366,
+          "value": "tops"
+        },
+        {
+          "score": 0.23767139,
+          "value": "box"
+        },
+        {
+          "score": 0.23732121,
+          "value": "shoes"
+        },
+        {
+          "score": 0.23453169,
+          "value": "chaussures"
+        },
+        {
+          "score": 0.23247623,
+          "value": "hair"
+        },
+        {
+          "score": 0.23144041,
+          "value": "lab"
+        },
+        {
+          "score": 0.22945756,
+          "value": "popular"
+        },
+        {
+          "score": 0.22899155,
+          "value": "sacs"
+        },
+        {
+          "score": 0.22838537,
+          "value": "designer"
+        },
+        {
+          "score": 0.22788651,
+          "value": "bain"
+        },
+        {
+          "score": 0.22756162,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.2256,
+          "value": "shorts"
+        },
+        {
+          "score": 0.22367291,
+          "value": "femme"
+        },
+        {
+          "score": 0.21772665,
+          "value": "chemises"
+        },
+        {
+          "score": 0.21730463,
+          "value": "restriction"
+        },
+        {
+          "score": 0.21669874,
+          "value": "shirt"
+        },
+        {
+          "score": 0.2160777,
+          "value": "soleil"
+        },
+        {
+          "score": 0.21319056,
+          "value": "community"
+        },
+        {
+          "score": 0.2092812,
+          "value": "original lab"
+        },
+        {
+          "score": 0.20685446,
+          "value": "homme"
+        },
+        {
+          "score": 0.20502673,
+          "value": "diabetes"
+        },
+        {
+          "score": 0.20496105,
+          "value": "book"
+        },
+        {
+          "score": 0.20429187,
+          "value": "lunettes"
+        },
+        {
+          "score": 0.20306313,
+          "value": "water"
+        },
+        {
+          "score": 0.20161414,
+          "value": "pantalons"
+        },
+        {
+          "score": 0.19729562,
+          "value": "beauty"
+        },
+        {
+          "score": 0.19648953,
+          "value": "lunettes soleil"
+        },
+        {
+          "score": 0.19581158,
+          "value": "setting"
+        },
+        {
+          "score": 0.19158623,
+          "value": "apparel"
+        },
+        {
+          "score": 0.19007325,
+          "value": "swimwear"
+        },
+        {
+          "score": 0.18981804,
+          "value": "food"
+        },
+        {
+          "score": 0.18825638,
+          "value": "stock"
+        },
+        {
+          "score": 0.18459167,
+          "value": "preference"
+        },
+        {
+          "score": 0.18280369,
+          "value": "error"
+        },
+        {
+          "score": 0.18184341,
+          "value": "office"
+        },
+        {
+          "score": 0.18060786,
+          "value": "perruques"
+        },
+        {
+          "score": 0.1798053,
+          "value": "color"
+        },
+        {
+          "score": 0.17912328,
+          "value": "baby"
+        },
+        {
+          "score": 0.17690499,
+          "value": "casual"
+        },
+        {
+          "score": 0.17623681,
+          "value": "popular product"
+        },
+        {
+          "score": 0.17605506,
+          "value": "health"
+        },
+        {
+          "score": 0.17562601,
+          "value": "kindle"
+        },
+        {
+          "score": 0.17427726,
+          "value": "flash"
+        },
+        {
+          "score": 0.17391498,
+          "value": "credit"
+        },
+        {
+          "score": 0.1729305,
+          "value": "program"
+        },
+        {
+          "score": 0.17077248,
+          "value": "coupon"
+        },
+        {
+          "score": 0.1706759,
+          "value": "jacket"
+        },
+        {
+          "score": 0.1704048,
+          "value": "maillots"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://linkmydeals.com/",
+        "https://www.linkmydeals.com/",
+        "http://linkmydeals.com/",
+        "http://www.linkmydeals.com/"
+      ]
+    },
+    "metaData": {
+      "description": null,
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/linkmydeals.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://linkmydeals.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 290,
+        "value": [
+          "1800petmeds.com",
+          "etsy.com",
+          "adobe.com",
+          "247blinds.co.uk",
+          "ubi.com",
+          "airtel.in",
+          "amazon.com",
+          "abhibus.com",
+          "microsoft.com",
+          "americanexpress.com",
+          "doordash.com",
+          "coursera.org",
+          "ebooks.com",
+          "ikea.com",
+          "restaurant.com",
+          "nordstrom.com",
+          "sainsburys.co.uk",
+          "underarmour.com",
+          "aboutyou.de",
+          "ubereats.com",
+          "academy.com",
+          "woot.com",
+          "jackery.com",
+          "oneplus.com",
+          "samsung.com",
+          "xbox.com",
+          "morrisons.com",
+          "ocado.com",
+          "shutterfly.com",
+          "adultshop.com",
+          "amazon.co.uk",
+          "walmart.com",
+          "flipkart.com",
+          "namecheap.com",
+          "fiverr.com",
+          "agoda.com",
+          "airportparkingreservations.com",
+          "ajio.com",
+          "saturn.de",
+          "aldi.co.uk",
+          "entertainment.com",
+          "aliexpress.us",
+          "alltricks.de",
+          "amazon.de",
+          "amazon.es",
+          "amazon.com.au",
+          "amicafarmacia.com",
+          "americantourister.com",
+          "jcpenney.com",
+          "teachable.com",
+          "anker.com",
+          "hilton.com",
+          "bitly.com",
+          "appsumo.com",
+          "patpat.com",
+          "argos.co.uk",
+          "ashleystewart.com",
+          "sonos.com",
+          "sephora.co.uk",
+          "gap.com",
+          "attractiontickets.com",
+          "au.zaful.com",
+          "godaddy.com",
+          "samsclub.com",
+          "zappos.com",
+          "tesco.com",
+          "bannerbuzz.com",
+          "bannerbuzz.co.uk",
+          "barkbox.com",
+          "barnesandnoble.com",
+          "bathandbodyworks.com",
+          "shopclues.com",
+          "beardo.in",
+          "beatoapp.com",
+          "hsn.com",
+          "harrods.com",
+          "beautycounter.com",
+          "bebe.com",
+          "bedbathandbeyond.com",
+          "bedworks.com.au",
+          "belk.com",
+          "bellelily.com",
+          "bestmobilier.com",
+          "myer.com.au",
+          "biba.in",
+          "bigw.com.au",
+          "bitdefender.com",
+          "blinds-2go.co.uk",
+          "homedepot.com",
+          "blindsdirect.co.uk",
+          "blissy.com",
+          "blissim.fr",
+          "clothingshoponline.com",
+          "ebay.com",
+          "ecoflow.com",
+          "forever21.com",
+          "hellofresh.com",
+          "groupon.com",
+          "michaels.com",
+          "macsales.com",
+          "potterybarn.com",
+          "very.co.uk",
+          "zomato.com",
+          "bonanza.com",
+          "cheapoair.com",
+          "priceline.com",
+          "eurostar.com",
+          "booking.com",
+          "bookoutlet.com",
+          "bookvip.com",
+          "booksamillion.com",
+          "boots.com",
+          "box.co.uk",
+          "zales.com",
+          "buffalowildwings.com",
+          "officedepot.com",
+          "landsend.com",
+          "udemy.com",
+          "buywow.in",
+          "ca.babor.com",
+          "cafago.com",
+          "canva.com",
+          "cvs.com",
+          "hobbylobby.com",
+          "cargurus.com",
+          "hostinger.com",
+          "target.com",
+          "macys.com",
+          "catch.com.au",
+          "movavi.com",
+          "centreofexcellence.com",
+          "ebay.co.uk",
+          "ebay.com.au",
+          "hostgator.com",
+          "chewy.com",
+          "claires.com",
+          "clearly.com.au",
+          "dreamhost.com",
+          "clovia.com",
+          "costco.com",
+          "converse.com",
+          "dominos.co.uk",
+          "mcdonalds.com",
+          "cotosen.com",
+          "walgreens.com",
+          "coxandcox.co.uk",
+          "croma.com",
+          "edreams.es",
+          "orbitz.com",
+          "cuelinks.com",
+          "cultbeauty.com",
+          "cultsport.com",
+          "tomtop.com",
+          "deliveroo.co.uk",
+          "pizzahut.co.uk",
+          "wagamama.com",
+          "staples.com",
+          "dhiindia.com",
+          "dickssportinggoods.com",
+          "disneystore.com",
+          "dominos.co.in",
+          "dollardays.com",
+          "dresslily.com",
+          "dsw.com",
+          "newegg.com",
+          "ergobaby.com",
+          "es.trip.com",
+          "es.lastminute.com",
+          "soccer.com",
+          "hurley.com",
+          "hekka.com",
+          "roccat.com",
+          "fnac.com",
+          "zaful.com",
+          "expedia.com",
+          "jcrew.com",
+          "fathead.com",
+          "filson.com",
+          "firstcry.com",
+          "reebok.com",
+          "foodhub.co.uk",
+          "forever21.in",
+          "fossil.com",
+          "freshtohome.com",
+          "ftd.com",
+          "furniturevillage.co.uk",
+          "furniture123.co.uk",
+          "gardeningexpress.co.uk",
+          "glassesdirect.co.uk",
+          "llbean.com",
+          "prana.com",
+          "ulta.com",
+          "liquidweb.com",
+          "glossybox.co.uk",
+          "iceland.co.uk",
+          "hammacher.com",
+          "harvester.co.uk",
+          "healthkart.com",
+          "kogan.com",
+          "spacenk.com",
+          "yatra.com",
+          "homegoods.com",
+          "hostinger.in",
+          "radissonhotels.com",
+          "wayfair.com",
+          "sharperimage.com",
+          "in.bookmyshow.com",
+          "jaypore.com",
+          "joann.com",
+          "jolse.com",
+          "josbank.com",
+          "journeys.com",
+          "kennethcole.com",
+          "kmart.com",
+          "koparoclean.com",
+          "kushals.com",
+          "lightinthebox.com",
+          "littlecaesars.com",
+          "lotus-professional.com",
+          "loveholidays.com",
+          "semrush.com",
+          "tatacliq.com",
+          "rosegal.com",
+          "tigerdirect.com",
+          "viator.com",
+          "mamaearth.in",
+          "mcdelivery.co.in",
+          "medexpress.co.uk",
+          "microperfumes.com",
+          "mojoglasses.com",
+          "mothercare.co.id",
+          "mysleepwell.com",
+          "nadula.com",
+          "voylla.com",
+          "nikestrength.com",
+          "nordstromrack.com",
+          "nutrisystem.com",
+          "nykaa.com",
+          "oakfurnitureland.co.uk",
+          "onsitego.com",
+          "thedermaco.com",
+          "pizzaexpress.com",
+          "pizzahut.com",
+          "oshkosh.com",
+          "otto.de",
+          "otto-office.com",
+          "oyorooms.com",
+          "parkdeanresorts.co.uk",
+          "pharmeasy.in",
+          "potterybarnkids.com",
+          "proozy.com",
+          "rexingusa.com",
+          "ryderwear.com",
+          "sallybeauty.com",
+          "sbicard.com",
+          "selectspecs.com",
+          "temu.com",
+          "shoecarnival.com",
+          "silkn.com",
+          "simplycook.com",
+          "skiphop.com",
+          "smartbuyglasses.co.uk",
+          "sperry.com",
+          "sportpursuit.com",
+          "spirithalloween.com",
+          "springtek.in",
+          "stevemadden.com",
+          "superbottoms.com",
+          "zinus.com",
+          "swiggy.com",
+          "thesak.com",
+          "timesprime.com",
+          "topvintage.nl",
+          "truebrowns.com",
+          "tvc-mall.com",
+          "tyresnmore.com",
+          "uk.coach.com",
+          "uk.pandora.net",
+          "uk.zaful.com",
+          "us.ecoflow.com",
+          "us.patpat.com",
+          "us.puma.com",
+          "vitacost.com",
+          "wondershare.com",
+          "xyxxcrew.com",
+          "yourparkingspace.co.uk",
+          "zalesoutlet.com",
+          "zeelool.com",
+          "zivame.com",
+          "zooplus.co.uk"
+        ]
+      },
+      "partnersAdded": {
+        "count": 13,
+        "value": [
+          {
+            "domain": "uk.coach.com"
+          },
+          {
+            "domain": "es.trip.com"
+          },
+          {
+            "domain": "uk.pandora.net"
+          },
+          {
+            "domain": "littlecaesars.com"
+          },
+          {
+            "domain": "us.ecoflow.com"
+          },
+          {
+            "domain": "us.patpat.com"
+          },
+          {
+            "domain": "au.zaful.com"
+          },
+          {
+            "domain": "bitly.com"
+          },
+          {
+            "domain": "uk.zaful.com"
+          },
+          {
+            "domain": "us.puma.com"
+          },
+          {
+            "domain": "ca.babor.com"
+          },
+          {
+            "domain": "es.lastminute.com"
+          },
+          {
+            "domain": "in.bookmyshow.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 14,
+        "value": [
+          {
+            "domain": "lastminute.com"
+          },
+          {
+            "domain": "pandora.net"
+          },
+          {
+            "domain": "douglas.de"
+          },
+          {
+            "domain": "oreillyauto.com"
+          },
+          {
+            "domain": "bookmyshow.com"
+          },
+          {
+            "domain": "celloworld.com"
+          },
+          {
+            "domain": "puma.com"
+          },
+          {
+            "domain": "audible.co.uk"
+          },
+          {
+            "domain": "childrensplace.com"
+          },
+          {
+            "domain": "trip.com"
+          },
+          {
+            "domain": "coach.com"
+          },
+          {
+            "domain": "ztedevices.com"
+          },
+          {
+            "domain": "babor.com"
+          },
+          {
+            "domain": "akbartravels.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 36.300003,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 25.35,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 18.15,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 16.3,
+            "vertical": "Food / Take Out"
+          },
+          {
+            "count": 11.049998,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 10.65,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 10.499999,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 9.6,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 8.75,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 7.45,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 6.7999997,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 6.7499995,
+            "vertical": "Online / Web Hosting"
+          },
+          {
+            "count": 6.6,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 6.5999994,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 6.55,
+            "vertical": "Travel / Flights"
+          },
+          {
+            "count": 5.85,
+            "vertical": "Health / Eyecare"
+          },
+          {
+            "count": 5.6,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 4.85,
+            "vertical": "Home / Babycare"
+          },
+          {
+            "count": 4.75,
+            "vertical": "Home / Beds & Bedding"
+          },
+          {
+            "count": 3.95,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 3.9,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 3.9,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 3.8500001,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 3.8500001,
+            "vertical": "Home / Pets"
+          },
+          {
+            "count": 3.8500001,
+            "vertical": "Travel / Vacation"
+          },
+          {
+            "count": 3.85,
+            "vertical": "Fashion / Jewellery"
+          },
+          {
+            "count": 3.75,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 3,
+            "vertical": "Business / Office"
+          },
+          {
+            "count": 2.9,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 2.65,
+            "vertical": "Motoring / Cars"
+          },
+          {
+            "count": 2.35,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Entertainment / Hobbies"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Travel / Attractions"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Finance / Cards"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Travel / Parking Transfers"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Travel / Rail & Coach"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Fashion / Kids"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Fashion / Lingerie"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Health / Adult"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 1,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 1,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 1,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 1,
+            "vertical": "Travel / Accessories"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Cyber Security"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Gifts / Personalised"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Fragrances"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Weight Loss"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Online / Security"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Sports / Cycling"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Gifts / Experience Days"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Gifts / Flowers"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / DIY"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / Garden"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Travel / Car Hire"
+          },
+          {
+            "count": 0.85,
+            "vertical": "Business / Energy"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 290,
+      "value": [
+        "1800petmeds.com",
+        "etsy.com",
+        "adobe.com",
+        "247blinds.co.uk",
+        "ubi.com",
+        "airtel.in",
+        "amazon.com",
+        "abhibus.com",
+        "microsoft.com",
+        "americanexpress.com",
+        "doordash.com",
+        "coursera.org",
+        "ebooks.com",
+        "ikea.com",
+        "restaurant.com",
+        "nordstrom.com",
+        "sainsburys.co.uk",
+        "underarmour.com",
+        "aboutyou.de",
+        "ubereats.com",
+        "academy.com",
+        "woot.com",
+        "jackery.com",
+        "oneplus.com",
+        "samsung.com",
+        "xbox.com",
+        "morrisons.com",
+        "ocado.com",
+        "shutterfly.com",
+        "adultshop.com",
+        "amazon.co.uk",
+        "walmart.com",
+        "flipkart.com",
+        "namecheap.com",
+        "fiverr.com",
+        "agoda.com",
+        "airportparkingreservations.com",
+        "ajio.com",
+        "saturn.de",
+        "aldi.co.uk",
+        "entertainment.com",
+        "aliexpress.us",
+        "alltricks.de",
+        "amazon.de",
+        "amazon.es",
+        "amazon.com.au",
+        "amicafarmacia.com",
+        "americantourister.com",
+        "jcpenney.com",
+        "teachable.com",
+        "anker.com",
+        "hilton.com",
+        "bitly.com",
+        "appsumo.com",
+        "patpat.com",
+        "argos.co.uk",
+        "ashleystewart.com",
+        "sonos.com",
+        "sephora.co.uk",
+        "gap.com",
+        "attractiontickets.com",
+        "au.zaful.com",
+        "godaddy.com",
+        "samsclub.com",
+        "zappos.com",
+        "tesco.com",
+        "bannerbuzz.com",
+        "bannerbuzz.co.uk",
+        "barkbox.com",
+        "barnesandnoble.com",
+        "bathandbodyworks.com",
+        "shopclues.com",
+        "beardo.in",
+        "beatoapp.com",
+        "hsn.com",
+        "harrods.com",
+        "beautycounter.com",
+        "bebe.com",
+        "bedbathandbeyond.com",
+        "bedworks.com.au",
+        "belk.com",
+        "bellelily.com",
+        "bestmobilier.com",
+        "myer.com.au",
+        "biba.in",
+        "bigw.com.au",
+        "bitdefender.com",
+        "blinds-2go.co.uk",
+        "homedepot.com",
+        "blindsdirect.co.uk",
+        "blissy.com",
+        "blissim.fr",
+        "clothingshoponline.com",
+        "ebay.com",
+        "ecoflow.com",
+        "forever21.com",
+        "hellofresh.com",
+        "groupon.com",
+        "michaels.com",
+        "macsales.com",
+        "potterybarn.com",
+        "very.co.uk",
+        "zomato.com",
+        "bonanza.com",
+        "cheapoair.com",
+        "priceline.com",
+        "eurostar.com",
+        "booking.com",
+        "bookoutlet.com",
+        "bookvip.com",
+        "booksamillion.com",
+        "boots.com",
+        "box.co.uk",
+        "zales.com",
+        "buffalowildwings.com",
+        "officedepot.com",
+        "landsend.com",
+        "udemy.com",
+        "buywow.in",
+        "ca.babor.com",
+        "cafago.com",
+        "canva.com",
+        "cvs.com",
+        "hobbylobby.com",
+        "cargurus.com",
+        "hostinger.com",
+        "target.com",
+        "macys.com",
+        "catch.com.au",
+        "movavi.com",
+        "centreofexcellence.com",
+        "ebay.co.uk",
+        "ebay.com.au",
+        "hostgator.com",
+        "chewy.com",
+        "claires.com",
+        "clearly.com.au",
+        "dreamhost.com",
+        "clovia.com",
+        "costco.com",
+        "converse.com",
+        "dominos.co.uk",
+        "mcdonalds.com",
+        "cotosen.com",
+        "walgreens.com",
+        "coxandcox.co.uk",
+        "croma.com",
+        "edreams.es",
+        "orbitz.com",
+        "cuelinks.com",
+        "cultbeauty.com",
+        "cultsport.com",
+        "tomtop.com",
+        "deliveroo.co.uk",
+        "pizzahut.co.uk",
+        "wagamama.com",
+        "staples.com",
+        "dhiindia.com",
+        "dickssportinggoods.com",
+        "disneystore.com",
+        "dominos.co.in",
+        "dollardays.com",
+        "dresslily.com",
+        "dsw.com",
+        "newegg.com",
+        "ergobaby.com",
+        "es.trip.com",
+        "es.lastminute.com",
+        "soccer.com",
+        "hurley.com",
+        "hekka.com",
+        "roccat.com",
+        "fnac.com",
+        "zaful.com",
+        "expedia.com",
+        "jcrew.com",
+        "fathead.com",
+        "filson.com",
+        "firstcry.com",
+        "reebok.com",
+        "foodhub.co.uk",
+        "forever21.in",
+        "fossil.com",
+        "freshtohome.com",
+        "ftd.com",
+        "furniturevillage.co.uk",
+        "furniture123.co.uk",
+        "gardeningexpress.co.uk",
+        "glassesdirect.co.uk",
+        "llbean.com",
+        "prana.com",
+        "ulta.com",
+        "liquidweb.com",
+        "glossybox.co.uk",
+        "iceland.co.uk",
+        "hammacher.com",
+        "harvester.co.uk",
+        "healthkart.com",
+        "kogan.com",
+        "spacenk.com",
+        "yatra.com",
+        "homegoods.com",
+        "hostinger.in",
+        "radissonhotels.com",
+        "wayfair.com",
+        "sharperimage.com",
+        "in.bookmyshow.com",
+        "jaypore.com",
+        "joann.com",
+        "jolse.com",
+        "josbank.com",
+        "journeys.com",
+        "kennethcole.com",
+        "kmart.com",
+        "koparoclean.com",
+        "kushals.com",
+        "lightinthebox.com",
+        "littlecaesars.com",
+        "lotus-professional.com",
+        "loveholidays.com",
+        "semrush.com",
+        "tatacliq.com",
+        "rosegal.com",
+        "tigerdirect.com",
+        "viator.com",
+        "mamaearth.in",
+        "mcdelivery.co.in",
+        "medexpress.co.uk",
+        "microperfumes.com",
+        "mojoglasses.com",
+        "mothercare.co.id",
+        "mysleepwell.com",
+        "nadula.com",
+        "voylla.com",
+        "nikestrength.com",
+        "nordstromrack.com",
+        "nutrisystem.com",
+        "nykaa.com",
+        "oakfurnitureland.co.uk",
+        "onsitego.com",
+        "thedermaco.com",
+        "pizzaexpress.com",
+        "pizzahut.com",
+        "oshkosh.com",
+        "otto.de",
+        "otto-office.com",
+        "oyorooms.com",
+        "parkdeanresorts.co.uk",
+        "pharmeasy.in",
+        "potterybarnkids.com",
+        "proozy.com",
+        "rexingusa.com",
+        "ryderwear.com",
+        "sallybeauty.com",
+        "sbicard.com",
+        "selectspecs.com",
+        "temu.com",
+        "shoecarnival.com",
+        "silkn.com",
+        "simplycook.com",
+        "skiphop.com",
+        "smartbuyglasses.co.uk",
+        "sperry.com",
+        "sportpursuit.com",
+        "spirithalloween.com",
+        "springtek.in",
+        "stevemadden.com",
+        "superbottoms.com",
+        "zinus.com",
+        "swiggy.com",
+        "thesak.com",
+        "timesprime.com",
+        "topvintage.nl",
+        "truebrowns.com",
+        "tvc-mall.com",
+        "tyresnmore.com",
+        "uk.coach.com",
+        "uk.pandora.net",
+        "uk.zaful.com",
+        "us.ecoflow.com",
+        "us.patpat.com",
+        "us.puma.com",
+        "vitacost.com",
+        "wondershare.com",
+        "xyxxcrew.com",
+        "yourparkingspace.co.uk",
+        "zalesoutlet.com",
+        "zeelool.com",
+        "zivame.com",
+        "zooplus.co.uk"
+      ]
+    },
+    "promotype": {
+      "value": "incentive"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Shopping / Department Stores",
+      "value": [
+        "Shopping / Department Stores",
+        "Online / Freebies"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Shopping / Department Stores",
+        "rank": 1,
+        "score": 80
+      },
+      "value": [
+        {
+          "name": "Shopping / Department Stores",
+          "rank": 1,
+          "score": 80
+        },
+        {
+          "name": "Online / Freebies",
+          "rank": 1,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,283 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 8,
+      "sampleValue": [
+        "Business Insider",
+        "Linkbux",
+        "Linkby"
+      ],
+      "value": [
+        "Business Insider",
+        "Linkbux",
+        "Linkby",
+        "Refersion",
+        "ShareASale",
+        "Skimlinks",
+        "Viglink",
+        "Yieldkit"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 8,
+      "error": false,
+      "value": [
+        {
+          "department": null,
+          "value": "at@bestselfco.we"
+        },
+        {
+          "department": null,
+          "value": "everything@once.pareto"
+        },
+        {
+          "department": null,
+          "value": "good@scheduling.overwhelm"
+        },
+        {
+          "department": "support",
+          "value": "support@bestself.co"
+        },
+        {
+          "department": "support",
+          "value": "up@checkout.for"
+        },
+        {
+          "department": "communication",
+          "value": "was@risk.the"
+        },
+        {
+          "department": "communication",
+          "value": "wholesale@bestself.co"
+        },
+        {
+          "department": null,
+          "value": "wholesale@bestself.co.where"
+        }
+      ]
+    },
+    "domain": "bestself.co",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "Buy the top productivity tools you need to succeed. Self Journal goal setting system and productivity planner, conversation starters, relationship tools, date night ideas and more.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/bestself.co.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://bestself.co"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 173
+      },
+      "partnersAdded": {
+        "count": 10,
+        "value": [
+          {
+            "domain": "savcoupons.com"
+          },
+          {
+            "domain": "eoupon.site"
+          },
+          {
+            "domain": "korting-en-acties.nl"
+          },
+          {
+            "domain": "promocodes.com"
+          },
+          {
+            "domain": "newsgroove.co.uk"
+          },
+          {
+            "domain": "coreywilkspsyd.com"
+          },
+          {
+            "domain": "creativecallingcoaching.com"
+          },
+          {
+            "domain": "journalreviewr.com"
+          },
+          {
+            "domain": "himareddy.com"
+          },
+          {
+            "domain": "na.310nutrition.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 6,
+        "value": [
+          {
+            "domain": "designepiclife.com"
+          },
+          {
+            "domain": "larrygmaguire.com"
+          },
+          {
+            "domain": "glowyz.xyz"
+          },
+          {
+            "domain": "usbannerads.com"
+          },
+          {
+            "domain": "310nutrition.com"
+          },
+          {
+            "domain": "silverpeaksstorage.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 49,
+            "promotype": "blog",
+            "value": [
+              "amazon.co.uk",
+              "annakonchar.com",
+              "balancesaludable.com",
+              "bannercho.com",
+              "beckymollenkamp.com",
+              "brizziebaskets.com",
+              "businessinsider.com",
+              "buzzfeed.com",
+              "careerupgrader.net",
+              "creativeprimer.com",
+              "drwellness.co.nz",
+              "entreresource.com",
+              "eventsolutionsmanagement.com",
+              "freestyleconnection.com",
+              "giftcardspromocodes.com",
+              "goodlifewife.com",
+              "horkeyhandbook.com",
+              "ikeahackers.net",
+              "iriediva.com",
+              "journalreviewr.com",
+              "korting-en-acties.nl",
+              "marathon-crossfit.com",
+              "mblwrites.com",
+              "medicalreceptionistnetwork.com",
+              "medium.com",
+              "mindlove.com",
+              "momssmallvictories.com",
+              "music.amazon.com",
+              "onerollatatime.com",
+              "our-wolves-den.com",
+              "peakmindpsychology.com",
+              "phspot.org",
+              "podchaser.com",
+              "projectbliss.net",
+              "quepasomiami.com",
+              "sapphiretherapy.org",
+              "savingarena.com",
+              "sflsg.com",
+              "simonshareef.com",
+              "techsbucket.com",
+              "thebrainbuddha.com",
+              "thepaleomama.com",
+              "thewritesideofmybrain.com",
+              "topdust.com",
+              "tyrool.com",
+              "verifiedpromocode.com",
+              "vitalityangel.com",
+              "wordstrumpet.com",
+              "ztec100.com"
+            ]
+          },
+          {
+            "count": 18,
+            "promotype": "student",
+            "value": [
+              "blog.repithwin.com",
+              "eonline.com",
+              "fiverr.com",
+              "highpayingaffiliateprograms.com",
+              "inc.com",
+              "jazdaigle.com",
+              "kitastw.com",
+              "megareviewer.info",
+              "naturalife.org",
+              "pattaya-online.com",
+              "productivity.academy",
+              "promocodes.com",
+              "puertoricodigitalnews.com",
+              "theefficientadvisor.com",
+              "tree3.com",
+              "under30experiences.com",
+              "unfoldingmatrix.com",
+              "wealthworthylife.com"
+            ]
+          },
+          {
+            "count": 3,
+            "promotype": "content",
+            "value": [
+              "coreywilkspsyd.com",
+              "finalbookofdaniel.com",
+              "xingyunlite.com"
+            ]
+          },
+          {
+            "count": 11,
+            "promotype": "incentive",
+            "value": [
+              "couponclans.com",
+              "coupon.freedomofword.com",
+              "coupon.goldendojo.com",
+              "couponifier.com",
+              "couponit.com",
+              "couponsnake.com",
+              "couponupto.com",
+              "especialcoupons.com",
+              "funcoupons.net",
+              "remedydeals.com",
+              "uttercoupons.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 3,
+      "socialsAvailable": [
+        "twitter",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/bestselfco",
+        "instagram": "https://instagram.com/bestselfco",
+        "twitter": "https://twitter.com/bestselfco"
+      }
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Health / Wellbeing",
+        "rank": 2,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Entertainment / Hobbies",
+          "rank": 2,
+          "score": 70
+        },
+        {
+          "name": "Health / Wellbeing",
+          "rank": 2,
+          "score": 90
+        }
+      ]
+    }
+  }
+}

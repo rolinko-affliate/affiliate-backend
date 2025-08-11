@@ -1,0 +1,4053 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 17,
+      "sampleValue": [
+        "Awin",
+        "Business Insider",
+        "CJ Affiliate"
+      ],
+      "value": [
+        "Awin",
+        "Business Insider",
+        "CJ Affiliate",
+        "Flexoffers",
+        "Impact",
+        "Linkby",
+        "Optimise",
+        "Partnerize",
+        "Pepperjam",
+        "Private Network",
+        "Rakuten",
+        "ShareASale",
+        "Skimlinks",
+        "Tradedoubler",
+        "TUNE",
+        "Viglink",
+        "Webgains"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "gb",
+        "score": 0.65
+      },
+      "sampleValue": [
+        {
+          "countryCode": "gb",
+          "score": 0.65
+        },
+        {
+          "countryCode": "us",
+          "score": 0.2
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "gb",
+          "score": 0.65
+        },
+        {
+          "countryCode": "us",
+          "score": 0.2
+        }
+      ]
+    },
+    "domain": "dailymail.co.uk",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "investment"
+        },
+        {
+          "score": 0.8077717,
+          "value": "dress"
+        },
+        {
+          "score": 0.5882443,
+          "value": "fund"
+        },
+        {
+          "score": 0.58819145,
+          "value": "investments"
+        },
+        {
+          "score": 0.5422108,
+          "value": "shirt"
+        },
+        {
+          "score": 0.5345497,
+          "value": "financial"
+        },
+        {
+          "score": 0.51713777,
+          "value": "investing"
+        },
+        {
+          "score": 0.48501602,
+          "value": "investor"
+        },
+        {
+          "score": 0.48229975,
+          "value": "investors"
+        },
+        {
+          "score": 0.4234471,
+          "value": "invest"
+        },
+        {
+          "score": 0.4070043,
+          "value": "pension"
+        },
+        {
+          "score": 0.37625733,
+          "value": "active"
+        },
+        {
+          "score": 0.354892,
+          "value": "market"
+        },
+        {
+          "score": 0.35288185,
+          "value": "funds"
+        },
+        {
+          "score": 0.3411775,
+          "value": "markets"
+        },
+        {
+          "score": 0.34032917,
+          "value": "portfolio"
+        },
+        {
+          "score": 0.339706,
+          "value": "cash"
+        },
+        {
+          "score": 0.33304638,
+          "value": "money"
+        },
+        {
+          "score": 0.32036376,
+          "value": "petite"
+        },
+        {
+          "score": 0.3173138,
+          "value": "clothing"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "investment"
+        },
+        {
+          "score": 0.8077717,
+          "value": "dress"
+        },
+        {
+          "score": 0.5882443,
+          "value": "fund"
+        },
+        {
+          "score": 0.58819145,
+          "value": "investments"
+        },
+        {
+          "score": 0.5422108,
+          "value": "shirt"
+        },
+        {
+          "score": 0.5345497,
+          "value": "financial"
+        },
+        {
+          "score": 0.51713777,
+          "value": "investing"
+        },
+        {
+          "score": 0.48501602,
+          "value": "investor"
+        },
+        {
+          "score": 0.48229975,
+          "value": "investors"
+        },
+        {
+          "score": 0.4234471,
+          "value": "invest"
+        },
+        {
+          "score": 0.4070043,
+          "value": "pension"
+        },
+        {
+          "score": 0.37625733,
+          "value": "active"
+        },
+        {
+          "score": 0.354892,
+          "value": "market"
+        },
+        {
+          "score": 0.35288185,
+          "value": "funds"
+        },
+        {
+          "score": 0.3411775,
+          "value": "markets"
+        },
+        {
+          "score": 0.34032917,
+          "value": "portfolio"
+        },
+        {
+          "score": 0.339706,
+          "value": "cash"
+        },
+        {
+          "score": 0.33304638,
+          "value": "money"
+        },
+        {
+          "score": 0.32036376,
+          "value": "petite"
+        },
+        {
+          "score": 0.3173138,
+          "value": "clothing"
+        },
+        {
+          "score": 0.31638214,
+          "value": "accessory"
+        },
+        {
+          "score": 0.3162458,
+          "value": "stock"
+        },
+        {
+          "score": 0.30414516,
+          "value": "share"
+        },
+        {
+          "score": 0.29875833,
+          "value": "maternity"
+        },
+        {
+          "score": 0.27785796,
+          "value": "jacket"
+        },
+        {
+          "score": 0.2706909,
+          "value": "charges"
+        },
+        {
+          "score": 0.2705585,
+          "value": "stocks"
+        },
+        {
+          "score": 0.261748,
+          "value": "income"
+        },
+        {
+          "score": 0.25971413,
+          "value": "equity"
+        },
+        {
+          "score": 0.25434354,
+          "value": "article"
+        },
+        {
+          "score": 0.25081226,
+          "value": "asset"
+        },
+        {
+          "score": 0.2500747,
+          "value": "trusts"
+        },
+        {
+          "score": 0.24959493,
+          "value": "trust"
+        },
+        {
+          "score": 0.24654007,
+          "value": "capital"
+        },
+        {
+          "score": 0.24153998,
+          "value": "companies"
+        },
+        {
+          "score": 0.23957768,
+          "value": "shoe"
+        },
+        {
+          "score": 0.20097148,
+          "value": "hoodie"
+        },
+        {
+          "score": 0.19642572,
+          "value": "beauty"
+        },
+        {
+          "score": 0.19346344,
+          "value": "pensions"
+        },
+        {
+          "score": 0.18301274,
+          "value": "global"
+        },
+        {
+          "score": 0.17719811,
+          "value": "trouser"
+        },
+        {
+          "score": 0.17519057,
+          "value": "transfer"
+        },
+        {
+          "score": 0.17005518,
+          "value": "bank"
+        },
+        {
+          "score": 0.16958499,
+          "value": "savings"
+        },
+        {
+          "score": 0.1686118,
+          "value": "securities"
+        },
+        {
+          "score": 0.16586179,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.1658258,
+          "value": "treasury"
+        },
+        {
+          "score": 0.16275495,
+          "value": "invesco"
+        },
+        {
+          "score": 0.16126086,
+          "value": "retirement"
+        },
+        {
+          "score": 0.15603389,
+          "value": "short"
+        },
+        {
+          "score": 0.15413292,
+          "value": "international"
+        },
+        {
+          "score": 0.14894041,
+          "value": "earnings"
+        },
+        {
+          "score": 0.14861733,
+          "value": "wealth"
+        },
+        {
+          "score": 0.14783618,
+          "value": "websites"
+        },
+        {
+          "score": 0.14332002,
+          "value": "dividend"
+        },
+        {
+          "score": 0.14211991,
+          "value": "coat"
+        },
+        {
+          "score": 0.13829914,
+          "value": "swimwear"
+        },
+        {
+          "score": 0.13770697,
+          "value": "assets"
+        },
+        {
+          "score": 0.12699588,
+          "value": "fit"
+        },
+        {
+          "score": 0.12689598,
+          "value": "prices"
+        },
+        {
+          "score": 0.12125226,
+          "value": "profit"
+        },
+        {
+          "score": 0.116516255,
+          "value": "men"
+        },
+        {
+          "score": 0.113621384,
+          "value": "agencies"
+        },
+        {
+          "score": 0.112109385,
+          "value": "categories"
+        },
+        {
+          "score": 0.11173985,
+          "value": "blackrock"
+        },
+        {
+          "score": 0.11137423,
+          "value": "advice"
+        },
+        {
+          "score": 0.11072114,
+          "value": "boot"
+        },
+        {
+          "score": 0.10882227,
+          "value": "desktop"
+        },
+        {
+          "score": 0.107828565,
+          "value": "trading"
+        },
+        {
+          "score": 0.10611346,
+          "value": "shares"
+        },
+        {
+          "score": 0.103997774,
+          "value": "outlook"
+        },
+        {
+          "score": 0.102411844,
+          "value": "guide"
+        },
+        {
+          "score": 0.10171197,
+          "value": "expert"
+        },
+        {
+          "score": 0.09980958,
+          "value": "jogger"
+        },
+        {
+          "score": 0.098511204,
+          "value": "technologies"
+        },
+        {
+          "score": 0.097207695,
+          "value": "ready"
+        },
+        {
+          "score": 0.09379725,
+          "value": "occasion"
+        },
+        {
+          "score": 0.09379207,
+          "value": "lifetime"
+        },
+        {
+          "score": 0.09364408,
+          "value": "register"
+        },
+        {
+          "score": 0.09212919,
+          "value": "bonds"
+        },
+        {
+          "score": 0.09099623,
+          "value": "jumpsuit"
+        },
+        {
+          "score": 0.09050857,
+          "value": "save"
+        },
+        {
+          "score": 0.090508334,
+          "value": "popular"
+        },
+        {
+          "score": 0.089987814,
+          "value": "activewear"
+        },
+        {
+          "score": 0.08985824,
+          "value": "skirt"
+        },
+        {
+          "score": 0.08780527,
+          "value": "tilney"
+        },
+        {
+          "score": 0.08610007,
+          "value": "virtual"
+        },
+        {
+          "score": 0.08591483,
+          "value": "risk"
+        },
+        {
+          "score": 0.0843059,
+          "value": "freelance"
+        },
+        {
+          "score": 0.08398312,
+          "value": "body"
+        },
+        {
+          "score": 0.0838502,
+          "value": "insight"
+        },
+        {
+          "score": 0.08322677,
+          "value": "women"
+        },
+        {
+          "score": 0.08265996,
+          "value": "advanced"
+        },
+        {
+          "score": 0.08207352,
+          "value": "trend"
+        },
+        {
+          "score": 0.08078448,
+          "value": "gold"
+        },
+        {
+          "score": 0.08003306,
+          "value": "pricing"
+        },
+        {
+          "score": 0.07827496,
+          "value": "tax"
+        },
+        {
+          "score": 0.076506406,
+          "value": "sell"
+        },
+        {
+          "score": 0.07616113,
+          "value": "tips"
+        },
+        {
+          "score": 0.074741304,
+          "value": "acquisition"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "description": "MailOnline - get the latest breaking news, showbiz & celebrity photos, sport news & rumours, viral videos and top stories from MailOnline, Daily Mail and Mail on Sunday newspapers.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/dailymail.co.uk.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://dailymail.co.uk"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1253,
+        "value": [
+          "myshopify.com",
+          "111skin.co.uk",
+          "111skin.com",
+          "12thtribe.com",
+          "etsy.com",
+          "23andme.com",
+          "2btanned.com",
+          "4thandreckless.com",
+          "47skin.com",
+          "58gin.com",
+          "drmartens.com",
+          "8swimlondon.com",
+          "7forallmankind.com",
+          "royalmint.com",
+          "apple.com",
+          "deichmann.com",
+          "aap.org",
+          "amazon.com",
+          "abbottlyon.com",
+          "abercrombie.com",
+          "aberfallsdistillery.com",
+          "ikea.com",
+          "coursera.org",
+          "babbel.com",
+          "hurrcollective.com",
+          "hm.com",
+          "netflix.com",
+          "nike.com",
+          "nordstrom.com",
+          "sainsburys.co.uk",
+          "absolutecollagen.com",
+          "cnn.com",
+          "webgains.com",
+          "ray-ban.com",
+          "nokia.com",
+          "accessorize.com",
+          "lenovo.com",
+          "mylio.com",
+          "ring.com",
+          "samsung.com",
+          "t-mobile.com",
+          "fitbit.com",
+          "morrisons.com",
+          "ocado.com",
+          "accurist.co.uk",
+          "everlane.com",
+          "usatoday.com",
+          "adnams.co.uk",
+          "adorebeauty.com.au",
+          "huawei.com",
+          "flexoffers.com",
+          "roku.com",
+          "nationalgeographic.com",
+          "ae.com",
+          "simple-life-app.com",
+          "walmart.com",
+          "amazon.co.uk",
+          "agolde.com",
+          "aime.co",
+          "ajosepo.com",
+          "ajbell.co.uk",
+          "aldermore.co.uk",
+          "aldi.co.uk",
+          "alchemyoils.co.uk",
+          "alexandalexa.com",
+          "albaray.co.uk",
+          "aligne.co",
+          "alicesweetwatersbarandgrille.com",
+          "allsaints.com",
+          "allroundfun.co.uk",
+          "aloyoga.com",
+          "alpkit.com",
+          "alzheimers.org.uk",
+          "amara.com",
+          "amazon.com.au",
+          "ameonskin.com",
+          "americangirl.com",
+          "americangolf.co.uk",
+          "amyojewelry.com",
+          "revolve.com",
+          "and-daughter.com",
+          "anastasiabeverlyhills.com",
+          "andbegin.com",
+          "andrewmartin.co.uk",
+          "angelareed.co.uk",
+          "angara.com",
+          "jcpenney.com",
+          "sephora.com",
+          "answr.uk",
+          "anthropologie.com",
+          "antoniasaintny.com",
+          "ao.com",
+          "antipodium.com",
+          "hp.com",
+          "skyscanner.net",
+          "youtube.com",
+          "aplaceforeverything.co.uk",
+          "apothekary.com",
+          "apostrophe.com",
+          "next.co.uk",
+          "shein.co.uk",
+          "uspto.gov",
+          "appleyardflowers.com",
+          "kohls.com",
+          "disneyplus.com",
+          "homebase.co.uk",
+          "garmin.com",
+          "stories.com",
+          "superdrug.com",
+          "aquatalia.com",
+          "archerandolive.com",
+          "lego.com",
+          "arenaflowers.com",
+          "argos.co.uk",
+          "arket.com",
+          "arran.com",
+          "artfullywalls.com",
+          "latimes.com",
+          "asalidesigns.co.uk",
+          "asics.com",
+          "asda.com",
+          "sonos.com",
+          "asos.com",
+          "aspinaloflondon.com",
+          "aspesi.com",
+          "aspiga.com",
+          "sephora.co.uk",
+          "marksandspencer.com",
+          "goop.com",
+          "nature.com",
+          "astridandmiyu.com",
+          "gap.com",
+          "atlasteaclub.com",
+          "audible.com",
+          "audiopro.com",
+          "augustinusbader.com",
+          "aureejewellery.com",
+          "zappos.com",
+          "hollandandbarrett.com",
+          "theaa.com",
+          "awin.com",
+          "b2bfinance.com",
+          "babyark.com",
+          "babychum.co.uk",
+          "azazie.com",
+          "babymori.com",
+          "tesco.com",
+          "baebody.com",
+          "balanceme.com",
+          "bakedbymelissa.com",
+          "bakedbysteph.co.uk",
+          "balmonds.co.uk",
+          "balmonds.com",
+          "gapfactory.com",
+          "bamigo.com",
+          "gap.co.uk",
+          "banwood.com",
+          "barkerandstonehouse.co.uk",
+          "bargainmax.co.uk",
+          "barrym.com",
+          "bathandbodyworks.com",
+          "bbc.co.uk",
+          "baublebar.com",
+          "bawdybeauty.com",
+          "beatsbydre.com",
+          "dior.com",
+          "beautybase.com",
+          "harrods.com",
+          "beautybay.com",
+          "beauty-scent.co.uk",
+          "beautypie.com",
+          "beaverbrooks.co.uk",
+          "beerhawk.co.uk",
+          "bedthreads.co.uk",
+          "befrontman.com",
+          "bedroomathletics.com",
+          "belkin.com",
+          "benefitcosmetics.com",
+          "bellissimaitalia.co.uk",
+          "bershka.com",
+          "bestinvest.co.uk",
+          "levi.com",
+          "neimanmarcus.com",
+          "saksoff5th.com",
+          "betseyjohnson.com",
+          "betterskintoday.com",
+          "bijouxdemimi.com",
+          "urbanoutfitters.com",
+          "bimbaylola.com",
+          "purevpn.com",
+          "biscuiteers.com",
+          "vodafone.co.uk",
+          "debenhams.com",
+          "endclothing.com",
+          "fabletics.com",
+          "freepeople.com",
+          "hellofresh.co.uk",
+          "houseoffraser.co.uk",
+          "jdsports.com",
+          "lizearle.com",
+          "missoma.com",
+          "myheritage.com",
+          "nastygal.com",
+          "prettylittlething.com",
+          "scs.co.uk",
+          "schuh.co.uk",
+          "shopbop.com",
+          "siriusxm.com",
+          "thewhiskyexchange.com",
+          "very.co.uk",
+          "bloomersintimates.com",
+          "wsj.com",
+          "bloomingdales.com",
+          "bloomandwild.com",
+          "bloompost.co.uk",
+          "bluebella.com",
+          "bluemercury.com",
+          "blueland.com",
+          "blushingcook.com",
+          "bmstores.co.uk",
+          "boden.co.uk",
+          "bobbibrown.co.uk",
+          "bobux.co.uk",
+          "bodyblendz.com",
+          "boden.com",
+          "boggbag.com",
+          "bohomoon.com",
+          "bollandbranch.com",
+          "bondilaser.com",
+          "boohoo.com",
+          "bondisands.co.uk",
+          "boody.co.uk",
+          "boody.com",
+          "booking.com",
+          "lloydspharmacy.com",
+          "selfridges.com",
+          "boots.com",
+          "boostlabco.com",
+          "boopbeauty.co.uk",
+          "bottegaveneta.com",
+          "bose.co.uk",
+          "bouxavenue.com",
+          "boysmells.com",
+          "swarovski.com",
+          "bravosierra.com",
+          "brewdog.com",
+          "brilliantearth.com",
+          "brownsugarbabe.net",
+          "brow-hq.com",
+          "broraonline.com",
+          "bt.com",
+          "brunaebody.co",
+          "buckleylondon.com",
+          "bugaboo.com",
+          "bulk.com",
+          "currys.co.uk",
+          "butterlondon.com",
+          "buyagift.co.uk",
+          "dermalogica.co.uk",
+          "butlins.com",
+          "byterry.com",
+          "net-a-porter.com",
+          "mrporter.com",
+          "cadburygiftsdirect.co.uk",
+          "calocurb.com",
+          "cambridgesatchel.com",
+          "camcamcopenhagen.com",
+          "frenchconnection.com",
+          "caracaranyc.com",
+          "cannariver.com",
+          "carawayhome.com",
+          "carbon38.com",
+          "cvs.com",
+          "dyson.com",
+          "cathkidston.com",
+          "thewhitecompany.com",
+          "thetoyshop.com",
+          "carolbike.com",
+          "carouseljewels.com",
+          "target.com",
+          "carven.com",
+          "casetify.com",
+          "catchrhys.co.uk",
+          "catherinezoraida.com",
+          "cbs.com",
+          "sprinkles.com",
+          "cbdshopy.co.uk",
+          "kurtgeiger.com",
+          "feelunique.com",
+          "theinformation.com",
+          "cefinn.com",
+          "people.com",
+          "cernucci.com",
+          "cettire.com",
+          "ebay.co.uk",
+          "champohaircare.com",
+          "champagnedirect.co.uk",
+          "charleskeith.co.uk",
+          "charlottetilbury.com",
+          "charleskeith.com",
+          "charles-stanley.co.uk",
+          "chasedistillery.co.uk",
+          "charlestyrwhitt.com",
+          "iherb.com",
+          "tokyotreat.com",
+          "cheekychompers.com",
+          "chella.com",
+          "chelseapeers.com",
+          "chemistdirect.co.uk",
+          "chillys.com",
+          "chintiandparker.com",
+          "chloe.com",
+          "choosegood.com.au",
+          "chopovalowena.com",
+          "chloecroftlondon.com",
+          "choconchoc.co.uk",
+          "thebodyshop.com",
+          "christopherobin.com",
+          "citizenwatch.co.uk",
+          "clarks.co.uk",
+          "clarks.com",
+          "claires.com",
+          "sharkclean.co.uk",
+          "linksynergy.com",
+          "clinicaltrials.gov",
+          "clinique.co.uk",
+          "closetlondon.com",
+          "jigsaw-online.com",
+          "on-running.com",
+          "clubllondon.com",
+          "craftginclub.co.uk",
+          "cmcinvest.com",
+          "coast-stores.com",
+          "coastfashion.com",
+          "hershesons.com",
+          "cocoandeve.com",
+          "delonghi.com",
+          "colourchronicles.com",
+          "columbiasportswear.co.uk",
+          "eufy.com",
+          "giffgaff.com",
+          "narscosmetics.co.uk",
+          "sony.co.uk",
+          "hivehome.com",
+          "visible.com",
+          "topcashback.co.uk",
+          "pure.com",
+          "confused.com",
+          "gousto.co.uk",
+          "waitrose.com",
+          "postoffice.co.uk",
+          "haier-europe.com",
+          "cos.com",
+          "cosstores.com",
+          "cottontraders.com",
+          "cosmetify.com",
+          "cotswoldsdistillery.com",
+          "coxandcox.co.uk",
+          "cowshed.com",
+          "laithwaites.co.uk",
+          "cozyearth.com",
+          "crabtree-evelyn.com",
+          "cranel.co",
+          "creativenaturesuperfoods.co.uk",
+          "crosstown.co.uk",
+          "crystalsandco.com",
+          "mytheresa.com",
+          "crown-love.com",
+          "cuckooland.com",
+          "cultbeauty.co.uk",
+          "curaprox.co.uk",
+          "currentbody.com",
+          "qvcuk.com",
+          "cyklar.com",
+          "sennheiser.com",
+          "dagsmejan.com",
+          "danielsandler.com",
+          "danielwellington.com",
+          "newlook.com",
+          "dailymail.co.uk",
+          "damsonmadder.com",
+          "dare2b.com",
+          "danabandi.com",
+          "danmurphys.com.au",
+          "dealpq.com",
+          "de.zettle.com",
+          "deborahblyth.com",
+          "delilahcosmetics.com",
+          "demellierlondon.com",
+          "derivehomeware.com",
+          "dermstore.com",
+          "dermelect.com",
+          "devialet.com",
+          "matalan.co.uk",
+          "dimebeautyco.com",
+          "diptyqueparis.com",
+          "sharkclean.com",
+          "diy.com",
+          "dixiegraze.uk",
+          "dlouise.co.uk",
+          "dockatot.com",
+          "donatellabalsamo.com",
+          "dodl.co.uk",
+          "doi.org",
+          "dontbuyherflowers.com",
+          "dollbeauty.com",
+          "dotmaison.com",
+          "dreamcloudsleep.com",
+          "dridriss.com",
+          "luxuryescapes.com",
+          "drinkhappyflower.com",
+          "drinksimple.com",
+          "drinkolipop.com",
+          "drink-trip.com",
+          "drinkcranes.shop",
+          "drsambunting.com",
+          "drleahskincare.co.uk",
+          "dsw.com",
+          "dukeanddexter.com",
+          "dunelondon.com",
+          "dusk.com",
+          "dunelm.com",
+          "dyson.co.uk",
+          "east.co.uk",
+          "eberjey.com",
+          "edgeofember.com",
+          "victoriahealth.com",
+          "ego.co.uk",
+          "egoshoes.com",
+          "ekohome.co.uk",
+          "eleanorbalfour.com",
+          "elcaminobracelets.com",
+          "elfcosmetics.co.uk",
+          "eli-o.ch",
+          "elizabetharden.com",
+          "elleme.com",
+          "elizabetharden.co.uk",
+          "joules.com",
+          "ellisbrooklyn.com",
+          "ellesse.com",
+          "sweatybetty.com",
+          "emiliawickstead.com",
+          "emma-mattress.co.uk",
+          "emilymortimer.co.uk",
+          "emma-sleep.co.uk",
+          "ember.com",
+          "emmabridgewater.co.uk",
+          "emmylondon.com",
+          "emmacook.co.uk",
+          "waterdrop.com",
+          "enchanteddrinks.co.uk",
+          "moncler.com",
+          "epson.co.uk",
+          "ergoflex.co.uk",
+          "escentual.com",
+          "hollisterco.com",
+          "esgau.etribez.com",
+          "espaskincare.com",
+          "esteelauder.co.uk",
+          "esmi.com.au",
+          "estellabartlett.com",
+          "eswbeauty.com",
+          "essentiel-antwerp.com",
+          "ethelm.com",
+          "tog24.com",
+          "facetheory.com",
+          "farrow-ball.com",
+          "ethique.co.uk",
+          "ettika.com",
+          "jellycat.com",
+          "frankbody.com",
+          "katespade.com",
+          "karenmillen.com",
+          "neomwellbeing.com",
+          "monsoon.co.uk",
+          "medik8.com",
+          "sandandsky.com",
+          "savilerowco.com",
+          "refybeauty.com",
+          "millerharris.com",
+          "sisterjane.com",
+          "riverisland.com",
+          "stuartweitzman.com",
+          "moshi.com",
+          "stanley1913.com",
+          "thisworks.com",
+          "toa.st",
+          "topshop.com",
+          "tennessean.com",
+          "wonderskin.com",
+          "euronics.co.uk",
+          "everyandone.com",
+          "evn-cbd.com",
+          "evolvebeauty.com",
+          "johnlewis.com",
+          "express.com",
+          "eyewearindex.com",
+          "yslbeauty.co.uk",
+          "facethefuture.co.uk",
+          "facegym.com",
+          "jcrew.com",
+          "fairfaxandfavor.com",
+          "fairharborclothing.com",
+          "uniqlo.com",
+          "farfetch.com",
+          "fatface.com",
+          "feelgoodcontacts.com",
+          "fentybeauty.com",
+          "fenwick.co.uk",
+          "fiils.co",
+          "fidelity.co.uk",
+          "fhinds.co.uk",
+          "figleaves.com",
+          "fillingpieces.com",
+          "firebox.com",
+          "luisaviaroma.com",
+          "fitflop.com",
+          "flightcentre.com.au",
+          "floward.com",
+          "florencebymillsbeauty.com",
+          "floom.com",
+          "flowercard.co.uk",
+          "flowerbx.com",
+          "flossandrock.co.uk",
+          "followthecult.com",
+          "foreo.com",
+          "forevernew.co.uk",
+          "foriawellness.com",
+          "forevernewclothing.com",
+          "fortnumandmason.com",
+          "xda-developers.com",
+          "freddystore.com",
+          "freetrade.io",
+          "frenchbeautyco.com.au",
+          "fromourplace.co.uk",
+          "fromourplace.com",
+          "funkincocktails.co.uk",
+          "fwrd.com",
+          "gocompare.com",
+          "ganni.com",
+          "gb.weekendmaxmara.com",
+          "hayu.com",
+          "geologie.com",
+          "lottosocial.com",
+          "genucel.com",
+          "getchip.uk",
+          "getitinkd.com",
+          "getquip.com",
+          "ghdhair.com",
+          "ghost.co.uk",
+          "giftcards.com",
+          "tedbaker.com",
+          "opi.com",
+          "giorgioarmanibeauty-usa.com",
+          "moroccanoil.com",
+          "solawave.co",
+          "ulta.com",
+          "glossier.com",
+          "glossybox.co.uk",
+          "skimresources.com",
+          "glut.co.uk",
+          "goatfashion.com",
+          "godiva.com",
+          "goldsmiths.co.uk",
+          "goodamerican.com",
+          "quince.com",
+          "gopurebeauty.com",
+          "gourmetdinnerlady.com",
+          "graceloveslace.co.uk",
+          "grahamandgreen.co.uk",
+          "grailed.com",
+          "greenchef.co.uk",
+          "greenpeople.co.uk",
+          "grenson.com",
+          "greenpan.us",
+          "growgorgeous.co.uk",
+          "groveandvae.com",
+          "guestpix.com",
+          "guerlain.com",
+          "gtech.co.uk",
+          "habitat.co.uk",
+          "lookfantastic.com",
+          "hackett.com",
+          "halfords.com",
+          "hairgainnow.com",
+          "hamleys.com",
+          "happbrand.com",
+          "harmanaudio.com",
+          "harfi.co.uk",
+          "harveynichols.com",
+          "hattingleyvalley.com",
+          "havaianas-store.com",
+          "heals.com",
+          "hdbrows.com",
+          "hayesgardenworld.co.uk",
+          "hayloft.co.uk",
+          "helloklean.com",
+          "helloseen.com",
+          "ruelala.com",
+          "spacenk.com",
+          "simbasleep.com",
+          "quizclothing.co.uk",
+          "thereformation.com",
+          "tuftandneedle.com",
+          "yoox.com",
+          "herdwear.co",
+          "hexbug.com",
+          "heylandandwhittle.co.uk",
+          "hicksandbrown.com",
+          "heybudskincare.com",
+          "higherdose.com",
+          "hidratespark.uk",
+          "highstreettv.com",
+          "hims.com",
+          "hihonor.com",
+          "hildunbeauty.co.uk",
+          "hint.app",
+          "highgrovegardens.com",
+          "hiyahealth.com",
+          "hl.co.uk",
+          "hobbs.co.uk",
+          "hobbs.com",
+          "hobbycraft.co.uk",
+          "hokaoneone.eu",
+          "homebargains.co.uk",
+          "homecourt.co",
+          "hoopsandchains.com",
+          "hoover.co.uk",
+          "horwood.co.uk",
+          "hotelchocolat.com",
+          "hourglasscosmetics.com",
+          "hsamuel.co.uk",
+          "houseofbruar.com",
+          "studio.co.uk",
+          "theverge.com",
+          "hubblecontacts.com",
+          "tartecosmetics.com",
+          "hudabeauty.com",
+          "huddleson.com",
+          "hunterboots.co.uk",
+          "hunterboots.com",
+          "hush-uk.com",
+          "hummingbirdbakery.com",
+          "icklebubba.com",
+          "iconiclondoninc.com",
+          "ifonlyif.co.uk",
+          "ilioslighting.co",
+          "ii.co.uk",
+          "ilmakiage.com",
+          "illamasqua.com",
+          "immunocologie.com",
+          "lululemon.co.uk",
+          "inhibitif.com",
+          "initialled.co.uk",
+          "roseskinco.com",
+          "interflora.co.uk",
+          "victoriabeckham.com",
+          "lespecs.com",
+          "toteme.com",
+          "investengine.com",
+          "isawitfirst.com",
+          "isleofwightdistillery.com",
+          "itcosmetics.co.uk",
+          "ivygold.co.uk",
+          "jabra.co.uk",
+          "jamesreadtan.com",
+          "mango.com",
+          "janeiredale.com",
+          "jdwilliams.co.uk",
+          "jellydrops.com",
+          "jean-patrique.co.uk",
+          "joebrowns.co.uk",
+          "johnbellcroyden.co.uk",
+          "prioritypass.com",
+          "johnstonsofelgin.com",
+          "thetimes.co.uk",
+          "joloves.com",
+          "jojomamanbebe.co.uk",
+          "jonesbootmaker.com",
+          "joubi.com",
+          "jonesroadbeauty.com",
+          "joulesclothing.com",
+          "juicycouture.co.uk",
+          "julychild.com",
+          "justaddbuoy.com",
+          "jupiduu.com",
+          "jwpei.com",
+          "jwpei.co.uk",
+          "justhype.co.uk",
+          "kalinko.com",
+          "karenkane.com",
+          "katesomerville.co.uk",
+          "katherinedanielscosmetics.com",
+          "katespade.co.uk",
+          "katieloxton.com",
+          "keeohair.com",
+          "kentishpip.co.uk",
+          "kerastase-usa.com",
+          "kenwoodworld.com",
+          "keskine.com",
+          "kfacials.com",
+          "kiehls.co.uk",
+          "kidinn.com",
+          "kiltane.com",
+          "kiehls.com",
+          "kiki.co.uk",
+          "kindoasis.com",
+          "kitchenaid.com",
+          "kitandkin.com",
+          "kikocosmetics.com",
+          "kitristudio.com",
+          "wickes.co.uk",
+          "knightandwilson.com",
+          "kocktail.co.uk",
+          "kravebeauty.com",
+          "lakeland.co.uk",
+          "lamaisonvalmont.com",
+          "lalagebeaumont.com",
+          "lancome.co.uk",
+          "laptopsdirect.co.uk",
+          "landsend.co.uk",
+          "lanolips.com",
+          "laredoute.co.uk",
+          "latched.uk",
+          "lastcrumb.com",
+          "laticoleathers.com",
+          "lashdupe.com",
+          "lauragalasso.com",
+          "lavazza.co.uk",
+          "lavenderhillclothing.com",
+          "lechameau.com",
+          "lecolonel.com",
+          "learnwithhomer.com",
+          "lecreuset.co.uk",
+          "shopcider.com",
+          "lekilt.co.uk",
+          "leightondenny.com",
+          "letoyvan.co.uk",
+          "letssanitise.com",
+          "letterboxgifts.co.uk",
+          "libertylondon.com",
+          "libertygames.co.uk",
+          "lidl.co.uk",
+          "lifesupplies.com",
+          "lightsandlamps.com",
+          "wilko.com",
+          "lilyarkwright.com",
+          "lilyengland.com",
+          "lilyobriens.co.uk",
+          "lilyandroo.com",
+          "lindt.co.uk",
+          "lisaeldridge.com",
+          "littletikes.co.uk",
+          "littlemercies.co.uk",
+          "lipsy.co.uk",
+          "littlewoods.com",
+          "little-mistress.com",
+          "liveunlimitedlondon.com",
+          "littlesleepies.com",
+          "livingproof.co.uk",
+          "lociwear.com",
+          "lkbennett.com",
+          "lolascupcakes.co.uk",
+          "loopcashmere.co.uk",
+          "londonsockcompany.com",
+          "lordjones.com",
+          "lostsheepcoffee.com",
+          "lovecocoa.com",
+          "lovemememe.com",
+          "lovehoney.co.uk",
+          "lovesac.com",
+          "loveindus.com",
+          "lovetodream.co.uk",
+          "lovewritingco.com",
+          "lovisa.co.uk",
+          "luluguinness.com",
+          "lulasgarden.com",
+          "lumedeodorant.com",
+          "lumene.com",
+          "lumie.com",
+          "maccosmetics.co.uk",
+          "lyma.life",
+          "lyres.co.uk",
+          "notonthehighstreet.com",
+          "reebok.co.uk",
+          "thehut.com",
+          "sezane.com",
+          "theperfumeshop.com",
+          "zalando.co.uk",
+          "visionexpress.com",
+          "maaree.com",
+          "zara.com",
+          "made.com",
+          "magnochocolates.us",
+          "majestic.co.uk",
+          "mamatoyzuk.com",
+          "mamasandpapas.com",
+          "malinandgoetz.co.uk",
+          "manomano.co.uk",
+          "margaretdabbs.co.uk",
+          "marieoliver.com",
+          "markandgraham.com",
+          "marshallheadphones.com",
+          "massimodutti.com",
+          "matchesfashion.com",
+          "masterofmalt.com",
+          "maximuscle.com",
+          "maximustribe.com",
+          "meandem.com",
+          "mdlondon.co.uk",
+          "meetargie.com",
+          "meliebianco.com",
+          "mejuri.com",
+          "melacomfort.co.uk",
+          "memara.co.uk",
+          "meritbeauty.com",
+          "meridiangrooming.com",
+          "meshki.co.uk",
+          "mgemi.com",
+          "metrestomiles.co.uk",
+          "michaelkors.co.uk",
+          "miicosmetics.com",
+          "micro-scooters.co.uk",
+          "mih-jeans.com",
+          "mihigh.co.uk",
+          "mintvelvet.com",
+          "mirabeauwine.com",
+          "missguidedus.com",
+          "missguided.co.uk",
+          "mintvelvet.co.uk",
+          "misspap.com",
+          "mizziethekangaroo.co.uk",
+          "modibodi.co.uk",
+          "molecular-cosmetics.com",
+          "moneysupermarket.com",
+          "monreallondon.com",
+          "monicavinader.com",
+          "moonpig.com",
+          "mosaicfoods.com",
+          "motorway.co.uk",
+          "msccruises.co.uk",
+          "murad.co.uk",
+          "mutha.com",
+          "musto.com",
+          "mykitsch.com",
+          "myminimaker.com",
+          "myfluffi.com",
+          "mymeglio.com",
+          "mylittlecoco.co.uk",
+          "myperfectcosmeticscompany.com",
+          "mysmallspace.co.uk",
+          "myrevair.com",
+          "mysweetsmile.com",
+          "mzskin.com",
+          "na-kd.com",
+          "nadinemerabi.com",
+          "nailberry.co.uk",
+          "names.co.uk",
+          "naturalpatch.com",
+          "natpat.com",
+          "necessaire.com",
+          "neimarow.com",
+          "neomorganics.com",
+          "oliverbonas.com",
+          "neubau-eyewear.com",
+          "neverfullydressed.co.uk",
+          "newbyteas.co.uk",
+          "niococktails.co.uk",
+          "ninjakitchen.co.uk",
+          "nipandfab.com",
+          "no7beauty.co.uk",
+          "noblepanacea.com",
+          "nobodyschild.com",
+          "nordstromrack.com",
+          "nosecretsbeauty.com",
+          "nowhereelse.fr",
+          "nudeenvie.com",
+          "nuehoops.com",
+          "nurvv.com",
+          "nusa.studio",
+          "nuskin.com",
+          "oasisfashion.com",
+          "office.co.uk",
+          "offblak.com",
+          "ohpolly.com",
+          "oka.com",
+          "olfactorynyc.com",
+          "oliviarosethelabel.com",
+          "omnes.com",
+          "one33social.com",
+          "onequietmind.com",
+          "onlycurls.com",
+          "ooni.com",
+          "opopop.com",
+          "opositiv.com",
+          "orelia.co.uk",
+          "whitehouseblackmarket.com",
+          "organix.com",
+          "orlakiely.com",
+          "oskiaskincare.com",
+          "otiumberg.com",
+          "otherland.com",
+          "ottomanhands.com",
+          "ottieandthebea.com",
+          "ourkindra.com",
+          "theiconic.com.au",
+          "scotch-soda.com",
+          "owlchemy.co.uk",
+          "outpour.co.uk",
+          "pactcoffee.com",
+          "pacamask.com",
+          "pacsun.com",
+          "pagesix.com",
+          "palonesofficial.com",
+          "pampasandbloom.co.uk",
+          "pampeano.co.uk",
+          "pairs-scotland.com",
+          "parcelforce.com",
+          "parissa.com",
+          "patmcgrath.com",
+          "paulaschoice.com",
+          "patternbeauty.com",
+          "peachandlily.com",
+          "peacci.com",
+          "peepclub.co.uk",
+          "penelopechilvers.com",
+          "pensadormezcal.com",
+          "peperharowengland.com",
+          "ssense.com",
+          "percko.com",
+          "peppermayo.co.uk",
+          "perriconemd.co.uk",
+          "perfumedirect.com",
+          "petite-plume.com",
+          "phase-eight.com",
+          "phlur.com",
+          "pigletinbed.com",
+          "pillowbeautyuk.com",
+          "plumo.com",
+          "poferries.com",
+          "pocket-sport.com",
+          "pontofootwear.com",
+          "poopourri.com",
+          "popskilondon.co.uk",
+          "portraitbookshop.com",
+          "pooky.com",
+          "praibeauty.co.uk",
+          "pourmoi.co.uk",
+          "prestigeflowers.co.uk",
+          "prettylavish.co.uk",
+          "prettylittlething.us",
+          "pretavoir.co.uk",
+          "prettyballerinas.co.uk",
+          "prezzybox.com",
+          "prismvibes.com",
+          "probulin.com",
+          "serenataflowers.com",
+          "proporta.co.uk",
+          "proto-col.com",
+          "provacan.co.uk",
+          "psdunderwear.com",
+          "purcosmetics.com",
+          "purearth.co.uk",
+          "pureheavenly.com",
+          "rachelriley.co.uk",
+          "radley.co.uk",
+          "raffaello-network.com",
+          "ralphlauren.co.uk",
+          "ragdalehall.co.uk",
+          "raisin.co.uk",
+          "reddress.com",
+          "wowcher.co.uk",
+          "theoutnet.com",
+          "thrivecausemetics.com",
+          "regatta.com",
+          "reigntogether.com",
+          "reiss.com",
+          "reserved.com",
+          "rested.com",
+          "revitalash.co.uk",
+          "reviveskincare.com",
+          "revamphair.com",
+          "retrouve.com",
+          "rhsplants.co.uk",
+          "rhugwildbeauty.com",
+          "ro.co",
+          "robertdyas.co.uk",
+          "ritani.com",
+          "robertwelch.com",
+          "rockettstgeorge.co.uk",
+          "rodial.co.uk",
+          "roenbeauty.com",
+          "rokalondon.com",
+          "romanoriginals.co.uk",
+          "rossiderm.com",
+          "rta.com",
+          "roxy-uk.co.uk",
+          "royalcollectionshop.co.uk",
+          "ruggable.co.uk",
+          "russellandbromley.co.uk",
+          "saksfifthavenue.com",
+          "sallybeauty.co.uk",
+          "saltandripple.com.au",
+          "sansmatin.co.uk",
+          "sarahflint.com",
+          "sassandbelle.co.uk",
+          "sarahraven.com",
+          "santander.co.uk",
+          "scarerase.co.uk",
+          "scandiborn.co.uk",
+          "affiliatefuture.com",
+          "schoffelcountry.com",
+          "sculptedbyaimee.co.uk",
+          "seasaltcornwall.co.uk",
+          "sculptedbyaimee.com",
+          "screampretty.com",
+          "seavees.com",
+          "serendipity3.com",
+          "sensoryretreats.com",
+          "seraphinalondon.com",
+          "serumkind.com",
+          "shabbystore.co.uk",
+          "shareasale-analytics.com",
+          "shareasale.com",
+          "sheridanaustralia.co.uk",
+          "shoeaholics.com",
+          "shop-daphine.com",
+          "shop.isabelgarcia.it",
+          "smeguk.com",
+          "shop.parsonsnose.co.uk",
+          "sueryder.org",
+          "thesportsedit.com",
+          "shop.zapfcreation.co.uk",
+          "weekday.com",
+          "shopdisney.co.uk",
+          "shopatanna.com",
+          "shoplamarue.com",
+          "shopto.net",
+          "shopnativaspa.com",
+          "shrimps.com",
+          "silverjeans.com",
+          "simitri.shop",
+          "simplehuman.co.uk",
+          "silvercrossus.com",
+          "simoncarter.net",
+          "sisterlylab.com",
+          "sisley-paris.com",
+          "sixstories.co.uk",
+          "skims.com",
+          "skinceuticals.com",
+          "skinceuticals.co.uk",
+          "skinatwork.com",
+          "skinnytan.co.uk",
+          "skincycles.com",
+          "skipper.org",
+          "slingerbaguk.frameworksports.com",
+          "smythson.com",
+          "smilebrilliant.com",
+          "smythstoys.com",
+          "snoozeshade.com",
+          "snowandrock.com",
+          "sodastream.co.uk",
+          "softservices.co",
+          "solebliss.com",
+          "sorujewellery.com",
+          "spellsoflove.co.uk",
+          "splendid.com",
+          "stacksocial.com",
+          "startfitness.co.uk",
+          "standout.co.uk",
+          "starface.world",
+          "stay-drenched.co.uk",
+          "stellar-79.com",
+          "stellar79.com",
+          "stevemadden.co.uk",
+          "steiffuk.com",
+          "stevemadden.com",
+          "stellamccartneybeauty.com",
+          "stone-and-mason.com",
+          "stitchfinity.com",
+          "strathberry.com",
+          "straand.com.au",
+          "stradivarius.com",
+          "tomdixon.net",
+          "strike.co.uk",
+          "stunnco.com",
+          "stwff-stuff.co.uk",
+          "subtlbeauty.com",
+          "super8hydration.co.uk",
+          "susancaplan.co.uk",
+          "sweettreebybrowns.co.uk",
+          "sweatband.com",
+          "sylvennewyork.com",
+          "tabithajameskraan.com",
+          "tajacollection.com",
+          "talacooking.com",
+          "tan-luxe.com",
+          "tarajarmon.fr",
+          "tangleangel.com",
+          "teaandtequila.com",
+          "technogym.com",
+          "techinthebasket.com",
+          "templespa.com",
+          "tenthmuselondon.com",
+          "tentree.com",
+          "tgifridays.co.uk",
+          "theazurinastore.com",
+          "thebottleclub.com",
+          "thebodyfirm.com",
+          "thecheesegeek.com",
+          "thefoldlondon.com",
+          "thefloweryard.co.uk",
+          "thediamondstore.co.uk",
+          "thefragranceshop.co.uk",
+          "thedrybar.com",
+          "thedirect.com",
+          "thedirtychic.com",
+          "thedenkitco.com",
+          "thecremeshop.com",
+          "thehouseofmarley.co.uk",
+          "thelandmarklondon.wearegifted.co.uk",
+          "thehuggshop.co.uk",
+          "thelittlebotanical.com",
+          "theisleofparadise.com",
+          "theordinary.com",
+          "theoodie.co.uk",
+          "therabody.com",
+          "theowstore.com",
+          "thenueco.com",
+          "therealdeal.com",
+          "therange.co.uk",
+          "thepowdershampoo.com",
+          "theskinexperts.co.uk",
+          "thewoolroom.com",
+          "threewarriors.co.uk",
+          "thriday.com.au",
+          "tielleloveluxury.co.uk",
+          "tillysveaas.co.uk",
+          "tmlewin.co.uk",
+          "tkmaxx.com",
+          "tomlane.co",
+          "tommeetippee.com",
+          "toccin.com",
+          "traceycox.com",
+          "transferwise.com",
+          "transformulas.com",
+          "treatwell.co.uk",
+          "trinnylondon.com",
+          "tropicskincare.com",
+          "trotters.co.uk",
+          "trophyskin.com",
+          "tulaskincare.co.uk",
+          "tweezerman.com",
+          "tusting.co.uk",
+          "twinset.com",
+          "ugg.com",
+          "uk.elemis.com",
+          "uk.defacto.com",
+          "uk.caudalie.com",
+          "uk.iherb.com",
+          "uk.glossier.com",
+          "uk.jonathanadler.com",
+          "uk.air-up.com",
+          "uk.alessi.com",
+          "uk.jshealthvitamins.com",
+          "uk.coach.com",
+          "uk.loccitane.com",
+          "uk.cocoandeve.com",
+          "uk.gymshark.com",
+          "uk.russellhobbs.com",
+          "uk.pmdbeauty.com",
+          "uk.ryobitools.eu",
+          "uk.saintandsofia.com",
+          "uk.olverum.com",
+          "uk.livingnatureworld.com",
+          "uk.myinvity.com",
+          "uk.mylivia.com",
+          "uk.ooni.com",
+          "uk.sandandsky.com",
+          "uk.sandro-paris.com",
+          "uk.matteroffact.com",
+          "uk.nobis.com",
+          "uk.pandora.net",
+          "uk.shokz.com",
+          "uk.rails.com",
+          "uk.stanley1913.com",
+          "uk.shop.gymshark.com",
+          "uk.theinkeylist.com",
+          "uk.store.asus.com",
+          "uklash.com",
+          "uk.tile.com",
+          "ulo.co",
+          "unsubscribed.com",
+          "urbanstems.com",
+          "urbandecay.co.uk",
+          "us.boohoo.com",
+          "us.champohaircare.com",
+          "us.babor.com",
+          "us.modibodi.com",
+          "us.princesspolly.com",
+          "us.publicdesire.com",
+          "us.revivecollagen.com",
+          "us.shein.com",
+          "us.thecollagen.co",
+          "us.thisworks.com",
+          "uswitch.com",
+          "vacayswimwear.com.au",
+          "us.whogivesacrap.org",
+          "utan.co.uk",
+          "vanclarke.com",
+          "veronicabeard.com",
+          "versineskincare.com",
+          "victoriabeckhambeauty.com",
+          "vileda.co.uk",
+          "vieve.co.uk",
+          "virginexperiencedays.co.uk",
+          "vivaia.com",
+          "vivaiacollection.com",
+          "vivolife.com",
+          "waitrosecellar.com",
+          "walklondonshoes.com",
+          "warehousefashion.com",
+          "waterstones.com",
+          "waringbrooke.com",
+          "wealthify.com",
+          "wayfair.co.uk",
+          "wearereset.co",
+          "wearefaace.com",
+          "wearetala.com",
+          "welcometowondervalley.com",
+          "whirli.com",
+          "whiskyshop.com",
+          "whistles.com",
+          "wildjac.co.uk",
+          "wildsciencelab.com",
+          "willowandhall.co.uk",
+          "wildflowerpaperclub.com",
+          "withnothingunderneath.com",
+          "withlovedarling.com",
+          "wolfandbadger.com",
+          "woodentoyshop.co.uk",
+          "wuffes.com",
+          "wyselondon.com",
+          "xandrolab.com",
+          "youbeautyshop.co.uk",
+          "yourstory.co.uk",
+          "yumbles.com",
+          "yummikeys.com",
+          "zenbodys.com",
+          "zennioptical.com",
+          "zoelev.com",
+          "zimplikids.com",
+          "zoflora.co.uk"
+        ]
+      },
+      "partnersAdded": {
+        "count": 119,
+        "value": [
+          {
+            "domain": "uk.tile.com"
+          },
+          {
+            "domain": "firebox.com"
+          },
+          {
+            "domain": "hunterboots.co.uk"
+          },
+          {
+            "domain": "owlchemy.co.uk"
+          },
+          {
+            "domain": "uk.shokz.com"
+          },
+          {
+            "domain": "vivaiacollection.com"
+          },
+          {
+            "domain": "uk.shop.gymshark.com"
+          },
+          {
+            "domain": "nurvv.com"
+          },
+          {
+            "domain": "genucel.com"
+          },
+          {
+            "domain": "us.publicdesire.com"
+          },
+          {
+            "domain": "glut.co.uk"
+          },
+          {
+            "domain": "sony.co.uk"
+          },
+          {
+            "domain": "slingerbaguk.frameworksports.com"
+          },
+          {
+            "domain": "kenwoodworld.com"
+          },
+          {
+            "domain": "wealthify.com"
+          },
+          {
+            "domain": "us.thisworks.com"
+          },
+          {
+            "domain": "fhinds.co.uk"
+          },
+          {
+            "domain": "uk.matteroffact.com"
+          },
+          {
+            "domain": "epson.co.uk"
+          },
+          {
+            "domain": "sarahraven.com"
+          },
+          {
+            "domain": "us.boohoo.com"
+          },
+          {
+            "domain": "cosstores.com"
+          },
+          {
+            "domain": "susancaplan.co.uk"
+          },
+          {
+            "domain": "buckleylondon.com"
+          },
+          {
+            "domain": "uk.defacto.com"
+          },
+          {
+            "domain": "grenson.com"
+          },
+          {
+            "domain": "moshi.com"
+          },
+          {
+            "domain": "cbdshopy.co.uk"
+          },
+          {
+            "domain": "vivolife.com"
+          },
+          {
+            "domain": "us.whogivesacrap.org"
+          },
+          {
+            "domain": "cannariver.com"
+          },
+          {
+            "domain": "uk.loccitane.com"
+          },
+          {
+            "domain": "uk.iherb.com"
+          },
+          {
+            "domain": "marshallheadphones.com"
+          },
+          {
+            "domain": "uk.theinkeylist.com"
+          },
+          {
+            "domain": "us.revivecollagen.com"
+          },
+          {
+            "domain": "thehouseofmarley.co.uk"
+          },
+          {
+            "domain": "tomdixon.net"
+          },
+          {
+            "domain": "uk.pandora.net"
+          },
+          {
+            "domain": "uk.mylivia.com"
+          },
+          {
+            "domain": "us.thecollagen.co"
+          },
+          {
+            "domain": "luxuryescapes.com"
+          },
+          {
+            "domain": "us.modibodi.com"
+          },
+          {
+            "domain": "cranel.co"
+          },
+          {
+            "domain": "us.babor.com"
+          },
+          {
+            "domain": "geologie.com"
+          },
+          {
+            "domain": "reviveskincare.com"
+          },
+          {
+            "domain": "uk.stanley1913.com"
+          },
+          {
+            "domain": "uk.glossier.com"
+          },
+          {
+            "domain": "hubblecontacts.com"
+          },
+          {
+            "domain": "homebase.co.uk"
+          },
+          {
+            "domain": "hayloft.co.uk"
+          },
+          {
+            "domain": "uk.saintandsofia.com"
+          },
+          {
+            "domain": "devialet.com"
+          },
+          {
+            "domain": "harmanaudio.com"
+          },
+          {
+            "domain": "stunnco.com"
+          },
+          {
+            "domain": "gb.weekendmaxmara.com"
+          },
+          {
+            "domain": "sandandsky.com"
+          },
+          {
+            "domain": "rested.com"
+          },
+          {
+            "domain": "highgrovegardens.com"
+          },
+          {
+            "domain": "us.princesspolly.com"
+          },
+          {
+            "domain": "uk.sandro-paris.com"
+          },
+          {
+            "domain": "uk.alessi.com"
+          },
+          {
+            "domain": "uk.coach.com"
+          },
+          {
+            "domain": "boody.com"
+          },
+          {
+            "domain": "uk.nobis.com"
+          },
+          {
+            "domain": "uk.sandandsky.com"
+          },
+          {
+            "domain": "forevernew.co.uk"
+          },
+          {
+            "domain": "uk.olverum.com"
+          },
+          {
+            "domain": "regatta.com"
+          },
+          {
+            "domain": "vileda.co.uk"
+          },
+          {
+            "domain": "bondilaser.com"
+          },
+          {
+            "domain": "uk.air-up.com"
+          },
+          {
+            "domain": "delonghi.com"
+          },
+          {
+            "domain": "alzheimers.org.uk"
+          },
+          {
+            "domain": "hershesons.com"
+          },
+          {
+            "domain": "hobbycraft.co.uk"
+          },
+          {
+            "domain": "pure.com"
+          },
+          {
+            "domain": "uk.caudalie.com"
+          },
+          {
+            "domain": "modibodi.co.uk"
+          },
+          {
+            "domain": "uk.elemis.com"
+          },
+          {
+            "domain": "coxandcox.co.uk"
+          },
+          {
+            "domain": "sisterlylab.com"
+          },
+          {
+            "domain": "audiopro.com"
+          },
+          {
+            "domain": "uk.cocoandeve.com"
+          },
+          {
+            "domain": "therange.co.uk"
+          },
+          {
+            "domain": "rhsplants.co.uk"
+          },
+          {
+            "domain": "sennheiser.com"
+          },
+          {
+            "domain": "uk.russellhobbs.com"
+          },
+          {
+            "domain": "uk.ryobitools.eu"
+          },
+          {
+            "domain": "hp.com"
+          },
+          {
+            "domain": "seasaltcornwall.co.uk"
+          },
+          {
+            "domain": "raffaello-network.com"
+          },
+          {
+            "domain": "threewarriors.co.uk"
+          },
+          {
+            "domain": "us.shein.com"
+          },
+          {
+            "domain": "americangirl.com"
+          },
+          {
+            "domain": "uk.rails.com"
+          },
+          {
+            "domain": "uk.myinvity.com"
+          },
+          {
+            "domain": "ember.com"
+          },
+          {
+            "domain": "katespade.co.uk"
+          },
+          {
+            "domain": "us.champohaircare.com"
+          },
+          {
+            "domain": "dotmaison.com"
+          },
+          {
+            "domain": "bose.co.uk"
+          },
+          {
+            "domain": "homebargains.co.uk"
+          },
+          {
+            "domain": "hsamuel.co.uk"
+          },
+          {
+            "domain": "forevernewclothing.com"
+          },
+          {
+            "domain": "uk.store.asus.com"
+          },
+          {
+            "domain": "karenkane.com"
+          },
+          {
+            "domain": "uk.jonathanadler.com"
+          },
+          {
+            "domain": "sallybeauty.co.uk"
+          },
+          {
+            "domain": "bollandbranch.com"
+          },
+          {
+            "domain": "de.zettle.com"
+          },
+          {
+            "domain": "technogym.com"
+          },
+          {
+            "domain": "mihigh.co.uk"
+          },
+          {
+            "domain": "uk.jshealthvitamins.com"
+          },
+          {
+            "domain": "uk.pmdbeauty.com"
+          },
+          {
+            "domain": "lovisa.co.uk"
+          },
+          {
+            "domain": "uk.gymshark.com"
+          },
+          {
+            "domain": "dridriss.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 72,
+        "value": [
+          {
+            "domain": "thecollagen.co"
+          },
+          {
+            "domain": "princesspolly.com"
+          },
+          {
+            "domain": "bouqs.com"
+          },
+          {
+            "domain": "gymshark.com"
+          },
+          {
+            "domain": "cosmedix.com"
+          },
+          {
+            "domain": "savagex.co.uk"
+          },
+          {
+            "domain": "ftd.com"
+          },
+          {
+            "domain": "blume.com"
+          },
+          {
+            "domain": "modibodi.com"
+          },
+          {
+            "domain": "tile.com"
+          },
+          {
+            "domain": "1800flowers.com"
+          },
+          {
+            "domain": "dailynouri.com"
+          },
+          {
+            "domain": "shokz.com"
+          },
+          {
+            "domain": "whogivesacrap.org"
+          },
+          {
+            "domain": "proflowers.com"
+          },
+          {
+            "domain": "psychejunior.co.uk"
+          },
+          {
+            "domain": "caudalie.com"
+          },
+          {
+            "domain": "nowtv.com"
+          },
+          {
+            "domain": "russellhobbs.com"
+          },
+          {
+            "domain": "myexpertmidwife.com"
+          },
+          {
+            "domain": "theinkeylist.com"
+          },
+          {
+            "domain": "saintandsofia.com"
+          },
+          {
+            "domain": "elvie.com"
+          },
+          {
+            "domain": "bloomsybox.com"
+          },
+          {
+            "domain": "nectarsleep.com"
+          },
+          {
+            "domain": "eatloveraw.com"
+          },
+          {
+            "domain": "coach.com"
+          },
+          {
+            "domain": "rodial.com"
+          },
+          {
+            "domain": "jshealthvitamins.com"
+          },
+          {
+            "domain": "getsunday.com"
+          },
+          {
+            "domain": "thesill.com"
+          },
+          {
+            "domain": "olverum.com"
+          },
+          {
+            "domain": "pureology.com"
+          },
+          {
+            "domain": "elizabethscarlett.com"
+          },
+          {
+            "domain": "nobis.com"
+          },
+          {
+            "domain": "theknot.com"
+          },
+          {
+            "domain": "sandro-paris.com"
+          },
+          {
+            "domain": "didofy.com"
+          },
+          {
+            "domain": "rails.com"
+          },
+          {
+            "domain": "printed.com"
+          },
+          {
+            "domain": "loccitane.com"
+          },
+          {
+            "domain": "swann.com"
+          },
+          {
+            "domain": "thebeautychef.com"
+          },
+          {
+            "domain": "asus.com"
+          },
+          {
+            "domain": "defacto.com"
+          },
+          {
+            "domain": "jomalone.co.uk"
+          },
+          {
+            "domain": "intermixonline.com"
+          },
+          {
+            "domain": "zettle.com"
+          },
+          {
+            "domain": "legology.co"
+          },
+          {
+            "domain": "shein.com"
+          },
+          {
+            "domain": "psyche.co.uk"
+          },
+          {
+            "domain": "pandora.net"
+          },
+          {
+            "domain": "babor.com"
+          },
+          {
+            "domain": "vitalbaby.com"
+          },
+          {
+            "domain": "publicdesire.com"
+          },
+          {
+            "domain": "revivecollagen.com"
+          },
+          {
+            "domain": "elemis.com"
+          },
+          {
+            "domain": "coggles.com"
+          },
+          {
+            "domain": "air-up.com"
+          },
+          {
+            "domain": "greybandit.com"
+          },
+          {
+            "domain": "ryobitools.eu"
+          },
+          {
+            "domain": "rebeccaudall.com"
+          },
+          {
+            "domain": "myinvity.com"
+          },
+          {
+            "domain": "miele.co.uk"
+          },
+          {
+            "domain": "shopterrain.com"
+          },
+          {
+            "domain": "alessi.com"
+          },
+          {
+            "domain": "aureliaskincare.com"
+          },
+          {
+            "domain": "skinnydiplondon.com"
+          },
+          {
+            "domain": "thorntons.co.uk"
+          },
+          {
+            "domain": "toysandbears.com"
+          },
+          {
+            "domain": "jonathanadler.com"
+          },
+          {
+            "domain": "gandyslondon.com"
+          }
+        ]
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 222.69969,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 210.69968,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 47.350002,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 47.000008,
+            "vertical": "Fashion / Shoes"
+          },
+          {
+            "count": 45.000015,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 37.200005,
+            "vertical": "Fashion / Jewellery"
+          },
+          {
+            "count": 33.3,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 28.149998,
+            "vertical": "Health / Wellbeing"
+          },
+          {
+            "count": 28.099998,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 27.3,
+            "vertical": "Food / Alcohol"
+          },
+          {
+            "count": 25.950003,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 23,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 22.150003,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 20.9,
+            "vertical": "Food / Groceries"
+          },
+          {
+            "count": 19.3,
+            "vertical": "Fashion / Sportswear"
+          },
+          {
+            "count": 18.8,
+            "vertical": "Home / Electricals"
+          },
+          {
+            "count": 18.199999,
+            "vertical": "Gifts / Kids"
+          },
+          {
+            "count": 18.05,
+            "vertical": "Food / Confectionery"
+          },
+          {
+            "count": 16.25,
+            "vertical": "Home / Babycare"
+          },
+          {
+            "count": 13.65,
+            "vertical": "Gifts / Flowers"
+          },
+          {
+            "count": 12.449999,
+            "vertical": "Home / Beds & Bedding"
+          },
+          {
+            "count": 11.449999,
+            "vertical": "Health / Fragrances"
+          },
+          {
+            "count": 11.349998,
+            "vertical": "Finance / Investments"
+          },
+          {
+            "count": 10.599999,
+            "vertical": "Home / Furniture"
+          },
+          {
+            "count": 10.45,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 10.149999,
+            "vertical": "Entertainment / Hobbies"
+          },
+          {
+            "count": 9.499999,
+            "vertical": "Fashion / Lingerie"
+          },
+          {
+            "count": 8.749999,
+            "vertical": "Health / Eyecare"
+          },
+          {
+            "count": 8.599999,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 8.5,
+            "vertical": "Gifts / Personalised"
+          },
+          {
+            "count": 8.5,
+            "vertical": "Home / Garden"
+          },
+          {
+            "count": 8.35,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 7.6000004,
+            "vertical": "Home / DIY"
+          },
+          {
+            "count": 7.55,
+            "vertical": "Sports / Outdoor"
+          },
+          {
+            "count": 7.4499993,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 6.55,
+            "vertical": "Food / Take Out"
+          },
+          {
+            "count": 5.9,
+            "vertical": "Health / CBD"
+          },
+          {
+            "count": 5.85,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 5.7499995,
+            "vertical": "Health / Drinks"
+          },
+          {
+            "count": 5.7,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 5.4,
+            "vertical": "Fashion / Kids"
+          },
+          {
+            "count": 4.5,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 4.1,
+            "vertical": "Travel / Vacation"
+          },
+          {
+            "count": 3.7,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 3.4499998,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 3.1,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 2.95,
+            "vertical": "Finance / Banking"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Business / Online Training"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Finance / Insurance"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Health / Adult"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Shopping / Wedding"
+          },
+          {
+            "count": 2.65,
+            "vertical": "Property / Property"
+          },
+          {
+            "count": 2.5500002,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 2.55,
+            "vertical": "Entertainment / Movies"
+          },
+          {
+            "count": 2.45,
+            "vertical": "Home / Security"
+          },
+          {
+            "count": 2.35,
+            "vertical": "Home / Art"
+          },
+          {
+            "count": 2.1999998,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 2,
+            "vertical": "Gifts / Experience Days"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Sports / Cycling"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Finance / Currency"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Finance / Trading"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Home / Utilities"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Motoring / Cars"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Travel / Flights"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Travel / Cruises"
+          },
+          {
+            "count": 1.65,
+            "vertical": "Finance / Cards"
+          },
+          {
+            "count": 1,
+            "vertical": "Fashion / Maternity"
+          },
+          {
+            "count": 1,
+            "vertical": "Finance / Accounts"
+          },
+          {
+            "count": 1,
+            "vertical": "Motoring / Breakdown Cover"
+          },
+          {
+            "count": 1,
+            "vertical": "Online / VPN"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Finance"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Loans"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Finance / Mortgages & Loans"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Gambling / Lottery"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Health / Weight Loss"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Home / Pets"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Online / Freebies"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Business / Office"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Online / Web Hosting"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Travel / Accessories"
+          },
+          {
+            "count": 0.85,
+            "vertical": "Sports / Hunting"
+          },
+          {
+            "count": 0.8,
+            "vertical": "Online / Web Design"
+          },
+          {
+            "count": 0.6,
+            "vertical": "Online / Dating"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 1253,
+      "value": [
+        "myshopify.com",
+        "111skin.co.uk",
+        "111skin.com",
+        "12thtribe.com",
+        "etsy.com",
+        "23andme.com",
+        "2btanned.com",
+        "4thandreckless.com",
+        "47skin.com",
+        "58gin.com",
+        "drmartens.com",
+        "8swimlondon.com",
+        "7forallmankind.com",
+        "royalmint.com",
+        "apple.com",
+        "deichmann.com",
+        "aap.org",
+        "amazon.com",
+        "abbottlyon.com",
+        "abercrombie.com",
+        "aberfallsdistillery.com",
+        "ikea.com",
+        "coursera.org",
+        "babbel.com",
+        "hurrcollective.com",
+        "hm.com",
+        "netflix.com",
+        "nike.com",
+        "nordstrom.com",
+        "sainsburys.co.uk",
+        "absolutecollagen.com",
+        "cnn.com",
+        "webgains.com",
+        "ray-ban.com",
+        "nokia.com",
+        "accessorize.com",
+        "lenovo.com",
+        "mylio.com",
+        "ring.com",
+        "samsung.com",
+        "t-mobile.com",
+        "fitbit.com",
+        "morrisons.com",
+        "ocado.com",
+        "accurist.co.uk",
+        "everlane.com",
+        "usatoday.com",
+        "adnams.co.uk",
+        "adorebeauty.com.au",
+        "huawei.com",
+        "flexoffers.com",
+        "roku.com",
+        "nationalgeographic.com",
+        "ae.com",
+        "simple-life-app.com",
+        "walmart.com",
+        "amazon.co.uk",
+        "agolde.com",
+        "aime.co",
+        "ajosepo.com",
+        "ajbell.co.uk",
+        "aldermore.co.uk",
+        "aldi.co.uk",
+        "alchemyoils.co.uk",
+        "alexandalexa.com",
+        "albaray.co.uk",
+        "aligne.co",
+        "alicesweetwatersbarandgrille.com",
+        "allsaints.com",
+        "allroundfun.co.uk",
+        "aloyoga.com",
+        "alpkit.com",
+        "alzheimers.org.uk",
+        "amara.com",
+        "amazon.com.au",
+        "ameonskin.com",
+        "americangirl.com",
+        "americangolf.co.uk",
+        "amyojewelry.com",
+        "revolve.com",
+        "and-daughter.com",
+        "anastasiabeverlyhills.com",
+        "andbegin.com",
+        "andrewmartin.co.uk",
+        "angelareed.co.uk",
+        "angara.com",
+        "jcpenney.com",
+        "sephora.com",
+        "answr.uk",
+        "anthropologie.com",
+        "antoniasaintny.com",
+        "ao.com",
+        "antipodium.com",
+        "hp.com",
+        "skyscanner.net",
+        "youtube.com",
+        "aplaceforeverything.co.uk",
+        "apothekary.com",
+        "apostrophe.com",
+        "next.co.uk",
+        "shein.co.uk",
+        "uspto.gov",
+        "appleyardflowers.com",
+        "kohls.com",
+        "disneyplus.com",
+        "homebase.co.uk",
+        "garmin.com",
+        "stories.com",
+        "superdrug.com",
+        "aquatalia.com",
+        "archerandolive.com",
+        "lego.com",
+        "arenaflowers.com",
+        "argos.co.uk",
+        "arket.com",
+        "arran.com",
+        "artfullywalls.com",
+        "latimes.com",
+        "asalidesigns.co.uk",
+        "asics.com",
+        "asda.com",
+        "sonos.com",
+        "asos.com",
+        "aspinaloflondon.com",
+        "aspesi.com",
+        "aspiga.com",
+        "sephora.co.uk",
+        "marksandspencer.com",
+        "goop.com",
+        "nature.com",
+        "astridandmiyu.com",
+        "gap.com",
+        "atlasteaclub.com",
+        "audible.com",
+        "audiopro.com",
+        "augustinusbader.com",
+        "aureejewellery.com",
+        "zappos.com",
+        "hollandandbarrett.com",
+        "theaa.com",
+        "awin.com",
+        "b2bfinance.com",
+        "babyark.com",
+        "babychum.co.uk",
+        "azazie.com",
+        "babymori.com",
+        "tesco.com",
+        "baebody.com",
+        "balanceme.com",
+        "bakedbymelissa.com",
+        "bakedbysteph.co.uk",
+        "balmonds.co.uk",
+        "balmonds.com",
+        "gapfactory.com",
+        "bamigo.com",
+        "gap.co.uk",
+        "banwood.com",
+        "barkerandstonehouse.co.uk",
+        "bargainmax.co.uk",
+        "barrym.com",
+        "bathandbodyworks.com",
+        "bbc.co.uk",
+        "baublebar.com",
+        "bawdybeauty.com",
+        "beatsbydre.com",
+        "dior.com",
+        "beautybase.com",
+        "harrods.com",
+        "beautybay.com",
+        "beauty-scent.co.uk",
+        "beautypie.com",
+        "beaverbrooks.co.uk",
+        "beerhawk.co.uk",
+        "bedthreads.co.uk",
+        "befrontman.com",
+        "bedroomathletics.com",
+        "belkin.com",
+        "benefitcosmetics.com",
+        "bellissimaitalia.co.uk",
+        "bershka.com",
+        "bestinvest.co.uk",
+        "levi.com",
+        "neimanmarcus.com",
+        "saksoff5th.com",
+        "betseyjohnson.com",
+        "betterskintoday.com",
+        "bijouxdemimi.com",
+        "urbanoutfitters.com",
+        "bimbaylola.com",
+        "purevpn.com",
+        "biscuiteers.com",
+        "vodafone.co.uk",
+        "debenhams.com",
+        "endclothing.com",
+        "fabletics.com",
+        "freepeople.com",
+        "hellofresh.co.uk",
+        "houseoffraser.co.uk",
+        "jdsports.com",
+        "lizearle.com",
+        "missoma.com",
+        "myheritage.com",
+        "nastygal.com",
+        "prettylittlething.com",
+        "scs.co.uk",
+        "schuh.co.uk",
+        "shopbop.com",
+        "siriusxm.com",
+        "thewhiskyexchange.com",
+        "very.co.uk",
+        "bloomersintimates.com",
+        "wsj.com",
+        "bloomingdales.com",
+        "bloomandwild.com",
+        "bloompost.co.uk",
+        "bluebella.com",
+        "bluemercury.com",
+        "blueland.com",
+        "blushingcook.com",
+        "bmstores.co.uk",
+        "boden.co.uk",
+        "bobbibrown.co.uk",
+        "bobux.co.uk",
+        "bodyblendz.com",
+        "boden.com",
+        "boggbag.com",
+        "bohomoon.com",
+        "bollandbranch.com",
+        "bondilaser.com",
+        "boohoo.com",
+        "bondisands.co.uk",
+        "boody.co.uk",
+        "boody.com",
+        "booking.com",
+        "lloydspharmacy.com",
+        "selfridges.com",
+        "boots.com",
+        "boostlabco.com",
+        "boopbeauty.co.uk",
+        "bottegaveneta.com",
+        "bose.co.uk",
+        "bouxavenue.com",
+        "boysmells.com",
+        "swarovski.com",
+        "bravosierra.com",
+        "brewdog.com",
+        "brilliantearth.com",
+        "brownsugarbabe.net",
+        "brow-hq.com",
+        "broraonline.com",
+        "bt.com",
+        "brunaebody.co",
+        "buckleylondon.com",
+        "bugaboo.com",
+        "bulk.com",
+        "currys.co.uk",
+        "butterlondon.com",
+        "buyagift.co.uk",
+        "dermalogica.co.uk",
+        "butlins.com",
+        "byterry.com",
+        "net-a-porter.com",
+        "mrporter.com",
+        "cadburygiftsdirect.co.uk",
+        "calocurb.com",
+        "cambridgesatchel.com",
+        "camcamcopenhagen.com",
+        "frenchconnection.com",
+        "caracaranyc.com",
+        "cannariver.com",
+        "carawayhome.com",
+        "carbon38.com",
+        "cvs.com",
+        "dyson.com",
+        "cathkidston.com",
+        "thewhitecompany.com",
+        "thetoyshop.com",
+        "carolbike.com",
+        "carouseljewels.com",
+        "target.com",
+        "carven.com",
+        "casetify.com",
+        "catchrhys.co.uk",
+        "catherinezoraida.com",
+        "cbs.com",
+        "sprinkles.com",
+        "cbdshopy.co.uk",
+        "kurtgeiger.com",
+        "feelunique.com",
+        "theinformation.com",
+        "cefinn.com",
+        "people.com",
+        "cernucci.com",
+        "cettire.com",
+        "ebay.co.uk",
+        "champohaircare.com",
+        "champagnedirect.co.uk",
+        "charleskeith.co.uk",
+        "charlottetilbury.com",
+        "charleskeith.com",
+        "charles-stanley.co.uk",
+        "chasedistillery.co.uk",
+        "charlestyrwhitt.com",
+        "iherb.com",
+        "tokyotreat.com",
+        "cheekychompers.com",
+        "chella.com",
+        "chelseapeers.com",
+        "chemistdirect.co.uk",
+        "chillys.com",
+        "chintiandparker.com",
+        "chloe.com",
+        "choosegood.com.au",
+        "chopovalowena.com",
+        "chloecroftlondon.com",
+        "choconchoc.co.uk",
+        "thebodyshop.com",
+        "christopherobin.com",
+        "citizenwatch.co.uk",
+        "clarks.co.uk",
+        "clarks.com",
+        "claires.com",
+        "sharkclean.co.uk",
+        "linksynergy.com",
+        "clinicaltrials.gov",
+        "clinique.co.uk",
+        "closetlondon.com",
+        "jigsaw-online.com",
+        "on-running.com",
+        "clubllondon.com",
+        "craftginclub.co.uk",
+        "cmcinvest.com",
+        "coast-stores.com",
+        "coastfashion.com",
+        "hershesons.com",
+        "cocoandeve.com",
+        "delonghi.com",
+        "colourchronicles.com",
+        "columbiasportswear.co.uk",
+        "eufy.com",
+        "giffgaff.com",
+        "narscosmetics.co.uk",
+        "sony.co.uk",
+        "hivehome.com",
+        "visible.com",
+        "topcashback.co.uk",
+        "pure.com",
+        "confused.com",
+        "gousto.co.uk",
+        "waitrose.com",
+        "postoffice.co.uk",
+        "haier-europe.com",
+        "cos.com",
+        "cosstores.com",
+        "cottontraders.com",
+        "cosmetify.com",
+        "cotswoldsdistillery.com",
+        "coxandcox.co.uk",
+        "cowshed.com",
+        "laithwaites.co.uk",
+        "cozyearth.com",
+        "crabtree-evelyn.com",
+        "cranel.co",
+        "creativenaturesuperfoods.co.uk",
+        "crosstown.co.uk",
+        "crystalsandco.com",
+        "mytheresa.com",
+        "crown-love.com",
+        "cuckooland.com",
+        "cultbeauty.co.uk",
+        "curaprox.co.uk",
+        "currentbody.com",
+        "qvcuk.com",
+        "cyklar.com",
+        "sennheiser.com",
+        "dagsmejan.com",
+        "danielsandler.com",
+        "danielwellington.com",
+        "newlook.com",
+        "dailymail.co.uk",
+        "damsonmadder.com",
+        "dare2b.com",
+        "danabandi.com",
+        "danmurphys.com.au",
+        "dealpq.com",
+        "de.zettle.com",
+        "deborahblyth.com",
+        "delilahcosmetics.com",
+        "demellierlondon.com",
+        "derivehomeware.com",
+        "dermstore.com",
+        "dermelect.com",
+        "devialet.com",
+        "matalan.co.uk",
+        "dimebeautyco.com",
+        "diptyqueparis.com",
+        "sharkclean.com",
+        "diy.com",
+        "dixiegraze.uk",
+        "dlouise.co.uk",
+        "dockatot.com",
+        "donatellabalsamo.com",
+        "dodl.co.uk",
+        "doi.org",
+        "dontbuyherflowers.com",
+        "dollbeauty.com",
+        "dotmaison.com",
+        "dreamcloudsleep.com",
+        "dridriss.com",
+        "luxuryescapes.com",
+        "drinkhappyflower.com",
+        "drinksimple.com",
+        "drinkolipop.com",
+        "drink-trip.com",
+        "drinkcranes.shop",
+        "drsambunting.com",
+        "drleahskincare.co.uk",
+        "dsw.com",
+        "dukeanddexter.com",
+        "dunelondon.com",
+        "dusk.com",
+        "dunelm.com",
+        "dyson.co.uk",
+        "east.co.uk",
+        "eberjey.com",
+        "edgeofember.com",
+        "victoriahealth.com",
+        "ego.co.uk",
+        "egoshoes.com",
+        "ekohome.co.uk",
+        "eleanorbalfour.com",
+        "elcaminobracelets.com",
+        "elfcosmetics.co.uk",
+        "eli-o.ch",
+        "elizabetharden.com",
+        "elleme.com",
+        "elizabetharden.co.uk",
+        "joules.com",
+        "ellisbrooklyn.com",
+        "ellesse.com",
+        "sweatybetty.com",
+        "emiliawickstead.com",
+        "emma-mattress.co.uk",
+        "emilymortimer.co.uk",
+        "emma-sleep.co.uk",
+        "ember.com",
+        "emmabridgewater.co.uk",
+        "emmylondon.com",
+        "emmacook.co.uk",
+        "waterdrop.com",
+        "enchanteddrinks.co.uk",
+        "moncler.com",
+        "epson.co.uk",
+        "ergoflex.co.uk",
+        "escentual.com",
+        "hollisterco.com",
+        "esgau.etribez.com",
+        "espaskincare.com",
+        "esteelauder.co.uk",
+        "esmi.com.au",
+        "estellabartlett.com",
+        "eswbeauty.com",
+        "essentiel-antwerp.com",
+        "ethelm.com",
+        "tog24.com",
+        "facetheory.com",
+        "farrow-ball.com",
+        "ethique.co.uk",
+        "ettika.com",
+        "jellycat.com",
+        "frankbody.com",
+        "katespade.com",
+        "karenmillen.com",
+        "neomwellbeing.com",
+        "monsoon.co.uk",
+        "medik8.com",
+        "sandandsky.com",
+        "savilerowco.com",
+        "refybeauty.com",
+        "millerharris.com",
+        "sisterjane.com",
+        "riverisland.com",
+        "stuartweitzman.com",
+        "moshi.com",
+        "stanley1913.com",
+        "thisworks.com",
+        "toa.st",
+        "topshop.com",
+        "tennessean.com",
+        "wonderskin.com",
+        "euronics.co.uk",
+        "everyandone.com",
+        "evn-cbd.com",
+        "evolvebeauty.com",
+        "johnlewis.com",
+        "express.com",
+        "eyewearindex.com",
+        "yslbeauty.co.uk",
+        "facethefuture.co.uk",
+        "facegym.com",
+        "jcrew.com",
+        "fairfaxandfavor.com",
+        "fairharborclothing.com",
+        "uniqlo.com",
+        "farfetch.com",
+        "fatface.com",
+        "feelgoodcontacts.com",
+        "fentybeauty.com",
+        "fenwick.co.uk",
+        "fiils.co",
+        "fidelity.co.uk",
+        "fhinds.co.uk",
+        "figleaves.com",
+        "fillingpieces.com",
+        "firebox.com",
+        "luisaviaroma.com",
+        "fitflop.com",
+        "flightcentre.com.au",
+        "floward.com",
+        "florencebymillsbeauty.com",
+        "floom.com",
+        "flowercard.co.uk",
+        "flowerbx.com",
+        "flossandrock.co.uk",
+        "followthecult.com",
+        "foreo.com",
+        "forevernew.co.uk",
+        "foriawellness.com",
+        "forevernewclothing.com",
+        "fortnumandmason.com",
+        "xda-developers.com",
+        "freddystore.com",
+        "freetrade.io",
+        "frenchbeautyco.com.au",
+        "fromourplace.co.uk",
+        "fromourplace.com",
+        "funkincocktails.co.uk",
+        "fwrd.com",
+        "gocompare.com",
+        "ganni.com",
+        "gb.weekendmaxmara.com",
+        "hayu.com",
+        "geologie.com",
+        "lottosocial.com",
+        "genucel.com",
+        "getchip.uk",
+        "getitinkd.com",
+        "getquip.com",
+        "ghdhair.com",
+        "ghost.co.uk",
+        "giftcards.com",
+        "tedbaker.com",
+        "opi.com",
+        "giorgioarmanibeauty-usa.com",
+        "moroccanoil.com",
+        "solawave.co",
+        "ulta.com",
+        "glossier.com",
+        "glossybox.co.uk",
+        "skimresources.com",
+        "glut.co.uk",
+        "goatfashion.com",
+        "godiva.com",
+        "goldsmiths.co.uk",
+        "goodamerican.com",
+        "quince.com",
+        "gopurebeauty.com",
+        "gourmetdinnerlady.com",
+        "graceloveslace.co.uk",
+        "grahamandgreen.co.uk",
+        "grailed.com",
+        "greenchef.co.uk",
+        "greenpeople.co.uk",
+        "grenson.com",
+        "greenpan.us",
+        "growgorgeous.co.uk",
+        "groveandvae.com",
+        "guestpix.com",
+        "guerlain.com",
+        "gtech.co.uk",
+        "habitat.co.uk",
+        "lookfantastic.com",
+        "hackett.com",
+        "halfords.com",
+        "hairgainnow.com",
+        "hamleys.com",
+        "happbrand.com",
+        "harmanaudio.com",
+        "harfi.co.uk",
+        "harveynichols.com",
+        "hattingleyvalley.com",
+        "havaianas-store.com",
+        "heals.com",
+        "hdbrows.com",
+        "hayesgardenworld.co.uk",
+        "hayloft.co.uk",
+        "helloklean.com",
+        "helloseen.com",
+        "ruelala.com",
+        "spacenk.com",
+        "simbasleep.com",
+        "quizclothing.co.uk",
+        "thereformation.com",
+        "tuftandneedle.com",
+        "yoox.com",
+        "herdwear.co",
+        "hexbug.com",
+        "heylandandwhittle.co.uk",
+        "hicksandbrown.com",
+        "heybudskincare.com",
+        "higherdose.com",
+        "hidratespark.uk",
+        "highstreettv.com",
+        "hims.com",
+        "hihonor.com",
+        "hildunbeauty.co.uk",
+        "hint.app",
+        "highgrovegardens.com",
+        "hiyahealth.com",
+        "hl.co.uk",
+        "hobbs.co.uk",
+        "hobbs.com",
+        "hobbycraft.co.uk",
+        "hokaoneone.eu",
+        "homebargains.co.uk",
+        "homecourt.co",
+        "hoopsandchains.com",
+        "hoover.co.uk",
+        "horwood.co.uk",
+        "hotelchocolat.com",
+        "hourglasscosmetics.com",
+        "hsamuel.co.uk",
+        "houseofbruar.com",
+        "studio.co.uk",
+        "theverge.com",
+        "hubblecontacts.com",
+        "tartecosmetics.com",
+        "hudabeauty.com",
+        "huddleson.com",
+        "hunterboots.co.uk",
+        "hunterboots.com",
+        "hush-uk.com",
+        "hummingbirdbakery.com",
+        "icklebubba.com",
+        "iconiclondoninc.com",
+        "ifonlyif.co.uk",
+        "ilioslighting.co",
+        "ii.co.uk",
+        "ilmakiage.com",
+        "illamasqua.com",
+        "immunocologie.com",
+        "lululemon.co.uk",
+        "inhibitif.com",
+        "initialled.co.uk",
+        "roseskinco.com",
+        "interflora.co.uk",
+        "victoriabeckham.com",
+        "lespecs.com",
+        "toteme.com",
+        "investengine.com",
+        "isawitfirst.com",
+        "isleofwightdistillery.com",
+        "itcosmetics.co.uk",
+        "ivygold.co.uk",
+        "jabra.co.uk",
+        "jamesreadtan.com",
+        "mango.com",
+        "janeiredale.com",
+        "jdwilliams.co.uk",
+        "jellydrops.com",
+        "jean-patrique.co.uk",
+        "joebrowns.co.uk",
+        "johnbellcroyden.co.uk",
+        "prioritypass.com",
+        "johnstonsofelgin.com",
+        "thetimes.co.uk",
+        "joloves.com",
+        "jojomamanbebe.co.uk",
+        "jonesbootmaker.com",
+        "joubi.com",
+        "jonesroadbeauty.com",
+        "joulesclothing.com",
+        "juicycouture.co.uk",
+        "julychild.com",
+        "justaddbuoy.com",
+        "jupiduu.com",
+        "jwpei.com",
+        "jwpei.co.uk",
+        "justhype.co.uk",
+        "kalinko.com",
+        "karenkane.com",
+        "katesomerville.co.uk",
+        "katherinedanielscosmetics.com",
+        "katespade.co.uk",
+        "katieloxton.com",
+        "keeohair.com",
+        "kentishpip.co.uk",
+        "kerastase-usa.com",
+        "kenwoodworld.com",
+        "keskine.com",
+        "kfacials.com",
+        "kiehls.co.uk",
+        "kidinn.com",
+        "kiltane.com",
+        "kiehls.com",
+        "kiki.co.uk",
+        "kindoasis.com",
+        "kitchenaid.com",
+        "kitandkin.com",
+        "kikocosmetics.com",
+        "kitristudio.com",
+        "wickes.co.uk",
+        "knightandwilson.com",
+        "kocktail.co.uk",
+        "kravebeauty.com",
+        "lakeland.co.uk",
+        "lamaisonvalmont.com",
+        "lalagebeaumont.com",
+        "lancome.co.uk",
+        "laptopsdirect.co.uk",
+        "landsend.co.uk",
+        "lanolips.com",
+        "laredoute.co.uk",
+        "latched.uk",
+        "lastcrumb.com",
+        "laticoleathers.com",
+        "lashdupe.com",
+        "lauragalasso.com",
+        "lavazza.co.uk",
+        "lavenderhillclothing.com",
+        "lechameau.com",
+        "lecolonel.com",
+        "learnwithhomer.com",
+        "lecreuset.co.uk",
+        "shopcider.com",
+        "lekilt.co.uk",
+        "leightondenny.com",
+        "letoyvan.co.uk",
+        "letssanitise.com",
+        "letterboxgifts.co.uk",
+        "libertylondon.com",
+        "libertygames.co.uk",
+        "lidl.co.uk",
+        "lifesupplies.com",
+        "lightsandlamps.com",
+        "wilko.com",
+        "lilyarkwright.com",
+        "lilyengland.com",
+        "lilyobriens.co.uk",
+        "lilyandroo.com",
+        "lindt.co.uk",
+        "lisaeldridge.com",
+        "littletikes.co.uk",
+        "littlemercies.co.uk",
+        "lipsy.co.uk",
+        "littlewoods.com",
+        "little-mistress.com",
+        "liveunlimitedlondon.com",
+        "littlesleepies.com",
+        "livingproof.co.uk",
+        "lociwear.com",
+        "lkbennett.com",
+        "lolascupcakes.co.uk",
+        "loopcashmere.co.uk",
+        "londonsockcompany.com",
+        "lordjones.com",
+        "lostsheepcoffee.com",
+        "lovecocoa.com",
+        "lovemememe.com",
+        "lovehoney.co.uk",
+        "lovesac.com",
+        "loveindus.com",
+        "lovetodream.co.uk",
+        "lovewritingco.com",
+        "lovisa.co.uk",
+        "luluguinness.com",
+        "lulasgarden.com",
+        "lumedeodorant.com",
+        "lumene.com",
+        "lumie.com",
+        "maccosmetics.co.uk",
+        "lyma.life",
+        "lyres.co.uk",
+        "notonthehighstreet.com",
+        "reebok.co.uk",
+        "thehut.com",
+        "sezane.com",
+        "theperfumeshop.com",
+        "zalando.co.uk",
+        "visionexpress.com",
+        "maaree.com",
+        "zara.com",
+        "made.com",
+        "magnochocolates.us",
+        "majestic.co.uk",
+        "mamatoyzuk.com",
+        "mamasandpapas.com",
+        "malinandgoetz.co.uk",
+        "manomano.co.uk",
+        "margaretdabbs.co.uk",
+        "marieoliver.com",
+        "markandgraham.com",
+        "marshallheadphones.com",
+        "massimodutti.com",
+        "matchesfashion.com",
+        "masterofmalt.com",
+        "maximuscle.com",
+        "maximustribe.com",
+        "meandem.com",
+        "mdlondon.co.uk",
+        "meetargie.com",
+        "meliebianco.com",
+        "mejuri.com",
+        "melacomfort.co.uk",
+        "memara.co.uk",
+        "meritbeauty.com",
+        "meridiangrooming.com",
+        "meshki.co.uk",
+        "mgemi.com",
+        "metrestomiles.co.uk",
+        "michaelkors.co.uk",
+        "miicosmetics.com",
+        "micro-scooters.co.uk",
+        "mih-jeans.com",
+        "mihigh.co.uk",
+        "mintvelvet.com",
+        "mirabeauwine.com",
+        "missguidedus.com",
+        "missguided.co.uk",
+        "mintvelvet.co.uk",
+        "misspap.com",
+        "mizziethekangaroo.co.uk",
+        "modibodi.co.uk",
+        "molecular-cosmetics.com",
+        "moneysupermarket.com",
+        "monreallondon.com",
+        "monicavinader.com",
+        "moonpig.com",
+        "mosaicfoods.com",
+        "motorway.co.uk",
+        "msccruises.co.uk",
+        "murad.co.uk",
+        "mutha.com",
+        "musto.com",
+        "mykitsch.com",
+        "myminimaker.com",
+        "myfluffi.com",
+        "mymeglio.com",
+        "mylittlecoco.co.uk",
+        "myperfectcosmeticscompany.com",
+        "mysmallspace.co.uk",
+        "myrevair.com",
+        "mysweetsmile.com",
+        "mzskin.com",
+        "na-kd.com",
+        "nadinemerabi.com",
+        "nailberry.co.uk",
+        "names.co.uk",
+        "naturalpatch.com",
+        "natpat.com",
+        "necessaire.com",
+        "neimarow.com",
+        "neomorganics.com",
+        "oliverbonas.com",
+        "neubau-eyewear.com",
+        "neverfullydressed.co.uk",
+        "newbyteas.co.uk",
+        "niococktails.co.uk",
+        "ninjakitchen.co.uk",
+        "nipandfab.com",
+        "no7beauty.co.uk",
+        "noblepanacea.com",
+        "nobodyschild.com",
+        "nordstromrack.com",
+        "nosecretsbeauty.com",
+        "nowhereelse.fr",
+        "nudeenvie.com",
+        "nuehoops.com",
+        "nurvv.com",
+        "nusa.studio",
+        "nuskin.com",
+        "oasisfashion.com",
+        "office.co.uk",
+        "offblak.com",
+        "ohpolly.com",
+        "oka.com",
+        "olfactorynyc.com",
+        "oliviarosethelabel.com",
+        "omnes.com",
+        "one33social.com",
+        "onequietmind.com",
+        "onlycurls.com",
+        "ooni.com",
+        "opopop.com",
+        "opositiv.com",
+        "orelia.co.uk",
+        "whitehouseblackmarket.com",
+        "organix.com",
+        "orlakiely.com",
+        "oskiaskincare.com",
+        "otiumberg.com",
+        "otherland.com",
+        "ottomanhands.com",
+        "ottieandthebea.com",
+        "ourkindra.com",
+        "theiconic.com.au",
+        "scotch-soda.com",
+        "owlchemy.co.uk",
+        "outpour.co.uk",
+        "pactcoffee.com",
+        "pacamask.com",
+        "pacsun.com",
+        "pagesix.com",
+        "palonesofficial.com",
+        "pampasandbloom.co.uk",
+        "pampeano.co.uk",
+        "pairs-scotland.com",
+        "parcelforce.com",
+        "parissa.com",
+        "patmcgrath.com",
+        "paulaschoice.com",
+        "patternbeauty.com",
+        "peachandlily.com",
+        "peacci.com",
+        "peepclub.co.uk",
+        "penelopechilvers.com",
+        "pensadormezcal.com",
+        "peperharowengland.com",
+        "ssense.com",
+        "percko.com",
+        "peppermayo.co.uk",
+        "perriconemd.co.uk",
+        "perfumedirect.com",
+        "petite-plume.com",
+        "phase-eight.com",
+        "phlur.com",
+        "pigletinbed.com",
+        "pillowbeautyuk.com",
+        "plumo.com",
+        "poferries.com",
+        "pocket-sport.com",
+        "pontofootwear.com",
+        "poopourri.com",
+        "popskilondon.co.uk",
+        "portraitbookshop.com",
+        "pooky.com",
+        "praibeauty.co.uk",
+        "pourmoi.co.uk",
+        "prestigeflowers.co.uk",
+        "prettylavish.co.uk",
+        "prettylittlething.us",
+        "pretavoir.co.uk",
+        "prettyballerinas.co.uk",
+        "prezzybox.com",
+        "prismvibes.com",
+        "probulin.com",
+        "serenataflowers.com",
+        "proporta.co.uk",
+        "proto-col.com",
+        "provacan.co.uk",
+        "psdunderwear.com",
+        "purcosmetics.com",
+        "purearth.co.uk",
+        "pureheavenly.com",
+        "rachelriley.co.uk",
+        "radley.co.uk",
+        "raffaello-network.com",
+        "ralphlauren.co.uk",
+        "ragdalehall.co.uk",
+        "raisin.co.uk",
+        "reddress.com",
+        "wowcher.co.uk",
+        "theoutnet.com",
+        "thrivecausemetics.com",
+        "regatta.com",
+        "reigntogether.com",
+        "reiss.com",
+        "reserved.com",
+        "rested.com",
+        "revitalash.co.uk",
+        "reviveskincare.com",
+        "revamphair.com",
+        "retrouve.com",
+        "rhsplants.co.uk",
+        "rhugwildbeauty.com",
+        "ro.co",
+        "robertdyas.co.uk",
+        "ritani.com",
+        "robertwelch.com",
+        "rockettstgeorge.co.uk",
+        "rodial.co.uk",
+        "roenbeauty.com",
+        "rokalondon.com",
+        "romanoriginals.co.uk",
+        "rossiderm.com",
+        "rta.com",
+        "roxy-uk.co.uk",
+        "royalcollectionshop.co.uk",
+        "ruggable.co.uk",
+        "russellandbromley.co.uk",
+        "saksfifthavenue.com",
+        "sallybeauty.co.uk",
+        "saltandripple.com.au",
+        "sansmatin.co.uk",
+        "sarahflint.com",
+        "sassandbelle.co.uk",
+        "sarahraven.com",
+        "santander.co.uk",
+        "scarerase.co.uk",
+        "scandiborn.co.uk",
+        "affiliatefuture.com",
+        "schoffelcountry.com",
+        "sculptedbyaimee.co.uk",
+        "seasaltcornwall.co.uk",
+        "sculptedbyaimee.com",
+        "screampretty.com",
+        "seavees.com",
+        "serendipity3.com",
+        "sensoryretreats.com",
+        "seraphinalondon.com",
+        "serumkind.com",
+        "shabbystore.co.uk",
+        "shareasale-analytics.com",
+        "shareasale.com",
+        "sheridanaustralia.co.uk",
+        "shoeaholics.com",
+        "shop-daphine.com",
+        "shop.isabelgarcia.it",
+        "smeguk.com",
+        "shop.parsonsnose.co.uk",
+        "sueryder.org",
+        "thesportsedit.com",
+        "shop.zapfcreation.co.uk",
+        "weekday.com",
+        "shopdisney.co.uk",
+        "shopatanna.com",
+        "shoplamarue.com",
+        "shopto.net",
+        "shopnativaspa.com",
+        "shrimps.com",
+        "silverjeans.com",
+        "simitri.shop",
+        "simplehuman.co.uk",
+        "silvercrossus.com",
+        "simoncarter.net",
+        "sisterlylab.com",
+        "sisley-paris.com",
+        "sixstories.co.uk",
+        "skims.com",
+        "skinceuticals.com",
+        "skinceuticals.co.uk",
+        "skinatwork.com",
+        "skinnytan.co.uk",
+        "skincycles.com",
+        "skipper.org",
+        "slingerbaguk.frameworksports.com",
+        "smythson.com",
+        "smilebrilliant.com",
+        "smythstoys.com",
+        "snoozeshade.com",
+        "snowandrock.com",
+        "sodastream.co.uk",
+        "softservices.co",
+        "solebliss.com",
+        "sorujewellery.com",
+        "spellsoflove.co.uk",
+        "splendid.com",
+        "stacksocial.com",
+        "startfitness.co.uk",
+        "standout.co.uk",
+        "starface.world",
+        "stay-drenched.co.uk",
+        "stellar-79.com",
+        "stellar79.com",
+        "stevemadden.co.uk",
+        "steiffuk.com",
+        "stevemadden.com",
+        "stellamccartneybeauty.com",
+        "stone-and-mason.com",
+        "stitchfinity.com",
+        "strathberry.com",
+        "straand.com.au",
+        "stradivarius.com",
+        "tomdixon.net",
+        "strike.co.uk",
+        "stunnco.com",
+        "stwff-stuff.co.uk",
+        "subtlbeauty.com",
+        "super8hydration.co.uk",
+        "susancaplan.co.uk",
+        "sweettreebybrowns.co.uk",
+        "sweatband.com",
+        "sylvennewyork.com",
+        "tabithajameskraan.com",
+        "tajacollection.com",
+        "talacooking.com",
+        "tan-luxe.com",
+        "tarajarmon.fr",
+        "tangleangel.com",
+        "teaandtequila.com",
+        "technogym.com",
+        "techinthebasket.com",
+        "templespa.com",
+        "tenthmuselondon.com",
+        "tentree.com",
+        "tgifridays.co.uk",
+        "theazurinastore.com",
+        "thebottleclub.com",
+        "thebodyfirm.com",
+        "thecheesegeek.com",
+        "thefoldlondon.com",
+        "thefloweryard.co.uk",
+        "thediamondstore.co.uk",
+        "thefragranceshop.co.uk",
+        "thedrybar.com",
+        "thedirect.com",
+        "thedirtychic.com",
+        "thedenkitco.com",
+        "thecremeshop.com",
+        "thehouseofmarley.co.uk",
+        "thelandmarklondon.wearegifted.co.uk",
+        "thehuggshop.co.uk",
+        "thelittlebotanical.com",
+        "theisleofparadise.com",
+        "theordinary.com",
+        "theoodie.co.uk",
+        "therabody.com",
+        "theowstore.com",
+        "thenueco.com",
+        "therealdeal.com",
+        "therange.co.uk",
+        "thepowdershampoo.com",
+        "theskinexperts.co.uk",
+        "thewoolroom.com",
+        "threewarriors.co.uk",
+        "thriday.com.au",
+        "tielleloveluxury.co.uk",
+        "tillysveaas.co.uk",
+        "tmlewin.co.uk",
+        "tkmaxx.com",
+        "tomlane.co",
+        "tommeetippee.com",
+        "toccin.com",
+        "traceycox.com",
+        "transferwise.com",
+        "transformulas.com",
+        "treatwell.co.uk",
+        "trinnylondon.com",
+        "tropicskincare.com",
+        "trotters.co.uk",
+        "trophyskin.com",
+        "tulaskincare.co.uk",
+        "tweezerman.com",
+        "tusting.co.uk",
+        "twinset.com",
+        "ugg.com",
+        "uk.elemis.com",
+        "uk.defacto.com",
+        "uk.caudalie.com",
+        "uk.iherb.com",
+        "uk.glossier.com",
+        "uk.jonathanadler.com",
+        "uk.air-up.com",
+        "uk.alessi.com",
+        "uk.jshealthvitamins.com",
+        "uk.coach.com",
+        "uk.loccitane.com",
+        "uk.cocoandeve.com",
+        "uk.gymshark.com",
+        "uk.russellhobbs.com",
+        "uk.pmdbeauty.com",
+        "uk.ryobitools.eu",
+        "uk.saintandsofia.com",
+        "uk.olverum.com",
+        "uk.livingnatureworld.com",
+        "uk.myinvity.com",
+        "uk.mylivia.com",
+        "uk.ooni.com",
+        "uk.sandandsky.com",
+        "uk.sandro-paris.com",
+        "uk.matteroffact.com",
+        "uk.nobis.com",
+        "uk.pandora.net",
+        "uk.shokz.com",
+        "uk.rails.com",
+        "uk.stanley1913.com",
+        "uk.shop.gymshark.com",
+        "uk.theinkeylist.com",
+        "uk.store.asus.com",
+        "uklash.com",
+        "uk.tile.com",
+        "ulo.co",
+        "unsubscribed.com",
+        "urbanstems.com",
+        "urbandecay.co.uk",
+        "us.boohoo.com",
+        "us.champohaircare.com",
+        "us.babor.com",
+        "us.modibodi.com",
+        "us.princesspolly.com",
+        "us.publicdesire.com",
+        "us.revivecollagen.com",
+        "us.shein.com",
+        "us.thecollagen.co",
+        "us.thisworks.com",
+        "uswitch.com",
+        "vacayswimwear.com.au",
+        "us.whogivesacrap.org",
+        "utan.co.uk",
+        "vanclarke.com",
+        "veronicabeard.com",
+        "versineskincare.com",
+        "victoriabeckhambeauty.com",
+        "vileda.co.uk",
+        "vieve.co.uk",
+        "virginexperiencedays.co.uk",
+        "vivaia.com",
+        "vivaiacollection.com",
+        "vivolife.com",
+        "waitrosecellar.com",
+        "walklondonshoes.com",
+        "warehousefashion.com",
+        "waterstones.com",
+        "waringbrooke.com",
+        "wealthify.com",
+        "wayfair.co.uk",
+        "wearereset.co",
+        "wearefaace.com",
+        "wearetala.com",
+        "welcometowondervalley.com",
+        "whirli.com",
+        "whiskyshop.com",
+        "whistles.com",
+        "wildjac.co.uk",
+        "wildsciencelab.com",
+        "willowandhall.co.uk",
+        "wildflowerpaperclub.com",
+        "withnothingunderneath.com",
+        "withlovedarling.com",
+        "wolfandbadger.com",
+        "woodentoyshop.co.uk",
+        "wuffes.com",
+        "wyselondon.com",
+        "xandrolab.com",
+        "youbeautyshop.co.uk",
+        "yourstory.co.uk",
+        "yumbles.com",
+        "yummikeys.com",
+        "zenbodys.com",
+        "zennioptical.com",
+        "zoelev.com",
+        "zimplikids.com",
+        "zoflora.co.uk"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 17,
+      "value": [
+        "investing.thisismoney.co.uk",
+        "metro.co.uk",
+        "mailonsunday.co.uk",
+        "mailsportbetting.com",
+        "mailfeatures.com",
+        "pregnancies.co.uk",
+        "thisismoney.co.uk",
+        "mailtxt.com",
+        "dailym.ai",
+        "dailybraille.co.uk",
+        "thismon.ee",
+        "financialmail.co.uk",
+        "mailsoccer.com",
+        "thisiswhatson.com",
+        "entertainmentmail.co.uk",
+        "mailonline.co.uk",
+        "thisismoney.com"
+      ]
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 1,
+      "socialsAvailable": [
+        "facebook"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/dailymail"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 1,
+      "sampleValue": "Online / Services",
+      "value": [
+        "Online / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Online / Services",
+        "rank": 1,
+        "score": 100
+      },
+      "value": [
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 100
+        }
+      ]
+    }
+  }
+}

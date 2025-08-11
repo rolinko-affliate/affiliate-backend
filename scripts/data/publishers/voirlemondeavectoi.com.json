@@ -1,0 +1,637 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Tradedoubler"
+      ],
+      "value": [
+        "Tradedoubler"
+      ]
+    },
+    "countryRankings": {
+      "count": 3,
+      "highestValue": {
+        "countryCode": "fr",
+        "score": 0.5
+      },
+      "sampleValue": [
+        {
+          "countryCode": "fr",
+          "score": 0.5
+        },
+        {
+          "countryCode": "be",
+          "score": 0.2
+        },
+        {
+          "countryCode": "ca",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "fr",
+          "score": 0.5
+        },
+        {
+          "countryCode": "be",
+          "score": 0.2
+        },
+        {
+          "countryCode": "ca",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "voirlemondeavectoi.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "hotel"
+        },
+        {
+          "score": 0.54043126,
+          "value": "hôtel"
+        },
+        {
+          "score": 0.099460915,
+          "value": "proximité"
+        },
+        {
+          "score": 0.09218329,
+          "value": "hôtel proximité"
+        },
+        {
+          "score": 0.09056604,
+          "value": "hotele"
+        },
+        {
+          "score": 0.09056604,
+          "value": "citie"
+        },
+        {
+          "score": 0.0787062,
+          "value": "dicht"
+        },
+        {
+          "score": 0.06253369,
+          "value": "voyage"
+        },
+        {
+          "score": 0.0541779,
+          "value": "hotell"
+        },
+        {
+          "score": 0.049056605,
+          "value": "site"
+        },
+        {
+          "score": 0.04690027,
+          "value": "hotel deal"
+        },
+        {
+          "score": 0.043665767,
+          "value": "recherche"
+        },
+        {
+          "score": 0.043665767,
+          "value": "popular"
+        },
+        {
+          "score": 0.042857144,
+          "value": "autoverhuur"
+        },
+        {
+          "score": 0.04123989,
+          "value": "résultat"
+        },
+        {
+          "score": 0.04123989,
+          "value": "politique"
+        },
+        {
+          "score": 0.04123989,
+          "value": "eur"
+        },
+        {
+          "score": 0.03908356,
+          "value": "londre"
+        },
+        {
+          "score": 0.038274933,
+          "value": "paramètre"
+        },
+        {
+          "score": 0.03800539,
+          "value": "voiture"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "hotel"
+        },
+        {
+          "score": 0.54043126,
+          "value": "hôtel"
+        },
+        {
+          "score": 0.099460915,
+          "value": "proximité"
+        },
+        {
+          "score": 0.09218329,
+          "value": "hôtel proximité"
+        },
+        {
+          "score": 0.09056604,
+          "value": "hotele"
+        },
+        {
+          "score": 0.09056604,
+          "value": "citie"
+        },
+        {
+          "score": 0.0787062,
+          "value": "dicht"
+        },
+        {
+          "score": 0.06253369,
+          "value": "voyage"
+        },
+        {
+          "score": 0.0541779,
+          "value": "hotell"
+        },
+        {
+          "score": 0.049056605,
+          "value": "site"
+        },
+        {
+          "score": 0.04690027,
+          "value": "hotel deal"
+        },
+        {
+          "score": 0.043665767,
+          "value": "recherche"
+        },
+        {
+          "score": 0.043665767,
+          "value": "popular"
+        },
+        {
+          "score": 0.042857144,
+          "value": "autoverhuur"
+        },
+        {
+          "score": 0.04123989,
+          "value": "résultat"
+        },
+        {
+          "score": 0.04123989,
+          "value": "politique"
+        },
+        {
+          "score": 0.04123989,
+          "value": "eur"
+        },
+        {
+          "score": 0.03908356,
+          "value": "londre"
+        },
+        {
+          "score": 0.038274933,
+          "value": "paramètre"
+        },
+        {
+          "score": 0.03800539,
+          "value": "voiture"
+        },
+        {
+          "score": 0.03800539,
+          "value": "aide"
+        },
+        {
+          "score": 0.03773585,
+          "value": "location"
+        },
+        {
+          "score": 0.03504043,
+          "value": "chambre"
+        },
+        {
+          "score": 0.034231804,
+          "value": "matière"
+        },
+        {
+          "score": 0.034231804,
+          "value": "prix"
+        },
+        {
+          "score": 0.03234501,
+          "value": "flights"
+        },
+        {
+          "score": 0.029110512,
+          "value": "départ"
+        },
+        {
+          "score": 0.028032346,
+          "value": "hôtels"
+        },
+        {
+          "score": 0.027762802,
+          "value": "flüg"
+        },
+        {
+          "score": 0.02749326,
+          "value": "nottingham"
+        },
+        {
+          "score": 0.026415095,
+          "value": "vuelo"
+        },
+        {
+          "score": 0.025876012,
+          "value": "offre"
+        },
+        {
+          "score": 0.025067385,
+          "value": "accueil"
+        },
+        {
+          "score": 0.025067385,
+          "value": "politique matière"
+        },
+        {
+          "score": 0.025067385,
+          "value": "confidentialité"
+        },
+        {
+          "score": 0.02398922,
+          "value": "destination"
+        },
+        {
+          "score": 0.023450134,
+          "value": "hotellit"
+        },
+        {
+          "score": 0.023450134,
+          "value": "hotele barato"
+        },
+        {
+          "score": 0.023450134,
+          "value": "goed"
+        },
+        {
+          "score": 0.023450134,
+          "value": "barato"
+        },
+        {
+          "score": 0.023450134,
+          "value": "отели"
+        },
+        {
+          "score": 0.02264151,
+          "value": "hôtel location"
+        },
+        {
+          "score": 0.022371968,
+          "value": "cookiebeleid"
+        },
+        {
+          "score": 0.022102427,
+          "value": "partenaire"
+        },
+        {
+          "score": 0.021832883,
+          "value": "hoteller"
+        },
+        {
+          "score": 0.021832883,
+          "value": "zoekresultaat"
+        },
+        {
+          "score": 0.021832883,
+          "value": "rom"
+        },
+        {
+          "score": 0.021832883,
+          "value": "oteller"
+        },
+        {
+          "score": 0.0212938,
+          "value": "établissement"
+        },
+        {
+          "score": 0.020754717,
+          "value": "uni"
+        },
+        {
+          "score": 0.020754717,
+          "value": "partner"
+        },
+        {
+          "score": 0.020485176,
+          "value": "centre"
+        },
+        {
+          "score": 0.01994609,
+          "value": "skyscanner"
+        },
+        {
+          "score": 0.01967655,
+          "value": "propos"
+        },
+        {
+          "score": 0.01967655,
+          "value": "meilleur"
+        },
+        {
+          "score": 0.01967655,
+          "value": "bordeaux"
+        },
+        {
+          "score": 0.019407008,
+          "value": "utilisation"
+        },
+        {
+          "score": 0.019137466,
+          "value": "ealing"
+        },
+        {
+          "score": 0.019137466,
+          "value": "madrid"
+        },
+        {
+          "score": 0.018867925,
+          "value": "reis"
+        },
+        {
+          "score": 0.018867925,
+          "value": "technologie"
+        },
+        {
+          "score": 0.018598383,
+          "value": "équipement"
+        },
+        {
+          "score": 0.018059298,
+          "value": "emplacement"
+        },
+        {
+          "score": 0.018059298,
+          "value": "kamer"
+        },
+        {
+          "score": 0.018059298,
+          "value": "covid"
+        },
+        {
+          "score": 0.017789757,
+          "value": "park"
+        },
+        {
+          "score": 0.017520215,
+          "value": "royaum"
+        },
+        {
+          "score": 0.017520215,
+          "value": "internet"
+        },
+        {
+          "score": 0.017250674,
+          "value": "vliegticket"
+        },
+        {
+          "score": 0.017250674,
+          "value": "commentaire"
+        },
+        {
+          "score": 0.016981132,
+          "value": "dicht hotel"
+        },
+        {
+          "score": 0.016981132,
+          "value": "vilamoura"
+        },
+        {
+          "score": 0.016981132,
+          "value": "étoile"
+        },
+        {
+          "score": 0.01671159,
+          "value": "york"
+        },
+        {
+          "score": 0.01671159,
+          "value": "salle"
+        },
+        {
+          "score": 0.01644205,
+          "value": "français"
+        },
+        {
+          "score": 0.01644205,
+          "value": "sintra"
+        },
+        {
+          "score": 0.01644205,
+          "value": "essentiel"
+        },
+        {
+          "score": 0.01644205,
+          "value": "locatie"
+        },
+        {
+          "score": 0.016172506,
+          "value": "vol destination"
+        },
+        {
+          "score": 0.015902964,
+          "value": "vie"
+        },
+        {
+          "score": 0.015902964,
+          "value": "média"
+        },
+        {
+          "score": 0.015902964,
+          "value": "janvier"
+        },
+        {
+          "score": 0.015633423,
+          "value": "info"
+        },
+        {
+          "score": 0.015633423,
+          "value": "hotel отели"
+        },
+        {
+          "score": 0.015633423,
+          "value": "emirate"
+        },
+        {
+          "score": 0.015363881,
+          "value": "aanbieding"
+        },
+        {
+          "score": 0.015363881,
+          "value": "авиабилеты"
+        },
+        {
+          "score": 0.015363881,
+          "value": "tanie"
+        },
+        {
+          "score": 0.015363881,
+          "value": "flyg"
+        },
+        {
+          "score": 0.015363881,
+          "value": "deutschland"
+        },
+        {
+          "score": 0.015363881,
+          "value": "lennot"
+        },
+        {
+          "score": 0.01509434,
+          "value": "réception"
+        },
+        {
+          "score": 0.01509434,
+          "value": "critère"
+        },
+        {
+          "score": 0.014824797,
+          "value": "français fr"
+        },
+        {
+          "score": 0.014824797,
+          "value": "petit"
+        },
+        {
+          "score": 0.014555256,
+          "value": "compagnie"
+        },
+        {
+          "score": 0.014555256,
+          "value": "hotel hotele"
+        },
+        {
+          "score": 0.014555256,
+          "value": "ster"
+        },
+        {
+          "score": 0.014285714,
+          "value": "prijs"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/voirlemondeavectoi.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://voirlemondeavectoi.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1,
+        "value": [
+          "skyscanner.fr"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 1,
+            "vertical": "Travel / Flights"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 1,
+      "value": [
+        "skyscanner.fr"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 5,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "instagram",
+        "pinterest"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/voirlemondeavectoi",
+        "instagram": "https://instagram.com/voirlemondeavectoi",
+        "pinterest": "https://pinterest.com/voirlemondeat",
+        "twitter": "https://twitter.com/voirlemavectoi",
+        "youtube": "https://youtube.com/channel/ucobo9o_zh3_gsuisprdnqmg"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Travel / Vacation",
+      "value": [
+        "Travel / Vacation",
+        "Travel / Accommodation",
+        "Travel / Flights"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Travel / Vacation",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Travel / Vacation",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Travel / Accommodation",
+          "rank": 1,
+          "score": 70
+        },
+        {
+          "name": "Travel / Flights",
+          "rank": 1,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

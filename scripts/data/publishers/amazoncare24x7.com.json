@@ -1,0 +1,637 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 3,
+      "sampleValue": [
+        "Awin",
+        "Rakuten",
+        "ShareASale"
+      ],
+      "value": [
+        "Awin",
+        "Rakuten",
+        "ShareASale"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.6
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "in",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.6
+        },
+        {
+          "countryCode": "in",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "amazoncare24x7.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "publisher"
+        },
+        {
+          "score": 0.9239516,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.8189964,
+          "value": "awin"
+        },
+        {
+          "score": 0.5752688,
+          "value": "advertiser"
+        },
+        {
+          "score": 0.56718135,
+          "value": "legal"
+        },
+        {
+          "score": 0.562724,
+          "value": "influencer"
+        },
+        {
+          "score": 0.49462366,
+          "value": "law"
+        },
+        {
+          "score": 0.4408602,
+          "value": "personal datum"
+        },
+        {
+          "score": 0.4247312,
+          "value": "network"
+        },
+        {
+          "score": 0.42114696,
+          "value": "compliance"
+        },
+        {
+          "score": 0.36379927,
+          "value": "commission"
+        },
+        {
+          "score": 0.36200717,
+          "value": "provider"
+        },
+        {
+          "score": 0.35848776,
+          "value": "event"
+        },
+        {
+          "score": 0.35842294,
+          "value": "market"
+        },
+        {
+          "score": 0.34767026,
+          "value": "global"
+        },
+        {
+          "score": 0.3211668,
+          "value": "watch"
+        },
+        {
+          "score": 0.31003585,
+          "value": "mailchimp"
+        },
+        {
+          "score": 0.30428645,
+          "value": "team"
+        },
+        {
+          "score": 0.29928315,
+          "value": "protection"
+        },
+        {
+          "score": 0.2956989,
+          "value": "request"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "publisher"
+        },
+        {
+          "score": 0.9239516,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.8189964,
+          "value": "awin"
+        },
+        {
+          "score": 0.5752688,
+          "value": "advertiser"
+        },
+        {
+          "score": 0.56718135,
+          "value": "legal"
+        },
+        {
+          "score": 0.562724,
+          "value": "influencer"
+        },
+        {
+          "score": 0.49462366,
+          "value": "law"
+        },
+        {
+          "score": 0.4408602,
+          "value": "personal datum"
+        },
+        {
+          "score": 0.4247312,
+          "value": "network"
+        },
+        {
+          "score": 0.42114696,
+          "value": "compliance"
+        },
+        {
+          "score": 0.36379927,
+          "value": "commission"
+        },
+        {
+          "score": 0.36200717,
+          "value": "provider"
+        },
+        {
+          "score": 0.35848776,
+          "value": "event"
+        },
+        {
+          "score": 0.35842294,
+          "value": "market"
+        },
+        {
+          "score": 0.34767026,
+          "value": "global"
+        },
+        {
+          "score": 0.3211668,
+          "value": "watch"
+        },
+        {
+          "score": 0.31003585,
+          "value": "mailchimp"
+        },
+        {
+          "score": 0.30428645,
+          "value": "team"
+        },
+        {
+          "score": 0.29928315,
+          "value": "protection"
+        },
+        {
+          "score": 0.2956989,
+          "value": "request"
+        },
+        {
+          "score": 0.27419356,
+          "value": "partner"
+        },
+        {
+          "score": 0.27060932,
+          "value": "sector"
+        },
+        {
+          "score": 0.26164874,
+          "value": "afiliado"
+        },
+        {
+          "score": 0.25,
+          "value": "outdoors"
+        },
+        {
+          "score": 0.2311828,
+          "value": "personnel"
+        },
+        {
+          "score": 0.22401434,
+          "value": "respect"
+        },
+        {
+          "score": 0.2204301,
+          "value": "insight"
+        },
+        {
+          "score": 0.21505377,
+          "value": "potential"
+        },
+        {
+          "score": 0.21285714,
+          "value": "watches"
+        },
+        {
+          "score": 0.21282625,
+          "value": "country"
+        },
+        {
+          "score": 0.20967741,
+          "value": "breach"
+        },
+        {
+          "score": 0.20967741,
+          "value": "legitimate"
+        },
+        {
+          "score": 0.20788531,
+          "value": "device"
+        },
+        {
+          "score": 0.2075,
+          "value": "chronograph"
+        },
+        {
+          "score": 0.2075,
+          "value": "tropical"
+        },
+        {
+          "score": 0.20430107,
+          "value": "identity"
+        },
+        {
+          "score": 0.20430107,
+          "value": "informacin"
+        },
+        {
+          "score": 0.20250896,
+          "value": "regulation"
+        },
+        {
+          "score": 0.19892474,
+          "value": "applicable"
+        },
+        {
+          "score": 0.19713262,
+          "value": "anunciant"
+        },
+        {
+          "score": 0.19447176,
+          "value": "lady"
+        },
+        {
+          "score": 0.18996416,
+          "value": "enforcement"
+        },
+        {
+          "score": 0.185,
+          "value": "thailand"
+        },
+        {
+          "score": 0.18409204,
+          "value": "exclusive"
+        },
+        {
+          "score": 0.1827957,
+          "value": "dato"
+        },
+        {
+          "score": 0.17562725,
+          "value": "donne"
+        },
+        {
+          "score": 0.17493418,
+          "value": "men"
+        },
+        {
+          "score": 0.16840868,
+          "value": "aviation"
+        },
+        {
+          "score": 0.1675,
+          "value": "flight"
+        },
+        {
+          "score": 0.16305372,
+          "value": "code"
+        },
+        {
+          "score": 0.16129032,
+          "value": "form"
+        },
+        {
+          "score": 0.16,
+          "value": "personalized"
+        },
+        {
+          "score": 0.16,
+          "value": "wear"
+        },
+        {
+          "score": 0.15949821,
+          "value": "permission"
+        },
+        {
+          "score": 0.15232974,
+          "value": "tracking"
+        },
+        {
+          "score": 0.15053764,
+          "value": "twitter"
+        },
+        {
+          "score": 0.14928639,
+          "value": "jewellery"
+        },
+        {
+          "score": 0.1469534,
+          "value": "acquisition"
+        },
+        {
+          "score": 0.14516129,
+          "value": "individual"
+        },
+        {
+          "score": 0.145,
+          "value": "packaging"
+        },
+        {
+          "score": 0.14336918,
+          "value": "legal right"
+        },
+        {
+          "score": 0.14336918,
+          "value": "clause"
+        },
+        {
+          "score": 0.14336918,
+          "value": "contacto"
+        },
+        {
+          "score": 0.13978495,
+          "value": "gdpr"
+        },
+        {
+          "score": 0.13978495,
+          "value": "global privacy"
+        },
+        {
+          "score": 0.13907398,
+          "value": "seiko"
+        },
+        {
+          "score": 0.13620071,
+          "value": "por"
+        },
+        {
+          "score": 0.13440861,
+          "value": "requirement"
+        },
+        {
+          "score": 0.13440861,
+          "value": "agency"
+        },
+        {
+          "score": 0.13261649,
+          "value": "nature"
+        },
+        {
+          "score": 0.1325,
+          "value": "bangkok"
+        },
+        {
+          "score": 0.1313805,
+          "value": "strap"
+        },
+        {
+          "score": 0.13082437,
+          "value": "springer"
+        },
+        {
+          "score": 0.13082437,
+          "value": "transaction"
+        },
+        {
+          "score": 0.12724014,
+          "value": "platform"
+        },
+        {
+          "score": 0.12724014,
+          "value": "personal party"
+        },
+        {
+          "score": 0.12724014,
+          "value": "dana"
+        },
+        {
+          "score": 0.12544803,
+          "value": "lead"
+        },
+        {
+          "score": 0.12544803,
+          "value": "merger"
+        },
+        {
+          "score": 0.12544803,
+          "value": "proceeding"
+        },
+        {
+          "score": 0.12544803,
+          "value": "legal proceeding"
+        },
+        {
+          "score": 0.12544803,
+          "value": "risk"
+        },
+        {
+          "score": 0.12544803,
+          "value": "entity"
+        },
+        {
+          "score": 0.125043,
+          "value": "luxury"
+        },
+        {
+          "score": 0.125,
+          "value": "straps"
+        },
+        {
+          "score": 0.123655915,
+          "value": "international"
+        },
+        {
+          "score": 0.12246466,
+          "value": "colour"
+        },
+        {
+          "score": 0.1218638,
+          "value": "basis"
+        },
+        {
+          "score": 0.1218638,
+          "value": "ccpa"
+        },
+        {
+          "score": 0.1218638,
+          "value": "personal entity"
+        },
+        {
+          "score": 0.12070262,
+          "value": "gold"
+        },
+        {
+          "score": 0.12007169,
+          "value": "training"
+        },
+        {
+          "score": 0.11827957,
+          "value": "reach"
+        },
+        {
+          "score": 0.11827957,
+          "value": "obligation"
+        },
+        {
+          "score": 0.117634006,
+          "value": "mechanical"
+        },
+        {
+          "score": 0.11720546,
+          "value": "style"
+        },
+        {
+          "score": 0.11678366,
+          "value": "leather"
+        },
+        {
+          "score": 0.11501649,
+          "value": "card"
+        },
+        {
+          "score": 0.11469534,
+          "value": "expertise"
+        },
+        {
+          "score": 0.11469534,
+          "value": "internet"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/amazoncare24x7.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://amazoncare24x7.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 8,
+        "value": [
+          "awin.com",
+          "beaverbrooks.co.uk",
+          "brathwait.com",
+          "bremont.com",
+          "victorinox.com",
+          "lapizta.com",
+          "undone.com",
+          "watchshop.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 4.35,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 1.25,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Fashion / Jewellery"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 8,
+      "value": [
+        "awin.com",
+        "beaverbrooks.co.uk",
+        "brathwait.com",
+        "bremont.com",
+        "victorinox.com",
+        "lapizta.com",
+        "undone.com",
+        "watchshop.com"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Business / Services",
+      "value": [
+        "Business / Services",
+        "Online / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Business / Services",
+        "rank": 1,
+        "score": 80
+      },
+      "value": [
+        {
+          "name": "Business / Services",
+          "rank": 1,
+          "score": 80
+        },
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

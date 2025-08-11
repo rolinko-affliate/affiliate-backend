@@ -1,0 +1,158 @@
+{
+  "advertiser": {
+    "affiliateNetworks": {
+      "count": 4,
+      "sampleValue": [
+        "Digidip",
+        "Refersion",
+        "ShareASale"
+      ],
+      "value": [
+        "Digidip",
+        "Refersion",
+        "ShareASale",
+        "Viglink"
+      ]
+    },
+    "backlinks": {},
+    "contactEmails": {
+      "count": 2,
+      "error": false,
+      "value": [
+        {
+          "department": "support",
+          "value": "affiliate@tusolwellness.com"
+        },
+        {
+          "department": "support",
+          "value": "hello@tusolwellness.com"
+        }
+      ]
+    },
+    "domain": "tusolwellness.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "metaData": {
+      "description": "Organic, sustainable smoothies designed to support metabolism, collagen, energy and immunity. Research-backed and ready in under 1 minute.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/tusolwellness.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://tusolwellness.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 53
+      },
+      "partnersAdded": {
+        "count": 1,
+        "value": [
+          {
+            "domain": "retailreviewhub.com"
+          }
+        ]
+      },
+      "partnersRemoved": {
+        "count": 2,
+        "value": [
+          {
+            "domain": "nutritionalvibe.com"
+          },
+          {
+            "domain": "hellosubscription.com"
+          }
+        ]
+      },
+      "promotypeMix": {
+        "value": [
+          {
+            "count": 12,
+            "promotype": "blog",
+            "value": [
+              "10reviewsplus.com",
+              "500toprated.com",
+              "amazon.co.uk",
+              "babylonbee.com",
+              "feelmoregooder.com",
+              "fittbe.com",
+              "mysubscriptionaddiction.com",
+              "oola.com",
+              "player.fm",
+              "poddtoppen.se",
+              "ubestpick.com",
+              "vitalityangel.com"
+            ]
+          },
+          {
+            "count": 3,
+            "promotype": "student",
+            "value": [
+              "amazon.com.au",
+              "droppricetoday.com",
+              "ivoox.com"
+            ]
+          },
+          {
+            "count": 6,
+            "promotype": "incentive",
+            "value": [
+              "couponifier.com",
+              "couponsnake.com",
+              "especialcoupons.com",
+              "trycoupon.net",
+              "uttercoupons.com",
+              "x2coupons.com"
+            ]
+          },
+          {
+            "count": 2,
+            "promotype": "content",
+            "value": [
+              "missmillmag.com",
+              "thefitnessjunkieblog.com"
+            ]
+          }
+        ]
+      }
+    },
+    "relatedAdvertisers": {
+      "count": 1,
+      "value": [
+        "somethin.com"
+      ]
+    },
+    "socialMedia": {
+      "count": 3,
+      "socialsAvailable": [
+        "twitter",
+        "facebook",
+        "instagram"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/tusolwellness",
+        "instagram": "https://instagram.com/tusolwellness",
+        "twitter": "https://twitter.com/tusolwellness"
+      }
+    },
+    "verticals": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Health / Wellbeing",
+        "rank": 2,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Business / Ecommerce",
+          "rank": 2,
+          "score": 70
+        },
+        {
+          "name": "Health / Wellbeing",
+          "rank": 2,
+          "score": 90
+        }
+      ]
+    }
+  }
+}

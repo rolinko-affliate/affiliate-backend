@@ -1,0 +1,945 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "Skimlinks"
+      ],
+      "value": [
+        "Skimlinks"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.2
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.2
+        },
+        {
+          "countryCode": "cn",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.2
+        },
+        {
+          "countryCode": "cn",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "blakecoinmining.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "seller"
+        },
+        {
+          "score": 0.9731858,
+          "value": "amazon"
+        },
+        {
+          "score": 0.63424116,
+          "value": "store"
+        },
+        {
+          "score": 0.5102848,
+          "value": "sign"
+        },
+        {
+          "score": 0.497499,
+          "value": "device"
+        },
+        {
+          "score": 0.45137838,
+          "value": "video"
+        },
+        {
+          "score": 0.41162187,
+          "value": "program"
+        },
+        {
+          "score": 0.39983067,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.37822598,
+          "value": "fee"
+        },
+        {
+          "score": 0.34099993,
+          "value": "central"
+        },
+        {
+          "score": 0.31600338,
+          "value": "team"
+        },
+        {
+          "score": 0.30756447,
+          "value": "tech"
+        },
+        {
+          "score": 0.29299653,
+          "value": "card"
+        },
+        {
+          "score": 0.2744613,
+          "value": "fba"
+        },
+        {
+          "score": 0.26735666,
+          "value": "health"
+        },
+        {
+          "score": 0.25953856,
+          "value": "digital"
+        },
+        {
+          "score": 0.25574994,
+          "value": "prime"
+        },
+        {
+          "score": 0.2397762,
+          "value": "restriction"
+        },
+        {
+          "score": 0.23354742,
+          "value": "sports"
+        },
+        {
+          "score": 0.23346476,
+          "value": "technology"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "seller"
+        },
+        {
+          "score": 0.9731858,
+          "value": "amazon"
+        },
+        {
+          "score": 0.63424116,
+          "value": "store"
+        },
+        {
+          "score": 0.5102848,
+          "value": "sign"
+        },
+        {
+          "score": 0.497499,
+          "value": "device"
+        },
+        {
+          "score": 0.45137838,
+          "value": "video"
+        },
+        {
+          "score": 0.41162187,
+          "value": "program"
+        },
+        {
+          "score": 0.39983067,
+          "value": "affiliate"
+        },
+        {
+          "score": 0.37822598,
+          "value": "fee"
+        },
+        {
+          "score": 0.34099993,
+          "value": "central"
+        },
+        {
+          "score": 0.31600338,
+          "value": "team"
+        },
+        {
+          "score": 0.30756447,
+          "value": "tech"
+        },
+        {
+          "score": 0.29299653,
+          "value": "card"
+        },
+        {
+          "score": 0.2744613,
+          "value": "fba"
+        },
+        {
+          "score": 0.26735666,
+          "value": "health"
+        },
+        {
+          "score": 0.25953856,
+          "value": "digital"
+        },
+        {
+          "score": 0.25574994,
+          "value": "prime"
+        },
+        {
+          "score": 0.2397762,
+          "value": "restriction"
+        },
+        {
+          "score": 0.23354742,
+          "value": "sports"
+        },
+        {
+          "score": 0.23346476,
+          "value": "technology"
+        },
+        {
+          "score": 0.23051023,
+          "value": "marketplace"
+        },
+        {
+          "score": 0.22583169,
+          "value": "care"
+        },
+        {
+          "score": 0.22336468,
+          "value": "event"
+        },
+        {
+          "score": 0.22258177,
+          "value": "requirement"
+        },
+        {
+          "score": 0.21023734,
+          "value": "education"
+        },
+        {
+          "score": 0.20662664,
+          "value": "electronics"
+        },
+        {
+          "score": 0.20491053,
+          "value": "kids"
+        },
+        {
+          "score": 0.2031313,
+          "value": "book"
+        },
+        {
+          "score": 0.20006473,
+          "value": "career"
+        },
+        {
+          "score": 0.19808,
+          "value": "feedback"
+        },
+        {
+          "score": 0.1933392,
+          "value": "kindle"
+        },
+        {
+          "score": 0.19049063,
+          "value": "accessory"
+        },
+        {
+          "score": 0.18780468,
+          "value": "professional"
+        },
+        {
+          "score": 0.18548183,
+          "value": "supplier"
+        },
+        {
+          "score": 0.17953658,
+          "value": "photography"
+        },
+        {
+          "score": 0.17828302,
+          "value": "fulfillment"
+        },
+        {
+          "score": 0.17471394,
+          "value": "category"
+        },
+        {
+          "score": 0.17457034,
+          "value": "apple"
+        },
+        {
+          "score": 0.17261669,
+          "value": "food"
+        },
+        {
+          "score": 0.17230538,
+          "value": "camera"
+        },
+        {
+          "score": 0.17023854,
+          "value": "military"
+        },
+        {
+          "score": 0.16995415,
+          "value": "app"
+        },
+        {
+          "score": 0.1644452,
+          "value": "request"
+        },
+        {
+          "score": 0.16400982,
+          "value": "assistance"
+        },
+        {
+          "score": 0.16302736,
+          "value": "computers"
+        },
+        {
+          "score": 0.16296537,
+          "value": "walmart"
+        },
+        {
+          "score": 0.15765218,
+          "value": "target"
+        },
+        {
+          "score": 0.15683645,
+          "value": "manufacturers"
+        },
+        {
+          "score": 0.15654008,
+          "value": "phone"
+        },
+        {
+          "score": 0.15302138,
+          "value": "warranty"
+        },
+        {
+          "score": 0.15213843,
+          "value": "prime video"
+        },
+        {
+          "score": 0.15157412,
+          "value": "wireless"
+        },
+        {
+          "score": 0.15011644,
+          "value": "box"
+        },
+        {
+          "score": 0.14698589,
+          "value": "personnel"
+        },
+        {
+          "score": 0.14643122,
+          "value": "share"
+        },
+        {
+          "score": 0.14572352,
+          "value": "government"
+        },
+        {
+          "score": 0.14521894,
+          "value": "military personnel"
+        },
+        {
+          "score": 0.14521894,
+          "value": "temporary"
+        },
+        {
+          "score": 0.14521894,
+          "value": "duty"
+        },
+        {
+          "score": 0.14521894,
+          "value": "temporary duty"
+        },
+        {
+          "score": 0.14367941,
+          "value": "light"
+        },
+        {
+          "score": 0.14104867,
+          "value": "mask"
+        },
+        {
+          "score": 0.13882318,
+          "value": "global"
+        },
+        {
+          "score": 0.13541201,
+          "value": "issue"
+        },
+        {
+          "score": 0.13362487,
+          "value": "portable"
+        },
+        {
+          "score": 0.1323932,
+          "value": "supply"
+        },
+        {
+          "score": 0.13231754,
+          "value": "department"
+        },
+        {
+          "score": 0.1320728,
+          "value": "surveillance"
+        },
+        {
+          "score": 0.1293459,
+          "value": "software"
+        },
+        {
+          "score": 0.12920508,
+          "value": "space"
+        },
+        {
+          "score": 0.12850833,
+          "value": "skin"
+        },
+        {
+          "score": 0.12395391,
+          "value": "investor"
+        },
+        {
+          "score": 0.123566784,
+          "value": "fashion"
+        },
+        {
+          "score": 0.12333983,
+          "value": "agreement"
+        },
+        {
+          "score": 0.12240458,
+          "value": "community"
+        },
+        {
+          "score": 0.121783026,
+          "value": "sport"
+        },
+        {
+          "score": 0.119569845,
+          "value": "human"
+        },
+        {
+          "score": 0.11888247,
+          "value": "family"
+        },
+        {
+          "score": 0.11878749,
+          "value": "solution"
+        },
+        {
+          "score": 0.1187248,
+          "value": "lighting"
+        },
+        {
+          "score": 0.118291035,
+          "value": "mattress"
+        },
+        {
+          "score": 0.11808321,
+          "value": "setting"
+        },
+        {
+          "score": 0.1167269,
+          "value": "automotive"
+        },
+        {
+          "score": 0.11538557,
+          "value": "orders"
+        },
+        {
+          "score": 0.11342993,
+          "value": "notice"
+        },
+        {
+          "score": 0.11319822,
+          "value": "carrier"
+        },
+        {
+          "score": 0.1124059,
+          "value": "story"
+        },
+        {
+          "score": 0.11131187,
+          "value": "credit"
+        },
+        {
+          "score": 0.11033895,
+          "value": "packaging"
+        },
+        {
+          "score": 0.11016896,
+          "value": "screen"
+        },
+        {
+          "score": 0.10937279,
+          "value": "powered"
+        },
+        {
+          "score": 0.10849197,
+          "value": "save"
+        },
+        {
+          "score": 0.10830678,
+          "value": "entertainment"
+        },
+        {
+          "score": 0.107354574,
+          "value": "partner"
+        },
+        {
+          "score": 0.10636046,
+          "value": "subject"
+        },
+        {
+          "score": 0.105245516,
+          "value": "camcorders"
+        },
+        {
+          "score": 0.105245516,
+          "value": "cameras"
+        },
+        {
+          "score": 0.104743,
+          "value": "art"
+        },
+        {
+          "score": 0.10322027,
+          "value": "law"
+        },
+        {
+          "score": 0.10112192,
+          "value": "electronic"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 2,
+      "value": [
+        "http://blakecoinmining.com/",
+        "http://www.blakecoinmining.com/"
+      ]
+    },
+    "metaData": {
+      "description": "澳门六给彩开奖+结果2022查询,澳门六网站资料查询2022年,澳门六给彩官方网址 手机版+pc版 app下载,观看开奖直播 下载开奖结果.We bring you the future as it happens.",
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/blakecoinmining.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://blakecoinmining.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 105,
+        "value": [
+          "amazonaws.com",
+          "pxf.io",
+          "4ocean.com",
+          "apple.com",
+          "amazon.com",
+          "abebooks.com",
+          "microsoft.com",
+          "wyze.com",
+          "meta.com",
+          "dell.com",
+          "samsung.com",
+          "adorama.com",
+          "hulu.com",
+          "walmart.com",
+          "amazon.co.uk",
+          "espn.com",
+          "airbandmask.com",
+          "youtube.com",
+          "shopmoment.com",
+          "arcteryx.com",
+          "wired.com",
+          "armbrustusa.com",
+          "sonos.com",
+          "samsclub.com",
+          "discoveryplus.com",
+          "parachutehome.com",
+          "avantlink.com",
+          "awarasleep.com",
+          "awin.com",
+          "backbone.com",
+          "baggu.com",
+          "curiositystream.com",
+          "bhphotovideo.com",
+          "urbanoutfitters.com",
+          "birch.fziv.net",
+          "homedepot.com",
+          "deezer.com",
+          "pandora.com",
+          "bookmate.com",
+          "britboxinternational.com",
+          "buff.com",
+          "marvel.com",
+          "cvs.com",
+          "carewell.com",
+          "target.com",
+          "casper.com",
+          "cj.dotomi.com",
+          "cleverhood.com",
+          "coalatree.com",
+          "tunein.com",
+          "gopro.com",
+          "consent.google.com",
+          "kobo.com",
+          "walgreens.com",
+          "courtyardla.com",
+          "crunchyroll.com",
+          "cuehealth.com",
+          "dcuniverseinfinite.com",
+          "demerbox.com",
+          "detect.com",
+          "dreamcloudsleep.com",
+          "eightsleep.com",
+          "eightsleep.kustomer.help",
+          "elfcosmetics.com",
+          "fujifilm-x.com",
+          "everlywell.com",
+          "expressmed.com",
+          "uniqlo.com",
+          "flowflexrapidtest.com",
+          "vistaprint.com",
+          "gitzo.com",
+          "ulta.com",
+          "hedleyandbennett.com",
+          "tuftandneedle.com",
+          "ihealthlabs.com",
+          "keetsa.com",
+          "leesa.com",
+          "letsongo.com",
+          "sears.com",
+          "marmot.com",
+          "mattressfirm.com",
+          "mubi.com",
+          "music.amazon.com",
+          "mytbr.co",
+          "nathansports.com",
+          "nectarsleep.com",
+          "outdoorresearch.com",
+          "paulaschoice.com",
+          "riteaid.com",
+          "planetary.org",
+          "play.google.com",
+          "primalwear.com",
+          "purple.com",
+          "ro.co",
+          "sanctuaryclothing.com",
+          "shareasale-analytics.com",
+          "shop.demetech.us",
+          "simplymedical.com",
+          "starface.world",
+          "sundayriley.com",
+          "tentree.com",
+          "timbuk2.com",
+          "walgreensbootsalliance.com",
+          "warbyparker.com",
+          "zitsticka.com"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 12.649999,
+            "vertical": "Health / Healthcare"
+          },
+          {
+            "count": 10.65,
+            "vertical": "Home / Beds & Bedding"
+          },
+          {
+            "count": 9.6,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 7.6,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 6.5999994,
+            "vertical": "Fashion / Clothing"
+          },
+          {
+            "count": 5.9,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 5.85,
+            "vertical": "Technology / Software"
+          },
+          {
+            "count": 5.75,
+            "vertical": "Health / Beauty"
+          },
+          {
+            "count": 4.95,
+            "vertical": "Business / Services"
+          },
+          {
+            "count": 4.75,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 3.8000002,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 3.75,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 2.8,
+            "vertical": "Sports / Outdoor"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Fashion / Accessories"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Sports / Fitness"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 1.8499999,
+            "vertical": "Home / Homeware"
+          },
+          {
+            "count": 1.65,
+            "vertical": "Entertainment / Gaming"
+          },
+          {
+            "count": 1.2,
+            "vertical": "Online / Services"
+          },
+          {
+            "count": 1,
+            "vertical": "Health / Eyecare"
+          },
+          {
+            "count": 1,
+            "vertical": "Home / Security"
+          },
+          {
+            "count": 1,
+            "vertical": "Sports / Equipment"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Business / Software"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Travel / Accommodation"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Business / Cyber Security"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Entertainment / Movies"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Home / DIY"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Online / Security"
+          },
+          {
+            "count": 0.7,
+            "vertical": "Entertainment / Hobbies"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 105,
+      "value": [
+        "amazonaws.com",
+        "pxf.io",
+        "4ocean.com",
+        "apple.com",
+        "amazon.com",
+        "abebooks.com",
+        "microsoft.com",
+        "wyze.com",
+        "meta.com",
+        "dell.com",
+        "samsung.com",
+        "adorama.com",
+        "hulu.com",
+        "walmart.com",
+        "amazon.co.uk",
+        "espn.com",
+        "airbandmask.com",
+        "youtube.com",
+        "shopmoment.com",
+        "arcteryx.com",
+        "wired.com",
+        "armbrustusa.com",
+        "sonos.com",
+        "samsclub.com",
+        "discoveryplus.com",
+        "parachutehome.com",
+        "avantlink.com",
+        "awarasleep.com",
+        "awin.com",
+        "backbone.com",
+        "baggu.com",
+        "curiositystream.com",
+        "bhphotovideo.com",
+        "urbanoutfitters.com",
+        "birch.fziv.net",
+        "homedepot.com",
+        "deezer.com",
+        "pandora.com",
+        "bookmate.com",
+        "britboxinternational.com",
+        "buff.com",
+        "marvel.com",
+        "cvs.com",
+        "carewell.com",
+        "target.com",
+        "casper.com",
+        "cj.dotomi.com",
+        "cleverhood.com",
+        "coalatree.com",
+        "tunein.com",
+        "gopro.com",
+        "consent.google.com",
+        "kobo.com",
+        "walgreens.com",
+        "courtyardla.com",
+        "crunchyroll.com",
+        "cuehealth.com",
+        "dcuniverseinfinite.com",
+        "demerbox.com",
+        "detect.com",
+        "dreamcloudsleep.com",
+        "eightsleep.com",
+        "eightsleep.kustomer.help",
+        "elfcosmetics.com",
+        "fujifilm-x.com",
+        "everlywell.com",
+        "expressmed.com",
+        "uniqlo.com",
+        "flowflexrapidtest.com",
+        "vistaprint.com",
+        "gitzo.com",
+        "ulta.com",
+        "hedleyandbennett.com",
+        "tuftandneedle.com",
+        "ihealthlabs.com",
+        "keetsa.com",
+        "leesa.com",
+        "letsongo.com",
+        "sears.com",
+        "marmot.com",
+        "mattressfirm.com",
+        "mubi.com",
+        "music.amazon.com",
+        "mytbr.co",
+        "nathansports.com",
+        "nectarsleep.com",
+        "outdoorresearch.com",
+        "paulaschoice.com",
+        "riteaid.com",
+        "planetary.org",
+        "play.google.com",
+        "primalwear.com",
+        "purple.com",
+        "ro.co",
+        "sanctuaryclothing.com",
+        "shareasale-analytics.com",
+        "shop.demetech.us",
+        "simplymedical.com",
+        "starface.world",
+        "sundayriley.com",
+        "tentree.com",
+        "timbuk2.com",
+        "walgreensbootsalliance.com",
+        "warbyparker.com",
+        "zitsticka.com"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 5,
+      "socialsAvailable": [
+        "twitter",
+        "youtube",
+        "facebook",
+        "instagram",
+        "pinterest"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/wired",
+        "instagram": "https://instagram.com/wired",
+        "pinterest": "https://pinterest.com/wired",
+        "twitter": "https://twitter.com/wired",
+        "youtube": "https://youtube.com/user/wired"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 1,
+      "sampleValue": "Finance / Forex & Crypto",
+      "value": [
+        "Finance / Forex & Crypto"
+      ]
+    },
+    "verticalsV2": {
+      "count": 1,
+      "sampleValue": {
+        "name": "Finance / Forex & Crypto",
+        "rank": 1,
+        "score": 95
+      },
+      "value": [
+        {
+          "name": "Finance / Forex & Crypto",
+          "rank": 1,
+          "score": 95
+        }
+      ]
+    }
+  }
+}

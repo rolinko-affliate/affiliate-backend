@@ -1,0 +1,233 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 8,
+      "sampleValue": [
+        "Awin",
+        "CJ Affiliate",
+        "Impact"
+      ],
+      "value": [
+        "Awin",
+        "CJ Affiliate",
+        "Impact",
+        "Partnerize",
+        "Rakuten",
+        "ShareASale",
+        "Skimlinks",
+        "Viglink"
+      ]
+    },
+    "countryRankings": {
+      "count": 2,
+      "highestValue": {
+        "countryCode": "us",
+        "score": 0.65
+      },
+      "sampleValue": [
+        {
+          "countryCode": "us",
+          "score": 0.65
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "us",
+          "score": 0.65
+        },
+        {
+          "countryCode": "gb",
+          "score": 0.1
+        }
+      ]
+    },
+    "domain": "dailygeekreport.com",
+    "keywords": {
+      "count": 0,
+      "sampleValue": [],
+      "value": []
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 4,
+      "value": [
+        "https://dailygeekreport.com/",
+        "https://www.dailygeekreport.com/",
+        "http://dailygeekreport.com/",
+        "http://www.dailygeekreport.com/"
+      ]
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/dailygeekreport.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://dailygeekreport.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 22,
+        "value": [
+          "etsy.com",
+          "apple.com",
+          "amazon.com",
+          "netflix.com",
+          "woot.com",
+          "hulu.com",
+          "anycubic.com",
+          "lego.com",
+          "ticketmaster.co.uk",
+          "max.com",
+          "sling.com",
+          "ebay.com",
+          "roughtrade.com",
+          "ticketmaster.com",
+          "disneystore.com",
+          "starz.com",
+          "paramountplus.com",
+          "magazinesdirect.com",
+          "music.apple.com",
+          "music.amazon.com",
+          "thriftbooks.com",
+          "ticketmaster.ie"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 5.9,
+            "vertical": "Entertainment / Streaming"
+          },
+          {
+            "count": 3.8,
+            "vertical": "Shopping / Department Stores"
+          },
+          {
+            "count": 3,
+            "vertical": "Entertainment / Tickets"
+          },
+          {
+            "count": 2.85,
+            "vertical": "Entertainment / Music"
+          },
+          {
+            "count": 1.95,
+            "vertical": "Entertainment / Books"
+          },
+          {
+            "count": 1.9,
+            "vertical": "Technology / Electronics"
+          },
+          {
+            "count": 1,
+            "vertical": "Business / Ecommerce"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Computers"
+          },
+          {
+            "count": 0.95,
+            "vertical": "Technology / Mobile & Broadband"
+          },
+          {
+            "count": 0.9,
+            "vertical": "Gifts / Kids"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 22,
+      "value": [
+        "etsy.com",
+        "apple.com",
+        "amazon.com",
+        "netflix.com",
+        "woot.com",
+        "hulu.com",
+        "anycubic.com",
+        "lego.com",
+        "ticketmaster.co.uk",
+        "max.com",
+        "sling.com",
+        "ebay.com",
+        "roughtrade.com",
+        "ticketmaster.com",
+        "disneystore.com",
+        "starz.com",
+        "paramountplus.com",
+        "magazinesdirect.com",
+        "music.apple.com",
+        "music.amazon.com",
+        "thriftbooks.com",
+        "ticketmaster.ie"
+      ]
+    },
+    "promotype": {
+      "value": "blog"
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": []
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 2,
+      "socialsAvailable": [
+        "twitter",
+        "facebook"
+      ],
+      "value": {
+        "facebook": "https://facebook.com/geekreportdaily",
+        "twitter": "https://twitter.com/geekreportdaily"
+      }
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 3,
+      "sampleValue": "Technology / Computers",
+      "value": [
+        "Technology / Computers",
+        "Entertainment / Gaming",
+        "Online / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 3,
+      "sampleValue": {
+        "name": "Technology / Computers",
+        "rank": 1,
+        "score": 85
+      },
+      "value": [
+        {
+          "name": "Technology / Computers",
+          "rank": 1,
+          "score": 85
+        },
+        {
+          "name": "Entertainment / Gaming",
+          "rank": 1,
+          "score": 70
+        },
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 60
+        }
+      ]
+    }
+  }
+}

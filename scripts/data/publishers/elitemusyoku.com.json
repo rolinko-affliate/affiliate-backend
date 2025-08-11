@@ -1,0 +1,603 @@
+{
+  "publisher": {
+    "affiliateNetworks": {
+      "count": 1,
+      "sampleValue": [
+        "A8"
+      ],
+      "value": [
+        "A8"
+      ]
+    },
+    "countryRankings": {
+      "count": 1,
+      "highestValue": {
+        "countryCode": "jp",
+        "score": 0.8
+      },
+      "sampleValue": [
+        {
+          "countryCode": "jp",
+          "score": 0.8
+        }
+      ],
+      "value": [
+        {
+          "countryCode": "jp",
+          "score": 0.8
+        }
+      ]
+    },
+    "domain": "elitemusyoku.com",
+    "keywords": {
+      "count": 100,
+      "sampleValue": [
+        {
+          "score": 1,
+          "value": "yahoo"
+        },
+        {
+          "score": 0.82419235,
+          "value": "open"
+        },
+        {
+          "score": 0.44027048,
+          "value": "プレスリリース"
+        },
+        {
+          "score": 0.39969948,
+          "value": "japan"
+        },
+        {
+          "score": 0.34259954,
+          "value": "yahoo japan"
+        },
+        {
+          "score": 0.21788129,
+          "value": "トップメッセージ"
+        },
+        {
+          "score": 0.20435762,
+          "value": "お知らせ"
+        },
+        {
+          "score": 0.1833208,
+          "value": "hack"
+        },
+        {
+          "score": 0.1833208,
+          "value": "tech"
+        },
+        {
+          "score": 0.16679189,
+          "value": "ニュース"
+        },
+        {
+          "score": 0.162284,
+          "value": "企業情報"
+        },
+        {
+          "score": 0.14500375,
+          "value": "csr"
+        },
+        {
+          "score": 0.14124718,
+          "value": "会社情報"
+        },
+        {
+          "score": 0.13523667,
+          "value": "open open"
+        },
+        {
+          "score": 0.13523667,
+          "value": "サービス テクノロジー"
+        },
+        {
+          "score": 0.13523667,
+          "value": "サービス"
+        },
+        {
+          "score": 0.13523667,
+          "value": "採用情報"
+        },
+        {
+          "score": 0.13523667,
+          "value": "テクノロジー"
+        },
+        {
+          "score": 0.13072878,
+          "value": "こちら"
+        },
+        {
+          "score": 0.12546957,
+          "value": "プレスリリース プレスリリース"
+        }
+      ],
+      "value": [
+        {
+          "score": 1,
+          "value": "yahoo"
+        },
+        {
+          "score": 0.82419235,
+          "value": "open"
+        },
+        {
+          "score": 0.44027048,
+          "value": "プレスリリース"
+        },
+        {
+          "score": 0.39969948,
+          "value": "japan"
+        },
+        {
+          "score": 0.34259954,
+          "value": "yahoo japan"
+        },
+        {
+          "score": 0.21788129,
+          "value": "トップメッセージ"
+        },
+        {
+          "score": 0.20435762,
+          "value": "お知らせ"
+        },
+        {
+          "score": 0.1833208,
+          "value": "hack"
+        },
+        {
+          "score": 0.1833208,
+          "value": "tech"
+        },
+        {
+          "score": 0.16679189,
+          "value": "ニュース"
+        },
+        {
+          "score": 0.162284,
+          "value": "企業情報"
+        },
+        {
+          "score": 0.14500375,
+          "value": "csr"
+        },
+        {
+          "score": 0.14124718,
+          "value": "会社情報"
+        },
+        {
+          "score": 0.13523667,
+          "value": "open open"
+        },
+        {
+          "score": 0.13523667,
+          "value": "サービス テクノロジー"
+        },
+        {
+          "score": 0.13523667,
+          "value": "サービス"
+        },
+        {
+          "score": 0.13523667,
+          "value": "採用情報"
+        },
+        {
+          "score": 0.13523667,
+          "value": "テクノロジー"
+        },
+        {
+          "score": 0.13072878,
+          "value": "こちら"
+        },
+        {
+          "score": 0.12546957,
+          "value": "プレスリリース プレスリリース"
+        },
+        {
+          "score": 0.12321563,
+          "value": "プレスリリース yahoo"
+        },
+        {
+          "score": 0.11870774,
+          "value": "トピックス"
+        },
+        {
+          "score": 0.11870774,
+          "value": "電子公告"
+        },
+        {
+          "score": 0.11870774,
+          "value": "インボイス制度導入"
+        },
+        {
+          "score": 0.11795642,
+          "value": "役員体制"
+        },
+        {
+          "score": 0.11795642,
+          "value": "役員体制 ヤフーの歴史"
+        },
+        {
+          "score": 0.11795642,
+          "value": "コーポレートブログ"
+        },
+        {
+          "score": 0.11795642,
+          "value": "ヤフーの歴史"
+        },
+        {
+          "score": 0.117205106,
+          "value": "会社情報 トップメッセージ"
+        },
+        {
+          "score": 0.117205106,
+          "value": "トップメッセージ インボイス制度導入"
+        },
+        {
+          "score": 0.117205106,
+          "value": "トピックス 電子公告"
+        },
+        {
+          "score": 0.117205106,
+          "value": "主なグループ会社 トピックス"
+        },
+        {
+          "score": 0.117205106,
+          "value": "主なグループ会社"
+        },
+        {
+          "score": 0.117205106,
+          "value": "コーポレートブログ 主なグループ会社"
+        },
+        {
+          "score": 0.117205106,
+          "value": "ヤフーの歴史 コーポレートブログ"
+        },
+        {
+          "score": 0.117205106,
+          "value": "インボイス制度導入 役員体制"
+        },
+        {
+          "score": 0.104432754,
+          "value": "message"
+        },
+        {
+          "score": 0.10217881,
+          "value": "誰もが活躍できる社会の実現"
+        },
+        {
+          "score": 0.101427495,
+          "value": "top message"
+        },
+        {
+          "score": 0.10067619,
+          "value": "情報技術社会の発展"
+        },
+        {
+          "score": 0.10067619,
+          "value": "持続可能な社会への挑戦"
+        },
+        {
+          "score": 0.09842224,
+          "value": "課題解決特集"
+        },
+        {
+          "score": 0.09842224,
+          "value": "情報技術社会の発展 誰もが活躍できる社会の実現"
+        },
+        {
+          "score": 0.09767093,
+          "value": "誰もが活躍できる社会の実現 持続可能な社会への挑戦"
+        },
+        {
+          "score": 0.096168295,
+          "value": "地域カーボンニュートラル"
+        },
+        {
+          "score": 0.096168295,
+          "value": "yahoo japanが挑戦する"
+        },
+        {
+          "score": 0.096168295,
+          "value": "促進プロジェクト"
+        },
+        {
+          "score": 0.096168295,
+          "value": "地域カーボンニュートラル 促進プロジェクト"
+        },
+        {
+          "score": 0.096168295,
+          "value": "japan 地域カーボンニュートラル"
+        },
+        {
+          "score": 0.096168295,
+          "value": "ヤフーの取り組み yahoo"
+        },
+        {
+          "score": 0.096168295,
+          "value": "東日本大震災における ヤフーの取り組み"
+        },
+        {
+          "score": 0.096168295,
+          "value": "課題解決特集 東日本大震災における"
+        },
+        {
+          "score": 0.096168295,
+          "value": "ヤフーの取り組み"
+        },
+        {
+          "score": 0.096168295,
+          "value": "持続可能な社会への挑戦 課題解決特集"
+        },
+        {
+          "score": 0.096168295,
+          "value": "東日本大震災における"
+        },
+        {
+          "score": 0.096168295,
+          "value": "社会課題解決の取り組み"
+        },
+        {
+          "score": 0.096168295,
+          "value": "japanが挑戦する 社会課題解決の取り組み"
+        },
+        {
+          "score": 0.096168295,
+          "value": "トップメッセージ top"
+        },
+        {
+          "score": 0.096168295,
+          "value": "japanが挑戦する"
+        },
+        {
+          "score": 0.096168295,
+          "value": "message english"
+        },
+        {
+          "score": 0.09391435,
+          "value": "conference"
+        },
+        {
+          "score": 0.093163036,
+          "value": "hack day"
+        },
+        {
+          "score": 0.093163036,
+          "value": "tech conference"
+        },
+        {
+          "score": 0.09090909,
+          "value": "english yahoo"
+        },
+        {
+          "score": 0.09015778,
+          "value": "ストアアドバイザー募集"
+        },
+        {
+          "score": 0.09015778,
+          "value": "ctoメッセージ ヤフーが目指す世界観"
+        },
+        {
+          "score": 0.09015778,
+          "value": "day hack"
+        },
+        {
+          "score": 0.09015778,
+          "value": "japanの研究開発 イベント"
+        },
+        {
+          "score": 0.09015778,
+          "value": "yahoo japanの研究開発"
+        },
+        {
+          "score": 0.09015778,
+          "value": "ラボ yahoo"
+        },
+        {
+          "score": 0.09015778,
+          "value": "yahoo ラボ"
+        },
+        {
+          "score": 0.09015778,
+          "value": "登壇動画 yahoo"
+        },
+        {
+          "score": 0.09015778,
+          "value": "登壇資料 登壇動画"
+        },
+        {
+          "score": 0.09015778,
+          "value": "blog 登壇資料"
+        },
+        {
+          "score": 0.09015778,
+          "value": "tech blog"
+        },
+        {
+          "score": 0.09015778,
+          "value": "oss 技術情報"
+        },
+        {
+          "score": 0.09015778,
+          "value": "id連携 oss"
+        },
+        {
+          "score": 0.09015778,
+          "value": "yahoo id連携"
+        },
+        {
+          "score": 0.09015778,
+          "value": "about us"
+        },
+        {
+          "score": 0.09015778,
+          "value": "apiドキュメント yahoo"
+        },
+        {
+          "score": 0.09015778,
+          "value": "ご利用ガイド apiドキュメント"
+        },
+        {
+          "score": 0.09015778,
+          "value": "アプリケーションの管理 ご利用ガイド"
+        },
+        {
+          "score": 0.09015778,
+          "value": "お知らせ サービス"
+        },
+        {
+          "score": 0.09015778,
+          "value": "open tech"
+        },
+        {
+          "score": 0.09015778,
+          "value": "電子公告 ニュース"
+        },
+        {
+          "score": 0.09015778,
+          "value": "数字で見るヤフー ヤフーが抱える技術課題"
+        },
+        {
+          "score": 0.09015778,
+          "value": "ヤフーが抱える技術課題 エンジニアの方へ"
+        },
+        {
+          "score": 0.09015778,
+          "value": "エンジニアの方へ workplace"
+        },
+        {
+          "score": 0.09015778,
+          "value": "働き方 カルチャー"
+        },
+        {
+          "score": 0.09015778,
+          "value": "カルチャー 福利厚生"
+        },
+        {
+          "score": 0.09015778,
+          "value": "福利厚生 オフィス紹介"
+        },
+        {
+          "score": 0.09015778,
+          "value": "オフィス紹介 障がいがある方へ"
+        },
+        {
+          "score": 0.09015778,
+          "value": "障がいがある方へ interview"
+        },
+        {
+          "score": 0.09015778,
+          "value": "社員インタビュー linotice"
+        },
+        {
+          "score": 0.09015778,
+          "value": "open お知らせ"
+        },
+        {
+          "score": 0.09015778,
+          "value": "よくある質問 検索"
+        },
+        {
+          "score": 0.09015778,
+          "value": "linotice recruitment"
+        },
+        {
+          "score": 0.09015778,
+          "value": "アプリケーションの管理"
+        },
+        {
+          "score": 0.09015778,
+          "value": "ご利用ガイド"
+        },
+        {
+          "score": 0.09015778,
+          "value": "apiドキュメント"
+        }
+      ]
+    },
+    "known": {
+      "value": false
+    },
+    "liveUrls": {
+      "count": 0,
+      "value": []
+    },
+    "metaData": {
+      "faviconImageUrl": "https://storage.googleapis.com/pd-meta/logos/elitemusyoku.com.png",
+      "screenshotImageUrl": "https://image.thum.io/get/auth/55050-c0ecd6a57589f0618f520d06885dac20/width/1200/crop/800/https://elitemusyoku.com"
+    },
+    "partnerInformation": {
+      "partners": {
+        "count": 1,
+        "value": [
+          "yahoo.co.jp"
+        ]
+      },
+      "partnersAdded": {
+        "count": 0,
+        "value": []
+      },
+      "partnersRemoved": {
+        "count": 0,
+        "value": []
+      },
+      "verticalMix": {
+        "value": [
+          {
+            "count": 0.9,
+            "vertical": "Online / Services"
+          }
+        ]
+      }
+    },
+    "partners": {
+      "count": 1,
+      "value": [
+        "yahoo.co.jp"
+      ]
+    },
+    "promotype": {
+      "value": null
+    },
+    "relatedPublishers": {
+      "count": 0,
+      "value": null
+    },
+    "relevance": 0,
+    "socialMedia": {
+      "count": 0,
+      "socialsAvailable": [],
+      "value": null
+    },
+    "trafficScore": 0,
+    "verticals": {
+      "count": 2,
+      "sampleValue": "Business / Jobs & Careers",
+      "value": [
+        "Business / Jobs & Careers",
+        "Online / Services"
+      ]
+    },
+    "verticalsV2": {
+      "count": 2,
+      "sampleValue": {
+        "name": "Business / Jobs & Careers",
+        "rank": 1,
+        "score": 90
+      },
+      "value": [
+        {
+          "name": "Business / Jobs & Careers",
+          "rank": 1,
+          "score": 90
+        },
+        {
+          "name": "Online / Services",
+          "rank": 1,
+          "score": 70
+        }
+      ]
+    }
+  }
+}

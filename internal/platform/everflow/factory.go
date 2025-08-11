@@ -1,9 +1,12 @@
 package everflow
 
 import (
+	"strings"
+
 	"github.com/affiliate-backend/internal/platform/everflow/advertiser"
 	"github.com/affiliate-backend/internal/platform/everflow/affiliate"
 	"github.com/affiliate-backend/internal/platform/everflow/offer"
+	"github.com/affiliate-backend/internal/platform/everflow/tracking"
 )
 
 // Config holds the configuration for Everflow clients
@@ -23,21 +26,27 @@ func NewIntegrationServiceWithClients(
 	campaignProviderMappingRepo CampaignProviderMappingRepository,
 ) *IntegrationService {
 	// Configure advertiser client
+	// Note: Advertiser client uses /v1/networks/advertisers path, so we need base URL without /v1
+	advertiserBaseURL := strings.TrimSuffix(config.BaseURL, "/v1")
 	advertiserConfig := advertiser.NewConfiguration()
 	advertiserConfig.Servers = []advertiser.ServerConfiguration{
 		{
-			URL: config.BaseURL,
+			URL: advertiserBaseURL,
 		},
 	}
+	// Add Everflow API key header
+	advertiserConfig.AddDefaultHeader("X-Eflow-API-Key", config.APIKey)
 	advertiserClient := advertiser.NewAPIClient(advertiserConfig)
 
 	// Configure affiliate client
 	affiliateConfig := affiliate.NewConfiguration()
 	affiliateConfig.Servers = []affiliate.ServerConfiguration{
 		{
-			URL: config.BaseURL,
+			URL: config.BaseURL, // BaseURL already includes /v1
 		},
 	}
+	// Add Everflow API key header
+	affiliateConfig.AddDefaultHeader("X-Eflow-API-Key", config.APIKey)
 	affiliateClient := affiliate.NewAPIClient(affiliateConfig)
 
 	// Configure offer client
@@ -47,12 +56,26 @@ func NewIntegrationServiceWithClients(
 			URL: config.BaseURL,
 		},
 	}
+	// Add Everflow API key header
+	offerConfig.AddDefaultHeader("X-Eflow-API-Key", config.APIKey)
 	offerClient := offer.NewAPIClient(offerConfig)
+
+	// Configure tracking client
+	trackingConfig := tracking.NewConfiguration()
+	trackingConfig.Servers = []tracking.ServerConfiguration{
+		{
+			URL: config.BaseURL,
+		},
+	}
+	// Add Everflow API key header
+	trackingConfig.AddDefaultHeader("X-Eflow-API-Key", config.APIKey)
+	trackingClient := tracking.NewAPIClient(trackingConfig)
 
 	return NewIntegrationService(
 		advertiserClient,
 		affiliateClient,
 		offerClient,
+		trackingClient,
 		advertiserRepo,
 		affiliateRepo,
 		campaignRepo,

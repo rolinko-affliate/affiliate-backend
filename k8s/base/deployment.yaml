@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: asia-east2-docker.pkg.dev/jinko-test/jinko-test-docker-repo/saas-app:0.0.15
+        image: asia-east2-docker.pkg.dev/jinko-test/jinko-test-docker-repo/saas-app:0.0.16
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -56,6 +56,11 @@ spec:
             secretKeyRef:
               name: saas-bff-secrets
               key: encryption_key
+        - name: EVERFLOW_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: saas-bff-secrets
+              key: everflow_api_key
         - name: MOCK_MODE
           value: "true"
 

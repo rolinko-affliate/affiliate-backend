@@ -24,7 +24,7 @@ spec:
       serviceAccountName: saas-bff-ksa
       containers:
       - name: migration
-        image: asia-east2-docker.pkg.dev/jinko-test/jinko-test-docker-repo/saas-app:0.0.15
+        image: asia-east2-docker.pkg.dev/jinko-test/jinko-test-docker-repo/saas-app:0.0.16
         command: ["/bin/sh"]
         args:
           - "-c"
@@ -70,8 +70,13 @@ spec:
             secretKeyRef:
               name: saas-bff-secrets
               key: encryption_key
+        - name: EVERFLOW_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: saas-bff-secrets
+              key: everflow_api_key
         - name: MOCK_MODE
-          value: "true"
+          value: "false"
         resources:
           requests:
             cpu: "100m"

@@ -62,7 +62,7 @@ spec:
               name: saas-bff-secrets
               key: everflow_api_key
         - name: MOCK_MODE
-          value: "true"
+          value: "false"
 
         readinessProbe:
           httpGet:

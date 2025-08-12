@@ -56,6 +56,7 @@ func LoadConfig() {
 
 	viper.SetDefault("SUPABASE_JWT_SECRET", "") // Default password, should be overridden
 	viper.SetDefault("ENCRYPTION_KEY", "")      // Default password, should be overridden
+	viper.SetDefault("EVERFLOW_API_KEY", "")    // Default password, should be overridden
 	viper.SetDefault("MockMode", false)
 
 	// Logging defaults
@@ -98,6 +99,9 @@ func LoadConfig() {
 	}
 	if AppConfig.EncryptionKey == "" {
 		log.Fatal("ENCRYPTION_KEY must be set for securing provider credentials")
+	}
+	if AppConfig.EverflowAPIKey == "" {
+		log.Println("EVERFLOW_API_KEY not set, some features may be limited")
 	}
 }
 

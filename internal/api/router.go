@@ -26,6 +26,7 @@ type RouterOptions struct {
 	PublisherMessagingHandler              *handlers.PublisherMessagingHandler
 	BillingHandler                         *handlers.BillingHandler
 	WebhookHandler                         *handlers.WebhookHandler
+	ReportingHandler                       *handlers.ReportingHandler
 }
 
 // SetupRouter sets up the API router
@@ -262,6 +263,24 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		billing.POST("/recharge", opts.BillingHandler.Recharge)
 		billing.GET("/transactions", opts.BillingHandler.GetTransactionHistory)
 	}
+
+	// --- Reporting Routes ---
+	reports := v1.Group("/reports")
+	reports.Use(profileMW()) // Load profile first to get user role
+	reports.Use(rbacMW("AdvertiserManager", "AffiliateManager", "Admin")) // Allow all managers and admins
+	{
+		// Performance reporting
+		reports.GET("/performance/summary", opts.ReportingHandler.GetPerformanceSummary)
+		reports.GET("/performance/timeseries", opts.ReportingHandler.GetPerformanceTimeSeries)
+		reports.GET("/performance/daily", opts.ReportingHandler.GetDailyPerformanceReport)
+
+		// Event reporting
+		reports.GET("/conversions", opts.ReportingHandler.GetConversionsReport)
+		reports.GET("/clicks", opts.ReportingHandler.GetClicksReport)
+	}
+
+	// Campaigns list endpoint (for filters) - moved from campaigns group to be accessible by reporting
+	v1.GET("/campaigns", profileMW(), rbacMW("AdvertiserManager", "AffiliateManager", "Admin"), opts.ReportingHandler.GetCampaignsList)
 
 	// --- Organization Association Routes ---
 	orgAssociations := v1.Group("/organization-associations")

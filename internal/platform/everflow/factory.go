@@ -6,6 +6,7 @@ import (
 	"github.com/affiliate-backend/internal/platform/everflow/advertiser"
 	"github.com/affiliate-backend/internal/platform/everflow/affiliate"
 	"github.com/affiliate-backend/internal/platform/everflow/offer"
+	"github.com/affiliate-backend/internal/platform/everflow/reporting"
 	"github.com/affiliate-backend/internal/platform/everflow/tracking"
 )
 
@@ -83,4 +84,11 @@ func NewIntegrationServiceWithClients(
 		affiliateProviderMappingRepo,
 		campaignProviderMappingRepo,
 	)
+}
+
+// NewReportingClient creates a new Everflow reporting client
+func NewReportingClient(config Config) *reporting.Client {
+	// Use the base URL without /v1 suffix for reporting API
+	baseURL := strings.TrimSuffix(config.BaseURL, "/v1")
+	return reporting.NewClient(baseURL, config.APIKey)
 }

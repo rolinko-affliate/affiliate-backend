@@ -254,6 +254,7 @@ func main() {
 	analyticsRepo := repository.NewAnalyticsRepository(repository.DB)
 	favoritePublisherListRepo := repository.NewFavoritePublisherListRepository(repository.DB)
 	publisherMessagingRepo := repository.NewPublisherMessagingRepository(repository.DB)
+	reportingRepo := repository.NewReportingRepository(repository.DB, campaignRepo)
 
 	// Initialize Billing Repositories
 	billingAccountRepo := repository.NewPgxBillingAccountRepository(repository.DB)
@@ -311,6 +312,25 @@ func main() {
 		)
 	}
 
+	// Initialize Reporting Client and Service
+	var reportingService service.ReportingService
+	if appConf.MockMode {
+		// In mock mode, we could create a mock reporting service
+		// For now, we'll use the real service but it will fail gracefully
+		reportingClient := everflow.NewReportingClient(everflow.Config{
+			BaseURL: "https://api.eflow.team/v1",
+			APIKey:  "mock-key",
+		})
+		reportingService = service.NewReportingService(reportingClient, reportingRepo)
+	} else {
+		everflowConfig := everflow.Config{
+			BaseURL: "https://api.eflow.team/v1",
+			APIKey:  appConf.EverflowAPIKey,
+		}
+		reportingClient := everflow.NewReportingClient(everflowConfig)
+		reportingService = service.NewReportingService(reportingClient, reportingRepo)
+	}
+
 	// Initialize Domain Services
 	profileService := service.NewProfileService(profileRepo)
 	organizationService := service.NewOrganizationService(organizationRepo, advertiserRepo, affiliateRepo)
@@ -348,6 +368,9 @@ func main() {
 	billingHandler := handlers.NewBillingHandler(billingService, profileService)
 	webhookHandler := handlers.NewWebhookHandler(stripeService, billingService, webhookEventRepo, billingAccountRepo, transactionRepo, stripeConfig.WebhookSecret)
 
+	// Initialize Reporting Handler
+	reportingHandler := handlers.NewReportingHandler(reportingService)
+
 	// Setup Router
 	router := api.SetupRouter(api.RouterOptions{
 		ProfileHandler:                         profileHandler,
@@ -365,6 +388,7 @@ func main() {
 		PublisherMessagingHandler:              publisherMessagingHandler,
 		BillingHandler:                         billingHandler,
 		WebhookHandler:                         webhookHandler,
+		ReportingHandler:                       reportingHandler,
 	})
 
 	// Start Server

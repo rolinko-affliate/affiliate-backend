@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/affiliate-backend/internal/domain"
-	"github.com/jmoiron/sqlx"
+	"github.com/jackc/pgx/v5/pgxpool"
 )
 
 // ReportingRepository handles reporting data persistence and caching
@@ -24,12 +24,12 @@ type ReportingRepository interface {
 }
 
 type reportingRepository struct {
-	db *sqlx.DB
+	db *pgxpool.Pool
 	// Add Redis client here if using Redis for caching
 }
 
 // NewReportingRepository creates a new reporting repository
-func NewReportingRepository(db *sqlx.DB) ReportingRepository {
+func NewReportingRepository(db *pgxpool.Pool) ReportingRepository {
 	return &reportingRepository{
 		db: db,
 	}
@@ -76,7 +76,7 @@ func (r *reportingRepository) GetCampaignsByOrganization(ctx context.Context, or
 
 	query += " ORDER BY name"
 
-	rows, err := r.db.QueryContext(ctx, query, args...)
+	rows, err := r.db.Query(ctx, query, args...)
 	if err != nil {
 		return nil, fmt.Errorf("failed to query campaigns by organization: %w", err)
 	}
@@ -124,7 +124,7 @@ func (r *reportingRepository) GetCampaignsByAffiliate(ctx context.Context, affil
 
 	query += " ORDER BY c.name"
 
-	rows, err := r.db.QueryContext(ctx, query, args...)
+	rows, err := r.db.Query(ctx, query, args...)
 	if err != nil {
 		return nil, fmt.Errorf("failed to query campaigns by affiliate: %w", err)
 	}

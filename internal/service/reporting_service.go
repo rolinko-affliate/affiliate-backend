@@ -245,7 +245,10 @@ func (s *reportingService) GetCampaignsList(ctx context.Context, affiliateID *st
 		campaigns, err = s.repo.GetCampaignsByAffiliate(ctx, affID, status)
 	} else {
 		// Get campaigns for user's organization
-		campaigns, err = s.repo.GetCampaignsByOrganization(ctx, userProfile.OrganizationID, status)
+		if userProfile.OrganizationID == nil {
+			return nil, fmt.Errorf("user is not associated with any organization")
+		}
+		campaigns, err = s.repo.GetCampaignsByOrganization(ctx, *userProfile.OrganizationID, status)
 	}
 
 	if err != nil {
@@ -301,7 +304,7 @@ func (s *reportingService) applyUserFilters(req *reporting.EntityReportRequest, 
 	// This would need to be implemented based on your business logic
 
 	// For example, if user is an affiliate manager, only show their affiliates' data
-	if userProfile.Role == "AffiliateManager" {
+	if userProfile.RoleName == "AffiliateManager" {
 		// Add affiliate filter based on user's organization
 		// This would require mapping organization to affiliate IDs
 	}

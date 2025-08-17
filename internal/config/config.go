@@ -31,7 +31,11 @@ type Config struct {
 	LogAddSource bool   `mapstructure:"LOG_ADD_SOURCE"` // Add source file and line number
 	
 	// Everflow API configuration
+	EverflowAPIURL string `mapstructure:"EVERFLOW_API_URL"` // Everflow API base URL
 	EverflowAPIKey string `mapstructure:"EVERFLOW_API_KEY"` // Everflow API key for authentication
+	
+	// Redis configuration
+	RedisURL string `mapstructure:"REDIS_URL"` // Redis connection URL for caching
 }
 
 var AppConfig Config
@@ -56,7 +60,9 @@ func LoadConfig() {
 
 	viper.SetDefault("SUPABASE_JWT_SECRET", "") // Default password, should be overridden
 	viper.SetDefault("ENCRYPTION_KEY", "")      // Default password, should be overridden
+	viper.SetDefault("EVERFLOW_API_URL", "https://api.eflow.team/v1")    // Default Everflow API URL
 	viper.SetDefault("EVERFLOW_API_KEY", "")    // Default password, should be overridden
+	viper.SetDefault("REDIS_URL", "")           // Default Redis URL (empty means no Redis)
 	viper.SetDefault("MockMode", false)
 
 	// Logging defaults

@@ -44,6 +44,7 @@ import (
 	"github.com/affiliate-backend/internal/platform/stripe"
 	"github.com/affiliate-backend/internal/repository"
 	"github.com/affiliate-backend/internal/service"
+	"github.com/redis/go-redis/v9"
 )
 
 // getLatestMigrationVersion scans the migrations directory to find the highest version number
@@ -254,7 +255,7 @@ func main() {
 	analyticsRepo := repository.NewAnalyticsRepository(repository.DB)
 	favoritePublisherListRepo := repository.NewFavoritePublisherListRepository(repository.DB)
 	publisherMessagingRepo := repository.NewPublisherMessagingRepository(repository.DB)
-	reportingRepo := repository.NewReportingRepository(repository.DB, campaignRepo)
+	reportingRepo := repository.NewReportingRepository(repository.DB)
 
 	// Initialize Billing Repositories
 	billingAccountRepo := repository.NewPgxBillingAccountRepository(repository.DB)
@@ -321,14 +322,14 @@ func main() {
 			BaseURL: "https://api.eflow.team/v1",
 			APIKey:  "mock-key",
 		})
-		reportingService = service.NewReportingService(reportingClient, reportingRepo)
+		reportingService = service.NewReportingService(reportingClient, reportingRepo, campaignRepo)
 	} else {
 		everflowConfig := everflow.Config{
 			BaseURL: "https://api.eflow.team/v1",
 			APIKey:  appConf.EverflowAPIKey,
 		}
 		reportingClient := everflow.NewReportingClient(everflowConfig)
-		reportingService = service.NewReportingService(reportingClient, reportingRepo)
+		reportingService = service.NewReportingService(reportingClient, reportingRepo, campaignRepo)
 	}
 
 	// Initialize Domain Services
@@ -371,6 +372,25 @@ func main() {
 	// Initialize Reporting Handler
 	reportingHandler := handlers.NewReportingHandler(reportingService)
 
+	// Initialize Redis client for caching (optional - can be nil for now)
+	var redisClient *redis.Client
+	if appConf.RedisURL != "" {
+		redisClient = redis.NewClient(&redis.Options{
+			Addr: appConf.RedisURL,
+		})
+		// Test connection
+		if err := redisClient.Ping(context.Background()).Err(); err != nil {
+			logger.Warn("Redis connection failed, continuing without cache", "error", err)
+			redisClient = nil
+		}
+	}
+
+	// Initialize Dashboard Service and Handler
+	dashboardCacheRepo := repository.NewDashboardCacheRepository(redisClient)
+	everflowRepo := repository.NewEverflowRepository(appConf.EverflowAPIURL, appConf.EverflowAPIKey, redisClient, logger.GetDefault())
+	dashboardService := service.NewDashboardService(dashboardCacheRepo, everflowRepo, reportingService, profileService, organizationService, logger.GetDefault())
+	dashboardHandler := handlers.NewDashboardHandler(dashboardService, logger.GetDefault())
+
 	// Setup Router
 	router := api.SetupRouter(api.RouterOptions{
 		ProfileHandler:                         profileHandler,
@@ -389,6 +409,7 @@ func main() {
 		BillingHandler:                         billingHandler,
 		WebhookHandler:                         webhookHandler,
 		ReportingHandler:                       reportingHandler,
+		DashboardHandler:                       dashboardHandler,
 	})
 
 	// Start Server

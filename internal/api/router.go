@@ -27,6 +27,7 @@ type RouterOptions struct {
 	BillingHandler                         *handlers.BillingHandler
 	WebhookHandler                         *handlers.WebhookHandler
 	ReportingHandler                       *handlers.ReportingHandler
+	DashboardHandler                       *handlers.DashboardHandler
 }
 
 // SetupRouter sets up the API router
@@ -362,6 +363,31 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		trackingLinks.GET("/:id", opts.TrackingLinkHandler.GetTrackingLinkClean)
 		trackingLinks.PUT("/:id", opts.TrackingLinkHandler.UpdateTrackingLinkClean)
 		trackingLinks.DELETE("/:id", opts.TrackingLinkHandler.DeleteTrackingLinkClean)
+	}
+
+	// --- Dashboard Routes ---
+	dashboard := v1.Group("/dashboard")
+	dashboard.Use(profileMW()) // Load profile first to get user role
+	dashboard.Use(rbacMW("AdvertiserManager", "AffiliateManager", "AgencyManager", "PlatformOwner", "Admin"))
+	{
+		// Main dashboard endpoint
+		dashboard.GET("", opts.DashboardHandler.GetDashboard)
+
+		// Campaign detail endpoint
+		dashboard.GET("/campaigns/:campaignId", opts.DashboardHandler.GetCampaignDetail)
+
+		// Activity endpoints
+		dashboard.GET("/activity", opts.DashboardHandler.GetRecentActivity)
+		dashboard.POST("/activity", opts.DashboardHandler.TrackActivity)
+
+		// System health endpoint (Platform Owner only)
+		dashboard.GET("/system/health", rbacMW("PlatformOwner", "Admin"), opts.DashboardHandler.GetSystemHealth)
+
+		// Cache management
+		dashboard.POST("/cache/invalidate", opts.DashboardHandler.InvalidateCache)
+
+		// Dashboard health check
+		dashboard.GET("/health", opts.DashboardHandler.DashboardHealthCheck)
 	}
 
 	return r

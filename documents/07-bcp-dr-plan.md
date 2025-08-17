@@ -1,9 +1,9 @@
 # Business Continuity Plan (BCP) / Disaster Recovery (DR) Plan
 
-**Document Version**: v1.0  
+**Document Version**: v1.1  
 **Owner**: SRE Lead  
-**Last Updated**: 2025-08-05  
-**Next Review**: 2026-02-05
+**Last Updated**: 2025-08-15  
+**Next Review**: 2026-02-15
 
 ---
 

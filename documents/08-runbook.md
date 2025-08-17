@@ -1,9 +1,9 @@
 # Runbook: Affiliate Backend Platform
 
-**Document Version**: v1.0  
+**Document Version**: v1.1  
 **Owner**: On-Call Team Lead  
-**Last Updated**: 2025-08-05  
-**Next Review**: 2026-02-05
+**Last Updated**: 2025-08-15  
+**Next Review**: 2026-02-15
 
 ---
 
@@ -88,8 +88,28 @@ fi
 echo "6. Checking disk usage..."
 kubectl top nodes | awk 'NR>1 {if ($5+0 > 80) print "❌ High disk usage on " $1 ": " $5; else print "✅ Disk usage OK on " $1 ": " $5}'
 
-# 7. Check certificate expiry
-echo "7. Checking certificate expiry..."
+# 7. Check dashboard API endpoints
+echo "7. Checking dashboard API endpoints..."
+DASHBOARD_RESPONSE=$(curl -f -s -w "%{http_code}" -o /dev/null "https://api.affiliate-platform.com/api/v1/dashboard/advertiser/1" -H "Authorization: Bearer test-token")
+if [ "$DASHBOARD_RESPONSE" = "200" ] || [ "$DASHBOARD_RESPONSE" = "401" ]; then
+    echo "✅ Dashboard API is responding"
+else
+    echo "❌ Dashboard API returned $DASHBOARD_RESPONSE - CHECK DASHBOARD SERVICE"
+fi
+
+# 8. Check Everflow integration
+echo "8. Checking Everflow integration..."
+EVERFLOW_STATUS=$(kubectl exec -it deployment/affiliate-api -- /bin/sh -c "
+    curl -f -s -w '%{http_code}' -o /dev/null 'https://api.eflow.team/v1/advertisers/dashboard/summary' -H 'X-Eflow-API-Key: \$EVERFLOW_API_KEY'
+")
+if [ "$EVERFLOW_STATUS" = "200" ]; then
+    echo "✅ Everflow API is accessible"
+else
+    echo "❌ Everflow API returned $EVERFLOW_STATUS - CHECK EVERFLOW CONNECTION"
+fi
+
+# 9. Check certificate expiry
+echo "9. Checking certificate expiry..."
 CERT_DAYS=$(echo | openssl s_client -servername api.affiliate-platform.com -connect api.affiliate-platform.com:443 2>/dev/null | openssl x509 -noout -dates | grep notAfter | cut -d= -f2 | xargs -I {} date -d {} +%s)
 CURRENT_DATE=$(date +%s)
 DAYS_UNTIL_EXPIRY=$(( (CERT_DAYS - CURRENT_DATE) / 86400 ))
@@ -388,6 +408,81 @@ kubectl exec -it deployment/affiliate-api -- /bin/sh -c "
 ```bash
 # Restart application pods to reset Redis connections
 kubectl rollout restart deployment/affiliate-api
+```
+
+### 3.5 Dashboard API Issues
+
+**Symptoms**: Dashboard endpoints returning errors, slow dashboard loading, missing data
+
+**Diagnosis Steps**:
+```bash
+# 1. Check dashboard endpoint health
+curl -f -s -w "%{http_code}\n" "https://api.affiliate-platform.com/api/v1/dashboard/advertiser/1" \
+    -H "Authorization: Bearer $TEST_TOKEN"
+
+# 2. Check Everflow API connectivity
+kubectl exec -it deployment/affiliate-api -- /bin/sh -c "
+    curl -f -s -w '%{http_code}\n' 'https://api.eflow.team/v1/advertisers/dashboard/summary' \
+        -H 'X-Eflow-API-Key: \$EVERFLOW_API_KEY'
+"
+
+# 3. Check dashboard service logs
+kubectl logs -l app=affiliate-api --tail=100 | grep -i dashboard
+
+# 4. Check cache status (if Redis enabled)
+kubectl exec -it deployment/affiliate-api -- /bin/sh -c "
+    redis-cli -h \$REDIS_HOST --scan --pattern 'dashboard:*' | wc -l
+"
+```
+
+**Solutions**:
+
+#### Solution 1: Everflow API issues
+```bash
+# Check Everflow API status
+curl -I https://api.eflow.team/v1/health
+
+# Verify API key configuration
+kubectl get secret everflow-api-key -o jsonpath='{.data.api-key}' | base64 -d | wc -c
+
+# If API key is invalid, update it:
+kubectl create secret generic everflow-api-key \
+    --from-literal=api-key="$NEW_EVERFLOW_API_KEY" \
+    --dry-run=client -o yaml | kubectl apply -f -
+
+# Restart pods to pick up new secret
+kubectl rollout restart deployment/affiliate-api
+```
+
+#### Solution 2: Dashboard cache issues
+```bash
+# Clear dashboard cache (if Redis enabled)
+kubectl exec -it deployment/affiliate-api -- /bin/sh -c "
+    redis-cli -h \$REDIS_HOST --scan --pattern 'dashboard:*' | xargs redis-cli -h \$REDIS_HOST del
+"
+
+# Check cache configuration
+kubectl exec -it deployment/affiliate-api -- /bin/sh -c "
+    echo 'Dashboard cache TTL:' \$DASHBOARD_CACHE_TTL
+    echo 'Redis URL:' \$REDIS_URL
+"
+```
+
+#### Solution 3: Dashboard data inconsistency
+```bash
+# Force refresh dashboard data
+curl -X POST "https://api.affiliate-platform.com/api/v1/dashboard/advertiser/1/refresh" \
+    -H "Authorization: Bearer $ADMIN_TOKEN"
+
+# Check organization data integrity
+kubectl exec -it deployment/affiliate-api -- /bin/sh -c "
+    psql \$DATABASE_URL -c 'SELECT id, name, organization_type FROM organizations WHERE id = 1;'
+"
+
+# Verify Everflow sync status
+kubectl exec -it deployment/affiliate-api -- /bin/sh -c "
+    psql \$DATABASE_URL -c 'SELECT * FROM advertisers WHERE organization_id = 1;'
+"
 ```
 
 ## 4. Incident Response Playbooks

@@ -1,9 +1,9 @@
 # Service-Level Agreement: Affiliate Backend Platform
 
-**Document Version**: v1.0  
+**Document Version**: v1.1  
 **Owner**: Service Manager  
-**Last Updated**: 2025-08-05  
-**Next Review**: 2026-02-05  
+**Last Updated**: 2025-08-15  
+**Next Review**: 2026-02-15  
 **Effective Date**: 2025-08-05  
 **Agreement Period**: 12 months (auto-renewal)
 

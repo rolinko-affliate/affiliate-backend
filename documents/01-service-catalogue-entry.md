@@ -1,9 +1,9 @@
 # Service Catalogue Entry: Affiliate Backend Platform
 
-**Document Version**: v1.0  
+**Document Version**: v1.1  
 **Owner**: Product Owner  
-**Last Updated**: 2025-08-05  
-**Next Review**: 2026-02-05
+**Last Updated**: 2025-08-15  
+**Next Review**: 2026-02-15
 
 ---
 
@@ -34,7 +34,8 @@ A comprehensive, cloud-native affiliate marketing platform that enables business
 3. **Campaign Management**: End-to-end campaign lifecycle management with performance optimization
 4. **Payment Processing**: Automated commission calculations and payment distribution via Stripe integration
 5. **Analytics & Reporting**: Comprehensive dashboards with customizable KPI tracking and export capabilities
-6. **API-First Architecture**: RESTful APIs enabling seamless integration with existing marketing tools
+6. **Real-Time Dashboards**: Organization-specific dashboards with live performance metrics and charts ✅ **NEW**
+7. **API-First Architecture**: RESTful APIs enabling seamless integration with existing marketing tools
 
 ## Service Level Summary
 
@@ -97,6 +98,22 @@ A comprehensive, cloud-native affiliate marketing platform that enables business
 - **Additional Events**: $0.001 per event above plan limits
 - **Premium Support**: $500/month for extended support hours
 - **Custom Integrations**: Professional services rates apply
+
+## Recent Updates
+
+### August 2025 - Dashboard API Release ✅
+- **New Feature**: Organization-specific dashboards with real-time metrics
+- **Integration**: Direct Everflow API integration for live data
+- **Performance**: Sub-200ms response times with intelligent caching
+- **Security**: Role-based access control with organization isolation
+- **Availability**: Production ready with 99.9% uptime target
+
+### Key Dashboard Features
+- **Multi-Organization Support**: Advertiser, Agency, and Platform Owner dashboards
+- **Real-Time Charts**: Revenue, conversion, and performance visualization
+- **Campaign Management**: Detailed campaign analytics and tracking
+- **Activity Monitoring**: Real-time activity feeds and audit trails
+- **Export Capabilities**: Data export in multiple formats
 
 ## Key Contacts
 

@@ -1,9 +1,9 @@
 # Configuration Baseline (CMDB / IaC): Affiliate Backend Platform
 
-**Document Version**: v1.0  
+**Document Version**: v1.1  
 **Owner**: DevOps Engineer  
-**Last Updated**: 2025-08-05  
-**Next Review**: 2026-02-05
+**Last Updated**: 2025-08-15  
+**Next Review**: 2026-02-15
 
 ---
 
@@ -917,6 +917,12 @@ ENCRYPTION_KEY=<production-encryption-key>
 STRIPE_SECRET_KEY=sk_live_<production-stripe-key>
 EVERFLOW_API_KEY=<production-everflow-key>
 EVERFLOW_BASE_URL=https://api.everflow.io
+
+# Dashboard Configuration
+DASHBOARD_CACHE_TTL=300
+DASHBOARD_MAX_CONCURRENT_REQUESTS=50
+DASHBOARD_TIMEOUT_SECONDS=30
+DASHBOARD_RATE_LIMIT_PER_MINUTE=100
 
 # Monitoring
 PROMETHEUS_ENDPOINT=http://prometheus:9090

@@ -372,18 +372,19 @@ func main() {
 	// Initialize Reporting Handler
 	reportingHandler := handlers.NewReportingHandler(reportingService)
 
+	// TODO: Re-enable Redis client for caching later
 	// Initialize Redis client for caching (optional - can be nil for now)
 	var redisClient *redis.Client
-	if appConf.RedisURL != "" {
-		redisClient = redis.NewClient(&redis.Options{
-			Addr: appConf.RedisURL,
-		})
-		// Test connection
-		if err := redisClient.Ping(context.Background()).Err(); err != nil {
-			logger.Warn("Redis connection failed, continuing without cache", "error", err)
-			redisClient = nil
-		}
-	}
+	// if appConf.RedisURL != "" {
+	// 	redisClient = redis.NewClient(&redis.Options{
+	// 		Addr: appConf.RedisURL,
+	// 	})
+	// 	// Test connection
+	// 	if err := redisClient.Ping(context.Background()).Err(); err != nil {
+	// 		logger.Warn("Redis connection failed, continuing without cache", "error", err)
+	// 		redisClient = nil
+	// 	}
+	// }
 
 	// Initialize Dashboard Service and Handler
 	dashboardCacheRepo := repository.NewDashboardCacheRepository(redisClient)

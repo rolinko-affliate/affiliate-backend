@@ -201,6 +201,11 @@ func (r *everflowRepository) makeAPICall(ctx context.Context, method, url string
 
 // Cache operations
 func (r *everflowRepository) SetCache(ctx context.Context, key string, value interface{}, ttl time.Duration) error {
+	// TODO: Re-enable Redis caching - currently disabled
+	if r.cache == nil {
+		return nil // No-op if cache not available
+	}
+	
 	data, err := json.Marshal(value)
 	if err != nil {
 		return fmt.Errorf("failed to marshal cache value: %w", err)
@@ -210,6 +215,11 @@ func (r *everflowRepository) SetCache(ctx context.Context, key string, value int
 }
 
 func (r *everflowRepository) GetCache(ctx context.Context, key string, dest interface{}) error {
+	// TODO: Re-enable Redis caching - currently disabled
+	if r.cache == nil {
+		return fmt.Errorf("cache not available")
+	}
+	
 	data, err := r.cache.Get(ctx, key).Result()
 	if err != nil {
 		return err
@@ -219,5 +229,10 @@ func (r *everflowRepository) GetCache(ctx context.Context, key string, dest inte
 }
 
 func (r *everflowRepository) DeleteCache(ctx context.Context, key string) error {
+	// TODO: Re-enable Redis caching - currently disabled
+	if r.cache == nil {
+		return nil // No-op if cache not available
+	}
+	
 	return r.cache.Del(ctx, key).Err()
 }

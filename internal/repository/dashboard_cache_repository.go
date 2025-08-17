@@ -41,6 +41,7 @@ func NewDashboardCacheRepository(cache *redis.Client) DashboardCacheRepository {
 
 // Dashboard-specific cache methods
 func (r *dashboardCacheRepository) GetCachedDashboardData(ctx context.Context, orgID int64, orgType domain.OrganizationType) (*domain.DashboardData, error) {
+	// TODO: Re-enable Redis caching - currently disabled
 	if r.cache == nil {
 		return nil, fmt.Errorf("cache not available")
 	}
@@ -61,6 +62,7 @@ func (r *dashboardCacheRepository) GetCachedDashboardData(ctx context.Context, o
 }
 
 func (r *dashboardCacheRepository) SetCachedDashboardData(ctx context.Context, orgID int64, orgType domain.OrganizationType, data *domain.DashboardData, ttl time.Duration) error {
+	// TODO: Re-enable Redis caching - currently disabled
 	if r.cache == nil {
 		return nil // No-op if cache not available
 	}
@@ -75,6 +77,7 @@ func (r *dashboardCacheRepository) SetCachedDashboardData(ctx context.Context, o
 }
 
 func (r *dashboardCacheRepository) InvalidateDashboardCache(ctx context.Context, orgID int64) error {
+	// TODO: Re-enable Redis caching - currently disabled
 	if r.cache == nil {
 		return nil // No-op if cache not available
 	}
@@ -94,6 +97,7 @@ func (r *dashboardCacheRepository) InvalidateDashboardCache(ctx context.Context,
 
 // Generic cache operations
 func (r *dashboardCacheRepository) SetCache(ctx context.Context, key string, value interface{}, ttl time.Duration) error {
+	// TODO: Re-enable Redis caching - currently disabled
 	if r.cache == nil {
 		return nil // No-op if cache not available
 	}
@@ -107,6 +111,7 @@ func (r *dashboardCacheRepository) SetCache(ctx context.Context, key string, val
 }
 
 func (r *dashboardCacheRepository) GetCache(ctx context.Context, key string, dest interface{}) error {
+	// TODO: Re-enable Redis caching - currently disabled
 	if r.cache == nil {
 		return fmt.Errorf("cache not available")
 	}
@@ -120,6 +125,7 @@ func (r *dashboardCacheRepository) GetCache(ctx context.Context, key string, des
 }
 
 func (r *dashboardCacheRepository) DeleteCache(ctx context.Context, key string) error {
+	// TODO: Re-enable Redis caching - currently disabled
 	if r.cache == nil {
 		return nil // No-op if cache not available
 	}

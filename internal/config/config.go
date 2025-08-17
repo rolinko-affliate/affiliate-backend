@@ -35,6 +35,7 @@ type Config struct {
 	EverflowAPIKey string `mapstructure:"EVERFLOW_API_KEY"` // Everflow API key for authentication
 	
 	// Redis configuration
+	// TODO: Re-enable Redis caching - currently disabled
 	RedisURL string `mapstructure:"REDIS_URL"` // Redis connection URL for caching
 }
 

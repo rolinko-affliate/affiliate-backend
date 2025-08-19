@@ -226,7 +226,7 @@ func main() {
 	// Override config with command line flag if provided
 	if mockMode {
 		appConf.MockMode = true
-		logger.Info("Mock mode enabled via command line flag")
+		logger.Info("🔧 Mock mode enabled via command line flag")
 	}
 
 	// Check database migration status
@@ -313,16 +313,14 @@ func main() {
 		)
 	}
 
+	// Initialize mock data service (used by both dashboard and reporting in mock mode)
+	mockDataService := service.NewMockDataService(logger.GetDefault())
+
 	// Initialize Reporting Client and Service
 	var reportingService service.ReportingService
 	if appConf.MockMode {
-		// In mock mode, we could create a mock reporting service
-		// For now, we'll use the real service but it will fail gracefully
-		reportingClient := everflow.NewReportingClient(everflow.Config{
-			BaseURL: "https://api.eflow.team/v1",
-			APIKey:  "mock-key",
-		})
-		reportingService = service.NewReportingService(reportingClient, reportingRepo, campaignRepo)
+		logger.Info("🔧 Using Mock Reporting Service - all reporting data will come from CSV files")
+		reportingService = service.NewMockReportingService(mockDataService, logger.GetDefault())
 	} else {
 		everflowConfig := everflow.Config{
 			BaseURL: "https://api.eflow.team/v1",
@@ -389,9 +387,6 @@ func main() {
 	// Initialize Dashboard Service and Handler
 	dashboardCacheRepo := repository.NewDashboardCacheRepository(redisClient)
 	everflowRepo := repository.NewEverflowRepository(appConf.EverflowAPIURL, appConf.EverflowAPIKey, redisClient, logger.GetDefault())
-	
-	// Initialize mock data service for dashboard
-	mockDataService := service.NewMockDataService(logger.GetDefault())
 	
 	dashboardService := service.NewDashboardService(dashboardCacheRepo, everflowRepo, reportingService, profileService, organizationService, mockDataService, logger.GetDefault(), appConf.MockMode)
 	dashboardHandler := handlers.NewDashboardHandler(dashboardService, logger.GetDefault())

@@ -29,12 +29,13 @@ func NewDashboardHandler(service service.DashboardService, log *logger.Logger) *
 	}
 }
 
-// GetDashboard handles GET /api/v1/dashboard
+// GetDashboard handles GET /dashboard
 // @Summary      Get dashboard data
 // @Description  Returns dashboard data based on user's organization type
 // @Tags         dashboard
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        period      query     string  false  "Time period (today, 7d, 30d, 90d, custom)"  default(30d)
 // @Param        start_date  query     string  false  "Start date for custom period (YYYY-MM-DD)"
 // @Param        end_date    query     string  false  "End date for custom period (YYYY-MM-DD)"
@@ -44,7 +45,7 @@ func NewDashboardHandler(service service.DashboardService, log *logger.Logger) *
 // @Failure      401         {object}  ErrorResponse
 // @Failure      403         {object}  ErrorResponse
 // @Failure      500         {object}  ErrorResponse
-// @Router       /api/v1/dashboard [get]
+// @Router       /dashboard [get]
 func (h *DashboardHandler) GetDashboard(c *gin.Context) {
 	// Get user ID from context (set by auth middleware)
 	userIDStr, exists := c.Get("user_id")
@@ -114,7 +115,7 @@ func (h *DashboardHandler) GetDashboard(c *gin.Context) {
 	c.JSON(http.StatusOK, dashboardData)
 }
 
-// GetCampaignDetail handles GET /api/v1/dashboard/campaigns/:campaignId
+// GetCampaignDetail handles GET /dashboard/campaigns/:campaignId
 // @Summary      Get campaign detail
 // @Description  Returns detailed performance data for a specific campaign
 // @Tags         dashboard
@@ -127,7 +128,7 @@ func (h *DashboardHandler) GetDashboard(c *gin.Context) {
 // @Failure      403         {object}  ErrorResponse
 // @Failure      404         {object}  ErrorResponse
 // @Failure      500         {object}  ErrorResponse
-// @Router       /api/v1/dashboard/campaigns/{campaignId} [get]
+// @Router       /dashboard/campaigns/{campaignId} [get]
 func (h *DashboardHandler) GetCampaignDetail(c *gin.Context) {
 	// Get user ID from context
 	userIDStr, exists := c.Get("user_id")
@@ -181,7 +182,7 @@ func (h *DashboardHandler) GetCampaignDetail(c *gin.Context) {
 	c.JSON(http.StatusOK, detail)
 }
 
-// GetRecentActivity handles GET /api/v1/dashboard/activity
+// GetRecentActivity handles GET /dashboard/activity
 // @Summary      Get recent activity
 // @Description  Returns paginated recent activity feed
 // @Tags         dashboard
@@ -196,7 +197,7 @@ func (h *DashboardHandler) GetCampaignDetail(c *gin.Context) {
 // @Failure      401     {object}  ErrorResponse
 // @Failure      403     {object}  ErrorResponse
 // @Failure      500     {object}  ErrorResponse
-// @Router       /api/v1/dashboard/activity [get]
+// @Router       /dashboard/activity [get]
 func (h *DashboardHandler) GetRecentActivity(c *gin.Context) {
 	// Get user ID from context
 	userIDStr, exists := c.Get("user_id")
@@ -268,7 +269,7 @@ func (h *DashboardHandler) GetRecentActivity(c *gin.Context) {
 	c.JSON(http.StatusOK, response)
 }
 
-// GetSystemHealth handles GET /api/v1/dashboard/system/health
+// GetSystemHealth handles GET /dashboard/system/health
 // @Summary      Get system health metrics
 // @Description  Returns system health metrics (Platform Owner only)
 // @Tags         dashboard
@@ -278,7 +279,7 @@ func (h *DashboardHandler) GetRecentActivity(c *gin.Context) {
 // @Failure      401  {object}  ErrorResponse
 // @Failure      403  {object}  ErrorResponse
 // @Failure      500  {object}  ErrorResponse
-// @Router       /api/v1/dashboard/system/health [get]
+// @Router       /dashboard/system/health [get]
 func (h *DashboardHandler) GetSystemHealth(c *gin.Context) {
 	// Get user ID from context
 	userIDStr, exists := c.Get("user_id")
@@ -313,14 +314,14 @@ func (h *DashboardHandler) GetSystemHealth(c *gin.Context) {
 	c.JSON(http.StatusOK, health)
 }
 
-// DashboardHealthCheck handles GET /api/v1/dashboard/health
+// DashboardHealthCheck handles GET /dashboard/health
 // @Summary      Dashboard health check
 // @Description  Returns the health status of the dashboard service
 // @Tags         dashboard
 // @Produce      json
 // @Success      200  {object}  map[string]interface{}  "Health status"
 // @Failure      503  {object}  map[string]interface{}  "Service unavailable"
-// @Router       /api/v1/dashboard/health [get]
+// @Router       /dashboard/health [get]
 func (h *DashboardHandler) DashboardHealthCheck(c *gin.Context) {
 	ctx := c.Request.Context()
 
@@ -360,7 +361,7 @@ func (h *DashboardHandler) DashboardHealthCheck(c *gin.Context) {
 	})
 }
 
-// InvalidateCache handles POST /api/v1/dashboard/cache/invalidate
+// InvalidateCache handles POST /dashboard/cache/invalidate
 // @Summary      Invalidate dashboard cache
 // @Description  Invalidates dashboard cache for the user's organization
 // @Tags         dashboard
@@ -369,7 +370,7 @@ func (h *DashboardHandler) DashboardHealthCheck(c *gin.Context) {
 // @Success      200  {object}  map[string]string  "Cache invalidated"
 // @Failure      401  {object}  ErrorResponse
 // @Failure      500  {object}  ErrorResponse
-// @Router       /api/v1/dashboard/cache/invalidate [post]
+// @Router       /dashboard/cache/invalidate [post]
 func (h *DashboardHandler) InvalidateCache(c *gin.Context) {
 	// Get user profile from context (set by profile middleware)
 	profile, exists := c.Get("profile")
@@ -407,7 +408,7 @@ func (h *DashboardHandler) InvalidateCache(c *gin.Context) {
 	})
 }
 
-// TrackActivity handles POST /api/v1/dashboard/activity
+// TrackActivity handles POST /dashboard/activity
 // @Summary      Track dashboard activity
 // @Description  Creates a new activity record for the user's organization
 // @Tags         dashboard
@@ -418,7 +419,7 @@ func (h *DashboardHandler) InvalidateCache(c *gin.Context) {
 // @Failure      400      {object}  ErrorResponse
 // @Failure      401      {object}  ErrorResponse
 // @Failure      500      {object}  ErrorResponse
-// @Router       /api/v1/dashboard/activity [post]
+// @Router       /dashboard/activity [post]
 func (h *DashboardHandler) TrackActivity(c *gin.Context) {
 	// Get user profile from context
 	profile, exists := c.Get("profile")

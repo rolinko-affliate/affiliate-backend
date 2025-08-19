@@ -24,7 +24,22 @@ func NewReportingHandler(reportingService service.ReportingService) *ReportingHa
 	}
 }
 
-// GetPerformanceSummary handles GET /api/v1/reports/performance/summary
+// GetPerformanceSummary handles GET /reports/performance/summary
+// @Summary      Get performance summary
+// @Description  Returns aggregated performance metrics for the specified date range and filters
+// @Tags         reports
+// @Accept       json
+// @Produce      json
+// @Security     BearerAuth
+// @Param        startDate     query     string  true   "Start date (YYYY-MM-DD)"
+// @Param        endDate       query     string  true   "End date (YYYY-MM-DD)"
+// @Param        campaignIds   query     string  false  "Comma-separated campaign IDs"
+// @Param        affiliateId   query     string  false  "Affiliate ID filter"
+// @Success      200           {object}  PerformanceSummaryResponse
+// @Failure      400           {object}  ErrorResponse
+// @Failure      401           {object}  ErrorResponse
+// @Failure      500           {object}  ErrorResponse
+// @Router       /reports/performance/summary [get]
 func (h *ReportingHandler) GetPerformanceSummary(c *gin.Context) {
 	// Parse query parameters
 	filters, err := h.parseReportingFilters(c)
@@ -84,7 +99,23 @@ func (h *ReportingHandler) GetPerformanceSummary(c *gin.Context) {
 	})
 }
 
-// GetPerformanceTimeSeries handles GET /api/v1/reports/performance/timeseries
+// GetPerformanceTimeSeries handles GET /reports/performance/timeseries
+// @Summary      Get performance time series
+// @Description  Returns time series performance data for charts and graphs
+// @Tags         reports
+// @Accept       json
+// @Produce      json
+// @Security     BearerAuth
+// @Param        startDate     query     string  true   "Start date (YYYY-MM-DD)"
+// @Param        endDate       query     string  true   "End date (YYYY-MM-DD)"
+// @Param        campaignIds   query     string  false  "Comma-separated campaign IDs"
+// @Param        affiliateId   query     string  false  "Affiliate ID filter"
+// @Param        granularity   query     string  false  "Data granularity (day, hour)"  default(day)
+// @Success      200           {object}  PerformanceTimeSeriesResponse
+// @Failure      400           {object}  ErrorResponse
+// @Failure      401           {object}  ErrorResponse
+// @Failure      500           {object}  ErrorResponse
+// @Router       /reports/performance/timeseries [get]
 func (h *ReportingHandler) GetPerformanceTimeSeries(c *gin.Context) {
 	// Parse query parameters
 	filters, err := h.parseReportingFilters(c)
@@ -140,7 +171,26 @@ func (h *ReportingHandler) GetPerformanceTimeSeries(c *gin.Context) {
 	})
 }
 
-// GetDailyPerformanceReport handles GET /api/v1/reports/performance/daily
+// GetDailyPerformanceReport handles GET /reports/performance/daily
+// @Summary      Get daily performance report
+// @Description  Returns paginated daily performance breakdown with campaign details
+// @Tags         reports
+// @Accept       json
+// @Produce      json
+// @Security     BearerAuth
+// @Param        startDate     query     string  true   "Start date (YYYY-MM-DD)"
+// @Param        endDate       query     string  true   "End date (YYYY-MM-DD)"
+// @Param        campaignIds   query     string  false  "Comma-separated campaign IDs"
+// @Param        affiliateId   query     string  false  "Affiliate ID filter"
+// @Param        page          query     int     false  "Page number"  default(1)
+// @Param        limit         query     int     false  "Items per page (max 100)"  default(10)
+// @Param        sortBy        query     string  false  "Sort field"  default(date)
+// @Param        sortOrder     query     string  false  "Sort order (asc, desc)"  default(desc)
+// @Success      200           {object}  DailyPerformanceReportResponse
+// @Failure      400           {object}  ErrorResponse
+// @Failure      401           {object}  ErrorResponse
+// @Failure      500           {object}  ErrorResponse
+// @Router       /reports/performance/daily [get]
 func (h *ReportingHandler) GetDailyPerformanceReport(c *gin.Context) {
 	// Parse query parameters
 	filters, err := h.parseReportingFilters(c)
@@ -209,7 +259,27 @@ func (h *ReportingHandler) GetDailyPerformanceReport(c *gin.Context) {
 	})
 }
 
-// GetConversionsReport handles GET /api/v1/reports/conversions
+// GetConversionsReport handles GET /reports/conversions
+// @Summary      Get conversions report
+// @Description  Returns paginated conversion events with detailed tracking information
+// @Tags         reports
+// @Accept       json
+// @Produce      json
+// @Security     BearerAuth
+// @Param        startDate     query     string  true   "Start date (YYYY-MM-DD)"
+// @Param        endDate       query     string  true   "End date (YYYY-MM-DD)"
+// @Param        campaignIds   query     string  false  "Comma-separated campaign IDs"
+// @Param        affiliateId   query     string  false  "Affiliate ID filter"
+// @Param        status        query     string  false  "Conversion status filter"
+// @Param        page          query     int     false  "Page number"  default(1)
+// @Param        limit         query     int     false  "Items per page (max 100)"  default(10)
+// @Param        sortBy        query     string  false  "Sort field"  default(date)
+// @Param        sortOrder     query     string  false  "Sort order (asc, desc)"  default(desc)
+// @Success      200           {object}  ConversionsReportResponse
+// @Failure      400           {object}  ErrorResponse
+// @Failure      401           {object}  ErrorResponse
+// @Failure      500           {object}  ErrorResponse
+// @Router       /reports/conversions [get]
 func (h *ReportingHandler) GetConversionsReport(c *gin.Context) {
 	// Parse query parameters
 	filters, err := h.parseReportingFilters(c)
@@ -278,7 +348,26 @@ func (h *ReportingHandler) GetConversionsReport(c *gin.Context) {
 	})
 }
 
-// GetClicksReport handles GET /api/v1/reports/clicks
+// GetClicksReport handles GET /reports/clicks
+// @Summary      Get clicks report
+// @Description  Returns paginated click events with geographic and referrer information
+// @Tags         reports
+// @Accept       json
+// @Produce      json
+// @Security     BearerAuth
+// @Param        startDate     query     string  true   "Start date (YYYY-MM-DD)"
+// @Param        endDate       query     string  true   "End date (YYYY-MM-DD)"
+// @Param        campaignIds   query     string  false  "Comma-separated campaign IDs"
+// @Param        affiliateId   query     string  false  "Affiliate ID filter"
+// @Param        page          query     int     false  "Page number"  default(1)
+// @Param        limit         query     int     false  "Items per page (max 100)"  default(10)
+// @Param        sortBy        query     string  false  "Sort field"  default(date)
+// @Param        sortOrder     query     string  false  "Sort order (asc, desc)"  default(desc)
+// @Success      200           {object}  ClicksReportResponse
+// @Failure      400           {object}  ErrorResponse
+// @Failure      401           {object}  ErrorResponse
+// @Failure      500           {object}  ErrorResponse
+// @Router       /reports/clicks [get]
 func (h *ReportingHandler) GetClicksReport(c *gin.Context) {
 	// Parse query parameters
 	filters, err := h.parseReportingFilters(c)
@@ -347,7 +436,20 @@ func (h *ReportingHandler) GetClicksReport(c *gin.Context) {
 	})
 }
 
-// GetCampaignsList handles GET /api/v1/campaigns
+// GetCampaignsList handles GET /campaigns
+// @Summary      Get campaigns list
+// @Description  Returns list of available campaigns for filtering and selection
+// @Tags         campaigns
+// @Accept       json
+// @Produce      json
+// @Param        affiliateId   query     string  false  "Affiliate ID filter"
+// @Param        status        query     string  false  "Campaign status filter"  default(active)
+// @Param        search        query     string  false  "Search term for campaign name"
+// @Success      200           {object}  CampaignsListResponse
+// @Failure      400           {object}  ErrorResponse
+// @Failure      401           {object}  ErrorResponse
+// @Failure      500           {object}  ErrorResponse
+// @Router       /campaigns [get]
 func (h *ReportingHandler) GetCampaignsList(c *gin.Context) {
 	// Parse query parameters
 	affiliateID := c.Query("affiliateId")

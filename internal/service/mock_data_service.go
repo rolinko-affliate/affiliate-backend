@@ -7,6 +7,7 @@ import (
 	"os"
 	"path/filepath"
 	"strconv"
+	"strings"
 	"time"
 
 	"github.com/google/uuid"
@@ -17,6 +18,7 @@ import (
 
 // MockDataService provides methods to load mock data from CSV files
 type MockDataService interface {
+	// Dashboard data methods
 	LoadAdvertiserSummary(ctx context.Context, orgID int64) (*domain.AdvertiserSummary, error)
 	LoadCampaignPerformance(ctx context.Context, orgID int64) (*domain.CampaignPerformance, error)
 	LoadRevenueChart(ctx context.Context, orgID int64, period string) (*domain.RevenueChart, error)
@@ -30,6 +32,14 @@ type MockDataService interface {
 	LoadSystemHealth(ctx context.Context) (*domain.SystemHealth, error)
 	LoadActivities(ctx context.Context, orgID int64, limit, offset int, activityTypes []string, since *time.Time) (*domain.ActivityResponse, error)
 	LoadCampaignDetail(ctx context.Context, campaignID int64, orgID int64) (*domain.CampaignDetail, error)
+
+	// Reporting data methods
+	LoadPerformanceSummary(ctx context.Context, orgID int64, filters domain.ReportingFilters) (*domain.PerformanceSummary, error)
+	LoadPerformanceTimeSeries(ctx context.Context, orgID int64, filters domain.ReportingFilters) ([]domain.PerformanceTimeSeriesPoint, error)
+	LoadDailyPerformanceReport(ctx context.Context, orgID int64, filters domain.ReportingFilters, pagination domain.PaginationParams) ([]domain.DailyPerformanceReport, *domain.PaginationResult, error)
+	LoadConversionsReport(ctx context.Context, orgID int64, filters domain.ReportingFilters, pagination domain.PaginationParams) ([]domain.ConversionReport, *domain.PaginationResult, error)
+	LoadClicksReport(ctx context.Context, orgID int64, filters domain.ReportingFilters, pagination domain.PaginationParams) ([]domain.ClickReport, *domain.PaginationResult, error)
+	LoadCampaignsList(ctx context.Context, orgID int64, affiliateID *string, status string, search *string) ([]domain.CampaignListItem, error)
 }
 
 type mockDataService struct {
@@ -702,7 +712,7 @@ func (s *mockDataService) LoadActivities(ctx context.Context, orgID int64, limit
 	}
 
 	hasMore := total > offset+len(activities)
-	
+
 	return &domain.ActivityResponse{
 		Activities: activities,
 		Total:      total,
@@ -838,4 +848,464 @@ func (s *mockDataService) loadCSV(filename string) ([][]string, error) {
 	}
 
 	return records, nil
+}
+
+// LoadPerformanceSummary loads performance summary data from CSV
+func (s *mockDataService) LoadPerformanceSummary(ctx context.Context, orgID int64, filters domain.ReportingFilters) (*domain.PerformanceSummary, error) {
+	records, err := s.loadCSV("performance_summary.csv")
+	if err != nil {
+		return nil, fmt.Errorf("failed to load performance summary: %w", err)
+	}
+
+	for _, record := range records[1:] { // Skip header
+		if len(record) < 8 {
+			continue
+		}
+
+		recordOrgID, err := strconv.ParseInt(record[0], 10, 64)
+		if err != nil {
+			continue
+		}
+
+		if recordOrgID == orgID {
+			totalClicks, _ := strconv.ParseInt(record[1], 10, 64)
+			totalConversions, _ := strconv.ParseInt(record[2], 10, 64)
+			totalRevenue, _ := strconv.ParseFloat(record[3], 64)
+			conversionRate, _ := strconv.ParseFloat(record[4], 64)
+			averageRevenue, _ := strconv.ParseFloat(record[5], 64)
+			clickThroughRate, _ := strconv.ParseFloat(record[6], 64)
+			totalImpressions, _ := strconv.ParseInt(record[7], 10, 64)
+
+			return &domain.PerformanceSummary{
+				TotalClicks:      totalClicks,
+				TotalConversions: totalConversions,
+				TotalRevenue:     totalRevenue,
+				ConversionRate:   conversionRate,
+				AverageRevenue:   averageRevenue,
+				ClickThroughRate: clickThroughRate,
+				TotalImpressions: totalImpressions,
+			}, nil
+		}
+	}
+
+	// Return default data if not found
+	return &domain.PerformanceSummary{
+		TotalClicks:      1000,
+		TotalConversions: 80,
+		TotalRevenue:     2500.00,
+		ConversionRate:   8.0,
+		AverageRevenue:   31.25,
+		ClickThroughRate: 2.5,
+		TotalImpressions: 40000,
+	}, nil
+}
+
+// LoadPerformanceTimeSeries loads performance time series data from CSV
+func (s *mockDataService) LoadPerformanceTimeSeries(ctx context.Context, orgID int64, filters domain.ReportingFilters) ([]domain.PerformanceTimeSeriesPoint, error) {
+	records, err := s.loadCSV("performance_timeseries.csv")
+	if err != nil {
+		return nil, fmt.Errorf("failed to load performance timeseries: %w", err)
+	}
+
+	var timeSeries []domain.PerformanceTimeSeriesPoint
+
+	for _, record := range records[1:] { // Skip header
+		if len(record) < 8 {
+			continue
+		}
+
+		recordOrgID, err := strconv.ParseInt(record[0], 10, 64)
+		if err != nil {
+			continue
+		}
+
+		if recordOrgID == orgID {
+			// Apply date filtering if provided
+			if filters.StartDate != "" && record[1] < filters.StartDate {
+				continue
+			}
+			if filters.EndDate != "" && record[1] > filters.EndDate {
+				continue
+			}
+
+			clicks, _ := strconv.ParseInt(record[2], 10, 64)
+			impressions, _ := strconv.ParseInt(record[3], 10, 64)
+			conversions, _ := strconv.ParseInt(record[4], 10, 64)
+			revenue, _ := strconv.ParseFloat(record[5], 64)
+			conversionRate, _ := strconv.ParseFloat(record[6], 64)
+			clickThroughRate, _ := strconv.ParseFloat(record[7], 64)
+
+			point := domain.PerformanceTimeSeriesPoint{
+				Date:             record[1],
+				Clicks:           clicks,
+				Impressions:      impressions,
+				Conversions:      conversions,
+				Revenue:          revenue,
+				ConversionRate:   conversionRate,
+				ClickThroughRate: clickThroughRate,
+			}
+			timeSeries = append(timeSeries, point)
+		}
+	}
+
+	return timeSeries, nil
+}
+
+// LoadDailyPerformanceReport loads daily performance report data from CSV
+func (s *mockDataService) LoadDailyPerformanceReport(ctx context.Context, orgID int64, filters domain.ReportingFilters, pagination domain.PaginationParams) ([]domain.DailyPerformanceReport, *domain.PaginationResult, error) {
+	records, err := s.loadCSV("daily_performance_report.csv")
+	if err != nil {
+		return nil, nil, fmt.Errorf("failed to load daily performance report: %w", err)
+	}
+
+	var reports []domain.DailyPerformanceReport
+
+	for _, record := range records[1:] { // Skip header
+		if len(record) < 11 {
+			continue
+		}
+
+		recordOrgID, err := strconv.ParseInt(record[0], 10, 64)
+		if err != nil {
+			continue
+		}
+
+		if recordOrgID == orgID {
+			// Apply date filtering if provided
+			if filters.StartDate != "" && record[1] < filters.StartDate {
+				continue
+			}
+			if filters.EndDate != "" && record[1] > filters.EndDate {
+				continue
+			}
+
+			// Apply campaign filtering if provided
+			if len(filters.CampaignIDs) > 0 {
+				campaignMatch := false
+				for _, campaignID := range filters.CampaignIDs {
+					if record[2] == campaignID {
+						campaignMatch = true
+						break
+					}
+				}
+				if !campaignMatch {
+					continue
+				}
+			}
+
+			clicks, _ := strconv.ParseInt(record[4], 10, 64)
+			impressions, _ := strconv.ParseInt(record[5], 10, 64)
+			conversions, _ := strconv.ParseInt(record[6], 10, 64)
+			revenue, _ := strconv.ParseFloat(record[7], 64)
+			conversionRate, _ := strconv.ParseFloat(record[8], 64)
+			clickThroughRate, _ := strconv.ParseFloat(record[9], 64)
+			payouts, _ := strconv.ParseFloat(record[10], 64)
+
+			report := domain.DailyPerformanceReport{
+				Date:             record[1],
+				CampaignID:       record[2],
+				CampaignName:     record[3],
+				Clicks:           clicks,
+				Impressions:      impressions,
+				Conversions:      conversions,
+				Revenue:          revenue,
+				ConversionRate:   conversionRate,
+				ClickThroughRate: clickThroughRate,
+				Payouts:          payouts,
+			}
+			reports = append(reports, report)
+		}
+	}
+
+	// Apply pagination
+	totalItems := len(reports)
+	startIndex := (pagination.Page - 1) * pagination.Limit
+	endIndex := startIndex + pagination.Limit
+
+	if startIndex >= totalItems {
+		reports = []domain.DailyPerformanceReport{}
+	} else if endIndex > totalItems {
+		reports = reports[startIndex:]
+	} else {
+		reports = reports[startIndex:endIndex]
+	}
+
+	totalPages := (totalItems + pagination.Limit - 1) / pagination.Limit
+	paginationResult := &domain.PaginationResult{
+		CurrentPage:     pagination.Page,
+		TotalPages:      totalPages,
+		TotalItems:      totalItems,
+		ItemsPerPage:    pagination.Limit,
+		HasNextPage:     pagination.Page < totalPages,
+		HasPreviousPage: pagination.Page > 1,
+	}
+
+	return reports, paginationResult, nil
+}
+
+// LoadConversionsReport loads conversions report data from CSV
+func (s *mockDataService) LoadConversionsReport(ctx context.Context, orgID int64, filters domain.ReportingFilters, pagination domain.PaginationParams) ([]domain.ConversionReport, *domain.PaginationResult, error) {
+	records, err := s.loadCSV("conversions_report.csv")
+	if err != nil {
+		return nil, nil, fmt.Errorf("failed to load conversions report: %w", err)
+	}
+
+	var conversions []domain.ConversionReport
+
+	for _, record := range records[1:] { // Skip header
+		if len(record) < 18 {
+			continue
+		}
+
+		recordOrgID, err := strconv.ParseInt(record[0], 10, 64)
+		if err != nil {
+			continue
+		}
+
+		if recordOrgID == orgID {
+			// Apply campaign filtering if provided
+			if len(filters.CampaignIDs) > 0 {
+				campaignMatch := false
+				for _, campaignID := range filters.CampaignIDs {
+					if record[4] == campaignID {
+						campaignMatch = true
+						break
+					}
+				}
+				if !campaignMatch {
+					continue
+				}
+			}
+
+			// Apply status filtering if provided
+			if filters.Status != nil && *filters.Status != "" && record[8] != *filters.Status {
+				continue
+			}
+
+			timestamp, _ := time.Parse(time.RFC3339, record[2])
+			payout, _ := strconv.ParseFloat(record[9], 64)
+			var conversionValue *float64
+			if record[14] != "" {
+				cv, _ := strconv.ParseFloat(record[14], 64)
+				conversionValue = &cv
+			}
+
+			var clickID, sub1, sub2, sub3 *string
+			if record[13] != "" {
+				clickID = &record[13]
+			}
+			if record[15] != "" {
+				sub1 = &record[15]
+			}
+			if record[16] != "" {
+				sub2 = &record[16]
+			}
+			if record[17] != "" {
+				sub3 = &record[17]
+			}
+
+			conversion := domain.ConversionReport{
+				ID:              record[1],
+				Timestamp:       timestamp,
+				TransactionID:   record[3],
+				CampaignID:      record[4],
+				CampaignName:    record[5],
+				OfferID:         record[6],
+				OfferName:       record[7],
+				Status:          record[8],
+				Payout:          payout,
+				Currency:        record[10],
+				AffiliateID:     record[11],
+				AffiliateName:   record[12],
+				ClickID:         clickID,
+				ConversionValue: conversionValue,
+				Sub1:            sub1,
+				Sub2:            sub2,
+				Sub3:            sub3,
+			}
+			conversions = append(conversions, conversion)
+		}
+	}
+
+	// Apply pagination
+	totalItems := len(conversions)
+	startIndex := (pagination.Page - 1) * pagination.Limit
+	endIndex := startIndex + pagination.Limit
+
+	if startIndex >= totalItems {
+		conversions = []domain.ConversionReport{}
+	} else if endIndex > totalItems {
+		conversions = conversions[startIndex:]
+	} else {
+		conversions = conversions[startIndex:endIndex]
+	}
+
+	totalPages := (totalItems + pagination.Limit - 1) / pagination.Limit
+	paginationResult := &domain.PaginationResult{
+		CurrentPage:     pagination.Page,
+		TotalPages:      totalPages,
+		TotalItems:      totalItems,
+		ItemsPerPage:    pagination.Limit,
+		HasNextPage:     pagination.Page < totalPages,
+		HasPreviousPage: pagination.Page > 1,
+	}
+
+	return conversions, paginationResult, nil
+}
+
+// LoadClicksReport loads clicks report data from CSV
+func (s *mockDataService) LoadClicksReport(ctx context.Context, orgID int64, filters domain.ReportingFilters, pagination domain.PaginationParams) ([]domain.ClickReport, *domain.PaginationResult, error) {
+	records, err := s.loadCSV("clicks_report.csv")
+	if err != nil {
+		return nil, nil, fmt.Errorf("failed to load clicks report: %w", err)
+	}
+
+	var clicks []domain.ClickReport
+
+	for _, record := range records[1:] { // Skip header
+		if len(record) < 21 {
+			continue
+		}
+
+		recordOrgID, err := strconv.ParseInt(record[0], 10, 64)
+		if err != nil {
+			continue
+		}
+
+		if recordOrgID == orgID {
+			// Apply campaign filtering if provided
+			if len(filters.CampaignIDs) > 0 {
+				campaignMatch := false
+				for _, campaignID := range filters.CampaignIDs {
+					if record[3] == campaignID {
+						campaignMatch = true
+						break
+					}
+				}
+				if !campaignMatch {
+					continue
+				}
+			}
+
+			timestamp, _ := time.Parse(time.RFC3339, record[2])
+			converted, _ := strconv.ParseBool(record[19])
+
+			var region, city, referrerURL, sub1, sub2, sub3, conversionID *string
+			if record[12] != "" {
+				region = &record[12]
+			}
+			if record[13] != "" {
+				city = &record[13]
+			}
+			if record[14] != "" {
+				referrerURL = &record[14]
+			}
+			if record[16] != "" {
+				sub1 = &record[16]
+			}
+			if record[17] != "" {
+				sub2 = &record[17]
+			}
+			if record[18] != "" {
+				sub3 = &record[18]
+			}
+			if record[20] != "" {
+				conversionID = &record[20]
+			}
+
+			click := domain.ClickReport{
+				ID:             record[1],
+				Timestamp:      timestamp,
+				CampaignID:     record[3],
+				CampaignName:   record[4],
+				OfferID:        record[5],
+				OfferName:      record[6],
+				AffiliateID:    record[7],
+				AffiliateName:  record[8],
+				IPAddress:      record[9],
+				UserAgent:      record[10],
+				Country:        record[11],
+				Region:         region,
+				City:           city,
+				ReferrerURL:    referrerURL,
+				LandingPageURL: record[15],
+				Sub1:           sub1,
+				Sub2:           sub2,
+				Sub3:           sub3,
+				Converted:      converted,
+				ConversionID:   conversionID,
+			}
+			clicks = append(clicks, click)
+		}
+	}
+
+	// Apply pagination
+	totalItems := len(clicks)
+	startIndex := (pagination.Page - 1) * pagination.Limit
+	endIndex := startIndex + pagination.Limit
+
+	if startIndex >= totalItems {
+		clicks = []domain.ClickReport{}
+	} else if endIndex > totalItems {
+		clicks = clicks[startIndex:]
+	} else {
+		clicks = clicks[startIndex:endIndex]
+	}
+
+	totalPages := (totalItems + pagination.Limit - 1) / pagination.Limit
+	paginationResult := &domain.PaginationResult{
+		CurrentPage:     pagination.Page,
+		TotalPages:      totalPages,
+		TotalItems:      totalItems,
+		ItemsPerPage:    pagination.Limit,
+		HasNextPage:     pagination.Page < totalPages,
+		HasPreviousPage: pagination.Page > 1,
+	}
+
+	return clicks, paginationResult, nil
+}
+
+// LoadCampaignsList loads campaigns list data from CSV
+func (s *mockDataService) LoadCampaignsList(ctx context.Context, orgID int64, affiliateID *string, status string, search *string) ([]domain.CampaignListItem, error) {
+	records, err := s.loadCSV("campaigns_list.csv")
+	if err != nil {
+		return nil, fmt.Errorf("failed to load campaigns list: %w", err)
+	}
+
+	var campaigns []domain.CampaignListItem
+
+	for _, record := range records[1:] { // Skip header
+		if len(record) < 4 {
+			continue
+		}
+
+		recordOrgID, err := strconv.ParseInt(record[0], 10, 64)
+		if err != nil {
+			continue
+		}
+
+		if recordOrgID == orgID {
+			// Apply status filtering if provided
+			if status != "" && record[3] != status {
+				continue
+			}
+
+			// Apply search filtering if provided
+			if search != nil && *search != "" {
+				searchTerm := strings.ToLower(*search)
+				if !strings.Contains(strings.ToLower(record[2]), searchTerm) {
+					continue
+				}
+			}
+
+			campaign := domain.CampaignListItem{
+				ID:     record[1],
+				Name:   record[2],
+				Status: record[3],
+			}
+			campaigns = append(campaigns, campaign)
+		}
+	}
+
+	return campaigns, nil
 }

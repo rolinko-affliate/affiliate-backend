@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"encoding/json"
+	"github.com/affiliate-backend/internal/domain"
 )
 
 // This file contains type definitions to help Swagger generate proper documentation
@@ -70,4 +71,52 @@ type ProviderOfferConfigExample struct {
 	TrackingURLTemplate string `json:"tracking_url_template" example:"https://track.provider.com/{offer_id}/{affiliate_id}"`
 	// Payout details
 	Payout map[string]interface{} `json:"payout"`
+}
+
+// Reporting API Response Types
+
+// PerformanceSummaryResponse represents the response for performance summary endpoint
+type PerformanceSummaryResponse struct {
+	Data      domain.PerformanceSummary `json:"data"`
+	DateRange DateRangeInfo             `json:"dateRange"`
+	Status    string                    `json:"status"`
+}
+
+// PerformanceTimeSeriesResponse represents the response for performance time series endpoint
+type PerformanceTimeSeriesResponse struct {
+	Data   []domain.PerformanceTimeSeriesPoint `json:"data"`
+	Status string                              `json:"status"`
+}
+
+// DailyPerformanceReportResponse represents the response for daily performance report endpoint
+type DailyPerformanceReportResponse struct {
+	Data       []domain.DailyPerformanceReport `json:"data"`
+	Pagination domain.PaginationResult         `json:"pagination"`
+	Status     string                          `json:"status"`
+}
+
+// ConversionsReportResponse represents the response for conversions report endpoint
+type ConversionsReportResponse struct {
+	Data       []domain.ConversionReport   `json:"data"`
+	Pagination domain.PaginationResult     `json:"pagination"`
+	Status     string                      `json:"status"`
+}
+
+// ClicksReportResponse represents the response for clicks report endpoint
+type ClicksReportResponse struct {
+	Data       []domain.ClickReport        `json:"data"`
+	Pagination domain.PaginationResult     `json:"pagination"`
+	Status     string                      `json:"status"`
+}
+
+// CampaignsListResponse represents the response for campaigns list endpoint
+type CampaignsListResponse struct {
+	Data   []domain.CampaignListItem `json:"data"`
+	Status string                    `json:"status"`
+}
+
+// DateRangeInfo represents date range information in responses
+type DateRangeInfo struct {
+	StartDate string `json:"startDate"`
+	EndDate   string `json:"endDate"`
 }

@@ -5,7 +5,8 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"log/slog"
+	// "log" // Commented out - not used
+	// "log/slog" // Commented out for Go 1.19 compatibility
 	"os"
 	"time"
 
@@ -98,8 +99,8 @@ func main() {
 	
 	loggerInstance := logger.NewLogger(loggerConfig)
 
-	// Set global logger
-	slog.SetDefault(loggerInstance.Logger)
+	// Set global logger - commented out for Go 1.19 compatibility
+	// slog.SetDefault(loggerInstance.Logger)
 
 	loggerInstance.Info("Starting Everflow synchronization", 
 		"dry_run", opts.DryRun,
@@ -156,7 +157,7 @@ func main() {
 
 	// Create sync service
 	syncService := &SyncService{
-		logger:                            loggerInstance.Logger,
+		logger:                            loggerInstance,
 		everflowService:                   everflowService,
 		advertiserRepo:                    advertiserRepo,
 		affiliateRepo:                     affiliateRepo,
@@ -190,7 +191,7 @@ func main() {
 
 // SyncService handles the synchronization logic
 type SyncService struct {
-	logger                            *slog.Logger
+	logger                            *logger.Logger
 	everflowService                   *everflow.IntegrationService
 	advertiserRepo                    repository.AdvertiserRepository
 	affiliateRepo                     repository.AffiliateRepository

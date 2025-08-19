@@ -41,12 +41,14 @@ type DashboardService interface {
 
 // dashboardService implements DashboardService
 type dashboardService struct {
-	cacheRepo          repository.DashboardCacheRepository
-	everflowRepo       repository.EverflowRepository
-	reportingService   ReportingService
-	profileService     ProfileService
+	cacheRepo           repository.DashboardCacheRepository
+	everflowRepo        repository.EverflowRepository
+	reportingService    ReportingService
+	profileService      ProfileService
 	organizationService OrganizationService
-	logger             *logger.Logger
+	mockDataService     MockDataService
+	logger              *logger.Logger
+	mockMode            bool
 }
 
 // NewDashboardService creates a new dashboard service
@@ -56,15 +58,19 @@ func NewDashboardService(
 	reportingService ReportingService,
 	profileService ProfileService,
 	organizationService OrganizationService,
+	mockDataService MockDataService,
 	logger *logger.Logger,
+	mockMode bool,
 ) DashboardService {
 	return &dashboardService{
-		cacheRepo:          cacheRepo,
-		everflowRepo:       everflowRepo,
-		reportingService:   reportingService,
-		profileService:     profileService,
+		cacheRepo:           cacheRepo,
+		everflowRepo:        everflowRepo,
+		reportingService:    reportingService,
+		profileService:      profileService,
 		organizationService: organizationService,
-		logger:             logger,
+		mockDataService:     mockDataService,
+		logger:              logger,
+		mockMode:            mockMode,
 	}
 }
 
@@ -166,6 +172,11 @@ func (s *dashboardService) GetDashboardData(ctx context.Context, userID uuid.UUI
 
 // getAdvertiserSummary builds advertiser-specific dashboard summary using Everflow data
 func (s *dashboardService) getAdvertiserSummary(ctx context.Context, orgID int64, from, to time.Time) (*domain.AdvertiserDashboard, error) {
+	// Use mock data if mock mode is enabled
+	if s.mockMode && s.mockDataService != nil {
+		return s.getAdvertiserSummaryFromMock(ctx, orgID)
+	}
+
 	// Get dashboard summary from Everflow
 	// For timezone, we'll use UTC (timezone ID 67) as default
 	dashboardSummary, err := s.everflowRepo.GetDashboardSummary(ctx, 67)
@@ -207,14 +218,14 @@ func (s *dashboardService) getAdvertiserSummary(ctx context.Context, orgID int64
 	// Convert entity data to campaign summaries
 	var campaignSummaries []domain.CampaignSummary
 	activeCampaigns := 0
-	
+
 	if entityResponse != nil {
 		for _, row := range entityResponse.Table.Rows {
 			if offerName, ok := row["offer"].(string); ok {
 				clicks := int64(0)
 				conversions := int64(0)
 				revenue := float64(0)
-				
+
 				if clicksVal, ok := row["clicks"]; ok {
 					if clicksFloat, ok := clicksVal.(float64); ok {
 						clicks = int64(clicksFloat)
@@ -230,12 +241,12 @@ func (s *dashboardService) getAdvertiserSummary(ctx context.Context, orgID int64
 						revenue = revenueFloat
 					}
 				}
-				
+
 				conversionRate := float64(0)
 				if clicks > 0 {
 					conversionRate = float64(conversions) / float64(clicks) * 100
 				}
-				
+
 				campaignSummaries = append(campaignSummaries, domain.CampaignSummary{
 					ID:             int64(len(campaignSummaries) + 1), // Generate ID
 					Name:           offerName,
@@ -274,16 +285,50 @@ func (s *dashboardService) getAdvertiserSummary(ctx context.Context, orgID int64
 	}, nil
 }
 
+// getAdvertiserSummaryFromMock builds advertiser dashboard using mock data
+func (s *dashboardService) getAdvertiserSummaryFromMock(ctx context.Context, orgID int64) (*domain.AdvertiserDashboard, error) {
+	// Load advertiser summary
+	summary, err := s.mockDataService.LoadAdvertiserSummary(ctx, orgID)
+	if err != nil {
+		return nil, fmt.Errorf("failed to load mock advertiser summary: %w", err)
+	}
+
+	// Load campaign performance
+	campaignPerformance, err := s.mockDataService.LoadCampaignPerformance(ctx, orgID)
+	if err != nil {
+		return nil, fmt.Errorf("failed to load mock campaign performance: %w", err)
+	}
+
+	// Load revenue chart (default to 30d period)
+	revenueChart, err := s.mockDataService.LoadRevenueChart(ctx, orgID, "30d")
+	if err != nil {
+		return nil, fmt.Errorf("failed to load mock revenue chart: %w", err)
+	}
+
+	// Load billing info
+	billing, err := s.mockDataService.LoadBillingInfo(ctx, orgID)
+	if err != nil {
+		return nil, fmt.Errorf("failed to load mock billing info: %w", err)
+	}
+
+	return &domain.AdvertiserDashboard{
+		Summary:             *summary,
+		CampaignPerformance: *campaignPerformance,
+		RevenueChart:        *revenueChart,
+		Billing:             billing,
+	}, nil
+}
+
 // buildRevenueChartFromEverflow builds revenue chart from Everflow performance data
 func (s *dashboardService) buildRevenueChartFromEverflow(entityResponse *domain.EverflowEntityResponse) domain.RevenueChart {
 	var dataPoints []domain.RevenueDataPoint
-	
+
 	if entityResponse != nil && entityResponse.Performance.Data != nil {
 		for _, point := range entityResponse.Performance.Data {
 			revenue := float64(0)
 			clicks := int64(0)
 			conversions := int64(0)
-			
+
 			if revenueVal, ok := point.Metrics["revenue"]; ok {
 				if revenueFloat, ok := revenueVal.(float64); ok {
 					revenue = revenueFloat
@@ -299,7 +344,7 @@ func (s *dashboardService) buildRevenueChartFromEverflow(entityResponse *domain.
 					conversions = int64(conversionsFloat)
 				}
 			}
-			
+
 			dataPoints = append(dataPoints, domain.RevenueDataPoint{
 				Date:        point.Timestamp,
 				Revenue:     revenue,
@@ -308,7 +353,7 @@ func (s *dashboardService) buildRevenueChartFromEverflow(entityResponse *domain.
 			})
 		}
 	}
-	
+
 	// If no performance data, create a basic chart with current data
 	if len(dataPoints) == 0 {
 		dataPoints = []domain.RevenueDataPoint{
@@ -320,7 +365,7 @@ func (s *dashboardService) buildRevenueChartFromEverflow(entityResponse *domain.
 			},
 		}
 	}
-	
+
 	return domain.RevenueChart{
 		Period: "daily",
 		Data:   dataPoints,
@@ -329,6 +374,11 @@ func (s *dashboardService) buildRevenueChartFromEverflow(entityResponse *domain.
 
 // getAgencySummary builds agency-specific dashboard summary using Everflow data
 func (s *dashboardService) getAgencySummary(ctx context.Context, orgID int64, from, to time.Time) (*domain.AgencyDashboard, error) {
+	// Use mock data if mock mode is enabled
+	if s.mockMode && s.mockDataService != nil {
+		return s.getAgencySummaryFromMock(ctx, orgID)
+	}
+
 	// Get dashboard summary from Everflow
 	dashboardSummary, err := s.everflowRepo.GetDashboardSummary(ctx, 67)
 	if err != nil {
@@ -352,7 +402,7 @@ func (s *dashboardService) getAgencySummary(ctx context.Context, orgID int64, fr
 		},
 		{
 			ClientID:   2,
-			ClientName: "Client B", 
+			ClientName: "Client B",
 			Revenue:    float64(dashboardSummary.Cost.Today) * 0.3,
 			Growth:     3.1,
 		},
@@ -384,7 +434,7 @@ func (s *dashboardService) getAgencySummary(ctx context.Context, orgID int64, fr
 
 	// Build revenue chart from Everflow data
 	revenueChart := s.buildRevenueChartFromEverflow(nil)
-	
+
 	// Convert to agency revenue chart with client breakdown
 	agencyRevenueChart := domain.AgencyRevenueChart{
 		Period: revenueChart.Period,
@@ -408,8 +458,40 @@ func (s *dashboardService) getAgencySummary(ctx context.Context, orgID int64, fr
 	}, nil
 }
 
+// getAgencySummaryFromMock builds agency dashboard using mock data
+func (s *dashboardService) getAgencySummaryFromMock(ctx context.Context, orgID int64) (*domain.AgencyDashboard, error) {
+	// Load agency summary
+	summary, err := s.mockDataService.LoadAgencySummary(ctx, orgID)
+	if err != nil {
+		return nil, fmt.Errorf("failed to load mock agency summary: %w", err)
+	}
+
+	// Load client performance
+	clientPerformance, err := s.mockDataService.LoadClientPerformance(ctx, orgID)
+	if err != nil {
+		return nil, fmt.Errorf("failed to load mock client performance: %w", err)
+	}
+
+	// Load agency revenue chart (default to 30d period)
+	revenueChart, err := s.mockDataService.LoadAgencyRevenueChart(ctx, orgID, "30d")
+	if err != nil {
+		return nil, fmt.Errorf("failed to load mock agency revenue chart: %w", err)
+	}
+
+	return &domain.AgencyDashboard{
+		Summary:           *summary,
+		ClientPerformance: *clientPerformance,
+		RevenueChart:      *revenueChart,
+	}, nil
+}
+
 // getPlatformOwnerSummary builds platform owner dashboard summary using Everflow data
 func (s *dashboardService) getPlatformOwnerSummary(ctx context.Context, from, to time.Time) (*domain.PlatformOwnerDashboard, error) {
+	// Use mock data if mock mode is enabled
+	if s.mockMode && s.mockDataService != nil {
+		return s.getPlatformOwnerSummaryFromMock(ctx)
+	}
+
 	// Get dashboard summary from Everflow
 	dashboardSummary, err := s.everflowRepo.GetDashboardSummary(ctx, 67)
 	if err != nil {
@@ -425,10 +507,10 @@ func (s *dashboardService) getPlatformOwnerSummary(ctx context.Context, from, to
 	}
 
 	userMetrics := domain.UserMetrics{
-		ActiveUsers:     800,
-		NewUsers:        50,
-		UserGrowthRate:  5.2,
-		UsersByType:     map[string]int{"advertiser": 300, "agency": 200, "affiliate": 500},
+		ActiveUsers:    800,
+		NewUsers:       50,
+		UserGrowthRate: 5.2,
+		UsersByType:    map[string]int{"advertiser": 300, "agency": 200, "affiliate": 500},
 	}
 
 	revenueMetrics := domain.RevenueMetrics{
@@ -456,7 +538,39 @@ func (s *dashboardService) getPlatformOwnerSummary(ctx context.Context, from, to
 	}, nil
 }
 
+// getPlatformOwnerSummaryFromMock builds platform owner dashboard using mock data
+func (s *dashboardService) getPlatformOwnerSummaryFromMock(ctx context.Context) (*domain.PlatformOwnerDashboard, error) {
+	// Load platform summary
+	summary, err := s.mockDataService.LoadPlatformSummary(ctx)
+	if err != nil {
+		return nil, fmt.Errorf("failed to load mock platform summary: %w", err)
+	}
 
+	// Load user metrics
+	userMetrics, err := s.mockDataService.LoadUserMetrics(ctx)
+	if err != nil {
+		return nil, fmt.Errorf("failed to load mock user metrics: %w", err)
+	}
+
+	// Load revenue metrics
+	revenueMetrics, err := s.mockDataService.LoadRevenueMetrics(ctx)
+	if err != nil {
+		return nil, fmt.Errorf("failed to load mock revenue metrics: %w", err)
+	}
+
+	// Load system health
+	systemHealth, err := s.mockDataService.LoadSystemHealth(ctx)
+	if err != nil {
+		return nil, fmt.Errorf("failed to load mock system health: %w", err)
+	}
+
+	return &domain.PlatformOwnerDashboard{
+		Summary:        *summary,
+		UserMetrics:    *userMetrics,
+		RevenueMetrics: *revenueMetrics,
+		SystemHealth:   *systemHealth,
+	}, nil
+}
 
 // GetCampaignDetail retrieves detailed campaign information
 func (s *dashboardService) GetCampaignDetail(ctx context.Context, userID uuid.UUID, campaignID int64) (*domain.CampaignDetail, error) {
@@ -468,6 +582,11 @@ func (s *dashboardService) GetCampaignDetail(ctx context.Context, userID uuid.UU
 
 	if profile.OrganizationID == nil {
 		return nil, errors.New("user is not associated with any organization")
+	}
+
+	// Use mock data if mock mode is enabled
+	if s.mockMode && s.mockDataService != nil {
+		return s.mockDataService.LoadCampaignDetail(ctx, *profile.OrganizationID, campaignID)
 	}
 
 	// For now, return mock campaign detail since we're focusing on Everflow data
@@ -518,6 +637,11 @@ func (s *dashboardService) GetRecentActivity(ctx context.Context, userID uuid.UU
 		return nil, errors.New("user is not associated with any organization")
 	}
 
+	// Use mock data if mock mode is enabled
+	if s.mockMode && s.mockDataService != nil {
+		return s.mockDataService.LoadActivities(ctx, *profile.OrganizationID, limit, offset, activityTypes, since)
+	}
+
 	// Convert string activity types to domain types and back to valid strings
 	var validActivityTypes []string
 	for _, typeStr := range activityTypes {
@@ -549,6 +673,11 @@ func (s *dashboardService) GetSystemHealth(ctx context.Context, userID uuid.UUID
 
 	if profile.RoleName != "Admin" && profile.RoleName != "PlatformOwner" {
 		return nil, errors.New("insufficient privileges for system health access")
+	}
+
+	// Use mock data if mock mode is enabled
+	if s.mockMode && s.mockDataService != nil {
+		return s.mockDataService.LoadSystemHealth(ctx)
 	}
 
 	// Return mock system health data

@@ -389,7 +389,11 @@ func main() {
 	// Initialize Dashboard Service and Handler
 	dashboardCacheRepo := repository.NewDashboardCacheRepository(redisClient)
 	everflowRepo := repository.NewEverflowRepository(appConf.EverflowAPIURL, appConf.EverflowAPIKey, redisClient, logger.GetDefault())
-	dashboardService := service.NewDashboardService(dashboardCacheRepo, everflowRepo, reportingService, profileService, organizationService, logger.GetDefault())
+	
+	// Initialize mock data service for dashboard
+	mockDataService := service.NewMockDataService(logger.GetDefault())
+	
+	dashboardService := service.NewDashboardService(dashboardCacheRepo, everflowRepo, reportingService, profileService, organizationService, mockDataService, logger.GetDefault(), appConf.MockMode)
 	dashboardHandler := handlers.NewDashboardHandler(dashboardService, logger.GetDefault())
 
 	// Setup Router

@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"sort"
 	"strconv"
 	"strings"
 	"time"
@@ -1077,6 +1078,11 @@ func (s *mockDataService) LoadConversionsReport(ctx context.Context, orgID int64
 				}
 			}
 
+			// Apply affiliate filtering if provided
+			if filters.AffiliateID != nil && *filters.AffiliateID != "" && record[11] != *filters.AffiliateID {
+				continue
+			}
+
 			// Apply status filtering if provided
 			if filters.Status != nil && *filters.Status != "" && record[8] != *filters.Status {
 				continue
@@ -1126,6 +1132,11 @@ func (s *mockDataService) LoadConversionsReport(ctx context.Context, orgID int64
 			conversions = append(conversions, conversion)
 		}
 	}
+
+	// Sort by timestamp DESC (most recent first)
+	sort.Slice(conversions, func(i, j int) bool {
+		return conversions[i].Timestamp.After(conversions[j].Timestamp)
+	})
 
 	// Apply pagination
 	totalItems := len(conversions)
@@ -1187,6 +1198,11 @@ func (s *mockDataService) LoadClicksReport(ctx context.Context, orgID int64, fil
 				}
 			}
 
+			// Apply affiliate filtering if provided
+			if filters.AffiliateID != nil && *filters.AffiliateID != "" && record[7] != *filters.AffiliateID {
+				continue
+			}
+
 			timestamp, _ := time.Parse(time.RFC3339, record[2])
 			converted, _ := strconv.ParseBool(record[19])
 
@@ -1238,6 +1254,11 @@ func (s *mockDataService) LoadClicksReport(ctx context.Context, orgID int64, fil
 			clicks = append(clicks, click)
 		}
 	}
+
+	// Sort by timestamp DESC (most recent first)
+	sort.Slice(clicks, func(i, j int) bool {
+		return clicks[i].Timestamp.After(clicks[j].Timestamp)
+	})
 
 	// Apply pagination
 	totalItems := len(clicks)

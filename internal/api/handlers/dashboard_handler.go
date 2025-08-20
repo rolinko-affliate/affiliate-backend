@@ -10,6 +10,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 
+	"github.com/affiliate-backend/internal/api/middleware"
 	"github.com/affiliate-backend/internal/domain"
 	"github.com/affiliate-backend/internal/platform/logger"
 	"github.com/affiliate-backend/internal/service"
@@ -48,7 +49,7 @@ func NewDashboardHandler(service service.DashboardService, log *logger.Logger) *
 // @Router       /dashboard [get]
 func (h *DashboardHandler) GetDashboard(c *gin.Context) {
 	// Get user ID from context (set by auth middleware)
-	userIDStr, exists := c.Get("user_id")
+	userIDStr, exists := c.Get(middleware.UserIDKey)
 	if !exists {
 		RespondWithError(c, http.StatusUnauthorized, "User ID not found in context")
 		return
@@ -131,7 +132,7 @@ func (h *DashboardHandler) GetDashboard(c *gin.Context) {
 // @Router       /dashboard/campaigns/{campaignId} [get]
 func (h *DashboardHandler) GetCampaignDetail(c *gin.Context) {
 	// Get user ID from context
-	userIDStr, exists := c.Get("user_id")
+	userIDStr, exists := c.Get(middleware.UserIDKey)
 	if !exists {
 		RespondWithError(c, http.StatusUnauthorized, "User ID not found in context")
 		return
@@ -200,7 +201,7 @@ func (h *DashboardHandler) GetCampaignDetail(c *gin.Context) {
 // @Router       /dashboard/activity [get]
 func (h *DashboardHandler) GetRecentActivity(c *gin.Context) {
 	// Get user ID from context
-	userIDStr, exists := c.Get("user_id")
+	userIDStr, exists := c.Get(middleware.UserIDKey)
 	if !exists {
 		RespondWithError(c, http.StatusUnauthorized, "User ID not found in context")
 		return
@@ -282,7 +283,7 @@ func (h *DashboardHandler) GetRecentActivity(c *gin.Context) {
 // @Router       /dashboard/system/health [get]
 func (h *DashboardHandler) GetSystemHealth(c *gin.Context) {
 	// Get user ID from context
-	userIDStr, exists := c.Get("user_id")
+	userIDStr, exists := c.Get(middleware.UserIDKey)
 	if !exists {
 		RespondWithError(c, http.StatusUnauthorized, "User ID not found in context")
 		return

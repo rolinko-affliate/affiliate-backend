@@ -23,7 +23,7 @@ func NewMockReportingService(mockDataService MockDataService, logger *logger.Log
 
 // GetPerformanceSummary retrieves aggregated performance metrics from mock data
 func (s *MockReportingService) GetPerformanceSummary(ctx context.Context, filters domain.ReportingFilters, userProfile *domain.Profile) (*domain.PerformanceSummary, error) {
-	orgID := int64(1) // Default organization ID
+	orgID := int64(100) // Default organization ID
 	if userProfile.OrganizationID != nil {
 		orgID = *userProfile.OrganizationID
 	}
@@ -33,7 +33,7 @@ func (s *MockReportingService) GetPerformanceSummary(ctx context.Context, filter
 
 // GetPerformanceTimeSeries retrieves daily performance data for charts from mock data
 func (s *MockReportingService) GetPerformanceTimeSeries(ctx context.Context, filters domain.ReportingFilters, userProfile *domain.Profile) ([]domain.PerformanceTimeSeriesPoint, error) {
-	orgID := int64(1) // Default organization ID
+	orgID := int64(100) // Default organization ID
 	if userProfile.OrganizationID != nil {
 		orgID = *userProfile.OrganizationID
 	}
@@ -43,7 +43,7 @@ func (s *MockReportingService) GetPerformanceTimeSeries(ctx context.Context, fil
 
 // GetDailyPerformanceReport retrieves daily performance breakdown from mock data
 func (s *MockReportingService) GetDailyPerformanceReport(ctx context.Context, filters domain.ReportingFilters, pagination domain.PaginationParams, userProfile *domain.Profile) ([]domain.DailyPerformanceReport, *domain.PaginationResult, error) {
-	orgID := int64(1) // Default organization ID
+	orgID := int64(100) // Default organization ID
 	if userProfile.OrganizationID != nil {
 		orgID = *userProfile.OrganizationID
 	}
@@ -53,7 +53,7 @@ func (s *MockReportingService) GetDailyPerformanceReport(ctx context.Context, fi
 
 // GetConversionsReport retrieves detailed conversion events from mock data
 func (s *MockReportingService) GetConversionsReport(ctx context.Context, filters domain.ReportingFilters, pagination domain.PaginationParams, userProfile *domain.Profile) ([]domain.ConversionReport, *domain.PaginationResult, error) {
-	orgID := int64(1) // Default organization ID
+	orgID := int64(100) // Default organization ID
 	if userProfile.OrganizationID != nil {
 		orgID = *userProfile.OrganizationID
 	}
@@ -63,7 +63,7 @@ func (s *MockReportingService) GetConversionsReport(ctx context.Context, filters
 
 // GetClicksReport retrieves detailed click events from mock data
 func (s *MockReportingService) GetClicksReport(ctx context.Context, filters domain.ReportingFilters, pagination domain.PaginationParams, userProfile *domain.Profile) ([]domain.ClickReport, *domain.PaginationResult, error) {
-	orgID := int64(1) // Default organization ID
+	orgID := int64(100) // Default organization ID
 	if userProfile.OrganizationID != nil {
 		orgID = *userProfile.OrganizationID
 	}
@@ -73,7 +73,7 @@ func (s *MockReportingService) GetClicksReport(ctx context.Context, filters doma
 
 // GetCampaignsList retrieves campaigns list for filter dropdown from mock data
 func (s *MockReportingService) GetCampaignsList(ctx context.Context, affiliateID *string, status string, search *string, userProfile *domain.Profile) ([]domain.CampaignListItem, error) {
-	orgID := int64(1) // Default organization ID
+	orgID := int64(100) // Default organization ID
 	if userProfile.OrganizationID != nil {
 		orgID = *userProfile.OrganizationID
 	}

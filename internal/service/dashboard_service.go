@@ -204,12 +204,50 @@ func (s *dashboardService) getAdvertiserSummary(ctx context.Context, orgID int64
 		return nil, fmt.Errorf("failed to get Everflow dashboard summary: %w", err)
 	}
 
-	// Convert Everflow data to our domain model
-	advertiserSummary := domain.AdvertiserSummary{
-		TotalClicks:    int64(dashboardSummary.Click.Today),
-		Conversions:    int64(dashboardSummary.Conversion.Today),
-		Revenue:        float64(dashboardSummary.Cost.Today),
-		ConversionRate: dashboardSummary.CVR.Today,
+	// Convert Everflow data to our domain model with historical metrics
+	advertiserMetrics := domain.AdvertiserMetrics{
+		TotalClicks: domain.MetricWithHistory{
+			Today:           float64(dashboardSummary.Click.Today),
+			Yesterday:       float64(dashboardSummary.Click.Yesterday),
+			CurrentMonth:    float64(dashboardSummary.Click.CurrentMonth),
+			LastMonth:       float64(dashboardSummary.Click.LastMonth),
+			ChangePercentage: calculateChangePercentage(float64(dashboardSummary.Click.Today), float64(dashboardSummary.Click.Yesterday)),
+		},
+		Conversions: domain.MetricWithHistory{
+			Today:           float64(dashboardSummary.Conversion.Today),
+			Yesterday:       float64(dashboardSummary.Conversion.Yesterday),
+			CurrentMonth:    float64(dashboardSummary.Conversion.CurrentMonth),
+			LastMonth:       float64(dashboardSummary.Conversion.LastMonth),
+			ChangePercentage: calculateChangePercentage(float64(dashboardSummary.Conversion.Today), float64(dashboardSummary.Conversion.Yesterday)),
+		},
+		Revenue: domain.MetricWithHistory{
+			Today:           float64(dashboardSummary.Cost.Today),
+			Yesterday:       float64(dashboardSummary.Cost.Yesterday),
+			CurrentMonth:    float64(dashboardSummary.Cost.CurrentMonth),
+			LastMonth:       float64(dashboardSummary.Cost.LastMonth),
+			ChangePercentage: calculateChangePercentage(float64(dashboardSummary.Cost.Today), float64(dashboardSummary.Cost.Yesterday)),
+		},
+		ConversionRate: domain.MetricWithHistory{
+			Today:           dashboardSummary.CVR.Today,
+			Yesterday:       dashboardSummary.CVR.Yesterday,
+			CurrentMonth:    dashboardSummary.CVR.CurrentMonth,
+			LastMonth:       dashboardSummary.CVR.LastMonth,
+			ChangePercentage: calculateChangePercentage(dashboardSummary.CVR.Today, dashboardSummary.CVR.Yesterday),
+		},
+		Events: domain.MetricWithHistory{
+			Today:           float64(dashboardSummary.Event.Today),
+			Yesterday:       float64(dashboardSummary.Event.Yesterday),
+			CurrentMonth:    float64(dashboardSummary.Event.CurrentMonth),
+			LastMonth:       float64(dashboardSummary.Event.LastMonth),
+			ChangePercentage: calculateChangePercentage(float64(dashboardSummary.Event.Today), float64(dashboardSummary.Event.Yesterday)),
+		},
+		EventRate: domain.MetricWithHistory{
+			Today:           dashboardSummary.EVR.Today,
+			Yesterday:       dashboardSummary.EVR.Yesterday,
+			CurrentMonth:    dashboardSummary.EVR.CurrentMonth,
+			LastMonth:       dashboardSummary.EVR.LastMonth,
+			ChangePercentage: calculateChangePercentage(dashboardSummary.EVR.Today, dashboardSummary.EVR.Yesterday),
+		},
 	}
 
 	// Get entity report for campaign-level data
@@ -298,7 +336,7 @@ func (s *dashboardService) getAdvertiserSummary(ctx context.Context, orgID int64
 	}
 
 	return &domain.AdvertiserDashboard{
-		Summary:             advertiserSummary,
+		Metrics:             advertiserMetrics,
 		CampaignPerformance: campaignPerformance,
 		RevenueChart:        revenueChart,
 		Billing:             billing,
@@ -397,6 +435,17 @@ func (s *dashboardService) buildRevenueChartFromEverflow(entityResponse *domain.
 		Period: "daily",
 		Data:   dataPoints,
 	}
+}
+
+// calculateChangePercentage calculates the percentage change between current and previous values
+func calculateChangePercentage(current, previous float64) float64 {
+	if previous == 0 {
+		if current == 0 {
+			return 0
+		}
+		return 100 // 100% increase from 0
+	}
+	return ((current - previous) / previous) * 100
 }
 
 // getAgencySummary builds agency-specific dashboard summary using Everflow data

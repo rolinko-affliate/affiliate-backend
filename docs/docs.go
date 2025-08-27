@@ -4073,6 +4073,24 @@ const docTemplate = `{
                         "description": "Timezone identifier",
                         "name": "timezone",
                         "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Comma-separated list of advertiser IDs",
+                        "name": "advertiser_ids",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Comma-separated list of campaign IDs",
+                        "name": "campaign_ids",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Comma-separated list of affiliate IDs",
+                        "name": "affiliate_ids",
+                        "in": "query"
                     }
                 ],
                 "responses": {
@@ -4111,6 +4129,11 @@ const docTemplate = `{
         },
         "/dashboard/activity": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Returns paginated recent activity feed",
                 "consumes": [
                     "application/json"
@@ -4189,6 +4212,11 @@ const docTemplate = `{
                 }
             },
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Creates a new activity record for the user's organization",
                 "consumes": [
                     "application/json"
@@ -4244,6 +4272,11 @@ const docTemplate = `{
         },
         "/dashboard/cache/invalidate": {
             "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Invalidates dashboard cache for the user's organization",
                 "consumes": [
                     "application/json"
@@ -4282,6 +4315,11 @@ const docTemplate = `{
         },
         "/dashboard/campaigns/{campaignId}": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Returns detailed performance data for a specific campaign",
                 "consumes": [
                     "application/json"
@@ -4344,6 +4382,11 @@ const docTemplate = `{
         },
         "/dashboard/health": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Returns the health status of the dashboard service",
                 "produces": [
                     "application/json"
@@ -4370,8 +4413,81 @@ const docTemplate = `{
                 }
             }
         },
+        "/dashboard/offers": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Returns paginated offers for the user's organization",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "dashboard"
+                ],
+                "summary": "Get paginated offers",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "default": 1,
+                        "description": "Page number (1-based)",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "default": 10,
+                        "description": "Items per page",
+                        "name": "per_page",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/domain.OffersPaginated"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handlers.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/dashboard/system/health": {
             "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
                 "description": "Returns system health metrics (Platform Owner only)",
                 "consumes": [
                     "application/json"
@@ -10394,6 +10510,67 @@ const docTemplate = `{
                 },
                 "screenshotImageUrl": {
                     "type": "string"
+                }
+            }
+        },
+        "domain.Offer": {
+            "type": "object",
+            "properties": {
+                "category": {
+                    "type": "string"
+                },
+                "conversion_flow": {
+                    "type": "string"
+                },
+                "countries": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "currency": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "payout": {
+                    "type": "number"
+                },
+                "status": {
+                    "type": "string"
+                }
+            }
+        },
+        "domain.OffersPaginated": {
+            "type": "object",
+            "properties": {
+                "has_next": {
+                    "type": "boolean"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/domain.Offer"
+                    }
+                },
+                "page": {
+                    "type": "integer"
+                },
+                "per_page": {
+                    "type": "integer"
+                },
+                "total_count": {
+                    "type": "integer"
                 }
             }
         },

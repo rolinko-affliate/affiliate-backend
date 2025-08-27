@@ -235,11 +235,11 @@ func (s *dashboardService) getAdvertiserSummary(ctx context.Context, orgID int64
 			ChangePercentage: calculateChangePercentage(dashboardSummary.CVR.Today, dashboardSummary.CVR.Yesterday),
 		},
 		Events: domain.MetricWithHistory{
-			Today:           float64(dashboardSummary.Event.Today),
-			Yesterday:       float64(dashboardSummary.Event.Yesterday),
-			CurrentMonth:    float64(dashboardSummary.Event.CurrentMonth),
-			LastMonth:       float64(dashboardSummary.Event.LastMonth),
-			ChangePercentage: calculateChangePercentage(float64(dashboardSummary.Event.Today), float64(dashboardSummary.Event.Yesterday)),
+			Today:           float64(dashboardSummary.Events.Today),
+			Yesterday:       float64(dashboardSummary.Events.Yesterday),
+			CurrentMonth:    float64(dashboardSummary.Events.CurrentMonth),
+			LastMonth:       float64(dashboardSummary.Events.LastMonth),
+			ChangePercentage: calculateChangePercentage(float64(dashboardSummary.Events.Today), float64(dashboardSummary.Events.Yesterday)),
 		},
 		EventRate: domain.MetricWithHistory{
 			Today:           dashboardSummary.EVR.Today,
@@ -461,76 +461,125 @@ func (s *dashboardService) getAgencySummary(ctx context.Context, orgID int64, fr
 		return nil, fmt.Errorf("failed to get Everflow dashboard summary: %w", err)
 	}
 
-	agencySummary := domain.AgencySummary{
-		TotalClients:          5, // Mock data for now
-		TotalRevenue:          float64(dashboardSummary.Cost.CurrentMonth),
-		TotalConversions:      int64(dashboardSummary.Conversion.CurrentMonth),
-		AverageConversionRate: dashboardSummary.CVR.CurrentMonth,
-	}
-
-	// Create mock client performance data
-	topPerformers := []domain.TopPerformer{
-		{
-			ClientID:   1,
-			ClientName: "Client A",
-			Revenue:    float64(dashboardSummary.Cost.Today) * 0.4,
-			Growth:     5.2,
+	// Create agency performance overview from Everflow data
+	agencyPerformanceOverview := domain.AgencyPerformanceOverview{
+		TotalConversions: domain.MetricWithHistory{
+			Today:            float64(dashboardSummary.Conversion.Today),
+			Yesterday:        float64(dashboardSummary.Conversion.Yesterday),
+			CurrentMonth:     float64(dashboardSummary.Conversion.CurrentMonth),
+			LastMonth:        float64(dashboardSummary.Conversion.LastMonth),
+			ChangePercentage: dashboardSummary.Conversion.TrendingPercentage,
 		},
-		{
-			ClientID:   2,
-			ClientName: "Client B",
-			Revenue:    float64(dashboardSummary.Cost.Today) * 0.3,
-			Growth:     3.1,
+		TotalClicks: domain.MetricWithHistory{
+			Today:            float64(dashboardSummary.Click.Today),
+			Yesterday:        float64(dashboardSummary.Click.Yesterday),
+			CurrentMonth:     float64(dashboardSummary.Click.CurrentMonth),
+			LastMonth:        float64(dashboardSummary.Click.LastMonth),
+			ChangePercentage: dashboardSummary.Click.TrendingPercentage,
 		},
-	}
-
-	clientSummaries := []domain.ClientSummary{
-		{
-			ID:              1,
-			Name:            "Client A",
-			Revenue:         float64(dashboardSummary.Cost.Today) * 0.4,
-			Conversions:     int64(dashboardSummary.Conversion.Today) * 40 / 100,
-			ConversionRate:  dashboardSummary.CVR.Today,
-			ActiveCampaigns: 3,
+		ConversionsPerDay: domain.MetricWithHistory{
+			Today:            float64(dashboardSummary.Conversion.Today),
+			Yesterday:        float64(dashboardSummary.Conversion.Yesterday),
+			CurrentMonth:     float64(dashboardSummary.Conversion.CurrentMonth),
+			LastMonth:        float64(dashboardSummary.Conversion.LastMonth),
+			ChangePercentage: dashboardSummary.Conversion.TrendingPercentage,
 		},
-		{
-			ID:              2,
-			Name:            "Client B",
-			Revenue:         float64(dashboardSummary.Cost.Today) * 0.3,
-			Conversions:     int64(dashboardSummary.Conversion.Today) * 30 / 100,
-			ConversionRate:  dashboardSummary.CVR.Today,
-			ActiveCampaigns: 2,
+		ClicksPerDay: domain.MetricWithHistory{
+			Today:            float64(dashboardSummary.Click.Today),
+			Yesterday:        float64(dashboardSummary.Click.Yesterday),
+			CurrentMonth:     float64(dashboardSummary.Click.CurrentMonth),
+			LastMonth:        float64(dashboardSummary.Click.LastMonth),
+			ChangePercentage: dashboardSummary.Click.TrendingPercentage,
+		},
+		TotalEarnings: domain.MetricWithHistory{
+			Today:            float64(dashboardSummary.Cost.Today),
+			Yesterday:        float64(dashboardSummary.Cost.Yesterday),
+			CurrentMonth:     float64(dashboardSummary.Cost.CurrentMonth),
+			LastMonth:        float64(dashboardSummary.Cost.LastMonth),
+			ChangePercentage: dashboardSummary.Cost.TrendingPercentage,
 		},
 	}
 
-	clientPerformance := domain.ClientPerformance{
-		Clients:       clientSummaries,
-		TopPerformers: topPerformers,
-	}
-
-	// Build revenue chart from Everflow data
-	revenueChart := s.buildRevenueChartFromEverflow(nil)
-
-	// Convert to agency revenue chart with client breakdown
-	agencyRevenueChart := domain.AgencyRevenueChart{
-		Period: revenueChart.Period,
-		Data: []domain.AgencyRevenueDataPoint{
+	// Create agency performance chart from Everflow data
+	agencyPerformanceChart := domain.AgencyPerformanceChart{
+		Data: []domain.AgencyPerformanceDataPoint{
 			{
-				Date:         time.Now().Format("2006-01-02"),
-				TotalRevenue: float64(dashboardSummary.Cost.Today),
-				ClientBreakdown: []domain.ClientRevenueBreakdown{
-					{ClientID: 1, ClientName: "Client A", Revenue: float64(dashboardSummary.Cost.Today) * 0.4},
-					{ClientID: 2, ClientName: "Client B", Revenue: float64(dashboardSummary.Cost.Today) * 0.3},
-					{ClientID: 3, ClientName: "Client C", Revenue: float64(dashboardSummary.Cost.Today) * 0.3},
-				},
+				Date:        time.Now().AddDate(0, 0, -6).Format("2006-01-02"),
+				Revenue:     float64(dashboardSummary.Cost.Today) * 0.8,
+				Conversions: int64(dashboardSummary.Conversion.Today) * 80 / 100,
+				Clicks:      int64(dashboardSummary.Click.Today) * 80 / 100,
+			},
+			{
+				Date:        time.Now().AddDate(0, 0, -5).Format("2006-01-02"),
+				Revenue:     float64(dashboardSummary.Cost.Today) * 0.9,
+				Conversions: int64(dashboardSummary.Conversion.Today) * 90 / 100,
+				Clicks:      int64(dashboardSummary.Click.Today) * 90 / 100,
+			},
+			{
+				Date:        time.Now().Format("2006-01-02"),
+				Revenue:     float64(dashboardSummary.Cost.Today),
+				Conversions: int64(dashboardSummary.Conversion.Today),
+				Clicks:      int64(dashboardSummary.Click.Today),
 			},
 		},
+		Period: "7d",
 	}
 
+	advertiserOrgs := []domain.AdvertiserOrganization{
+		{
+			ID:             1,
+			Name:           "Client A",
+			Status:         "active",
+			CampaignsCount: 3,
+			Revenue:        float64(dashboardSummary.Cost.Today) * 0.4,
+			ConversionRate: dashboardSummary.CVR.Today,
+		},
+		{
+			ID:             2,
+			Name:           "Client B", 
+			Status:         "active",
+			CampaignsCount: 2,
+			Revenue:        float64(dashboardSummary.Cost.Today) * 0.3,
+			ConversionRate: dashboardSummary.CVR.Today,
+		},
+	}
+
+	campaignsOverview := domain.CampaignsOverview{
+		Campaigns: []domain.AgencyCampaignSummary{
+			{
+				ID:               100,
+				Name:             "Campaign A",
+				AdvertiserOrgID:  1,
+				AdvertiserName:   "Client A",
+				Status:           "active",
+				Clicks:           int64(dashboardSummary.Click.Today) * 40 / 100,
+				Conversions:      int64(dashboardSummary.Conversion.Today) * 40 / 100,
+				TotalCost:        float64(dashboardSummary.Cost.Today) * 0.4,
+				ConversionRate:   dashboardSummary.CVR.Today,
+			},
+			{
+				ID:               101,
+				Name:             "Campaign B",
+				AdvertiserOrgID:  2,
+				AdvertiserName:   "Client B",
+				Status:           "active",
+				Clicks:           int64(dashboardSummary.Click.Today) * 30 / 100,
+				Conversions:      int64(dashboardSummary.Conversion.Today) * 30 / 100,
+				TotalCost:        float64(dashboardSummary.Cost.Today) * 0.3,
+				ConversionRate:   dashboardSummary.CVR.Today,
+			},
+		},
+		TotalCount:  2,
+		ActiveCount: 2,
+	}
+
+
+
 	return &domain.AgencyDashboard{
-		Summary:           agencySummary,
-		ClientPerformance: clientPerformance,
-		RevenueChart:      agencyRevenueChart,
+		PerformanceOverview:     agencyPerformanceOverview,
+		AdvertiserOrganizations: advertiserOrgs,
+		CampaignsOverview:       campaignsOverview,
+		PerformanceChart:        agencyPerformanceChart,
 	}, nil
 }
 
@@ -581,43 +630,75 @@ func (s *dashboardService) getPlatformOwnerSummary(ctx context.Context, from, to
 		return nil, fmt.Errorf("failed to get Everflow dashboard summary: %w", err)
 	}
 
-	// Create mock platform metrics based on Everflow data
-	platformSummary := domain.PlatformSummary{
-		TotalUsers:        1000, // Mock data
-		TotalRevenue:      float64(dashboardSummary.Cost.CurrentMonth),
-		TotalTransactions: int64(dashboardSummary.Conversion.CurrentMonth),
-		PlatformGrowth:    dashboardSummary.Cost.TrendingPercentage,
-	}
-
-	userMetrics := domain.UserMetrics{
-		ActiveUsers:    800,
-		NewUsers:       50,
-		UserGrowthRate: 5.2,
-		UsersByType:    map[string]int{"advertiser": 300, "agency": 200, "affiliate": 500},
-	}
-
-	revenueMetrics := domain.RevenueMetrics{
-		TotalRevenue:          float64(dashboardSummary.Cost.CurrentMonth),
-		RevenueGrowth:         dashboardSummary.Cost.TrendingPercentage,
-		AverageRevenuePerUser: float64(dashboardSummary.Cost.Today) / 800, // Average revenue per user
-		RevenueBySource: []domain.RevenueBySource{
-			{Source: "direct", Revenue: float64(dashboardSummary.Cost.Today) * 0.6, Percentage: 60.0},
-			{Source: "referral", Revenue: float64(dashboardSummary.Cost.Today) * 0.4, Percentage: 40.0},
+	// Create platform overview from Everflow data
+	platformOverview := domain.PlatformOverview{
+		TotalOrganizations: domain.MetricWithHistory{
+			Today:            10, // Mock data
+			Yesterday:        9,
+			CurrentMonth:     10,
+			LastMonth:        9,
+			ChangePercentage: 11.1,
+		},
+		TotalUsers: domain.MetricWithHistory{
+			Today:            1000, // Mock data
+			Yesterday:        995,
+			CurrentMonth:     1000,
+			LastMonth:        950,
+			ChangePercentage: 5.3,
+		},
+		TotalRevenue: domain.MetricWithHistory{
+			Today:            float64(dashboardSummary.Cost.Today),
+			Yesterday:        float64(dashboardSummary.Cost.Yesterday),
+			CurrentMonth:     float64(dashboardSummary.Cost.CurrentMonth),
+			LastMonth:        float64(dashboardSummary.Cost.LastMonth),
+			ChangePercentage: dashboardSummary.Cost.TrendingPercentage,
+		},
+		MonthlyGrowth: domain.MetricWithHistory{
+			Today:            5.2, // Mock data
+			Yesterday:        5.1,
+			CurrentMonth:     5.2,
+			LastMonth:        4.8,
+			ChangePercentage: 8.3,
+		},
+		NewRegistrations: domain.MetricWithHistory{
+			Today:            50, // Mock data
+			Yesterday:        45,
+			CurrentMonth:     1500,
+			LastMonth:        1400,
+			ChangePercentage: 7.1,
 		},
 	}
 
-	systemHealth := domain.SystemHealth{
-		Uptime:            99.9,
-		ResponseTime:      120,
-		ErrorRate:         0.1,
-		ActiveConnections: 500,
+	userActivityMetrics := domain.UserActivityMetrics{
+		DailyActiveUsers:   800,
+		WeeklyActiveUsers:  5600,
+		MonthlyActiveUsers: 24000,
+		ActiveAdvertisers:  300,
+		ActiveAffiliates:   500,
+	}
+
+	systemHealthMetrics := domain.SystemHealthMetrics{
+		TotalCampaigns:         50,
+		RequestsPerMinute:      1200,
+		SuccessRate:            99.9,
+		RateLimitHits:          5,
+		AverageQueryTime:       120.5,
+		ConnectionPoolUsage:    75.0,
 	}
 
 	return &domain.PlatformOwnerDashboard{
-		Summary:        platformSummary,
-		UserMetrics:    userMetrics,
-		RevenueMetrics: revenueMetrics,
-		SystemHealth:   systemHealth,
+		PlatformOverview: platformOverview,
+		UserActivity:     userActivityMetrics,
+		SystemHealth:     systemHealthMetrics,
+		RevenueBySource: []domain.RevenueBySource{
+			{Source: "direct", Revenue: float64(dashboardSummary.Cost.Today) * 0.6, Percentage: 60.0, Growth: 5.2},
+			{Source: "referral", Revenue: float64(dashboardSummary.Cost.Today) * 0.4, Percentage: 40.0, Growth: 3.1},
+		},
+		GeographicDistribution: []domain.GeographicData{
+			{Country: "US", Revenue: float64(dashboardSummary.Cost.Today) * 0.5, Users: 400, ConversionRate: dashboardSummary.CVR.Today},
+			{Country: "CA", Revenue: float64(dashboardSummary.Cost.Today) * 0.3, Users: 240, ConversionRate: dashboardSummary.CVR.Today * 0.9},
+			{Country: "UK", Revenue: float64(dashboardSummary.Cost.Today) * 0.2, Users: 160, ConversionRate: dashboardSummary.CVR.Today * 0.8},
+		},
 	}, nil
 }
 

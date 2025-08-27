@@ -152,6 +152,7 @@ func (h *DashboardHandler) GetDashboard(c *gin.Context) {
 // @Tags         dashboard
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        campaignId  path      int  true  "Campaign ID"
 // @Success      200         {object}  domain.CampaignDetail
 // @Failure      400         {object}  ErrorResponse
@@ -219,6 +220,7 @@ func (h *DashboardHandler) GetCampaignDetail(c *gin.Context) {
 // @Tags         dashboard
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        limit   query     int       false  "Number of items per page"  default(10)  maximum(50)
 // @Param        offset  query     int       false  "Number of items to skip"   default(0)
 // @Param        type    query     []string  false  "Filter by activity types"
@@ -306,6 +308,7 @@ func (h *DashboardHandler) GetRecentActivity(c *gin.Context) {
 // @Tags         dashboard
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Success      200  {object}  domain.SystemHealth
 // @Failure      401  {object}  ErrorResponse
 // @Failure      403  {object}  ErrorResponse
@@ -350,6 +353,7 @@ func (h *DashboardHandler) GetSystemHealth(c *gin.Context) {
 // @Description  Returns the health status of the dashboard service
 // @Tags         dashboard
 // @Produce      json
+// @Security     BearerAuth
 // @Success      200  {object}  map[string]interface{}  "Health status"
 // @Failure      503  {object}  map[string]interface{}  "Service unavailable"
 // @Router       /dashboard/health [get]
@@ -398,6 +402,7 @@ func (h *DashboardHandler) DashboardHealthCheck(c *gin.Context) {
 // @Tags         dashboard
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Success      200  {object}  map[string]string  "Cache invalidated"
 // @Failure      401  {object}  ErrorResponse
 // @Failure      500  {object}  ErrorResponse
@@ -445,6 +450,7 @@ func (h *DashboardHandler) InvalidateCache(c *gin.Context) {
 // @Tags         dashboard
 // @Accept       json
 // @Produce      json
+// @Security     BearerAuth
 // @Param        request  body      TrackActivityRequest  true  "Activity data"
 // @Success      201      {object}  map[string]string     "Activity tracked"
 // @Failure      400      {object}  ErrorResponse

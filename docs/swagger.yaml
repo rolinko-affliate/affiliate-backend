@@ -1518,6 +1518,46 @@ definitions:
       screenshotImageUrl:
         type: string
     type: object
+  domain.Offer:
+    properties:
+      category:
+        type: string
+      conversion_flow:
+        type: string
+      countries:
+        items:
+          type: string
+        type: array
+      created_at:
+        type: string
+      currency:
+        type: string
+      description:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      payout:
+        type: number
+      status:
+        type: string
+    type: object
+  domain.OffersPaginated:
+    properties:
+      has_next:
+        type: boolean
+      items:
+        items:
+          $ref: '#/definitions/domain.Offer'
+        type: array
+      page:
+        type: integer
+      per_page:
+        type: integer
+      total_count:
+        type: integer
+    type: object
   domain.Organization:
     properties:
       created_at:
@@ -5889,6 +5929,18 @@ paths:
         in: query
         name: timezone
         type: string
+      - description: Comma-separated list of advertiser IDs
+        in: query
+        name: advertiser_ids
+        type: string
+      - description: Comma-separated list of campaign IDs
+        in: query
+        name: campaign_ids
+        type: string
+      - description: Comma-separated list of affiliate IDs
+        in: query
+        name: affiliate_ids
+        type: string
       produces:
       - application/json
       responses:
@@ -5968,6 +6020,8 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
       summary: Get recent activity
       tags:
       - dashboard
@@ -6003,6 +6057,8 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
       summary: Track dashboard activity
       tags:
       - dashboard
@@ -6028,6 +6084,8 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
       summary: Invalidate dashboard cache
       tags:
       - dashboard
@@ -6069,6 +6127,8 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
       summary: Get campaign detail
       tags:
       - dashboard
@@ -6088,7 +6148,53 @@ paths:
           schema:
             additionalProperties: true
             type: object
+      security:
+      - BearerAuth: []
       summary: Dashboard health check
+      tags:
+      - dashboard
+  /dashboard/offers:
+    get:
+      consumes:
+      - application/json
+      description: Returns paginated offers for the user's organization
+      parameters:
+      - default: 1
+        description: Page number (1-based)
+        in: query
+        name: page
+        type: integer
+      - default: 10
+        description: Items per page
+        in: query
+        name: per_page
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/domain.OffersPaginated'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get paginated offers
       tags:
       - dashboard
   /dashboard/system/health:
@@ -6115,6 +6221,8 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
       summary: Get system health metrics
       tags:
       - dashboard

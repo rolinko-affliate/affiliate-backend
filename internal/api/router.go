@@ -373,6 +373,9 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		// Main dashboard endpoint
 		dashboard.GET("", opts.DashboardHandler.GetDashboard)
 
+		// Offers endpoint
+		dashboard.GET("/offers", opts.DashboardHandler.GetOffers)
+
 		// Campaign detail endpoint
 		dashboard.GET("/campaigns/:campaignId", opts.DashboardHandler.GetCampaignDetail)
 

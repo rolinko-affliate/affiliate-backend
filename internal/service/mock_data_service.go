@@ -19,7 +19,21 @@ import (
 
 // MockDataService provides methods to load mock data from CSV files
 type MockDataService interface {
-	// Dashboard data methods
+	// Dashboard data methods - New enhanced methods
+	LoadAdvertiserMetrics(ctx context.Context, orgID int64) (*domain.AdvertiserMetrics, error)
+	LoadOffersPaginated(ctx context.Context, orgID int64, page, perPage int) (*domain.OffersPaginated, error)
+	LoadAgencyPerformanceOverview(ctx context.Context, orgID int64) (*domain.AgencyPerformanceOverview, error)
+	LoadAdvertiserOrganizations(ctx context.Context, orgID int64) ([]domain.AdvertiserOrganization, error)
+	LoadCampaignsOverview(ctx context.Context, orgID int64) (*domain.CampaignsOverview, error)
+	LoadAgencyPerformanceChart(ctx context.Context, orgID int64, period string) (*domain.AgencyPerformanceChart, error)
+	LoadPlatformOverview(ctx context.Context) (*domain.PlatformOverview, error)
+	LoadUserActivityMetrics(ctx context.Context) (*domain.UserActivityMetrics, error)
+	LoadSystemHealthMetrics(ctx context.Context) (*domain.SystemHealthMetrics, error)
+	LoadRevenueBySource(ctx context.Context, orgID int64) ([]domain.RevenueBySource, error)
+	LoadGeographicDistribution(ctx context.Context, orgID int64) ([]domain.GeographicData, error)
+	LoadEnhancedRevenueChart(ctx context.Context, orgID int64, period string) (*domain.RevenueChart, error)
+	
+	// Dashboard data methods - Legacy support
 	LoadAdvertiserSummary(ctx context.Context, orgID int64) (*domain.AdvertiserSummary, error)
 	LoadCampaignPerformance(ctx context.Context, orgID int64) (*domain.CampaignPerformance, error)
 	LoadRevenueChart(ctx context.Context, orgID int64, period string) (*domain.RevenueChart, error)
@@ -1329,4 +1343,684 @@ func (s *mockDataService) LoadCampaignsList(ctx context.Context, orgID int64, af
 	}
 
 	return campaigns, nil
+}
+
+// LoadAdvertiserMetrics loads advertiser metrics with historical data
+func (s *mockDataService) LoadAdvertiserMetrics(ctx context.Context, orgID int64) (*domain.AdvertiserMetrics, error) {
+	records, err := s.loadCSV("historical_metrics.csv")
+	if err != nil {
+		return nil, fmt.Errorf("failed to load historical metrics: %w", err)
+	}
+
+	for _, record := range records[1:] { // Skip header
+		if len(record) < 7 {
+			continue
+		}
+
+		recordOrgID, err := strconv.ParseInt(record[0], 10, 64)
+		if err != nil {
+			continue
+		}
+
+		if recordOrgID == orgID {
+			// Parse metrics for this organization
+			metrics := &domain.AdvertiserMetrics{}
+			
+			// Find all metrics for this organization
+			for _, r := range records[1:] {
+				if len(r) < 7 {
+					continue
+				}
+				
+				rOrgID, _ := strconv.ParseInt(r[0], 10, 64)
+				if rOrgID != orgID {
+					continue
+				}
+				
+				metricType := r[1]
+				today, _ := strconv.ParseFloat(r[2], 64)
+				yesterday, _ := strconv.ParseFloat(r[3], 64)
+				currentMonth, _ := strconv.ParseFloat(r[4], 64)
+				lastMonth, _ := strconv.ParseFloat(r[5], 64)
+				changePercentage, _ := strconv.ParseFloat(r[6], 64)
+				
+				metric := domain.MetricWithHistory{
+					Today:           today,
+					Yesterday:       yesterday,
+					CurrentMonth:    currentMonth,
+					LastMonth:       lastMonth,
+					ChangePercentage: changePercentage,
+				}
+				
+				switch metricType {
+				case "total_clicks":
+					metrics.TotalClicks = metric
+				case "conversions":
+					metrics.Conversions = metric
+				case "revenue":
+					metrics.Revenue = metric
+				case "conversion_rate":
+					metrics.ConversionRate = metric
+				case "events":
+					metrics.Events = metric
+				case "event_rate":
+					metrics.EventRate = metric
+				}
+			}
+			
+			return metrics, nil
+		}
+	}
+
+	// Return default data if not found
+	return &domain.AdvertiserMetrics{
+		TotalClicks: domain.MetricWithHistory{
+			Today: 1250, Yesterday: 1180, CurrentMonth: 35000, LastMonth: 32000, ChangePercentage: 9.4,
+		},
+		Conversions: domain.MetricWithHistory{
+			Today: 89, Yesterday: 85, CurrentMonth: 2450, LastMonth: 2200, ChangePercentage: 11.4,
+		},
+		Revenue: domain.MetricWithHistory{
+			Today: 4450.50, Yesterday: 4200.00, CurrentMonth: 122500.00, LastMonth: 110000.00, ChangePercentage: 11.4,
+		},
+		ConversionRate: domain.MetricWithHistory{
+			Today: 0.071, Yesterday: 0.072, CurrentMonth: 0.070, LastMonth: 0.069, ChangePercentage: 1.4,
+		},
+		Events: domain.MetricWithHistory{
+			Today: 156, Yesterday: 148, CurrentMonth: 4200, LastMonth: 3800, ChangePercentage: 10.5,
+		},
+		EventRate: domain.MetricWithHistory{
+			Today: 0.125, Yesterday: 0.125, CurrentMonth: 0.120, LastMonth: 0.119, ChangePercentage: 0.8,
+		},
+	}, nil
+}
+
+// LoadOffersPaginated loads paginated offers data
+func (s *mockDataService) LoadOffersPaginated(ctx context.Context, orgID int64, page, perPage int) (*domain.OffersPaginated, error) {
+	records, err := s.loadCSV("offers.csv")
+	if err != nil {
+		return nil, fmt.Errorf("failed to load offers: %w", err)
+	}
+
+	var allOffers []domain.Offer
+	for _, record := range records[1:] { // Skip header
+		if len(record) < 11 {
+			continue
+		}
+
+		advertiserOrgID, err := strconv.ParseInt(record[1], 10, 64)
+		if err != nil {
+			continue
+		}
+
+		if advertiserOrgID == orgID {
+			id, _ := strconv.ParseInt(record[0], 10, 64)
+			payout, _ := strconv.ParseFloat(record[4], 64)
+			
+			// Parse countries JSON-like string
+			countriesStr := strings.Trim(record[7], "[]\"")
+			countries := strings.Split(countriesStr, "\",\"")
+			for i, country := range countries {
+				countries[i] = strings.Trim(country, "\"")
+			}
+			
+			var description *string
+			if record[3] != "" {
+				description = &record[3]
+			}
+
+			offer := domain.Offer{
+				ID:             id,
+				Name:           record[2],
+				Description:    description,
+				Payout:         payout,
+				Currency:       record[5],
+				Status:         record[6],
+				Category:       record[8],
+				Countries:      countries,
+				ConversionFlow: record[9],
+				CreatedAt:      record[10],
+			}
+			allOffers = append(allOffers, offer)
+		}
+	}
+
+	// Calculate pagination
+	totalCount := len(allOffers)
+	startIndex := (page - 1) * perPage
+	endIndex := startIndex + perPage
+	
+	if startIndex >= totalCount {
+		return &domain.OffersPaginated{
+			Items:      []domain.Offer{},
+			TotalCount: totalCount,
+			Page:       page,
+			PerPage:    perPage,
+			HasNext:    false,
+		}, nil
+	}
+	
+	if endIndex > totalCount {
+		endIndex = totalCount
+	}
+	
+	items := allOffers[startIndex:endIndex]
+	hasNext := endIndex < totalCount
+
+	return &domain.OffersPaginated{
+		Items:      items,
+		TotalCount: totalCount,
+		Page:       page,
+		PerPage:    perPage,
+		HasNext:    hasNext,
+	}, nil
+}
+
+// LoadAgencyPerformanceOverview loads agency performance overview
+func (s *mockDataService) LoadAgencyPerformanceOverview(ctx context.Context, orgID int64) (*domain.AgencyPerformanceOverview, error) {
+	records, err := s.loadCSV("historical_metrics.csv")
+	if err != nil {
+		return nil, fmt.Errorf("failed to load historical metrics: %w", err)
+	}
+
+	overview := &domain.AgencyPerformanceOverview{}
+	
+	for _, record := range records[1:] { // Skip header
+		if len(record) < 7 {
+			continue
+		}
+
+		recordOrgID, err := strconv.ParseInt(record[0], 10, 64)
+		if err != nil {
+			continue
+		}
+
+		if recordOrgID == orgID {
+			metricType := record[1]
+			today, _ := strconv.ParseFloat(record[2], 64)
+			yesterday, _ := strconv.ParseFloat(record[3], 64)
+			currentMonth, _ := strconv.ParseFloat(record[4], 64)
+			lastMonth, _ := strconv.ParseFloat(record[5], 64)
+			changePercentage, _ := strconv.ParseFloat(record[6], 64)
+			
+			metric := domain.MetricWithHistory{
+				Today:           today,
+				Yesterday:       yesterday,
+				CurrentMonth:    currentMonth,
+				LastMonth:       lastMonth,
+				ChangePercentage: changePercentage,
+			}
+			
+			switch metricType {
+			case "total_clicks":
+				overview.TotalClicks = metric
+				overview.ClicksPerDay = domain.MetricWithHistory{
+					Today: today, Yesterday: yesterday, 
+					CurrentMonth: currentMonth/30, LastMonth: lastMonth/30, 
+					ChangePercentage: changePercentage,
+				}
+			case "conversions":
+				overview.TotalConversions = metric
+				overview.ConversionsPerDay = domain.MetricWithHistory{
+					Today: today, Yesterday: yesterday,
+					CurrentMonth: currentMonth/30, LastMonth: lastMonth/30,
+					ChangePercentage: changePercentage,
+				}
+			case "revenue":
+				overview.TotalEarnings = metric
+			}
+		}
+	}
+
+	// Return default if not found
+	if overview.TotalClicks.Today == 0 {
+		return &domain.AgencyPerformanceOverview{
+			TotalConversions: domain.MetricWithHistory{
+				Today: 450, Yesterday: 420, CurrentMonth: 12500, LastMonth: 11200, ChangePercentage: 11.6,
+			},
+			TotalClicks: domain.MetricWithHistory{
+				Today: 6200, Yesterday: 5800, CurrentMonth: 175000, LastMonth: 162000, ChangePercentage: 8.0,
+			},
+			ConversionsPerDay: domain.MetricWithHistory{
+				Today: 450, Yesterday: 420, CurrentMonth: 417, LastMonth: 373, ChangePercentage: 11.6,
+			},
+			ClicksPerDay: domain.MetricWithHistory{
+				Today: 6200, Yesterday: 5800, CurrentMonth: 5833, LastMonth: 5400, ChangePercentage: 8.0,
+			},
+			TotalEarnings: domain.MetricWithHistory{
+				Today: 22500.00, Yesterday: 21000.00, CurrentMonth: 625000.00, LastMonth: 560000.00, ChangePercentage: 11.6,
+			},
+		}, nil
+	}
+
+	return overview, nil
+}
+
+// LoadAdvertiserOrganizations loads advertiser organizations for agencies
+func (s *mockDataService) LoadAdvertiserOrganizations(ctx context.Context, orgID int64) ([]domain.AdvertiserOrganization, error) {
+	records, err := s.loadCSV("advertiser_organizations.csv")
+	if err != nil {
+		return nil, fmt.Errorf("failed to load advertiser organizations: %w", err)
+	}
+
+	var organizations []domain.AdvertiserOrganization
+	for _, record := range records[1:] { // Skip header
+		if len(record) < 7 {
+			continue
+		}
+
+		agencyOrgID, err := strconv.ParseInt(record[1], 10, 64)
+		if err != nil {
+			continue
+		}
+
+		if agencyOrgID == orgID {
+			id, _ := strconv.ParseInt(record[0], 10, 64)
+			campaignsCount, _ := strconv.Atoi(record[4])
+			revenue, _ := strconv.ParseFloat(record[5], 64)
+			conversionRate, _ := strconv.ParseFloat(record[6], 64)
+
+			org := domain.AdvertiserOrganization{
+				ID:             id,
+				Name:           record[2],
+				Status:         record[3],
+				CampaignsCount: campaignsCount,
+				Revenue:        revenue,
+				ConversionRate: conversionRate,
+			}
+			organizations = append(organizations, org)
+		}
+	}
+
+	return organizations, nil
+}
+
+// LoadCampaignsOverview loads campaigns overview for agencies
+func (s *mockDataService) LoadCampaignsOverview(ctx context.Context, orgID int64) (*domain.CampaignsOverview, error) {
+	records, err := s.loadCSV("enhanced_campaign_performance.csv")
+	if err != nil {
+		return nil, fmt.Errorf("failed to load enhanced campaign performance: %w", err)
+	}
+
+	var campaigns []domain.AgencyCampaignSummary
+	activeCount := 0
+	
+	for _, record := range records[1:] { // Skip header
+		if len(record) < 15 {
+			continue
+		}
+
+		recordOrgID, err := strconv.ParseInt(record[1], 10, 64)
+		if err != nil {
+			continue
+		}
+
+		if recordOrgID == orgID {
+			id, _ := strconv.ParseInt(record[0], 10, 64)
+			advertiserOrgID, _ := strconv.ParseInt(record[2], 10, 64)
+			clicks, _ := strconv.ParseInt(record[5], 10, 64)
+			conversions, _ := strconv.ParseInt(record[6], 10, 64)
+			totalCost, _ := strconv.ParseFloat(record[14], 64)
+			conversionRate, _ := strconv.ParseFloat(record[8], 64)
+
+			campaign := domain.AgencyCampaignSummary{
+				ID:               id,
+				Name:             record[4],
+				AdvertiserOrgID:  advertiserOrgID,
+				AdvertiserName:   record[3],
+				Status:           record[11],
+				Clicks:           clicks,
+				Conversions:      conversions,
+				TotalCost:        totalCost,
+				ConversionRate:   conversionRate,
+			}
+			
+			if campaign.Status == "active" {
+				activeCount++
+			}
+			
+			campaigns = append(campaigns, campaign)
+		}
+	}
+
+	return &domain.CampaignsOverview{
+		Campaigns:   campaigns,
+		TotalCount:  len(campaigns),
+		ActiveCount: activeCount,
+	}, nil
+}
+
+// LoadAgencyPerformanceChart loads agency performance chart data
+func (s *mockDataService) LoadAgencyPerformanceChart(ctx context.Context, orgID int64, period string) (*domain.AgencyPerformanceChart, error) {
+	records, err := s.loadCSV("agency_performance_chart.csv")
+	if err != nil {
+		return nil, fmt.Errorf("failed to load agency performance chart: %w", err)
+	}
+
+	var dataPoints []domain.AgencyPerformanceDataPoint
+	currentDate := ""
+	var currentPoint *domain.AgencyPerformanceDataPoint
+	
+	for _, record := range records[1:] { // Skip header
+		if len(record) < 8 {
+			continue
+		}
+
+		agencyOrgID, err := strconv.ParseInt(record[0], 10, 64)
+		if err != nil {
+			continue
+		}
+
+		if agencyOrgID == orgID {
+			date := record[1]
+			
+			// If this is a new date, save the previous point and start a new one
+			if date != currentDate {
+				if currentPoint != nil {
+					dataPoints = append(dataPoints, *currentPoint)
+				}
+				
+				conversions, _ := strconv.ParseInt(record[2], 10, 64)
+				clicks, _ := strconv.ParseInt(record[3], 10, 64)
+				revenue, _ := strconv.ParseFloat(record[4], 64)
+				
+				currentPoint = &domain.AgencyPerformanceDataPoint{
+					Date:                date,
+					Conversions:         conversions,
+					Clicks:              clicks,
+					Revenue:             revenue,
+					AdvertiserBreakdown: []domain.AdvertiserBreakdownPoint{},
+				}
+				currentDate = date
+			}
+			
+			// Add advertiser breakdown
+			if len(record) >= 8 {
+				advertiserID, _ := strconv.ParseInt(record[5], 10, 64)
+				advertiserConversions, _ := strconv.ParseInt(record[7], 10, 64)
+				advertiserRevenue, _ := strconv.ParseFloat(record[8], 64)
+				
+				breakdown := domain.AdvertiserBreakdownPoint{
+					AdvertiserID:   advertiserID,
+					AdvertiserName: record[6],
+					Conversions:    advertiserConversions,
+					Revenue:        advertiserRevenue,
+				}
+				currentPoint.AdvertiserBreakdown = append(currentPoint.AdvertiserBreakdown, breakdown)
+			}
+		}
+	}
+	
+	// Add the last point
+	if currentPoint != nil {
+		dataPoints = append(dataPoints, *currentPoint)
+	}
+
+	return &domain.AgencyPerformanceChart{
+		Data:   dataPoints,
+		Period: period,
+	}, nil
+}
+
+// LoadPlatformOverview loads platform overview with historical data
+func (s *mockDataService) LoadPlatformOverview(ctx context.Context) (*domain.PlatformOverview, error) {
+	records, err := s.loadCSV("historical_metrics.csv")
+	if err != nil {
+		return nil, fmt.Errorf("failed to load historical metrics: %w", err)
+	}
+
+	overview := &domain.PlatformOverview{}
+	
+	for _, record := range records[1:] { // Skip header
+		if len(record) < 7 {
+			continue
+		}
+
+		recordOrgID, err := strconv.ParseInt(record[0], 10, 64)
+		if err != nil {
+			continue
+		}
+
+		// Platform metrics have orgID 100
+		if recordOrgID == 100 {
+			metricType := record[1]
+			today, _ := strconv.ParseFloat(record[2], 64)
+			yesterday, _ := strconv.ParseFloat(record[3], 64)
+			currentMonth, _ := strconv.ParseFloat(record[4], 64)
+			lastMonth, _ := strconv.ParseFloat(record[5], 64)
+			changePercentage, _ := strconv.ParseFloat(record[6], 64)
+			
+			metric := domain.MetricWithHistory{
+				Today:           today,
+				Yesterday:       yesterday,
+				CurrentMonth:    currentMonth,
+				LastMonth:       lastMonth,
+				ChangePercentage: changePercentage,
+			}
+			
+			switch metricType {
+			case "total_organizations":
+				overview.TotalOrganizations = metric
+			case "total_users":
+				overview.TotalUsers = metric
+			case "total_clicks":
+				overview.TotalRevenue = domain.MetricWithHistory{
+					Today: today * 0.1, Yesterday: yesterday * 0.1,
+					CurrentMonth: currentMonth * 0.1, LastMonth: lastMonth * 0.1,
+					ChangePercentage: changePercentage,
+				}
+			case "monthly_growth":
+				overview.MonthlyGrowth = metric
+			case "new_registrations":
+				overview.NewRegistrations = metric
+			}
+		}
+	}
+
+	// Return default if not found
+	if overview.TotalUsers.Today == 0 {
+		return &domain.PlatformOverview{
+			TotalOrganizations: domain.MetricWithHistory{
+				Today: 1250, Yesterday: 1248, CurrentMonth: 1250, LastMonth: 1180, ChangePercentage: 5.9,
+			},
+			TotalUsers: domain.MetricWithHistory{
+				Today: 5600, Yesterday: 5580, CurrentMonth: 5600, LastMonth: 5200, ChangePercentage: 7.7,
+			},
+			TotalRevenue: domain.MetricWithHistory{
+				Today: 22500.00, Yesterday: 21000.00, CurrentMonth: 625000.00, LastMonth: 560000.00, ChangePercentage: 11.6,
+			},
+			MonthlyGrowth: domain.MetricWithHistory{
+				Today: 0.094, Yesterday: 0.092, CurrentMonth: 0.094, LastMonth: 0.087, ChangePercentage: 8.0,
+			},
+			NewRegistrations: domain.MetricWithHistory{
+				Today: 25, Yesterday: 22, CurrentMonth: 680, LastMonth: 620, ChangePercentage: 9.7,
+			},
+		}, nil
+	}
+
+	return overview, nil
+}
+
+// LoadUserActivityMetrics loads user activity metrics
+func (s *mockDataService) LoadUserActivityMetrics(ctx context.Context) (*domain.UserActivityMetrics, error) {
+	records, err := s.loadCSV("enhanced_platform_metrics.csv")
+	if err != nil {
+		return nil, fmt.Errorf("failed to load platform metrics: %w", err)
+	}
+
+	if len(records) > 1 && len(records[1]) >= 6 {
+		record := records[1]
+		dailyActiveUsers, _ := strconv.Atoi(record[1])
+		weeklyActiveUsers, _ := strconv.Atoi(record[2])
+		monthlyActiveUsers, _ := strconv.Atoi(record[3])
+		activeAdvertisers, _ := strconv.Atoi(record[4])
+		activeAffiliates, _ := strconv.Atoi(record[5])
+
+		return &domain.UserActivityMetrics{
+			DailyActiveUsers:   dailyActiveUsers,
+			WeeklyActiveUsers:  weeklyActiveUsers,
+			MonthlyActiveUsers: monthlyActiveUsers,
+			ActiveAdvertisers:  activeAdvertisers,
+			ActiveAffiliates:   activeAffiliates,
+		}, nil
+	}
+
+	// Return default data
+	return &domain.UserActivityMetrics{
+		DailyActiveUsers:   2800,
+		WeeklyActiveUsers:  4200,
+		MonthlyActiveUsers: 5600,
+		ActiveAdvertisers:  450,
+		ActiveAffiliates:   800,
+	}, nil
+}
+
+// LoadSystemHealthMetrics loads system health metrics
+func (s *mockDataService) LoadSystemHealthMetrics(ctx context.Context) (*domain.SystemHealthMetrics, error) {
+	records, err := s.loadCSV("enhanced_platform_metrics.csv")
+	if err != nil {
+		return nil, fmt.Errorf("failed to load platform metrics: %w", err)
+	}
+
+	if len(records) > 1 && len(records[1]) >= 12 {
+		record := records[1]
+		totalCampaigns, _ := strconv.Atoi(record[6])
+		requestsPerMinute, _ := strconv.Atoi(record[7])
+		successRate, _ := strconv.ParseFloat(record[8], 64)
+		rateLimitHits, _ := strconv.Atoi(record[9])
+		averageQueryTime, _ := strconv.ParseFloat(record[10], 64)
+		connectionPoolUsage, _ := strconv.ParseFloat(record[11], 64)
+
+		return &domain.SystemHealthMetrics{
+			TotalCampaigns:       totalCampaigns,
+			RequestsPerMinute:    requestsPerMinute,
+			SuccessRate:          successRate,
+			RateLimitHits:        rateLimitHits,
+			AverageQueryTime:     averageQueryTime,
+			ConnectionPoolUsage:  connectionPoolUsage,
+		}, nil
+	}
+
+	// Return default data
+	return &domain.SystemHealthMetrics{
+		TotalCampaigns:       2500,
+		RequestsPerMinute:    2500,
+		SuccessRate:          99.95,
+		RateLimitHits:        12,
+		AverageQueryTime:     25,
+		ConnectionPoolUsage:  65,
+	}, nil
+}
+
+// LoadRevenueBySource loads revenue by source data
+func (s *mockDataService) LoadRevenueBySource(ctx context.Context, orgID int64) ([]domain.RevenueBySource, error) {
+	records, err := s.loadCSV("revenue_by_source.csv")
+	if err != nil {
+		return nil, fmt.Errorf("failed to load revenue by source: %w", err)
+	}
+
+	var sources []domain.RevenueBySource
+	for _, record := range records[1:] { // Skip header
+		if len(record) < 5 {
+			continue
+		}
+
+		recordOrgID, err := strconv.ParseInt(record[0], 10, 64)
+		if err != nil {
+			continue
+		}
+
+		if recordOrgID == orgID {
+			revenue, _ := strconv.ParseFloat(record[2], 64)
+			percentage, _ := strconv.ParseFloat(record[3], 64)
+			growth, _ := strconv.ParseFloat(record[4], 64)
+
+			source := domain.RevenueBySource{
+				Source:     record[1],
+				Revenue:    revenue,
+				Percentage: percentage,
+				Growth:     growth,
+			}
+			sources = append(sources, source)
+		}
+	}
+
+	return sources, nil
+}
+
+// LoadGeographicDistribution loads geographic distribution data
+func (s *mockDataService) LoadGeographicDistribution(ctx context.Context, orgID int64) ([]domain.GeographicData, error) {
+	records, err := s.loadCSV("geographic_distribution.csv")
+	if err != nil {
+		return nil, fmt.Errorf("failed to load geographic distribution: %w", err)
+	}
+
+	var geoData []domain.GeographicData
+	for _, record := range records[1:] { // Skip header
+		if len(record) < 5 {
+			continue
+		}
+
+		recordOrgID, err := strconv.ParseInt(record[0], 10, 64)
+		if err != nil {
+			continue
+		}
+
+		if recordOrgID == orgID {
+			revenue, _ := strconv.ParseFloat(record[2], 64)
+			users, _ := strconv.Atoi(record[3])
+			conversionRate, _ := strconv.ParseFloat(record[4], 64)
+
+			data := domain.GeographicData{
+				Country:        record[1],
+				Revenue:        revenue,
+				Users:          users,
+				ConversionRate: conversionRate,
+			}
+			geoData = append(geoData, data)
+		}
+	}
+
+	return geoData, nil
+}
+
+// LoadEnhancedRevenueChart loads enhanced revenue chart with events data
+func (s *mockDataService) LoadEnhancedRevenueChart(ctx context.Context, orgID int64, period string) (*domain.RevenueChart, error) {
+	records, err := s.loadCSV("enhanced_revenue_chart.csv")
+	if err != nil {
+		return nil, fmt.Errorf("failed to load enhanced revenue chart: %w", err)
+	}
+
+	var dataPoints []domain.RevenueDataPoint
+	for _, record := range records[1:] { // Skip header
+		if len(record) < 6 {
+			continue
+		}
+
+		recordOrgID, err := strconv.ParseInt(record[0], 10, 64)
+		if err != nil {
+			continue
+		}
+
+		if recordOrgID == orgID {
+			revenue, _ := strconv.ParseFloat(record[2], 64)
+			clicks, _ := strconv.ParseInt(record[3], 10, 64)
+			conversions, _ := strconv.ParseInt(record[4], 10, 64)
+			events, _ := strconv.ParseInt(record[5], 10, 64)
+
+			dataPoint := domain.RevenueDataPoint{
+				Date:        record[1],
+				Revenue:     revenue,
+				Clicks:      clicks,
+				Conversions: conversions,
+				Events:      events,
+			}
+			dataPoints = append(dataPoints, dataPoint)
+		}
+	}
+
+	return &domain.RevenueChart{
+		Data:   dataPoints,
+		Period: period,
+	}, nil
 }

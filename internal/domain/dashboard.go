@@ -81,20 +81,63 @@ type ActivityResponse struct {
 	HasMore    bool       `json:"has_more"`
 }
 
+// MetricWithHistory represents a metric with historical comparison data
+type MetricWithHistory struct {
+	Today           float64 `json:"today"`
+	Yesterday       float64 `json:"yesterday"`
+	CurrentMonth    float64 `json:"current_month"`
+	LastMonth       float64 `json:"last_month"`
+	ChangePercentage float64 `json:"change_percentage"`
+}
+
 // AdvertiserDashboard represents advertiser-specific dashboard data
 type AdvertiserDashboard struct {
-	Summary             AdvertiserSummary   `json:"summary"`
+	Metrics             AdvertiserMetrics   `json:"metrics"`
 	CampaignPerformance CampaignPerformance `json:"campaign_performance"`
 	RevenueChart        RevenueChart        `json:"revenue_chart"`
+	Offers              *OffersPaginated    `json:"offers,omitempty"`
 	Billing             *BillingInfo        `json:"billing,omitempty"`
 }
 
-// AdvertiserSummary contains key metrics for advertisers
+// AdvertiserMetrics contains key metrics for advertisers with historical data
+type AdvertiserMetrics struct {
+	TotalClicks    MetricWithHistory `json:"total_clicks"`
+	Conversions    MetricWithHistory `json:"conversions"`
+	Revenue        MetricWithHistory `json:"revenue"`
+	ConversionRate MetricWithHistory `json:"conversion_rate"`
+	Events         MetricWithHistory `json:"events"`
+	EventRate      MetricWithHistory `json:"event_rate"`
+}
+
+// AdvertiserSummary contains key metrics for advertisers (legacy support)
 type AdvertiserSummary struct {
 	TotalClicks    int64   `json:"total_clicks"`
 	Conversions    int64   `json:"conversions"`
 	Revenue        float64 `json:"revenue"`
 	ConversionRate float64 `json:"conversion_rate"` // Percentage (0-100)
+}
+
+// OffersPaginated represents paginated offers data
+type OffersPaginated struct {
+	Items      []Offer `json:"items"`
+	TotalCount int     `json:"total_count"`
+	Page       int     `json:"page"`
+	PerPage    int     `json:"per_page"`
+	HasNext    bool    `json:"has_next"`
+}
+
+// Offer represents an offer/campaign offer
+type Offer struct {
+	ID             int64    `json:"id"`
+	Name           string   `json:"name"`
+	Description    *string  `json:"description,omitempty"`
+	Payout         float64  `json:"payout"`
+	Currency       string   `json:"currency"`
+	Status         string   `json:"status"`
+	Category       string   `json:"category"`
+	Countries      []string `json:"countries"`
+	ConversionFlow string   `json:"conversion_flow"`
+	CreatedAt      string   `json:"created_at"`
 }
 
 // CampaignPerformance contains campaign-related metrics
@@ -106,13 +149,18 @@ type CampaignPerformance struct {
 
 // CampaignSummary represents individual campaign performance
 type CampaignSummary struct {
-	ID             int64   `json:"id" db:"campaign_id"`
-	Name           string  `json:"name" db:"name"`
-	Clicks         int64   `json:"clicks" db:"clicks"`
-	Conversions    int64   `json:"conversions" db:"conversions"`
-	Revenue        float64 `json:"revenue" db:"revenue"`
-	ConversionRate float64 `json:"conversion_rate" db:"conversion_rate"`
-	Status         string  `json:"status" db:"status"`
+	ID               int64   `json:"id" db:"campaign_id"`
+	Name             string  `json:"name" db:"name"`
+	Clicks           int64   `json:"clicks" db:"clicks"`
+	Conversions      int64   `json:"conversions" db:"conversions"`
+	Revenue          float64 `json:"revenue" db:"revenue"`
+	ConversionRate   float64 `json:"conversion_rate" db:"conversion_rate"`
+	Events           int64   `json:"events" db:"events"`
+	EventRate        float64 `json:"event_rate" db:"event_rate"`
+	Status           string  `json:"status" db:"status"`
+	StartDate        string  `json:"start_date" db:"start_date"`
+	EndDate          *string `json:"end_date,omitempty" db:"end_date"`
+	AdvertiserOrgID  int64   `json:"advertiser_org_id" db:"advertiser_org_id"`
 }
 
 // RevenueChart contains time-series revenue data
@@ -127,6 +175,7 @@ type RevenueDataPoint struct {
 	Revenue     float64 `json:"revenue"`
 	Clicks      int64   `json:"clicks"`
 	Conversions int64   `json:"conversions"`
+	Events      int64   `json:"events"`
 }
 
 // BillingInfo contains billing-related information
@@ -138,12 +187,75 @@ type BillingInfo struct {
 
 // AgencyDashboard represents agency-specific dashboard data
 type AgencyDashboard struct {
-	Summary           AgencySummary      `json:"summary"`
-	ClientPerformance ClientPerformance  `json:"client_performance"`
-	RevenueChart      AgencyRevenueChart `json:"revenue_chart"`
+	PerformanceOverview      AgencyPerformanceOverview `json:"performance_overview"`
+	AdvertiserOrganizations  []AdvertiserOrganization  `json:"advertiser_organizations"`
+	CampaignsOverview        CampaignsOverview         `json:"campaigns_overview"`
+	PerformanceChart         AgencyPerformanceChart    `json:"performance_chart"`
 }
 
-// AgencySummary contains key metrics for agencies
+// AgencyPerformanceOverview contains aggregated performance across advertisers
+type AgencyPerformanceOverview struct {
+	TotalConversions   MetricWithHistory `json:"total_conversions"`
+	TotalClicks        MetricWithHistory `json:"total_clicks"`
+	ConversionsPerDay  MetricWithHistory `json:"conversions_per_day"`
+	ClicksPerDay       MetricWithHistory `json:"clicks_per_day"`
+	TotalEarnings      MetricWithHistory `json:"total_earnings"`
+}
+
+// AdvertiserOrganization represents an advertiser organization for agencies
+type AdvertiserOrganization struct {
+	ID             int64   `json:"id"`
+	Name           string  `json:"name"`
+	Status         string  `json:"status"`
+	CampaignsCount int     `json:"campaigns_count"`
+	Revenue        float64 `json:"revenue"`
+	ConversionRate float64 `json:"conversion_rate"`
+}
+
+// CampaignsOverview contains campaigns overview across all advertisers
+type CampaignsOverview struct {
+	Campaigns   []AgencyCampaignSummary `json:"campaigns"`
+	TotalCount  int                     `json:"total_count"`
+	ActiveCount int                     `json:"active_count"`
+}
+
+// AgencyCampaignSummary represents campaign summary for agencies
+type AgencyCampaignSummary struct {
+	ID               int64   `json:"id"`
+	Name             string  `json:"name"`
+	AdvertiserOrgID  int64   `json:"advertiser_org_id"`
+	AdvertiserName   string  `json:"advertiser_name"`
+	Status           string  `json:"status"`
+	Clicks           int64   `json:"clicks"`
+	Conversions      int64   `json:"conversions"`
+	TotalCost        float64 `json:"total_cost"`
+	ConversionRate   float64 `json:"conversion_rate"`
+}
+
+// AgencyPerformanceChart contains agency-specific performance data
+type AgencyPerformanceChart struct {
+	Data   []AgencyPerformanceDataPoint `json:"data"`
+	Period string                       `json:"period"`
+}
+
+// AgencyPerformanceDataPoint represents performance data with advertiser breakdown
+type AgencyPerformanceDataPoint struct {
+	Date                string                      `json:"date"`
+	Conversions         int64                       `json:"conversions"`
+	Clicks              int64                       `json:"clicks"`
+	Revenue             float64                     `json:"revenue"`
+	AdvertiserBreakdown []AdvertiserBreakdownPoint  `json:"advertiser_breakdown,omitempty"`
+}
+
+// AdvertiserBreakdownPoint represents revenue contribution by advertiser
+type AdvertiserBreakdownPoint struct {
+	AdvertiserID   int64   `json:"advertiser_id"`
+	AdvertiserName string  `json:"advertiser_name"`
+	Conversions    int64   `json:"conversions"`
+	Revenue        float64 `json:"revenue"`
+}
+
+// AgencySummary contains key metrics for agencies (legacy support)
 type AgencySummary struct {
 	TotalClients          int     `json:"total_clients"`
 	TotalRevenue          float64 `json:"total_revenue"`
@@ -197,13 +309,31 @@ type ClientRevenueBreakdown struct {
 
 // PlatformOwnerDashboard represents platform owner dashboard data
 type PlatformOwnerDashboard struct {
-	Summary        PlatformSummary `json:"summary"`
-	UserMetrics    UserMetrics     `json:"user_metrics"`
-	RevenueMetrics RevenueMetrics  `json:"revenue_metrics"`
-	SystemHealth   SystemHealth    `json:"system_health"`
+	PlatformOverview       PlatformOverview       `json:"platform_overview"`
+	UserActivity           UserActivityMetrics    `json:"user_activity"`
+	SystemHealth           SystemHealthMetrics    `json:"system_health"`
+	RevenueBySource        []RevenueBySource      `json:"revenue_by_source"`
+	GeographicDistribution []GeographicData       `json:"geographic_distribution"`
 }
 
-// PlatformSummary contains high-level platform metrics
+// PlatformOverview contains platform-wide metrics with historical data
+type PlatformOverview struct {
+	TotalOrganizations MetricWithHistory `json:"total_organizations"`
+	TotalUsers         MetricWithHistory `json:"total_users"`
+	TotalRevenue       MetricWithHistory `json:"total_revenue"`
+	MonthlyGrowth      MetricWithHistory `json:"monthly_growth"`
+	NewRegistrations   MetricWithHistory `json:"new_registrations"`
+}
+
+// GeographicData represents geographic distribution of users/revenue
+type GeographicData struct {
+	Country        string  `json:"country"`
+	Revenue        float64 `json:"revenue"`
+	Users          int     `json:"users"`
+	ConversionRate float64 `json:"conversion_rate"`
+}
+
+// PlatformSummary contains high-level platform metrics (legacy support)
 type PlatformSummary struct {
 	TotalUsers        int     `json:"total_users"`
 	TotalRevenue      float64 `json:"total_revenue"`
@@ -211,7 +341,26 @@ type PlatformSummary struct {
 	PlatformGrowth    float64 `json:"platform_growth"` // Percentage
 }
 
-// UserMetrics contains user-related metrics
+// UserActivityMetrics contains user activity metrics
+type UserActivityMetrics struct {
+	DailyActiveUsers   int `json:"daily_active_users"`
+	WeeklyActiveUsers  int `json:"weekly_active_users"`
+	MonthlyActiveUsers int `json:"monthly_active_users"`
+	ActiveAdvertisers  int `json:"active_advertisers"`
+	ActiveAffiliates   int `json:"active_affiliates"`
+}
+
+// SystemHealthMetrics contains system health metrics
+type SystemHealthMetrics struct {
+	TotalCampaigns       int     `json:"total_campaigns"`
+	RequestsPerMinute    int     `json:"requests_per_minute"`
+	SuccessRate          float64 `json:"success_rate"`
+	RateLimitHits        int     `json:"rate_limit_hits"`
+	AverageQueryTime     float64 `json:"average_query_time"`
+	ConnectionPoolUsage  float64 `json:"connection_pool_usage"`
+}
+
+// UserMetrics contains user-related metrics (legacy support)
 type UserMetrics struct {
 	ActiveUsers    int            `json:"active_users"`
 	NewUsers       int            `json:"new_users"`
@@ -219,7 +368,7 @@ type UserMetrics struct {
 	UsersByType    map[string]int `json:"users_by_type"`
 }
 
-// RevenueMetrics contains revenue-related metrics
+// RevenueMetrics contains revenue-related metrics (legacy support)
 type RevenueMetrics struct {
 	TotalRevenue          float64           `json:"total_revenue"`
 	RevenueGrowth         float64           `json:"revenue_growth"`
@@ -232,9 +381,10 @@ type RevenueBySource struct {
 	Source     string  `json:"source"`
 	Revenue    float64 `json:"revenue"`
 	Percentage float64 `json:"percentage"`
+	Growth     float64 `json:"growth"`
 }
 
-// SystemHealth contains system health metrics
+// SystemHealth contains system health metrics (legacy support)
 type SystemHealth struct {
 	Uptime            float64 `json:"uptime"`             // Percentage
 	ResponseTime      float64 `json:"response_time"`      // Average in milliseconds

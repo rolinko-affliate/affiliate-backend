@@ -37,10 +37,13 @@ func NewDashboardHandler(service service.DashboardService, log *logger.Logger) *
 // @Accept       json
 // @Produce      json
 // @Security     BearerAuth
-// @Param        period      query     string  false  "Time period (today, 7d, 30d, 90d, custom)"  default(30d)
-// @Param        start_date  query     string  false  "Start date for custom period (YYYY-MM-DD)"
-// @Param        end_date    query     string  false  "End date for custom period (YYYY-MM-DD)"
-// @Param        timezone    query     string  false  "Timezone identifier"  default(UTC)
+// @Param        period         query     string  false  "Time period (today, 7d, 30d, 90d, custom)"  default(30d)
+// @Param        start_date     query     string  false  "Start date for custom period (YYYY-MM-DD)"
+// @Param        end_date       query     string  false  "End date for custom period (YYYY-MM-DD)"
+// @Param        timezone       query     string  false  "Timezone identifier"  default(UTC)
+// @Param        advertiser_ids query     string  false  "Comma-separated list of advertiser IDs"
+// @Param        campaign_ids   query     string  false  "Comma-separated list of campaign IDs"
+// @Param        affiliate_ids  query     string  false  "Comma-separated list of affiliate IDs"
 // @Success      200         {object}  domain.DashboardData
 // @Failure      400         {object}  ErrorResponse
 // @Failure      401         {object}  ErrorResponse
@@ -65,6 +68,33 @@ func (h *DashboardHandler) GetDashboard(c *gin.Context) {
 	period := c.DefaultQuery("period", "30d")
 	timezone := c.DefaultQuery("timezone", "UTC")
 
+	// Parse filter parameters
+	var advertiserIDs, campaignIDs, affiliateIDs []int64
+	
+	if advertiserIDsStr := c.Query("advertiser_ids"); advertiserIDsStr != "" {
+		for _, idStr := range strings.Split(advertiserIDsStr, ",") {
+			if id, err := strconv.ParseInt(strings.TrimSpace(idStr), 10, 64); err == nil {
+				advertiserIDs = append(advertiserIDs, id)
+			}
+		}
+	}
+	
+	if campaignIDsStr := c.Query("campaign_ids"); campaignIDsStr != "" {
+		for _, idStr := range strings.Split(campaignIDsStr, ",") {
+			if id, err := strconv.ParseInt(strings.TrimSpace(idStr), 10, 64); err == nil {
+				campaignIDs = append(campaignIDs, id)
+			}
+		}
+	}
+	
+	if affiliateIDsStr := c.Query("affiliate_ids"); affiliateIDsStr != "" {
+		for _, idStr := range strings.Split(affiliateIDsStr, ",") {
+			if id, err := strconv.ParseInt(strings.TrimSpace(idStr), 10, 64); err == nil {
+				affiliateIDs = append(affiliateIDs, id)
+			}
+		}
+	}
+
 	var startDate, endDate *time.Time
 
 	// Parse custom date range if provided
@@ -87,7 +117,7 @@ func (h *DashboardHandler) GetDashboard(c *gin.Context) {
 	}
 
 	// Get dashboard data
-	dashboardData, err := h.service.GetDashboardData(c.Request.Context(), userID, period, startDate, endDate, timezone)
+	dashboardData, err := h.service.GetDashboardData(c.Request.Context(), userID, period, startDate, endDate, timezone, advertiserIDs, campaignIDs, affiliateIDs)
 	if err != nil {
 		h.logger.Error("Failed to get dashboard data",
 			"user_id", userID,
@@ -512,4 +542,80 @@ func RespondWithDashboardError(c *gin.Context, code int, errorCode, message, det
 
 	c.Header("X-Error-Code", errorCode)
 	c.AbortWithStatusJSON(code, resp)
+}
+
+// GetOffers handles GET /dashboard/offers
+// @Summary      Get paginated offers
+// @Description  Returns paginated offers for the user's organization
+// @Tags         dashboard
+// @Accept       json
+// @Produce      json
+// @Security     BearerAuth
+// @Param        page     query     int  false  "Page number (1-based)"  default(1)
+// @Param        per_page query     int  false  "Items per page"         default(10)
+// @Success      200      {object}  domain.OffersPaginated
+// @Failure      400      {object}  ErrorResponse
+// @Failure      401      {object}  ErrorResponse
+// @Failure      403      {object}  ErrorResponse
+// @Failure      500      {object}  ErrorResponse
+// @Router       /dashboard/offers [get]
+func (h *DashboardHandler) GetOffers(c *gin.Context) {
+	// Get user ID from context (set by auth middleware)
+	userIDStr, exists := c.Get(middleware.UserIDKey)
+	if !exists {
+		RespondWithError(c, http.StatusUnauthorized, "User ID not found in context")
+		return
+	}
+
+	userID, err := uuid.Parse(userIDStr.(string))
+	if err != nil {
+		RespondWithError(c, http.StatusBadRequest, "Invalid user ID format")
+		return
+	}
+
+	// Parse pagination parameters
+	page := 1
+	if pageStr := c.Query("page"); pageStr != "" {
+		if p, err := strconv.Atoi(pageStr); err == nil && p > 0 {
+			page = p
+		}
+	}
+
+	perPage := 10
+	if perPageStr := c.Query("per_page"); perPageStr != "" {
+		if pp, err := strconv.Atoi(perPageStr); err == nil && pp > 0 && pp <= 100 {
+			perPage = pp
+		}
+	}
+
+	// Get offers data
+	offers, err := h.service.GetOffersPaginated(c.Request.Context(), userID, page, perPage)
+	if err != nil {
+		h.logger.Error("Failed to get offers data",
+			"user_id", userID,
+			"page", page,
+			"per_page", perPage,
+			"error", err,
+		)
+
+		if errors.Is(err, domain.ErrNotFound) {
+			RespondWithError(c, http.StatusNotFound, err.Error())
+			return
+		}
+
+		if errors.Is(err, domain.ErrUnauthorized) || errors.Is(err, domain.ErrForbidden) {
+			RespondWithError(c, http.StatusForbidden, err.Error())
+			return
+		}
+
+		if errors.Is(err, domain.ErrInvalidInput) {
+			RespondWithError(c, http.StatusBadRequest, err.Error())
+			return
+		}
+
+		RespondWithError(c, http.StatusInternalServerError, "Failed to retrieve offers data")
+		return
+	}
+
+	c.JSON(http.StatusOK, offers)
 }

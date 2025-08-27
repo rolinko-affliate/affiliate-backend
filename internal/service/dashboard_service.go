@@ -20,9 +20,12 @@ const (
 // DashboardService defines the interface for dashboard business logic
 type DashboardService interface {
 	// Main dashboard methods
-	GetDashboardData(ctx context.Context, userID uuid.UUID, period string, startDate, endDate *time.Time, timezone string) (*domain.DashboardData, error)
+	GetDashboardData(ctx context.Context, userID uuid.UUID, period string, startDate, endDate *time.Time, timezone string, advertiserIDs, campaignIDs, affiliateIDs []int64) (*domain.DashboardData, error)
 	GetCampaignDetail(ctx context.Context, userID uuid.UUID, campaignID int64) (*domain.CampaignDetail, error)
 	GetRecentActivity(ctx context.Context, userID uuid.UUID, limit, offset int, activityTypes []string, since *time.Time) (*domain.ActivityResponse, error)
+
+	// Enhanced dashboard methods
+	GetOffersPaginated(ctx context.Context, userID uuid.UUID, page, perPage int) (*domain.OffersPaginated, error)
 
 	// System health (platform owner only)
 	GetSystemHealth(ctx context.Context, userID uuid.UUID) (*domain.SystemHealth, error)
@@ -75,7 +78,7 @@ func NewDashboardService(
 }
 
 // GetDashboardData retrieves dashboard data based on user's organization type
-func (s *dashboardService) GetDashboardData(ctx context.Context, userID uuid.UUID, period string, startDate, endDate *time.Time, timezone string) (*domain.DashboardData, error) {
+func (s *dashboardService) GetDashboardData(ctx context.Context, userID uuid.UUID, period string, startDate, endDate *time.Time, timezone string, advertiserIDs, campaignIDs, affiliateIDs []int64) (*domain.DashboardData, error) {
 	start := time.Now()
 
 	s.logger.Info("Dashboard data request started",
@@ -304,10 +307,10 @@ func (s *dashboardService) getAdvertiserSummary(ctx context.Context, orgID int64
 
 // getAdvertiserSummaryFromMock builds advertiser dashboard using mock data
 func (s *dashboardService) getAdvertiserSummaryFromMock(ctx context.Context, orgID int64) (*domain.AdvertiserDashboard, error) {
-	// Load advertiser summary
-	summary, err := s.mockDataService.LoadAdvertiserSummary(ctx, orgID)
+	// Load advertiser metrics with historical data
+	metrics, err := s.mockDataService.LoadAdvertiserMetrics(ctx, orgID)
 	if err != nil {
-		return nil, fmt.Errorf("failed to load mock advertiser summary: %w", err)
+		return nil, fmt.Errorf("failed to load mock advertiser metrics: %w", err)
 	}
 
 	// Load campaign performance
@@ -316,10 +319,16 @@ func (s *dashboardService) getAdvertiserSummaryFromMock(ctx context.Context, org
 		return nil, fmt.Errorf("failed to load mock campaign performance: %w", err)
 	}
 
-	// Load revenue chart (default to 30d period)
-	revenueChart, err := s.mockDataService.LoadRevenueChart(ctx, orgID, "30d")
+	// Load enhanced revenue chart (default to 30d period)
+	revenueChart, err := s.mockDataService.LoadEnhancedRevenueChart(ctx, orgID, "30d")
 	if err != nil {
 		return nil, fmt.Errorf("failed to load mock revenue chart: %w", err)
+	}
+
+	// Load offers with pagination (first page, 10 items)
+	offers, err := s.mockDataService.LoadOffersPaginated(ctx, orgID, 1, 10)
+	if err != nil {
+		return nil, fmt.Errorf("failed to load mock offers: %w", err)
 	}
 
 	// Load billing info
@@ -329,9 +338,10 @@ func (s *dashboardService) getAdvertiserSummaryFromMock(ctx context.Context, org
 	}
 
 	return &domain.AdvertiserDashboard{
-		Summary:             *summary,
+		Metrics:             *metrics,
 		CampaignPerformance: *campaignPerformance,
 		RevenueChart:        *revenueChart,
+		Offers:              offers,
 		Billing:             billing,
 	}, nil
 }
@@ -477,28 +487,35 @@ func (s *dashboardService) getAgencySummary(ctx context.Context, orgID int64, fr
 
 // getAgencySummaryFromMock builds agency dashboard using mock data
 func (s *dashboardService) getAgencySummaryFromMock(ctx context.Context, orgID int64) (*domain.AgencyDashboard, error) {
-	// Load agency summary
-	summary, err := s.mockDataService.LoadAgencySummary(ctx, orgID)
+	// Load agency performance overview
+	performanceOverview, err := s.mockDataService.LoadAgencyPerformanceOverview(ctx, orgID)
 	if err != nil {
-		return nil, fmt.Errorf("failed to load mock agency summary: %w", err)
+		return nil, fmt.Errorf("failed to load mock agency performance overview: %w", err)
 	}
 
-	// Load client performance
-	clientPerformance, err := s.mockDataService.LoadClientPerformance(ctx, orgID)
+	// Load advertiser organizations
+	advertiserOrgs, err := s.mockDataService.LoadAdvertiserOrganizations(ctx, orgID)
 	if err != nil {
-		return nil, fmt.Errorf("failed to load mock client performance: %w", err)
+		return nil, fmt.Errorf("failed to load mock advertiser organizations: %w", err)
 	}
 
-	// Load agency revenue chart (default to 30d period)
-	revenueChart, err := s.mockDataService.LoadAgencyRevenueChart(ctx, orgID, "30d")
+	// Load campaigns overview
+	campaignsOverview, err := s.mockDataService.LoadCampaignsOverview(ctx, orgID)
 	if err != nil {
-		return nil, fmt.Errorf("failed to load mock agency revenue chart: %w", err)
+		return nil, fmt.Errorf("failed to load mock campaigns overview: %w", err)
+	}
+
+	// Load agency performance chart (default to 30d period)
+	performanceChart, err := s.mockDataService.LoadAgencyPerformanceChart(ctx, orgID, "30d")
+	if err != nil {
+		return nil, fmt.Errorf("failed to load mock agency performance chart: %w", err)
 	}
 
 	return &domain.AgencyDashboard{
-		Summary:           *summary,
-		ClientPerformance: *clientPerformance,
-		RevenueChart:      *revenueChart,
+		PerformanceOverview:      *performanceOverview,
+		AdvertiserOrganizations:  advertiserOrgs,
+		CampaignsOverview:        *campaignsOverview,
+		PerformanceChart:         *performanceChart,
 	}, nil
 }
 
@@ -557,35 +574,42 @@ func (s *dashboardService) getPlatformOwnerSummary(ctx context.Context, from, to
 
 // getPlatformOwnerSummaryFromMock builds platform owner dashboard using mock data
 func (s *dashboardService) getPlatformOwnerSummaryFromMock(ctx context.Context) (*domain.PlatformOwnerDashboard, error) {
-	// Load platform summary
-	summary, err := s.mockDataService.LoadPlatformSummary(ctx)
+	// Load platform overview with historical data
+	platformOverview, err := s.mockDataService.LoadPlatformOverview(ctx)
 	if err != nil {
-		return nil, fmt.Errorf("failed to load mock platform summary: %w", err)
+		return nil, fmt.Errorf("failed to load mock platform overview: %w", err)
 	}
 
-	// Load user metrics
-	userMetrics, err := s.mockDataService.LoadUserMetrics(ctx)
+	// Load user activity metrics
+	userActivity, err := s.mockDataService.LoadUserActivityMetrics(ctx)
 	if err != nil {
-		return nil, fmt.Errorf("failed to load mock user metrics: %w", err)
+		return nil, fmt.Errorf("failed to load mock user activity metrics: %w", err)
 	}
 
-	// Load revenue metrics
-	revenueMetrics, err := s.mockDataService.LoadRevenueMetrics(ctx)
+	// Load system health metrics
+	systemHealth, err := s.mockDataService.LoadSystemHealthMetrics(ctx)
 	if err != nil {
-		return nil, fmt.Errorf("failed to load mock revenue metrics: %w", err)
+		return nil, fmt.Errorf("failed to load mock system health metrics: %w", err)
 	}
 
-	// Load system health
-	systemHealth, err := s.mockDataService.LoadSystemHealth(ctx)
+	// Load revenue by source (use platform orgID 100)
+	revenueBySource, err := s.mockDataService.LoadRevenueBySource(ctx, 100)
 	if err != nil {
-		return nil, fmt.Errorf("failed to load mock system health: %w", err)
+		return nil, fmt.Errorf("failed to load mock revenue by source: %w", err)
+	}
+
+	// Load geographic distribution (use platform orgID 100)
+	geographicDistribution, err := s.mockDataService.LoadGeographicDistribution(ctx, 100)
+	if err != nil {
+		return nil, fmt.Errorf("failed to load mock geographic distribution: %w", err)
 	}
 
 	return &domain.PlatformOwnerDashboard{
-		Summary:        *summary,
-		UserMetrics:    *userMetrics,
-		RevenueMetrics: *revenueMetrics,
-		SystemHealth:   *systemHealth,
+		PlatformOverview:       *platformOverview,
+		UserActivity:           *userActivity,
+		SystemHealth:           *systemHealth,
+		RevenueBySource:        revenueBySource,
+		GeographicDistribution: geographicDistribution,
 	}, nil
 }
 
@@ -706,6 +730,35 @@ func (s *dashboardService) GetSystemHealth(ctx context.Context, userID uuid.UUID
 	}
 
 	return health, nil
+}
+
+// GetOffersPaginated retrieves paginated offers for the user's organization
+func (s *dashboardService) GetOffersPaginated(ctx context.Context, userID uuid.UUID, page, perPage int) (*domain.OffersPaginated, error) {
+	// Get user profile to determine organization
+	profile, err := s.profileService.GetProfileByID(ctx, userID)
+	if err != nil {
+		return nil, fmt.Errorf("failed to get user profile: %w", err)
+	}
+
+	if profile.OrganizationID == nil {
+		return nil, errors.New("user is not associated with any organization")
+	}
+
+	orgID := *profile.OrganizationID
+
+	// Use mock data if mock mode is enabled
+	if s.mockMode && s.mockDataService != nil {
+		return s.mockDataService.LoadOffersPaginated(ctx, orgID, page, perPage)
+	}
+
+	// For non-mock mode, return empty offers for now
+	return &domain.OffersPaginated{
+		Items:      []domain.Offer{},
+		TotalCount: 0,
+		Page:       page,
+		PerPage:    perPage,
+		HasNext:    false,
+	}, nil
 }
 
 // TrackActivity creates a new activity record

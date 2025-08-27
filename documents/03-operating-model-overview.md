@@ -1,9 +1,9 @@
 # Operating Model Overview: Affiliate Backend Platform
 
-**Document Version**: v1.0  
+**Document Version**: v1.1  
 **Owner**: Operations Manager  
-**Last Updated**: 2025-08-05  
-**Next Review**: 2026-02-05
+**Last Updated**: 2025-08-15  
+**Next Review**: 2026-02-15
 
 ---
 

@@ -1,9 +1,9 @@
 # Security & Compliance Guide: Affiliate Backend Platform
 
-**Document Version**: v1.0  
+**Document Version**: v1.1  
 **Owner**: Security Officer  
-**Last Updated**: 2025-08-05  
-**Next Review**: 2026-02-05
+**Last Updated**: 2025-08-15  
+**Next Review**: 2026-02-15
 
 ---
 
@@ -403,6 +403,60 @@ func ValidateInput() gin.HandlerFunc {
         
         c.Next()
     })
+}
+```
+
+#### Dashboard API Security Controls
+```go
+// Dashboard-specific security middleware
+func DashboardSecurityMiddleware() gin.HandlerFunc {
+    return gin.HandlerFunc(func(c *gin.Context) {
+        // Rate limiting for dashboard endpoints
+        if !checkRateLimit(c.ClientIP(), "dashboard", 100) {
+            c.JSON(429, gin.H{"error": "Rate limit exceeded"})
+            c.Abort()
+            return
+        }
+        
+        // Validate organization access
+        orgID := c.GetHeader("X-Organization-ID")
+        userID := c.GetString("user_id")
+        if !hasOrganizationAccess(userID, orgID) {
+            c.JSON(403, gin.H{"error": "Insufficient permissions"})
+            c.Abort()
+            return
+        }
+        
+        // Sanitize date range parameters
+        from := c.Query("from")
+        to := c.Query("to")
+        if !isValidDateRange(from, to) {
+            c.JSON(400, gin.H{"error": "Invalid date range"})
+            c.Abort()
+            return
+        }
+        
+        // Prevent data exfiltration through large date ranges
+        if exceedsMaxDateRange(from, to, 365) {
+            c.JSON(400, gin.H{"error": "Date range too large"})
+            c.Abort()
+            return
+        }
+        
+        c.Next()
+    })
+}
+
+// Everflow API key protection
+func SecureEverflowClient() *EverflowClient {
+    return &EverflowClient{
+        APIKey:     getSecretFromVault("everflow-api-key"),
+        BaseURL:    getConfigValue("everflow-base-url"),
+        Timeout:    30 * time.Second,
+        RetryCount: 3,
+        // Implement circuit breaker for external API calls
+        CircuitBreaker: NewCircuitBreaker(),
+    }
 }
 ```
 

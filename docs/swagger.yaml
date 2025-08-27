@@ -1,5 +1,67 @@
 basePath: /api/v1
 definitions:
+  domain.Activity:
+    properties:
+      campaign_id:
+        description: Context-specific fields
+        type: integer
+      campaign_name:
+        type: string
+      client_id:
+        type: integer
+      client_name:
+        type: string
+      description:
+        type: string
+      id:
+        type: string
+      metadata:
+        additionalProperties: true
+        type: object
+      severity:
+        type: string
+      timestamp:
+        type: string
+      type:
+        $ref: '#/definitions/domain.ActivityType'
+    type: object
+  domain.ActivityResponse:
+    properties:
+      activities:
+        items:
+          $ref: '#/definitions/domain.Activity'
+        type: array
+      has_more:
+        type: boolean
+      total:
+        type: integer
+    type: object
+  domain.ActivityType:
+    enum:
+    - campaign_created
+    - campaign_updated
+    - conversion
+    - click
+    - client_added
+    - campaign_launched
+    - payment
+    - user_registered
+    - system_alert
+    - revenue_milestone
+    - error
+    type: string
+    x-enum-varnames:
+    - ActivityCampaignCreated
+    - ActivityCampaignUpdated
+    - ActivityConversion
+    - ActivityClick
+    - ActivityClientAdded
+    - ActivityCampaignLaunched
+    - ActivityPayment
+    - ActivityUserRegistered
+    - ActivitySystemAlert
+    - ActivityRevenueMilestone
+    - ActivityError
   domain.AddExternalMessageRequest:
     properties:
       content:
@@ -827,6 +889,106 @@ definitions:
       weekly_conversion_cap:
         type: integer
     type: object
+  domain.CampaignDetail:
+    properties:
+      campaign:
+        $ref: '#/definitions/domain.CampaignInfo'
+      daily_stats:
+        items:
+          $ref: '#/definitions/domain.DailyStat'
+        type: array
+      performance:
+        $ref: '#/definitions/domain.CampaignMetrics'
+    type: object
+  domain.CampaignInfo:
+    properties:
+      budget:
+        type: number
+      end_date:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      spent:
+        type: number
+      start_date:
+        type: string
+      status:
+        type: string
+    type: object
+  domain.CampaignListItem:
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      status:
+        type: string
+    type: object
+  domain.CampaignMetrics:
+    properties:
+      clicks:
+        type: integer
+      conversions:
+        type: integer
+      cpa:
+        description: Cost per acquisition
+        type: number
+      cpc:
+        description: Cost per click
+        type: number
+      ctr:
+        description: Click-through rate
+        type: number
+      impressions:
+        type: integer
+      revenue:
+        type: number
+    type: object
+  domain.ClickReport:
+    properties:
+      affiliate_id:
+        type: string
+      affiliate_name:
+        type: string
+      campaign_id:
+        type: string
+      campaign_name:
+        type: string
+      city:
+        type: string
+      conversion_id:
+        type: string
+      converted:
+        type: boolean
+      country:
+        type: string
+      id:
+        type: string
+      ip_address:
+        type: string
+      landing_page_url:
+        type: string
+      offer_id:
+        type: string
+      offer_name:
+        type: string
+      referrer_url:
+        type: string
+      region:
+        type: string
+      sub1:
+        type: string
+      sub2:
+        type: string
+      sub3:
+        type: string
+      timestamp:
+        type: string
+      user_agent:
+        type: string
+    type: object
   domain.ContactEmailData:
     properties:
       count:
@@ -870,6 +1032,43 @@ definitions:
         type: integer
       total:
         type: integer
+    type: object
+  domain.ConversionReport:
+    properties:
+      affiliate_id:
+        type: string
+      affiliate_name:
+        type: string
+      campaign_id:
+        type: string
+      campaign_name:
+        type: string
+      click_id:
+        type: string
+      conversion_value:
+        type: number
+      currency:
+        type: string
+      id:
+        type: string
+      offer_id:
+        type: string
+      offer_name:
+        type: string
+      payout:
+        type: number
+      status:
+        type: string
+      sub1:
+        type: string
+      sub2:
+        type: string
+      sub3:
+        type: string
+      timestamp:
+        type: string
+      transaction_id:
+        type: string
     type: object
   domain.CountryRankingData:
     properties:
@@ -1027,6 +1226,55 @@ definitions:
         type: boolean
     required:
     - payment_method_id
+    type: object
+  domain.DailyPerformanceReport:
+    properties:
+      campaign_id:
+        type: string
+      campaign_name:
+        type: string
+      click_through_rate:
+        type: number
+      clicks:
+        type: integer
+      conversion_rate:
+        type: number
+      conversions:
+        type: integer
+      date:
+        type: string
+      impressions:
+        type: integer
+      payouts:
+        type: number
+      revenue:
+        type: number
+    type: object
+  domain.DailyStat:
+    properties:
+      clicks:
+        type: integer
+      conversions:
+        type: integer
+      date:
+        type: string
+      impressions:
+        type: integer
+      revenue:
+        type: number
+    type: object
+  domain.DashboardData:
+    properties:
+      last_updated:
+        type: string
+      organization_type:
+        $ref: '#/definitions/domain.OrganizationType'
+      recent_activity:
+        items:
+          $ref: '#/definitions/domain.Activity'
+        type: array
+      summary:
+        description: Type varies by org type
     type: object
   domain.DelegationPermission:
     enum:
@@ -1270,6 +1518,46 @@ definitions:
       screenshotImageUrl:
         type: string
     type: object
+  domain.Offer:
+    properties:
+      category:
+        type: string
+      conversion_flow:
+        type: string
+      countries:
+        items:
+          type: string
+        type: array
+      created_at:
+        type: string
+      currency:
+        type: string
+      description:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      payout:
+        type: number
+      status:
+        type: string
+    type: object
+  domain.OffersPaginated:
+    properties:
+      has_next:
+        type: boolean
+      items:
+        items:
+          $ref: '#/definitions/domain.Offer'
+        type: array
+      page:
+        type: integer
+      per_page:
+        type: integer
+      total_count:
+        type: integer
+    type: object
   domain.Organization:
     properties:
       created_at:
@@ -1400,6 +1688,21 @@ definitions:
       updated_at:
         type: string
     type: object
+  domain.PaginationResult:
+    properties:
+      current_page:
+        type: integer
+      has_next_page:
+        type: boolean
+      has_previous_page:
+        type: boolean
+      items_per_page:
+        type: integer
+      total_items:
+        type: integer
+      total_pages:
+        type: integer
+    type: object
   domain.PaymentDetails:
     properties:
       account_number:
@@ -1483,6 +1786,40 @@ definitions:
     - PaymentTypePayPal
     - PaymentTypeCrypto
     - PaymentTypeOther
+  domain.PerformanceSummary:
+    properties:
+      average_revenue:
+        type: number
+      click_through_rate:
+        type: number
+      conversion_rate:
+        type: number
+      total_clicks:
+        type: integer
+      total_conversions:
+        type: integer
+      total_impressions:
+        type: integer
+      total_revenue:
+        type: number
+    type: object
+  domain.PerformanceTimeSeriesPoint:
+    properties:
+      click_through_rate:
+        type: number
+      clicks:
+        type: integer
+      conversion_rate:
+        type: number
+      conversions:
+        type: integer
+      date:
+        type: string
+      impressions:
+        type: integer
+      revenue:
+        type: number
+    type: object
   domain.PermissionCheckRequest:
     properties:
       advertiser_org_id:
@@ -1682,6 +2019,20 @@ definitions:
         type: string
       updated_at:
         type: string
+    type: object
+  domain.SystemHealth:
+    properties:
+      active_connections:
+        type: integer
+      error_rate:
+        description: Percentage
+        type: number
+      response_time:
+        description: Average in milliseconds
+        type: number
+      uptime:
+        description: Percentage
+        type: number
     type: object
   domain.Transaction:
     properties:
@@ -2024,6 +2375,37 @@ definitions:
         description: Total number of items found matching the search criteria
         type: integer
     type: object
+  handlers.CampaignsListResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/domain.CampaignListItem'
+        type: array
+      status:
+        type: string
+    type: object
+  handlers.ClicksReportResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/domain.ClickReport'
+        type: array
+      pagination:
+        $ref: '#/definitions/domain.PaginationResult'
+      status:
+        type: string
+    type: object
+  handlers.ConversionsReportResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/domain.ConversionReport'
+        type: array
+      pagination:
+        $ref: '#/definitions/domain.PaginationResult'
+      status:
+        type: string
+    type: object
   handlers.CreateAdvertiserRequest:
     properties:
       data:
@@ -2119,11 +2501,47 @@ definitions:
     - data
     - domain
     type: object
+  handlers.DailyPerformanceReportResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/domain.DailyPerformanceReport'
+        type: array
+      pagination:
+        $ref: '#/definitions/domain.PaginationResult'
+      status:
+        type: string
+    type: object
+  handlers.DateRangeInfo:
+    properties:
+      endDate:
+        type: string
+      startDate:
+        type: string
+    type: object
   handlers.ErrorResponse:
     properties:
       details:
         type: string
       error:
+        type: string
+    type: object
+  handlers.PerformanceSummaryResponse:
+    properties:
+      data:
+        $ref: '#/definitions/domain.PerformanceSummary'
+      dateRange:
+        $ref: '#/definitions/handlers.DateRangeInfo'
+      status:
+        type: string
+    type: object
+  handlers.PerformanceTimeSeriesResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/domain.PerformanceTimeSeriesPoint'
+        type: array
+      status:
         type: string
     type: object
   handlers.ProfileRequest:
@@ -2163,6 +2581,19 @@ definitions:
       type:
         description: e.g., "INSERT"
         type: string
+    type: object
+  handlers.TrackActivityRequest:
+    properties:
+      description:
+        type: string
+      metadata:
+        additionalProperties: true
+        type: object
+      type:
+        type: string
+    required:
+    - description
+    - type
     type: object
   handlers.UpdateAffiliateProviderMappingRequest:
     properties:
@@ -5261,6 +5692,46 @@ paths:
       tags:
       - billing
   /campaigns:
+    get:
+      consumes:
+      - application/json
+      description: Returns list of available campaigns for filtering and selection
+      parameters:
+      - description: Affiliate ID filter
+        in: query
+        name: affiliateId
+        type: string
+      - default: active
+        description: Campaign status filter
+        in: query
+        name: status
+        type: string
+      - description: Search term for campaign name
+        in: query
+        name: search
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handlers.CampaignsListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      summary: Get campaigns list
+      tags:
+      - campaigns
     post:
       consumes:
       - application/json
@@ -5434,6 +5905,327 @@ paths:
       summary: Get campaign provider mapping
       tags:
       - campaigns
+  /dashboard:
+    get:
+      consumes:
+      - application/json
+      description: Returns dashboard data based on user's organization type
+      parameters:
+      - default: 30d
+        description: Time period (today, 7d, 30d, 90d, custom)
+        in: query
+        name: period
+        type: string
+      - description: Start date for custom period (YYYY-MM-DD)
+        in: query
+        name: start_date
+        type: string
+      - description: End date for custom period (YYYY-MM-DD)
+        in: query
+        name: end_date
+        type: string
+      - default: UTC
+        description: Timezone identifier
+        in: query
+        name: timezone
+        type: string
+      - description: Comma-separated list of advertiser IDs
+        in: query
+        name: advertiser_ids
+        type: string
+      - description: Comma-separated list of campaign IDs
+        in: query
+        name: campaign_ids
+        type: string
+      - description: Comma-separated list of affiliate IDs
+        in: query
+        name: affiliate_ids
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/domain.DashboardData'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get dashboard data
+      tags:
+      - dashboard
+  /dashboard/activity:
+    get:
+      consumes:
+      - application/json
+      description: Returns paginated recent activity feed
+      parameters:
+      - default: 10
+        description: Number of items per page
+        in: query
+        maximum: 50
+        name: limit
+        type: integer
+      - default: 0
+        description: Number of items to skip
+        in: query
+        name: offset
+        type: integer
+      - collectionFormat: csv
+        description: Filter by activity types
+        in: query
+        items:
+          type: string
+        name: type
+        type: array
+      - description: Filter activities since this timestamp (RFC3339)
+        in: query
+        name: since
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/domain.ActivityResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get recent activity
+      tags:
+      - dashboard
+    post:
+      consumes:
+      - application/json
+      description: Creates a new activity record for the user's organization
+      parameters:
+      - description: Activity data
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handlers.TrackActivityRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Activity tracked
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Track dashboard activity
+      tags:
+      - dashboard
+  /dashboard/cache/invalidate:
+    post:
+      consumes:
+      - application/json
+      description: Invalidates dashboard cache for the user's organization
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Cache invalidated
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Invalidate dashboard cache
+      tags:
+      - dashboard
+  /dashboard/campaigns/{campaignId}:
+    get:
+      consumes:
+      - application/json
+      description: Returns detailed performance data for a specific campaign
+      parameters:
+      - description: Campaign ID
+        in: path
+        name: campaignId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/domain.CampaignDetail'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get campaign detail
+      tags:
+      - dashboard
+  /dashboard/health:
+    get:
+      description: Returns the health status of the dashboard service
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Health status
+          schema:
+            additionalProperties: true
+            type: object
+        "503":
+          description: Service unavailable
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Dashboard health check
+      tags:
+      - dashboard
+  /dashboard/offers:
+    get:
+      consumes:
+      - application/json
+      description: Returns paginated offers for the user's organization
+      parameters:
+      - default: 1
+        description: Page number (1-based)
+        in: query
+        name: page
+        type: integer
+      - default: 10
+        description: Items per page
+        in: query
+        name: per_page
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/domain.OffersPaginated'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get paginated offers
+      tags:
+      - dashboard
+  /dashboard/system/health:
+    get:
+      consumes:
+      - application/json
+      description: Returns system health metrics (Platform Owner only)
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/domain.SystemHealth'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get system health metrics
+      tags:
+      - dashboard
   /favorite-publisher-lists:
     get:
       description: Retrieves all favorite publisher lists for the user's organization
@@ -7367,6 +8159,316 @@ paths:
       summary: Update conversation status
       tags:
       - Publisher Messaging
+  /reports/clicks:
+    get:
+      consumes:
+      - application/json
+      description: Returns paginated click events with geographic and referrer information
+      parameters:
+      - description: Start date (YYYY-MM-DD)
+        in: query
+        name: startDate
+        required: true
+        type: string
+      - description: End date (YYYY-MM-DD)
+        in: query
+        name: endDate
+        required: true
+        type: string
+      - description: Comma-separated campaign IDs
+        in: query
+        name: campaignIds
+        type: string
+      - description: Affiliate ID filter
+        in: query
+        name: affiliateId
+        type: string
+      - default: 1
+        description: Page number
+        in: query
+        name: page
+        type: integer
+      - default: 10
+        description: Items per page (max 100)
+        in: query
+        name: limit
+        type: integer
+      - default: date
+        description: Sort field
+        in: query
+        name: sortBy
+        type: string
+      - default: desc
+        description: Sort order (asc, desc)
+        in: query
+        name: sortOrder
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handlers.ClicksReportResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get clicks report
+      tags:
+      - reports
+  /reports/conversions:
+    get:
+      consumes:
+      - application/json
+      description: Returns paginated conversion events with detailed tracking information
+      parameters:
+      - description: Start date (YYYY-MM-DD)
+        in: query
+        name: startDate
+        required: true
+        type: string
+      - description: End date (YYYY-MM-DD)
+        in: query
+        name: endDate
+        required: true
+        type: string
+      - description: Comma-separated campaign IDs
+        in: query
+        name: campaignIds
+        type: string
+      - description: Affiliate ID filter
+        in: query
+        name: affiliateId
+        type: string
+      - description: Conversion status filter
+        in: query
+        name: status
+        type: string
+      - default: 1
+        description: Page number
+        in: query
+        name: page
+        type: integer
+      - default: 10
+        description: Items per page (max 100)
+        in: query
+        name: limit
+        type: integer
+      - default: date
+        description: Sort field
+        in: query
+        name: sortBy
+        type: string
+      - default: desc
+        description: Sort order (asc, desc)
+        in: query
+        name: sortOrder
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handlers.ConversionsReportResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get conversions report
+      tags:
+      - reports
+  /reports/performance/daily:
+    get:
+      consumes:
+      - application/json
+      description: Returns paginated daily performance breakdown with campaign details
+      parameters:
+      - description: Start date (YYYY-MM-DD)
+        in: query
+        name: startDate
+        required: true
+        type: string
+      - description: End date (YYYY-MM-DD)
+        in: query
+        name: endDate
+        required: true
+        type: string
+      - description: Comma-separated campaign IDs
+        in: query
+        name: campaignIds
+        type: string
+      - description: Affiliate ID filter
+        in: query
+        name: affiliateId
+        type: string
+      - default: 1
+        description: Page number
+        in: query
+        name: page
+        type: integer
+      - default: 10
+        description: Items per page (max 100)
+        in: query
+        name: limit
+        type: integer
+      - default: date
+        description: Sort field
+        in: query
+        name: sortBy
+        type: string
+      - default: desc
+        description: Sort order (asc, desc)
+        in: query
+        name: sortOrder
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handlers.DailyPerformanceReportResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get daily performance report
+      tags:
+      - reports
+  /reports/performance/summary:
+    get:
+      consumes:
+      - application/json
+      description: Returns aggregated performance metrics for the specified date range
+        and filters
+      parameters:
+      - description: Start date (YYYY-MM-DD)
+        in: query
+        name: startDate
+        required: true
+        type: string
+      - description: End date (YYYY-MM-DD)
+        in: query
+        name: endDate
+        required: true
+        type: string
+      - description: Comma-separated campaign IDs
+        in: query
+        name: campaignIds
+        type: string
+      - description: Affiliate ID filter
+        in: query
+        name: affiliateId
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handlers.PerformanceSummaryResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get performance summary
+      tags:
+      - reports
+  /reports/performance/timeseries:
+    get:
+      consumes:
+      - application/json
+      description: Returns time series performance data for charts and graphs
+      parameters:
+      - description: Start date (YYYY-MM-DD)
+        in: query
+        name: startDate
+        required: true
+        type: string
+      - description: End date (YYYY-MM-DD)
+        in: query
+        name: endDate
+        required: true
+        type: string
+      - description: Comma-separated campaign IDs
+        in: query
+        name: campaignIds
+        type: string
+      - description: Affiliate ID filter
+        in: query
+        name: affiliateId
+        type: string
+      - default: day
+        description: Data granularity (day, hour)
+        in: query
+        name: granularity
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handlers.PerformanceTimeSeriesResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get performance time series
+      tags:
+      - reports
   /tracking-links:
     get:
       description: List tracking links with optional filtering by affiliate IDs and

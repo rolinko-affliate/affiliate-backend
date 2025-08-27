@@ -26,6 +26,8 @@ type RouterOptions struct {
 	PublisherMessagingHandler              *handlers.PublisherMessagingHandler
 	BillingHandler                         *handlers.BillingHandler
 	WebhookHandler                         *handlers.WebhookHandler
+	ReportingHandler                       *handlers.ReportingHandler
+	DashboardHandler                       *handlers.DashboardHandler
 }
 
 // SetupRouter sets up the API router
@@ -263,6 +265,24 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		billing.GET("/transactions", opts.BillingHandler.GetTransactionHistory)
 	}
 
+	// --- Reporting Routes ---
+	reports := v1.Group("/reports")
+	reports.Use(profileMW()) // Load profile first to get user role
+	reports.Use(rbacMW("AdvertiserManager", "AffiliateManager", "Admin")) // Allow all managers and admins
+	{
+		// Performance reporting
+		reports.GET("/performance/summary", opts.ReportingHandler.GetPerformanceSummary)
+		reports.GET("/performance/timeseries", opts.ReportingHandler.GetPerformanceTimeSeries)
+		reports.GET("/performance/daily", opts.ReportingHandler.GetDailyPerformanceReport)
+
+		// Event reporting
+		reports.GET("/conversions", opts.ReportingHandler.GetConversionsReport)
+		reports.GET("/clicks", opts.ReportingHandler.GetClicksReport)
+	}
+
+	// Campaigns list endpoint (for filters) - moved from campaigns group to be accessible by reporting
+	v1.GET("/campaigns", profileMW(), rbacMW("AdvertiserManager", "AffiliateManager", "Admin"), opts.ReportingHandler.GetCampaignsList)
+
 	// --- Organization Association Routes ---
 	orgAssociations := v1.Group("/organization-associations")
 	orgAssociations.Use(profileMW()) // Load profile first to get user role
@@ -343,6 +363,34 @@ func SetupRouter(opts RouterOptions) *gin.Engine {
 		trackingLinks.GET("/:id", opts.TrackingLinkHandler.GetTrackingLinkClean)
 		trackingLinks.PUT("/:id", opts.TrackingLinkHandler.UpdateTrackingLinkClean)
 		trackingLinks.DELETE("/:id", opts.TrackingLinkHandler.DeleteTrackingLinkClean)
+	}
+
+	// --- Dashboard Routes ---
+	dashboard := v1.Group("/dashboard")
+	dashboard.Use(profileMW()) // Load profile first to get user role
+	dashboard.Use(rbacMW("AdvertiserManager", "AffiliateManager", "AgencyManager", "PlatformOwner", "Admin"))
+	{
+		// Main dashboard endpoint
+		dashboard.GET("", opts.DashboardHandler.GetDashboard)
+
+		// Offers endpoint
+		dashboard.GET("/offers", opts.DashboardHandler.GetOffers)
+
+		// Campaign detail endpoint
+		dashboard.GET("/campaigns/:campaignId", opts.DashboardHandler.GetCampaignDetail)
+
+		// Activity endpoints
+		dashboard.GET("/activity", opts.DashboardHandler.GetRecentActivity)
+		dashboard.POST("/activity", opts.DashboardHandler.TrackActivity)
+
+		// System health endpoint (Platform Owner only)
+		dashboard.GET("/system/health", rbacMW("PlatformOwner", "Admin"), opts.DashboardHandler.GetSystemHealth)
+
+		// Cache management
+		dashboard.POST("/cache/invalidate", opts.DashboardHandler.InvalidateCache)
+
+		// Dashboard health check
+		dashboard.GET("/health", opts.DashboardHandler.DashboardHealthCheck)
 	}
 
 	return r

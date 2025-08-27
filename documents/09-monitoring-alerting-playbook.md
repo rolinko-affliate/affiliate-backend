@@ -1,9 +1,9 @@
 # Monitoring & Alerting Playbook: Affiliate Backend Platform
 
-**Document Version**: v1.0  
+**Document Version**: v1.1  
 **Owner**: SRE Team  
-**Last Updated**: 2025-08-05  
-**Next Review**: 2026-02-05
+**Last Updated**: 2025-08-15  
+**Next Review**: 2026-02-15
 
 ---
 
@@ -343,6 +343,52 @@ histogram_quantile(0.99,
             "format": "table"
           }
         ]
+      },
+      {
+        "title": "Dashboard API Performance",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket{job=\"affiliate-api\",endpoint=~\"/api/v1/dashboard/.*\"}[5m])) by (le))",
+            "legendFormat": "Dashboard API 95th percentile"
+          },
+          {
+            "expr": "sum(rate(http_requests_total{job=\"affiliate-api\",endpoint=~\"/api/v1/dashboard/.*\"}[5m]))",
+            "legendFormat": "Dashboard API Request Rate"
+          }
+        ]
+      },
+      {
+        "title": "Dashboard Usage by Organization Type",
+        "type": "pie",
+        "targets": [
+          {
+            "expr": "sum(rate(http_requests_total{job=\"affiliate-api\",endpoint=~\"/api/v1/dashboard/.*\"}[1h])) by (org_type)",
+            "legendFormat": "{{org_type}}"
+          }
+        ]
+      },
+      {
+        "title": "Everflow API Integration Health",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "sum(rate(everflow_api_requests_total{status=\"success\"}[5m])) / sum(rate(everflow_api_requests_total[5m])) * 100",
+            "legendFormat": "Everflow Success Rate %"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "unit": "percent",
+            "thresholds": {
+              "steps": [
+                {"color": "red", "value": 0},
+                {"color": "yellow", "value": 95},
+                {"color": "green", "value": 99}
+              ]
+            }
+          }
+        }
       }
     ]
   }
@@ -502,6 +548,85 @@ groups:
       summary: "Unusually low user activity"
       description: "Request rate is {{ $value }} requests/second"
       runbook_url: "https://docs.company.com/runbooks/low-activity"
+```
+
+### 5.4 Dashboard API Alerts
+
+#### Dashboard API High Error Rate
+```yaml
+- name: dashboard-alerts
+  rules:
+  - alert: DashboardAPIHighErrorRate
+    expr: |
+      (
+        sum(rate(http_requests_total{job="affiliate-api",endpoint=~"/api/v1/dashboard/.*",code=~"5.."}[5m])) /
+        sum(rate(http_requests_total{job="affiliate-api",endpoint=~"/api/v1/dashboard/.*"}[5m]))
+      ) * 100 > 5
+    for: 2m
+    labels:
+      severity: critical
+      team: sre
+      service: dashboard-api
+    annotations:
+      summary: "High error rate on Dashboard API"
+      description: "Dashboard API error rate is {{ $value }}% for the last 5 minutes"
+      runbook_url: "https://docs.company.com/runbooks/dashboard-api-errors"
+```
+
+#### Dashboard API Slow Response
+```yaml
+  - alert: DashboardAPISlowResponse
+    expr: |
+      histogram_quantile(0.95, 
+        sum(rate(http_request_duration_seconds_bucket{job="affiliate-api",endpoint=~"/api/v1/dashboard/.*"}[5m])) by (le)
+      ) > 0.5
+    for: 5m
+    labels:
+      severity: warning
+      team: sre
+      service: dashboard-api
+    annotations:
+      summary: "Dashboard API response time is high"
+      description: "95th percentile response time is {{ $value }}s"
+      runbook_url: "https://docs.company.com/runbooks/dashboard-api-slow"
+```
+
+#### Everflow API Integration Failure
+```yaml
+  - alert: EverflowAPIFailure
+    expr: |
+      (
+        sum(rate(everflow_api_requests_total{status="success"}[5m])) /
+        sum(rate(everflow_api_requests_total[5m]))
+      ) * 100 < 95
+    for: 3m
+    labels:
+      severity: critical
+      team: sre
+      service: everflow-integration
+    annotations:
+      summary: "Everflow API integration failure"
+      description: "Everflow API success rate is {{ $value }}%"
+      runbook_url: "https://docs.company.com/runbooks/everflow-api-failure"
+```
+
+#### Dashboard Cache Miss Rate High
+```yaml
+  - alert: DashboardCacheMissHigh
+    expr: |
+      (
+        sum(rate(dashboard_cache_misses_total[5m])) /
+        (sum(rate(dashboard_cache_hits_total[5m])) + sum(rate(dashboard_cache_misses_total[5m])))
+      ) * 100 > 50
+    for: 10m
+    labels:
+      severity: warning
+      team: sre
+      service: dashboard-cache
+    annotations:
+      summary: "High dashboard cache miss rate"
+      description: "Dashboard cache miss rate is {{ $value }}%"
+      runbook_url: "https://docs.company.com/runbooks/dashboard-cache-issues"
 ```
 
 ## 6. Alert Routing and Escalation

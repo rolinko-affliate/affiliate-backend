@@ -44,6 +44,7 @@ import (
 	"github.com/affiliate-backend/internal/platform/stripe"
 	"github.com/affiliate-backend/internal/repository"
 	"github.com/affiliate-backend/internal/service"
+	"github.com/redis/go-redis/v9"
 )
 
 // getLatestMigrationVersion scans the migrations directory to find the highest version number
@@ -225,7 +226,7 @@ func main() {
 	// Override config with command line flag if provided
 	if mockMode {
 		appConf.MockMode = true
-		logger.Info("Mock mode enabled via command line flag")
+		logger.Info("🔧 Mock mode enabled via command line flag")
 	}
 
 	// Check database migration status
@@ -254,6 +255,7 @@ func main() {
 	analyticsRepo := repository.NewAnalyticsRepository(repository.DB)
 	favoritePublisherListRepo := repository.NewFavoritePublisherListRepository(repository.DB)
 	publisherMessagingRepo := repository.NewPublisherMessagingRepository(repository.DB)
+	reportingRepo := repository.NewReportingRepository(repository.DB)
 
 	// Initialize Billing Repositories
 	billingAccountRepo := repository.NewPgxBillingAccountRepository(repository.DB)
@@ -311,6 +313,23 @@ func main() {
 		)
 	}
 
+	// Initialize mock data service (used by both dashboard and reporting in mock mode)
+	mockDataService := service.NewMockDataService(logger.GetDefault())
+
+	// Initialize Reporting Client and Service
+	var reportingService service.ReportingService
+	if appConf.MockMode {
+		logger.Info("🔧 Using Mock Reporting Service - all reporting data will come from CSV files")
+		reportingService = service.NewMockReportingService(mockDataService, logger.GetDefault())
+	} else {
+		everflowConfig := everflow.Config{
+			BaseURL: "https://api.eflow.team/v1",
+			APIKey:  appConf.EverflowAPIKey,
+		}
+		reportingClient := everflow.NewReportingClient(everflowConfig)
+		reportingService = service.NewReportingService(reportingClient, reportingRepo, campaignRepo)
+	}
+
 	// Initialize Domain Services
 	profileService := service.NewProfileService(profileRepo)
 	organizationService := service.NewOrganizationService(organizationRepo, advertiserRepo, affiliateRepo)
@@ -348,6 +367,30 @@ func main() {
 	billingHandler := handlers.NewBillingHandler(billingService, profileService)
 	webhookHandler := handlers.NewWebhookHandler(stripeService, billingService, webhookEventRepo, billingAccountRepo, transactionRepo, stripeConfig.WebhookSecret)
 
+	// Initialize Reporting Handler
+	reportingHandler := handlers.NewReportingHandler(reportingService)
+
+	// TODO: Re-enable Redis client for caching later
+	// Initialize Redis client for caching (optional - can be nil for now)
+	var redisClient *redis.Client
+	// if appConf.RedisURL != "" {
+	// 	redisClient = redis.NewClient(&redis.Options{
+	// 		Addr: appConf.RedisURL,
+	// 	})
+	// 	// Test connection
+	// 	if err := redisClient.Ping(context.Background()).Err(); err != nil {
+	// 		logger.Warn("Redis connection failed, continuing without cache", "error", err)
+	// 		redisClient = nil
+	// 	}
+	// }
+
+	// Initialize Dashboard Service and Handler
+	dashboardCacheRepo := repository.NewDashboardCacheRepository(redisClient)
+	everflowRepo := repository.NewEverflowRepository(appConf.EverflowAPIURL, appConf.EverflowAPIKey, redisClient, logger.GetDefault())
+	
+	dashboardService := service.NewDashboardService(dashboardCacheRepo, everflowRepo, reportingService, profileService, organizationService, mockDataService, logger.GetDefault(), appConf.MockMode)
+	dashboardHandler := handlers.NewDashboardHandler(dashboardService, logger.GetDefault())
+
 	// Setup Router
 	router := api.SetupRouter(api.RouterOptions{
 		ProfileHandler:                         profileHandler,
@@ -365,6 +408,8 @@ func main() {
 		PublisherMessagingHandler:              publisherMessagingHandler,
 		BillingHandler:                         billingHandler,
 		WebhookHandler:                         webhookHandler,
+		ReportingHandler:                       reportingHandler,
+		DashboardHandler:                       dashboardHandler,
 	})
 
 	// Start Server

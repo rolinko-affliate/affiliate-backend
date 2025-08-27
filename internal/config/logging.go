@@ -1,7 +1,7 @@
 package config
 
 import (
-	"log/slog"
+	// "log/slog" // Commented out for Go 1.19 compatibility
 	"os"
 	"strings"
 )
@@ -65,6 +65,8 @@ func GetLoggingConfig() LoggingConfig {
 }
 
 // ToSlogLevel converts LogLevel to slog.Level
+// Commented out for Go 1.19 compatibility
+/*
 func (l LogLevel) ToSlogLevel() slog.Level {
 	switch l {
 	case LogLevelDebug:
@@ -79,8 +81,11 @@ func (l LogLevel) ToSlogLevel() slog.Level {
 		return slog.LevelInfo
 	}
 }
+*/
 
 // ConfigureLogger sets up the global logger with the specified configuration
+// Commented out for Go 1.19 compatibility
+/*
 func ConfigureLogger(config LoggingConfig) {
 	var handler slog.Handler
 
@@ -100,6 +105,7 @@ func ConfigureLogger(config LoggingConfig) {
 	logger := slog.New(handler)
 	slog.SetDefault(logger)
 }
+*/
 
 // SanitizeForLogging removes or masks sensitive information from log values
 func SanitizeForLogging(key string, value interface{}) interface{} {
@@ -134,6 +140,8 @@ func SanitizeForLogging(key string, value interface{}) interface{} {
 }
 
 // LogWithSanitization logs with automatic sanitization of sensitive fields
+// Commented out for Go 1.19 compatibility
+/*
 func LogWithSanitization(level slog.Level, msg string, args ...interface{}) {
 	if len(args)%2 != 0 {
 		// If odd number of args, just log normally
@@ -174,3 +182,4 @@ func WarnSanitized(msg string, args ...interface{}) {
 func ErrorSanitized(msg string, args ...interface{}) {
 	LogWithSanitization(slog.LevelError, msg, args...)
 }
+*/

@@ -670,7 +670,7 @@ def save_organization_info(org: Organization, campaigns: List[Campaign],
 def main():
     parser = argparse.ArgumentParser(description='Generate organization-specific mock data')
     parser.add_argument('--jwt-token', required=True, help='JWT token for authentication')
-    parser.add_argument('--base-url', default='http://localhost:18080', help='Base URL of the API')
+    parser.add_argument('--base-url', default='http://localhost:8080', help='Base URL of the API')
     parser.add_argument('--output-dir', default='./generated_mock_data', help='Output directory for generated data')
     parser.add_argument('--num-clicks', type=int, default=500, help='Number of click events to generate')
     parser.add_argument('--verbose', '-v', action='store_true', help='Enable verbose logging')

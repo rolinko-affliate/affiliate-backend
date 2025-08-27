@@ -145,7 +145,7 @@ func (h *DashboardHandler) GetCampaignDetail(c *gin.Context) {
 	}
 
 	// Parse campaign ID
-	campaignIDStr := c.Param("campaignId")
+	campaignIDStr := c.Param("id")
 	campaignID, err := strconv.ParseInt(campaignIDStr, 10, 64)
 	if err != nil {
 		RespondWithError(c, http.StatusBadRequest, "Invalid campaign ID format")

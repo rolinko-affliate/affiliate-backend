@@ -105,12 +105,6 @@ func (s *dashboardService) GetDashboardData(ctx context.Context, userID uuid.UUI
 
 	orgID := *profile.OrganizationID
 
-	// Get organization details
-	org, err := s.organizationService.GetOrganizationByID(ctx, orgID)
-	if err != nil {
-		return nil, fmt.Errorf("failed to get organization: %w", err)
-	}
-
 	// Parse query parameters
 	query := &domain.DashboardQuery{
 		Period:    period,
@@ -123,6 +117,35 @@ func (s *dashboardService) GetDashboardData(ctx context.Context, userID uuid.UUI
 		return nil, err
 	}
 
+	// Get date range
+	from, to := query.GetDateRange()
+
+	// For now, return empty activities since we're focusing on Everflow data
+	activities := []domain.Activity{}
+
+	// In mock mode, use default organization type (advertiser)
+	if s.mockMode && s.mockDataService != nil {
+		summary, err := s.getAdvertiserSummary(ctx, orgID, from, to)
+		if err != nil {
+			return nil, fmt.Errorf("failed to get dashboard summary: %w", err)
+		}
+
+		dashboardData := &domain.DashboardData{
+			OrganizationType: domain.OrganizationTypeAdvertiser,
+			Summary:          summary,
+			RecentActivity:   activities,
+			LastUpdated:      time.Now(),
+		}
+
+		return dashboardData, nil
+	}
+
+	// Get organization details
+	org, err := s.organizationService.GetOrganizationByID(ctx, orgID)
+	if err != nil {
+		return nil, fmt.Errorf("failed to get organization: %w", err)
+	}
+
 	// Check cache first
 	cachedData, err := s.cacheRepo.GetCachedDashboardData(ctx, orgID, org.Type)
 	if err != nil {
@@ -131,12 +154,6 @@ func (s *dashboardService) GetDashboardData(ctx context.Context, userID uuid.UUI
 		s.logger.Debug("Returning cached dashboard data", "org_id", orgID)
 		return cachedData, nil
 	}
-
-	// Get date range
-	from, to := query.GetDateRange()
-
-	// For now, return empty activities since we're focusing on Everflow data
-	activities := []domain.Activity{}
 
 	// Build dashboard data based on organization type
 	var summary interface{}
@@ -586,7 +603,7 @@ func (s *dashboardService) GetCampaignDetail(ctx context.Context, userID uuid.UU
 
 	// Use mock data if mock mode is enabled
 	if s.mockMode && s.mockDataService != nil {
-		return s.mockDataService.LoadCampaignDetail(ctx, *profile.OrganizationID, campaignID)
+		return s.mockDataService.LoadCampaignDetail(ctx, campaignID, *profile.OrganizationID)
 	}
 
 	// For now, return mock campaign detail since we're focusing on Everflow data
